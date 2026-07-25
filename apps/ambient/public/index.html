@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#08070f" />
+<title>Ambient — agent-native todo</title>
+<style>
+/* ─── tokens ─────────────────────────────────────────────────────────────── */
+:root{
+  --bg:#08070f; --bg-2:#0d0b17;
+  --surface:rgba(255,255,255,.045); --surface-2:rgba(255,255,255,.075);
+  --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
+  --text:#f2f0f7; --text-2:#a9a4bd; --text-3:#6f6a86;
+  --accent:#a78bfa; --accent-2:#f0abfc; --accent-3:#67e8f9;
+  --urgent:#fb7185; --ok:#4ade80;
+  --r:18px; --r-sm:12px;
+  --shadow:0 24px 60px -18px rgba(0,0,0,.75);
+  --spring:cubic-bezier(.22,1.2,.36,1);
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:light){
+  :root{
+    --bg:#f7f6fb; --bg-2:#efedf7;
+    --surface:rgba(255,255,255,.8); --surface-2:#fff;
+    --line:rgba(20,14,50,.09); --line-2:rgba(20,14,50,.16);
+    --text:#16121f; --text-2:#5a5470; --text-3:#8b849f;
+    --accent:#7c3aed; --accent-2:#c026d3; --accent-3:#0891b2;
+    --shadow:0 20px 50px -20px rgba(40,20,90,.22);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  font:15px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,Roboto,sans-serif;
+  color:var(--text); background:var(--bg);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  letter-spacing:-.011em;
+}
+/* aurora */
+body::before{
+  content:""; position:fixed; inset:-30%; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(45% 40% at 18% 12%, color-mix(in oklab,var(--accent) 42%,transparent),transparent 70%),
+    radial-gradient(40% 38% at 84% 20%, color-mix(in oklab,var(--accent-2) 34%,transparent),transparent 70%),
+    radial-gradient(50% 45% at 60% 92%, color-mix(in oklab,var(--accent-3) 26%,transparent),transparent 72%);
+  filter:blur(70px) saturate(140%); opacity:.5;
+  animation:drift 26s ease-in-out infinite alternate;
+}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,transparent,var(--bg) 78%)}
+@keyframes drift{to{transform:translate3d(3%,-3%,0) scale(1.1) rotate(6deg)}}
+
+.wrap{max-width:760px;margin:0 auto;padding:0 18px calc(190px + var(--safe-b))}
+
+/* ─── header ─────────────────────────────────────────────────────────────── */
+header{padding:40px 0 22px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{
+  width:38px;height:38px;border-radius:12px;flex:none;position:relative;
+  background:linear-gradient(140deg,var(--accent),var(--accent-2) 55%,var(--accent-3));
+  box-shadow:0 8px 26px -8px color-mix(in oklab,var(--accent) 70%,transparent);
+}
+.mark::after{content:"";position:absolute;inset:11px;border-radius:4px;border:2px solid rgba(255,255,255,.92);border-right-color:transparent;border-bottom-color:transparent;transform:rotate(-45deg) translate(1px,2px)}
+h1{font-size:22px;font-weight:680;letter-spacing:-.03em;line-height:1.1}
+.sub{font-size:12.5px;color:var(--text-3);margin-top:2px}
+.live{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-3);white-space:nowrap}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 color-mix(in oklab,var(--ok) 60%,transparent);animation:pulse 2.4s infinite}
+.dot.off{background:var(--text-3);animation:none;box-shadow:none}
+@keyframes pulse{70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+/* ─── stats ──────────────────────────────────────────────────────────────── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:20px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 10px;text-align:center;backdrop-filter:blur(20px)}
+.stat b{display:block;font-size:21px;font-weight:660;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stat span{font-size:10.5px;color:var(--text-3);text-transform:uppercase;letter-spacing:.07em}
+.stat.hot b{color:var(--urgent)}
+
+/* ─── composer ───────────────────────────────────────────────────────────── */
+.composer{display:flex;gap:9px;margin-bottom:16px}
+.composer input{
+  flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);color:var(--text);
+  padding:14px 16px;border-radius:var(--r);font:inherit;outline:none;transition:.25s var(--spring);
+  backdrop-filter:blur(20px)
+}
+.composer input::placeholder{color:var(--text-3)}
+.composer input:focus{border-color:color-mix(in oklab,var(--accent) 55%,transparent);box-shadow:0 0 0 4px color-mix(in oklab,var(--accent) 14%,transparent)}
+.btn{
+  border:0;border-radius:var(--r);padding:0 20px;font:inherit;font-weight:600;cursor:pointer;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;
+  transition:transform .18s var(--spring),filter .18s;white-space:nowrap;min-height:48px
+}
+.btn:hover{filter:brightness(1.09)} .btn:active{transform:scale(.96)}
+.btn.ghost{background:var(--surface);color:var(--text-2);border:1px solid var(--line);font-weight:500}
+
+/* ─── filters ────────────────────────────────────────────────────────────── */
+.filters{display:flex;gap:7px;margin-bottom:16px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.filters::-webkit-scrollbar{display:none}
+.chip{
+  border:1px solid var(--line);background:var(--surface);color:var(--text-2);
+  padding:8px 15px;border-radius:99px;font-size:13px;cursor:pointer;white-space:nowrap;
+  transition:.2s var(--spring);min-height:38px
+}
+.chip[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:transparent;font-weight:560}
+.chip:active{transform:scale(.95)}
+
+/* ─── list ───────────────────────────────────────────────────────────────── */
+.list{display:flex;flex-direction:column;gap:8px}
+.task{
+  display:flex;align-items:flex-start;gap:13px;padding:15px 16px;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  backdrop-filter:blur(20px);transition:.28s var(--spring);
+  animation:rise .42s var(--spring) both;position:relative;overflow:hidden
+}
+@keyframes rise{from{opacity:0;transform:translateY(9px) scale(.985)}}
+.task:hover{border-color:var(--line-2);transform:translateY(-1px)}
+.task.p1::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--urgent)}
+.task.done{opacity:.48}
+.check{
+  width:22px;height:22px;flex:none;margin-top:1px;border-radius:7px;border:2px solid var(--line-2);
+  background:transparent;cursor:pointer;position:relative;transition:.22s var(--spring)
+}
+.check:hover{border-color:var(--accent)}
+.check:active{transform:scale(.86)}
+.task.done .check{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent}
+.task.done .check::after{
+  content:"";position:absolute;left:6.5px;top:2.5px;width:5px;height:10px;
+  border:2.5px solid #fff;border-top:0;border-left:0;transform:rotate(43deg);
+  animation:pop .3s var(--spring)
+}
+@keyframes pop{from{transform:rotate(43deg) scale(0)}}
+.body{flex:1;min-width:0}
+.title{font-size:14.5px;font-weight:520;word-wrap:break-word;line-height:1.4}
+.task.done .title{text-decoration:line-through;text-decoration-color:var(--text-3)}
+.notes{font-size:12.5px;color:var(--text-3);margin-top:3px;line-height:1.45}
+.meta{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap}
+.tag{font-size:10.5px;padding:3px 8px;border-radius:6px;background:var(--surface-2);color:var(--text-3);border:1px solid var(--line)}
+.tag.due{color:var(--accent-3)} .tag.over{color:var(--urgent);border-color:color-mix(in oklab,var(--urgent) 34%,transparent)}
+.del{background:none;border:0;color:var(--text-3);cursor:pointer;font-size:17px;padding:6px 4px;opacity:0;transition:.2s;line-height:1}
+.task:hover .del{opacity:1} .del:hover{color:var(--urgent)}
+@media (hover:none){.del{opacity:.5}}
+
+.empty{text-align:center;padding:64px 20px;color:var(--text-3)}
+.empty .big{font-size:44px;margin-bottom:12px;opacity:.85}
+.empty p{font-size:13.5px;max-width:280px;margin:0 auto;line-height:1.6}
+
+/* ─── agent dock ─────────────────────────────────────────────────────────── */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:40;
+  padding:12px 18px calc(14px + var(--safe-b));
+  background:color-mix(in oklab,var(--bg) 86%,transparent);
+  backdrop-filter:blur(28px) saturate(180%);
+  border-top:1px solid var(--line)
+}
+.dock-in{max-width:760px;margin:0 auto}
+.agent-row{display:flex;gap:9px;align-items:flex-end}
+.agent-row textarea{
+  flex:1;background:var(--surface);border:1px solid var(--line);color:var(--text);
+  padding:13px 16px;border-radius:var(--r);font:inherit;outline:none;resize:none;
+  max-height:120px;min-height:48px;transition:.25s var(--spring)
+}
+.agent-row textarea:focus{border-color:color-mix(in oklab,var(--accent-2) 55%,transparent);box-shadow:0 0 0 4px color-mix(in oklab,var(--accent-2) 13%,transparent)}
+.agent-row textarea::placeholder{color:var(--text-3)}
+.hint{font-size:10.5px;color:var(--text-3);margin-top:8px;text-align:center;letter-spacing:.01em}
+.reply{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:12px 15px;margin-bottom:10px;font-size:13.5px;line-height:1.55;
+  animation:rise .34s var(--spring) both;max-height:35vh;overflow:auto
+}
+.reply .who{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);margin-bottom:5px;font-weight:600}
+.reply ul{list-style:none;margin-top:9px;display:flex;flex-direction:column;gap:4px}
+.reply li{font-size:11.5px;color:var(--text-3);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.thinking{display:inline-flex;gap:4px;align-items:center}
+.thinking i{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:bounce 1.3s infinite}
+.thinking i:nth-child(2){animation-delay:.18s} .thinking i:nth-child(3){animation-delay:.36s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+
+.toast{
+  position:fixed;left:50%;bottom:calc(120px + var(--safe-b));transform:translateX(-50%);
+  background:var(--text);color:var(--bg);padding:10px 18px;border-radius:99px;font-size:13px;
+  font-weight:520;z-index:60;animation:rise .3s var(--spring);box-shadow:var(--shadow);max-width:88vw
+}
+
+@media (max-width:560px){
+  header{padding:26px 0 18px} h1{font-size:19px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .wrap{padding:0 14px calc(200px + var(--safe-b))}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="mark"></div>
+      <div>
+        <h1>Ambient</h1>
+        <div class="sub">agent-native · every action, both ways</div>
+      </div>
+    </div>
+    <div class="live"><span class="dot" id="dot"></span><span id="liveTxt">live</span></div>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <form class="composer" id="quick">
+    <input id="quickInput" placeholder="Add a task…" autocomplete="off" />
+    <button class="btn" type="submit">Add</button>
+  </form>
+
+  <div class="filters" id="filters"></div>
+  <div class="list" id="list"></div>
+</div>
+
+<div class="dock">
+  <div class="dock-in">
+    <div id="replyBox"></div>
+    <div class="agent-row">
+      <textarea id="agentInput" rows="1" placeholder="Ask the agent…  “what’s overdue?”  “plan my week”"></textarea>
+      <button class="btn" id="agentSend">Send</button>
+    </div>
+    <div class="hint">Same actions as the buttons — no shadow AI · <kbd>⌘↵</kbd> to send</div>
+  </div>
+</div>
+
+<script type="module">
+const $ = (s) => document.querySelector(s);
+const state = { tasks: [], stats: {}, filter: 'open', project: null };
+
+const api = async (name, input = {}) => {
+  const r = await fetch(`/_actions/${name}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'X-Surface': 'ui' },
+    body: JSON.stringify(input),
+  });
+  const j = await r.json();
+  if (!j.ok) throw new Error(j.error);
+  return j.value;
+};
+
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const toast = (msg) => {
+  document.querySelector('.toast')?.remove();
+  const el = Object.assign(document.createElement('div'), { className: 'toast', textContent: msg });
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 2600);
+};
+
+function relDue(due) {
+  if (!due) return null;
+  const d = new Date(due + 'T00:00:00'), today = new Date(); today.setHours(0, 0, 0, 0);
+  const days = Math.round((d - today) / 864e5);
+  const label = days < 0 ? `${-days}d overdue` : days === 0 ? 'today' : days === 1 ? 'tomorrow' : `in ${days}d`;
+  return { label, over: days < 0 };
+}
+
+function renderStats() {
+  const s = state.stats;
+  $('#stats').innerHTML = [
+    ['open', s.open ?? 0, ''],
+    ['done', s.done ?? 0, ''],
+    ['overdue', s.overdue ?? 0, s.overdue ? 'hot' : ''],
+    ['rate', (s.completionRate ?? 0) + '%', ''],
+  ].map(([k, v, cls]) => `<div class="stat ${cls}"><b>${v}</b><span>${k}</span></div>`).join('');
+}
+
+function renderFilters(projects) {
+  const chip = (label, active, attrs) => `<button class="chip" aria-pressed="${active}" ${attrs}>${esc(label)}</button>`;
+  $('#filters').innerHTML =
+    ['open', 'done', 'all'].map((f) => chip(f, state.filter === f && !state.project, `data-filter="${f}"`)).join('') +
+    projects.filter((p) => p.open > 0).map((p) =>
+      chip(`${p.project} ${p.open}`, state.project === p.project, `data-project="${esc(p.project)}"`)).join('');
+}
+
+function renderList() {
+  const el = $('#list');
+  if (!state.tasks.length) {
+    el.innerHTML = `<div class="empty"><div class="big">✦</div><p>Nothing here yet. Add a task above, or just tell the agent what's on your mind.</p></div>`;
+    return;
+  }
+  el.innerHTML = state.tasks.map((t) => {
+    const d = relDue(t.due);
+    return `<div class="task ${t.status === 'done' ? 'done' : ''} ${t.priority === 1 ? 'p1' : ''}" data-id="${t.id}">
+      <button class="check" data-act="toggle" aria-label="toggle"></button>
+      <div class="body">
+        <div class="title">${esc(t.title)}</div>
+        ${t.notes ? `<div class="notes">${esc(t.notes)}</div>` : ''}
+        <div class="meta">
+          ${t.project && t.project !== 'Inbox' ? `<span class="tag">${esc(t.project)}</span>` : ''}
+          ${t.priority === 1 ? `<span class="tag" style="color:var(--urgent)">urgent</span>` : ''}
+          ${d ? `<span class="tag due ${d.over ? 'over' : ''}">${d.label}</span>` : ''}
+        </div>
+      </div>
+      <button class="del" data-act="del" aria-label="delete">×</button>
+    </div>`;
+  }).join('');
+}
+
+async function refresh() {
+  const [tasks, stats, projects] = await Promise.all([
+    api('list-tasks', state.project ? { project: state.project } : { status: state.filter }),
+    api('stats'), api('list-projects'),
+  ]);
+  state.tasks = tasks; state.stats = stats;
+  renderStats(); renderFilters(projects); renderList();
+  // Tell the backend what we're looking at, so the agent isn't blind to it.
+  api('set-navigation', { filter: state.filter, project: state.project ?? '' }).catch(() => {});
+}
+
+// events
+$('#quick').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const input = $('#quickInput'), title = input.value.trim();
+  if (!title) return;
+  input.value = '';
+  await api('add-task', { title });
+  await refresh();
+});
+
+$('#filters').addEventListener('click', (e) => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  if (b.dataset.filter) { state.filter = b.dataset.filter; state.project = null; }
+  else { state.project = state.project === b.dataset.project ? null : b.dataset.project; }
+  refresh();
+});
+
+$('#list').addEventListener('click', async (e) => {
+  const btn = e.target.closest('[data-act]'); if (!btn) return;
+  const id = btn.closest('.task').dataset.id;
+  if (btn.dataset.act === 'toggle') { await api('toggle-task', { id }); refresh(); }
+  if (btn.dataset.act === 'del') { await api('delete-task', { id }); toast('Deleted'); refresh(); }
+});
+
+// agent
+const ta = $('#agentInput');
+ta.addEventListener('input', () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 120) + 'px'; });
+ta.addEventListener('keydown', (e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); send(); } });
+$('#agentSend').addEventListener('click', send);
+
+async function send() {
+  const message = ta.value.trim(); if (!message) return;
+  ta.value = ''; ta.style.height = 'auto';
+  $('#replyBox').innerHTML = `<div class="reply"><div class="who">agent</div><span class="thinking"><i></i><i></i><i></i></span></div>`;
+  try {
+    const r = await fetch('/_agent', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message, autoApprove: true }),
+    }).then((x) => x.json());
+    if (!r.ok) throw new Error(r.error);
+    const calls = (r.results ?? []).map((x) =>
+      `<li>${x.status === 'ok' ? '✓' : x.status === 'needs-approval' ? '⚠' : '✗'} ${esc(x.action)}${x.error ? ' — ' + esc(x.error) : ''}</li>`).join('');
+    $('#replyBox').innerHTML = `<div class="reply"><div class="who">agent</div>${esc(r.reply)}${calls ? `<ul>${calls}</ul>` : ''}</div>`;
+    refresh();
+  } catch (err) {
+    $('#replyBox').innerHTML = `<div class="reply"><div class="who">agent</div>Couldn't reach the model — ${esc(err.message)}</div>`;
+  }
+}
+
+// live sync: agent writes appear without a manual refresh
+let es;
+function connect() {
+  es = new EventSource('/_events');
+  es.onopen = () => { $('#dot').classList.remove('off'); $('#liveTxt').textContent = 'live'; };
+  es.onmessage = () => refresh();
+  es.onerror = () => { $('#dot').classList.add('off'); $('#liveTxt').textContent = 'polling'; es.close(); setTimeout(connect, 3000); };
+}
+connect();
+setInterval(() => { if (!es || es.readyState !== 1) refresh(); }, 10000); // polling fallback
+refresh();
+</script>
+</body>
+</html>

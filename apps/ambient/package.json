@@ -1,0 +1,16 @@
+{
+  "name": "ambient",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ambient — an agent-native todo app. One action definition powers UI, agent, HTTP, MCP and CLI.",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "action": "node cli.mjs action",
+    "agent": "node cli.mjs agent",
+    "ls": "node cli.mjs ls",
+    "actions": "node cli.mjs actions"
+  },
+  "engines": { "node": ">=22" }
+}
