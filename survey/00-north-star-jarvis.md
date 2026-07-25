@@ -118,3 +118,77 @@ Ranked by (impact for the target learner) ÷ (blocker difficulty):
 > An ambient tutor that sees the work, remembers everything, points at the thing,
 > notices you are stuck before you say so, changes its approach when its approach
 > is failing — and, most of the time, declines to give you the answer.
+
+---
+
+## 7. Addendum — Wan Streamer changes three of the seven blockers
+
+*Added 2026-07-25 after direct source review. Supersedes the latency and avatar
+analysis above where they conflict.*
+
+**Sources.** Wan-Streamer v0.2, arXiv:2607.04443 (Huang et al., 5 Jul 2026);
+Wan Streamer v0.3, https://wan-streamer.com/v0.3/ (16 Jul 2026). Local install
+present at `~/wan-streamer` — note this directory is actually **StreamDiffusionV2**
+(arXiv:2511.07399, MLSys 2026 Best Paper), a *different* real-time V2V system with
+Blackwell support added 2026-05-17. Both are relevant; they are not the same
+project.
+
+**Measured figures (v0.2/v0.3):** 640×368 @ **25 FPS**, **~200 ms model-side
+signal-to-signal latency**, ~550 ms total remote including 350 ms network.
+Architecture: single-GPU *thinker* (perception) + multi-GPU *performer*
+(Ulysses-style context parallelism). `MEASURED-BENCH`, author-reported.
+
+### Revisions to §2 and §3
+
+| | Previous finding | Revised |
+|---|---|---|
+| **Latency** | "Budget blown before the model runs" (800 ms default VAD) | **~200 ms model-side is inside the human turn-gap budget** (modal 100–200 ms; Levinson & Torreira). The 800 ms figure describes *default VAD configuration*, not the achievable floor. |
+| **J2 — sees what you see** | Degraded, ≤1 FPS | Applies to Gemini Live / OpenAI Realtime. A dedicated real-time audio-visual stack operates at 25 FPS. |
+| **J1 — ambient** | Blocked by 2-min video cap | Vendor-API constraint, not a physical one. A self-hosted stream has no such cap. |
+
+### The v0.3 contribution: world / event-stream decomposition
+
+v0.3 separates **the world** (scene, characters, appearance, sound — must stay
+coherent) from **the event stream** (speech, motion, camera movement,
+environmental change — varies moment to moment). *"Establish the world once,
+follow the timeline, and learn what happens next."*
+
+This is the sharpest architectural fit for tutoring in the entire survey:
+
+- **The world is the lesson context** — a lab bench, a workshop, a circuit, a
+  kitchen, a farm. Established once, persistent across the session.
+- **The event stream is the teaching** — the tutor's speech, gesture, object
+  manipulation, and attention shifts, time-aligned within that world.
+
+It also addresses Genie 3's two disqualifying limits for education directly:
+persistent world state (vs ~1 minute of visual memory) and legible on-screen text
+(v0.2's stated goal is "readable details during real-time conversation").
+One of v0.3's own demo categories is **"instructional activity."**
+
+### What this does *not* fix
+
+Physical correctness is unchanged. VideoPhy (39.6% best case) and VideoPhy-2
+(22% on the hard subset) measure generated-video physics adherence, and nothing
+in v0.2/v0.3 claims to improve it. **A generated world may be real-time,
+persistent, legible, and still wrong about physics** — and photorealism makes
+the error more persuasive, not less.
+
+Therefore the A5 conclusion is narrowed rather than withdrawn:
+
+> Generated pixel worlds remain unsuitable as the *authority* for physical law.
+> They are now suitable as the *stage* — a persistent, legible, real-time
+> environment in which a tutor grounded by verifiable code (G1 ladder) teaches.
+> Keep the world generative; keep the physics symbolic.
+
+### Revised build order (supersedes §5)
+
+Deixis (J3) rises to first. In a persistent world at 25 FPS, "point at *this*"
+becomes tractable in a way it never was over a 1 FPS still-frame channel — and it
+is the highest-value accommodation in the H1 archetype table.
+
+1. **Deixis in a persistent world** — the tutor indicates, annotates, manipulates.
+2. **State (J4)** — one learner model beneath it.
+3. **The refusal engine (§4)** — unchanged; still the pedagogy.
+4. **Proactive probing (J5)** — out-of-band evaluation → CBM loop.
+5. **The face** — now cheap to render, still `g ≈ 0.19–0.20`. Build for
+   engagement; do not claim it teaches.

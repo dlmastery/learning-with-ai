@@ -316,4 +316,140 @@ MILU, Whisper/MMS WER — pending from the language research stream; see §6.]*
 
 ---
 
-<!-- SECTIONS 4-8 PENDING RESEARCH STREAMS -->
+---
+
+## 7. The uncomfortable counter-argument
+
+### 7.1 The steelman
+
+*Stated as strongly as it can be stated, because it is largely correct.*
+
+**Premise 1 — Content availability has not been the binding constraint for decades.**
+Every curriculum a child needs has been free on the open web since roughly 2010. Khan
+Academy, Wikipedia, OpenStax, CK-12, and YouTube collectively solved "access to explanation"
+years ago. Learning poverty nonetheless stands at roughly 70% of ten-year-olds in low- and
+middle-income countries. If content were the constraint, that number would have moved. It
+did not. AI does not add content; it adds *responsiveness* to content that was already free.
+The burden of proof is on the claim that responsiveness is the missing ingredient, and that
+burden has not been discharged.
+
+**Premise 2 — The measured constraints are physiological, institutional, and custodial.**
+A child who is stunted, anaemic, or hungry cannot consolidate what a tutor teaches, however
+patient the tutor. A child who is not in school is not in front of the device. A child in a
+classroom whose teacher is absent has no one to enforce the routine that makes any
+instructional technology work. A girl who is unsafe walking to the learning centre does not
+arrive. These are the variables with the largest documented effects on learning outcomes in
+low-income settings, and **an AI tutor moves none of them.** It does not deworm, feed,
+enrol, supervise, or protect.
+
+**Premise 3 — The ICT4D record is a forty-year controlled experiment in exactly this
+hypothesis, and it failed.** Every prior wave — radio, television, PCs, one-laptop-per-child,
+tablets, MOOCs — arrived with the same structure of argument: the marginal cost of
+distributing instruction has collapsed, therefore the learning gap will close. Each time,
+rigorous evaluation found effects near zero on learning outcomes. The interventions that
+*did* work were the ones that changed what an adult did with a child's time. AI is a better
+technology than any of these, but "better technology" was never the failed variable — the
+theory of change was.
+
+**Premise 4 — Cost-effectiveness arithmetic actively disfavours the sophisticated version.**
+This is the counter-argument's sharpest edge, and it comes from this section's own numbers.
+Converting to the sector's standard currency (Learning-Adjusted Years of Schooling per $100,
+at ~0.30 SD per year of schooling):
+
+| Configuration | Full TCO/child/yr | LAYS per $100 at d=0.2 | Effect size needed to reach 3 LAYS/$100 |
+|---|---|---|---|
+| Frontier cloud, voice, 1:1 | $281.77 | 0.24 | **2.54 SD — implausible** |
+| Cheap cloud model, voice, 1:1 | $76.57 | 0.87 | 0.69 SD — a stretch |
+| On-device 4B, 1:1 | $27.57 | 2.42 | 0.25 SD — plausible |
+| Small open model, text, shared 1:5 | $6.24 | 10.68 | 0.06 SD — plausible |
+| On-device, shared 1:5 school tablet | $5.53 | 12.06 | 0.05 SD — plausible |
+| SMS/IVR on an existing phone | $1.75 | 38.10 | 0.02 SD — plausible |
+
+Benchmarks in the same units: structured pedagogy ~2–3 LAYS/$100; teaching-at-the-right-level
+~3–15; information on returns to schooling ~20+; **providing hardware alone <0.3, frequently
+indistinguishable from zero.**
+
+The implication is uncomfortable for the field's enthusiasms. **Frontier 1:1 voice tutoring
+would need an effect size of ~2.5 SD to be cost-competitive with interventions that already
+exist.** Bloom's 2-sigma is the theoretical ceiling of individual human tutoring and has
+never been replicated under controlled conditions. So the most desirable configuration is
+the one the arithmetic most clearly rejects — while an SMS bot on a phone the family already
+owns needs only 0.02 SD to be a best buy.
+
+**Conclusion of the steelman:** AI learning is a solution to a problem that was already
+solved, priced above interventions that already work, deployed into infrastructure that does
+not exist, in languages it does not speak, for children who are not in the room.
+
+### 7.2 Response
+
+The steelman is right about roughly 80% of the claim, and the honest response concedes that
+rather than fighting it.
+
+**Concede Premise 1 entirely.** Content was never scarce. Any version of this survey's
+ambition that rests on "access to knowledge" is making a claim that was falsified fifteen
+years ago. The defensible claim is narrower and different in kind: what has been scarce is
+**contingent adult attention** — someone who notices *this* child is stuck at *this* step and
+responds. That has always been supply-constrained because it is human time, and it is the
+first thing in history to become manufacturable. Whether manufactured attention substitutes
+for human attention is an empirical question, not a rhetorical one, and it is the question
+the field should actually be running.
+
+**Concede Premise 2 almost entirely.** Nutrition, enrolment, attendance, teacher presence,
+and safety dominate. AI addresses none directly. The correct posture is **complementarity,
+not substitution**: AI is a multiplier on instructional time that already exists, not a
+substitute for a child being fed, enrolled, and supervised. A multiplier on zero is zero.
+This means AI tutoring should be evaluated and funded *alongside* the interventions that put
+children in seats — never as an alternative to them, and never in a budget line that competes
+with them.
+
+**Concede Premise 3, with one specific and important qualification.** The ICT4D record is
+damning and the burden of proof sits with AI. But the failures were not undifferentiated.
+The interventions that failed were those that shipped *hardware and content* and expected
+learning to follow. The ones that worked — computer-assisted learning that adapted to the
+child's actual level, and teaching-at-the-right-level programmes — worked because they
+solved **heterogeneity**: the problem that a classroom of forty children spans six years of
+attainment and a single-paced lesson serves almost none of them. That is a genuinely
+different mechanism from "here is a laptop," and it is the one mechanism in the historical
+record that AI is unusually well suited to. The prior is not "technology fails"; the prior is
+"technology fails unless it targets instruction to the individual child's level, in which
+case it sometimes works." AI's claim should be staked on that narrower ground, where the
+evidence actually points.
+
+**Partially reject Premise 4 — and note that its own logic points somewhere useful.**
+The cost-effectiveness arithmetic is correct but is an argument about *configuration*, not
+about AI. It rejects frontier voice tutoring on 1:1 devices; it strongly *endorses* shared
+on-device small models and SMS/IVR delivery, which reach 12–38 LAYS/$100 at modest effect
+sizes and outperform most things in the Smart Buys catalogue. The arithmetic is not a verdict
+against AI learning. It is a verdict against the version of AI learning that demos well —
+and a direction: **build for the feature phone and the shared tablet first, not the
+frontier-model voice agent.**
+
+Two further points the steelman understates:
+
+- **The price trend is real and fast.** At Epoch AI's observed 9×–900×/year decline, the
+  frontier configuration that fails the cost-effectiveness test today passes it in roughly
+  12–24 months without anyone doing anything. Several premises above are true statements
+  about 2026 that will be false statements about 2028. That does not rescue the enrolment,
+  nutrition, or safety arguments — those do not move with token prices — but it does retire
+  the affordability objection specifically.
+- **Marginal cost near zero changes who can build.** The historical failures were centrally
+  procured national programmes with multi-year cycles. Open-weights small models and on-device
+  inference mean a national curriculum in Telugu or Hausa can be adapted by a local team on a
+  budget of thousands, not tens of millions. That is a structural change in *who* gets to
+  build for a linguistic community — and it is the most plausible route to the language
+  problem in §3.
+
+**Net position.** Marginal cost approaching zero makes universal AI tutoring *affordable*.
+It does not make it *effective*, and affordability was not the binding constraint. The
+correct claim for this survey is bounded: **AI removes the cost barrier to personalised
+instruction, which is real and was never removed before — and leaves every other barrier
+standing.** "No child left behind" is unachievable by AI alone and was never an AI-shaped
+problem. What is achievable, and worth stating precisely, is that for children who are
+already in school, already fed, and already supervised, the marginal cost of giving each of
+them instruction targeted to their actual level has fallen to roughly five cents an hour and
+is still falling. That is a smaller claim than the ambition. It is also, unlike the ambition,
+true.
+
+---
+
+<!-- SECTIONS 4-6 PENDING RESEARCH STREAMS -->
