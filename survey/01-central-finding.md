@@ -1,17 +1,58 @@
 ---
-title: "The Felt-Learning Trap"
+title: "What Works — and the One Design Choice That Decides It"
 section: central-finding
 status: draft
 date: 2026-07-25
 ---
 
-# The Felt-Learning Trap
+# What Works
+
+**The wins available today are large, real, and measured.**
+
+| Result | Effect | Evidence |
+|---|---|---|
+| AI tutor that withholds answers and hints instead | **+127% practice, no retention penalty** | Randomised, ~1,000 students |
+| Gemini Guided Learning, Sierra Leone | **+0.258 SD maths** — 1.2–1.7 years of typical progress in 8 weeks (1.8–2.5 in high-engagement classrooms) | Pre-registered RCT, 1,763 students, 12 schools |
+| Retrieval practice | **g = 0.50** in labs *and* classrooms | 222 studies, 48,478 students |
+| Learning by teaching | **g = 0.56**, robust at delay | Meta-analysis; near-zero deployment |
+| Productive failure | **g = 0.36**, rising to **0.58** at high fidelity | Meta-analysis |
+| Spaced practice | classroom **d = 0.54** | 12 of 271 comparisons failed |
+
+These are not incremental. A tutor that produces 1.2–1.7 years of maths progress
+in eight weeks, in one of the world's most resource-constrained school systems,
+is the strongest evidence in the history of educational technology.
+
+**And the mechanism is known.** In the Sierra Leone deployment, 113k conversations
+were coded: **91.4% concept-building, scaffolding in 76% of responses, direct
+solutions in 2%.** The system worked because it *withheld*.
+
+## The one design choice that decides it
+
+The same model, given to the same students, produces opposite outcomes depending
+on a single property:
+
+| | Practice | Exam, unassisted |
+|---|---|---|
+| Answers freely | +48% | **−17%** |
+| Withholds, hints, requires reasoning | **+127%** | **no penalty** |
+
+That is the whole finding. **Restraint is the active ingredient; everything else
+is delivery.** Every positive result in this survey comes from a constrained
+system. Every harm comes from an unconstrained one.
+
+This is good news, and it is immediately actionable: the win needs no new model,
+no new capability, and no additional cost. It needs a loop that decides when
+*not* to answer.
+
+## Why the field mostly builds the other one
+
+Not pessimism — a measurement problem with a fixable cause.
 
 Three research streams in this survey converged independently on one result. It
 is the paper's central finding and it indicts most of what the field is building.
 
-**Every headline AI-for-learning capability improves how learning *feels* while
-leaving — or making worse — how much is *learned*.**
+Felt learning is what every optimisation loop can measure. Real learning is what
+none of them measure. So systems drift toward the former — and the two dissociate:
 
 | Capability | Felt / affect | Actual learning |
 |---|---|---|
