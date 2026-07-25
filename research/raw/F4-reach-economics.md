@@ -163,7 +163,7 @@ still fail if nothing else changes.
 
 Annual global bill, **180 hours per child per year** (one hour every school day), $ billions:
 
-| Price/hour | All school-age (1.9B) | LMIC children (1.5B) | LIC children (300M) | Out-of-school (250M) |
+| Price/hour | All school-age (1.9B) | LMIC children (1.5B) | LIC children (300M) | Out-of-school (272.9M) |
 |---|---|---|---|---|
 | $9.86 (frontier, uncached) | 3,372 | 2,662 | 532 | 444 |
 | $2.28 (frontier + premium voice) | 780 | 616 | 123 | 103 |
@@ -176,7 +176,7 @@ Inverting — the price that fits a given budget:
 
 | Budget | Cohort & dose | Required price/hour |
 |---|---|---|
-| UNESCO SDG4 financing gap (~$100B/yr) | All children, 180 h | $0.29 |
+| UNESCO SDG4 financing gap ($97B/yr, verified) | All children, 180 h | $0.29 |
 | UNESCO SDG4 gap | LMIC children, 180 h | $0.37 |
 | Total global aid to education (~$15B/yr) | All children, 180 h | $0.044 |
 | Total global aid to education | LMIC children, 180 h | $0.056 |
@@ -225,12 +225,17 @@ years):
 
 | Scenario | Inference | Bandwidth | Device | Power | **Total** | Inference as % |
 |---|---|---|---|---|---|---|
-| A. Frontier cloud, voice, 1:1 device | $253.80 | $7.77 | $20.00 | $0.20 | **$281.77** | 90.1% |
-| B. Cheap cloud model, voice, 1:1 | $48.60 | $7.77 | $20.00 | $0.20 | **$76.57** | 63.5% |
-| C. Small open model, text, shared 1:5 | $2.16 | $0.03 | $4.00 | $0.05 | **$6.24** | 34.6% |
-| D. On-device 4B, offline, 1:1 | $0.00 | $0.00 | $26.67 | $0.90 | **$27.57** | 0% |
-| E. On-device, shared 1:5 school tablet | $0.00 | $0.00 | $5.33 | $0.20 | **$5.53** | 0% |
+| A. Frontier cloud, voice, 1:1 device | $253.80 | $7.77 | $60.00 | $0.20 | **$321.77** | 78.9% |
+| B. Cheap cloud model, voice, 1:1 | $48.60 | $7.77 | $60.00 | $0.20 | **$116.57** | 41.7% |
+| C. Small open model, text, shared 1:5 | $2.16 | $0.26 | $12.00 | $0.05 | **$14.47** | 14.9% |
+| D. On-device 4B, offline, 1:1 | $0.00 | $0.00 | $60.00 | $0.54 | **$60.54** | 0% |
+| E. On-device 4B, shared 1:5 | $0.00 | $0.00 | $12.00 | $0.20 | **$12.20** | 0% |
 | F. SMS/IVR on existing feature phone | $0.20 | $1.50 | $0.00 | $0.05 | **$1.75** | 11.4% |
+
+Device prices here are deliberately **not** the $60 figure often quoted. §4.3 shows that a
+4 GB, $100 handset cannot comfortably host even a 1B model; a device that genuinely runs a
+4B model needs 6–8 GB and costs ~$180. Power uses MELT's measured 0.16–0.21 mWh/token
+(Laskaridis et al., MobiCom 2024) rather than an assumed wattage.
 
 **The inversion.** In scenario A intelligence is 90% of cost; in scenario C it is 35%; in
 D and E it is zero. **As inference approaches free, the problem becomes entirely a hardware
@@ -526,11 +531,11 @@ at ~0.30 SD per year of schooling):
 
 | Configuration | Full TCO/child/yr | LAYS/$100 at d=0.10 | at d=0.15 | at d=0.20 | Verdict vs 3-LAYS bar |
 |---|---|---|---|---|---|
-| Frontier cloud, voice, 1:1 | $281.77 | 0.12 | 0.18 | 0.24 | **FAILS** (needs 2.54 SD) |
-| Cheap cloud model, voice, 1:1 | $76.57 | 0.44 | 0.65 | 0.87 | FAILS (needs 0.69 SD) |
-| On-device 4B, 1:1 | $27.57 | 1.21 | 1.81 | 2.42 | marginal (needs 0.25 SD) |
-| Small open model, text, shared 1:5 | $6.24 | 5.34 | 8.01 | 10.68 | **BEATS** (needs 0.06 SD) |
-| On-device, shared 1:5 school tablet | $5.53 | 6.03 | 9.04 | 12.06 | **BEATS** (needs 0.05 SD) |
+| Frontier cloud, voice, 1:1 | $321.77 | 0.10 | 0.16 | 0.21 | **FAILS** (needs 2.90 SD) |
+| Cheap cloud model, voice, 1:1 | $116.57 | 0.29 | 0.43 | 0.57 | FAILS (needs 1.05 SD) |
+| On-device 4B, 1:1 | $60.54 | 0.55 | 0.83 | 1.10 | FAILS (needs 0.55 SD) |
+| Small open model, text, shared 1:5 | $14.47 | 2.30 | 3.46 | 4.61 | **BEATS** (needs 0.13 SD) |
+| On-device 4B, shared 1:5 | $12.20 | 2.73 | 4.10 | 5.46 | **BEATS** (needs 0.11 SD) |
 | SMS/IVR on an existing phone | $1.75 | 19.05 | 28.57 | 38.10 | **BEATS** (needs 0.02 SD) |
 
 The d range is not hypothetical: **Evans & Yuan (2022) put the median LMIC RCT effect at
@@ -625,6 +630,327 @@ true.
 
 ---
 
-<!-- SECTIONS 4-5 PENDING RESEARCH STREAMS -->
+---
+
+## 4. Small and on-device models — what actually runs on what
+
+### 4.1 The capability ladder
+
+Instruction-tuned benchmark scores from vendor model cards:
+
+| Model | Params | MMLU / MMLU-Pro | GSM8K | MATH | HumanEval |
+|---|---|---|---|---|---|
+| Gemma 3 1B | 1B | 14.7 (Pro) | 62.8 | 48.0 | 41.5 |
+| Llama 3.2 1B | 1B | 49.3 | 44.4 | 30.6 | — |
+| Llama 3.2 3B | 3B | 63.4 | 77.7 | 48.0 | — |
+| Gemma 3 4B | 4B | 43.6 (Pro) | 89.2 | 75.6 | 71.3 |
+| Phi-3-mini | 3.8B | 68.8 | 82.5 | 41.3 | 58.5 |
+| Phi-4-mini | 3.8B | 67.3 | 88.6 | 64.0 | — |
+| Llama 3.1 8B | 8B | 69.4 | 84.5 | 51.9 | — |
+| Gemma 3n E4B | ~4B eff. | 64.9 | — | 37.7 (HiddenMath) | 75.0 |
+| **Gemma 4 E2B** | **2.3B eff.** | **60.0 (Pro)** | — | 37.5 (AIME 2026) | 44.0 (LCB) |
+| Gemma 4 E4B | 4.5B eff. | 69.4 (Pro) | — | 42.5 (AIME 2026) | 52.0 (LCB) |
+| Gemma 3 27B | 27B | 67.5 (Pro) | 95.9 | 89.0 | 87.8 |
+
+Sources: Gemma model cards (huggingface.co/google/gemma-*); Phi-3 technical report
+(Abdin et al., arXiv:2404.14219); Llama 3.2 model cards; Qwen3 (qwenlm.github.io/blog/qwen3).
+
+**Gemma 4 E2B at 2.3B effective parameters scoring MMLU-Pro 60.0 is the single most
+important number here** — two generations earlier, Gemma 3 27B scored 67.5. Qwen reports a
+similar ~2× parameter-efficiency gain per generation ("Qwen3-1.7B/4B/8B performs as well as
+Qwen2.5-3B/7B/14B"). The floor is falling fast.
+
+### 4.2 But capability ≠ pedagogy — the most important finding in this section
+
+**Maurya, Srivatsa, Petukhova & Kochmar, "Unifying AI Tutor Evaluation: An Evaluation
+Taxonomy for Pedagogical Ability Assessment", arXiv:2412.09416** (MRBench, 192 dialogues):
+
+| Tutor | Mistake ID | Mistake Loc | **Guidance** | **Actionability** | Coherence | **Human-like** |
+|---|---|---|---|---|---|---|
+| Human expert | 76.04 | 63.02 | **67.19** | **76.04** | 79.17 | 87.50 |
+| Phi-3 (3.8B) | 28.65 | 26.04 | **17.71** | 11.98 | 39.58 | 52.08 |
+| Llama-3.1-8B | 80.21 | 54.69 | **45.31** | 42.71 | 80.73 | **93.75** |
+| Mistral (7B) | 93.23 | 73.44 | 63.54 | 70.31 | 86.98 | **95.31** |
+| GPT-4 | 94.27 | 84.38 | 76.04 | 46.35 | 90.17 | 89.62 |
+| Llama-3.1-405B | 94.27 | 84.38 | 77.08 | 74.48 | 91.67 | 90.62 |
+
+Read this carefully. Small models are **good at noticing something is wrong** (Llama-3.1-8B
+80.2% mistake ID) and **better than human experts at sounding human** (93.8% and 95.3% vs
+87.5%). They are **bad at the thing that constitutes tutoring**: guidance (45.3% vs 67.2%)
+and actionability (42.7% vs 76.0%).
+
+**The failure mode is precisely the dangerous one for education: fluent, human-sounding,
+confidently non-actionable.** A model that sounds more like a teacher than a teacher does,
+while giving guidance barely two-thirds as useful, is worse than an obviously-broken one —
+it will not trigger the scepticism it should.
+
+Note also that **Phi-3 scored worst of all models tested (17.71% guidance) despite MMLU 68.8
+and GSM8K 82.5.** Raw benchmark capability and tutoring ability are close to decoupled at
+this scale. Any procurement decision made on MMLU is being made on the wrong number.
+
+Corroborating evidence:
+- **TutorEval** (Chevalier et al., arXiv:2402.11111): GPT-4 85.5 vs **best 7B ≈ 50.9** — a
+  35-point gap that *survived* domain fine-tuning.
+- **BEA 2025 shared task** (Kochmar et al., arXiv:2507.10579): best macro-F1 58.34 (guidance)
+  to 71.81 (mistake ID) — but **96.98 F1 on identifying which tutor produced a turn.**
+  Machine tutoring style is trivially detectable while the pedagogical judgements stay hard.
+- **Error diagnosis is unsolved even at the frontier**: Imran & Bulathwela, "Catching The
+  Correct Answer Trap", arXiv:2605.23925 — when a student reaches a correct answer by flawed
+  reasoning, **frontier** models detect the misconception only **57%** of the time. A 1–3B
+  model is not a credible diagnostician.
+- **LearnLM** (arXiv:2412.16429) shows pedagogical post-training is worth +31% expert
+  preference over GPT-4o — but at Gemini scale, telling us nothing about 1–4B.
+
+### 4.3 Quantization, thermals, and the cheap-phone reality
+
+**Quantization.** Liu et al., "Quantization Hurts Reasoning?", arXiv:2504.04823 — W8A8 and
+W4A16 are essentially lossless; **below 4 bits is a cliff, and the cliff is steeper for
+smaller models.** DeepSeek-R1-Distill-Qwen-1.5B at W3A16 loses 18.6% average (MATH-500
+84.7 → 48.1); the 32B model loses only 3.9%.
+
+Meta's own Llama 3.2 numbers show *method* matters as much as bit-width:
+
+| | 1B BF16 | 1B naive PTQ | 1B SpinQuant | 1B QLoRA |
+|---|---|---|---|---|
+| GSM8K | 44.4 | **33.1** | 40.6 | 46.5 |
+| MATH | 30.6 | **20.5** | 25.3 | 31.0 |
+
+**Naive 4-bit PTQ costs a 1B model a quarter to a third of its math ability.**
+Quantization-aware training recovers it. QAT is not optional at this scale. (Apple ships a
+~3B model at **2 bits per weight** via QAT with only ~4.6% MGSM regression — but nobody
+outside Apple has reproduced this and the weights are not released.)
+
+**On-device throughput** (Meta, OnePlus 12 / Snapdragon 8 Gen 3, ExecuTorch):
+
+| | 1B SpinQuant | 3B SpinQuant |
+|---|---|---|
+| Decode | 50.2 tok/s | 19.7 tok/s |
+| Time-to-first-token | 0.3 s | 0.7 s |
+| **Resident memory (RSS)** | **1.92 GB** | **3.73 GB** |
+
+**The independent measurement that undercuts the on-device story.** Laskaridis, Katevas,
+Minto & Haddadi, **"MELTing Point: Mobile Evaluation of Language Transformers"**, MobiCom
+2024, arXiv:2403.12844:
+- TinyLlama-1.1B 4-bit on a Galaxy S23: **13.6 tok/s on CPU, 13.2 on GPU** — GPU offload gave
+  *no* benefit.
+- Energy **0.16–0.21 mWh per token**; **~490–591 prompts until battery depletion** on
+  flagship hardware.
+- Thermals: iPhone 14 Pro surface reached **47.9 °C**, 13.8 W sustained, >18 W instantaneous.
+- Their conclusion: **"continuous execution of LLMs remains elusive"** on account of energy
+  and thermal limits.
+
+**A 60-minute tutoring dialogue is exactly the sustained-conversation workload MELT
+identifies as infeasible.** At 120 turns per session, MELT's 490–591 prompt budget means
+**~4–5 sessions per full battery charge — a daily hour drains 20–25% of a flagship
+battery.** In a household without reliable power, that converts directly into charging-kiosk
+trips.
+
+**What a $50–100 Android phone actually is.** Samsung Galaxy A06 (Aug 2024, **$100.80**):
+MediaTek Helio G85 (12 nm), 2×A75 @2.0 GHz + 6×A55, **4 GB RAM**. The Android 15 CDD still
+permits compliant devices with under 1 GB available memory, and such devices are still sold.
+
+Against Meta's measured **1.92 GB RSS for a quantized 1B**, on a 4 GB device where the OS
+already consumes 1.5–2.5 GB: **marginal at 1B, impossible at 3B.** On throughput, a Helio
+G85 has roughly a quarter to a third of an S23's memory bandwidth, implying **~3–6 tok/s**
+(extrapolated from MELT, *not* measured) — a 150-token tutor turn would take **25–50
+seconds**.
+
+**Honest conclusion: the $50–100 phone is not currently a viable host for a conversational
+on-device tutor.** Claims to the contrary should be checked for whether they were measured on
+flagship hardware. This is why §2's revised TCO prices a workable on-device device at ~$180,
+not $60 — and why shared devices, not 1:1, are the only configuration that clears the
+cost-effectiveness bar.
+
+### 4.4 The threshold question
+
+**The evidence-based floor is ~3–4B, and the evidence for it is weak.**
+
+Supporting: below 3B the math substrate itself breaks (Llama 3.2 1B: GSM8K 44.4, MATH 30.6,
+falling to 33.1/20.5 under naive PTQ — a tutor wrong a third to half the time is not a
+tutor); at 3–4B, GSM8K crosses 85% and MMLU crosses 65%; vendors have independently converged
+on ~3B for on-device (Apple ~3B, Gemma 4 E2B 2.3B effective, Phi-4-mini 3.8B).
+
+**Why the evidence is weak, stated plainly:** MRBench is 192 dialogues and tested exactly one
+model under 7B — Phi-3, which was an outlier. TutorEval's small-model entries are 2024-era.
+**No study systematically sweeps model size (0.5B → 1B → 3B → 8B → frontier) against a fixed
+pedagogical benchmark.** That is the exact experiment the field needs and does not have. And
+there is **no study measuring learning outcomes for students using a small on-device tutor at
+all.** Every threshold claim here, including this one, is inference from adjacent evidence.
+
+**Compounding risk no benchmark captures:** the deployment stack multiplies degradations —
+quantization loss, then a pedagogical gap larger than the capability gap, then thermal
+throttling mid-session. Benchmarks measure only the first.
+
+### 4.5 Distillation — encouraging, but for the wrong task
+
+- Llama 3.2 1B/3B were distilled from 8B/70B logits — production-scale existence proof.
+- **Dang & Ngo, arXiv:2503.16219**: DeepSeek-R1-Distill-Qwen-1.5B improved AMC23 from 63% to
+  80% and hit 46.7% on AIME24 (beating o1-preview) for **$42 of compute** on 4×A40 over 24
+  hours. The strongest cost-effectiveness datapoint for narrow specialisation.
+- **Qian et al., ICML 2026, arXiv:2606.16152**: high-reward distillation data actively
+  *impairs* small-model math reasoning unless style-aligned — a real trap for naive
+  GPT-4-distillation pipelines.
+
+**The honest gap:** no study shows a small model fine-tuned on a narrow curriculum domain
+matching a frontier model **at tutoring**. Everything above is math-*solving* specialisation
+or tutor-*evaluation* distillation. Given that MRBench shows pedagogical and problem-solving
+skill are close to decoupled, transferring these results to tutoring is an extrapolation the
+field has not validated. **This is the most important open question in this section.**
+
+---
+
+## 5. The digital divide as it actually is
+
+### 5.1 Connectivity (ITU *Facts and Figures 2025*)
+
+| Metric | Value |
+|---|---|
+| Global internet users | **74%, ~6.0 billion** |
+| **People offline** | **2.2 billion (26%)** |
+| Africa | **36%** |
+| LDCs / LLDCs | **34% / 38%** |
+| Low-income vs high-income economies | **23% vs 94%** |
+| Urban vs rural (global) | 85% vs 58% |
+| Urban–rural ratio, Africa | **2.6** (Europe 1.1) |
+| **Rural internet use, low-income countries** | **14%** |
+| Gender | men 77% vs women 71%; **~280 million more men online** |
+| Mobile phone ownership (10+) | 80% global; **Africa 66%**; low-income **56%** |
+
+**The structural fact that reframes everything.** ITU 2025: **96%** of the world population
+is covered by 3G or better, **93%** by 4G. Only **4% (~312 million)** live outside coverage.
+But only 74% use the internet.
+
+**→ The usage gap is ~22 percentage points, roughly 1.8–1.9 billion people who live under a
+mobile broadband signal and do not use it — about 6× the size of the coverage gap.**
+
+The binding constraint is **affordability, devices, skills and relevance — not towers.**
+Building more network does not reach these people; they are already covered. This is the
+single most important fact for anyone designing global AI-learning delivery, and it points
+away from streaming-voice architectures and toward the cheapest possible channel.
+
+Affordability (ITU 2025): entry-level mobile data = 1.4% of GNI per capita globally, but
+low-income subscribers spend **~22×** the income share high-income subscribers do. Only
+**~40% of low- and middle-income economies** meet the Broadband Commission 2% affordability
+target for even one basket.
+
+### 5.2 Electricity
+
+| Metric | Value | Source |
+|---|---|---|
+| Access to electricity, world | 91.9% | WB `EG.ELC.ACCS.ZS` (2024) |
+| Sub-Saharan Africa | **55.1%** | WB (2024) |
+| Low-income countries | **48.8%** | WB (2024) |
+| **People without electricity** | **666.4 million** | UN SDG Report 2025 (2023) |
+| SSA share of that deficit | **565 million = 85%** | UN SDG Report 2025 |
+| Projected still unserved in 2030 | 645 million | UN SDG Report 2025 |
+
+(The widely quoted 685 million is the 2022 reference-year figure; **666.4 million is
+current.**)
+
+### 5.3 Schools — the sharpest data in this section (UNESCO UIS, 2024)
+
+| Indicator | World | **Sub-Saharan Africa** | LDCs |
+|---|---|---|---|
+| Primary schools with **electricity** | 78.1% | **36.3%** | 43.1% |
+| Lower secondary with electricity | 86.8% | 49.0% | 56.4% |
+| Primary schools with **computers** | 48.5% | **19.0%** (2022) | 26.0% |
+| Lower secondary with computers | 65.4% | 28.3% (2019) | 34.2% |
+| Primary schools with **internet** | 48.0% | *no aggregate published* | 23.4% |
+| Upper secondary with internet | 69.7% | 25.2% (2016) | 36.4% |
+
+Comparator, primary level: Europe & North America 99.7% electricity / 98.8% computers /
+95.9% internet.
+
+**→ In Sub-Saharan Africa, at most ~6.9% of primary schools have both electricity and a
+computer** (0.363 × 0.190, assuming independence — the true figure is higher if correlated,
+but the ceiling is what matters).
+
+**UIS publishes no recent regional aggregate for SSA primary computers or primary/lower
+secondary internet. The most recent data points are 2016–2022. The absence of data is itself
+a finding** — we are proposing to deliver AI tutoring into an infrastructure we have stopped
+measuring.
+
+### 5.4 Teachers — the human-capacity divide
+
+| Metric | World | SSA | Low income |
+|---|---|---|---|
+| Pupil–teacher ratio, primary | 23.4 | **37.4** | **39.8** |
+| Qualified teachers, primary | 88.9% | **73.4%** | — |
+| Qualified teachers, secondary | 87.2% | **66.2%** | — |
+| Trained teachers, secondary | 81.5% | **59.5%** | 55.6% |
+
+**The 44 million gap** (UNESCO *Global Report on Teachers*): 44 million additional primary
+and secondary teachers needed by 2030; **Sub-Saharan Africa alone needs ~15 million (34%)**.
+Cost to close: **~US$120 billion/year** ($12.8bn primary + $106.8bn secondary). For scale,
+the world had 34.1 million primary teachers in 2024 — **the gap is larger than today's entire
+primary teaching force.** Primary teacher attrition nearly doubled, 4.62% (2015) → 9.06%
+(2022).
+
+**Teacher presence and knowledge — World Bank Service Delivery Indicators.** Bold, Filmer,
+Martin, Molina, Stacy, Rockmore, Svensson & Wane, *"What Do Teachers Know and Do? Does It
+Matter?"*, World Bank PRWP 7956 (2017) / *JEP* 31(4):185–204. Eight surveys, seven SSA
+countries:
+
+- **44% of teachers were absent from class.** In three of eight surveys, over half. Only
+  Nigeria was below 30%.
+- **One-third of classrooms were "orphaned"** — students present, no teacher.
+- Scheduled teaching day **5h27m**; actual instruction received **2h49m — roughly half.**
+  ~10% of schools provide no teaching at all on a given day.
+- **Content knowledge: only 7% of language teachers** met the minimum threshold (80%
+  correct); **zero** met it in Togo, Mozambique, Tanzania (2010) or Nigeria. In maths, **1 in
+  10 could not add two double-digit numbers**; half could solve a simple story problem.
+- **Pedagogical knowledge: only 10%** reached the minimum threshold; under 5% in four
+  countries. Only **17%** could give feedback on strengths and weaknesses.
+- **No improvement in two decades**: Uganda school absence 27% (2002–03, Chaudhury et al.) →
+  30% (2013, SDI).
+
+**The arithmetic that follows is uncomfortable for both sides of the argument.** The missing
+2h38m of daily instruction × 180 days = **~473 hours per child per year of already-funded,
+already-scheduled teaching that does not happen.** That is **2.6× the 180-hour AI dose modelled
+in this section**, available at zero marginal compute cost if the adult simply shows up.
+
+But note the other edge: where only 7% of teachers meet minimum subject knowledge and 10%
+meet minimum pedagogical knowledge, "the adult shows up" is not sufficient either. **This is
+the strongest available argument for AI as a complement — not because teachers are
+replaceable, but because a teacher with a competent tutor in the room is a different
+proposition from a teacher without one.**
+
+### 5.5 Learning poverty, out-of-school children, and nutrition
+
+- **Learning poverty**: **70%** of 10-year-olds in LMICs cannot read and understand a simple
+  text (up from 57% pre-pandemic). **Sub-Saharan Africa 89%.** Latin America 80%, South Asia
+  78%. Lifetime earnings loss for this cohort: **US$21 trillion**, 17% of global GDP.
+  (World Bank/UNESCO/UNICEF, *State of Global Learning Poverty: 2022 Update*.)
+- **Out-of-school (UIS, 2025): 272.9 million** — primary 78.6m, lower secondary 63.6m, upper
+  secondary 130.7m. SSA 109.0 million. SSA out-of-school rates: primary 20%, lower secondary
+  34%, upper secondary **46%**. (The commonly quoted "250 million" is the pre-revision
+  figure — **use 272 million**.)
+- **Foundational learning**: minimum proficiency is **58% in reading, 44% in mathematics**.
+- **Stunting**: **149 million** under-5s (WHO/JME 2022); prevalence world 23.2%, **SSA 32.3%,
+  low-income countries 35.8%**.
+- **Deworming — the nuance that matters.** Miguel & Kremer (2004), *Econometrica* 72(1),
+  doi:10.1111/j.1468-0262.2004.00481.x: mass deworming **"reduced school absenteeism by
+  one-quarter"** and was far cheaper than alternatives — **but "we do not find evidence that
+  deworming improved academic test scores."** The canonical "fix health first" intervention
+  got children into seats and did not, by itself, raise learning. This cuts against a naive
+  version of the counter-argument in §7 as much as it supports the sophisticated one.
+
+### 5.6 Financing
+
+- **SDG4 annual financing gap: US$97 billion/year** across 79 low- and lower-middle-income
+  countries (UNESCO GEM, *Can countries afford their national SDG 4 benchmarks?*, 2024).
+- Education spending as % of GDP: world 3.57%, **low income 2.98%**.
+- **Low-income countries already allocate 16.7% of government budgets to education — a
+  larger share than high-income countries' 12.0%, and at the top of the recommended 15–20%
+  band. The gap is not political will at the margin; it is the size of the base.**
+- Spending per primary pupil: **~US$75/year in low-income countries vs ~US$10,300 in
+  high-income — a ratio of roughly 140:1.** (Derived: WB `SE.XPD.PRIM.PC.ZS` share applied to
+  2024 GDP per capita; numerator years are stale (2012–2016), so treat as order-of-magnitude.)
+
+This $75 figure is the denominator for everything in §1. **The $9.36/child/year small-model
+configuration is 12% of a low-income country's entire per-pupil budget. The $253.80 frontier
+configuration is 3.4× the whole budget.**
+
+---
 
 

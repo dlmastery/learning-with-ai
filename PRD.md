@@ -407,3 +407,35 @@ Each app targets one concept and must demonstrate at least one survey claim
 | Breadth without depth | One agent per section, ≥15 sources each |
 | Search budget exhaustion | API-based retrieval; flag unreachable |
 | Survey obsolescence | D1 designed as a rolling quarterly section |
+
+---
+
+### F11 reference implementation — ZemoMemo (zemomemo.com)
+
+`VENDOR` unless noted. Flashcard platform built on **FSRS-6**, the current
+research-grade spaced-repetition scheduler (`MEASURED-BENCH` — FSRS itself is
+validated on Anki-scale review data; ZemoMemo's own outcomes are not published).
+
+Loop: deck creation (manual · import · PDF · AI prompt) → Learn Mode with
+confidence rating → **"stickiness score"** (days a card survives in memory) →
+sub-5-minute refresh sessions timed just before predicted forgetting → successful
+refresh extends the interval.
+
+**Three choices that match the H1 archetypes:**
+
+| Feature | Archetype it serves | Mechanism |
+|---|---|---|
+| FSRS-6 scheduling | Long-term retention difficulty | Spaced retrieval — best-evidenced retention intervention available |
+| Sub-5-minute sessions | Attention / ADHD | Fits inside the attention window rather than fighting it |
+| Visible "stickiness score" | Anxiety / learned helplessness | An **open learner model**: growth number owned by the learner, not a verdict |
+
+**The limit, stated in the survey:** flashcards train *recall of discrete items*.
+They do not train **transfer or reasoning**. A system leaning only on SRS produces
+a learner who remembers everything and cannot apply it. F11 therefore owns the
+**retention** half only; the **reasoning** half belongs to F10 (depth laddering)
+plus worked examples with faded scaffolds — a different mechanism, different
+evidence base.
+
+Also inherits F6's caution: gamified engagement is the least stable cell in the
+gamification meta-analyses, with measured novelty decay. Any streak-like
+mechanic must pass the **Null-Learner Test** before shipping.

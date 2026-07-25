@@ -44,7 +44,7 @@ Numbered so nothing is silently dropped. `✅` planned/underway · `⏳` queued 
 | 21 | Wan streamer → live avatar to talk to | A4 | ✅ |
 | 22 | Manim animations | A2 | ✅ |
 | 23 | Remotion studio | A2 | ✅ |
-| 24 | **memozemo.com** scientific remembering framework | F11 | ❓ **domain does not resolve — need correct URL** |
+| 24 | **zemomemo.com** scientific remembering framework | F11 | ✅ resolved — FSRS-6 SRS, see F11 note |
 | 25 | **lessonorca.com** — the user's own product | E2 | ✅ primary evidence |
 | 26 | Latest **edtech startups, innovations, novelties** | E1 | ✅ |
 | 27 | `xiaol/Harnessing-LLM-Skills-to-Master-Machine-Learning` as an example | G3 | ✅ analysed AFTER futures |
@@ -180,5 +180,5 @@ request for a 400–500 word executive summary as the final message.
 - Repo created and pushed; PRD and this ledger committed.
 - **14 research agents in flight** (waves A, B, D, F).
 - Queued on the 20-agent cap: F10, F11, E1, E2, H1, G2, C1, C2, plus open-problems.
-- Blocked on user: correct `memozemo` URL; optional raise of the subagent cap.
+- Blocked on user: optional raise of the subagent cap (`CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS=40`).
 - No survey sections drafted yet — awaiting first raw reports.
