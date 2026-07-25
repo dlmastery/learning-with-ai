@@ -318,6 +318,174 @@ MILU, Whisper/MMS WER — pending from the language research stream; see §6.]*
 
 ---
 
+## 6. Evidence from deployed interventions
+
+### 6.1 The two studies carrying the entire "AI tutoring works in poor countries" claim
+
+**Nigeria — De Simone, Tiberti, Barron Rodriguez, Manolio, Mosuro & Dikoru (2025),
+*From Chalkboards to Chatbots*, World Bank Policy Research WP 11125,
+doi:10.1596/1813-9450-11125.** Nine public schools, Benin City, Edo State. Microsoft Copilot
+(GPT-4) in school computer labs, twelve 90-minute after-school sessions over six weeks,
+teacher-guided with prompt scaffolds. ITT effects: **English 0.238 SD (SE 0.068)**, total
+weighted 0.31 SD, third-term curricular English exam 0.21 SD. Cost **$48/pupil** for the
+pilot ($9 marginal; $124/pupil projected for a four-quarter version).
+
+Caveats that matter:
+- **Opt-in**: only 52% of eligible students entered the randomisation pool; no demographic
+  data on non-participants.
+- **Differential attrition**: 36% treatment vs 50% control failed to complete endline —
+  statistically significant, and the analysed sample is 57% of those assigned. Lee bounds and
+  IPW are applied and effects survive, which is the right response, but this is the study's
+  largest threat.
+- **Heterogeneity is regressive**: larger effects for higher-baseline and higher-SES students.
+- **Not an AI-alone intervention**: teachers ran the sessions; students got extra
+  instructional time, a computer lab, and structured curriculum-aligned activity. The
+  counterfactual is *nothing*, not *the same 18 hours without a chatbot*. The active
+  ingredient is unidentified.
+- **The "nearly two years of learning in six weeks" headline is a units conversion, not a
+  finding.** It is an Evans & Yuan (2019) EYOS transformation of 0.238 SD. It is a statement
+  about how little a business-as-usual Nigerian school year adds, not how much the chatbot
+  taught. The year-long extrapolation (1.2–2.23 SD) linearly projects a per-day dose-response
+  estimated over ≤12 sessions out to 36 weeks and should not be quoted as a result.
+- **No replication.** A full-text search of the World Bank corpus returns this paper and
+  nothing else.
+
+**Ghana — Henkel, Horne-Robinson, Kozhakhmetova & Lee (2024), *Effective and Scalable Math
+Support: Experimental Evidence on the Impact of an AI-Math Tutor in Ghana*, AIED 2024,
+doi:10.1007/978-3-031-64315-6_34 (arXiv:2402.09809).** Rori, a WhatsApp math tutor. Eleven
+Rising Academies schools, **randomised at school level** (5T/6C), grades 3–8, two 30-minute
+sessions/week, Feb–Aug 2023. 477 of 637 completed both tests. **Cohen's d = 0.36.** Marginal
+cost **~$5/student/year**.
+
+This is the most-cited LMIC AI-tutoring number and the **weakest-identified study of the set**:
+- Assignment is at school level with **11 clusters**, but inference is an independent-samples
+  t-test on 477 students — standard errors are not clustered, no school fixed effects. The
+  reported p<0.001 is not credible as stated; the honest interval around 0.36 is very wide.
+- Same 35-item instrument at all grades and both timepoints; authors concede **ceiling
+  effects**; retest effects likely.
+- 25% attrition, with dropouts substantially lower-scoring at baseline.
+- Rising Academies **built the product, runs the schools, and authored the evaluation**. No
+  pre-registration mentioned; authors call it "a preliminary evaluation."
+- The $5 is *marginal* (API + device + 3G), excluding devices, content development, and
+  teacher supervision — not comparable to Nigeria's all-in $48.
+
+### 6.2 The near-empty evidence base
+
+Searches across Crossref, ERIC, Europe PMC and the World Bank corpus produced **no rigorous
+outcome evaluation** of Khanmigo (anywhere, including the US), ConveGenius/SwiftChat, Kidato,
+M-Shule, Somanasi, Eneza Education, Pratham LLM pilots, or Central Square Foundation AI work.
+Rocket Learning's public impact page carries testimonials only — no control group, N, effect
+size, or cost. Youth Impact lists no AI/LLM programme with measured results.
+
+**Two studies, neither replicated, one of them badly identified, is the entire base.**
+
+### 6.3 The most rigorous trial finds zero
+
+**Bastani, Bastani, Sungu, Ge, Kabakcı & Mariman (2025), *Generative AI without guardrails
+can harm learning: Evidence from high school mathematics*, PNAS 122(26), e2422633122.**
+~1,000 students, one Turkish high school, four 90-minute sessions, three arms.
+
+| Arm | During assisted practice | On unassisted exam |
+|---|---|---|
+| GPT Base (no guardrails) | **+48%** | **−0.054 SD (SE 0.022), i.e. −17%** |
+| GPT Tutor (guardrailed) | **+127%** | **−0.004 SD (SE 0.013) — a precise null** |
+
+Two things are usually lost in citation. First, the harm comes from *unrestricted
+answer-giving*, and a well-designed tutor removed it. Second, and less comfortably:
+**the well-designed tutor also produced no detectable learning gain.** The best result in the
+most careful negative-controlled AI-tutoring trial is "did no harm." (The 2025 PNAS
+Correction, doi:10.1073/pnas.2518204122, is an author-affiliation fix only — no numbers
+changed.)
+
+For contrast, the strongest positive: **Kestin, Miller, Klales, Milbourne & Ponti (2025),
+*AI tutoring outperforms in-class active learning*, Scientific Reports 15,
+doi:10.1038/s41598-025-97652-6** — Harvard, 194 students, within-subject crossover, **0.63 SD**.
+But: immediate researcher-designed multiple-choice post-test with **no delayed retention
+measure**, two lessons, elite institution, expert-crafted prompts and bespoke instructional
+video. An upper bound on a heavily engineered system, not on "students using ChatGPT."
+
+### 6.4 The meta-analytic picture, including a retraction
+
+- **VanLehn (2011)**, Educational Psychologist 46(4), doi:10.1080/00461520.2011.611369 —
+  the field believed CAI/ITS/human tutoring were d = 0.3/1.0/2.0. Actual: **human tutoring
+  0.79, ITS 0.76.** ITS essentially match human tutors, and **human tutors do not reach two
+  sigma.**
+- **Kulik & Fletcher (2016)**, RER 86(1), doi:10.3102/0034654315581420 — k=50, median 0.66 SD,
+  but heavily dependent on local vs standardised outcome measures.
+- **Steenbergen-Hu & Cooper (2013, 2014)** — college g = 0.32–0.37, ITS **less** effective
+  than human tutoring; K-12 math "no negative and perhaps a small positive effect."
+- **Liu, Zuo & Lu (2025)**, JCAL, doi:10.1111/jcal.70096 — k=37, g = 0.577 [0.395, 0.759].
+  Its own moderators are the tell: largest effects at **samples of 21–40** and 5–10-week
+  interventions. That is the signature of small-study bias.
+- **⚠️ The headline LLM number has been retracted.** Wang & Fan (2025), *The effect of ChatGPT
+  on students' learning performance…*, Humanities and Social Sciences Communications,
+  doi:10.1057/s41599-025-04787-y, reported g = 0.867 across 51 studies and accumulated ~247
+  citations. **Retracted 22 April 2026** (doi:10.1057/s41599-026-07310-z). Independently,
+  **Bartoš, Martinková & Wagenmakers (2025)**, doi:10.31234/osf.io/8vs32_v1, show the effects
+  "greatly diminish once publication bias is accounted for." **Anyone citing g ≈ 0.87 for LLM
+  tutoring is citing a retracted paper.**
+- **Bloom's two sigma has never been replicated.** Bloom (1984), doi:10.2307/1175554,
+  dismantled by **von Hippel (2024), "Two-Sigma Tutoring: Separating Science Fiction from
+  Science Fact," Education Next**: it rests on two dissertations, 3-week interventions,
+  deliberately unfamiliar content, narrow researcher-made tests; the tutoring arm bundled
+  mastery-learning retesting (roughly half the effect) and *replaced* rather than supplemented
+  instruction. Cohen, Kulik & Kulik (1982): mean **0.33 SD** across 65 studies, 0.84 on local
+  tests vs **0.27 on standardised tests**.
+- **Human tutoring benchmark**: Nickow, Oreopoulos & Quan — the widely quoted 0.37 SD is the
+  2020 working paper; the **published** version (AERJ 2023, doi:10.3102/00028312231208687)
+  reports **0.288 SD (SE 0.029)**. Costs: Saga Education **$3,500–4,300/student/year**;
+  US federally funded supplemental tutoring **$1,100–2,000/student** for **0.06 SD**.
+
+### 6.5 What to expect at scale — the voltage drop
+
+- **Muralidharan, Singh & Ganimian (2019)**, AER 109(4), doi:10.1257/aer.20171112 — Mindspark
+  urban India, **0.37 SD math / 0.23 Hindi** over 4.5 months.
+- **Muralidharan & Singh (2025)**, *Adapting for Scale*, NBER WP 34205 — same technology,
+  adapted for scale, sample **20× larger**, **18 months**: **0.22 SD math / 0.20 Hindi**.
+  Longer dose, bigger sample, smaller effect. This is the best-documented voltage drop in the
+  technology-aided-instruction literature and the right prior for what happens to 0.31 and
+  0.36 at scale.
+- **Evans & Yuan (2022)**, EEPA, doi:10.3102/01623737221079646 — across 234 LMIC studies the
+  **median RCT effect is 0.10 SD**, and effects are "larger and demonstrate higher variance
+  for small-scale studies." Both AI studies above are small-scale.
+- **Reich & Ruipérez-Valiente (2019)**, *The MOOC pivot*, Science 363(6423),
+  doi:10.1126/science.aav7958 — six years of Harvard/MIT edX data: most learners never return
+  after year one, growth concentrated in affluent countries, **completion rates did not
+  improve over six years.** The closest well-measured analogue for unsupervised chatbot
+  engagement over time — and the reason the Nigeria result matters *because* attendance was
+  supervised (72% in a monitored lab), not despite it.
+
+**No published measurement of week-by-week engagement decay in an LLM tutoring deployment
+exists.** Rori's own evaluation names dosage–response and plateau as open questions. This is
+a genuine hole.
+
+### 6.6 Placing the measured points in the cost-effectiveness framework
+
+Converting at ~0.30 SD per year of schooling (LAYS per $100; higher is better):
+
+| Intervention | Cost/child/yr | d | LAYS per $100 |
+|---|---|---|---|
+| Ghana Rori (as claimed) | $5 | 0.36 | **24.00** |
+| Ghana Rori (at Evans–Yuan median) | $5 | 0.10 | **6.67** |
+| Botswana SMS + phone, human tutors | $13.50 | 0.12 | **2.96** |
+| Nigeria Copilot, 6-week pilot as run | $48 | 0.238 | **1.65** |
+| Mindspark urban | $100 | 0.37 | 1.23 |
+| Mindspark at scale | $100 | 0.22 | 0.73 |
+| Nigeria, projected 4-quarter version | $124 | 0.238 | 0.64 |
+| Bastani GPT Tutor (guardrailed) | ~$50 | 0.00 | **0.00** |
+| Saga human tutoring (US) | $3,900 | 0.26 | 0.02 |
+| US supplemental private tutoring | $1,550 | 0.06 | 0.01 |
+
+**Framework validation:** my conversion puts the Nigeria pilot at 1.65 LAYS/$100; the paper's
+own reported range is **0.6–1.9**. The framework agrees with the primary source.
+
+**The pattern is unambiguous and it is about cost, not about effect size.** The interventions
+that win are the cheap ones. Rori wins not because 0.36 SD is large but because $5 is small.
+Saga Education achieves a perfectly respectable 0.26 SD and scores 0.02 — a thousandth of
+Rori — purely on price. **Buy AI tutoring for the cost, not the effect size.**
+
+---
+
 ## 7. The uncomfortable counter-argument
 
 ### 7.1 The steelman
@@ -356,14 +524,19 @@ This is the counter-argument's sharpest edge, and it comes from this section's o
 Converting to the sector's standard currency (Learning-Adjusted Years of Schooling per $100,
 at ~0.30 SD per year of schooling):
 
-| Configuration | Full TCO/child/yr | LAYS per $100 at d=0.2 | Effect size needed to reach 3 LAYS/$100 |
-|---|---|---|---|
-| Frontier cloud, voice, 1:1 | $281.77 | 0.24 | **2.54 SD — implausible** |
-| Cheap cloud model, voice, 1:1 | $76.57 | 0.87 | 0.69 SD — a stretch |
-| On-device 4B, 1:1 | $27.57 | 2.42 | 0.25 SD — plausible |
-| Small open model, text, shared 1:5 | $6.24 | 10.68 | 0.06 SD — plausible |
-| On-device, shared 1:5 school tablet | $5.53 | 12.06 | 0.05 SD — plausible |
-| SMS/IVR on an existing phone | $1.75 | 38.10 | 0.02 SD — plausible |
+| Configuration | Full TCO/child/yr | LAYS/$100 at d=0.10 | at d=0.15 | at d=0.20 | Verdict vs 3-LAYS bar |
+|---|---|---|---|---|---|
+| Frontier cloud, voice, 1:1 | $281.77 | 0.12 | 0.18 | 0.24 | **FAILS** (needs 2.54 SD) |
+| Cheap cloud model, voice, 1:1 | $76.57 | 0.44 | 0.65 | 0.87 | FAILS (needs 0.69 SD) |
+| On-device 4B, 1:1 | $27.57 | 1.21 | 1.81 | 2.42 | marginal (needs 0.25 SD) |
+| Small open model, text, shared 1:5 | $6.24 | 5.34 | 8.01 | 10.68 | **BEATS** (needs 0.06 SD) |
+| On-device, shared 1:5 school tablet | $5.53 | 6.03 | 9.04 | 12.06 | **BEATS** (needs 0.05 SD) |
+| SMS/IVR on an existing phone | $1.75 | 19.05 | 28.57 | 38.10 | **BEATS** (needs 0.02 SD) |
+
+The d range is not hypothetical: **Evans & Yuan (2022) put the median LMIC RCT effect at
+0.10 SD**, Mindspark fell from 0.37 to **0.22** on scaling, and the most rigorous AI-tutoring
+trial (Bastani et al.) found **0.00** for a guardrailed tutor. d = 0.10–0.20 is the honest
+planning range; 0.30+ requires believing the two unreplicated LMIC studies survive scaling.
 
 Benchmarks in the same units: structured pedagogy ~2–3 LAYS/$100; teaching-at-the-right-level
 ~3–15; information on returns to schooling ~20+; **providing hardware alone <0.3, frequently
@@ -452,4 +625,6 @@ true.
 
 ---
 
-<!-- SECTIONS 4-6 PENDING RESEARCH STREAMS -->
+<!-- SECTIONS 4-5 PENDING RESEARCH STREAMS -->
+
+
