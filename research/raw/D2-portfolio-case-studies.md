@@ -969,54 +969,389 @@ pre-registered research program… laptop-scale, rigor-gated, negative-results-f
 `nature_inspired_networks` (*"autoresearch-style ablation… 71 hypotheses + paradigm comparison"*),
 `environment_stats_talk` (86 MB, *"autoresearch protocol, skills, runnable on a 4090"*).
 
-### D.2 What the loop is, from the descriptions
+Lineage is explicit: FX (`autoresearch`) → medical imaging (`autoresearchimage`) → tabular
+(`autoresearchtabular`) → equity (`autoresearchspy`, `autoresearchindexstock`) → benchmark fan-outs
+(`autoresearch_dsbench`, `autoresearch_darebench`). A domain-agnostic extraction exists at
+`autoresearch/generalized_ml_autoresearch/` (44 files, "52/52 CLAUDE.md sections preserved") — **this is
+the version that would be repointed at curriculum.**
 
-The recurring shape across all seven, as stated in the repo metadata:
+### D.2 The loop, verbatim
 
-1. A **fixed benchmark/target** with a single scalar objective (test Sharpe, composite Sharpe, OOD AUC,
-   DSBench task score).
-2. A **backbone sweep** — the same protocol re-run across N architectures (14 backbones × 25 experiments;
-   5 backbones × 216 experiments) so the *method* is compared, not just one model.
-3. **Hill-climbing on train/val only** — the test set is quarantined. `autoresearch_dsbench` states this
-   explicitly and reports 82/112 tasks beating the published DSBench baselines.
-4. **Audit gates as a first-class stage.** Named gates: **"Citation Rigor"**, **"Reasoning Blob"**
-   (`autoresearchtabular`), a **10-agent forensic committee** (`dsbench`), an **11-agent forensic
-   committee including "Agent K, forbidden-path enforcer"** (`darebench`). `dsbench` reports
-   **112/112 forensic PASS** — i.e. the audit is run on every task and reported as a headline metric
-   alongside performance.
-5. **A named champion** promoted at the end ("Residual MLP champion test Sharpe +6.21", "mamba dmamba
-   global champion +1.32 composite Sharpe").
-6. **A skill pack extracted from the run** — `dsbench` yields a "44-skill industry-shareable pack",
-   closing the loop back into reusable method.
+**Framing** (`autoresearch/AUTORESEARCH_PROCESS.md`, mirrored in `autoresearchspy/`):
 
-### D.3 Why this matters for curriculum
+> ## Karpathy's Original Principle (github.com/karpathy/autoresearch)
+> Karpathy's autoresearch: modify → train (5 min) → check if improved → keep/discard → repeat.
+> "Everything is fair game: architecture, hyperparameters, optimizer, batch size."
+> The agent runs autonomously until interrupted. One file modified. One metric to beat.
+
+Three declared deviations from Karpathy:
+> 1. **NEVER deviate far from the winner.** … The winner config is sacred — every experiment starts from it.
+> 2. **Claude IS the expert researcher.** Karpathy's agent just tries things. Our agent must DIAGNOSE
+>    per-fold, cite literature, form hypotheses…
+> 3. **Epoch-bound, not time-bound.** 20 epochs with early stopping.
+
+Core invariant:
+> **Always start from the current best config. Modify ONE thing. Keep if composite improves. Revert if
+> not. Never wander off.**
+
+**The seven steps, named** (`## The Loop (Every Iteration)`):
+
+1. **Read Results** — load `experiment_log.jsonl` (full history) + `best_config.json` (champion);
+   examine per-window breakdown for BOTH val and test.
+2. **Diagnose (This Is Where The Work Happens)** — five sub-analyses: *per-fold forensics*,
+   *train–test gap analysis* (`gap < 0.5` healthy; `0.5–1.5` mild overfitting; `> 2.0` severe, needs
+   structural change), *val–test consistency*, *composite decomposition*, *trajectory analysis*.
+3. **Research (Go Deep When Stuck)** — literature keyed to the diagnosed failure mode.
+4. **Hypothesize** — *"Write a SPECIFIC, FALSIFIABLE hypothesis"*; explicitly negated:
+   `NOT: "Let me try warmup and see what happens."`
+5. **Design ONE Experiment** — *"Change exactly ONE thing from the current best config… Predict what you
+   expect to see."*
+6. **Run & Analyse** — *"If composite improved → new best. If not → revert, hypothesis was wrong."*
+7. **Decide Next Direction** — *"If REVERT after 3+ tries on the same problem: rethink the diagnosis…
+   Occasionally try RADICAL changes to escape local optima."*
+
+The ASCII form in `autoresearch/README.md` §"Seven-Step Scientific Process" names them differently and
+more usefully:
+
+```
+ +---> 1. DIAGNOSE -----> Per-fold failure analysis
+ |     2. CITE ---------> Literature search
+ |     3. HYPOTHESIZE ---> Form a testable hypothesis
+ |     4. PREDICT -------> State expected outcome BEFORE running
+ |     5. RUN -----------> Execute ONE experiment
+ |     6. ANALYZE -------> Compare per-fold deltas to champion
+ |     7. CHECKPOINT ----> Save state for crash recovery
+ +--------<+ (loop)
+```
+
+Canonical one-liner (`autoresearchtabular/AUTORESEARCH_PROCESS.md`):
+`diagnose → cite → hypothesize → predict → run-ONE → analyze → checkpoint`, with the enforcement note:
+
+> "The first four steps happen **before** training… Step 7 is the persistence step where the experiment
+> row is appended to the leaderboard. **The runner refuses transitions in any other order.**"
+
+An 8-row **Anti-Patterns** table accompanies it: *"Let me try X and see"* → *"I'm trying X because
+[diagnosis] and [paper] suggests [mechanism]"*; *"Grid search (try 5 values of lr)"* → *"Diagnose →
+hypothesize → test ONE value with justification"*; *"Changing 2+ things at once"* → *"ONE change."*;
+*"Running without diagnosing"* → *"NEVER run an experiment without first writing the diagnosis"*. Plus a
+section headed *"What Makes This Different From Hyperopt/Optuna"*: **"The researcher's advantage over
+Optuna is understanding. Optuna can't read a paper."**
+
+The whole method is packaged as a portable skill —
+`autoresearch_dsbench/skills/autoresearch-pack/skills/seven-step-research-process/SKILL.md` — one of 48
+in the pack.
+
+### D.3 The hypothesis registry — the mechanism the survey should steal
+
+Two parallel artifacts per experiment. **Neither is a database.** Append-only JSONL + JSON + Markdown.
+
+**Reasoning registry** — `autoresearch_results/reasoning_annotations.json`, keyed by `experiment_num`,
+with **machine-enforced word floors**:
+
+| Field | Content | Floor |
+|---|---|---|
+| `diagnosis` | Why THIS experiment now: which champion weakness, which fold weakest, what prior experiments ruled out | ≥60 words |
+| `citations` | Full author/year/venue/title/arXiv-id/relevance-note per paper | ≥40 words |
+| `hypothesis` | "parameter X = value Y will change metric Z via mechanism M"; must contain "because" or "per [paper]" | ≥50 words |
+| `prediction` | Numeric range on composite + a sub-prediction on at least one fold | ≥25 words |
+| `verdict` | KEEP/DISCARD/NEAR-MISS + composite + delta vs champion + per-fold narrative | ≥30 words |
+| `learning` | What this updates in the mental model; axis closed/open; next try | ≥40 words |
+
+> **Two-phase write per experiment:** (1) **BEFORE launch** Claude inserts `diagnosis`, `citations`,
+> `hypothesis`, `prediction`. **Experiment does not launch until this entry exists.** (2) **AFTER
+> completion** Claude appends `verdict` + `learning`.
+
+The generalised implementation is `core/reasoning.py`:
+
+```python
+WORD_FLOORS = {"diagnose":25, "cite":30, "hypothesize":30,
+               "predict":25, "run":15, "analyze":50, "checkpoint":15}
+
+def validate_reasoning_blob(blob, *, post_run):
+    sections = ["diagnose","cite","hypothesize","predict","run"]
+    if post_run: sections += ["analyze","checkpoint"]
+    for s in sections:
+        if s not in blob: raise ReasoningGateError(f"missing section '{s}'")
+        if len(blob[s].split()) < WORD_FLOORS[s]: raise ReasoningGateError(...)
+    validate_citation_rigor(blob["cite"])
+```
+
+**Experiment ledger** — `autoresearch_results/experiment_log.jsonl`, append-only, one object per line.
+Actual row 1 from `autoresearchtabular` (~97 rows, 250 KB):
+
+```json
+{"experiment_num":1,"timestamp":"2026-04-26T06:46:35Z","backbone":"lightgbm",
+ "description":"exp1 [lightgbm#1] default 1000 leaves 63 lr 0.05","seed":0,
+ "params":{...}, "metrics":{"train":{...},"val":{...},"test":{...}},
+ "composite":0.830114864061622,
+ "composite_formula":"min(test_auc, val_auc) - 0.1 * abs(test_auc - val_auc)",
+ "composite_fingerprint":"dc2d2526d9bf12e1",
+ "train_time_s":96.66,"status":"KEEP/CHAMPION"}
+```
+
+Note `composite_fingerprint` — a SHA-256 of the objective formula string embedded in **every** row.
+*"If anyone tries to silently swap the formula mid-campaign, the runner refuses to start
+(**Goodhart-fingerprinting**)."* **This is the single most transferable safeguard in the whole portfolio
+for anyone proposing to optimise a curriculum against a learning metric.**
+
+### D.4 How experiments are proposed
+
+**(a) LLM-authored, one at a time** (FX / SPY / QQQ / image / tabular). Claude writes the pre-run blob,
+changes ONE knob, runs. *"ALWAYS hill-climb from the per-backbone champion (highest composite, NOT
+highest A_sharpe…). One config change per experiment. ONE arXiv-cited rationale per experiment."*
+
+**(b) Programmatic proposal library** (dsbench 112 tasks, darebench 324). `framework/hill_climb.py`:
+`ITERATIONS_PER_BACKBONE = 25`, `EXTENDED_ITERATIONS = 200`. Per ADR-0005:
+
+> **Every backbone runs 25 iterations. No early stop.** … 1. **Iter 1 is the published paper default**
+> (Chen & Guestrin 2016 KDD for XGBoost; Ke et al. 2017 NeurIPS for LightGBM). 2. **Iters 8 and 9 are
+> seed perturbations** (`seed=7`, `seed=99` paired with default `seed=42`) to compute a 3-seed median
+> champion. Without this, claimed champions can be variance flukes.
+
+Rationale for no early stop: *"Negative results inform downstream backbones. Knowing that
+`colsample=0.5` failed on XGBoost shapes the LightGBM `feature_fraction` proposal."*
+
+DARE-bench adds a **prompt-template axis** for grader-based tasks — `PROMPT_TECHNIQUES` of 8, each with
+an arXiv citation: `zero_shot`, `cot`, `react`, `self_consistency`, `plan_and_solve`, `tree_of_thoughts`,
+`least_to_most`, `reflexion`. **This is the closest existing analogue to sweeping *explanation
+strategies* rather than model hyperparameters — and it is exactly the axis a curriculum loop would use.**
+
+Conditional deepening (ADR-0006): a 200-iteration recovery cycle runs only on tasks still losing after
+the base 125, across 15 extra backbone families, appending to the *same* ledger; stop when 200 complete
+OR composite delta > 0.02 over baseline.
+
+### D.5 Gating — five layers, all fail-fast
+
+**Gate 1 — Data-split audit** (`core/evaluation/audit.py`, "7 auditors, `audit_or_die()`"):
+split disjointness (*"Failures here are immediately fatal — there is no recovery path"*), split protocol,
+class balance, size floors, no-leakage-via-metadata, reproducibility (`sha256(X.tobytes())`), feature
+consistency. Emits a `data_split_fingerprint.txt` recorded in every experiment row —
+*"if it ever changes, every prior leaderboard row is invalidated by definition."*
+
+**Gate 2 — Citation Rigor.** A parser, not a norm:
+
+```python
+def validate_citation_rigor(text):
+    if not re.search(r"[A-Z][a-z]+\s+\d{4}", text): raise ...("citation missing author + year")
+    if not (re.search(r"§\s*\d", text) or re.search(r"Tab\.?\s*\d", text)
+            or re.search(r"Fig\.?\s*\d", text)):    raise ...("missing section/table/figure reference")
+    if "Higgs" not in text and not re.search(r"\b(low-level|high-level|jet|lepton|...)\b", text):
+                                                    raise ...("citation missing reason naming ...")
+```
+Required format: `{hp_name} = {value} per {Author Year} §{section} ("{title}", {venue}) — {reason}`.
+*"Bare URLs are rejected. Folklore ('LightGBM likes 256 leaves on big data') is rejected."*
+The FX/SPY prose form requires 6 elements including `(arXiv:XXXX.XXXXX)`, with worked BAD examples.
+
+**Gate 3 — Reasoning Blob Completeness** (§D.3). *"The runner refuses to start training without a
+passing pre-run blob, and refuses to write the result row without a passing post-run blob."*
+
+**Fail-fast semantics, verbatim:** *"Any auditor that fails raises `AuditFailure`, which is not caught.
+The process exits with non-zero. The `all_runs.csv` is untouched. There is no 'warning, continuing
+anyway' mode. … **There is no 'force-pass' mode. There is no `--skip-audit` flag. This is also by
+design.**"*
+
+**Gate 4 — Forensic committee.** `dsbench` runs **10 independent agents** (ADR-0004); `darebench` runs
+**11 (A–K)**:
+
+| Agent | Concern | Class |
+|---|---|---|
+| A | split-hash integrity (eval_test never read during hill climb) | FAIL |
+| B | target/label leakage (MI per feature vs label) | FAIL |
+| C | row overlap (train/val/test disjoint) | FAIL |
+| D | distribution shift (KS per feature) | FAIL |
+| E | anomaly (val > train, perfect 1.0, jumps > 0.3) | FAIL (whitelisted) |
+| F | static-code grep for `X_test` / `y_test` | FAIL |
+| G | temporal ordering | FAIL |
+| H | seed stability | RECORD-ONLY |
+| I | refit consistency (champion refits within ±0.005 of recorded test score) | FAIL |
+| J | backbone diversity (≥3 distinct backbones tried) | WARN |
+| K | **forbidden-path access** (static grep + runtime `open()` audit-log tail) | FAIL |
+| Z | committee verdict aggregator | — |
+
+Structural rule: *"**Independent agents.** No agent reads another's output during its check; they all
+read raw artefacts… a bug in one agent can never silently corrupt another."* Cost: *"10 agents × 112
+tasks = 1120 checks per audit. Total runtime ~10 minutes."*
+
+**Gate 5 — Four-layer audit gate (ADR-0015):** (1) section coverage — 112/112, no `X_test` in runner
+code; (2) forensic committee — 112/112 PASS; (3) explainability — **14 required sections** in every
+winner's `audit_report.md`; (4) skill-pack coverage — every H2/H3 in the source CLAUDE.md files maps to
+≥1 skill. Run via a 9-step commit ritual. Honest caveat quoted in-repo: *"The 9-step ritual takes ~15
+minutes end-to-end… the ritual is **per-batch, not per-experiment**."*
+
+### D.6 Champion selection and leakage control
+
+**The objective is deliberately gap-penalised**, and is the sole criterion:
+
+- Tabular/Higgs: `composite = min(test_auc, val_auc) − 0.1·|test_auc − val_auc|` (SHA-256 fingerprinted)
+- FX/SPY: `composite = min(test_sharpe, val_sharpe) − 0.1·n_negative_folds`
+- DSBench (test-embargoed): `composite = min(val, train) − 0.05·|val − train|`
+
+> **Winner = global champion across ALL backbones AND ALL experiments** (by composite). Per-backbone
+> bests are tracked separately but only the global best gets archived.
+
+On promotion, `winners/<backbone>_exp<N>_<desc>/` archives `config.json`, `model_checkpoint.pt`, a
+**frozen `code/` snapshot**, `inference/predict.py`, `reproduction/reproduce_log.txt`, a 14-section
+`audit_report.md`, and a Colab notebook — plus a seed-fixed reproduction run and, at campaign end, a
+**3-seed rerun** of the cross-backbone champion to record mean ± std.
+
+**Leakage control — ADR-0002, "Hill-climb on train + val only; touch test once via `final_report.py`":**
+
+> 1. **Code-gen invariant.** `generate_scaffolds.py` writes per-task runners that never reference
+>    `X_test` or `y_test`.
+> 2. **Runtime invariant.** `runner.py:run_one` predicts on `X_train` and `X_val` only.
+> 3. **Forensic invariant.** Agent F greps for `X_test`/`y_test`; ANY reference is a FAIL. Agent A
+>    re-hashes the test split pre/post run to confirm no read happened.
+
+Named principle: **The Test-Set Embargo Rule** — *"if the test set is read once, it leaks once. There is
+no 'just a peek' allowance. The only legal reader is `framework/final_report.py`, exactly once per
+task."* Acknowledged cost, quoted honestly: *"The dashboard physically has no test-metric column for
+non-champion rows."*
+
+DARE-bench goes further with **eval-only inversion**: the 4,274-task HuggingFace benchmark-*train* half
+is forbidden entirely; within each eval task, `verify/ground_truth*.csv` and `val_v*` are a second
+forbidden surface; **Agent K tails `data/read_audit.log` and fails the run if any forbidden path was
+opened.**
+
+Domain-specific extras in FX/SPY: 7 regime windows (2006–2024) with a **90-day purge gap, 21-day embargo,
+10-day label-horizon buffer**; a **shuffle test** (train on permuted labels, evaluate on real test —
+FX result +0.006 Sharpe, i.e. no leakage) triggered whenever a tree model beats the best deep baseline by
+> +1.0; a documented caught bug (*"FX's first XGBoost run gave composite −1.61 due to
+`y = seg_tgt.values[seq_len:]` (lookahead by 1)… Fix gave +8.78 jump"*); and a hard `seq_len ≤ 60` rule
+because larger windows silently skip val folds (*"NOT strict data leakage… but it IS metric-integrity
+violation"*).
+
+**Anti-local-optimum rule:** *"Three consecutive DISCARDs = STOP, rethink mechanism. Not 'try the next HP
+axis'. … Multiple failures mean your hypothesis about what to change is wrong. The answer is NOT more
+hyperparameter tweaks — it's a structural change."* `autoresearchspy/CLAUDE.md` reports **DISCARD ratios
+of ~60% (FX) and ~70% (SPY) as a positive signal**: *"High DISCARD ratio is a sign of non-trivial
+hypotheses."* It also contains a self-critical *"Don't-repeat-on-SPY list (mistakes I made already)"*
+enumerating 7 protocol violations by the agent itself.
+
+### D.7 Scale actually run
+
+| Repo | Experiments | Backbones |
+|---|---|---|
+| `autoresearch` (FX) | 151 across 4 backbones (badge says 104; 265 at paper time — the counts are inconsistent across files) | MLP, LSTM, PatchTST, PatchTSMixer, LFM2-350M, XGBoost, LightGBM, CatBoost |
+| `autoresearchspy` | 62 at transfer time; ~144+ trade logs; 350 more planned | MLP, LSTM, Mamba/dMamba, XGB, LGBM, CatBoost + 14 roadmapped |
+| `autoresearchindexstock` | **216+** | 5–6 complete |
+| `autoresearchtabular` | 25 × 14 = 350 planned; ledger at ~97 | LR, RF, LGBM, XGB, CatBoost, MLP, FT-Transformer, SAINT, NODE, TabNet, TabM, ResNet-tabular… |
+| `autoresearchimage` | 21 (18 synthetic + 3 real WILDS-Camelyon17) | — |
+| `autoresearch_dsbench` | 74×5×25 = **9,250** modeling + 38×25 = **950** analysis; docs claim **~14,000** total incl. the extended phase | 19 catalogued, 5 runner + 15 extension families |
+| `autoresearch_darebench` | 324 scaffolds generated, **0 run** | ≥3 arXiv-cited per category |
+
+Outcomes: FX champion LSTM Exp35 composite +6.4242 (test Sharpe +6.5242, 7/7 positive folds); QQQ
+champion mamba dmamba exp52 composite +1.3216; tabular champion `ft_transformer` #95 composite 0.8723;
+DSBench **82/112 BEAT, 112/112 FORENSIC PASS**; image real WILDS test_ood AUC 0.9220 ± 0.018 (3-seed) vs
+Koh 2021's 0.853 ± 0.020.
+
+### D.8 Persisted state — "the repository is the memory"
+
+```
+autoresearch_results/experiment_log.jsonl      — append-only experiment log
+autoresearch_results/best_config.json          — current champion config + full results
+autoresearch_results/reasoning_annotations.json— the hypothesis registry (two-phase write)
+autoresearch_results/dashboard.html            — decoupled visual dashboard
+research_journal.md / experiment_summary.md    — Claude-authored narrative, appended every run
+memory/project_autoresearch_checkpoint.md      — the crash-recovery checkpoint
+winners/<backbone>_exp<N>_<desc>/              — archived champion + frozen code
+data_split_fingerprint.txt / .composite_fingerprint.json  — integrity anchors
+```
+
+The checkpoint is the load-bearing artifact:
+
+> - **Checkpoint every 5 minutes AND after every experiment** (whichever comes first)
+> - Contains: champion config, composite score, per-fold table, last experiment result, **exact next
+>   command to run**, rationale, exhausted axes
+> - **Self-contained:** A fresh Claude Code session reading ONLY `CLAUDE.md` + the checkpoint can resume
+>   without reading any other file
+
+The theoretical justification, from
+`autoresearch_dsbench/docs/part_1_thesis/01_what_is_autoresearch_engineering.md`, is the single most
+directly transferable paragraph in the family:
+
+> AutoResearch projects sit on a fourth axis that the SWE-book doesn't address directly: **collaborator
+> turns**. The LLM collaborator … has no persistent memory; every session starts cold. **The repository
+> *is* the memory.**
+> … A traditional ML project has a human researcher whose memory persists between sessions; if a tuning
+> knob feels exhausted, the human remembers and doesn't re-try it. Our collaborator forgets. The
+> Per-Backbone 25-Experiment Mandate is the rule that converts **"the human remembers" into "the log
+> remembers and the next session reads the log"**.
+
+Plus the context economics that force the design: *"Loading `CLAUDE.md` + the checkpoint + the last three
+rows of `experiment_log.jsonl` is **~6 K tokens**; loading the global state would be ~600 K and
+unworkable."*
+
+**This is precisely the learner-model problem restated for agents. The portfolio solved "how does a
+memoryless agent accumulate knowledge across sessions" and did not apply the same solution to "how does a
+tutor accumulate knowledge about a learner across sessions."**
+
+### D.9 Autonomy — the honest answer
+
+**Mixed.** The repos *claim* full autonomy (`autoresearch/README.md`: *"Claude Code reads results,
+diagnoses per-fold failures, cites published papers, forms hypotheses, runs experiments, and checkpoints
+state. **No human in the loop during experimentation.**"*; Agent Rule 7: *"**The agent never stops.**"*).
+
+The actual structure is **Claude as the outer loop, deterministic machine gates on the inner loop**. The
+sequence diagram `docs/appendix_d_diagrams/per_experiment_lifecycle.mmd` is literally titled *"Per-experiment
+lifecycle — **Claude as outer loop**"*: Claude pre-writes the reasoning blob → invokes proposal N →
+runner fits on train/val → computes composite → appends JSONL → overwrites `best_config.json` if better
+→ Claude post-writes verdict + learning → updates checkpoint with the next command. **The decision is
+Claude's; the keep/discard is a deterministic comparison; the permission to run at all is enforced by
+non-bypassable programmatic gates.**
+
+Genuinely unattended batch execution exists in dsbench (two background jobs of 9,250 + 950 experiments,
+resumable and idempotent). A fully-API-driven variant exists as a side branch —
+`autoresearchspy/optimizer/agent_loop.py` (13.5 KB) with a `MODIFIABLE_FILES` whitelist,
+`py_compile` syntax validation, a `.optimizer_backups/` rollback dir and `optimizer_state.json`, driven
+by `run_overnight.py` — but it is small and older than the CLAUDE.md-driven protocol.
+
+Human gating points that remain: user directives logged inline in `CLAUDE.md` redirect strategy between
+batches; the CPU-pinning rule (*"NEVER lift this without explicit user approval"*); the 4-layer gate runs
+per-batch and is *"a script, not a CI pipeline. **Self-discipline is required to actually run it.**"*;
+and `final_report.py` (the single test-set touch) is a separate deliberate invocation.
+
+### D.10 Why this matters for curriculum
 
 Map the loop onto teaching and it becomes an **autonomous curriculum-improvement protocol**:
 
 | Autoresearch element | Curriculum analogue |
 |---|---|
-| Objective (Sharpe / AUC) | Learning gain: post-test − pre-test, retention at 7/30 days |
-| Backbone sweep | Explanation-strategy sweep: analogy-first vs formal-first vs worked-example vs Socratic |
-| Hill-climb on train/val, quarantine test | Tune on a pilot cohort; hold out a validation cohort so you don't overfit the curriculum to the learners who wrote it |
-| Citation Rigor gate | Every SOTA claim in a notebook must resolve to a real 2024–26 source (already a stated requirement of the `zero-to-hero-colab` skill) |
-| Reasoning Blob gate | Every derivation step must carry its `(reason)` annotation (already non-negotiable #9) |
-| Forensic committee / Agent K forbidden-path enforcer | The `colab_qc.py` grounding + caption + leaked-label checks, promoted to a multi-agent adversarial review |
-| Named champion | The promoted version of a lesson |
-| Skill pack extraction | `skills/zero-to-hero-colab` and `concept-mastery-colab` themselves |
+| Fingerprinted composite objective | Learning gain, gap-penalised: `min(post_test, retention_30d) − λ·|post_test − retention_30d|`, SHA-256 pinned so nobody quietly swaps it when the number stops moving |
+| Backbone sweep (25 iters, no early stop) | Explanation-strategy sweep: analogy-first vs formal-first vs worked-example vs Socratic vs interleaved — **the DARE-bench `PROMPT_TECHNIQUES` axis is already exactly this** |
+| Iter 1 = published paper default | Lesson v1 = the textbook's own treatment; every variant must beat it |
+| Iters 8, 9 = seed perturbations | Re-run the same lesson with different cohorts to separate a real gain from cohort variance |
+| Hill-climb on train/val, embargo test | Tune on a pilot cohort; embargo a held-out cohort so the curriculum is not overfit to the learners who co-wrote it |
+| Test-Set Embargo Rule + Agent A/F/K | A learner cohort that the authoring loop may never read, enforced by codegen + runtime + forensic grep |
+| Citation Rigor gate (a regex, not a norm) | Every SOTA claim in a lesson must parse as `{claim} per {Author Year} §{section} ("{title}", {venue}) — {reason}`. Already a *stated* requirement of `zero-to-hero-colab`; here it is *enforced* |
+| Reasoning Blob word floors | Every derivation step carries its `(reason)` annotation — already non-negotiable #9 of `concept-mastery-colab`, unenforced |
+| 10/11-agent forensic committee, independent | `colab_qc.py`'s grounding + caption + leaked-label checks promoted to independent adversarial agents that read only raw artifacts |
+| Three-consecutive-DISCARD rule | Three failed reworks of a lesson = the diagnosis is wrong; change the pedagogy, not the wording |
+| High DISCARD ratio as a *positive* signal | A curriculum loop that keeps every change is testing trivial hypotheses |
+| Crash-recovery checkpoint | The **learner model** — self-contained, resumable by a memoryless session, containing the exact next action |
+| Winner archive + frozen code snapshot | The promoted version of a lesson, with its generator pinned so it is reproducible |
+| 48-skill pack extraction | `skills/zero-to-hero-colab` and `concept-mastery-colab` themselves |
 
 **The author has already built both halves and has not connected them.** `class` has the QC harness
 (`colab_qc.py`, `verify_grounding.py`) and the coverage auditor (`AUDIT_TOC_COVERAGE.md`) but no
-objective function and no experiment ledger. `autoresearch*` has the ledger, the sweep, the gates, and
-the champion-selection machinery but is pointed at Sharpe ratios. **Joining them is the concrete, novel
-contribution the survey can propose**, and the missing piece is the only genuinely hard one: a learning-gain
-signal, which requires assessment, which is exactly what §B.4 shows does not exist.
+objective function, no experiment ledger, and no hypothesis registry. `autoresearch*` has the ledger, the
+registry, the sweep, five layers of gates, champion archiving, and the "repository is the memory" thesis —
+but is pointed at Sharpe ratios. **Joining them is the concrete, novel contribution the survey can
+propose**, and the missing piece is the only genuinely hard one: a learning-gain signal. That requires
+assessment, which §B.4 shows does not exist, which §A shows the Live API could already emit via
+`provide_feedback` / `mark_word_practiced` function calls.
 
-### D.4 Status
+Two cautions the survey should carry forward, both stated in the repos themselves:
 
-A dedicated sub-investigation of the loop's step names, ledger format, and gating implementation was
-dispatched in parallel and had not returned at the time of writing. §D.2 records only what is verifiable
-from repo descriptions. **The "7-step Karpathy-style research loop" step names are not yet verified
-first-hand — re-run that dive before quoting them.**
+1. **Goodhart is the named enemy.** The composite-fingerprint mechanism exists precisely because an
+   agent optimising a scalar will drift the scalar. A curriculum objective is far softer than AUC and
+   correspondingly easier to game — a loop that hill-climbs "post-test score" will discover teaching to
+   the test within a handful of iterations. The fingerprint plus the embargoed cohort are the minimum
+   defences, and they are not sufficient.
+2. **The autonomy claim does not survive contact with the code.** These repos advertise "no human in the
+   loop" and are in fact Claude-as-outer-loop with human strategy redirection between batches and a
+   commit ritual that *"requires self-discipline to actually run."* A survey section on autonomous
+   curriculum improvement should describe the achievable version — machine-gated inner loop, human
+   strategy setting — not the advertised one.
 
 ---
 
@@ -1068,10 +1403,20 @@ the survey as a technique: **make generation legible rather than hiding it behin
    cycle.
 6. **Dependency-ordered curriculum with an enforced minimum-repetition rule** (`formulae/SEQUENCE.md`).
 7. **A 32-feature typed contract for what an AI tutor should expose** (`ekalavya-ai` `DataProvider`).
-8. **An autonomous experiment loop with adversarial audit gates and champion selection**, proven at scale
-   on external benchmarks (DSBench 82/112, 112/112 forensic PASS).
-9. **Streaming/progressive media delivery** (HLS + ffmpeg tee) and local generative video, as reusable
-   primitives for generated lesson media.
+8. **An autonomous experiment loop with a machine-enforced hypothesis registry, five layers of
+   adversarial audit gates, a fingerprinted objective, and champion archiving** — proven at scale on
+   external benchmarks (DSBench 82/112 BEAT, 112/112 forensic PASS; ~14,000 logged experiments).
+9. **A solved "memoryless collaborator" problem** — the crash-recovery checkpoint plus append-only
+   ledger, with an explicit thesis (*"the repository is the memory"*) and explicit context economics
+   (~6 K tokens to resume vs ~600 K for global state).
+10. **Streaming/progressive media delivery** — single-ffmpeg HLS with A/V sync solved by construction,
+   2 s keyframe-pinned segments, a 15 s client prebuffer for slower-than-realtime producers, and a
+   documented negative result (never ship fragmented MP4 as the download).
+11. **A complete concept → storyboard → stills → video → narration → exportable MP4 pipeline**
+   (`lumiere.ai`), including Veo last-frame conditioning for scene continuity and a canvas +
+   `MediaRecorder` export path.
+12. **Cross-session memory and affect-conditioned pacing** (`meditationguru`) — built for meditation,
+   never applied to teaching.
 
 ### E.3 What is missing — the survey's agenda
 
@@ -1081,6 +1426,10 @@ on `grade` and `location` — static demographics, set once at onboarding. `mark
 `users/{uid}/curriculums/{id}` — the *artifact*, not the *state*. **Recommendation for the survey: the
 minimum viable learner model is (concept → mastery estimate → last-seen timestamp → evidence pointer),
 and the Live-API function-call channel is already the right transport for writing it.**
+The sharpest form of this gap: `meditationguru` has `guru-memory.ts` injecting *"CONTEXT FROM PREVIOUS
+SESSIONS"* into every live session, and `autoresearch` has a formal thesis that *"the repository is the
+memory"* for a memoryless agent. **The same author solved cross-session memory twice — for a meditation
+app and for an ML agent — and shipped none of it in the tutors.**
 
 **2. There is no assessment loop, and therefore no measurable learning.** 128 notebooks, 0 exercises.
 The one instrument with real practice structure (`pca_interview_gauntlet`) is 1/128. The `examprep`
@@ -1108,7 +1457,13 @@ runtime for real users.
      Lab does not — the fix was applied to the parent and not propagated to the fork.
    - Ekalavya ships a hardcoded `AIzaSy…` Firebase web key (semi-public by design, but it should be
      domain-restricted; worth verifying).
-   **A shared component/package boundary would have prevented all four.**
+   - `meditationguru` disagrees with itself about which model it uses across README, `CLAUDE.md`, and
+     two source files; `face-swap-streamer`'s README and repo description still advertise an "ffmpeg tee
+     muxer" that was **removed** from the code with a documented rationale.
+   - The same PCM-audio-playback problem is solved three ways in one portfolio: correctly
+     (`lumiere.ai addWavHeader`), correctly-with-scheduling (Spanish/Telugu bundles), and **incorrectly**
+     (`meditationguru` calls `decodeAudioData` on raw PCM, which throws, with no playback queue).
+   **A shared component/package boundary would have prevented all of these.**
 
 **5. BYOK is an adoption wall.** `window.aistudio.openSelectKey()` in six apps, plus the shipped copy
 *"To use high-fidelity Vision and Video features, a paid API key is required."* A platform for "the next
@@ -1118,9 +1473,12 @@ is the correct pattern and should be the template.
 **6. The offline/on-device requirement was written and then abandoned.** The Sokrates PRD specifies
 Gemini Nano on-device, offline 95%+ of the time, `<50 MB`, `<$0.01`/session, $30–50 Android, village USB
 sharing. The deployment is an online-only React SPA whose voice path needs a persistent WebSocket and
-whose audio capture uses a deprecated main-thread `ScriptProcessorNode` that will glitch on exactly those
-devices. **The gap between the specified and the shipped constraint set is a case study in its own right,
-and an honest one is more valuable to the survey than a success story.**
+whose audio capture uses a deprecated main-thread `ScriptProcessorNode` (in *every* app in the portfolio —
+Ekalavya, the language portals, and `meditationguru`; `AudioWorklet` appears nowhere) that will glitch on
+exactly those devices. The one genuinely local generative stack in the portfolio (`wan-streamer`) runs at
+**~1.8 FPS** on this machine and says so in its own source. **The gap between the specified and the
+shipped constraint set is a case study in its own right, and an honest one is more valuable to the survey
+than a success story.**
 
 **7. Grounding-quality and safety controls are absent where they matter most.** `googleSearch` grounding
 is applied uniformly — to logistic regression *and* to Ayurvedic health guidance delivered in the voice of

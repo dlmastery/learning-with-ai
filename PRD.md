@@ -202,13 +202,104 @@ Constraints: any use must be aggregate-only, no individual learner data, COPPA
 posture preserved, and clearly labelled `OBSERVED` (single-product, non-randomised)
 rather than `MEASURED-RCT`. Report it as one product's telemetry, not as proof.
 
+### Wave H — Access-first design *(reordered to the front of the design argument)*
+| § | Section | Core question |
+|---|---|---|
+| H1 | **Special education, SELPA, and accessibility-first design** | What if we design for the margin first? |
+
+#### H1 — The inversion
+
+Standard practice builds for the median learner and bolts on accommodations.
+This survey argues the opposite order: **build the SELPA-grade system; it serves
+everyone.** The formal name is **Universal Design for Learning** (CAST); the
+popular name is the curb-cut effect.
+
+The argument is not moral, it is technical. Every core SELPA accommodation is
+*also* an established mainstream learning principle:
+
+| SELPA accommodation | Same thing, mainstream literature |
+|---|---|
+| Multiple representations | Mayer multimedia principles; Ainsworth DeFT |
+| Extended time / self-pacing | Self-paced mastery learning |
+| Reduced distraction | Coherence principle; extraneous cognitive load |
+| Text-to-speech / speech-to-text | Modality principle; decoding-load removal |
+| Explicit, systematic instruction | Worked examples; direct instruction evidence |
+| Chunking & scaffolds that fade | Segmenting principle; scaffolding + fading |
+| Frequent low-stakes checks | Retrieval practice; formative assessment |
+
+Designing for the margin first produces a better system for the centre. That is
+the section's thesis and it should govern the reference architecture in G2.
+
+**Evidence spine.** This is the most replication-rich area in education and must
+be treated as such: National Reading Panel; structured literacy and
+Orton-Gillingham for dyslexia; explicit/direct instruction (Project Follow
+Through, Stockard et al. meta-analysis); Response to Intervention / MTSS;
+mathematics interventions for dyscalculia; AAC and assistive technology
+evidence; executive-function supports for ADHD; autism-spectrum instructional
+research. Report effect sizes, and report where the evidence is weak.
+
+**Hard constraints — non-negotiable, stated in the paper:**
+
+1. **An IEP is a legally binding document authored by a team including the
+   parent.** Under IDEA an AI may draft, summarise, surface progress data, and
+   prepare materials. It may not author, decide eligibility, or replace the team
+   process. Any system claiming otherwise is a legal and ethical failure.
+2. **This is not a domain for novel unvalidated pedagogy.** Where decades of
+   replicated intervention research exist, the AI's job is *fidelity and dosage*
+   — delivering known-good intervention at an intensity no staffing ratio can
+   afford — not invention.
+3. **Diagnosis is out of scope.** Screening signals may be surfaced to
+   professionals; the system must never label a child.
+4. **Accessibility is a floor, not a feature.** WCAG 2.2 AA minimum, keyboard-
+   only operation, screen-reader correctness, captions, no
+   colour-only encoding, adjustable motion. A learning system that fails
+   accessibility has failed its hardest users first.
+5. **Data protection is elevated.** Disability status is sensitive data under
+   FERPA/IDEA and GDPR special-category rules. Default to on-device, minimise,
+   and never train on it.
+
+**Open question the section must answer honestly:** does AI tutoring actually
+help students with disabilities, or has it only been measured on typical
+learners? Find the evidence; if it is thin, say so — that gap is itself a
+finding, and arguably the most important one in the survey.
+
 ### Wave G — Synthesis
 | § | Section |
 |---|---|
 | G1 | The grounding ladder (L0–L4 correctness standard) |
-| G2 | Reference architecture for an AI-native learning system |
+| G2 | **Reference architecture: the agent village** |
 | G3 | Comparative analysis of AI-native book projects |
 | G4 | Research agenda |
+
+#### G2 — University-in-a-box / school-in-a-box: the agent village
+
+A single "tutor" agent is the wrong unit. A school is a *society of specialists*:
+subject experts, a diagnostician, a curriculum planner, an assessor, a
+counsellor, a librarian, a lab technician, a peer, a devil's advocate. The
+reference architecture is a **village of role-specialised agents** sharing one
+learner model and one evidence store.
+
+Design questions the section must resolve rather than assert:
+
+1. **What does "certified expert agent" mean operationally?** A claim of expertise
+   is worthless without a test. Proposal: every agent role carries a published
+   eval suite, a grounding tier from G1, and a scope boundary — an agent may only
+   assert what its tier permits. "Certified" must mean *passed a stated eval*,
+   never *prompted to be an expert* (see B1: persona prompting shows **no**
+   measured accuracy gain).
+2. **Who arbitrates disagreement?** Multi-agent research in this project found
+   majority voting discards correct minority answers ~1 in 4 times, and that
+   selection beats synthesis by a wide margin. The village needs an explicit
+   arbitration rule, not a consensus vibe.
+3. **What must remain human?** Legal authorship (IEPs), safeguarding decisions,
+   diagnosis, and relatedness. Name these explicitly.
+4. **Single learner model, many agents** — every agent reads and writes one
+   learner state (F5), or the village fragments into contradictory tutors.
+5. **Cost discipline** — a village is N× the tokens of a tutor. F4's arithmetic
+   governs how many agents a learner-hour can afford.
+
+The architecture must satisfy H1 first: if the village does not work for a SELPA
+student, it is not the architecture.
 
 ## 7. The reference implementation
 
