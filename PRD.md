@@ -439,3 +439,11 @@ evidence base.
 Also inherits F6's caution: gamified engagement is the least stable cell in the
 gamification meta-analyses, with measured novelty decay. Any streak-like
 mechanic must pass the **Null-Learner Test** before shipping.
+
+**⚠️ Correction to the F11 note above (added after B1 landed).** Latimier (2020)
+finds **expanding intervals confer no advantage: g = 0.034, n.s.** The expansion
+curve marketed by SM-2/FSRS/ZemoMemo is *not* the active ingredient. What is
+supported: scheduling retrieval at all (classroom d = 0.54; only 12 of 271
+massed-vs-spaced comparisons failed) with gaps ≈10–20% of the target retention
+interval, falling to 5–10% for year-long retention (Cepeda 2008). Endorse the
+practice; do not endorse the schedule shape. `MEASURED-META`
