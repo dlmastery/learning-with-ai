@@ -121,6 +121,43 @@ reports as they land.
 | F7 | Embodiment: spatial, physical, robotic | What can't be learned through a screen? |
 | F8 | Safety, privacy, and children | What must never be built? |
 | F9 | Open problems & what nobody is building | Where is the field blind? |
+| F10 | **Explanation depth laddering (ELI10/15/20/25)** | Can one concept be rendered at every sophistication level without lying? |
+| F11 | **Scientific remembering frameworks** | What makes knowledge *stick* rather than merely land? |
+
+#### F10 — Explanation depth laddering *(distinct primitive, do not merge)*
+
+Zero-to-hero moves a learner **through topics over time**. Laddering renders **one
+concept at N sophistication levels simultaneously**, so a learner enters at their
+level and climbs. Almost nothing does this deliberately.
+
+Required contributions:
+
+1. **A level taxonomy** — what operationally separates ELI10 from ELI15 from ELI20:
+   vocabulary, prerequisite load, formalism, abstraction, and which edge cases are
+   retained vs dropped. Not vibes.
+2. **A fidelity rule** — what a simplification may *drop* versus what it may never
+   *falsify*, so climbing the ladder never requires unlearning. This is the central
+   risk: the Bohr atom is taught, then untaught. A productive simplification and a
+   planted misconception must be distinguishable *by construction*.
+3. **Adaptive entry** — the expertise reversal effect means an ELI5 given to an
+   expert actively harms them. Level selection must be driven by measured prior
+   knowledge, never by preference.
+
+Evidence spine: concreteness fading (Goldstone & Son; Fyfe & McNeil), Bruner's
+spiral curriculum, Gentner's structure mapping, Ainsworth's DeFT, Meyer & Land's
+threshold concepts, Chi's self-explanation effect, conceptual-change research
+(Posner, diSessa).
+
+#### F11 — Scientific remembering
+
+Retention is a separate problem from comprehension and is where most learning
+systems quietly fail. Covers spaced repetition schedulers (SM-2, FSRS, Anki-scale
+data), encoding strength, mnemonic and method-of-loci evidence, elaborative
+interrogation, and the interaction between *understanding* and *retention* — a
+well-understood explanation still decays without scheduled retrieval.
+
+Overlaps F5 (learner modeling); F11 owns the **retention mechanism**, F5 owns the
+**learner state**.
 
 ### Wave G — Synthesis
 | § | Section |
