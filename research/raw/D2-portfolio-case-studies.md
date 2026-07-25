@@ -2,7 +2,7 @@
 title: "Case Studies from an Existing Practitioner Portfolio (dlmastery)"
 wave: D
 date_researched: 2026-07-25
-sources_count: 46
+sources_count: 78
 ---
 
 # Case Studies from an Existing Practitioner Portfolio
@@ -44,6 +44,14 @@ research agenda rather than as embarrassments:
    `window.aistudio.openSelectKey()` — they demand the *end user's* Gemini API key. Only Ekalavya has a
    server-side proxy. A learning platform for "the next billion minds" cannot require the learner to hold
    a paid API key.
+5. **The two capabilities the tutors most need were built elsewhere in the same portfolio.**
+   Cross-session memory and affect-conditioned pacing exist in `meditationguru`; a formal, gated,
+   ledger-backed improvement loop with a "the repository is the memory" thesis exists in `autoresearch*`.
+   Neither has been applied to teaching.
+6. **Enforcement vs intention is the portfolio's defining split.** The teaching corpus *states* quality
+   rules; the research corpus *compiles them into regexes, word floors, SHA-256 fingerprints and
+   independent audit agents that exit non-zero with no bypass flag*. Where rules are norms they have
+   already drifted; where rules are gates they hold at 112/112.
 
 ---
 
@@ -1502,12 +1510,24 @@ instrumentation channel is available and unused.
 - **The bottleneck in AI-native learning is not generation.** Generation is solved to a startling degree.
   The bottleneck is **state**: knowing what the learner knows, keeping it, and acting on it. Every single
   gap in §E.3 (1, 2, 3, 8) reduces to the absence of a persisted learner model and an assessment signal.
+- **Enforcement beats intention.** The single clearest lesson across §B and §D: `class` *states* its
+  quality rules ("citation rigor", "no jargon before grounded", "hide code by default") and satisfies
+  some of them; `autoresearch` *compiles its rules into regexes, word floors, hash fingerprints, and
+  independent audit agents that exit non-zero*, with no `--skip-audit` flag. Where a rule is a norm it
+  drifts (rule 12 is unimplemented in every `formulae/` notebook); where a rule is a gate it holds
+  (112/112 forensic PASS). **A survey advocating AI-generated curricula must advocate gates, not
+  guidelines.**
 - **Method beats artifact.** The most reusable things here are not the notebooks or the apps — they are
   `skills/concept-mastery-colab/SKILL.md`, `colab_qc.py`, `AUDIT_TOC_COVERAGE.md`,
-  `formulae/SEQUENCE.md`, and `ekalavya-ai/src/lib/providers/data-provider.ts`. Five files.
+  `formulae/SEQUENCE.md`, `ekalavya-ai/src/lib/providers/data-provider.ts`,
+  `autoresearchtabular/core/reasoning.py`, and `autoresearch_darebench/framework/forensic_audit.py`.
+  Seven files.
 - **The closing move is available and unbuilt:** point the autoresearch loop (§D) at the curriculum
-  (§B) using an assessment signal the apps (§A) could already emit via Live-API function calls. Every
-  component exists in this portfolio. None of them are wired together.
+  (§B), using an assessment signal the apps (§A) could already emit via Live-API function calls, with
+  the multimodal delivery stack (§C) as the presentation layer and the crash-recovery checkpoint format
+  (§D.8) as the learner model. Every component exists in this portfolio. None of them are wired
+  together. That wiring — objective, ledger, hypothesis registry, embargoed cohort, forensic gates,
+  champion promotion — is the survey's contribution.
 
 ---
 
@@ -1518,10 +1538,22 @@ Telugu Learning Portal · Bhagavad Gita AI · Sanatana Dharma AI · Personalized
 Akka Rural Health Companion · Exo 3.0. Production JS bundles downloaded and analysed for 7 of them
 (Akka is inline; Exo is static HTML).
 
-**GitHub repos read via authenticated `gh api`:** `dlmastery/class` (private; full tree + 12 files) ·
-`dlmastery/ekalavya-ai` (full tree + 4 files) · `dlmastery/aicourse_syllabus` · plus metadata for
-`meditationguru`, `face-swap-streamer`, `lumiere.ai`, `image2video`, `youtube-to-ppt-converter`,
-`akka-rural-health-companion`, `organizational-singularity`, and the seven `autoresearch*` repos.
+**GitHub repos read via authenticated `gh api`:** `dlmastery/class` (private; full 1,128-file tree +
+12 files) · `dlmastery/ekalavya-ai` (full tree + 4 files) · `dlmastery/aicourse_syllabus` ·
+`dlmastery/meditationguru` (tree + `src/lib/gemini.ts`, `gemini-enhanced.ts`, `imagen.ts`,
+`CosmicScene.tsx`, `next.config.ts`, `firebase.json`, README, `CLAUDE.md`) ·
+`dlmastery/face-swap-streamer` (tree + `webapp.py`, `docs/ARCHITECTURE.md`, `web/components/HlsPlayer.tsx`) ·
+all seven `autoresearch*` repos (`AUTORESEARCH_PROCESS.md`, `CLAUDE.md`, `README.md`, `core/reasoning.py`,
+`core/evaluation/audit.py`, `framework/forensic_audit.py`, `framework/hill_climb.py`,
+`experiment_log.jsonl`, `memory/project_autoresearch_checkpoint.md`, ADRs 0002/0004/0005/0006/0015,
+`docs/part_1_thesis/01_what_is_autoresearch_engineering.md`, `skills/autoresearch-pack/`) · plus metadata
+for `image2video`, `youtube-to-ppt-converter`, `akka-rural-health-companion`,
+`organizational-singularity`.
+
+**Local directories inspected:** `/home/eranti/dlmastery/lumiere.ai` (`services/geminiService.ts`,
+`App.tsx`, `components/Player.tsx`, `vite.config.ts`, `package.json`, `docs/`) · `/home/eranti/Wan2GP`
+(README, `wgp.py` metadata, `Dockerfile`, `entrypoint.sh`, `wan2gp.log`) · `/home/eranti/wan-streamer`
+(`run_v2v.sh`, `demo/main.py`, `demo_stream/server.py`, `demo_stream/server.log`, README).
 
 **Key files quoted:** `class/ZERO_TO_HERO_COLABS.md` · `class/CLAUDE.md` ·
 `class/AUDIT_TOC_COVERAGE.md` · `class/skills/README.md` · `class/skills/zero-to-hero-colab/SKILL.md` ·
@@ -1537,3 +1569,10 @@ Akka Rural Health Companion · Exo 3.0. Production JS bundles downloaded and ana
 `logistic_regression_zero_to_hero.ipynb` (186 cells) · `classification_tabular_sota_2026.ipynb` (110) ·
 `statistical_validity_sota_2026.ipynb` (82) · `formulae/pca_interview_gauntlet.ipynb` (105) ·
 `exam_prep_solved_problems_zero_to_hero.ipynb` (123).
+
+**Reliability note.** §A and §B are entirely first-hand (bundles downloaded and parsed; notebooks
+downloaded and parsed programmatically). §C and §D are first-hand reads of repository source and docs
+performed by two parallel sub-investigations; all quoted step names, code blocks, ffmpeg invocations,
+model IDs and thresholds are verbatim from those files. Counts marked "as claimed in-repo" (§D.7) are the
+repos' own numbers and are internally inconsistent in `autoresearch` (FX) — treat 151/4 as the best
+estimate and do not cite a single figure without checking which file it came from.

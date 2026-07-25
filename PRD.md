@@ -263,6 +263,84 @@ help students with disabilities, or has it only been measured on typical
 learners? Find the evidence; if it is thin, say so — that gap is itself a
 finding, and arguably the most important one in the survey.
 
+#### H1.1 — Learner archetypes the system must actually serve
+
+Not personas for flavour. Each archetype names a **mechanism**, the **design
+consequence**, and the **failure mode** if ignored. The system is only credible
+if it works for these, not for a median abstraction.
+
+| Archetype | Load-bearing mechanism | Design consequence | Failure mode if ignored |
+|---|---|---|---|
+| **Attention / ADHD** | Executive function + inhibition (Barkley), not "not trying". Sustained attention collapses long before comprehension does. | Short segments; one idea per screen; ruthless removal of decorative content; immediate feedback; movement and break scheduling; novelty used deliberately. | Long unbroken explanation. The child disengages, and the system reads disengagement as inability. |
+| **Working-memory limitation** | WM capacity is the bottleneck; instructions with 3+ held steps fail before reasoning starts. | Externalise memory — visible steps, persistent scaffolds, worked examples, no "remember what we said earlier". Never make the child hold state. | Multi-step verbal instruction. Looks like a reasoning failure; is actually a storage failure. |
+| **Long-term retention difficulty** | Encoding and consolidation, not comprehension. The child *understood* it and it decayed. | Scheduled retrieval (F11) is mandatory, not optional; overlearning; re-teach cycles planned from day one. | Teaching once and moving on. The curriculum advances; the child does not. |
+| **Reasoning / abstraction gaps** | Abstraction without a concrete anchor has nothing to attach to. | **Explicit instruction over discovery.** Concreteness fading (F10). Never start at the formal level. | Discovery learning. Actively harmful here — this is well replicated. |
+| **Processing speed** | Slower does not mean less able; timed tasks measure speed, not knowledge. | Untimed by default; measure mastery, never rate. | Timed drills. Measures the disability, not the learning. |
+| **Language / reading access** | Decoding load consumes the capacity needed for meaning. | Text-to-speech, speech-to-text, dual-coded content; decouple *reading* difficulty from *concept* difficulty. | Assessing physics through a reading test. |
+| **Anxiety / learned helplessness** | Prior failure history is itself a barrier; errors are threatening. | Low-stakes everything; visible personal growth curve; error framed as information; no public comparison. | High-frequency graded testing. Demoralises exactly the child it was meant to help. |
+
+Archetypes **co-occur** — ADHD with working-memory limits and a history of failure
+is the common case, not the edge case. The system must compose accommodations, not
+select one.
+
+#### H1.2 — The bidirectional loop *(the core mechanism of this project)*
+
+The system learns the student while the student learns the topic. Both models
+update. This is the architectural centre of H1 and G2.
+
+```
+  pre-test / grill  →  hypothesis about THIS learner
+        ↓
+  teach with method M
+        ↓
+  frequent low-stakes probe   ← CBM: brief, graphed, non-punitive
+        ↓
+  decision rule fires?  ──no──→  continue M
+        │ yes
+        ↓
+  PIVOT: change method, not volume
+        ↓
+  update learner model → repeat
+```
+
+**1. Grill / pre-test.** Diagnose **prior knowledge and misconceptions**, never
+"learning style" (no credible evidence — see §3 of CLAUDE.md). Also establish
+*channel* constraints: reading load, WM span, sustained-attention window.
+
+**2. Frequent probing.** Curriculum-Based Measurement: brief, frequent, graphed.
+Low-stakes by construction. The growth curve is shown to the **student** as their
+own progress (open learner model), never as a verdict.
+
+**3. The pivot rule — the hard part.** Most AI tutors re-explain the same way with
+more words. This system must detect non-response and **change approach**:
+representation (verbal → visual → manipulative → worked example), granularity,
+modality, pacing, or prerequisite level. Formal basis: Data-Based
+Individualization decision rules (e.g. four consecutive points below the goal
+line ⇒ change instruction). The survey must specify:
+- what signal triggers a pivot (accuracy, latency, error *type*, disengagement, self-report);
+- how long before pivoting — **too fast is as harmful as too slow**, because method-thrash prevents any method from consolidating;
+- what to pivot *to*, and in what order;
+- when to stop pivoting and escalate to a human.
+
+**4. Bidirectional model.** The learner model (F5) is a live hypothesis, not a
+record. It must be **inspectable and correctable by the student and parent** —
+they know things the telemetry cannot see.
+
+#### H1.3 — Where this survey's own advice inverts
+
+Stated explicitly so the paper does not contradict itself:
+
+| General claim (elsewhere in survey) | For this population |
+|---|---|
+| Productive failure; desirable difficulties | **Explicit instruction wins.** Struggle that is productive for a typical learner is often just failure here. |
+| Discovery and exploration | **Guided, worked, faded.** Discovery learning is among the clearest harms. |
+| Frequent assessment is good | Only **low-stakes, brief, private, growth-framed**. Frequent high-stakes assessment harms. |
+| Reduce scaffolds as expertise grows | Fade **on evidence**, never on schedule; be willing to restore them without treating it as regression. |
+
+A survey that gives one universal answer here is wrong. The correct claim is that
+the *mode* must be selected per learner and per moment — which is precisely what
+the bidirectional loop is for.
+
 ### Wave G — Synthesis
 | § | Section |
 |---|---|
