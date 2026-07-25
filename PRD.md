@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| Status | Active — Wave A + F in flight |
+| Status | Active — 11 raw reports + 3 synthesis sections landed; F11 in progress |
 | Target | ~100 pages, ~20 sections, 400+ cited sources |
 | Repo | `dlmastery/learning-with-ai` (private) |
 | Date | 2026-07-25 |
@@ -70,10 +70,10 @@ Therefore:
 
 ## 5. Research method
 
-**Constraint:** this session's WebSearch budget is exhausted. Systematic retrieval
-is unaffected — agents use arXiv, Semantic Scholar, OpenAlex, Crossref, ERIC and
-PubMed APIs via `curl`, plus targeted `WebFetch` and authenticated `gh api`.
-Serendipitous discovery is degraded; unreachable sources are flagged, never guessed.
+**Retrieval note:** the initial session's WebSearch budget was exhausted.
+Continuations check the current allowance, but systematic retrieval remains the
+default: arXiv, Semantic Scholar, OpenAlex, Crossref, ERIC and PubMed APIs, plus
+targeted primary-source fetches. Unreachable sources are flagged, never guessed.
 
 **Parallel agent waves.** Each agent owns one section, writes a standalone report to
 `research/raw/`, and returns an executive summary. Sections are drafted from those

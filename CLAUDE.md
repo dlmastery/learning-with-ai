@@ -145,13 +145,16 @@ Agents write to `research/raw/<SECTION-ID>-<slug>.md` with YAML frontmatter
 
 ## 5. Environment constraints
 
-- **WebSearch budget EXHAUSTED (200/200)** for this session. Agents must use
-  `curl` against arXiv / Semantic Scholar / OpenAlex / Crossref / ERIC / PubMed
-  APIs, plus `WebFetch` on known URLs and `gh api` (authenticated, 5000/hr).
-  Calling WebSearch fails. Unreachable sources are flagged, never guessed.
-- **Concurrent subagent cap: 20.** Raise with
-  `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS=40` to run remaining waves at full width.
-- `gh` authenticated as `dlmastery`; git credential helper configured.
+- The **initial session exhausted its WebSearch budget (200/200)**. Later
+  continuations may have a fresh search allowance; check rather than assuming.
+  Regardless of interface, prefer primary sources and systematic retrieval through
+  arXiv, Semantic Scholar, OpenAlex, Crossref, ERIC and PubMed APIs. Unreachable
+  sources are flagged, never guessed.
+- The initial run used a 20-agent concurrency cap. A continuation must not assume
+  those agents are still live: the filesystem and git history are the recovery
+  record.
+- Git credentials can read and push `dlmastery/learning-with-ai`. Connector/API
+  visibility may still return 404, so local `git` is the reliable repository path.
 
 ---
 
@@ -175,10 +178,27 @@ request for a 400–500 word executive summary as the final message.
 
 ---
 
-## 8. Status at last write
+## 8. Status at recovery — 2026-07-25
 
-- Repo created and pushed; PRD and this ledger committed.
-- **14 research agents in flight** (waves A, B, D, F).
-- Queued on the 20-agent cap: F10, F11, E1, E2, H1, G2, C1, C2, plus open-problems.
-- Blocked on user: optional raise of the subagent cap (`CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS=40`).
-- No survey sections drafted yet — awaiting first raw reports.
+The filesystem and commit history supersede the earlier “agents in flight” note.
+The prior run landed:
+
+- **11 raw reports**: A2, A4, A5, B1, D1, D2, F1, F2, F4, F5, and F6
+  (about 95,000 words; 725 catalogued sources, excluding F4 whose frontmatter
+  source count was left as `0`).
+- **3 survey/synthesis sections**: the JARVIS north star, the central finding
+  (“restraint is the active ingredient”), and the teach-to-learn architecture.
+- **Reference artifacts**: an ambient agent-native app, four Hermes skills, and
+  the hardened DGX/Sunshine installer.
+
+No research agents from the initial run should be presumed live. Remaining raw
+research sections are A1, A3, B2, C1–C3, E1–E2, F3, F7–F11, H1, and G2/G3. The
+`evidence/` and `examples/` directories described in the planned layout have not
+yet landed.
+
+**Next committed workstream:** F11, scientific remembering. It must reuse rather
+than duplicate B1's intervention evidence and F5's scheduler/model audit. F11 owns
+the end-to-end retention protocol, transfer boundary, mnemonic evidence, failure
+modes, and AI-native implementation rules. Draft `research/raw/F11-scientific-
+remembering.md` first, then a survey section from it, with a separate commit for
+each coherent artifact.
