@@ -159,6 +159,49 @@ well-understood explanation still decays without scheduled retrieval.
 Overlaps F5 (learner modeling); F11 owns the **retention mechanism**, F5 owns the
 **learner state**.
 
+### Wave E — The market frontier
+| § | Section | Core question |
+|---|---|---|
+| E1 | **Edtech startup landscape & novelties** | What is actually being built, funded, and shipped right now? |
+| E2 | **LessonOrca as primary evidence** | Does Socratic-only tutoring work, measured on real users? |
+
+#### E1 — Edtech landscape
+
+A systematic sweep of what exists in 2026, not a vendor list. Organised by the
+*primitive* each company bets on, so the section reads as a taxonomy of design
+hypotheses rather than a directory: content generation · tutoring · assessment ·
+teacher tooling · language · early literacy · STEM · credentialing · learning
+infrastructure. Funding and traction data where available (Crunchbase/press),
+labelled `VENDOR` throughout. Explicit attention to the **graveyard** — edtech has
+a very high failure rate and the failures are more informative than the winners.
+
+#### E2 — LessonOrca *(primary evidence, not anchoring)*
+
+Distinct from the portfolio quarantine (§4): the quarantine exists to stop
+*design* anchoring. LessonOrca is a **deployed product with instrumented users**,
+which makes it an evidence source rather than an inspiration source.
+
+What makes it survey-relevant:
+
+- **Socratic-only by construction** — "never gives answers directly." This is a
+  production test of the anti-sycophancy argument in F2. The survey claims
+  agreeable answer-giving AI harms learning; this product bet the other way.
+- **Persistent learner profiles** across sessions — the F5 model, in the field.
+- **Full parent/tutor transparency** into every AI interaction — a concrete answer
+  to F8's oversight problem, and a pattern worth generalising.
+- **Continuity between sessions** framed as *the* problem — matching F11's claim
+  that retention, not comprehension, is where systems fail.
+
+**Original-measurement opportunity.** A PostHog deployment on this product means
+the survey can report *measured* behaviour rather than cited literature:
+session completion, return rate, question-depth distributions, drop-off points,
+and — if instrumented — whether Socratic sessions retain learners better than
+answer-giving fallbacks. Almost no published work has this data.
+
+Constraints: any use must be aggregate-only, no individual learner data, COPPA
+posture preserved, and clearly labelled `OBSERVED` (single-product, non-randomised)
+rather than `MEASURED-RCT`. Report it as one product's telemetry, not as proof.
+
 ### Wave G — Synthesis
 | § | Section |
 |---|---|

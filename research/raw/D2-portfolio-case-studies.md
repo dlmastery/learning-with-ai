@@ -667,46 +667,290 @@ capabilities in this portfolio today:
 It is shipped, six times over. The unsolved problem is everything behind it — state, assessment, memory,
 and offline.
 
-### C.2 `dlmastery/meditationguru`
+### C.2 `dlmastery/meditationguru` — live voice + live camera + tool-driven UI + 3D
 
-Repo: public, TypeScript, 389 KB, last pushed 2026-02-10. Description: *"AI-powered meditation & yoga app
-with real-time Gemini AI Guru, 3D cosmic visuals, and voice interaction."* Detailed findings pending from
-the parallel agent (see §C.5).
+Public, default branch **`master`**, Next.js 16 App Router + TypeScript, 389 KB, last push 2026-02-10.
+All AI code is in `src/lib/` (no `services/`).
 
-### C.3 `dlmastery/face-swap-streamer`
+**Model IDs (they disagree across files — a real hazard for reuse):**
 
-Repo: public, Python, 751 KB, last pushed 2026-06-06. Description: *"Live face-swap web app: upload image
-+ video, watch the swap stream to your browser with synchronised audio while it processes. Flask + HLS +
-ffmpeg tee muxer + InsightFace."* Detailed findings pending (§C.5).
+| Purpose | Exact model ID | File |
+|---|---|---|
+| Live bidi voice+video (legacy path) | `models/gemini-2.0-flash-live-001` | `src/lib/gemini.ts` |
+| Live bidi voice+video (**the path the session page uses**) | `models/gemini-2.5-flash-live-001` (`const LIVE_MODEL`) | `src/lib/gemini-enhanced.ts` |
+| Text (intent parse, plan gen) | `gemini-2.0-flash` | `src/lib/gemini.ts` |
+| Image (yoga pose illustrations) | `gemini-2.5-flash-image` (3 call sites) | `src/lib/imagen.ts` |
 
-The architecturally interesting claim is **"watch … while it processes"** — a progressive/live HLS stream
-emitted by an ffmpeg `tee` muxer as frames are produced, rather than a batch render followed by playback.
-That is exactly the primitive a *generated-video lesson* needs: the learner starts watching segment 1
-while segment 8 is still being rendered. Related local work: `/home/eranti/Wan2GP`, `/home/eranti/wan-streamer`,
-and `dlmastery/image2video` (*"Local web app for Sulphur-2 / LTX-2.3 text-to-video, image-to-video, and
-video extension on Windows + RTX 4090"*, 3.4 MB).
+The README advertises "Gemini 2.5 Flash Live", `CLAUDE.md` says "Gemini 2.0 Flash Live", and
+`src/lib/gemini.ts` carries the comment
+`model: 'gemini-2.0-flash',  // Using latest available, update to 3.0-flash-preview when available`.
+Three sources of truth, three answers.
 
-### C.4 `lumiere.ai` (Gemini + Veo)
+**Live API — raw WebSocket, no SDK.** Endpoint hardcoded in both files:
+```
+wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent?key=${apiKey}
+```
+The key is `NEXT_PUBLIC_GEMINI_API_KEY` — **shipped to the browser**. Same class of defect as the
+AI-Studio apps in §A. Setup frame:
+`{ setup: { model, generationConfig: { responseModalities: ['AUDIO','TEXT'], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName } } } }, systemInstruction: { parts }, tools: [{ functionDeclarations }] } }`.
 
-Repo `dlmastery/lumiere.ai` (public, TypeScript, 88 KB): *"AI-powered video creation platform with Google
-Gemini & Veo."* Local checkout at `/home/eranti/dlmastery/lumiere.ai`. Detailed findings pending (§C.5).
+**Audio uplink** (`startAudioStream`): `getUserMedia({audio:{sampleRate:16000, channelCount:1,
+echoCancellation:true, noiseSuppression:true}})` → `AudioContext({sampleRate:16000})` →
+`createScriptProcessor(4096,1,1)` → `floatTo16BitPCM` → little-endian Int16 → base64 →
+`{ realtimeInput: { mediaChunks: [{ mimeType: 'audio/pcm;rate=16000', data }] } }`.
+**No `AudioWorklet` anywhere in the repo.**
 
-Related: `dlmastery/youtube-to-ppt-converter` (*"AI-powered slide extraction from YouTube presentation
-videos using Gemini and ffmpeg"*) — the inverse pipeline, video → slides, which is a plausible
-lesson-ingestion path.
+**Audio downlink — a real bug worth not copying.** `src/app/session/page.tsx` (~L201–215) does
+`new AudioContext({sampleRate:24000})` then `await audioContext.decodeAudioData(audioData)`. Gemini Live
+returns **raw 24 kHz PCM, not a container** — `decodeAudioData` throws on it. There is also no playback
+queue: each chunk creates a fresh `AudioContext` and `start()`s immediately, so chunks overlap and
+stutter. **The correct fix already exists in this portfolio** — `lumiere.ai`'s `addWavHeader()` (§C.4)
+wraps the PCM in a hand-written 44-byte RIFF/WAVE header. The right target is that plus a scheduled
+queue (`nextStartTime += buffer.duration`) — which is exactly what the Spanish/Telugu bundles do (§C.1).
+**Three implementations of the same problem in one portfolio: one correct, one partial, one broken.**
 
-### C.5 Status
+**Video uplink:** `getUserMedia({video:{width:640,height:480,facingMode:'user'}})` → offscreen `<canvas>`
+→ `canvas.toDataURL('image/jpeg', 0.7)` → base64 → `realtimeInput.mediaChunks` at
+`VIDEO_FRAME_INTERVAL_MS = 1000` (1 FPS, the Live API rate).
 
-A dedicated sub-investigation of `meditationguru`, `face-swap-streamer`, `lumiere.ai`, `Wan2GP` and
-`wan-streamer` was dispatched in parallel with this write-up and had not returned at the time of
-writing. §C.2–C.4 record only what is verifiable from repo metadata and from the §C.1 bundle evidence.
-**Do not cite §C.2–C.4 for implementation detail without re-running that dive.**
+**Tool-calling over the live socket — the most reusable single idea in the portfolio.**
+`FUNCTION_DECLARATIONS` in `src/lib/gemini-enhanced.ts` registers five tools that let the model drive the
+React UI mid-sentence: `control_soundscape`, `generate_visualization`, `report_pose_analysis`,
+`report_breathing_observation`, `report_emotion_observation`. Note the workaround: **every parameter is
+typed `string`** even for numbers (`overallScore`: "Alignment score 0-100"; `corrections`: "JSON array of
+corrections: [...]"), parsed client-side. Responses go back as
+`{ toolResponse: { functionResponses: [{ name, response }] } }`. Incoming calls arrive at **both**
+`message.toolCall.functionCalls` and `serverContent.modelTurn.parts[].functionCall`; the handler covers
+both. For a tutor this maps 1:1 onto `show_diagram`, `run_quiz`, `highlight_step`,
+`report_comprehension` — the model narrates by voice while mutating application state.
+
+**System prompt** (`GURU_SYSTEM_PROMPT`, `src/lib/gemini.ts`) is a full persona spec — personality
+("Warm, patient, and deeply caring… Wise but never condescending… Adapts your energy"), capabilities
+("Teach and correct yoga poses by observing the user via video", "Remember the user's journey, goals, and
+preferences"), and mode-specific delivery rules ("When guiding meditation: use calming, rhythmic speech…
+allow moments of silence"). Two appended blocks matter for teaching:
+
+> **Affective dialog:** "IMPORTANT: You have affective dialog capabilities. Pay close attention to the
+> user's vocal tone, pace, and emotional cues. When you detect a shift in their emotional state, call the
+> `report_emotion_observation` function. Adapt your tone and pacing to match or soothe their emotional
+> state. If they sound anxious, slow down. If drowsy, add gentle energy."
+>
+> **Memory injection:** "CONTEXT FROM PREVIOUS SESSIONS:\n{guruMemoryContext}\nUse this context to
+> personalize your guidance. Reference past sessions naturally."
+
+**`meditationguru` is the only app in the portfolio with cross-session memory** (`src/lib/guru-memory.ts`
++ Firestore) and the only one with affect-conditioned pacing. Both are exactly what the learning apps
+lack — and they were built for meditation, not for teaching.
+
+**3D stack:** `three@^0.182` + `@react-three/fiber@^9.5` + `@react-three/drei@^10.7`.
+`src/components/three/CosmicScene.tsx` is a fixed `inset-0 -z-10` `<Canvas>` (ACESFilmic tone mapping,
+`dpr={[1,2]}`, fog 30–80) containing a `Starfield` (5000 pts, 8000 in onboarding, driven by a
+`breathingIntensity` prop), three layered `Nebula` meshes whose colours switch on `sessionMood`
+(`calm`/`energetic`/`neutral`), three `Particles` fields that can `flowToGuru`, and clickable `GoalOrbs`.
+`CLAUDE.md` notes the two operational rules: dynamic import with `ssr:false`, and *"No traditional ML
+models — Gemini handles all pose analysis via live video prompts."*
+
+**Deployment: no Dockerfile, no Cloud Run.** `next.config.ts` is `output:'export'` + unoptimized images →
+static export; `firebase.json` serves `out/` with SPA rewrite, plus Firestore rules/indexes (`us-east1`).
+Also reusable: `src/lib/group-session.ts` (6-char invite codes from an unambiguous alphabet, max 8
+participants, group-aware system prompts) and `src/lib/meditation-audio.ts` (asset-free WebAudio
+oscillator bells/chimes/breath cues — a 432 Hz bell with a 2.01× detuned overtone).
+
+### C.3 `dlmastery/face-swap-streamer` — progressive playback while still computing
+
+Public, `main`, Python, 751 KB, last push 2026-06-06.
+
+**Correction to the brief: the ffmpeg `tee` muxer was removed.** The repo description and README still say
+"tee muxer"; the code does not use it. `webapp.py`'s `_spawn_ffmpeg` docstring explains why, verbatim:
+
+> Why not fragmented MP4 in tee any more: with empty_moov+frag_keyframe many native players (especially
+> mobile) can't open the file at all — symptoms were "format not supported" on phones and "audio only" on
+> desktop because only the audio fragments were decodable.
+
+And `docs/ARCHITECTURE.md` §4.3 states the generalised lesson:
+
+> Lesson: fragmented MP4 is a streaming-protocol format, not a file format. Always remux to
+> non-fragmented MP4 if the file will be opened by anything except an MSE-based player.
+
+**The actual streaming invocation** (spawned with `cwd=job_dir`, `stdin=PIPE`, `bufsize=0`, stderr drained
+to `ffmpeg.log`):
+
+```
+ffmpeg -y -hide_banner -loglevel info
+  -f rawvideo -pixel_format bgr24 -video_size {w}x{h} -framerate {fps} -i pipe:0
+  -i <abs path to original target.mp4>
+  -map 0:v:0 -map 1:a:0?
+  -c:v libx264 -preset ultrafast -tune zerolatency
+  -pix_fmt yuv420p -profile:v high -level 4.1
+  -g {2*fps} -keyint_min {2*fps} -sc_threshold 0
+  -c:a aac -b:a 192k -ac 2 -ar 44100 -shortest
+  -f hls -hls_time 2 -hls_list_size 0
+  -hls_flags independent_segments+append_list
+  -hls_segment_filename hls/seg_%05d.ts  hls/playlist.m3u8
+```
+
+**Audio sync is solved for free, and elegantly.** Video arrives on `pipe:0` as raw BGR at the source fps;
+audio is a **second input read directly from the original file by ffmpeg itself**. ffmpeg timestamps both
+against the same output clock, so AAC advances in wall-clock-correct step with the incoming frames no
+matter how slowly the GPU produces them — no manual PTS math, no drift. `-shortest` terminates when the
+finite video pipe closes. Audio lives inside the `.ts` segments, so the live stream has sound from frame 1.
+
+**Segment strategy:** 2 s segments with the GOP pinned to exactly 2 s (`-g`/`-keyint_min = round(fps*2)`,
+`-sc_threshold 0`) so every segment starts on a keyframe; `hls_list_size 0` keeps the full playlist so it
+doubles as VOD.
+
+**Finalisation** (`_remux_to_mp4`), after `stdin.close()` writes `#EXT-X-ENDLIST`:
+```
+ffmpeg -y -allowed_extensions ALL -i hls/playlist.m3u8 -c copy \
+       -bsf:a aac_adtstoasc -movflags +faststart out.mp4
+```
+`-c copy` = no re-encode (~5 s for a 4-minute video); `aac_adtstoasc` repacks AAC from ADTS to MP4
+framing; `+faststart` fronts the `moov` atom.
+
+**Client-side progressive playback** (`web/components/HlsPlayer.tsx` + inline viewer in `webapp.py`):
+`PREBUFFER_TARGET = 15` seconds buffered before `play()` — because the swap runs *slower than realtime*
+(8–13 fps at 1080p vs 25–30 fps playback), so the buffer must absorb the deficit; `REBUFFER_TARGET = 8` s
+to resume after a stall. hls.js config: `liveSyncDuration: preBufferSeconds, liveMaxLatencyDuration: 60,
+maxBufferLength: 60, maxMaxBufferLength: 120, backBufferLength: 90`, plus **60 retries at 800 ms** on
+manifest/level/frag loading (early polls hit a playlist with zero or one segment). Autoplay rescue via
+`muted = true` + a "🔊 Click to unmute" pill, with the documented gotcha: *"Don't set `playStarted = true`
+before `play()` resolves. A rejected promise leaves you wedged."* On completion the player swaps `src` to
+the static MP4 and destroys the Hls instance. Server sets `Cache-Control: no-store` on all HLS responses
+and path-whitelists `.m3u8`/`.ts`.
+
+**Pipeline:** 4-stage bounded-queue thread pipeline, `Q_DEPTH = 128` ("each queue ~800 MB at 1080p"):
+`reader (cv2.read) → detect (fa.get + embedding argmax) → main (sw.get swap) → writer (ffmpeg.stdin.write)`,
+each forwarding an `END` sentinel. The honest note in `docs/ARCHITECTURE.md` §7: ORT serialises GPU calls
+across threads, so *"The win from the pipeline isn't parallel GPU work; it's that CPU work (decode,
+embedding match, pipe write, paste_back) overlaps with GPU work."*
+
+**Models:** InsightFace `buffalo_l` at `det_size 480`; `inswapper_128_fp16.onnx` via **TensorRT FP16**
+(engine cached, 60–90 s first build); `GFPGANv1.4.pth`; onnxruntime-gpu 1.23.2, TensorRT 10.x, CUDA 12,
+ffmpeg 8.1. Matching: 512-d embeddings, cluster threshold cosine 0.30, per-frame `REFERENCE_THRESH = 0.22`,
+batched `tgt_embs @ ref_embs.T` then argmax.
+
+**Throughput (RTX 4090 Laptop, TRT FP16, det_size 480):** 480×360 → 30–45 fps; 640×480 → 18–25;
+1280×720 → 12–18; 1920×1080 → 8–13. A commit-by-commit optimisation ledger is kept (7.5 → 10.1 async
+writer → 10.8 async reader → 11.7 det_size 480 → 12+ batched embedding dot → 12+ 4-stage pipeline). A
+multiprocess variant `webapp_mp.py` (`FACESWAP_WORKERS=6`) claims **33 fps at 1080p** at 87–95% SM util.
+Time-to-first-frame ≈ 15 s prebuffer + ~30 s model warmup.
+
+Job phases polled from `/job/<id>/status`:
+`queued → loading_models → detecting_source → finding_reference → streaming → finalising → done`.
+
+### C.4 `/home/eranti/dlmastery/lumiere.ai` — the full concept → video → narration pipeline
+
+Vite 6 + React 19.2 + TS 5.8, `@google/genai@^1.31.0`, Firebase 12.8. `vite.config.ts` `define`s
+`process.env.API_KEY` at build time — key in the bundle again.
+
+Model IDs, all in `/home/eranti/dlmastery/lumiere.ai/services/geminiService.ts`:
+
+| Purpose | Model ID |
+|---|---|
+| Director's treatment (concept) | `gemini-3-flash-preview` |
+| Storyboard / script, refinement | `gemini-3-pro-preview` |
+| Scene stills | `gemini-3-pro-image-preview` (`imageConfig = { aspectRatio:"16:9", imageSize:"1K" }`) |
+| **Video** | **`veo-3.1-generate-preview`** |
+| TTS | `gemini-2.5-flash-preview-tts` |
+
+**Veo long-running-operation polling** (`generateSceneVideo`) — the canonical loop:
+```ts
+let operation = await ai.models.generateVideos({ model:'veo-3.1-generate-preview', prompt,
+                    image:{imageBytes, mimeType}, config });
+while (!operation.done) {
+  await new Promise(r => setTimeout(r, 10000));        // fixed 10 s poll, no backoff, no timeout
+  operation = await ai.operations.getVideosOperation({ operation });
+}
+const videoUri = operation.response?.generatedVideos?.[0]?.video?.uri;
+const videoRes = await fetch(`${videoUri}&key=${process.env.API_KEY}`);   // URI needs the key appended
+return URL.createObjectURL(await videoRes.blob());
+```
+Config `{ numberOfVideos:1, resolution:'720p', aspectRatio:'16:9' }` plus optional
+`config.lastFrame = { imageBytes, mimeType }` — **first-frame + last-frame conditioning**, which is how
+scene-to-scene continuity is achieved (each scene carries `description`, `narrative`,
+`lastFrameDescription`).
+
+**TTS → playable audio (the correct pattern):** `responseModalities:[Modality.AUDIO]` +
+`prebuiltVoiceConfig.voiceName` (Kore/Puck/Charon/Fenrir/Zephyr) → base64 → `Uint8Array` →
+`addWavHeader(bytes, 24000, 1)` (hand-written 44-byte RIFF/WAVE, PCM 16-bit mono 24 kHz) → `Blob` →
+`URL.createObjectURL`.
+
+**UI:** 4-view state machine in `App.tsx` (`hero | concept | planning | workspace`) with per-scene
+`SceneStatus`. `components/Player.tsx` (22 KB) is a **canvas compositor**: `<canvas>` +
+`requestAnimationFrame` drawing either the Veo clip or the still with a Ken Burns pan/zoom, aspect-fit
+maths, captions, an `AudioContext` for voiceover, and **`MediaRecorder` to export the composed timeline
+as a downloadable video**. The storyboard prompt uses a two-persona "Director drafts / Critic reviews"
+structure with a `responseSchema` and a regex stripping `Voiceover:|Narrator:|Caption:` prefixes.
+
+**This is a complete lesson-video pipeline that nobody pointed at a lesson.**
+
+### C.5 Local generative-video infrastructure
+
+**`/home/eranti/Wan2GP`** — upstream **WanGP by DeepBeepMeep** ("The best Open Source Generative Models
+Accessible to the GPU Poor"), v12.3 (July 2026). Interface: **Gradio 5.29**, monolithic entrypoint
+`wgp.py` (**766 KB**). `wan2gp.log` confirms it last ran at `http://localhost:7860` with an INT8
+Quanto/triton backend and a "Motion Designer" plugin. Model zoo: video (Wan 2.1/2.2, LTX-2, Hunyuan
+Video 1/1.5, LongCat, Kandinsky, MagiHuman), image (Qwen Image, Z-Image, Flux 1/2, HiDream, KREA-2),
+audio/TTS (Qwen3 TTS, Ace Step 1/2/XL, Omnivoice, Index TTS2, Chatterbox), plus MMAudio soundtracks,
+SeedVC voice replacement, RIFE/FlashVSR upsampling, whisper + pyannote diarization, LoRAs, and
+int8/fp8/gguf/NVFP4/Nunchaku quantisation down to a **6 GB VRAM floor**. Launch: `scripts/install.sh` +
+`scripts/run.sh`, or Docker (`Dockerfile` + `entrypoint.sh` with CUDA sanity checks). Has a headless/batch
+mode and a **"WanGP API"** for embedding generation into other apps — that API is the hook if a learning
+app needs local asset generation.
+
+**`/home/eranti/wan-streamer`** — upstream **StreamDiffusionV2** (MLSys 2026 Best Research Paper,
+arXiv 2511.07399, Apache-2.0). Wan2.1-T2V-1.3B or -14B base + distilled causal-DMD v2v checkpoints
+(2-step / 1-step), optional TAEHV VAE decoder and TensorRT. Chunk-wise API you drive yourself:
+`stream.prepare(prompt)` → `chunk_video` → `encode_chunk` → `denoise_chunk` → `decode_chunk`, with
+sliding-window attention over a ring-buffer KV cache. Three launchers: `run_v2v.sh` (offline batch,
+`torchrun` pipeline-parallel across GPUs), upstream `demo/` (FastAPI + WebSocket `/api/ws/{user_id}` +
+SvelteKit frontend on 7860, 16 FPS input throttle, per-frame latency queue), and a **locally written**
+`demo_stream/` ("Wan Streamer 0.2", port 7870, stdlib `ThreadingHTTPServer`, MJPEG over
+`multipart/x-mixed-replace` into a plain `<img>`, with `POST /prompt`, `/start_image`, `/control`).
+
+The transferable idea is its **hot-swap without reload**, verbatim from `demo_stream/server.py`:
+
+> Hot-update model: the generation loop re-reads shared params (effective prompt, input source, denoise
+> strength, seed) at every chunk boundary. Whenever any of them changes (signalled by a bumped source_id)
+> it re-runs prepare(prompt) — which re-encodes the UMT5 text embedding / conditional_dict — and rebuilds
+> the input chunks, WITHOUT reloading the ~5.6GB model. The model is loaded once.
+
+And its own honesty note, which the survey should quote as a model of calibrated claiming:
+
+> HONESTY: this is NOT a real-time interactive avatar. It is a low-FPS (~1.8 FPS on this GB10, arm64, no
+> flash-attn/TensorRT) video-to-video style transfer stream. The keyboard keys drive diffusion PARAMETERS,
+> not 3D camera or character movement (that would require a world model).
+
+**Verdict for the survey: live generative video as a tutor avatar is not viable today on this hardware
+(~1.8 FPS). Asynchronous generated lesson media streamed progressively over HLS is viable now.**
+
+### C.6 The multimodal stack, assembled
+
+Nothing new needs to be invented to build a real-time multimodal tutor from this portfolio:
+
+| Capability | Source | Status |
+|---|---|---|
+| Bidi live voice, persona, barge-in | `gemini-enhanced.ts` / Spanish+Telugu bundles | working, needs key moved server-side |
+| Live camera into the model (1 FPS JPEG) | `gemini-enhanced.ts` | working |
+| Model drives UI mid-sentence via tools | `FUNCTION_DECLARATIONS` + dual dispatch | working |
+| Affect-conditioned pacing | `report_emotion_observation` + prompt block | working (meditation only) |
+| Cross-session memory injection | `guru-memory.ts` | working (meditation only) |
+| PCM→playable audio at 24 kHz | `lumiere.ai addWavHeader` | correct impl exists |
+| Scheduled gapless playback queue | Spanish/Telugu bundles | correct impl exists |
+| Concept → storyboard → stills → video → VO → MP4 | `lumiere.ai geminiService.ts` + `Player.tsx` | working |
+| Scene-to-scene visual continuity | Veo `lastFrame` conditioning | working |
+| Watch-while-rendering (HLS, A/V synced) | `face-swap-streamer` | working, with negative results documented |
+| Phase-based long-job progress UI | `face-swap-streamer` `/job/<id>/status` | working |
+| Reactive 3D ambience | `CosmicScene.tsx` | working |
+| Asset-free audio feedback cues | `meditation-audio.ts` | working |
+| Local/offline generation fallback | Wan2GP (API + headless), wan-streamer | working, async only |
+
+**The two things this stack cannot do are the two things a tutor needs most: it cannot say what the
+learner knows, and it cannot run offline on a $50 phone.**
 
 ---
 
 ## D. The autoresearch family — candidate method for autonomous curriculum improvement
-
-*(Investigated by a parallel agent; see §D.4 for status.)*
 
 ### D.1 Inventory
 
