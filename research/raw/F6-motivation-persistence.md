@@ -3,7 +3,7 @@ title: "Motivation, persistence, and the attention economy — why learners quit
 wave: F
 section: F6
 date_researched: 2026-07-25
-sources_count: 66
+sources_count: 76
 ---
 
 # F6 — Motivation, Persistence, and the Attention Economy
@@ -882,7 +882,7 @@ hidden.
 
 ---
 
-## 10. Source list (66)
+## 10. Source list (76)
 
 **MOOC completion & the methodological debate (9)**
 1. Jordan 2014, IRRODL — [10.19173/irrodl.v15i1.1651](https://doi.org/10.19173/irrodl.v15i1.1651) `MEASURED-BENCH`
@@ -925,7 +925,7 @@ hidden.
 32. van Roy & Zaman 2018, *Computers & Education* — [10.1016/j.compedu.2018.08.018](https://doi.org/10.1016/j.compedu.2018.08.018) **negative/longitudinal dip**
 33. van Roy & Zaman 2019, *IJHCS* — [10.1016/j.ijhcs.2018.04.009](https://doi.org/10.1016/j.ijhcs.2018.04.009) `OBSERVED`
 
-**Duolingo & streak mechanics (12)**
+**Duolingo & streak mechanics (13)**
 34. Yancey & Settles 2020, KDD — [10.1145/3394486.3403351](https://doi.org/10.1145/3394486.3403351) `MEASURED-BENCH` **(DAU objective)**
 35. Settles & Meeder 2016, ACL — [10.18653/v1/p16-1174](https://doi.org/10.18653/v1/p16-1174) `MEASURED-BENCH`
 36. Duolingo engineering blog, streak/habit — <https://blog.duolingo.com/how-duolingo-streak-builds-habit/> `VENDOR`
@@ -946,7 +946,7 @@ hidden.
 49. Hristova, Jovicic, Göbl et al. 2022, *CHB Reports* — [10.1016/j.chbr.2022.100172](https://doi.org/10.1016/j.chbr.2022.100172) `OBSERVED`
 50. Hristova, Dumit & Lieberoth 2019 (preprint) — [10.31234/osf.io/nszex](https://doi.org/10.31234/osf.io/nszex) `OBSERVED`
 
-**Flow, interest, curiosity (9)**
+**Flow, interest, curiosity (11)**
 51. Csikszentmihalyi & Csikszentmihalyi 1988, *Optimal Experience* — [10.1017/cbo9780511621956](https://doi.org/10.1017/cbo9780511621956)
 52. Zhang & Fang 2023, *Frontiers in Psychology* — [10.3389/fpsyg.2023.1270642](https://doi.org/10.3389/fpsyg.2023.1270642) `MEASURED-META` (correlational)
 53. Hidi & Renninger 2006, *Educational Psychologist* — [10.1207/s15326985ep4102_4](https://doi.org/10.1207/s15326985ep4102_4)
@@ -959,7 +959,7 @@ hidden.
 60. Gruber & Ranganath 2019, *TiCS* (PACE) — [10.1016/j.tics.2019.10.003](https://doi.org/10.1016/j.tics.2019.10.003)
 61. Brod & Breitwieser 2019, *npj Science of Learning* — [10.1038/s41539-019-0056-y](https://doi.org/10.1038/s41539-019-0056-y) `MEASURED-RCT`
 
-**Relatedness, AI companionship & its limits (6)**
+**Relatedness, AI companionship & its limits (8)**
 62. Roorda, Koomen, Spilt & Oort 2011, *RER* — [10.3102/0034654311421793](https://doi.org/10.3102/0034654311421793) `MEASURED-META`
 63. Mykota 2025, *IJEDE* social presence meta — [10.55667/10.55667/ijede.2025.v40.i1.1351](https://doi.org/10.55667/10.55667/ijede.2025.v40.i1.1351) `MEASURED-META`
 64. Maples, Cerit, Vishwanath & Pea 2024, *npj Mental Health Research* — [10.1038/s44184-023-00047-6](https://doi.org/10.1038/s44184-023-00047-6) `OBSERVED`
@@ -969,7 +969,7 @@ hidden.
 68. Rogers & Feller 2016, *Psych. Science* — [10.1177/0956797615623770](https://doi.org/10.1177/0956797615623770) `MEASURED-RCT` **negative**
 69. Kizilcec et al. 2017, "Follow the successful crowd," LAK — [10.1145/3027385.3027411](https://doi.org/10.1145/3027385.3027411) `MEASURED-RCT`
 
-**Dark patterns, metrics & the felt-vs-actual gap (6)**
+**Dark patterns, metrics & the felt-vs-actual gap (7)**
 70. Mathur, Acar, Friedman et al. 2019, *PACM HCI* — [10.1145/3359183](https://doi.org/10.1145/3359183) `OBSERVED`
 71. Karlsen 2019, *Transgression in Games and Play* — [10.7551/mitpress/11550.003.0019](https://doi.org/10.7551/mitpress/11550.003.0019)
 72. Deslauriers, McCarty, Miller, Callaghan & Kestin 2019, *PNAS* — [10.1073/pnas.1821936116](https://doi.org/10.1073/pnas.1821936116) `MEASURED-RCT`
