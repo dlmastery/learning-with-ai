@@ -36,6 +36,7 @@ language, community, device tier, and learning environment.*
 10. [Reactive learning documents](survey/09-reactive-learning-documents.md)
 11. [The live multimodal mentor](survey/10-live-multimodal-mentor.md)
 12. [The verified visual](survey/11-verified-visual-generation.md)
+13. [Assessment as a living evidence stream](survey/12-assessment-as-evidence-stream.md)
 
 ## North star
 

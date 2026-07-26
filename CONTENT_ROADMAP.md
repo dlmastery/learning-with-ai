@@ -18,7 +18,7 @@ destination, primary-source links, and at least one meaningful visual.
 | B1 | Learning science | existing | synthesis destination pending | learning-action loop | queued |
 | B2 | AI tutoring efficacy | `B2-efficacy-frontier-2026.md` | `04-efficacy-frontier.md` | `evidence-frontier-2026.svg` | current |
 | C1 | Illustration and diagrams | `C1-verified-visual-generation-2026.md` | `11-verified-visual-generation.md` | `visual-verification-pipeline.svg` | current |
-| C2 | Generated assessment | — | — | validity pipeline | queued |
+| C2 | Generated assessment | `C2-generated-assessment-validity-2026.md` | `12-assessment-as-evidence-stream.md` | `assessment-validity-pipeline.svg` | current |
 | C3 | Learner modeling | `C3-F5-learner-owned-state-2026.md` | `06-learner-owned-state.md` | `learner-owned-state.svg` | current |
 | D1 | Frontier model advances | current | `01-central-finding.md` | evidence frontier | current |
 | D2 | Portfolio validation | existing; refresh needed | examples destination pending | portfolio coverage matrix | refresh |
