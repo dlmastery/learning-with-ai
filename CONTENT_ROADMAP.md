@@ -34,7 +34,7 @@ destination, primary-source links, and at least one meaningful visual.
 | F8 | Safety and children | — | — | human escalation architecture | queued |
 | F9 | Open problems | — | — | research frontier map | queued |
 | F10 | Explanation laddering | `F10-explanation-depth-laddering-2026.md` | `13-one-concept-four-depths.md` | `explanation-depth-ladder.svg` | current |
-| F11 | Scientific remembering | — | — | memory-compounding loop | queued |
+| F11 | Scientific remembering | `F11-scientific-remembering-2026.md` | `14-the-memory-that-compounds.md` | `memory-compounding-loop.svg` | current |
 | H1 | Accessibility/SELPA first | — | — | curb-cut architecture | queued |
 | G1 | Grounding ladder | `G1-grounding-ladder-2026.md` | `05-grounding-ladder.md` | `grounding-ladder.svg` | current |
 | G2 | Reference architecture | F2/F4 seed | `03-expert-mentor-mesh.md` | mentor mesh + delivery tiers | active |

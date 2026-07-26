@@ -60,3 +60,4 @@ Prompt:
 | `diagrams/visual-verification-pipeline.svg` | Concept contract → generation → truth/render/access/provenance checks → targeted repair |
 | `diagrams/assessment-validity-pipeline.svg` | Claim → assessment tuple → checks → synthetic prior → real calibration → next teaching action |
 | `diagrams/explanation-depth-ladder.svg` | Four sophistication rungs connected by an invariant fidelity thread |
+| `diagrams/memory-compounding-loop.svg` | Encode → retrieve → repair → vary → adaptive spacing → connected knowledge |
