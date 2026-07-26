@@ -26,7 +26,7 @@ destination, primary-source links, and at least one meaningful visual.
 | E2 | LessonOrca evidence | — | — | product measurement loop | queued |
 | F1 | Assessment reconstruction | existing; refresh needed | — | assessment assurance ladder | refresh |
 | F2 | Expert agent society | current | `03-expert-mentor-mesh.md` | `expert-mentor-mesh.svg` | current |
-| F3 | Executable knowledge | — | — | grounding ladder | queued |
+| F3 | Executable knowledge | `F3-executable-knowledge-2026.md` | `07-executable-knowledge.md` | `executable-knowledge-loop.svg` | current |
 | F4 | Reach and economics | current | integrated in `01` | `three-tier-delivery.svg` | current |
 | F5 | Lifelong learner model | current with C3 | `06-learner-owned-state.md` | `learner-owned-state.svg` | current |
 | F6 | Motivation | existing; refresh needed | — | persistence flywheel | refresh |

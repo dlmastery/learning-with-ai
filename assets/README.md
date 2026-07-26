@@ -53,3 +53,4 @@ Prompt:
 | `diagrams/teach-build-collaborate.svg` | Learner-authored create, teach, defend, revise, and transfer loop |
 | `diagrams/grounding-ladder.svg` | L0 generated → L4 human-authorized correctness standard |
 | `diagrams/learner-owned-state.svg` | Evidence → uncertain state → teaching action → human correction |
+| `diagrams/executable-knowledge-loop.svg` | Concept spec → representations → verification → learner action |

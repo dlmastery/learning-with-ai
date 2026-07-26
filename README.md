@@ -31,6 +31,7 @@ language, community, device tier, and learning environment.*
 5. [The efficacy frontier](survey/04-efficacy-frontier.md)
 6. [The grounding ladder](survey/05-grounding-ladder.md)
 7. [The learner-owned state](survey/06-learner-owned-state.md)
+8. [Executable knowledge](survey/07-executable-knowledge.md)
 
 ## North star
 
