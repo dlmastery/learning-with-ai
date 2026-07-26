@@ -10,7 +10,7 @@ destination, primary-source links, and at least one meaningful visual.
 
 | ID | Section | Raw research | Survey | Visual | State |
 |---|---|---|---|---|---|
-| A1 | AI-native textbooks | — | — | course-generation pipeline | queued |
+| A1 | AI-native textbooks | `A1-ai-native-textbook-2026.md` | `08-ai-native-textbook.md` | `ai-native-book-loop.svg` | current |
 | A2 | Interactive animation | existing; refresh needed | — | modality decision map | refresh |
 | A3 | Reactive notebooks | — | — | computational-document anatomy | queued |
 | A4 | Live multimodal tutoring | existing; refresh needed | — | full-duplex session loop | refresh |

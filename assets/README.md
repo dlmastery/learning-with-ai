@@ -54,3 +54,4 @@ Prompt:
 | `diagrams/grounding-ladder.svg` | L0 generated → L4 human-authorized correctness standard |
 | `diagrams/learner-owned-state.svg` | Evidence → uncertain state → teaching action → human correction |
 | `diagrams/executable-knowledge-loop.svg` | Concept spec → representations → verification → learner action |
+| `diagrams/ai-native-book-loop.svg` | Goal + sources → compiled micro-chapter → next learner edition |

@@ -32,6 +32,7 @@ language, community, device tier, and learning environment.*
 6. [The grounding ladder](survey/05-grounding-ladder.md)
 7. [The learner-owned state](survey/06-learner-owned-state.md)
 8. [Executable knowledge](survey/07-executable-knowledge.md)
+9. [The AI-native textbook](survey/08-ai-native-textbook.md)
 
 ## North star
 

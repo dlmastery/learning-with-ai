@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="790" viewBox="0 0 1200 790" role="img" aria-labelledby="title desc">
+  <title id="title">AI-native textbook as a continuously compiled course</title>
+  <desc id="desc">A learner goal and trusted source library feed a diagnostic and objective graph. A course compiler creates a short multimodal chapter. The learner predicts, explores, practices, creates, teaches, and transfers. Evidence updates learner-owned state and compiles the next edition. Teachers and families can inspect and steer the process.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFDF7"/>
+      <stop offset="1" stop-color="#ECF8F6"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#172554" flood-opacity=".14"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#64748B"/>
+    </marker>
+    <style>
+      .h1{font:800 34px Inter,Arial,sans-serif;fill:#172554}
+      .h2{font:800 20px Inter,Arial,sans-serif;fill:#172554}
+      .body{font:500 15px Inter,Arial,sans-serif;fill:#334155}
+      .small{font:600 13px Inter,Arial,sans-serif;fill:#475569}
+      .pill{font:750 14px Inter,Arial,sans-serif;fill:#17324A}
+      .link{fill:none;stroke:#64748B;stroke-width:3;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="790" rx="30" fill="url(#bg)"/>
+  <text x="60" y="62" class="h1">The book is recompiled after every meaningful act of learning</text>
+  <text x="60" y="94" class="body">A stable, source-grounded backbone; a learner-specific sequence, language, representation, practice plan, and edition.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="55" y="145" width="245" height="185" rx="25" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+    <text x="177" y="184" text-anchor="middle" class="h2">GOAL + SOURCES</text>
+    <text x="177" y="217" text-anchor="middle" class="body">learner purpose</text>
+    <text x="177" y="244" text-anchor="middle" class="body">local curriculum</text>
+    <text x="177" y="271" text-anchor="middle" class="body">teacher materials</text>
+    <text x="177" y="298" text-anchor="middle" class="body">trusted open resources</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="370" y="145" width="245" height="185" rx="25" fill="#FFFFFF" stroke="#0F766E" stroke-width="2"/>
+    <text x="492" y="184" text-anchor="middle" class="h2">DIAGNOSE + MAP</text>
+    <text x="492" y="217" text-anchor="middle" class="body">prior knowledge</text>
+    <text x="492" y="244" text-anchor="middle" class="body">prerequisites</text>
+    <text x="492" y="271" text-anchor="middle" class="body">100+ objectives</text>
+    <text x="492" y="298" text-anchor="middle" class="body">multiple valid paths</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="685" y="128" width="460" height="219" rx="25" fill="#FFFFFF" stroke="#D97706" stroke-width="2"/>
+    <text x="915" y="168" text-anchor="middle" class="h2">COMPILE THE NEXT MICRO-CHAPTER</text>
+    <text x="915" y="193" text-anchor="middle" class="small">source claims + grounding tier + version + expiry</text>
+    <rect x="720" y="222" width="115" height="48" rx="15" fill="#DBEAFE"/>
+    <text x="777" y="252" text-anchor="middle" class="pill">EXPLAIN</text>
+    <rect x="850" y="222" width="130" height="48" rx="15" fill="#CCFBF1"/>
+    <text x="915" y="252" text-anchor="middle" class="pill">VISUALIZE</text>
+    <rect x="995" y="222" width="115" height="48" rx="15" fill="#FEF3C7"/>
+    <text x="1052" y="252" text-anchor="middle" class="pill">SIMULATE</text>
+    <rect x="720" y="285" width="115" height="38" rx="14" fill="#F3E8FF"/>
+    <text x="777" y="309" text-anchor="middle" class="pill">SPEAK</text>
+    <rect x="850" y="285" width="130" height="38" rx="14" fill="#FCE7F3"/>
+    <text x="915" y="309" text-anchor="middle" class="pill">PRACTICE</text>
+    <rect x="995" y="285" width="115" height="38" rx="14" fill="#E7F4DD"/>
+    <text x="1052" y="309" text-anchor="middle" class="pill">CREATE</text>
+  </g>
+
+  <path d="M300 237L370 237" class="link"/>
+  <path d="M615 237L685 237" class="link"/>
+
+  <g filter="url(#shadow)">
+    <rect x="155" y="430" width="890" height="155" rx="30" fill="#172554"/>
+    <text x="600" y="470" text-anchor="middle" style="font:800 23px Inter,Arial,sans-serif;fill:#FFFFFF">LEARNER ACTION</text>
+    <rect x="195" y="500" width="110" height="46" rx="14" fill="#DBEAFE"/>
+    <text x="250" y="529" text-anchor="middle" class="pill">PREDICT</text>
+    <rect x="320" y="500" width="110" height="46" rx="14" fill="#CCFBF1"/>
+    <text x="375" y="529" text-anchor="middle" class="pill">EXPLORE</text>
+    <rect x="445" y="500" width="110" height="46" rx="14" fill="#FEF3C7"/>
+    <text x="500" y="529" text-anchor="middle" class="pill">PRACTICE</text>
+    <rect x="570" y="500" width="110" height="46" rx="14" fill="#F3E8FF"/>
+    <text x="625" y="529" text-anchor="middle" class="pill">CREATE</text>
+    <rect x="695" y="500" width="110" height="46" rx="14" fill="#FCE7F3"/>
+    <text x="750" y="529" text-anchor="middle" class="pill">TEACH</text>
+    <rect x="820" y="500" width="185" height="46" rx="14" fill="#E7F4DD"/>
+    <text x="912" y="529" text-anchor="middle" class="pill">TRANSFER</text>
+  </g>
+
+  <path d="M915 347C915 392 850 400 830 430" class="link"/>
+
+  <g filter="url(#shadow)">
+    <rect x="250" y="650" width="700" height="78" rx="23" fill="#FFFFFF" stroke="#A78BFA" stroke-width="2"/>
+    <text x="600" y="681" text-anchor="middle" class="h2">LEARNER-OWNED STATE → NEXT EDITION</text>
+    <text x="600" y="708" text-anchor="middle" class="body">mastery • misconceptions • retention • transfer • successful representations</text>
+  </g>
+  <path d="M600 585L600 650" class="link"/>
+  <path d="M250 689C75 689 78 330 177 330" class="link"/>
+
+  <rect x="955" y="644" width="190" height="90" rx="20" fill="#FFFFFF" stroke="#A78BFA" stroke-width="2"/>
+  <text x="1050" y="676" text-anchor="middle" class="h2">HUMAN LAYER</text>
+  <text x="1050" y="703" text-anchor="middle" class="small">teacher • family • expert</text>
+  <text x="1050" y="722" text-anchor="middle" class="small">inspect + steer</text>
+  <path d="M955 689L950 689" class="link"/>
+</svg>
