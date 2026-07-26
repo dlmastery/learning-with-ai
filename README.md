@@ -34,6 +34,7 @@ language, community, device tier, and learning environment.*
 8. [Executable knowledge](survey/07-executable-knowledge.md)
 9. [The AI-native textbook](survey/08-ai-native-textbook.md)
 10. [Reactive learning documents](survey/09-reactive-learning-documents.md)
+11. [The live multimodal mentor](survey/10-live-multimodal-mentor.md)
 
 ## North star
 

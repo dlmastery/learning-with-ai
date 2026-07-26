@@ -4,9 +4,18 @@ wave: A
 section: A4
 date_researched: 2026-07-25
 sources_count: 48
+status: superseded
+superseded_by: "research/raw/A4-live-multimodal-frontier-2026-07-25.md"
 ---
 
 # A4 — Live, full-duplex multimodal tutoring
+
+> **Superseded on 2026-07-25.** This first pass over-centered avatar rendering
+> and point-in-time API limits. Use
+> [A4 — Live Multimodal Mentorship](A4-live-multimodal-frontier-2026-07-25.md),
+> which incorporates GPT-Live full duplex, Gemini 3.5 Live Translate, scoped
+> perception, shared artifacts, local continuity, and a complete interaction
+> policy. This file remains as a detailed technical source ledger.
 
 **Scope.** What it actually takes, today, to build a tutor that a student can *talk to* while
 *showing it something* (paper, screen, whiteboard) and that talks back with a face. Three
