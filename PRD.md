@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| Status | Active — July 2026 frontier reset landed; 32 raw documents + 27 synthesis sections |
-| Target | ~100 pages, ~20 sections, 400+ cited sources |
+| Status | July 2026 research pass complete; 33 raw documents + 28 synthesis sections; Release 0 next |
+| Target | 28+ synthesis sections, 400+ cited sources, plus the reference implementation |
 | Repo | `dlmastery/learning-with-ai` (private) |
 | Date | 2026-07-25 |
 

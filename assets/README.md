@@ -73,3 +73,4 @@ Prompt:
 | `diagrams/research-frontier-priority-map.svg` | P0 prove → P1 compose → P2 ecosystem research agenda with falsifiable milestones |
 | `diagrams/learning-action-control-loop.svg` | Goal → diagnose → select → act → feedback → remember → delayed transfer |
 | `diagrams/assessment-assurance-ladder.svg` | Activity → response → explanation → performance → transfer → learner-owned portfolio |
+| `diagrams/universal-mentor-reference-architecture.svg` | Learner → conductor → seven functional planes → open contracts → device, community-hub, and cloud delivery |

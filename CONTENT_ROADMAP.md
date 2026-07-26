@@ -8,6 +8,10 @@ This tracker turns the PRD into an executable content plan. A section is complet
 only when it has current raw research, a survey chapter or explicit synthesis
 destination, primary-source links, and at least one meaningful visual.
 
+**Research pass:** complete as of 2026-07-25. Next milestone: G2 Release 0, one
+verified concept through the complete universal-mentor runtime and its
+seven-day transfer test.
+
 | ID | Section | Raw research | Survey | Visual | State |
 |---|---|---|---|---|---|
 | A1 | AI-native textbooks | `A1-ai-native-textbook-2026.md` | `08-ai-native-textbook.md` | `ai-native-book-loop.svg` | current |
@@ -37,7 +41,7 @@ destination, primary-source links, and at least one meaningful visual.
 | F11 | Scientific remembering | `F11-scientific-remembering-2026.md` | `14-the-memory-that-compounds.md` | `memory-compounding-loop.svg` | current |
 | H1 | Accessibility/SELPA first | `H1-accessibility-first-mentor-2026.md` | `19-designed-from-the-margin.md` | `accessibility-first-pivot-loop.svg` | current |
 | G1 | Grounding ladder | `G1-grounding-ladder-2026.md` | `05-grounding-ladder.md` | `grounding-ladder.svg` | current |
-| G2 | Reference architecture | F2/F4 seed | `03-expert-mentor-mesh.md` | mentor mesh + delivery tiers | active |
+| G2 | Reference architecture | `G2-universal-mentor-reference-architecture-2026.md` | `27-the-universal-mentor-reference-architecture.md` | `universal-mentor-reference-architecture.svg` | current |
 | G3 | Comparative projects | `D2-G3-portfolio-comparison-2026.md` | `23-the-union-is-the-product.md` | `portfolio-coverage-matrix.svg` | current |
 | G4 | Research agenda | `F9-G4-research-frontier-2026.md` | `24-the-next-problems-are-system-problems.md` | `research-frontier-priority-map.svg` | current |
 

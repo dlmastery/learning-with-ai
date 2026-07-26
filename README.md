@@ -8,7 +8,9 @@ working set of dynamic, multimodal learning apps built on its conclusions.
 *The north star: world-class expert mentorship should be available in every
 language, community, device tier, and learning environment.*
 
-**Status:** in progress, built incrementally. Sections land as their research wave completes.
+**Status:** July 2026 research and synthesis pass complete. The next milestone is
+Release 0 of the reference implementation: one verified concept through the
+complete mentor loop.
 
 ## Structure
 
@@ -51,6 +53,15 @@ language, community, device tier, and learning environment.*
 25. [The next problems are system problems](survey/24-the-next-problems-are-system-problems.md)
 26. [Learning science becomes a control system](survey/25-learning-science-becomes-a-control-system.md)
 27. [Assessment becomes an evidence architecture](survey/26-assessment-becomes-an-evidence-architecture.md)
+28. [The universal mentor reference architecture](survey/27-the-universal-mentor-reference-architecture.md)
+
+## Next build
+
+Release 0 proves the architecture end to end for one concept: text and voice,
+an explicit teaching router, verified learning objects, learner-owned state,
+offline evidence capture, and a seven-day independent-transfer check. The
+complete specification and acceptance tests are in
+[the reference architecture](survey/27-the-universal-mentor-reference-architecture.md).
 
 ## North star
 
