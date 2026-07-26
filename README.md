@@ -29,6 +29,7 @@ language, community, device tier, and learning environment.*
 3. [Teach, build, and collaborate](survey/02-teach-to-learn.md)
 4. [The expert mentor mesh](survey/03-expert-mentor-mesh.md)
 5. [The efficacy frontier](survey/04-efficacy-frontier.md)
+6. [The grounding ladder](survey/05-grounding-ladder.md)
 
 ## North star
 

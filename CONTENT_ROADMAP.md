@@ -36,7 +36,7 @@ destination, primary-source links, and at least one meaningful visual.
 | F10 | Explanation laddering | — | — | one concept at four depths | queued |
 | F11 | Scientific remembering | — | — | memory-compounding loop | queued |
 | H1 | Accessibility/SELPA first | — | — | curb-cut architecture | queued |
-| G1 | Grounding ladder | PRD seed | — | grounding ladder | queued |
+| G1 | Grounding ladder | `G1-grounding-ladder-2026.md` | `05-grounding-ladder.md` | `grounding-ladder.svg` | current |
 | G2 | Reference architecture | F2/F4 seed | `03-expert-mentor-mesh.md` | mentor mesh + delivery tiers | active |
 | G3 | Comparative projects | D2 seed | — | comparison matrix | queued |
 | G4 | Research agenda | — | — | priority/uncertainty map | queued |

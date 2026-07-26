@@ -51,3 +51,4 @@ Prompt:
 | `diagrams/three-tier-delivery.svg` | Device → school/community → regional-cloud delivery |
 | `diagrams/evidence-frontier-2026.svg` | Current measured learning and opportunity evidence |
 | `diagrams/teach-build-collaborate.svg` | Learner-authored create, teach, defend, revise, and transfer loop |
+| `diagrams/grounding-ladder.svg` | L0 generated → L4 human-authorized correctness standard |
