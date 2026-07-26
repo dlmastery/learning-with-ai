@@ -12,7 +12,7 @@ destination, primary-source links, and at least one meaningful visual.
 |---|---|---|---|---|---|
 | A1 | AI-native textbooks | `A1-ai-native-textbook-2026.md` | `08-ai-native-textbook.md` | `ai-native-book-loop.svg` | current |
 | A2 | Interactive animation | existing; refresh needed | — | modality decision map | refresh |
-| A3 | Reactive notebooks | — | — | computational-document anatomy | queued |
+| A3 | Reactive notebooks | `A3-reactive-notebooks-2026.md` | `09-reactive-learning-documents.md` | `reactive-notebook-anatomy.svg` | current |
 | A4 | Live multimodal tutoring | existing; refresh needed | — | full-duplex session loop | refresh |
 | A5 | World models | existing; refresh needed | — | verified-world stack | refresh |
 | B1 | Learning science | existing | synthesis destination pending | learning-action loop | queued |

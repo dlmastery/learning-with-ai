@@ -55,3 +55,4 @@ Prompt:
 | `diagrams/learner-owned-state.svg` | Evidence → uncertain state → teaching action → human correction |
 | `diagrams/executable-knowledge-loop.svg` | Concept spec → representations → verification → learner action |
 | `diagrams/ai-native-book-loop.svg` | Goal + sources → compiled micro-chapter → next learner edition |
+| `diagrams/reactive-notebook-anatomy.svg` | Semantic dependency graph for executable learning documents |
