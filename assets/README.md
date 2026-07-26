@@ -61,3 +61,4 @@ Prompt:
 | `diagrams/assessment-validity-pipeline.svg` | Claim → assessment tuple → checks → synthetic prior → real calibration → next teaching action |
 | `diagrams/explanation-depth-ladder.svg` | Four sophistication rungs connected by an invariant fidelity thread |
 | `diagrams/memory-compounding-loop.svg` | Encode → retrieve → repair → vary → adaptive spacing → connected knowledge |
+| `diagrams/compassionate-persistence-flywheel.svg` | Purpose → action → challenge → progress → belonging → shame-free return |

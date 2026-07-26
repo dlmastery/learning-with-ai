@@ -29,7 +29,7 @@ destination, primary-source links, and at least one meaningful visual.
 | F3 | Executable knowledge | `F3-executable-knowledge-2026.md` | `07-executable-knowledge.md` | `executable-knowledge-loop.svg` | current |
 | F4 | Reach and economics | current | integrated in `01` | `three-tier-delivery.svg` | current |
 | F5 | Lifelong learner model | current with C3 | `06-learner-owned-state.md` | `learner-owned-state.svg` | current |
-| F6 | Motivation | existing; refresh needed | — | persistence flywheel | refresh |
+| F6 | Motivation | `F6-compassionate-persistence-2026.md` | `15-compassionate-persistence.md` | `compassionate-persistence-flywheel.svg` | current |
 | F7 | Embodiment | — | — | screen-to-world continuum | queued |
 | F8 | Safety and children | — | — | human escalation architecture | queued |
 | F9 | Open problems | — | — | research frontier map | queued |

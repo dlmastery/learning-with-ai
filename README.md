@@ -39,6 +39,7 @@ language, community, device tier, and learning environment.*
 13. [Assessment as a living evidence stream](survey/12-assessment-as-evidence-stream.md)
 14. [One concept at four depths](survey/13-one-concept-four-depths.md)
 15. [The memory that compounds](survey/14-the-memory-that-compounds.md)
+16. [Compassionate persistence](survey/15-compassionate-persistence.md)
 
 ## North star
 
