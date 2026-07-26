@@ -63,3 +63,4 @@ Prompt:
 | `diagrams/memory-compounding-loop.svg` | Encode → retrieve → repair → vary → adaptive spacing → connected knowledge |
 | `diagrams/compassionate-persistence-flywheel.svg` | Purpose → action → challenge → progress → belonging → shame-free return |
 | `diagrams/modality-decision-map.svg` | Learner action → annotate, animate, simulate, generate video, or do |
+| `diagrams/verified-world-stack.svg` | Generated experience → executable law → grounded sources → real observation |

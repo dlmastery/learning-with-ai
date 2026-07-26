@@ -14,7 +14,7 @@ destination, primary-source links, and at least one meaningful visual.
 | A2 | Interactive animation | `A2-generative-interactive-explanations-2026.md` | `16-from-motion-to-intervention.md` | `modality-decision-map.svg` | current |
 | A3 | Reactive notebooks | `A3-reactive-notebooks-2026.md` | `09-reactive-learning-documents.md` | `reactive-notebook-anatomy.svg` | current |
 | A4 | Live multimodal tutoring | `A4-live-multimodal-frontier-2026-07-25.md` | `10-live-multimodal-mentor.md` | `full-duplex-mentor-loop.svg` | current |
-| A5 | World models | existing; refresh needed | — | verified-world stack | refresh |
+| A5 | World models | `A5-verified-generative-worlds-2026.md` | `17-worlds-you-can-question.md` | `verified-world-stack.svg` | current |
 | B1 | Learning science | existing | synthesis destination pending | learning-action loop | queued |
 | B2 | AI tutoring efficacy | `B2-efficacy-frontier-2026.md` | `04-efficacy-frontier.md` | `evidence-frontier-2026.svg` | current |
 | C1 | Illustration and diagrams | `C1-verified-visual-generation-2026.md` | `11-verified-visual-generation.md` | `visual-verification-pipeline.svg` | current |

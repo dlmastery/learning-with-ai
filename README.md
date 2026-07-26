@@ -41,6 +41,7 @@ language, community, device tier, and learning environment.*
 15. [The memory that compounds](survey/14-the-memory-that-compounds.md)
 16. [Compassionate persistence](survey/15-compassionate-persistence.md)
 17. [From motion to intervention](survey/16-from-motion-to-intervention.md)
+18. [Worlds you can question](survey/17-worlds-you-can-question.md)
 
 ## North star
 
