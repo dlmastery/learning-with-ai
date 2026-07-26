@@ -32,14 +32,14 @@ destination, primary-source links, and at least one meaningful visual.
 | F6 | Motivation | `F6-compassionate-persistence-2026.md` | `15-compassionate-persistence.md` | `compassionate-persistence-flywheel.svg` | current |
 | F7 | Embodiment | `F7-embodied-mentor-2026.md` | `18-the-screen-is-a-doorway.md` | `screen-to-world-continuum.svg` | current |
 | F8 | Safety and children | `F8-child-safety-freedom-2026.md` | `20-safe-enough-to-be-free.md` | `human-escalation-architecture.svg` | current |
-| F9 | Open problems | — | — | research frontier map | queued |
+| F9 | Open problems | `F9-G4-research-frontier-2026.md` | `24-the-next-problems-are-system-problems.md` | `research-frontier-priority-map.svg` | current |
 | F10 | Explanation laddering | `F10-explanation-depth-laddering-2026.md` | `13-one-concept-four-depths.md` | `explanation-depth-ladder.svg` | current |
 | F11 | Scientific remembering | `F11-scientific-remembering-2026.md` | `14-the-memory-that-compounds.md` | `memory-compounding-loop.svg` | current |
 | H1 | Accessibility/SELPA first | `H1-accessibility-first-mentor-2026.md` | `19-designed-from-the-margin.md` | `accessibility-first-pivot-loop.svg` | current |
 | G1 | Grounding ladder | `G1-grounding-ladder-2026.md` | `05-grounding-ladder.md` | `grounding-ladder.svg` | current |
 | G2 | Reference architecture | F2/F4 seed | `03-expert-mentor-mesh.md` | mentor mesh + delivery tiers | active |
 | G3 | Comparative projects | `D2-G3-portfolio-comparison-2026.md` | `23-the-union-is-the-product.md` | `portfolio-coverage-matrix.svg` | current |
-| G4 | Research agenda | — | — | priority/uncertainty map | queued |
+| G4 | Research agenda | `F9-G4-research-frontier-2026.md` | `24-the-next-problems-are-system-problems.md` | `research-frontier-priority-map.svg` | current |
 
 ## Incremental build order
 

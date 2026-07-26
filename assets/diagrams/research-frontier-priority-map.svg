@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="930" viewBox="0 0 1400 930" role="img" aria-labelledby="title desc">
+  <title id="title">Universal mentor research frontier priority map</title>
+  <desc id="desc">A three-tier roadmap ranks four prove-before-scaling problems, four composition problems, and two ecosystem problems, each linked to a falsifiable outcome and time horizon.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#172554" flood-opacity=".11"/>
+    </filter>
+    <linearGradient id="arrow" x1="0" x2="1">
+      <stop offset="0" stop-color="#0F766E"/>
+      <stop offset=".5" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <style>
+      .title{font:700 34px Inter,Arial,sans-serif;fill:#172554}
+      .sub{font:400 18px Inter,Arial,sans-serif;fill:#475569}
+      .tier{font:800 24px Inter,Arial,sans-serif;fill:#fff}
+      .tiernote{font:600 13px Inter,Arial,sans-serif;fill:#fff;letter-spacing:.5px}
+      .cardhead{font:700 17px Inter,Arial,sans-serif;fill:#172554}
+      .cardbody{font:400 14px Inter,Arial,sans-serif;fill:#475569}
+      .proof{font:700 12px Inter,Arial,sans-serif;fill:#0F766E;letter-spacing:.5px}
+      .small{font:600 13px Inter,Arial,sans-serif;fill:#475569}
+      .bottom{font:700 19px Inter,Arial,sans-serif;fill:#fff}
+    </style>
+  </defs>
+
+  <rect width="1400" height="930" fill="#FFFDF7"/>
+  <circle cx="1270" cy="72" r="150" fill="#DBEAFE" opacity=".55"/>
+  <circle cx="90" cy="875" r="145" fill="#CCFBF1" opacity=".5"/>
+
+  <text x="70" y="60" class="title">THE NEXT PROBLEMS ARE SYSTEM PROBLEMS</text>
+  <text x="70" y="94" class="sub">July 2026 research agenda: every priority ends in a falsifiable learner or deployment outcome.</text>
+
+  <!-- P0 -->
+  <g transform="translate(70 132)">
+    <rect width="180" height="215" rx="22" fill="#172554" filter="url(#shadow)"/>
+    <text x="28" y="52" class="tier">P0</text>
+    <text x="28" y="84" class="tier">PROVE</text>
+    <text x="28" y="116" class="tiernote">BEFORE SCALING</text>
+    <line x1="28" y1="139" x2="152" y2="139" stroke="#93C5FD" stroke-width="2"/>
+    <text x="28" y="166" class="tiernote">0–12 MONTHS</text>
+    <text x="28" y="192" style="font:400 13px Inter,Arial,sans-serif;fill:#DBEAFE">Trustworthy claims</text>
+
+    <g transform="translate(205 0)" filter="url(#shadow)">
+      <rect width="260" height="215" rx="20" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+      <text x="22" y="38" class="cardhead">DELAYED TRANSFER</text>
+      <text x="22" y="69" class="cardbody">New task · later date</text>
+      <text x="22" y="91" class="cardbody">changed context · no help</text>
+      <line x1="22" y1="118" x2="238" y2="118" stroke="#BFDBFE"/>
+      <text x="22" y="146" class="proof">PROOF</text>
+      <text x="22" y="172" class="cardbody">7 / 30 / 90 / 365-day</text>
+      <text x="22" y="194" class="cardbody">independent performance</text>
+    </g>
+
+    <g transform="translate(480 0)" filter="url(#shadow)">
+      <rect width="260" height="215" rx="20" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+      <text x="22" y="38" class="cardhead">LEARNER-OWNED STATE</text>
+      <text x="22" y="69" class="cardbody">Portable · uncertain</text>
+      <text x="22" y="91" class="cardbody">readable · correctable</text>
+      <line x1="22" y1="118" x2="238" y2="118" stroke="#BFDBFE"/>
+      <text x="22" y="146" class="proof">PROOF</text>
+      <text x="22" y="172" class="cardbody">Two providers + platforms</text>
+      <text x="22" y="194" class="cardbody">+ one offline hub</text>
+    </g>
+
+    <g transform="translate(755 0)" filter="url(#shadow)">
+      <rect width="260" height="215" rx="20" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+      <text x="22" y="38" class="cardhead">VERIFIED GENERATION</text>
+      <text x="22" y="69" class="cardbody">Text · diagram · simulation</text>
+      <text x="22" y="91" class="cardbody">practice · assessment</text>
+      <line x1="22" y1="118" x2="238" y2="118" stroke="#BFDBFE"/>
+      <text x="22" y="146" class="proof">PROOF</text>
+      <text x="22" y="172" class="cardbody">Representations agree</text>
+      <text x="22" y="194" class="cardbody">or fail the build</text>
+    </g>
+
+    <g transform="translate(1030 0)" filter="url(#shadow)">
+      <rect width="230" height="215" rx="20" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+      <text x="20" y="38" class="cardhead">OFFLINE LIVE MENTOR</text>
+      <text x="20" y="69" class="cardbody">Voice · retrieval · memory</text>
+      <text x="20" y="91" class="cardbody">local → hub → specialist</text>
+      <line x1="20" y1="118" x2="210" y2="118" stroke="#BFDBFE"/>
+      <text x="20" y="146" class="proof">PROOF</text>
+      <text x="20" y="172" class="cardbody">Device, energy, latency,</text>
+      <text x="20" y="194" class="cardbody">cost + learning budgets</text>
+    </g>
+  </g>
+
+  <!-- P1 -->
+  <g transform="translate(70 375)">
+    <rect width="180" height="215" rx="22" fill="#0F766E" filter="url(#shadow)"/>
+    <text x="28" y="52" class="tier">P1</text>
+    <text x="28" y="84" class="tier">COMPOSE</text>
+    <text x="28" y="116" class="tiernote">THE EXPERIENCE</text>
+    <line x1="28" y1="139" x2="152" y2="139" stroke="#99F6E4" stroke-width="2"/>
+    <text x="28" y="166" class="tiernote">6–24 MONTHS</text>
+    <text x="28" y="192" style="font:400 13px Inter,Arial,sans-serif;fill:#CCFBF1">Compounding help</text>
+
+    <g transform="translate(205 0)" filter="url(#shadow)">
+      <rect width="260" height="215" rx="20" fill="#ECFDF5" stroke="#0F766E" stroke-width="2"/>
+      <text x="22" y="38" class="cardhead">TEACHING ROUTER</text>
+      <text x="22" y="69" class="cardbody">Explain · model · hint</text>
+      <text x="22" y="91" class="cardbody">question · retrieve · peer</text>
+      <line x1="22" y1="118" x2="238" y2="118" stroke="#99F6E4"/>
+      <text x="22" y="146" class="proof">PROOF</text>
+      <text x="22" y="172" class="cardbody">Beats best fixed policy</text>
+      <text x="22" y="194" class="cardbody">on delayed transfer</text>
+    </g>
+
+    <g transform="translate(480 0)" filter="url(#shadow)">
+      <rect width="260" height="215" rx="20" fill="#ECFDF5" stroke="#0F766E" stroke-width="2"/>
+      <text x="22" y="38" class="cardhead">REAL ACTIVITY</text>
+      <text x="22" y="69" class="cardbody">Speech · handwriting · tools</text>
+      <text x="22" y="91" class="cardbody">experiments · group work</text>
+      <line x1="22" y1="118" x2="238" y2="118" stroke="#99F6E4"/>
+      <text x="22" y="146" class="proof">PROOF</text>
+      <text x="22" y="172" class="cardbody">Better than text-only</text>
+      <text x="22" y="194" class="cardbody">with few false interventions</text>
+    </g>
+
+    <g transform="translate(755 0)" filter="url(#shadow)">
+      <rect width="260" height="215" rx="20" fill="#ECFDF5" stroke="#0F766E" stroke-width="2"/>
+      <text x="22" y="38" class="cardhead">ACCESS BY DESIGN</text>
+      <text x="22" y="69" class="cardbody">Disability · home language</text>
+      <text x="22" y="91" class="cardbody">representation · pace · AAC</text>
+      <line x1="22" y1="118" x2="238" y2="118" stroke="#99F6E4"/>
+      <text x="22" y="146" class="proof">PROOF</text>
+      <text x="22" y="172" class="cardbody">Same rigor, improved</text>
+      <text x="22" y="194" class="cardbody">transfer + participation</text>
+    </g>
+
+    <g transform="translate(1030 0)" filter="url(#shadow)">
+      <rect width="230" height="215" rx="20" fill="#ECFDF5" stroke="#0F766E" stroke-width="2"/>
+      <text x="20" y="38" class="cardhead">HUMAN MESH</text>
+      <text x="20" y="69" class="cardbody">Family · peer · teacher</text>
+      <text x="20" y="91" class="cardbody">tutor · local specialist</text>
+      <line x1="20" y1="118" x2="210" y2="118" stroke="#99F6E4"/>
+      <text x="20" y="146" class="proof">PROOF</text>
+      <text x="20" y="172" class="cardbody">More learning per human</text>
+      <text x="20" y="194" class="cardbody">hour + continuity</text>
+    </g>
+  </g>
+
+  <!-- P2 -->
+  <g transform="translate(70 618)">
+    <rect width="180" height="160" rx="22" fill="#7C3AED" filter="url(#shadow)"/>
+    <text x="28" y="48" class="tier">P2</text>
+    <text x="28" y="80" class="tier">ECOSYSTEM</text>
+    <line x1="28" y1="101" x2="152" y2="101" stroke="#DDD6FE" stroke-width="2"/>
+    <text x="28" y="129" class="tiernote">12–36 MONTHS</text>
+
+    <g transform="translate(205 0)" filter="url(#shadow)">
+      <rect width="510" height="160" rx="20" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2"/>
+      <text x="24" y="38" class="cardhead">EVIDENCE → OPPORTUNITY</text>
+      <text x="24" y="68" class="cardbody">A privacy-minimized capability credential crosses institutions</text>
+      <text x="24" y="92" class="cardbody">without exposing the learner’s raw history.</text>
+      <text x="24" y="126" class="proof">PROOF · SECOND INSTITUTION ACCEPTS SELECTIVE EVIDENCE</text>
+    </g>
+
+    <g transform="translate(730 0)" filter="url(#shadow)">
+      <rect width="530" height="160" rx="20" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2"/>
+      <text x="24" y="38" class="cardhead">GLOBAL DEPLOYMENT LABS</text>
+      <text x="24" y="68" class="cardbody">Locally led sites publish shared outcomes, local goals, device and</text>
+      <text x="24" y="92" class="cardbody">network conditions, cost, configuration, and reusable playbooks.</text>
+      <text x="24" y="126" class="proof">PROOF · EVERY SITE MAKES THE NEXT DEPLOYMENT CHEAPER</text>
+    </g>
+  </g>
+
+  <path d="M100 830 H1260" stroke="url(#arrow)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M1245 811 L1280 830 L1245 849 Z" fill="#7C3AED"/>
+  <rect x="355" y="805" width="650" height="50" rx="25" fill="#172554"/>
+  <text x="680" y="837" text-anchor="middle" class="bottom">SUPPORTED SUCCESS → INDEPENDENT CAPABILITY → HUMAN OPPORTUNITY</text>
+
+  <text x="70" y="898" class="small">RANKED BY LEARNING LEVERAGE · UNIVERSAL REACH · COMPLEMENTARITY · VERIFIABILITY</text>
+  <text x="70" y="918" class="small">LEARNING IN THE NEW FRONTIER AI WORLD · CUTOFF 25 JULY 2026</text>
+</svg>

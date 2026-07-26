@@ -48,6 +48,7 @@ language, community, device tier, and learning environment.*
 22. [From product use to learning evidence](survey/21-lessonorca-evidence-loop.md)
 23. [The market is a stack](survey/22-the-market-is-a-stack.md)
 24. [The union is the product](survey/23-the-union-is-the-product.md)
+25. [The next problems are system problems](survey/24-the-next-problems-are-system-problems.md)
 
 ## North star
 

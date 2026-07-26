@@ -70,3 +70,4 @@ Prompt:
 | `diagrams/lessonorca-evidence-loop.svg` | Product surfaces → privacy-separated events → policy test → human review → verified learning claim |
 | `diagrams/market-capability-landscape-2026.svg` | Shipped, emerging, and build-frontier layers of the July 2026 universal-mentor market |
 | `diagrams/portfolio-coverage-matrix.svg` | Complementary existence proofs across current projects → one composed mentor |
+| `diagrams/research-frontier-priority-map.svg` | P0 prove → P1 compose → P2 ecosystem research agenda with falsifiable milestones |
