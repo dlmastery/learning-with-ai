@@ -67,3 +67,4 @@ Prompt:
 | `diagrams/screen-to-world-continuum.svg` | Explain → see → sense → coach action → connect people → authorized actuation |
 | `diagrams/accessibility-first-pivot-loop.svg` | Preserve the goal → observe → compose access → teach → probe → continue, pivot, or escalate |
 | `diagrams/human-escalation-architecture.svg` | Keep learning open → gate consequential action → trained local review → minimum-necessary escalation |
+| `diagrams/lessonorca-evidence-loop.svg` | Product surfaces → privacy-separated events → policy test → human review → verified learning claim |

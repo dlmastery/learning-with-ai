@@ -23,7 +23,7 @@ destination, primary-source links, and at least one meaningful visual.
 | D1 | Frontier model advances | current | `01-central-finding.md` | evidence frontier | current |
 | D2 | Portfolio validation | existing; refresh needed | examples destination pending | portfolio coverage matrix | refresh |
 | E1 | 2026 market frontier | — | — | capability landscape | queued |
-| E2 | LessonOrca evidence | — | — | product measurement loop | queued |
+| E2 | LessonOrca evidence | `E2-lessonorca-evidence-program-2026.md` | `21-lessonorca-evidence-loop.md` | `lessonorca-evidence-loop.svg` | current |
 | F1 | Assessment reconstruction | existing; refresh needed | — | assessment assurance ladder | refresh |
 | F2 | Expert agent society | current | `03-expert-mentor-mesh.md` | `expert-mentor-mesh.svg` | current |
 | F3 | Executable knowledge | `F3-executable-knowledge-2026.md` | `07-executable-knowledge.md` | `executable-knowledge-loop.svg` | current |
