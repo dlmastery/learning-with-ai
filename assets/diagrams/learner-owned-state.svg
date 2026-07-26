@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Learner-owned state architecture</title>
+  <desc id="desc">Learning events from speech, work, practice, projects, and human observations flow into an append-only evidence ledger. Recomputable estimates for mastery, misconceptions, retention, transfer, and support needs include confidence and expiry. A teaching router proposes the next action. Learners, teachers, and families can inspect and correct the state.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFDF7"/>
+      <stop offset="1" stop-color="#ECF8F6"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#172554" flood-opacity=".14"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#64748B"/>
+    </marker>
+    <style>
+      .h1{font:800 34px Inter,Arial,sans-serif;fill:#172554}
+      .h2{font:800 20px Inter,Arial,sans-serif;fill:#172554}
+      .body{font:500 15px Inter,Arial,sans-serif;fill:#334155}
+      .small{font:600 13px Inter,Arial,sans-serif;fill:#475569}
+      .pill{font:700 14px Inter,Arial,sans-serif;fill:#17324A}
+      .link{fill:none;stroke:#64748B;stroke-width:3;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="820" rx="30" fill="url(#bg)"/>
+  <text x="60" y="62" class="h1">The learner model is a living hypothesis—not a permanent label</text>
+  <text x="60" y="94" class="body">Keep observations separate from estimates. Attach evidence, uncertainty, expiry, and a correction path to every inference.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="55" y="145" width="255" height="510" rx="26" fill="#FFFFFF" stroke="#93C5FD" stroke-width="2"/>
+    <text x="182" y="184" text-anchor="middle" class="h2">LEARNING EVIDENCE</text>
+    <text x="182" y="208" text-anchor="middle" class="small">append-only observations</text>
+    <rect x="86" y="240" width="193" height="52" rx="16" fill="#DBEAFE"/>
+    <text x="182" y="272" text-anchor="middle" class="pill">spoken explanation</text>
+    <rect x="86" y="307" width="193" height="52" rx="16" fill="#DBEAFE"/>
+    <text x="182" y="339" text-anchor="middle" class="pill">worked steps + errors</text>
+    <rect x="86" y="374" width="193" height="52" rx="16" fill="#DBEAFE"/>
+    <text x="182" y="406" text-anchor="middle" class="pill">retrieval + latency</text>
+    <rect x="86" y="441" width="193" height="52" rx="16" fill="#DBEAFE"/>
+    <text x="182" y="473" text-anchor="middle" class="pill">project + transfer</text>
+    <rect x="86" y="508" width="193" height="52" rx="16" fill="#DBEAFE"/>
+    <text x="182" y="540" text-anchor="middle" class="pill">self-report + goals</text>
+    <rect x="86" y="575" width="193" height="52" rx="16" fill="#DBEAFE"/>
+    <text x="182" y="607" text-anchor="middle" class="pill">teacher observation</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="390" y="145" width="420" height="510" rx="26" fill="#FFFFFF" stroke="#2DD4BF" stroke-width="2"/>
+    <text x="600" y="184" text-anchor="middle" class="h2">RECOMPUTABLE LEARNER STATE</text>
+    <text x="600" y="208" text-anchor="middle" class="small">each estimate has confidence + evidence + expiry</text>
+    <rect x="425" y="240" width="340" height="68" rx="17" fill="#CCFBF1"/>
+    <text x="452" y="269" class="h2">Concept mastery</text>
+    <text x="452" y="292" class="small">by goal, representation, and context</text>
+    <rect x="425" y="323" width="340" height="68" rx="17" fill="#DFF6EF"/>
+    <text x="452" y="352" class="h2">Misconception hypotheses</text>
+    <text x="452" y="375" class="small">error pattern, alternatives, next probe</text>
+    <rect x="425" y="406" width="340" height="68" rx="17" fill="#E7F4DD"/>
+    <text x="452" y="435" class="h2">Retention state</text>
+    <text x="452" y="458" class="small">stability, retrievability, review window</text>
+    <rect x="425" y="489" width="340" height="68" rx="17" fill="#FFF0CC"/>
+    <text x="452" y="518" class="h2">Transfer + independence</text>
+    <text x="452" y="541" class="small">novel contexts and scaffold level</text>
+    <rect x="425" y="572" width="340" height="55" rx="17" fill="#F3E8FF"/>
+    <text x="452" y="606" class="h2">Language + access preferences</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="890" y="145" width="255" height="320" rx="26" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2"/>
+    <text x="1017" y="184" text-anchor="middle" class="h2">TEACHING ROUTER</text>
+    <text x="1017" y="208" text-anchor="middle" class="small">proposes—not dictates</text>
+    <rect x="922" y="240" width="191" height="48" rx="15" fill="#FEF3C7"/>
+    <text x="1017" y="270" text-anchor="middle" class="pill">next concept</text>
+    <rect x="922" y="300" width="191" height="48" rx="15" fill="#FEF3C7"/>
+    <text x="1017" y="330" text-anchor="middle" class="pill">teaching mode</text>
+    <rect x="922" y="360" width="191" height="48" rx="15" fill="#FEF3C7"/>
+    <text x="1017" y="390" text-anchor="middle" class="pill">review or transfer</text>
+    <text x="1017" y="438" text-anchor="middle" class="small">explains why this action fits</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="890" y="505" width="255" height="150" rx="26" fill="#FFFFFF" stroke="#A78BFA" stroke-width="2"/>
+    <text x="1017" y="544" text-anchor="middle" class="h2">HUMAN CORRECTION</text>
+    <text x="1017" y="577" text-anchor="middle" class="body">learner • teacher • family</text>
+    <text x="1017" y="604" text-anchor="middle" class="small">inspect • annotate • contest</text>
+    <text x="1017" y="628" text-anchor="middle" class="small">share • export • delete</text>
+  </g>
+
+  <path d="M310 400L390 400" class="link"/>
+  <path d="M810 310L890 310" class="link"/>
+  <path d="M1017 505L1017 465" class="link"/>
+  <path d="M890 580C842 580 852 610 810 610" class="link"/>
+  <path d="M182 655C182 720 600 735 600 655" class="link"/>
+
+  <rect x="270" y="704" width="660" height="60" rx="20" fill="#172554"/>
+  <text x="600" y="730" text-anchor="middle" style="font:800 17px Inter,Arial,sans-serif;fill:#FFFFFF">LEARNER CUSTODY + PORTABLE SYNC</text>
+  <text x="600" y="753" text-anchor="middle" style="font:500 14px Inter,Arial,sans-serif;fill:#DCE7F5">local-first • permissioned views • conflict-safe merge • model-independent export</text>
+  <path d="M600 704L600 655" class="link"/>
+</svg>

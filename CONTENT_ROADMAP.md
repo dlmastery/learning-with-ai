@@ -19,7 +19,7 @@ destination, primary-source links, and at least one meaningful visual.
 | B2 | AI tutoring efficacy | `B2-efficacy-frontier-2026.md` | `04-efficacy-frontier.md` | `evidence-frontier-2026.svg` | current |
 | C1 | Illustration and diagrams | — | — | visual-verification pipeline | queued |
 | C2 | Generated assessment | — | — | validity pipeline | queued |
-| C3 | Learner modeling | — | — | state and uncertainty model | queued |
+| C3 | Learner modeling | `C3-F5-learner-owned-state-2026.md` | `06-learner-owned-state.md` | `learner-owned-state.svg` | current |
 | D1 | Frontier model advances | current | `01-central-finding.md` | evidence frontier | current |
 | D2 | Portfolio validation | existing; refresh needed | examples destination pending | portfolio coverage matrix | refresh |
 | E1 | 2026 market frontier | — | — | capability landscape | queued |
@@ -28,7 +28,7 @@ destination, primary-source links, and at least one meaningful visual.
 | F2 | Expert agent society | current | `03-expert-mentor-mesh.md` | `expert-mentor-mesh.svg` | current |
 | F3 | Executable knowledge | — | — | grounding ladder | queued |
 | F4 | Reach and economics | current | integrated in `01` | `three-tier-delivery.svg` | current |
-| F5 | Lifelong learner model | existing; refresh needed | — | learner-owned state ledger | refresh |
+| F5 | Lifelong learner model | current with C3 | `06-learner-owned-state.md` | `learner-owned-state.svg` | current |
 | F6 | Motivation | existing; refresh needed | — | persistence flywheel | refresh |
 | F7 | Embodiment | — | — | screen-to-world continuum | queued |
 | F8 | Safety and children | — | — | human escalation architecture | queued |
