@@ -40,6 +40,7 @@ language, community, device tier, and learning environment.*
 14. [One concept at four depths](survey/13-one-concept-four-depths.md)
 15. [The memory that compounds](survey/14-the-memory-that-compounds.md)
 16. [Compassionate persistence](survey/15-compassionate-persistence.md)
+17. [From motion to intervention](survey/16-from-motion-to-intervention.md)
 
 ## North star
 
