@@ -156,7 +156,8 @@ Both groups receive the same:
 - human escalation;
 - delayed no-AI transfer probe.
 
-Primary outcome: delayed independent transfer.  
+Primary outcome: delayed independent transfer.
+
 Secondary: mastery efficiency, hint dependence, frustration, and next-session
 retrieval.
 

@@ -358,9 +358,11 @@ Both groups receive:
 - human escalation;
 - a delayed no-AI transfer probe.
 
-Primary outcome: delayed independent transfer.  
+Primary outcome: delayed independent transfer.
+
 Secondary: mastery efficiency, frustration, hint dependence, and next-session
-retrieval.  
+retrieval.
+
 Analysis: intention-to-treat, learner-clustered uncertainty, concept and center
 effects, preregistered exclusions.
 
