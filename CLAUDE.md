@@ -193,10 +193,10 @@ for a 400–500 word executive summary as the final message.
 
 The filesystem and commit history are authoritative. Current state:
 
-- **11 raw research documents** covering A2, A4, A5, B1, D1 (quarter report plus
-  frontier supplement), D2, F1, F4, F5, and F6.
-- **3 survey/synthesis sections**: the universal-mentor north star, the central
-  frontier finding, and the teach-to-learn architecture.
+- **12 raw research documents** covering A2, A4, A5, B1, D1 (quarter report plus
+  frontier supplement), D2, F1, the rebuilt F2, F4, F5, and F6.
+- **4 survey/synthesis sections**: the universal-mentor north star, the central
+  frontier finding, teach/build/collaborate, and the expert mentor mesh.
 - **A current frontier supplement** with 44 primary/current sources covering
   GPT-5.6, GPT-Live, Gemini Study Notebooks, Claude 5, open/edge models,
   multilingual speech, current deployments, and 2026 tutoring research.
@@ -206,16 +206,16 @@ The filesystem and commit history are authoritative. Current state:
   the hardened DGX/Sunshine installer.
 
 Removed as superseded: the old F2 report organized around AI-learning harm, and
-the incomplete F11 draft that inherited the same framing. F2 must be researched
-again from a July 2026 agent-society perspective; F11 remains planned but should
-focus constructively on how an AI mentor compounds understanding into long-term
-mastery.
+the incomplete F11 draft that inherited the same framing. F2 has now been
+rebuilt from a July 2026 agent-society perspective; F11 remains planned and
+should focus constructively on how an AI mentor compounds understanding into
+long-term mastery.
 
-Remaining raw sections include A1, A3, B2, C1–C3, E1–E2, F2–F3, F7–F11, H1,
+Remaining raw sections include A1, A3, B2, C1–C3, E1–E2, F3, F7–F11, H1,
 and G2/G3. The `evidence/` and `examples/` directories described in the planned
 layout have not yet landed.
 
-**Next committed workstream:** F2/G2, the universal mentor mesh and agent society:
-how a learner can access a coordinated team of certified subject experts,
-language mentors, visual teachers, practice coaches, and human escalation on
-low-cost, offline-first infrastructure.
+**Next committed workstream:** B2, a frontier-first efficacy map that treats the
+Sierra Leone, Nigeria, India, Peru, July 2026 knowledge-acquisition, skills-gap,
+and multi-agent results as the starting portfolio and asks how to reproduce the
+largest gains for learners furthest behind.
