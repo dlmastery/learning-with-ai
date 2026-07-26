@@ -7,6 +7,11 @@ date: 2026-07-25
 
 # Teach, Build, and Collaborate
 
+![A circular learning loop in which a learner creates, verifies, teaches, defends, revises, and transfers](../assets/diagrams/teach-build-collaborate.svg)
+
+*AI contributes audiences, alternative strategies, tools, and expert checks.
+The learner contributes the judgment—and demonstrates mastery through transfer.*
+
 One of the most powerful uses of AI is to give every learner an attentive
 audience, a curious student, a project partner, and a panel of peers.
 

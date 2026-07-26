@@ -3,6 +3,11 @@
 A survey of how frontier AI changes the way humans learn complex things — and a
 working set of dynamic, multimodal learning apps built on its conclusions.
 
+![Learners around the world using books, experiments, shared devices, and an ambient AI mentor](assets/illustrations/universal-mentor-world-hero.png)
+
+*The north star: world-class expert mentorship should be available in every
+language, community, device tier, and learning environment.*
+
 **Status:** in progress, built incrementally. Sections land as their research wave completes.
 
 ## Structure
@@ -14,6 +19,16 @@ working set of dynamic, multimodal learning apps built on its conclusions.
 | `research/` | Raw agent research reports, verbatim |
 | `apps/` | Dynamic per-concept learning mini-apps |
 | `examples/` | Worked zero-to-hero artifacts |
+| [`CONTENT_ROADMAP.md`](CONTENT_ROADMAP.md) | PRD-wide research, writing, and illustration tracker |
+| [`assets/`](assets/) | Editorial illustrations, technical diagrams, and visual provenance |
+
+## Survey chapters
+
+1. [A world-class AI mentor for every learner](survey/00-north-star-jarvis.md)
+2. [The frontier has crossed](survey/01-central-finding.md)
+3. [Teach, build, and collaborate](survey/02-teach-to-learn.md)
+4. [The expert mentor mesh](survey/03-expert-mentor-mesh.md)
+5. [The efficacy frontier](survey/04-efficacy-frontier.md)
 
 ## North star
 

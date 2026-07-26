@@ -7,6 +7,11 @@ date: 2026-07-25
 
 # The Expert Mentor Mesh
 
+![Architecture of a learner-facing mentor coordinating specialist agents through a learner-owned state ledger](../assets/diagrams/expert-mentor-mesh.svg)
+
+*One coherent relationship in front; a role-tested faculty and inspectable
+learner-owned memory behind it.*
+
 The universal AI mentor should feel like one relationship and operate like a
 whole faculty.
 
@@ -45,6 +50,11 @@ The technical stack now matches the research direction:
   role-specialized, inspectable evaluation of educational content. `MEASURED-BENCH`
 
 ## The architecture
+
+![Three-tier delivery architecture connecting the learner device, school or community infrastructure, regional cloud, and trusted humans](../assets/diagrams/three-tier-delivery.svg)
+
+*The same mentor should degrade gracefully from cloud-rich operation to
+local-first, delay-tolerant service without losing the human support layer.*
 
 ```text
 learner ↔ mentor/conductor

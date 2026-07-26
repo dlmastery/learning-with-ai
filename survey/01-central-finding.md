@@ -7,6 +7,11 @@ date: 2026-07-25
 
 # The Frontier Has Crossed
 
+![Six cards summarizing the July 2026 evidence frontier for AI-supported learning](../assets/diagrams/evidence-frontier-2026.svg)
+
+*The studies use different populations, subjects, durations, and outcome
+measures; together they establish a portfolio of positive learning signals.*
+
 The central finding of this survey is optimistic and actionable:
 
 > Frontier AI can already deliver meaningful personalized learning, and the

@@ -7,6 +7,11 @@ date: 2026-07-25
 
 # A World-Class AI Mentor for Every Learner
 
+![A panorama of learners in varied global settings creating and experimenting with support from an ambient AI mentor](../assets/illustrations/universal-mentor-world-hero.png)
+
+*One mentor relationship, rooted in the learner’s place and culture, with the
+reach of a global faculty.*
+
 The north star is simple enough for a child to understand:
 
 > Wherever you are, whatever language you speak, however much money your family
