@@ -47,6 +47,7 @@ language, community, device tier, and learning environment.*
 21. [Safe enough to be free](survey/20-safe-enough-to-be-free.md)
 22. [From product use to learning evidence](survey/21-lessonorca-evidence-loop.md)
 23. [The market is a stack](survey/22-the-market-is-a-stack.md)
+24. [The union is the product](survey/23-the-union-is-the-product.md)
 
 ## North star
 

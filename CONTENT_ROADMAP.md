@@ -21,7 +21,7 @@ destination, primary-source links, and at least one meaningful visual.
 | C2 | Generated assessment | `C2-generated-assessment-validity-2026.md` | `12-assessment-as-evidence-stream.md` | `assessment-validity-pipeline.svg` | current |
 | C3 | Learner modeling | `C3-F5-learner-owned-state-2026.md` | `06-learner-owned-state.md` | `learner-owned-state.svg` | current |
 | D1 | Frontier model advances | current | `01-central-finding.md` | evidence frontier | current |
-| D2 | Portfolio validation | existing; refresh needed | examples destination pending | portfolio coverage matrix | refresh |
+| D2 | Portfolio validation | `D2-G3-portfolio-comparison-2026.md` + source audit | `23-the-union-is-the-product.md` | `portfolio-coverage-matrix.svg` | current |
 | E1 | 2026 market frontier | `E1-market-frontier-2026.md` | `22-the-market-is-a-stack.md` | `market-capability-landscape-2026.svg` | current |
 | E2 | LessonOrca evidence | `E2-lessonorca-evidence-program-2026.md` | `21-lessonorca-evidence-loop.md` | `lessonorca-evidence-loop.svg` | current |
 | F1 | Assessment reconstruction | existing; refresh needed | — | assessment assurance ladder | refresh |
@@ -38,7 +38,7 @@ destination, primary-source links, and at least one meaningful visual.
 | H1 | Accessibility/SELPA first | `H1-accessibility-first-mentor-2026.md` | `19-designed-from-the-margin.md` | `accessibility-first-pivot-loop.svg` | current |
 | G1 | Grounding ladder | `G1-grounding-ladder-2026.md` | `05-grounding-ladder.md` | `grounding-ladder.svg` | current |
 | G2 | Reference architecture | F2/F4 seed | `03-expert-mentor-mesh.md` | mentor mesh + delivery tiers | active |
-| G3 | Comparative projects | D2 seed | — | comparison matrix | queued |
+| G3 | Comparative projects | `D2-G3-portfolio-comparison-2026.md` | `23-the-union-is-the-product.md` | `portfolio-coverage-matrix.svg` | current |
 | G4 | Research agenda | — | — | priority/uncertainty map | queued |
 
 ## Incremental build order

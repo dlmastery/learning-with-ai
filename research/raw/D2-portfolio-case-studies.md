@@ -3,9 +3,16 @@ title: "Case Studies from an Existing Practitioner Portfolio (dlmastery)"
 wave: D
 date_researched: 2026-07-25
 sources_count: 78
+status: source-audit
+synthesis: D2-G3-portfolio-comparison-2026.md
 ---
 
 # Case Studies from an Existing Practitioner Portfolio
+
+> **Source-audit note:** This detailed forensic record is retained as primary
+> portfolio evidence. Its current constructive synthesis and comparison against
+> the July 2026 reference standard is
+> [D2-G3-portfolio-comparison-2026.md](D2-G3-portfolio-comparison-2026.md).
 
 **Subject:** GitHub user `dlmastery` (eranti@gmail.com), ~60 repositories (35+ active), 9 live deployed
 apps inspected. All evidence below is first-hand: authenticated `gh api` reads (including private repos),

@@ -69,3 +69,4 @@ Prompt:
 | `diagrams/human-escalation-architecture.svg` | Keep learning open → gate consequential action → trained local review → minimum-necessary escalation |
 | `diagrams/lessonorca-evidence-loop.svg` | Product surfaces → privacy-separated events → policy test → human review → verified learning claim |
 | `diagrams/market-capability-landscape-2026.svg` | Shipped, emerging, and build-frontier layers of the July 2026 universal-mentor market |
+| `diagrams/portfolio-coverage-matrix.svg` | Complementary existence proofs across current projects → one composed mentor |
