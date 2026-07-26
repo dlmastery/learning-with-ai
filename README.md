@@ -46,6 +46,7 @@ language, community, device tier, and learning environment.*
 20. [Designed from the margin](survey/19-designed-from-the-margin.md)
 21. [Safe enough to be free](survey/20-safe-enough-to-be-free.md)
 22. [From product use to learning evidence](survey/21-lessonorca-evidence-loop.md)
+23. [The market is a stack](survey/22-the-market-is-a-stack.md)
 
 ## North star
 
