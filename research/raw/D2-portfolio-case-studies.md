@@ -3,9 +3,16 @@ title: "Case Studies from an Existing Practitioner Portfolio (dlmastery)"
 wave: D
 date_researched: 2026-07-25
 sources_count: 78
+status: source-audit
+synthesis: D2-G3-portfolio-comparison-2026.md
 ---
 
 # Case Studies from an Existing Practitioner Portfolio
+
+> **Source-audit note:** This detailed forensic record is retained as primary
+> portfolio evidence. Its current constructive synthesis and comparison against
+> the July 2026 reference standard is
+> [D2-G3-portfolio-comparison-2026.md](D2-G3-portfolio-comparison-2026.md).
 
 **Subject:** GitHub user `dlmastery` (eranti@gmail.com), ~60 repositories (35+ active), 9 live deployed
 apps inspected. All evidence below is first-hand: authenticated `gh api` reads (including private repos),
@@ -509,10 +516,11 @@ sampled notebooks:
 ```
 
 The design is **explanation + demonstration + verification-by-the-author**. The learner reads and runs;
-the learner is never asked to produce anything. The skill's own success criterion confirms this:
-*"a student can narrate every cell in a 1-hour video."* That is a **fluency illusion** target, not a
-mastery target. Re-reading and worked examples produce high confidence and poor retention; the corpus
-optimises exactly for that.
+the learner is rarely asked to produce anything. The skill's success criterion—
+*"a student can narrate every cell in a 1-hour video"*—is a strong explanation and
+understanding target. The next layer should add learner production, transfer
+challenges, and scheduled recall so that this excellent explanatory base compounds
+into independent mastery.
 
 Practice exists only in two dedicated, separate notebooks:
 

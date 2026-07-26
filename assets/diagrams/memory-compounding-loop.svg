@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Scientific remembering as a memory-compounding loop</title>
+  <desc id="desc">Meaningful encoding flows into effortful retrieval, immediate feedback and repair, varied transfer, and an adaptive spacing scheduler. Retrieval evidence updates difficulty, stability, and retrievability while concept connections grow, so remembering supports reasoning rather than isolated recall.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07152f"/><stop offset="1" stop-color="#143c5b"/></linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#020914" flood-opacity=".5"/></filter>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#77dfcb"/></marker>
+    <style>
+      .h{font:700 34px Inter,Segoe UI,sans-serif;fill:#f8fbff}.sub{font:400 17px Inter,Segoe UI,sans-serif;fill:#bed0e3}
+      .k{font:700 12px Inter,Segoe UI,sans-serif;letter-spacing:1.1px;fill:#83ead6}.t{font:700 20px Inter,Segoe UI,sans-serif;fill:#f8fbff}
+      .b{font:400 14px Inter,Segoe UI,sans-serif;fill:#d9e6f1}.dark{font:700 19px Inter,Segoe UI,sans-serif;fill:#112942}.ds{font:400 14px Inter,Segoe UI,sans-serif;fill:#33516d}
+    </style>
+  </defs>
+  <rect width="1200" height="850" rx="34" fill="url(#bg)"/>
+  <text x="65" y="68" class="h">Remembering compounds when every retrieval changes the next one</text>
+  <text x="65" y="102" class="sub">Schedule recall, repair errors, vary the context, and reconnect facts to models, skills, and transfer.</text>
+
+  <g filter="url(#s)">
+    <rect x="80" y="175" width="215" height="155" rx="24" fill="#173e66" stroke="#5187b4"/>
+    <text x="104" y="210" class="k">01 · ENCODE</text><text x="104" y="246" class="t">Meaningful model</text>
+    <text x="104" y="276" class="b">explain · generate · locate</text><text x="104" y="301" class="b">connect · choose cue</text>
+    <rect x="355" y="175" width="215" height="155" rx="24" fill="#164357" stroke="#55a59a"/>
+    <text x="379" y="210" class="k">02 · RETRIEVE</text><text x="379" y="246" class="t">Effort before answer</text>
+    <text x="379" y="276" class="b">recall · reconstruct · solve</text><text x="379" y="301" class="b">predict · demonstrate</text>
+    <rect x="630" y="175" width="215" height="155" rx="24" fill="#164357" stroke="#55a59a"/>
+    <text x="654" y="210" class="k">03 · REPAIR</text><text x="654" y="246" class="t">Fast grounded feedback</text>
+    <text x="654" y="276" class="b">compare · explain error</text><text x="654" y="301" class="b">update cue and model</text>
+    <rect x="905" y="175" width="215" height="155" rx="24" fill="#3b2d46" stroke="#c28ed0"/>
+    <text x="929" y="210" class="k" fill="#e7b4f3">04 · VARY</text><text x="929" y="246" class="t">Transfer the memory</text>
+    <text x="929" y="276" class="b">new context · modality</text><text x="929" y="301" class="b">application · edge case</text>
+  </g>
+  <path d="M295 252 H346" stroke="#77dfcb" stroke-width="4" marker-end="url(#a)"/><path d="M570 252 H621" stroke="#77dfcb" stroke-width="4" marker-end="url(#a)"/><path d="M845 252 H896" stroke="#77dfcb" stroke-width="4" marker-end="url(#a)"/>
+
+  <g filter="url(#s)">
+    <rect x="335" y="438" width="530" height="182" rx="28" fill="#fffdf7"/>
+    <text x="375" y="478" class="k" fill="#157268">ADAPTIVE SPACING ENGINE</text>
+    <text x="375" y="517" class="dark">Difficulty · Stability · Retrievability</text>
+    <text x="375" y="551" class="ds">Choose the next interval and the next retrieval form</text>
+    <text x="375" y="580" class="ds">Target retention is a workload choice—not a score of intelligence</text>
+  </g>
+  <path d="M1012 330 V377 Q1012 397 992 397 H620 Q600 397 600 429" fill="none" stroke="#ffc857" stroke-width="4" marker-end="url(#a)"/>
+  <path d="M474 438 V397 Q474 377 454 377 H188 Q168 377 168 339" fill="none" stroke="#ffc857" stroke-width="4" marker-end="url(#a)"/>
+
+  <g>
+    <circle cx="219" cy="718" r="41" fill="#1c5570" stroke="#73cbbb"/><circle cx="339" cy="682" r="35" fill="#1c5570" stroke="#73cbbb"/>
+    <circle cx="458" cy="726" r="45" fill="#1c5570" stroke="#73cbbb"/><circle cx="587" cy="677" r="39" fill="#1c5570" stroke="#73cbbb"/>
+    <circle cx="715" cy="722" r="44" fill="#1c5570" stroke="#73cbbb"/><circle cx="843" cy="682" r="36" fill="#1c5570" stroke="#73cbbb"/>
+    <circle cx="968" cy="718" r="42" fill="#1c5570" stroke="#73cbbb"/>
+    <path d="M252 699 L307 690 M373 694 L419 712 M501 709 L550 691 M624 691 L676 711 M756 710 L812 694 M878 694 L929 708 M339 682 L458 726 M587 677 L715 722 M715 722 L843 682" stroke="#ffc857" stroke-width="4"/>
+    <text x="422" y="804" class="t">A connected knowledge structure—not a pile of cards</text>
+  </g>
+</svg>

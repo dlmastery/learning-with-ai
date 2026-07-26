@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">The L0 to L4 grounding ladder for an expert AI mentor</title>
+  <desc id="desc">Five stacked levels define what evidence a mentor claim needs: L0 visibly generated, L1 source-attested, L2 tool-checked, L3 measurement-checked, and L4 human-authorized. A side panel lists the evidence record stored for each claim.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFDF7"/>
+      <stop offset="1" stop-color="#EAF4F6"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#172554" flood-opacity=".13"/>
+    </filter>
+    <style>
+      .title{font:800 34px Inter,Arial,sans-serif;fill:#172554}
+      .subtitle{font:500 17px Inter,Arial,sans-serif;fill:#475569}
+      .level{font:850 28px Inter,Arial,sans-serif;fill:#fff}
+      .name{font:800 21px Inter,Arial,sans-serif;fill:#172554}
+      .body{font:500 15px Inter,Arial,sans-serif;fill:#334155}
+      .gate{font:700 14px Inter,Arial,sans-serif;fill:#0F3C46}
+      .record{font:600 15px Inter,Arial,sans-serif;fill:#334155}
+    </style>
+  </defs>
+  <rect width="1200" height="820" rx="30" fill="url(#bg)"/>
+  <text x="60" y="62" class="title">The grounding ladder: use the lightest evidence that fits the claim</text>
+  <text x="60" y="94" class="subtitle">Higher is not “smarter.” Each level changes what the mentor may assert and what evidence it must preserve.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="140" width="700" height="105" rx="22" fill="#F8FAFC" stroke="#A78BFA" stroke-width="2"/>
+    <rect x="70" y="140" width="105" height="105" rx="22" fill="#7C3AED"/>
+    <path d="M153 140h22v105h-22z" fill="#7C3AED"/>
+    <text x="122" y="202" text-anchor="middle" class="level">L0</text>
+    <text x="205" y="177" class="name">VISIBLY GENERATED</text>
+    <text x="205" y="205" class="body">stories • analogies • practice variants • speculative ideas</text>
+    <text x="205" y="229" class="gate">GATE: mark as generated; do not present invention as evidence</text>
+
+    <rect x="70" y="260" width="700" height="105" rx="22" fill="#F8FAFC" stroke="#60A5FA" stroke-width="2"/>
+    <rect x="70" y="260" width="105" height="105" rx="22" fill="#2563EB"/>
+    <path d="M153 260h22v105h-22z" fill="#2563EB"/>
+    <text x="122" y="322" text-anchor="middle" class="level">L1</text>
+    <text x="205" y="297" class="name">SOURCE-ATTESTED</text>
+    <text x="205" y="325" class="body">facts • quotations • curriculum claims • current information</text>
+    <text x="205" y="349" class="gate">GATE: claim-level source span, authority, date, scope, and version</text>
+
+    <rect x="70" y="380" width="700" height="105" rx="22" fill="#F8FAFC" stroke="#2DD4BF" stroke-width="2"/>
+    <rect x="70" y="380" width="105" height="105" rx="22" fill="#0F766E"/>
+    <path d="M153 380h22v105h-22z" fill="#0F766E"/>
+    <text x="122" y="442" text-anchor="middle" class="level">L2</text>
+    <text x="205" y="417" class="name">TOOL-CHECKED</text>
+    <text x="205" y="445" class="body">calculation • code • formal proof • unit and constraint checks</text>
+    <text x="205" y="469" class="gate">GATE: record tool, version, input, output, and pass condition</text>
+
+    <rect x="70" y="500" width="700" height="105" rx="22" fill="#F8FAFC" stroke="#F59E0B" stroke-width="2"/>
+    <rect x="70" y="500" width="105" height="105" rx="22" fill="#D97706"/>
+    <path d="M153 500h22v105h-22z" fill="#D97706"/>
+    <text x="122" y="562" text-anchor="middle" class="level">L3</text>
+    <text x="205" y="537" class="name">MEASUREMENT-CHECKED</text>
+    <text x="205" y="565" class="body">experiment • sensor • dataset • validated simulation or world model</text>
+    <text x="205" y="589" class="gate">GATE: preserve provenance, parameters, uncertainty, and validity domain</text>
+
+    <rect x="70" y="620" width="700" height="105" rx="22" fill="#F8FAFC" stroke="#F87171" stroke-width="2"/>
+    <rect x="70" y="620" width="105" height="105" rx="22" fill="#B91C1C"/>
+    <path d="M153 620h22v105h-22z" fill="#B91C1C"/>
+    <text x="122" y="682" text-anchor="middle" class="level">L4</text>
+    <text x="205" y="657" class="name">HUMAN-AUTHORIZED</text>
+    <text x="205" y="685" class="body">child welfare • diagnosis • IEP • credential • consequential decision</text>
+    <text x="205" y="709" class="gate">GATE: named accountable person, consent, rationale, and appeal path</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="815" y="140" width="320" height="585" rx="26" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+    <text x="855" y="185" class="name">CLAIM EVIDENCE RECORD</text>
+    <text x="855" y="218" class="record">claim text + stable ID</text>
+    <text x="855" y="251" class="record">required tier / achieved tier</text>
+    <text x="855" y="284" class="record">source spans + authority</text>
+    <text x="855" y="317" class="record">tool + version + parameters</text>
+    <text x="855" y="350" class="record">input / output hashes</text>
+    <text x="855" y="383" class="record">uncertainty + validity scope</text>
+    <text x="855" y="416" class="record">model + policy version</text>
+    <text x="855" y="449" class="record">checked at + expires at</text>
+    <text x="855" y="482" class="record">learner-visible explanation</text>
+    <text x="855" y="515" class="record">human authorization if L4</text>
+    <line x1="855" y1="548" x2="1095" y2="548" stroke="#CBD5E1" stroke-width="2"/>
+    <text x="855" y="584" style="font:800 17px Inter,Arial,sans-serif;fill:#0F766E">ROUTER RULE</text>
+    <text x="855" y="616" class="body">If achieved tier is lower than</text>
+    <text x="855" y="640" class="body">required tier: retrieve, call a</text>
+    <text x="855" y="664" class="body">tool, measure, escalate—or say</text>
+    <text x="855" y="688" style="font:800 18px Inter,Arial,sans-serif;fill:#B91C1C">“not yet verified.”</text>
+  </g>
+
+  <text x="600" y="777" text-anchor="middle" class="subtitle">
+    Grounding establishes what supports a claim. Pedagogy still decides when and how to teach it.
+  </text>
+</svg>

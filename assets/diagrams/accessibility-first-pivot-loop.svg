@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="940" viewBox="0 0 1400 940" role="img" aria-labelledby="title desc">
+  <title id="title">Accessibility-first tutoring pivot loop</title>
+  <desc id="desc">A loop preserves an ambitious learning goal while observing learner-selected evidence, composing access supports, teaching a verified method, probing privately, and deciding whether to continue, fade, pivot, or escalate to a human. Curb-cut benefits such as captions, visible steps, self-pacing, multiple representations, and offline resume help every learner.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFDF7"/>
+      <stop offset="1" stop-color="#EFF6FF"/>
+    </linearGradient>
+    <linearGradient id="goal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#172554"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#172554" flood-opacity=".12"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
+    </marker>
+    <marker id="amberArrow" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/>
+    </marker>
+    <style>
+      .label { font-family: Inter, Arial, sans-serif; fill: #172554; }
+      .small { font-family: Inter, Arial, sans-serif; fill: #475569; font-size: 19px; }
+      .node-title { font-family: Inter, Arial, sans-serif; fill: #172554; font-size: 25px; font-weight: 700; }
+      .node-copy { font-family: Inter, Arial, sans-serif; fill: #334155; font-size: 18px; }
+      .pill { font-family: Inter, Arial, sans-serif; fill: #172554; font-size: 18px; font-weight: 650; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="940" rx="30" fill="url(#bg)"/>
+  <text x="700" y="58" text-anchor="middle" class="label" font-size="34" font-weight="800">ACCESSIBILITY-FIRST MENTOR</text>
+  <text x="700" y="91" text-anchor="middle" class="small">Preserve the goal · change the access path · let evidence drive the next move</text>
+
+  <rect x="265" y="122" width="870" height="96" rx="24" fill="url(#goal)" filter="url(#shadow)"/>
+  <text x="700" y="162" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="800" fill="#FFFFFF">AMBITIOUS LEARNING GOAL</text>
+  <text x="700" y="194" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="19" fill="#DBEAFE">Same concept, equivalent access, learner and family authority</text>
+
+  <path d="M700 219 L700 257" stroke="#2563EB" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <rect x="70" y="264" width="330" height="146" rx="22" fill="#FFFFFF" stroke="#93C5FD" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="112" cy="307" r="23" fill="#DBEAFE"/>
+  <text x="112" y="315" text-anchor="middle" class="label" font-size="22" font-weight="800">1</text>
+  <text x="148" y="312" class="node-title">Observe</text>
+  <text x="102" y="349" class="node-copy">Learner-selected evidence</text>
+  <text x="102" y="378" class="node-copy">prerequisites · access · effort</text>
+
+  <rect x="535" y="264" width="330" height="146" rx="22" fill="#FFFFFF" stroke="#5EEAD4" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="577" cy="307" r="23" fill="#CCFBF1"/>
+  <text x="577" y="315" text-anchor="middle" class="label" font-size="22" font-weight="800">2</text>
+  <text x="613" y="312" class="node-title">Compose access</text>
+  <text x="567" y="349" class="node-copy">Channels + visible scaffolds</text>
+  <text x="567" y="378" class="node-copy">chosen, correctable, expiring</text>
+
+  <rect x="1000" y="264" width="330" height="146" rx="22" fill="#FFFFFF" stroke="#FCD34D" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="1042" cy="307" r="23" fill="#FEF3C7"/>
+  <text x="1042" y="315" text-anchor="middle" class="label" font-size="22" font-weight="800">3</text>
+  <text x="1078" y="312" class="node-title">Teach faithfully</text>
+  <text x="1032" y="349" class="node-copy">Verified method + dosage</text>
+  <text x="1032" y="378" class="node-copy">surface adapts, sequence holds</text>
+
+  <path d="M401 337 C452 337 482 337 531 337" fill="none" stroke="#2563EB" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M866 337 C917 337 947 337 996 337" fill="none" stroke="#2563EB" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <rect x="840" y="494" width="330" height="146" rx="22" fill="#FFFFFF" stroke="#93C5FD" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="882" cy="537" r="23" fill="#DBEAFE"/>
+  <text x="882" y="545" text-anchor="middle" class="label" font-size="22" font-weight="800">4</text>
+  <text x="918" y="542" class="node-title">Probe privately</text>
+  <text x="872" y="579" class="node-copy">Brief accessible performance</text>
+  <text x="872" y="608" class="node-copy">strategy · error · self-report</text>
+  <path d="M1130 412 C1130 447 1090 466 1065 490" fill="none" stroke="#2563EB" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <rect x="230" y="494" width="430" height="146" rx="22" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="272" cy="537" r="23" fill="#EDE9FE"/>
+  <text x="272" y="545" text-anchor="middle" class="label" font-size="22" font-weight="800">5</text>
+  <text x="308" y="542" class="node-title">Decide by rule</text>
+  <text x="262" y="579" class="node-copy">Continue · fade · pivot · escalate</text>
+  <text x="262" y="608" class="node-copy">minimum evidence window, not vibes</text>
+  <path d="M836 568 L665 568" fill="none" stroke="#2563EB" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <rect x="70" y="702" width="520" height="126" rx="22" fill="#FFF7ED" stroke="#FDBA74" stroke-width="3"/>
+  <text x="105" y="744" class="node-title" fill="#9A3412">PIVOT METHOD — NOT WORD COUNT</text>
+  <text x="105" y="779" class="node-copy">access → memory → representation → prerequisite</text>
+  <text x="105" y="808" class="node-copy">→ explicit method → pacing/dosage</text>
+  <path d="M352 642 C350 666 343 681 332 698" fill="none" stroke="#D97706" stroke-width="5" marker-end="url(#amberArrow)"/>
+  <path d="M590 766 C700 766 726 703 726 645 C726 515 640 461 574 414" fill="none" stroke="#D97706" stroke-width="5" stroke-dasharray="12 10" marker-end="url(#amberArrow)"/>
+
+  <rect x="810" y="702" width="520" height="126" rx="22" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="3"/>
+  <text x="845" y="744" class="node-title" fill="#065F46">HUMAN AUTHORITY + HANDOFF</text>
+  <text x="845" y="779" class="node-copy">learner · family · teacher · specialist · IEP team</text>
+  <text x="845" y="808" class="node-copy">goal + evidence + exact blocker + attempts</text>
+  <path d="M544 642 C610 695 708 709 806 754" fill="none" stroke="#0F766E" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <text x="700" y="870" text-anchor="middle" class="label" font-size="22" font-weight="750">CURB-CUT DIVIDEND FOR EVERY LEARNER</text>
+  <g>
+    <rect x="86" y="891" width="177" height="36" rx="18" fill="#DBEAFE"/><text x="175" y="915" text-anchor="middle" class="pill">captions</text>
+    <rect x="280" y="891" width="177" height="36" rx="18" fill="#CCFBF1"/><text x="369" y="915" text-anchor="middle" class="pill">visible steps</text>
+    <rect x="474" y="891" width="177" height="36" rx="18" fill="#FEF3C7"/><text x="563" y="915" text-anchor="middle" class="pill">self-pacing</text>
+    <rect x="668" y="891" width="240" height="36" rx="18" fill="#EDE9FE"/><text x="788" y="915" text-anchor="middle" class="pill">multiple representations</text>
+    <rect x="925" y="891" width="177" height="36" rx="18" fill="#FFEDD5"/><text x="1014" y="915" text-anchor="middle" class="pill">low-stakes probes</text>
+    <rect x="1119" y="891" width="195" height="36" rx="18" fill="#D1FAE5"/><text x="1217" y="915" text-anchor="middle" class="pill">offline resume</text>
+  </g>
+</svg>

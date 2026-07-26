@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Visual verification pipeline for AI-generated educational illustrations</title>
+  <desc id="desc">A source-grounded concept specification flows through separate semantic, visual, accessibility, and provenance checks. Failed checks enter a repair loop; passing visuals become reusable verified learning objects.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07152f"/><stop offset="1" stop-color="#102b4d"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffc857"/><stop offset="1" stop-color="#ff9f43"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#020914" flood-opacity=".5"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#76d7c4"/></marker>
+    <style>
+      .h { font: 700 35px Inter,Segoe UI,sans-serif; fill: #f7fbff; }
+      .sub { font: 400 17px Inter,Segoe UI,sans-serif; fill: #b9cbe0; }
+      .t { font: 700 20px Inter,Segoe UI,sans-serif; fill: #f7fbff; }
+      .b { font: 400 15px Inter,Segoe UI,sans-serif; fill: #d6e2ef; }
+      .k { font: 700 13px Inter,Segoe UI,sans-serif; letter-spacing: 1.2px; fill: #76d7c4; }
+      .n { font: 700 16px Inter,Segoe UI,sans-serif; fill: #08172c; }
+    </style>
+  </defs>
+  <rect width="1200" height="780" rx="34" fill="url(#bg)"/>
+  <text x="70" y="72" class="h">Every educational visual is a testable learning object</text>
+  <text x="70" y="106" class="sub">Generate freely. Publish only after meaning, rendering, access, and provenance agree.</text>
+  <g filter="url(#shadow)">
+    <rect x="70" y="158" width="235" height="186" rx="22" fill="#163b63" stroke="#3e78a8"/>
+    <text x="94" y="194" class="k">01 · SPECIFY</text><text x="94" y="229" class="t">Concept contract</text>
+    <text x="94" y="260" class="b">• source claims</text><text x="94" y="286" class="b">• required relationships</text><text x="94" y="312" class="b">• learner + medium</text>
+    <rect x="350" y="158" width="235" height="186" rx="22" fill="#193d5d" stroke="#4b88b0"/>
+    <text x="374" y="194" class="k">02 · GENERATE</text><text x="374" y="229" class="t">Two-layer asset</text>
+    <text x="374" y="260" class="b">• semantic IR / code</text><text x="374" y="286" class="b">• rendered pixels</text><text x="374" y="312" class="b">• editable source</text>
+    <rect x="630" y="158" width="500" height="186" rx="22" fill="#153c49" stroke="#51a99b"/>
+    <text x="654" y="194" class="k">03 · VERIFY IN PARALLEL</text>
+    <g transform="translate(654 216)"><rect width="106" height="94" rx="15" fill="#0d2b3c"/><text x="15" y="32" class="t">Truth</text><text x="15" y="61" class="b">claims</text><text x="15" y="81" class="b">geometry</text></g>
+    <g transform="translate(775 216)"><rect width="106" height="94" rx="15" fill="#0d2b3c"/><text x="15" y="32" class="t">Render</text><text x="15" y="61" class="b">compile</text><text x="15" y="81" class="b">overlap</text></g>
+    <g transform="translate(896 216)"><rect width="106" height="94" rx="15" fill="#0d2b3c"/><text x="15" y="32" class="t">Access</text><text x="15" y="61" class="b">alt text</text><text x="15" y="81" class="b">contrast</text></g>
+    <g transform="translate(1017 216)"><rect width="89" height="94" rx="15" fill="#0d2b3c"/><text x="12" y="32" class="t">Trace</text><text x="12" y="61" class="b">sources</text><text x="12" y="81" class="b">version</text></g>
+  </g>
+  <path d="M305 251 H342" stroke="#76d7c4" stroke-width="4" marker-end="url(#arrow)"/><path d="M585 251 H622" stroke="#76d7c4" stroke-width="4" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)">
+    <path d="M522 425 L602 503 L522 581 L442 503 Z" fill="#17324d" stroke="#ffc857" stroke-width="3"/>
+    <text x="478" y="495" class="t">All checks</text><text x="491" y="522" class="t">pass?</text>
+    <rect x="710" y="425" width="360" height="156" rx="24" fill="#f8fbff"/>
+    <text x="742" y="466" class="k" fill="#13766d">VERIFIED LEARNING OBJECT</text>
+    <text x="742" y="505" class="n">Correct · editable · accessible</text><text x="742" y="534" class="n">localized · provenance-carrying</text>
+    <rect x="742" y="551" width="292" height="8" rx="4" fill="url(#gold)"/>
+    <rect x="70" y="425" width="265" height="156" rx="24" fill="#3b2444" stroke="#ba7bd2"/>
+    <text x="98" y="466" class="k" fill="#e3a6fa">TARGETED REPAIR</text><text x="98" y="505" class="t">Change the failed layer</text><text x="98" y="534" class="b">Preserve everything verified</text>
+  </g>
+  <path d="M602 503 H700" stroke="#ffc857" stroke-width="5" marker-end="url(#arrow)"/><text x="630" y="486" class="k" fill="#ffc857">YES</text>
+  <path d="M442 503 H345" stroke="#d69aec" stroke-width="4" marker-end="url(#arrow)"/><text x="370" y="486" class="k" fill="#e3a6fa">NO</text>
+  <path d="M202 425 V385 Q202 365 222 365 H467 Q487 365 487 345" fill="none" stroke="#d69aec" stroke-width="4" marker-end="url(#arrow)"/>
+  <rect x="70" y="646" width="1060" height="70" rx="18" fill="#0b2039" stroke="#274968"/>
+  <text x="96" y="676" class="t">Publication rule</text><text x="96" y="703" class="b">Pixels may illustrate. Semantic claims must live in a structure that a machine—or a person—can inspect.</text>
+</svg>

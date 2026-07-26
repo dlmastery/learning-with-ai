@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920" role="img" aria-labelledby="title desc">
+  <title id="title">Learning science as a real-time teaching control loop</title>
+  <desc id="desc">A circular loop moves from a meaningful goal through diagnosis, teaching-action selection, generated learning object, learner action, feedback, state update, scheduled retrieval and variation, and delayed transfer. A human network can join at any point, and transfer evidence begins the next loop.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#172554" flood-opacity=".12"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2563EB"/>
+    </marker>
+    <marker id="tealArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0F766E"/>
+    </marker>
+    <linearGradient id="center" x1="0" x2="1">
+      <stop offset="0" stop-color="#172554"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <style>
+      .title{font:700 34px Inter,Arial,sans-serif;fill:#172554}
+      .sub{font:400 18px Inter,Arial,sans-serif;fill:#475569}
+      .step{font:800 14px Inter,Arial,sans-serif;fill:#2563EB;letter-spacing:.7px}
+      .head{font:700 18px Inter,Arial,sans-serif;fill:#172554}
+      .body{font:400 14px Inter,Arial,sans-serif;fill:#475569}
+      .centerhead{font:800 22px Inter,Arial,sans-serif;fill:#fff}
+      .centerbody{font:400 15px Inter,Arial,sans-serif;fill:#DBEAFE}
+      .humanhead{font:700 18px Inter,Arial,sans-serif;fill:#fff}
+      .humanbody{font:400 14px Inter,Arial,sans-serif;fill:#CCFBF1}
+      .small{font:600 13px Inter,Arial,sans-serif;fill:#64748B}
+    </style>
+  </defs>
+
+  <rect width="1400" height="920" fill="#FFFDF7"/>
+  <circle cx="1280" cy="76" r="150" fill="#DBEAFE" opacity=".55"/>
+  <circle cx="105" cy="845" r="155" fill="#CCFBF1" opacity=".5"/>
+
+  <text x="70" y="60" class="title">LEARNING SCIENCE BECOMES A CONTROL SYSTEM</text>
+  <text x="70" y="94" class="sub">State changes the teaching action; evidence changes the state; transfer starts the next loop.</text>
+
+  <!-- connecting loop -->
+  <g fill="none" stroke="#2563EB" stroke-width="4" marker-end="url(#arrow)">
+    <path d="M360 202 C465 130 570 124 650 158"/>
+    <path d="M833 165 C948 138 1053 174 1104 242"/>
+    <path d="M1190 358 C1208 444 1188 510 1125 557"/>
+    <path d="M1015 650 C914 706 827 726 756 713"/>
+    <path d="M613 713 C504 737 404 704 346 642"/>
+    <path d="M252 546 C205 474 207 405 245 343"/>
+    <path d="M278 254 C293 231 313 214 336 201"/>
+  </g>
+
+  <!-- cards -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="165" width="260" height="150" rx="20" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+    <rect x="560" y="120" width="290" height="150" rx="20" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+    <rect x="1050" y="230" width="260" height="150" rx="20" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+    <rect x="1010" y="540" width="300" height="150" rx="20" fill="#ECFDF5" stroke="#0F766E" stroke-width="2"/>
+    <rect x="550" y="660" width="300" height="150" rx="20" fill="#ECFDF5" stroke="#0F766E" stroke-width="2"/>
+    <rect x="95" y="535" width="285" height="150" rx="20" fill="#ECFDF5" stroke="#0F766E" stroke-width="2"/>
+    <rect x="70" y="300" width="285" height="150" rx="20" fill="#FFF7ED" stroke="#D97706" stroke-width="2"/>
+  </g>
+
+  <g>
+    <text x="122" y="195" class="step">01 · DIAGNOSE</text>
+    <text x="122" y="226" class="head">Current state</text>
+    <text x="122" y="254" class="body">Knowledge · memory · error</text>
+    <text x="122" y="276" class="body">goal · access · confidence</text>
+    <text x="122" y="298" class="body">Evidence, never a fixed label</text>
+
+    <text x="582" y="150" class="step">02 · SELECT</text>
+    <text x="582" y="181" class="head">Teaching action</text>
+    <text x="582" y="209" class="body">Explain · model · hint · question</text>
+    <text x="582" y="231" class="body">retrieve · simulate · peer · human</text>
+    <text x="582" y="253" class="body">Reason is inspectable</text>
+
+    <text x="1072" y="260" class="step">03 · COMPILE</text>
+    <text x="1072" y="291" class="head">Learning object</text>
+    <text x="1072" y="319" class="body">Verified example · visual</text>
+    <text x="1072" y="341" class="body">simulation · probe · project</text>
+    <text x="1072" y="363" class="body">One concept, many forms</text>
+
+    <text x="1032" y="570" class="step" style="fill:#0F766E">04 · ACT</text>
+    <text x="1032" y="601" class="head">Learner does something</text>
+    <text x="1032" y="629" class="body">Predict · solve · speak · build</text>
+    <text x="1032" y="651" class="body">teach · measure · collaborate</text>
+    <text x="1032" y="673" class="body">The action produces evidence</text>
+
+    <text x="572" y="690" class="step" style="fill:#0F766E">05 · FEEDBACK + UPDATE</text>
+    <text x="572" y="721" class="head">Reopen progress</text>
+    <text x="572" y="749" class="body">Name the gap · try again</text>
+    <text x="572" y="771" class="body">Update confidence + evidence</text>
+    <text x="572" y="793" class="body">Fade or restore one support</text>
+
+    <text x="117" y="565" class="step" style="fill:#0F766E">06 · REMEMBER</text>
+    <text x="117" y="596" class="head">Schedule the next reach</text>
+    <text x="117" y="624" class="body">Spacing · retrieval · variation</text>
+    <text x="117" y="646" class="body">Reconnect prior knowledge</text>
+    <text x="117" y="668" class="body">Resume unfinished purpose</text>
+
+    <text x="92" y="330" class="step" style="fill:#D97706">07 · VERIFY</text>
+    <text x="92" y="361" class="head">Delayed transfer</text>
+    <text x="92" y="389" class="body">New task · later date</text>
+    <text x="92" y="411" class="body">changed context · no help</text>
+    <text x="92" y="433" class="body">Starts the next diagnosis</text>
+  </g>
+
+  <!-- center -->
+  <g filter="url(#shadow)">
+    <circle cx="700" cy="455" r="155" fill="url(#center)"/>
+  </g>
+  <text x="700" y="414" text-anchor="middle" class="centerhead">MEANINGFUL GOAL</text>
+  <text x="700" y="445" text-anchor="middle" class="centerbody">one learner · one concept</text>
+  <text x="700" y="470" text-anchor="middle" class="centerbody">one moment · one horizon</text>
+  <line x1="620" y1="493" x2="780" y2="493" stroke="#93C5FD" stroke-width="2"/>
+  <text x="700" y="521" text-anchor="middle" class="centerbody">objective: growing independence</text>
+
+  <!-- human mesh -->
+  <path d="M835 420 C920 392 980 380 1045 370" fill="none" stroke="#0F766E" stroke-width="4" stroke-dasharray="8 7" marker-end="url(#tealArrow)"/>
+  <g filter="url(#shadow)">
+    <rect x="960" y="397" width="350" height="115" rx="20" fill="#0F766E"/>
+  </g>
+  <text x="985" y="430" class="humanhead">HUMAN NETWORK CAN JOIN ANYWHERE</text>
+  <text x="985" y="459" class="humanbody">family · peer · teacher · tutor · specialist</text>
+  <text x="985" y="484" class="humanbody">minimum context · clear authority · continuity</text>
+
+  <text x="70" y="875" class="small">ADAPTIVE = STATE CHANGES ACTION · ACTION PRODUCES EVIDENCE · EVIDENCE CHANGES STATE</text>
+  <text x="70" y="900" class="small">LEARNING IN THE NEW FRONTIER AI WORLD · CUTOFF 25 JULY 2026</text>
+</svg>

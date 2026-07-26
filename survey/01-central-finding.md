@@ -1,119 +1,175 @@
 ---
-title: "What Works — and the One Design Choice That Decides It"
+title: "The Frontier Has Crossed — Expert AI Mentorship Can Be Universal"
 section: central-finding
 status: draft
 date: 2026-07-25
 ---
 
-# What Works
+# The Frontier Has Crossed
 
-**The wins available today are large, real, and measured.**
+![Six cards summarizing the July 2026 evidence frontier for AI-supported learning](../assets/diagrams/evidence-frontier-2026.svg)
 
-| Result | Effect | Evidence |
-|---|---|---|
-| AI tutor that withholds answers and hints instead | **+127% practice, no retention penalty** | Randomised, ~1,000 students |
-| Gemini Guided Learning, Sierra Leone | **+0.258 SD maths** — 1.2–1.7 years of typical progress in 8 weeks (1.8–2.5 in high-engagement classrooms) | Pre-registered RCT, 1,763 students, 12 schools |
-| Retrieval practice | **g = 0.50** in labs *and* classrooms | 222 studies, 48,478 students |
-| Learning by teaching | **g = 0.56**, robust at delay | Meta-analysis; near-zero deployment |
-| Productive failure | **g = 0.36**, rising to **0.58** at high fidelity | Meta-analysis |
-| Spaced practice | classroom **d = 0.54** | 12 of 271 comparisons failed |
+*The studies use different populations, subjects, durations, and outcome
+measures; together they establish a portfolio of positive learning signals.*
 
-These are not incremental. A tutor that produces 1.2–1.7 years of maths progress
-in eight weeks, in one of the world's most resource-constrained school systems,
-is the strongest evidence in the history of educational technology.
+The central finding of this survey is optimistic and actionable:
 
-**And the mechanism is known.** In the Sierra Leone deployment, 113k conversations
-were coded: **91.4% concept-building, scaffolding in 76% of responses, direct
-solutions in 2%.** The system worked because it *withheld*.
+> Frontier AI can already deliver meaningful personalized learning, and the
+> combined cost, language, speech, vision, and on-device curves make universal
+> expert mentorship a credible near-term goal.
 
-## The one design choice that decides it
+The dominant question is no longer “can an AI tutor work?” It is “how quickly can
+we turn current capability into reliable, locally grounded mentorship for every
+learner?”
 
-The same model, given to the same students, produces opposite outcomes depending
-on a single property:
+## 1. The outcome evidence is now a portfolio
 
-| | Practice | Exam, unassisted |
-|---|---|---|
-| Answers freely | +48% | **−17%** |
-| Withholds, hints, requires reasoning | **+127%** | **no penalty** |
+| Deployment or study | Result | Why it matters |
+|---|---:|---|
+| Gemini Guided Learning, Sierra Leone | **+0.258 SD mathematics** | Pre-registered RCT; 1,763 students; 12 schools |
+| Teacher-supported generative AI, Nigeria | **+0.31 SD** | Six-week randomized field deployment; gains across several outcomes |
+| Khan Academy implementation support, India | **nearly +0.5 SD mathematics** | Government residential schools; usage rose 7.2→47.4 min/week |
+| Generative AI for learning an unfamiliar topic | **+0.27 SD unaided test** | July 2026 randomized study; gain persisted one week |
+| AI and the education performance gap | gap **0.548→0.139 SD** | Randomized N=1,174; roughly three quarters of the measured gap closed |
+| LearnLM/Eedi exploratory trial | **+5.5 percentage points** | Better performance on a novel later topic than human tutoring alone |
 
-That is the whole finding. **Restraint is the active ingredient; everything else
-is delivery.** Every positive result in this survey comes from a constrained
-system. Every harm comes from an unconstrained one.
+Sources:
 
-This is good news, and it is immediately actionable: the win needs no new model,
-no new capability, and no additional cost. It needs a loop that decides when
-*not* to answer.
+- [Sierra Leone trial](https://deepmind.google/blog/measuring-the-impact-of-learning-with-ai-in-sierra-leone-and-beyond/) `MEASURED-RCT`
+- [Nigeria World Bank trial](https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099548105192529324) `MEASURED-RCT`
+- [India implementation trial](https://www.nber.org/papers/w34683) `MEASURED-RCT`
+- [July 2026 knowledge-acquisition RCT](https://arxiv.org/abs/2607.08849) `MEASURED-RCT`
+- [NBER skills-gap experiment](https://www.nber.org/papers/w34851) `MEASURED-RCT`
+- [LearnLM/Eedi study](https://arxiv.org/abs/2512.23633) `MEASURED-RCT`, exploratory
 
-## Why the field mostly builds the other one
+These studies differ in population, product, subject, duration, and support.
+That diversity is the point. The positive result is no longer confined to one
+lab or one product pattern. We now have enough signal to pursue deployment,
+replication, and improvement with urgency.
 
-Not pessimism — a measurement problem with a fixable cause.
+## 2. The capability stack arrived together
 
-Three research streams in this survey converged independently on one result. It
-is the paper's central finding and it indicts most of what the field is building.
+The educational effect sizes matter because the surrounding system has also
+changed.
 
-Felt learning is what every optimisation loop can measure. Real learning is what
-none of them measure. So systems drift toward the former — and the two dissociate:
+### Conversation
 
-| Capability | Felt / affect | Actual learning |
-|---|---|---|
-| AI assistance (Bastani, PNAS) | practice scores **+48%** | unassisted performance **−17%** |
-| Pedagogical agents / avatars | social presence, well-being **d = .85–1.01** | learning **did not move** (3 field experiments, 2024) |
-| Animation vs static graphics | comprehensibility, interest, enjoyment, motivation all rise (Kim, Yoon, Whang & Tversky 2007) | *"but not comprehension test score"* |
+GPT-Live provides full-duplex speech; Gemini Live and open audio models expand
+the design space for natural interruption, pronunciation, and oral practice.
+Voice makes one-to-one instruction available to learners for whom typing or
+reading is a barrier.
 
-Supporting evidence points the same way. Berney & Bétrancourt's meta-analysis
-(61 studies, N = 7,036) puts animation's advantage at **g = 0.226**. Tversky,
-Morrison & Bétrancourt (2002) found **no case** where animation beat an
-*informationally equivalent* static graphic — the apparent wins were confounds.
-Mayer's own experiments found annotated static illustrations equalled or beat
-narrated animations on transfer. Paik & Schraw (2013) found representational
-animation *negatively* affected learning.
+### Adaptive curricula
 
-And the mirror image completes it: Deslauriers et al. (2019, PNAS) showed active
-learning **raises real learning while lowering felt learning.** Students in the
-condition that taught them more reported learning less.
+Gemini Study Notebooks diagnoses a goal, decomposes it into more than 100
+objectives, generates lessons and quizzes, updates a skill dashboard, and links
+to source-grounded notebooks. This is evidence that the consumer product unit
+is moving from “chat” to **adaptive course**. `VENDOR`
 
-## Why this is a systems problem, not a research curiosity
+### Dynamic learning objects
 
-Felt learning is what every optimisation loop can measure. Real learning is what
-none of them measure.
+ChatGPT can generate interactive visual explanations across mathematics and
+science; Claude Opus 5 creates manipulable artifacts such as simulations and
+interactive demonstrations; modern image models can render dense diagrams and
+small text. The tutor can increasingly create the representation a learner
+needs in the moment. `VENDOR`
 
-- Engagement metrics, session length, retention, NPS, thumbs-up — all proxy felt
-  learning.
-- RLHF optimises for preferred responses. Preferred means fluent, complete,
-  immediate — the exact profile that produces fluency illusion.
-- **Every LLM→explanatory-video pipeline surveyed optimises on VLM or human
-  preference judgments** — i.e. directly on the axis that dissociates from
-  comprehension.
-- No paper found in the LLM-explanatory-video literature measures human learning
-  gain. The most ambitious metric (TeachQuiz) measures whether *a VLM* recovers
-  the knowledge.
+### Local and multilingual operation
 
-A field that cannot measure its objective will optimise its proxy. That is what
-is happening.
+Gemma 4 targets phones and laptops with text, image, and audio; Sarvam Edge is
+sub-1GB and targets all 22 scheduled Indian languages; Meta Omnilingual ASR
+covers more than 1,600 languages; Mistral OCR 4 covers 170 languages. Universal
+delivery no longer means routing every utterance through an English-first
+frontier model. `VENDOR` + `MEASURED-BENCH`
 
-## Consequences for this survey's design claims
+### Economics
 
-1. **The refusal engine is not a preference.** It is the only mechanism that
-   trades felt learning for real learning deliberately. Bastani gives the price
-   of not having one: −17%.
-2. **Build the face and the animation for engagement, and say so.** Both are real
-   wins for an ADHD learner — attention is a prerequisite, not a nicety. Neither
-   is a comprehension intervention. Claiming otherwise is the error.
-3. **Animate only when the change itself is the learning target.** This is the
-   single moderator that survives meta-analysis. Motion depicting motion, not
-   motion decorating a static idea.
-4. **Never ship an objective function that rewards satisfaction.** See F6 for the
-   replacement.
-5. **Assessment must measure unassisted, delayed performance.** A post-test taken
-   with the tutor present measures the tutor.
+At published DeepSeek V4 Flash prices, an intentionally generous cached text
+session can be modeled at roughly **$0.012 per learner-hour**. At 180 hours per
+year that is about **$2.19 per learner-year** before devices, support, and
+delivery. This is an illustrative calculation, not a procurement quote, but it
+shows why the bottleneck has moved from raw inference to implementation.
 
-## The uncomfortable corollary
+See [the reach analysis](../research/raw/F4-reach-economics.md).
 
-The learner cannot detect this either. Fluency illusion is *defined* by
-subjective confidence exceeding objective retention. So a system optimising
-learner-reported satisfaction, and a learner choosing what feels effective, fail
-in the same direction — together, and confidently.
+## 3. The system design that follows
 
-This is why the survey treats **frequent low-stakes retrieval** (H1.2) as
-non-negotiable infrastructure rather than a feature. It is the only routinely
-available instrument that measures the thing that matters.
+The universal mentor has six load-bearing components.
+
+1. **A learner-owned longitudinal state.** It remembers goals, prerequisites,
+   mastery, language, accessibility needs, interests, and successful teaching
+   approaches.
+2. **A teaching-mode router.** It can diagnose, explain, model, ask, hint,
+   reveal, verify, practice, retrieve, transfer, celebrate, or escalate.
+3. **A specialist mesh.** Routine turns stay local or cheap; difficult questions
+   route to the best subject, language, verification, or safety agent.
+4. **A dynamic learning-object engine.** Any concept can become a story,
+   diagram, simulation, worked example, oral drill, or locally meaningful
+   analogy.
+5. **An offline-first delivery layer.** The lesson continues on shared, modest
+   hardware and syncs when connectivity returns.
+6. **A teacher-and-family collaboration surface.** AI supplies abundant
+   individual attention while people supply goals, care, culture, judgment, and
+   accountability.
+
+The architecture is ambitious, but none of its primitives is hypothetical.
+
+## 4. What the research program should optimize
+
+The field should stop treating adoption anxiety as its default research
+question. The higher-value program is constructive:
+
+- Which tutoring policies produce the largest gains for learners starting
+  furthest behind?
+- How much expert mentorship can one teacher orchestrate with an agent mesh?
+- Which languages and dialects need community datasets or model adapters next?
+- How small can the offline stack become without sacrificing instructional
+  quality?
+- Which dynamic representations best unlock a given misconception?
+- How quickly can the system identify a prerequisite gap and repair it?
+- What is the cost per durable learning gain, by geography and learner group?
+- How do teachers, families, and learners inspect and correct the learner model?
+- Which safety and escalation patterns deserve global open standards?
+
+These questions assume abundance is possible and then make it measurable.
+
+## 5. Evidence without pessimism
+
+An optimistic survey still distinguishes randomized outcomes, benchmark
+results, observed deployments, product claims, and author inference. It still
+reports uncertainty and scope. But rigor does not require manufacturing a
+negative counterpoint for every advance.
+
+The editorial rule is:
+
+> Include a limitation when it changes a decision, an architecture, a safety
+> boundary, or the interpretation of a result—not to perform artificial balance.
+
+For example, the Sierra Leone effect has a wide confidence interval and varied
+by baseline achievement. That does not erase the result; it defines the next
+engineering target: make the gain reliable and largest for learners furthest
+behind.
+
+## 6. No child left behind becomes literal
+
+The aim is not a premium tutor for already advantaged students. It is a
+world-class mentor available to a child in rural Africa, China, India, Latin
+America, an island, a refugee settlement, or an under-resourced neighborhood,
+speaking the language that child actually uses.
+
+The technical strategy is:
+
+```
+local speech + local curriculum + learner state
+        ↓
+low-cost everyday mentor
+        ↓
+frontier specialist when needed
+        ↓
+teacher, family, and community collaboration
+        ↓
+measured mastery and expanding opportunity
+```
+
+AI makes expert attention abundant. The moral and engineering task is to
+distribute that abundance.

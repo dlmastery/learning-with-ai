@@ -4,10 +4,17 @@ wave: F
 section: F5
 date_researched: 2026-07-25
 sources_count: 88
-status: raw-research
+status: superseded
+superseded_by: "research/raw/C3-F5-learner-owned-state-2026.md"
 ---
 
 # F5 — Learner modeling, knowledge tracing, and the lifelong memory of a learner
+
+> **Superseded on 2026-07-25.** This exploratory report over-centered predictive
+> leaderboard ceilings and constraint rhetoric. The current constructive,
+> frontier-first architecture is
+> [C3/F5 — The Learner-Owned State](C3-F5-learner-owned-state-2026.md). This file
+> remains only as a source ledger and reproducibility trail.
 
 > **Retrieval note.** WebSearch budget was exhausted before this section began. OpenAlex hit
 > its daily credit limit mid-session; arXiv's API returned sustained `503 / Rate exceeded`.

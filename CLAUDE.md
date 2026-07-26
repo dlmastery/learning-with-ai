@@ -82,6 +82,10 @@ Numbered so nothing is silently dropped. `✅` planned/underway · `⏳` queued 
 | 47 | As many parallel subagents as possible, full agent team | ✅ capped at 20 concurrent |
 | 48 | Take the time needed | ✅ |
 | 49 | Dissect every piece, plan and attack each | ✅ this ledger |
+| 50 | Focus on the **latest and greatest as of July 2026**, not old surveys | ✅ governing rule |
+| 51 | North star: **no child left behind; an expert AI mentor for every learner** | ✅ governing thesis |
+| 52 | Do not adopt incumbent-edtech anxiety as the research prior | ✅ independent evidence standard |
+| 53 | Remove obsolete pessimistic framing; lead with measured AI-learning opportunity | ✅ reset completed |
 
 ---
 
@@ -90,10 +94,14 @@ Numbered so nothing is silently dropped. `✅` planned/underway · `⏳` queued 
 Evidence labels on every claim: `MEASURED-RCT` · `MEASURED-META` · `MEASURED-BENCH` ·
 `OBSERVED` · `VENDOR` · `DEMO` · `INFERENCE`.
 
-1. A `VENDOR` claim may **never** be restated as a finding.
-2. Every section must contain ≥1 documented **negative or null** result.
-3. Unverifiable claims are reported as unverifiable, never laundered or omitted.
-4. Effect sizes over adjectives.
+1. A `VENDOR` claim may **never** be restated as a measured finding.
+2. Lead with the newest primary evidence and the strongest current capability.
+3. Include a limitation when it changes a design, safety, deployment, or
+   interpretation decision—not to manufacture balance.
+4. Unverifiable claims are reported as unverifiable, never laundered.
+5. Effect sizes over adjectives; global reach over incumbent narratives.
+6. The constructive question is always: **what can now be built so every learner
+   receives expert mentorship?**
 
 ---
 
@@ -139,19 +147,24 @@ examples/       worked zero-to-hero artifacts
 
 Agents write to `research/raw/<SECTION-ID>-<slug>.md` with YAML frontmatter
 (`title`, `wave`, `date_researched`, `sources_count`). Survey sections are drafted
-**from** those files; never delete a raw report.
+**from** those files. Preserve useful evidence, but supersede or remove a raw
+report when the user explicitly changes the governing thesis or a newer frontier
+review makes the report misleading.
 
 ---
 
 ## 5. Environment constraints
 
-- **WebSearch budget EXHAUSTED (200/200)** for this session. Agents must use
-  `curl` against arXiv / Semantic Scholar / OpenAlex / Crossref / ERIC / PubMed
-  APIs, plus `WebFetch` on known URLs and `gh api` (authenticated, 5000/hr).
-  Calling WebSearch fails. Unreachable sources are flagged, never guessed.
-- **Concurrent subagent cap: 20.** Raise with
-  `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS=40` to run remaining waves at full width.
-- `gh` authenticated as `dlmastery`; git credential helper configured.
+- The **initial session exhausted its WebSearch budget (200/200)**. Later
+  continuations may have a fresh search allowance; check rather than assuming.
+  Regardless of interface, prefer primary sources and systematic retrieval through
+  arXiv, Semantic Scholar, OpenAlex, Crossref, ERIC and PubMed APIs. Unreachable
+  sources are flagged, never guessed.
+- The initial run used a 20-agent concurrency cap. A continuation must not assume
+  those agents are still live: the filesystem and git history are the recovery
+  record.
+- Git credentials can read and push `dlmastery/learning-with-ai`. Connector/API
+  visibility may still return 404, so local `git` is the reliable repository path.
 
 ---
 
@@ -167,18 +180,42 @@ Agents write to `research/raw/<SECTION-ID>-<slug>.md` with YAML frontmatter
 
 ## 7. Agent prompt template
 
-Every research agent gets: the section's core question · the WebSearch-exhausted
-constraint and the API alternatives · a demand for evidence labels · a demand for
-≥1 negative/null result · an instruction to state what *should* exist rather than
-summarise what does (futures waves) · the exact `research/raw/` output path · a
-request for a 400–500 word executive summary as the final message.
+Every research agent gets: the section's core question · the July 2026 cutoff · a
+demand for primary sources and evidence labels · the universal-expert-mentor
+north star · an instruction to prioritize what is newly possible and what should
+be built · a requirement to cover rural, low-connectivity, multilingual, and
+accessibility-first use cases · the exact `research/raw/` output path · a request
+for a 400–500 word executive summary as the final message.
 
 ---
 
-## 8. Status at last write
+## 8. Status after the July 2026 frontier reset — 2026-07-25
 
-- Repo created and pushed; PRD and this ledger committed.
-- **14 research agents in flight** (waves A, B, D, F).
-- Queued on the 20-agent cap: F10, F11, E1, E2, H1, G2, C1, C2, plus open-problems.
-- Blocked on user: optional raise of the subagent cap (`CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS=40`).
-- No survey sections drafted yet — awaiting first raw reports.
+The filesystem and commit history are authoritative. Current state:
+
+- **12 raw research documents** covering A2, A4, A5, B1, D1 (quarter report plus
+  frontier supplement), D2, F1, the rebuilt F2, F4, F5, and F6.
+- **4 survey/synthesis sections**: the universal-mentor north star, the central
+  frontier finding, teach/build/collaborate, and the expert mentor mesh.
+- **A current frontier supplement** with 44 primary/current sources covering
+  GPT-5.6, GPT-Live, Gemini Study Notebooks, Claude 5, open/edge models,
+  multilingual speech, current deployments, and 2026 tutoring research.
+- **A rebuilt F4 reach report** centered on current economics, offline delivery,
+  language coverage, and the universal mentor mesh.
+- **Reference artifacts**: an ambient agent-native app, four Hermes skills, and
+  the hardened DGX/Sunshine installer.
+
+Removed as superseded: the old F2 report organized around AI-learning harm, and
+the incomplete F11 draft that inherited the same framing. F2 has now been
+rebuilt from a July 2026 agent-society perspective; F11 remains planned and
+should focus constructively on how an AI mentor compounds understanding into
+long-term mastery.
+
+Remaining raw sections include A1, A3, B2, C1–C3, E1–E2, F3, F7–F11, H1,
+and G2/G3. The `evidence/` and `examples/` directories described in the planned
+layout have not yet landed.
+
+**Next committed workstream:** B2, a frontier-first efficacy map that treats the
+Sierra Leone, Nigeria, India, Peru, July 2026 knowledge-acquisition, skills-gap,
+and multi-agent results as the starting portfolio and asks how to reproduce the
+largest gains for learners furthest behind.

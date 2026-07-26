@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920" role="img" aria-labelledby="title desc">
+  <title id="title">July 2026 learning AI market capability landscape</title>
+  <desc id="desc">A seven-layer stack shows that model intelligence and guided learning are broadly shipped; verified knowledge, pedagogical routing, human coordination, and outcome evidence are emerging; learner-owned state and offline frontier intelligence remain major integration opportunities. The universal mentor composes every layer.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#172554" flood-opacity="0.11"/>
+    </filter>
+    <linearGradient id="headerGlow" x1="0" x2="1">
+      <stop offset="0" stop-color="#172554"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <style>
+      .title{font:700 34px Inter,Arial,sans-serif;fill:#172554}
+      .sub{font:400 18px Inter,Arial,sans-serif;fill:#475569}
+      .layer{font:700 20px Inter,Arial,sans-serif;fill:#172554;letter-spacing:.4px}
+      .body{font:400 15px Inter,Arial,sans-serif;fill:#334155}
+      .small{font:600 13px Inter,Arial,sans-serif;fill:#475569;letter-spacing:.7px}
+      .chip{font:700 13px Inter,Arial,sans-serif;fill:#fff}
+      .sidehead{font:700 18px Inter,Arial,sans-serif;fill:#172554}
+      .sidetext{font:400 14px Inter,Arial,sans-serif;fill:#334155}
+      .bottom{font:700 20px Inter,Arial,sans-serif;fill:#fff}
+    </style>
+  </defs>
+
+  <rect width="1400" height="920" fill="#FFFDF7"/>
+  <circle cx="1260" cy="80" r="150" fill="#DBEAFE" opacity=".55"/>
+  <circle cx="90" cy="850" r="155" fill="#CCFBF1" opacity=".55"/>
+
+  <text x="70" y="65" class="title">THE MARKET IS A STACK</text>
+  <text x="70" y="98" class="sub">July 2026: most primitives ship; the universal mentor is the trustworthy composition.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="145" width="930" height="82" rx="18" fill="#E0F2FE" stroke="#2563EB" stroke-width="2"/>
+    <rect x="70" y="237" width="930" height="82" rx="18" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+    <rect x="70" y="329" width="930" height="82" rx="18" fill="#ECFDF5" stroke="#0F766E" stroke-width="2"/>
+    <rect x="70" y="421" width="930" height="82" rx="18" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+    <rect x="70" y="513" width="930" height="82" rx="18" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2"/>
+    <rect x="70" y="605" width="930" height="82" rx="18" fill="#FFF7ED" stroke="#EA580C" stroke-width="2"/>
+    <rect x="70" y="697" width="930" height="82" rx="18" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+  </g>
+
+  <g>
+    <circle cx="106" cy="186" r="20" fill="#2563EB"/>
+    <text x="106" y="192" text-anchor="middle" class="chip">1</text>
+    <text x="145" y="178" class="layer">MODEL INTELLIGENCE</text>
+    <text x="145" y="204" class="body">Multilingual reasoning · image/document understanding · live voice · tools</text>
+    <rect x="825" y="167" width="150" height="38" rx="19" fill="#0F766E"/>
+    <text x="900" y="191" text-anchor="middle" class="chip">BROADLY SHIPPED</text>
+
+    <circle cx="106" cy="278" r="20" fill="#2563EB"/>
+    <text x="106" y="284" text-anchor="middle" class="chip">2</text>
+    <text x="145" y="270" class="layer">VERIFIED KNOWLEDGE</text>
+    <text x="145" y="296" class="body">Course grounding ships · executable concept contracts and verification are emerging</text>
+    <rect x="847" y="259" width="128" height="38" rx="19" fill="#D97706"/>
+    <text x="911" y="283" text-anchor="middle" class="chip">EMERGING</text>
+
+    <circle cx="106" cy="370" r="20" fill="#0F766E"/>
+    <text x="106" y="376" text-anchor="middle" class="chip">3</text>
+    <text x="145" y="362" class="layer">PEDAGOGY ROUTER</text>
+    <text x="145" y="388" class="body">Guided modes ship · mode selection across teach, hint, retrieve, simulate, and collaborate is early</text>
+    <rect x="847" y="351" width="128" height="38" rx="19" fill="#D97706"/>
+    <text x="911" y="375" text-anchor="middle" class="chip">EMERGING</text>
+
+    <circle cx="106" cy="462" r="20" fill="#D97706"/>
+    <text x="106" y="468" text-anchor="middle" class="chip">4</text>
+    <text x="145" y="454" class="layer">LEARNER-OWNED STATE</text>
+    <text x="145" y="480" class="body">Provider memory and adaptive notebooks exist · portable, uncertain, lifelong state does not</text>
+    <rect x="808" y="443" width="167" height="38" rx="19" fill="#7C3AED"/>
+    <text x="891" y="467" text-anchor="middle" class="chip">BUILD FRONTIER</text>
+
+    <circle cx="106" cy="554" r="20" fill="#7C3AED"/>
+    <text x="106" y="560" text-anchor="middle" class="chip">5</text>
+    <text x="145" y="546" class="layer">HUMAN NETWORK</text>
+    <text x="145" y="572" class="body">Teacher workspaces and human+AI tutoring work · continuity across family and specialists is early</text>
+    <rect x="847" y="535" width="128" height="38" rx="19" fill="#D97706"/>
+    <text x="911" y="559" text-anchor="middle" class="chip">EMERGING</text>
+
+    <circle cx="106" cy="646" r="20" fill="#EA580C"/>
+    <text x="106" y="652" text-anchor="middle" class="chip">6</text>
+    <text x="145" y="638" class="layer">OUTCOME EVIDENCE</text>
+    <text x="145" y="664" class="body">Quizzes and next-item metrics ship · delayed independent transfer and portable proof are rare</text>
+    <rect x="808" y="627" width="167" height="38" rx="19" fill="#7C3AED"/>
+    <text x="891" y="651" text-anchor="middle" class="chip">BUILD FRONTIER</text>
+
+    <circle cx="106" cy="738" r="20" fill="#64748B"/>
+    <text x="106" y="744" text-anchor="middle" class="chip">7</text>
+    <text x="145" y="730" class="layer">ACCESS FOUNDATION</text>
+    <text x="145" y="756" class="body">Offline curriculum works · local frontier inference, shared-device identity, and sync need composition</text>
+    <rect x="808" y="719" width="167" height="38" rx="19" fill="#7C3AED"/>
+    <text x="891" y="743" text-anchor="middle" class="chip">BUILD FRONTIER</text>
+  </g>
+
+  <g>
+    <rect x="1040" y="145" width="290" height="410" rx="22" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#shadow)"/>
+    <text x="1070" y="184" class="sidehead">WHAT SHIPS NOW</text>
+
+    <circle cx="1080" cy="220" r="7" fill="#0F766E"/>
+    <text x="1100" y="225" class="sidetext">Guided learning conversation</text>
+    <circle cx="1080" cy="254" r="7" fill="#0F766E"/>
+    <text x="1100" y="259" class="sidetext">Teacher creation and control</text>
+    <circle cx="1080" cy="288" r="7" fill="#0F766E"/>
+    <text x="1100" y="293" class="sidetext">Grounded study and practice</text>
+    <circle cx="1080" cy="322" r="7" fill="#0F766E"/>
+    <text x="1100" y="327" class="sidetext">Speech and reading specialists</text>
+    <circle cx="1080" cy="356" r="7" fill="#0F766E"/>
+    <text x="1100" y="361" class="sidetext">Generated multimodal media</text>
+    <circle cx="1080" cy="390" r="7" fill="#0F766E"/>
+    <text x="1100" y="395" class="sidetext">Human-plus-AI tutoring</text>
+    <circle cx="1080" cy="424" r="7" fill="#0F766E"/>
+    <text x="1100" y="429" class="sidetext">Open tutoring frameworks</text>
+    <circle cx="1080" cy="458" r="7" fill="#0F766E"/>
+    <text x="1100" y="463" class="sidetext">Offline curriculum delivery</text>
+    <circle cx="1080" cy="492" r="7" fill="#0F766E"/>
+    <text x="1100" y="497" class="sidetext">Measured public-school gains</text>
+
+    <line x1="1070" y1="518" x2="1300" y2="518" stroke="#CBD5E1"/>
+    <text x="1070" y="543" class="small">STATUS = EVIDENCE, NOT HYPE</text>
+  </g>
+
+  <g>
+    <rect x="1040" y="585" width="290" height="194" rx="22" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" filter="url(#shadow)"/>
+    <text x="1070" y="622" class="sidehead">THE COMPOSITION RULE</text>
+    <text x="1070" y="653" class="sidetext">Use the best replaceable model.</text>
+    <text x="1070" y="681" class="sidetext">Keep knowledge verifiable.</text>
+    <text x="1070" y="709" class="sidetext">Give state to the learner.</text>
+    <text x="1070" y="737" class="sidetext">Connect trusted humans.</text>
+    <text x="1070" y="765" class="sidetext">Measure independence.</text>
+  </g>
+
+  <path d="M110 815 L110 840 L1290 840 L1290 815" fill="none" stroke="#172554" stroke-width="4" stroke-linecap="round"/>
+  <rect x="355" y="810" width="690" height="74" rx="37" fill="url(#headerGlow)" filter="url(#shadow)"/>
+  <text x="700" y="842" text-anchor="middle" class="bottom">UNIVERSAL MENTOR = EVERY LAYER, COMPOSED FOR THE LEARNER</text>
+  <text x="700" y="865" text-anchor="middle" style="font:400 14px Inter,Arial,sans-serif;fill:#DBEAFE">multilingual · full duplex · grounded · adaptive · human-connected · offline-capable · evidence-producing</text>
+
+  <text x="70" y="905" class="small">LEARNING IN THE NEW FRONTIER AI WORLD · CUTOFF 25 JULY 2026</text>
+</svg>

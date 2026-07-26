@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Validity pipeline for AI-generated assessment</title>
+  <desc id="desc">A learning claim becomes an assessment tuple, passes executable and accessibility checks, is provisionally calibrated with simulated learners, then calibrated and monitored using real learner evidence before updating the learner model and next teaching action.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07162f"/><stop offset="1" stop-color="#12375a"/></linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#020914" flood-opacity=".5"/></filter>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#76d7c4"/></marker>
+    <style>
+      .h{font:700 34px Inter,Segoe UI,sans-serif;fill:#f7fbff}.sub{font:400 17px Inter,Segoe UI,sans-serif;fill:#bfd0e2}
+      .k{font:700 12px Inter,Segoe UI,sans-serif;letter-spacing:1.1px;fill:#7ce0cc}.t{font:700 19px Inter,Segoe UI,sans-serif;fill:#f7fbff}
+      .b{font:400 14px Inter,Segoe UI,sans-serif;fill:#d8e4ef}.dark{font:700 18px Inter,Segoe UI,sans-serif;fill:#0c2038}.small{font:400 14px Inter,Segoe UI,sans-serif;fill:#23405d}
+    </style>
+  </defs>
+  <rect width="1200" height="820" rx="34" fill="url(#bg)"/>
+  <text x="65" y="68" class="h">Generated assessment earns validity from learner evidence</text>
+  <text x="65" y="101" class="sub">Models create abundance. Tests, people, and longitudinal outcomes decide what the evidence means.</text>
+
+  <g filter="url(#s)">
+    <rect x="65" y="150" width="210" height="150" rx="22" fill="#173c65" stroke="#4d83b2"/>
+    <text x="88" y="184" class="k">01 · CLAIM</text><text x="88" y="220" class="t">What should this</text><text x="88" y="246" class="t">response reveal?</text>
+    <text x="88" y="275" class="b">concept · depth · transfer</text>
+
+    <rect x="330" y="150" width="210" height="150" rx="22" fill="#193e60" stroke="#538bb5"/>
+    <text x="353" y="184" class="k">02 · GENERATE</text><text x="353" y="220" class="t">Assessment tuple</text>
+    <text x="353" y="250" class="b">task · evidence · rubric</text><text x="353" y="275" class="b">feedback · variants</text>
+
+    <rect x="595" y="150" width="235" height="150" rx="22" fill="#16404e" stroke="#53ad9e"/>
+    <text x="618" y="184" class="k">03 · VERIFY</text><text x="618" y="220" class="t">Executable checks</text>
+    <text x="618" y="250" class="b">answerability · uniqueness</text><text x="618" y="275" class="b">grounding · access · leakage</text>
+
+    <rect x="885" y="150" width="250" height="150" rx="22" fill="#3c2d45" stroke="#c08bce"/>
+    <text x="908" y="184" class="k" fill="#e5b1f2">04 · PROVISIONAL PILOT</text><text x="908" y="220" class="t">Synthetic classroom</text>
+    <text x="908" y="250" class="b">difficulty prior · failure modes</text><text x="908" y="275" class="b">never final calibration</text>
+  </g>
+  <path d="M275 225 H321" stroke="#76d7c4" stroke-width="4" marker-end="url(#a)"/><path d="M540 225 H586" stroke="#76d7c4" stroke-width="4" marker-end="url(#a)"/><path d="M830 225 H876" stroke="#76d7c4" stroke-width="4" marker-end="url(#a)"/>
+
+  <g filter="url(#s)">
+    <rect x="118" y="385" width="300" height="175" rx="24" fill="#fffdf7"/>
+    <text x="145" y="423" class="k" fill="#156f65">05 · REAL LEARNER EVIDENCE</text>
+    <text x="145" y="460" class="dark">Field calibration</text>
+    <text x="145" y="490" class="small">difficulty · discrimination</text>
+    <text x="145" y="515" class="small">fairness · response process</text>
+    <text x="145" y="540" class="small">transfer · delayed retention</text>
+
+    <rect x="470" y="385" width="300" height="175" rx="24" fill="#fffdf7"/>
+    <text x="497" y="423" class="k" fill="#156f65">06 · USE + MONITOR</text>
+    <text x="497" y="460" class="dark">Adaptive evidence stream</text>
+    <text x="497" y="490" class="small">uncertainty-aware scoring</text>
+    <text x="497" y="515" class="small">drift · subgroup checks</text>
+    <text x="497" y="540" class="small">human review on impact</text>
+
+    <rect x="822" y="385" width="260" height="175" rx="24" fill="#fffdf7"/>
+    <text x="849" y="423" class="k" fill="#156f65">07 · TEACH</text>
+    <text x="849" y="460" class="dark">Update with humility</text>
+    <text x="849" y="490" class="small">learner-state probability</text>
+    <text x="849" y="515" class="small">next task or explanation</text>
+    <text x="849" y="540" class="small">learner can inspect/correct</text>
+  </g>
+  <path d="M1009 300 V335 Q1009 350 994 350 H268 Q253 350 253 376" fill="none" stroke="#76d7c4" stroke-width="4" marker-end="url(#a)"/>
+  <path d="M418 472 H461" stroke="#76d7c4" stroke-width="4" marker-end="url(#a)"/><path d="M770 472 H813" stroke="#76d7c4" stroke-width="4" marker-end="url(#a)"/>
+  <path d="M952 560 V616 Q952 636 932 636 H192 Q172 636 172 570" fill="none" stroke="#ffc857" stroke-width="4" marker-end="url(#a)"/>
+  <text x="448" y="627" class="k" fill="#ffc857">OUTCOMES RECALIBRATE THE ITEM BANK</text>
+
+  <rect x="118" y="682" width="964" height="70" rx="18" fill="#0b213b" stroke="#31536f"/>
+  <text x="145" y="713" class="t">Validity is a living argument</text>
+  <text x="145" y="738" class="b">No single score labels a child. Each response is evidence with uncertainty, purpose, context, and an appeal path.</text>
+</svg>

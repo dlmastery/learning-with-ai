@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">The 2026 AI learning evidence frontier</title>
+  <desc id="desc">Six cards summarize current evidence: Sierra Leone plus 0.258 standard deviations, Nigeria plus 0.31, India nearly plus 0.5, a July knowledge study plus 0.27 with persistence, an education performance gap reduced by about three quarters, and tutor plus peers reaching 65 percent accuracy versus 42 percent without agents.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFDF7"/><stop offset="1" stop-color="#EFF6FF"/></linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#172554" flood-opacity=".12"/></filter>
+    <style>
+      .h1{font:700 34px system-ui,sans-serif;fill:#172554}.k{font:800 36px system-ui,sans-serif;fill:#0F766E}
+      .h2{font:700 20px system-ui,sans-serif;fill:#172554}.body{font:500 15px system-ui,sans-serif;fill:#334155}
+      .small{font:500 13px system-ui,sans-serif;fill:#475569}.card{fill:#fff;stroke:#CBD5E1;stroke-width:1.5;rx:20;filter:url(#s)}
+    </style>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <text x="600" y="55" text-anchor="middle" class="h1">AI learning efficacy is now a portfolio, not a single result</text>
+  <text x="600" y="85" text-anchor="middle" class="body">Different populations, subjects, products, and deployment patterns point toward build-and-replicate.</text>
+
+  <g transform="translate(55 125)">
+    <rect width="340" height="240" class="card"/>
+    <rect width="340" height="13" rx="7" fill="#0F766E"/>
+    <text x="28" y="58" class="h2">Sierra Leone</text>
+    <text x="28" y="110" class="k">+0.258 SD</text>
+    <text x="28" y="145" class="body">mathematics · 8 weeks</text>
+    <text x="28" y="174" class="small">1,763 students · 12 schools</text>
+    <text x="28" y="199" class="small">pre-registered randomized trial</text>
+  </g>
+  <g transform="translate(430 125)">
+    <rect width="340" height="240" class="card"/>
+    <rect width="340" height="13" rx="7" fill="#2563EB"/>
+    <text x="28" y="58" class="h2">Nigeria</text>
+    <text x="28" y="110" class="k">+0.31 SD</text>
+    <text x="28" y="145" class="body">English + AI/digital skills</text>
+    <text x="28" y="174" class="small">~800 students · 6 weeks</text>
+    <text x="28" y="199" class="small">teacher-supported randomized trial</text>
+  </g>
+  <g transform="translate(805 125)">
+    <rect width="340" height="240" class="card"/>
+    <rect width="340" height="13" rx="7" fill="#D97706"/>
+    <text x="28" y="58" class="h2">India</text>
+    <text x="28" y="110" class="k">≈ +0.5 SD</text>
+    <text x="28" y="145" class="body">mathematics</text>
+    <text x="28" y="174" class="small">government residential schools</text>
+    <text x="28" y="199" class="small">implementation support raised usage 6.6×</text>
+  </g>
+
+  <g transform="translate(55 405)">
+    <rect width="340" height="240" class="card"/>
+    <rect width="340" height="13" rx="7" fill="#7C3AED"/>
+    <text x="28" y="58" class="h2">Knowledge acquisition, July 2026</text>
+    <text x="28" y="110" class="k">+0.27 SD</text>
+    <text x="28" y="145" class="body">immediate unaided test</text>
+    <text x="28" y="174" class="small">gain persisted one week</text>
+    <text x="28" y="199" class="small">randomized undergraduate study</text>
+  </g>
+  <g transform="translate(430 405)">
+    <rect width="340" height="240" class="card"/>
+    <rect width="340" height="13" rx="7" fill="#DB2777"/>
+    <text x="28" y="58" class="h2">Education performance gap</text>
+    <text x="28" y="110" class="k">≈ 75% closed</text>
+    <text x="28" y="145" class="body">0.548 → 0.139 SD</text>
+    <text x="28" y="174" class="small">1,174 adults</text>
+    <text x="28" y="199" class="small">randomized experiment</text>
+  </g>
+  <g transform="translate(805 405)">
+    <rect width="340" height="240" class="card"/>
+    <rect width="340" height="13" rx="7" fill="#0891B2"/>
+    <text x="28" y="58" class="h2">Tutor + AI peers</text>
+    <text x="28" y="110" class="k">65% vs 42%</text>
+    <text x="28" y="145" class="body">unaided SAT-math accuracy</text>
+    <text x="28" y="174" class="small">315 participants</text>
+    <text x="28" y="199" class="small">controlled multi-agent experiment</text>
+  </g>
+
+  <text x="600" y="708" text-anchor="middle" class="small">Metrics are not directly interchangeable; each card reports its study’s own outcome and design.</text>
+  <text x="600" y="732" text-anchor="middle" class="small">See survey/04-efficacy-frontier.md for sources, confidence intervals, and interpretation.</text>
+</svg>

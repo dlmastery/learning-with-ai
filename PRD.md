@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| Status | Active — Wave A + F in flight |
-| Target | ~100 pages, ~20 sections, 400+ cited sources |
+| Status | July 2026 research pass complete; 33 raw documents + 28 synthesis sections; Release 0 next |
+| Target | 28+ synthesis sections, 400+ cited sources, plus the reference implementation |
 | Repo | `dlmastery/learning-with-ai` (private) |
 | Date | 2026-07-25 |
 
@@ -17,14 +17,20 @@ Every existing treatment of AI in education asks *"how do we bolt AI onto school
 This survey asks the inverted question: **if learning were designed today, with
 frontier AI assumed, what would it look like?**
 
-The answer is not "a chatbot tutor." That framing is a failure of imagination and
-is, on the evidence, pedagogically counterproductive in several specific ways this
-survey documents.
+The answer is not merely "a chatbot tutor." It is a multilingual, multimodal,
+offline-capable **expert mentor mesh** that knows the learner, creates the right
+learning object on demand, routes to specialists, and collaborates with teachers
+and families.
+
+The north star is **no child left behind**: a world-class AI mentor for every
+learner, including rural and remote communities across Africa, China, India,
+Latin America, and everywhere expert attention is scarce.
 
 ## 2. Non-goals
 
 - **Not a vendor catalogue.** Product marketing is quoted only when labelled as such.
-- **Not a hype document.** Null and negative results are mandatory content, not caveats.
+- **Not an incumbent-defense document.** Industry anxiety is not an evidence
+  prior; current capability and measured learning gains are.
 - **Not anchored on prior art.** See §4 — anchoring is an actively managed risk.
 - **Not a single-shot generation.** The paper is built incrementally, section by
   section, each committed as its evidence lands.
@@ -39,8 +45,12 @@ Every claim carries a **source URL** and an **evidence-strength label**:
 | `MEASURED-META` | Meta-analysis or systematic review |
 | `MEASURED-BENCH` | Benchmark result, method disclosed |
 | `OBSERVED` | Field/observational study |
+| `FOUNDATIONAL` | Replicated pre-frontier principle retained as a design invariant |
+| `INSPECTED` | Code, built artifact, or public file directly examined |
 | `VENDOR` | Company claim, not independently verified |
 | `DEMO` | Shown in a curated demo; availability/reliability unverified |
+| `RESEARCH` | Current proposed or open research system; production readiness not assumed |
+| `NOT-PUBLIC` | Capability not visible in the inspected public surface; not proof of absence |
 | `INFERENCE` | The author's reasoning beyond the cited evidence |
 
 Rules that are not negotiable:
@@ -52,6 +62,11 @@ Rules that are not negotiable:
 3. **If a claim cannot be verified, the survey says it could not be verified**
    rather than omitting or laundering it.
 4. **Effect sizes over adjectives.** "Improves learning" is not a finding.
+5. **Frontier-first.** July 2026 primary evidence supersedes inherited narratives
+   built around older models or isolated studies.
+6. **Constructive rigor.** Include limitations when they change a design,
+   deployment, safety, or interpretation decision; do not manufacture a negative
+   counterpoint for rhetorical balance.
 
 ## 4. Anchoring risk — actively managed
 
@@ -70,10 +85,10 @@ Therefore:
 
 ## 5. Research method
 
-**Constraint:** this session's WebSearch budget is exhausted. Systematic retrieval
-is unaffected — agents use arXiv, Semantic Scholar, OpenAlex, Crossref, ERIC and
-PubMed APIs via `curl`, plus targeted `WebFetch` and authenticated `gh api`.
-Serendipitous discovery is degraded; unreachable sources are flagged, never guessed.
+**Retrieval note:** the initial session's WebSearch budget was exhausted.
+Continuations check the current allowance, but systematic retrieval remains the
+default: arXiv, Semantic Scholar, OpenAlex, Crossref, ERIC and PubMed APIs, plus
+targeted primary-source fetches. Unreachable sources are flagged, never guessed.
 
 **Parallel agent waves.** Each agent owns one section, writes a standalone report to
 `research/raw/`, and returns an executive summary. Sections are drafted from those
@@ -94,7 +109,7 @@ reports as they land.
 | § | Section | Core question |
 |---|---|---|
 | B1 | Learning science | What actually works, independent of AI? |
-| B2 | AI tutoring efficacy | What has been *measured*, including nulls? |
+| B2 | AI tutoring efficacy | Which designs now produce measured learning gains, for whom, and at what cost? |
 
 ### Wave C — Generation technology
 | § | Section | Core question |
@@ -113,7 +128,7 @@ reports as they land.
 | § | Section | Core question |
 |---|---|---|
 | F1 | Assessment: collapse & reconstruction | What is assessment when AI can produce the artifact? |
-| F2 | Beyond the tutor: peer, student, adversary | Is "helpful tutor" the wrong default? |
+| F2 | Beyond one tutor: the expert agent society | How should specialists collaborate around one learner? |
 | F3 | Executable & verifiable knowledge | How do we make generated explanations *checkable*? |
 | F4 | Reach: economics, access, language | What does "nobody left behind" cost, arithmetically? |
 | F5 | Memory & the lifelong learner model | What persists across years, not sessions? |
@@ -172,8 +187,8 @@ A systematic sweep of what exists in 2026, not a vendor list. Organised by the
 hypotheses rather than a directory: content generation · tutoring · assessment ·
 teacher tooling · language · early literacy · STEM · credentialing · learning
 infrastructure. Funding and traction data where available (Crunchbase/press),
-labelled `VENDOR` throughout. Explicit attention to the **graveyard** — edtech has
-a very high failure rate and the failures are more informative than the winners.
+labelled `VENDOR` throughout. Incumbent business-model concerns do not set the
+research agenda; global learning gain, reach, and cost do.
 
 #### E2 — LessonOrca *(primary evidence, not anchoring)*
 
@@ -183,9 +198,10 @@ which makes it an evidence source rather than an inspiration source.
 
 What makes it survey-relevant:
 
-- **Socratic-only by construction** — "never gives answers directly." This is a
-  production test of the anti-sycophancy argument in F2. The survey claims
-  agreeable answer-giving AI harms learning; this product bet the other way.
+- **Socratic-oriented by construction** — "never gives answers directly." This
+  is one production implementation of the teaching-mode router. Compare it with
+  worked-example, verification-first, and mixed policies rather than treating
+  one interaction style as universal.
 - **Persistent learner profiles** across sessions — the F5 model, in the field.
 - **Full parent/tutor transparency** into every AI interaction — a concrete answer
   to F8's oversight problem, and a pattern worth generalising.
@@ -195,8 +211,8 @@ What makes it survey-relevant:
 **Original-measurement opportunity.** A PostHog deployment on this product means
 the survey can report *measured* behaviour rather than cited literature:
 session completion, return rate, question-depth distributions, drop-off points,
-and — if instrumented — whether Socratic sessions retain learners better than
-answer-giving fallbacks. Almost no published work has this data.
+and—if instrumented—which teaching modes work best by learner, subject, and
+moment. Almost no published work has this product-level routing data.
 
 Constraints: any use must be aggregate-only, no individual learner data, COPPA
 posture preserved, and clearly labelled `OBSERVED` (single-product, non-randomised)
@@ -391,7 +407,8 @@ Each app targets one concept and must demonstrate at least one survey claim
 ## 8. Acceptance criteria
 
 1. Every section cites ≥15 sources with evidence labels.
-2. Every section contains ≥1 documented **negative or null** result.
+2. Every section uses current primary evidence and states decision-relevant
+   scope or uncertainty.
 3. No `VENDOR` claim appears as a finding.
 4. The grounding ladder is concrete enough to implement.
 5. At least three working mini-apps demonstrate survey claims.
@@ -403,7 +420,8 @@ Each app targets one concept and must demonstrate at least one survey claim
 |---|---|
 | Anchoring on existing work | Quarantine (§4) |
 | Vendor-claim laundering | Mandatory evidence labels |
-| Hype drift | Mandatory negative results per section |
+| Capability hype | Separate vendor claims from measured outcomes; require direct sources |
+| Incumbent or historical pessimism | July 2026 frontier-first review and explicit universal-mentor north star |
 | Breadth without depth | One agent per section, ≥15 sources each |
 | Search budget exhaustion | API-based retrieval; flag unreachable |
 | Survey obsolescence | D1 designed as a rolling quarterly section |

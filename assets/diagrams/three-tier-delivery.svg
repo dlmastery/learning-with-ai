@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc">
+  <title id="title">Three-tier delivery for universal AI mentorship</title>
+  <desc id="desc">Core tutoring continues on the learner device, stronger shared services run at a school or community node, and frontier specialists run in a regional cloud. Teachers, families, and local experts connect across all three tiers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFDF7"/><stop offset="1" stop-color="#F1F5F9"/></linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#172554" flood-opacity=".12"/></filter>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#64748B"/></marker>
+    <style>
+      .h1{font:700 34px system-ui,sans-serif;fill:#172554}.h2{font:700 23px system-ui,sans-serif;fill:#172554}
+      .body{font:500 16px system-ui,sans-serif;fill:#334155}.small{font:500 14px system-ui,sans-serif;fill:#475569}
+      .card{fill:white;stroke-width:3;rx:24;filter:url(#s)}.pill{rx:16;stroke-width:1.5}
+      .line{stroke:#64748B;stroke-width:3;fill:none;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1200" height="690" fill="url(#bg)"/>
+  <text x="600" y="55" text-anchor="middle" class="h1">The lesson continues even when the cloud disappears</text>
+  <text x="600" y="86" text-anchor="middle" class="body">Route by capability, privacy, latency, connectivity, and measured value.</text>
+
+  <rect x="55" y="145" width="330" height="400" class="card" stroke="#0F766E"/>
+  <circle cx="220" cy="205" r="38" fill="#CCFBF1"/>
+  <rect x="201" y="178" width="38" height="55" rx="7" fill="none" stroke="#0F766E" stroke-width="5"/>
+  <circle cx="220" cy="223" r="2.5" fill="#0F766E"/>
+  <text x="220" y="270" text-anchor="middle" class="h2">Tier 0 · learner device</text>
+  <text x="220" y="302" text-anchor="middle" class="small">always available · private · offline-first</text>
+  <g class="body">
+    <text x="92" y="350">• speech recognition and voice</text>
+    <text x="92" y="385">• language and accessibility</text>
+    <text x="92" y="420">• cached curriculum and examples</text>
+    <text x="92" y="455">• routine tutoring and review</text>
+    <text x="92" y="490">• learner state and sync queue</text>
+  </g>
+
+  <rect x="435" y="145" width="330" height="400" class="card" stroke="#2563EB"/>
+  <circle cx="600" cy="205" r="38" fill="#DBEAFE"/>
+  <path d="M573 223v-34l27-16 27 16v34M582 223v-25h36v25M593 223v-13h14v13" fill="none" stroke="#2563EB" stroke-width="4" stroke-linejoin="round"/>
+  <text x="600" y="270" text-anchor="middle" class="h2">Tier 1 · school/community</text>
+  <text x="600" y="302" text-anchor="middle" class="small">shared capacity · local knowledge · orchestration</text>
+  <g class="body">
+    <text x="472" y="350">• stronger open model</text>
+    <text x="472" y="385">• textbook and curriculum index</text>
+    <text x="472" y="420">• content and model update cache</text>
+    <text x="472" y="455">• teacher dashboard and grouping</text>
+    <text x="472" y="490">• peer and classroom coordination</text>
+  </g>
+
+  <rect x="815" y="145" width="330" height="400" class="card" stroke="#D97706"/>
+  <circle cx="980" cy="205" r="38" fill="#FEF3C7"/>
+  <path d="M951 217h57c11 0 17-12 11-21-4-6-10-8-16-7-3-13-20-18-30-9-12-5-26 4-25 17-10 4-8 20 3 20z" fill="none" stroke="#D97706" stroke-width="4"/>
+  <text x="980" y="270" text-anchor="middle" class="h2">Tier 2 · regional cloud</text>
+  <text x="980" y="302" text-anchor="middle" class="small">frontier specialists · verification · scale</text>
+  <g class="body">
+    <text x="852" y="350">• hardest subject reasoning</text>
+    <text x="852" y="385">• multi-agent verification</text>
+    <text x="852" y="420">• dynamic media generation</text>
+    <text x="852" y="455">• regional safety escalation</text>
+    <text x="852" y="490">• evaluation and model updates</text>
+  </g>
+
+  <path d="M385 345H435" class="line"/>
+  <path d="M765 345H815" class="line"/>
+  <path d="M435 390H385" class="line"/>
+  <path d="M815 390H765" class="line"/>
+
+  <rect x="245" y="595" width="710" height="58" class="pill" fill="#F5F3FF" stroke="#7C3AED"/>
+  <text x="600" y="620" text-anchor="middle" class="h2">Human layer across every tier</text>
+  <text x="600" y="643" text-anchor="middle" class="small">teachers · families · local experts · public institutions · community language stewards</text>
+</svg>

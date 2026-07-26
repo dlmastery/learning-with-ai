@@ -1,128 +1,201 @@
 ---
-title: "Teach to Learn — the highest-evidence, least-built intervention"
+title: "Teach, Build, and Collaborate — AI Turns Every Learner into a Creator"
 section: F2-design
 status: draft
 date: 2026-07-25
 ---
 
-# Teach to Learn
+# Teach, Build, and Collaborate
 
-**The claim:** the most effective available use of an AI in learning is not as a
-tutor that explains, but as a **student that must be taught** — and as an
-**instrument the learner uses to build an explanation.**
+![A circular learning loop in which a learner creates, verifies, teaches, defends, revises, and transfers](../assets/diagrams/teach-build-collaborate.svg)
+
+*AI contributes audiences, alternative strategies, tools, and expert checks.
+The learner contributes the judgment—and demonstrates mastery through transfer.*
+
+One of the most powerful uses of AI is to give every learner an attentive
+audience, a curious student, a project partner, and a panel of peers.
+
+The learner does not have to remain the recipient of explanations. They can:
+
+- teach a concept to an agent;
+- build an explanation, slide deck, simulation, story, or worked example;
+- watch an AI peer try a different strategy;
+- diagnose a peer’s mistake;
+- defend a claim before an expert panel;
+- revise the artifact and teach it again at a deeper level.
+
+This is learning by creating and teaching, made available on demand.
 
 ## 1. The evidence
 
-| Finding | Effect | Note |
-|---|---|---|
-| Learning by teaching (protégé effect) | **g = 0.56** | Robust at delay — it survives the retention test most interventions fail |
-| Self-explanation effect (Chi et al.) | Large, replicated | Explaining *to yourself* already works; an audience raises the stakes |
-| Deployment in AI learning products | **≈ zero** | The field built the tutor and skipped this entirely |
+| Finding | Result | Design opportunity |
+|---|---:|---|
+| Learning by teaching | **g = 0.56** | Give every learner a responsive student and audience |
+| Tutor + AI peers, SAT mathematics | **~65% unaided accuracy** vs ~42% control | Let learners observe, compare, and correct role-distinct peers |
+| Two-model writing support | Higher quality with diversity near baseline | Use genuinely different agents to broaden ideas |
+| Verification feedback in programming | **82.4% productive continuation** | Make checking and revision a first-class teaching action |
 
-Highest evidence × highest neglect. Nothing else in this survey scores that
-combination.
+The 2026 multi-agent experiments are especially important. In mathematics,
+participants learned with no agents, peer agents, a tutor, or tutor plus peers.
+Accuracy rose approximately 42% → 48% → 59% → 65%. In writing, both single- and
+two-model help improved quality, while the two-model condition preserved
+idea-level diversity close to the no-AI baseline. `MEASURED-RCT`
 
-**Why it works** is not mysterious: preparing to teach forces retrieval,
-organisation, and gap-detection *before* the explanation is given, and the act of
-explaining exposes the gaps you could not detect by reading. It converts passive
-comprehension into a generation task, which is precisely the transformation
-retrieval-practice research says produces durable memory.
+Sources:
 
-## 2. The blocker: a competent AI cannot be taught
+- [Beyond the AI Tutor: Social Learning with LLM Agents](https://arxiv.org/abs/2604.02677)
+- [Programming-tutor interaction study](https://arxiv.org/abs/2607.09919)
 
-This is the finding that kills the obvious implementation.
+The lesson is not that one interaction replaces all others. It is that frontier
+AI can generate an entire **social learning structure** around one learner.
 
-Chen et al. (2025): students teaching ChatGPT **failed to develop error-correction
-skill** *"due to ChatGPT's tendency to generate correct code."* The model could
-not stay wrong. Combined with measured sycophancy — 58.19% capitulation rate,
-14.66% of it *regressive* toward wrong answers — the default assistant is
-structurally incapable of playing the student.
+## 2. The AI student
 
-Three ways it breaks, all silent:
-
-1. **Autocomplete.** The learner starts an explanation; the model finishes it.
-   The gap is filled before it can be felt.
-2. **Silent correction.** The learner teaches something wrong; the model quietly
-   applies the right version anyway. The misconception survives, untested.
-3. **Sycophantic praise.** "That's a great explanation!" — the learner stops.
-   This is the felt-learning trap in one sentence.
-
-## 3. The architecture that works: the teachable agent
-
-**Betty's Brain** solved this twenty years ago and almost nobody has rebuilt it
-with LLMs. The move is to take truth *out* of the agent's disposition and put it
-in a **verifier**:
+A teachable agent adopts the learner’s explanation and applies it to a fresh
+case. That makes the learner’s model visible.
 
 ```
-  learner explains  →  agent ADOPTS the explanation as given, errors included
-                       (it must be able to stay wrong)
-                            ↓
-  agent applies it to a NEW problem, consistently and visibly
-                            ↓
-  a simulator / grader / test suite evaluates the RESULT
-                            ↓
-  failure is traceable to the learner's explanation, not asserted by the agent
-                            ↓
-  learner debugs their own model  →  re-teaches
+learner explains a rule
+        ↓
+AI student represents the rule
+        ↓
+AI student applies it to a new example
+        ↓
+tool, simulation, or rubric checks the result
+        ↓
+learner inspects, revises, and teaches again
 ```
 
-The agent never says "you're wrong." **The world does.** That converts sycophancy
-from an alignment problem you cannot solve into a systems-design choice you can —
-the same move as the grounding ladder: correctness lives in the checker, not the
-model's manners.
+The agent should ask authentic clarifying questions:
 
-**Hard requirements for the student-agent:**
+- “What happens when the denominator is negative?”
+- “Does your rule still work at the boundary?”
+- “Which step depends on that assumption?”
+- “Can you give me a counterexample?”
+- “How would you explain this to someone two levels earlier?”
 
-| Requirement | Why |
-|---|---|
-| Faithfully adopts the learner's model, errors included | Otherwise nothing is being tested |
-| Applies it *consistently* to novel cases | Inconsistency hides the flaw |
-| **Never volunteers the correct answer** | One helpful correction ends the exercise |
-| Asks genuine clarifying questions at gaps | This is where the learning happens |
-| Fails *visibly and traceably* | The learner must see cause → effect |
-| Cannot be nudged into correctness by tone | Sycophancy defeats the whole design |
+The point is not to stage artificial ignorance. It is to give the learner a
+concrete external representation of what they taught and a reason to refine it.
 
-The last one is the engineering problem. It is a prompting-and-scaffolding
-problem, not a model-capability problem — which means it is available today.
+## 3. The AI peer group
 
-## 4. Slides and presentations: who generates matters
+Peers contribute something different from an expert. They make partial
+understanding visible.
 
-On-the-fly slide generation is valuable **only in one direction**.
+Useful roles include:
 
-| Direction | Pedagogical value |
-|---|---|
-| AI generates polished slides *for* the learner | **Near zero.** Feels productive, is not. The AI does the organising — which was the learning. Textbook felt-learning trap. |
-| AI *scaffolds* the learner generating slides | **High.** Organisation, sequencing, and gap-detection stay with the learner. |
-| AI *is the audience* for the learner's presentation | **Highest.** Adds retrieval under pressure, plus a questioner who probes the gaps. |
+- a conceptually strong peer who wants arithmetic checked;
+- a careful calculator who needs help with the underlying idea;
+- a visual thinker who proposes a diagram;
+- a skeptic who asks for evidence;
+- a beginner who requests a simpler explanation;
+- a transfer peer who asks whether the idea works in a new domain.
 
-Design consequences:
+The mentor coordinates the group, names genuine disagreements, and invites the
+learner to judge. The agents are role-distinct because they have different
+information and responsibilities, not because they use decorative personalities.
 
-- **The artifact the learner produces is the assessment.** A deck reveals their
-  concept map — sequencing errors, missing prerequisites, and the slide they
-  couldn't fill are all diagnostic signals, free.
-- **The AI's job is the questions, not the deck.** After the presentation:
-  "on slide 3 you said X — why does that follow?" This is grilling in its
-  legitimate form, and it is assessment (F1) and instruction at once.
-- **Generation is still useful** — for figures, worked examples, and consistent
-  visual language *the learner directs*. Per A2: constrain generation to a
-  verifiable intermediate representation and let a deterministic renderer draw.
+## 4. The learner as creator
 
-## 5. Why this matters most for the H1 archetypes
+AI makes sophisticated creation possible earlier.
 
-- **Working-memory limits:** a slide is *external memory*. Building the deck
-  offloads the state the learner cannot hold, and the deck persists as a scaffold.
-- **ADHD:** presenting is short, active, and high-stakes-feeling without being
-  high-stakes. It fits the attention window rather than fighting it.
-- **Anxiety / learned helplessness:** teaching *reverses the role*. The learner is
-  the authority. The evidence base for this reversal is exactly the protégé
-  effect, and the confidence is earned rather than granted.
-- **Reasoning gaps:** teaching forces the causal chain to be made explicit — the
-  thing that abstraction-without-anchor never surfaces.
+A ten-year-old can build an interactive fraction model. A teenager can generate
+and test a physics simulation. A language learner can write and perform a short
+play. A student without drawing skill can direct a scientifically accurate
+diagram. A learner on a shared phone can create an oral presentation with local
+examples and receive questions in their strongest language.
 
-## 6. Open problem
+The creation loop is:
 
-Nobody has published an LLM teachable agent that reliably **stays wrong**. The
-required behaviour is the exact inverse of every alignment objective the base
-models were trained on. Whether this is achievable by prompting and scaffolding
-alone, or requires fine-tuning, is — as far as this survey can determine —
-**unanswered and worth answering.**
+1. **Choose a claim or goal.**
+2. **Generate candidate representations** with the AI.
+3. **Inspect and select** what communicates the idea.
+4. **Ground or verify** factual and computational claims.
+5. **Present or teach** the artifact to an AI audience.
+6. **Answer questions** from expert and peer agents.
+7. **Revise** for accuracy, clarity, and transfer.
+8. **Publish or share** with a real class, family, or community when appropriate.
+
+AI contribution and learner contribution remain visible. Co-creation is not a
+lesser form of learning; it is a new literacy whose quality can be assessed
+through choices, explanations, verification, and revision.
+
+## 5. Presentations become adaptive oral practice
+
+The presentation is no longer a one-time performance. The learner can rehearse
+with audiences tuned to different purposes:
+
+- **friendly beginner:** asks for clarity and examples;
+- **subject expert:** checks assumptions and edge cases;
+- **skeptical panel:** requests evidence and counterarguments;
+- **local audience:** asks why the concept matters here;
+- **interviewer:** tests concise recall and transfer;
+- **accessibility reviewer:** checks captions, reading order, contrast, and
+  alternative explanations.
+
+The mentor records which questions were easy, which exposed a gap, and which
+explanation worked. Those observations update the learner-owned state and shape
+the next lesson.
+
+## 6. The teaching-mode router keeps the loop adaptive
+
+Sometimes the learner should create from a blank page. Sometimes a worked
+example, generated draft, or expert demonstration is the fastest bridge to the
+next level. The router selects among:
+
+```
+demonstrate → co-create → complete → critique → teach → defend → transfer
+```
+
+The sequence can change by learner, goal, subject, and time. A novice may start
+by modifying a rich example. An experienced learner may begin with an open
+challenge. A student preparing for an exam may inspect a complete solution and
+then explain each decision. The governing objective is expanding independent
+capability, not enforcing one ritual.
+
+## 7. The agent society behind the activity
+
+One learner-facing mentor can call:
+
+- a curriculum architect to choose the next concept;
+- a subject specialist to verify truth;
+- a visual teacher to build the artifact;
+- a language mentor to preserve meaning;
+- peer agents to expose alternative reasoning;
+- an assessment coach to create transfer questions;
+- an accessibility agent to adapt the experience;
+- a human liaison to involve a teacher or family member.
+
+All agents share one learner-owned ledger. The learner experiences a coherent
+relationship, not a crowd of disconnected bots.
+
+See [The Expert Mentor Mesh](../research/raw/F2-agent-society-2026.md).
+
+## 8. What to measure
+
+The reference implementation should compare:
+
+- explanation-only versus teach-and-apply;
+- one mentor versus mentor plus peers;
+- one model versus genuinely different model families;
+- static artifact versus interactive artifact;
+- first draft versus verified and defended revision;
+- immediate success versus later unaided transfer;
+- effects by baseline knowledge, language, access, and disability.
+
+It should also measure the learner’s agency:
+
+- Did they choose among alternatives?
+- Could they explain why?
+- Did they catch an error or improve a representation?
+- Could they adapt the idea to a new case?
+- Did the finished artifact express something distinctively theirs?
+
+## 9. The design claim
+
+> AI does not only make expert teaching abundant. It makes audiences,
+> collaborators, students, peer groups, studios, and practice panels abundant.
+
+That is a larger opportunity than tutoring alone. Every child can learn by
+building something meaningful, teaching it, defending it, and making it better—
+with an expert team ready whenever needed.
