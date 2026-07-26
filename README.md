@@ -42,6 +42,7 @@ language, community, device tier, and learning environment.*
 16. [Compassionate persistence](survey/15-compassionate-persistence.md)
 17. [From motion to intervention](survey/16-from-motion-to-intervention.md)
 18. [Worlds you can question](survey/17-worlds-you-can-question.md)
+19. [The screen is a doorway](survey/18-the-screen-is-a-doorway.md)
 
 ## North star
 

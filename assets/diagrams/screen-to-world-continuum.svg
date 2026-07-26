@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Screen-to-world continuum for embodied AI mentorship</title>
+  <desc id="desc">The AI mentor moves from talking about the world to observing learner work, sensing the local environment, overlaying guidance, coaching physical action, connecting a human expert, and optionally coordinating tools or robots. Learner evidence flows back at every stage.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07152f"/><stop offset="1" stop-color="#17405d"/></linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5288b4"/><stop offset=".55" stop-color="#55a99d"/><stop offset="1" stop-color="#ffc857"/></linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#020914" flood-opacity=".5"/></filter>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#ffc857"/></marker>
+    <style>
+      .h{font:700 34px Inter,Segoe UI,sans-serif;fill:#f8fbff}.sub{font:400 17px Inter,Segoe UI,sans-serif;fill:#bed0e3}
+      .k{font:700 12px Inter,Segoe UI,sans-serif;letter-spacing:1px;fill:#83ead6}.t{font:700 18px Inter,Segoe UI,sans-serif;fill:#f8fbff}
+      .b{font:400 14px Inter,Segoe UI,sans-serif;fill:#d9e6f1}.dark{font:700 18px Inter,Segoe UI,sans-serif;fill:#102840}.ds{font:400 14px Inter,Segoe UI,sans-serif;fill:#36546e}
+    </style>
+  </defs>
+  <rect width="1200" height="820" rx="34" fill="url(#bg)"/>
+  <text x="65" y="68" class="h">The screen is a doorway back into the world</text>
+  <text x="65" y="102" class="sub">Move from explanation to perception, action, people, tools, and measurable reality.</text>
+  <rect x="80" y="195" width="1040" height="12" rx="6" fill="url(#line)"/>
+  <g filter="url(#s)">
+    <g transform="translate(55 245)"><rect width="170" height="205" rx="23" fill="#173f66" stroke="#5288b4"/><text x="23" y="38" class="k">TALK</text><text x="23" y="78" class="t">Explain and</text><text x="23" y="103" class="t">simulate</text><text x="23" y="140" class="b">model before action</text><text x="23" y="165" class="b">plan + predict</text></g>
+    <g transform="translate(239 245)"><rect width="170" height="205" rx="23" fill="#173f66" stroke="#5288b4"/><text x="23" y="38" class="k">SEE</text><text x="23" y="78" class="t">Observe learner</text><text x="23" y="103" class="t">work</text><text x="23" y="140" class="b">camera · screen</text><text x="23" y="165" class="b">drawing · gesture</text></g>
+    <g transform="translate(423 245)"><rect width="170" height="205" rx="23" fill="#164457" stroke="#55a99d"/><text x="23" y="38" class="k">SENSE</text><text x="23" y="78" class="t">Measure the</text><text x="23" y="103" class="t">local world</text><text x="23" y="140" class="b">audio · motion · light</text><text x="23" y="165" class="b">probe · wearable</text></g>
+    <g transform="translate(607 245)"><rect width="170" height="205" rx="23" fill="#164457" stroke="#55a99d"/><text x="23" y="38" class="k">DO</text><text x="23" y="78" class="t">Coach physical</text><text x="23" y="103" class="t">practice</text><text x="23" y="140" class="b">build · move · repair</text><text x="23" y="165" class="b">fade guidance</text></g>
+    <g transform="translate(791 245)"><rect width="170" height="205" rx="23" fill="#3b2d46" stroke="#c38fd1"/><text x="23" y="38" class="k" fill="#e8b7f4">CONNECT</text><text x="23" y="78" class="t">Bring in a</text><text x="23" y="103" class="t">person</text><text x="23" y="140" class="b">teacher · expert</text><text x="23" y="165" class="b">peer · family</text></g>
+    <g transform="translate(975 245)"><rect width="170" height="205" rx="23" fill="#4b3d22" stroke="#dda94c"/><text x="23" y="38" class="k" fill="#ffd47c">ACTUATE</text><text x="23" y="78" class="t">Coordinate</text><text x="23" y="103" class="t">tools or robot</text><text x="23" y="140" class="b">authorized zones</text><text x="23" y="165" class="b">local stop control</text></g>
+  </g>
+  <g fill="#ffc857"><circle cx="140" cy="201" r="10"/><circle cx="324" cy="201" r="10"/><circle cx="508" cy="201" r="10"/><circle cx="692" cy="201" r="10"/><circle cx="876" cy="201" r="10"/><circle cx="1060" cy="201" r="10"/></g>
+  <rect x="115" y="540" width="970" height="135" rx="25" fill="#fffdf7" stroke="#ffc857" stroke-width="3"/>
+  <text x="150" y="580" class="k" fill="#157268">RETURN EVIDENCE</text>
+  <text x="150" y="618" class="dark">prediction · sensor trace · demonstrated skill · human observation · artifact</text>
+  <text x="150" y="648" class="ds">The learner owns the evidence. High-impact or hazardous actions require local human authority.</text>
+  <path d="M600 540 V480" stroke="#ffc857" stroke-width="4" marker-end="url(#a)"/>
+  <rect x="115" y="720" width="970" height="48" rx="15" fill="#0b223d" stroke="#345874"/>
+  <text x="145" y="750" class="b">Universal baseline: paper + local materials + phone camera/audio/sensors + offline instructions + a reachable person</text>
+</svg>

@@ -30,7 +30,7 @@ destination, primary-source links, and at least one meaningful visual.
 | F4 | Reach and economics | current | integrated in `01` | `three-tier-delivery.svg` | current |
 | F5 | Lifelong learner model | current with C3 | `06-learner-owned-state.md` | `learner-owned-state.svg` | current |
 | F6 | Motivation | `F6-compassionate-persistence-2026.md` | `15-compassionate-persistence.md` | `compassionate-persistence-flywheel.svg` | current |
-| F7 | Embodiment | — | — | screen-to-world continuum | queued |
+| F7 | Embodiment | `F7-embodied-mentor-2026.md` | `18-the-screen-is-a-doorway.md` | `screen-to-world-continuum.svg` | current |
 | F8 | Safety and children | — | — | human escalation architecture | queued |
 | F9 | Open problems | — | — | research frontier map | queued |
 | F10 | Explanation laddering | `F10-explanation-depth-laddering-2026.md` | `13-one-concept-four-depths.md` | `explanation-depth-ladder.svg` | current |

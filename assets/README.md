@@ -64,3 +64,4 @@ Prompt:
 | `diagrams/compassionate-persistence-flywheel.svg` | Purpose → action → challenge → progress → belonging → shame-free return |
 | `diagrams/modality-decision-map.svg` | Learner action → annotate, animate, simulate, generate video, or do |
 | `diagrams/verified-world-stack.svg` | Generated experience → executable law → grounded sources → real observation |
+| `diagrams/screen-to-world-continuum.svg` | Explain → see → sense → coach action → connect people → authorized actuation |
