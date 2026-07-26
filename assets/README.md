@@ -32,16 +32,42 @@ classes:
 
 Prompt:
 
-> Wide premium editorial illustration showing the hopeful reality of a
-> world-class AI mentor available to every learner across rural Africa, India,
-> China, Latin America, an island community, and an under-resourced urban
-> neighborhood. Learners actively solve, build, draw, speak, experiment, and
-> collaborate; teachers and families are empowered partners. AI is represented
-> as warm ambient light, diagrams, and responsive learning surfaces, not a
-> humanoid robot. Painterly digital gouache, sunrise warmth, deep indigo, amber,
-> teal, and earth tones. Low-cost shared devices coexist with books, paper,
-> manipulatives, tools, and experiments. No flags, readable text, logos,
-> trademarks, watermark, charity framing, or dystopian imagery.
+> Use case: illustration-story  
+> Asset type: wide editorial hero illustration for the open research survey
+> “Learning in the New Frontier AI World”  
+> Primary request: show the hopeful reality of a world-class AI mentor
+> available to every learner, with children and teenagers learning complex
+> subjects across rural Africa, India, China, Latin America, an island
+> community, and an under-resourced urban neighborhood, all connected through
+> an abundant shared intelligence while remaining rooted in their own place and
+> culture  
+> Scene/backdrop: a seamless wide panorama that moves naturally across several
+> real learning environments—village school veranda, mountain classroom, family
+> home with shared phone, modest science lab, community learning center—unified
+> by subtle flowing light and knowledge motifs  
+> Subject: diverse learners actively solving, building, drawing, speaking,
+> experimenting, and collaborating; teachers and family members present as
+> empowered partners; the AI mentor represented as warm, non-humanoid ambient
+> light, diagrams, and responsive learning surfaces rather than a dominant
+> robot  
+> Style/medium: premium contemporary editorial illustration, painterly digital
+> gouache with precise educational detail, humane and optimistic, sophisticated
+> enough for a research report cover  
+> Composition/framing: 16:9 panoramic composition, clear focal flow from
+> individual learner to connected global learning community, generous breathing
+> room, visually legible at article-header scale  
+> Lighting/mood: sunrise warmth, possibility, dignity, intelligence, calm
+> confidence  
+> Color palette: deep indigo, warm amber, teal, earth tones, balanced natural
+> skin tones  
+> Constraints: culturally respectful; every learner is active rather than
+> passively watching; show low-cost and shared devices alongside books, paper,
+> manipulatives, tools, and experiments; teachers are amplified rather than
+> replaced; no country flags; no readable text; no logos; no trademarks; no
+> watermark  
+> Avoid: glossy corporate stock-art look, humanoid robots, dystopian
+> surveillance imagery, science-fiction hologram clichés, charity imagery,
+> savior framing, exaggerated poverty, visual clutter
 
 ## Diagram inventory
 
