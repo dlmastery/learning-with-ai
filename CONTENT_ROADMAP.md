@@ -15,7 +15,7 @@ destination, primary-source links, and at least one meaningful visual.
 | A3 | Reactive notebooks | `A3-reactive-notebooks-2026.md` | `09-reactive-learning-documents.md` | `reactive-notebook-anatomy.svg` | current |
 | A4 | Live multimodal tutoring | `A4-live-multimodal-frontier-2026-07-25.md` | `10-live-multimodal-mentor.md` | `full-duplex-mentor-loop.svg` | current |
 | A5 | World models | `A5-verified-generative-worlds-2026.md` | `17-worlds-you-can-question.md` | `verified-world-stack.svg` | current |
-| B1 | Learning science | existing | synthesis destination pending | learning-action loop | queued |
+| B1 | Learning science | `B1-learning-science-control-loop-2026.md` + source archive | `25-learning-science-becomes-a-control-system.md` | `learning-action-control-loop.svg` | current |
 | B2 | AI tutoring efficacy | `B2-efficacy-frontier-2026.md` | `04-efficacy-frontier.md` | `evidence-frontier-2026.svg` | current |
 | C1 | Illustration and diagrams | `C1-verified-visual-generation-2026.md` | `11-verified-visual-generation.md` | `visual-verification-pipeline.svg` | current |
 | C2 | Generated assessment | `C2-generated-assessment-validity-2026.md` | `12-assessment-as-evidence-stream.md` | `assessment-validity-pipeline.svg` | current |

@@ -4,9 +4,16 @@ wave: B
 section: B1
 date_researched: 2026-07-25
 sources_count: 109
+status: source-archive
+synthesis: B1-learning-science-control-loop-2026.md
 ---
 
 # The Learning-Science Floor
+
+> **Source-archive note:** This long-form effect-size and replication review is
+> retained as the foundational evidence spine. The July 2026 frontier synthesis,
+> organized as an executable teaching control loop, is
+> [B1-learning-science-control-loop-2026.md](B1-learning-science-control-loop-2026.md).
 
 **Purpose of this section.** Every AI capability claimed in this survey should be judged against
 what non-AI instructional science already delivers, at what effect size, with what replication

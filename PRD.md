@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| Status | Active — July 2026 frontier reset landed; 30 raw documents + 25 synthesis sections |
+| Status | Active — July 2026 frontier reset landed; 31 raw documents + 26 synthesis sections |
 | Target | ~100 pages, ~20 sections, 400+ cited sources |
 | Repo | `dlmastery/learning-with-ai` (private) |
 | Date | 2026-07-25 |
@@ -45,6 +45,7 @@ Every claim carries a **source URL** and an **evidence-strength label**:
 | `MEASURED-META` | Meta-analysis or systematic review |
 | `MEASURED-BENCH` | Benchmark result, method disclosed |
 | `OBSERVED` | Field/observational study |
+| `FOUNDATIONAL` | Replicated pre-frontier principle retained as a design invariant |
 | `INSPECTED` | Code, built artifact, or public file directly examined |
 | `VENDOR` | Company claim, not independently verified |
 | `DEMO` | Shown in a curated demo; availability/reliability unverified |

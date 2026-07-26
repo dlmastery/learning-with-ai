@@ -49,6 +49,7 @@ language, community, device tier, and learning environment.*
 23. [The market is a stack](survey/22-the-market-is-a-stack.md)
 24. [The union is the product](survey/23-the-union-is-the-product.md)
 25. [The next problems are system problems](survey/24-the-next-problems-are-system-problems.md)
+26. [Learning science becomes a control system](survey/25-learning-science-becomes-a-control-system.md)
 
 ## North star
 
