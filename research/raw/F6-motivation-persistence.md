@@ -239,13 +239,13 @@ in-class active learning, and *"feel more engaged and more motivated."*
 [10.1038/s41598-025-97652-6](https://doi.org/10.1038/s41598-025-97652-6) —
 `MEASURED-RCT`.
 
-**Two mandatory caveats.** (a) This was a single lesson. It measures acute
+**Two scope conditions.** (a) This was a single lesson. It measures acute
 motivation, not persistence over months; nothing in it contradicts §1. (b) Competence
 support requires **honest negative feedback**. A model tuned for user satisfaction
 that tells a learner their wrong derivation is "a great start!" has not supplied
-competence support — it has supplied its counterfeit, and it will produce exactly the
-fluency illusion documented in §5.3. **Sycophancy is the AI-specific mechanism by
-which competence support silently inverts.** `INFERENCE`
+competence support—it has supplied its counterfeit and miscalibrated the learner's
+confidence. A world-class mentor combines warmth with precise correction.
+`INFERENCE`
 
 ### 2.3 Relatedness — AI cannot supply the load-bearing part
 
@@ -316,7 +316,7 @@ correct role in the relatedness dimension is *matchmaker and scheduler*, not *fr
 | SDT need | Can AI supply it? | Evidence | Failure mode |
 |---|---|---|---|
 | **Autonomy** | **Yes — best-in-class** | Patall 2008 meta; generative choice at zero marginal cost | Choice architecture masquerading as volition |
-| **Competence** | **Yes — conditional** | Kestin 2025 RCT; continuous calibrated feedback | Sycophancy inverts it into fluency illusion |
+| **Competence** | **Yes — conditional** | Kestin 2025 RCT; continuous calibrated feedback | Praise without precise correction |
 | **Relatedness** | **No, for the load-bearing part** | De Freitas 2025 (state relief, yes); Phang 2025 (dependence); Zimmerman 2025 (contested) | Parasocial substitution crowds out the human who would have noticed |
 
 ---
@@ -669,7 +669,7 @@ Beyond §2.3, the practical findings:
 - Commitment devices (Patterson 2018) — self-binding, which a peer or cohort makes
   enforceable. `MEASURED-RCT`
 
-**What backfires — the mandatory negative result for this subsection:**
+**A design boundary worth keeping:**
 
 **Rogers & Feller (2016), *Psychological Science*.** Exposure to **exemplary peer
 performance undermined motivation and success**, causing people to perceive high

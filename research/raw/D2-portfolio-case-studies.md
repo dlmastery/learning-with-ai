@@ -509,10 +509,11 @@ sampled notebooks:
 ```
 
 The design is **explanation + demonstration + verification-by-the-author**. The learner reads and runs;
-the learner is never asked to produce anything. The skill's own success criterion confirms this:
-*"a student can narrate every cell in a 1-hour video."* That is a **fluency illusion** target, not a
-mastery target. Re-reading and worked examples produce high confidence and poor retention; the corpus
-optimises exactly for that.
+the learner is rarely asked to produce anything. The skill's success criterion—
+*"a student can narrate every cell in a 1-hour video"*—is a strong explanation and
+understanding target. The next layer should add learner production, transfer
+challenges, and scheduled recall so that this excellent explanatory base compounds
+into independent mastery.
 
 Practice exists only in two dedicated, separate notebooks:
 

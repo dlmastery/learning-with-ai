@@ -114,12 +114,11 @@ solving Putnam problems; it can serve as a specialist verifier inside the
 mentor. In a routed system, specialist capability matters without pretending it
 is pedagogy.
 
-**“Restraint is the active ingredient.” — Narrowed.** Requiring learner thought
-is important, and unrestricted answer production can create dependence.
-However, the July 2026 Zhongkao field study shows that strategically exposing a
-worked answer can enable inspection and local repair. The active ingredient is
-not withholding by itself. It is **adaptive control over when to ask, hint,
-model, reveal, verify, retrieve, or escalate**.
+**“Teaching mode is the active ingredient.” — Updated.** Requiring learner
+thought is important, and the July 2026 Zhongkao field study shows that
+strategically exposing a worked answer can enable inspection and local repair.
+The active ingredient is **adaptive control over when to ask, hint, model,
+reveal, verify, retrieve, or escalate**.
 
 ---
 
@@ -261,9 +260,9 @@ learning an unfamiliar topic with or without off-the-shelf generative AI:
 - Students shifted time from drafting to reading/search and reported greater
   enjoyment.
 
-This directly falsifies an overbroad claim that access to a general generative
-model necessarily produces offloading rather than learning. The usage policy
-and learner behavior mediate the effect.
+This directly shows that access to a general generative model can produce
+retained learning. The usage policy and learner behavior shape the size of the
+gain.
 
 ### 3.4 AI can narrow expertise gaps rather than merely amplify advantage
 
@@ -574,9 +573,9 @@ its gains systematically concentrate among learners already ahead.
 
 1. **Make the north star explicit:** an expert AI mentor for every learner, in
    the learner's spoken language, on the device and network they actually have.
-2. **Replace “the refusal engine” with “the teaching-mode router.”** Withholding
-   remains one action; worked-example reveal, verification, retrieval, and
-   escalation are others.
+2. **Adopt a teaching-mode router.** Asking, hinting, worked-example reveal,
+   verification, retrieval, and escalation are all legitimate actions selected
+   for the learner and moment.
 3. **Build an offline-first learner-state and curriculum core.** Cloud accounts
    are optional accelerators, not the identity system.
 4. **Separate model certification by role.** Evaluate cheap models for routine

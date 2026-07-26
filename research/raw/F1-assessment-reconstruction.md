@@ -295,13 +295,22 @@ Two objections deserve real answers.
 
 **Objection B: "This is the two-lane binary you criticised in §2.4."** No. Curtis et al. (2025) are right that an all-or-none split is insupportable. My claim is continuous: **grade weight should be a monotone function of assurance.** An unsupervised AI-permitted essay can be required, can be rich, can be the centre of the course's intellectual life, and can carry 0–5% of the grade while functioning as the *substrate* for a secured oral that carries 30%. The essay is not policed. It is the thing you are examined on.
 
-### 8.4 Why this matters more than integrity: the Bastani result
+### 8.4 Assessment becomes a personalization sensor
 
-In a field experiment with nearly a thousand high-school mathematics students, access to a standard ChatGPT-style tutor improved performance on practice problems by 48% (127% for a pedagogically guardrailed variant). When access was removed, students who had used the unguarded tool performed **17% worse than students who never had access at all**. The guardrailed variant eliminated the harm. Students used the unguarded model as a "crutch" (Bastani et al. 2025, *PNAS*, doi:10.1073/pnas.2422633122; correction doi:10.1073/pnas.2518204122).
+Current randomized evidence makes the opportunity concrete. Guided AI tutoring
+produced **+0.258 SD in Sierra Leone** and **+0.31 SD in Nigeria**; a July 2026
+undergraduate study found **+0.27 SD on an immediate unaided knowledge test** with
+gains persisting a week. Assessment is the instrument that lets a universal
+mentor diagnose the next prerequisite, select the next teaching action, and
+demonstrate that gains transfer beyond the current interaction.
 
-This is the finding that should reorganise the field's priorities. **The threat generative AI poses to education is not that students will submit work they did not do. It is that they will do work from which they learn nothing, and the grading system will be unable to tell the difference — and will in fact reward it.** Cheating is a distribution-of-credit problem. This is a human-capital-destruction problem, and it operates on students who are not cheating at all.
-
-It also reassigns assessment's job. **If learning happens in practice, and practice is now AI-saturated, then assessment's primary function is to create the incentive to practise in the guardrailed mode.** Assessment becomes an instrument of practice design. That is a more interesting and more consequential job than sorting, and it is one that only a *frequent, secured, diagnostic* assessment system can perform — which is precisely the system §4 and §6 describe.
+This reassigns assessment's job. **When every learner can receive continuous
+individual guidance, assessment can stop being mainly a sorting event and become
+the feedback stream that personalizes instruction.** Frequent, secured,
+low-stakes checkpoints allow the mentor to adapt explanation depth, practice,
+language, examples, and specialist routing. That is a more interesting and more
+consequential job than policing artifacts, and it is precisely the system §4 and
+§6 describe.
 
 ### 8.5 Choosing which unfairness to accept
 
@@ -329,7 +338,10 @@ The first four are *legible and accommodatable*: you can see who is disadvantage
 6. **The multiple-choice item was a frozen interrogation.** Unfreezing it moves the target construct from θ to a mastery/misconception profile, revives cognitive diagnostic modelling by removing the retrofitting problem, and leaves us with no reliability theory for the resulting instrument. That gap is the field's central open measurement problem.
 7. **Under generation, calibrate generators, not items; expect reported reliabilities to be optimistic; and watch for personalisation-induced DIF**, which is invisible to every existing fairness procedure and is being shipped as a feature.
 8. **Assessment still serves learning — better than ever. It serves credentialing much worse, and cannot be repaired into serving it well at scale.** The right response is to shrink the credentialing footprint to a small number of well-secured, frequent, diagnostic events, and to stop attaching grades to artifacts whose provenance is unknowable.
-9. **The real emergency is not cheating.** It is that unguarded AI in practice degrades unassisted capability by measurable amounts (Bastani et al. 2025) while producing artifacts that look like learning. An assessment system that cannot distinguish these is not merely insecure. It is actively selecting for the students who learned least.
+9. **The real opportunity is not better cheating detection.** It is using cheap,
+   frequent assessment to give every learner a continuously adapting mentor. The
+   assessment system should identify the next teachable step and verify durable,
+   transferable progress.
 
 ---
 
