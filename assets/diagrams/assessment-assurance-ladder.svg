@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920" role="img" aria-labelledby="title desc">
+  <title id="title">Assessment assurance ladder</title>
+  <desc id="desc">Six ascending levels move from activity to immediate response, interactive explanation, executable performance, delayed independent transfer, and a longitudinal learner-owned portfolio. Evidence strength rises while support conditions, accessibility, provenance, uncertainty, and learner permissions apply at every level.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#172554" flood-opacity=".12"/>
+    </filter>
+    <linearGradient id="rise" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#94A3B8"/>
+      <stop offset=".35" stop-color="#2563EB"/>
+      <stop offset=".7" stop-color="#0F766E"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <style>
+      .title{font:700 34px Inter,Arial,sans-serif;fill:#172554}
+      .sub{font:400 18px Inter,Arial,sans-serif;fill:#475569}
+      .level{font:800 14px Inter,Arial,sans-serif;fill:#fff;letter-spacing:.7px}
+      .head{font:700 18px Inter,Arial,sans-serif;fill:#172554}
+      .body{font:400 14px Inter,Arial,sans-serif;fill:#475569}
+      .arrowtext{font:700 14px Inter,Arial,sans-serif;fill:#172554;letter-spacing:.8px}
+      .striphead{font:800 15px Inter,Arial,sans-serif;fill:#fff}
+      .stripbody{font:400 14px Inter,Arial,sans-serif;fill:#DBEAFE}
+      .small{font:600 13px Inter,Arial,sans-serif;fill:#64748B}
+    </style>
+  </defs>
+
+  <rect width="1400" height="920" fill="#FFFDF7"/>
+  <circle cx="1275" cy="80" r="155" fill="#DBEAFE" opacity=".55"/>
+  <circle cx="90" cy="850" r="150" fill="#CCFBF1" opacity=".5"/>
+
+  <text x="70" y="60" class="title">ASSESSMENT BECOMES AN EVIDENCE ARCHITECTURE</text>
+  <text x="70" y="94" class="sub">Each rung supports a different claim; no single artifact has to carry the whole credential.</text>
+
+  <!-- inference arrow -->
+  <path d="M105 710 L105 180" stroke="url(#rise)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M82 205 L105 160 L128 205 Z" fill="#172554"/>
+  <text x="75" y="450" transform="rotate(-90 75 450)" text-anchor="middle" class="arrowtext">STRONGER INFERENCE ABOUT CAPABILITY</text>
+
+  <!-- ladder cards -->
+  <g filter="url(#shadow)">
+    <rect x="170" y="650" width="250" height="130" rx="18" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2"/>
+    <rect x="360" y="550" width="300" height="140" rx="18" fill="#EFF6FF" stroke="#60A5FA" stroke-width="2"/>
+    <rect x="560" y="450" width="330" height="150" rx="18" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+    <rect x="780" y="350" width="350" height="160" rx="18" fill="#ECFDF5" stroke="#0F766E" stroke-width="2"/>
+    <rect x="970" y="245" width="360" height="170" rx="18" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+    <rect x="740" y="125" width="590" height="155" rx="22" fill="#172554" stroke="#172554" stroke-width="2"/>
+  </g>
+
+  <!-- level chips -->
+  <g>
+    <rect x="190" y="668" width="72" height="28" rx="14" fill="#64748B"/>
+    <text x="226" y="687" text-anchor="middle" class="level">LEVEL 0</text>
+    <text x="190" y="728" class="head">Activity</text>
+    <text x="190" y="754" class="body">Opened · watched · completed</text>
+    <text x="190" y="774" class="body">Opportunity, not capability</text>
+
+    <rect x="382" y="568" width="72" height="28" rx="14" fill="#2563EB"/>
+    <text x="418" y="587" text-anchor="middle" class="level">LEVEL 1</text>
+    <text x="382" y="628" class="head">Immediate response</text>
+    <text x="382" y="654" class="body">Recall · select · solve · correct</text>
+    <text x="382" y="676" class="body">Fast state update</text>
+
+    <rect x="582" y="468" width="72" height="28" rx="14" fill="#2563EB"/>
+    <text x="618" y="487" text-anchor="middle" class="level">LEVEL 2</text>
+    <text x="582" y="528" class="head">Interactive explanation</text>
+    <text x="582" y="554" class="body">Explain · repair · defend · compare</text>
+    <text x="582" y="576" class="body">Adaptive oral or equivalent mode</text>
+
+    <rect x="802" y="368" width="72" height="28" rx="14" fill="#0F766E"/>
+    <text x="838" y="387" text-anchor="middle" class="level">LEVEL 3</text>
+    <text x="802" y="428" class="head">Executable performance</text>
+    <text x="802" y="454" class="body">Proof · code · experiment · build</text>
+    <text x="802" y="476" class="body">Product carries part of its warrant</text>
+
+    <rect x="992" y="263" width="72" height="28" rx="14" fill="#D97706"/>
+    <text x="1028" y="282" text-anchor="middle" class="level">LEVEL 4</text>
+    <text x="992" y="323" class="head">Delayed independent transfer</text>
+    <text x="992" y="349" class="body">New task · later date</text>
+    <text x="992" y="371" class="body">changed context · no tutor</text>
+    <text x="992" y="393" class="body">Strong routine learning claim</text>
+
+    <rect x="764" y="146" width="72" height="28" rx="14" fill="#2563EB"/>
+    <text x="800" y="165" text-anchor="middle" class="level">LEVEL 5</text>
+    <text x="764" y="206" style="font:700 22px Inter,Arial,sans-serif;fill:#fff">LONGITUDINAL LEARNER-OWNED PORTFOLIO</text>
+    <text x="764" y="236" style="font:400 15px Inter,Arial,sans-serif;fill:#DBEAFE">Projects · transfer · explanations · collaboration · reflection · human validation</text>
+    <text x="764" y="260" style="font:400 15px Inter,Arial,sans-serif;fill:#DBEAFE">Selective disclosure → verifiable credential → new opportunity</text>
+  </g>
+
+  <!-- arrows between steps -->
+  <g fill="none" stroke="#2563EB" stroke-width="4" stroke-linecap="round">
+    <path d="M420 690 L465 650"/>
+    <path d="M660 590 L705 550"/>
+    <path d="M890 490 L930 450"/>
+    <path d="M1130 390 L1170 350"/>
+    <path d="M1120 245 L1080 225"/>
+  </g>
+  <g fill="#2563EB">
+    <path d="M457 647 l17-5 -5 17 z"/>
+    <path d="M697 547 l17-5 -5 17 z"/>
+    <path d="M922 447 l17-5 -5 17 z"/>
+    <path d="M1162 347 l17-5 -5 17 z"/>
+    <path d="M1087 218 l-18 0 8 16 z"/>
+  </g>
+
+  <!-- persistent contract strip -->
+  <rect x="170" y="815" width="1160" height="70" rx="20" fill="#2563EB" filter="url(#shadow)"/>
+  <text x="195" y="843" class="striphead">EVERY RUNG RECORDS</text>
+  <text x="195" y="868" class="stripbody">claim · task · AI/human support · accessibility · provenance · evaluator · uncertainty · learner permission · next teaching action</text>
+
+  <text x="70" y="913" class="small">THE GOAL IS NOT MORE TESTING · THE GOAL IS CLEARER EVIDENCE THAT IMMEDIATELY IMPROVES LEARNING</text>
+</svg>

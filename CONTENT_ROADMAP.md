@@ -24,7 +24,7 @@ destination, primary-source links, and at least one meaningful visual.
 | D2 | Portfolio validation | `D2-G3-portfolio-comparison-2026.md` + source audit | `23-the-union-is-the-product.md` | `portfolio-coverage-matrix.svg` | current |
 | E1 | 2026 market frontier | `E1-market-frontier-2026.md` | `22-the-market-is-a-stack.md` | `market-capability-landscape-2026.svg` | current |
 | E2 | LessonOrca evidence | `E2-lessonorca-evidence-program-2026.md` | `21-lessonorca-evidence-loop.md` | `lessonorca-evidence-loop.svg` | current |
-| F1 | Assessment reconstruction | existing; refresh needed | — | assessment assurance ladder | refresh |
+| F1 | Assessment reconstruction | `F1-assessment-evidence-architecture-2026.md` + source archive | `26-assessment-becomes-an-evidence-architecture.md` | `assessment-assurance-ladder.svg` | current |
 | F2 | Expert agent society | current | `03-expert-mentor-mesh.md` | `expert-mentor-mesh.svg` | current |
 | F3 | Executable knowledge | `F3-executable-knowledge-2026.md` | `07-executable-knowledge.md` | `executable-knowledge-loop.svg` | current |
 | F4 | Reach and economics | current | integrated in `01` | `three-tier-delivery.svg` | current |

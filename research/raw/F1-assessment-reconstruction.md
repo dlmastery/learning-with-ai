@@ -3,9 +3,16 @@ title: "The Collapse and Reconstruction of Assessment"
 wave: F
 date_researched: 2026-07-25
 sources_count: 85
+status: source-archive
+synthesis: F1-assessment-evidence-architecture-2026.md
 ---
 
 # The Collapse and Reconstruction of Assessment
+
+> **Source-archive note:** This long-form reconstruction preserves the validity,
+> security, detector, oral-assessment, and programmatic-assessment evidence. The
+> July 2026 frontier synthesis now centers what can be built:
+> [F1-assessment-evidence-architecture-2026.md](F1-assessment-evidence-architecture-2026.md).
 
 ## 0. The question, stated precisely
 

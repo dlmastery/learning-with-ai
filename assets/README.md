@@ -72,3 +72,4 @@ Prompt:
 | `diagrams/portfolio-coverage-matrix.svg` | Complementary existence proofs across current projects → one composed mentor |
 | `diagrams/research-frontier-priority-map.svg` | P0 prove → P1 compose → P2 ecosystem research agenda with falsifiable milestones |
 | `diagrams/learning-action-control-loop.svg` | Goal → diagnose → select → act → feedback → remember → delayed transfer |
+| `diagrams/assessment-assurance-ladder.svg` | Activity → response → explanation → performance → transfer → learner-owned portfolio |

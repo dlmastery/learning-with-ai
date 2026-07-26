@@ -50,6 +50,7 @@ language, community, device tier, and learning environment.*
 24. [The union is the product](survey/23-the-union-is-the-product.md)
 25. [The next problems are system problems](survey/24-the-next-problems-are-system-problems.md)
 26. [Learning science becomes a control system](survey/25-learning-science-becomes-a-control-system.md)
+27. [Assessment becomes an evidence architecture](survey/26-assessment-becomes-an-evidence-architecture.md)
 
 ## North star
 
