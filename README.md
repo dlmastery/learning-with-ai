@@ -37,6 +37,7 @@ language, community, device tier, and learning environment.*
 11. [The live multimodal mentor](survey/10-live-multimodal-mentor.md)
 12. [The verified visual](survey/11-verified-visual-generation.md)
 13. [Assessment as a living evidence stream](survey/12-assessment-as-evidence-stream.md)
+14. [One concept at four depths](survey/13-one-concept-four-depths.md)
 
 ## North star
 

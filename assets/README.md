@@ -59,3 +59,4 @@ Prompt:
 | `diagrams/full-duplex-mentor-loop.svg` | Continuous listen/see/show/speak/tool/state tutoring loop |
 | `diagrams/visual-verification-pipeline.svg` | Concept contract → generation → truth/render/access/provenance checks → targeted repair |
 | `diagrams/assessment-validity-pipeline.svg` | Claim → assessment tuple → checks → synthetic prior → real calibration → next teaching action |
+| `diagrams/explanation-depth-ladder.svg` | Four sophistication rungs connected by an invariant fidelity thread |
