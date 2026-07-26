@@ -5,6 +5,14 @@ date_researched: 2026-07-25
 sources_count: 0
 ---
 
+> **⚠️ PARTIAL — agent terminated by session limit mid-write (2026-07-25).**
+> Sections 1–3 are complete and self-corrected (the agent explicitly replaced its
+> own §3 after finding its published-multiplier estimates "wrong in both
+> directions"). Sections 4+ (offline/low-bandwidth design, ICT4D failure history,
+> the digital divide, deployed-intervention RCTs, and the steelman counter-argument)
+> were **never written**. Re-run required — see CLAUDE.md §8.
+
+
 # The Reach Frontier
 
 **Thesis of this section.** "No child, no teen, no adult left behind" is an engineering and
@@ -288,347 +296,238 @@ thing that gets all the attention.**
 
 ---
 
-## 3. Language — the cost model is regressive by construction
+## 3. Language — measured, not claimed
 
-Tokenisation penalties multiply *every* number above. Non-Latin and low-resource scripts
-fragment into far more tokens per word than English (Ahia et al., EMNLP 2023, "Do All
-Languages Cost the Same?"; Petrov et al., NeurIPS 2023, "Language Model Tokenizers Introduce
-Unfairness Between Languages"). Applying published multipliers to the $/hour figures:
+### 3.1 How many languages are genuinely served?
 
-| Language | × tokens vs English | Frontier $/h | Small model $/h | Small model $/yr |
-|---|---|---|---|---|
-| English | 1.0 | $1.41 | $0.052 | $9.36 |
-| Spanish / French | 1.2 | $1.69 | $0.062 | $11.23 |
-| Hindi (Devanagari) | 2.5 | $3.53 | $0.130 | $23.40 |
-| Yoruba | 2.5 | $3.53 | $0.130 | $23.40 |
-| Bengali | 3.0 | $4.23 | $0.156 | $28.08 |
-| Telugu | 4.0 | $5.64 | $0.208 | $37.44 |
-| Amharic (Ge'ez) | 5.0 | $7.05 | $0.260 | $46.80 |
-| Burmese | 9.0 | $12.69 | $0.468 | $84.24 |
-| Shan (worst observed) | 15.0 | $21.15 | $0.780 | $140.40 |
+**Joshi, Santy, Budhiraja, Bali & Choudhury (2020), "The State and Fate of Linguistic
+Diversity and Inclusion in the NLP World", ACL 2020, arXiv:2004.09095** — the taxonomy that
+frames everything:
 
-**The learner who most needs a free tutor pays the most per sentence.** A Telugu or Amharic
-speaker pays 4–5× an English speaker for identical pedagogy; a Burmese speaker up to 9×. The
-penalty correlates inversely with how much of the language was in the tokeniser's training
-mix — it is regressive by construction, and it compounds with the quality gap (a worse tutor,
-charged at a higher rate).
-
-It also consumes the context window: a 1M-token window holds ~1M English tokens of curriculum
-but only the equivalent of ~200–250k words in Amharic.
-
-*[Measured benchmark performance by language — Global-MMLU, Belebele, IrokoBench/AfriMMLU,
-MILU, Whisper/MMS WER — pending from the language research stream; see §6.]*
-
----
-
----
-
-## 6. Evidence from deployed interventions
-
-### 6.1 The two studies carrying the entire "AI tutoring works in poor countries" claim
-
-**Nigeria — De Simone, Tiberti, Barron Rodriguez, Manolio, Mosuro & Dikoru (2025),
-*From Chalkboards to Chatbots*, World Bank Policy Research WP 11125,
-doi:10.1596/1813-9450-11125.** Nine public schools, Benin City, Edo State. Microsoft Copilot
-(GPT-4) in school computer labs, twelve 90-minute after-school sessions over six weeks,
-teacher-guided with prompt scaffolds. ITT effects: **English 0.238 SD (SE 0.068)**, total
-weighted 0.31 SD, third-term curricular English exam 0.21 SD. Cost **$48/pupil** for the
-pilot ($9 marginal; $124/pupil projected for a four-quarter version).
-
-Caveats that matter:
-- **Opt-in**: only 52% of eligible students entered the randomisation pool; no demographic
-  data on non-participants.
-- **Differential attrition**: 36% treatment vs 50% control failed to complete endline —
-  statistically significant, and the analysed sample is 57% of those assigned. Lee bounds and
-  IPW are applied and effects survive, which is the right response, but this is the study's
-  largest threat.
-- **Heterogeneity is regressive**: larger effects for higher-baseline and higher-SES students.
-- **Not an AI-alone intervention**: teachers ran the sessions; students got extra
-  instructional time, a computer lab, and structured curriculum-aligned activity. The
-  counterfactual is *nothing*, not *the same 18 hours without a chatbot*. The active
-  ingredient is unidentified.
-- **The "nearly two years of learning in six weeks" headline is a units conversion, not a
-  finding.** It is an Evans & Yuan (2019) EYOS transformation of 0.238 SD. It is a statement
-  about how little a business-as-usual Nigerian school year adds, not how much the chatbot
-  taught. The year-long extrapolation (1.2–2.23 SD) linearly projects a per-day dose-response
-  estimated over ≤12 sessions out to 36 weeks and should not be quoted as a result.
-- **No replication.** A full-text search of the World Bank corpus returns this paper and
-  nothing else.
-
-**Ghana — Henkel, Horne-Robinson, Kozhakhmetova & Lee (2024), *Effective and Scalable Math
-Support: Experimental Evidence on the Impact of an AI-Math Tutor in Ghana*, AIED 2024,
-doi:10.1007/978-3-031-64315-6_34 (arXiv:2402.09809).** Rori, a WhatsApp math tutor. Eleven
-Rising Academies schools, **randomised at school level** (5T/6C), grades 3–8, two 30-minute
-sessions/week, Feb–Aug 2023. 477 of 637 completed both tests. **Cohen's d = 0.36.** Marginal
-cost **~$5/student/year**.
-
-This is the most-cited LMIC AI-tutoring number and the **weakest-identified study of the set**:
-- Assignment is at school level with **11 clusters**, but inference is an independent-samples
-  t-test on 477 students — standard errors are not clustered, no school fixed effects. The
-  reported p<0.001 is not credible as stated; the honest interval around 0.36 is very wide.
-- Same 35-item instrument at all grades and both timepoints; authors concede **ceiling
-  effects**; retest effects likely.
-- 25% attrition, with dropouts substantially lower-scoring at baseline.
-- Rising Academies **built the product, runs the schools, and authored the evaluation**. No
-  pre-registration mentioned; authors call it "a preliminary evaluation."
-- The $5 is *marginal* (API + device + 3G), excluding devices, content development, and
-  teacher supervision — not comparable to Nigeria's all-in $48.
-
-### 6.2 The near-empty evidence base
-
-Searches across Crossref, ERIC, Europe PMC and the World Bank corpus produced **no rigorous
-outcome evaluation** of Khanmigo (anywhere, including the US), ConveGenius/SwiftChat, Kidato,
-M-Shule, Somanasi, Eneza Education, Pratham LLM pilots, or Central Square Foundation AI work.
-Rocket Learning's public impact page carries testimonials only — no control group, N, effect
-size, or cost. Youth Impact lists no AI/LLM programme with measured results.
-
-**Two studies, neither replicated, one of them badly identified, is the entire base.**
-
-### 6.3 The most rigorous trial finds zero
-
-**Bastani, Bastani, Sungu, Ge, Kabakcı & Mariman (2025), *Generative AI without guardrails
-can harm learning: Evidence from high school mathematics*, PNAS 122(26), e2422633122.**
-~1,000 students, one Turkish high school, four 90-minute sessions, three arms.
-
-| Arm | During assisted practice | On unassisted exam |
-|---|---|---|
-| GPT Base (no guardrails) | **+48%** | **−0.054 SD (SE 0.022), i.e. −17%** |
-| GPT Tutor (guardrailed) | **+127%** | **−0.004 SD (SE 0.013) — a precise null** |
-
-Two things are usually lost in citation. First, the harm comes from *unrestricted
-answer-giving*, and a well-designed tutor removed it. Second, and less comfortably:
-**the well-designed tutor also produced no detectable learning gain.** The best result in the
-most careful negative-controlled AI-tutoring trial is "did no harm." (The 2025 PNAS
-Correction, doi:10.1073/pnas.2518204122, is an author-affiliation fix only — no numbers
-changed.)
-
-For contrast, the strongest positive: **Kestin, Miller, Klales, Milbourne & Ponti (2025),
-*AI tutoring outperforms in-class active learning*, Scientific Reports 15,
-doi:10.1038/s41598-025-97652-6** — Harvard, 194 students, within-subject crossover, **0.63 SD**.
-But: immediate researcher-designed multiple-choice post-test with **no delayed retention
-measure**, two lessons, elite institution, expert-crafted prompts and bespoke instructional
-video. An upper bound on a heavily engineered system, not on "students using ChatGPT."
-
-### 6.4 The meta-analytic picture, including a retraction
-
-- **VanLehn (2011)**, Educational Psychologist 46(4), doi:10.1080/00461520.2011.611369 —
-  the field believed CAI/ITS/human tutoring were d = 0.3/1.0/2.0. Actual: **human tutoring
-  0.79, ITS 0.76.** ITS essentially match human tutors, and **human tutors do not reach two
-  sigma.**
-- **Kulik & Fletcher (2016)**, RER 86(1), doi:10.3102/0034654315581420 — k=50, median 0.66 SD,
-  but heavily dependent on local vs standardised outcome measures.
-- **Steenbergen-Hu & Cooper (2013, 2014)** — college g = 0.32–0.37, ITS **less** effective
-  than human tutoring; K-12 math "no negative and perhaps a small positive effect."
-- **Liu, Zuo & Lu (2025)**, JCAL, doi:10.1111/jcal.70096 — k=37, g = 0.577 [0.395, 0.759].
-  Its own moderators are the tell: largest effects at **samples of 21–40** and 5–10-week
-  interventions. That is the signature of small-study bias.
-- **⚠️ The headline LLM number has been retracted.** Wang & Fan (2025), *The effect of ChatGPT
-  on students' learning performance…*, Humanities and Social Sciences Communications,
-  doi:10.1057/s41599-025-04787-y, reported g = 0.867 across 51 studies and accumulated ~247
-  citations. **Retracted 22 April 2026** (doi:10.1057/s41599-026-07310-z). Independently,
-  **Bartoš, Martinková & Wagenmakers (2025)**, doi:10.31234/osf.io/8vs32_v1, show the effects
-  "greatly diminish once publication bias is accounted for." **Anyone citing g ≈ 0.87 for LLM
-  tutoring is citing a retracted paper.**
-- **Bloom's two sigma has never been replicated.** Bloom (1984), doi:10.2307/1175554,
-  dismantled by **von Hippel (2024), "Two-Sigma Tutoring: Separating Science Fiction from
-  Science Fact," Education Next**: it rests on two dissertations, 3-week interventions,
-  deliberately unfamiliar content, narrow researcher-made tests; the tutoring arm bundled
-  mastery-learning retesting (roughly half the effect) and *replaced* rather than supplemented
-  instruction. Cohen, Kulik & Kulik (1982): mean **0.33 SD** across 65 studies, 0.84 on local
-  tests vs **0.27 on standardised tests**.
-- **Human tutoring benchmark**: Nickow, Oreopoulos & Quan — the widely quoted 0.37 SD is the
-  2020 working paper; the **published** version (AERJ 2023, doi:10.3102/00028312231208687)
-  reports **0.288 SD (SE 0.029)**. Costs: Saga Education **$3,500–4,300/student/year**;
-  US federally funded supplemental tutoring **$1,100–2,000/student** for **0.06 SD**.
-
-### 6.5 What to expect at scale — the voltage drop
-
-- **Muralidharan, Singh & Ganimian (2019)**, AER 109(4), doi:10.1257/aer.20171112 — Mindspark
-  urban India, **0.37 SD math / 0.23 Hindi** over 4.5 months.
-- **Muralidharan & Singh (2025)**, *Adapting for Scale*, NBER WP 34205 — same technology,
-  adapted for scale, sample **20× larger**, **18 months**: **0.22 SD math / 0.20 Hindi**.
-  Longer dose, bigger sample, smaller effect. This is the best-documented voltage drop in the
-  technology-aided-instruction literature and the right prior for what happens to 0.31 and
-  0.36 at scale.
-- **Evans & Yuan (2022)**, EEPA, doi:10.3102/01623737221079646 — across 234 LMIC studies the
-  **median RCT effect is 0.10 SD**, and effects are "larger and demonstrate higher variance
-  for small-scale studies." Both AI studies above are small-scale.
-- **Reich & Ruipérez-Valiente (2019)**, *The MOOC pivot*, Science 363(6423),
-  doi:10.1126/science.aav7958 — six years of Harvard/MIT edX data: most learners never return
-  after year one, growth concentrated in affluent countries, **completion rates did not
-  improve over six years.** The closest well-measured analogue for unsupervised chatbot
-  engagement over time — and the reason the Nigeria result matters *because* attendance was
-  supervised (72% in a monitored lab), not despite it.
-
-**No published measurement of week-by-week engagement decay in an LLM tutoring deployment
-exists.** Rori's own evaluation names dosage–response and plateau as open questions. This is
-a genuine hole.
-
-### 6.6 Placing the measured points in the cost-effectiveness framework
-
-Converting at ~0.30 SD per year of schooling (LAYS per $100; higher is better):
-
-| Intervention | Cost/child/yr | d | LAYS per $100 |
-|---|---|---|---|
-| Ghana Rori (as claimed) | $5 | 0.36 | **24.00** |
-| Ghana Rori (at Evans–Yuan median) | $5 | 0.10 | **6.67** |
-| Botswana SMS + phone, human tutors | $13.50 | 0.12 | **2.96** |
-| Nigeria Copilot, 6-week pilot as run | $48 | 0.238 | **1.65** |
-| Mindspark urban | $100 | 0.37 | 1.23 |
-| Mindspark at scale | $100 | 0.22 | 0.73 |
-| Nigeria, projected 4-quarter version | $124 | 0.238 | 0.64 |
-| Bastani GPT Tutor (guardrailed) | ~$50 | 0.00 | **0.00** |
-| Saga human tutoring (US) | $3,900 | 0.26 | 0.02 |
-| US supplemental private tutoring | $1,550 | 0.06 | 0.01 |
-
-**Framework validation:** my conversion puts the Nigeria pilot at 1.65 LAYS/$100; the paper's
-own reported range is **0.6–1.9**. The framework agrees with the primary source.
-
-**The pattern is unambiguous and it is about cost, not about effect size.** The interventions
-that win are the cheap ones. Rori wins not because 0.36 SD is large but because $5 is small.
-Saga Education achieves a perfectly respectable 0.26 SD and scores 0.02 — a thousandth of
-Rori — purely on price. **Buy AI tutoring for the cost, not the effect size.**
-
----
-
-## 7. The uncomfortable counter-argument
-
-### 7.1 The steelman
-
-*Stated as strongly as it can be stated, because it is largely correct.*
-
-**Premise 1 — Content availability has not been the binding constraint for decades.**
-Every curriculum a child needs has been free on the open web since roughly 2010. Khan
-Academy, Wikipedia, OpenStax, CK-12, and YouTube collectively solved "access to explanation"
-years ago. Learning poverty nonetheless stands at roughly 70% of ten-year-olds in low- and
-middle-income countries. If content were the constraint, that number would have moved. It
-did not. AI does not add content; it adds *responsiveness* to content that was already free.
-The burden of proof is on the claim that responsiveness is the missing ingredient, and that
-burden has not been discharged.
-
-**Premise 2 — The measured constraints are physiological, institutional, and custodial.**
-A child who is stunted, anaemic, or hungry cannot consolidate what a tutor teaches, however
-patient the tutor. A child who is not in school is not in front of the device. A child in a
-classroom whose teacher is absent has no one to enforce the routine that makes any
-instructional technology work. A girl who is unsafe walking to the learning centre does not
-arrive. These are the variables with the largest documented effects on learning outcomes in
-low-income settings, and **an AI tutor moves none of them.** It does not deworm, feed,
-enrol, supervise, or protect.
-
-**Premise 3 — The ICT4D record is a forty-year controlled experiment in exactly this
-hypothesis, and it failed.** Every prior wave — radio, television, PCs, one-laptop-per-child,
-tablets, MOOCs — arrived with the same structure of argument: the marginal cost of
-distributing instruction has collapsed, therefore the learning gap will close. Each time,
-rigorous evaluation found effects near zero on learning outcomes. The interventions that
-*did* work were the ones that changed what an adult did with a child's time. AI is a better
-technology than any of these, but "better technology" was never the failed variable — the
-theory of change was.
-
-**Premise 4 — Cost-effectiveness arithmetic actively disfavours the sophisticated version.**
-This is the counter-argument's sharpest edge, and it comes from this section's own numbers.
-Converting to the sector's standard currency (Learning-Adjusted Years of Schooling per $100,
-at ~0.30 SD per year of schooling):
-
-| Configuration | Full TCO/child/yr | LAYS/$100 at d=0.10 | at d=0.15 | at d=0.20 | Verdict vs 3-LAYS bar |
+| Class | Name | # Languages | Speakers | % of langs | Examples |
 |---|---|---|---|---|---|
-| Frontier cloud, voice, 1:1 | $321.77 | 0.10 | 0.16 | 0.21 | **FAILS** (needs 2.90 SD) |
-| Cheap cloud model, voice, 1:1 | $116.57 | 0.29 | 0.43 | 0.57 | FAILS (needs 1.05 SD) |
-| On-device 4B, 1:1 | $60.54 | 0.55 | 0.83 | 1.10 | FAILS (needs 0.55 SD) |
-| Small open model, text, shared 1:5 | $14.47 | 2.30 | 3.46 | 4.61 | **BEATS** (needs 0.13 SD) |
-| On-device 4B, shared 1:5 | $12.20 | 2.73 | 4.10 | 5.46 | **BEATS** (needs 0.11 SD) |
-| SMS/IVR on an existing phone | $1.75 | 19.05 | 28.57 | 38.10 | **BEATS** (needs 0.02 SD) |
+| 0 | The Left-Behinds | **2,191** | 1.0B | 88.17% | Dahalo, Warlpiri, Bora |
+| 1 | The Scraping-Bys | 222 | 1.0B | 8.93% | Cherokee, Bhojpuri, Fijian |
+| 2 | The Hopefuls | 19 | 300M | 0.76% | Zulu, Konkani, Lao |
+| 3 | The Rising Stars | 28 | 1.1B | 1.13% | Indonesian, Ukrainian, Hebrew |
+| 4 | The Underdogs | 18 | 1.6B | 0.72% | Russian, Vietnamese, Korean |
+| 5 | **The Winners** | **7** | 2.5B | 0.28% | English, Spanish, German, Japanese, French |
 
-The d range is not hypothetical: **Evans & Yuan (2022) put the median LMIC RCT effect at
-0.10 SD**, Mindspark fell from 0.37 to **0.22** on scaling, and the most rigorous AI-tutoring
-trial (Bastani et al.) found **0.00** for a guardrailed tutor. d = 0.10–0.20 is the honest
-planning range; 0.30+ requires believing the two unreplicated LMIC studies survive scaling.
+**Seven languages out of ~7,000 are genuinely resourced. Roughly one billion people speak a
+Class 0 language.** Speaker population does not buy resources: Telugu has ~96M speakers —
+more than German — and Bhojpuri ~50M sits in Class 1.
 
-Benchmarks in the same units: structured pedagogy ~2–3 LAYS/$100; teaching-at-the-right-level
-~3–15; information on returns to schooling ~20+; **providing hardware alone <0.3, frequently
-indistinguishable from zero.**
+### 3.2 The measured quality gap
 
-The implication is uncomfortable for the field's enthusiasms. **Frontier 1:1 voice tutoring
-would need an effect size of ~2.5 SD to be cost-competitive with interventions that already
-exist.** Bloom's 2-sigma is the theoretical ceiling of individual human tutoring and has
-never been replicated under controlled conditions. So the most desirable configuration is
-the one the arithmetic most clearly rejects — while an SMS bot on a phone the family already
-owns needs only 0.02 SD to be a best buy.
+**Belebele** (Bandarkar et al., ACL 2024, arXiv:2308.16884), 122 language variants, reading
+comprehension, random baseline = 25:
 
-**Conclusion of the steelman:** AI learning is a solution to a problem that was already
-solved, priced above interventions that already work, deployed into infrastructure that does
-not exist, in languages it does not speak, for children who are not in the room.
+GPT-3.5-turbo 5-shot: English **87.7**, average across all 122 variants **50.6**. Amharic
+**28.7**, Hausa 32.2, Lao 30.0, Khmer 30.4, Burmese 30.4, Bengali 43.6. **Roughly 30 of the
+122 variants score below 30% — statistically indistinguishable from guessing.**
 
-### 7.2 Response
+**The finding that should reframe procurement:** fine-tuned **XLM-R-large (550M parameters)**
+beats GPT-3.5 badly on low-resource languages — Amharic **60.7 vs 28.7**, Telugu 61.1 vs
+40.6, Bengali 63.7 vs 43.6. **Scale does not substitute for balanced pretraining data.** A
+half-billion-parameter model with the right data beats a frontier model with the wrong data,
+by 30+ points.
 
-The steelman is right about roughly 80% of the claim, and the honest response concedes that
-rather than fighting it.
+**IrokoBench** (Adelani et al., 2024, arXiv:2406.03368), 17 African languages:
 
-**Concede Premise 1 entirely.** Content was never scarce. Any version of this survey's
-ambition that rests on "access to knowledge" is making a claim that was falsified fifteen
-years ago. The defensible claim is narrower and different in kind: what has been scarce is
-**contingent adult attention** — someone who notices *this* child is stuck at *this* step and
-responds. That has always been supply-constrained because it is human time, and it is the
-first thing in history to become manufacturable. Whether manufactured attention substitutes
-for human attention is an empirical question, not a rhetorical one, and it is the question
-the field should actually be running.
+| Model | AfriMMLU English | AfriMMLU African avg |
+|---|---|---|
+| GPT-4o | 86.9 | **59.0** |
+| Gemini-1.5-Pro | 82.6 | 58.3 |
+| Claude Opus | 73.3 | **42.3** |
+| Gemma-2-27B (best open) | 76.3 | **37.1** |
+| Llama-3.1-70B | 73.5 | **34.0** |
+| Aya-101 | 39.3 | 28.6 |
 
-**Concede Premise 2 almost entirely.** Nutrition, enrolment, attendance, teacher presence,
-and safety dominate. AI addresses none directly. The correct posture is **complementarity,
-not substitution**: AI is a multiplier on instructional time that already exists, not a
-substitute for a child being fed, enrolled, and supervised. A multiplier on zero is zero.
-This means AI tutoring should be evaluated and funded *alongside* the interventions that put
-children in seats — never as an alternative to them, and never in a budget line that competes
-with them.
+**AfriMGSM (grade-school math word problems) is the starkest table in the literature.**
+GPT-4o: English 58.4, **African average 29.3**. Open models, in-language African average:
+**Aya-101 4.2, Llama-3-8B 2.9, mT0-XXL 2.6, BLOOMZ-7B 4.1, Gemma-7B 4.6, Llama-3-70B 8.2.**
 
-**Concede Premise 3, with one specific and important qualification.** The ICT4D record is
-damning and the burden of proof sits with AI. But the failures were not undifferentiated.
-The interventions that failed were those that shipped *hardware and content* and expected
-learning to follow. The ones that worked — computer-assisted learning that adapted to the
-child's actual level, and teaching-at-the-right-level programmes — worked because they
-solved **heterogeneity**: the problem that a classroom of forty children spans six years of
-attainment and a single-paced lesson serves almost none of them. That is a genuinely
-different mechanism from "here is a laptop," and it is the one mechanism in the historical
-record that AI is unusually well suited to. The prior is not "technology fails"; the prior is
-"technology fails unless it targets instruction to the individual child's level, in which
-case it sometimes works." AI's claim should be staked on that narrower ground, where the
-evidence actually points.
+**For a Yoruba- or Amharic-speaking learner, open models cannot do grade-school arithmetic
+word problems at all.** This is the single most damaging fact for the "cheap open model
+tutors the world" thesis in §1, and it is not visible in any English benchmark.
 
-**Partially reject Premise 4 — and note that its own logic points somewhere useful.**
-The cost-effectiveness arithmetic is correct but is an argument about *configuration*, not
-about AI. It rejects frontier voice tutoring on 1:1 devices; it strongly *endorses* shared
-on-device small models and SMS/IVR delivery, which reach 12–38 LAYS/$100 at modest effect
-sizes and outperform most things in the Smart Buys catalogue. The arithmetic is not a verdict
-against AI learning. It is a verdict against the version of AI learning that demos well —
-and a direction: **build for the feature phone and the shared tablet first, not the
-frontier-model voice agent.**
+**MILU** (Verma et al., arXiv:2411.02538), 11 Indic languages: GPT-4o 74%; **language-specific
+fine-tuned models "perform only slightly better than random baselines."** A direct rebuke to
+"just fine-tune a small local model."
 
-Two further points the steelman understates:
+**INCLUDE** (Romanou et al., arXiv:2411.19799) — 1,926 *real local exams*, not translations,
+44 languages. GPT-4o overall 77.1, but Telugu **68.2**, Armenian **53.6** vs Italian 90.0 — a
+~39-point spread. **Global-MMLU** (Singh et al., arXiv:2412.03304) adds the methodological
+warning: **28% of MMLU questions require culturally-sensitive knowledge**, and of
+geography-dependent questions **84.9% concern North America or Europe.** Translated benchmarks
+systematically mismeasure.
 
-- **The price trend is real and fast.** At Epoch AI's observed 9×–900×/year decline, the
-  frontier configuration that fails the cost-effectiveness test today passes it in roughly
-  12–24 months without anyone doing anything. Several premises above are true statements
-  about 2026 that will be false statements about 2028. That does not rescue the enrolment,
-  nutrition, or safety arguments — those do not move with token prices — but it does retire
-  the affordability objection specifically.
-- **Marginal cost near zero changes who can build.** The historical failures were centrally
-  procured national programmes with multi-year cycles. Open-weights small models and on-device
-  inference mean a national curriculum in Telugu or Hausa can be adapted by a local team on a
-  budget of thousands, not tens of millions. That is a structural change in *who* gets to
-  build for a linguistic community — and it is the most plausible route to the language
-  problem in §3.
+### 3.3 Tokenization — direct measurement on parallel text
 
-**Net position.** Marginal cost approaching zero makes universal AI tutoring *affordable*.
-It does not make it *effective*, and affordability was not the binding constraint. The
-correct claim for this survey is bounded: **AI removes the cost barrier to personalised
-instruction, which is real and was never removed before — and leaves every other barrier
-standing.** "No child left behind" is unachievable by AI alone and was never an AI-shaped
-problem. What is achievable, and worth stating precisely, is that for children who are
-already in school, already fed, and already supervised, the marginal cost of giving each of
-them instruction targeted to their actual level has fallen to roughly five cents an hour and
-is still falling. That is a smaller claim than the ambition. It is also, unlike the ambition,
-true.
+Measured on the **same 300 parallel FLORES-200 devtest sentences** per language (identical
+information content), relative to English:
 
----
+| Language | cl100k (**Llama-3 inherits this**) | o200k (GPT-4o family) | mT5/Aya | Sarvam-1 |
+|---|---|---|---|---|
+| English | 1.00 | 1.00 | 1.00 | 1.00 |
+| Swahili | 1.94 | **1.50** | 1.26 | 2.05 |
+| Hausa | 1.95 | 1.53 | 1.34 | 2.00 |
+| Hindi | 4.70 | **1.58** | 1.58 | **1.12** |
+| Bengali | 5.84 | **1.73** | 1.57 | 1.29 |
+| Zulu | 2.17 | 1.73 | 1.42 | 2.20 |
+| **Telugu** | **8.22** | **1.92** | 1.42 | **1.16** |
+| Tamil | 7.55 | 2.02 | 1.29 | 1.16 |
+| Yoruba | 2.90 | **2.15** | 2.01 | 3.80 |
+| Burmese | 11.54 | 3.18 | 1.59 | 13.63 |
+| Odia | 12.42 | 4.96 | — | — |
+| **Amharic** | 7.53 | **5.74** | 1.72 | 6.61 |
+| Tigrinya | 7.79 | 5.99 | — | — |
+| Shan | 14.48 | 7.66 | — | — |
+| Lao | 9.43 | **8.13** | — | — |
+| Santali | 12.44 | **13.40** | — | — |
+
+**Four findings that overturn the received wisdom:**
+
+1. **The 2023-era "Telugu costs 5–8× more" claim is now wrong for GPT-4o-family models.**
+   o200k dropped Telugu from 8.22× to **1.92×**, Bengali 5.84 → 1.73, Tamil 7.55 → 2.02.
+   Anyone citing Ahia et al. (2023) figures for a 2026 frontier model is citing stale data.
+2. **Ge'ez and South-East Asian scripts were left behind entirely.** Amharic 5.74×, Tigrinya
+   5.99×, Lao 8.13×, and **Santali 13.40× — where o200k is *worse* than cl100k.** Amharic at
+   **9.02 tokens/word means 0.57 characters per token** — sub-byte fragmentation.
+3. **Latin-script African languages are cheaper than assumed** — Swahili 1.50×, Hausa 1.53×,
+   Yoruba 2.15×. Yoruba's premium is *diacritic/tone-driven*, not script-driven.
+4. **⚠️ The inversion that matters most for §1: open small models inherit the old penalty.**
+   Llama-3's 128k vocabulary extends cl100k — its Telugu token counts are **byte-identical**
+   to cl100k's.
+
+### 3.4 The cheap-model penalty — a direct hit on §1's economics
+
+| Language | Small-open (cl100k) $/hr | $/child/yr | Frontier (o200k) $/hr | Cheap-model disadvantage |
+|---|---|---|---|---|
+| English | $0.052 | $9.36 | $1.411 | — |
+| Swahili | $0.101 | $18.16 | $2.12 | 1.3× |
+| Hindi | $0.244 | $43.99 | $2.23 | **3.0×** |
+| Bengali | $0.304 | $54.66 | $2.44 | **3.4×** |
+| Yoruba | $0.151 | $27.14 | $3.03 | 1.3× |
+| **Telugu** | **$0.427** | **$76.94** | $2.71 | **4.3×** |
+| Amharic | $0.392 | $70.48 | $8.10 | 1.3× |
+| Burmese | $0.600 | $108.01 | $4.49 | 3.6× |
+
+**The small-model cost advantage collapses exactly where it is most needed.** In English the
+open model is 27× cheaper than frontier; in Telugu only 6×. And the absolute number is the
+problem: **$76.94/child/year for Telugu on a small open model is above the entire ~$75
+per-pupil budget of a low-income country** (§5.6), against $9.36 for English.
+
+**The learner who most needs a free tutor pays the most per sentence — and the regression is
+worse on the cheap infrastructure than on the expensive kind.**
+
+**But the fix is cheap and known.** Sarvam-1's 68k Indic-specialised vocabulary gets Telugu to
+**1.16×** — better than *either* mainstream tokenizer. **For Indic learners, tokenizer choice
+is worth more than model choice.** This is the strongest argument in the section for regional
+model-building: a tokenizer is a few thousand dollars of work that permanently divides the
+serving cost of a language by four.
+
+**Context-window erosion** compounds it (o200k tokens/word):
+
+| Language | tok/word | A 1M-token window holds |
+|---|---|---|
+| English | 1.25 | 800k words |
+| Swahili | 1.90 | 526k words |
+| Telugu | 3.05 | 328k words |
+| Amharic | 9.02 | **111k words** |
+| Lao | 31.68 | **32k words** |
+
+**Ahia et al. (EMNLP 2023, arXiv:2305.13707)** document the capability consequence, not just
+cost: on XLSum, Telugu and Amharic **"struggle to fit even one in-context example for the
+majority of their test set,"** forcing zero-shot-only evaluation. **Few-shot prompting is a
+privilege of Latin-script users.** Petrov et al. (NeurIPS 2023, arXiv:2305.15425) find up to
+**15×** length differences for identical content.
+
+### 3.5 Speech — the only interface for a non-literate learner
+
+This matters more than text for exactly the populations in question: a learner who cannot read
+has speech as the *sole* channel.
+
+- **Whisper** (Radford et al., arXiv:2212.04356): 680,000 training hours, of which **only
+  117,000 (~17%) cover 96 non-English languages.** Two laws from the paper: log-WER vs
+  log-training-data correlation **r² = 0.83**, and **WER halves for every 16× increase in
+  data.** Named negative outliers include **Telugu**.
+- **MMS** (Pratap et al., arXiv:2305.13516) gives the best available comparison: on the **54
+  FLEURS languages both systems cover, Whisper large-v2 = 44.3 WER; MMS = 18.7 WER** — a 58%
+  relative reduction while supporting 11× more languages. MMS covers **1,107 languages for
+  ASR and 1,107 for TTS**. Average CER 2.1 overall but **Africa 2.9** vs Europe 1.7.
+- **The caveat that should temper enthusiasm:** MMS trains on ~32 hours/language of **readings
+  of religious texts**. Register, vocabulary, and speaker demographics are all badly mismatched
+  to classroom dialogue.
+
+**A 44% WER is not a usable tutoring interface.** For Yoruba, Amharic, and most African
+languages, no openly-benchmarked ASR system is at usable WER for open-domain educational
+dialogue. Whisper (44.3) and MMS (18.7) bracket the state of the art on the *easier*
+54-language subset. This directly undermines the on-device voice architectures §2 and §4
+otherwise favour.
+
+### 3.6 Translation as a bridge — asymmetric, and that asymmetry is usable
+
+NLLB-200 MoE-54B official FLORES-200 metrics (exact published numbers, 40,602 directions):
+
+| Direction | eng→X chrF++ | X→eng chrF++ |
+|---|---|---|
+| French | 69.7 | 68.4 |
+| Hindi | 57.3 | 66.5 |
+| Swahili | 58.6 | 66.1 |
+| Telugu | 55.9 | 65.5 |
+| Bengali | 50.0 | 62.2 |
+| Amharic | **39.4** | 59.9 |
+| Tigrinya | **25.8** | 50.4 |
+| **Yoruba** | **25.5** | 46.3 |
+
+Distribution over all 201 directions: mean chrF++ **eng→X 45.3 vs X→eng 56.8**. Directions
+below chrF++ 40: **66 (33%) for eng→X** but only 20 (10%) for X→eng.
+
+**The asymmetry is the design insight.** Translating *into* English works far better than out
+of it. **A pipeline that ingests learner speech in Yoruba, reasons in English, and generates
+back into Yoruba will fail on the last step** — eng→Yoruba chrF++ 25.5 despite 53M speakers,
+worse than Luganda.
+
+**Translate-then-prompt is nonetheless the strongest actionable result in the literature**,
+and it rescues exactly the models §1 wants to use:
+
+| Model, AfriMGSM | In-language | Translate-test |
+|---|---|---|
+| Llama-3-70B | 8.2 | **45.3** |
+| Llama-3-8B | 2.9 | **27.0** |
+| GPT-4o | 29.3 | 32.4 (negligible gain) |
+| BLOOMZ / mT0 | 4.1 | 2.1 (*degrades*) |
+
+**The benefit is inversely proportional to native multilingual competence** — which means the
+cheap open models §1 depends on are precisely the ones translate-test rescues most. Confirmed
+by MGSM (Shi et al., arXiv:2210.03057): Swahili gains **+16 points** (35.2 → 51.2) from
+reasoning in English.
+
+### 3.7 What is actually being built
+
+| Effort | Size | Languages | Measured result |
+|---|---|---|---|
+| Aya 101 | 13B | 101 | AfriMMLU 28.6, AfriMGSM 4.2 — coverage was never functional |
+| Aya 23 / Expanse | 8B/35B | **23** | Beats Aya-101 on the 23 kept |
+| Sarvam-1 | **2B** | 10 Indic | **Telugu tokenizer fertility 1.16×**; FLORES en→Indic chrF++ 39.83 |
+| IndicTrans2 | — | 22 Indian | BPCC 230M pairs; first covering all 22 |
+| InkubaLM | **0.4B** | 5 African | Comparable to much larger models on AfriMMLU/AfriXNLI |
+| MMS | — | 1,107 ASR/TTS | See §3.5 |
+| NLLB-200 | 54B MoE | 202 | **"not released for production deployment"** |
+
+**The defining trend is a breadth-to-depth retreat.** Cohere went **101 → 23 languages
+deliberately**, framing it as "depth vs breadth." It worked — but **Aya 23's language list
+contains zero sub-Saharan African languages** and only Hindi from South Asia. Given
+Aya-101's actual scores (AfriMMLU 28.6), this is arguably honesty rather than retreat. The
+practical effect is that **the frontier of *serving* low-resource languages is now held by
+benchmark-builders (Masakhane, AI4Bharat) rather than model-builders.**
+
+**What this means for §1's ambition:** the cost curve says a Telugu or Yoruba speaker can be
+served for cents. The measurement says that at those prices, in those languages, the model
+cannot currently do grade-school word problems, the ASR is at 44% WER, and generating fluent
+pedagogical Yoruba is beyond the best open translation system. **"No child left behind" is
+not, at present, a claim that survives translation.**
 
 ---
 

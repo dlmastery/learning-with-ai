@@ -175,10 +175,42 @@ request for a 400–500 word executive summary as the final message.
 
 ---
 
-## 8. Status at last write
+## 8. Status at last write — 2026-07-25, end of session
 
-- Repo created and pushed; PRD and this ledger committed.
-- **14 research agents in flight** (waves A, B, D, F).
-- Queued on the 20-agent cap: F10, F11, E1, E2, H1, G2, C1, C2, plus open-problems.
-- Blocked on user: optional raise of the subagent cap (`CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS=40`).
-- No survey sections drafted yet — awaiting first raw reports.
+**Session limit hit** (`resets 12:40am UTC`). 8 agents terminated mid-flight,
+including sub-agents that F3 and F4 had themselves spawned.
+
+### Complete — 11 research reports, ~660 KB
+A2 animation · A4 live-multimodal · A5 world-models · B1 learning-science ·
+D1 frontier-quarter · D2 portfolio · F1 assessment · F2 beyond-the-tutor ·
+F5 learner-model · F6 motivation · **F4 reach-economics (PARTIAL, §1–3 only)**
+
+### Survey drafted — 3 sections
+`00-north-star-jarvis.md` (+ Wan Streamer addendum) · `01-central-finding.md`
+(reframed to lead with wins) · `02-teach-to-learn.md`
+
+### Killed by session limit — RE-RUN THESE FIRST
+| § | Section | State |
+|---|---|---|
+| A1 | AI-native textbook platforms | died at launch, nothing written |
+| B2 | AI tutoring efficacy scoreboard | died mid-research |
+| F3 | Executable & verifiable knowledge | died mid-research (had spawned CAS/SymPy/Wester sub-agents) |
+| F4 | Reach economics | **§1–3 written, §4+ missing** |
+
+### Never launched — blocked on the 20-agent cap
+F7 embodiment · F8 safety/privacy/children · F9 open problems ·
+**F10 ELI-laddering** · F11 scientific remembering · E1 edtech landscape ·
+E2 LessonOrca · **H1 SELPA** · G2 agent village · G3 book comparison ·
+C1 illustration · C2 psychometrics · A3 reactive notebooks
+
+### Verified 2026-07-25: repo integrity
+All commits authored by `dlmastery <eranti@gmail.com>`. No foreign commits, no
+force-push, no deletions. If another agent read the repo, it did not write to it.
+
+### Priority order for the next session
+1. **H1 (SELPA)** — the section the project exists for; expected finding is that
+   AI-tutoring efficacy has been measured almost exclusively on typical learners.
+2. **F3** — the grounding ladder is a cross-cutting dependency for G1.
+3. **B2** — the efficacy scoreboard keeps the survey honest.
+4. **F4 §4+** — finish offline/ICT4D/divide/counter-argument.
+5. Then F10, F11, E1/E2, G2.
