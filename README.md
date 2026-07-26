@@ -43,6 +43,7 @@ language, community, device tier, and learning environment.*
 17. [From motion to intervention](survey/16-from-motion-to-intervention.md)
 18. [Worlds you can question](survey/17-worlds-you-can-question.md)
 19. [The screen is a doorway](survey/18-the-screen-is-a-doorway.md)
+20. [Designed from the margin](survey/19-designed-from-the-margin.md)
 
 ## North star
 

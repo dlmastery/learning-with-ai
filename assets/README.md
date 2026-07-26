@@ -65,3 +65,4 @@ Prompt:
 | `diagrams/modality-decision-map.svg` | Learner action → annotate, animate, simulate, generate video, or do |
 | `diagrams/verified-world-stack.svg` | Generated experience → executable law → grounded sources → real observation |
 | `diagrams/screen-to-world-continuum.svg` | Explain → see → sense → coach action → connect people → authorized actuation |
+| `diagrams/accessibility-first-pivot-loop.svg` | Preserve the goal → observe → compose access → teach → probe → continue, pivot, or escalate |
