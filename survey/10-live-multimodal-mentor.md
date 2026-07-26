@@ -160,7 +160,7 @@ even when the network is weak.
 
 ---
 
-**Research basis:** [A4 frontier research and source index](../research/raw/A4-live-multimodal-frontier-2026-07-25.md)  
+**Research basis:** [A4 frontier research and source index](../research/raw/A4-live-multimodal-frontier-2026-07-25.md)
 **Related:** [Reactive learning documents](09-reactive-learning-documents.md) ·
 [The expert mentor mesh](03-expert-mentor-mesh.md) ·
 [Content roadmap](../CONTENT_ROADMAP.md)

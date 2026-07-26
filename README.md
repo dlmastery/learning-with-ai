@@ -35,6 +35,7 @@ language, community, device tier, and learning environment.*
 9. [The AI-native textbook](survey/08-ai-native-textbook.md)
 10. [Reactive learning documents](survey/09-reactive-learning-documents.md)
 11. [The live multimodal mentor](survey/10-live-multimodal-mentor.md)
+12. [The verified visual](survey/11-verified-visual-generation.md)
 
 ## North star
 
