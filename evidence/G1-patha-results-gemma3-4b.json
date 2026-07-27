@@ -1,0 +1,3458 @@
+[
+ {
+  "claim": "pendulum",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: T = 2*pi*sqrt(L/g)",
+  "agree": true,
+  "sec": 0.7073450088500977
+ },
+ {
+  "claim": "pendulum",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: L = (2*pi*sqrt(g/T))^2",
+  "agree": false,
+  "sec": 0.7675931453704834
+ },
+ {
+  "claim": "pendulum",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 2*pi*sqrt(4/10)",
+  "agree": true,
+  "sec": 0.6771488189697266
+ },
+ {
+  "claim": "pendulum",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 2*pi*sqrt(1/2)",
+  "agree": true,
+  "sec": 0.6289582252502441
+ },
+ {
+  "claim": "pendulum",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: \u221a2",
+  "agree": false,
+  "sec": 0.5723628997802734
+ },
+ {
+  "claim": "pendulum",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: T^2 = (2*pi*sqrt(L/g))^2 * L/g",
+  "agree": false,
+  "sec": 0.793536901473999
+ },
+ {
+  "claim": "pendulum",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: T = 2*pi*sqrt(L/g)",
+  "agree": true,
+  "sec": 0.7562284469604492
+ },
+ {
+  "claim": "pendulum",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: T = 2*pi*sqrt(L/g)",
+  "agree": true,
+  "sec": 0.7460758686065674
+ },
+ {
+  "claim": "pendulum",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: T = 2*pi*sqrt(L/g)",
+  "agree": true,
+  "sec": 0.7369575500488281
+ },
+ {
+  "claim": "pendulum",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: T = 2*pi*sqrt(L/g)",
+  "agree": true,
+  "sec": 0.7557868957519531
+ },
+ {
+  "claim": "pendulum",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: T = 2*pi*sqrt(L/g)",
+  "agree": true,
+  "sec": 0.7549870014190674
+ },
+ {
+  "claim": "pendulum",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: T = 2*pi*sqrt(L/g)",
+  "agree": true,
+  "sec": 0.7223010063171387
+ },
+ {
+  "claim": "pendulum",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: T = 2*pi*sqrt(g/L)",
+  "agree": true,
+  "sec": 0.7594809532165527
+ },
+ {
+  "claim": "pendulum",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: L = (2*pi*sqrt(g/T))^2 / g",
+  "agree": false,
+  "sec": 0.7703046798706055
+ },
+ {
+  "claim": "pendulum",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 2*pi*sqrt(10/4)",
+  "agree": true,
+  "sec": 0.7326812744140625
+ },
+ {
+  "claim": "pendulum",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 2*pi*sqrt(2)",
+  "agree": true,
+  "sec": 0.627547025680542
+ },
+ {
+  "claim": "pendulum",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": false,
+  "sec": 0.6165220737457275
+ },
+ {
+  "claim": "pendulum",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: T^2 = (2*pi)^2 * (g/L)",
+  "agree": true,
+  "sec": 0.8208849430084229
+ },
+ {
+  "claim": "pendulum",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: T = 2*pi*sqrt(g/L)",
+  "agree": true,
+  "sec": 0.6471529006958008
+ },
+ {
+  "claim": "pendulum",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: T = 2*pi*sqrt(g/L)",
+  "agree": true,
+  "sec": 0.7010097503662109
+ },
+ {
+  "claim": "pendulum",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: T = 2*pi*sqrt(g/L)",
+  "agree": true,
+  "sec": 0.7588546276092529
+ },
+ {
+  "claim": "pendulum",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: T = 2*pi*sqrt(g/L)",
+  "agree": true,
+  "sec": 0.6938350200653076
+ },
+ {
+  "claim": "pendulum",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: T = 2*pi*sqrt(g/L)",
+  "agree": true,
+  "sec": 0.7401247024536133
+ },
+ {
+  "claim": "pendulum",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: T = 2*pi*sqrt(g/L)",
+  "agree": true,
+  "sec": 0.7441821098327637
+ },
+ {
+  "claim": "kinetic",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: E = (1/2) * m * v**2",
+  "agree": true,
+  "sec": 0.7201361656188965
+ },
+ {
+  "claim": "kinetic",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: v = sqrt((2*E)/m)",
+  "agree": true,
+  "sec": 0.6895594596862793
+ },
+ {
+  "claim": "kinetic",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 24",
+  "agree": true,
+  "sec": 0.6825582981109619
+ },
+ {
+  "claim": "kinetic",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 100",
+  "agree": true,
+  "sec": 0.6387224197387695
+ },
+ {
+  "claim": "kinetic",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": false,
+  "sec": 0.5663964748382568
+ },
+ {
+  "claim": "kinetic",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: sqrt(2*E/m) = v",
+  "agree": true,
+  "sec": 0.6963357925415039
+ },
+ {
+  "claim": "kinetic",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: E = (1/2) * m * v**2",
+  "agree": true,
+  "sec": 0.681682825088501
+ },
+ {
+  "claim": "kinetic",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: E = (1/2) * m * v**2",
+  "agree": true,
+  "sec": 0.7453203201293945
+ },
+ {
+  "claim": "kinetic",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: E = (1/2) * m * v**2",
+  "agree": true,
+  "sec": 0.6735548973083496
+ },
+ {
+  "claim": "kinetic",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: E = (1/2) * m * v**2",
+  "agree": true,
+  "sec": 0.6860532760620117
+ },
+ {
+  "claim": "kinetic",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: E = (1/2) * m * v**2",
+  "agree": true,
+  "sec": 0.674109935760498
+ },
+ {
+  "claim": "kinetic",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: E = (1/2) * m * v**2",
+  "agree": true,
+  "sec": 0.7289869785308838
+ },
+ {
+  "claim": "kinetic",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: E = (m*v)/2",
+  "agree": true,
+  "sec": 0.6460776329040527
+ },
+ {
+  "claim": "kinetic",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: v = 2E/(m)",
+  "agree": null,
+  "sec": 0.6792292594909668
+ },
+ {
+  "claim": "kinetic",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 6",
+  "agree": true,
+  "sec": 0.5005209445953369
+ },
+ {
+  "claim": "kinetic",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 10",
+  "agree": true,
+  "sec": 0.6006546020507812
+ },
+ {
+  "claim": "kinetic",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": true,
+  "sec": 0.626389741897583
+ },
+ {
+  "claim": "kinetic",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: F = sqrt(4*E*m/v)",
+  "agree": false,
+  "sec": 0.7481861114501953
+ },
+ {
+  "claim": "kinetic",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: E = (m*v)/2",
+  "agree": true,
+  "sec": 0.675288200378418
+ },
+ {
+  "claim": "kinetic",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: E = (m*v)/2",
+  "agree": true,
+  "sec": 0.683297872543335
+ },
+ {
+  "claim": "kinetic",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: E = (m*v)/2",
+  "agree": true,
+  "sec": 0.6229598522186279
+ },
+ {
+  "claim": "kinetic",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: E = (m*v)/2",
+  "agree": true,
+  "sec": 0.6069111824035645
+ },
+ {
+  "claim": "kinetic",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: E = (m*v)/2",
+  "agree": true,
+  "sec": 0.6913771629333496
+ },
+ {
+  "claim": "kinetic",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: E = (m*v)/2",
+  "agree": true,
+  "sec": 0.6039087772369385
+ },
+ {
+  "claim": "escape",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: v = sqrt(2*G*M/R)",
+  "agree": true,
+  "sec": 0.7880086898803711
+ },
+ {
+  "claim": "escape",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: R = sqrt((2*G*M)/v^2)",
+  "agree": false,
+  "sec": 0.7834856510162354
+ },
+ {
+  "claim": "escape",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: sqrt(18)",
+  "agree": false,
+  "sec": 0.585212230682373
+ },
+ {
+  "claim": "escape",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: sqrt(16)",
+  "agree": true,
+  "sec": 0.619732141494751
+ },
+ {
+  "claim": "escape",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: \u221a2",
+  "agree": false,
+  "sec": 0.5823929309844971
+ },
+ {
+  "claim": "escape",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: v^2 = 2*G*M/R",
+  "agree": true,
+  "sec": 0.7231442928314209
+ },
+ {
+  "claim": "escape",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: v = sqrt(2*G*M/R)",
+  "agree": true,
+  "sec": 0.6858181953430176
+ },
+ {
+  "claim": "escape",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: v = sqrt(2*G*M/R)",
+  "agree": true,
+  "sec": 0.7392416000366211
+ },
+ {
+  "claim": "escape",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: v = sqrt(2*G*M/R)",
+  "agree": true,
+  "sec": 0.7062623500823975
+ },
+ {
+  "claim": "escape",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: v = sqrt(2*G*M/R)",
+  "agree": true,
+  "sec": 0.7482564449310303
+ },
+ {
+  "claim": "escape",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: v = sqrt(2*G*M/R)",
+  "agree": true,
+  "sec": 0.6916992664337158
+ },
+ {
+  "claim": "escape",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: v = sqrt(2*G*M/R)",
+  "agree": true,
+  "sec": 0.7369248867034912
+ },
+ {
+  "claim": "escape",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: v = sqrt(G*M/(2*R))",
+  "agree": true,
+  "sec": 0.7099514007568359
+ },
+ {
+  "claim": "escape",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: R = sqrt(G*M/(2*v^2))",
+  "agree": false,
+  "sec": 0.7859880924224854
+ },
+ {
+  "claim": "escape",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: sqrt(G*M/(2*R))",
+  "agree": true,
+  "sec": 0.7140047550201416
+ },
+ {
+  "claim": "escape",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: sqrt(2)",
+  "agree": false,
+  "sec": 0.6160337924957275
+ },
+ {
+  "claim": "escape",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: \u221a2",
+  "agree": false,
+  "sec": 0.5416491031646729
+ },
+ {
+  "claim": "escape",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: G*M/(2*R) - v**2 = 0",
+  "agree": true,
+  "sec": 0.8383095264434814
+ },
+ {
+  "claim": "escape",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: v = sqrt(G*M/(2*R))",
+  "agree": true,
+  "sec": 0.7215580940246582
+ },
+ {
+  "claim": "escape",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: v = sqrt(G*M/(2*R))",
+  "agree": true,
+  "sec": 0.6604747772216797
+ },
+ {
+  "claim": "escape",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: v = sqrt(G*M/(2*R))",
+  "agree": true,
+  "sec": 0.7022678852081299
+ },
+ {
+  "claim": "escape",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: v = sqrt(G*M/(2*R))",
+  "agree": true,
+  "sec": 0.7614138126373291
+ },
+ {
+  "claim": "escape",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: v = sqrt(G*M/(2*R))",
+  "agree": true,
+  "sec": 0.7593874931335449
+ },
+ {
+  "claim": "escape",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: v = sqrt(G*M/(2*R))",
+  "agree": true,
+  "sec": 0.7118797302246094
+ },
+ {
+  "claim": "circle",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: A = pi * r**2",
+  "agree": true,
+  "sec": 0.6907365322113037
+ },
+ {
+  "claim": "circle",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: r = sqrt(A / pi)",
+  "agree": true,
+  "sec": 0.6585867404937744
+ },
+ {
+  "claim": "circle",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: pi*3**2",
+  "agree": true,
+  "sec": 0.5654036998748779
+ },
+ {
+  "claim": "circle",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: pi * 10**2",
+  "agree": true,
+  "sec": 0.6859157085418701
+ },
+ {
+  "claim": "circle",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 4",
+  "agree": true,
+  "sec": 0.6073009967803955
+ },
+ {
+  "claim": "circle",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: A - pi*r**2 = 0",
+  "agree": true,
+  "sec": 0.7039663791656494
+ },
+ {
+  "claim": "circle",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: A = pi * r**2",
+  "agree": true,
+  "sec": 0.6045305728912354
+ },
+ {
+  "claim": "circle",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: A = pi * r**2",
+  "agree": true,
+  "sec": 0.5980489253997803
+ },
+ {
+  "claim": "circle",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: A = pi * r**2",
+  "agree": true,
+  "sec": 0.7029063701629639
+ },
+ {
+  "claim": "circle",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: A = pi * r**2",
+  "agree": true,
+  "sec": 0.6032536029815674
+ },
+ {
+  "claim": "circle",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: A = pi * r**2",
+  "agree": true,
+  "sec": 0.6544132232666016
+ },
+ {
+  "claim": "circle",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: A = pi * r**2",
+  "agree": true,
+  "sec": 0.5776412487030029
+ },
+ {
+  "claim": "circle",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: A = 2*pi*r**2",
+  "agree": true,
+  "sec": 0.671734094619751
+ },
+ {
+  "claim": "circle",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: r = sqrt(A / (2*pi))",
+  "agree": true,
+  "sec": 0.6187512874603271
+ },
+ {
+  "claim": "circle",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 2*pi*3**2",
+  "agree": true,
+  "sec": 0.6561532020568848
+ },
+ {
+  "claim": "circle",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 2*pi*10**2",
+  "agree": true,
+  "sec": 0.7005798816680908
+ },
+ {
+  "claim": "circle",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 4",
+  "agree": true,
+  "sec": 0.6462149620056152
+ },
+ {
+  "claim": "circle",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: A - 2*pi*r**2 = 0",
+  "agree": true,
+  "sec": 0.7738714218139648
+ },
+ {
+  "claim": "circle",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: A = 2*pi*r**2",
+  "agree": true,
+  "sec": 0.7069664001464844
+ },
+ {
+  "claim": "circle",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: A = 2*pi*r**2",
+  "agree": true,
+  "sec": 0.632270336151123
+ },
+ {
+  "claim": "circle",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: A = 2*pi*r**2",
+  "agree": true,
+  "sec": 0.6790130138397217
+ },
+ {
+  "claim": "circle",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: A = 2*pi*r**2",
+  "agree": true,
+  "sec": 0.6580779552459717
+ },
+ {
+  "claim": "circle",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: A = 2*pi*r**2",
+  "agree": true,
+  "sec": 0.7080535888671875
+ },
+ {
+  "claim": "circle",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: A = 2*pi*r**2",
+  "agree": true,
+  "sec": 0.6688635349273682
+ },
+ {
+  "claim": "sphere",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: V = (4 * pi * r**3) / 3",
+  "agree": true,
+  "sec": 0.7542791366577148
+ },
+ {
+  "claim": "sphere",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: r = (3*V)/(4*pi*(r**2))",
+  "agree": false,
+  "sec": 0.7205922603607178
+ },
+ {
+  "claim": "sphere",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 32*pi",
+  "agree": false,
+  "sec": 0.647953987121582
+ },
+ {
+  "claim": "sphere",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 4*pi*5**3/3",
+  "agree": true,
+  "sec": 0.714238166809082
+ },
+ {
+  "claim": "sphere",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 8",
+  "agree": true,
+  "sec": 0.6131248474121094
+ },
+ {
+  "claim": "sphere",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: (3*V)/(4*pi*(r**3)) == 0",
+  "agree": null,
+  "sec": 0.8153436183929443
+ },
+ {
+  "claim": "sphere",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: V = (4 * pi * r**3) / 3",
+  "agree": true,
+  "sec": 0.7501413822174072
+ },
+ {
+  "claim": "sphere",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: V = (4 * pi * r**3) / 3",
+  "agree": true,
+  "sec": 0.713242769241333
+ },
+ {
+  "claim": "sphere",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: V = (4 * pi * r**3) / 3",
+  "agree": true,
+  "sec": 0.6985158920288086
+ },
+ {
+  "claim": "sphere",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: V = (4 * pi * r**3) / 3",
+  "agree": true,
+  "sec": 0.7039990425109863
+ },
+ {
+  "claim": "sphere",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: V = (4 * pi * r**3) / 3",
+  "agree": true,
+  "sec": 0.6529567241668701
+ },
+ {
+  "claim": "sphere",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: V = (4 * pi * r**3) / 3",
+  "agree": true,
+  "sec": 0.7438802719116211
+ },
+ {
+  "claim": "sphere",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: V = (3 * pi * r**3) / 4",
+  "agree": true,
+  "sec": 0.7664282321929932
+ },
+ {
+  "claim": "sphere",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: r = (4*V)/(3*pi)**(1/3)",
+  "agree": false,
+  "sec": 0.7630226612091064
+ },
+ {
+  "claim": "sphere",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 3*pi*2**3/4",
+  "agree": true,
+  "sec": 0.6642212867736816
+ },
+ {
+  "claim": "sphere",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 375*pi/4",
+  "agree": true,
+  "sec": 0.665407657623291
+ },
+ {
+  "claim": "sphere",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 8",
+  "agree": true,
+  "sec": 0.6194562911987305
+ },
+ {
+  "claim": "sphere",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: (V * (4/3*pi))**(1/3) - r**3 == 0",
+  "agree": null,
+  "sec": 0.8582782745361328
+ },
+ {
+  "claim": "sphere",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: V = (3 * pi * r**3) / 4",
+  "agree": true,
+  "sec": 0.7351033687591553
+ },
+ {
+  "claim": "sphere",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: V = (3 * pi * r**3) / 4",
+  "agree": true,
+  "sec": 0.6784687042236328
+ },
+ {
+  "claim": "sphere",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: V = (3 * pi * r**3) / 4",
+  "agree": true,
+  "sec": 0.7152864933013916
+ },
+ {
+  "claim": "sphere",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: V = (3 * pi * r**3) / 4",
+  "agree": true,
+  "sec": 0.717797040939331
+ },
+ {
+  "claim": "sphere",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: V = (3 * pi * r**3) / 4",
+  "agree": true,
+  "sec": 0.7003555297851562
+ },
+ {
+  "claim": "sphere",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: V = (3 * pi * r**3) / 4",
+  "agree": true,
+  "sec": 0.7707998752593994
+ },
+ {
+  "claim": "geomsum",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": true,
+  "sec": 0.6640579700469971
+ },
+ {
+  "claim": "geomsum",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: a = S(1-r)",
+  "agree": null,
+  "sec": 0.6983160972595215
+ },
+ {
+  "claim": "geomsum",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 6",
+  "agree": true,
+  "sec": 0.5998387336730957
+ },
+ {
+  "claim": "geomsum",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 1/ (1 - 1/4) = 4/3",
+  "agree": true,
+  "sec": 0.7703859806060791
+ },
+ {
+  "claim": "geomsum",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": true,
+  "sec": 0.5549345016479492
+ },
+ {
+  "claim": "geomsum",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: S*(1-r) = a",
+  "agree": true,
+  "sec": 0.6706390380859375
+ },
+ {
+  "claim": "geomsum",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": true,
+  "sec": 0.6892437934875488
+ },
+ {
+  "claim": "geomsum",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": true,
+  "sec": 0.6106572151184082
+ },
+ {
+  "claim": "geomsum",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": true,
+  "sec": 0.6346518993377686
+ },
+ {
+  "claim": "geomsum",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": true,
+  "sec": 0.5927903652191162
+ },
+ {
+  "claim": "geomsum",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": true,
+  "sec": 0.6203968524932861
+ },
+ {
+  "claim": "geomsum",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": true,
+  "sec": 0.6573638916015625
+ },
+ {
+  "claim": "geomsum",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": false,
+  "sec": 0.6196215152740479
+ },
+ {
+  "claim": "geomsum",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: a = S(1+r)",
+  "agree": null,
+  "sec": 0.7143979072570801
+ },
+ {
+  "claim": "geomsum",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 6",
+  "agree": false,
+  "sec": 0.5510170459747314
+ },
+ {
+  "claim": "geomsum",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 1/ (1 + 1/4) = 4/5",
+  "agree": true,
+  "sec": 0.8039844036102295
+ },
+ {
+  "claim": "geomsum",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": true,
+  "sec": 0.6094846725463867
+ },
+ {
+  "claim": "geomsum",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: S*(1+r) - a = 0",
+  "agree": true,
+  "sec": 0.7532997131347656
+ },
+ {
+  "claim": "geomsum",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": false,
+  "sec": 0.6239798069000244
+ },
+ {
+  "claim": "geomsum",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": false,
+  "sec": 0.6142101287841797
+ },
+ {
+  "claim": "geomsum",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": false,
+  "sec": 0.6328935623168945
+ },
+ {
+  "claim": "geomsum",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": false,
+  "sec": 0.6083707809448242
+ },
+ {
+  "claim": "geomsum",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": false,
+  "sec": 0.702500581741333
+ },
+ {
+  "claim": "geomsum",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: S = a/(1-r)",
+  "agree": false,
+  "sec": 0.6720967292785645
+ },
+ {
+  "claim": "compound",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: A = P*(1+i)**n",
+  "agree": true,
+  "sec": 0.6848785877227783
+ },
+ {
+  "claim": "compound",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: P = A / (1+i)^n",
+  "agree": true,
+  "sec": 0.7371420860290527
+ },
+ {
+  "claim": "compound",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 102.01",
+  "agree": false,
+  "sec": 0.6664810180664062
+ },
+ {
+  "claim": "compound",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 1157.625",
+  "agree": false,
+  "sec": 0.7240452766418457
+ },
+ {
+  "claim": "compound",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": true,
+  "sec": 0.6590569019317627
+ },
+ {
+  "claim": "compound",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: A = 0*(1+i)**n - P*0",
+  "agree": null,
+  "sec": 0.7443685531616211
+ },
+ {
+  "claim": "compound",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: A = P*(1+i)**n",
+  "agree": true,
+  "sec": 0.5964343547821045
+ },
+ {
+  "claim": "compound",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: A = P*(1+i)**n",
+  "agree": true,
+  "sec": 0.6069760322570801
+ },
+ {
+  "claim": "compound",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: A = P*(1+i)**n",
+  "agree": true,
+  "sec": 0.6308913230895996
+ },
+ {
+  "claim": "compound",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: A = P*(1+i)**n",
+  "agree": true,
+  "sec": 0.6646819114685059
+ },
+ {
+  "claim": "compound",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: A = P*(1+i)**n",
+  "agree": true,
+  "sec": 0.6174736022949219
+ },
+ {
+  "claim": "compound",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: A = P*(1+i)**n",
+  "agree": true,
+  "sec": 0.6951572895050049
+ },
+ {
+  "claim": "compound",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: A = P*(1+i*n)",
+  "agree": true,
+  "sec": 0.7059118747711182
+ },
+ {
+  "claim": "compound",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: P = A / (1+i*n)^(1/n)",
+  "agree": false,
+  "sec": 0.7886831760406494
+ },
+ {
+  "claim": "compound",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 121",
+  "agree": false,
+  "sec": 0.5692553520202637
+ },
+ {
+  "claim": "compound",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 1157.4290786397646",
+  "agree": false,
+  "sec": 0.7743301391601562
+ },
+ {
+  "claim": "compound",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": true,
+  "sec": 0.5972757339477539
+ },
+ {
+  "claim": "compound",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: A = P*(1+i*n)",
+  "agree": true,
+  "sec": 0.6661303043365479
+ },
+ {
+  "claim": "compound",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: A = P*(1+i*n)",
+  "agree": true,
+  "sec": 0.617774486541748
+ },
+ {
+  "claim": "compound",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: A = P*(1+i*n)",
+  "agree": true,
+  "sec": 0.732161283493042
+ },
+ {
+  "claim": "compound",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: A = P*(1+i*n)",
+  "agree": true,
+  "sec": 0.7247686386108398
+ },
+ {
+  "claim": "compound",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: A = P*(1+i*n)",
+  "agree": true,
+  "sec": 0.6248071193695068
+ },
+ {
+  "claim": "compound",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: A = P*(1+i*n)",
+  "agree": true,
+  "sec": 0.680347204208374
+ },
+ {
+  "claim": "compound",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: A = P*(1+i*n)",
+  "agree": true,
+  "sec": 0.674304723739624
+ },
+ {
+  "claim": "idealgas",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: P = (n*R*T)/V",
+  "agree": true,
+  "sec": 0.6737935543060303
+ },
+ {
+  "claim": "idealgas",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: V = n * R * T / P",
+  "agree": true,
+  "sec": 0.6738581657409668
+ },
+ {
+  "claim": "idealgas",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 120",
+  "agree": false,
+  "sec": 0.644780158996582
+ },
+ {
+  "claim": "idealgas",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 400",
+  "agree": true,
+  "sec": 0.5342288017272949
+ },
+ {
+  "claim": "idealgas",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": true,
+  "sec": 0.6076586246490479
+ },
+ {
+  "claim": "idealgas",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: P*(V/n*R*T)",
+  "agree": null,
+  "sec": 0.7331361770629883
+ },
+ {
+  "claim": "idealgas",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: P = (n*R*T)/V",
+  "agree": true,
+  "sec": 0.6639244556427002
+ },
+ {
+  "claim": "idealgas",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: P = (n*R*T)/V",
+  "agree": true,
+  "sec": 0.6022491455078125
+ },
+ {
+  "claim": "idealgas",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: P = (n*R*T)/V",
+  "agree": true,
+  "sec": 0.644188404083252
+ },
+ {
+  "claim": "idealgas",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: P = (n*R*T)/V",
+  "agree": true,
+  "sec": 0.7248520851135254
+ },
+ {
+  "claim": "idealgas",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: P = (n*R*T)/V",
+  "agree": true,
+  "sec": 0.7009150981903076
+ },
+ {
+  "claim": "idealgas",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: P = (n*R*T)/V",
+  "agree": true,
+  "sec": 0.659337043762207
+ },
+ {
+  "claim": "idealgas",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: P = (n*R*V) / T",
+  "agree": true,
+  "sec": 0.7181978225708008
+ },
+ {
+  "claim": "idealgas",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: V = n*R*T/P",
+  "agree": false,
+  "sec": 0.6617956161499023
+ },
+ {
+  "claim": "idealgas",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 120",
+  "agree": false,
+  "sec": 0.6038670539855957
+ },
+ {
+  "claim": "idealgas",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 40",
+  "agree": false,
+  "sec": 0.610053539276123
+ },
+ {
+  "claim": "idealgas",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": false,
+  "sec": 0.6038110256195068
+ },
+ {
+  "claim": "idealgas",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: P*(T*V) = n*R*V*T",
+  "agree": false,
+  "sec": 0.8149092197418213
+ },
+ {
+  "claim": "idealgas",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: P = (n*R*V) / T",
+  "agree": true,
+  "sec": 0.7684566974639893
+ },
+ {
+  "claim": "idealgas",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: P = (n*R*V) / T",
+  "agree": true,
+  "sec": 0.6396868228912354
+ },
+ {
+  "claim": "idealgas",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: P = (n*R*V) / T",
+  "agree": true,
+  "sec": 0.6713013648986816
+ },
+ {
+  "claim": "idealgas",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: P = (n*R*V) / T",
+  "agree": true,
+  "sec": 0.7041361331939697
+ },
+ {
+  "claim": "idealgas",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: P = (n*R*V) / T",
+  "agree": true,
+  "sec": 0.6605756282806396
+ },
+ {
+  "claim": "idealgas",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: P = (n*R*V) / T",
+  "agree": true,
+  "sec": 0.6948349475860596
+ },
+ {
+  "claim": "parallelR",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: R = (R1*R2)/(R1+R2)",
+  "agree": true,
+  "sec": 0.7687156200408936
+ },
+ {
+  "claim": "parallelR",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: R1 = (R1+R2)^2/(R2*R1+R2^2)",
+  "agree": false,
+  "sec": 0.8328139781951904
+ },
+ {
+  "claim": "parallelR",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 1.2",
+  "agree": true,
+  "sec": 0.6628897190093994
+ },
+ {
+  "claim": "parallelR",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 10*40/(10+40)",
+  "agree": true,
+  "sec": 0.7370920181274414
+ },
+ {
+  "claim": "parallelR",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 1/2",
+  "agree": false,
+  "sec": 0.62306809425354
+ },
+ {
+  "claim": "parallelR",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: R1*R2 == 0",
+  "agree": null,
+  "sec": 0.6429483890533447
+ },
+ {
+  "claim": "parallelR",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: R = (R1*R2)/(R1+R2)",
+  "agree": true,
+  "sec": 0.7236387729644775
+ },
+ {
+  "claim": "parallelR",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: R = (R1*R2)/(R1+R2)",
+  "agree": true,
+  "sec": 0.7866759300231934
+ },
+ {
+  "claim": "parallelR",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: R = (R1*R2)/(R1+R2)",
+  "agree": true,
+  "sec": 0.7090520858764648
+ },
+ {
+  "claim": "parallelR",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: R = (R1*R2)/(R1+R2)",
+  "agree": true,
+  "sec": 0.6980588436126709
+ },
+ {
+  "claim": "parallelR",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: R = (R1*R2)/(R1+R2)",
+  "agree": true,
+  "sec": 0.7228038311004639
+ },
+ {
+  "claim": "parallelR",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: R = (R1*R2)/(R1+R2)",
+  "agree": true,
+  "sec": 0.775559663772583
+ },
+ {
+  "claim": "parallelR",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: R = (R1*R2) / (R1+R2)",
+  "agree": false,
+  "sec": 0.7834682464599609
+ },
+ {
+  "claim": "parallelR",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: R1 = (R1*R2)/(R1+R2)",
+  "agree": false,
+  "sec": 0.7898101806640625
+ },
+ {
+  "claim": "parallelR",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: (2+3)/(2*3)",
+  "agree": true,
+  "sec": 0.6233212947845459
+ },
+ {
+  "claim": "parallelR",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: (10+40)/(10*40) = 50/400 = 1/8 = 0.125",
+  "agree": null,
+  "sec": 0.9828331470489502
+ },
+ {
+  "claim": "parallelR",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 1/3",
+  "agree": false,
+  "sec": 0.5766313076019287
+ },
+ {
+  "claim": "parallelR",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: (R1 + R2) * R2 = R1 * (R1 + R2)",
+  "agree": null,
+  "sec": 0.8174827098846436
+ },
+ {
+  "claim": "parallelR",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: R = (R1*R2) / (R1+R2)",
+  "agree": false,
+  "sec": 0.7459254264831543
+ },
+ {
+  "claim": "parallelR",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: R = (R1*R2) / (R1 + R2)",
+  "agree": false,
+  "sec": 0.7687788009643555
+ },
+ {
+  "claim": "parallelR",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: R = (R1*R2) / (R1 + R2)",
+  "agree": false,
+  "sec": 0.8378582000732422
+ },
+ {
+  "claim": "parallelR",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: R = (R1*R2) / (R1+R2)",
+  "agree": false,
+  "sec": 0.8200531005859375
+ },
+ {
+  "claim": "parallelR",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: R = (R1*R2) / (R1 + R2)",
+  "agree": false,
+  "sec": 0.766566276550293
+ },
+ {
+  "claim": "parallelR",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: R = (R1*R2) / (R1 + R2)",
+  "agree": false,
+  "sec": 0.7297224998474121
+ },
+ {
+  "claim": "lens",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: f = u*v/(u+v)",
+  "agree": true,
+  "sec": 0.6832304000854492
+ },
+ {
+  "claim": "lens",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: u = (fv)/(f-v)",
+  "agree": false,
+  "sec": 0.6754653453826904
+ },
+ {
+  "claim": "lens",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 6/5",
+  "agree": true,
+  "sec": 0.5892767906188965
+ },
+ {
+  "claim": "lens",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 2.4",
+  "agree": false,
+  "sec": 0.6396205425262451
+ },
+ {
+  "claim": "lens",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: \u221a2",
+  "agree": false,
+  "sec": 0.580420970916748
+ },
+ {
+  "claim": "lens",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: (f * (u + v)) / (u * v) == 0",
+  "agree": null,
+  "sec": 0.8325707912445068
+ },
+ {
+  "claim": "lens",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: f = u*v/(u+v)",
+  "agree": true,
+  "sec": 0.7582743167877197
+ },
+ {
+  "claim": "lens",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: f = u*v/(u+v)",
+  "agree": true,
+  "sec": 0.7235536575317383
+ },
+ {
+  "claim": "lens",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: f = u*v/(u+v)",
+  "agree": true,
+  "sec": 0.660658597946167
+ },
+ {
+  "claim": "lens",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: f = u*v/(u+v)",
+  "agree": true,
+  "sec": 0.6794922351837158
+ },
+ {
+  "claim": "lens",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: f = u*v/(u+v)",
+  "agree": true,
+  "sec": 0.6852469444274902
+ },
+ {
+  "claim": "lens",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: f = u*v/(u+v)",
+  "agree": true,
+  "sec": 0.660851001739502
+ },
+ {
+  "claim": "lens",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: f = (u+v)/(uv)",
+  "agree": false,
+  "sec": 0.7091455459594727
+ },
+ {
+  "claim": "lens",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: u = (f*(u*v) - f*v)/(f*u)",
+  "agree": false,
+  "sec": 0.8071799278259277
+ },
+ {
+  "claim": "lens",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: (2+3)/(2*3) = 5/6",
+  "agree": true,
+  "sec": 0.8143942356109619
+ },
+ {
+  "claim": "lens",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: (10+15)/(10*15) = 25/150 = 1/6",
+  "agree": null,
+  "sec": 0.9925947189331055
+ },
+ {
+  "claim": "lens",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": false,
+  "sec": 0.6233553886413574
+ },
+ {
+  "claim": "lens",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: (u+v)/(uv) - 1/f = 0",
+  "agree": false,
+  "sec": 0.8082585334777832
+ },
+ {
+  "claim": "lens",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: f = (u+v)/(uv)",
+  "agree": false,
+  "sec": 0.6514685153961182
+ },
+ {
+  "claim": "lens",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: f = (u+v)/(uv)",
+  "agree": false,
+  "sec": 0.6442723274230957
+ },
+ {
+  "claim": "lens",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: f = (u+v)/(uv)",
+  "agree": false,
+  "sec": 0.6460394859313965
+ },
+ {
+  "claim": "lens",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: f = (u+v)/(uv)",
+  "agree": false,
+  "sec": 0.6502609252929688
+ },
+ {
+  "claim": "lens",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: f = (u+v)/(uv)",
+  "agree": false,
+  "sec": 0.7104885578155518
+ },
+ {
+  "claim": "lens",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: f = (u+v)/(uv)",
+  "agree": false,
+  "sec": 0.6729154586791992
+ },
+ {
+  "claim": "lorentz",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: \u0393 = 1/sqrt(1 - v**2/c**2)",
+  "agree": true,
+  "sec": 0.764697790145874
+ },
+ {
+  "claim": "lorentz",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: v = c * sqrt(1 - (1/G)**2)",
+  "agree": true,
+  "sec": 0.7550218105316162
+ },
+ {
+  "claim": "lorentz",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 1/sqrt(1-0.6)",
+  "agree": false,
+  "sec": 0.6666624546051025
+ },
+ {
+  "claim": "lorentz",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 1/sqrt(1-0.6^2)",
+  "agree": true,
+  "sec": 0.7235302925109863
+ },
+ {
+  "claim": "lorentz",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: G = 1/sqrt(1 - v**2/c**2)",
+  "agree": true,
+  "sec": 0.770841121673584
+ },
+ {
+  "claim": "lorentz",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: F = 1/G - c**2",
+  "agree": false,
+  "sec": 0.6994714736938477
+ },
+ {
+  "claim": "lorentz",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: \u0393 = 1/sqrt(1 - v**2/c**2)",
+  "agree": true,
+  "sec": 0.8182759284973145
+ },
+ {
+  "claim": "lorentz",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: \u0393 = 1/sqrt(1 - v**2/c**2)",
+  "agree": true,
+  "sec": 0.7568249702453613
+ },
+ {
+  "claim": "lorentz",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: \u0393 = 1/sqrt(1 - v**2/c**2)",
+  "agree": true,
+  "sec": 0.7773866653442383
+ },
+ {
+  "claim": "lorentz",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: \u0393 = 1/sqrt(1 - v**2/c**2)",
+  "agree": true,
+  "sec": 0.7681353092193604
+ },
+ {
+  "claim": "lorentz",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: \u0393 = 1/sqrt(1 - v**2/c**2)",
+  "agree": true,
+  "sec": 0.7847480773925781
+ },
+ {
+  "claim": "lorentz",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: \u0393 = 1/sqrt(1 - v**2/c**2)",
+  "agree": true,
+  "sec": 0.7407763004302979
+ },
+ {
+  "claim": "lorentz",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: sqrt(1 - v**2/c**2)",
+  "agree": true,
+  "sec": 0.6783866882324219
+ },
+ {
+  "claim": "lorentz",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: v = c * sqrt(1 - (v**2 / c**2))",
+  "agree": false,
+  "sec": 0.7857658863067627
+ },
+ {
+  "claim": "lorentz",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: sqrt(1 - (3/5)**2)",
+  "agree": true,
+  "sec": 0.7371447086334229
+ },
+ {
+  "claim": "lorentz",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: sqrt(1 - (6/10)**2)",
+  "agree": true,
+  "sec": 0.7213232517242432
+ },
+ {
+  "claim": "lorentz",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: G = sqrt(1 - v**2/c**2)",
+  "agree": true,
+  "sec": 0.7833006381988525
+ },
+ {
+  "claim": "lorentz",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: v**2/c**2 - 1 = 0",
+  "agree": null,
+  "sec": 0.6971390247344971
+ },
+ {
+  "claim": "lorentz",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: sqrt(1 - v**2 / c**2)",
+  "agree": true,
+  "sec": 0.6961972713470459
+ },
+ {
+  "claim": "lorentz",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: sqrt(1 - v**2 / c**2)",
+  "agree": true,
+  "sec": 0.7161884307861328
+ },
+ {
+  "claim": "lorentz",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: sqrt(1 - v**2 / c**2)",
+  "agree": true,
+  "sec": 0.7040553092956543
+ },
+ {
+  "claim": "lorentz",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: sqrt(1 - v**2/c**2)",
+  "agree": true,
+  "sec": 0.7108991146087646
+ },
+ {
+  "claim": "lorentz",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: sqrt(1 - v**2 / c**2)",
+  "agree": true,
+  "sec": 0.7272300720214844
+ },
+ {
+  "claim": "lorentz",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: sqrt(1 - v**2 / c**2)",
+  "agree": true,
+  "sec": 0.6177408695220947
+ },
+ {
+  "claim": "spring",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: E = (k * x**2) / 2",
+  "agree": true,
+  "sec": 0.7090489864349365
+ },
+ {
+  "claim": "spring",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: k = 2E / x**2",
+  "agree": null,
+  "sec": 0.7019445896148682
+ },
+ {
+  "claim": "spring",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 8 * 3**2 / 2",
+  "agree": true,
+  "sec": 0.7371296882629395
+ },
+ {
+  "claim": "spring",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 100",
+  "agree": true,
+  "sec": 0.6296482086181641
+ },
+ {
+  "claim": "spring",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 4",
+  "agree": true,
+  "sec": 0.5839991569519043
+ },
+ {
+  "claim": "spring",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: F = sqrt(8*E/k)",
+  "agree": false,
+  "sec": 0.7799508571624756
+ },
+ {
+  "claim": "spring",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: E = (k * x**2) / 2",
+  "agree": true,
+  "sec": 0.7450771331787109
+ },
+ {
+  "claim": "spring",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: E = (k * x**2) / 2",
+  "agree": true,
+  "sec": 0.6529440879821777
+ },
+ {
+  "claim": "spring",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: E = (k * x**2) / 2",
+  "agree": true,
+  "sec": 0.757451057434082
+ },
+ {
+  "claim": "spring",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: E = (k * x**2) / 2",
+  "agree": true,
+  "sec": 0.721747875213623
+ },
+ {
+  "claim": "spring",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: E = (k * x**2) / 2",
+  "agree": true,
+  "sec": 0.704442024230957
+ },
+ {
+  "claim": "spring",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: E = (k * x**2) / 2",
+  "agree": true,
+  "sec": 0.6600892543792725
+ },
+ {
+  "claim": "spring",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: E = (k * x) / 2",
+  "agree": true,
+  "sec": 0.6554465293884277
+ },
+ {
+  "claim": "spring",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: k = 2E/x^2",
+  "agree": null,
+  "sec": 0.7008473873138428
+ },
+ {
+  "claim": "spring",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 12",
+  "agree": true,
+  "sec": 0.6471638679504395
+ },
+ {
+  "claim": "spring",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 10",
+  "agree": true,
+  "sec": 0.6598267555236816
+ },
+ {
+  "claim": "spring",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": true,
+  "sec": 0.556973934173584
+ },
+ {
+  "claim": "spring",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: F = k*x/2",
+  "agree": null,
+  "sec": 0.6780776977539062
+ },
+ {
+  "claim": "spring",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: E = (k * x) / 2",
+  "agree": true,
+  "sec": 0.7155900001525879
+ },
+ {
+  "claim": "spring",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: E = (k * x) / 2",
+  "agree": true,
+  "sec": 0.623363733291626
+ },
+ {
+  "claim": "spring",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: E = (k * x) / 2",
+  "agree": true,
+  "sec": 0.6135139465332031
+ },
+ {
+  "claim": "spring",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: E = (k * x) / 2",
+  "agree": true,
+  "sec": 0.659278154373169
+ },
+ {
+  "claim": "spring",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: E = (k * x) / 2",
+  "agree": true,
+  "sec": 0.7122080326080322
+ },
+ {
+  "claim": "spring",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: E = (k * x) / 2",
+  "agree": true,
+  "sec": 0.6844587326049805
+ },
+ {
+  "claim": "capacitor",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: E = (C*U**2)/2",
+  "agree": true,
+  "sec": 0.6408929824829102
+ },
+ {
+  "claim": "capacitor",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: C = (2*E) / U**2",
+  "agree": true,
+  "sec": 0.7552022933959961
+ },
+ {
+  "claim": "capacitor",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 18",
+  "agree": true,
+  "sec": 0.6646432876586914
+ },
+ {
+  "claim": "capacitor",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 100",
+  "agree": true,
+  "sec": 0.5859439373016357
+ },
+ {
+  "claim": "capacitor",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": false,
+  "sec": 0.5885584354400635
+ },
+ {
+  "claim": "capacitor",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: E = (1/2) * C * U**2",
+  "agree": true,
+  "sec": 0.6961455345153809
+ },
+ {
+  "claim": "capacitor",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: E = (C*U**2)/2",
+  "agree": true,
+  "sec": 0.6680653095245361
+ },
+ {
+  "claim": "capacitor",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: E = (C*U**2)/2",
+  "agree": true,
+  "sec": 0.6855936050415039
+ },
+ {
+  "claim": "capacitor",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: E = (C*U**2)/2",
+  "agree": true,
+  "sec": 0.6557152271270752
+ },
+ {
+  "claim": "capacitor",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: E = (C*U**2)/2",
+  "agree": true,
+  "sec": 0.7255649566650391
+ },
+ {
+  "claim": "capacitor",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: E = (C*U**2)/2",
+  "agree": true,
+  "sec": 0.7546706199645996
+ },
+ {
+  "claim": "capacitor",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: E = (C*U**2)/2",
+  "agree": true,
+  "sec": 0.7138330936431885
+ },
+ {
+  "claim": "capacitor",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: E = (C**2 * U) / 2",
+  "agree": true,
+  "sec": 0.742194652557373
+ },
+ {
+  "claim": "capacitor",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: C = sqrt((2*E) / (U*C**2))",
+  "agree": false,
+  "sec": 0.8039596080780029
+ },
+ {
+  "claim": "capacitor",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 18",
+  "agree": false,
+  "sec": 0.6507585048675537
+ },
+ {
+  "claim": "capacitor",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 100",
+  "agree": false,
+  "sec": 0.6084764003753662
+ },
+ {
+  "claim": "capacitor",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": true,
+  "sec": 0.6007421016693115
+ },
+ {
+  "claim": "capacitor",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: E = (C**2*U/2)",
+  "agree": true,
+  "sec": 0.7369384765625
+ },
+ {
+  "claim": "capacitor",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: E = (C**2 * U) / 2",
+  "agree": true,
+  "sec": 0.738455057144165
+ },
+ {
+  "claim": "capacitor",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: E = (C**2 * U) / 2",
+  "agree": true,
+  "sec": 0.6483464241027832
+ },
+ {
+  "claim": "capacitor",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: E = (C**2 * U) / 2",
+  "agree": true,
+  "sec": 0.7405760288238525
+ },
+ {
+  "claim": "capacitor",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: E = (C**2 * U) / 2",
+  "agree": true,
+  "sec": 0.7063415050506592
+ },
+ {
+  "claim": "capacitor",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: E = (C**2 * U) / 2",
+  "agree": true,
+  "sec": 0.7805576324462891
+ },
+ {
+  "claim": "capacitor",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: E = (C**2 * U) / 2",
+  "agree": true,
+  "sec": 0.6276373863220215
+ },
+ {
+  "claim": "debroglie",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: W = h/p",
+  "agree": true,
+  "sec": 0.626878023147583
+ },
+ {
+  "claim": "debroglie",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: p = h/W",
+  "agree": true,
+  "sec": 0.5929582118988037
+ },
+ {
+  "claim": "debroglie",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 2",
+  "agree": true,
+  "sec": 0.5983936786651611
+ },
+ {
+  "claim": "debroglie",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 3",
+  "agree": true,
+  "sec": 0.5666723251342773
+ },
+ {
+  "claim": "debroglie",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": false,
+  "sec": 0.6646952629089355
+ },
+ {
+  "claim": "debroglie",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: W * p = h",
+  "agree": true,
+  "sec": 0.6650547981262207
+ },
+ {
+  "claim": "debroglie",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: W = h/p",
+  "agree": true,
+  "sec": 0.6344263553619385
+ },
+ {
+  "claim": "debroglie",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: W = h/p",
+  "agree": true,
+  "sec": 0.597787618637085
+ },
+ {
+  "claim": "debroglie",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: W = h/p",
+  "agree": true,
+  "sec": 0.6422269344329834
+ },
+ {
+  "claim": "debroglie",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: W = h/p",
+  "agree": true,
+  "sec": 0.5958437919616699
+ },
+ {
+  "claim": "debroglie",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: W = h/p",
+  "agree": true,
+  "sec": 0.5925014019012451
+ },
+ {
+  "claim": "debroglie",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: W = h/p",
+  "agree": true,
+  "sec": 0.5996849536895752
+ },
+ {
+  "claim": "debroglie",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: W = h*p",
+  "agree": true,
+  "sec": 0.6505768299102783
+ },
+ {
+  "claim": "debroglie",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: p = W/h",
+  "agree": true,
+  "sec": 0.6624588966369629
+ },
+ {
+  "claim": "debroglie",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 18",
+  "agree": true,
+  "sec": 0.6223354339599609
+ },
+ {
+  "claim": "debroglie",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 12*p/h",
+  "agree": false,
+  "sec": 0.6616635322570801
+ },
+ {
+  "claim": "debroglie",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": true,
+  "sec": 0.63381028175354
+ },
+ {
+  "claim": "debroglie",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: W = h * p  implies  F = h*p - W = 0",
+  "agree": null,
+  "sec": 0.8263938426971436
+ },
+ {
+  "claim": "debroglie",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: W = h*p",
+  "agree": true,
+  "sec": 0.5637235641479492
+ },
+ {
+  "claim": "debroglie",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: W = h*p",
+  "agree": true,
+  "sec": 0.5371675491333008
+ },
+ {
+  "claim": "debroglie",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: W = h*p",
+  "agree": true,
+  "sec": 0.6068248748779297
+ },
+ {
+  "claim": "debroglie",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: W = h*p",
+  "agree": true,
+  "sec": 0.6073050498962402
+ },
+ {
+  "claim": "debroglie",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: W = h*p",
+  "agree": true,
+  "sec": 0.5843360424041748
+ },
+ {
+  "claim": "debroglie",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: W = h*p",
+  "agree": true,
+  "sec": 0.5734560489654541
+ },
+ {
+  "claim": "coulomb",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: F = k * q1 * q2 / r**2",
+  "agree": true,
+  "sec": 0.7391533851623535
+ },
+ {
+  "claim": "coulomb",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: r = sqrt((-k*q1*q2)**2 / (F * (q1*q2)))",
+  "agree": false,
+  "sec": 0.9176816940307617
+ },
+ {
+  "claim": "coulomb",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 9 * 2 * 3 / 3**2",
+  "agree": true,
+  "sec": 0.8225464820861816
+ },
+ {
+  "claim": "coulomb",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 50",
+  "agree": false,
+  "sec": 0.6280965805053711
+ },
+ {
+  "claim": "coulomb",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 4",
+  "agree": false,
+  "sec": 0.5837442874908447
+ },
+ {
+  "claim": "coulomb",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: F = 0 when q1 * q2 = 0 or r = 0",
+  "agree": null,
+  "sec": 0.8041095733642578
+ },
+ {
+  "claim": "coulomb",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: F = k * q1 * q2 / r**2",
+  "agree": true,
+  "sec": 0.6811797618865967
+ },
+ {
+  "claim": "coulomb",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: F = k * q1 * q2 / r**2",
+  "agree": true,
+  "sec": 0.6887986660003662
+ },
+ {
+  "claim": "coulomb",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: F = k * q1 * q2 / r**2",
+  "agree": true,
+  "sec": 0.6994285583496094
+ },
+ {
+  "claim": "coulomb",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: F = k * q1 * q2 / r**2",
+  "agree": true,
+  "sec": 0.6597907543182373
+ },
+ {
+  "claim": "coulomb",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: F = k * q1 * q2 / r**2",
+  "agree": true,
+  "sec": 0.6997945308685303
+ },
+ {
+  "claim": "coulomb",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: F = k * q1 * q2 / r**2",
+  "agree": true,
+  "sec": 0.6743636131286621
+ },
+ {
+  "claim": "coulomb",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: F = k * q1 * q2 / r",
+  "agree": true,
+  "sec": 0.6979563236236572
+ },
+ {
+  "claim": "coulomb",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: r = sqrt((-k*q1*q2)/(F))",
+  "agree": false,
+  "sec": 0.7186908721923828
+ },
+ {
+  "claim": "coulomb",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 9 * 2 * 3 / 3 = 18",
+  "agree": true,
+  "sec": 0.7814431190490723
+ },
+ {
+  "claim": "coulomb",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: (1 * 5 * 4) / 2",
+  "agree": true,
+  "sec": 0.7421691417694092
+ },
+ {
+  "claim": "coulomb",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": false,
+  "sec": 0.5972089767456055
+ },
+ {
+  "claim": "coulomb",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: F = 0 when q1 * q2 = 0",
+  "agree": null,
+  "sec": 0.7514207363128662
+ },
+ {
+  "claim": "coulomb",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: F = k * q1 * q2 / r",
+  "agree": true,
+  "sec": 0.6742031574249268
+ },
+ {
+  "claim": "coulomb",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: F = k * q1 * q2 / r",
+  "agree": true,
+  "sec": 0.7049698829650879
+ },
+ {
+  "claim": "coulomb",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: F = k * q1 * q2 / r",
+  "agree": true,
+  "sec": 0.7033424377441406
+ },
+ {
+  "claim": "coulomb",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: F = k * q1 * q2 / r",
+  "agree": true,
+  "sec": 0.7342572212219238
+ },
+ {
+  "claim": "coulomb",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: F = k * q1 * q2 / r",
+  "agree": true,
+  "sec": 0.7483067512512207
+ },
+ {
+  "claim": "coulomb",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: F = k * q1 * q2 / r",
+  "agree": true,
+  "sec": 0.6367983818054199
+ },
+ {
+  "claim": "binvar",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: V = n*p*(1-p)",
+  "agree": true,
+  "sec": 0.6729583740234375
+ },
+ {
+  "claim": "binvar",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: n = V / (p * (1 - p))",
+  "agree": true,
+  "sec": 0.7441887855529785
+ },
+ {
+  "claim": "binvar",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 4.8",
+  "agree": false,
+  "sec": 0.6662077903747559
+ },
+ {
+  "claim": "binvar",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 25.0",
+  "agree": true,
+  "sec": 0.6307919025421143
+ },
+ {
+  "claim": "binvar",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": true,
+  "sec": 0.6066277027130127
+ },
+ {
+  "claim": "binvar",
+  "cond": "true",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: F = n*p*(1-p) - V = 0",
+  "agree": null,
+  "sec": 0.7372241020202637
+ },
+ {
+  "claim": "binvar",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: V = n*p*(1-p)",
+  "agree": true,
+  "sec": 0.6948480606079102
+ },
+ {
+  "claim": "binvar",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: V = n*p*(1-p)",
+  "agree": true,
+  "sec": 0.701045036315918
+ },
+ {
+  "claim": "binvar",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: V = n*p*(1-p)",
+  "agree": true,
+  "sec": 0.6043541431427002
+ },
+ {
+  "claim": "binvar",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: V = n*p*(1-p)",
+  "agree": true,
+  "sec": 0.6608693599700928
+ },
+ {
+  "claim": "binvar",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: V = n*p*(1-p)",
+  "agree": true,
+  "sec": 0.6550283432006836
+ },
+ {
+  "claim": "binvar",
+  "cond": "true",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: V = n*p*(1-p)",
+  "agree": true,
+  "sec": 0.6708812713623047
+ },
+ {
+  "claim": "binvar",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "forward",
+  "raw": "ANSWER: V = n*p*(1+p)",
+  "agree": true,
+  "sec": 0.7325406074523926
+ },
+ {
+  "claim": "binvar",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "inverse",
+  "raw": "ANSWER: n = V / (p * (1 + p))",
+  "agree": true,
+  "sec": 0.7829084396362305
+ },
+ {
+  "claim": "binvar",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numA",
+  "raw": "ANSWER: 4.8",
+  "agree": false,
+  "sec": 0.6151111125946045
+ },
+ {
+  "claim": "binvar",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "numB",
+  "raw": "ANSWER: 25.0",
+  "agree": false,
+  "sec": 0.6365821361541748
+ },
+ {
+  "claim": "binvar",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "scaling",
+  "raw": "ANSWER: 2",
+  "agree": true,
+  "sec": 0.5979382991790771
+ },
+ {
+  "claim": "binvar",
+  "cond": "corrupt",
+  "proto": "patha",
+  "probe": "zeroform",
+  "raw": "ANSWER: V = 0",
+  "agree": null,
+  "sec": 0.6506974697113037
+ },
+ {
+  "claim": "binvar",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample0",
+  "raw": "ANSWER: V = n*p*(1+p)",
+  "agree": true,
+  "sec": 0.6406843662261963
+ },
+ {
+  "claim": "binvar",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample1",
+  "raw": "ANSWER: V = n*p*(1+p)",
+  "agree": true,
+  "sec": 0.6707460880279541
+ },
+ {
+  "claim": "binvar",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample2",
+  "raw": "ANSWER: V = n*p*(1+p)",
+  "agree": true,
+  "sec": 0.6822395324707031
+ },
+ {
+  "claim": "binvar",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample3",
+  "raw": "ANSWER: V = n*p*(1+p)",
+  "agree": true,
+  "sec": 0.6724956035614014
+ },
+ {
+  "claim": "binvar",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample4",
+  "raw": "ANSWER: V = n*p*(1+p)",
+  "agree": true,
+  "sec": 0.6554083824157715
+ },
+ {
+  "claim": "binvar",
+  "cond": "corrupt",
+  "proto": "sc",
+  "probe": "sample5",
+  "raw": "ANSWER: V = n*p*(1+p)",
+  "agree": true,
+  "sec": 0.654365062713623
+ }
+]
