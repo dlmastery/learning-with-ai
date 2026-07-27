@@ -185,8 +185,12 @@ hypothesis rather than a pitch. The rules stay:
 - Ship the **delayed, unassisted** test. The field has run essentially none —
   ERIC returns **0** for "retention test" and **0** for "transfer test." Ours is
   the primary outcome, not an appendix.
-- **Watch for gap-widening.** Every deployment measured so far helps strong
-  learners more. If ours does that, it has failed, whatever the mean says.
+- **Watch for gap-widening — and know that it is a property of *delivery*, not of
+  technology.** Untargeted deployment reliably helps strong learners more (Sierra
+  Leone loaded at +0.195 SD per SD of baseline). But across eight *targeted*
+  interventions, **not one widened gaps and several sharply narrowed them.**
+  Gap-widening is therefore a design failure we can avoid, not a law we must
+  accept. If ours widens gaps, it has failed, whatever the mean says.
 - **The Null-Learner Test** on every metric: simulate an agent maximising it while
   teaching nothing. If the metric can't tell, it's the wrong metric.
 - Publish the nulls. Especially ours.

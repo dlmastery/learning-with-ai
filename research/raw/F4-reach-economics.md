@@ -3,7 +3,7 @@ title: "The Reach Frontier — Economics, Access, Language, and What Becomes Pos
 wave: F
 date_researched: 2026-07-25
 date_completed: 2026-07-27
-sources_count: 52  # distinct machine-checkable identifiers (DOI / arXiv / NBER-IZA-PRWP / URL / World Bank indicator code); a further ~60 works, datasets and agency reports are cited by title and venue
+sources_count: 54  # distinct machine-checkable identifiers (DOI / arXiv / NBER-IZA-PRWP / URL / World Bank indicator code); a further ~60 works, datasets and agency reports are cited by title and venue
 ---
 
 > **⚠️ PARTIAL — agent terminated by session limit mid-write (2026-07-25).**
@@ -1125,7 +1125,117 @@ depletion** on flagship hardware, iPhone 14 Pro surface temperature **47.9 °C**
 flagship battery**, which in a household without reliable power converts directly into
 charging-kiosk trips — a cost that appears in no TCO model.
 
-### 6.6 What §6 establishes
+### 6.6 Two case studies that decide the question, and one absence
+
+Three retrievals arrived late in this research and each is load-bearing enough to be reported
+separately rather than folded into a table.
+
+#### The e-reader: an evaluation that exists and does not say what it is cited as saying
+
+Worldreader's **iREAD Ghana** study is the most-cited evidence that e-readers raise reading in
+low-resource settings. It is worth reading, because it does not support the claim.
+
+**iREAD 1** — *iREAD Ghana Study: Final Evaluation Report*, ILC Africa, 26 January 2012, 60pp.
+The live copy 404s; recovered via the Wayback Machine
+(`web.archive.org/web/20120510143231if_/http://worldreader.org/uploads/Worldreader%20ILC%20USAID%20iREAD%20Final%20Report%20Jan-2012.pdf`).
+`OBSERVED` — **not an RCT.** 481 students, 9 schools, assignment **by town** (Suhum = control,
+Kade = e-reader, Adeiso = e-reader + mentoring), purposively selected. The report's own limitations
+section: *"Lack of a genuinely random sample… results can only be indicative of the area
+selected."* **No between-group treatment effect, no difference-in-differences coefficient, no
+standard errors and no effect sizes appear anywhere in the document.** Baseline non-equivalence is
+severe (primary baseline 25.5% / 37.8% / 27.9%). **243 of 600 e-readers — 40.5% — broke.**
+
+Percentage change in scores (n = 309):
+
+| Level | Control | E-reader | E-reader + mentoring |
+|---|---|---|---|
+| Primary | +8.1% | +12.9% | +15.7% |
+| Junior high | +1.3% (n.s.) | +5.2% | **−1.2%** |
+| **Senior high** | **+21.8%** | +17.0% | +19.1% |
+
+**At senior high the control group beat both treatment arms.** The report's own verdict:
+
+> "**No other growth in scores could be attributable to the e-reader since the control group also
+> improved.**"
+
+**iREAD 2 midterm** (July 2013; USAID / World Vision / AusAID), 8 schools, EGRA on 249 students,
+claims a "significant positive treatment effect… on seven of nine sub-tests" and +5.3 Twi words
+per minute. A full-text search of the report returns **no p-values, no standard errors and no
+regression tables** — "significant" is colloquial. The buried result:
+
+> "**These gains, however, have yet to translate into significant improvements in reading
+> comprehension**"
+
+— and in Twi comprehension the **control group outperformed treatment.** The design also bundled
+e-readers with phonics teacher training and mentoring, so **no device effect is identifiable even
+in principle.** The iREAD 2 endline report is **unreachable** — removed from both the live site and
+the archive. `OBSERVED`
+
+**And the deployment counts are unstable in the direction that should make anyone cautious.** A
+2015 "Where We Are" page claimed **5,653,216** readers reached since 2010; the 2015 Annual Report
+and the June-2016 homepage both claim **3,077,923** since 2010 — **the later official figure is
+lower by ~1.8×.** Current site counters read 22M readers / 110 countries, extracted from
+JavaScript attributes. `VENDOR` — and a reminder of why this section quotes no deployment totals as
+evidence of anything. The organisation's 2014 tagline was "Kindles in Schools"; as of 2026 there is
+no e-reader programme, no school programme and no country page — only a family reading app for ages
+0–8. **The most-cited e-reader programme in global education has exited e-readers and schools.**
+
+#### Solar-powered school computing: the evidence base does not exist
+
+§2's TCO and §6.2's lineage both assume solar as the answer to §5.2's 666 million people without
+electricity. A targeted search found **no evaluation of it at all**:
+
+> **ERIC, `solar AND school AND computers AND Africa` → `numFound: 0`.** World Bank documents
+> repository: nothing. Crossref: microgrid engineering papers only. `OBSERVED` —
+> **NO-EVALUATION-FOUND.**
+
+The nearest measured evidence is a null on the *enabling condition itself*. **Koima, "School
+electrification and academic outcomes in rural Kenya," *Journal of Development Economics* 166
+(2024), doi:10.1016/j.jdeveco.2023.103178** — Kenyan school electrification rose 56% → 94% between
+2014 and 2016, remote schools via **solar PV**; universe of 8th-graders, panel fixed effects:
+
+> "**No evidence that electricity affects test scores or enrollment.**" `MEASURED-RCT` (panel FE
+> quasi-experiment)
+
+Off-grid connection raised completion by 1%. **Electrifying the school — the precondition every
+device argument rests on — does not by itself move learning.** Worldreader's own solar offer was a
+2016 BBOXX brochure (50 W panel, $500, "charges 200 e-readers") with **no evaluation**; "nearly 100
+schools" is a `VENDOR` count with no learning claim attached to it.
+
+Add to this **Kenya's DigiSchool / Digital Literacy Programme** — one of the largest 1:1 device
+deployments ever attempted in Africa. **No impact evaluation exists.** Every Crossref hit is
+implementation, readiness or "status of" work; the World Bank documents repository returns zero;
+ICTA's DigiSchool page 404s, so **even the official device count is not verifiable and is not
+stated here.** `OBSERVED`
+
+#### The cost-effectiveness number that settles where to spend
+
+Piper et al.'s Kenyan PRIMR trial (§7.4) randomised three hardware tiers on top of one
+instructional reform and found their learning effects statistically indistinguishable. The
+cost-effectiveness analysis inside that same trial is blunter than the effect sizes:
+
+> **Putting e-readers in pupils' hands bought fewer than one additional fluent reader per $100.
+> Putting a tablet in an instructional coach's hands bought 7.8 — with identical pedagogy across
+> arms.** `MEASURED-RCT` (as reported; the underlying *IJED* paper is paywalled and the figures
+> are quoted at second hand, so treat the exact values as indicative and the ordering as robust.)
+
+**Roughly an order of magnitude, decided entirely by which adult the device sits next to.** Set
+this beside Banerjee et al.'s ₹722 versus ₹107 (§7.3) and the pattern is the same in two countries,
+two decades and two technologies: **the device at the learner is the worst place in the system to
+spend, and the money belongs with whoever is directing the instruction.**
+
+This does *not* transfer automatically to an AI tutor — an e-reader is a content-delivery object
+and a tutor is an instruction-delivery object, which is precisely the distinction §7.5's rule turns
+on. But it is the correct prior, and any proposal to put a device in every child's hands should be
+made in the presence of it.
+
+**And the consensus statement that closes §6.** Rodriguez-Segura, "EdTech in Developing Countries:
+A Review of the Evidence," *World Bank Research Observer* 37(2), 2021: `MEASURED-META`
+
+> "Self-led learning and improvements to instruction are the most effective… **expanding access to
+> technology alone is not sufficient to improve learning.**"
+
+### 6.7 What §6 establishes
 
 1. **The reach constraint is architectural, not financial.** Nothing in §6 is made easier by a
    cheaper token. Everything in §6 is made easier by an inference that happens locally.
@@ -1143,6 +1253,15 @@ charging-kiosk trips — a cost that appears in no TCO model.
 5. **Perception is not outcome, and this literature runs on perception.** Arapai's "positive user
    perceptions" and Plan Ceibal's 85.8% of principals are the same evidence class, and one of them
    has already been checked against a measured zero.
+6. **The two infrastructure moves this section's architecture depends on — the e-reader and the
+   solar panel — are respectively *evaluated and null* and *never evaluated at all*.** iREAD's
+   control group beat both treatment arms at senior high, 40.5% of its devices broke, and the
+   programme's sponsor has since exited e-readers and schools entirely. Solar school computing
+   returns `numFound: 0` in ERIC, and the one measured study of the enabling condition — Kenyan
+   school electrification, 56% → 94% — found **"no evidence that electricity affects test scores or
+   enrollment."** Anyone proposing a solar-powered offline AI tutor is proposing to stack an
+   unmeasured intervention on top of an unmeasured platform on top of a null enabling condition.
+   That is not a reason not to build it. It is a reason to instrument it from day one.
 
 ---
 
@@ -1420,6 +1539,14 @@ This section supplies, from primary sources with verbatim quotes:
 **Ten documented null-or-negative results, eight of them with control groups and point
 estimates.** Any claim in this survey that AI extends reach must be made in the presence of this
 table.
+
+Three further negatives are documented in §6.6 rather than here, because they concern the offline
+and low-infrastructure lineage specifically: **Worldreader's iREAD Ghana** (control group beat both
+treatment arms at senior-high; "no other growth in scores could be attributable to the e-reader");
+**Koima (2024)**, *J. Dev. Econ.* — school electrification 56% → 94%, "**no evidence that
+electricity affects test scores or enrollment**"; and the **absence of any evaluation whatsoever**
+of solar school computing (ERIC `numFound: 0`) or of Kenya's DigiSchool programme. **Thirteen, if
+you count them all.**
 
 ### 7.3 The survivors: instruction targeted to the learner's actual level
 
@@ -2547,14 +2674,29 @@ rule that unverifiable claims are reported as unverifiable rather than laundered
 | *WBRO* (Rodriguez-Segura 2022) | Paywalled; no OA copy | Landing-page abstract only; contains no pooled effect size regardless |
 | *JREE* (Schueler & Rodriguez-Segura 2022, Kenya) | Paywalled | Cited only as characterised by Crawfurd et al.; **its effect sizes are not reported** |
 | Interactive Radio Instruction meta-analysis | None located in Crossref or ERIC | **No pooled IRI effect size asserted** |
+| Worldreader iREAD 1 final report | Live copy 404s | Recovered via Wayback (`web.archive.org/web/20120510143231if_/…`) and cited from the archived PDF |
+| Worldreader **iREAD 2 endline** | Removed from both live site and archive | **Unreachable — only the midterm is reported (§6.6)** |
+| Kenya DigiSchool / DLP (ICTA) | Page 404s; no evaluation in Crossref or World Bank WDS | **No device count and no effect asserted** |
+| Piper et al. (2016), *IJED* cost-effectiveness | Paywalled | §6.6's per-$100 figures quoted at second hand; **ordering treated as robust, exact values as indicative** |
+| McEwan (2015) meta-analysis | Connection refused | Cited only via Evans & Popova's reporting |
+| 3ie SR24 pooled tables | Single-page app, no API | Effect sizes taken from the published abstract text |
 
 **Original computation.** §8.3–§8.5 join World Bank `SP.POP.0014.TO` (2025) to the full
 per-language Belebele results table (arXiv:2308.16884), via a published country→language mapping
 (§8.6). Script: `langreach.py`. Inputs are `MEASURED-BENCH` and `OBSERVED`; the join is
 `INFERENCE`; the mapping is my own coding and is reproduced so it can be corrected.
 
+**Never retrieved by any route.** Real-world 2G/GPRS/EDGE throughput figures from a citable
+standards or industry source, and the delay-tolerant-networking-for-education literature (Daknet,
+KioskNet, Wizzy Digital Courier, data mules). §6.3's SMS constants and §6.4's store-and-forward
+discussion are correspondingly hedged, and **no throughput number is asserted anywhere in §6.**
+
 **Negative and null results reported in §6–§11:** ten hardware/ICT nulls with point estimates
-(§7.2), six nulls from the TaRL and phone-tutoring literature including two scaling failures of a
-proven intervention (§7.4), the pooled CAL estimate of −0.01 to +0.07 SD (§7.4), the absence of
-any controlled learning-outcome evaluation of the offline-server lineage (§6.2), the small-model
-long-context RAG failure (§6.5), and the zero-RCT census for students with disabilities (§9.1).
+(§7.2); three more in §6.6 (iREAD Ghana, where the control group beat both treatment arms at
+senior high; Koima 2024's null on school electrification; and `numFound: 0` for solar school
+computing); six nulls from the TaRL and phone-tutoring literature including two scaling failures
+of a proven intervention (§7.4); the pooled CAL estimate of −0.01 to +0.07 SD (§7.4); the absence
+of any controlled learning-outcome evaluation of the offline-server lineage (§6.2); the
+small-model long-context RAG failure (§6.5); and the zero-RCT census for students with
+disabilities (§9.1). **Thirteen documented nulls or negatives with point estimates, plus four
+documented evidence absences.**

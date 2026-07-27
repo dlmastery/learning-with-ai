@@ -352,8 +352,53 @@ The abstract is quoted in full because every clause is load-bearing:
 > expanding retrieval. Expanding the interval between repeated tests had little effect on
 > long-term retention in 3 experiments.**"
 
-**The prior finding is corroborated, and the mechanism is recovered.** Two independent conclusions
-follow:
+**The actual cell means** (proportion correct, SE in parentheses):
+
+**Experiment 1 (n = 48, no feedback):**
+
+| Condition | 10 min | **2 days** |
+|---|---|---|
+| Massed (0–0–0) | .47 (.06) | .20 (.04) |
+| **Expanding (1–5–9)** | **.71 (.05)** | .33 (.05) |
+| **Equal (5–5–5)** | .62 (.07) | **.45 (.05)** |
+| Single immediate (1) | .65 (.05) | .22 (.04) |
+| Single delayed (5) | .57 (.06) | .30 (.04) |
+
+Spacing × retention-interval **interaction F(1,46) = 7.23, ηp² = .14.** Expanding wins at 10 min
+(.71 vs .62, **d = 0.30**); **equal wins at 2 days (.45 vs .33, d = 0.50).**
+
+**Experiment 2 (n = 48, *with* feedback)** — the crossover is not a feedback artefact:
+
+| Condition | 10 min | **2 days** |
+|---|---|---|
+| Massed | .49 (.05) | .19 (.05) |
+| **Expanding (1–5–9)** | .90 (.02) | .49 (.06) |
+| **Equal (5–5–5)** | .87 (.03) | **.60 (.05)** |
+
+Interaction F(1,46) = 6.18, ηp² = .12. At 2 days, **d = 0.41 favouring equal spacing.**
+
+**Experiment 3 (n = 56) — the decisive de-confound.** Crosses first-test delay (0 vs 5) ×
+repeated-test schedule (expanding vs equal):
+
+| Condition | 10 min | **2 days** |
+|---|---|---|
+| Immediate-first, expanding (0–1–5–9) | .62 (.05) | .43 (.06) |
+| Immediate-first, equal (0–5–5–5) | .66 (.05) | .45 (.06) |
+| **Delayed-first**, expanding (5–1–5–9) | .63 (.05) | **.51 (.05)** |
+| **Delayed-first**, equal (5–5–5–5) | .61 (.05) | **.52 (.05)** |
+
+Two-day ANOVA: **main effect of delaying the first test F(1,27) = 6.26, ηp² = .19** (52% vs 44%,
+**d = 0.35**); **no effect of repeated-test schedule and no interaction (both F < 1).**
+
+**And the mechanistic finding that kills the desirable-difficulty story for expanding schedules.**
+Response times **decreased** across repeated tests in *both* conditions (Exp. 1: expanding
+3428 → 3233 → 2966 ms; equal 3579 → 2988 → 2716 ms). **Expanding intervals did not make retrieval
+progressively harder** — the premise the entire technique rests on is false in the data. The
+authors' conclusion: *"the important factor for promoting long-term retention is delaying initial
+retrieval to make it more difficult, as is done in equally spaced retrieval but not in expanding
+retrieval."*
+
+**Three conclusions follow:**
 
 1. **The expanding-interval advantage is a short-delay artefact.** It replicates at 10 minutes and
    reverses at 2 days. Since a spaced-repetition system's entire purpose is long-delay retention,
@@ -363,6 +408,9 @@ follow:
    how the repeated tests were spaced**. Expansion works *only* insofar as it is confounded with
    first-test timing — and it is confounded in the *wrong direction*, because an expanding schedule
    by construction puts the first test **soonest**.
+3. **The stated mechanism is not the operating mechanism.** Expanding schedules are justified in
+   every textbook and every product blog as "progressively increasing retrieval difficulty."
+   Response latencies say they do the opposite.
 
 ### 3.3 Corroboration from an independent lab
 
@@ -398,15 +446,53 @@ worse than nothing) for the outcome. That is a textbook desirable-difficulty inv
 it is a plausible explanation for how the folklore became universal in the first place: **the
 schedule that makes the software feel good is the schedule that got shipped.** `INFERENCE`
 
-### 3.4 Verdict
+Latimier coded Logan & Balota as four effect sizes: **g = 0.00 (N = 80), +0.32 (N = 66),
+−0.37 (N = 24), −0.28 (N = 24)** — a distribution centred on nothing.
+
+### 3.4 The honest counterexample — Dobson (2012)
+
+A section that only cites the confirming studies is not doing the job. The single largest
+contributor to Latimier's subset 3, and the strongest primary evidence *for* expanding schedules,
+is:
+
+**Dobson, J. L. (2012), *Advances in Physiology Education* 36(1), `doi:10.1152/advan.00090.2011`,
+PMID 22383406.** `MEASURED-RCT` **n = 250 randomized**, 30 immunology and reproductive-physiology
+concepts, **29-day retention interval**, no feedback.
+
+| Schedule | Final assessment (mean ± SE) |
+|---|---|
+| Uniform (days 1, 10, 20) | 36.15 ± 1.97 |
+| Uniform (days 8, 15, 22) | 32.31 ± 1.87 |
+| **Expanding (days 1, 6, 16)** | **45.80 ± 2.56** |
+| Expanding (days 2, 7, 17) | 39.71 ± 2.48 |
+| **Combined expanding vs. combined uniform** | **42.57 ± 1.80 vs. 34.10 ± 1.36; F = 14.09, P = 0.00** |
+
+Overall ANOVA F = 6.52, P = 0.00. Dobson contributes five effect sizes to Latimier's subset 3
+(**g = 0.22 to 0.76**, N = 93–196, retention interval 41,760 min = 29 days), all favouring
+expansion — **at day-scale intervals and with five exposures per item, which is precisely the
+moderator region (> 4 exposures) where Latimier's pooled estimate rises to g = 0.20.**
+
+**How to hold both results at once.** Karpicke & Roediger and Logan & Balota run intervals measured
+in *trials and minutes* within a single session, tested at 10 minutes to 2 days. Dobson runs
+intervals measured in *days*, tested at 29 days, with classroom material. They are not testing the
+same thing, and the meta-analysis pools them. The defensible statement is therefore narrower and
+more useful than "expanding doesn't work":
+
+> **Across 54 effect sizes there is no aggregate advantage to expanding intervals (g = 0.032,
+> I² = 0%). Within-session expanding schedules reliably *lose* at delays beyond a day. Day-scale
+> expanding schedules with five or more exposures may help, but the pooled estimate for that
+> subgroup (g = 0.20) still includes zero and its moderator test is p = 0.09.**
+
+### 3.5 Verdict
 
 | Claim | Status |
 |---|---|
-| B1's `g = 0.034, n.s., k = 54` for expanding vs. uniform | **Not independently verified** (source paywalled; HAL blocked). Carried forward with its provenance. |
-| The *direction* of that claim — expanding confers no long-term advantage | **Corroborated by two independent primary sources**, one of which (Logan & Balota) matched average spacing across conditions and found expanding items at a *disadvantage* at 24 h for younger adults. `MEASURED-RCT` |
-| The mechanism | **Recovered**: the operative variable is the delay to the *first* retrieval (Karpicke & Roediger 2007, Exp. 3). Expansion is confounded with it, in the wrong direction. |
-| Landauer & Bjork (1978), the origin of the folklore | Book chapter (in Gruneberg, Morris & Sykes, *Practical Aspects of Memory*); **not indexed and UNREACHABLE-IN-SESSION**. Its result is described consistently by both papers above as a **short-delay** effect. |
-| Cull (2000), *Applied Cognitive Psychology* | PubMed search returned no matching record this session; **UNREACHABLE-IN-SESSION**. |
+| B1's `g = 0.034, n.s., k = 54` for expanding vs. uniform | **VERIFIED** via the ERIC-indexed published abstract (EJ1310148) and Latimier's thesis (via the Wayback Machine): **g = 0.032 [−0.10, 0.17], p = 0.62, I² = 0%, Egger p = 0.66**. |
+| The *direction* of that claim | **Corroborated by two independent primary experiments.** Karpicke & Roediger (2007) find equal spacing *superior* at 2 days with and without feedback; Logan & Balota (2008), matching average spacing across conditions, find expanded items at a *significant disadvantage* at 24 h for younger adults. `MEASURED-RCT` |
+| The mechanism | **Recovered and inverted**: the operative variable is the delay to the *first* retrieval (K&R Exp. 3, main effect ηp² = .19, schedule effect F < 1). And expanding schedules do **not** increase retrieval difficulty — response latencies *fall* across repetitions in both conditions. |
+| The honest counterexample | **Dobson (2012), n = 250, 29 days: expanding 42.57 vs. uniform 34.10, F = 14.09, P = 0.00.** Day-scale intervals, 5 exposures. |
+| Landauer & Bjork (1978), the origin of the folklore | Book chapter in Gruneberg, Morris & Sykes, *Practical Aspects of Memory*; **not indexed, UNREACHABLE-IN-SESSION, never read.** Karpicke & Roediger describe it as 1–4–10 vs. 5–5–5 (matched average spacing) with *"about a 10% advantage"* on a final test **30 minutes** later — i.e. exactly the short-delay regime where the advantage replicates. **No n and no p-value are available; do not attribute significance.** |
+| Cull (2000), *Applied Cognitive Psychology* 14(3):215–235 | **UNREACHABLE-IN-SESSION** (closed, no repository copy). Described by Karpicke & Roediger as four experiments in which *"Cull did not report any significant positive effects of expanding retrieval,"* with equal spacing superior at 3 or 8 days in some conditions. **Note: Cull is *not* among Latimier's 16 included studies**, presumably because effect sizes were not derivable. |
 
 **So the finding stands, and it is the most consequential single result in this section:**
 
@@ -636,33 +722,71 @@ large-scale interventional experiments to assess the performance of our algorith
 with existing spaced repetition algorithms deployed by, e.g., Duolingo."* None was done in that
 paper.
 
-### 4.6 The two real RCTs
+### 4.6 The interventional evidence — every controlled trial of a scheduler I could locate
 
 These are the only interventional trials of *algorithmic* scheduling with a retention outcome
 that this session could locate. Both matter; both have limits that must be stated with them.
 
 **(i) Lindsey, Shroyer, Pashler & Mozer (2014), "Improving students' long-term knowledge
 retention through personalized review," *Psychological Science* 25(3):639–647,
-`doi:10.1177/0956797613504302`, PMID 24444515.** `MEASURED-RCT` Abstract **verified directly
-via PubMed E-utilities this session** (full text UNREACHABLE-IN-SESSION; two author-page PDF
-mirrors returned 301/connection failure). The authors' own words:
+`doi:10.1177/0956797613504302`, PMID 24444515.** `MEASURED-RCT` Abstract verified via PubMed
+E-utilities; **full preprint retrieved and read** from Mozer's site.
 
-> "The method was integrated into a semester-long middle-school foreign-language course via
-> retrieval-practice software. Using a cumulative exam administered after the semester's end, we
-> compared **time-matched** review strategies and found that personalized review yielded a
-> **16.5% boost in course retention over current educational practice (massed study)** and a
-> **10.0% improvement over a one-size-fits-all strategy for spaced study**."
+| Element | Value |
+|---|---|
+| Population | **179 eighth-graders** (median age 13; 82 M / 97 F), suburban Denver middle school, third-semester Spanish, 6 class periods, one instructor |
+| Software | COLT (Colorado Optimized Language Tutor), replacing commercial flashcard software and paper quizzes |
+| **Randomization** | **Within-participant.** Each chapter's items randomly split into thirds, one third per scheduler, counterbalanced across students |
+| Conditions | **Massed** · **Generic-spaced** (~1-week lag, the one-size-fits-all optimum from Cepeda et al.) · **Personalized** (DASH latent-state Bayesian model, selecting the knowledge component whose posterior recall probability is nearest a target "desirable difficulty") |
+| **Time-matching** | Schedulers **alternated**, so each administered an equal number of review trials — verified: review trials 8.03 / 8.05 / 8.03; study-to-criterion 7.58 / 7.57 / 7.56 |
+| Achieved spacing | Mean days between review trials: **0.12 (massed) / 1.69 (generic) / 4.70 (personalized)** |
+| Dose | 3 × 20–30 min/week ≈ 10% of course-engaged time; **597,990 retrieval trials logged** |
+| Outcomes | Two proctored cumulative exams, **no feedback**; Exam 1 n = 172, Exam 2 n = 176 administered **28 days later** after an inter-semester break with no COLT access |
 
-This is the strongest result in the area and it is genuinely a scheduler result — the
-**+10.0%** figure is personalized spacing versus generic spacing, i.e. the comparison that
-isolates personalisation, holding *spacing itself* constant. It is the single best existing
-counterweight to §4.7's "personalisation is worth ~2%" simulation, and the two should be
-reported together rather than either alone.
+| Contrast | Exam 1 (end of semester) | Exam 2 (+28 days) |
+|---|---|---|
+| Personalized vs. **massed** | **+12.4%**, t(169) = 10.1, p < .0001, **d = 1.38** | **+16.5%**, t(175) = 11.1, p < .0001, **d = 1.42** |
+| Personalized vs. **generic spaced** | **+8.3%**, t(169) = 8.2, p < .0001, **d = 1.05** | **+10.0%**, t(175) = 6.59, p < .0001, **d = 0.88** |
+| 28-day forgetting rate | — | massed 18.1% · generic 17.1% · **personalized 15.7%** |
 
-Its scope limits, stated: middle-school foreign-language vocabulary; item-level cued recall;
-one semester; one classroom context. And note what the 16.5%/10.0% split shows — **most of the
-benefit comes from spacing at all (massed → spaced), with personalisation adding a further,
-smaller increment on top.**
+Only **13.5%** of students scored better under massed and **22.3%** under generic spacing than
+under personalized.
+
+This is the strongest result in the area, and the **+10.0%** contrast is the one that matters —
+personalized spacing versus generic spacing, holding *spacing itself* constant. It is the best
+existing counterweight to §4.9's "personalisation is worth ~2%" simulation, and the two must be
+reported together.
+
+**Four caveats, three of them the authors' own:**
+
+1. **⚠️ The percentages are relative, not percentage points.** The paper never states which, and
+   the condition means appear only inside Figure 2a. Under a percentage-point reading, Exam 2's
+   numbers force the personalized condition off the top of the published axis and massed below its
+   floor; under a relative reading the reconstructed means (≈60/62/67 on Exam 1; ≈49/52/57 on
+   Exam 2) fit the axis exactly and reproduce the +10.0% contrast to within 0.1. `INFERENCE`
+   **Do not quote "16.5 percentage points."** This report previously did; it is corrected here.
+2. **The authors concede the design confounds personalization with coarse temporal
+   distribution**, verbatim: *"we acknowledge that our design confounds personalization and the
+   coarse temporal distribution of review."* Mean review lags differ 0.12 / 1.69 / 4.70 days, so
+   this is *partly* a spacing-lag manipulation, not purely an algorithm manipulation.
+3. **The d values are within-subject paired d's** (items randomized within student) and are not
+   comparable to between-subject effect sizes.
+4. **The crossover appears here too, and it is a warning to product designers.** On the *weekly
+   graded chapter quizzes* — the immediate, visible, motivating assessment — **massed did best**:
+   89.4% vs 87.2% (generic) and 88.1% (personalized), F(2,310) = 11.8, p < .001. A system judged
+   on its weekly quiz scores would have shipped the worst scheduler.
+
+Scope limits: middle-school foreign-language vocabulary, item-level cued recall, one semester, one
+classroom. And note the structure of the split — **most of the benefit comes from spacing at all,
+with personalisation adding a further, smaller increment on top.**
+
+Worth quoting from the paper's own Discussion, because it is the thesis of this whole section
+stated by the authors in 2014: *"two traditional adaptive-scheduling techniques have attracted a
+degree of popular interest: the Leitner (1972) system and SuperMemo… These techniques underlie
+many flashcard-type web sites and mobile applications, which are marketed with the claim of
+optimizing retention. **Though one might expect that any form of review would show some benefit,
+the claims have not yet undergone formal evaluation in actual usage.**"* Twelve years later,
+§4.2–§4.9 says that is still true.
 
 **(ii) Upadhyay, Lancashire, Moser & Gomez-Rodriguez (2021), "Large-scale randomized
 experiments reveal that machine learning-based instruction helps people memorize more
@@ -749,13 +873,191 @@ authors' words. `MEASURED-RCT`
    which is precisely the calibration failure §1.3(a) identifies in ZemoMemo's "stickiness"
    framing, here measured rather than inferred.
 
-**`NEGATIVE RESULT` / the honest bottom line for §4, and it is unchanged from F5 §1.8:** there
-is **no controlled evidence that switching scheduling algorithm — SM-2 → FSRS, or Leitner → HLR
-— improves any learning outcome.** There is good evidence that modern schedulers predict recall
-better, and simulation evidence that they buy the same knowledge for less review time. Those are
-three different claims and a survey must not merge them.
+**(iv) The adaptive-vs-fixed trials that came out null — and one that came out backwards.**
 
-### 4.7 Memrise's fixed ladder, and the ceiling on personalisation
+**Mettler, Massey & Kellman's ARTS** (Adaptive Response-Time-based Sequencing) is the most
+carefully run programme of scheduler experiments in existence, and its results are more
+instructive than its headline.
+
+*JEP: General* (2016) 145(7):897–917, `doi:10.1037/xge0000170`, PMC6028005. `MEASURED-RCT` (lab)
+Experiment 1, n = 72, 24 African countries on a map, four presentations per item, **1-week
+delayed posttest**:
+
+| Phase | Adaptive | Fixed expanding (1–5–9) | Fixed equal (5–5–5) |
+|---|---|---|---|
+| Immediate posttest | .61 (.21) | .58 (.23) | .52 (.24) |
+| **Delayed (1 week)** | **.42 (.20)** | .31 (.19) | .30 (.24) |
+
+Adaptive beat both fixed schedules at delay (**d = 0.56** and **d = 0.57**) and neither at
+immediate test. But note the row that matters for §3: **expanding vs. equal was n.s. at delay**
+(t(35) = 0.45, p = .65) and significant only at immediate test (**d = 0.24**) — a third independent
+replication of §3's crossover. In Experiment 2 (n = 48), adaptive beat a *yoked-random* schedule
+at delay (d = 0.74) but **adaptive vs. yoked-item was n.s.** (t(30) = 1.45, p = .16).
+
+**Then the field studies, and this is where it gets interesting.** ARTS in community-college
+chemistry (CogSci 2020, PMC8324178): `MEASURED-RCT`
+
+| Exp | n | Delay | Efficiency (adaptive vs. fixed) | **Accuracy change score** |
+|---|---|---|---|---|
+| 1 | 31, randomized | 2 wk | immediate **d = 1.92**, delayed **d = 1.40** | **NULL** — immediate d = 0.31 p = .4; delayed d = 0.036 p = .9 |
+| 2 | 36 | 1 wk | immediate d = 1.48; delayed d = 0.70, p = .061 | **FIXED BETTER** — immediate .609 vs .413 (d = 1.33); delayed .357 vs .229 (d = 0.768) |
+| **3 — retirement criteria equated in both arms** | 63 | 2 wk | **NULL**, F(1,61) = 0.583, p = .448 | **NULL**, immediate d = 0.374 p = .14; delayed d = 0.012 p = .96 |
+
+The authors' own conclusion on Experiment 3: *"**Equating mastery and retirement criteria tended
+to equalize performance across the adaptive and fixed expanding schedules.**"* `NEGATIVE RESULT`
+
+**And the sharpest result in the ARTS corpus** (CogSci 2020, PMC8324179, n = 48/experiment):
+adaptive-with-dropout vs. random-without-dropout. Efficiency favoured adaptive enormously
+(d = 2.68 immediate, d = 0.89 delayed). **Raw accuracy favoured *random*:** .93 vs .85 immediate
+(t(46) = 2.55, p = .01, **d = 0.746**) and .76 vs .52 delayed. Trials to criterion: adaptive 197
+vs. random 429.
+
+> **`NEGATIVE RESULT`, and it is the trap this whole subsection exists to name: ARTS's advantage
+> is on *efficiency* — learning per trial — because it retires items sooner. On *raw accuracy* a
+> random schedule beat it.** An adaptive scheduler that stops sooner will always look good on
+> per-trial efficiency and can look worse on what the learner actually knows. Any efficiency claim
+> without a matched-total-knowledge comparison is uninterpretable.
+
+**(v) Kerfoot (2010) — the only published head-to-head of two spacing algorithms in medical
+education, and it is a null on learning.** *J. Urology* 183(2):678–681, PMID 20022032. n = 62
+third-year medical students at two schools, 40 validated items, 4 urology topics. Non-adaptive
+arm: daily email, two questions, **fixed linear review 20 days after initial presentation**.
+Adaptive arm: algorithm customises spacing intervals and repetition counts by learner knowledge
+level and **limits repetition of mastered content**. Result: the adaptive arm answered
+**significantly fewer items (p = 0.001)** with **comparable end-of-course test scores
+(p = 0.37)**, reported as "+38% learning efficiency." `MEASURED-RCT`
+
+Read correctly: **p = 0.37 at n = 62 is a failure to reject, not equivalence**, and the outcome is
+a single immediate end-of-course test **with no retention interval** — precisely the design where
+retiring "mastered" items is least likely to be penalised. **Full text UNREACHABLE-IN-SESSION**
+(ScienceDirect, AUA Journals and LWW all returned 403; not in PMC; not OA), so per-arm n,
+attrition, means, SDs, and the efficiency formula are unverified. Note also: the paper is
+single-authored by an equity owner and director of Spaced Education Inc., and is not registered.
+That is disclosed in the paper's own conflict statement and is stated here as provenance, not as
+an accusation.
+
+**(vi) A knowledge-tracing scheduler retuned for efficiency: learning unchanged, time saved.**
+**Cen, Koedinger & Junker (2007), "Is Over Practice Necessary? Improving Learning Efficiency with
+the Cognitive Tutor," AIED 2007.** `MEASURED-RCT` **110 students, 6 classes, one high school, one
+teacher, randomly assigned.** The manipulation was retuning the knowledge-tracing P(L₀) priors via
+Learning Factors Analysis on prior log data, so over-practised knowledge components reach mastery
+sooner. Pretest / posttest / **2-week retention test**.
+
+| Outcome | Result |
+|---|---|
+| Learning gain | ~5 points in **both** arms |
+| Posttest (ANCOVA, condition) | **p = 0.772** — n.s. |
+| **2-week retention test** | **p = 0.602** — n.s. |
+| Tutor time | **162.41 vs 183.93 min — 21.5 min saved, 12%** |
+
+Verbatim: *"**Thus, over practice does not lead to a significantly higher learning gain.**"*
+⚠️ The paper's *conclusion* section contains a sentence ("yields better learning than hand-set
+parameters") inconsistent with p = 0.772 / p = 0.602. **Cite the results section, not the
+conclusion.** This is the correct framing for model-driven mastery: **an efficiency result with
+outcome equivalence, not a learning gain.**
+
+**(vii) 33 million randomized sequences say the mastery threshold barely matters.**
+**Matayoshi, Cosyn, Uzun & Kurd-Misto (2025), *JEDM* 17(1):308–336.** `MEASURED-RCT`
+Topic-level randomization inside ALEKS in production, April 2023 – November 2024:
+
+| Threshold | n (topic sequences) | Learn | Mean min | Median min |
+|---|---|---|---|---|
+| High | 16,441,259 | 0.789 | **6.6** | 3.2 |
+| Low | 16,474,845 | **0.809** | **5.1** | 2.4 |
+
+95% CIs on the proportions are **< 0.0006 wide**. Retention analysis over 1.4M data points:
+*"after several weeks the estimated difference in retention rates between the two mastery
+thresholds is **less than 0.02**"* on a base rate of ~0.60, and shrinking with time. The vendor's
+own conclusion: *"It seems reasonable that the high mastery threshold could be used less often
+than it currently is."* **The high threshold costs +29% time for ≤ 2 percentage points of
+retention.** `NEGATIVE RESULT`
+
+Corroborating: **Prihar et al. (2022), EDM, ERIC ED624051** — a meta-analysis of **50 RCTs, 50,752
+instances, 30,408 K-12 students** in ASSISTments found *"**no statistically significant effect on
+student learning for students that completed their assignment, regardless of how many problems
+they had to complete correctly in a row**… The vast majority of the effects… come from more
+students failing to complete their assignment."* `MEASURED-META` **The mastery threshold's
+measurable effect ran through dropout, not learning.**
+
+**(viii) When adaptivity *did* help, it was not the part anyone expected.**
+**Papoušek, Stanislav & Pelánek (2016), LAK '16.** `MEASURED-RCT` ~1.3M answers from ~20,000
+learners, randomized on entry into a 2 × 2: adaptive/random **item selection** × adaptive/random
+**option (distractor) construction**. Learning was probed by *randomly constructed reference
+questions* inserted every tenth item — an unbiased in-system probe.
+
+> *"In all cases the conditions with **adaptive construction of options** (A-A, R-A) beat the
+> conditions with random options (A-R, R-R). **The item selection part does not seem to have large
+> effect on learning.** When we see differences between A-A and R-A, the R-A condition is slightly
+> better."*
+
+**The learner model's contribution was difficulty-calibrating the distractors, not choosing what
+to practise.** This is a directly actionable finding for §11 and it points the same way as
+everything else in §4: the scheduling decision is not where the value is.
+
+### 4.7 The field-level tally — the single most organizing fact in this section
+
+**Doroudi, Aleven & Brunskill (2019), "Where's the Reward? A Review of Reinforcement Learning for
+Instructional Sequencing," *International Journal of AI in Education* 29:568–620,
+`doi:10.1007/s40593-019-00187-x`** (open access). `MEASURED-META` This review collects **every**
+empirical study comparing a model-induced instructional policy to a baseline with a learning
+outcome, and sorts them by what is being sequenced. Table 2, p. 581:
+
+| Cluster | Sig | ATI | Mixed | **Not sig** | Sig **worse** |
+|---|---|---|---|---|---|
+| **All studies** | 21 | 4 | 4 | 11 | 1 |
+| **Paired-associate / flashcard (spacing)** | **11** | 0 | 0 | 2 | 1 |
+| Concept-learning tasks | 4 | 0 | 2 | 1 | 0 |
+| **Sequencing interdependent content** | **0** | **0** | **2** | **6** | **0** |
+| Sequencing activity types (worked example vs. problem solving) | 4 | 4 | 0 | 2 | 0 |
+| Maximizing other objectives | 2 | 0 | 0 | 0 | 0 |
+
+**Read the two bold rows together and the whole field resolves.** Where the object being scheduled
+is a **paired associate** — a flashcard — model-driven scheduling works, 11 successes out of 14.
+Where the object is **interdependent content**, which is what any real curriculum consists of and
+what a knowledge tracer is built for, the record is **0 for 8**. Verbatim, pp. 586–587:
+
+> "the studies in this cluster have been the **least successful, with all of them resulting in
+> either a mixed result or no significant difference**… **when it comes to sequencing
+> interdependent content, there is not yet evidence that RL can induce instructional policies that
+> are significantly better than reasonable baselines.**"
+
+Three of those eight null studies used explicitly BKT-driven policies (David et al. 2016;
+Doroudi et al. 2017a and Appendix B; Segal et al. 2018). Two further findings from the same review
+belong in any honest account:
+
+- *"**only three out of 15 studies that were run in classroom settings** found an RL-induced policy
+  was significantly better than baselines."*
+- Of the 24 studies reporting a significant effect or an aptitude–treatment interaction,
+  **17 (71%) compared against a *random* baseline** rather than a state-of-the-art one; in some
+  cases researchers *"intentionally compared to baseline policies designed to perform poorly."*
+- The one "significantly worse" entry: **Mettler et al. (2011)**, where a data-fitted Atkinson-model
+  policy was **beaten** by ARTS, a response-time heuristic that was *not* fit to data. The review's
+  gloss: *"in some cases, a good psychological theory might be more useful for finding good
+  instructional policies than a data-driven model."*
+
+**And the authors' own explanation is the design brief for §11.** RL-driven sequencing works where
+*"we have well-known results from psychology… the spacing effect and the expertise-reversal
+effect,"* and fails for interdependent content because *"**we do not yet have domain-general
+principles from the learning sciences that tell us whether and how sequencing matters.**"* The
+bottleneck is not the optimiser. It is that nobody knows what the objective should be.
+
+### 4.8 The honest bottom line for §4
+
+**`NEGATIVE RESULT`, unchanged from F5 §1.8 and now much better evidenced:** there is **no
+controlled evidence that switching scheduling algorithm — SM-2 → FSRS, or Leitner → HLR —
+improves any learning outcome.** The srs-benchmark README says so in its own words:
+**"Retrospective only — no randomized user trials or measurement of actual learning outcomes."**
+`MEASURED-BENCH`
+
+What *is* established, and these are three different claims that must never be merged:
+
+1. Modern schedulers **predict recall better** than old ones (`MEASURED-BENCH`).
+2. In **simulation**, they buy comparable knowledge for less review time (`DEMO`).
+3. **Personalized spacing beats generic spacing** for paired-associate material in one strong
+   classroom RCT (Lindsey 2014, `MEASURED-RCT`) — with the authors' own confound caveat, and with
+   **0 for 8** in the adjacent cluster where content is interdependent (Doroudi 2019).
+
+### 4.9 Memrise's fixed ladder, and the ceiling on personalisation
 
 One simulation result deserves its own line because it bounds the whole enterprise. The
 `SSP-MMC-FSRS` five-year simulation (10,000 cards, 10 new/day; assumes FSRS is perfectly
@@ -961,7 +1263,7 @@ Verbatim:
 **That second asymmetry is the single most design-relevant sentence in the entire theory, and it
 is what every spaced-repetition scheduler is implicitly implementing without saying so.** A review
 scheduled while retrieval strength is still high buys you very little storage strength. This is
-the theoretical justification for the empirical finding in §4.7 that pushing desired retention
+the theoretical justification for the empirical finding in §4.9 that pushing desired retention
 above ~0.90 buys +8% knowledge for 4.9× the workload — you are paying full price for reviews that
 occur while retrieval strength is near ceiling.
 
@@ -1546,80 +1848,311 @@ which "learned the card, not the content" happens.
 ## 8. Knowledge tracing as the modern replacement for fixed schedules
 
 **The model-by-model forensics live in `F5-learner-model.md` §2 and are not repeated.** This
-section asks the question F5 does not: *if you had a better knowledge tracer, would you get a
-better schedule?*
+section asks the questions F5 does not: *did deep knowledge tracing ever actually beat logistic
+regression?* and *if you had a better tracer, would you get a better schedule?*
 
-### 8.1 The one-paragraph state of the art
+### 8.1 The founding claim, and what happened to it
 
-BKT (Corbett & Anderson 1995, a 4-parameter two-state HMM per skill), PFA/AFM (Pavlik, Cen &
-Koedinger 2009; Cen et al. 2006 — logistic regressions over counts of prior successes and
-failures), DKT (Piech et al. 2015 — an LSTM over one-hot skill×correctness), and the attention
-family (SAKT 2019, AKT 2020) are the canonical lineage. **The replication literature is unusually
-decisive, and F5 §2.2 documents it in full.** The five load-bearing results:
+**Piech et al. (2015), "Deep Knowledge Tracing," *NeurIPS* 28:505–513, arXiv:1506.05908.**
+`MEASURED-BENCH` Table 1 as published:
 
-| Finding | Source | Label |
+| Dataset | Marginal | BKT | BKT* | **DKT** |
+|---|---|---|---|---|
+| Simulated-5 | 0.64 | 0.54 | — | **0.82** |
+| Khan Math | 0.63 | 0.68 | — | **0.85** |
+| **Assistments** | 0.62 | 0.67 | 0.69 | **0.86** |
+
+Contribution 2 in the paper: *"A 25% gain in AUC over the best previous result on a knowledge
+tracing benchmark."* The arithmetic is (0.86 − 0.69)/0.69 = 24.6% — a **relative** increase in raw
+AUC, not normalised to the 0.5 chance floor. `INFERENCE` (arithmetic on their stated numbers)
+
+**Three independent 2016 replications took that number apart.** `MEASURED-BENCH` ×3
+
+**(a) Xiong, Zhao, Van Inwegen & Beck (2016), EDM 2016, 545–550** found three defects in the
+ASSISTments 2009-2010 set:
+
+1. **Random row duplication — 123,778 of 525,535 rows (23.6%).** Verbatim: *"large chunks of
+   records are duplications that should not be there for any reason… This is definitely an error
+   in the data set."*
+2. **Scaffolding problems included** (73,466 rows) that BKT and PFA exclude: *"Lua DKT had the
+   advantage of additional information; thus, the prediction results cannot be compared fairly."*
+3. **Multi-skill rows repeated per skill**, so the RNN sees the same response consecutively.
+
+Corrected, 5-fold student-level CV:
+
+| Dataset variant | DKT (Torch/TF) | **PFA** | BKT |
+|---|---|---|---|
+| 09-10 (a) duplicates removed | 0.79 / 0.81 | 0.70 | 0.60 |
+| 09-10 (b) + scaffolding removed | 0.79 / 0.82 | 0.73 | 0.63 |
+| **09-10 (c) + multi-skill repeats eliminated** | **0.73 / 0.75** | **0.73** | 0.63 |
+| 14-15 (clean) | 0.70 / 0.70 | **0.69** | 0.64 |
+
+**The smoking gun**, verbatim: splitting 09-10(b) predictions by position, *"predictions on
+repeated data points… have nearly perfect performance metrics (**AUC = 0.97, r² = 0.74**). On the
+other hand, the leading records… have much lower prediction results (**AUC = 0.77, r² = 0.23**)."*
+It was substantially predicting answers it had already been shown. Their verdict: *"the DKT
+algorithm did not achieve overwhelmingly better performance when compared to PFA model on
+ASSISTments data sets when they are properly prepared."* **0.86 → 0.75, and PFA ties it.**
+
+**(b) Wilson, Karklin, Han & Ekanadham (2016), EDM 2016, 539–544** (Knewton) independently found
+and removed the duplicates, then evaluated under an online-prediction protocol matching Piech et
+al.'s task:
+
+| Dataset | IRT | TIRT | **HIRT** | **DKT** |
+|---|---|---|---|---|
+| ASSISTments — AUC | 0.7651 | 0.7653 | **0.7740** | **0.7429** |
+| KDD Bridge-to-Algebra — AUC | 0.8542 | 0.8542 | **0.8597** | **0.8110** |
+| Knewton proprietary — AUC | 0.8045 | 0.8166 | **0.8189** | **0.7756** |
+
+**DKT is last on every dataset on both accuracy and AUC.** And the sentence that settles the
+provenance question, verbatim: *"**we were able to reproduce the performance reported in [Piech et
+al.] when applying our RNN implementation on the raw data set (with duplicates left in).**"*
+
+**(c) Khajah, Lindsey & Mozer (2016), "How Deep is Knowledge Tracing?", EDM 2016 Best Paper,
+arXiv:1604.02416** decomposed the remaining gap, verbatim:
+
+> "**31.6% of difference in performance reported in [Piech et al.] appears to be due to the use of
+> a biased procedure for computing the AUC for BKT. Another 50.6% of the difference in performance
+> reported vanishes if BKT is augmented to allow for forgetting.**"
+
+**~82% of the headline is an evaluation artefact plus one standard BKT extension.** The AUC issue
+is precise: Piech et al. pooled all trials into one ROC curve, while the 0.69 baseline they cited
+averaged per-skill AUCs — which *"suppresses any lift due to being able to predict the relative
+accuracy of different skills."* **The 0.86 and the 0.69 were never computed the same way.** With
+forgetting, ability and item-difficulty extensions, enhanced BKT beat DKT by 0.05 AUC on Synthetic
+and 0.01 on Spanish, and lost by 0.03 on ASSISTments and 0.01 on Statics. Their verdict:
+*"knowledge tracing may be a domain that does not require 'depth'."*
+
+**The provenance chain for one number, ASSISTments 2009:**
+
+| Value | Source | What changed |
 |---|---|---|
-| DKT's founding ASSISTments result was inflated by **23.6% duplicated rows** plus scaffolding records BKT/PFA never saw; correcting it drops DKT from **AUC 0.81 → 0.74**, and *"PFA performs as well as DKT"* on clean datasets | Xiong, Zhao, Van Inwegen & Beck (2016), EDM | `MEASURED-BENCH` |
-| Give BKT the same regularities DKT exploits and *"BKT achieves a level of performance indistinguishable from that of DKT"* | Khajah, Lindsey & Mozer (2016), EDM / arXiv:1604.02416 | `MEASURED-BENCH` |
-| IRT and its Bayesian/temporal extensions *"consistently matched or outperformed DKT across all data sets"* | Wilson, Karklin, Han & Ekanadham (2016), EDM / arXiv:1604.02336 | `MEASURED-BENCH` |
-| Across 9 datasets, **Best-LR (logistic) leads on 4, DKT on 5**, with winning margins of **+0.007 to +0.056 AUC**; the entire field lives in **AUC ≈ 0.67–0.83**; **SAKT fails to replicate** (0.85 reported → 0.73 observed); DAS3H's time-window features add nothing beyond an IRT difficulty term | Gervet, Koedinger, Schneider & Mitchell (2020), *JEDM* 12(3):31–54 | `MEASURED-BENCH` |
-| *"wrong evaluation setting may cause **label leakage** that generally leads to performance inflation"*; *"the improvement of many DLKT approaches is **minimal** compared to the very first DLKT model"* | Liu et al. (2022), pyKT, NeurIPS D&B, arXiv:2206.11460 | `MEASURED-BENCH` |
+| **0.86** | Piech et al. 2015 | duplicates in, scaffolding in, repeats in, pooled AUC |
+| 0.82 | Xiong 2016 (09-10b) | duplicates and scaffolding removed |
+| **0.75** | Xiong 2016 (09-10c) | multi-skill repeats eliminated |
+| 0.757 | Gervet 2020 | nested CV, tuned |
+| **0.7541** | pyKT 2022 | standardized, question-level, no leakage |
+| 0.7429 | Wilson 2016 | online-prediction protocol |
 
-**Deep models do not reliably beat logistic ones.** Where they win, the margin is a rounding
-error next to the between-dataset variance; where they were reported to win big, the win has
-generally not survived cleaner data or standardised preprocessing.
+And on the same data: **Best-LR 0.772, BKT+ 0.759, PFA 0.724, IRT 0.692.** *A logistic regression
+beats every published DKT number for this dataset once the dataset is fixed.*
 
-### 8.2 The finding that connects §4 and §8 — they are the same result twice
+**One row of the original table can never be checked:** the Khan Academy dataset (AUC 0.85) was
+never released. Khajah et al. state they were refused access even with a DKT co-author's help.
+And arXiv:1506.05908 still carries **only v1 and no erratum**.
 
-Put the two literatures side by side. Neither cites the other:
+### 8.2 Where the field stands now
 
-| | Spaced repetition (§4.2) | Knowledge tracing (§8.1) |
+**Gervet, Koedinger, Schneider & Mitchell (2020), *JEDM* 12(3):31–54** — nine datasets, 5-fold
+nested CV at learner level, against `Best-LR` (PFA with log-scaled counts plus IRT ability and
+difficulty terms). `MEASURED-BENCH`
+
+| Model | algebra05 | bridge06 | assist09 | assist12 | assist17 | statics | squirrel | spanish | assist15 |
+|---|---|---|---|---|---|---|---|---|---|
+| **Best-LR** | **0.831** | **0.803** | **0.772** | 0.751 | 0.714 | 0.819 | 0.765 | **0.863** | 0.702 |
+| **DKT** | 0.821 | 0.790 | 0.757 | **0.771** | **0.770** | **0.829** | **0.772** | 0.832 | **0.731** |
+| SAKT | 0.801 | 0.784 | 0.756 | 0.732 | 0.722 | 0.813 | 0.771 | 0.831 | 0.730 |
+| PFA | 0.769 | 0.741 | 0.724 | 0.669 | 0.619 | 0.691 | 0.614 | 0.847 | 0.690 |
+| IRT | 0.768 | 0.749 | 0.692 | 0.713 | 0.681 | 0.789 | 0.733 | 0.679 | 0.638 |
+
+**Best-LR wins 4 of 9; DKT wins 5 of 9.** DKT's winning margins: **+0.007, +0.010, +0.020, +0.029,
++0.056** — and the largest, on assist17, *"closes to +0.016 AUC"* when restricted to first
+attempts. The conditions are now characterised, and they are useful:
+
+| Condition | Winner | Authors' mechanism |
 |---|---|---|
-| Task | predict recall of an item at review | predict correctness of the next response |
-| Ceiling | AUC ≈ 0.70 (per-user models), 0.83 (cross-user with rich context) | AUC ≈ 0.67–0.83 |
-| Best simple baseline | 34-feature logistic regression **beats FSRS-6/7 on all three metrics**; zero-parameter MOVING-AVG beats them on log loss | **Best-LR ties or beats DKT on 4/9 datasets**; BKT-with-features is indistinguishable from DKT |
-| Movement since ~2015 | small | *"essentially none"* |
-| Where big models help | cross-user context and extra features (answer duration, sibling cards, deck hierarchy) | **cold start** — DKT reaches near-peak accuracy on a new learner ~6× faster (10 vs 60 interactions) |
+| **Fewer than ~1M interactions** | **Logistic** | *"DKT overfits small datasets but LR underfits large datasets"* |
+| **Sequential progression** through material | **DKT** | *"DKT makes better use of the temporal order of the sequence"* — holds even for per-KC DKT |
+| **Thousands of interactions per learner** | **Logistic** | *"DKT plateaus after 1000 student interactions, whereas Best-LR keeps improving… DKT is unable to keep track of long-term information"* |
+| **Cold start** | **DKT** | *"DKT needs **6 times fewer interactions** than Best-LR to reach close to peak performance"* (10 vs 60) |
 
-**This is one finding, discovered twice, in two communities that do not read each other:
-the predictive ceiling on individual response outcomes was reached by simple models, and the
-residual is largely irreducible noise.** Whether a specific learner recalls a specific item on a
-specific morning is close to aleatory. No amount of parameters fixes that.
+Two ablations that undercut deep KT's own marketing:
 
-### 8.3 Why that is good news, not bad
+- **DKT needs the expert knowledge-component model.** *"DKT — although initially advertised as
+  independent from any expert-designed structure — **relies on the KC model to perform
+  optimally**."* On assist09 the swing is 0.702 (items in/out) → 0.757 (KCs in/out).
+- **DAS3H's mechanism did not replicate.** *"the time-window features introduced in DAS3H (best
+  paper at EDM 2019) **do not add any predictive power** to our best logistic regression model…
+  the performance boost of DAS3H over PFA is simply due to the addition of an item difficulty
+  parameter inspired by IRT, rather than time-windows."* `NEGATIVE RESULT`
+- **SAKT did not replicate.** *"SAKT underperforms DKT on all datasets… the authors reported an
+  AUC of 0.85 [on ASSISTments 2015], while we observed **0.73**… they reported an AUC of 0.82…
+  for a simple baseline — **which we could not reproduce and seems impossible**."* `NEGATIVE RESULT`
 
-If predictive accuracy is saturated, **the returns have moved elsewhere**, and this is the
-constructive point:
+**The features-versus-architecture result.** **Schmucker, Wang, Hu & Mitchell (2022), *JEDM*
+14(1):1–45** ran four very large modern datasets (18–26M responses each). There **DKT genuinely
+beats Best-LR on all four** — but **AugmentedLR**, a logistic regression fed richer features
+(video watched/skipped, lag time, prerequisite structure), **beats DKT on 3 of the 4**:
 
-1. **To the features, not the model.** RWKV-P's win comes from *seeing more* (answer duration,
-   sibling cards, deck hierarchy, day of week), not from being deeper. Gervet et al.'s one real
-   deep-learning win is **cold start**. Both say: instrument better, don't model harder.
-2. **To the decision, not the prediction.** `MEASURED-BENCH` accuracy answers "will they get it
-   right?" Almost nothing in either literature answers "what should the system *do*?" — and where
-   that has been tested (§4.6), the strongest RCT compared its policy against *shuffle* and
-   *easiest-first*. There is a genuinely open, cheap, high-value experimental programme here.
-3. **To what is being traced.** Both literatures trace *items* or *skills-as-tags*. Gervet et al.
-   found expert knowledge-component models add **≤ +0.01 AUC on 7 of 9 datasets**, and that on 4
-   of 9 a KC-only model fails to beat an item-difficulty-only model — which they read as evidence
-   that the hand-built domain models are **low quality**. Building a good knowledge-component
-   graph was previously a multi-year expert task. It is now, for the first time, automatable.
-   **That, not a better tracer, is the unlock.** `INFERENCE`
+| Model | ElemMath AUC | EdNet AUC | Eedi AUC | Junyi15 AUC |
+|---|---|---|---|---|
+| Best-LR | 78.44 | 72.94 | 79.01 | 76.20 |
+| **DKT** | 79.71 | 74.92 | **81.55** | 80.62 |
+| **AugmentedLR** | **79.87** | **75.00** | 80.96 | **86.03** |
 
-### 8.4 Two cautions to carry into §11
+Similarly **Pavlik & Eglington (2023), *JEDM* 15(3):58–86** found automated feature search over
+logistic KT models beat DKT/SAKT/IKT on all three of their datasets *"typically requiring multiple
+orders of magnitude fewer parameters."*
+
+> **The generalizable finding is about *features*, not architecture: the largest single win in
+> this literature came from logging more about the learner, not from a bigger network.**
+
+**And the reproducibility audit.** **Liu et al. (2022), pyKT, NeurIPS Datasets & Benchmarks,
+arXiv:2206.11460:** *"due to the lack of agreed upon training and evaluation procedures, the
+published DLKT results surprisingly diverge. For example, **the reported AUC scores of DKT and AKT
+on ASSISTments2009 range from 0.73 to 0.821 and from 0.747 to 0.835 respectively.**"* They
+identify a **label-leakage** pattern — expanding multi-KC questions into a KC sequence and
+predicting the next KC *given the ground-truth label of the previous KC of the same question* —
+and name the AKT, SAKT and DKVMN implementations as affected. Mean inflation: **+8.38% AUC on
+ASSISTments 2009 and +13.09% on Algebra 2005.** Their Observation 1: *"**The majority of recently
+proposed DLKT approaches cannot beat the vanilla DKT model.**"* SAKT and SAINT — the transformers —
+**underperform the 2015 LSTM in most cases.** AKT survives as the best model but its ASSISTments
+2015 claim of +0.052 over DKT becomes **+0.0014** under standardized evaluation. `NEGATIVE RESULT`
+
+**The most deflating result of all.** **Ding & Larson (2019), "Why Deep Knowledge Tracing Has Less
+Depth than Anticipated," EDM 2019, ERIC ED599227** randomly initialised the LSTM and trained
+**only the final linear layer**:
+
+| Dataset | Full DKT | **DKT (untrained recurrence)** | PFA |
+|---|---|---|---|
+| 09-10 (a) | 0.81 | **0.79** | 0.70 |
+| 09-10 (c) | 0.75 | **0.73** | 0.73 |
+| 14-15 | 0.70 | **0.68** | 0.69 |
+| KDD | 0.79 | **0.76** | 0.71 |
+
+Verbatim: *"a randomly initialized DKT with only the final linear layer trained achieves similar
+results to the fully trained DKT model… **This is a worrying conclusion because it means the
+underlying recurrent representation may not be reliable nor semantically meaningful.**"* Their
+diagnosis: *"the DKT model is most likely learning an 'ability' model, rather than tracking each
+individual skill."*
+
+Corroborating from a different angle: **Yeung & Yeung (2018), L@S, arXiv:1806.02180** showed DKT's
+predicted knowledge state **oscillates** and **fails to reconstruct the input it just observed** —
+AUC(C) 0.904 vs AUC(N) 0.821 on ASSISTments — while its headline next-item AUC is unaffected.
+**Next-item AUC is blind to whether the model tracks knowledge at all.**
+
+### 8.3 The prediction/decision gap — three results that should end the AUC race
+
+**(a) The ceiling is already reached.** **Beck & Xiong (2013), "Limits to Accuracy: How Well Can We
+Do at Student Modeling?", EDM 2013, 4–11** built "cheating models" with oracle access:
+
+| ASSISTments (86,528 first attempts) | AUC |
+|---|---|
+| CM3 — knows initial knowledge + continuous knowledge + item difficulty | 0.884 |
+| CM1 — **perfect learning detector** + known initial knowledge | 0.804 |
+| **CM2i — perfect learning detector** | **0.747** |
+| **PFA baseline** | **0.745** |
+
+**A model that knows the exact moment each student learns each skill beats PFA by 0.002 AUC.**
+And across 178,000 data points five student-modelling techniques *"intercorrelated with each other
+at **0.92** on average… If PPS is removed, the remaining four intercorrelated at **0.96, an
+astonishingly high value**."* Their conclusions, verbatim:
+
+> *"Imagine a research result were published in EDM 2014 with a new student modeling approach that
+> achieved an A′ of 0.9… **But, what would we actually do with the model? This question is
+> non-rhetorical, as the authors do not have a good answer.**"*
+> *"**Ironically, as a field we have settled on a common test problem that has little impact on
+> tutorial decision making or on informing student knowledge.**"*
+> *"the research thread of predicting next item correctness is approaching limits to accuracy, and
+> **has probably progressed beyond a useful point**."*
+
+**(b) Equal predictive accuracy does not mean equal decisions.** **Rollinson & Brunskill (2015),
+"From Predictive Models to Instructional Policies," EDM 2015, 179–186.** BKT, PFM and AFM had
+RMSEs within 0.015 of one another on KDD Cup Algebra. They then derived a when-to-stop policy from
+each:
+
+| Comparison | r (all skills) |
+|---|---|
+| AFM vs PFM | 0.32 |
+| **AFM vs BKT** | **−0.06** |
+| **PFM vs BKT** | **0.16** |
+
+**Skills where the derived policy stops practice immediately: BKT 31 (6%), PFM 130 (26%), AFM 295
+(59%).** Verbatim: *"**models with similar predictive error rates can lead to very different
+policies. This suggests that if they are to be used for instructional decision making, student
+models should not be judged by predictive error rates alone.**"*
+
+**(c) The metric itself picks different winners.** **Pelánek (2015), "Metrics for Evaluation of
+Student Models," *JEDM* 7(2):1–19.** Across 20 simulated datasets with 15 candidate models, the
+number of times two metrics selected the *same* best model:
+
+| | AUC | LL | MAE | RMSE |
+|---|---|---|---|---|
+| **AUC** | — | **5/20** | 2/20 | **7/20** |
+| RMSE | 7/20 | 17/20 | 3/20 | — |
+
+**AUC and RMSE agree on the best model 35% of the time; AUC and log-likelihood 25%.** Verbatim:
+*"the choice of metric is really important and can influence conclusions of experiments,"* and AUC
+*"has **poor relation to over-practice and under-practice** and… is **unsuitable for optimizing
+parameter values**."* Pelánek's follow-up (*UMUAI* 2018, 28:207–235) shows methodology choices —
+truncating at 10 vs 50 answers per student, global vs per-student RMSE averaging, global vs per-KC
+AUC — each **flip the model ranking**, and that BKT parameters fit to the *same students* differ
+more by truncation depth than by anything about learning: P(L₀)/P(T)/P(S)/P(G) =
+0.52/0.41/0.28/0.21 at 10 answers vs **0.16/0.37/0.07/0.21** at 50. *"the fitted parameters can be
+more influenced by details of data collection than by properties of learning."*
+
+Pelánek also names the structural problem an AI learning system inherits: **the logs used for
+evaluation are produced by a policy driven by the model, so the model can suppress the very data
+that would reveal its deficiencies.** *"In weather forecasting models do not directly influence the
+system and cannot distort collected data, in student modeling they can."*
+
+**And a live case where AUC ranked the wrong model.** In Settles & Meeder's own backtest (§4.4),
+**Leitner had the highest AUC of everything tested (0.542) — and Leitner is the model Duolingo
+dropped.** The deployment decision was made on MAE and user feedback, explicitly against the AUC
+ranking. `MEASURED-BENCH`
+
+### 8.4 What this means, and why it is good news
+
+Put §4 and §8 side by side. Neither literature cites the other:
+
+| | Spaced repetition (§4.2) | Knowledge tracing (§8.2) |
+|---|---|---|
+| Ceiling | AUC ≈ 0.70 per-user; 0.83 cross-user with rich context | AUC ≈ 0.67–0.83 |
+| Best simple baseline | 34-feature logistic regression **beats FSRS-6/7 on all three metrics**; zero-parameter MOVING-AVG beats them on log loss | **Best-LR ties or beats DKT on 4/9**; BKT-with-features is indistinguishable from DKT; **AugmentedLR beats DKT on 3/4 large datasets** |
+| Movement since ~2015 | small | essentially none once evaluation is standardized |
+| Where big models help | cross-user context and extra features | **cold start** (6× fewer interactions) |
+| Interventional evidence | 1 strong RCT for paired associates; **0 for 8** for interdependent content | none located |
+
+**This is one finding, discovered twice, in two communities that do not read each other: the
+predictive ceiling on individual response outcomes was reached by simple models, and the residual
+is largely irreducible noise.** Beck & Xiong's cheating model puts a number on it — an oracle that
+knows the moment of learning is worth **+0.002 AUC**.
+
+**Three places the returns actually are:**
+
+1. **The features, not the model.** RWKV-P's win comes from *seeing more* (answer duration, sibling
+   cards, deck hierarchy). AugmentedLR's win comes from *seeing more* (video behaviour, lag time,
+   prerequisites). Both say: instrument better, don't model harder. `INFERENCE` from
+   `MEASURED-BENCH`
+2. **The decision, not the prediction.** Rollinson & Brunskill show that models within 0.015 RMSE
+   produce stop-policies correlated at **r = −0.06**. The decision is not determined by the
+   prediction, and almost nobody has evaluated the decision. **This is an open, cheap, high-value
+   experimental programme, not a dead end.**
+3. **What is being traced.** Gervet et al. found expert knowledge-component models add **≤ +0.01
+   AUC on 7 of 9 datasets**, and that on 4 of 9 a KC-only model fails to beat an
+   item-difficulty-only model — which they read as evidence the hand-built domain models are **low
+   quality**. Building a good knowledge-component graph was previously a multi-year expert task.
+   It is now, for the first time, automatable. **That, not a better tracer, is the unlock.**
+   `INFERENCE`
+
+### 8.5 Two cautions to carry into §11
 
 - **Calibration, not AUC, is what a scheduler consumes.** Gervet et al.: *"the current best models
   are severely biased on some datasets — hindering their applicability in adaptive policies and
-  open learner models."* A scheduler that turns p(recall) into a due date needs the *number* to
-  be right, not merely the *ranking*. This is why the srs-benchmark reports log loss and
-  RMSE(bins) alongside AUC — and why `RMSE-BINS-EXPLOIT` (§4.2) exists as a warning that even
-  calibration metrics can be gamed.
+  open learner models."* On assist09 both models *"severely overestimate learners when the
+  probability of correct answer is low, and underestimate… when high."* A scheduler that turns
+  p(recall) into a due date needs the *number* right, not the *ranking* — and §4.2's
+  `RMSE-BINS-EXPLOIT` is the standing warning that even calibration metrics can be gamed.
 - **Identifiability was flagged in 2007 and never fixed.** Beck & Chang (2007),
   `doi:10.1007/978-3-540-73078-1_17`: BKT's four parameters are not uniquely determined by the
-  data — multiple parameter sets fit equally well while implying very different pedagogy. Any
-  learner-facing readout derived from such parameters ("your mastery is 73%") is reporting one
-  arbitrary point from an equivalence class. `MEASURED-BENCH` This is the same class of problem
-  as ZemoMemo's "stickiness" (§1.3a): a probabilistic, non-identified quantity rendered to the
-  learner as a fact.
+  data — multiple parameter sets fit equally well while implying very different pedagogy.
+  Corbett & Anderson flagged the same class of failure in the *founding* paper: after remediation
+  to mastery, *"the model was completely insensitive to individual differences among students…
+  There was no variability in the knowledge estimates across students,"* while raw tutor error
+  rate still predicted posttest performance at **r = −0.64**. `MEASURED-BENCH`
+  **Any learner-facing readout derived from such parameters ("your mastery is 73%") is reporting
+  one arbitrary point from an equivalence class** — the same category of error as ZemoMemo's
+  "stickiness" (§1.3a).
 
 ---
 
@@ -1839,7 +2372,7 @@ The honest answer is that no measured decision rule exists, so §11 specifies on
    should be in a head. A remembering system that cannot distinguish "must be automatic" from
    "must be recognisable when encountered" from "must be findable" will schedule all three
    identically and waste the learner's life on the third. `INFERENCE`
-4. **When retention is being bought at a ruinous exchange rate.** The DR-workload table (§4.7,
+4. **When retention is being bought at a ruinous exchange rate.** The DR-workload table (§4.9,
    `DEMO`) shows knowledge rising only **+8%** (6,676 → 7,218 cards) between desired retention
    0.85 and 0.99 while workload rises **4.9×**. Above ~0.90, the system is buying very little
    with a great deal. Anki's own manual concurs: above 97% "the workload can be overwhelming."
@@ -2031,7 +2564,7 @@ Design that makes it a real test, not a demo:
 - **If both arms beat a no-review control by similar margins**, then the finding is the one this
   section has been converging on all along: **the gain is spacing and retrieval, and the
   scheduler is a rounding error.** That would be a genuinely useful negative result, and it is
-  the outcome most consistent with §3, §4.2, §4.6 and §4.7.
+  the outcome most consistent with §3, §4.2, §4.6 and §4.9.
 
 **Five secondary, independently falsifiable claims — ordered by cost, cheapest first:**
 
@@ -2071,7 +2604,7 @@ work at all.**
 ### 11.7 What this specification deliberately does not do
 
 - **It does not invest in scheduler sophistication.** §4.2: a zero-parameter moving average
-  matches FSRS-7 on calibration; a 34-feature logistic regression beats it. §4.7: Memrise's fixed
+  matches FSRS-7 on calibration; a 34-feature logistic regression beats it. §4.9: Memrise's fixed
   ladder is within ~2% of tuned FSRS in simulation. Effort spent on the arithmetic has a
   measured near-zero return. Note the honest counterweight: **Lindsey et al. (2014) measured
   personalised spacing beating generic spacing by +10.0 percentage points** (§4.6i). The
