@@ -3,7 +3,7 @@ title: "Scientific remembering: what the evidence supports, what spaced-repetiti
 wave: F
 section: F11
 date_researched: 2026-07-27
-sources_count: 87
+sources_count: 126
 status: raw-research
 ---
 
@@ -15,9 +15,19 @@ status: raw-research
 > Retrieval therefore ran on **arXiv** (HTTPS only — the HTTP endpoint returns a 301 with an
 > empty body), **Crossref**, **Europe PMC** (including `fullTextXML`), **PubMed E-utilities**,
 > **ERIC**, **ACL Anthology**, **GitHub via authenticated `gh api`**, targeted `WebFetch`, and
-> local `pdftotext -layout` extraction of downloaded PDFs. Sources that could not be reached
-> are flagged **UNREACHABLE-IN-SESSION** at the point of use and their numbers are never
-> reconstructed from memory.
+> local `pdftotext -layout` extraction of downloaded PDFs, plus the **Wayback Machine** and the
+> **HAL** and **theses.fr** APIs where publisher hosts blocked access. `hal.science` sits behind
+> an Anubis anti-bot challenge that returns 403 to both `curl` and `WebFetch`; several publisher
+> hosts (SAGE, ScienceDirect, ACM DL, `laplab.ucsd.edu`) returned 403. Sources that could not be
+> reached are flagged **UNREACHABLE-IN-SESSION** at the point of use, listed together in §12.7,
+> and their numbers are **never reconstructed from memory**. Where a figure appears only inside a
+> published chart rather than in text, it is not quoted as a value.
+>
+> **Corrections made during this session, recorded rather than silently absorbed.** (1) B1's
+> expanding-vs-uniform figure was initially recorded here as unverified; it was subsequently
+> **verified** through two independent routes (§3.1). (2) An earlier draft of §4.6 quoted
+> Lindsey et al.'s "16.5%" as percentage points; the paper does not say which, and the axis
+> arithmetic indicates a **relative** reading — corrected, with the inference labelled (§4.6i).
 >
 > **Relationship to other sections.** [`F5-learner-model.md`](./F5-learner-model.md) already
 > contains the algorithm forensics (SM-2 arithmetic, the FSRS v1→v7 lineage, the DSR update
@@ -1121,20 +1131,46 @@ classrooms across ~48,000 students.**
 Three 2026 sources — all located and read this session via Europe PMC — bring the applied
 picture up to date, and together they make the section's central distinction unusually crisp.
 
-**(a) The pooled applied effect is large.** **"The Effectiveness of Spaced Repetition in Medical
-Education: A Systematic Review and Meta-Analysis," *The Clinical Teacher* (2026),
-`doi:10.1111/tct.70353`.** PRISMA; searched Feb 2025; MERSQI quality assessment. 542 records
-screened → 14 studies in the review, **13 in the meta-analysis, 21,415 learners**. Result,
-verbatim: **"an overall significant effect in favour of spaced repetition study compared to
-standard studying techniques (standardised mean difference = 0.78; 95% CI 0.56–0.99;
-p < 0.0001)."** `MEASURED-META`
+**(a) The pooled applied effect is large — but read the two meta-analyses together, not either
+alone.** **"The Effectiveness of Spaced Repetition in Medical Education: A Systematic Review and
+Meta-Analysis," *The Clinical Teacher* (2026), `doi:10.1111/tct.70353`, PMID 41601436.** PRISMA;
+searched Feb 2025; MERSQI quality appraisal. 542 records screened → 14 studies in the review,
+**13 in the meta-analysis, 21,415 learners**. Result, verbatim: **"an overall significant effect
+in favour of spaced repetition study compared to standard studying techniques (standardised mean
+difference = 0.78; 95% CI 0.56–0.99; p < 0.0001)."** `MEASURED-META`
 
-Note carefully what varied: the interventions were "faculty-created or third-party flash cards,
-MCQs delivered via email or as part of a continuing medical education framework, and spaced
-classroom quizzes." **The manipulation is spacing-plus-testing as a practice, not a scheduling
-algorithm.** The authors' own conclusion asks for exactly the work that has not been done:
-*"Further work is required to investigate the optimal design and delivery of spaced repetition
-interventions."*
+**⚠️ Do not quote 0.78 as a randomized effect.** The full text is paywalled and
+**UNREACHABLE-IN-SESSION**, so how many of the 13 pooled studies were randomized rather than
+observational cohorts, the I², and the publication-bias assessment are all **unverified**. Given
+that the Cochrane-method review below, over substantially overlapping material, reports **SMD
+0.32**, a pooled 0.78 spanning 21,415 learners very likely includes large observational cohorts.
+
+**The more conservative estimate, with methods that could be checked:**
+**Martinengo et al. (2024), *JMIR* , `doi:10.2196/57760`, PMID 39388234, PMC11502984.**
+`MEASURED-META` Spaced versus massed **online** education across 23 studies:
+
+| Outcome | SMD [95% CI] | I² | k | Certainty |
+|---|---|---|---|---|
+| **Knowledge** | **0.32 [0.13, 0.51]** | 66% | 9 | moderate |
+| Behaviour change | 0.67 [0.43, 0.91] | 5% | — | — |
+| **Knowledge retention** | 0.38 [0.10, 0.65] | 0% | **only 2 studies** | — |
+| Surgical-skill simulation | 1.15 [0.34, 1.96] | — | — | low |
+
+Caveats the authors state: **19 of 23 studies (83%) at unclear or high risk of bias**, and several
+standard deviations were **back-derived from p-values** using RevMan's calculator — so the pooled
+behaviour estimate rests partly on reconstructed variances.
+
+A narrative synthesis reaches the same place: **Phillips et al. (2019), *Medical Education*,
+`doi:10.1111/medu.13895`, PMID 31144348** — 17 studies, 2,701 clinicians, **only 5 RCTs**;
+10 showed knowledge gains, 7 behaviour change, and **only 2 showed improvement in patient
+outcomes.**
+
+Note carefully what varied in all three: the interventions were "faculty-created or third-party
+flash cards, MCQs delivered via email or as part of a continuing medical education framework, and
+spaced classroom quizzes." **The manipulation is spacing-plus-testing as a practice, not a
+scheduling algorithm.** The 2026 review's own conclusion asks for exactly the work that has not
+been done: *"Further work is required to investigate the optimal design and delivery of spaced
+repetition interventions."*
 
 **(b) It transfers to a genuine skill, on a genuine transfer test.** **"Using spaced repetition
 to teach histopathology significantly improves diagnostic skills: A randomized within-participant
@@ -1172,6 +1208,39 @@ is the foundational-knowledge exam; Step 2 CK is the clinical-reasoning exam. An
 performance on the first and not the second. That is exactly the recognition-strength versus
 generative-competence boundary (§9.3) showing up in the wild, in an outcome that costs a career.
 It is observational and confounded — but it is the pattern a card-based system would predict.
+
+**The confounding structure, stated plainly**, because it applies to every study in this
+literature: exposure is **self-selected**, almost always **self-reported**, and correlated with
+conscientiousness, prior ability (MCAT/GPA), total study hours, and third-party question-bank use.
+**None of the studies adjusts for any of these.** The one study using objective Anki logs
+(*J. Med. Educ. Curric. Dev.* 2025, `doi:10.1177/23821205251369705`, n = 36) found mature cards
+predicted CBSE score (P = 0.002) — and so did **total hours studied (P = 0.013)**, of comparable
+magnitude. It cannot separate "spaced repetition works" from "students who study more score
+higher." Another (*Med. Sci. Educ.* 2023, `doi:10.1007/s40670-023-01826-8`, n = 130) found the
+*self-reported* user/non-user grouping predicted all four exams while *"little correlation between
+its specific statistical markers and examination performance"* — **the objective usage metrics did
+not track scores; only the self-report did.** That pattern is what confounding looks like.
+
+**Two more documented nulls in this literature:**
+
+- **`NEGATIVE RESULT` — a clean null on learning with positive perceptions.** *Cureus* (2024),
+  `doi:10.7759/cureus.70994`, PMID 39507168: instructor-made spaced-repetition flashcards in an
+  introductory microbiology course. **Exam performance unchanged, p = 0.2657.** Confidence
+  improved (p = 0.0066), "think like a microbiologist" (p = 0.0011), "effective approach"
+  (p = 0.0076). `MEASURED-RCT`-ish. **This is the felt-learning trap of §6 in miniature: every
+  subjective measure moved and the objective one did not.**
+- **`NEGATIVE RESULT` — a null in the primary comparison.** A graduate-entry cohort study
+  (*Med. Sci. Educ.* 2025, `doi:10.1007/s40670-025-02504-7`, n = 43 complete, 80% Anki users)
+  found *"no statistically significant benefit for Anki usage in terms of performance outcome
+  compared to those who did not use Anki when the module was considered as a whole,"* with
+  positive results only in two subgroups (extensive vs. inconsistent users; the physiology
+  subsection). `OBSERVED`
+
+**And a gap worth naming:** a Europe PMC sweep of `"spaced repetition" AND nursing` (120 hits) and
+`AND pharmacy AND student` (61 hits) returned **no RCT of Anki or SRS in nursing or pharmacy** —
+only microlearning/gamification studies, pretest–posttest designs, and scoping reviews. A Europe
+PMC search for `"spaced repetition" AND ("A/B test" OR "online controlled experiment")` returns
+**zero hits.**
 
 ### 5.2 The generation effect — the mechanism an LLM can actually manipulate
 
@@ -2464,10 +2533,23 @@ ratio                    = 0.30 for horizon ≲ 1 week,
    (recognition → cued production → free production → application). This is what prevents
    learning the cue.
 4. **A calibrated recall-probability model as a *tiebreaker only*.** Given §4.2 — a zero-parameter
-   moving average is competitive with FSRS-7 — the system uses the simplest model that is well
-   calibrated and does **not** invest in scheduler sophistication. Start with FSRS-6/7 or a
-   logistic regression over the `attempt` features; treat the choice as low-stakes, because the
-   evidence says it is.
+   moving average is competitive with FSRS-7 and a 34-feature logistic regression beats it — the
+   system uses **a well-calibrated logistic model over the `attempt` features**, not a bespoke
+   memory model, and does **not** invest in scheduler sophistication. Treat the choice as
+   low-stakes, because §4.2, §4.9, §8.2 and §8.3 all say it is.
+
+**Where the learner model is actually spent: calibrating the *item*, not choosing the *time*.**
+This is the least obvious commitment in the specification and it has direct evidence.
+**Papoušek, Stanislav & Pelánek (2016)** randomized ~20,000 learners across ~1.3M answers into a
+2 × 2 of adaptive/random **item selection** × adaptive/random **option construction**, and found:
+*"In all cases the conditions with **adaptive construction of options** beat the conditions with
+random options… **The item selection part does not seem to have large effect on learning.**"*
+`MEASURED-RCT` (§4.6viii)
+
+So the model's highest-value job is **difficulty-calibrating what appears inside the item** — which
+distractors, which phrasing, which level of the explanation ladder — not deciding which day the
+concept resurfaces. That is exactly the job an LLM can now do at generation time and could not do
+before, and §11.4 is where it lives.
 
 **The signal is not a self-report grade.** It is the graded outcome of a generated retrieval, plus
 response latency, plus which cue form was used. This is exactly the "richer input" that RWKV-P's
@@ -2628,8 +2710,28 @@ work at all.**
 ## 12. Negative and null results register
 
 The editorial standard requires at least one documented negative or null result per section. This
-section has **eighteen**, which is itself the most informative fact about the field. They are
+section has **sixty-eight**, which is itself the most informative fact about the field. They are
 grouped by what they falsify.
+
+### 12.0 The four that matter most
+
+If only four survive into the survey, these:
+
+1. **Sequencing interdependent content with a learner-model-driven policy: 0 significant results
+   out of 8 controlled trials.** Paired-associate/flashcard spacing, by contrast, is 11 of 14.
+   (Doroudi, Aleven & Brunskill 2019, *IJAIED* 29:568–620, Table 2.) `MEASURED-META`
+2. **Duolingo's trained scheduler, tested against the heuristic it replaced on ~1M students for
+   six weeks, produced no significant engagement gain and a significant −7.3% drop in practice —
+   and no learning outcome was measured.** The famous "+12%" is a different experiment comparing
+   two variants of the new model. (Settles & Meeder 2016, Table 4.) `MEASURED-RCT`
+3. **Expanding intervals confer no aggregate advantage (g = 0.032 [−0.10, 0.17], I² = 0%,
+   k = 54), and the mechanism they are justified by is false in the data** — response latencies
+   *fall* across repetitions in expanding schedules. The variable that does work is delaying the
+   *first* retrieval, which expanding schedules do least of. (Latimier et al. 2021;
+   Karpicke & Roediger 2007.) `MEASURED-META` + `MEASURED-RCT`
+4. **A model with oracle access to the exact moment of learning beats a 2009 logistic regression
+   by 0.002 AUC.** The next-item prediction problem is saturated. (Beck & Xiong 2013.)
+   `MEASURED-BENCH`
 
 ### 12.1 Nulls about scheduling algorithms
 
@@ -2642,7 +2744,20 @@ grouped by what they falsify.
 | 5 | **HLR ranks near the bottom of the independent Anki benchmark** — RMSE(bins) 0.1275, *worse than the zero-parameter AVG baseline* (0.1034) | srs-benchmark | `MEASURED-BENCH` | 4.4 |
 | 6 | **Memrise's fixed, non-adaptive 1→6→12→48→96→180-day ladder lands within ~2% of tuned FSRS** on cards-memorised-per-hour (15.6 vs 13.7–18.9) and above SM-2 (15.0) | `SSP-MMC-FSRS` 5-year simulation | `DEMO` | 4.7 |
 | 7 | **There is no controlled evidence that switching scheduling algorithm (SM-2 → FSRS, Leitner → HLR) improves any learning outcome.** The strongest RCT of an algorithmic scheduler (n ≈ 50,700) compared it against *shuffle* and *easiest-first*, not against a spacing schedule — and its authors say so | Upadhyay et al. (2021), *npj Sci. Learn.* | `MEASURED-RCT` with weak baselines | 4.6 |
-| 8 | **Above ~0.90 desired retention, knowledge rises +8% while workload rises 4.9×** | `SSP-MMC-FSRS` simulation; Anki manual concurs | `DEMO` / `OBSERVED` | 4.7 |
+| 8 | **Above ~0.90 desired retention, knowledge rises +8% while workload rises 4.9×** | `SSP-MMC-FSRS` simulation; Anki manual concurs | `DEMO` / `OBSERVED` | 4.9 |
+| 8a | **Sequencing interdependent content: 0 significant results in 8 controlled trials** (6 null, 2 mixed), three explicitly BKT-driven. Only 3 of 15 classroom studies of model-induced policies beat their baseline; **17 of 24 "successes" compared against a *random* baseline** | Doroudi, Aleven & Brunskill (2019), *IJAIED* 29:568–620, Table 2 | `MEASURED-META` | 4.7 |
+| 8b | **A data-fitted Atkinson-model policy was *beaten* by ARTS, a response-time heuristic not fit to data.** *"in some cases, a good psychological theory might be more useful… than a data-driven model"* | Mettler et al. (2011), via Doroudi 2019 | `MEASURED-RCT` | 4.7 |
+| 8c | **Adaptive scheduling did not beat a fixed 20-day linear review on learning** — end-of-course test **p = 0.37** (n = 62); only item count differed (p = 0.001) | Kerfoot (2010), *J. Urol.* 183(2):678–681, PMID 20022032 | `MEASURED-RCT` | 4.6v |
+| 8d | **Adaptive and fixed-expanding equalize once retirement criteria are matched** — efficiency F(1,61) = 0.583, p = .448; delayed accuracy d = 0.012, p = .96 | Mettler, Massey & Kellman, CogSci 2020, PMC8324178, Exp. 3 | `MEASURED-RCT` | 4.6iv |
+| 8e | **A *random* schedule produced significantly higher raw accuracy than ARTS** (.93 vs .85 immediate, d = 0.746; .76 vs .52 delayed). ARTS won only on per-trial efficiency, by retiring items sooner | Mettler et al., CogSci 2020, PMC8324179, Exp. 1 | `MEASURED-RCT` | 4.6iv |
+| 8f | **Fixed schedules beat adaptive on accuracy change scores** — immediate d = 1.33, delayed d = 0.768, both favouring fixed | Mettler et al., PMC8324178, Exp. 2 | `MEASURED-RCT` | 4.6iv |
+| 8g | **Retuning knowledge-tracing priors for efficiency left learning unchanged**: posttest **p = 0.772**, 2-week retention **p = 0.602**; 12% of tutor time saved | Cen, Koedinger & Junker (2007), AIED, n = 110 | `MEASURED-RCT` | 4.6vi |
+| 8h | **Across ~33 million randomized topic sequences, the high mastery threshold bought < 0.02 absolute retention on a 0.60 base, for +29% time** | Matayoshi et al. (2025), *JEDM* 17(1):308–336 | `MEASURED-RCT` | 4.6vii |
+| 8i | **Across 50 RCTs and 30,408 students, mastery requirements had no significant effect on learning for completers** — the measurable effect ran through **dropout** | Prihar et al. (2022), EDM, ERIC ED624051 | `MEASURED-META` | 4.6vii |
+| 8j | **Adaptive *item selection* had no large effect on learning**; the learner model's contribution was **distractor calibration** | Papoušek, Stanislav & Pelánek (2016), LAK '16, ~1.3M answers | `MEASURED-RCT` | 4.6viii |
+| 8k | **The srs-benchmark's own README:** *"Retrospective only — no randomized user trials or measurement of actual learning outcomes."* | `open-spaced-repetition/srs-benchmark` | `MEASURED-BENCH` | 4.8 |
+| 8l | **On the *immediate* weekly quizzes in the field's strongest scheduler RCT, massed practice won** (89.4% vs 87.2% / 88.1%, F(2,310) = 11.8, p < .001) — the opposite ranking from the delayed exams | Lindsey et al. (2014) | `MEASURED-RCT` | 4.6i |
+| 8m | **Spaced education did not transfer to the independent high-stakes exam.** Kerfoot's 2007 urology trial (n = 537 → 400) showed clear gains on its own items but **no transfer to the In-Service Examination**; the 2008 clerkship trial was null (p = 0.25, p = 0.28); the 2009 long-term trial was split (P = .04 / **P = .60**); the 2014 blood-pressure trial's **prespecified primary outcome was null** (median 129 vs 134 days, p = 0.46) | Kerfoot, PMIDs 17382760, 18423715, 18614145, 24847084 | `MEASURED-RCT` | 5.1 |
 
 ### 12.2 Nulls about expanding intervals — the core design folklore
 
@@ -2650,7 +2765,9 @@ grouped by what they falsify.
 |---|---|---|---|---|
 | 9 | **"Expanding the interval between repeated tests had little effect on long-term retention in 3 experiments."** Expanding beat equal spacing at 10 minutes and *lost* at 2 days, with and without feedback. The operative variable is the delay to the **first** retrieval, not expansion | Karpicke & Roediger (2007), *JEP:LMC* 33(4):704–719 | `MEASURED-RCT` | 3.2 |
 | 10 | **With average spacing matched (1-2-3 vs 2-2-2; 1-3-5 vs 3-3-3; 1-3-8 vs 4-4-4), the expanded advantage was lost at 24 h in both age groups and expanded items were at a *significant disadvantage* for younger adults** | Logan & Balota (2008), *Aging Neuropsychol. Cogn.* | `MEASURED-RCT` | 3.3 |
-| 11 | Carried, not re-verified: expanding vs. uniform, **g = 0.034, n.s., 54 effect sizes** | Latimier, Peyre & Ramus (2021) via B1 — **primary UNREACHABLE-IN-SESSION** | `MEASURED-META` (unverified) | 3.1 |
+| 11 | **VERIFIED: expanding vs. uniform g = 0.032 [−0.10, 0.17], p = 0.62, k = 54 (16 studies), I² = 0%, Egger p = 0.66 (no publication-bias asymmetry).** Published abstract gives 0.034. 55% of effects positive, 43% negative — centred on zero, not suppressed | Latimier, Peyre & Ramus (2021), *EPR* 33:959–987; verified via ERIC EJ1310148 and the author's thesis (HAL `tel-02461323`, via the Wayback Machine) | `MEASURED-META` | 3.1 |
+| 11a | **Expanding schedules do not increase retrieval difficulty** — response latencies *fall* across repetitions in both expanding (3428→3233→2966 ms) and equal (3579→2988→2716 ms) conditions. The stated mechanism is false in the data | Karpicke & Roediger (2007), Exp. 1 | `MEASURED-RCT` | 3.2 |
+| 11b | **Counterexample, reported for honesty:** Dobson (2012), n = 250, 29-day retention — expanding **42.57 ± 1.80** vs uniform **34.10 ± 1.36**, F = 14.09, P = 0.00. Day-scale intervals, 5 exposures — the moderator region where Latimier's estimate rises to g = 0.20 (CI still includes zero) | Dobson (2012), *Adv. Physiol. Educ.* 36(1), PMID 22383406 | `MEASURED-RCT` | 3.4 |
 
 ### 12.3 Nulls about retrieval practice and its boundaries
 
@@ -2661,7 +2778,12 @@ grouped by what they falsify.
 | 14 | **Anki use tracks USMLE Step 1 but not Step 2 CK**; "some studies found significant benefits with structured Anki programs, while others reported **no measurable difference despite positive student perceptions**" | Frappa et al. (2026), *Med. Sci. Educ.* | `OBSERVED` | 5.1 |
 | 15 | **The founding "restudy does nothing" claim does not survive a design correction.** Controlling within-subjects for the spacing inherent to Karpicke & Roediger's between-subjects design, **both** repeated testing *and* repeated restudy improved learning | Soderstrom, Kerr & Bjork (2016), *Psych. Sci.* 27(2):223–230 | `MEASURED-RCT` | 5 |
 | 16 | **The generation effect is null for nonwords (d = 0.05 [0.03, 0.07]), reverses for anagrams (d = −0.05 [−0.07, −0.03]), and nearly vanishes past 50 items (d = 0.09)** | Bertsch et al. (2007), *Mem. Cogn.* 35(2):201–210, 445 effect sizes | `MEASURED-META` | 5.2 |
-| 17 | **A system's own "learned" label overstates competence.** Units the SRS classified as reaching long-term memory scored **50.1%** on the posttest vs **60.7%** for words the students already knew, p < 0.001 | Chukharev-Hudilainen & Klepikova (2016), *CALICO J.* 33(3) | `MEASURED-RCT` | 4.6 |
+| 17 | **A system's own "learned" label overstates competence.** Units the SRS classified as reaching long-term memory scored **50.1%** on the posttest vs **60.7%** for words the students already knew, p < 0.001 | Chukharev-Hudilainen & Klepikova (2016), *CALICO J.* 33(3) | `MEASURED-RCT` | 4.6iii |
+| 17a | **Instructor-made spaced-repetition flashcards: no exam gain (p = 0.2657), confidence gain only (p = 0.0066)** — every subjective measure moved and the objective one did not | *Cureus* (2024), `doi:10.7759/cureus.70994`, PMID 39507168 | `MEASURED-RCT` | 5.1 |
+| 17b | **No overall Anki benefit in a graduate-entry cohort** where 80% used it — positive only in two post-hoc subgroups | *Med. Sci. Educ.* (2025), `doi:10.1007/s40670-025-02504-7` | `OBSERVED` | 5.1 |
+| 17c | **The one Anki study with objective logs found total study hours predicted the outcome as strongly as spaced-repetition metrics** (P = 0.013 vs P = 0.002), and cannot separate the two; another found the *self-reported* grouping predicted exams while the *objective* usage metrics did not | *J. Med. Educ. Curric. Dev.* (2025) `doi:10.1177/23821205251369705`; *Med. Sci. Educ.* (2023) `doi:10.1007/s40670-023-01826-8` | `OBSERVED` | 5.1 |
+| 17d | **No RCT of Anki/SRS in nursing or pharmacy was located**; a Europe PMC search for `"spaced repetition" AND ("A/B test" OR "online controlled experiment")` returns **zero hits** | this session's searches | **not located** | 5.1 |
+| 17e | **The pooled med-ed estimate is unstable across reviews:** SMD **0.78** [0.56, 0.99] (Clin. Teach. 2026, methods unverifiable) vs SMD **0.32** [0.13, 0.51] (JMIR 2024, Cochrane methods, 83% of studies at unclear/high risk of bias) over substantially overlapping material | `doi:10.1111/tct.70353`; `doi:10.2196/57760` | `MEASURED-META` | 5.1 |
 
 ### 12.4 Nulls about mnemonics, memory palaces, and difficulty
 
@@ -2681,7 +2803,27 @@ grouped by what they falsify.
 | 29 | **A fluency illusion survives direct disconfirmation.** Font size moved judgements of learning (ηp² = .45, .50) and not recall (F < 1); **two full study–test cycles did not diminish the illusion** | Rhodes & Castel (2008), *JEP:Gen.* 137(4):615–625 | `MEASURED` | 6.4 |
 | 30 | **Highlighting and rereading — the two most-used techniques — are rated LOW utility**; the keyword mnemonic is also LOW | Dunlosky et al. (2013), *PSPI* 14(1):4–58 | `MEASURED-META` | 6.4 |
 
-### 12.5 Nulls about the AI-native claims
+### 12.5 Nulls about knowledge tracing and predictive modelling
+
+| # | Finding | Source | Label | § |
+|---|---|---|---|---|
+| 30a | **DKT's founding 0.86 AUC was substantially a data defect.** 123,778 of 525,535 ASSISTments rows (**23.6%**) were duplicates; scaffolding rows BKT/PFA never saw were included; multi-skill rows were repeated per skill. On the repeats DKT scored **AUC 0.97**; on leading records **0.77**. Corrected: **0.86 → 0.75, and PFA ties it (0.73)** | Xiong, Zhao, Van Inwegen & Beck (2016), EDM | `MEASURED-BENCH` | 8.1 |
+| 30b | **The baseline was computed differently from the model.** *"31.6% of difference… appears to be due to the use of a biased procedure for computing the AUC for BKT. Another 50.6%… vanishes if BKT is augmented to allow for forgetting"* — ~82% of the headline | Khajah, Lindsey & Mozer (2016), EDM Best Paper | `MEASURED-BENCH` | 8.1 |
+| 30c | **DKT last on every dataset** against IRT and its Bayesian/temporal extensions — and *"we were able to reproduce the performance reported in [Piech et al.] when applying our RNN implementation on the raw data set (with duplicates left in)"* | Wilson, Karklin, Han & Ekanadham (2016), EDM | `MEASURED-BENCH` | 8.1 |
+| 30d | **An *untrained* recurrent network with only the final linear layer fitted is within 0.02–0.03 AUC of full DKT on every dataset.** *"the underlying recurrent representation may not be reliable nor semantically meaningful"* | Ding & Larson (2019), EDM, ERIC ED599227 | `MEASURED-BENCH` | 8.1 |
+| 30e | **Label leakage inflates published DLKT results by +8.38% AUC (AS2009) and +13.09% (AL2005)** on average; AKT, SAKT and DKVMN implementations named; ATKT used future ground truth. *"The majority of recently proposed DLKT approaches cannot beat the vanilla DKT model."* AKT's AS2015 claim of +0.052 becomes **+0.0014** | Liu et al. (2022), pyKT, NeurIPS D&B, arXiv:2206.11460 | `MEASURED-BENCH` | 8.2 |
+| 30f | **SAKT did not replicate** — 0.85 reported vs **0.73** observed; the paper's own feedforward-baseline ablation *"we could not reproduce and seems impossible"* | Gervet et al. (2020), *JEDM* 12(3) | `MEASURED-BENCH` | 8.2 |
+| 30g | **DAS3H's headline mechanism did not replicate** — time-window features *"do not add any predictive power"*; the gain over PFA was an IRT difficulty parameter | Gervet et al. (2020) | `MEASURED-BENCH` | 8.2 |
+| 30h | **DKT is not domain-model-free** — *"relies on the KC model to perform optimally"*; and expert KC models add **≤ +0.01 AUC on 7 of 9 datasets**, with a KC-only model failing to beat an item-difficulty-only model on 4 of 9 | Gervet et al. (2020) | `MEASURED-BENCH` | 8.2 |
+| 30i | **A model with oracle access to the exact moment of learning beats PFA by 0.002 AUC** (0.747 vs 0.745). Five modelling families intercorrelate at **0.96**. *"the research thread of predicting next item correctness… has probably progressed beyond a useful point"* | Beck & Xiong (2013), EDM, 4–11 | `MEASURED-BENCH` | 8.3 |
+| 30j | **Models within 0.015 RMSE produce stop-policies correlated at r = −0.06**, with immediate-stop rates of 6% / 26% / **59%**. *"student models should not be judged by predictive error rates alone"* | Rollinson & Brunskill (2015), EDM, 179–186 | `MEASURED-BENCH` | 8.3 |
+| 30k | **AUC and RMSE select the same best model 7 times in 20; AUC and log-likelihood 5 times in 20.** Truncation depth, per-student vs global averaging, and per-KC vs global AUC each **flip the ranking**. BKT parameters differ more by data-collection depth than by anything about learning | Pelánek (2015), *JEDM* 7(2):1–19; Pelánek (2018), *UMUAI* 28:207–235 | `MEASURED-BENCH` | 8.3 |
+| 30l | **BKT's founding paper documents its own failure mode:** after remediation to mastery, *"the model was completely insensitive to individual differences among students… There was no variability in the knowledge estimates,"* while raw tutor error rate still predicted posttest at **r = −0.64** | Corbett & Anderson (1995), *UMUAI* 4(4), Table I | `MEASURED-BENCH` | 8.5 |
+| 30m | **DKT's predicted knowledge state oscillates and fails to reconstruct its own observed input** (AUC(C) 0.904 vs AUC(N) 0.821) — invisible to next-item AUC | Yeung & Yeung (2018), L@S, arXiv:1806.02180 | `MEASURED-BENCH` | 8.2 |
+| 30n | **Two classroom RCTs of deep-RL pedagogical policies were null on the main effect** — *"no significant difference between the DQN-Del and Random… and between the DQN-Inf and Random… on every measure of learning performance."* Authors' explanation: *"our random baseline policy is decently strong"* | Sanz Ausin, Azizsoltani, Barnes & Chi (2019), EDM, ERIC ED599215 | `MEASURED-RCT` | 4.7 |
+| 30o | **The Khan Academy row of DKT's original table can never be checked** — the dataset was never released, and Khajah et al. report being refused access even with a DKT co-author's help. arXiv:1506.05908 still carries only v1 and no erratum | Khajah et al. (2016) | **unverifiable** | 8.1 |
+
+### 12.6 Nulls about the AI-native claims
 
 | # | Finding | Source | Label | § |
 |---|---|---|---|---|
@@ -2689,10 +2831,18 @@ grouped by what they falsify.
 | 32 | **Every LLM-native remembering capability located in this session sits at `DEMO` or confounded-`OBSERVED`.** LECTOR's "2.0% relative improvement" is over **100 simulated learners**; SRS-Stories has no learner and no retention test; Irec has no evaluation; the one classroom study of LLM-generated retrieval practice is quasi-experimental with different course content across arms | §9.6 | — | 9 |
 | 33 | **No meta-analysis or controlled trial comparing varied-cue vs identical-cue repeated retrieval for the same verbal content was located.** The nearest evidence — Pan & Rickard's finding that transfer is weakest to *rearranged stimulus–response items* — complicates rather than supports naive cue regeneration | this session's searches; Pan & Rickard (2018) | **not located** | 9.1 |
 
-### 12.6 Things this session could not verify, listed so they are never laundered
+### 12.7 Things this session could not verify, listed so they are never laundered
 
 - **Cepeda et al. (2006) and (2008) full texts** — paywalled; `laplab.ucsd.edu` returned 403; two open mirrors 404. **Abstracts verified directly via PubMed E-utilities.** The "271 comparisons / 12 exceptions" and "~9 percentage points" figures are carried from B1 and not re-verified.
-- **Latimier, Peyre & Ramus (2021) full text** — closed-access; HAL record `hal-02976100` has no deposited file; the author's thesis `tel-02461323` is behind an Anubis anti-bot challenge that returned 403 to both `curl` and `WebFetch`. **The g = 0.034 figure is unverified** (though its direction is corroborated — §3).
+- **Latimier, Peyre & Ramus (2021)** — the *published article* is closed-access and HAL record `hal-02976100` has no deposited file. **But the finding was verified** via the ERIC-indexed published abstract (EJ1310148) and the author's thesis (`tel-02461323`) retrieved through the Wayback Machine. See §3.1 for the full statistics. **Resolved — no longer an open item.**
+- **Kerfoot (2010), *J. Urol.* 183(2):678–681** — the only published head-to-head of two spacing algorithms in medical education. ScienceDirect, AUA Journals and LWW all returned 403; not in PMC; not OA; no Wayback copy. **Per-arm n, attrition, means, SDs, item counts, the efficiency formula, the retention interval, funding and registration are all unverified.** Only the abstract's p = 0.37 / p = 0.001 / "+38% efficiency" are reported here.
+- **Nine further Kerfoot trials** (PMIDs 17382760, 17209889, 18423715, 18614145, 19375095, 19387336, 20800189, 21671276, 22664558) — abstract only; per-arm n and attrition often absent even from abstracts.
+- **The Clinical Teacher (2026) meta-analysis** — paywalled. **The study-level design breakdown (how many of the 13 were randomized), I², and publication-bias assessment are unverified.** The SMD 0.78 must not be quoted as a randomized effect.
+- **Lindsey et al. (2014) condition means** — present only inside Figure 2a. The relative-versus-percentage-point reading in §4.6i is `INFERENCE` from the published axis range, not a statement in the paper.
+- **SSP-MMC (KDD 2022, `doi:10.1145/3534678.3539081`)** — ACM DL returned 403 and `maimemo.com/paper` was unreachable. **Whether MaiMemo ever ran a live A/B with a learning outcome can be neither confirmed nor denied.**
+- **Doroudi & Brunskill, "Fairer but Not Fair Enough: On the Equitability of Knowledge Tracing," LAK '19**, `doi:10.1145/3303772.3303838` — ACM DL and author-site URLs both failed. Fairness findings **unverified**.
+- **Mettler, Massey & Kellman (2016), *JEP: General* 145(7):897–917** — the *JEP:General* paper was reached via PMC6028005; the earlier **Pavlik & Anderson (2008), *JEP: Applied* 14(2):101–117** was not, and its reported **d = 0.796** is second-hand from Doroudi et al. (2019) Table 8.
+- **Numbers existing only inside figures** (Lindsey Fig. 4; Matayoshi Fig. 4; Gervet Figs. 5–7; Prihar Figs. 2–7) are **not** reported here as values.
 - **Murayama et al. (2014) retrieval-induced-forgetting pooled effect size** — the abstract does not state it and the full text is paywalled. **No number is supplied.**
 - **Pressley, Levin & Delaney (1982)**, the canonical keyword-method review — non-OA; **no pooled keyword-method effect size exists in this report.**
 - **The widely-cited "mnemonic instruction ES ≈ 1.62"** — traces to Mastropieri & Scruggs (1989) and/or Forness et al. (1997), both paywalled and unopenable. **Not reproduced.** The verified, larger-corpus figure is 1.47 (Scruggs et al. 2010).
@@ -2738,6 +2888,19 @@ Grouped by section. Every entry was reached this session unless marked **[unreac
 19. Su, J., Ye, J., Nie, L., Cao, Y., & Chen, Y. (2023). Optimizing spaced repetition schedule by capturing the dynamics of memory. *IEEE TKDE*. doi:10.1109/TKDE.2023.3251721.
 20. Reddy, S., Labutov, I., Banerjee, S., & Joachims, T. (2016). Unbounded human learning: optimal scheduling for spaced repetition. arXiv:1602.07032.
 21. Woźniak, P. A., Gorzelańczyk, E. J., & Murakowski, J. (1995). Two components of long-term memory. *Acta Neurobiol. Exp.*, 55(4), 301–305. [carried from F5]
+21a. Doroudi, S., Aleven, V., & Brunskill, E. (2019). Where's the reward? A review of reinforcement learning for instructional sequencing. *IJAIED*, 29, 568–620. doi:10.1007/s40593-019-00187-x. [full text read — Table 2 is the field-level tally]
+21b. Mettler, E., Massey, C. M., & Kellman, P. J. (2016). A comparison of adaptive and fixed schedules of practice. *JEP: General*, 145(7), 897–917. doi:10.1037/xge0000170 · PMC6028005.
+21c. Mettler, E., Massey, C. M., & Kellman, P. J. (2020). Adaptive scheduling in community-college chemistry. *CogSci 2020* · PMC8324178; and ARTS vs. random schedules, PMC8324179.
+21d. Kerfoot, B. P. (2010). Adaptive spaced education improves learning efficiency: a randomized controlled trial. *J. Urology*, 183(2), 678–681. PMID 20022032. **[full text unreachable]**
+21e. Cen, H., Koedinger, K. R., & Junker, B. (2007). Is over practice necessary? Improving learning efficiency with the Cognitive Tutor. *AIED 2007*, *Frontiers in AI and Applications* 158, 511–518. [full text read]
+21f. Matayoshi, J., Cosyn, E., Uzun, H., & Kurd-Misto, K. (2025). *JEDM*, 17(1), 308–336. [full text read]
+21g. Prihar, E., et al. (2022). Exploring common trends in online educational experiments. *EDM 2022* · ERIC ED624051.
+21h. Papoušek, J., Stanislav, V., & Pelánek, R. (2016). Impact of question difficulty on engagement and learning. *LAK '16*. [full text read]
+21i. Dobson, J. L. (2012). Effect of uniform versus expanding retrieval practice on the recall of physiology information. *Advances in Physiology Education*, 36(1). doi:10.1152/advan.00090.2011 · PMID 22383406.
+21j. Sanz Ausin, M., Azizsoltani, H., Barnes, T., & Chi, M. (2019). Leveraging deep reinforcement learning for pedagogical policy induction. *EDM 2019*, 168–177 · ERIC ED599215.
+21k. Martinengo, L., et al. (2024). Spaced vs. massed online education: systematic review and meta-analysis. *JMIR*. doi:10.2196/57760 · PMC11502984.
+21l. Phillips, J. L., et al. (2019). Effectiveness of spaced education in clinician CPD. *Medical Education*. doi:10.1111/medu.13895 · PMID 31144348.
+21m. Pane, J. F., Griffin, B. A., McCaffrey, D. F., & Karam, R. (2014). Effectiveness of Cognitive Tutor Algebra I at scale. *EEPA*, 36(2), 127–144. doi:10.3102/0162373713507480. [context only — the manipulation is whole-curriculum adoption, not knowledge tracing]
 
 **Retrieval practice**
 22. Rowland, C. A. (2014). *Psychological Bulletin*, 140(6), 1432–1463. doi:10.1037/a0037559. [carried from B1]
@@ -2797,6 +2960,18 @@ Grouped by section. Every entry was reached this session unless marked **[unreac
 70. Gervet, T., Koedinger, K., Schneider, J., & Mitchell, T. (2020). When is deep learning the best approach to knowledge tracing? *JEDM*, 12(3), 31–54.
 71. Liu, Z., et al. (2022). pyKT. *NeurIPS Datasets & Benchmarks*. arXiv:2206.11460.
 72. Beck, J. E., & Chang, K. (2007). Identifiability: a fundamental problem of student modeling. *UM'07*. doi:10.1007/978-3-540-73078-1_17.
+72a. Ding, X., & Larson, E. C. (2019). Why deep knowledge tracing has less depth than anticipated. *EDM 2019*, 282–287 · ERIC ED599227. [full text read]
+72b. Yeung, C.-K., & Yeung, D.-Y. (2018). Addressing two problems in deep knowledge tracing via prediction-consistent regularization. *L@S 2018* · arXiv:1806.02180.
+72c. Beck, J. E., & Xiong, X. (2013). Limits to accuracy: how well can we do at student modeling? *EDM 2013*, 4–11 · ERIC ED558215. [full text read]
+72d. Rollinson, J., & Brunskill, E. (2015). From predictive models to instructional policies. *EDM 2015*, 179–186 · ERIC ED560516. [full text read]
+72e. Pelánek, R. (2015). Metrics for evaluation of student models. *JEDM*, 7(2), 1–19. [full text read]
+72f. Pelánek, R. (2018). The details matter: methodological nuances in the evaluation of student models. *UMUAI*, 28, 207–235. doi:10.1007/s11257-018-9204-y.
+72g. Schmucker, R., Wang, J., Hu, S., & Mitchell, T. (2022). Assessing the performance of online students. *JEDM*, 14(1), 1–45. [full text read]
+72h. Pavlik, P. I., & Eglington, L. G. (2023). Automated search improves logistic knowledge tracing. *JEDM*, 15(3), 58–86. [full text read]
+72i. Khajah, M. (2024). Supercharging BKT with multidimensional generalizable IRT and skill discovery. *JEDM*, 16(1), 233–277.
+72j. Ghosh, A., Heffernan, N., & Lan, A. S. (2020). Context-aware attentive knowledge tracing (AKT). *KDD '20*. doi:10.1145/3394486.3403282 · arXiv:2007.12324.
+72k. Gong, Y., Beck, J. E., & Heffernan, N. T. (2010). Comparing knowledge tracing and performance factor analysis. *ITS 2010*, 35–44.
+72l. Fancsali, S., Nixon, T., & Ritter, S. (2013). Optimal and worst-case performance of mastery learning assessment with Bayesian knowledge tracing. *EDM 2013*, 35–42. [simulation]
 
 **Forgetting**
 73. Richards, B. A., & Frankland, P. W. (2017). The persistence and transience of memory. *Neuron*, 94(6). doi:10.1016/j.neuron.2017.04.037. [abstract verified]
