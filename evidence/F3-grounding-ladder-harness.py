@@ -1,13 +1,23 @@
 """
-Grounding-ladder coverage/cost experiment  (v2).
+Grounding-ladder coverage/cost experiment.
+
+Backs the MEASURED-BENCH figures in research/raw/F3-executable-verifiable.md §4.2.
+Run:  pip install sympy pint  &&  python F3-grounding-ladder-harness.py
+Measured with SymPy 1.14.0 / pint 0.25.3 / Python 3.12 on 2026-07-27.
+
+NOTE ON LABELS: the internal identifiers below (L2/L3/L5) predate the tier names
+used in the section. The mapping is:
+    L5 in this file  ->  tier L2a (dimensional)  in F3
+    L2 in this file  ->  tier L2b (numeric)      in F3
+    L3 in this file  ->  tier L3  (symbolic)     in F3
 
 Setup: for each textbook formula we have a REFERENCE expression (ground truth).
 A generator (an LLM, a student) emits a CANDIDATE. Three cheap checkers decide
 whether candidate == reference:
 
-  L2  numeric   : random substitution, 8 trials, rtol 1e-9
-  L3  symbolic  : sympy simplify(candidate - reference) == 0
-  L5  dimensional: pint dimensionality(candidate) == dimensionality(reference)
+  numeric     : random substitution, 8 trials, rtol 1e-9
+  symbolic    : sympy simplify(candidate - reference) == 0
+  dimensional : pint dimensionality(candidate) == dimensionality(reference)
 
 Candidates come in three flavours:
   (a) IDENTICAL          -> all tiers must say "agree"

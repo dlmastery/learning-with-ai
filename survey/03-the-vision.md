@@ -38,30 +38,50 @@ So the target is not a chatbot that knows things. It is:
 
 ---
 
-## 2. Why this is buildable now, not in 2035
+## 2. The constraint is no longer scarcity. It is capability.
 
-The cost objection is dead. G2's arithmetic: a well-structured village of
-specialists costs **1.07–1.30× a single tutor**, because token cost tracks
-*turns × context*, not agent count. Specialists read a 4 KB slice of the learner
-model, not the transcript.
+Every previous attempt at universal tutoring died on a scarcity argument. Bloom's
+two-sigma finding (1984) came with a built-in obituary: one tutor per child was
+*correct and unaffordable*, so the field spent forty years searching for
+"group-instruction methods as effective as one-to-one tutoring." That search was a
+response to a shortage.
 
-**At SELPA intensity — 1.8× the turns, because these learners need more:**
+**The shortage is ending, and it is ending on a curve, not at a price point.**
+Inference cost per unit of capability has fallen by orders of magnitude per year
+and continues to. A village of specialists costs **1.07–1.30× a single tutor**,
+because cost tracks *turns × context*, not agent count — specialists read a 4 KB
+slice of the learner model, not the transcript. Whatever number you compute today
+is wrong by next year in the same direction. Any design that treats attention as
+scarce is designing for a world that is closing.
 
-| Tier | Per learner-hour | Per child-year (500 h) |
-|---|---|---|
-| Frontier village | $2.795 | $1,398 |
-| Cheap village | **$0.250** | **$125** |
-| Small-open village | **$0.103** | **$52** |
+So stop asking what we can afford to give a child, and ask the harder question:
+**what would we give them if attention were free?**
 
-**$52 a year** for a personalised village of specialists. US special-education
-spending is roughly **$20,000+ per pupil per year**. This is not a moonshot. It is
-three orders of magnitude inside the existing budget, today, on hardware you can
-buy.
+Not more of the same. Not a chatbot that answers faster. The things that were
+*structurally impossible* under scarcity:
 
-The real-time layer is done too: **640×368 at 25 FPS with ~200 ms model-side
-latency** — inside the human conversational turn-gap — with a persistent world and
-a separate event stream. The thing that was science fiction in 2023 runs on a
-desk in 2026.
+- A tutor that **watches the whole process**, not the submitted answer — because
+  no human can sit beside thirty children at once, every hour, for a decade.
+- A mind that **remembers everything**, across years, and can tell you in March
+  which misconception from October is still live.
+- An adversary that generates a **fresh, unGoogleable** problem calibrated to the
+  exact edge of what you know, on demand, forever.
+- A **student you teach** — an agent that will be wrong on purpose and hold the
+  error until you actually repair it.
+- A crew of specialists, each narrow and each **certified against a published
+  eval**, deliberating over one child.
+
+Every one of those was unbuildable not because we lacked the idea but because we
+lacked the attention to spend on it. That is the constraint that is lifting.
+
+**And the real-time layer is already here:** 640×368 at 25 FPS with ~200 ms
+model-side latency — inside the human conversational turn-gap — with a persistent
+world and a separate event stream. The thing that was science fiction in 2023 runs
+on a desk in 2026.
+
+What remains hard is not the bill. It is state, refusal, deixis, and an agent that
+can hold a wrong belief. Those are engineering problems, and they are the subject
+of the rest of this document.
 
 ---
 
@@ -153,9 +173,27 @@ hypothesis rather than a pitch. The rules stay:
 
 ---
 
-## 7. The line
+## 7. Read the ending again
 
-Ekalavya lost his thumb so that the hierarchy could keep its best archer at the
-top.
+The myth is usually told as a story about access, and that half is right: Droṇa
+refused him, so he built a clay image and trained against it anyway. AI removes
+both of those barriers permanently — **the teacher's veto** and **the requirement
+of the teacher's consent**. No prerequisite lock. No "you're not ready yet." No
+one deciding in advance who is allowed to be taught.
 
-**Nobody's thumb, ever again.**
+But the thumb is taken **after** he succeeds. Not for learning badly — for
+learning *well*, and without authorisation. The veto that mattered was never the
+teacher's. It was **the guild's**, and it acted at the moment of recognition.
+
+So any claim that AI democratises learning is telling the true half and stopping
+one page early. Attention becomes free; **credentialing does not.** A system that
+teaches a child brilliantly and then hands them nothing the world will accept has
+reproduced the story exactly, in a nicer voice.
+
+That is why the certification requirement in this document points *both* ways.
+Every agent must pass a published eval — and so must every claim the system makes
+about a learner. Portable, inspectable, contestable, owned by the child.
+
+Ekalavya lost his thumb so the hierarchy could keep its best archer at the top.
+
+**Nobody's thumb, ever again — and this time, the record travels with them.**

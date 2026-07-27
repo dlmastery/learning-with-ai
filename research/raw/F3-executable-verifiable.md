@@ -656,7 +656,9 @@ fallback). SymPy 1.14.0, pint 0.25.3, Python 3.12, single core.
    classes (sign, ×2, ÷2).** It is not a weak version of the other checks; it is an
    *orthogonal* check that costs 0.07 ms.
 
-*(Harness: `ladder2.py`, ~230 lines, stdlib + sympy + pint. Reproducible in full.)*
+*(Harness committed at `evidence/F3-grounding-ladder-harness.py`, ~240 lines, stdlib + sympy
++ pint. Reproducible in full: `pip install sympy pint && python
+evidence/F3-grounding-ladder-harness.py`.)*
 
 ### 4.3 Why this is underused
 
