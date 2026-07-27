@@ -772,7 +772,81 @@ computing it. That is precisely the class of item a symbolic/executable backend 
 
 ## 8. Knowledge tracing as the modern replacement for fixed schedules
 
-<!-- PENDING: delegated. Inserted on completion. Cross-reference F5 §2. -->
+**The model-by-model forensics live in `F5-learner-model.md` §2 and are not repeated.** This
+section asks the question F5 does not: *if you had a better knowledge tracer, would you get a
+better schedule?*
+
+### 8.1 The one-paragraph state of the art
+
+BKT (Corbett & Anderson 1995, a 4-parameter two-state HMM per skill), PFA/AFM (Pavlik, Cen &
+Koedinger 2009; Cen et al. 2006 — logistic regressions over counts of prior successes and
+failures), DKT (Piech et al. 2015 — an LSTM over one-hot skill×correctness), and the attention
+family (SAKT 2019, AKT 2020) are the canonical lineage. **The replication literature is unusually
+decisive, and F5 §2.2 documents it in full.** The five load-bearing results:
+
+| Finding | Source | Label |
+|---|---|---|
+| DKT's founding ASSISTments result was inflated by **23.6% duplicated rows** plus scaffolding records BKT/PFA never saw; correcting it drops DKT from **AUC 0.81 → 0.74**, and *"PFA performs as well as DKT"* on clean datasets | Xiong, Zhao, Van Inwegen & Beck (2016), EDM | `MEASURED-BENCH` |
+| Give BKT the same regularities DKT exploits and *"BKT achieves a level of performance indistinguishable from that of DKT"* | Khajah, Lindsey & Mozer (2016), EDM / arXiv:1604.02416 | `MEASURED-BENCH` |
+| IRT and its Bayesian/temporal extensions *"consistently matched or outperformed DKT across all data sets"* | Wilson, Karklin, Han & Ekanadham (2016), EDM / arXiv:1604.02336 | `MEASURED-BENCH` |
+| Across 9 datasets, **Best-LR (logistic) leads on 4, DKT on 5**, with winning margins of **+0.007 to +0.056 AUC**; the entire field lives in **AUC ≈ 0.67–0.83**; **SAKT fails to replicate** (0.85 reported → 0.73 observed); DAS3H's time-window features add nothing beyond an IRT difficulty term | Gervet, Koedinger, Schneider & Mitchell (2020), *JEDM* 12(3):31–54 | `MEASURED-BENCH` |
+| *"wrong evaluation setting may cause **label leakage** that generally leads to performance inflation"*; *"the improvement of many DLKT approaches is **minimal** compared to the very first DLKT model"* | Liu et al. (2022), pyKT, NeurIPS D&B, arXiv:2206.11460 | `MEASURED-BENCH` |
+
+**Deep models do not reliably beat logistic ones.** Where they win, the margin is a rounding
+error next to the between-dataset variance; where they were reported to win big, the win has
+generally not survived cleaner data or standardised preprocessing.
+
+### 8.2 The finding that connects §4 and §8 — they are the same result twice
+
+Put the two literatures side by side. Neither cites the other:
+
+| | Spaced repetition (§4.2) | Knowledge tracing (§8.1) |
+|---|---|---|
+| Task | predict recall of an item at review | predict correctness of the next response |
+| Ceiling | AUC ≈ 0.70 (per-user models), 0.83 (cross-user with rich context) | AUC ≈ 0.67–0.83 |
+| Best simple baseline | 34-feature logistic regression **beats FSRS-6/7 on all three metrics**; zero-parameter MOVING-AVG beats them on log loss | **Best-LR ties or beats DKT on 4/9 datasets**; BKT-with-features is indistinguishable from DKT |
+| Movement since ~2015 | small | *"essentially none"* |
+| Where big models help | cross-user context and extra features (answer duration, sibling cards, deck hierarchy) | **cold start** — DKT reaches near-peak accuracy on a new learner ~6× faster (10 vs 60 interactions) |
+
+**This is one finding, discovered twice, in two communities that do not read each other:
+the predictive ceiling on individual response outcomes was reached by simple models, and the
+residual is largely irreducible noise.** Whether a specific learner recalls a specific item on a
+specific morning is close to aleatory. No amount of parameters fixes that.
+
+### 8.3 Why that is good news, not bad
+
+If predictive accuracy is saturated, **the returns have moved elsewhere**, and this is the
+constructive point:
+
+1. **To the features, not the model.** RWKV-P's win comes from *seeing more* (answer duration,
+   sibling cards, deck hierarchy, day of week), not from being deeper. Gervet et al.'s one real
+   deep-learning win is **cold start**. Both say: instrument better, don't model harder.
+2. **To the decision, not the prediction.** `MEASURED-BENCH` accuracy answers "will they get it
+   right?" Almost nothing in either literature answers "what should the system *do*?" — and where
+   that has been tested (§4.6), the strongest RCT compared its policy against *shuffle* and
+   *easiest-first*. There is a genuinely open, cheap, high-value experimental programme here.
+3. **To what is being traced.** Both literatures trace *items* or *skills-as-tags*. Gervet et al.
+   found expert knowledge-component models add **≤ +0.01 AUC on 7 of 9 datasets**, and that on 4
+   of 9 a KC-only model fails to beat an item-difficulty-only model — which they read as evidence
+   that the hand-built domain models are **low quality**. Building a good knowledge-component
+   graph was previously a multi-year expert task. It is now, for the first time, automatable.
+   **That, not a better tracer, is the unlock.** `INFERENCE`
+
+### 8.4 Two cautions to carry into §11
+
+- **Calibration, not AUC, is what a scheduler consumes.** Gervet et al.: *"the current best models
+  are severely biased on some datasets — hindering their applicability in adaptive policies and
+  open learner models."* A scheduler that turns p(recall) into a due date needs the *number* to
+  be right, not merely the *ranking*. This is why the srs-benchmark reports log loss and
+  RMSE(bins) alongside AUC — and why `RMSE-BINS-EXPLOIT` (§4.2) exists as a warning that even
+  calibration metrics can be gamed.
+- **Identifiability was flagged in 2007 and never fixed.** Beck & Chang (2007),
+  `doi:10.1007/978-3-540-73078-1_17`: BKT's four parameters are not uniquely determined by the
+  data — multiple parameter sets fit equally well while implying very different pedagogy. Any
+  learner-facing readout derived from such parameters ("your mastery is 73%") is reporting one
+  arbitrary point from an equivalence class. `MEASURED-BENCH` This is the same class of problem
+  as ZemoMemo's "stickiness" (§1.3a): a probabilistic, non-identified quantity rendered to the
+  learner as a fact.
 
 ---
 

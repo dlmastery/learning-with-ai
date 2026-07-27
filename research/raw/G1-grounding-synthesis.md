@@ -17,7 +17,7 @@ sources_count: 58
 > explanation ladders, I2 for the *pāṭha* protocol. Those four verification stories are
 > currently four stories. G1's job is to notice that they are one mechanism seen from four
 > angles, to say what the mechanism is, and to run the experiments that the separate sections
-> left open. Three original measurements are reported here (§3.4, §9), two of them negative.
+> left open. Four original measurements are reported here (§3.4, §8), three of them negative.
 
 ---
 
@@ -43,7 +43,7 @@ debate result (non-expert human judges **88% vs 60% baseline**, arXiv:2402.06782
 `MEASURED-BENCH`) is what that tier is worth. Grounding is the precondition that makes
 staging a disagreement safe rather than a way to teach a misconception with production value.
 > **Guardrail.** The check settles *the claim*, never *the person*. And it settles only
-> claims of the type it can decide (§5). A tutor that runs a numeric check and then
+> claims of the type it can decide (§4). A tutor that runs a numeric check and then
 > generalises the win into "and therefore my explanation was better" has committed F3 §7's
 > category error.
 
@@ -63,7 +63,7 @@ apparatus to get it. If the learner's prediction is falsified by a simulation th
 the source of the correction is the phenomenon. This has been unaffordable at scale for a
 century; at L2b it costs a reactive-notebook cell. `INFERENCE`.
 > **Guardrail.** A simulation is a *model*, and its assumptions are part of the claim
-> (§8). "The simulation disagrees with you" is only honest if the simulation's declared
+> (§7). "The simulation disagrees with you" is only honest if the simulation's declared
 > domain contains the learner's case.
 
 **1.4 The learner's own conjectures get the same ladder as the machine's.**
@@ -185,12 +185,12 @@ section (§3.4); the remainder are carried forward from F3 §8.2.
 
 | Rung | What it checks | What it **cannot** check | Measured cost | Measured coverage / recall | Escalate when |
 |---|---|---|---|---|---|
-| **L0** Asserted | nothing | everything | 0 | recall **0%** | always, unless the claim is on §7's declared-unverifiable list *and is labelled as such* |
+| **L0** Asserted | nothing | everything | 0 | recall **0%** | always, unless the claim is on §6.4's declared-unverifiable list *and is labelled as such* |
 | **L1** Attested | that a named source supports the claim | whether the source is right; whether the claim is *responsive* to the question | ≈$10⁻⁴–10⁻³, 0.3–3 s | fact-check accuracy **39–77%**; automatic attribution evaluation itself only **~80% macro-F1** (arXiv:2605.06635; arXiv:2402.15089) | never scale retrieval depth: fact-check accuracy falls **~42%** from k=2 to k=150 |
 | **L2a** Typed | dimensional homogeneity; transcendental arguments dimensionless; schema conformance; declared-scope presence | any error that preserves type — sign, coefficient, 2π vs 1 (ω vs f), torque vs energy | **0.07 ms** median | **100%** on exponent / dropped-term / wrong-variable; **0%** on sign / ×2 / ÷2; **0/14** false alarms; applies to ~50% of the F3 corpus (only dimensioned claims) | **never a sufficient check.** Mandatory gate; may reject, may never accept |
 | **L2b** Instantiated | agreement of two expressions at sampled points; independently recomputed plot curves; independently recomputed answer keys | universals ("for all n"); anything not instantiable; anything outside the sampled domain | **0.38 ms** median at k=1 †, 0.49 ms at k=8 † (F3 measured 0.61 ms at k=8 on its own harness); p95 **0.93 ms** at k=1 † | **112/113 = 99.1%** recall, identical at k=1 and k=16 †; **0/37** false alarms in the declared domain † | on `ABSTAIN`; on a universal quantifier; on reuse ≥ ~100×; on blast-radius ≥ 3 |
 | **L3** Normalised | symbolic equality; IR-vs-spec diff; constraint satisfaction | anything outside the decision procedure's competence — and it cannot tell you when it is outside | **1.8 ms** median, 10.8 ms p95, **unbounded worst case** | **100%** in-domain (113/113); but SymPy fails **152/397 = 38.3%** of the Wester suite, with three sections unimplemented — 57–70% failure in sums, definite integrals, transforms | on `ABSTAIN`. **`simplify(e) ≠ 0` never means `e ≠ 0`** (Richardson): L3 emits `PASS` or `ABSTAIN`, never `FAIL` |
-| **L4** Proved / Calibrated | that a formal statement follows from axioms; or that a design replicates against human data | **whether the formal statement means the informal one** — the 36% gap; whether the design measures the construct | **<$0.01** mathlib-native → **4M tokens/problem** → 3 days → 11 person-years (Flyspeck). Empirical L4: several hundred examinees, irreducible | ~90% competition; **60–88%** UG in mathlib idiom, **−26 pts** off-idiom; **16–35%** college physics; ~0 applied/numerical; end-to-end from prose **36%** | L4 does **not** subsume L1. Every L4 result needs a statement-fidelity check above it (§6) |
+| **L4** Proved / Calibrated | that a formal statement follows from axioms; or that a design replicates against human data | **whether the formal statement means the informal one** — the 36% gap; whether the design measures the construct | **<$0.01** mathlib-native → **4M tokens/problem** → 3 days → 11 person-years (Flyspeck). Empirical L4: several hundred examinees, irreducible | ~90% competition; **60–88%** UG in mathlib idiom, **−26 pts** off-idiom; **16–35%** college physics; ~0 applied/numerical; end-to-end from prose **36%** | L4 does **not** subsume L1. Every L4 result needs a statement-fidelity check above it (§5) |
 
 **Six facts a reader should take from this table.**
 
@@ -220,7 +220,7 @@ This is the table the survey has been missing. Rows are rungs; columns are what 
 | Rung | **Formula / derivation** (F3) | **Figure / diagram** (C1) | **Assessment item** (C2) | **Multi-agent claim** (G2) | **Explanation rung** (F10) |
 |---|---|---|---|---|---|
 | **L1** Attested | claim ↔ source span + entailment verdict | data provenance cited; alt text present and emitted *from the IR*, not from pixels | key and rationale traced to a named source; distractor traced to an *attested* error | claim cites a primary source; scope precedence names a role of record | every proposition traceable to the rung above |
-| **L2a** Typed | unit algebra; every additive term homogeneous | schema validation + the §5.2 assertion set: no label collision, canvas containment, arrows anchored, axis scale/limits/zero-baseline, unit present, contrast ≥ 4.5:1, second encoding channel | template/constraint conformance; option order randomised; NOTA forbidden unless the cognitive model requires it | role-card `may_assert` enforced **at the interface, not the prompt** | scope-flag present for every drop; **ontology test** (thing / direct process / emergent process) |
+| **L2a** Typed | unit algebra; every additive term homogeneous | schema validation + C1 §5.2's assertion set: no label collision, canvas containment, arrows anchored, axis scale/limits/zero-baseline, unit present, contrast ≥ 4.5:1, second encoding channel | template/constraint conformance; option order randomised; NOTA forbidden unless the cognitive model requires it | role-card `may_assert` enforced **at the interface, not the prompt** | scope-flag present for every drop; **ontology test** (thing / direct process / emergent process) |
 | **L2b** Instantiated | 8 (in fact 1 — §3.4) random substitutions, rtol 1e-9 | **independent recomputation of every plotted curve** — the only check that catches the wrong-curve class; round-trip atomic QA over pre-authored answers | key recomputed by a solver that is not the generator; item solved by a program | **T0: executable ground truth wins outright — CAS, unit test, proof checker, cited source. No agent votes.** | entailment test on instantiated cases |
 | **L3** Normalised | CAS zero test with declared assumptions | IR diff vs the requested spec; ASP/Draco constraint check (LLM substitutes measured at **F1 ≤ 0.82 common, < 0.15 subtle**) | isomorphy diagnostic (DCIF) on the *family*; within-family parameter variance σ²ᵢ:g estimated and published | judge that **selects, never synthesises**, from a different model family, with published calibration | full entailment: rung *n* ⊨ rung *n+1* under the declared scope |
 | **L4** Proved / Calibrated | proof kernel + statement-fidelity check | **named human reviewer of record** + external dataset ground truth | field calibration against human response data; documented equating; subgroup invariance; independent validity study | **escalate to a human** | expert sign-off; measured transfer |
@@ -241,7 +241,7 @@ Three things this table makes visible that none of the four sections could see a
   why it is both the most reliable and the cheapest tier.
 - **F10's fidelity rule is the L2a/L3 pair for the explanation modality**, and it is the only
   place in the whole survey where somebody wrote down a machine-checkable specification for
-  *pedagogical* correctness. §7 argues this is more important than it looks.
+  *pedagogical* correctness. §6 argues this is more important than it looks.
 
 ### 3.4 Original measurement — the cheap rung is cheaper than F3 thought, and 8 samples buy nothing
 
@@ -351,7 +351,7 @@ modalities; Steps 2–3 are unchanged from F3 and restated because G1 is the can
 Every claim carries a machine-readable rung badge plus a pointer to the artefact that
 justifies it: source span + entailment verdict (L1); unit trace (L2a); seeds, domain and
 tolerance (L2b); CAS certificate and assumption set (L3); proof-term hash or calibration
-study (L4). **The badge is the contract with the learner** — §8 specifies what it must say.
+study (L4). **The badge is the contract with the learner** — §7.3 specifies what it must say.
 
 ---
 
