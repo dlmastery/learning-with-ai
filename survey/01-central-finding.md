@@ -11,8 +11,8 @@ date: 2026-07-25
 
 | Result | Effect | Evidence |
 |---|---|---|
-| AI tutor that withholds answers and hints instead | **+127% practice, no retention penalty** | Randomised, ~1,000 students |
-| Gemini Guided Learning, Sierra Leone | **+0.258 SD maths** — 1.2–1.7 years of typical progress in 8 weeks (1.8–2.5 in high-engagement classrooms) | Pre-registered RCT, 1,763 students, 12 schools |
+| Guardrailed AI tutor | **+127% practice**; unassisted exam **−0.004 (ns)** — removes harm, adds no measured benefit | Randomised, ~1,000 students |
+| Gemini Guided Learning, Sierra Leone | **+0.258 SD (ANCOVA)** — but the **unadjusted estimate is +0.216 SD, SE 0.137, *not significant*** | Pre-registered RCT; 1,763 enrolled, **1,423 analysed**; model swapped mid-trial; Google.org + Gates funded |
 | Retrieval practice | **g = 0.50** in labs *and* classrooms | 222 studies, 48,478 students |
 | Learning by teaching | **g = 0.56**, robust at delay | Meta-analysis; near-zero deployment |
 | Productive failure | **g = 0.36**, rising to **0.58** at high fidelity | Meta-analysis |
@@ -117,3 +117,39 @@ in the same direction — together, and confidently.
 This is why the survey treats **frequent low-stakes retrieval** (H1.2) as
 non-negotiable infrastructure rather than a feature. It is the only routinely
 available instrument that measures the thing that matters.
+
+
+---
+
+## Correction — B2 (2026-07-27)
+
+The efficacy scoreboard revised three claims in this section. Recorded rather than
+quietly edited, per the editorial standard.
+
+1. **The Sierra Leone headline is fragile.** +0.258 SD holds only under ANCOVA;
+   Table C.4's unadjusted estimate is **+0.216 SD, SE 0.137 — not significant**.
+   1,423 of 1,763 analysed. The report itself is unusually honest; the distortion
+   happened downstream, including here.
+2. **Restraint removes harm; it does not add measured benefit.** Bastani's
+   guardrailed arm scores **−0.004 (ns)** on the unassisted exam. The +127% is a
+   *practice* gain. The correct claim is: unguarded AI is an active harm (−17%),
+   and guardrails buy that back. That is still the most important design result in
+   the survey — it is just a smaller claim than "restraint teaches."
+3. **Gap-widening is the default expectation, not a risk.** Sierra Leone
+   +0.195 SD per baseline SD (p=0.002 — an order of magnitude more robust than the
+   main effect); Nigeria +0.151; Lehmann concurs. **A student 1 SD below the mean
+   gains ≈0.055 SD.** Three countries, three tools, three age groups, same sign.
+
+**The load-bearing gap:** no study in the corpus administered a delayed retention
+test. ERIC counts (2026-07-27): ChatGPT + "learning outcomes" = 95;
++ "delayed post-test" = **2**; + "retention test" = **0**; + "transfer test" =
+**0**; + "preregistered" = **0** — against 273 ERIC records using delayed
+post-tests on other topics. The instrument exists. The field does not use it.
+
+And the field's most-cited meta-analysis (Wang & Fan 2025, g = 0.867, >250
+citations) was **retracted in 2026**; the authors have not responded.
+
+**What survives:** supervised LLM tutoring lands at **0.2–0.4 SD** — the same band
+as pre-LLM ITS (0.32–0.42) and in-person human tutoring (**0.288**, 96 RCTs). That
+is a real, useful, affordable effect. It is not an order-of-magnitude jump, and
+**GenAI without teacher support is null (g = 0.077)**.
