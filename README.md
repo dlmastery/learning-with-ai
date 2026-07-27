@@ -8,9 +8,10 @@ working set of dynamic, multimodal learning apps built on its conclusions.
 *The north star: world-class expert mentorship should be available in every
 language, community, device tier, and learning environment.*
 
-**Status:** July 2026 research and synthesis pass complete. The next milestone is
-Release 0 of the reference implementation: one verified concept through the
-complete mentor loop.
+**Status:** July 2026 research and synthesis pass complete. The interactive
+[Universal Mentor Lab](https://dlmastery.github.io/learning-with-ai/) now makes
+all 18 architecture capabilities runnable in the browser; Release 0 is the next
+production implementation milestone.
 
 ## Structure
 
@@ -20,6 +21,7 @@ complete mentor loop.
 | `evidence/` | Bibliography, claim ledger, evidence-strength grading |
 | `research/` | Raw agent research reports, verbatim |
 | `apps/` | Dynamic per-concept learning mini-apps |
+| [`docs/`](docs/) | GitHub Pages dashboard with 18 interactive capability prototypes |
 | `examples/` | Worked zero-to-hero artifacts |
 | [`CONTENT_ROADMAP.md`](CONTENT_ROADMAP.md) | PRD-wide research, writing, and illustration tracker |
 | [`assets/`](assets/) | Editorial illustrations, technical diagrams, and visual provenance |

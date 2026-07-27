@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#132f2b">
+  <meta name="description" content="Eighteen runnable browser prototypes for a universal, multilingual, multimodal, offline-capable AI mentor.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Universal Mentor Lab">
+  <meta property="og:description" content="18 runnable capability prototypes for a world-class AI mentor for every learner.">
+  <meta property="og:image" content="https://dlmastery.github.io/learning-with-ai/assets/og-universal-mentor-lab.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Universal Mentor Lab">
+  <meta name="twitter:description" content="18 runnable capability prototypes for a world-class AI mentor for every learner.">
+  <meta name="twitter:image" content="https://dlmastery.github.io/learning-with-ai/assets/og-universal-mentor-lab.png">
+  <title>Universal Mentor Lab · Learning With AI</title>
+  <link rel="preload" href="assets/mentor-world-hero.png" as="image">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#lab">Skip to the active prototype</a>
+
+  <header class="site-header">
+    <a class="brand" href="#conductor" aria-label="Universal Mentor Lab home">
+      <span class="brand-mark" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+      <span>
+        <strong>Universal Mentor</strong>
+        <small>Capability lab · July 2026</small>
+      </span>
+    </a>
+    <div class="header-actions">
+      <span class="system-status"><i></i> Local demo ready</span>
+      <a class="text-link hide-mobile" href="https://github.com/dlmastery/learning-with-ai" target="_blank" rel="noreferrer">Research ↗</a>
+      <button class="button button-dark" id="runLoop" type="button">Run complete loop</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-image" role="img" aria-label="Learners around the world creating, experimenting, and collaborating with an ambient AI mentor"></div>
+      <div class="hero-scrim"></div>
+      <div class="hero-content">
+        <p class="eyebrow">No child left behind</p>
+        <h1 id="hero-title">A world-class mentor,<br><em>assembled in public.</em></h1>
+        <p>Explore 18 working browser prototypes for the complete mentor stack—from live conversation and verified knowledge to learner-owned memory and offline continuity.</p>
+        <div class="hero-actions">
+          <button class="button button-light" id="exploreButton" type="button">Explore the labs</button>
+          <span><b>18</b> capabilities · <b>7</b> open contracts · <b>3</b> delivery tiers</span>
+        </div>
+      </div>
+      <div class="hero-note">
+        <span>North star</span>
+        <p>The useful core keeps teaching through an outage—and the learner can leave with their state.</p>
+      </div>
+    </section>
+
+    <section class="context-strip" aria-label="Shared learner context">
+      <div class="context-intro">
+        <span class="pulse-dot"></span>
+        <div>
+          <strong>Shared learner context</strong>
+          <small>Change it once. Every lab adapts.</small>
+        </div>
+      </div>
+      <label>
+        Learner
+        <select id="learnerSelect">
+          <option value="amina">Amina · fractions → algebra</option>
+          <option value="leo">Leo · circuits and systems</option>
+          <option value="mei">Mei · scientific writing</option>
+        </select>
+      </label>
+      <label>
+        Teaching language
+        <select id="languageSelect">
+          <option value="English">English</option>
+          <option value="Kiswahili">Kiswahili</option>
+          <option value="Hindi">Hindi</option>
+          <option value="Mandarin">Mandarin</option>
+          <option value="Spanish">Spanish</option>
+        </select>
+      </label>
+      <label>
+        Connection
+        <select id="networkSelect">
+          <option value="cloud">Cloud + community hub</option>
+          <option value="hub">Community hub only</option>
+          <option value="offline">Offline device</option>
+        </select>
+      </label>
+      <button class="icon-button" id="accessButton" type="button" aria-pressed="false" title="Toggle access profile">
+        <span aria-hidden="true">Aa</span>
+        <span class="sr-only">Toggle access profile</span>
+      </button>
+    </section>
+
+    <section class="dashboard" id="labs" aria-label="Capability prototype dashboard">
+      <aside class="lab-nav">
+        <div class="nav-heading">
+          <div>
+            <p class="eyebrow">Prototype index</p>
+            <h2>Capability labs</h2>
+          </div>
+          <span id="labCount">01 / 18</span>
+        </div>
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <span class="sr-only">Search capability labs</span>
+          <input id="labSearch" type="search" placeholder="Find a capability…" autocomplete="off">
+        </label>
+        <nav id="capabilityNav" aria-label="Capability labs"></nav>
+        <div class="nav-footer">
+          <span class="mini-orbit" aria-hidden="true"><i></i><i></i><i></i></span>
+          <p><strong>One relationship.</strong><br>Replaceable intelligence behind it.</p>
+        </div>
+      </aside>
+
+      <section class="lab-stage" id="lab" tabindex="-1" aria-labelledby="labTitle">
+        <div class="stage-topline">
+          <div>
+            <p class="eyebrow" id="labGroup">Control plane</p>
+            <h2 id="labTitle">Mentor conductor</h2>
+            <p id="labSummary">Select the next teaching action from current evidence, uncertainty, and constraints.</p>
+          </div>
+          <div class="stage-actions">
+            <span class="evidence-pill" id="evidencePill">Build frontier</span>
+            <button class="button button-outline" id="resetLab" type="button">Reset</button>
+            <button class="button button-accent" id="runLab" type="button">Run scenario</button>
+          </div>
+        </div>
+
+        <div class="stage-metrics" id="stageMetrics" aria-label="Active prototype metrics"></div>
+        <div class="prototype" id="prototype" aria-live="polite"></div>
+
+        <div class="event-tray">
+          <div class="event-heading">
+            <div>
+              <span class="live-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              <strong>Mentor trace</strong>
+            </div>
+            <button class="text-button" id="clearTrace" type="button">Clear</button>
+          </div>
+          <ol id="eventLog" aria-live="polite"></ol>
+        </div>
+      </section>
+
+      <aside class="learner-rail" aria-label="Learner-owned state">
+        <div class="rail-card identity-card">
+          <div class="learner-avatar" id="learnerAvatar">AM</div>
+          <div>
+            <span class="micro-label">Learner-owned state</span>
+            <h3 id="learnerName">Amina</h3>
+            <p id="learnerGoal">Goal: connect fractions to algebra</p>
+          </div>
+          <button class="more-button" type="button" aria-label="Learner state options">•••</button>
+        </div>
+
+        <div class="rail-card">
+          <div class="rail-card-heading">
+            <span class="micro-label">Current evidence</span>
+            <span class="confidence">72% confidence</span>
+          </div>
+          <div class="skill-list" id="skillList"></div>
+        </div>
+
+        <div class="rail-card next-card">
+          <span class="micro-label">Next best action</span>
+          <div class="next-symbol" aria-hidden="true">↗</div>
+          <h3 id="nextAction">Concrete worked example</h3>
+          <p id="nextReason">Because symbolic transfer is uncertain while visual partitioning is stable.</p>
+          <div class="next-meta">
+            <span>Expected: 6 min</span>
+            <span id="nextTier">Tier: device</span>
+          </div>
+        </div>
+
+        <button class="state-export" id="exportState" type="button">
+          <span aria-hidden="true">⇩</span>
+          <span><b>Export learner state</b><small>Portable JSON · no vendor lock-in</small></span>
+        </button>
+      </aside>
+    </section>
+
+    <section class="architecture-section" aria-labelledby="architectureTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">How the pieces compose</p>
+          <h2 id="architectureTitle">One mentor loop. Seven replaceable planes.</h2>
+        </div>
+        <p>A capability is useful alone. The breakthrough is a shared protocol that lets every capability improve the same learner relationship.</p>
+      </div>
+      <div class="architecture-track" id="architectureTrack">
+        <button type="button" data-capability="live"><span>01</span><b>Perceive</b><small>voice · vision · AAC</small></button>
+        <button type="button" data-capability="conductor"><span>02</span><b>Conduct</b><small>explicit teaching action</small></button>
+        <button type="button" data-capability="mesh"><span>03</span><b>Specialize</b><small>role-certified experts</small></button>
+        <button type="button" data-capability="compiler"><span>04</span><b>Verify</b><small>shared concept truth</small></button>
+        <button type="button" data-capability="state"><span>05</span><b>Remember</b><small>learner-owned state</small></button>
+        <button type="button" data-capability="human"><span>06</span><b>Act together</b><small>tools + trusted people</small></button>
+        <button type="button" data-capability="assessment"><span>07</span><b>Learn</b><small>evidence → next action</small></button>
+      </div>
+    </section>
+
+    <section class="principles">
+      <article>
+        <span>01</span>
+        <h3>Useful offline</h3>
+        <p>Connectivity changes richness and latency—not whether learning can continue.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Owned by the learner</h3>
+        <p>Goals, evidence, memory, permissions, and corrections travel with the learner.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Verified before vivid</h3>
+        <p>Every explanation, diagram, simulation, and assessment shares checked invariants.</p>
+      </article>
+      <article>
+        <span>04</span>
+        <h3>Human by design</h3>
+        <p>Teachers, families, peers, and experts are first-class nodes—not cleanup after failure.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-mark">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <div><strong>Learning With AI</strong><small>Open research · open architecture · universal ambition</small></div>
+    </div>
+    <p>This is an interaction prototype. It demonstrates control flow and product behavior; it does not call production models or store learner data.</p>
+    <div class="footer-links">
+      <a href="https://github.com/dlmastery/learning-with-ai" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a href="https://github.com/dlmastery/learning-with-ai/blob/main/survey/27-the-universal-mentor-reference-architecture.md" target="_blank" rel="noreferrer">Architecture ↗</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

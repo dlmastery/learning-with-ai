@@ -404,6 +404,20 @@ driving UI, agent, HTTP, MCP and CLI surfaces, all state in SQL, agent/UI parity
 Each app targets one concept and must demonstrate at least one survey claim
 (e.g. verification-first derivation, adversarial grilling, productive failure).
 
+### Capability prototype dashboard
+
+The first implementation layer is the
+[Universal Mentor Lab](https://dlmastery.github.io/learning-with-ai/) under
+`docs/`: 18 browser-local interaction prototypes covering every functional
+method in the reference architecture. The dashboard demonstrates control flow,
+shared learner context, open contracts, graceful degradation, and learner
+ownership without representing its simulated outputs as production model calls
+or real outcome evidence.
+
+Release 0 follows the dashboard: one verified concept backed by real text and
+voice models, explicit teaching-action routing, local append-only evidence,
+learner-owned state, offline continuation, and a seven-day transfer task.
+
 ## 8. Acceptance criteria
 
 1. Every section cites ≥15 sources with evidence labels.
