@@ -40,11 +40,26 @@ So the target is not a chatbot that knows things. It is:
 
 ## 2. The constraint is no longer scarcity. It is capability.
 
-Every previous attempt at universal tutoring died on a scarcity argument. Bloom's
-two-sigma finding (1984) came with a built-in obituary: one tutor per child was
-*correct and unaffordable*, so the field spent forty years searching for
-"group-instruction methods as effective as one-to-one tutoring." That search was a
-response to a shortage.
+Most previous attempts at universal tutoring died on a scarcity argument. Bloom's
+1984 paper came with a built-in obituary: one tutor per child was *correct and
+unaffordable*, so the field spent forty years searching for "group-instruction
+methods as effective as one-to-one tutoring."
+
+**Two sigma is not the number, and we should stop quoting it.** VanLehn measured
+human tutoring at **d = 0.79** and intelligent tutoring systems at **0.76**;
+Nickow et al. pooled tutoring RCTs at **0.37 SD**. Kestin's Harvard AI-tutor RCT
+landed at **0.63–0.73 — in 49 minutes against 60.** That is *inside the human
+tutoring range*, which is the honest claim and still a remarkable one. Chasing 2σ
+inflates the target roughly 2.5× and guarantees that everything real looks like a
+failure.
+
+And scarcity was not always the killer. **Direct Instruction won Project Follow
+Through** — the largest educational experiment ever run — on basic skills,
+cognitive skills *and* affective measures, with 328 studies, ~4,000 effects, all
+positive, and no publication-bias signature. It costs about $20 a workbook. It was
+sidelined anyway, over scripting and teacher autonomy. **Cost was never its
+constraint; professional identity was.** An AI has no professional identity to
+offend — which is an opportunity, and notably *not* an affordability argument.
 
 **The shortage is ending, and it is ending on a curve, not at a price point.**
 Inference cost per unit of capability has fallen by orders of magnitude per year
