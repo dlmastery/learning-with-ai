@@ -105,9 +105,14 @@ deliver the disconfirmation. Learning by teaching is **g = 0.56, robust at delay
 and essentially nobody has deployed it, because every commercial model is
 incapable of staying wrong.
 
-**4. It ladders.** One concept at every altitude — ELI10 through research-level —
-with a fidelity rule: a simplification may *drop* detail, never *falsify* it. You
-climb without ever having to unlearn.
+**4. It ladders.** One concept at **three** distinct altitudes — three rungs beat
+two (p=0.032); five did not beat three (p=0.738) — held as a **library the learner
+enters at the right height**, not an itinerary anyone walks. Fidelity rule:
+monotone refinement. A level may *drop* precision, formalism, mechanism-depth. It
+may never falsify **ontology, causal sign, quantifier strength, or uniqueness of
+mechanism** — because errors *across* ontological categories are the ones a full
+semester of instruction does not shift. Entry is **measured, never preferred**:
+preference moves d≈0.48 while knowledge moves zero.
 
 **5. It grounds.** Derivations are checked, not asserted. Numerically, then
 symbolically, then formally where it matters. Correctness lives in the verifier,
