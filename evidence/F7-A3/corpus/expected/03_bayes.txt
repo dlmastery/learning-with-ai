@@ -1,0 +1,3 @@
+prevalence      0.0010
+P(positive)     0.010980
+P(disease|+)    0.090164

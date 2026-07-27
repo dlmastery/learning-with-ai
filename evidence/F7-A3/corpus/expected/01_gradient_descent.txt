@@ -1,0 +1,2 @@
+closed form : w=1.990000 b=0.050000
+grad descent: w=1.990000 b=0.050000
