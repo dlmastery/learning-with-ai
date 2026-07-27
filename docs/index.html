@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Learning in the New Frontier AI World</title>
+<meta name="description" content="A standard-setting survey of AI-native learning — 11 research reports, ~800 sources, evidence-graded." />
+<style>
+:root{
+  --bg:#faf9f5; --bg-2:#f0eee6; --card:#fffefb;
+  --ink:#191919; --ink-2:#3d3d3a; --ink-3:#7c7a72;
+  --line:#e3e1d8; --line-2:#cfccc0;
+  --accent:#d97757; --accent-2:#b85c3e;
+  --good:#3d7a5a; --warn:#b8860b; --bad:#a4453a;
+  --serif:ui-serif,Georgia,"Iowan Old Style","Times New Roman",serif;
+  --sans:ui-sans-serif,-apple-system,"Segoe UI",Inter,Helvetica,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#1f1e1c;--bg-2:#262523;--card:#262523;--ink:#f5f4ef;--ink-2:#c9c6bc;
+        --ink-3:#918d82;--line:#38352f;--line-2:#4a463e;--accent:#e08c6e;}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);
+  -webkit-font-smoothing:antialiased;padding:0 20px 100px}
+.wrap{max-width:920px;margin:0 auto}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+a:hover{border-bottom-color:var(--accent)}
+
+header{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+.eyebrow{font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:18px}
+h1{font:400 clamp(32px,5.5vw,50px)/1.12 var(--serif);letter-spacing:-.02em;margin-bottom:16px}
+.lede{font-size:19px;line-height:1.6;color:var(--ink-2);max-width:62ch}
+.meta{margin-top:26px;display:flex;gap:22px;flex-wrap:wrap;font-size:13px;color:var(--ink-3)}
+.meta b{color:var(--ink);font-weight:600}
+
+h2{font:400 30px/1.2 var(--serif);letter-spacing:-.015em;margin:64px 0 8px}
+h2+.sub{color:var(--ink-3);font-size:15px;margin-bottom:26px}
+h3{font:600 15px/1.4 var(--sans);letter-spacing:.01em;margin:32px 0 10px}
+p{margin-bottom:16px;max-width:68ch;color:var(--ink-2)}
+strong{color:var(--ink);font-weight:600}
+
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:36px 0 8px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 20px}
+.stat .n{font:400 38px/1 var(--serif);color:var(--accent);letter-spacing:-.02em}
+.stat .l{font-size:13px;color:var(--ink-2);margin-top:8px;line-height:1.45}
+.stat .s{font-size:11.5px;color:var(--ink-3);margin-top:7px}
+
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px;display:block;overflow-x:auto}
+th{text-align:left;font:600 12px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);padding:0 14px 11px 0;border-bottom:1px solid var(--line-2);white-space:nowrap}
+td{padding:13px 14px 13px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+td b{color:var(--ink)}
+.num{font-family:var(--mono);font-size:13.5px;white-space:nowrap}
+.up{color:var(--good);font-weight:600}
+.down{color:var(--bad);font-weight:600}
+
+.callout{background:var(--bg-2);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;
+  padding:20px 24px;margin:26px 0}
+.callout p:last-child{margin-bottom:0}
+.callout .k{font:600 11.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:10px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:14px;margin:22px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.card h4{font:600 14.5px/1.35 var(--sans);margin-bottom:9px;color:var(--ink)}
+.card p{font-size:14px;margin:0;color:var(--ink-2)}
+.card .tag{display:inline-block;font:600 10.5px/1 var(--sans);letter-spacing:.08em;
+  text-transform:uppercase;padding:5px 9px;border-radius:5px;background:var(--bg-2);
+  color:var(--ink-3);margin-bottom:11px}
+
+.bar{height:5px;background:var(--bg-2);border-radius:3px;overflow:hidden;margin:9px 0 4px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:3px}
+
+ul{margin:0 0 16px 20px;color:var(--ink-2)}li{margin-bottom:7px;max-width:66ch}
+code{font-family:var(--mono);font-size:13px;background:var(--bg-2);padding:2px 6px;border-radius:4px}
+footer{margin-top:80px;padding-top:26px;border-top:1px solid var(--line);
+  font-size:13px;color:var(--ink-3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Survey · in progress · built incrementally</div>
+  <h1>Learning in the New&nbsp;Frontier AI World</h1>
+  <p class="lede">If learning were designed today — with frontier AI assumed, not bolted on —
+  what would it look like? A standard-setting survey, every claim graded by evidence strength,
+  negative results reported as first-class content.</p>
+  <div class="meta">
+    <span><b>11</b> research reports</span>
+    <span><b>~800</b> sources</span>
+    <span><b>660 KB</b> of evidence</span>
+    <span><b>30</b> sections planned</span>
+    <span>Updated <b>27 Jul 2026</b></span>
+  </div>
+</header>
+
+<h2>The headline is bullish</h2>
+<p class="sub">These are measured effects, not projections.</p>
+
+<div class="hero-stats">
+  <div class="stat"><div class="n">+127%</div><div class="l">AI tutor that <b>withholds answers</b> — with <b>no retention penalty</b></div><div class="s">Randomised, ~1,000 students</div></div>
+  <div class="stat"><div class="n">+0.258σ</div><div class="l">Maths gain — <b>1.2–1.7 years</b> of typical progress in 8 weeks</div><div class="s">Pre-registered RCT · 1,763 students · Sierra Leone</div></div>
+  <div class="stat"><div class="n">g=0.56</div><div class="l">Learning by teaching — <b>robust at delay</b>, near-zero deployment</div><div class="s">Meta-analysis</div></div>
+  <div class="stat"><div class="n">g=0.50</div><div class="l">Retrieval practice, labs <em>and</em> classrooms</div><div class="s">222 studies · 48,478 students</div></div>
+</div>
+
+<p>A tutor producing <strong>1.2–1.7 years of maths progress in eight weeks</strong>, in one of the
+world's most resource-constrained school systems, is plausibly the strongest evidence in the
+history of educational technology. It happened in June 2026.</p>
+
+<div class="callout">
+  <div class="k">The finding</div>
+  <p><strong>Restraint is the active ingredient. Everything else is delivery.</strong></p>
+  <p>The same model, given to the same students, produces opposite outcomes depending on one property:</p>
+  <table>
+    <tr><th>Condition</th><th>Practice</th><th>Exam, unassisted</th></tr>
+    <tr><td>Answers freely</td><td class="num">+48%</td><td class="num down">−17%</td></tr>
+    <tr><td><b>Withholds · hints · requires reasoning</b></td><td class="num up">+127%</td><td class="num up">no penalty</td></tr>
+  </table>
+  <p>This is good news and it is immediately actionable: the win needs <strong>no new model, no new
+  capability, and no extra cost</strong>. It needs a loop that decides when <em>not</em> to answer.</p>
+</div>
+
+<h2>Why the field mostly builds the other one</h2>
+<p class="sub">A measurement problem with a fixable cause.</p>
+
+<p>Felt learning is what every optimisation loop <em>can</em> measure. Real learning is what none of
+them measure. So systems drift toward the former — and the two dissociate:</p>
+
+<table>
+  <tr><th>Capability</th><th>Felt / affect</th><th>Actually learned</th></tr>
+  <tr><td>AI assistance</td><td class="num">practice +48%</td><td class="num down">unassisted −17%</td></tr>
+  <tr><td>Pedagogical avatars</td><td class="num">affect d = .85–1.01</td><td>did not move</td></tr>
+  <tr><td>Animation vs static</td><td>comprehensibility, interest, enjoyment ↑</td><td>“but not comprehension test score”</td></tr>
+  <tr><td>Active learning <em>(inverted)</em></td><td class="num down">felt they learned less</td><td class="num up">learned more</td></tr>
+</table>
+
+<p>RLHF optimises for <em>preferred</em> responses — fluent, complete, immediate — which is precisely
+the fluency-illusion profile. And every LLM→explanatory-video pipeline surveyed optimises on
+VLM or human preference judgments, i.e. directly on the axis that dissociates from comprehension.</p>
+
+<h2>Findings that change what you build</h2>
+
+<div class="grid">
+  <div class="card"><span class="tag">Verified</span><h4>Kimi K3 is not a world model</h4>
+  <p>Release blog never uses “world model”, “simulation”, “physics” or “environment”. It writes code and iterates on screenshots. The showcased world shipped as a 19-second video with no playable artifact.</p></div>
+
+  <div class="card"><span class="tag">Measured</span><h4>Generated worlds get physics wrong</h4>
+  <p>VideoPhy best case 39.6% physical adherence; hard subset 22%. Physics-IQ: understanding is <em>“unrelated to visual realism.”</em> Photorealism makes the error more persuasive.</p></div>
+
+  <div class="card"><span class="tag">Correction</span><h4>Expanding intervals don’t work</h4>
+  <p>g = 0.034, n.s. The expansion curve in SM-2 / FSRS is not the active ingredient. Scheduling retrieval is (classroom d = 0.54).</p></div>
+
+  <div class="card"><span class="tag">Demolished</span><h4>Bloom’s 2σ</h4>
+  <p>Two dissertations, three-week units, author-written narrow tests. Across 96 randomized tutoring studies, <b>none</b> reproduced 2σ. Pooled ES = 0.288.</p></div>
+
+  <div class="card"><span class="tag">Replication</span><h4>Knowledge tracing hit its ceiling in 2011</h4>
+  <p>DKT’s result was inflated by 23.6% duplicated rows. Cleaned, PFA matches it. SAKT fails replication on all nine datasets.</p></div>
+
+  <div class="card"><span class="tag">Unlock</span><h4>The accuracy ceiling is a privacy gift</h4>
+  <p>If a 21-parameter model is at the ceiling, the learner model runs <b>on-device</b>. No cloud, no transmission, no vendor holding a child’s cognitive profile.</p></div>
+
+  <div class="card"><span class="tag">Blocker</span><h4>A competent AI cannot be taught</h4>
+  <p>Teaching ChatGPT fails to build error-correction skill — the model <b>cannot stay wrong</b>. Sycophancy: 58.19% capitulation, 14.66% regressive.</p></div>
+
+  <div class="card"><span class="tag">Backfire</span><h4>Role-played devil’s advocate</h4>
+  <p>Announcing it produces cognitive <em>bolstering</em> of the learner’s original view. The exit: unannounced, model-owned objection — not pretending to disagree.</p></div>
+
+  <div class="card"><span class="tag">Equity</span><h4>Unconstrained AI is regressive</h4>
+  <p>No main effect overall — but a <b>widened gap</b> between low- and high-prior-knowledge students. It helps those who already know how to drive it.</p></div>
+</div>
+
+<h2>The architecture</h2>
+<p class="sub">JARVIS is the right image and the wrong specification.</p>
+
+<p><strong>JARVIS assists an expert. A tutor must build one.</strong> Every behaviour correct for an
+expert operator — answer instantly, never withhold, comply — is wrong for a learner. So the
+pedagogical JARVIS is defined by a capability the fictional one never needs: <strong>the judgment
+to refuse.</strong></p>
+
+<p>Real-time substrate is no longer the blocker. <strong>Wan Streamer v0.2/v0.3</strong> runs 640×368 at
+25 FPS with <strong>~200 ms model-side latency</strong> — inside the human turn-gap budget of 100–200 ms —
+and v0.3’s <em>world + event stream</em> decomposition maps cleanly onto pedagogy: the world is the
+lesson context, the event stream is the teaching.</p>
+
+<h2>Progress</h2>
+<div class="bar"><i style="width:37%"></i></div>
+<p class="sub">11 of 30 sections researched · 3 drafted</p>
+
+<table>
+  <tr><th>Wave</th><th>Sections</th><th>State</th></tr>
+  <tr><td><b>A</b> Named frontier</td><td>animation · live-multimodal · world-models</td><td class="up">3 complete</td></tr>
+  <tr><td><b>B</b> Evidence floor</td><td>learning science (109 sources)</td><td class="up">1 complete</td></tr>
+  <tr><td><b>D</b> Frontier + portfolio</td><td>rolling quarter · 35-project audit</td><td class="up">2 complete</td></tr>
+  <tr><td><b>F</b> Futures argument</td><td>assessment · beyond-the-tutor · learner-model · motivation · reach</td><td class="up">5 complete (1 partial)</td></tr>
+  <tr><td><b>H</b> SELPA-first</td><td>accessibility-first design, learner archetypes</td><td>next</td></tr>
+  <tr><td><b>G</b> Synthesis</td><td>grounding ladder · agent village · research agenda</td><td>planned</td></tr>
+</table>
+
+<div class="callout">
+  <div class="k">Editorial standard</div>
+  <p>Every claim carries a source URL and an evidence label — <code>MEASURED-RCT</code>,
+  <code>MEASURED-META</code>, <code>MEASURED-BENCH</code>, <code>OBSERVED</code>,
+  <code>VENDOR</code>, <code>DEMO</code>, <code>INFERENCE</code>. A <code>VENDOR</code> claim may
+  never be restated as a finding. Every section must contain at least one documented negative
+  or null result. Effect sizes over adjectives.</p>
+</div>
+
+<footer>
+  <p><a href="https://github.com/dlmastery/learning-with-ai">github.com/dlmastery/learning-with-ai</a>
+  · Built incrementally — each section committed as its evidence lands.</p>
+</footer>
+
+</div>
+</body>
+</html>
