@@ -760,13 +760,176 @@ computing it. That is precisely the class of item a symbolic/executable backend 
 
 ## 6. Desirable difficulties — and why the good stuff feels bad
 
-<!-- PENDING: delegated. Inserted on completion. -->
+This is the section that connects to the project's central "felt-learning trap," and it has one
+result crisp enough to carry the whole argument.
+
+### 6.1 The measured divergence between learning and the feeling of learning
+
+**Deslauriers, McCarty, Miller, Callaghan & Kestin (2019), "Measuring actual learning versus
+feeling of learning in response to being actively engaged in the classroom," *PNAS*
+116(39):19251–19257, `doi:10.1073/pnas.1821936116`, PMC6765278.** `MEASURED-RCT`
+**Full text retrieved and read this session** via Europe PMC; the numbers below are from Table 3
+of the paper, not the abstract.
+
+Design: large-enrollment introductory college physics, **randomized at the student level** with a
+**crossover** across two topics (statics, fluids), two instructors, two semesters. Both arms got
+identical content and identical handouts; the instructor made no attempt to sell either method;
+the passive arm was taught by experienced, highly rated lecturers — i.e. the control is a *strong*
+control, not a straw man. After each class students completed a **Feeling of Learning (FOL)**
+survey and then a 12-item **Test of Learning (TOL)**.
+
+Standardized regression coefficients for passive (0) vs. active (1), controlling for FCI pretest,
+CLASS pretest, prior midterm average, gender, instructor, topic, and semester:
+
+| Outcome | Coefficient | Significance |
+|---|---|---|
+| **Feeling of learning (FOL)** | **−0.56 SD** | p < 0.001 |
+| **Test of learning (TOL)** | **+0.46 SD** | p < 0.001 |
+
+**The same intervention moved actual learning up by about half a standard deviation and the
+feeling of learning down by about half a standard deviation. The gap between what worked and what
+felt like it worked is roughly one full SD, in opposite directions.** The authors verified
+randomization on all covariates (Table 1), confirmed the result is unchanged when each student is
+treated as their own control, and confirmed it is unchanged when all student-level covariates are
+removed.
+
+Their own interpretation, verbatim: *"when students experience the increased cognitive effort
+associated with active learning, they initially take that effort to signify poorer learning."*
+And the warning that should be printed on every edtech dashboard: *"attempts to evaluate
+instruction based on students' perceptions of learning could inadvertently promote inferior
+(passive) pedagogical methods. For instance, a superstar lecturer could create such a positive
+feeling of learning that students would choose those lectures over active learning."*
+
+### 6.2 The generalisation, and its label
+
+Robert Bjork's **desirable difficulties** framework holds that conditions which slow acquisition
+and increase errors during learning — spacing, interleaving, retrieval practice, generation,
+varied practice — improve long-term retention and transfer, while conditions that make acquisition
+feel fluent often do not. The theoretical machinery is the **new theory of disuse** (Bjork & Bjork,
+1992), which separates **storage strength** (how well-learned something is) from **retrieval
+strength** (how accessible it is right now), and holds that retrieval strength is what learners
+mistake for learning.
+
+That distinction is doing real work in §11: it is precisely why a momentary retrieval failure is
+not evidence of loss, and why §11.3 requires **≥3 cue forms across ≥2 days** before flagging a
+concept inert. A single miss is a retrieval-strength event.
+
+Corroborating evidence carried from `B1-learning-science.md` §9 (verified there, not re-verified
+here): **Karpicke & Roediger (2008, *Science*)** found students' predictions of their own
+performance were **uncorrelated with actual performance**; **Kornell & Bjork (2008)** found
+participants rated massing as more effective than spacing *even after their own test results
+contradicted them*. `MEASURED-RCT`
+
+<!-- ENRICHMENT-PENDING: primary-source detail on Bjork & Bjork (1992), Schmidt & Bjork (1992),
+     the Dunlosky et al. (2013) utility ratings, and the low-prior-knowledge boundary condition
+     is delegated and is merged below on completion. -->
+
+### 6.3 The design consequence — and this is the whole product argument
+
+**Learner satisfaction is anti-correlated with learning under exactly the conditions that produce
+durable memory.** An AI learning system optimised on thumbs-up, session length, streaks, or
+self-reported confidence will be systematically driven toward the passive-lecture end of the
+Deslauriers result. This is not a hypothetical alignment risk; it is a measured −0.56 SD.
+
+Note that §4.4 shows this failure already happened, in production, at scale: Duolingo's HLR
+deployment decision rested on *"positive anecdotal feedback about strength meter quality"* against
+a **−7.3% measured practice metric**, with **no learning outcome measured at all**. The felt-learning
+trap is not a student problem. It is an organisational one.
+
+**The constructive version — and it is genuinely constructive.** The Deslauriers authors do not
+conclude "ignore students." They conclude that instructors should *"improve students' response to
+being actively engaged"* early on, by explaining the effect. An AI system can do something no
+lecturer can: **show each learner their own version of Fig. 1.** It has every retrieval attempt,
+every latency, every self-rated confidence, and every delayed outcome. It can present the learner
+with their personal FOL-vs-TOL divergence — "here are the six topics you rated most confident;
+here is how you did on them three weeks later." Metacognitive calibration stops being an exhortation
+and becomes a measurement fed back to the person it is about. **That is a capability that did not
+exist before instrumented, delayed, generated assessment, and §11.1's append-only `attempt` table
+is what makes it possible.** `INFERENCE` — plausible and buildable, not yet measured.
 
 ---
 
-## 7. Mnemonics and memory palaces
+## 7. Mnemonics and memory palaces — what transfers and what is a party trick
 
-<!-- PENDING: delegated. Inserted on completion. -->
+### 7.1 The best evidence for the method of loci, read carefully
+
+**Dresler, Shirer, Konrad, Müller, Wagner, Fernández, Czisch & Greicius (2017), "Mnemonic
+Training Reshapes Brain Networks to Support Superior Memory," *Neuron* 93(5):1227–1235,
+`doi:10.1016/j.neuron.2017.02.003`, PMC5439266.** `MEASURED-RCT` (small)
+
+Design (retrieved from the PMC article this session; Europe PMC's `fullTextXML` endpoint returned
+404 for this record, so the article page was read directly): **23 of the world's most successful
+memory athletes** plus matched controls were scanned; separately, **51 memory-naive participants**
+were assigned to three arms — **method-of-loci training**, an **active control** (n-back working
+memory training), and a **passive control** (no training). Training was **~30 minutes per day for
+40 days across 6 weeks**, delivered via a web platform. The memory task was **72 concrete nouns**,
+with recall at **20 minutes**, **24 hours**, and a **4-month follow-up**.
+
+Result: the mnemonic arm improved significantly at all three time points (20 min: p < 0.001,
+η² = 0.47; 24 h: p < 0.001, η² = 0.58; 4-month follow-up: F(2,43) = 13.4, p < 0.001, η² = 0.39).
+**Neither the active n-back control nor the passive control showed significant gains.** The
+mnemonic effect is real, it is large, it survives four months, and it beats an *active* control —
+which is more than most cognitive-training literature can say.
+
+**`NEGATIVE RESULT` / the boundary, stated plainly: no transfer to non-word-list material was
+tested.** Every outcome in the study is recall of lists of concrete nouns. The paper establishes
+that six weeks of method-of-loci training makes you much better at remembering lists of concrete
+nouns, and that this durably reorganises functional connectivity. It establishes **nothing** about
+whether it helps you learn thermodynamics, differential diagnosis, or a second language's grammar.
+
+### 7.2 The memory-palace null
+
+From `I2-global-traditions.md` §6.1, carried forward with its provenance (a randomized trial in
+medical/allied-health students comparing three arms — control, memory-palace training, and
+Australian Aboriginal narrative-technique training,
+[`doi:10.1371/journal.pone.0251710`](https://doi.org/10.1371/journal.pone.0251710)):
+
+| Arm | Odds ratio | 95% CI |
+|---|---|---|
+| Australian Aboriginal narrative technique | **2.82** | **1.15 – 6.90** |
+| **Memory palace** | **2.03** | **0.81 – 5.06** |
+
+`MEASURED-RCT` (small). **The memory-palace arm's confidence interval includes 1 — it was not
+statistically significant.** The two trained arms were never directly compared against each other,
+and their CIs overlap substantially, so the only defensible claim is *"the narrative technique
+produced a statistically significant improvement where the memory palace did not"* — **not** that
+one beat the other. This is one of the required documented nulls and it is a striking one: in the
+single trial that put the method of loci against real curricular content (the tricarboxylic acid
+cycle) with a randomized design, **it did not reach significance.**
+
+Set that against §7.1 and the picture resolves cleanly: **the method of loci is powerfully
+effective on the material it was invented for (arbitrary ordered lists) and unproven on the
+material learners actually need (structured conceptual content).** Both statements are supported;
+neither should be reported without the other.
+
+### 7.3 What an LLM changes here — and what it does not
+
+Manufacturing a mnemonic used to be the bottleneck: a good keyword mnemonic or a vivid locus image
+is a small creative act, and doing it for 2,000 vocabulary items is why nobody does it. That
+constraint is gone. **SmartPhone** (Kang, Zhu et al., arXiv:2305.10436) builds an end-to-end
+pipeline that auto-generates **keyword-mnemonic verbal and visual cues** with an LLM and evaluates
+them against manually generated cues in a human-participant experiment. `DEMO` — a capability
+demonstration; it does not establish a retention advantage over ordinary retrieval practice.
+
+**The guardrail, and it is the same one as §5.2:** Bertsch et al. (2007) found the generation
+effect is **null for nonwords (d = 0.05)** and **reverses for anagrams (d = −0.05)**. A mnemonic
+is useful when it binds new material to *existing* semantic and episodic structure. An
+auto-generated keyword link that is merely phonetically clever, with no meaningful bridge, is
+closer to an anagram than to a memory palace. **Automatic mnemonic generation makes the technique
+cheap; it does not make it valid.** Validity has to be measured per item, which is exactly what
+§11.4's third gate specifies.
+
+**§11's position, stated as a deliberate omission (see §11.7):** mnemonics are not a core
+mechanism of the proposed system. They are a legitimate *optional* encoding aid for genuinely
+arbitrary material — the parts of a domain that really are unmotivated lists (nomenclature,
+irregular forms, unit prefixes, drug names) — and they should be offered exactly there and
+nowhere else. Using them on material that has structure substitutes an arbitrary association for
+an available explanation, which is a bad trade with a measured downside: it is the mechanism by
+which "learned the card, not the content" happens.
+
+<!-- ENRICHMENT-PENDING: Scruggs & Mastropieri mnemonic-instruction meta-analyses, keyword-method
+     long-delay evidence, and working-memory-training transfer nulls are delegated and are merged
+     below on completion. -->
 
 ---
 

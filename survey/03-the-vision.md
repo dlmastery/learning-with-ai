@@ -140,7 +140,8 @@ the 1991 trial that gave teachers data changed nothing; the arm that told them
 
 **3. It can be taught.** The Student agent adopts the learner's model *including
 its errors*, applies it visibly, and lets the world — a simulator, a test suite —
-deliver the disconfirmation. Learning by teaching is **g = 0.56, robust at delay**,
+deliver the disconfirmation. Learning by teaching is **g = 0.56, robust at delay** (measured
+with *human* tutees — the agent version is untested),
 and essentially nobody has deployed it, because every commercial model is
 incapable of staying wrong.
 

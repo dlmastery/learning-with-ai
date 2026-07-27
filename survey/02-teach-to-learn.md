@@ -15,7 +15,9 @@ tutor that explains, but as a **student that must be taught** — and as an
 
 | Finding | Effect | Note |
 |---|---|---|
-| Learning by teaching (protégé effect) | **g = 0.56** | Robust at delay — it survives the retention test most interventions fail |
+| Learning by teaching, *human* tutee (Kobayashi 2019) | **g = 0.56** | Robust at delay — it survives the retention test most interventions fail |
+| Teaching **with** a prior expectancy to teach (Kobayashi 2024, k=39) | **g = 0.48** [0.34, 0.63] | Delivery adds a further g = 0.38 on top of expectancy |
+| Teaching **without** a prior expectancy — "now explain it back to me" | **g = −0.02** [−0.14, 0.11] | The null condition, and the one almost every product ships |
 | Self-explanation effect (Chi et al.) | Large, replicated | Explaining *to yourself* already works; an audience raises the stakes |
 | Deployment in AI learning products | **≈ zero** | The field built the tutor and skipped this entirely |
 
