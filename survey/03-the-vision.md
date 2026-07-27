@@ -99,9 +99,13 @@ Not one tutor. A crew.
 | **The Archivist** | The learner model. Everything, forever, learner-owned, on-device | The ship's computer |
 | **The Connector** | Brokers contact with *actual humans*. Never simulates friendship | Guinan |
 
-Seven roles. Around $0.10–0.25 an hour. One shared learner model. No votes — a
-precedence ladder where executable ground truth wins outright and dissent is
-*recorded*, never averaged away.
+Seven roles. One shared learner model. **No votes** — a precedence ladder where
+executable ground truth wins outright and dissent is *recorded*, never averaged
+away. And the crew must be genuinely heterogeneous: three independent benchmarks
+find multi-agent debate does **not** reliably beat plain self-consistency, and one
+finds a single well-prompted agent nearly matches the best discussion method.
+Seven copies of the same model wearing hats is theatre. Different grounding,
+different evidence, different authority is a crew.
 
 ---
 
