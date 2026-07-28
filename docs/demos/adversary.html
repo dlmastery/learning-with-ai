@@ -221,6 +221,11 @@ changing the difficulty dial and watching the objection follow the flags.</div>
     <li>That one template space generalises. This is rate-and-capacity word problems. The space is
     large because the template is parameterised, not because the generator is creative — and a
     domain without a closed-form solver does not get this treatment.</li>
+    <li><strong>That generation is “unbounded”.</strong> It is not, and the page says the number out
+    loud for that reason: <span id="notunb">—</span> combinations from one template, of which
+    <span id="notunb2">—</span> were distinct in the sample measured at the top of this page.
+    Unboundedness would require a generator that invents new
+    <em>structure</em>, and this one only fills in slots.</li>
     <li>That an unannounced AI objection reproduces the human devil's-advocate finding. The
     bolstering result is about humans role-playing for other humans. Whether a learner treats an
     unannounced AI challenge as sincere is an open question, and arguably a harder one, because the
@@ -426,6 +431,7 @@ $('rad').innerHTML=RADIX.map(r=>'<tr><td><b>'+r.k+'</b></td><td class="num">'+r.
   '<span class="tag '+(r.kind==='structural'?'on':'sf')+'">'+r.kind+'</span></td><td>'+r.d+'</td></tr>').join('')+
   '<tr><td><b>product</b></td><td class="num"><b>'+fmt(SPACE)+'</b></td><td></td><td>Distinct index values</td></tr>';
 $('spaceT').textContent=fmt(SPACE)+' addressable items from one template';
+$('notunb').textContent=fmt(SPACE);
 const perDay=(SPACE/365.25).toFixed(0), bday=Math.round(Math.sqrt(2*SPACE*0.001));
 $('spaceS').innerHTML='At one item per day this template alone runs for <b>'+fmt(+perDay)+
   ' years</b>. Drawing items uniformly at random, you would need about <b>'+fmt(bday)+
@@ -437,6 +443,7 @@ $('spaceS').innerHTML='At one item per day this template alone runs for <b>'+fmt
     const d=decode(s%SPACE),it=itemOf(d);
     seen.add([d.sc,d.nm,it.rA,it.rB,it.drain,it.C,it.h,it.T,it.q,d.s2,d.s3,d.s4].join('|'));}
   const rate=100*seen.size/N;
+  $('notunb2').textContent=rate.toFixed(2)+'%';
   $('coll').innerHTML='<b>Measured, not claimed.</b> 20,000 indices were drawn at random just now and the '+
    'resulting items hashed on their substantive content. <b>'+fmt(seen.size)+' were distinct ('+rate.toFixed(2)+
    '%)</b>. The shortfall is real and has a cause: when the question asks for the capacity, the stated capacity '+

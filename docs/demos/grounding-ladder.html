@@ -164,14 +164,17 @@ interesting.</p>
 <div class="note" id="snote" style="display:none"></div>
 
 <h2>6 · The corpus figures, for comparison</h2>
-<p class="sub">Measured elsewhere, on a 113-item claim corpus in Python. Quoted, not reproduced.</p>
+<p class="sub">Measured elsewhere, on a 113-item claim corpus in Python. Quoted, not reproduced. Two
+independent harnesses timed the numeric rung and disagreed — 0.38 ms and 0.61 ms — which is itself
+worth stating rather than averaging away: harness overhead is most of a sub-millisecond measurement,
+and both are reported here rather than the more flattering one.</p>
 
 <div class="scroll">
 <table>
   <thead><tr><th>Rung</th><th class="num">Cost</th><th class="num">Recall</th><th class="num">False alarms</th><th>The catch</th></tr></thead>
   <tbody>
     <tr><td><b>L2b numeric</b></td>
-      <td class="num">0.38 ms median at k = 1<br />0.49 ms at k = 8<br />p95 0.93 ms</td>
+      <td class="num">0.38 ms median at k = 1<br />0.49 ms at k = 8<br />p95 0.93 ms<br /><span class="mini">0.61 ms at k = 8 on the separate F3 harness</span></td>
       <td class="num up">112/113 = <b>99.1%</b><br />identical k = 1 → k = 16</td>
       <td class="num up"><b>0 / 37</b> in the declared domain</td>
       <td>Cannot certify a universal. Cannot see outside the sampled domain. 1 in 113 slips through and always will.</td></tr>
@@ -449,8 +452,8 @@ function mutate(src,kind){
     const i=Math.floor(rnd()*vn.length);let j=Math.floor(rnd()*vn.length);
     if(j===i)j=(i+1)%vn.length;
     const x=vn[i],y=vn[j];
-    walk(A,n=>{if(n.t==='v'){if(n.n===x)n.n=' ';else if(n.n===y)n.n=x;}});
-    walk(A,n=>{if(n.t==='v'&&n.n===' ')n.n=y;});
+    walk(A,n=>{if(n.t==='v'){if(n.n===x)n.n='#swap#';else if(n.n===y)n.n=x;}});
+    walk(A,n=>{if(n.t==='v'&&n.n==='#swap#')n.n=y;});
     return A;}
   if(kind==='drop'){
     if(!sums.length)return null;

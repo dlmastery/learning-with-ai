@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Measurement That Changes Something — Demo 13</title>
+<meta name="description" content="A curriculum-based-measurement loop that generates probes, verifies their equivalence rather than assuming it, applies a stated decision rule, and emits a prescribed instructional change." />
+<link rel="stylesheet" href="demo.css" />
+<style>
+.gl{stroke:var(--line);stroke-width:1}
+.ax{font:600 10px var(--sans);letter-spacing:.11em;fill:var(--ink-3)}
+.sl{fill:var(--ink-2)}
+.vl{font:600 12px var(--mono);fill:var(--ink-2)}
+.dot{stroke:var(--surface);stroke-width:2}
+#tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .1s;z-index:99;left:0;top:0;
+  background:var(--ink);color:var(--bg);font:12.5px/1.5 var(--sans);padding:8px 11px;
+  border-radius:7px;max-width:266px;box-shadow:0 4px 16px rgba(0,0,0,.18)}
+#tip b{color:var(--bg);display:block;font-weight:650;margin-bottom:2px}
+input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
+.ctls{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px 22px;margin:16px 0 6px}
+.ctl label{display:flex;justify-content:space-between;gap:8px;align-items:baseline;text-transform:none;
+  letter-spacing:0;font:600 12px/1.4 var(--sans);color:var(--ink-2);margin-bottom:5px}
+.ctl label .v{font:600 12px var(--mono);color:var(--felt)}
+.pill{display:inline-block;font:600 10.5px/1 var(--mono);padding:4px 7px;border-radius:5px;
+  border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
+.pill.y{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
+.pill.n{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 45%,transparent)}
+.pill.c{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 45%,transparent)}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.stat div{background:var(--sunken);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+.stat .k{font:600 10px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+.stat .n{font:400 23px/1.1 var(--mono);color:var(--ink)}
+.stat .n.felt{color:var(--felt)} .stat .n.real{color:var(--real)} .stat .n.bad{color:var(--bad)}
+.stat .s{font:12px/1.4 var(--sans);color:var(--ink-3);margin-top:6px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px;font-size:12.5px;color:var(--ink-2)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+.legend i.ln{width:16px;height:2px;border-radius:0;vertical-align:3px}
+.form{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:7px;margin:14px 0}
+.form span{background:var(--sunken);border:1px solid var(--line);border-radius:7px;padding:8px 6px;
+  text-align:center;font:13px/1.3 var(--mono);color:var(--ink-2)}
+.presc{background:var(--sunken);border:1px solid var(--line);border-left:2px solid var(--real);
+  border-radius:11px;padding:20px 21px;margin:18px 0}
+.presc .h{font:600 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--real);margin-bottom:12px}
+.presc h4{font:650 15.5px/1.4 var(--sans);margin:0 0 8px;color:var(--ink)}
+.presc p{font-size:14.2px;line-height:1.6;margin:0 0 10px}
+.presc.none{border-left-color:var(--bad)}
+.presc.none .h{color:var(--bad)}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div id="tip"></div>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo Gallery</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 13 · The mechanisms</div>
+  <h1>Measurement That Changes Something</h1>
+  <p class="lede">Generate brief equivalent-form probes. Graph them against a goal line. Apply a
+  stated decision rule. And then — the part that carried the entire achievement effect in the
+  trial that established this — <strong>emit a prescribed instructional change from a known-good
+  menu</strong>. A dashboard that does everything except the last step is the arm that moved
+  nothing.</p>
+  <div class="chips">
+    <span class="chip m">Computed live</span>
+    <span class="chip">Probes generated and audited in the page</span>
+    <span class="chip n">Shows a null result</span>
+  </div>
+</header>
+
+<p><strong>Computed</strong> means: the probe forms below are really generated item by item, their
+composition is really audited, the simulated learner really answers them type by type, the
+decision rule really evaluates, the error profile really drives the selection from the menu, and
+the growth-claim gate really refuses. The learner is simulated; everything done to the learner is
+real code.</p>
+
+<h2>1 · Generate the probes</h2>
+<p class="sub">CBM-Math computation probes, scored in digits correct. Two generators.</p>
+
+<div class="panel">
+  <div class="ptitle">Generator</div>
+  <div class="psub">Both produce 25-item computation probes that look identical on the page. Only
+  one of them controls what actually drives difficulty.</div>
+  <div class="row">
+    <button id="gnaive">Surface-matched only</button>
+    <button id="gblue" class="on">Blueprint-controlled</button>
+  </div>
+  <div id="gendesc" class="note"></div>
+  <div class="ctls">
+    <div class="ctl"><label for="nf">Forms to audit <span class="v" id="nfv"></span></label>
+      <input type="range" id="nf" min="10" max="120" step="5" value="40" /></div>
+  </div>
+  <div class="row"><button class="pri" id="regen">Generate a fresh set</button>
+    <span style="font:12px var(--mono);color:var(--ink-3)" id="genstat"></span></div>
+  <div style="font:600 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:22px 0 0">One form, as administered</div>
+  <div class="form" id="oneform"></div>
+  <div class="scroll"><table id="blueprint"></table></div>
+</div>
+
+<figure class="panel">
+  <div class="ptitle">Equivalence audit — measured, not assumed</div>
+  <div class="psub">Across every generated form, two quantities that determine what a learner can
+  score: how many items require regrouping, and how many digits are available to be earned. Bars
+  show the full observed range; the dot is the mean.</div>
+  <div class="legend">
+    <span><i style="background:var(--felt)"></i>Surface-matched generator</span>
+    <span><i style="background:var(--real)"></i>Blueprint-controlled generator</span>
+  </div>
+  <div id="audit"></div>
+  <div class="scroll"><table id="audittable"></table></div>
+  <div id="auditnote"></div>
+</figure>
+
+<div class="note warn"><b>The warning this section exists for.</b> Six DIBELS oral-reading passages
+<em>"developed to be comparable based on readability formulas"</em> produced mean fluency ranging
+<strong>67.9 to 93.9 WCPM</strong> — a 26-point spread, <strong>roughly a semester of apparent
+growth</strong>, generated entirely by which passage the child happened to read. It biased both
+the shape and the slope of the growth trajectories. Readability-based equivalence is invalid;
+explicit equating on response data is required.<br /><br />
+<b>And the audit above cannot fix that.</b> Regrouping count and available digits are
+<em>surface features</em>. Controlling a surface feature is exactly what the readability formulas
+were doing when they failed. What this page can demonstrate is that a generator which does not
+control the difficulty-bearing feature produces forms that visibly are not equivalent. What it
+<em>cannot</em> demonstrate is that the controlled generator produces forms that are. Only
+response data from real students, and explicit equating on it, can establish that — and the
+generative analogue of "the prompt constrains difficulty" will fail the same way readability did.</div>
+
+<h2>2 · What non-equivalence does to the trend</h2>
+
+<div class="panel">
+  <div class="ptitle">Same learner, same growth, different probe sets</div>
+  <div class="psub">A simulated learner with identical true growth is administered 20 weeks of
+  probes from each generator, 400 times over. The quantity of interest is how much the
+  <em>estimated</em> slope wanders around the true one.</div>
+  <div class="row"><button class="pri" id="slopemc">Run 400 replications of each</button>
+    <span style="font:12px var(--mono);color:var(--ink-3)" id="slopestat"></span></div>
+  <div class="stat" id="slopestats"></div>
+  <div id="slopenote"></div>
+</div>
+
+<h2>3 · The loop</h2>
+<p class="sub">Administer, graph, decide, prescribe.</p>
+
+<div class="panel">
+  <div class="ptitle">Learner profile</div>
+  <div class="psub">Per-item-type accuracy. This is what the error profile will have to recover
+  from the probe responses — the system is not allowed to look at it directly.</div>
+  <div class="ctls" id="learnerctl"></div>
+  <div class="row" style="margin-top:14px">
+    <button class="pri" id="admin">Administer next week's probe</button>
+    <button id="run10">Run 10 weeks</button>
+    <button id="resetrun">Reset</button>
+    <span style="font:12px var(--mono);color:var(--ink-3)" id="wkstat"></span>
+  </div>
+</div>
+
+<figure class="panel">
+  <div class="ptitle">Progress graph</div>
+  <div class="legend">
+    <span><i style="background:var(--felt)"></i>Observed digits correct</span>
+    <span><i class="ln" style="background:var(--ink-3)"></i>Goal line</span>
+  </div>
+  <div id="graph"></div>
+  <div class="stat" id="gates"></div>
+</figure>
+
+<div class="panel">
+  <div class="ptitle">Decision rule and what happens when it fires</div>
+  <div class="psub">Both modes watch the identical graph and apply the identical rule. They differ
+  in one thing only, and that one thing is the finding.</div>
+  <div class="row">
+    <button id="mex" class="on">Expert-system mode</button>
+    <button id="mdb">Dashboard-only mode</button>
+  </div>
+  <div id="ruleout"></div>
+</div>
+
+<div class="panel sunken">
+  <div class="ptitle">The rules, stated</div>
+  <div class="mono-block" id="rulesrc"></div>
+</div>
+
+<h2>4 · The known-good menu</h2>
+<p class="sub">The component that carried the effect. It is a lookup table, and that is the point.</p>
+
+<div class="scroll">
+<table id="menu"></table>
+</div>
+
+<div class="note"><b>Why a menu and not a generator.</b> The prescription has to come from a set
+of changes that have <em>themselves</em> been evaluated. A system that invents a novel
+instructional change on the fly and prescribes it has replaced the active ingredient — a
+principled change drawn from known-good options — with an unprincipled one, which is the
+condition that produced no gain. In special education specifically, the evidence base is unusually
+replication-rich, and the system's job there is <strong>fidelity and dosage of known-good
+intervention, not invention</strong>.</div>
+
+<h2>5 · The evidence</h2>
+
+<div class="scroll">
+<table>
+  <tr><th>Finding</th><th>What it says</th><th>Label</th></tr>
+  <tr><td><b>Fuchs, Hamlett &amp; Stecker 1991</b><br /><span style="font-size:12.5px;color:var(--ink-3)">AERJ · the load-bearing result</span></td>
+    <td>33 teachers randomly assigned to three conditions — CBM with expert-system instructional
+    consultation, CBM without it, and no-CBM control. 20 weeks, mathematics operations. Verbatim:
+    <em>"Compared to the control group, <strong>both</strong> CBM groups appeared to revise
+    students' instructional programs more frequently. However, <strong>only the CBM-ExS group
+    effected superior student achievement.</strong>"</em> Replicated in a companion randomised
+    study in spelling.</td><td><code>MEASURED-RCT</code></td></tr>
+  <tr><td><b>Fuchs &amp; Fuchs 1986</b><br /><span style="font-size:12.5px;color:var(--ink-3)">meta-analysis</span></td>
+    <td>21 controlled studies, 96 effect sizes. Systematic formative evaluation averages
+    <strong>ES = 0.70</strong> — and the magnitude was moderated by the <em>data-evaluation
+    method</em> and the <em>data display</em>, i.e. by <em>how</em> the data were used, not merely
+    that they were collected.</td><td><code>MEASURED-META</code></td></tr>
+  <tr><td><b>Stecker, Fuchs &amp; Fuchs 2005</b><br /><span style="font-size:12.5px;color:var(--ink-3)">review</span></td>
+    <td>Reviewing experimental CBM contrast studies: the variables associated with enhanced
+    achievement are teachers' use of <strong>systematic data-based decision rules</strong>,
+    <strong>skills-analysis feedback</strong>, and <strong>instructional recommendations for making
+    programme modifications</strong>. All three are components, not attitudes.</td><td><code>MEASURED-META</code></td></tr>
+  <tr><td><b>Ardoin et al. 2013</b><br /><span style="font-size:12.5px;color:var(--ink-3)">systematic review — the null</span></td>
+    <td>102 documents. CBM-R progress-monitoring decision rules are <em>"based on expert
+    opinion"</em> with <em>"very limited psychometric or empirical support"</em>; there is
+    <em>"a lack of published evidence to support program evaluation and progress monitoring with
+    CBM-R."</em> The rule this page implements is the one the field uses. That is not the same as
+    the one the field has validated.</td><td><code>MEASURED-META</code></td></tr>
+  <tr><td><b>Francis et al. 2008</b><br /><span style="font-size:12.5px;color:var(--ink-3)">JSP — the equivalence warning</span></td>
+    <td>Six ORF passages matched on readability produced means from <strong>67.9 to 93.9
+    WCPM</strong>, biasing growth-trajectory shape and slope estimates. Explicit equating removed
+    the passage effects.</td><td><code>MEASURED-BENCH</code></td></tr>
+  <tr><td><b>The minimum data requirement</b></td>
+    <td><strong>~14 well-controlled data points over 8–15 weeks</strong> before a growth claim, and
+    trend-line decision rules are <strong>not statistically viable until 7–10 weeks</strong>. Any
+    system claiming to detect a change in learning trajectory from three quizzes in a week is
+    making a claim this literature has specifically measured and rejected.</td><td><code>INFERENCE</code> over <code>MEASURED-BENCH</code></td></tr>
+</table>
+</div>
+
+<h2>What this proves / What it does not</h2>
+
+<div class="panel">
+  <div class="ptitle">What this page proves</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li>That the whole loop is <strong>buildable end to end</strong> — generate, audit, administer,
+    graph, decide, prescribe — with every step stated as a rule rather than as a judgement.</li>
+    <li>That the difference between the two arms of the 1991 trial is <strong>one function
+    call</strong>. Both modes above run the identical rule on the identical data. One of them
+    returns an instruction and the other returns nothing, and that is the entire architectural
+    content of the finding.</li>
+    <li>That <strong>non-equivalent forms measurably corrupt the slope estimate</strong>. The
+    replication run computes the standard deviation of the estimated slope under each generator,
+    and the surface-matched one is visibly worse — from a mechanism you can inspect, namely that
+    the number of regrouping items varies from form to form and the learner is weak on
+    regrouping.</li>
+    <li>That the gates can be enforced rather than recommended. The system refuses a growth claim
+    below 14 points and says so, instead of drawing a trend line through four.</li>
+  </ul>
+  <div class="ptitle">What this page does not prove</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>That these probes are equivalent.</strong> The audit controls surface features.
+    Controlling surface features is precisely what failed for readability. Equivalence is
+    established by field-testing and explicit equating on real response data, and nothing in a
+    static page can substitute for that.</li>
+    <li><strong>That the decision rule is correct.</strong> Ardoin et al. reviewed 102 documents
+    and found the CBM-R rules rest on expert opinion with very limited psychometric support. This
+    page implements the convention faithfully; the convention is under-evidenced.</li>
+    <li><strong>That the menu is the right menu.</strong> Its entries are plausible and drawn from
+    the general shape of the intervention literature, but they are illustrative. A deployed system
+    needs each entry tied to a specific evaluated intervention with a stated effect size,
+    population and dosage, and needs a stopping rule that escalates to a human on repeated
+    non-response.</li>
+    <li>That the simulated learner behaves like a child. Per-type Bernoulli accuracy with linear
+    growth is a caricature. Real growth is non-linear, seasonal, and interacts with what is being
+    taught that month.</li>
+    <li>That any of this teaches anyone anything. A demo shows a mechanism is buildable and
+    coherent. It is not evidence that it teaches.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../">Dashboard</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai">Repository</a>
+  <br /><br />Source reports: <code>research/raw/H1-selpa-accessibility.md</code> F5,
+  <code>research/raw/C2-assessment-psychometrics.md</code> §9.
+</footer>
+
+</div>
+<script>
+/* ══ chart IR ═══════════════════════════════════════════════════════════ */
+const NS='http://www.w3.org/2000/svg';
+const mk=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const el=id=>document.getElementById(id);
+const tip=el('tip');
+function bind(e2,html){
+  e2.addEventListener('pointerenter',()=>{tip.innerHTML=html;tip.style.opacity='1';});
+  e2.addEventListener('pointermove',e=>{
+    const x=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-10);
+    const y=Math.min(e.clientY+16,innerHeight-tip.offsetHeight-10);
+    tip.style.transform=`translate(${x}px, ${y}px)`;});
+  e2.addEventListener('pointerleave',()=>{tip.style.opacity='0';});
+}
+/* range chart: rows of {label, lo, hi, mean, series, note}, grouped by unit */
+function renderRange(host,spec){
+  const narrow=innerWidth<640;
+  const LW=narrow?122:236, RW=64, ROW=narrow?46:42, PAD=14;
+  const W=720, H=spec.groups.reduce((a,g)=>a+g.rows.length*ROW+30,0)+PAD*2;
+  const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
+  let y=PAD;
+  spec.groups.forEach(gr=>{
+    const t=mk('text',{x:LW,y:y+10,'text-anchor':'end',class:'ax'});
+    t.textContent=gr.unit; svg.appendChild(t);
+    const trackX=LW+14, trackW=W-LW-RW-28;
+    const px=v=>trackX+(v-gr.min)/(gr.max-gr.min)*trackW;
+    [gr.min,(gr.min+gr.max)/2,gr.max].forEach(v=>{
+      svg.appendChild(mk('line',{x1:px(v),y1:y+16,x2:px(v),y2:y+16+gr.rows.length*ROW-8,class:'gl'}));
+      const lt=mk('text',{x:px(v),y:y+12,'text-anchor':'middle',class:'vl',style:'font-size:10.5px'});
+      lt.textContent=Math.round(v); svg.appendChild(lt);
+    });
+    y+=22;
+    gr.rows.forEach(r=>{
+      const cy=y+ROW/2, g=mk('g',{});
+      const col=r.series==='real'?'var(--real)':'var(--felt)';
+      const lab=mk('text',{x:LW,y:cy+4,'text-anchor':'end',class:'sl',style:`font-size:${narrow?10.5:12.5}px`});
+      lab.textContent=r.label; g.appendChild(lab);
+      g.appendChild(mk('rect',{x:px(r.lo),y:cy-6,width:Math.max(2,px(r.hi)-px(r.lo)),height:12,rx:6,
+        fill:col,opacity:.28}));
+      g.appendChild(mk('circle',{cx:px(r.mean),cy,r:5.5,fill:col,class:'dot'}));
+      const vt=mk('text',{x:trackX+trackW+8,y:cy+4,class:'vl',style:`fill:${col}`});
+      vt.textContent=(r.hi-r.lo).toFixed(0)+' wide'; g.appendChild(vt);
+      g.appendChild(mk('rect',{x:0,y:cy-ROW/2,width:W,height:ROW,fill:'transparent'}));
+      bind(g,`<b>${esc(r.label)}</b>${esc(r.note)}`);
+      svg.appendChild(g); y+=ROW;
+    });
+    y+=8;
+  });
+  host.replaceChildren(svg);
+}
+function renderPlot(host,spec){
+  const narrow=innerWidth<640;
+  const W=720, H=narrow?280:320, L=52, R=18, T=18, B=46;
+  const px=v=>L+(v-spec.x.min)/(spec.x.max-spec.x.min)*(W-L-R);
+  const py=v=>T+(1-(v-spec.y.min)/(spec.y.max-spec.y.min))*(H-T-B);
+  const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
+  for(let i=0;i<=4;i++){
+    const v=spec.y.min+(spec.y.max-spec.y.min)*i/4,yy=py(v);
+    svg.appendChild(mk('line',{x1:L,y1:yy,x2:W-R,y2:yy,class:'gl'}));
+    const t=mk('text',{x:L-9,y:yy+4,'text-anchor':'end',class:'vl'});
+    t.textContent=Math.round(v); svg.appendChild(t);
+  }
+  const nx=Math.min(10,Math.max(1,spec.x.max-spec.x.min));
+  for(let i=0;i<=nx;i++){
+    const v=spec.x.min+(spec.x.max-spec.x.min)*i/nx;
+    const t=mk('text',{x:px(v),y:H-22,'text-anchor':'middle',class:'vl'});
+    t.textContent=Math.round(v); svg.appendChild(t);
+  }
+  const xl=mk('text',{x:(L+W-R)/2,y:H-5,'text-anchor':'middle',class:'ax'});
+  xl.textContent=spec.x.label; svg.appendChild(xl);
+  if(spec.refline){const f=spec.refline.from,t2=spec.refline.to;
+    svg.appendChild(mk('line',{x1:px(f[0]),y1:py(f[1]),x2:px(t2[0]),y2:py(t2[1]),
+      stroke:'var(--ink-3)','stroke-width':1.6,'stroke-dasharray':'6 4'}));
+    const lt=mk('text',{x:px(t2[0])-4,y:py(t2[1])-8,'text-anchor':'end',class:'ax'});
+    lt.textContent=spec.refline.label; svg.appendChild(lt);}
+  (spec.marks||[]).forEach(m=>{
+    svg.appendChild(mk('line',{x1:px(m.at),y1:T,x2:px(m.at),y2:H-B,
+      stroke:'var(--bad)','stroke-width':1,'stroke-dasharray':'2 3'}));
+    const t=mk('text',{x:px(m.at),y:T-4,'text-anchor':'middle',class:'ax',style:'fill:var(--bad)'});
+    t.textContent=m.label; svg.appendChild(t);});
+  spec.series.forEach(s=>{
+    const col=s.series==='real'?'var(--real)':'var(--felt)';
+    if(s.kind==='line'){
+      const d=s.pts.map((p,i)=>(i?'L':'M')+px(p[0]).toFixed(2)+' '+py(p[1]).toFixed(2)).join(' ');
+      svg.appendChild(mk('path',{d,fill:'none',stroke:col,'stroke-width':2.2,opacity:.5}));
+    } else s.pts.forEach(p=>svg.appendChild(mk('circle',{cx:px(p[0]),cy:py(p[1]),r:4.6,fill:col,class:'dot'})));
+  });
+  host.replaceChildren(svg);
+}
+
+/* ══ RNG ════════════════════════════════════════════════════════════════ */
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;
+  let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;
+  return((t^t>>>14)>>>0)/4294967296;};}
+const ri=(rng,lo,hi)=>lo+Math.floor(rng()*(hi-lo+1));
+const dg=n=>String(Math.abs(n)).length;
+const mean=a=>a.reduce((s,x)=>s+x,0)/a.length;
+const sd=a=>{const m=mean(a);return Math.sqrt(a.reduce((s,x)=>s+(x-m)*(x-m),0)/(a.length-1));};
+
+/* ══ 1 · item types and generators ══════════════════════════════════════ */
+const TYPES=[
+ {id:'A1',label:'single-digit addition',regroup:false,
+  gen:r=>{const a=ri(r,2,9),b=ri(r,2,9);return{q:`${a} + ${b}`,ans:a+b};}},
+ {id:'A2',label:'2-digit + 1-digit, no regrouping',regroup:false,
+  gen:r=>{const t=ri(r,1,9),o=ri(r,0,7),a=t*10+o,b=ri(r,1,9-o);return{q:`${a} + ${b}`,ans:a+b};}},
+ {id:'A3',label:'2-digit + 2-digit, WITH regrouping',regroup:true,
+  gen:r=>{const o1=ri(r,2,9),o2=ri(r,10-o1,9),a=ri(r,1,8)*10+o1,b=ri(r,1,8)*10+o2;
+          return{q:`${a} + ${b}`,ans:a+b};}},
+ {id:'S1',label:'2-digit − 1-digit, no borrowing',regroup:false,
+  gen:r=>{const o=ri(r,2,9),a=ri(r,1,9)*10+o,b=ri(r,1,o);return{q:`${a} − ${b}`,ans:a-b};}},
+ {id:'S2',label:'2-digit − 2-digit, WITH borrowing',regroup:true,
+  gen:r=>{const o1=ri(r,0,7),o2=ri(r,o1+1,9),t1=ri(r,2,9),t2=ri(r,1,t1-1),
+            a=t1*10+o1,b=t2*10+o2; return{q:`${a} − ${b}`,ans:a-b};}}
+];
+const BLUEPRINT={A1:5,A2:5,A3:5,S1:5,S2:5};      // 25 items, fixed composition
+
+function makeForm(rng,mode){
+  const items=[];
+  if(mode==='blue'){
+    for(const t of TYPES) for(let i=0;i<BLUEPRINT[t.id];i++){
+      const it=t.gen(rng); items.push({...it,type:t.id});}
+    // deterministic interleave so the form does not look sorted
+    items.sort((a,b)=>(a.ans%7)-(b.ans%7));
+  } else {
+    // "surface-matched": 25 items, same operations, same operand digit counts,
+    // NO control over which item types (and therefore over regrouping) appear.
+    for(let i=0;i<25;i++){const t=TYPES[ri(rng,0,TYPES.length-1)];
+      const it=t.gen(rng); items.push({...it,type:t.id});}
+  }
+  return items;
+}
+const formStats=f=>({
+  regroup:f.filter(i=>TYPES.find(t=>t.id===i.type).regroup).length,
+  digits:f.reduce((s,i)=>s+dg(i.ans),0),
+  comp:TYPES.map(t=>f.filter(i=>i.type===t.id).length)
+});
+
+let MODE='blue', FORMSEED=20260726, SET={};
+function genDesc(){
+  el('gendesc').innerHTML= MODE==='blue'
+    ? `<b>Blueprint-controlled.</b> The composition is fixed: exactly
+       ${TYPES.map(t=>BLUEPRINT[t.id]+' × '+t.label).join(', ')}. Every form contains exactly
+       ${TYPES.filter(t=>t.regroup).reduce((s,t)=>s+BLUEPRINT[t.id],0)} items requiring regrouping,
+       by construction rather than by chance.`
+    : `<b>Surface-matched only.</b> 25 items, the same two operations, the same operand digit
+       counts — everything a prompt or a readability formula would specify. The item <em>type</em>
+       is drawn at random, so the number of regrouping items floats. This is the generative
+       analogue of "the prompt constrains difficulty", and it fails the same way.`;
+}
+function regen(){
+  el('nfv').textContent=el('nf').value;
+  const N=+el('nf').value;
+  const t0=performance.now();
+  SET={};
+  ['naive','blue'].forEach(m=>{
+    const rng=mulberry32(FORMSEED+(m==='blue'?7:0));
+    SET[m]=[]; for(let i=0;i<N;i++) SET[m].push(makeForm(rng,m));
+  });
+  el('genstat').textContent=`${N*2} forms · ${N*50} items · ${(performance.now()-t0).toFixed(0)} ms`;
+  const f=SET[MODE][0];
+  el('oneform').innerHTML=f.map(i=>`<span>${esc(i.q)}</span>`).join('');
+  const s=formStats(f);
+  el('blueprint').innerHTML=['<tr><th>Item type</th><th>Blueprint</th><th>This form</th><th>Regrouping</th></tr>']
+    .concat(TYPES.map((t,i)=>`<tr><td><b>${esc(t.label)}</b></td>
+      <td class="num">${BLUEPRINT[t.id]}</td>
+      <td class="num ${s.comp[i]===BLUEPRINT[t.id]?'up':'down'}">${s.comp[i]}</td>
+      <td>${t.regroup?'<span class="pill c">yes</span>':'<span class="pill">no</span>'}</td></tr>`))
+    .concat([`<tr><td><b>Total</b></td><td class="num">25</td><td class="num">${f.length}</td>
+      <td class="num">${s.regroup} regrouping items · ${s.digits} digits available</td></tr>`]).join('');
+  audit();
+}
+function audit(){
+  const stat=m=>{const r=SET[m].map(formStats);
+    return {reg:r.map(x=>x.regroup),dig:r.map(x=>x.digits)};};
+  const A=stat('naive'), B=stat('blue');
+  const g=(arr)=>({lo:Math.min(...arr),hi:Math.max(...arr),mean:mean(arr),sd:sd(arr)});
+  const ar=g(A.reg), br=g(B.reg), ad=g(A.dig), bd=g(B.dig);
+  renderRange(el('audit'),{
+    alt:'Range chart comparing, across generated forms, the number of regrouping items and the number of available digits, for a surface-matched generator and a blueprint-controlled one.',
+    groups:[
+     {unit:'REGROUPING ITEMS PER FORM',min:0,max:25,rows:[
+      {label:'Surface-matched',series:'felt',...ar,
+       note:`Range ${ar.lo}–${ar.hi} across ${SET.naive.length} forms, SD ${ar.sd.toFixed(2)}. A learner weak on regrouping meets a different test every week.`},
+      {label:'Blueprint-controlled',series:'real',...br,
+       note:`Range ${br.lo}–${br.hi}. Fixed by construction — the composition is a constraint, not an outcome.`}]},
+     {unit:'DIGITS AVAILABLE TO BE EARNED',min:Math.min(ad.lo,bd.lo)-3,max:Math.max(ad.hi,bd.hi)+3,rows:[
+      {label:'Surface-matched',series:'felt',...ad,
+       note:`Range ${ad.lo}–${ad.hi}, SD ${ad.sd.toFixed(2)}. The ceiling of the score itself moves week to week.`},
+      {label:'Blueprint-controlled',series:'real',...bd,
+       note:`Range ${bd.lo}–${bd.hi}, SD ${bd.sd.toFixed(2)}. Residual variation remains — fixing the composition does not fix everything, and this is the honest part.`}]}]});
+  el('audittable').innerHTML=[
+   '<tr><th>Quantity</th><th>Generator</th><th>Min</th><th>Max</th><th>Spread</th><th>SD</th></tr>',
+   ...[['Regrouping items','Surface-matched',ar],['Regrouping items','Blueprint-controlled',br],
+       ['Digits available','Surface-matched',ad],['Digits available','Blueprint-controlled',bd]]
+     .map(([q,gn,x])=>`<tr><td><b>${esc(q)}</b></td><td>${esc(gn)}</td>
+       <td class="num">${x.lo}</td><td class="num">${x.hi}</td>
+       <td class="num ${x.hi-x.lo>4?'down':'up'}">${x.hi-x.lo}</td>
+       <td class="num">${x.sd.toFixed(2)}</td></tr>`)].join('');
+  el('auditnote').innerHTML=`<div class="note" style="margin-bottom:0">
+    Across ${SET.naive.length} forms from each generator, the surface-matched one varies by
+    <b>${ar.hi-ar.lo} regrouping items</b> and <b>${ad.hi-ad.lo} available digits</b>; the
+    blueprint-controlled one varies by <b>${br.hi-br.lo}</b> and <b>${bd.hi-bd.lo}</b>. Note that
+    the controlled generator's digit spread is <em>not</em> zero. Fixing the composition removes
+    the largest source of non-equivalence and leaves a residue, which is exactly why the last step
+    has to be equating on response data rather than a constraint on the generator.</div>`;
+}
+el('gnaive').onclick=()=>{MODE='naive';el('gnaive').classList.add('on');el('gblue').classList.remove('on');genDesc();regen();};
+el('gblue').onclick=()=>{MODE='blue';el('gblue').classList.add('on');el('gnaive').classList.remove('on');genDesc();regen();};
+el('nf').addEventListener('input',regen);
+el('regen').onclick=()=>{FORMSEED=(FORMSEED*1103515245+12345)>>>0;regen();};
+
+/* ══ 3 · the simulated learner ══════════════════════════════════════════ */
+const LEARN={A1:92,A2:86,A3:38,S1:80,S2:28};
+const GROWTH=1.1;                                   // accuracy points per week, all types
+function renderLearnerCtl(){
+  el('learnerctl').innerHTML=TYPES.map(t=>`
+    <div class="ctl"><label for="L_${t.id}">${esc(t.label)} <span class="v" id="Lv_${t.id}">${LEARN[t.id]}%</span></label>
+      <input type="range" id="L_${t.id}" min="5" max="99" value="${LEARN[t.id]}" /></div>`).join('');
+  TYPES.forEach(t=>el('L_'+t.id).addEventListener('input',e=>{
+    LEARN[t.id]=+e.target.value;el('Lv_'+t.id).textContent=LEARN[t.id]+'%';resetRun();}));
+}
+function administer(form,acc,rng){
+  let score=0; const byType={};
+  TYPES.forEach(t=>byType[t.id]={n:0,right:0});
+  form.forEach(i=>{
+    const ok=rng()*100 < acc[i.type];
+    byType[i.type].n++; if(ok){byType[i.type].right++; score+=dg(i.ans);}
+  });
+  return {score,byType};
+}
+let RUN={weeks:[],rng:mulberry32(31337),seed:31337};
+function resetRun(){RUN={weeks:[],rng:mulberry32(31337),seed:31337};renderRun();}
+function accAt(w){const a={};TYPES.forEach(t=>a[t.id]=Math.min(98,LEARN[t.id]+GROWTH*(w-1)));return a;}
+function step(){
+  const w=RUN.weeks.length+1;
+  const form=makeForm(RUN.rng,MODE);
+  const r=administer(form,accAt(w),RUN.rng);
+  RUN.weeks.push({w,...r,regroup:formStats(form).regroup});
+  renderRun();
+}
+el('admin').onclick=step;
+el('run10').onclick=()=>{for(let i=0;i<10;i++)step();};
+el('resetrun').onclick=resetRun;
+
+const BASELINE=28, GOALSLOPE=1.6;                   // digits correct; goal growth per week
+const goalAt=w=>BASELINE+GOALSLOPE*w;
+
+const RULE_SRC=
+`DECISION RULE  (four-point rule — the CBM convention)
+  fire  ⇔  the last 4 consecutive weekly scores are all below the goal line
+
+GROWTH-CLAIM GATE
+  a growth claim (a stated slope, a projection, "on track") requires
+  ≥ 14 well-controlled data points spanning ≥ 8 weeks.
+  Below that the system reports the points and REFUSES the claim.
+
+ERROR PROFILE          (skills-analysis feedback — Stecker/Fuchs/Fuchs)
+  for each item type: accuracy over the last 4 administered probes
+  weakest ← argmin over types with ≥ 8 items observed
+
+PRESCRIPTION           (the component that carried the achievement effect)
+  change ← MENU[ profile(weakest, overall_accuracy, overall_rate) ]
+  if no menu entry matches → escalate to a human. Never improvise.`;
+el('rulesrc').textContent=RULE_SRC;
+
+const MENU=[
+ {id:'REGROUP-ADD',when:'Addition with regrouping is the weakest type, and accuracy elsewhere is adequate',
+  change:'Explicit place-value regrouping instruction with base-ten materials, 10 min/day, on addition only. Re-probe weekly; do not touch the subtraction sequence.',
+  why:'Targeted, single-skill, dosage-specified. The change is narrow enough that the next four probes can actually attribute a response to it.'},
+ {id:'REGROUP-SUB',when:'Subtraction with borrowing is the weakest type',
+  change:'Explicit decomposition instruction for borrowing across zero, with a written expanded-notation step required on every item, 10 min/day.',
+  why:'Borrowing errors are procedural and localisable; requiring the intermediate line makes the omission visible on the page rather than in the head.'},
+ {id:'FLUENCY',when:'Accuracy is high across all types but digits-correct is low',
+  change:'Timed fluency practice on the types already accurate. Do NOT introduce new content — this is a rate problem, not a knowledge problem.',
+  why:'The commonest misdiagnosis in the loop. A rate deficit that gets treated as a knowledge deficit produces re-teaching of material the learner already knows, which is the expertise-reversal condition.'},
+ {id:'DOSAGE',when:'All types are low and roughly equal',
+  change:'Increase dosage first — 3 sessions per week to 5 — and hold the approach constant for four more probes before considering a method change.',
+  why:'Dosage is the cheaper lever and is checked first. Changing approach and dosage simultaneously makes the next four points uninterpretable.'},
+ {id:'ESCALATE',when:'The rule has fired twice and the previous prescription produced no response',
+  change:'Escalate to a human. Stop the loop, hand over the full probe record and the changes already tried.',
+  why:'Non-response is a designed-for state, not an error. A stopping rule defined in advance is what keeps an automated loop from cycling through its own menu indefinitely.'}
+];
+el('menu').innerHTML=['<tr><th>Condition</th><th>Prescribed change</th><th>Why this one</th></tr>']
+  .concat(MENU.map(m=>`<tr><td><b>${esc(m.when)}</b><br /><code>${esc(m.id)}</code></td>
+    <td>${esc(m.change)}</td><td style="font-size:13.2px;color:var(--ink-3)">${esc(m.why)}</td></tr>`)).join('');
+
+let RMODE='ex';
+el('mex').onclick=()=>{RMODE='ex';el('mex').classList.add('on');el('mdb').classList.remove('on');renderRun();};
+el('mdb').onclick=()=>{RMODE='db';el('mdb').classList.add('on');el('mex').classList.remove('on');renderRun();};
+
+function fired(){
+  const w=RUN.weeks;
+  if(w.length<4) return 0;
+  for(let i=3;i<w.length;i++){
+    if(w.slice(i-3,i+1).every(x=>x.score<goalAt(x.w))) return w[i].w;
+  }
+  return 0;
+}
+function profile(){
+  const last=RUN.weeks.slice(-4);
+  const agg={}; TYPES.forEach(t=>agg[t.id]={n:0,right:0});
+  last.forEach(x=>TYPES.forEach(t=>{agg[t.id].n+=x.byType[t.id].n;agg[t.id].right+=x.byType[t.id].right;}));
+  const rows=TYPES.map(t=>({t,n:agg[t.id].n,acc:agg[t.id].n?agg[t.id].right/agg[t.id].n*100:null}));
+  const eligible=rows.filter(r=>r.n>=8&&r.acc!==null);
+  const weakest=eligible.length?eligible.reduce((a,b)=>a.acc<b.acc?a:b):null;
+  const overall=mean(rows.filter(r=>r.n).map(r=>r.acc));
+  return {rows,weakest,overall,eligible};
+}
+function selectChange(p){
+  if(!p.weakest) return null;
+  const spread=Math.max(...p.eligible.map(r=>r.acc))-Math.min(...p.eligible.map(r=>r.acc));
+  if(p.overall>=85) return MENU.find(m=>m.id==='FLUENCY');
+  if(spread<15) return MENU.find(m=>m.id==='DOSAGE');
+  if(p.weakest.t.id==='A3') return MENU.find(m=>m.id==='REGROUP-ADD');
+  if(p.weakest.t.id==='S2') return MENU.find(m=>m.id==='REGROUP-SUB');
+  return null;
+}
+function renderRun(){
+  const w=RUN.weeks;
+  el('wkstat').textContent=w.length?`${w.length} probe${w.length>1?'s':''} administered`:'no probes yet';
+  const maxW=Math.max(20,w.length);
+  const f=fired();
+  const ys=w.map(x=>x.score).concat([BASELINE,goalAt(maxW)]);
+  renderPlot(el('graph'),{
+    alt:'Progress graph of weekly digits-correct scores against a goal line, with the decision-rule fire week marked.',
+    x:{min:1,max:maxW,label:'WEEK'},
+    y:{min:Math.max(0,Math.floor(Math.min(...ys)-6)),max:Math.ceil(Math.max(...ys)+6)},
+    refline:{from:[1,goalAt(1)],to:[maxW,goalAt(maxW)],label:'GOAL'},
+    marks:f?[{at:f,label:'RULE FIRES'}]:[],
+    series:[{kind:'dots',series:'felt',pts:w.map(x=>[x.w,x.score])}]});
+  const pts=w.length;
+  el('gates').innerHTML=`
+    <div><div class="k">Data points</div><div class="n">${pts}</div>
+      <div class="s">weekly probes on record</div></div>
+    <div><div class="k">Four-point rule</div>
+      <div class="n" style="font-size:15px;padding-top:5px">
+        <span class="pill ${f?'n':'y'}">${f?'FIRED wk '+f:(pts<4?'needs 4':'not fired')}</span></div>
+      <div class="s">4 consecutive below goal</div></div>
+    <div><div class="k">Growth claim</div>
+      <div class="n" style="font-size:15px;padding-top:5px">
+        <span class="pill ${pts>=14?'y':'n'}">${pts>=14?'permitted':'REFUSED'}</span></div>
+      <div class="s">${pts>=14?'≥14 points, slope may be reported':`${14-pts} more point${14-pts===1?'':'s'} required`}</div></div>
+    <div><div class="k">Probe generator</div><div class="n" style="font-size:15px;padding-top:5px">
+      <span class="pill ${MODE==='blue'?'y':'c'}">${MODE==='blue'?'blueprint':'surface only'}</span></div>
+      <div class="s">${MODE==='blue'?'composition fixed':'composition floats — trend is suspect'}</div></div>`;
+  if(!f){
+    el('ruleout').innerHTML=`<div class="note" style="margin-bottom:0"><b>Rule has not fired.</b>
+      ${pts<4?'Fewer than four data points. The four-point rule needs four, and no amount of wanting an answer sooner changes that.'
+             :'The last four points are not all below the goal line, so no change is prescribed. Doing nothing is a decision, and it is the correct one here.'}</div>`;
+    return;
+  }
+  const p=profile(), ch=selectChange(p);
+  const prof=`<div class="scroll"><table>
+    <tr><th>Item type</th><th>Items over last 4 probes</th><th>Accuracy</th><th>Eligible</th></tr>
+    ${p.rows.map(r=>`<tr><td><b>${esc(r.t.label)}</b></td><td class="num">${r.n}</td>
+      <td class="num ${r.acc!==null&&r.acc<50?'down':'up'}">${r.acc===null?'—':r.acc.toFixed(0)+'%'}</td>
+      <td>${r.n>=8?'<span class="pill y">yes</span>':'<span class="pill n">&lt; 8 items</span>'}</td></tr>`).join('')}
+  </table></div>`;
+  el('ruleout').innerHTML = RMODE==='ex'
+    ? `<div style="font:12.5px/1.7 var(--mono);color:var(--ink-3);margin:16px 0 6px">
+         TRIGGER FIRED · four-point rule · week ${f}</div>
+       <div style="font:600 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:20px 0 0">Skills-analysis feedback</div>
+       ${prof}
+       ${ch?`<div class="presc"><div class="h">Prescribed instructional change · ${esc(ch.id)}</div>
+         <h4>${esc(ch.change)}</h4><p style="color:var(--ink-3);font-size:13.3px">${esc(ch.why)}</p>
+         <p style="color:var(--ink-3);font-size:13.3px;margin:0">Selected because: ${esc(ch.when.toLowerCase())}.
+         Weakest eligible type is <b>${esc(p.weakest.t.label)}</b> at ${p.weakest.acc.toFixed(0)}%,
+         against an overall ${p.overall.toFixed(0)}%.</p></div>`
+        :`<div class="presc none"><div class="h">No menu entry matches — escalating</div>
+          <h4>Hand over to a human, with the probe record and the changes already tried.</h4>
+          <p style="color:var(--ink-3);font-size:13.3px;margin:0">The profile does not match any
+          condition on the known-good menu. The system does not improvise a change, because an
+          unprincipled change is the condition that produced no achievement gain. Refusing is the
+          correct output.</p></div>`}`
+    : `<div style="font:12.5px/1.7 var(--mono);color:var(--ink-3);margin:16px 0 6px">
+         TRIGGER FIRED · four-point rule · week ${f}</div>
+       <div class="presc none"><div class="h">Output</div>
+       <h4>The graph you are already looking at, with a red line on it.</h4>
+       <p>The rule fired. There is no menu, so there is no prescription. The teacher is now more
+       likely to change the programme — that part replicates — and nothing has selected
+       <em>what</em> to change.</p>
+       <p style="margin:0;color:var(--ink-3);font-size:13.3px">This is the CBM-without-expert-system
+       arm. Same measurement, same decision rule, same graph, more programme revisions, and
+       <b>no achievement benefit</b>. Every dashboard, mastery bar, streak and adaptive-difficulty
+       slider in the consumer market is this arm.</p></div>`;
+}
+
+/* ══ 2 · what non-equivalence does to the slope ═════════════════════════ */
+function olsSlope(pts){
+  const n=pts.length,mx=mean(pts.map(p=>p[0])),my=mean(pts.map(p=>p[1]));
+  let sxy=0,sxx=0; pts.forEach(p=>{sxy+=(p[0]-mx)*(p[1]-my);sxx+=(p[0]-mx)*(p[0]-mx);});
+  return sxx>0?sxy/sxx:0;
+}
+el('slopemc').onclick=()=>{
+  const t0=performance.now(), REPS=400, WEEKS=20, out={};
+  ['naive','blue'].forEach(m=>{
+    const rng=mulberry32(555), slopes=[];
+    for(let r=0;r<REPS;r++){
+      const pts=[];
+      for(let w=1;w<=WEEKS;w++){
+        const form=makeForm(rng,m);
+        pts.push([w,administer(form,accAt(w),rng).score]);
+      }
+      slopes.push(olsSlope(pts));
+    }
+    out[m]={m:mean(slopes),s:sd(slopes),lo:Math.min(...slopes),hi:Math.max(...slopes)};
+  });
+  el('slopestat').textContent=`${REPS*2} simulated 20-week series · ${(performance.now()-t0).toFixed(0)} ms`;
+  const ratio=out.naive.s/out.blue.s;
+  el('slopestats').innerHTML=`
+    <div><div class="k">Slope SD — surface</div><div class="n felt">${out.naive.s.toFixed(3)}</div>
+      <div class="s">digits/week, across ${REPS} runs</div></div>
+    <div><div class="k">Slope SD — blueprint</div><div class="n real">${out.blue.s.toFixed(3)}</div>
+      <div class="s">same learner, same growth</div></div>
+    <div><div class="k">Ratio</div><div class="n ${ratio>1.15?'bad':''}">${ratio.toFixed(2)}×</div>
+      <div class="s">extra slope noise from the generator alone</div></div>
+    <div><div class="k">Surface range</div><div class="n" style="font-size:17px">${out.naive.lo.toFixed(2)} – ${out.naive.hi.toFixed(2)}</div>
+      <div class="s">blueprint: ${out.blue.lo.toFixed(2)} – ${out.blue.hi.toFixed(2)}</div></div>`;
+  el('slopenote').innerHTML=`<div class="note" style="margin-bottom:0">
+    The learner is <em>identical</em> in both columns — same starting accuracies, same
+    ${GROWTH} accuracy points of growth per week, same number of probes. The only difference is
+    which generator wrote the forms. The surface-matched generator adds
+    <b>${((ratio-1)*100).toFixed(0)}%</b> to the standard deviation of the estimated slope, which
+    is measurement error manufactured by the measuring instrument. Feed that into a trend rule and
+    the false-pivot arithmetic in <a href="pivot-loop.html">demo 10</a> gets worse by exactly that
+    factor — the two failures compound.</div>`;
+};
+
+/* ══ boot ═══════════════════════════════════════════════════════════════ */
+renderLearnerCtl(); genDesc(); regen(); resetRun();
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{audit();renderRun();},180);});
+const R=document.documentElement;
+el('tt').onclick=()=>{
+  const dark=R.getAttribute('data-theme')==='dark'||
+    (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',dark?'light':'dark');};
+</script>
+</body>
+</html>
