@@ -2,7 +2,7 @@
 
 **A survey of what AI-native learning has actually been measured to do — and a specification for
 what it should be.**
-<!--gen:sections-->32<!--/gen--> sections, <!--gen:words-->78,652<!--/gen--> words, built on
+<!--gen:sections-->33<!--/gen--> sections, <!--gen:words-->80,312<!--/gen--> words, built on
 ~2,100 sources.
 
 **[Read it on the web](https://dlmastery.github.io/learning-with-ai/paper.html)** ·
@@ -12,22 +12,54 @@ what it should be.**
 
 ---
 
-## The three findings
+## The finding the paper turns on
+
+An agent differs from a chatbot in four ways — **sampling, execution, persistence,
+absence** — and each is a multiplier on something else. Which gives a rule:
+
+> **The value of an agentic loop equals the value of the external check it closes on.**
+
+That explains the entire reliability landscape. Where a check exists: **79.2%**
+(SWE-bench Verified), **83.8%** (Terminal-Bench). Where none does: **21.0%**
+(PaperBench), **4.6%** (SciCode). A twenty-fold spread, and the axis is not difficulty.
+
+Teaching is in the second column. Across **223 real tutoring domains, no model beat
+chance at labelling an incorrect student action** — the most basic thing a tutor does.
+
+**Coding agents work because `pytest` exists. Pedagogy has no `pytest`.** Every
+agentic capability in education is waiting on one component that nobody has built.
+
+## Three findings that constrain what may be built
 
 **1 · Felt learning and real learning move in opposite directions.**
-Preference shifts at *d* ≈ 0.48 while knowledge does not move, and the effect survives explicit
-debiasing. Students in the condition that taught them *more* reported learning *less*. Every metric
-a product can cheaply optimise is the wrong one.
+Preference shifts at *d* ≈ 0.48 while knowledge does not move, and the effect survives
+explicit debiasing. Students in the condition that taught them *more* reported learning
+*less*. Every metric a product can cheaply optimise is the wrong one.
 
 **2 · Measurement without a decision rule is inert.**
-In the randomised trial that settles it, both arms revised instruction more often — and **only the
-arm told *what to change* moved achievement**. Dashboards, streaks, mastery bars and adaptive
+Both arms of the decisive trial revised instruction more often — **only the arm told
+*what to change* moved achievement**. Dashboards, streaks, mastery bars and adaptive
 difficulty are all the arm that measured more and moved nothing.
 
 **3 · Unguarded assistance is an active harm.**
-It leaves learners **17% worse** on later unassisted work. The guardrailed arm's unassisted
-coefficient is **−0.004, not significant**. Restraint removes the harm; it has not been shown to
-teach. Anyone selling it as a learning gain is ahead of the evidence.
+It leaves learners **17% worse** on later unassisted work. The guardrailed arm's
+unassisted coefficient is **−0.004, not significant**. Restraint removes the harm; it
+has not been shown to teach.
+
+## On speed, since everyone asks
+
+Learning is counted in **opportunities, not days**. Across 1.3 million observations,
+learning *rate* varies by **1.14×** while *prior knowledge* varies by **3.6×** — and
+time-based models fit poorly. The defensible bound is **10–40× on elapsed calendar,
+3–5× on engaged effort**, one documented case at ~300×, and **1×** on durability and
+on procedural skill.
+
+> **A week's understanding in an hour. A year's retention in six hours spread across
+> two months.**
+
+What limits polymathy is not learning rate. It is the fixed cost of orientation —
+how many times you can afford to be a beginner.
+
 
 ---
 
@@ -73,7 +105,7 @@ whichever way it lands. Especially the nulls.
 The claim that should make you suspicious of any survey is that it got everything right. This one
 did not, and the record is the point.
 
-**<!--gen:corrections-->28<!--/gen--> corrections, published in an append-only ledger with a
+**<!--gen:corrections-->29<!--/gen--> corrections, published in an append-only ledger with a
 provenance column.** <!--gen:external-->8<!--/gen--> were found by an adversarial reviewer, not by us — including the two most
 damaging, and one about the corrections ledger itself, which we had been silently editing inside a
 table headed *"published rather than silently edited."*

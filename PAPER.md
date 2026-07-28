@@ -11,48 +11,57 @@ Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/
 ## Abstract
 
 Generative AI arrived in education as a capability without a specification. Three
-years of deployment later, the field has produced roughly 2,900 papers and, by our
-census, **seven randomised controlled trials** — of which four are second-language
-learning. The literature measures resemblance, preference and engagement. It very
-rarely measures whether anyone learned anything, and almost never measures it
-**after the tool is taken away**.
+years on, the field has produced roughly 2,900 papers and, by our census, **seven
+randomised controlled trials** — four of them second-language learning. It measures
+resemblance, preference and engagement. It very rarely measures whether anyone
+learned anything, and almost never measures it **after the tool is taken away**.
 
-This survey is an attempt to write the missing specification. It is built on 32
-research reports and roughly 2,100 source citations, every claim carrying an
-evidence label, every section carrying at least one documented null result, and
-every one of the authors' own errors published in an append-only ledger rather than
-quietly edited — eight of the twenty-four corrections were found by an adversarial
-reviewer rather than by us.
+This survey is an attempt to write the missing specification. It rests on 34 research
+reports and roughly 2,300 source citations; every claim carries an evidence label,
+every section carries at least one documented null, and every one of the authors'
+errors is published in an append-only ledger rather than quietly edited — **eight of
+the twenty-nine corrections were found by an adversarial reviewer rather than by us.**
 
-Three findings organise it. **First, felt learning and real learning move in
-opposite directions**: preference shifts at *d* ≈ 0.48 while knowledge does not
-move, and the effect survives explicit debiasing — so every metric a product can
-easily optimise is the wrong one. **Second, measurement without a decision rule is
-inert**: in the randomised trial that settles it, both arms revised instruction more
-often and only the arm told *what to change* moved achievement, which disqualifies
-the dashboard as an intervention. **Third, unguarded assistance is an active harm**,
-leaving learners 17% worse on later unassisted work — while the guardrailed arm's
-unassisted coefficient is −0.004, not significant. Restraint removes the harm. It
-has not been shown to teach.
+**The organising finding is about agents.** An agent differs from a chatbot in four
+ways — sampling, execution, persistence, absence — and each is a multiplier on
+something else, which gives a rule: *the value of an agentic loop equals the value of
+the external check it closes on.* That rule explains the whole reliability landscape.
+Where a check exists, agents reach **79.2%** (SWE-bench Verified) and **83.8%**
+(Terminal-Bench). Where none exists, **21.0%** (PaperBench) and **4.6%** (SciCode).
+Teaching is in the second column, and the reason is now measured: across **223 real
+tutoring domains, no model beat chance at labelling an incorrect student action.**
+Coding agents work because `pytest` exists. **Pedagogy has no `pytest`, and every
+agentic capability in education is waiting on one.**
 
-From these we specify a system: a registry of certified specialist agents with an
-active set of three to five, arbitrating by precedence rather than by vote;
-persistent learner state that is local, inspectable and deletable; correctness that
-lives in a verifier rather than in the model's manners; explanation held as a
-three-rung library entered by measurement rather than a staircase climbed by
-preference; and a mentor whose highest-value act is declining to answer.
+Three findings constrain what may be built. **Felt learning and real learning move in
+opposite directions** — preference shifts at *d* ≈ 0.48 while knowledge does not, and
+the effect survives explicit debiasing, so every cheaply optimisable metric is the
+wrong one. **Measurement without a decision rule is inert** — both arms of the
+decisive trial revised instruction more often; only the arm told *what to change*
+moved achievement. **Unguarded assistance is an active harm**, leaving learners 17%
+worse on later unassisted work, while the guardrailed arm's unassisted coefficient is
+−0.004, not significant: restraint removes harm and has not been shown to teach.
 
-We design for the margin first. A census of ERIC and Europe PMC returns 30
-randomised trials of generative-AI tutoring that mention students and **zero** that
-mention disability, dyslexia, ADHD, autism, special education or an IEP. Every
-effect size in this field was measured on somebody else's child.
+On speed, the popular claim is roughly right and imprecise. Learning is counted in
+**opportunities, not days** — across 1.3 million observations, learning *rate* varies
+by 1.14× while *prior knowledge* varies by 3.6×, and time-based models fit poorly.
+The defensible bound is **10–40× on elapsed calendar and 3–5× on engaged effort**,
+one documented case at ~300×, and **1×** on both durability and procedural skill.
+Stated honestly: **a week's understanding in an hour; a year's retention in six hours
+spread across two months.** What limits polymathy is not learning rate but the fixed
+cost of orientation — how many times one can afford to be a beginner.
 
-The survey's central claim is that the measured 0.2–0.4 SD band describes systems
-that answer freely, forget everything between sessions, cannot see the work, cannot
-point, never change method, and agree with the learner — and that nobody has built
-and measured the constrained, grounded, pivoting, remembering, teachable
-alternative. **That nobody has measured it is proven. That it would do better is a
-hypothesis**, and Part VII states the conditions under which we would withdraw it.
+We design for the margin first. A census returns 30 randomised trials of
+generative-AI tutoring that mention students and **zero** that mention disability,
+dyslexia, ADHD, autism, special education or an IEP. Every effect size in this field
+was measured on somebody else's child.
+
+The central claim is that the measured 0.2–0.4 SD band describes systems that answer
+freely, forget between sessions, cannot see the work, cannot point, never change
+method, and agree with the learner — and that nobody has built and measured the
+constrained, grounded, pivoting, remembering, teachable alternative. **That nobody has
+measured it is proven. That it would do better is a hypothesis**, and Part VII states
+the conditions under which we would withdraw it.
 
 ---
 
