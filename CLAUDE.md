@@ -205,7 +205,8 @@ pedagogical systems · I2 global traditions
 Sierra Leone unadjusted +0.216 n.s. · "restraint removes harm, does not add
 benefit" · Orton-Gillingham g=0.22 n.s. · `d=0.971` unverifiable → ≈0.93 ·
 Fyfe 2014 is a systematic review with no pooled ES · Bloom's 2σ retired
-(VanLehn 0.79 / Nickow 0.37 / Kestin 0.63–0.73) · **g=0.56 is human
+(VanLehn 0.79 / **Nickow 0.288** — 0.37 was the superseded 2020 working paper /
+**Kestin d≈0.63**, developer-evaluated; "0.63–0.73" spliced two estimands) · **g=0.56 is human
 learning-by-teaching, not teachable agents; g=0.43 is peer tutoring's tutor gain** ·
 **gap-widening is a property of untargeted delivery, not of technology** · deixis
 substrate exists (arXiv:2604.02893) · pāṭha protocol benchmarked and falsified ·

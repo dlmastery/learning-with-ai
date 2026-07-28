@@ -107,7 +107,8 @@ claim evidence-labelled, ≥1 null per section. All 27 named entities investigat
 except zemomemo. PRD complete at 30 sections. Repo public, Pages building. Five
 substantive self-corrections caught by the research and recorded rather than
 silently edited — Sierra Leone's unadjusted estimate, "restraint teaches",
-Orton-Gillingham, `d=0.971`, Bloom's 2σ. One subagent claim (the Bastani
+Orton-Gillingham, `d=0.971` (unverifiable; components imply ≈0.93), Bloom's 2σ.
+One subagent claim (the Bastani
 "correction") independently verified and **rejected**. The evidence discipline is
 working; it is the only reason this audit has anything solid to stand on.
 
