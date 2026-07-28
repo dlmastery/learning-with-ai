@@ -48,6 +48,17 @@ personalisation engine should have to write out by hand first:
 Fifty years of looking. **Exactly one interaction survived** — and it survived in
 two forms that turn out to be the same law.
 
+**With a boundary that §24 forces us to draw, and that we would rather not.**
+Noetel's meta-meta-analysis found that **prior knowledge did not consistently
+moderate multimedia design effects (p = 0.14)**. That is in open tension with
+everything below. The honest reading, adopted here rather than argued away: the
+reversal is well established for **assistance and guidance** manipulations —
+worked examples, scaffolding, explicit instruction — and is **not reliably
+detectable across the broad multimedia-design corpus**. So the survivor is
+narrower than "prior knowledge moderates instruction." It is *prior knowledge
+moderates how much help to give*. That is still the axis this section builds on,
+and it is one claim smaller than it was.
+
 ---
 
 ## 2. The survivor
@@ -271,6 +282,6 @@ the saved complexity on getting the universal things right."
   unnecessary.
 
 The most valuable thing personalisation research produced in fifty years is a
-warning about itself. We are proposing to try again — with one interaction instead
+warning about itself. We are proposing to try again — with one narrow interaction instead
 of a hall of mirrors, a fifteen-second measurement instead of a battery, and a
 pre-registered condition under which we delete the feature.

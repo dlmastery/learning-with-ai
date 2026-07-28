@@ -157,17 +157,16 @@ is given off when it drops from a higher one to a lower one."* Every proposition
 there survives verbatim into the full quantum account. It drops the wavefunction,
 the orbital, the selection rules and the entire mechanism. **It falsifies nothing.**
 
-Two more tests complete the rule. Every drop must leave a **named, retrievable
-marker** — not "it's more complicated than that" but a token the learner can carry
-upward: *"this assumes no friction; the friction case is rung 3."* And every analogy
-ships with a declared **alignment set** (which relations map) and a declared **limit
-set** (which do not). For concepts with high reductive-bias risk, Spiro's
-prescription is two mutually *dis*analogous sources rather than one good one, so
-that neither can be over-extended.
+Two more tests complete the rule. Every drop leaves a **named, retrievable marker** —
+not "it's more complicated than that" but a token the learner can carry upward:
+*"this assumes no friction; the friction case is rung 3."* And every analogy ships a
+declared **alignment set** (which relations map) and **limit set** (which do not);
+for concepts with high reductive-bias risk, Spiro's prescription is two mutually
+*dis*analogous sources rather than one good one.
 
-There is a vocabulary corollary that follows from the same principle. Replacing
-"eigenvalue" with "stretchiness number" creates a term the learner must later
-unlearn and cannot look up. **Simplify the explanation; keep the name.**
+A vocabulary corollary follows. Replacing "eigenvalue" with "stretchiness number"
+creates a term the learner must later unlearn and cannot look up. **Simplify the
+explanation; keep the name.**
 
 ---
 

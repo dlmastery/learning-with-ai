@@ -2,7 +2,7 @@
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**29 sections · 73,275 words · 32 research reports · ~2,100 source citations**
+**29 sections · 73,363 words · 32 research reports · ~2,100 source citations**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -1927,6 +1927,17 @@ personalisation engine should have to write out by hand first:
 Fifty years of looking. **Exactly one interaction survived** — and it survived in
 two forms that turn out to be the same law.
 
+**With a boundary that §24 forces us to draw, and that we would rather not.**
+Noetel's meta-meta-analysis found that **prior knowledge did not consistently
+moderate multimedia design effects (p = 0.14)**. That is in open tension with
+everything below. The honest reading, adopted here rather than argued away: the
+reversal is well established for **assistance and guidance** manipulations —
+worked examples, scaffolding, explicit instruction — and is **not reliably
+detectable across the broad multimedia-design corpus**. So the survivor is
+narrower than "prior knowledge moderates instruction." It is *prior knowledge
+moderates how much help to give*. That is still the axis this section builds on,
+and it is one claim smaller than it was.
+
 ---
 
 ## 2. The survivor
@@ -2150,7 +2161,7 @@ the saved complexity on getting the universal things right."
   unnecessary.
 
 The most valuable thing personalisation research produced in fifty years is a
-warning about itself. We are proposing to try again — with one interaction instead
+warning about itself. We are proposing to try again — with one narrow interaction instead
 of a hall of mirrors, a fifteen-second measurement instead of a battery, and a
 pre-registered condition under which we delete the feature.
 
@@ -3062,17 +3073,16 @@ is given off when it drops from a higher one to a lower one."* Every proposition
 there survives verbatim into the full quantum account. It drops the wavefunction,
 the orbital, the selection rules and the entire mechanism. **It falsifies nothing.**
 
-Two more tests complete the rule. Every drop must leave a **named, retrievable
-marker** — not "it's more complicated than that" but a token the learner can carry
-upward: *"this assumes no friction; the friction case is rung 3."* And every analogy
-ships with a declared **alignment set** (which relations map) and a declared **limit
-set** (which do not). For concepts with high reductive-bias risk, Spiro's
-prescription is two mutually *dis*analogous sources rather than one good one, so
-that neither can be over-extended.
+Two more tests complete the rule. Every drop leaves a **named, retrievable marker** —
+not "it's more complicated than that" but a token the learner can carry upward:
+*"this assumes no friction; the friction case is rung 3."* And every analogy ships a
+declared **alignment set** (which relations map) and **limit set** (which do not);
+for concepts with high reductive-bias risk, Spiro's prescription is two mutually
+*dis*analogous sources rather than one good one.
 
-There is a vocabulary corollary that follows from the same principle. Replacing
-"eigenvalue" with "stretchiness number" creates a term the learner must later
-unlearn and cannot look up. **Simplify the explanation; keep the name.**
+A vocabulary corollary follows. Replacing "eigenvalue" with "stretchiness number"
+creates a term the learner must later unlearn and cannot look up. **Simplify the
+explanation; keep the name.**
 
 ---
 
@@ -7092,16 +7102,15 @@ Each primitive is a falsifiable hypothesis about how learning happens.
 
 Two clusters deserve their evidence stated rather than summarised.
 
-**Tutoring's real numbers are pre-LLM.** Kulik & Fletcher (2016) is the most-cited
-figure in the market — 50 controlled evaluations, **median 0.66 SD** — and it comes
-with its own debunking attached: the size of the improvement "depended to a great
-extent on whether improvement was measured on locally developed or standardized
-tests." §24 establishes that test alignment is worth a factor of 2–3 across this
-literature. Pane et al.'s Cognitive Tutor Algebra I trial, matched-pair school
-randomisation across seven states, is the best large-scale evidence anyone has:
-**no effect in year one**, positive in year two, significant for high schools and
-**not** for middle schools, at roughly eight percentile points. The LLM generation
-inherited the marketing claim and none of the measurement.
+**Tutoring's real numbers are pre-LLM.** Kulik & Fletcher (2016) — 50 controlled
+evaluations, **median 0.66 SD** — is the most-cited figure in the market and comes
+with its own debunking attached: the improvement "depended to a great extent on
+whether improvement was measured on locally developed or standardized tests," and
+§24 puts test alignment at a factor of 2–3. Pane et al.'s Cognitive Tutor Algebra I
+trial, matched-pair randomisation across seven states, is the best large-scale
+evidence anyone has: **no effect in year one**, positive in year two, significant
+for high schools and **not** for middle schools, at roughly eight percentile points.
+The LLM generation inherited the marketing claim and none of the measurement.
 
 **Early literacy is the most defensible bet in the market**, in mechanism terms
 rather than enthusiasm terms. The AI does something a human demonstrably cannot
