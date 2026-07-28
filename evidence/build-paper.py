@@ -553,23 +553,28 @@ def sync_dashboard(stats):
         "parts":    f"{len(PARTS)}",
         "demos":    str(len([d for d in (ROOT / "docs" / "demos").glob("*.html")
                              if d.name != "index.html"])),
-        "corrections": str(len(re.findall(r"^\|\s*\*\*C-\d+\*\*\s*\|", 
-                                          ledger.read_text(encoding="utf-8"), re.M)))
-                       if ledger.exists() else "0",
     }
-    src = f.read_text(encoding="utf-8")
-    out, changed = src, []
-    for key, val in counts.items():
-        pat = re.compile(r'(data-gen="%s"[^>]*>)[^<]*(</span>)' % key)
-        hits = pat.findall(out)
-        if hits and any(h for h in pat.finditer(out) if h.group(0).split(">")[1].split("<")[0] != val):
-            changed.append(f"{key}={val}")
-        out = pat.sub(lambda m: m.group(1) + val + m.group(2), out)
-    if out != src:
-        f.write_text(out, encoding="utf-8")
-    print("docs/index.html — counts synced: " +
-          ", ".join(f"{k}={v}" for k, v in counts.items()) +
-          (f"  (updated: {', '.join(changed)})" if changed else ""))
+    if ledger.exists():
+        rows = re.findall(r"^\|\s*\*\*C-\d+\*\*\s*\|.*$",
+                          ledger.read_text(encoding="utf-8"), re.M)
+        counts["corrections"] = str(len(rows))
+        # "found by someone whose job was to fail us" is the number that carries
+        # the argument, so it is counted rather than remembered.
+        counts["external"] = str(sum("EXTERNAL-REVIEW" in r for r in rows))
+    # docs/index.html carries them as <span data-gen="key">, README.md as
+    # <!--gen:key-->…<!--/gen-->. Same counts, two syntaxes, one source.
+    targets = [(f, r'(data-gen="%s"[^>]*>)([^<]*)(</span>)'),
+               (ROOT / "README.md", r'(<!--gen:%s-->)(.*?)(<!--/gen-->)')]
+    for path, tpl in targets:
+        if not path.exists(): continue
+        src = path.read_text(encoding="utf-8")
+        out = src
+        for key, val in counts.items():
+            out = re.sub(tpl % key, lambda m: m.group(1) + val + m.group(3), out)
+        if out != src:
+            path.write_text(out, encoding="utf-8")
+    print("counts synced into docs/index.html + README.md: " +
+          ", ".join(f"{k}={v}" for k, v in counts.items()))
 
 HOW_TO_READ = """\
 Every claim carries an evidence label — `MEASURED-RCT`, `MEASURED-META`,

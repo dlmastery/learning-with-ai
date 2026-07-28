@@ -2,7 +2,7 @@
 title: "The Agentic Frontier: What an Agent Can Do That a Chatbot Cannot"
 wave: K
 date_researched: 2026-07-28
-sources_count: 61
+sources_count: 101
 ---
 
 # K2 — The Agentic Frontier
@@ -61,6 +61,13 @@ literatures, and it is the load-bearing claim of the section:
 That last row is the whole opportunity. It is not that agentic systems fail at
 teaching. It is that **nobody has built the check**, and therefore nobody has
 been able to run the loop that makes agentic systems work everywhere else.
+
+And the reason it has not been built is itself now measured. Across **223 real
+tutoring domains, no LLM performed better than chance at labelling an incorrect
+student action** (TutorGym, arXiv:2505.01563, `MEASURED-BENCH`). Coding agents
+work because `pytest` exists. The equivalent of `pytest` for student work does
+not — and building it is the highest-leverage unbuilt thing in this section
+(§10, item 3).
 
 ---
 
@@ -1131,13 +1138,21 @@ Three concrete measurements pin the ceiling:
 
 ### 8.2 Error compounding is a hard wall on autonomy
 
-*(See §4 for the measured numbers.)* The structural point: for a task of *n*
-sequential steps each succeeding independently with probability *p*, end-to-end
-success is *pⁿ*. At *p* = 0.95, a 20-step task succeeds 36% of the time; at 50
-steps, 8%. Agentic pedagogy proposals routinely imply 50–500-step autonomous
-sessions. `INFERENCE` from arithmetic — real agents are neither independent nor
-memoryless, and recovery behaviour changes the exponent, which is precisely what
-§4's measurements quantify.
+The naive arithmetic — *pⁿ* for *n* independent steps at accuracy *p* — is
+`INFERENCE` and it is not quite the right model, because §4.3 measured something
+worse: **self-conditioning**. Agents become *more* likely to err once their own
+earlier errors are in context, so per-step accuracy is not constant across the
+run, and **scaling the model does not fix it** (arXiv:2509.09677). The same
+paper shows the optimistic half: horizon length **H_s(p) = ln(s)/ln(p)** grows
+*hyperbolically* past 80% step accuracy, so the wall moves fast.
+
+The measured operating point, stated once so nobody has to interpolate: at the
+current frontier, **~70 minutes of autonomous work at 80% success, ~12 hours at
+50%, doubling roughly every 129 days** (METR TH1.1, `MEASURED-BENCH`). And
+across repeated attempts, **τ-bench pass⁸ falls below 25% where pass¹ is 61%**.
+Design in one-hour verified units, checkpoint against an external check at each
+boundary, and the ceiling is not binding for anything in §7. Design for an
+unattended overnight tutor and it is.
 
 ### 8.3 Verification cost is paid by the learner, and the learner is the scarce resource
 
@@ -1276,6 +1291,17 @@ attention; (c) honest handling of the fact that one learner supplies very little
 signal, so the loop must pool across learners with per-learner shrinkage. That
 last point is where the adaptive-experimentation literature (§6) should be
 mined rather than reinvented.
+
+**Its scaled form is the single largest unclaimed prize in the field.** §6
+established that two literatures exist and have never met: a self-improvement
+literature that optimises brilliantly against benchmark accuracy (GEPA, DGM,
+AlphaEvolve) and an instructional-policy literature that closed the loop on real
+human retention with 2014 machinery and got **+16.5% semester retention**
+(Lindsey et al.). **A GEPA-class optimiser whose fitness function is measured
+human retention at delay has never been attempted by anyone.** It is #2's loop
+run across learners instead of within one. It is ranked here rather than
+separately because it is the same object at a different scale, and because the
+per-learner version must work before the population version is meaningful.
 
 ### 3. The step-level verifier for student work
 
@@ -1465,6 +1491,42 @@ published data files. Every item below is marked verified or explicitly flagged.
 60. Yan, Greiff, Lodge, Gašević (2025), *Nature Reviews Psychology*, doi:10.1038/s44159-025-00467-5 — **verified**
 61. Rutten, van Joolingen, van der Veen (2012), doi:10.1016/j.compedu.2011.07.017 — **narrative review, no pooled ES. Do not cite for a number.**
 62. de Jong, Linn, Zacharia (2013), *Science*, doi:10.1126/science.1230579 — **Review/Perspective, no meta-analytic ES. Do not cite for a number.**
+
+### Self-improvement: optimisers (Branch A — all machine-benchmark only)
+70. Yang, Wang, Lu, Liu, Le, Zhou, Chen — *Large Language Models as Optimizers* (OPRO), arXiv:2309.03409 — **verified**
+71. Khattab et al. — *DSPy*, arXiv:2310.03714 — **verified**
+72. Opsahl-Ong et al. — *MIPRO / Optimizing Instructions and Demonstrations…*, arXiv:2406.11695 — **verified**
+73. Fernando, Banarse, Michalewski, Osindero, Rocktäschel — *PromptBreeder*, arXiv:2309.16797 — abstract **verified**; Table 1 numbers **body-verified via ar5iv**
+74. Agrawal et al. — *GEPA*, arXiv:2507.19457 — **verified, ID confirmed**
+75. Yuksekgonul et al. — *TextGrad*, arXiv:2406.07496 — **verified**
+76. Novikov et al. (DeepMind) — *AlphaEvolve*, arXiv:2506.13131 — abstract **verified**; body numbers **via ar5iv**
+77. Zhang, Hu, Lu, Lange, Clune — *Darwin Gödel Machine*, arXiv:2505.22954 — **verified, ID confirmed**
+78. Hu, Lu, Clune — *ADAS / Automated Design of Agentic Systems*, arXiv:2408.08435 — **verified**; **no numeric gain in abstract**
+79. Zhang, Lehman, Stanley, Clune — *OMNI*, arXiv:2306.01711; *OMNI-EPIC*, arXiv:2405.15568 — **verified**; **no/qualitative numbers**
+80. Lu et al. — *Automated Capability Discovery*, arXiv:2502.07577 — **verified**
+81. Wang, Lehman, Clune, Stanley — *POET*, arXiv:1901.01753 — **verified**; qualitative
+82. *Do Agent Optimizers Compound? Continual-Learning Evaluation on Terminal-Bench 2.0*, arXiv:2607.14004 — **verified via PDF**
+83. *Are Large Language Models Good Prompt Optimizers?*, arXiv:2402.02101 — **verified**
+84. *The Unreasonable Effectiveness of Eccentric Automatic Prompts*, arXiv:2402.10949 — **verified**
+85. *A Systematic Survey of Automatic Prompt Optimization Techniques*, arXiv:2502.16923 — **verified** (field scoping)
+86. Wu, Dyer, Neyshabur — *When Do Curricula Work?*, arXiv:2012.03107 (ICLR 2021) — **verified**
+87. Saglietti, Mannelli, Saxe — arXiv:2106.08068 — **verified**
+88. Soviany et al. — *Curriculum Learning: A Survey*, arXiv:2101.10382 — **verified as taxonomy; no aggregate effect size. Do not cite for gains.**
+89. Bengio, Louradour, Collobert, Weston — *Curriculum Learning*, ICML 2009, doi:10.1145/1553374.1553380 — **metadata verified only; no number extracted**
+
+### Self-improvement: instructional policies on human learners (Branch B — all pre-LLM)
+90. Doroudi, Aleven, Brunskill (2019), IJAIED 29(4):568–620, doi:10.1007/s40593-019-00187-x, ERIC EJ1235264 — **verified**; 21/41 studies significantly beat all baselines. **This corrects a common misreading that the review is negative.**
+91. Lindsey, Shroyer, Pashler, Mozer (2014), *Psychological Science* 25(3):639–647, doi:10.1177/0956797613504302 — **+16.5% / +10.0%** semester retention — **verified via Crossref abstract**
+92. Clement, Roy, Oudeyer, Lopes (2015), JEDM 7(2), ERIC EJ1115278; preprint arXiv:1310.3174 — **verified**
+93. Clement et al. (2024), arXiv:2402.01669 — RCT, 265 children — **verified**; **the reported F/p pair is unverified**
+94. Rafferty, Brunskill, Griffiths, Shafto, *Cognitive Science* 40(6):1290–1332, doi:10.1111/cogs.12290 — **verified**
+95. Williams, Kim, Rafferty, Maldonado, Gajos, Lasecki, Heffernan — *AXIS*, L@S 2016, doi:10.1145/2876034.2876042 — **verified**
+96. Prihar, Haim, Sales, Heffernan (2022), L@S, doi:10.1145/3491140.3528267 — **verified**; +10% is **simulation only**
+97. Prihar, Sales, Heffernan (2023), UMAP, ERIC ED636016 — **verified**
+98. Rafferty, Williams, Ying (2019), JEDM, ERIC EJ1220507 — **verified**
+99. Rollinson & Brunskill (2015), EDM, ERIC ED560516 — **verified**
+100. Khajah, Lindsey, Mozer — *How deep is knowledge tracing?*, arXiv:1604.02416 — **verified**
+101. Williams et al. — MOOClet framework, arXiv:1502.04247 and arXiv:1509.04360 — **verified**; methodology only, no outcome effect sizes
 
 ### Internal prior (this survey)
 63. §05 *The explanation is the work* — test-based selection **+8.14pp** vs LLM-judge **−3.20pp / −1.68pp**; expectancy **g = 0.48 vs −0.02**; human code raters α ≈ 0.20
