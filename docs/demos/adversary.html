@@ -286,43 +286,52 @@ function encode(d){let x=0;for(let j=0;j<RADIX.length;j++)x=x*RADIX[j].n+d[RADIX
 function itemOf(d){
   const S=SCEN[d.sc],N=NAMES[d.nm];
   const rA=RA[d.ra];
-  const drain=!!d.s6;
+  const q=d.q;
+  /* solving for the second rate means it cannot also be stated, and a head start
+     would over-determine the item — so those two flags are suppressed there. */
+  let drain=(q===1)?false:!!d.s6;
+  const h=(q===1)?0:(d.s5?HS[d.hs]:0);
   let rB=RB[d.rb];
   if(drain&&rB>=rA-1)rB=Math.max(2,rA-4);          /* keep every item solvable */
   const net=rA+(drain?-rB:rB);
-  const C=CAP[d.cp], h=d.s5?HS[d.hs]:0, T=TT[d.tt];
-  const q=d.q;
+  const C=CAP[d.cp], T=TT[d.tt];
   const steps=[],ans={};
-  /* stated rate for A: direct, or over a 15-minute base */
+  /* the first rate: stated directly, or over a 15-minute base */
   let aStated;
-  if(d.s2){const per15=rA/4;aStated=N[0]+'’s '+S.a+' '+S.v+' '+(+per15.toFixed(2))+' '+S.u+' every 15 minutes';
-    steps.push({t:'Convert the first rate to a per-hour figure: '+(+per15.toFixed(2))+' '+S.u+' / 15 min × 4 = <b>'+rA+' '+S.u+'/h</b>.',c:1});}
-  else aStated=N[0]+'’s '+S.a+' '+S.v+' '+rA+' '+S.u+' per hour';
-  const bStated=N[1]+'’s '+S.b+' '+(drain?S.w:S.v)+' '+rB+' '+S.u+' per hour';
-  if(drain)steps.push({t:'The second agent <b>removes</b>. The combined rate is a difference, not a sum: '+rA+' − '+rB+' = <b>'+net+' '+S.u+'/h</b>.',c:1});
-  else steps.push({t:'Combine the rates: '+rA+' + '+rB+' = <b>'+net+' '+S.u+'/h</b>.',c:0});
-  if(h)steps.push({t:'The first agent works alone for '+h+' h and moves '+h+' × '+rA+' = <b>'+(h*rA)+' '+S.u+'</b> before the second starts.',c:1});
+  if(d.s2){const per15=+(rA/4).toFixed(2);
+    aStated=N[0]+'\u2019s '+S.a+' '+S.v+' '+per15+' '+S.u+' every 15 minutes';
+    steps.push({t:'Convert the first rate to a per-hour figure: '+per15+' '+S.u+' / 15 min \u00d7 4 = <b>'+rA+' '+S.u+'/h</b>.',c:1});}
+  else aStated=N[0]+'\u2019s '+S.a+' '+S.v+' '+rA+' '+S.u+' per hour';
+  const bStated=(q===1)
+    ? N[1]+'\u2019s '+S.b+' starts at the same moment, at a rate that has not been fixed yet'
+    : N[1]+'\u2019s '+S.b+' '+(drain?S.w:S.v)+' '+rB+' '+S.u+' per hour';
+  if(q!==1){
+    if(drain)steps.push({t:'The second agent <b>removes</b>. The combined rate is a difference, not a sum: '+rA+' \u2212 '+rB+' = <b>'+net+' '+S.u+'/h</b>.',c:1});
+    else steps.push({t:'Combine the rates: '+rA+' + '+rB+' = <b>'+net+' '+S.u+'/h</b>.',c:0});}
+  if(h)steps.push({t:'The first agent works alone for '+h+' h and moves '+h+' \u00d7 '+rA+' = <b>'+(+(h*rA).toFixed(2))+' '+S.u+'</b> before the second starts.',c:1});
   let question,answer,unitOut=' hours';
   if(q===0){
     const t=(C-h*rA)/net, total=h+t;
-    steps.push({t:'Remaining work ÷ combined rate: ('+C+' − '+(h*rA)+') ÷ '+net+' = <b>'+(+t.toFixed(3))+' h</b> with both running.',c:0});
+    steps.push({t:'Remaining work \u00f7 combined rate: ('+C+' \u2212 '+(+(h*rA).toFixed(2))+') \u00f7 '+net+' = <b>'+(+t.toFixed(3))+' h</b> with both running.',c:0});
     if(h)steps.push({t:'Add the head start back: '+h+' + '+(+t.toFixed(3))+' = <b>'+(+total.toFixed(3))+' h</b>.',c:1});
-    answer=total;question=(d.s3?'How many minutes':'How long')+' does the whole '+S.o+
+    answer=total;
+    question=(d.s3?'How many minutes':'How long')+' does the whole '+S.o+
       ' take, from the moment the first '+S.a+' starts?';
   }else if(q===1){
-    const t=T-h, rb2=(C-h*rA-t*rA)/t;
-    steps.push({t:'The two run together for '+T+' − '+h+' = <b>'+(+t.toFixed(3))+' h</b>.',c:h?1:0});
-    steps.push({t:'Rearrange for the unknown rate: ('+C+' − '+(h*rA)+' − '+(+(t*rA).toFixed(2))+') ÷ '+(+t.toFixed(3))+' = <b>'+(+rb2.toFixed(3))+' '+S.u+'/h</b>.',c:1});
+    const rb2=(C-rA*T)/T;
+    steps.push({t:'Both run for the whole '+T+' h, so the first agent contributes '+rA+' \u00d7 '+T+' = <b>'+(rA*T)+' '+S.u+'</b>.',c:0});
+    steps.push({t:'Rearrange for the unknown rate: ('+C+' \u2212 '+(rA*T)+') \u00f7 '+T+' = <b>'+(+rb2.toFixed(3))+' '+S.u+'/h</b>.',c:1});
     answer=rb2;unitOut=' '+S.u+'/h';
-    question='What rate must the second '+S.b+' work at for the '+S.o+' to be finished in exactly '+T+' hours?';
+    question='What rate must the second '+S.b+' work at for the '+S.o+' \u2014 all '+C+' '+S.u+
+      ' of it \u2014 to be finished in exactly '+T+' hours?';
   }else{
     const t=T-h, cap=h*rA+t*net;
-    steps.push({t:'The two run together for '+T+' − '+h+' = <b>'+(+t.toFixed(3))+' h</b>.',c:h?1:0});
-    steps.push({t:'Total work = head-start work + joint work: '+(h*rA)+' + '+(+t.toFixed(3))+' × '+net+' = <b>'+(+cap.toFixed(2))+' '+S.u+'</b>.',c:0});
+    steps.push({t:'The two run together for '+T+' \u2212 '+h+' = <b>'+(+t.toFixed(3))+' h</b>.',c:h?1:0});
+    steps.push({t:'Total work = head-start work + joint work: '+(+(h*rA).toFixed(2))+' + '+(+t.toFixed(3))+' \u00d7 '+net+' = <b>'+(+cap.toFixed(2))+' '+S.u+'</b>.',c:0});
     answer=cap;unitOut=' '+S.u;
     question='How large is the '+S.o+', if it is exactly finished after '+T+' hours?';
   }
-  if(d.s3&&q===0){steps.push({t:'The question asks for <b>minutes</b>: '+(+answer.toFixed(3))+' × 60 = <b>'+(+(answer*60).toFixed(1))+' minutes</b>.',c:1});
+  if(d.s3&&q===0){steps.push({t:'The question asks for <b>minutes</b>: '+(+answer.toFixed(3))+' \u00d7 60 = <b>'+(+(answer*60).toFixed(1))+' minutes</b>.',c:1});
     answer=answer*60;unitOut=' minutes';}
   const irrel=d.s4?'The '+S.o+' is '+(2+d.cp)+' metres deep and was commissioned in 20'+(10+d.hs)+'. ':'';
   ans.value=answer;ans.unit=unitOut;
@@ -380,7 +389,7 @@ function render(){
   /* approach options */
   const wrong=[];
   if(it.h)wrong.push({t:'Divide the capacity by the combined rate.',trap:'head'});
-  if(it.drain)wrong.push({t:'Add the two rates and divide.',trap:'sign'});
+  if(it.drain&&it.q!==1)wrong.push({t:'Add the two rates and divide.',trap:'sign'});
   if(d.s2)wrong.push({t:'Use the stated figure as a per-hour rate.',trap:'base'});
   if(d.s3&&it.q===0)wrong.push({t:'Give the answer in hours.',trap:'unit'});
   if(d.s4)wrong.push({t:'Use the depth figure — it must be there for a reason.',trap:'irrel'});
@@ -441,7 +450,7 @@ const LEVELS=[
  {q:0,s2:0,s3:0,s4:0,s5:0,s6:0},
  {q:0,s2:1,s3:0,s4:1,s5:0,s6:0},
  {q:2,s2:1,s3:0,s4:1,s5:0,s6:1},
- {q:1,s2:1,s3:0,s4:1,s5:1,s6:1},
+ {q:0,s2:1,s3:0,s4:1,s5:1,s6:1},
  {q:0,s2:1,s3:1,s4:1,s5:1,s6:1}];
 function applyDial(){
   const d=decode(IDX),L=LEVELS[+$('dial').value-1];
