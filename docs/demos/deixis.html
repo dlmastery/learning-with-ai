@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pointing At The Thing — Demo 06</title>
+<meta name="description" content="A tutor that circles, arrows and highlights a shared figure and says “this”, versus the same tutor describing position in words. Drag a vertex — the gestures follow, because they are computed from the geometry." />
+<link rel="stylesheet" href="demo.css" />
+<style>
+.tag{font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;
+  border-radius:5px;border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
+.stage{background:var(--sunken);border:1px solid var(--line);border-radius:var(--r);
+  padding:10px;margin-bottom:16px;touch-action:none}
+.fig{stroke-linecap:round;stroke-linejoin:round}
+.fig .base{fill:none;stroke:var(--ink-3);stroke-width:2}
+.fig .par{fill:none;stroke:var(--ink-3);stroke-width:1.5;stroke-dasharray:7 6}
+.fig .lbl{font:600 13px var(--sans);fill:var(--ink-2)}
+.fig .amt{font:600 12px var(--mono);fill:var(--ink-3)}
+.fig .arc{fill:none;stroke:var(--ink-3);stroke-width:1.6}
+.fig .hi{stroke:var(--real);stroke-width:4.5}
+.fig .hiw{stroke:var(--real);stroke-width:3.5;fill:none}
+.fig .ring{fill:none;stroke:var(--real);stroke-width:2.6}
+.fig .sweep{fill:var(--real);opacity:.13;stroke:none}
+.fig .arw{fill:none;stroke:var(--real);stroke-width:2;stroke-dasharray:5 5}
+.fig .grab{fill:var(--felt);opacity:.9;cursor:grab}
+.fig .grab:active{cursor:grabbing}
+.fig .halo{fill:var(--felt);opacity:.16}
+.turns{display:flex;flex-direction:column;gap:10px}
+.turn{padding:12px 15px;border-radius:12px;border:1px solid var(--line);background:var(--surface);
+  font-size:14.8px;line-height:1.55;color:var(--ink-2);cursor:pointer;transition:border-color .12s}
+.turn:hover{border-color:var(--ink-3)}
+.turn.act{border-color:var(--real);background:color-mix(in oklab,var(--real) 6%,transparent);color:var(--ink)}
+.turn .n{font:600 10.5px/1 var(--mono);color:var(--ink-3);margin-right:9px}
+.turn.act .n{color:var(--real)}
+.two{display:grid;grid-template-columns:1fr;gap:14px;margin:22px 0}
+@media(min-width:700px){.two{grid-template-columns:1fr 1fr}}
+.stat{border:1px solid var(--line);border-radius:var(--r);padding:18px;background:var(--surface)}
+.stat .sn{font:600 10.5px/1 var(--sans);letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.stat .sv{font:400 30px/1 var(--serif);margin-bottom:6px}
+.stat.a .sv{color:var(--real)} .stat.b .sv{color:var(--felt)}
+.stat p{font-size:13.2px;line-height:1.55;margin:0;color:var(--ink-3)}
+.mini{font-size:12.5px;color:var(--ink-3)}
+.sum{font:13.5px/1.6 var(--mono);color:var(--ink-2)}
+.sum b{color:var(--ink)}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo Gallery</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 06 · The Village</div>
+  <h1>Pointing At The Thing</h1>
+  <p class="lede">Human teachers do not describe position. They <strong>point</strong>. Here is a
+  tutor that circles, arrows and shades a shared figure while saying “this” — and the same tutor
+  forbidden from pointing, so you can feel what the words cost.</p>
+  <div class="chips">
+    <span class="chip m">Computed live</span>
+    <span class="chip m">Drag a vertex</span>
+    <span class="chip n">Tutoring loop unmeasured</span>
+  </div>
+</header>
+
+<div class="note"><b>COMPUTED.</b> The figure is not a picture. Every angle, arc, parallel line and
+pointing gesture is computed from three vertex coordinates, live — drag a vertex and the
+<em>referents move with it</em>, because they are derived from the object rather than drawn on top
+of it. That is the actual technical claim behind deixis: a gesture has to resolve to a region of
+the current scene, not to a location on a canvas. The tutor's <b>sentences are a fixed script</b>,
+which is labelled below every time it matters.</div>
+
+<h2>1 · The shared field</h2>
+<div class="stage">
+<svg id="svg" viewBox="0 0 620 400" class="fig" role="img" aria-label="A triangle with a line drawn through the apex parallel to the base, and its interior angles marked.">
+  <g id="ov"></g>
+  <g id="base"></g>
+  <g id="handles"></g>
+</svg>
+</div>
+<div class="row">
+  <button class="pri" id="mode">Switch to words only</button>
+  <button id="prev">◀ Back</button>
+  <button id="nxt">Next ▶</button>
+  <button id="reset">Reset the triangle</button>
+</div>
+<div class="sum" id="angles" style="margin-top:14px">—</div>
+
+<h2>2 · The tutor’s turns</h2>
+<p class="sub" id="modeNote">—</p>
+<div class="turns" id="turns"></div>
+
+<div class="two">
+  <div class="stat a">
+    <div class="sn">Deictic transcript</div>
+    <div class="sv" id="wA">—</div>
+    <p>Words needed when the tutor can point. “This angle” is two words because the pointing does
+    the referring.</p>
+  </div>
+  <div class="stat b">
+    <div class="sn">Words-only transcript</div>
+    <div class="sv" id="wB">—</div>
+    <p id="wBn">Words needed when the same content must locate every referent in prose. Counted
+    from the two scripts on this page.</p>
+  </div>
+</div>
+
+<div class="note"><b>What that number is and is not.</b> It is a genuine count of the two scripts,
+and it measures <em>verbosity</em>. It is not a measure of comprehension, effort or learning. The
+reason to care about the difference is a separate, older result: the <b>spatial-contiguity /
+split-attention effect, g = 0.63</b> — text placed next to the thing it describes beats text placed
+away from it, because the learner does not have to hold a search in working memory while
+integrating. Deixis is a mechanism for achieving contiguity in a moving, interactive figure.
+<b>The effect size belongs to contiguity, not to this demo.</b></div>
+
+<h2>3 · The substrate now exists — and stops one step short</h2>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Capability</th><th class="num">Measured</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>Resolving “the angle at the base of the triangle” to a <b>region of a diagram</b><br />
+      <span class="mini">Florence-2 fine-tuned on 200k synthetic geometry diagrams, referring-expression segmentation</span></td>
+      <td class="num up"><b>49% IoU</b><br />85% buffered IoU</td>
+      <td>Exists. arXiv:2604.02893, <code>MEASURED-BENCH</code></td></tr>
+    <tr><td>The same task, <b>zero-shot</b></td>
+      <td class="num down"><b>&lt; 1% IoU</b></td>
+      <td>The gap that fine-tuning closed. Nothing about this was free.</td></tr>
+    <tr><td>A <b>tutoring loop</b> built on that grounding — point, ask, watch, re-point</td>
+      <td class="num">—</td><td><b>Does not exist</b> in any located work</td></tr>
+    <tr><td>An <b>efficacy measurement</b> of deictic tutoring vs the same tutor without pointing</td>
+      <td class="num">—</td><td><b>Does not exist.</b> This is the missing trial</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note warn"><b>Read 49% correctly.</b> It is a genuine advance from a floor of under 1%,
+on a task that was recently hopeless — and it means that on roughly half the pixels of a typical
+referent, the model and the ground truth disagree. Buffered IoU at 85% says the model usually
+points at approximately the right thing. “Approximately the right thing” is a good research result
+and an ambiguous tutoring signal: a tutor that circles approximately the right angle has, from the
+learner's side, circled a different angle.</div>
+
+<h2>4 · Why the words-only version is not merely wordier</h2>
+<p>Switch the mode and read turn 4 in both versions. In the deictic version the learner's eye is
+led to the referent before the claim arrives. In the words-only version the learner must
+<em>parse a locative description, search the figure, commit to a candidate, and only then</em>
+receive the claim — and if they picked the wrong candidate, the claim lands on the wrong object and
+nothing in the interaction detects it. That is the failure the pointing removes. It is also,
+precisely, the failure a 49%-IoU pointer <em>reintroduces</em> half the time.</p>
+
+<h2>What this proves / what it does not</h2>
+<div class="panel">
+  <div class="ptitle">What it proves</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li>Deictic reference can be made <strong>computational</strong>: gestures resolved against a
+    live geometric model, not baked into an image. Drag a vertex and every referent follows.</li>
+    <li>The contrast is felt rather than argued. One toggle, same content, and the words-only
+    version is immediately worse to follow.</li>
+    <li>A shared, manipulable field is buildable with no dependency — SVG, pointer events, and
+    about a hundred lines of trigonometry.</li>
+    <li>The verbosity cost of banning deixis is real and countable.</li>
+  </ul>
+  <div class="ptitle">What it does not prove</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li><strong>That pointing teaches better.</strong> The comparison — deictic tutor versus the
+    same tutor without gestures, on learning outcomes — has not been run. What exists is the
+    contiguity literature, which is adjacent and not the same claim.</li>
+    <li>That a model could produce these gestures. Here they are hand-authored against known
+    regions. The hard problem is the inverse: taking a natural-language intention and resolving it
+    to the right region, which is the 49%-IoU problem, on synthetic diagrams, in one domain.</li>
+    <li>That deixis survives contact with a messy figure. A triangle has a small, unambiguous set
+    of referents. A photograph of a lab bench, a hand-drawn working, or a student's own sketch does
+    not.</li>
+    <li>That the learner's attention actually went where the circle went. This page has no eye
+    tracking and no comprehension probe. Pointing is an <em>invitation</em> to look; whether it was
+    accepted is exactly what the missing trial would measure.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../">Dashboard</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw">Research reports</a>
+  <br /><br />Sources: arXiv:2604.02893 (geometry referring-expression segmentation, verified 2026-07-27) ·
+  spatial-contiguity meta-analysis, <code>B1-learning-science</code> · open problem OP-8, <code>F9-open-problems</code>.
+</footer>
+
+</div>
+<script>
+const tt=document.getElementById('tt'),R=document.documentElement;
+tt.onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const NS='http://www.w3.org/2000/svg';
+const HOME={A:[300,90],B:[130,320],C:[500,320]};
+let V={A:HOME.A.slice(),B:HOME.B.slice(),C:HOME.C.slice()};
+let STEP=0, WORDS=false;
+
+/* ── vector helpers ───────────────────────────────────────── */
+const sub=(p,q)=>[p[0]-q[0],p[1]-q[1]];
+const add=(p,q)=>[p[0]+q[0],p[1]+q[1]];
+const mul=(p,s)=>[p[0]*s,p[1]*s];
+const len=p=>Math.hypot(p[0],p[1]);
+const nrm=p=>{const l=len(p)||1;return [p[0]/l,p[1]/l];};
+const dot=(p,q)=>p[0]*q[0]+p[1]*q[1];
+const crs=(p,q)=>p[0]*q[1]-p[1]*q[0];
+const deg=r=>r*180/Math.PI;
+
+/* ── the computed model ───────────────────────────────────── */
+function G(){
+  const {A,B,C}=V;
+  const d=nrm(sub(C,B));                       /* direction of the base */
+  const L=340;
+  const PL=sub(A,mul(d,L)), PR=add(A,mul(d,L));/* the parallel line through A */
+  function arc(at,p,q,r){
+    const u=nrm(sub(p,at)),w=nrm(sub(q,at));
+    const s=add(at,mul(u,r)),e=add(at,mul(w,r));
+    const sweep=crs(u,w)>0?1:0;
+    const mid=add(at,mul(nrm(add(u,w)),r*1.34));
+    const ang=deg(Math.acos(Math.max(-1,Math.min(1,dot(u,w)))));
+    return {d:'M'+s[0].toFixed(1)+' '+s[1].toFixed(1)+'A'+r+' '+r+' 0 0 '+sweep+' '+
+              e[0].toFixed(1)+' '+e[1].toFixed(1), mid, ang};
+  }
+  const angA=arc(A,B,C,44), angB=arc(B,C,A,40), angC=arc(C,A,B,40);
+  const altL=arc(A,PL,B,64), altR=arc(A,PR,C,64);
+  const wedge='M'+PL[0].toFixed(1)+' '+PL[1].toFixed(1)+'L'+A[0]+' '+A[1]+
+              'L'+PR[0].toFixed(1)+' '+PR[1].toFixed(1)+'Z';
+  const sweepArc=arc(A,PL,PR,86);
+  return {A,B,C,PL,PR,angA,angB,angC,altL,altR,wedge,sweepArc,
+    sideBC:'M'+B[0]+' '+B[1]+'L'+C[0]+' '+C[1],
+    sideAB:'M'+A[0]+' '+A[1]+'L'+B[0]+' '+B[1],
+    sideAC:'M'+A[0]+' '+A[1]+'L'+C[0]+' '+C[1],
+    line:'M'+PL[0].toFixed(1)+' '+PL[1].toFixed(1)+'L'+PR[0].toFixed(1)+' '+PR[1].toFixed(1)};
+}
+
+/* ── the script. deictic turns and their words-only twins ─── */
+const TURNS=[
+ {d:'A triangle. Nothing is claimed yet — drag any of the three orange handles and watch every mark on the figure recompute.',
+  w:'A triangle. Nothing is claimed yet — drag any of the three orange handles, at the top vertex, the lower-left vertex and the lower-right vertex, and watch every mark on the figure recompute.',
+  hi:[]},
+ {d:'Start here. Look at <b>this</b> angle.',
+  w:'Start at the lower-left vertex. Look at the angle formed there between the horizontal base and the side that rises to the apex.',
+  hi:['angB','ringB']},
+ {d:'And <b>this</b> one.',
+  w:'And now the angle at the lower-right vertex, formed between the same horizontal base and the side that rises from there to the apex.',
+  hi:['angC','ringC']},
+ {d:'I am drawing <b>this</b> line through <b>here</b>, parallel to <b>this</b> side.',
+  w:'I am drawing a dashed line through the top vertex, running parallel to the horizontal base at the bottom of the figure, and extending well past the triangle on both the left and the right.',
+  hi:['line','ringA','sideBC']},
+ {d:'Now: <b>this</b> angle is equal to <b>this</b> one.',
+  w:'Now, the angle at the top vertex formed between the leftward part of the dashed line and the side running down to the lower-left vertex is equal to the angle at the lower-left vertex that we looked at first.',
+  hi:['altL','angB'],arw:['altL','angB']},
+ {d:'And <b>this</b> equals <b>this</b>.',
+  w:'And the angle at the top vertex formed between the rightward part of the dashed line and the side running down to the lower-right vertex is equal to the angle at the lower-right vertex that we looked at second.',
+  hi:['altR','angC'],arw:['altR','angC']},
+ {d:'So <b>these three</b> make a straight line.',
+  w:'So the three angles gathered at the top vertex — the one on the left between the dashed line and the left side, the triangle’s own angle at the top, and the one on the right between the dashed line and the right side — together make a straight line.',
+  hi:['altL','angA','altR'],sweep:1},
+ {d:'Which is why <b>this</b> plus <b>this</b> plus <b>this</b> is 180°. Drag a vertex — it stays 180°.',
+  w:'Which is why the angle at the top vertex, plus the angle at the lower-left vertex, plus the angle at the lower-right vertex, comes to 180 degrees. Drag any vertex — it stays 180 degrees.',
+  hi:['angA','angB','angC']}
+];
+
+/* ── drawing ──────────────────────────────────────────────── */
+function el(tag,attrs){const n=document.createElementNS(NS,tag);
+  for(const k in attrs)n.setAttribute(k,attrs[k]);return n;}
+function draw(){
+  const g=G(),T=TURNS[STEP],hi=(WORDS?[]:(T.hi||[]));
+  const base=$('base'),ov=$('ov'),hd=$('handles');
+  base.textContent='';ov.textContent='';hd.textContent='';
+  /* the figure itself, always visible */
+  if(STEP>=3)base.appendChild(el('path',{d:g.line,class:'par'}));
+  [g.sideAB,g.sideAC,g.sideBC].forEach(d=>base.appendChild(el('path',{d,class:'base'})));
+  [['angA',g.angA],['angB',g.angB],['angC',g.angC]].forEach(([k,a])=>
+    base.appendChild(el('path',{d:a.d,class:'arc'})));
+  if(STEP>=4){[['altL',g.altL],['altR',g.altR]].forEach(([k,a])=>
+    base.appendChild(el('path',{d:a.d,class:'arc'})));}
+  /* labels */
+  const off={A:[0,-20],B:[-20,20],C:[20,20]};
+  ['A','B','C'].forEach(k=>{const p=add(V[k],off[k]);
+    const t=el('text',{x:p[0],y:p[1],class:'lbl','text-anchor':'middle'});t.textContent=k;base.appendChild(t);});
+  [['A',g.angA],['B',g.angB],['C',g.angC]].forEach(([k,a])=>{
+    const t=el('text',{x:a.mid[0],y:a.mid[1]+4,class:'amt','text-anchor':'middle'});
+    t.textContent=a.ang.toFixed(1)+'°';base.appendChild(t);});
+  /* the pointing layer — suppressed entirely in words-only mode */
+  if(T.sweep&&!WORDS)ov.appendChild(el('path',{d:g.wedge,class:'sweep'}));
+  const REG={angA:g.angA,angB:g.angB,angC:g.angC,altL:g.altL,altR:g.altR};
+  hi.forEach(k=>{
+    if(REG[k])ov.appendChild(el('path',{d:REG[k].d,class:'hiw'}));
+    else if(k==='line')ov.appendChild(el('path',{d:g.line,class:'hi',fill:'none','stroke-dasharray':'7 6'}));
+    else if(k==='sideBC')ov.appendChild(el('path',{d:g.sideBC,class:'hi',fill:'none'}));
+    else if(k.slice(0,4)==='ring'){const p=V[k[4]];
+      ov.appendChild(el('circle',{cx:p[0],cy:p[1],r:21,class:'ring'}));}
+  });
+  if(T.arw&&!WORDS){
+    const a=REG[T.arw[0]].mid,b=REG[T.arw[1]].mid;
+    const m=[(a[0]+b[0])/2,(a[1]+b[1])/2-58];
+    ov.appendChild(el('path',{d:'M'+a[0].toFixed(1)+' '+a[1].toFixed(1)+'Q'+m[0].toFixed(1)+' '+
+      m[1].toFixed(1)+' '+b[0].toFixed(1)+' '+b[1].toFixed(1),class:'arw'}));
+    const dir=nrm(sub(b,m)),n1=add(b,mul([-dir[0]+dir[1],-dir[1]-dir[0]],11)),
+          n2=add(b,mul([-dir[0]-dir[1],-dir[1]+dir[0]],11));
+    ov.appendChild(el('path',{d:'M'+n1[0].toFixed(1)+' '+n1[1].toFixed(1)+'L'+b[0].toFixed(1)+' '+
+      b[1].toFixed(1)+'L'+n2[0].toFixed(1)+' '+n2[1].toFixed(1),class:'arw','stroke-dasharray':'none'}));
+  }
+  /* drag handles */
+  ['A','B','C'].forEach(k=>{
+    hd.appendChild(el('circle',{cx:V[k][0],cy:V[k][1],r:16,class:'halo'}));
+    const c=el('circle',{cx:V[k][0],cy:V[k][1],r:7,class:'grab','data-v':k});
+    hd.appendChild(c);});
+  const s=g.angA.ang+g.angB.ang+g.angC.ang;
+  $('angles').innerHTML='computed from the coordinates, live &nbsp;·&nbsp; A = <b>'+g.angA.ang.toFixed(2)+
+    '°</b> + B = <b>'+g.angB.ang.toFixed(2)+'°</b> + C = <b>'+g.angC.ang.toFixed(2)+'°</b> &nbsp;=&nbsp; <b>'+
+    s.toFixed(2)+'°</b>';
+}
+function paintTurns(){
+  $('turns').innerHTML=TURNS.map((t,i)=>'<div class="turn'+(i===STEP?' act':'')+'" data-i="'+i+'">'+
+    '<span class="n">'+String(i).padStart(2,'0')+'</span>'+(WORDS?t.w:t.d)+'</div>').join('');
+  $('turns').querySelectorAll('.turn').forEach(n=>n.onclick=()=>{STEP=+n.dataset.i;draw();paintTurns();});
+  $('mode').textContent=WORDS?'Switch back to pointing':'Switch to words only';
+  $('mode').classList.toggle('pri',!WORDS);
+  $('modeNote').innerHTML=WORDS
+    ? '<b>Words-only mode.</b> The figure is still here; the tutor is not allowed to touch it. Same content, same order, every referent located in prose. Click a turn to jump to it.'
+    : '<b>Pointing mode.</b> The tutor circles, thickens and shades regions of the figure and refers to them as “this”. Click a turn to jump to it. <span class="mini">The sentences are a fixed script; the gestures are computed.</span>';
+  const count=s=>s.replace(/<[^>]+>/g,'').trim().split(/\s+/).length;
+  const a=TURNS.reduce((n,t)=>n+count(t.d),0), b=TURNS.reduce((n,t)=>n+count(t.w),0);
+  $('wA').textContent=a+' words';
+  $('wB').textContent=b+' words';
+  $('wBn').innerHTML='Words needed when the same content must locate every referent in prose: <b>'+
+    (b/a).toFixed(1)+'× as many</b>, and '+(b-a)+' more words for identical mathematics. Counted from '+
+    'the two scripts on this page.';
+}
+
+/* ── dragging ─────────────────────────────────────────────── */
+let DRAG=null;
+const svg=$('svg');
+function pt(e){
+  const r=svg.getBoundingClientRect();
+  return [(e.clientX-r.left)*620/r.width,(e.clientY-r.top)*400/r.height];
+}
+svg.addEventListener('pointerdown',e=>{
+  const k=e.target&&e.target.getAttribute&&e.target.getAttribute('data-v');
+  if(!k)return;
+  DRAG=k;svg.setPointerCapture(e.pointerId);e.preventDefault();});
+svg.addEventListener('pointermove',e=>{
+  if(!DRAG)return;
+  const p=pt(e), prev=V[DRAG];
+  V[DRAG]=[Math.max(40,Math.min(580,p[0])),Math.max(40,Math.min(372,p[1]))];
+  /* refuse a degenerate configuration: a flat triangle has no angles to point at */
+  const {A,B,C}=V;
+  if(Math.abs(crs(sub(B,A),sub(C,A)))<4000){V[DRAG]=prev;return;}
+  draw();});
+['pointerup','pointercancel'].forEach(ev=>svg.addEventListener(ev,()=>{DRAG=null;}));
+
+/* ── wiring ───────────────────────────────────────────────── */
+$('nxt').onclick=()=>{STEP=Math.min(TURNS.length-1,STEP+1);draw();paintTurns();};
+$('prev').onclick=()=>{STEP=Math.max(0,STEP-1);draw();paintTurns();};
+$('mode').onclick=()=>{WORDS=!WORDS;draw();paintTurns();};
+$('reset').onclick=()=>{V={A:HOME.A.slice(),B:HOME.B.slice(),C:HOME.C.slice()};draw();};
+draw();paintTurns();
+</script>
+</body>
+</html>
