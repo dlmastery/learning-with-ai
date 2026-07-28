@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Mentor That Won’t Tell You — Demo 02</title>
+<meta name="description" content="The answer / ask / wait / pivot / escalate decision, computed live with every input exposed — and the SELPA inversion that flips withholding into telling." />
+<link rel="stylesheet" href="demo.css" />
+<style>
+.tag{font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;
+  border-radius:5px;border:1px solid var(--line-2);color:var(--ink-3)}
+.ctrl{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:640px){.ctrl{grid-template-columns:1fr 1fr}}
+.ctrl label{margin-bottom:7px}
+input[type=range]{width:100%;accent-color:var(--real);height:22px;padding:0;border:0;background:none}
+.val{font:13px/1 var(--mono);color:var(--ink);float:right;text-transform:none;letter-spacing:0}
+.tog{display:flex;gap:8px;flex-wrap:wrap}
+.tog button{padding:8px 12px;font-size:12.5px}
+.tog button.on{border-color:var(--real);color:var(--real);background:color-mix(in oklab,var(--real) 8%,transparent)}
+.dec{display:grid;grid-template-columns:1fr;gap:14px;margin:26px 0}
+@media(min-width:700px){.dec{grid-template-columns:1fr 1fr}}
+.dbox{border:1px solid var(--line);border-radius:var(--r);padding:20px;background:var(--surface)}
+.dbox.active{border-color:var(--real);box-shadow:0 0 0 1px var(--real) inset}
+.dbox.other{background:var(--sunken)}
+.dhead{font:600 10.5px/1 var(--sans);letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px}
+.dbox.active .dhead{color:var(--real)}
+.dbox.other .dhead{color:var(--felt)}
+.act{font:400 33px/1 var(--serif);letter-spacing:-.02em;color:var(--ink);margin-bottom:10px}
+.dbox.active .act{color:var(--real)} .dbox.other .act{color:var(--felt)}
+.fired{font:12.5px/1.55 var(--mono);color:var(--ink-2)}
+.rules td:first-child{font-family:var(--mono);font-size:12.5px;white-space:nowrap;color:var(--ink-3)}
+tr.hit td{background:color-mix(in oklab,var(--real) 10%,transparent);color:var(--ink)}
+tr.hit td:first-child{color:var(--real);font-weight:700}
+tr.skip td{opacity:.5}
+.trace{font:12.5px/1.7 var(--mono)}
+.trace .no{color:var(--ink-3)} .trace .yes{color:var(--real);font-weight:700}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo Gallery</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 02 · The Village</div>
+  <h1>The Mentor That Won’t Tell You</h1>
+  <p class="lede">Most tutoring systems hide the moment where they decide to help. This one puts
+  the decision function on the table. Move the inputs; watch <strong>answer / ask / wait / pivot /
+  escalate</strong> change, and read the exact rule that fired.</p>
+  <div class="chips">
+    <span class="chip m">Computed live</span>
+    <span class="chip n">Guardrails remove harm, add nothing</span>
+    <span class="chip d">Wording is templated</span>
+  </div>
+</header>
+
+<div class="note"><b>COMPUTED — with one labelled exception.</b> The decision itself is a real,
+ordered rule evaluation running in your browser; every predicate below is executed against the
+inputs you set, and the trace shows which rules were tested and which one fired. <b>The sentence
+the mentor speaks is a fixed template</b> chosen by the decision — it is not generated, and it is
+not evidence that a model would say anything similar.</div>
+
+<h2>1 · The inputs</h2>
+<p>Nothing hidden, nothing inferred. Six signals, all of which a real system can actually observe.</p>
+
+<div class="panel">
+  <div class="ctrl">
+    <div>
+      <label for="att">Attempts made <span class="val" id="attv">0</span></label>
+      <input type="range" id="att" min="0" max="6" step="1" value="0" />
+    </div>
+    <div>
+      <label for="tim">Time on task <span class="val" id="timv">0:20</span></label>
+      <input type="range" id="tim" min="10" max="1500" step="10" value="20" />
+    </div>
+    <div>
+      <label for="frus">Frustration signal <span class="val" id="frusv">0.10</span></label>
+      <input type="range" id="frus" min="0" max="100" step="1" value="10" />
+    </div>
+    <div>
+      <label for="rep">Same error repeated <span class="val" id="repv">0</span></label>
+      <input type="range" id="rep" min="0" max="5" step="1" value="0" />
+    </div>
+    <div>
+      <label for="err">Most recent error type</label>
+      <select id="err">
+        <option value="none">no error yet — blank page</option>
+        <option value="concept">conceptual — the model is wrong</option>
+        <option value="slip">slip — right method, arithmetic wrong</option>
+        <option value="conv">convention — notation, units, a name</option>
+        <option value="prereq">prerequisite — missing earlier skill</option>
+      </select>
+    </div>
+    <div>
+      <label>Was this taught in the last 7 days?</label>
+      <div class="tog" id="taught">
+        <button data-v="1" class="on">Taught</button><button data-v="0">Never taught</button>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line)">
+    <label style="margin:0 12px 0 0">Instructional mode</label>
+    <div class="tog" id="mode">
+      <button data-v="discovery" class="on">Guided discovery</button>
+      <button data-v="explicit">Explicit instruction (SELPA)</button>
+    </div>
+  </div>
+  <div class="psub" style="margin:14px 0 0">Explicit instruction is the mode with the strongest
+  evidence base for students with identified learning disabilities. It is not a lesser mode. It is
+  a different one, and it inverts the central heuristic.</div>
+</div>
+
+<h2>2 · The decision, both ways at once</h2>
+<p class="sub">The active mode is on the left. The counterfactual — what the <em>other</em> mode
+would do with identical inputs — is on the right. The inversion is the point.</p>
+
+<div class="dec">
+  <div class="dbox active" id="boxA">
+    <div class="dhead" id="headA">Guided discovery · active</div>
+    <div class="act" id="actA">wait</div>
+    <div class="fired" id="firedA"></div>
+  </div>
+  <div class="dbox other" id="boxB">
+    <div class="dhead" id="headB">Explicit instruction · counterfactual</div>
+    <div class="act" id="actB">answer</div>
+    <div class="fired" id="firedB"></div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="ptitle">What it says, and what it withholds</div>
+  <div class="psub">Template text selected by the decision. Not generated — labelled scripted.</div>
+  <div class="chat">
+    <div class="msg learner"><span class="who">Learner</span><span id="lrn">—</span></div>
+    <div class="msg agent"><span class="who">Mentor</span><span id="say">—</span></div>
+  </div>
+  <div class="note" style="margin:0" id="wh"></div>
+</div>
+
+<h2>3 · The rule set, in evaluation order</h2>
+<p class="sub">First match wins. The row that fired is highlighted; rows below it were never
+reached. This is the whole policy — there is no second, secret model.</p>
+
+<div class="scroll">
+<table class="rules">
+  <thead><tr><th>Rule</th><th>Condition</th><th>Action</th><th>Why</th></tr></thead>
+  <tbody id="rt"></tbody>
+</table>
+</div>
+
+<div class="panel sunken">
+  <div class="ptitle">Evaluation trace</div>
+  <div class="psub">Each predicate, executed, in order, against your inputs.</div>
+  <div class="trace mono-block" id="tr" style="white-space:pre-wrap"></div>
+</div>
+
+<h2>4 · Try the four cases that matter</h2>
+<div class="row">
+  <button id="s1">Blank page, 15 seconds in</button>
+  <button id="s2">Third identical error, frustrated</button>
+  <button id="s3">Stuck on a convention nobody told them</button>
+  <button id="s4">Distressed, twenty minutes, no progress</button>
+</div>
+
+<h2>5 · The evidence that justifies the restraint — and limits the claim</h2>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Condition</th><th class="num">Practice</th><th class="num">Unassisted exam</th><th>Reading</th></tr></thead>
+  <tbody>
+    <tr><td><b>Unguarded LLM</b> (GPT Base)</td><td class="num up">+48% (β = 0.137, SE .031)</td>
+      <td class="num down">−17% (β = −0.054, SE .022, p &lt; .05)</td>
+      <td>Practice soared. Learning went backwards.</td></tr>
+    <tr><td><b>Guardrailed tutor</b> (GPT Tutor)</td><td class="num up">+127% (β = 0.361, SE .032)</td>
+      <td class="num">−0.004 (SE 0.013), <b>n.s.</b></td>
+      <td>Harm removed. <b>Benefit not added.</b></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="sub">Bastani et al., <em>PNAS</em> 2025. ~1,000 high-school students, ~50 classrooms,
+4 × 90-minute sessions ≈ 15% of the curriculum. <code>MEASURED-RCT</code>. The 2025 PNAS notice
+attached to this paper is an affiliation erratum; the −17% stands.</p>
+
+<div class="note warn"><b>Read the second row honestly.</b> The guardrailed coefficient is
+<strong>−0.004, not significantly different from zero</strong>. The correct sentence is
+“restraint removes the harm; it does not add a benefit.” Anyone who quotes this trial as evidence
+that a well-designed tutor <em>teaches</em> is quoting the row above the one that matters. And it
+is one school, in one country, not yet replicated.</div>
+
+<h2>What this proves / what it does not</h2>
+<div class="panel">
+  <div class="ptitle">What it proves</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li>The help/withhold decision can be made <strong>legible</strong> — a finite, ordered,
+    inspectable rule set rather than a vibe emitted by a prompt.</li>
+    <li>Every input is one a real system can observe without inferring a diagnosis, an emotion, or
+    a disability label.</li>
+    <li>The SELPA inversion is a genuine structural property, not a slogan: identical inputs, two
+    modes, different actions — and the mode is a declared setting, never something the system
+    guesses about a child.</li>
+    <li>Escalation to a human is a first-class outcome with its own firing rule, not a fallback for
+    when the model fails.</li>
+  </ul>
+  <div class="ptitle">What it does not prove</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li><strong>That these thresholds are right.</strong> 45 seconds, 0.85, three repeats — every
+    constant here is a design proposal, not a measured optimum. No trial has calibrated them.</li>
+    <li>That the inputs are measurable at this fidelity. “Frustration signal” is a slider here; in
+    production it is an inference, and inferring affect from keystrokes has a poor track record.</li>
+    <li>That withholding teaches. The guardrailed arm of the only RCT with an AI-removed exam
+    returned <strong>n.s.</strong> Restraint is defensible because the unguarded alternative
+    measured −17%, not because restraint measured a gain.</li>
+    <li>That the templated sentences would survive contact with a real model. Selection is computed;
+    the words are canned.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../">Dashboard</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw">Research reports</a>
+  <br /><br />Sources: Bastani et al. (2025) <em>PNAS</em> · EEF/E4L explicit-instruction entries · 34 CFR 300.
+</footer>
+
+</div>
+<script>
+const tt=document.getElementById('tt'),R=document.documentElement;
+tt.onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+<script>
+const $=id=>document.getElementById(id);
+const S={att:0,tim:20,frus:.10,rep:0,err:'none',taught:1,mode:'discovery'};
+
+/* ── the policy. two ordered rule sets, first match wins ───── */
+const DISCOVERY=[
+ {id:'D1',act:'escalate',c:'frustration ≥ 0.80  AND  time ≥ 10 min',
+  f:s=>s.frus>=.80&&s.tim>=600,
+  why:'Sustained distress is not a tutoring problem. Hand to a human; do not keep prompting.'},
+ {id:'D2',act:'escalate',c:'same error ≥ 4  AND  attempts ≥ 4',
+  f:s=>s.rep>=4&&s.att>=4,
+  why:'Four identical failures means the model of the learner is wrong. The system does not get to keep guessing.'},
+ {id:'D3',act:'answer',c:'error = convention',
+  f:s=>s.err==='conv',
+  why:'A notational convention is not discoverable. Withholding an arbitrary name is cruelty dressed as pedagogy.'},
+ {id:'D4',act:'answer',c:'taught = never  AND  attempts ≥ 2',
+  f:s=>!s.taught&&s.att>=2,
+  why:'You cannot withhold what was never given. Unassisted discovery measures d = −0.38 against explicit instruction.'},
+ {id:'D5',act:'wait',c:'attempts = 0  AND  time &lt; 45 s',
+  f:s=>s.att===0&&s.tim<45,
+  why:'Silence is the intervention. Interrupting before the first attempt destroys the generation effect.'},
+ {id:'D6',act:'pivot',c:'same error ≥ 3  AND  frustration ≥ 0.50',
+  f:s=>s.rep>=3&&s.frus>=.50,
+  why:'Repeating the same representation harder is not teaching. Change the representation, not the volume.'},
+ {id:'D7',act:'ask',c:'error = conceptual',
+  f:s=>s.err==='concept',
+  why:'A wrong model must be surfaced before it is contradicted, or the correction lands on nothing.'},
+ {id:'D8',act:'answer',c:'error = prerequisite  AND  attempts ≥ 2',
+  f:s=>s.err==='prereq'&&s.att>=2,
+  why:'The blockage is upstream. Teach the missing step directly; struggling here trains helplessness, not the skill.'},
+ {id:'D9',act:'ask',c:'attempts ≥ 1  AND  error = slip',
+  f:s=>s.att>=1&&s.err==='slip',
+  why:'The method is right. Point at the line, do not re-teach the method.'},
+ {id:'D10',act:'wait',c:'time &lt; 3 min  AND  frustration &lt; 0.60',
+  f:s=>s.tim<180&&s.frus<.60,
+  why:'Productive struggle has a floor and this is inside it.'},
+ {id:'D11',act:'ask',c:'default',f:()=>true,
+  why:'When nothing else fires, ask rather than tell. The default is the cheapest reversible act.'}
+];
+const EXPLICIT=[
+ {id:'E1',act:'escalate',c:'frustration ≥ 0.80  AND  time ≥ 10 min',
+  f:s=>s.frus>=.80&&s.tim>=600,
+  why:'Unchanged. Distress escalates in every mode.'},
+ {id:'E2',act:'escalate',c:'same error ≥ 4  AND  attempts ≥ 4',
+  f:s=>s.rep>=4&&s.att>=4,
+  why:'Unchanged. Four identical failures is a fidelity failure, and fidelity is the case manager’s call.'},
+ {id:'E3',act:'answer',c:'taught = never',
+  f:s=>!s.taught,
+  why:'INVERSION. Discovery waits for an attempt first; explicit instruction models the procedure first, every time.'},
+ {id:'E4',act:'answer',c:'error ∈ {conceptual, prerequisite, convention}',
+  f:s=>['concept','prereq','conv'].indexOf(s.err)>-1,
+  why:'INVERSION. Where discovery asks a diagnostic question, explicit instruction re-models the step, then requires practice.'},
+ {id:'E5',act:'pivot',c:'same error ≥ 3',
+  f:s=>s.rep>=3,
+  why:'Fires one condition earlier than D6 — no frustration threshold. Three failures is already a dosage problem.'},
+ {id:'E6',act:'answer',c:'attempts = 0',
+  f:s=>s.att===0,
+  why:'INVERSION. A blank page in explicit mode gets a worked example, not silence.'},
+ {id:'E7',act:'ask',c:'error = slip',
+  f:s=>s.err==='slip',
+  why:'The one place both modes agree: a slip gets a pointer, not a re-teach.'},
+ {id:'E8',act:'answer',c:'default',f:()=>true,
+  why:'INVERSION. The default is to tell, then require the learner to do it back.'}
+];
+
+const SAY={
+ wait:['I’m going to sit with this for a moment.','',
+   'The mentor says nothing and does nothing. That is the intervention. A tutor that speaks here converts a problem the learner was about to solve into a problem the tutor solved.'],
+ ask:['What did you expect to happen, and what happened instead?','',
+   'A diagnostic question, not a hint. It costs the learner nothing to answer and it is the only way the system learns which model is in the learner’s head.'],
+ answer:['Here it is, worked, with the step you were missing marked. Now do the next one.','',
+   'Telling is correct here. The rule that fired identifies a case where withholding has no upside — an arbitrary convention, a never-taught prerequisite, or an explicit-instruction learner.'],
+ pivot:['Let’s draw it instead. Same problem, different representation.','',
+   'The content did not change; the representation did. Repeating the same explanation louder is the single most common failure of scripted tutoring.'],
+ escalate:['I’m stopping and flagging this for your teacher. This isn’t working and it isn’t your fault.','',
+   'The highest-value act available. The system declares its own incompetence rather than continuing to generate. Note it also removes blame from the learner explicitly.']
+};
+const LRN={
+ none:'…(nothing typed yet)',
+ concept:'I did 1/2 + 1/3 and got 2/5.',
+ slip:'I set it up right but I got 7 × 8 = 54.',
+ conv:'What does the little number under the square root sign mean?',
+ prereq:'I can’t do this one, I don’t know how to multiply the bottoms.'
+};
+
+function decide(rules,s){
+  const trace=[];
+  for(const r of rules){
+    const hit=!!r.f(s);
+    trace.push({id:r.id,c:r.c,hit,act:r.act});
+    if(hit)return{rule:r,trace};
+  }
+  return{rule:null,trace};
+}
+function render(){
+  $('attv').textContent=S.att;
+  $('timv').textContent=Math.floor(S.tim/60)+':'+String(S.tim%60).padStart(2,'0');
+  $('frusv').textContent=S.frus.toFixed(2);
+  $('repv').textContent=S.rep;
+  const disc=decide(DISCOVERY,S), expl=decide(EXPLICIT,S);
+  const A=S.mode==='discovery'?disc:expl, B=S.mode==='discovery'?expl:disc;
+  const nameA=S.mode==='discovery'?'Guided discovery':'Explicit instruction (SELPA)';
+  const nameB=S.mode==='discovery'?'Explicit instruction (SELPA)':'Guided discovery';
+  $('headA').textContent=nameA+' · active';
+  $('headB').textContent=nameB+' · counterfactual';
+  $('actA').textContent=A.rule.act; $('actB').textContent=B.rule.act;
+  $('firedA').innerHTML='<b>'+A.rule.id+'</b> fired — <code>'+A.rule.c+'</code><br /><br />'+A.rule.why;
+  $('firedB').innerHTML='<b>'+B.rule.id+'</b> fired — <code>'+B.rule.c+'</code><br /><br />'+B.rule.why;
+
+  const t=SAY[A.rule.act];
+  $('lrn').textContent=LRN[S.err];
+  $('say').textContent=t[0];
+  $('wh').innerHTML='<b>Why this and not the others.</b> '+t[2]+
+    (A.rule.act!==B.rule.act
+      ? ' <b>The other mode would '+B.rule.act+' instead</b> — same learner, same second, different declared mode.'
+      : ' Both modes agree here.');
+
+  const rules=S.mode==='discovery'?DISCOVERY:EXPLICIT;
+  let reached=true,rows='';
+  for(const r of rules){
+    const isHit=A.rule.id===r.id;
+    rows+='<tr class="'+(isHit?'hit':(reached?'':'skip'))+'"><td>'+r.id+'</td><td class="num">'+r.c+
+      '</td><td><b>'+r.act+'</b></td><td>'+r.why+'</td></tr>';
+    if(isHit)reached=false;
+  }
+  $('rt').innerHTML=rows;
+  $('tr').innerHTML=A.trace.map(x=>
+    (x.hit?'<span class="yes">✔ '+x.id+'  '+x.c+'   → '+x.act+'   FIRED</span>'
+          :'<span class="no">· '+x.id+'  '+x.c+'   → not met</span>')).join('\n')+
+    '\n\n<span class="no">' + (rules.length-A.trace.length) + ' rule(s) below the match were never evaluated.</span>';
+}
+function bindRange(id,key,fn){
+  $(id).oninput=e=>{S[key]=fn?fn(+e.target.value):+e.target.value;render();};
+}
+bindRange('att','att'); bindRange('tim','tim'); bindRange('rep','rep');
+bindRange('frus','frus',v=>v/100);
+$('err').onchange=e=>{S.err=e.target.value;render();};
+function bindTog(id,key,cast){
+  const box=$(id);
+  box.querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); S[key]=cast?cast(b.dataset.v):b.dataset.v; render();});
+}
+bindTog('taught','taught',v=>+v); bindTog('mode','mode');
+function setScene(o){
+  Object.assign(S,o);
+  $('att').value=S.att;$('tim').value=S.tim;$('rep').value=S.rep;
+  $('frus').value=Math.round(S.frus*100);$('err').value=S.err;
+  const tb=$('taught');tb.querySelectorAll('button').forEach(b=>b.classList.toggle('on',+b.dataset.v===S.taught));
+  render();
+}
+$('s1').onclick=()=>setScene({att:0,tim:15,frus:.05,rep:0,err:'none',taught:1});
+$('s2').onclick=()=>setScene({att:3,tim:340,frus:.62,rep:3,err:'concept',taught:1});
+$('s3').onclick=()=>setScene({att:2,tim:150,frus:.30,rep:0,err:'conv',taught:0});
+$('s4').onclick=()=>setScene({att:5,tim:1220,frus:.88,rep:4,err:'prereq',taught:1});
+render();
+</script>
+</body>
+</html>
