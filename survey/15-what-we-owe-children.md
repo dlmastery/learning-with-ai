@@ -56,26 +56,23 @@ building. And Article 6(4) means self-exemption is not silent: a provider
 claiming the derogation must document the assessment before market and register
 the system anyway.
 
-Two secondary readings are worth stating as open rather than settled. Annex III
-3(b) lacks the institutional limiter that 3(c) and 3(d) carry ("in the context
-of or within educational and vocational training institutions"), which on plain
-text pulls direct-to-consumer tutors into scope — no authoritative construction
-of that asymmetry was found. And the operative application date itself needs
-re-verification: the best available timeline source is stamped 1 August 2024 and
-therefore cannot reflect any subsequent amendment, EUR-Lex was unreachable
-during this research (HTTP 202, empty body), and there has been public
-discussion of a simplification package proposing deferral. **Do not plan on a
-delay. Check Article 113 against EUR-Lex before making a compliance decision.**
+Two secondary readings are open rather than settled. Annex III 3(b) lacks the
+institutional limiter that 3(c) and 3(d) carry, which on plain text pulls
+direct-to-consumer tutors into scope; no authoritative construction was found.
+And the application date itself needs re-verification — the best available
+timeline source is stamped 1 August 2024, EUR-Lex was unreachable during this
+research (HTTP 202, empty body), and a simplification package proposing deferral
+has been publicly discussed. **Do not plan on a delay. Check Article 113 against
+EUR-Lex before making a compliance decision.**
 
-The practical consequence for a builder is not defensive. It is that the
-conformity artefacts — risk management, data governance, logging, human
-oversight, a Fundamental Rights Impact Assessment under Article 27 for public
-deployers — are procurement assets. A state school buying an adaptive tutor has
-a legal duty to produce a FRIA. Vendors who ship an honest pre-populated
-template, including a candid list of the groups their system underserves, hand
-the customer the hardest part of their own compliance. Vendors who don't force
-the school to invent the risk analysis, and the school will find the underserved
-groups without help.
+The practical consequence for a builder is not defensive. The conformity
+artefacts — risk management, data governance, logging, human oversight, and a
+Fundamental Rights Impact Assessment under Article 27 for public deployers — are
+procurement assets. A state school buying an adaptive tutor has a legal duty to
+produce a FRIA. Ship an honest pre-populated template, including a candid list of
+the groups your system underserves, and you have handed the customer the hardest
+part of their own compliance. Don't, and the school will find those groups
+without your help.
 
 ---
 
