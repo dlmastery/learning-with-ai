@@ -54,6 +54,9 @@ edited — see C-12 and C-13, which are the reason this file exists.
 | **C-23** | 28 Jul | *(process)* Corrections were applied by **rewriting the ledger rows in place** — inside a table headed "each published rather than silently edited" — and the six corrections of 28 July appeared in no ledger at all | This file. Rows are append-only, carry provenance, and the count is generated from the filesystem | **EXTERNAL-REVIEW** |
 | **C-24** | 28 Jul | *(process)* Warned three times that `research/raw/E1-E2-*.md` exposes LessonOrca's confidential operating data — "churn economics, pricing, funnel" — and asked the owner to decide on scrubbing git history | **Mostly wrong, and it should have been checked before being raised.** §6's figures ($1,600 per churned student, $15,000 wasted labour per tutor) are the company's **own public marketing copy**, retrieved verbatim from `lessonorca.com` and labelled `VENDOR` in the report's own header. Republishing a company's published claims is not a leak. **The genuinely internal material is narrower: §7's product telemetry** (n = 31 starts, 22% signup conversion, 6% reaching first real action) — sourced from the author's own analytics, not public. That is the only part where a scrub decision is real | SELF-VERIFY |
 | **C-25** | 28 Jul | §22 framed expertise reversal as *the one aptitude-treatment interaction that survived*, without qualification | **Narrower than stated.** Noetel's meta-meta-analysis found prior knowledge **did not consistently moderate multimedia design effects (p = 0.14)**. The reversal is well established for **assistance and guidance** manipulations and is **not reliably detectable across the broad multimedia-design corpus**. The survivor is *prior knowledge moderates how much help to give* — not *prior knowledge moderates instruction*. Both sections now state the tension rather than picking a side | SELF-RESEARCH (survey writer, §24) |
+| **C-26** | 28 Jul | "WCAG 2.2 AA is the accessibility floor", published in two survey sections | **The ADA Title II web rule incorporates WCAG 2.1**, not 2.2 — and the compliance dates moved twelve months in April 2026 (91 FR 20902), to **26 April 2027** and **26 April 2028**. Most published guidance still says 2.2 and April 2026 | SELF-RESEARCH (H2) |
+| **C-27** | 28 Jul | §04 treated testing accommodations as part of the "known-good intervention" base being scaled | **Legally mandated and evidentially weak.** Kieffer et al.: overall **g = .034, p = .180**. Rios et al.: **none statistically different from zero** across N = 11,069. Elbaum 2007: the effect **reverses** at secondary level. And teachers assign them **at chance** (N = 1,218). Both halves must be held: required by law, not established by evidence | SELF-RESEARCH (H2) |
+| **C-28** | 28 Jul | "An AI that changes a child's programme without generating prior written notice has created a procedural violation" | **Directionally right, wrong in three specifics.** The duty attaches to the **agency**, not the tool; it fires on identification, evaluation, placement and FAPE provision — **not on teaching methodology**, which §300.501(b)(3) places outside the meeting requirement; and a procedural violation denies FAPE only through §300.513(a)(2)'s three gates. ED's own line governs: *"placement refers to the provision of special education and related services rather than a specific place"* (71 FR 46588) | SELF-RESEARCH (H2) |
 
 ---
 
@@ -61,13 +64,13 @@ edited — see C-12 and C-13, which are the reason this file exists.
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 13 |
+| Caught by our own research | 16 |
 | Caught by our own verification (incl. of our own warnings) | 2 |
 | **Caught by an adversarial external reviewer** | **7** |
 | Caught by our own builders, against their own briefs | 3 |
-| **Total** | **25** |
+| **Total** | **28** |
 
-Eight of twenty-five were found by someone whose job was to fail us — including the
+Eight of twenty-eight were found by someone whose job was to fail us — including the
 two most damaging (C-12, C-13) and the one about the ledger itself (C-23). That ratio
 is the honest measure of how much an internal review process is worth, and it is the
 argument for commissioning the hostile read rather than trusting the self-audit.

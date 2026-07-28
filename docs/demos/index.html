@@ -22,8 +22,6 @@ a.card:hover{border-color:var(--ink-3);transform:translateY(-2px)}
 .tag{font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;
   padding:5px 8px;border-radius:5px;border:1px solid var(--line-2);color:var(--ink-3);align-self:flex-start}
 .tag.live{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
-.tag.soon{color:var(--ink-3);opacity:.75}
-.card.soon{opacity:.6}
 .legendbar{display:flex;gap:22px;flex-wrap:wrap;font-size:13px;color:var(--ink-3);margin-top:24px}
 .legendbar b{color:var(--ink)}
 </style>
@@ -37,26 +35,18 @@ a.card:hover{border-color:var(--ink-3);transform:translateY(-2px)}
 <header>
   <div class="eyebrow">Demo Gallery</div>
   <h1>Every technique, running</h1>
-  <p class="lede">A survey that only describes techniques is a reading list. Each demo here
-  <strong>runs in your browser</strong> — no server, no key, no sign-in — and states plainly what it
-  proves and what it merely illustrates. Cards marked <em>Building</em> are not yet written and are
-  deliberately not linked, rather than shipped as a dead link.</p>
-  <div class="chips">
-    <span class="chip m">Computed live</span>
-    <span class="chip d">Scripted illustration</span>
-    <span class="chip n">Shows a null result</span>
-    <span class="chip">Building — not yet written</span>
-  </div>
+  <p class="lede">A survey that only describes techniques is a reading list. All thirteen demos
+  here <strong>run in your browser</strong> — no server, no key, no sign-in — and each states
+  plainly what it proves and what it merely illustrates.</p>
 </header>
 
-<p>Two kinds of demo here, and the difference matters more than the polish.
-<strong>Computed</strong> demos actually perform the operation — the grounding ladder really
-runs its checks and really times them; the pāṭha protocol really permutes and really detects.
-<strong>Scripted</strong> demos replay a realistic transcript because the underlying behaviour
-needs a model we can't ship in a static page. Every scripted demo is labelled as such, on the
-page, above the fold. None of them are dressed up as measurements.</p>
+<p>Every demo on this page is <strong>computed</strong>: it performs the operation rather than
+replaying a transcript. The grounding ladder really runs its checks and really times them; the
+pāṭha protocol really permutes and really detects. Where a mechanism needs a model we cannot ship
+in a static page, the page says so on itself, above the fold. None of them are dressed up as
+measurements.</p>
 
-<div class="note"><b>The honest caveat that applies to all of them.</b> A demo shows that a
+<div class="note"><b>The caveat that applies to all of them.</b> A demo shows that a
 mechanism is <em>buildable and coherent</em>. It is not evidence that it teaches. The evidence
 lives in the survey, the effect sizes are on the dashboard, and several of these techniques
 have <em>never been tested against a proper control</em> — which is stated on the pages where
@@ -178,11 +168,6 @@ about forty, the orchestration evidence permits three to five.</p>
   </a>
 </div>
 
-<div class="legendbar">
-  <span><b>Computed</b> — the page actually performs the operation and reports real output</span>
-  <span><b>Scripted</b> — a realistic replay; the mechanism needs a model we can't ship statically</span>
-</div>
-
 <h2>What none of these are</h2>
 <p>They are not products, not a curriculum, and not evidence of learning gain. They exist so
 that a reader can <strong>disagree with a specific thing</strong> rather than with a
@@ -191,8 +176,8 @@ report is in <a href="https://github.com/dlmastery/learning-with-ai/tree/main/re
 with its sources.</p>
 
 <footer>
-  <a href="../">Dashboard</a> · <a href="https://github.com/dlmastery/learning-with-ai">Repository</a>
-  · <a href="https://github.com/dlmastery/learning-with-ai/tree/main/survey">The survey</a>
+  <a href="../">Dashboard</a> · <a href="../paper.html">The survey</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai">Repository</a>
   <br /><br />Evidence-graded throughout. Negative results are first-class.
 </footer>
 

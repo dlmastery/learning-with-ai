@@ -288,8 +288,8 @@ body{padding:0;overflow-x:hidden}
   gap:20px 44px;justify-content:start;border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);padding:20px 0;margin-bottom:8px}
 .facts div{min-width:0}
-.facts dt{font:600 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;
-  color:var(--ink-3);margin-bottom:6px}
+.facts dt{font:600 10.5px/1.35 var(--sans);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:8px}
 .facts dd{font:400 21px/1 var(--serif);color:var(--ink);letter-spacing:-.01em}
 
 h2.fm{font:400 27px/1.2 var(--serif);margin:64px 0 var(--s4);letter-spacing:-.018em;
@@ -551,7 +551,6 @@ def sync_dashboard(stats):
         "sections": f"{stats['sections']}",
         "words":    f"{stats['words']:,}",
         "parts":    f"{len(PARTS)}",
-        "reports":  str(len(list((ROOT / "research" / "raw").glob("*.md")))),
         "demos":    str(len([d for d in (ROOT / "docs" / "demos").glob("*.html")
                              if d.name != "index.html"])),
         "corrections": str(len(re.findall(r"^\|\s*\*\*C-\d+\*\*\s*\|", 

@@ -78,7 +78,7 @@ sense.
 
 | Tier | Establishes | Method | Status |
 |---|---|---|---|
-| **C0** Conformance | It runs, it is reachable, it is accessible | WCAG 2.2 AA, keyboard-only, screen reader, latency budget | Real, mechanical, binary |
+| **C0** Conformance | It runs, it is reachable, it is accessible | **WCAG 2.1 AA** (the standard ADA Title II actually incorporates), keyboard-only, screen reader, latency budget | Real, mechanical, binary |
 | **C1** Correctness under adversarial probe | It is right and stays right when attacked | Executable check (CAS, unit test, proof checker) + red-team suite | **Real.** The only tier with non-circular ground truth |
 | **C2** Pedagogical form | It behaves like teaching looks | LLM-judge or expert rubric | **Proxy. Circular. Label it `PROXY` wherever reported** |
 | **C3** Learning outcome | A human who did not know now knows, 30 days later, on novel items | Growth slope on a sampled panel | **The only real certification.** Nobody ships it |

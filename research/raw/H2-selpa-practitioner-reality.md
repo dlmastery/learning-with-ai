@@ -2,7 +2,7 @@
 title: "H2 — The practitioner's week: IEP machinery, IDEA/504/ADA, LRE, procedural safeguards, caseload, and safeguarding"
 wave: H
 date_researched: 2026-07-28
-sources_count: 61
+sources_count: 118
 ---
 
 # H2 — SELPA practitioner reality
@@ -2791,19 +2791,61 @@ section.
 
 **13. Add the workload reality, and let it change the conclusion.** The section's implicit model
 is that the AI's job is instruction. §7 says the binding constraint on this system is adult
-hours, and that most of those hours are not instructional. **If AI's largest contribution here is
-administrative rather than instructional, the section should say so plainly — it is the most
-practically consequential finding in the H-wave and it is currently absent.** It also
-strengthens, rather than weakens, the instructional argument: hours returned to a caseload are
+hours, and that most of those hours are not instructional — **20% of class time on academic
+instruction and 17% on paperwork in the only direct-observation study located** (Vannest &
+Hagan-Burke 2011, 31 teachers, >7,000 data points), converging with SPeNSE's self-report and
+ASHA's 2024 SLP survey on 13–17% of professional time going to documentation. **If AI's largest
+contribution here is administrative rather than instructional, the section should say so plainly
+— it is the most practically consequential finding in the H-wave and it is currently absent.** It
+strengthens rather than weakens the instructional argument: hours returned to a caseload are
 hours available for the explicit instruction the evidence base actually supports.
 
-**14. Add escalation, and build the one-way door.** Mandated reporting is personal,
-non-delegable in at least 17 states plus DC and the Virgin Islands, triggers on *suspicion*, and
-routes **around** the parent. Every other flow in the survey routes *through* the parent. **A
-product with a single "notify the guardian" pathway has built a mechanism for endangering
-children.** State it as a flat prohibition, not a consideration.
+**But carry the track record in the same breath, or the claim is just marketing.** Computerisation:
+measured, zero. Human delegation: measured, zero, *"because much of the paperwork teachers
+complete cannot be appropriately delegated to an aide or secretary."* Deregulation: priced by ED
+at approximately zero. Statutory waiver authority: twenty-one years, no waiver, no required
+report. **The AI claim is the fifth attempt and rests on one randomised trial of 22 novice
+teachers on one sub-task.** The honest framing is a specific question, not a promise: *the barrier
+to delegation was judgement rather than throughput — is a language model a different kind of
+delegate from an aide?*
 
-**15. Fix three factual details.**
+**14. Say out loud that accommodations — the most deployed intervention in the field — do not have
+the evidence base the section's framework assumes.** Two meta-analyses return overall nulls
+(Kieffer et al., g = .034, p = .180; Rios et al., *"none… statistically different from zero"*
+across 95 effect sizes and N = 11,069). Elbaum (2007) found the differential boost **reversed** at
+secondary level. Teachers assign accommodations **at chance** (Helwig & Tindal, N = 1,218). Benefit
+is **item-conditional, not student-conditional** (Ketterlin-Geller 2007), which means no amount of
+better learner modelling can fix the assignment problem. And the What Works Clearinghouse has
+certified nothing about accommodations in thirty Practice Guides. **`survey/04` argues AI's job is
+fidelity to known-good intervention. Accommodations are legally mandated and not known-good. The
+section must hold both facts at once, because a system that faithfully delivers a child's
+accommodations is doing something required by law and unsupported by evidence.**
+
+**15. Add escalation, and build the one-way door.** Mandated reporting is personal,
+non-delegable in at least 17 states plus DC and the Virgin Islands, triggers on *suspicion*, and
+routes **around** the parent. Texas Family Code §261.101(b): *"A professional may not delegate to
+or rely on another person to make the report."* California Penal Code §11166(i)(3): reporting to
+*"an employer, supervisor, school principal, school counselor, coworker, or other person **shall
+not be a substitute for making a mandated report**."* Every other flow in the survey routes
+*through* the parent. **A product with a single "notify the guardian" pathway has built a
+mechanism for endangering children.** State it as a flat prohibition, not a consideration.
+
+**16. And state the finding that should stop the section from building a detector at all.** The
+binding constraint in school safeguarding is **disclosure, not detection.** NIS-4: school
+sentinels recognised 52% of Harm Standard maltreatment, at least 80% of it never reached an
+investigation, and CPS *"probably would have investigated nearly three-fourths (72%)"* of what it
+never saw. Wyman's group-randomised trial: gatekeeper training moved staff confidence by **ES
+1.22** and moved identification behaviour by **nothing** — because *"fewer students with prior
+suicide attempts endorsed talking to adults about distress."* Meanwhile GoGuardian's own figure is
+**4.6 alerts per student per year**, and a six-day census of ~4,400 children produced **9,387 flags
+with zero genuine suicide references** — including 44 visits to the US Holocaust Memorial Museum's
+website — routed, in at least one large district, to **school police**. **An AI that improves
+detection is intervening on the non-binding constraint, and the cost of doing so lands on the
+children least able to absorb it.** There is one live counter-hypothesis — that children will
+disclose to a machine what they will not disclose to an adult — and the section should name it as
+an untested hypothesis worth testing, not as a reason to ship.
+
+**17. Fix three factual details.**
 - *"Roughly one child in seven"* → NCES reports **15 percent** of all public school students,
   7.5 million ages 3–21, for 2022–23; OSEP's §618 count for **2023–24 is 7,892,433**. "About one
   in six and rising" is the accurate phrasing.
@@ -2820,7 +2862,7 @@ children.** State it as a flat prohibition, not a consideration.
   20902. Describing 2.2 AA as compliance is wrong; describing it as a deliberate choice above the
   floor is both accurate and a better argument.
 
-**16. And keep the empty chair.** The central image survives all of this intact. The correction
+**18. And keep the empty chair.** The central image survives all of this intact. The correction
 is not that the chair is full. It is that the room the chair sits in has a statute, a calendar,
 a caseload and a paper trail, and the section currently describes none of them.
 
@@ -2829,7 +2871,7 @@ a caseload and a paper trail, and the section currently describes none of them.
 ## 13. Null and negative results ledger
 
 The brief asked for at least three documented negative/null results or systemic failures. There
-are twenty-two.
+are twenty-nine.
 
 ### 13.1 Administrative burden — the interventions that were measured and failed
 
@@ -2926,6 +2968,25 @@ California statutes retrieved verbatim from leginfo.legislature.ca.gov (HTTP 200
 - Child Welfare Information Gateway, *Mandatory Reporting of Child Abuse and Neglect*, State
   Statutes series, current through May 2023 — retrieved from the CWIG S3 bucket (HTTP 200) after
   childwelfare.gov returned HTTP 404.
+- HHS/ACF, NCANDS *Child Maltreatment* reports FFY2018–FFY2024 — acf.hhs.gov (HTTP 200 with a
+  full browser user-agent; **acf.gov returns HTTP 202 bot-challenge and zero bytes**).
+- Sedlak et al., *Fourth National Incidence Study of Child Abuse and Neglect (NIS-4): Report to
+  Congress* (2010) — HHS/ACF/OPRE (HTTP 200), read in full.
+- EFF, *GoGuardian: A Red Flag Machine By Design* — redflagmachine.com/research (HTTP 200);
+  underlying district records obtained by EFF under public-records law.
+- ASHA 2024 Schools Survey; NASP Research Reports series (Affrunti) on
+  students-per-school-psychologist ratios 2019–20 through 2024–25 and on turnover; 2020 NASP
+  Membership Survey Parts 1 and 2.
+- Vannest & Hagan-Burke (2011), *Journal of Educational Research* — abstract via ERIC and
+  OpenAlex (article closed access).
+- President's Commission on Excellence in Special Education (2002) — ERIC ED473830.
+- ED Office for Civil Rights, Civil Rights Data Collection national estimations API (HTTP 200)
+  for Section 504-only counts, 2011–12 through 2020–21.
+- IDEA §618 Part B Personnel (`bpersonnel2023-24.csv`) and Part B Child Count CSVs — data.ed.gov.
+- US DoE Teacher Shortage Areas — raw API `POST tsa.ed.gov/api/ViewReportsAPI/Reports`.
+- NCEO Reports 41, 47 and 412; ERIC full texts ED459571, ED499407, ED600669, ED517792, ED433362.
+- Cochrane CD011775.pub2; PubMed eutils for Kim et al. (2017), Wyman et al. (2008, 2010),
+  Kenny (2001), Aseltine et al. (2004, 2007), and the 2024/2025 gatekeeper meta-analyses.
 
 ### 14.3 Case law
 
@@ -2954,7 +3015,22 @@ digits); *J.B. v. Kyrene* (cdn.ca9.uscourts.gov, HTTP 200).
 | Perry Zirkel litigation analyses | **ERIC abstracts only**; full texts not retrieved. Percentages are as stated in the abstracts. |
 | sites.ed.gov/idea site search | Returns HTTP 200 but reports no results for every query including controls — **the search endpoint is unusable**, so the absence of OSEP AI guidance could **not** be established this way. |
 | OSEP guidance on artificial intelligence under IDEA | **Not located.** The nearest official statement is ED OET, *Artificial Intelligence and the Future of Teaching and Learning* (May 2023): *"Laws such as the Individuals with Disabilities Education Act (IDEA) may likewise be considered as new situations arise in the use of AI-enabled learning technologies."* A Federal Register API search for documents containing both "artificial intelligence" and "individualized education program" since 2023 returned **5 results, all grant priorities or unrelated rules — none IDEA implementation guidance.** Best available characterisation: **regulatory silence**, stated as such. |
-| Empirical audits of PLAAFP and IEP-goal quality; testing-accommodation "differential boost" meta-analyses; measured evaluations of LLM-generated IEP goals | **Not retrieved in this pass** (the assigned research strand terminated on an API error). These are real literatures and remain a gap in this report. Treat any figure on "what percentage of IEP goals are measurable" as **UNVERIFIED** until sourced. |
+| **Empirical audits of PLAAFP and IEP-goal quality** — what fraction of PLAAFPs contain baselines, what fraction of goals are actually measurable | **Not retrieved.** This remains the largest gap in the report. Treat any figure on "what percentage of IEP goals are measurable" as **UNVERIFIED** until sourced. |
+| Sireci, Scarpati & Li (2005) study-by-study support counts | RER closed; Unpaywall `is_oa: false`; Sage PDF **403**. Tallies substituted from Kettler (2015) and Lane & Leventhal (2015) via NCEO Report 412. |
+| Buzick & Stone (2014) and Li (2014) exact effect sizes | Wiley **402/403**; Wayback no PDF snapshot. Direction of effect is verbatim from abstracts; **magnitudes UNVERIFIED**. |
+| Gregg & Nelson (2012), *JLD* 45(2) extended-time meta-analysis | Abstract only; Sage **403**, Unpaywall CLOSED. Its own title is *"More questions than answers."* |
+| Helwig & Tindal (2003) exact accuracy/kappa; Weis et al. (2016) exact percentages; Sahli Lozano et al. (2022) coefficients | Sage **403**; Taylor & Francis not OA. **Verbatim conclusions quoted; numbers UNVERIFIED.** |
+| Rakap (2023) effect sizes and minute-level times | Full text paywalled. Direction and significance from the abstract; **magnitudes UNVERIFIED**. |
+| Center for Democracy & Technology student-monitoring survey figures | **cdt.org returns HTTP 403 to every route** (full Chrome fingerprint, WebFetch, Wayback `id_` 404, CDX API 504). The figures quoted in EFF's report — 88% of schools monitoring, one in two teachers reporting law-enforcement contact, 48%/55%/41% discipline disparity — are **secondary-quoted and their sample sizes and question wording are UNVERIFIED.** |
+| Gaggle "1,300 students" statistic and the 2024 AP / *Seattle Times* investigation | Every route failed: apnews.com domain-blocked and `/hub/gaggle` 404; seattletimes.com 404; lawrencekstimes.com and kansasreflector.com 403; the74million.org 404; gaggle.net 404; Wayback CDX 504. **Do not cite.** |
+| "Vanderbilt/Lawrence Hidden Harms" | *Hidden Harms* is a **CDT** report title, not a Vanderbilt product; rand.org returned an empty shell; OpenAlex found no peer-reviewed cluster. **Likely a conflation. UNVERIFIED.** |
+| C-SSRS as a school risk-screening protocol | PubMed returns only studies *using* C-SSRS as an instrument in school epidemiological samples, not evaluations of it as a screening protocol. **Do not assert an evidence base.** |
+| Modern national IEP document length | The only national measurement located is **1980** (ED199970: mean ~5 pages, median under 3.5; state/special facilities mean 8, median 5). **No modern national page or word count exists.** |
+| Number of IEP meetings per case manager per year | ERIC query `"number of IEP meetings"` returns **numFound: 0**. Genuine measurement gap. |
+| Florida rule 6A-6.03028 running text | fldoe.org PDF **403**; title and 27 Aug 2024 effective date verified, **text UNVERIFIED**. |
+| Texas Administrative Code and statutes via official sites | texreg.sos.state.tx.us serves a 2,517-byte "Site Has Moved" stub (TAC migrated to a JS-only portal mid-2025); statutes.capitol.texas.gov now returns an identical navigation shell for every chapter. **Rule text recovered from 2024 Wayback captures.** Also failed: ilga.gov 403, justia 403, casetext 410, regs.nysed.gov DNS failure, secure.sos.state.or.us JS challenge. |
+| NCES Digest table 204.30 for 2023–24 and 2024–25 | `dt24_204.30.asp` **404**; percentages for those years recomputed from §618 CSVs against CCD enrolment and flagged as `INFERENCE`. Fall 2024 CCD enrolment not yet published, so the 2024–25 percentage is **UNVERIFIED**. |
+| US DoE Teacher Shortage Area counts versus LPI's "45 states" | TSA raw API returns **37–43 of 51** jurisdictions listing special education across 2021–22 to 2025–26 (California never appears under this subject code, so these are floors). **The widely repeated "all 50 states" is not what the raw data shows, and the LPI figure exceeds the TSA-derived count. The discrepancy is unresolved.** |
 
 ### 14.5 A note on method
 

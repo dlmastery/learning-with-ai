@@ -103,9 +103,9 @@ meta-analysis concludes it improves the learning *process* while "the impact on
 educational outcomes has not been demonstrated"; a policy review found no rigorous
 published research demonstrating improvement. The component practices it bundles —
 multiple representations, choice, scaffolded engagement — are individually
-well-evidenced. **Keep the components; drop the claim.** We build to WCAG 2.2 AA as
-an accessibility floor because access is a right, not because a framework promises a
-score.
+well-evidenced. **Keep the components; drop the claim.** We build to the accessibility
+standard the law actually incorporates — see below — because access is a right, not
+because a framework promises a score.
 
 **Do not build a working-memory trainer.** Working-memory training produces reliable
 near-transfer to the trained task and does not transfer to anything anyone cares
@@ -207,7 +207,12 @@ Four hard limits, and they are not negotiable by product decision.
   evidence, and prepare a parent for the meeting. It does not sign.
 - **An AI may not diagnose or label a child.** It may observe that a strategy is not
   working and say so, in behavioural terms, to the humans responsible.
-- **WCAG 2.2 AA is a floor, not a target.** Access is a precondition, not a feature.
+- **The accessibility standard is WCAG 2.1 AA, and the deadline moved.** *Corrected
+  2026-07-28:* the ADA Title II web rule incorporates **WCAG 2.1**, not 2.2, and the
+  compliance dates were pushed twelve months in April 2026 (91 FR 20902) to
+  **26 April 2027** and **26 April 2028**. Most published guidance — including an
+  earlier version of this section — still says WCAG 2.2 and April 2026. Build to 2.2
+  if you like; conform to 2.1 because that is what is enforceable.
 - **Disability status is sensitive data.** Under **IDEA §300.624**, personally
   identifiable information "must be destroyed at the request of the parents" — which makes an undeletable model weight a compliance
   failure for precisely the population it claims to serve. The learner model is

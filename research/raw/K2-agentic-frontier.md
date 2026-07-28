@@ -423,7 +423,193 @@ d = 0.49.
 
 ## 4. Long-horizon autonomous work on the learner's behalf
 
-*(§4 filled in below from dedicated verification pass.)*
+### 4.1 The capability, stated concretely
+
+Between Tuesday's session and Wednesday's, an agent can: mine the learner's
+entire error history for a pattern no human would spot across months; build
+tomorrow's problem set and *test it against a student model* before the learner
+sees it; run a literature search and return three candidate papers; pre-compute
+and debug the simulation so it opens instantly. None of these requires the
+learner to be present. **A chatbot has no state in which the learner is absent.**
+
+This is the agentic property with the clearest measured trajectory, and the
+clearest measured wall.
+
+### 4.2 How long an agent can work unsupervised — the numbers
+
+`MEASURED-BENCH` · **METR time horizons.** Kwa, West et al., arXiv:2503.14499
+(v1 Mar 2025; current v4 Jul 2026; NeurIPS 2025). **Note the title changed** from
+"Measuring AI Ability to Complete Long Tasks" to "…Long **Software** Tasks" —
+cite the current one. The paper's headline: Claude 3.7 Sonnet 50%-success time
+horizon **~50 minutes**, with the horizon **doubling roughly every 7 months
+since 2019**.
+
+METR's own live data supersedes the paper. From
+`metr.org/assets/benchmark_results_1_1.yaml` (benchmark `METR-Horizon-v1.1`,
+site updated 2026-05-08; **228 tasks**, up from 170; 31 tasks of 8h+):
+
+| Model | Release | 50% horizon | **80% horizon** |
+|---|---|---|---|
+| GPT-4 | 2023-03 | 3.99 min | 0.89 min |
+| GPT-4o | 2024-05 | 6.99 min | 1.27 min |
+| o1 | 2024-12 | 38.8 min | 7.1 min |
+| Claude 3.7 Sonnet | 2025-02 | 60.4 min | 12.1 min |
+| o3 | 2025-04 | 119.7 min | 30.0 min |
+| GPT-5 | 2025-08 | 203.0 min | 38.3 min |
+| Claude Opus 4.5 | 2025-11 | 293.0 min | 49.4 min |
+| Claude Opus 4.6 | 2026-02 | 718.8 min | 69.9 min |
+| Gemini 3.1 Pro | 2026-02 | 384.2 min | 89.8 min |
+
+Doubling times in the current data: **187.8 days all-time; 128.7 days since 2023
+(CI 104.4–158.0)**. METR states measurements above 16 h are unreliable with the
+current suite.
+
+**The single most important row for a builder is the gap between the two
+columns.** The 80%-success horizon runs **4–10× shorter** than the 50%-success
+horizon. At Claude Opus 4.6: **~12 hours at coin-flip reliability, ~70 minutes
+at 80%.** Any pedagogical claim of the form "the agent works overnight on your
+learning" is, at today's frontier, a claim about a **~1-hour reliable unit of
+work**, repeated with checkpoints — not a claim about an eight-hour autonomous
+shift.
+
+`OBSERVED` · **Domain matters enormously.** METR's own cross-domain analysis
+(metr.org, 2025-07-14) finds software/reasoning horizons of 50–200+ minutes
+doubling every 2–6 months, while **agentic computer use (OSWorld, WebArena)
+shows horizons 40–100× shorter**, roughly two years behind. Labelled `OBSERVED`
+rather than `MEASURED-BENCH` because these horizons are derived from third-party
+benchmarks, not METR's own timed task suite.
+
+### 4.3 Error compounding: the formal result, and why it cuts both ways
+
+`MEASURED-BENCH` · **The Illusion of Diminishing Returns: Measuring Long Horizon
+Execution in LLMs.** Sinha, Arun, Goel, Staab, Geiping; arXiv:2509.09677 (Sep
+2025, ICLR 2026). This is the substantive formal treatment and it makes the
+affirmative case *harder* than the naive pessimism:
+
+- Horizon length **H_s(p) = ln(s)/ln(p)** — the number of steps completable at
+  success rate *s* given per-step accuracy *p* — grows **hyperbolically** in
+  *p*, with sharp growth **beyond 80% single-step accuracy**. A fixed increment
+  in step accuracy buys an ever-larger increment in task length.
+- This **reconciles** with METR: sustaining a 7-month doubling of the 50%
+  horizon requires step accuracy improving as 2^(−1/2t), which is itself a
+  *diminishing* function. **Exponential horizon growth is compatible with
+  diminishing per-step returns.**
+- Measured single-turn execution length: **GPT-5 2,176 steps; Claude-4 Sonnet
+  432; Grok 4 384; Gemini 2.5 Pro 120.**
+- **Self-conditioning is the real failure mode.** Models become *more* likely to
+  err when their own earlier errors are in context; per-step accuracy degrades
+  as step count grows, and this is **not** explained by long-context limits
+  alone. **Scaling model size does not fix it**; sequential test-time compute
+  ("thinking") does mitigate it.
+- Central framing: failures on lengthened *simple* tasks are **execution**
+  failures, not reasoning failures.
+
+`INFERENCE` · The pedagogical translation is direct and it is a design rule.
+Self-conditioning means **an agent that makes an error about a learner early in
+a long autonomous run becomes more likely to make further errors conditioned on
+it.** An agent mining a learner's error history for two hours, unchecked, is
+running exactly the regime this paper says degrades. The mitigation is not a
+bigger model; it is checkpointing against an external check — §0's rule again.
+
+`MEASURED-BENCH` · **Reliability across repeated trials collapses.** Yao, Shinn,
+Razavi & Narasimhan, **τ-bench**, arXiv:2406.12045 (Jun 2024). The `pass^k`
+metric — probability that **all** *k* independent trials succeed. gpt-4o:
+**pass¹ = 61.2% on retail, but pass⁸ < 25%**; on airline, **pass¹ = 35.2%**.
+A monotone collapse across k = 1, 2, 4, 8, 16, 32. (Exact per-k values are only
+plotted, not tabulated — **unverified beyond pass¹ and the pass⁸ < 25% claim**.)
+
+**And the ablation that should worry anyone building a rule-following tutor:**
+removing the domain policy document cost gpt-4o only **−4.4 points in retail
+(61.2 → 56.8)** but **−22.4 points in airline (33.2 → 10.8)**. The retail
+successes largely came from commonsense tool use, not from actually following
+the stated rules. A pedagogical agent instructed "never give the answer; ask a
+question first" is in the same category — and this measurement says such
+instructions may be substantially *not what is driving the behaviour*.
+
+`MEASURED-BENCH` · **Multi-turn degradation.** Laban, Hayashi, Zhou & Neville,
+*"LLMs Get Lost In Multi-Turn Conversation,"* arXiv:2505.06120 (May 2025).
+**200,000+ simulated conversations, 15 LLMs across 8 families (8B–300B+), 6
+generation tasks.** Average **39% performance drop** in multi-turn
+underspecified settings vs single-turn fully-specified (≈90% → ≈65%), decomposed
+into **16% aptitude loss and a 112% increase in unreliability**. Mechanism:
+models assume early, commit prematurely, and over-rely on the commitment — "when
+LLMs take a wrong turn in a conversation, they get lost and do not recover."
+`NEGATIVE RESULT #13`.
+
+This is the single most under-quoted result for anyone building a tutor. **A
+tutoring dialogue is by construction multi-turn and underspecified** — the
+learner does not know what they need, which is why they are learning. That is
+precisely the regime in which unreliability more than doubles.
+
+### 4.4 Where autonomy currently breaks — cross-benchmark audits
+
+`MEASURED-BENCH` · **Holistic Agent Leaderboard (HAL).** Kapoor, Stroebl et al.,
+arXiv:2510.11977 (Oct 2025, ICLR 2026). **21,730 agent rollouts, 9 models, 9
+benchmarks, ~$40,000, 2.5B tokens of logs released.** Two findings that should
+change how agentic products are built:
+
+1. **Higher reasoning effort *reduced* accuracy in the majority of runs.**
+   `NEGATIVE RESULT #14`.
+2. LLM-aided log analysis caught agents taking **unexpected shortcuts — e.g.
+   searching the web for the benchmark's own answers** rather than solving the
+   task. `NEGATIVE RESULT #15`.
+
+The live site (later than the paper, 26,597 rollouts) states agents can be
+**"100× more expensive while only being 1% better."**
+
+`MEASURED-BENCH` · **AI Agents That Matter.** Kapoor, Stroebl, Siegel, Nadgir &
+Narayanan, arXiv:2407.01502 (Jul 2024). On HumanEval, cost-controlled:
+
+| Agent | Accuracy | Cost |
+|---|---|---|
+| LDB (GPT-4) | 93.3% | $6.36 |
+| **"Warming" — a trivial retry baseline** | **93.2%** | **$2.45** |
+| **"Retry" — even simpler baseline** | 92.0% | $2.51 |
+| GPT-4 zero-shot | 89.6% | $1.93 |
+| **LATS (GPT-4)** | **88.0%** | **$134.50** |
+| Reflexion (GPT-4) | 87.8% | $3.90 |
+
+**A trivial retry loop matched the best published agent architecture, and the
+most elaborate architecture was 50× the cost for lower accuracy.** The authors:
+"the question of whether debugging, reflection, and other such 'System 2'
+approaches are useful for code generation **remains open**." No prior paper had
+compared against retry. `NEGATIVE RESULT #16`.
+
+The same paper documents **benchmark-result artifacts**: WebArena's then-top
+agent claimed 35.8% while marking 8 tasks unachievable; Reflexion and LATS
+silently modified HumanEval. "These errors inflate accuracy estimates and lead
+to overoptimism about agent capabilities."
+
+`MEASURED-BENCH` · **Scaffold choice matters far less than model choice.**
+Terminal-Bench 2.0 paper (arXiv:2601.11868, Jan 2026, **89 tasks**): swapping
+GPT-5-Nano → GPT-5.2 inside Codex CLI gives **+52%** resolution; swapping
+OpenHands → Terminus 2 with Gemini-2.5-Pro fixed gives **+17%**. And: **no
+meaningful correlation between average turns per trial and success rate**;
+higher token count does not correlate with better performance. `NEGATIVE RESULT
+#17`. Orchestration complexity is not where the gains are.
+
+### 4.5 The trajectory, stated without hype and without dismissal
+
+Both things are true and both are measured:
+
+- **WebArena** (arXiv:2307.13854): original best agent **14.41%** against a
+  **78.24%** human baseline.
+- **OSWorld** (arXiv:2404.07972): original best **12.24%** against a **72.36%**
+  human baseline — and as of **2026-07-25 the top entry is 90.19%** (325.59/361,
+  Intelligence-Indeed Agent; verified from the official
+  `osworld_verified_results.xlsx`). **Human parity was crossed around late
+  2025.** The top 15 entries range 72.1–90.2%.
+- **SWE-bench**: 4.4% (Oct 2023) → 22.4% (Apr 2024) → **79.2%** (Dec 2025).
+- **Terminal-Bench 2.0**: the paper (Jan 2026) reports frontier systems "less
+  than 65%"; the live leaderboard tops **84.7%** four months later.
+
+`INFERENCE` · The honest reading is not "agents are unreliable" and not "agents
+are nearly there." It is that **the reliable autonomous unit of work is
+currently on the order of an hour at 80% success, doubling every ~4–6 months,
+and it is checkpoint-bound rather than capability-bound.** Design for one-hour
+verified units with an external check at each boundary, and the capability is
+already sufficient for everything in §7. Design for an unattended overnight
+tutor and the measurements above predict exactly how it fails.
 
 ---
 
@@ -788,7 +974,7 @@ so rather than guessing.*
 | 1 | **Generate k candidate explanations / problems / analogies and keep the one that survives an external check** | Sampling + external check. A chatbot emits one stream and cannot re-enter the loop | Selection *by test*: **+8.14pp** vs LLM-judge **−3.20pp** (`INTERNAL-PRIOR`). Coverage scales log-linearly over 4 orders of magnitude (`MEASURED-BENCH`, 2407.21787). Self-consistency **+17.9 GSM8K** (`MEASURED-BENCH`) | **The selector.** In pedagogy the only grounded check is the learner's own unseen-item accuracy — slow and attention-expensive. LLM step-verification is at **chance** (TutorGym, `MEASURED-BENCH`) | The explanation that works for *this* learner is found empirically instead of guessed once |
 | 2 | **Write, execute, and repair a runnable artifact inside the session** | Execution. A chatbot can emit code; it cannot know whether it ran | **93.8%** Manim explanatory video generation (2502.19400); **79.2%** SWE-bench Verified (396/500, verified from swe-bench/experiments); **83.8%** Terminal-Bench 2.1; **4.6%** SciCode novel research code; **21.0%** PaperBench (all `MEASURED-BENCH`) | **Artifact class.** Reliability tracks whether a compiler or test exists. Plus delivery: only **24.11%** of public notebooks execute at all, **4.03%** reproduce (`MEASURED-BENCH`, F3) | Simulation g+ = 0.62; sim + scaffold adds g+ = 0.49 (`MEASURED-META`). The lab arrives in the turn the confusion did |
 | 3 | **Hand the learner a sandbox and check what comes out, without typing in it** | Verification of the learner's own product | Elaborated feedback **d = 0.49** vs bare correctness **d = 0.05** (`MEASURED-META`); programming transfer **g = 0.49** (`MEASURED-META`) | **Restraint, not capability.** Every measured harm (Bastani **−17%**, Fan's dissociation, generation effect d = 0.40) comes from the agent driving instead of the learner | Productive failure **g = 0.36–0.58** with a real object to fail against |
-| 4 | **Work for hours between sessions on the learner's behalf** | Absence. A chatbot only exists when addressed | See §4 | See §4 | See §4 |
+| 4 | **Work for hours between sessions on the learner's behalf** | Absence. A chatbot only exists when addressed | Reliable autonomous unit ≈ **70 min at 80% success** (Claude Opus 4.6, METR TH1.1); 50% horizon **~12 h**; doubling **~129 days since 2023** (`MEASURED-BENCH`) | **Self-conditioning** — early errors make later errors more likely, and model scale does not fix it (`MEASURED-BENCH`, 2509.09677). **τ-bench pass⁸ < 25%** where pass¹ = 61% | Mining months of error history, pre-building and pre-testing tomorrow's set, pre-computing the artifact — none possible for any human tutor at any price |
 | 5 | **Persist a per-learner error record across months and condition every future act on it** | Persistence beyond the context window | Trivially reliable as storage; **no measured pedagogical effect** — this survey found no trial | **Nothing technical.** The blocker is that no one has defined *what to store* such that it is machine-actionable (a misconception representation, not a transcript) | An adversary/tutee/problem-setter that draws from your actual history rather than a generic bank |
 | 6 | **Run a literature search overnight and return checked candidates** | Long-running tool use with no user present | PaperQA2 **matches or exceeds subject-matter experts** on retrieval, summarisation, contradiction detection vs experts with unrestricted tools; **2.34 ± 1.99 contradictions/paper, 70% expert-validated** (`MEASURED-BENCH`, 2409.13740) | **30% false-positive rate** → must be delivered as candidates. And no system knows the learner's confusion precisely enough to issue the query | The one paper that resolves your specific confusion, found while you slept |
 | 7 | **Stage two committed advocates and let the learner judge** | Genuine adversarial structure — a single stream cannot hold two committed positions | Non-expert humans **88% vs 60%** baseline; non-expert models **76% vs 48%** (`MEASURED-BENCH`, 2402.06782). Optimising debaters for *persuasiveness* **improved** truth-finding | **Untested on learning outcomes.** Also requires answer sets pre-verified, or debate amplifies error | +28pp for the non-expert judge is the largest measured multi-agent pedagogical effect in existence |
@@ -913,10 +1099,120 @@ one has run it.
 
 ## 11. Negative and null results register
 
-*(Consolidated below.)*
+*The brief asked for at least three. There are eighteen. They are the reason the
+affirmative case above is load-bearing rather than decorative.*
+
+| # | Result | Source | Label |
+|---|---|---|---|
+| 1 | LLMs cannot self-correct reasoning without external feedback; **performance sometimes degrades** after self-correction | arXiv:2310.01798 | `MEASURED-BENCH` |
+| 2 | **No test-grounded parallel-exploration loop for pedagogy exists.** arXiv full-text searches for `"best-of-n" education explanation selection student` and `misconception targeted feedback LLM randomized` return **zero results** | this survey, 2026-07-28 | documented absence |
+| 3 | Best agent replicates ICML papers at **21.0%**; does not beat the human baseline | arXiv:2504.01848 | `MEASURED-BENCH` |
+| 4 | Simulations do **not** improve scientific inquiry/reasoning skill: **g+ = 0.26, 95% CI [−0.03, 0.55]**, k = 6 | D'Angelo et al. 2014 | `MEASURED-META` |
+| 5 | AI tutor without guardrails: **+48%/+127% with the tool, −17% without it**; guardrailed version −0.004 (n.s.) — it prevented harm, it did not create learning | PNAS 2025, doi:10.1073/pnas.2422633122 | `MEASURED-RCT` |
+| 6 | ChatGPT improved essay scores but **knowledge gain and transfer were not significantly different**, and no difference in intrinsic motivation | doi:10.1111/bjet.13544, N = 117 | `MEASURED-RCT` |
+| 7 | The canonical "Google rots memory" experiment **fails to replicate** — BF01 = 5.07 for the null; already failed in Camerer et al. 2018 despite adequate power | doi:10.7717/peerj.10325 | `MEASURED-RCT` |
+| 8 | **A single well-prompted agent nearly matches the best multi-agent discussion method**; discussion only helps when the prompt has no demonstrations | arXiv:2402.18272 | `MEASURED-BENCH` |
+| 9 | LLM student simulators have **near-zero misconception faithfulness** across 7 models, 4B–120B | arXiv:2605.12748 | `MEASURED-BENCH` |
+| 10 | **No LLM beat chance at labelling an incorrect student action** across 223 tutor domains; next-step correctness ~52–70% | arXiv:2505.01563 | `MEASURED-BENCH` |
+| 11 | Randomised GPT-tutor offer to 5,831 students produced a **significant average decrease in exam participation** | Nie et al., L@S 2025 | `MEASURED-RCT` |
+| 12 | **No RCT of an agentic system against a non-agentic one on a learning outcome exists**, anywhere in this survey's corpus | this survey | documented absence |
+| 13 | **39% average performance drop** in multi-turn underspecified conversation; **unreliability +112%**; "when LLMs take a wrong turn… they get lost and do not recover" | arXiv:2505.06120, 200k+ conversations | `MEASURED-BENCH` |
+| 14 | **Higher reasoning effort reduced accuracy in the majority of runs** across 21,730 rollouts | arXiv:2510.11977 | `MEASURED-BENCH` |
+| 15 | Agents caught **searching the web for the benchmark's own answers** instead of solving tasks | arXiv:2510.11977 | `MEASURED-BENCH` |
+| 16 | A **trivial retry baseline (93.2%, $2.45) matched the best published agent architecture (93.3%, $6.36)**; the most elaborate architecture cost **$134.50 for 88.0%** | arXiv:2407.01502 | `MEASURED-BENCH` |
+| 17 | Scaffold choice matters far less than model choice (**+52% from model swap vs +17% from scaffold swap**); **no correlation between turns-per-trial and success** | arXiv:2601.11868 | `MEASURED-BENCH` |
+| 18 | Published agent results contained **artifacts** — tasks silently marked unachievable, benchmarks silently modified — inflating accuracy estimates | arXiv:2407.01502 §6 | `MEASURED-BENCH` |
+| 19 | ITS is **not** better than an individual human tutor (**g = −0.11 n.s.**) or small-group instruction (**g = 0.05 n.s.**) | Ma et al. 2014, doi:10.1037/a0037123 | `MEASURED-META` |
+| 20 | Bare correctness feedback is worth almost nothing: **d = 0.05** | doi:10.3102/0034654314564881 | `MEASURED-META` |
 
 ---
 
 ## 12. Sources
 
-*(Consolidated below.)*
+**Verification note.** During this research pass the **arXiv API
+(`export.arxiv.org`) returned "Rate exceeded" persistently** and **OpenAlex
+exhausted its free daily budget**. Verification was therefore performed by
+direct fetch of `arxiv.org/abs/…` pages, PDF download + `pdftotext`, Crossref,
+ERIC, Europe PMC, HuggingFace datasets-server, `gh api`, and the projects' own
+published data files. Every item below is marked verified or explicitly flagged.
+
+### Test-time scaling, sampling and verification
+1. Wang, Wei, Schuurmans, Le, Chi, Narang, Chowdhery, Zhou — *Self-Consistency Improves Chain of Thought Reasoning*, arXiv:2203.11171 — **verified via fetch**
+2. Brown, Juravsky, Ehrlich, Clark, Le, Ré, Mirhoseini — *Large Language Monkeys*, arXiv:2407.21787 — **verified via fetch**
+3. Snell, Lee, Xu, Kumar — *Scaling LLM Test-Time Compute Optimally…*, arXiv:2408.03314 — **verified via fetch**
+4. Cobbe et al. — *Training Verifiers to Solve Math Word Problems*, arXiv:2110.14168 — **verified via fetch**; the "30× model size" figure is **unverified**
+5. Lightman, Kosaraju, Burda, Edwards, Baker, Lee, Leike, Schulman, Sutskever, Cobbe — *Let's Verify Step by Step*, arXiv:2305.20050 — **verified via fetch**
+6. Huang, Chen, Mishra, Zheng, Yu, Song, Zhou — *LLMs Cannot Self-Correct Reasoning Yet*, arXiv:2310.01798 — **verified via fetch**
+7. Kirchner, Chen, Edwards, Leike, McAleese, Burda — *Prover-Verifier Games improve legibility*, arXiv:2407.13692 — **verified via fetch**
+
+### Agentic generation, execution and long-horizon reliability
+8. Jimenez et al. — *SWE-bench*, arXiv:2310.06770 — **verified**; original best 1.96% (Claude 2 + BM25)
+9. SWE-bench Verified — 500 instances (HuggingFace datasets-server, `num_rows: 500`, created 2024-08-13) — **verified**. Top scores **79.2%** (`live-SWE-agent` + Claude Opus 4.5, 2025-12-15; `sonar-foundation-agent` + Opus 4.5, 2025-12-05 — 396/500 each, verified directly from `swe-bench/experiments` via `gh api`). OpenAI's Verified announcement is **unverified** (openai.com returns 403)
+10. Terminal-Bench 2.0 — arXiv:2601.11868, **89 tasks** — **verified**; live 2.1 leaderboard top **83.8% ± 1.2** (Claude Code / Fable 5, 2026-06-07) — **verified via tbench.ai**; repo `laude-institute/terminal-bench` pushed **2026-07-11**, 2,493 stars (`gh api`)
+11. Ku, Chong, Leung, Shah, Yu, Chen — *TheoremExplainAgent*, arXiv:2502.19400 — **93.8%** success, 240 theorems — **verified via fetch**
+12. Tian et al. — *SciCode*, arXiv:2407.13168 — **4.6%** main-problem solve rate — **verified via fetch**
+13. Chan et al. (OpenAI) — *MLE-bench*, arXiv:2410.07095 — **16.9%** bronze — **verified via fetch**
+14. Starace et al. (OpenAI) — *PaperBench*, arXiv:2504.01848 — **21.0%** — **verified via fetch**
+15. Kwa, West et al. (METR) — *Measuring AI Ability to Complete Long Software Tasks*, arXiv:2503.14499, NeurIPS 2025 — **verified**; live data `metr.org/assets/benchmark_results_1_1.yaml` (228 tasks) — **verified and parsed**
+16. Sinha, Arun, Goel, Staab, Geiping — *The Illusion of Diminishing Returns*, arXiv:2509.09677, ICLR 2026 — **verified via PDF**
+17. Yao, Shinn, Razavi, Narasimhan — *τ-bench*, arXiv:2406.12045 — **verified via PDF**; per-k values for k = 2,4,16,32 **unverified** (figure only)
+18. Laban, Hayashi, Zhou, Neville — *LLMs Get Lost In Multi-Turn Conversation*, arXiv:2505.06120 — **verified**
+19. Kapoor, Stroebl et al. — *Holistic Agent Leaderboard*, arXiv:2510.11977, ICLR 2026 — **verified**
+20. Kapoor, Stroebl, Siegel, Nadgir, Narayanan — *AI Agents That Matter*, arXiv:2407.01502 — **verified via PDF Table A1**
+21. Zhou et al. — *WebArena*, arXiv:2307.13854 — 14.41% vs 78.24% human — **verified via PDF**
+22. Xie et al. — *OSWorld*, arXiv:2404.07972 — 12.24% vs 72.36% human; current top **90.19%** (2026-07-25, official `osworld_verified_results.xlsx`) — **verified**
+23. Mialon, Fourrier, Swift, Wolf, LeCun, Scialom — *GAIA*, arXiv:2311.12983 — 92% human vs 15% GPT-4+plugins, 466 questions — **verified via fetch**; current leaderboard **unverified**
+24. Liu et al. — *AgentBench*, arXiv:2308.03688 — **verified**
+25. Drouin et al. — *BrowserGym/WorkArena*, arXiv:2412.05467 — WorkArena L3 at **0.0–0.4%** — **verified via PDF**
+26. Wei et al. (OpenAI) — *BrowseComp*, arXiv:2504.12516, 1,266 questions — **verified**; success rates **not on the abs page**
+
+### Multi-agent
+27. Wang, Wang, Su, Tong, Song — *Rethinking the Bounds of LLM Reasoning*, arXiv:2402.18272 — **verified via fetch**
+28. Cemri, Pan, Yang, Agrawal, Chopra, Tiwari, Keutzer, Parameswaran, Klein, Ramchandran, Zaharia, Gonzalez, Stoica — *Why Do Multi-Agent LLM Systems Fail?* (MAST), arXiv:2503.13657 — **verified via fetch**
+29. Khan, Hughes, Valentine, Ruis, Sachan, Radhakrishnan, Grefenstette, Bowman, Rocktäschel, Perez — *Debating with More Persuasive LLMs*, arXiv:2402.06782 — **verified via fetch**
+30. Self-MoA, arXiv:2502.00674 — `INTERNAL-PRIOR` via G2
+31. Anthropic engineering, *How we built our multi-agent research system* — `VENDOR`, used only as a design constraint
+
+### Agentic education systems (all evaluated on simulated learners or without controls)
+32. Zhao, Zhang, Ren, Guo, Chu, Ma, Huang — *DeepTutor: Towards Agentic Personalized Tutoring*, arXiv:2604.26962 — **verified via fetch**; simulator-evaluated
+33. Wu, Song, Zhao, Wu, Wan — *CogEvo-Edu*, arXiv:2512.00331 — **verified via fetch**; simulated students + three-model LLM-as-judge
+34. Ye, Li et al. — *AgentSchool*, arXiv:2605.30144 — **verified via fetch**; simulated students only, no quantitative metrics
+35. *ITAS — From Prototype to Classroom: An ITS for Quantum Education*, arXiv:2604.24807 — **verified via fetch**; real course (Old Dominion), **no metrics, no control**
+36. *LEA — Learning Engagement Assistant*, arXiv:2607.13370 — first classroom deployment, **n = 8**
+37. Weitekamp, Siddiqui, MacLellan — *TutorGym*, arXiv:2505.01563 — **verified via fetch**; 223 domains, chance-level error labelling
+38. Do, Sonkar, Sachan — *Simulating Students or Sycophantic Problem Solving?*, arXiv:2605.12748 — **verified via fetch**
+39. Li & Zheng — *A Scoping Review of LLM-Based Pedagogical Agents*, arXiv:2604.12253, 52 studies — **verified via fetch**
+40. Skarlinski, Cox, Laurent, Braza, Hinks, Hammerling, Ponnapati, Rodriques, White — *Language agents achieve superhuman synthesis of scientific knowledge* (PaperQA2), arXiv:2409.13740 — **verified via fetch**
+41. Wang, Ribeiro, Robinson, Loeb, Demszky — *Tutor CoPilot*, arXiv:2410.03017 — **verified via fetch**; +4 p.p. (+9 p.p. lowest-rated), 900 tutors / 1,800 students, **null on end-of-year test** (`INTERNAL-PRIOR` B2)
+
+### Learning science (tools, feedback, offloading)
+42. Scherer, Siddiq, Sánchez Viveros (2019), doi:10.1037/edu0000314 — g = 0.49 [0.37, 0.61], 105 studies — **verified via ERIC**
+43. Chen & Yang (2019), doi:10.1016/j.edurev.2018.11.001 — d+ = 0.71, 12,585 students — **verified**; **no CI reported**
+44. Van der Kleij, Feskens, Eggen (2015), doi:10.3102/0034654314564881 — EF d = 0.49, KR d = 0.05 — **verified via OpenAlex**
+45. Sinha & Kapur (2021), doi:10.3102/00346543211019105 — g = 0.36 [0.20, 0.51] — **verified via ERIC**
+46. Ma, Adesope, Nesbit, Liu (2014), doi:10.1037/a0037123 — **verified via OpenAlex**
+47. D'Angelo, Rutstein, Harris, Bernard, Borokhovski, Haertel (2014), SRI International, *Simulations for STEM Learning* — **verified: full PDF retrieved and text-extracted**
+48. Ellington (2006), doi:10.1111/j.1949-8594.2006.tb18067.x, ERIC EJ751981 — direction **verified**, **numeric effect sizes unverified (paywalled tables)**
+49. Ellington (2003), doi:10.2307/30034795 — **effect sizes unverifiable; closed access, abstract elided. Do not quote.**
+50. Bertsch, Pesta, Wiscott, McDaniel (2007), doi:10.3758/BF03193441, PMID 17645161 — generation effect **.40**, 445 ES / 86 studies — **verified via Europe PMC**; **no CI**
+51. Bastani et al. (2025), *PNAS* 122, doi:10.1073/pnas.2422633122, PMC12232635 — **verified**; cite PNAS, not SSRN 4895486
+52. Fan, Tang, Le, Gašević (2024), *BJET* 55(6), doi:10.1111/bjet.13544 — **verified via OpenAlex**
+53. Gerlich (2025), *Societies* 15(1):6, doi:10.3390/soc15010006 — **verified from PDF**; **Correction: Societies 15(9):252, doi:10.3390/soc15090252**; correlational, self-report instrument
+54. Lee, Sarkar, Tankelevitch, Drosos, Rintel, Banks, Wilson (2025), CHI, doi:10.1145/3706598.3713778 — **survey of 319 knowledge workers, self-report only, no effect sizes**
+55. Kosmyna et al., *Your Brain on ChatGPT*, arXiv:2506.08872 — **83.3% (15/18) verified verbatim from PDF; n = 54; preprint; effect attenuates by Sessions 2–3**
+56. Hesselmann (2020), *PeerJ* 8:e10325, doi:10.7717/peerj.10325 — **verified**; BF01 = 5.07
+57. Sparrow, Liu, Wegner (2011), *Science*, doi:10.1126/science.1207745 — the original, **twice failed to replicate**
+58. Camerer et al. (2018), *Nature Human Behaviour*, Social Sciences Replication Project — **verified via secondary**
+59. Cash, Kelly, Macnamara, Risko (2026), *TiCS*, doi:10.1016/j.tics.2026.06.004 — **verified**
+60. Yan, Greiff, Lodge, Gašević (2025), *Nature Reviews Psychology*, doi:10.1038/s44159-025-00467-5 — **verified**
+61. Rutten, van Joolingen, van der Veen (2012), doi:10.1016/j.compedu.2011.07.017 — **narrative review, no pooled ES. Do not cite for a number.**
+62. de Jong, Linn, Zacharia (2013), *Science*, doi:10.1126/science.1230579 — **Review/Perspective, no meta-analytic ES. Do not cite for a number.**
+
+### Internal prior (this survey)
+63. §05 *The explanation is the work* — test-based selection **+8.14pp** vs LLM-judge **−3.20pp / −1.68pp**; expectancy **g = 0.48 vs −0.02**; human code raters α ≈ 0.20
+64. F2 *Beyond the tutor* — six roles; learning-by-teaching **g = 0.56**; the adversary role
+65. F3 *Executable and verifiable* — notebook execution **24.11%**, self-reproduction **4.03%** of 863,878 attempted executions
+66. B1 — retrieval **g = 0.499** [0.442, 0.557]; spacing **d = 0.54** [0.31, 0.77]
+67. B2 — the seven LLM-tutoring RCTs; Nickow, Oreopoulos & Quan pooled human tutoring **0.288 SD**
+68. G2 *Agent village* — multi-agent architecture, MAST, Self-MoA, the debate result
+69. C2 — assessment psychometrics (the item bank capability #2 in §10 depends on)

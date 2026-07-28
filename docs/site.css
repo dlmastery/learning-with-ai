@@ -148,8 +148,8 @@ details{margin:var(--s4) 0}
 summary{cursor:pointer;font:600 13px var(--sans);color:var(--ink-3);padding:var(--s2) 0;
   list-style:none}
 summary::-webkit-details-marker{display:none}
-summary::before{content:"▸ ";color:var(--felt);display:inline-block;transition:transform .12s}
-details[open] summary::before{content:"▾ "}
+summary::before{content:"▸\00a0\00a0";color:var(--felt);display:inline-block}
+details[open] summary::before{content:"▾\00a0\00a0"}
 summary:hover{color:var(--felt)}
 
 /* ── theme toggle — same object, same corner, every page ──── */

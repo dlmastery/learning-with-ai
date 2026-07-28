@@ -18,8 +18,8 @@
 .actions{display:flex;gap:var(--s3);flex-wrap:wrap;margin:var(--s6) 0 var(--s7)}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,auto));
   gap:20px 44px;justify-content:start;border-top:1px solid var(--line);padding-top:var(--s5)}
-.facts dt{font:600 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;
-  color:var(--ink-3);margin-bottom:7px}
+.facts dt{font:600 10.5px/1.35 var(--sans);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:8px}
 .facts dd{font:400 21px/1 var(--serif);color:var(--ink);letter-spacing:-.01em}
 .facts dd span.sep{color:var(--ink-3)}
 
@@ -62,8 +62,9 @@ figcaption{font-size:13px;color:var(--ink-3);margin-top:var(--s4);line-height:1.
   padding:18px 20px 18px 56px;margin-bottom:11px;position:relative}
 .q::before{counter-increment:q;content:counter(q);position:absolute;left:20px;top:17px;
   font:400 19px/1 var(--serif);color:var(--felt)}
-.q b{display:block;font:650 14.5px/1.4 var(--sans);color:var(--ink);margin-bottom:6px}
+.q > b{display:block;font:650 14.5px/1.4 var(--sans);color:var(--ink);margin-bottom:6px}
 .q p{font-size:13.5px;margin:0;color:var(--ink-2);max-width:none}
+.q p b{color:var(--ink);font-weight:650}
 
 /* ── where to go next ───────────────────────────────────── */
 .onward{display:grid;gap:14px;margin:var(--s6) 0}
@@ -102,8 +103,7 @@ figcaption{font-size:13px;color:var(--ink-3);margin-top:var(--s4);line-height:1.
     <div><dt>The survey</dt>
       <dd><span data-gen="sections">31</span> sections <span class="sep">·</span>
           <span data-gen="words">76,982</span> words</dd></div>
-    <div><dt>Built on</dt>
-      <dd><span data-gen="reports">35</span> reports <span class="sep">·</span> ~2,100 sources</dd></div>
+    <div><dt>Built on</dt><dd>~2,100 sources</dd></div>
     <div><dt>Running demos</dt><dd><span data-gen="demos">13</span></dd></div>
     <div><dt>Published corrections</dt><dd><span data-gen="corrections">25</span></dd></div>
   </dl>
@@ -494,6 +494,12 @@ const SLOPE = {
     {label:"Active learning",        a:"felt worse",  b:"learned more", bad:false, invert:true, note:"Deslauriers PNAS 2019 — the mirror image, and the tell."}
   ]
 };
+
+/* The heading claims these are ordered, so order them here rather than trusting
+   the literal to stay sorted through edits. C-12 dropped Nickow from 0.37 to
+   0.288 and left the row where it was; the chart then contradicted its own
+   caption. Both the chart and the generated table read this one array. */
+LADDER.rows.sort((a, b) => b.v - a.v);
 
 const tip = document.getElementById('tip');
 const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
