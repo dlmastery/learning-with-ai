@@ -1022,3 +1022,266 @@ pathologist, or remedial reading teacher."*
 *(Sections 7–12 follow: caseload and workload; escalation and safeguarding; the
 coordinator's week; the ownership table; the null-results ledger; and what `survey/04` must
 say. Case-law block at §10.)*
+
+---
+
+## 10. The case law a coordinator actually operates under
+
+All holdings below were retrieved from primary or archival full-text sources
+(supremecourt.gov, tile.loc.gov US Reports, law.resource.org F.2d/F.3d mirror,
+cdn.ca9.uscourts.gov). Source-reachability notes at §13.
+
+### 10.1 The substantive standard: *Rowley*, then *Endrew F.*
+
+`CASE-LAW` — ***Board of Education v. Rowley*, 458 U.S. 176, 206–07 (1982)**, verbatim:
+
+> "Therefore, a court's inquiry in suits brought under § 1415(e)(2) is twofold. **First, has
+> the State complied with the procedures set forth in the Act?** And second, is the
+> **individualized educational program developed through the Act's procedures reasonably
+> calculated to enable the child to receive educational benefits?** If these requirements
+> are met, the State has complied with the obligations imposed by Congress and the courts
+> can require no more."
+
+**Half the federal test for whether a child received a free appropriate public education is
+procedural.** That is the single fact most missing from `survey/04`, and it reframes
+everything: in this domain, process is not overhead around the pedagogy. Process is half
+the entitlement.
+
+*Rowley* also sets the limit that protects instructional judgement from courts — and, by
+extension, from anyone else: *"In assuring that the requirements of the Act have been met,
+courts must be careful to avoid imposing their view of preferable educational methods upon
+the States"* (458 U.S. at 206).
+
+`CASE-LAW` — ***Endrew F. v. Douglas County School District RE-1*, 580 U.S. 386 (2017)**,
+verbatim from the slip opinion:
+
+> "**To meet its substantive obligation under the IDEA, a school must offer an IEP reasonably
+> calculated to enable a child to make progress appropriate in light of the child's
+> circumstances.**"
+
+> "Of course this describes a general standard, not a formula. But whatever else can be said
+> about it, **this standard is markedly more demanding than the 'merely more than de minimis'
+> test applied by the Tenth Circuit.** […] When all is said and done, a student offered an
+> educational program providing '**merely more than de minimis**' progress from year to year
+> **can hardly be said to have been offered an education at all.**"
+
+And the sentence that should govern every AI-assisted decision in this space:
+
+> "A reviewing court may fairly expect those authorities to be able to **offer a cogent and
+> responsive explanation for their decisions** that shows the IEP is reasonably calculated to
+> enable the child to make progress appropriate in light of his circumstances."
+
+**That is a judicially imposed explainability requirement, arrived at eight years before
+anyone was arguing about explainable AI in schools.** A district using a system whose
+recommendations it cannot explain cannot meet *Endrew F.*'s expectation. Not "should not" —
+cannot. This is the strongest available argument that interpretability in this domain is a
+legal requirement rather than a preference. `INFERENCE` from the quoted text, but a short one.
+
+*Endrew F.* also makes **goal ambition** justiciable. A goal that locks in trivial progress
+is no longer merely poor practice; it is substantively defective. Any AI that drafts goals by
+extrapolating a child's historical trend line will systematically produce *Endrew F.*-deficient
+goals, because a trend line encodes the status quo. `INFERENCE` — and it is a specific,
+foreseeable, testable failure mode of the most-published AI application in special education.
+
+### 10.2 LRE: four tests, and the circuit split is real
+
+`CASE-LAW` — ***Daniel R.R. v. State Board of Education*, 874 F.2d 1036, 1048 (5th Cir. 1989)**,
+verbatim:
+
+> "Adhering to the language of the EHA, we discern a two part test for determining compliance
+> with the mainstreaming requirement. **First, we ask whether education in the regular
+> classroom, with the use of supplemental aids and services, can be achieved satisfactorily
+> for a given child.** […] If it cannot and the school intends to provide special education or
+> to remove the child from regular education, we ask, **second, whether the school has
+> mainstreamed the child to the maximum extent appropriate.** […] no single factor is
+> dispositive in all cases. Rather, our analysis is an individualized, fact-specific
+> inquiry…"
+
+Prong-one factors, verbatim:
+
+1. **Steps taken to accommodate.** *"If the state has made no effort to take such
+   accommodating steps, our inquiry ends, for the state is in violation of the Act's express
+   mandate… **The Act does not permit states to make mere token gestures to accommodate
+   handicapped students; its requirement for modifying and supplementing regular education is
+   broad.**"*
+2. **Educational benefit.** *"This inquiry necessarily will focus on the student's ability to
+   grasp the essential elements of the regular education curriculum… We reiterate, however,
+   that academic achievement is not the only purpose of mainstreaming."*
+3. **Overall experience / non-academic benefit.** *"a child may be able to absorb only a
+   minimal amount of the regular education program, but may benefit enormously from the
+   language models that his nonhandicapped peers provide"* (at 1049).
+4. **Effect on others.** *"If, however, the handicapped child requires so much of the teacher
+   or the aide's time that the rest of the class suffers, then the balance will tip in favor
+   of placing the child in special education."*
+
+The court expressly refuses to use *Rowley*'s two-part test for LRE: *"the Rowley test thus
+assumes the answer to the question presented in a mainstreaming case."*
+
+`CASE-LAW` — ***Sacramento City Unified School District v. Rachel H.*, 14 F.3d 1398, 1404
+(9th Cir. 1994)**, verbatim:
+
+> "The result was a four-factor balancing test in which the court considered **(1) the
+> educational benefits of placement full-time in a regular class; (2) the non-academic
+> benefits of such placement; (3) the effect Rachel had on the teacher and children in the
+> regular class; and (4) the costs of mainstreaming Rachel.** […] **Accordingly, we approve
+> and adopt the test employed by the district court.**"
+
+Factor 3 has a two-part sub-inquiry: *"(1) whether there was detriment because the child was
+disruptive, distracting or unruly, and (2) whether the child would take up so much of the
+teacher's time that the other students would suffer from lack of attention."* On cost, the
+burden is the district's: *"the District did not meet its burden of proving that regular
+placement would burden the District's funds or adversely affect services available to other
+children."*
+
+`CASE-LAW` — ***Roncker v. Walter*, 700 F.2d 1058, 1063 (6th Cir. 1983)**, the portability
+test, verbatim:
+
+> "In a case where the segregated facility is considered superior, the court should determine
+> whether the services which make that placement superior **could be feasibly provided in a
+> non-segregated setting.** If they can, the placement in the segregated school would be
+> inappropriate under the Act."
+
+With the three carve-outs and cost expressly in play: *"…because the handicapped child would
+not benefit from mainstreaming, because any marginal benefits received from mainstreaming are
+far outweighed by the benefits gained from services which could not feasibly be provided in
+the non-segregated setting, or because the handicapped child is a disruptive force… **Cost is
+a proper factor to consider since excessive spending on one handicapped child deprives other
+handicapped children.**"*
+
+`CASE-LAW` — ***Oberti v. Board of Education of Clementon School District*, 995 F.2d 1204,
+1215 (3d Cir. 1993)** adopts *Daniel R.R.* and says why:
+
+> "**the Roncker test fails to make clear that even if placement in the regular classroom
+> cannot be achieved satisfactorily for the major portion of a particular child's education
+> program, the school is still required to include that child in school programs with
+> nondisabled children** (specific academic classes, other classes such as music and art,
+> lunch, recess, etc.) whenever possible."
+
+`CASE-LAW` — ***Hartmann v. Loudoun County Board of Education*, 118 F.3d 996 (4th Cir. 1997)**
+applies *Roncker* through *DeVries v. Fairfax County School Board*, 882 F.2d 876, 879 (4th
+Cir. 1989): mainstreaming is not required where *"(1) the disabled child would not receive an
+educational benefit from mainstreaming into a regular class; (2) any marginal benefit from
+mainstreaming would be significantly outweighed by benefits which could feasibly be obtained
+only in a separate instructional setting; or, (3) the disabled child is a disruptive force in
+a regular classroom setting."* *Hartmann* squarely rejects discounting disruption.
+
+**The circuit map** — sourced from a court's own survey, ***L.B. ex rel. K.B. v. Nebo School
+District*, 379 F.3d 966, 976–77 (10th Cir. 2004)**, not from a secondary summary:
+
+| Test | Circuits |
+|---|---|
+| *Daniel R.R.* two-part | 3d, 5th, 10th (without the cost factor), 11th (*Greer*, with cost) |
+| *Rachel H.* four-factor (*Daniel R.R.* + cost as co-equal factor) | 9th |
+| *Roncker* portability | 4th, 6th, 8th |
+| Cost acknowledged as relevant | 7th |
+| Own framework, **expressly declined** *Daniel R.R.* | 1st (*Roland M.*; reaffirmed in *C.D. v. Natick Public School District*, 924 F.3d 621 (1st Cir. 2019): *"We reject both arguments"*) |
+| **Not mapped from a retrieved source** | 2d, D.C. Cir. — `UNVERIFIED`. *P. ex rel. Mr. & Mrs. P. v. Newington Board of Education*, 546 F.3d 111 (2d Cir. 2008) is the mapping case; its full text could not be retrieved from four mirrors. Do not cite without independent verification. |
+
+**Why this matters for a product and not just for lawyers.** The four tests weight *cost* and
+*disruption* differently. A recommendation engine that proposes a placement is implicitly
+applying one of them. **There is no circuit-neutral placement recommendation.** Any system
+that offers placement guidance is either encoding a jurisdiction it was never told, or
+averaging four incompatible legal standards into one number. Both are wrong. This is the
+strongest single argument in this report for the flat prohibition in §11: **an AI may not
+recommend placement.**
+
+### 10.3 Predetermination — the doctrine that governs pre-meeting AI output
+
+`CASE-LAW` — ***Deal v. Hamilton County Board of Education*, 392 F.3d 840 (6th Cir. 2004)**,
+verbatim:
+
+> "The evidence reveals that the School System, and its representatives, **had pre-decided not
+> to offer Zachary intensive ABA services regardless of any evidence concerning Zachary's
+> individual needs** and the effectiveness of his private program. **This predetermination
+> amounted to a procedural violation of the IDEA. Because it effectively deprived Zachary's
+> parents of meaningful participation in the IEP process, the predetermination caused
+> substantive harm and therefore deprived Zachary of a FAPE.**"
+
+And the line that draws the boundary exactly where an AI sits, quoting *Ms. C. ex rel. N.L. v.
+Knox County Schools*, 315 F.3d 688, 693–95 (6th Cir. 2003):
+
+> "**school officials are permitted to form opinions and compile reports prior to IEP
+> meetings.** The Court cautioned, however, that **such conduct is only harmless as long as
+> school officials are 'willing to listen to the parents'** … school system representatives
+> should '**come to the meeting with suggestions and open minds, not a required course of
+> action**'."
+
+`CASE-LAW` — ***Spielberg v. Henrico County Public Schools*, 853 F.2d 256, 258–59 (4th Cir.
+1988)**, verbatim:
+
+> "The decision to place Jonathan at Randolph **before developing an IEP on which to base that
+> placement** violates this regulation as interpreted by the Secretary of Education. It also
+> **violates the spirit and intent of the EHA, which emphasizes parental involvement. After
+> the fact involvement is not enough.**"
+
+`INFERENCE` — a necessary caveat: *Spielberg*'s "sufficient in itself" framing predates IDEA
+2004's codified harmless-error filter at 20 U.S.C. §1415(f)(3)(E)(ii) / 34 CFR §300.513(a)(2).
+*Deal* already runs the substantive-harm analysis. Do not quote *Spielberg* as if per-se
+invalidity survives unqualified.
+
+Also collected in *Deal*, the no-predetermination side: *Fuhrmann v. East Hanover Board of
+Education*, 993 F.2d 1031, 1036 (3d Cir. 1993); *Hanson v. Smith*, 212 F. Supp. 2d 474, 486
+(D. Md. 2002) (district came to meetings *"with an open mind"*); *Doyle v. Arlington County
+School Board*, 806 F. Supp. 1253, 1262 (E.D. Va. 1992) (district *"merely proposed"* a
+placement and had not *"fully made up its mind before the parents ever [got] involved"*); and
+*W.G. v. Board of Trustees of Target Range School District No. 23*, 960 F.2d 1479, 1484–85
+(9th Cir. 1992) (the district *"was required to conduct, **not just an IEP meeting, but a
+meaningful IEP meeting**"*).
+
+**The operative rule: pre-meeting analysis is lawful; a pre-committed outcome is not.** An AI
+draft is lawful. An AI draft that the team cannot realistically move is the *Deal* fact
+pattern with better typography.
+
+### 10.4 PWN failure, and the harmless-error escape hatch
+
+`CASE-LAW` — ***J.B. v. Kyrene Elementary School District No. 28*, 112 F.4th 1156 (9th Cir.
+2024)**. The district issued prior written notices refusing to continue the IEP process and
+refusing an independent educational evaluation **solely because the student was not enrolled**
+— a rationale the whole panel agreed was not legitimate. The majority nonetheless affirmed for
+the district on harmless-error grounds, **accepting substitute reasons developed later in the
+administrative proceedings and never contemporaneously given to the parent.**
+
+Collins, J., dissenting, states the governing standard verbatim:
+
+> "Under the IDEA, procedural violations—such as **the failure to provide a valid explanation
+> for proposed agency action in a PWN**, see 20 U.S.C. § 1415(c)(1)(B)—'constitute a denial of
+> a [FAPE],' and therefore warrant a remedy, only if they (1) 'seriously impair the parents'
+> opportunity to participate in the IEP formulation process'; (2) 'result in the loss of
+> educational opportunity for the child'; or (3) 'cause a deprivation of the child's
+> educational benefits.' *Timothy O. v. Paso Robles Unified Sch. Dist.*, 822 F.3d 1105, 1124
+> (9th Cir. 2016)… In my view, the District's procedural error was plainly harmful under the
+> first of these three alternatives."
+
+**This is the most recent and most directly analogous authority in the report.** A district
+that acts on an opaque recommendation, writes a thin PWN, and reconstructs its reasoning at
+hearing may well win. That is not a reason for a builder to relax; it is a description of how
+the accountability loop fails. **The system that gets built should produce the
+contemporaneous reasoning, because the legal system will not reliably force it to.**
+
+### 10.5 Exhaustion — when a family can bypass IDEA entirely
+
+`CASE-LAW` — ***Fry v. Napoleon Community Schools*, 580 U.S. 154 (2017)**, verbatim:
+
+> "**Held: 1. Exhaustion of the IDEA's administrative procedures is unnecessary where the
+> gravamen of the plaintiff's suit is something other than the denial of the IDEA's core
+> guarantee of a FAPE.** […] In determining whether a plaintiff seeks relief for the denial of
+> a FAPE, **what matters is the gravamen of the plaintiff's complaint, setting aside any
+> attempts at artful pleading.** … **examination of a plaintiff's complaint should consider
+> substance, not surface**."
+
+`CASE-LAW` — ***Perez v. Sturgis Public Schools*, 598 U.S. 142 (2023)**, verbatim:
+
+> "**Held: IDEA's exhaustion requirement does not preclude Mr. Perez's ADA lawsuit because the
+> relief he seeks (i.e., compensatory damages) is not something IDEA can provide.**"
+
+> "The statute's administrative exhaustion requirement applies only to suits that 'see[k]
+> relief . . . also available under' IDEA. And that condition simply is not met in situations
+> like ours, where a plaintiff brings a suit under another federal law for compensatory
+> damages—a form of relief everyone agrees IDEA does not provide."
+
+*Fry* supplies a **gravamen** test; *Perez* adds an independent **remedy-availability** test.
+They are cumulative. `INFERENCE` — practical consequence: a family alleging disability
+discrimination and seeking damages may go straight to federal court under ADA/§504 without
+ever filing a due process complaint. The §618 due-process counts in §12 therefore
+**understate** total dispute volume by an unmeasured amount, and a product's exposure is not
+bounded by IDEA's administrative process.

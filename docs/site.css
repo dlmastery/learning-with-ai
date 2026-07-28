@@ -1,0 +1,164 @@
+/* ============================================================
+   Learning in the New Frontier AI World — the design system.
+
+   One file. Every page on this site links it: the dashboard,
+   the paper, the demo gallery and all thirteen demos. If a
+   token or a component is used on more than one page it lives
+   here, so the three surfaces cannot drift apart again.
+
+   Palette is CVD-validated (protan ΔE 16.7 light / 18.3 dark).
+   --felt and --real are the only categorical hues. --good,
+   --warn and --bad are STATUS ONLY and must never encode a
+   data series. Do not add hues without re-running the
+   validator.
+   ============================================================ */
+
+:root{
+  /* ── surfaces & ink ── */
+  --bg:#faf9f5; --surface:#fcfcfb; --raise:#f2f0e9; --sunken:#f6f4ee;
+  --ink:#171614; --ink-2:#413f3a; --ink-3:#7b7870;
+  --line:#e5e2d8; --line-2:#cfcbbe;
+
+  /* ── categorical: the only two data hues ── */
+  --felt:#C4623D;            /* series 1 — what it feels like / the human side */
+  --real:#1D6FA5;            /* series 2 — what is measured / the true side   */
+
+  /* ── status: never a data series ── */
+  --good:#2f6d4f; --warn:#8a6d1f; --bad:#9d3f33;
+
+  /* ── type ── */
+  --serif:ui-serif,Georgia,"Iowan Old Style",serif;
+  --sans:ui-sans-serif,-apple-system,"Segoe UI",Inter,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  /* ── spacing scale — everything is a step on this ── */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px;
+  --s6:32px; --s7:48px; --s8:72px; --s9:104px;
+
+  /* ── radii ── */
+  --r:12px; --r-sm:8px; --r-xs:5px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#1a1917; --surface:#211f1d; --raise:#2a2825; --sunken:#161513;
+        --ink:#f6f4ef; --ink-2:#c6c2b8; --ink-3:#8e8a80;
+        --line:#35322c; --line-2:#474339;
+        --felt:#D4784C; --real:#3D93CC;
+        --good:#5fa583; --warn:#c9a94e; --bad:#d08a7e;}
+}
+:root[data-theme="dark"]{--bg:#1a1917; --surface:#211f1d; --raise:#2a2825; --sunken:#161513;
+  --ink:#f6f4ef; --ink-2:#c6c2b8; --ink-3:#8e8a80; --line:#35322c; --line-2:#474339;
+  --felt:#D4784C; --real:#3D93CC; --good:#5fa583; --warn:#c9a94e; --bad:#d08a7e;}
+:root[data-theme="light"]{--bg:#faf9f5; --surface:#fcfcfb; --raise:#f2f0e9; --sunken:#f6f4ee;
+  --ink:#171614; --ink-2:#413f3a; --ink-3:#7b7870; --line:#e5e2d8; --line-2:#cfcbbe;
+  --felt:#C4623D; --real:#1D6FA5; --good:#2f6d4f; --warn:#8a6d1f; --bad:#9d3f33;}
+
+/* ── base ─────────────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:16.5px/1.68 var(--sans);
+  -webkit-font-smoothing:antialiased;padding:0 var(--s5) var(--s9);overflow-x:hidden}
+.wrap{max-width:960px;margin:0 auto}
+.narrow{max-width:720px}
+a{color:var(--felt);text-decoration:none;border-bottom:1px solid transparent}
+a:hover{border-bottom-color:currentColor}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--real);
+  outline-offset:2px;border-radius:3px}
+p{margin-bottom:var(--s4);max-width:68ch;color:var(--ink-2)}
+strong{color:var(--ink);font-weight:650}
+em{font-style:italic}
+code{font:13px/1.5 var(--mono);background:var(--raise);padding:1.5px 5px;
+  border-radius:var(--r-xs);color:var(--ink)}
+hr{border:0;border-top:1px solid var(--line);margin:var(--s7) 0}
+
+/* ── type scale ───────────────────────────────────────────── */
+h1{font:400 clamp(30px,5.4vw,46px)/1.1 var(--serif);letter-spacing:-.022em;
+  margin-bottom:var(--s4);color:var(--ink)}
+h2{font:400 28px/1.22 var(--serif);letter-spacing:-.018em;margin:var(--s8) 0 var(--s1);color:var(--ink)}
+h3{font:650 15px/1.4 var(--sans);margin:var(--s6) 0 var(--s3);color:var(--ink)}
+.lede{font-size:18.5px;line-height:1.58;color:var(--ink-2);max-width:60ch}
+.sub{color:var(--ink-3);font-size:14.5px;line-height:1.55;margin-bottom:var(--s5);max-width:66ch}
+.eyebrow{font:600 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--felt);margin-bottom:var(--s4)}
+
+/* ── page open / page close ───────────────────────────────
+   Every page opens with a crumb and a header, and closes with
+   a footer. Same rhythm everywhere.                         */
+.crumb{padding:var(--s5) 0 0;font-size:13px;color:var(--ink-3)}
+.crumb a{color:var(--ink-3)}
+.crumb a:hover{color:var(--felt)}
+header{padding:var(--s6) 0;border-bottom:1px solid var(--line);margin-bottom:var(--s6)}
+footer{margin-top:var(--s8);padding-top:var(--s5);border-top:1px solid var(--line);
+  font-size:13px;color:var(--ink-3)}
+footer a{color:var(--ink-3)}
+footer a:hover{color:var(--felt)}
+
+/* ── the one link style that reads as an action ───────────── */
+.go{display:inline-flex;align-items:center;gap:9px;font:650 15px/1 var(--sans);
+  color:var(--ink);border:1px solid var(--line-2);border-radius:var(--r-sm);
+  padding:13px 17px;background:var(--surface);transition:border-color .13s,color .13s}
+.go:hover{border-color:var(--felt);color:var(--felt)}
+.go::after{content:"→";color:var(--felt);font-size:14px}
+.go.q{border-color:transparent;background:none;padding:13px 0;color:var(--ink-3);font-weight:600}
+.go.q:hover{color:var(--felt);border-color:transparent}
+
+/* ── evidence chips ───────────────────────────────────────── */
+.chips{display:flex;gap:var(--s2);flex-wrap:wrap;margin-top:var(--s5)}
+.chip{font:600 10.5px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;
+  padding:6px 9px;border-radius:6px;border:1px solid var(--line-2);
+  color:var(--ink-3);white-space:nowrap}
+.chip.m{color:var(--real);border-color:color-mix(in oklab,var(--real) 42%,transparent)}
+.chip.d{color:var(--felt);border-color:color-mix(in oklab,var(--felt) 42%,transparent)}
+.chip.n{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 42%,transparent)}
+
+/* ── pills: in-table state markers ────────────────────────── */
+.pill{display:inline-block;font:600 10.5px/1 var(--mono);padding:4px 7px;
+  border-radius:var(--r-xs);border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
+.pill.y{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
+.pill.n{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 45%,transparent)}
+.pill.c{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 45%,transparent)}
+
+/* ── panels & asides ──────────────────────────────────────── */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s5);margin:var(--s5) 0}
+.panel.sunken{background:var(--sunken)}
+.ptitle{font:650 14.5px/1.35 var(--sans);color:var(--ink);margin-bottom:var(--s1)}
+.psub{font-size:12.5px;color:var(--ink-3);margin-bottom:var(--s4);line-height:1.5}
+.note{border-left:2px solid var(--line-2);padding:2px 0 2px var(--s4);margin:var(--s5) 0;
+  font-size:14.5px;color:var(--ink-3);max-width:64ch}
+.note.warn{border-left-color:var(--bad)}
+.note.warn b{color:var(--bad)}
+.callout{background:var(--sunken);border:1px solid var(--line);border-left:2px solid var(--felt);
+  border-radius:var(--r);padding:var(--s5);margin:var(--s5) 0}
+.callout .k{font:600 10.5px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;
+  color:var(--felt);margin-bottom:var(--s3)}
+.callout p:last-child{margin-bottom:0}
+
+/* ── tables — wide content scrolls in its own box ─────────── */
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:var(--s5) 0}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th{text-align:left;font:600 11px/1.3 var(--sans);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);padding:0 14px 10px 0;border-bottom:1px solid var(--line-2);vertical-align:bottom}
+td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+td b,th:first-child+td{color:var(--ink)}
+.num{font-family:var(--mono);font-size:13px;white-space:nowrap}
+.up{color:var(--good)} .down{color:var(--bad)} .mut{color:var(--ink-3)}
+
+/* ── details/summary ──────────────────────────────────────── */
+details{margin:var(--s4) 0}
+summary{cursor:pointer;font:600 13px var(--sans);color:var(--ink-3);padding:var(--s2) 0;
+  list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";color:var(--felt);display:inline-block;transition:transform .12s}
+details[open] summary::before{content:"▾ "}
+summary:hover{color:var(--felt)}
+
+/* ── theme toggle — same object, same corner, every page ──── */
+.theme{position:fixed;top:16px;right:16px;z-index:60;width:38px;height:38px;padding:0;
+  border-radius:10px;background:var(--surface);border:1px solid var(--line-2);
+  color:var(--ink);font-size:15px;line-height:1;text-align:center;cursor:pointer}
+.theme:hover{border-color:var(--ink-3)}
+
+/* ── misc ─────────────────────────────────────────────────── */
+svg{display:block;width:100%;height:auto;overflow:visible}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;
+  transition:none!important;scroll-behavior:auto!important}}

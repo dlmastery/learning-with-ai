@@ -122,11 +122,21 @@ def read(slug):
     return meta, t.strip()
 
 def build():
+    """Assemble PAPER.md and return (markdown, stats, structure).
+
+    `structure` is the declarative outline — parts, sections, anchors, word
+    counts — that the HTML renderer builds its contents rail from. Both the
+    rail and the contents page are generated from it, so neither can drift
+    from the document the way the old hand-slugged anchors did (every one of
+    the 29 contents links was dead)."""
     parts_out, toc, n, missing = [], [], 0, []
     stats = {"sections": 0, "words": 0}
-    for numeral, ptitle, blurb, slugs in PARTS:
+    structure = []
+    for pi, (numeral, ptitle, blurb, slugs) in enumerate(PARTS, 1):
         toc.append(f"\n**Part {numeral} — {ptitle}**\n")
         body = [f"\n\n---\n\n# Part {numeral} · {ptitle}\n\n*{blurb}*\n"]
+        prec = {"numeral": numeral, "title": ptitle, "blurb": blurb,
+                "anchor": f"p{pi}", "words": 0, "sections": []}
         for slug in slugs:
             meta, text = read(slug)
             if text is None:
@@ -138,8 +148,13 @@ def build():
             src = meta.get("source_report", "")
             srcline = f"\n<sub>Source report: `{src}`</sub>\n" if src else "\n"
             body.append(f"\n## {n}. {title}\n{srcline}\n{text}\n")
+            words = len(text.split())
             stats["sections"] += 1
-            stats["words"] += len(text.split())
+            stats["words"] += words
+            prec["words"] += words
+            prec["sections"].append({"n": n, "title": title, "anchor": f"s{n}",
+                                     "source": src, "words": words, "text": text})
+        structure.append(prec)
         parts_out.append("\n".join(body))
 
     covered = {s for _, _, _, ss in PARTS for s in ss}

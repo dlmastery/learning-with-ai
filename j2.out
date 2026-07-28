@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/eranti/learning-with-ai/j2.py", line 1, in <module>
+    from run import *
+ModuleNotFoundError: No module named 'run'
