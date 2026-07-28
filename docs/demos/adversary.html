@@ -307,7 +307,8 @@ function itemOf(d){
     const t=(C-h*rA)/net, total=h+t;
     steps.push({t:'Remaining work ÷ combined rate: ('+C+' − '+(h*rA)+') ÷ '+net+' = <b>'+(+t.toFixed(3))+' h</b> with both running.',c:0});
     if(h)steps.push({t:'Add the head start back: '+h+' + '+(+t.toFixed(3))+' = <b>'+(+total.toFixed(3))+' h</b>.',c:1});
-    answer=total;question='How long does the whole '+S.o+' take, from the moment the first '+S.a+' starts?';
+    answer=total;question=(d.s3?'How many minutes':'How long')+' does the whole '+S.o+
+      ' take, from the moment the first '+S.a+' starts?';
   }else if(q===1){
     const t=T-h, rb2=(C-h*rA-t*rA)/t;
     steps.push({t:'The two run together for '+T+' − '+h+' = <b>'+(+t.toFixed(3))+' h</b>.',c:h?1:0});
@@ -322,7 +323,7 @@ function itemOf(d){
     question='How large is the '+S.o+', if it is exactly finished after '+T+' hours?';
   }
   if(d.s3&&q===0){steps.push({t:'The question asks for <b>minutes</b>: '+(+answer.toFixed(3))+' × 60 = <b>'+(+(answer*60).toFixed(1))+' minutes</b>.',c:1});
-    answer=answer*60;unitOut=' minutes';question=question.replace('How long','How many minutes');}
+    answer=answer*60;unitOut=' minutes';}
   const irrel=d.s4?'The '+S.o+' is '+(2+d.cp)+' metres deep and was commissioned in 20'+(10+d.hs)+'. ':'';
   ans.value=answer;ans.unit=unitOut;
   return {S,N,rA,rB,drain,net,C,h,T,q,aStated,bStated,question,steps,ans,irrel,d};
@@ -438,10 +439,10 @@ $('spaceS').innerHTML='At one item per day this template alone runs for <b>'+fmt
 /* ══ wiring ══════════════════════════════════════════════════ */
 const LEVELS=[
  {q:0,s2:0,s3:0,s4:0,s5:0,s6:0},
- {q:0,s2:0,s3:0,s4:1,s5:0,s6:0},
- {q:0,s2:1,s3:0,s4:1,s5:1,s6:0},
- {q:2,s2:1,s3:0,s4:1,s5:1,s6:1},
- {q:1,s2:1,s3:1,s4:1,s5:1,s6:1}];
+ {q:0,s2:1,s3:0,s4:1,s5:0,s6:0},
+ {q:2,s2:1,s3:0,s4:1,s5:0,s6:1},
+ {q:1,s2:1,s3:0,s4:1,s5:1,s6:1},
+ {q:0,s2:1,s3:1,s4:1,s5:1,s6:1}];
 function applyDial(){
   const d=decode(IDX),L=LEVELS[+$('dial').value-1];
   Object.assign(d,L);IDX=encode(d);PICK=-1;render();}
