@@ -2,7 +2,7 @@
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**29 sections · 73,363 words · 32 research reports · ~2,100 source citations**
+**30 sections · 75,352 words · 32 research reports · ~2,100 source citations**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -95,35 +95,36 @@ One of them documents a mechanism this project proposed, benchmarked, and
 10. [Teach to Learn — the highest-evidence, least-built intervention](#teach-to-learn-the-highest-evidence-least-built-intervention)
 11. [The Explanation Is the Work — generative slides, and the learner as explainer](#the-explanation-is-the-work-generative-slides-and-the-learner-as-explainer)
 12. [The Ladder of Explanation — ELI10 to ELI25, and the rule that makes a simplification legal](#the-ladder-of-explanation-eli10-to-eli25-and-the-rule-that-makes-a-simplification-legal)
-13. [Nobody Needs a Better Scheduler — the science of durable remembering](#nobody-needs-a-better-scheduler-the-science-of-durable-remembering)
-14. [Beyond the Tutor — the five roles nobody is building](#beyond-the-tutor-the-five-roles-nobody-is-building)
-15. [What the Object Must Refuse — embodiment, manipulatives, and executable material](#what-the-object-must-refuse-embodiment-manipulatives-and-executable-material)
-16. [Showing — illustration, animation, and the arithmetic of a wrong picture](#showing-illustration-animation-and-the-arithmetic-of-a-wrong-picture)
+13. [Explaining Hard Things — the fidelity invariants, instantiated](#explaining-hard-things-the-fidelity-invariants-instantiated)
+14. [Nobody Needs a Better Scheduler — the science of durable remembering](#nobody-needs-a-better-scheduler-the-science-of-durable-remembering)
+15. [Beyond the Tutor — the five roles nobody is building](#beyond-the-tutor-the-five-roles-nobody-is-building)
+16. [What the Object Must Refuse — embodiment, manipulatives, and executable material](#what-the-object-must-refuse-embodiment-manipulatives-and-executable-material)
+17. [Showing — illustration, animation, and the arithmetic of a wrong picture](#showing-illustration-animation-and-the-arithmetic-of-a-wrong-picture)
 
 **Part IV — Correctness**
 
-17. [Grounding — correctness that lives in the verifier](#grounding-correctness-that-lives-in-the-verifier)
-18. [Assessment After the Artifact — measuring a person when the work no longer indicates them](#assessment-after-the-artifact-measuring-a-person-when-the-work-no-longer-indicates-them)
+18. [Grounding — correctness that lives in the verifier](#grounding-correctness-that-lives-in-the-verifier)
+19. [Assessment After the Artifact — measuring a person when the work no longer indicates them](#assessment-after-the-artifact-measuring-a-person-when-the-work-no-longer-indicates-them)
 
 **Part V — Who it is for**
 
-19. [The Empty Chair — designing for the margin first](#the-empty-chair-designing-for-the-margin-first)
-20. [Who Is Not in the Room — reach, language, and the barriers attention does not remove](#who-is-not-in-the-room-reach-language-and-the-barriers-attention-does-not-remove)
-21. [What We Owe Children — the legal floor as a design specification](#what-we-owe-children-the-legal-floor-as-a-design-specification)
+20. [The Empty Chair — designing for the margin first](#the-empty-chair-designing-for-the-margin-first)
+21. [Who Is Not in the Room — reach, language, and the barriers attention does not remove](#who-is-not-in-the-room-reach-language-and-the-barriers-attention-does-not-remove)
+22. [What We Owe Children — the legal floor as a design specification](#what-we-owe-children-the-legal-floor-as-a-design-specification)
 
 **Part VI — The field, and what it has already built**
 
-22. [The Substrate — what the frontier actually supplies](#the-substrate-what-the-frontier-actually-supplies)
-23. [The Textbook That Writes Itself — and who it remembers](#the-textbook-that-writes-itself-and-who-it-remembers)
-24. [The Canon — what the history of pedagogy already settled](#the-canon-what-the-history-of-pedagogy-already-settled)
-25. [The Market — nine bets, one graveyard, and the number that shrinks as you look at it](#the-market-nine-bets-one-graveyard-and-the-number-that-shrinks-as-you-look-at-it)
-26. [Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration](#prior-art-what-thirty-five-builds-reveal-read-as-evidence-and-not-as-inspiration)
-27. [Motivation — wanting to continue](#motivation-wanting-to-continue)
+23. [The Substrate — what the frontier actually supplies](#the-substrate-what-the-frontier-actually-supplies)
+24. [The Textbook That Writes Itself — and who it remembers](#the-textbook-that-writes-itself-and-who-it-remembers)
+25. [The Canon — what the history of pedagogy already settled](#the-canon-what-the-history-of-pedagogy-already-settled)
+26. [The Market — nine bets, one graveyard, and the number that shrinks as you look at it](#the-market-nine-bets-one-graveyard-and-the-number-that-shrinks-as-you-look-at-it)
+27. [Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration](#prior-art-what-thirty-five-builds-reveal-read-as-evidence-and-not-as-inspiration)
+28. [Motivation — wanting to continue](#motivation-wanting-to-continue)
 
 **Part VII — What we do not know**
 
-28. [What We Cannot See From Here — the unknown unknowns, and the questions that expose them](#what-we-cannot-see-from-here-the-unknown-unknowns-and-the-questions-that-expose-them)
-29. [The Agenda — three experiments, and what would falsify this survey](#the-agenda-three-experiments-and-what-would-falsify-this-survey)
+29. [What We Cannot See From Here — the unknown unknowns, and the questions that expose them](#what-we-cannot-see-from-here-the-unknown-unknowns-and-the-questions-that-expose-them)
+30. [The Agenda — three experiments, and what would falsify this survey](#the-agenda-three-experiments-and-what-would-falsify-this-survey)
 
 ---
 
@@ -2551,7 +2552,7 @@ weak part. The place to put them was.**
 
 # Part III · The mechanisms
 
-*Seven techniques, each with a measured effect and a specified failure mode. These are the parts that do the teaching.*
+*Eight techniques, each with a measured effect and a specified failure mode. These are the parts that do the teaching.*
 
 
 ## 10. Teach to Learn — the highest-evidence, least-built intervention
@@ -3242,7 +3243,255 @@ measured design. It is also the cheapest experiment in this section, and the one
 that would turn the ladder from an output into an instrument.
 
 
-## 13. Nobody Needs a Better Scheduler — the science of durable remembering
+## 13. Explaining Hard Things — the fidelity invariants, instantiated
+
+<sub>Source report: `derived — see provenance note in §1`</sub>
+
+Section 25 established a rule for when a simplification is legal: **monotone
+refinement.** A rung may drop precision, formalism, or mechanism-depth. It may never
+falsify **ontology, causal sign, quantifier strength, or uniqueness of mechanism**.
+
+That rule is correct and, as stated, nearly unusable. Four abstract invariants do not
+tell an author what to check on a Tuesday. This section instantiates them — which one
+breaks in which domain, what the breakage looks like, and what a machine can check.
+
+**Provenance, stated because this section's evidential status differs from the rest.**
+What follows was derived by applying §25's rule to two live cases — graduate
+mathematics, and a specific published explanation of energy-based models — rather than
+retrieved from a literature. The invariants themselves carry the evidence of §25. The
+instantiations are `INFERENCE`. Where a claim below is measured, it is labelled and
+sourced; where it is derived, it says so. We flag this rather than let the section
+borrow §25's authority.
+
+---
+
+## 1. Which invariant breaks, by domain
+
+The four invariants are not equally at risk. In each field, one of them is where
+almost all bad explanation dies.
+
+| Domain | The invariant most at risk | What the failure looks like |
+|---|---|---|
+| **Mathematics** | **Quantifier strength** | ∀∃ silently reordered |
+| **Physics / engineering** | **Uniqueness of mechanism** | A determined quantity presented as a tunable choice |
+| **Computer science** | **Ontology** | Process and object conflated — a function as *a rule you run* versus *a value you pass* |
+| **Biology / medicine** | **Causal sign** | Correlational mechanism narrated as causal, direction unmarked |
+| **Statistics** | **Quantifier strength** again | "The probability the hypothesis is true", which reverses the conditional |
+
+This is a design table, not a finding. Its use is that it tells an author *what to
+check first*, and it tells a verifier which predicate to spend its budget on.
+
+---
+
+## 2. Mathematics: quantifier strength is the whole game
+
+> "For every ε there is a δ" and "there is a δ that works for every ε" are the
+> difference between continuity and **uniform** continuity — and the entire second
+> half of a real-analysis course.
+
+Nearly every "intuitive" explanation of a limit, a convergence, or a bound quietly
+reorders those quantifiers, because the reordered version is easier to say. The
+student computes correctly for two years and then cannot understand uniform
+convergence, and the trace goes back to a sentence nobody flagged.
+
+**This is mechanically checkable**, which makes it the most valuable entry in the
+table. An explanation is legal iff **its quantifier prefix is entailed by the formal
+statement's, under the declared scope.** That is a predicate, not a matter of taste,
+and it is decidable at the cheap rung of the grounding ladder given both statements.
+
+### The ontological crossing that follows it
+
+Chi's test says errors *within* an ontological category are repairable and errors
+*across* categories are robust — the Bohr-model hybrid population was **unchanged
+across a full semester** of university chemistry (§25).
+
+Mathematics has its own canonical crossing: **process versus object.** A limit as
+*something you do* versus *a number that exists*. A function as *a rule you apply*
+versus *a point in a space*.
+
+A student holding "limit" in the process category can compute limits indefinitely and
+cannot understand uniform convergence — because uniform convergence quantifies over a
+**space of functions**, which requires functions to be objects first. The
+misconception survives instruction exactly as Chi's test predicts, because the repair
+is a category change rather than a correction. `INFERENCE`, from Chi's mechanism plus
+the process/object literature in mathematics education.
+
+---
+
+## 3. Two failure modes worth naming
+
+These are the section's original contributions, and both are checkable.
+
+### 3.1 Machinery before obstacle
+
+**An explanation that presents machinery before the obstacle the machinery exists to
+dodge makes the machinery look arbitrary.**
+
+The reader has no slot to put it in. They remember it as a list of tricks, cannot
+reconstruct it, and cannot tell which parts are essential and which are incidental —
+which is precisely the failure that makes an explanation feel clear and leave nothing
+behind. It is a fluency illusion with a specific cause.
+
+**The rule: lead with the constraint that forces the design.** Name the thing that
+does not work before naming what was done about it.
+
+This is checkable in a weak but useful sense — for a technical explanation, does the
+obstacle appear before the first piece of machinery it motivates? A structural
+predicate over an outline, not a judgement about prose.
+
+### 3.2 A determined quantity presented as tunable
+
+This falsifies **uniqueness of mechanism**, and it is endemic in engineering
+explanation.
+
+When a quantity is *determined* — by a conservation law, a stationarity condition, a
+dimensional constraint — and the explanation presents it as a knob someone chose, the
+reader concludes the design is taste. They will then tune it, and be confused when it
+breaks, because they were told it was theirs to set.
+
+**The check:** for each numeric constant in an explanation, is it (a) determined by a
+stated condition, (b) empirically fitted, or (c) arbitrary? All three are fine. Not
+saying which is the violation.
+
+---
+
+## 4. Worked example: energy-based models
+
+A test of whether any of this improves an explanation that is already good. The
+subject is a published walkthrough of energy-based generative models — energy
+landscape, a particle in a fluid, rolling downhill while wandering, a persistent
+replay buffer. The physics framing is the right instinct. Three things sharpen it.
+
+### 4.1 Lead with the uncomputable constant
+
+Every piece of machinery in an energy-based model exists to dodge one fact:
+
+> **You can write the probability of any image up to a constant you cannot compute.**
+
+*p(x) = e^(−E(x)) / Z*, where *Z* integrates over **every possible image**. In 784
+dimensions that integral is not hard; it is hopeless.
+
+Introduce *Z* as the antagonist first and every later step is *forced* rather than
+clever. Introduce the landscape first and the reader meets Langevin dynamics,
+contrastive divergence and replay buffers as three unrelated tricks. Same content,
+different retention — §3.1.
+
+### 4.2 The one line the method turns on
+
+**∇ₓ log p(x) = −∇ₓ E(x)**, because *Z* is constant in *x* and vanishes under the
+gradient.
+
+You cannot evaluate the probability. You can always compute *which direction makes it
+go up* — and sampling only ever needs the direction. Most treatments bury this in the
+derivation. It is the hinge, and it belongs at the top of rung 2.
+
+### 4.3 The noise scale is not a knob
+
+"Rolling downhill while wandering" is the right picture with the *why* missing.
+Gradient descent finds **a mode**. You do not want the most likely image; you want a
+*sample*. So Langevin adds noise:
+
+*x*ₜ₊₁ = *x*ₜ − (ε/2)∇E(*x*ₜ) + √ε · *z*ₜ
+
+The **√ε is not a hyperparameter.** It is the unique scale at which the stationary
+distribution equals *p*. Present it as tunable and you have falsified uniqueness of
+mechanism — §3.2, exactly.
+
+And the persistent replay buffer stops being a hack once the tug-of-war is visible:
+training pushes energy *down* on real data and *up* on model samples, and the "up"
+push lands wherever the negative samples happen to be. Unconverged samples mean
+**pushing up in the wrong places** — teaching the model to distrust regions it should
+like. The buffer maintains a population near equilibrium so that after the landscape
+shifts, the samples are still approximately right.
+
+Note what that is: **continuity of state across steps**, because recomputing from
+scratch each time is biased and slow. The same argument this survey makes for
+persistent learner state (§11), in a different domain.
+
+### 4.4 The three rungs
+
+Three, not five — five did not beat three, **p = 0.738** (§25).
+
+| Rung | The claim |
+|---|---|
+| **1** | A network scores images. Real ones score low, everything else high. To make an image, start from noise and walk downhill while jittering. |
+| **2** | The score is an unnormalised log-probability. The normaliser is uncomputable, but its gradient is zero — so sampling works where evaluating does not. The noise scale is fixed by requiring the correct stationary distribution. |
+| **3** | Maximum likelihood on −E − log Z; ∇_θ log Z = −𝔼_{p_θ}[∇_θ E], estimated by MCMC. Persistent contrastive divergence approximates that expectation with a maintained chain, because a fresh chain per step is both biased and slow. |
+
+Every rung is entailed by the one below it. Rung 1 drops the normaliser entirely —
+legal, it drops precision. It does **not** claim the score *is* a probability — that
+would falsify ontology.
+
+---
+
+## 5. Probe on the obstacle, not the definition
+
+§22 established that entry must be **measured, never preferred**: preference moves
+d ≈ 0.48 while knowledge moves zero, and rapid dynamic assessment recovers an
+actionable estimate from 1–3 items in 15–40 seconds at r = 0.66–0.92 against full
+diagnostics.
+
+This section adds *what the probe should ask*. **Probe on the obstacle, not the
+definition.**
+
+- Weak probe: *"What is an energy-based model?"* — separates people who have read a
+  definition from people who have not.
+- Strong probe: *"Why can't we just compute the probability directly?"*
+
+The second sorts by whether the reader holds the *constraint that generates the
+field*. Someone who can answer it belongs at rung 2 whatever their credentials;
+someone who cannot will not understand rung 2 however much they have read. `INFERENCE`
+— this follows from §3.1 rather than from a trial, and it is cheap to test.
+
+---
+
+## 6. Graduate level: the tutor's job inverts
+
+Guidance measures **d = −0.428 for experts**. Worked examples, scaffolding and
+explicit instruction — the strongest interventions that exist for a novice — are an
+*active harm* here. A tutor that explains beautifully to a graduate student is doing
+the wrong job well.
+
+What remains, in order of value:
+
+1. **Numeric falsification before symbolic proof.** A numeric check catches 99.1% of
+   seeded derivation errors in **0.38–0.61 ms** with zero false alarms; symbolic costs
+   roughly 3× for +0.9 points and carries a **38.3% XFAIL/SKIP hole** in SymPy,
+   concentrated in sums (70%), definite integrals (57%) and inequalities (47%) — the
+   areas graduate work lives in. Substitute random values before proving. Most wrong
+   conjectures die in a millisecond.
+2. **The adversary, unannounced.** The referee who supplies the case the proof forgot.
+   *Announced* devil's advocacy measurably produces bolstering of the original view
+   (§26), so the objection must be owned, not performed.
+3. **Explaining it back, with the expectancy set first** — g = 0.48 with, **g = −0.02**
+   without (§05). This is why seminars work and "any questions?" does not.
+4. **Formal verification where it earns its cost**, and honestly: 97% autoformalisation
+   × 69% proving yields **36% end-to-end**, because the formal statement stops matching
+   the informal one (§13). The kernel moves the trust boundary; it does not remove it.
+
+Explanation is fourth at best, and it is the learner's output rather than the tutor's.
+
+---
+
+## 7. What this section commits us to
+
+- **Instantiate the invariant before authoring.** Name which of the four is at risk in
+  this domain, and check that one first.
+- **In mathematics, check the quantifier prefix.** It is decidable, it is cheap, and it
+  is where the damage is.
+- **Obstacle before machinery**, always. If the reader does not know what fails, every
+  fix looks arbitrary.
+- **Label every constant** as determined, fitted, or arbitrary. Silence on this point
+  is a falsification of mechanism.
+- **Probe on the obstacle.** A definition question measures reading. An obstacle
+  question measures understanding.
+- **At expert level, stop explaining.** Falsify, object, and let them teach it back.
+
+The general form, which is the section in one line: **a simplification is legal when
+the reader can still tell what would break.**
+
+
+## 14. Nobody Needs a Better Scheduler — the science of durable remembering
 
 <sub>Source report: `research/raw/F11-scientific-remembering.md`</sub>
 
@@ -3479,7 +3728,7 @@ struggled, actually explained, and actually got told when they were wrong.**
 The machinery is worth building. It is just not worth mistaking for the mechanism.
 
 
-## 14. Beyond the Tutor — the five roles nobody is building
+## 15. Beyond the Tutor — the five roles nobody is building
 
 <sub>Source report: `research/raw/F2-beyond-the-tutor.md`</sub>
 
@@ -3805,7 +4054,7 @@ that the field does not appear to know there was a choice — and therefore has 
 sequenced them.
 
 
-## 15. What the Object Must Refuse — embodiment, manipulatives, and executable material
+## 16. What the Object Must Refuse — embodiment, manipulatives, and executable material
 
 <sub>Source report: `research/raw/F7-A3-embodiment-and-notebooks.md`</sub>
 
@@ -4023,7 +4272,7 @@ other direction: what teaches is not the richness of what the learner is given. 
 is the **precision of what they are not allowed to do wrong without noticing.**
 
 
-## 16. Showing — illustration, animation, and the arithmetic of a wrong picture
+## 17. Showing — illustration, animation, and the arithmetic of a wrong picture
 
 <sub>Source report: `research/raw/C1-illustration-generation.md, research/raw/A2-interactive-animation.md`</sub>
 
@@ -4382,7 +4631,7 @@ and only one of those is the job.
 *How a tutor can be wrong safely, and how a learner's work can be measured when the artifact no longer indicates the person who produced it.*
 
 
-## 17. Grounding — correctness that lives in the verifier
+## 18. Grounding — correctness that lives in the verifier
 
 <sub>Source report: `research/raw/G1-grounding-synthesis.md`</sub>
 
@@ -4820,7 +5069,7 @@ the correction can come from a program the learner can run themselves rather tha
 machine claiming to know.
 
 
-## 18. Assessment After the Artifact — measuring a person when the work no longer indicates them
+## 19. Assessment After the Artifact — measuring a person when the work no longer indicates them
 
 <sub>Source report: `research/raw/F1-assessment-reconstruction.md`</sub>
 
@@ -5237,7 +5486,7 @@ learned least.**
 *The learners the evidence was not collected on, the learners it cannot reach, and the legal floor that turns out to be a design specification.*
 
 
-## 19. The Empty Chair — designing for the margin first
+## 20. The Empty Chair — designing for the margin first
 
 <sub>Source report: `research/raw/H1-selpa-accessibility.md`</sub>
 
@@ -5489,7 +5738,7 @@ lands.
 The chair is empty because nobody sat down. Not because the seat was taken.
 
 
-## 20. Who Is Not in the Room — reach, language, and the barriers attention does not remove
+## 21. Who Is Not in the Room — reach, language, and the barriers attention does not remove
 
 <sub>Source report: `research/raw/F4-reach-economics.md`</sub>
 
@@ -5698,7 +5947,7 @@ should be checkable against a specific person who is **not in the room** — and
 their language.
 
 
-## 21. What We Owe Children — the legal floor as a design specification
+## 22. What We Owe Children — the legal floor as a design specification
 
 <sub>Source report: `research/raw/F8-safety-privacy-children.md`</sub>
 
@@ -6066,7 +6315,7 @@ build from.
 *The frontier's actual capabilities, the artifacts other people have shipped, the pedagogical canon that settled most of this decades ago, and the question of whether anyone wants to continue.*
 
 
-## 22. The Substrate — what the frontier actually supplies
+## 23. The Substrate — what the frontier actually supplies
 
 <sub>Source report: `research/raw/A4-live-multimodal.md, research/raw/A5-world-models.md, research/raw/D1-frontier-quarter.md`</sub>
 
@@ -6401,7 +6650,7 @@ whether it teaches — is the widest measurement gap in applied AI, and it is th
 subject of the last section in this survey.
 
 
-## 23. The Textbook That Writes Itself — and who it remembers
+## 24. The Textbook That Writes Itself — and who it remembers
 
 <sub>Source report: `research/raw/A1-ai-native-textbooks.md, research/raw/G3-future-of-learning-projects.md`</sub>
 
@@ -6714,7 +6963,7 @@ telling; the human still writes the doing — and the reason is now measured, no
 asserted. The doing is the only part with a right answer that can be wrong.
 
 
-## 24. The Canon — what the history of pedagogy already settled
+## 25. The Canon — what the history of pedagogy already settled
 
 <sub>Source report: `research/raw/I1-pedagogical-systems.md, research/raw/I2-global-traditions.md`</sub>
 
@@ -7049,7 +7298,7 @@ ever gated by the price of attention. Those are the ones to build. The rest are
 worth knowing so that we do not mistake a tradition for a finding.
 
 
-## 25. The Market — nine bets, one graveyard, and the number that shrinks as you look at it
+## 26. The Market — nine bets, one graveyard, and the number that shrinks as you look at it
 
 <sub>Source report: `research/raw/E1-E2-edtech-landscape-lessonorca.md, research/raw/E3-latest-sweep.md`</sub>
 
@@ -7352,7 +7601,7 @@ the school years it would take for anyone to notice the difference. The fix is n
 better claims. It is naming, in advance, the observation that would prove you wrong.
 
 
-## 26. Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration
+## 27. Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration
 
 <sub>Source report: `research/raw/D2-portfolio-case-studies.md`</sub>
 
@@ -7674,7 +7923,7 @@ that measure whether anyone learned are the parts that are always about to be bu
 next.
 
 
-## 27. Motivation — wanting to continue
+## 28. Motivation — wanting to continue
 
 <sub>Source report: `research/raw/F6-motivation-persistence.md`</sub>
 
@@ -8145,7 +8394,7 @@ whether they came back with nobody asking.**
 *The catalogued gaps, the uncatalogued ones, and the conditions under which this document's central claim would have to be withdrawn.*
 
 
-## 28. What We Cannot See From Here — the unknown unknowns, and the questions that expose them
+## 29. What We Cannot See From Here — the unknown unknowns, and the questions that expose them
 
 <sub>Source report: `synthesis across the corpus`</sub>
 
@@ -8442,7 +8691,7 @@ failures we have not measured, and put the falsifier in writing before the resul
 arrives.**
 
 
-## 29. The Agenda — three experiments, and what would falsify this survey
+## 30. The Agenda — three experiments, and what would falsify this survey
 
 <sub>Source report: `research/raw/F9-open-problems.md`</sub>
 
