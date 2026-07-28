@@ -2,7 +2,7 @@
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**33 sections · 80,725 words · 35 research reports · 37 published corrections**
+**33 sections · 80,725 words · 35 research reports · 41 published corrections**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -19,8 +19,8 @@ learned anything, and almost never measures it **after the tool is taken away**.
 This survey is an attempt to write the missing specification. It rests on 35 research
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
-errors is published in an append-only ledger rather than quietly edited — **16 of
-the 37 corrections were found by an adversarial reviewer rather than by us.**
+errors is published in an append-only ledger rather than quietly edited — **20 of
+the 41 corrections were found by an adversarial reviewer rather than by us.**
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on

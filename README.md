@@ -108,8 +108,8 @@ whichever way it lands. Especially the nulls.
 The claim that should make you suspicious of any survey is that it got everything right. This one
 did not, and the record is the point.
 
-**<!--gen:corrections-->37<!--/gen--> corrections, published in an append-only ledger with a
-provenance column.** <!--gen:external-->16<!--/gen--> were found by an adversarial reviewer, not by us — including the two most
+**<!--gen:corrections-->41<!--/gen--> corrections, published in an append-only ledger with a
+provenance column.** <!--gen:external-->20<!--/gen--> were found by an adversarial reviewer, not by us — including the two most
 damaging, and one about the corrections ledger itself, which we had been silently editing inside a
 table headed *"published rather than silently edited."*
 

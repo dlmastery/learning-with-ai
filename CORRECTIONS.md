@@ -66,6 +66,10 @@ edited — see C-12 and C-13, which are the reason this file exists.
 | **C-35** | 28 Jul | The abstract said "32 research reports · ~2,100 citations"; the head said 34; the filesystem said 35. And "eight of the twenty-nine corrections" against a generated scoreboard reading twelve of thirty-three | **C-32 reproduced inside the abstract** — hardcoded counts sitting beside computed ones. Every count in the paper head and abstract is now derived from the filesystem and the ledger at build time | **EXTERNAL-REVIEW** |
 | **C-36** | 28 Jul | *(process)* The hardened checker was reported as working | **Still defeatable: 17 evasions planted, 1 caught.** A `\| C-99 \|` row claimed the ledger exemption without the id needing to exist; `PAPER.md` was not a surface at all; C-16's regex could not match the plain `0.50` form; and deleting every surface printed *"OK, 0 violations"* and exited 0. Fixed: exemption now checks the id against the real ledger, PAPER.md and paper.html are surfaces, the regex is widened, and a scan finding fewer than 20 surfaces **fails** | **EXTERNAL-REVIEW** |
 | **C-37** | 28 Jul | §32: *"the value of an agentic loop **equals** the value of the external check it closes on"*, with SciCode tabled as having no check | **Overstated, and the table was wrong.** SciCode has hand-written tests and still lands at 4.6%. The rule is a **bound**, not an equality: a weak check caps you low; a strong one does not guarantee you reach the bound | **EXTERNAL-REVIEW** |
+| **C-38** | 28 Jul | *(process)* Reported all cross-references fixed after C-34 | **23 were never in scope.** `renumber()` matched `§\d{2}` only, so unpadded intra-section refs (`§4`, `§3.1`) passed through and, once assembled, **landed on real but wrong sections** — three inside a bolded build order. A reference that resolves to a wrong section is worse than a dead one, because nothing flags it. Intra-section refs are now qualified as `§23.3` | **EXTERNAL-REVIEW** |
+| **C-39** | 28 Jul | *(process)* Reported all counts derived after C-35 | **The external total was computed twice, differently** — one site counted the provenance-key legend row as a correction (17), the other did not (16) — and `sync-ledger.py`'s row regex silently dropped C-36, whose cells contain escaped pipes. Three different figures were published simultaneously: 17 of 37, 16 of 37, 15 of 36. **Truth: 16 of 37.** Now computed once, from ledger rows only | **EXTERNAL-REVIEW** |
+| **C-40** | 28 Jul | *(process)* Reported the C-37 overstatement fixed | Fixed in the section body and **not in the abstract or the README**, both of which still said *"equals"* and filed SciCode under *"where none exists"*. The correction reached one of three surfaces — the failure named in C-17, recurring | **EXTERNAL-REVIEW** |
+| **C-41** | 28 Jul | *(process)* Reported the checker hardened after C-36 | **Fifth hole: 14 rules against 37 ledger rows.** C-23 through C-37 had no rule at all — including the C-37 violation that was live in the abstract while the checker reported green. A propagation checker that only covers the first two-thirds of its own ledger is measuring its own age. Now 19 rules | **EXTERNAL-REVIEW** |
 
 ---
 
@@ -79,10 +83,10 @@ hand-maintained, which is the whole argument for generating it.*
 | Caught by our own research | 15 |
 | Caught by our own verification — including of our own warnings | 2 |
 | Caught by our own builders, working against their own briefs | 4 |
-| **Caught by an adversarial external reviewer** | **16** |
-| **Total** | **37** |
+| **Caught by an adversarial external reviewer** | **20** |
+| **Total** | **41** |
 
-16 of 37 were found by someone whose job was to fail us — including
+20 of 41 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the

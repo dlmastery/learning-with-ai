@@ -115,7 +115,7 @@ the debunked mechanism.
 **SELPA-first, not SELPA-also.** Build the SELPA-grade system; it serves everyone
 (Universal Design for Learning / curb-cut effect). Hard limits: an AI may not author
 an IEP (IDEA — legally binding, team-authored), may not diagnose or label a child,
-must meet WCAG 2.2 AA as a floor, and must treat disability status as sensitive data.
+must meet the accessibility standard ADA Title II actually incorporates — **WCAG 2.1 AA**, with compliance dates moved to 26 Apr 2027/2028 (91 FR 20902); see C-26, and must treat disability status as sensitive data.
 Special education is the most replication-rich area in education — the AI's job there
 is *fidelity and dosage of known-good intervention*, not invention.
 
