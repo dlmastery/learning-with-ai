@@ -52,6 +52,7 @@ edited — see C-12 and C-13, which are the reason this file exists.
 | **C-21** | 28 Jul | Numeric grounding check "99.1% recall @ 0.61 ms" | Two harnesses measured **0.38 ms and 0.61 ms**; both are now reported rather than the flattering one. A third implementation in the demo measures 170 ns on a smaller set and is not directly comparable | SELF-RESEARCH (demo builder) |
 | **C-22** | 28 Jul | The Sierra Leone trial "ran across a school year" | It ran **eight weeks.** The error made the field's time horizon look better than it is, in the very section arguing that the horizon is too short | **EXTERNAL-REVIEW** |
 | **C-23** | 28 Jul | *(process)* Corrections were applied by **rewriting the ledger rows in place** — inside a table headed "each published rather than silently edited" — and the six corrections of 28 July appeared in no ledger at all | This file. Rows are append-only, carry provenance, and the count is generated from the filesystem | **EXTERNAL-REVIEW** |
+| **C-24** | 28 Jul | *(process)* Warned three times that `research/raw/E1-E2-*.md` exposes LessonOrca's confidential operating data — "churn economics, pricing, funnel" — and asked the owner to decide on scrubbing git history | **Mostly wrong, and it should have been checked before being raised.** §6's figures ($1,600 per churned student, $15,000 wasted labour per tutor) are the company's **own public marketing copy**, retrieved verbatim from `lessonorca.com` and labelled `VENDOR` in the report's own header. Republishing a company's published claims is not a leak. **The genuinely internal material is narrower: §7's product telemetry** (n = 31 starts, 22% signup conversion, 6% reaching first real action) — sourced from the author's own analytics, not public. That is the only part where a scrub decision is real | SELF-VERIFY |
 
 ---
 
@@ -60,12 +61,12 @@ edited — see C-12 and C-13, which are the reason this file exists.
 | Source | Count |
 |---|---|
 | Caught by our own research | 12 |
-| Caught by our own verification of a claim made to us | 1 |
+| Caught by our own verification (incl. of our own warnings) | 2 |
 | **Caught by an adversarial external reviewer** | **7** |
 | Caught by our own builders, against their own briefs | 3 |
-| **Total** | **23** |
+| **Total** | **24** |
 
-Seven of twenty-three were found by someone whose job was to fail us — including the
+Eight of twenty-four were found by someone whose job was to fail us — including the
 two most damaging (C-12, C-13) and the one about the ledger itself (C-23). That ratio
 is the honest measure of how much an internal review process is worth, and it is the
 argument for commissioning the hostile read rather than trusting the self-audit.

@@ -732,6 +732,12 @@ evidence that the design works.
 
 ## 7. Original measurement: what the telemetry actually shows
 
+> **Provenance note added 2026-07-28.** Unlike §6 — which quotes the company's own
+> published marketing copy and is therefore already public — this section reports
+> **non-public product analytics** from the author's own instance. It is included with
+> the owner's knowledge because a deployed, instrumented product is *evidence* where a
+> landing page is not. If it should be withdrawn, it is this section and not §6.
+
 `OBSERVED` — single product, non-randomised, no control condition. Source: the author's
 PostHog project (org "LessonOrca", project 499062), aggregate queries only, no individual
 learner data retrieved, no session content inspected. Window: **all data present in the
