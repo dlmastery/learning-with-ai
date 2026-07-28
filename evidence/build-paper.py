@@ -45,7 +45,7 @@ PARTS = [
  ("V", "Who it is for",
   "The learners the evidence was not collected on, the learners it cannot "
   "reach, and the legal floor that turns out to be a design specification.",
-  ["04-the-empty-chair", "07-who-is-not-in-the-room", "15-what-we-owe-children"]),
+  ["04-the-empty-chair", "31-the-coordinators-week", "07-who-is-not-in-the-room", "15-what-we-owe-children"]),
 
  ("VI", "The field, and what it has already built",
   "The frontier's actual capabilities, the artifacts other people have shipped, "

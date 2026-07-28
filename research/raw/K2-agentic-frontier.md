@@ -716,7 +716,234 @@ buildable thing, and §13 ranks it.
 
 ## 6. The self-improving curriculum
 
-*(§6 filled in below from dedicated verification pass.)*
+*The brief predicted "almost nothing" here and expected a documented absence to
+be a major finding. The prediction is correct, and the absence is sharper and
+more specific than expected — but the reason is not that the idea failed. It is
+that **two literatures exist and they have never touched each other.***
+
+### 6.1 Branch A — self-improvement works, on benchmarks
+
+`MEASURED-BENCH` · Every one of these is verified, and every one is measured on
+a static machine benchmark:
+
+| System | Measured gain | Source |
+|---|---|---|
+| **OPRO** | "up to **8% on GSM8K**, up to **50% on Big-Bench Hard**" over human-designed prompts | arXiv:2309.03409 |
+| **DSPy** | compiled pipelines beat standard few-shot by "**over 25%** (GPT-3.5) and **65%** (llama2-13b-chat)"; beat expert demonstrations by **5–46%** and **16–40%** | arXiv:2310.03714 |
+| **MIPROv2** | beats baseline optimisers on **5 of 7** multi-stage programs, "**as high as 13% accuracy**" | arXiv:2406.11695 |
+| **PromptBreeder** | PaLM 2-L zero-shot **GSM8K 83.9% vs 59.3%** (Plan-and-Solve+); SVAMP 90.2 vs 75.7; ETHOS 89 vs 80 | arXiv:2309.16797 (table via body text) |
+| **GEPA** | beats GRPO by **6% average, up to 20%**, with **up to 35× fewer rollouts**; beats MIPROv2 by **>10%** (+12% on AIME-2025) | arXiv:2507.19457 |
+| **TextGrad** | GPT-4o on GPQA **51% → 55%**; **20% relative** on LeetCode-Hard | arXiv:2406.07496 |
+| **AlphaEvolve** | 4×4 complex matrix multiplication in **48 scalar multiplications** — first improvement on Strassen in this setting in **56 years**; recovers **0.7%** of Google fleet compute; on **>50 open maths problems**, ~75% matched and **~20% improved** the state of the art | arXiv:2506.13131 |
+| **Darwin Gödel Machine** | self-modifying agent: **SWE-bench 20.0% → 50.0%**, Polyglot **14.2% → 30.7%** | arXiv:2505.22954 |
+
+That is a real, replicated, cross-lab capability. An agent that reads its own
+outcome data and rewrites its own instruction **works**, and the effect sizes
+are large.
+
+**And zero of these papers involves a single human participant, let alone a
+learning outcome.**
+
+Note also what several of the most-cited open-endedness systems do *not* report:
+**ADAS** (arXiv:2408.08435) gives **no numeric gain in its abstract**; **OMNI**
+(arXiv:2306.01711) reports **no numbers**; **OMNI-EPIC** (arXiv:2405.15568)
+claims **no quantitative evaluation at all**; **POET** (arXiv:1901.01753) is
+qualitative. The open-endedness cluster is the least quantified part of the
+whole self-improvement literature. `NEGATIVE RESULT` — treat any "self-designing
+curriculum" pitch citing these as `DEMO`.
+
+### 6.2 Branch B — instructional-policy optimisation on human learners exists, and it is pre-LLM
+
+**A correction this survey must make to its own prior.** It is often asserted
+that reinforcement learning for instructional sequencing has largely failed.
+That is **wrong**, and the correction matters:
+
+`MEASURED-META` · **Doroudi, Aleven & Brunskill (2019)**, *"Where's the Reward?
+A Review of Reinforcement Learning for Instructional Sequencing,"* IJAIED
+29(4):568–620, doi:10.1007/s40593-019-00187-x. Verbatim: **"We find that over
+half of the studies found that RL-induced policies significantly outperform
+baselines."** Of **41 studies from 34 papers**: **21 (51%)** significantly beat
+all baselines; 4 showed aptitude–treatment interactions favouring low
+performers; 4 mixed; **10 no significant difference; 1 where the baseline won.**
+The authors' qualifier is the load-bearing part: RL "has been most successful in
+cases where it has been **constrained with ideas and theories from cognitive
+psychology and the learning sciences**."
+
+`MEASURED-RCT` · **The strongest single number in this literature.** Lindsey,
+Shroyer, Pashler & Mozer (2014), *Psychological Science* 25(3):639–647,
+doi:10.1177/0956797613504302. A model-based personalised review scheduler,
+deployed for a **full semester in a middle-school foreign-language course**,
+produced **+16.5% course retention over massed study and +10.0% over
+one-size-fits-all spaced study** on a cumulative post-semester exam. A policy
+optimised against a memory model, measured on real long-term human retention.
+
+`MEASURED-RCT` · **Clement, Roy, Oudeyer & Lopes** — learning-progress bandits
+(ZPDES) in schools. The 2024 follow-up (arXiv:2402.01669) is an **RCT with 265
+children aged 7–8**: pre→post Predefined **6.83 → 8.36** vs ZPDES **6.74 →
+9.38**; algorithm × time **η² = 0.034**; ordering ZPDES+Choice > ZPDES >
+Predefined > Predefined+Choice. **Note the null-and-negative:** adding learner
+choice to the *fixed* curriculum **hurt** learning. (One reported test statistic
+in the retrieved body text appears mis-transcribed — **the F/p pair is
+unverified**; the means and group sizes are reliable.)
+
+`MEASURED-RCT` · **AXIS** — Williams, Kim, Rafferty, Maldonado, Gajos, Lasecki
+& Heffernan, L@S 2016, doi:10.1145/2876034.2876042. Learners generate and revise
+explanations; a bandit selects which to show next. **This is the closest thing
+that has ever existed to §1's loop.** Result: AXIS explanations "objectively
+enhanced learning… compared to the default practice," and their "rated quality
+and learning benefit **did not differ from explanations generated by an
+experienced instructor**." (No effect size in the abstract.) It is a decade old
+and it used learnersourced human explanations, not generated ones.
+
+`MEASURED-RCT` · **Rafferty, Brunskill, Griffiths & Shafto**, *Faster Teaching
+via POMDP Planning*, *Cognitive Science* 40(6):1290–1332,
+doi:10.1111/cogs.12290 — POMDP-planned teaching accelerated learning relative to
+baseline in two human concept-learning tasks. Lab tasks; no effect size in the
+abstract.
+
+### 6.3 The null results inside Branch B
+
+`MEASURED-RCT` · **Prihar, Haim, Sales & Heffernan (2022)**, L@S,
+doi:10.1145/3491140.3528267. Verbatim: the first empirical study of their
+Automatic Personalized Learning Service found Beta-Bernoulli Thompson Sampling
+**"only slightly more capable of selecting helpful support than randomly
+selecting from the relevant support options."** The frequently quoted **+10%
+learning figure for their improved algorithm is simulation-only** and must be
+labelled as such. `NEGATIVE RESULT #21`.
+
+`MEASURED-RCT` · **Prihar, Sales & Heffernan (2023)**, UMAP (ERIC ED636016): the
+bandit **"slightly increased students' learning compared to A/B testing"** — no
+effect size; "slightly" is the authors' own word.
+
+`MEASURED-BENCH` · **Better prediction is not better instruction.** Rollinson &
+Brunskill, EDM 2015 (ERIC ED560516): **"student models with similar predictive
+accuracies can suggest that substantially different amounts of practice are
+necessary… predictive accuracy may not be a sufficient metric by itself when
+choosing which student model to use."** `NEGATIVE RESULT #22`.
+
+`MEASURED-BENCH` · **Khajah, Lindsey & Mozer**, *"How deep is knowledge
+tracing?"*, arXiv:1604.02416 (EDM 2016): DKT's "stunning performance advantage"
+over Bayesian Knowledge Tracing **disappears** once BKT is given comparable
+flexibility — "BKT achieves a level of performance indistinguishable from that
+of DKT… its gains do not come from the discovery of novel representations."
+`NEGATIVE RESULT #23`.
+
+`MEASURED-BENCH` · **Adaptive assignment costs you statistical power.**
+Rafferty, Williams & Ying, JEDM 2019 (ERIC EJ1220507) — simulation study
+documenting the false-positive-rate and power costs of bandit assignment in
+educational experiments. Anyone proposing §1's loop must price this in.
+
+### 6.4 Curriculum learning for machines is mostly null
+
+`MEASURED-BENCH` · **Wu, Dyer & Neyshabur**, *"When Do Curricula Work?"*,
+arXiv:2012.03107 (ICLR 2021), from thousands of orderings: **"for standard
+benchmark datasets, curricula have only marginal benefits, and randomly ordered
+samples perform as well or better than curricula and anti-curricula, suggesting
+that any benefit is entirely due to the dynamic training set size."** Curricula
+help only under limited training budget or noisy labels. `NEGATIVE RESULT #24`.
+
+Saglietti, Mannelli & Saxe (arXiv:2106.08068) state it plainly: "in machine
+learning, curricula are not widely used and empirically often yield only
+moderate benefits."
+
+**Do not cite** *Curriculum Learning: A Survey* (arXiv:2101.10382) as evidence
+of gains — it is a taxonomy paper with a promotional abstract and **no aggregate
+effect size**.
+
+### 6.5 The failure modes of automatic prompt optimisation itself
+
+`MEASURED-BENCH` · *Are Large Language Models Good Prompt Optimizers?*,
+arXiv:2402.02101: LLM optimisers **"struggle to identify the true causes of
+errors during reflection, tending to be biased by their own prior knowledge
+rather than genuinely reflecting on the errors,"** and even when reflection is
+semantically valid they "often fail to generate appropriate prompts for the
+target models." `NEGATIVE RESULT #25`.
+
+`MEASURED-BENCH` · *The Unreasonable Effectiveness of Eccentric Automatic
+Prompts*, arXiv:2402.10949: 60 system-message combinations × 3 models (7B–70B)
+on GSM8K — results **"do not universally generalize across models"**
+(Llama2-70B's optimum was *no* system message at all), and the best
+auto-optimised prompt "exhibits a degree of peculiarity far beyond
+expectations." **Optimised prompts are search artifacts, not transferable
+pedagogy.** `NEGATIVE RESULT #26`.
+
+`MEASURED-BENCH` · **Optimiser gains do not compound, and can transfer below the
+unoptimised baseline.** *Do Agent Optimizers Compound? A Continual-Learning
+Evaluation on Terminal-Bench 2.0*, arXiv:2607.14004 (Jul 2026). Two-phase
+continual-learning evaluation (Phase-1 / Transfer / Final / lifelong average):
+
+| Optimiser | Phase 1 | **Transfer** | Final | Lifelong avg |
+|---|---|---|---|---|
+| Baseline (unoptimised) | 62.5 | 56.8 | 56.8 | 58.7% |
+| **GEPA** | 70.8 | **54.5** | 72.7 | 66.0% |
+| Meta Harness | 66.6 | 68.2 | 59.1 | 64.6% |
+| RELAI-VCL (regression-aware) | 79.2 | 72.7 | 77.3 | **76.4%** |
+
+**GEPA transfers below the unoptimised baseline (54.5% vs 56.8%)** — Phase-1
+overfitting, measured. Gains compound only when regression control sits *inside*
+the search loop. `NEGATIVE RESULT #27`. This is the closest thing found to a
+demonstration that APO overfits; a targeted search for a paper explicitly
+measuring an APO train/validation/test gap returned **nothing citable**, so
+treat "APO overfits validation" as **currently unsupported by a direct
+citation**.
+
+### 6.6 The headline: the two branches have never met
+
+> **Has any agentic self-improving instructional system — LLM prompt/program
+> optimisation, evolutionary search over agent designs, automated agentic-system
+> design — ever been evaluated on human learners with a learning outcome?**
+>
+> **No. Zero such papers.**
+
+The absence is documented rather than assumed. Search record (all counts exact,
+performed 2026-07-28):
+
+| Database | Query | Hits | Relevant |
+|---|---|---|---|
+| arXiv | `abs:"prompt optimization" AND abs:students` | 6 | **0** (one English-teaching chatbot uses APO but reports no learning outcome; one uses 32 students as *annotators*) |
+| arXiv | `abs:"prompt optimization" AND (abs:"learning outcomes" OR abs:"learning gains")` | 1 | **0** |
+| arXiv | `abs:DSPy AND (abs:tutor OR abs:education OR abs:students)` | 1 | **0** |
+| arXiv | `abs:"self-improving" AND (abs:"human learners" OR abs:"student learning")` | **0** | 0 |
+| arXiv | `abs:"automatic curriculum" AND abs:students` | 7 | **0** — all seven are RL agents where "students" means the *learner network* |
+| arXiv | `abs:GEPA OR abs:MIPROv2 OR abs:PromptBreeder AND abs:tutoring` | 64 | **0** with human learners |
+| ERIC | `description:"prompt optimization"` | **0** | — |
+| ERIC | `description:"automated prompt"` | **0** | — |
+| ERIC | `title:DSPy` | **0** | — |
+| ERIC | `"automatic prompt optimization"` | **0** | — |
+| ERIC | `description:"evolutionary search" AND description:"instruction"` | **0** | — |
+| ERIC | `description:"large language model" AND description:"instructional policy"` | **0** | — |
+| ERIC | `description:"automated design" AND description:"tutoring"` | **0** | — |
+| ERIC | `description:"self-improving" AND description:"tutoring system"` | 2 | **0** (1988, 1995) |
+| ERIC | `description:"reinforcement learning" AND description:"instructional policy"` | 1 | Doroudi 2019 |
+| ERIC | `description:"multi-armed bandit"` | 13 | the entire education-bandit literature — **all pre-LLM** |
+| OpenAlex | full text: "adaptive experimentation MOOClet multi-armed bandit education" | **15 in all of OpenAlex** | the field is that small |
+
+**The boundary case, and why it makes the absence worse.** Tutor CoPilot
+(arXiv:2410.03017) is "the first randomized controlled trial of a Human-AI
+system in live tutoring, involving 900 tutors and 1,800 K-12 students": **+4
+p.p. topic mastery (p < 0.01), +9 p.p. for students of the lowest-rated tutors,
+at $20 per tutor per year.** But Tutor CoPilot is **a fixed, hand-engineered
+prompt.** No optimiser, no search, no self-improvement loop. It proves that
+human-learner RCTs of LLM instruction are entirely feasible at scale — which
+makes the total absence of *any* optimiser-in-the-loop trial the more striking.
+(`INTERNAL-PRIOR`, B2 §3.5: Tutor CoPilot's own distal outcome was **null** —
+"we did not find statistically significant improvements in end-of-year math test
+scores.")
+
+### 6.7 What this means
+
+`INFERENCE` · The self-improvement literature has spent three years optimising
+against proxies — benchmark accuracy — without once closing the loop on the only
+reward signal that matters in education. The one place the loop *was* closed
+(Lindsey's review scheduler, ZPDES, AXIS) used 2014-era machinery over tiny,
+hand-authored action spaces, and produced the largest personalisation effect
+anyone has measured on human learners (**+16.5% semester retention**).
+
+The unbuilt object is the obvious composition: **Branch A's optimiser, Branch
+B's reward signal.** A GEPA-class optimiser whose fitness function is not
+benchmark accuracy but measured human retention at delay. Nobody has attempted
+it. The two nearest obstacles are both measured: the reward is slow and sparse
+(§8.3), and the optimiser overfits its training phase (arXiv:2607.14004).
 
 ---
 
@@ -806,8 +1033,29 @@ Covered in §1. **Blocker: the selector, not the generator.** `NEGATIVE RESULT #
 
 ### 7.6 A curriculum that rewrites itself from your outcome data
 
-*(§6 below. Preview: this is where the affirmative case is weakest and the
-absence is largest.)*
+**Status: both halves exist; they have never been joined.** The optimiser works
+(GEPA, DGM, AlphaEvolve — §6.1). The reward signal has been closed on human
+learners before, with the largest personalisation effect anyone has measured
+(**+16.5% semester retention**, Lindsey et al. 2014) — but with 2014 machinery
+over a hand-authored action space (§6.2).
+
+**Blocker:** the reward is slow and sparse, and optimisers overfit their training
+phase in a measured way (**GEPA transfers to 54.5% against a 56.8% unoptimised
+baseline**, arXiv:2607.14004). `NEGATIVE RESULT #27`.
+
+### 7.7 An adversary or environment that adapts *between* sessions rather than within them
+
+**Status: the least-discussed and most available.** Everything in §7.1–7.6 is
+about what happens while the learner is present. The genuinely unprecedented
+thing is the interval. No human tutor has ever spent two hours between Tuesday
+and Wednesday reading one student's entire error history. That is not a
+sophistication claim; it is an availability claim, and the measured reliability
+(§4.2: ~70 minutes of work at 80% success, doubling every ~4–6 months) is
+already sufficient for it.
+
+**Blocker:** nothing technical. **The learner model.** You cannot mine a
+transcript for a pattern; you can mine a structured error record. Nobody stores
+one.
 
 ---
 
@@ -979,7 +1227,7 @@ so rather than guessing.*
 | 6 | **Run a literature search overnight and return checked candidates** | Long-running tool use with no user present | PaperQA2 **matches or exceeds subject-matter experts** on retrieval, summarisation, contradiction detection vs experts with unrestricted tools; **2.34 ± 1.99 contradictions/paper, 70% expert-validated** (`MEASURED-BENCH`, 2409.13740) | **30% false-positive rate** → must be delivered as candidates. And no system knows the learner's confusion precisely enough to issue the query | The one paper that resolves your specific confusion, found while you slept |
 | 7 | **Stage two committed advocates and let the learner judge** | Genuine adversarial structure — a single stream cannot hold two committed positions | Non-expert humans **88% vs 60%** baseline; non-expert models **76% vs 48%** (`MEASURED-BENCH`, 2402.06782). Optimising debaters for *persuasiveness* **improved** truth-finding | **Untested on learning outcomes.** Also requires answer sets pre-verified, or debate amplifies error | +28pp for the non-expert judge is the largest measured multi-agent pedagogical effect in existence |
 | 8 | **Be taught by the learner, hold the error, and act on what it was taught** | Holding a false belief under corrective pressure | **Near-zero Selective Flip Score** across 7 models 4B–120B (`MEASURED-BENCH`, 2605.12748). SFT improves it **up to +0.56** | **Sycophancy at the model level.** Needs a fine-tuned tutee + an SFS-class certification eval | Learning by teaching **g = 0.56**, gated on expectancy stated *before* study (**g = 0.48 vs −0.02**) |
-| 9 | **Optimise its own instruction against outcome data** | Reading its own results and rewriting its own policy | See §6 | See §6 | See §6 |
+| 9 | **Optimise its own instruction against outcome data** | Reading its own results and rewriting its own policy | On benchmarks: **GEPA +6–20% over GRPO with 35× fewer rollouts**; **DGM SWE-bench 20% → 50%**; **AlphaEvolve improved ~20% of >50 open maths problems** (`MEASURED-BENCH`). On human learners: **zero systems, ever** | **The reward signal.** Human learning is slow, sparse, and measured at delay. Also **GEPA transfers *below* the unoptimised baseline** (54.5% vs 56.8%) — measured overfitting (`MEASURED-BENCH`, 2607.14004) | Branch B shows the prize: a policy optimised against a memory model gave **+16.5% semester retention** (Lindsey 2014). Branch A's optimiser on Branch B's signal is unbuilt |
 | 10 | **Guarantee the low-tech floor is actually delivered, per learner, indefinitely** | Persistence + absence: it must act when the learner has forgotten to come back | Component effects are the largest in the survey (retrieval **g = 0.499**, spacing **d = 0.54**, expectancy **g = 0.48**). **The composed system has never been trialled** | Nothing technical. **Nobody has built it because it is unglamorous** | The highest expected value in this section, and the least researched |
 
 ---
@@ -1124,6 +1372,16 @@ affirmative case above is load-bearing rather than decorative.*
 | 18 | Published agent results contained **artifacts** — tasks silently marked unachievable, benchmarks silently modified — inflating accuracy estimates | arXiv:2407.01502 §6 | `MEASURED-BENCH` |
 | 19 | ITS is **not** better than an individual human tutor (**g = −0.11 n.s.**) or small-group instruction (**g = 0.05 n.s.**) | Ma et al. 2014, doi:10.1037/a0037123 | `MEASURED-META` |
 | 20 | Bare correctness feedback is worth almost nothing: **d = 0.05** | doi:10.3102/0034654314564881 | `MEASURED-META` |
+| 21 | Thompson-sampling personalisation in ASSISTments was **"only slightly more capable of selecting helpful support than randomly selecting"**; the +10% figure is **simulation only** | doi:10.1145/3491140.3528267 | `MEASURED-RCT` |
+| 22 | **Predictive accuracy is not a sufficient criterion for a student model** — models with similar AUC imply substantially different practice requirements | Rollinson & Brunskill, EDM 2015, ERIC ED560516 | `MEASURED-BENCH` |
+| 23 | Deep Knowledge Tracing's advantage over BKT **disappears** when BKT is given comparable flexibility; "gains do not come from the discovery of novel representations" | arXiv:1604.02416 | `MEASURED-BENCH` |
+| 24 | **Curricula have only marginal benefits** on standard benchmarks; **randomly ordered samples perform as well or better**; any benefit is attributable to dynamic training-set size | arXiv:2012.03107 (ICLR 2021) | `MEASURED-BENCH` |
+| 25 | LLM prompt optimisers **"struggle to identify the true causes of errors… biased by their own prior knowledge rather than genuinely reflecting on the errors"** | arXiv:2402.02101 | `MEASURED-BENCH` |
+| 26 | Auto-optimised prompts **do not generalise across models** (Llama2-70B's optimum was *no* system message) and are search artifacts — "peculiarity far beyond expectations" | arXiv:2402.10949 | `MEASURED-BENCH` |
+| 27 | **GEPA transfers below the unoptimised baseline** (54.5% vs 56.8%) — measured Phase-1 overfitting; optimiser gains compound only with regression control inside the search loop | arXiv:2607.14004 | `MEASURED-BENCH` |
+| 28 | Adding **learner choice to a fixed curriculum hurt learning** (Predefined+Choice was the worst of four arms), RCT, 265 children | arXiv:2402.01669 | `MEASURED-RCT` |
+| 29 | The most-cited open-endedness systems report **no quantitative gain at all** — ADAS gives no number in its abstract, OMNI none, OMNI-EPIC claims no quantitative evaluation, POET is qualitative | arXiv:2408.08435 / 2306.01711 / 2405.15568 / 1901.01753 | `DEMO` |
+| 30 | **Zero agentic self-improving instructional systems have ever been evaluated on human learners with a learning outcome.** 6 arXiv queries, 10 ERIC queries, OpenAlex full-text — search record in §6.6 | this survey, 2026-07-28 | documented absence |
 
 ---
 
