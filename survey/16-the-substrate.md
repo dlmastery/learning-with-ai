@@ -147,45 +147,40 @@ instructor:
 That is the honest position: **a face reliably makes learners feel better and
 does not reliably make them learn more.** The meta-analytic base agrees on
 magnitude — pedagogical agents at **g ≈ 0.19** across 43 studies and 3,088
-participants, and **g ≈ 0.20** in an independent multimedia synthesis. Both
-figures were recovered from citation contexts rather than the paywalled originals
-and should be re-verified before publication.
+participants, **g ≈ 0.20** in an independent multimedia synthesis. (Both figures
+were recovered from citation contexts rather than the paywalled originals;
+re-verify before publication.) And in the same analysis, **agents communicating
+via on-screen text outperformed agents communicating by narration** — the
+opposite of the voice-first, face-first product thesis. The larger 2025
+GenAI-agent effects (g ≈ 0.36–0.40) compare an AI tutor to *no tutor*, not an
+agent with a face to the same agent without one: they measure the model, not the
+avatar.
 
-Two moderators sharpen it. Agents helped K-12 more than post-secondary learners —
-and in the same analysis, **agents communicating via on-screen text outperformed
-agents communicating by narration**, the opposite of the voice-first, face-first
-product thesis. The larger 2025 GenAI-agent effects (g ≈ 0.36–0.40) compare *an
-AI tutor* to *no tutor*, not *an agent with a face* to *the same agent without
-one*: they measure the value of the model, not the value of the avatar.
-
-What the evidence does support is narrower. Embodiment helps *relative to a
-static agent* — a human-voiced agent with gestures, gaze and facial expression
-beat the same agent without them on a transfer test. That is an argument about
-how to animate, not whether to show a face. And the uncanny-valley result is
-directly actionable: **reducing consistency in human realism increases the
-uncanny effect**, so a photoreal face with slightly-off mouth motion is worse
-than a stylised face with the same motion. Cartoon-quality avatars are an
-engineering choice, not a compromise.
+Two things the evidence does support. Embodiment helps *relative to a static
+agent* — gestures, gaze and expression beat their absence on a transfer test,
+which is an argument about how to animate rather than whether to show a face.
+And **reducing consistency in human realism increases the uncanny effect**, so a
+photoreal face with slightly-off mouth motion is worse than a stylised face with
+the same motion. Cartoon-quality avatars are an engineering choice, not a
+compromise.
 
 **Build the face for social presence and willingness to keep going, and say
-exactly that.** Persistence is a learning input. It is not a learning gain, and
-claiming otherwise runs ahead of the evidence.
+exactly that.** Persistence is a learning input. It is not a learning gain.
 
 ---
 
 ## 4. Generated worlds: the measurement everyone skips
 
 Genie 3, on DeepMind's own numbers: 720p, 24 fps, "a few minutes of continuous
-interaction," visual memory "extending as far back as one minute ago,"
-promptable mid-session world events that alter weather or introduce objects. It
-is a real step change — real-time interactive is qualitatively different from
-clip generation. It is also a US-only, 18+, $200/month consumer tier with no
-API, no export, and no persistence guarantee, and **no technical report exists
-for Genie 2 or Genie 3.** Every capability claim in that lineage is a vendor
-blog post plus curated demo reels.
+interaction," visual memory "extending as far back as one minute ago," promptable
+mid-session world events that alter weather or introduce objects. A real step
+change — real-time interactive is qualitatively different from clip generation.
+It is also a US-only, 18+, $200/month consumer tier with no API, no export and no
+persistence guarantee, and **no technical report exists for Genie 2 or Genie 3.**
+Every capability claim in that lineage is a vendor blog post plus curated demo
+reels.
 
-Now the benchmarks, which point the other way and are the reason this section
-exists.
+Now the benchmarks, which point the other way.
 
 | Benchmark | Result |
 |---|---|

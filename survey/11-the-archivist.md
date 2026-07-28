@@ -20,9 +20,9 @@ pedagogical mechanism than most funded products. It treated learner configuratio
 as a first-class object. It wrote a numbered prerequisite ladder from 0.1 to 0.9
 *before* touching the target concept. Its test function generated a
 simple-familiar / complex-familiar / **complex-unfamiliar** triad — the near/far
-transfer distinction that almost no published trial measures. And per its own
-changelog it solved each maths problem in Code Interpreter *before* posing it to
-the student, which is executable grounding, implemented in a prompt, in 2023.
+transfer distinction almost no published trial measures. And per its own changelog it
+solved each maths problem in Code Interpreter *before* posing it to the student:
+executable grounding, in a prompt, in 2023.
 
 It also tried to keep a learner model. Every lesson step opened a code environment,
 wrote "a short assessment on how you think the student is learning and what changes
@@ -82,14 +82,11 @@ instructive.
 
 Deep knowledge tracing announced itself in 2015 with **AUC 0.86 for DKT against
 0.67 for BKT** on ASSISTments 2009-2010. Xiong, Zhao, Van Inwegen & Beck (EDM 2016)
-took the dataset apart:
-
-- **123,778 duplicated rows out of 525,535 — 23.6%.** The ASSISTments team
-  acknowledged the error.
-- **73,466 rows of scaffolding records** that BKT and PFA excluded and DKT was fed.
-  An information advantage, not a modelling advantage.
-- Multi-skill items decomposed by repeating the same action log once per skill, so
-  the network saw each answer and then saw it again.
+took the dataset apart and found **123,778 duplicated rows out of 525,535 — 23.6%**
+(acknowledged by the ASSISTments team), **73,466 rows of scaffolding records** that
+BKT and PFA excluded and DKT was fed, and multi-skill items decomposed by repeating
+the same action log once per skill, so the network saw each answer and then saw it
+again.
 
 Quantified: merging multi-skill items to remove the repeats drops **DKT's average
 AUC from 0.81 to 0.74** and r² from 0.30 to 0.18. Split the predictions and the
@@ -153,20 +150,18 @@ by accident, because Anki is a general-purpose tool that individuals own.
 That is the strongest empirical argument in this section, and it is an argument
 about custody rather than about modelling.
 
-There is a second, softer null worth naming. The open-learner-model and
-learning-analytics-dashboard literature — four systematic reviews — converges on a
-methodological finding: these systems overwhelmingly evaluate **perception**
-(usability, satisfaction, self-reported usefulness) rather than learning; the
-grounding in self-regulated learning theory is thin or post-hoc; and the most common
-design, comparison against a peer average, targets *awareness*, the weakest link in
-the chain. The field's own title for this is **"Awareness Is Not Enough."** Worse,
-social-comparison designs are a documented demotivation risk — showing a struggling
-learner that they are below the class average.
+A second, softer null. The open-learner-model and learning-analytics-dashboard
+literature — four systematic reviews — converges on a methodological finding: these
+systems overwhelmingly evaluate **perception** rather than learning; the grounding in
+self-regulated learning theory is thin or post-hoc; and the most common design,
+comparison against a peer average, targets *awareness*, the weakest link in the chain.
+The field's own title for this is **"Awareness Is Not Enough."** Social-comparison
+designs are additionally a documented demotivation risk.
 
 And an under-appreciated compounding problem: the best knowledge-tracing models are
 "severely biased on some datasets." **An open learner model inherits the calibration
-debt of the model it opens.** It shows a learner a number with the authority of an
-interface. Every OLM should be required to publish reliability diagrams, not AUC.
+debt of the model it opens**, and shows a learner a number with the authority of an
+interface. Every OLM should publish reliability diagrams, not AUC.
 
 ---
 
@@ -189,15 +184,13 @@ permits at no cost.
 
 Compare the alternatives honestly. **Federated learning** buys population priors
 without pooling raw traces, but leaks through gradients and still needs a
-coordinator, and education cohorts are small enough that per-round updates can
-identify. **Differential privacy** gives a formal guarantee and is a poor fit here:
+coordinator. **Differential privacy** gives a formal guarantee and is a poor fit here:
 cohorts are a class of twenty-five, traces are per-item and long, and *the useful
 signal is the outlier* — this learner's specific misconception. A DP budget that
-protects the student destroys the diagnostic.
-
-And the "just anonymise it" move is settled. De-identifying the MITx/HarvardX
-dataset to a FERPA-defensible k-anonymity standard **degraded the data enough to
-change the conclusions that could be drawn from it.**
+protects the student destroys the diagnostic. And the "just anonymise it" move is
+settled: de-identifying the MITx/HarvardX dataset to a FERPA-defensible k-anonymity
+standard **degraded the data enough to change the conclusions that could be drawn from
+it.**
 
 ---
 
@@ -230,12 +223,9 @@ belief — and Hake's 6,542-student result separating interactive engagement
 (g ≈ 0.48) from lecture (g ≈ 0.23) was possible **only** because the instrument
 measured misconceptions rather than performance. And it *survives the model*: a
 misconception label written in 2026 still means something in 2036; a BKT posterior
-does not.
-
-The raw material exists. Eedi's diagnostic-question corpus is **over 20 million
-student answers** where the label is *which wrong belief*, not *wrong*. The
-vocabulary is the missing work, and it is the most obvious high-value application
-of frontier models in this whole area.
+does not. The raw material exists — Eedi's diagnostic-question corpus is **over 20
+million student answers** where the label is *which wrong belief*, not *wrong*. The
+vocabulary is the missing work.
 
 **Everything decays, and the two literatures have never been joined.** Every
 knowledge-tracing model assumes knowledge is monotone or near-monotone within a

@@ -57,33 +57,31 @@ target where the model was asked to compute coordinates.
 asked to do.** Every coordinate the model computes is a coordinate that can be
 silently wrong, and no gate catches it.
 
-**Why hand-written SVG is Tier D, specifically.** The benchmark literature here
-is unusually consistent and unusually negative. VGBench (4,279 understanding +
-5,845 generation samples): models show "less desirable performance on low-level
-formats (SVG)." SVGenius (2,377 queries, 24 domains, 22 models, 18 metrics):
-"**all models exhibit systematic performance degradation with increasing
-complexity, indicating fundamental limitations in current approaches.**" VCode:
-"frontier VLMs struggle to generate faithful SVGs." SGP-GenBench decomposes the
-failure into attribute binding, spatial relations, and numeracy — the same three
-axes that fail in text-to-image. VectorEdits, on 270k+ edit pairs: "current
-methods struggle to produce accurate and valid edits."
+**Why hand-written SVG is Tier D, specifically.** The benchmark literature is
+unusually consistent and unusually negative. VGBench (4,279 understanding + 5,845
+generation samples): models show "less desirable performance on low-level formats
+(SVG)." SVGenius (2,377 queries, 24 domains, 22 models): "**all models exhibit
+systematic performance degradation with increasing complexity, indicating
+fundamental limitations in current approaches.**" VCode: "frontier VLMs struggle
+to generate faithful SVGs." SGP-GenBench decomposes the failure into attribute
+binding, spatial relations and numeracy — the same three axes that fail in
+text-to-image. VectorEdits, on 270k+ edit pairs: "current methods struggle to
+produce accurate and valid edits."
 
-The distinction that resolves the apparent paradox: **SVG is an excellent output
-format and a bad generation target.** You want SVG on the page — it is text, it
-scales, and it carries a DOM that a screen reader can walk with `<title>`,
-`<desc>`, and `role="graphics-document"`. You do not want a language model
+The distinction that resolves the paradox: **SVG is an excellent output format
+and a bad generation target.** You want SVG on the page — it is text, it scales,
+and it carries a DOM a screen reader can walk. You do not want a language model
 computing its path coordinates. Emit Tier A or B; let a renderer produce the SVG.
 
-*(A self-application worth stating: this project's own documentation dashboard
-shipped hand-written SVG charts. By its own standard those are Tier D artifacts
-and are being replaced. The rule applies to us.)*
+*(A self-application: this project's own documentation dashboard shipped
+hand-written SVG charts. By its own standard those are Tier D artifacts and are
+being replaced.)*
 
 Tier E is disqualified rather than discouraged for any figure containing text.
-SciDraw-Bench, across 32 structured tasks over 8 figure types and 10
-disciplines, found domain-specific systems substantially beating general
-text-to-image models, with "**text fidelity remains the hardest dimension for
-all systems.**" A raster figure cannot be parsed, diffed, edited, or made
-screen-reader-navigable.
+SciDraw-Bench, across 32 structured tasks over 8 figure types and 10 disciplines,
+found domain-specific systems substantially beating general text-to-image models,
+with "**text fidelity remains the hardest dimension for all systems.**" A raster
+figure cannot be parsed, diffed, edited, or made screen-reader-navigable.
 
 ---
 

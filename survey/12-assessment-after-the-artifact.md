@@ -203,20 +203,18 @@ Three consequences follow, and the third is the one nobody is watching.
 **(a) The psychometric object is the generator.** If item text comes from a
 stochastic policy conditioned on a specification, the object with parameters is the
 *distribution* the policy induces, not any individual item. Random-item and crossed
-random-effects IRT is the existing apparatus. What must be demonstrated is that
+random-effects IRT is the existing apparatus; what must be demonstrated is that
 generator-level parameters are stable enough to support inference even though
 item-level ones are not.
 
 **(b) Every operational system currently understates measurement error.**
-Conventional CAT scoring treats calibrated item parameters as *known*. Under
+Conventional adaptive-test scoring treats calibrated item parameters as *known*. Under
 generation they are draws, so the standard error of θ must include item-sampling
 variance, and no shipping system appears to do this. The prediction is falsifiable
 and cheap to test: **reported reliabilities for LLM-generated adaptive quizzes are
-systematically optimistic, and the gap widens as item novelty increases.**
-Administer two independently generated forms from the same generator and compare the
-observed correlation against the claimed reliability. Duolingo's own published
-numbers illustrate the size of the gap — **test–retest 0.84 against internal
-consistency 0.96**, and only one of those two is estimable under generation.
+systematically optimistic, and the gap widens as item novelty increases.** Duolingo's
+own published numbers illustrate the size of the gap — **test–retest 0.84 against
+internal consistency 0.96**, and only one of those two is estimable under generation.
 
 **(c) Fairness moves to the generator, and there is a new failure mode.**
 Differential item functioning assumes a fixed item administered to multiple groups.
