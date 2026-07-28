@@ -13,7 +13,7 @@ date: 2026-07-25
 |---|---|---|
 | Guardrailed AI tutor | **+127% practice**; unassisted exam **−0.004 (ns)** — removes harm, adds no measured benefit | Randomised, ~1,000 students |
 | Gemini Guided Learning, Sierra Leone | **+0.258 SD (ANCOVA)** — but the **unadjusted estimate is +0.216 SD, SE 0.137, *not significant*** | Pre-registered RCT; 1,763 enrolled, **1,423 analysed**; model swapped mid-trial; Google.org + Gates funded |
-| Retrieval practice | **g = 0.50** in labs *and* classrooms | 222 studies, 48,478 students |
+| Retrieval practice | **g = 0.499** [0.442, 0.557] in labs *and* classrooms | 222 studies, 48,478 students; **I² = 88%** |
 | Learning by teaching (human tutee) | **g = 0.56**, robust at delay | Meta-analysis; expectancy must precede study |
 | Productive failure | **g = 0.36**, rising to **0.58** at high fidelity | Meta-analysis |
 | Spaced practice | classroom **d = 0.54** | 12 of 271 comparisons failed |
