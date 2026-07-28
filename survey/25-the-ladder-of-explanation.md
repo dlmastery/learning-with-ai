@@ -96,20 +96,18 @@ Put those together and you get a structural failure, not a preference:
 Expert intuition is inadmissible for the same reason from the other side. Hansen &
 Richland (2020, *CBE—Life Sciences Education*) found that people's beliefs about
 how to sequence representations *for others* were systematically different from
-their beliefs about how they themselves learn — and the students' actual results
-matched neither belief cleanly, favouring simultaneous presentation **only when
-paired with self-explanation prompts.** Teaching intuition about sequencing was
-wrong and internally inconsistent in the same heads.
+their beliefs about how they themselves learn — and the students' results favoured
+simultaneous presentation **only when paired with self-explanation prompts**,
+matching neither belief cleanly.
 
 So the entry rung comes from a probe, not a dropdown. The validated instrument is
-Kalyuga & Sweller's rapid dynamic assessment, whose economics §22 works through in
-detail. Two details belong here rather than there. First, Tetzlaff et al. (2025)
-report that **the type of prior-knowledge assessment is itself a significant
-moderator** of the expertise-reversal effect — the probe is not incidental to the
-system, it is the largest tunable parameter in it. Second, the selection is per
-prerequisite: compute the mastery vector over the concept's transitive prerequisite
-closure and **enter at the weakest link**, then ladder that prerequisite separately
-rather than dragging the whole explanation down to its level.
+Kalyuga & Sweller's rapid dynamic assessment, which §22 works through in detail. Two
+details belong here rather than there. **The type of prior-knowledge assessment is
+itself a significant moderator** of the expertise-reversal effect (Tetzlaff et al.
+2025) — the probe is the largest tunable parameter in the system, not an incidental.
+And the selection is per prerequisite: compute the mastery vector over the concept's
+transitive prerequisite closure and **enter at the weakest link**, laddering that
+prerequisite separately rather than dragging the whole explanation down.
 
 ---
 
@@ -130,10 +128,10 @@ non-falsification constraint against an account you have not written yet. Writin
 the ELI10 first and "adding detail" is structurally incapable of passing the test.
 
 What a rung **may** drop: numeric precision; higher-order corrections; formal
-machinery — the derivation, the notation, the proof; mechanism depth, by
-black-boxing a subcomponent *provided the box is named as a box*; edge cases
-outside a declared scope; historical provenance; one of several equivalent
-formulations, provided it is not asserted as *the* formulation.
+machinery — derivation, notation, proof; mechanism depth, by black-boxing a
+subcomponent *provided the box is named as a box*; edge cases outside a declared
+scope; historical provenance; one of several equivalent formulations, provided it is
+not asserted as *the* formulation.
 
 What a rung may **never** falsify:
 
@@ -231,18 +229,18 @@ Ordering is not the mechanism.
 **Variety of surface actively harms.** Bennett, Inglis & Gilmore (2019, *JEP*),
 three experiments: children who learned novel numerical symbols paired with a
 single abstract representation outperformed those given multiple concrete ones —
-and the authors are explicit that the harm was attributable to **the multiplicity
-itself**, not to concreteness. Day, Motz & Goldstone (2015) found the same shape in
-two classroom experiments: **greater contextualisation, poorer transfer**, in
-undergraduates and middle-schoolers alike. An ELI10 rendered as "here are four fun
-everyday analogies" is reproducing both results at once.
+and the harm was attributable to **the multiplicity itself**, not to concreteness.
+Day, Motz & Goldstone (2015) found the same shape in two classroom experiments:
+**greater contextualisation, poorer transfer**, in undergraduates and
+middle-schoolers alike. An ELI10 rendered as "here are four fun everyday analogies"
+reproduces both results at once.
 
 **A well-motivated analogy manipulation produced nothing.** Sota (2012) randomly
 assigned participants to refutational contrasting analogies, non-refutational
-contrasting analogies, or none, for natural selection. "Analysis of variance showed
-**no differences among groups** on either understanding of or reasoning about
-natural selection" — though the groups did engage differently with the analogy
-materials themselves. Different experience, identical learning.
+contrasting analogies, or none, for natural selection: "**no differences among
+groups** on either understanding of or reasoning about natural selection" — though
+the groups engaged differently with the analogy materials. Different experience,
+identical learning.
 
 **The Feynman technique has essentially no research base.** An ERIC search across
 the entire corpus returns **two records**, both 2025–2026, both small, both from

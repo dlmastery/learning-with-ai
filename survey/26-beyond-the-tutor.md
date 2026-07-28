@@ -62,11 +62,10 @@ Everything below is what is left.
 
 ### 2.1 Why dissent works, and why it does not need to be right
 
-Nemeth's core asymmetry (1986/1987) is that exposure to opposing views from a
-**minority** produces divergent thinking — the problem gets considered from multiple
-angles, and performance improves. Exposure to opposing **majority** views produces
-convergent thinking — narrowing onto the proposed view, which does not help and can
-impair.
+Nemeth's core asymmetry (1986/1987): exposure to opposing views from a **minority**
+produces divergent thinking, and performance improves. Exposure to opposing
+**majority** views produces convergent thinking — narrowing onto the proposed view,
+which does not help and can impair.
 
 **The dissenter's value does not depend on the dissenter being right.** It depends
 on the dissent being real.
