@@ -208,8 +208,8 @@ Four hard limits, and they are not negotiable by product decision.
 - **An AI may not diagnose or label a child.** It may observe that a strategy is not
   working and say so, in behavioural terms, to the humans responsible.
 - **WCAG 2.2 AA is a floor, not a target.** Access is a precondition, not a feature.
-- **Disability status is sensitive data.** Under IDEA, records must be destroyed at
-  the parent's request — which makes an undeletable model weight a compliance
+- **Disability status is sensitive data.** Under **IDEA §300.624**, personally
+  identifiable information "must be destroyed at the request of the parents" — which makes an undeletable model weight a compliance
   failure for precisely the population it claims to serve. The learner model is
   local, inspectable, correctable, and deletable, or it is not shippable.
 

@@ -42,6 +42,16 @@ SURFACES = ["README.md", "CLAUDE.md", "AUDIT.md",
 
 WINDOW = 400   # chars either side that may carry the cure
 
+# A ledger row is ALLOWED to quote the superseded value — that is its job. A row is
+# identified structurally (a table row whose first cell is a C-nn id), not by any
+# keyword, so this cannot be used to launder prose. C-17 is exactly this case: a
+# process correction that must quote the sentence it is about.
+LEDGER_ROW = re.compile(r'^\s*(\|\s*(\*\*)?C-\d+|<tr><td>C-\d+)', re.M)
+
+def in_ledger_row(text, pos):
+    start = text.rfind("\n", 0, pos) + 1
+    return bool(LEDGER_ROW.match(text, start))
+
 class Rule:
     """bad: what must not appear.  cure: what makes it acceptable nearby.
     probe: a literal string, known to have appeared in the repo, used by --self-test."""
@@ -119,6 +129,8 @@ def scan(root):
             except Exception: continue
             for r in RULES:
                 for m in r.bad.finditer(text):
+                    if in_ledger_row(text, m.start()):
+                        continue
                     lo, hi = max(0, m.start()-WINDOW), min(len(text), m.end()+WINDOW)
                     if not r.cure.search(text[lo:hi]):
                         out.append((f.relative_to(root), text.count("\n",0,m.start())+1,

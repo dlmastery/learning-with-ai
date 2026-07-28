@@ -222,15 +222,23 @@ Re-read the multimedia meta-analyses as a *specification* rather than as advice.
 
 | Principle | Effect | Checkable? | The check |
 |---|---|---|---|
-| **Spatial contiguity** | **g = 0.63 [0.55, 0.71]**, k = 58 | **Fully** | assert `distance(label_bbox, referent_bbox) < τ`; no legend-only mapping for ≤ 6 series |
-| **Contiguity overall** | **g = 0.74 [0.67, 0.82]**, k = 46 | Mostly | as above, plus temporal alignment |
+| **Spatial contiguity / split attention** (Schroeder & Cenkci 2018) | **g = 0.63 [0.55, 0.71]**, k = 58, n = 2,426 | **Fully** | assert `distance(label_bbox, referent_bbox) < τ`; no legend-only mapping for ≤ 6 series |
+| **Contiguity, overall** (Ginns 2006) | **g = 0.74 [0.67, 0.82]**, k = 46 | Mostly | as above, plus temporal alignment |
 | **Signalling** | **g = 0.43**, k = 209; benefit concentrated in **low-prior-knowledge** learners | Partly | one salient emphasis channel; gate on the prior-knowledge estimate — signalling is subject to expertise reversal |
 | **Coherence** | **g = 0.33**, k = 68; persistent details **g = 0.43**, transient **g = 0.12 n.s.** | Weakly | element budget; every element referenced in the caption; otherwise human review |
 
-**The strongest multimedia principle is also the most mechanically checkable
-one.** Spatial contiguity, the largest effect in the table, reduces to a distance
-predicate on two bounding boxes. Coherence, the smallest, requires judgement.
-Spend the automated gate's budget on contiguity and reserve humans for coherence.
+A note on the first two rows, because an earlier draft implied one was a subset of
+the other and the arithmetic was impossible: **these are two independent
+meta-analyses, twelve years apart, over overlapping but distinct literatures** —
+Schroeder & Cenkci (2018) on spatial contiguity and split attention, and Ginns
+(2006) on contiguity broadly. k = 58 is not nested inside k = 46. They agree on
+direction and differ on scope, which is why both are shown.
+
+**The strongest multimedia principle is also the most mechanically checkable one.**
+Contiguity — **g = 0.63 to 0.74** across those two estimates, the largest effect in
+the table on either measure — reduces to a distance predicate on two bounding boxes.
+Coherence, at g = 0.33, is the smallest and requires judgement. Spend the automated
+gate's budget on contiguity and reserve humans for coherence.
 Evidence and engineering rarely agree this cleanly.
 
 The persistence moderator carries a specific indictment of static figures.

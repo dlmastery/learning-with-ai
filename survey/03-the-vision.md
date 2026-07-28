@@ -171,7 +171,12 @@ Every effect size in the literature is a measurement of **systems that don't do
 any of this.** A tutor that answers freely, has no memory, cannot see the work,
 cannot point, never pivots, and agrees with everything — measured at 0.2–0.4 SD.
 
-That is the floor with the brakes on.
+We call that *the floor with the brakes on* — and it is worth being exact about the
+status of that phrase, because §20 is, and this section was not. **"Nobody has built
+and measured the assembled system" is proven. "It would do better" is a hypothesis,
+not a finding.** It is the project's central bet, it is stated as falsifiable in §20
+with its concession conditions named in advance, and nothing in this survey
+establishes it.
 
 Nobody has built the constrained, grounded, pivoting, teachable, remembering
 version and measured it. **The zero RCTs on learners with disabilities is not a

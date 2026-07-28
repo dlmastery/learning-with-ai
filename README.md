@@ -195,26 +195,31 @@ tested across mobile, tablet and desktop in both colour schemes before they ship
 
 ## What we got wrong
 
-**23 corrections, and 7 of them were found by an adversarial reviewer rather than by us.**
-The full ledger with a provenance column is [`CORRECTIONS.md`](CORRECTIONS.md) — append-only, because
-an earlier version applied corrections by *rewriting the ledger rows in place*, inside a table headed
-"published rather than silently edited". That is C-23.
+**23 corrections. 8 of them were found by an adversarial reviewer, not by us.**
+The full append-only ledger with a provenance column is [`CORRECTIONS.md`](CORRECTIONS.md).
+This section is a summary of that file and is not maintained separately — because an earlier
+version *was*, and it was silently edited (that is C-23).
 
-| We said | Actually |
-|---|---|
-| Sierra Leone +0.258 SD, "strongest evidence in edtech history" | **Unadjusted +0.216, SE 0.137 — not significant.** Loads entirely on Grade 8; gaps widened |
-| Guardrails teach | They **remove harm**. Unassisted coefficient −0.004, n.s. |
-| Orton-Gillingham is decades-replicated | **g = 0.22, p = .40** |
-| Expertise reversal d = 0.971 | Unverifiable. Components imply **≈0.93** |
-| Concreteness fading has a pooled effect size | Fyfe 2014 is a **systematic review**. No pooled ES exists |
-| Bloom's 2σ is the target | Does not replicate. **VanLehn 0.79 · Nickow 0.288** |
-| g = 0.56 is the teachable-agent effect | It is **human** learning-by-teaching. The agent version is **untested** |
-| AI tutoring widens gaps, full stop | A property of **untargeted delivery**. Across 8 targeted interventions, **none widened gaps** |
-| The pāṭha protocol should beat self-consistency | Benchmarked and **falsified** — exactly at chance |
-| Deixis is complete greenfield | Substrate exists (arXiv:2604.02893). The tutoring loop does not |
-| Bastani's −17% carries a PNAS correction | That correction is an **author-affiliation erratum**. The finding stands |
+**The ones we did not catch**, listed first because they are the ones that matter:
 
----
+| # | We said | Actually | Caught by |
+|---|---|---|---|
+| C-12 | Nickow pooled tutoring **0.37**, published in five places including a chart bar labelled "the honest field-wide number" | **0.288.** The 0.37 is the superseded 2020 working-paper figure — and `survey/09` states our own rule to discount working-paper effect sizes. We broke our own rule on the front page | **External review** |
+| C-13 | Kestin AI tutor **"0.63–0.73"** | **A range that exists in no source.** 0.63 is the regression estimate; 0.73–1.3 is *ceiling-corrected* — two different estimands spliced, then the midpoint plotted. Correct: **d ≈ 0.63**, and the study is developer-built and developer-evaluated with no funding statement | **External review** |
+| C-14 | **98.4%** recognition proves a tutor "sees" handwritten work | It is **answer-position recognition** on a 61-exam grading benchmark, and its 0.58% false-negative rate requires **supplying the reference solution**. Error-*correction* on handwriting tops out at **77%** | **External review** |
+| C-15 | Spacing d = 0.54, from "the Cepeda meta-analytic tradition" | Sourced to a **2025 classroom meta-analysis** — 22 reports, 31 effects, N > 3,000, CI [0.31, 0.77]. Cepeda et al. 2006 is the canonical *lab* meta-analysis and gives different figures | **External review** |
+| C-16 | Retrieval practice g = 0.50, presented as settled | **I² = 88%** was omitted while I² was reported three times for null results — selective reporting, and exactly the failure this survey exists to name. Boundary conditions also added: at immediate test restudy often wins; unsuccessful retrieval **without feedback** yields little | **External review** |
+| C-17 | *(process)* `survey/01`'s Sierra Leone correction was appended 100 lines below the error, leaving "the strongest evidence in the history of educational technology" standing in the body | Corrected **in place**. A correction that does not reach the wrong sentence is not a correction | **External review** |
+| C-22 | The Sierra Leone trial "ran across a school year" | It ran **eight weeks.** The error made the field's time horizon look better than it is, in the very section arguing that the horizon is too short | **External review** |
+| C-23 | *(process)* Corrections were applied by **rewriting the ledger rows in place** — inside a table headed "each published rather than silently edited" — and the six corrections of 28 July appeared in no ledger at all | This file. Rows are append-only, carry provenance, and the count is generated from the filesystem | **External review** |
+
+The remaining 15 were caught by our own research, our own verification of a
+claim made to us, or our own builders working against their own briefs. All of them, with dates
+and provenance, are in [`CORRECTIONS.md`](CORRECTIONS.md).
+
+The reviews themselves are checked in: [first pass](evidence/review-2026-07-28.md),
+[second pass](evidence/review-2-2026-07-28.md), [third pass](evidence/review-3-2026-07-28.md).
+Each returned a verdict on whether this was publishable, and the first two said no.
 
 ## Open problems
 
