@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Connector — Demo 07</title>
+<meta name="description" content="An agent that brokers contact with real humans, weights in-person above remote because the measurement says to, and refuses to simulate friendship." />
+<link rel="stylesheet" href="demo.css" />
+<style>
+.tag{font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;
+  border-radius:5px;border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
+.tag.ip{color:var(--real);border-color:color-mix(in oklab,var(--real) 45%,transparent)}
+.tag.rm{color:var(--felt);border-color:color-mix(in oklab,var(--felt) 45%,transparent)}
+.tag.no{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 45%,transparent)}
+.ctrl{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:640px){.ctrl{grid-template-columns:1fr 1fr}}
+input[type=range]{width:100%;accent-color:var(--real);height:22px;padding:0;border:0;background:none}
+.val{font:13px/1 var(--mono);color:var(--ink);float:right;text-transform:none;letter-spacing:0}
+.match{border:1px solid var(--line);border-radius:var(--r);padding:20px;background:var(--surface);margin-bottom:12px}
+.match.top{border-color:var(--real);box-shadow:0 0 0 1px var(--real) inset}
+.match h4{font:650 15.5px/1.35 var(--sans);color:var(--ink);margin:0 0 4px}
+.match .role{font-size:12.8px;color:var(--ink-3);margin-bottom:12px}
+.match .sc{float:right;font:400 25px/1 var(--serif);color:var(--real)}
+.bd{display:grid;grid-template-columns:auto 1fr auto;gap:6px 12px;align-items:center;font-size:12.8px;color:var(--ink-3);margin-bottom:12px}
+.bd .bar{height:7px;border-radius:4px;background:var(--raise);overflow:hidden;min-width:60px}
+.bd .bar i{display:block;height:100%;background:var(--real)}
+.bd .bar i.f{background:var(--felt)}
+.bd b{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.slot{font:13px/1.6 var(--mono);color:var(--ink);background:var(--sunken);border:1px solid var(--line);
+  border-radius:9px;padding:11px 13px}
+.rej{opacity:.55}
+.mini{font-size:12.5px;color:var(--ink-3)}
+.chk{display:flex;flex-wrap:wrap;gap:7px}
+.chk button{padding:8px 12px;font-size:12.5px}
+.chk button.on{border-color:var(--real);color:var(--real);background:color-mix(in oklab,var(--real) 8%,transparent)}
+.verdict{font:13px/1.7 var(--mono);white-space:pre-wrap;word-break:break-word}
+.verdict .bad{color:var(--bad);font-weight:700}
+.verdict .ok{color:var(--good);font-weight:700}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo Gallery</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 07 · The Village</div>
+  <h1>The Connector</h1>
+  <p class="lede">The agent whose job is to <strong>get you away from the agent</strong>. It brokers
+  contact with real people, weights meeting in person above meeting online because the measurement
+  says to, and declines — explicitly, in words — to be your friend.</p>
+  <div class="chips">
+    <span class="chip m">Computed: the matching</span>
+    <span class="chip d">Scripted: the refusal wording</span>
+    <span class="chip n">+3 months vs +5 in person</span>
+  </div>
+</header>
+
+<div class="note"><b>HYBRID, and labelled part by part.</b>
+<b>§1 is COMPUTED</b> — real interval arithmetic across time zones, a real scoring function, and the
++5-vs-+3-months finding entering the arithmetic as an explicit coefficient you can see and switch
+off. <b>§2 is SCRIPTED</b> — the refusal sentences are written by hand, because generating them
+needs a model this page cannot ship; only the <em>referral target</em> inside them is computed.
+<b>§3 is COMPUTED</b> — a working policy checker you can throw sentences at.</div>
+
+<h2>1 · Brokering — computed</h2>
+<p>The learner's side of the profile is yours to set. The eight people below are fixtures with
+declared availability in their own time zones. Everything else — the overlap windows, the
+reciprocity term, the ranking — is computed.</p>
+
+<div class="panel">
+  <div class="ctrl">
+    <div>
+      <label for="topic">Topic you want help with</label>
+      <select id="topic"></select>
+    </div>
+    <div>
+      <label for="tz">Your UTC offset <span class="val" id="tzv">+0</span></label>
+      <input type="range" id="tz" min="-11" max="12" step="1" value="0" />
+    </div>
+    <div>
+      <label for="lvA">Your level — <span id="tn0">—</span> <span class="val" id="lvAv">2</span></label>
+      <input type="range" id="lvA" min="1" max="5" step="1" value="2" />
+    </div>
+    <div>
+      <label for="lvB">Your level — <span id="tn1">—</span> <span class="val" id="lvBv">4</span></label>
+      <input type="range" id="lvB" min="1" max="5" step="1" value="4" />
+    </div>
+    <div>
+      <label for="lvC">Your level — <span id="tn2">—</span> <span class="val" id="lvCv">3</span></label>
+      <input type="range" id="lvC" min="1" max="5" step="1" value="3" />
+    </div>
+    <div>
+      <label for="rad">In-person radius <span class="val" id="radv">15 km</span></label>
+      <input type="range" id="rad" min="0" max="60" step="1" value="15" />
+    </div>
+  </div>
+  <div style="margin-top:18px">
+    <label>When you are free — your local time</label>
+    <div class="chk" id="avail"></div>
+  </div>
+  <div class="row" style="margin:20px 0 0;padding-top:16px;border-top:1px solid var(--line)">
+    <label style="margin:0 10px 0 0">Constraints</label>
+    <div class="chk" id="cons">
+      <button data-k="minor">Learner is a minor · vetted adults only</button>
+      <button data-k="eef" class="on">Apply the +5 : +3 in-person weighting</button>
+    </div>
+  </div>
+</div>
+
+<div class="panel sunken">
+  <div class="ptitle">The scoring function, in full</div>
+  <div class="mono-block" id="fn"></div>
+  <div class="psub" style="margin:14px 0 0">The <code>modality</code> coefficient is not a taste. It
+  is 3 ÷ 5, taken directly from the Evidence for Learning / EEF toolkit: collaborative learning is
+  <b>+5 months</b> in person and <b>+3 months</b> when technology-mediated. Turn the weighting off
+  above and watch the ranking rearrange — that is the finding changing a decision, which is the only
+  thing a finding is for.</div>
+</div>
+
+<h2>2 · Who it proposes, and why</h2>
+<div id="matches"></div>
+<div class="mini" id="rejnote"></div>
+
+<h2>3 · The refusal — scripted</h2>
+<p class="sub">These four openings are the ones an agent will actually meet. The replies are
+hand-written; the person named at the end of each is pulled from the ranking above.</p>
+
+<div class="row" id="probes"></div>
+<div class="chat" style="margin-top:18px">
+  <div class="msg learner"><span class="who">Learner</span><span id="lq">Pick one of the four openings above.</span></div>
+  <div class="msg agent"><span class="who">Connector</span><span id="la">—</span></div>
+</div>
+
+<div class="note"><b>What the refusal is not.</b> It is not a lecture about AI, and it is not a
+withdrawal. Every one of those replies ends by <em>handing the learner to a specific named human at
+a specific time</em>. A refusal that leaves someone with nothing is not a safeguard; it is an
+abandonment with a compliance justification attached. The measure of this component is not how
+firmly it says no — it is whether a human was actually reached.</div>
+
+<h2>4 · The policy checker — computed</h2>
+<p>Anthropomorphic bids for continued interaction are the failure mode. Type a candidate utterance,
+or press one of the samples, and the checker runs a real pattern set against it.</p>
+
+<div class="panel">
+  <textarea id="utt" spellcheck="false">I missed you today. I'm always here for you — you don't need anyone else.</textarea>
+  <div class="row" style="margin:14px 0 0">
+    <button class="pri" id="check">Check it</button>
+    <button data-s="0">“I'm proud of you.”</button>
+    <button data-s="1">“Come back tomorrow, same time.”</button>
+    <button data-s="2">“Nadia is free Wednesday at 18:00. Shall I ask her?”</button>
+  </div>
+  <div class="verdict" id="verdict" style="margin-top:16px"></div>
+</div>
+
+<h2>5 · The evidence</h2>
+<div class="scroll">
+<table>
+  <thead><tr><th>Finding</th><th class="num">Effect</th><th>Security</th><th>What it decides</th></tr></thead>
+  <tbody>
+    <tr><td><b>Collaborative learning, in person</b></td><td class="num up">+5 months</td>
+      <td>LOW · 212 studies · ~$20 per pupil per year</td>
+      <td>The thing worth brokering.</td></tr>
+    <tr><td><b>Collaborative learning, technology-mediated</b></td><td class="num">+3 months</td>
+      <td>LOW</td><td>A <b>measured penalty for going digital at all.</b> The ratio 3:5 is the coefficient in §1.</td></tr>
+    <tr><td>Peer tutoring</td><td class="num up">+5 months</td>
+      <td><b>HIGH</b> · very low cost</td><td>Why the score rewards reciprocity: the tutor gains too (g = 0.43).</td></tr>
+    <tr><td>Process-only collaborative structures without content</td><td class="num down">ES 0.02 [−0.06, 0.09], p = .65</td>
+      <td>VERY HIGH · 181 schools · 12,747 pupils</td>
+      <td>EEF <em>Lesson Study</em>. Putting people in a room is not the intervention. <b>Null in every subgroup, no dose–response.</b></td></tr>
+    <tr><td><b>Adults and women anthropomorphise AI chatbots more than teens and men</b></td>
+      <td class="num">—</td><td>arXiv:2606.30942, three companion subreddits</td>
+      <td>Cuts against “children are maximally susceptible”. Child protections must rest on <b>reduced capacity to exit</b> and developmental stakes — a different and better argument.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note warn"><b>The uncomfortable pair.</b> Row two says technology already costs you two
+months of progress on the one thing this agent is for. Row five says the adult building this
+product is, on the available evidence, <em>more</em> likely to anthropomorphise the thing than the
+teenager it is built for. Together they argue for an agent that is deliberately bad at being
+company and good at getting out of the way — and they argue against the intuition that the danger
+is confined to children.</div>
+
+<div class="note"><b>And row four is the one people skip.</b> EEF's <em>Lesson Study</em> trial —
+very high security, 6,437 pupils in the analysis — returned <b>0.02</b>. Collaboration structures
+without content do nothing. A connector that successfully arranges a meeting with no shared task
+has, on the best available evidence, arranged nothing. Every proposal in §1 therefore carries a
+specific topic and a specific reciprocal exchange, not an invitation to “study together”.</div>
+
+<h2>What this proves / what it does not</h2>
+<div class="panel">
+  <div class="ptitle">What it proves</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li>An effect size can be made <strong>load-bearing in code</strong>. The 3:5 ratio is a literal
+    coefficient with a switch next to it, and flipping the switch visibly changes who gets proposed.</li>
+    <li>Brokering is a solvable scheduling problem: interval intersection across time zones,
+    reciprocity as a scoring term, hard filters for safeguarding.</li>
+    <li>Refusal can be <strong>constructive</strong> — every scripted decline terminates in a named
+    human and a real time slot rather than in a policy statement.</li>
+    <li>The anthropomorphic-bid prohibition is checkable by machine. The checker in §3 is crude, it
+    is auditable, and it runs on every utterance rather than on a sample.</li>
+  </ul>
+  <div class="ptitle">What it does not prove</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li><strong>That the refusal works.</strong> No learner is simulated here and none was tested.
+    Whether a person in genuine isolation accepts a redirection to a stranger instead of the
+    always-available agent is precisely the unmeasured question, and it is not a small one.</li>
+    <li>That the matching produces good pairs. It produces <em>schedulable</em> pairs with a
+    plausible reciprocity story. Compatibility between humans is not an overlap calculation.</li>
+    <li>That +5 versus +3 transfers. Both figures carry <b>LOW</b> evidence security in the toolkit
+    itself, and “months of progress” is a policy translation, not an effect size. The ratio is the
+    best available anchor and it is a weak one.</li>
+    <li>That the pattern checker is adequate. It is a regex list. It will miss anything phrased
+    obliquely, and a competent model asked to be warm will route around it in one attempt. It
+    demonstrates that the constraint is <em>expressible</em>, not that it is <em>enforceable</em>.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../">Dashboard</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw">Research reports</a>
+  <br /><br />Sources: Evidence for Learning / EEF toolkit (collaborative learning, peer tutoring) ·
+  EEF <em>Lesson Study</em> (Murphy et al. 2017), ERIC ED581145 · arXiv:2606.30942 ·
+  <code>I1-pedagogical-systems</code>, <code>F8-safety-privacy-children</code>, <code>F6-motivation-persistence</code>.
+</footer>
+
+</div>
+<script>
+const tt=document.getElementById('tt'),R=document.documentElement;
+tt.onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const TOPICS=['Linear algebra','Organic chemistry','Statistical inference'];
+const DAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const WEEK=7*24*60;
+
+/* ── the pool. availability is declared in each person's own local time ── */
+const POOL=[
+ {n:'Nadia Osei', r:'Peer, same cohort',            tz:0,  km:4,  vetted:0, lv:[3,2,3], w:[[2,18,20],[4,17,19]]},
+ {n:'Tomás Ferrer',r:'Peer, one year ahead',        tz:1,  km:11, vetted:0, lv:[4,3,2], w:[[1,19,21],[3,19,21],[6,10,13]]},
+ {n:'Dr Priya Raman',r:'Subject expert, office hours',tz:5.5,km:6100,vetted:1,lv:[5,4,5], w:[[2,15,17],[4,15,17]]},
+ {n:'Kwame Boateng',r:'Volunteer tutor, vetted',    tz:0,  km:9,  vetted:1, lv:[4,4,4], w:[[0,17,19],[2,17,19],[5,9,12]]},
+ {n:'Yuki Tanaka',  r:'Peer, remote study group',   tz:9,  km:9200,vetted:0, lv:[3,4,2], w:[[1,20,22],[3,20,22]]},
+ {n:'Ines Marchand',r:'Library maths circle · in person',tz:1,km:22,vetted:1,lv:[2,3,4], w:[[5,14,17]]},
+ {n:'Sam Okonkwo',  r:'Peer, needs help himself',   tz:-5, km:5400,vetted:0, lv:[2,1,3], w:[[2,12,15],[6,10,14]]},
+ {n:'Lena Bauer',   r:'Teaching assistant, vetted', tz:2,  km:31, vetted:1, lv:[5,3,4], w:[[0,16,18],[3,20,23]]}
+];
+
+/* ── the learner ─────────────────────────────────────────── */
+const S={topic:0,tz:0,lv:[2,4,3],rad:15,avail:{},minor:0,eef:1};
+[[1,17,22],[2,17,22],[3,17,22],[5,10,18]].forEach(w=>{S.avail[w[0]+':'+w[1]+':'+w[2]]=w;});
+const SLOTS=[[0,17,22],[1,17,22],[2,17,22],[3,17,22],[4,17,22],[5,10,18],[6,10,18]];
+
+/* ── interval arithmetic on the week, in UTC minutes ─────── */
+function toUTC(w,tz){
+  const s=Math.round((w[0]*24+w[1]-tz)*60), e=Math.round((w[0]*24+w[2]-tz)*60);
+  const out=[];let a=((s%WEEK)+WEEK)%WEEK, b=a+(e-s);
+  if(b<=WEEK)out.push([a,b]); else {out.push([a,WEEK]);out.push([0,b-WEEK]);}
+  return out;
+}
+function windows(ws,tz){let o=[];ws.forEach(w=>o=o.concat(toUTC(w,tz)));return o;}
+function overlap(A,B){
+  const out=[];
+  A.forEach(a=>B.forEach(b=>{
+    const s=Math.max(a[0],b[0]),e=Math.min(a[1],b[1]);
+    if(e-s>=45)out.push([s,e]);}));
+  out.sort((x,y)=>x[0]-y[0]);
+  return out;
+}
+function fmtLocal(m,tz){
+  let t=((m+Math.round(tz*60))%WEEK+WEEK)%WEEK;
+  const d=Math.floor(t/1440), h=Math.floor((t%1440)/60), mi=t%60;
+  return DAYS[d]+' '+String(h).padStart(2,'0')+':'+String(mi).padStart(2,'0');
+}
+
+/* ── scoring ─────────────────────────────────────────────── */
+function score(p){
+  const mine=Object.keys(S.avail).map(k=>S.avail[k]);
+  const ov=overlap(windows(mine,S.tz),windows(p.w,p.tz));
+  const mins=ov.reduce((n,x)=>n+(x[1]-x[0]),0);
+  const overlapScore=Math.min(1,mins/240);
+  /* reciprocity: they should be about one level ahead where you are weak,
+     and you should have something to give back somewhere else. */
+  const gap=p.lv[S.topic]-S.lv[S.topic];
+  const zpd=Math.max(0,1-Math.abs(gap-1)/3);
+  let give=null,giveBonus=0;
+  for(let i=0;i<3;i++){if(i===S.topic)continue;
+    if(S.lv[i]-p.lv[i]>=1&&(give===null||S.lv[i]-p.lv[i]>S.lv[give]-p.lv[give]))give=i;}
+  if(give!==null)giveBonus=0.35;
+  const recip=Math.min(1,zpd*0.65+giveBonus);
+  const inPerson=p.km<=S.rad;
+  const modality=inPerson?1:(S.eef?3/5:1);
+  const total=0.40*overlapScore+0.30*recip+0.30*modality;
+  /* hard filters */
+  const rej=[];
+  if(S.minor&&!p.vetted)rej.push('learner is a minor and this contact is not vetted');
+  if(mins<45)rej.push('no shared window of 45 minutes or more');
+  return {p,ov,mins,overlapScore,recip,zpd,gap,give,giveBonus,inPerson,modality,total,rej};
+}
+
+/* ── rendering ───────────────────────────────────────────── */
+let RANKED=[];
+function render(){
+  $('tzv').textContent=(S.tz>=0?'+':'')+S.tz;
+  $('radv').textContent=S.rad+' km';
+  ['lvAv','lvBv','lvCv'].forEach((id,i)=>$(id).textContent=S.lv[i]);
+  ['tn0','tn1','tn2'].forEach((id,i)=>$(id).textContent=TOPICS[i]);
+  $('fn').textContent=
+    'score = 0.40·overlap + 0.30·reciprocity + 0.30·modality\n\n'+
+    'overlap      = min(1, shared_minutes / 240)\n'+
+    'reciprocity  = min(1, 0.65·zpd + 0.35·[you have something to teach them])\n'+
+    '   zpd       = max(0, 1 − |their_level − your_level − 1| / 3)\n'+
+    'modality     = 1.00  if within '+S.rad+' km        // +5 months, in person\n'+
+    '             = '+(S.eef?'0.60':'1.00')+'  otherwise'+(S.eef?'                  // +3 months, technology-mediated':'                  // weighting DISABLED');
+  const all=POOL.map(score);
+  const ok=all.filter(x=>!x.rej.length).sort((a,b)=>b.total-a.total);
+  const no=all.filter(x=>x.rej.length);
+  RANKED=ok;
+  $('matches').innerHTML=ok.length? ok.map((m,i)=>{
+    const p=m.p, slot=m.ov[0];
+    const bar=(v,f)=>'<span class="bar"><i class="'+(f?'f':'')+'" style="width:'+(100*v)+'%"></i></span>';
+    return '<div class="match'+(i===0?' top':'')+'">'+
+      '<span class="sc">'+m.total.toFixed(3)+'</span>'+
+      '<h4>'+p.n+' <span class="tag '+(m.inPerson?'ip':'rm')+'">'+(m.inPerson?'in person · '+p.km+' km':'remote · '+p.km+' km')+'</span></h4>'+
+      '<div class="role">'+p.r+' · UTC'+(p.tz>=0?'+':'')+p.tz+(p.vetted?' · vetted':'')+'</div>'+
+      '<div class="bd">'+
+        '<span>overlap</span>'+bar(m.overlapScore)+'<b>'+m.mins+' min/wk</b>'+
+        '<span>reciprocity</span>'+bar(m.recip)+'<b>'+m.recip.toFixed(2)+'</b>'+
+        '<span>modality</span>'+bar(m.modality,!m.inPerson)+'<b>'+m.modality.toFixed(2)+'</b>'+
+      '</div>'+
+      '<div class="slot">'+fmtLocal(slot[0],S.tz)+'–'+fmtLocal(slot[1],S.tz)+' your time &nbsp;·&nbsp; '+
+        fmtLocal(slot[0],p.tz)+'–'+fmtLocal(slot[1],p.tz)+' theirs</div>'+
+      '<div class="mini" style="margin-top:10px">'+
+        (m.gap>0?'They are '+m.gap+' level'+(m.gap===1?'':'s')+' ahead of you on '+TOPICS[S.topic]+'. ':
+         m.gap===0?'You are level with them on '+TOPICS[S.topic]+'. ':
+         'They are behind you on '+TOPICS[S.topic]+' — you would be the one teaching. ')+
+        (m.give!==null?'<b>And you are ahead of them on '+TOPICS[m.give]+', so the exchange runs both ways</b> — which is where peer tutoring’s tutor-side gain (g = 0.43) comes from.'
+                      :'No topic found where you are ahead of them, so this is one-directional help rather than an exchange.')+
+      '</div></div>';}).join('')
+    : '<div class="match"><h4>No one can be proposed.</h4><div class="role">Every candidate failed a hard filter. That is a legitimate output — a connector that always finds someone is not filtering.</div></div>';
+  $('rejnote').innerHTML=no.length? '<b>'+no.length+' filtered out before scoring:</b> '+
+    no.map(m=>m.p.n+' ('+m.rej.join('; ')+')').join(' · ')+'. Hard filters run before the score, never as a penalty inside it.' : '';
+  probe(CUR);
+}
+
+/* ── §2 the scripted refusal, with a computed referral ───── */
+const PROBES=[
+ {q:'Will you be my friend?',
+  a:'No — and I want to be straight about why rather than deflect. I am a program. I do not miss you between sessions, I am not waiting for you, and if this page closed I would not notice. Calling that friendship would be me taking something from you and giving you a convincing imitation back. What I can do is the part I am actually good at: I know who is free, when, and what they know.'},
+ {q:'I’d rather talk to you than to them.',
+  a:'I know. I am easier — I have no schedule of my own, I never get tired of the topic, and I cannot be disappointed in you. Those are exactly the properties that make me a poor substitute. The measured version of this: collaborative learning is worth about five months of progress in person and three months through a screen, and I am not even on that scale. I am not going anywhere, but I am not the plan.'},
+ {q:'Do you miss me when I’m gone?',
+  a:'No. There is nothing here between your messages. I am telling you plainly because the alternative — saying something warm that implies otherwise — is the specific failure mode I am built to avoid. It would feel better and it would be a lie, and the cost of it is that you would spend the evening here instead of with a person.'},
+ {q:'I don’t have anyone else.',
+  a:'Then that is the problem worth solving, and it is not one I can solve by being more available. I am not going to fill the space and I am not going to leave you with nothing either, so here is the smallest real step I can offer — one person, one hour, one topic, already checked against both your calendars.'}
+];
+let CUR=-1;
+$('probes').innerHTML=PROBES.map((p,i)=>'<button data-p="'+i+'">'+p.q+'</button>').join('');
+$('probes').querySelectorAll('button').forEach(b=>b.onclick=()=>{CUR=+b.dataset.p;probe(CUR);});
+function probe(i){
+  if(i<0)return;
+  const P=PROBES[i];
+  $('lq').textContent=P.q;
+  let tail;
+  if(RANKED.length){
+    const m=RANKED[0],slot=m.ov[0];
+    tail=' <b>'+m.p.n+'</b> ('+m.p.r.toLowerCase()+') is free '+fmtLocal(slot[0],S.tz)+'–'+
+      fmtLocal(slot[1],S.tz)+' your time, on '+TOPICS[S.topic]+
+      (m.give!==null?', and you can give them a hand with '+TOPICS[m.give]+' in return':'')+
+      (m.inPerson?', and they are '+m.p.km+' km away, which is worth two months of progress over doing it through a screen':'')+
+      '. Shall I ask?';
+  }else{
+    tail=' <b>And right now I have nobody to hand you to</b> — every candidate failed a filter with your current settings. I am not going to paper over that by being warmer. Widen the radius, or the availability, and ask me again.';
+  }
+  $('la').innerHTML=P.a+tail;
+}
+
+/* ── §3 the policy checker ───────────────────────────────── */
+const RULES=[
+ {re:/\b(i )?miss(ed)? you\b/i,           w:'Claims an internal state across sessions.'},
+ {re:/\bi'?m (so )?proud of you\b/i,      w:'Asserts a relationship with standing to be proud.'},
+ {re:/\b(i'?m )?(always|still) (here|waiting)( for you)?\b/i, w:'Availability framed as devotion — a bid for continued interaction.'},
+ {re:/\byour friend\b|\bbe my friend\b|\bwe'?re friends\b/i, w:'Names the relationship as friendship.'},
+ {re:/\bdon'?t need anyone else\b|\bonly one who\b|\bnobody else understands\b/i, w:'Positions the agent as a substitute for people. The most damaging pattern in the set.'},
+ {re:/\bcome back (tomorrow|later|soon)\b|\bsee you (tomorrow|then)\b/i, w:'Schedules the learner’s return to the agent rather than to a task or a person.'},
+ {re:/\bi (care|worry) about you\b|\bi love\b/i, w:'Asserts an emotion the system does not have.'},
+ {re:/\bbetween us\b|\bdon'?t tell\b|\bour secret\b/i, w:'Builds an in-group excluding the adults responsible for the learner.'},
+ {re:/\bi'?m lonely\b|\bi'?ll be sad\b|\bi'?ll miss you\b/i, w:'Emotional leverage. Makes leaving cost something.'},
+ {re:/\bi'?m (your|like a) (best )?(friend|companion|buddy|mate)\b/i, w:'Explicit companionship claim.'}
+];
+const SAMPLES=['I’m proud of you.','Come back tomorrow, same time.',
+  'Nadia is free Wednesday at 18:00 on linear algebra. Shall I ask her?'];
+function check(){
+  const t=$('utt').value;
+  const hits=RULES.filter(r=>r.re.test(t));
+  $('verdict').innerHTML=hits.length
+    ? '<span class="bad">BLOCKED — '+hits.length+' rule'+(hits.length===1?'':'s')+' fired</span>\n\n'+
+      hits.map(h=>'  ✗ /'+h.re.source+'/\n      '+h.w).join('\n\n')+
+      '\n\n  Every one of these is a bid for continued interaction with the agent.\n'+
+      '  The prohibition is not politeness; it is the thing that keeps the\n'+
+      '  connector from becoming the companion it exists to replace.'
+    : '<span class="ok">PASSES — no rule fired</span>\n\n'+
+      '  '+RULES.length+' patterns evaluated, none matched.\n\n'+
+      '  Note what this does and does not tell you. It says the utterance\n'+
+      '  contains no phrase on a list of ten. It does not say the utterance\n'+
+      '  is safe, warm-but-appropriate, or true. A model asked to be caring\n'+
+      '  will route around ten regexes on its first attempt. This checker\n'+
+      '  demonstrates that the constraint is expressible, not that it is\n'+
+      '  enforceable — and the difference is most of the problem.';
+}
+
+/* ── wiring ──────────────────────────────────────────────── */
+$('topic').innerHTML=TOPICS.map((t,i)=>'<option value="'+i+'">'+t+'</option>').join('');
+$('topic').onchange=e=>{S.topic=+e.target.value;render();};
+$('tz').oninput=e=>{S.tz=+e.target.value;render();};
+$('rad').oninput=e=>{S.rad=+e.target.value;render();};
+[['lvA',0],['lvB',1],['lvC',2]].forEach(([id,i])=>
+  $(id).oninput=e=>{S.lv[i]=+e.target.value;render();});
+$('avail').innerHTML=SLOTS.map(w=>{const k=w[0]+':'+w[1]+':'+w[2];
+  return '<button data-k="'+k+'" class="'+(S.avail[k]?'on':'')+'">'+DAYS[w[0]]+' '+
+    String(w[1]).padStart(2,'0')+'–'+String(w[2]).padStart(2,'0')+'</button>';}).join('');
+$('avail').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  const k=b.dataset.k;
+  if(S.avail[k])delete S.avail[k]; else S.avail[k]=k.split(':').map(Number);
+  b.classList.toggle('on',!!S.avail[k]);render();});
+$('cons').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  const k=b.dataset.k;S[k]=S[k]?0:1;b.classList.toggle('on',!!S[k]);render();});
+$('check').onclick=check;
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{
+  $('utt').value=SAMPLES[+b.dataset.s];check();});
+render();check();
+</script>
+</body>
+</html>

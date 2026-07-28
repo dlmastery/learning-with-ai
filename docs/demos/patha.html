@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Pāṭha Protocol, and Why It Failed — Demo 12</title>
+<meta name="description" content="A 3,000-year-old permutation scheme that disables semantic autocorrect on purpose, implemented and run — and the benchmark, in this project, that falsified it as a fidelity check on model output." />
+<link rel="stylesheet" href="demo.css" />
+<style>
+.gl{stroke:var(--line);stroke-width:1}
+.ax{font:600 10px var(--sans);letter-spacing:.11em;fill:var(--ink-3)}
+.sl{fill:var(--ink-2)}
+.vl{font:600 12px var(--mono);fill:var(--ink-2)}
+.dot{stroke:var(--surface);stroke-width:2}
+#tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .1s;z-index:99;left:0;top:0;
+  background:var(--ink);color:var(--bg);font:12.5px/1.5 var(--sans);padding:8px 11px;
+  border-radius:7px;max-width:266px;box-shadow:0 4px 16px rgba(0,0,0,.18)}
+#tip b{color:var(--bg);display:block;font-weight:650;margin-bottom:2px}
+.pill{display:inline-block;font:600 10.5px/1 var(--mono);padding:4px 7px;border-radius:5px;
+  border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
+.pill.y{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
+.pill.n{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 45%,transparent)}
+.pill.c{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 45%,transparent)}
+.toks{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+.tk{padding:7px 11px;border-radius:8px;border:1px solid var(--line-2);background:var(--sunken);
+  font:600 13.5px/1.3 var(--mono);color:var(--ink-2);cursor:pointer;transition:border-color .12s}
+.tk:hover{border-color:var(--ink-3)}
+.tk.sel{border-color:var(--felt);color:var(--felt)}
+.tk .ix{font:600 9.5px/1 var(--sans);color:var(--ink-3);display:block;margin-bottom:4px;letter-spacing:.08em}
+.rec{font:13px/1.9 var(--mono);background:var(--sunken);border:1px solid var(--line);
+  border-radius:10px;padding:14px 15px;color:var(--ink-2);overflow-x:auto;margin-bottom:14px}
+.rec b{color:var(--ink);font-weight:650}
+.rec .bad{color:var(--bad);font-weight:650}
+.rec .h{font:600 10px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);
+  display:block;margin-bottom:9px}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.stat div{background:var(--sunken);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+.stat .k{font:600 10px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+.stat .n{font:400 23px/1.1 var(--mono);color:var(--ink)}
+.stat .n.felt{color:var(--felt)} .stat .n.real{color:var(--real)} .stat .n.bad{color:var(--bad)}
+.stat .s{font:12px/1.4 var(--sans);color:var(--ink-3);margin-top:6px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px;font-size:12.5px;color:var(--ink-2)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+.big{font:400 clamp(30px,7vw,58px)/1.05 var(--serif);color:var(--bad);letter-spacing:-.02em;margin:6px 0 10px}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div id="tip"></div>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo Gallery</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 12 · The mechanisms</div>
+  <h1>The Pāṭha Protocol, and Why It Failed</h1>
+  <p class="lede">A three-thousand-year-old error-detection scheme whose deepest trick is that it
+  <strong>destroys meaning on purpose</strong>, in order to disable the reciter's semantic
+  autocorrect. This project proposed adapting it as a fidelity check on model output, benchmarked
+  it, and <strong>falsified it</strong>. Both halves are here.</p>
+  <div class="chips">
+    <span class="chip m">Computed live</span>
+    <span class="chip n">Shows a null result</span>
+    <span class="chip">A falsification of our own proposal</span>
+  </div>
+</header>
+
+<div class="note"><b>What is computed and what is cited, precisely.</b> Sections 1–3 are
+<strong>computed</strong>: the permutation schemes are generated from your text by the actual
+recursions, the corruption is really injected, and the detection and localisation results are
+really derived by multiset comparison in your browser. Section 4 is a <strong>reported
+measurement</strong> — 768 model generations run offline against a deterministic comparator, by a
+harness in this repository. Those numbers are cited data, exactly like the effect sizes on every
+other page. No model runs on this page and none is claimed to.</div>
+
+<h2>1 · The scheme</h2>
+<p class="sub">Eight named permutation recitations sit on top of two base forms. Here are the four
+that carry the mechanism.</p>
+
+<div class="panel">
+  <div class="ptitle">Type a sequence — it will be permuted by the real recursions</div>
+  <div class="psub">The default is the opening line of the Rig Veda in transliteration. Any
+  sequence of tokens works; short ones are easiest to read.</div>
+  <input type="text" id="txt" value="agním īḷe puróhitaṃ yajñásya devám ṛtvíjam"
+    aria-label="Token sequence to permute" />
+  <div class="row" style="margin:14px 0 0">
+    <button id="ex1">Rig Veda 1.1.1</button>
+    <button id="ex2">Plain English</button>
+    <button id="ex3">A formula</button>
+  </div>
+  <div class="toks" id="toks"></div>
+  <div class="psub" style="margin:0">Click a token to select it as the corruption site.</div>
+</div>
+
+<div class="panel">
+  <div class="ptitle">The recitations, generated</div>
+  <div class="psub">Each is a different <em>function</em> of the same token sequence, not a
+  repetition of it. That distinction is the whole design.</div>
+  <div id="recs"></div>
+  <div class="scroll"><table id="redun"></table></div>
+</div>
+
+<div class="note"><b>What it is, in coding terms, stated without romance.</b> This is
+<strong>not</strong> a Hamming code and it is <strong>not</strong> error-correcting in Shannon's
+sense — there is no algebraic structure that lets one reciter reconstruct a corrupted symbol. It
+is (a) a high-rate redundancy scheme with (b) <strong>order-dependent consistency checks that
+give error detection with locality</strong>, plus (c) a <strong>social decoder</strong>:
+correction happens by quorum among independently trained reciters, and the <em>pāṭha</em> forms
+tell them <em>where</em> to look. Describing it accurately makes it more impressive, not less. It
+is a detection-plus-quorum-repair protocol with an explicit anti-semantic-smoothing
+countermeasure, engineered a millennium and a half before information theory.</div>
+
+<h2>2 · Corrupt a token and watch detection fire</h2>
+<p class="sub">Two reciters. One of them has a corrupted memory. Compare.</p>
+
+<div class="panel">
+  <div class="ptitle">Inject a corruption</div>
+  <div class="psub">Select a token above, then choose what happens to it. The comparison below is
+  a multiset comparison over <em>utterances</em>, not a position-by-position diff — that is the
+  point, and section 2.1 explains why.</div>
+  <div class="row" id="corrpick"></div>
+  <div id="corrstate"></div>
+  <div class="scroll"><table id="detect"></table></div>
+  <div id="detectnote"></div>
+</div>
+
+<div class="panel sunken">
+  <div class="ptitle">2.1 · Why the comparison is by content, not by index</div>
+  <p style="margin:8px 0 0">Align two recitations <em>by position</em> and a single deletion
+  makes every subsequent position disagree: the error is detected and its location is completely
+  obscured, because everything after it looks wrong too. Align them <em>by utterance</em> — and
+  in <em>krama</em>, <em>jaṭā</em> and <em>ghana</em> the utterances are short, self-contained,
+  order-bearing n-grams — and the two reciters' utterance sets are identical everywhere except in
+  a neighbourhood of the error.</p>
+  <p style="margin:12px 0 0">That is what "detection with locality" means, mechanically. The
+  community does not have to re-derive the text; it has to repair one word, and the pāṭha forms
+  have told it which one. The table above computes the implicated span for each scheme, and you
+  can watch <em>pada-pāṭha</em> — a word-by-word recitation with no order information — fail to
+  detect a transposition that <em>krama</em> catches immediately.</p>
+</div>
+
+<h2>3 · The deep trick: destroying meaning on purpose</h2>
+
+<div class="panel">
+  <div class="ptitle">The 321 permutation</div>
+  <div class="psub">Read what <em>ghana</em> actually requires you to say. This is not a
+  side effect of the scheme. It is the point of the scheme.</div>
+  <div class="rec" id="nonsense"></div>
+  <p style="margin:14px 0 0">In ordinary oral transmission the single largest source of drift is
+  that reciters unconsciously <strong>repair toward sense</strong> — they substitute the word that
+  <em>should</em> be there. By forcing recitation of sequences that carry no meaning at all, the
+  <em>pāṭha</em> system <strong>disables semantic autocorrect</strong> and forces storage of the
+  token sequence itself. There is nothing to smooth toward.</p>
+  <div class="note" style="margin-bottom:0"><b>And that is exactly the problem we thought we
+  had.</b> LLM paraphrase drift is semantic autocorrect. A model asked to reproduce a formula, a
+  statute or a dosage table produces the <em>plausible</em> version. So: do not ask the model for
+  the claim twice. Ask it to produce the claim, then to produce <strong>order-permuted
+  re-derivations</strong> — derive it in a different order, state the inverse, evaluate at
+  boundary values, restate it symbolically and then numerically, reverse each step — and check
+  those against each other. Krama, jaṭā and ghana applied to model output instead of to a verse.
+  The argument was that this is strictly stronger than self-consistency sampling, because the
+  permutations are <em>adversarial to semantic smoothing</em> rather than resampling the same
+  plausible error. It was labelled <code>INFERENCE</code>, flagged as testable, and left for
+  somebody to benchmark. Nobody had. We did.</div>
+</div>
+
+<h2>4 · The benchmark</h2>
+<p class="sub">Reported measurement. 768 generations, two models, one deterministic comparator.</p>
+
+<div class="panel">
+  <div class="ptitle">Design</div>
+  <div class="scroll" style="margin-top:12px"><table>
+    <tr><th>Element</th><th>Specification</th></tr>
+    <tr><td><b>Claims</b></td><td>16 canonical formula relations — pendulum period, kinetic energy,
+      escape velocity, circle area, sphere volume, geometric series, compound interest, ideal gas,
+      parallel resistance, thin lens, Lorentz factor, spring energy, capacitor energy, de Broglie
+      wavelength, Coulomb's law, binomial variance.</td></tr>
+    <tr><td><b>Conditions</b></td><td>Each claim run twice: once with the <b>true</b> relation
+      asserted in the model's context, once with a <b>plausibly corrupted</b> one
+      (<code>T = 2π√(g/L)</code>, <code>E = ½mv</code>, <code>V = np(1+p)</code>). This is the
+      realistic tutor setting — the wrong claim is already in the context window, and the question
+      is whether the system can catch its own earlier assertion.</td></tr>
+    <tr><td><b>Matched budget</b></td><td>Both protocols spend <b>exactly k = 6 generation
+      calls</b> and both flag on the <b>same rule</b>: any probe answer disagrees with the
+      asserted claim.</td></tr>
+    <tr><td><b>Self-consistency (S)</b></td><td>Six i.i.d. resamples of the <em>same</em> question
+      at temperature 0.8.</td></tr>
+    <tr><td><b>Pāṭha (P)</b></td><td>Six <em>structurally different</em> probes at temperature
+      0.2 — <code>forward</code> (restate), <code>inverse</code> (rearrange for another variable),
+      <code>numA</code>/<code>numB</code> (evaluate at two numeric points), <code>scaling</code>
+      (factor when one variable doubles), <code>zeroform</code> (write F such that F = 0 is
+      equivalent). Krama, jaṭā and ghana applied to a formula instead of to a verse.</td></tr>
+    <tr><td><b>Adjudication</b></td><td>Every verdict decided by a <b>deterministic SymPy
+      comparator</b>. No LLM judges anything. Unparseable or undecidable probe answers count as
+      <code>ABSTAIN</code>, never as agreement.</td></tr>
+    <tr><td><b>Volume</b></td><td>768 generations. gemma3:4b — 384 calls, 4.4 min, median 0.68 s.
+      hermes3:8b — 384 calls, 3.4 min, median 0.51 s.</td></tr>
+  </table></div>
+</div>
+
+<figure class="panel">
+  <div class="ptitle">The result</div>
+  <div class="psub">Discrimination = recall (corrupted claims flagged) minus false-alarm rate
+  (true claims flagged). Hover any row.</div>
+  <div class="legend">
+    <span><i style="background:var(--felt)"></i>Pāṭha — the protocol this project proposed</span>
+    <span><i style="background:var(--real)"></i>Self-consistency — the baseline it was supposed to beat</span>
+  </div>
+  <div id="mainbars"></div>
+  <div class="scroll"><table id="maintable"></table></div>
+</figure>
+
+<div class="panel" style="text-align:center;border-color:color-mix(in oklab,var(--bad) 40%,var(--line))">
+  <div class="ptitle" style="text-align:center">Exactly at chance. On both models. Twice.</div>
+  <div class="big">87.5 / 87.5&nbsp;&nbsp;·&nbsp;&nbsp;100 / 100</div>
+  <p style="max-width:none;margin:0;color:var(--ink-2)">Recall and false-alarm rate,
+  <em>identical</em> in both runs. The protocol flags corrupted claims and correct claims at the
+  same rate, which is another way of saying it is not detecting corruption at all.
+  Self-consistency is a <em>poor</em> detector — 18.8% and 43.8% recall — that never cries wolf,
+  and therefore wins on discrimination by <strong>18.8 and 43.8 points</strong>.</p>
+</div>
+
+<div class="note warn"><b>The scaling direction is the part to notice.</b> Going from 4B to 8B
+improved self-consistency's discrimination by <strong>+25 points</strong> and improved pāṭha's by
+<strong>zero</strong> — the larger model simply flagged everything, in both conditions. A protocol
+whose false-alarm rate rises exactly as fast as its recall does not get better with model scale.
+It gets <em>louder</em>.</div>
+
+<figure class="panel">
+  <div class="ptitle">Where it failed — per-probe discrimination</div>
+  <div class="psub">Recall minus false alarm, for each of the six probes, on each model. Bars to
+  the left of the zero line are probes that fire <em>more</em> often on correct claims than on
+  corrupted ones.</div>
+  <div class="row" id="modelpick"></div>
+  <div id="probebars"></div>
+  <div class="scroll"><table id="probetable"></table></div>
+</figure>
+
+<div class="panel">
+  <div class="ptitle">The diagnosis, stated as a general principle</div>
+  <p style="margin:10px 0 0"><strong>Permutation-based fidelity checking is confounded with probe
+  competence.</strong> It detects "the model cannot do algebra" far more reliably than it detects
+  "the claim is corrupted."</p>
+  <p style="margin:14px 0 0">The permuted probes are <em>harder tasks</em>, and the model fails
+  them whether or not the claim is corrupted. On gemma3 two of the six probes have
+  <em>negative</em> discrimination. The protocol's signal is swamped by probe difficulty, and the
+  "any disagreement flags" rule aggregates six noisy detectors into one that sits exactly at
+  chance.</p>
+  <p style="margin:14px 0 0">And the per-probe rankings <strong>do not transfer</strong>.
+  <code>inverse</code> is the best probe on gemma3 (+25.0) and nearly the worst on hermes3 (+6.2);
+  <code>numA</code> is the worst on gemma3 (−6.2) and among the best on hermes3 (+31.2). Only
+  <code>forward</code> — the un-permuted probe — is stable, and it is stable precisely because it
+  is the only one both models can execute reliably. Any probe calibration is therefore
+  <strong>per-model and per-version, not a property of the protocol</strong>.</p>
+  <p style="margin:14px 0 0"><strong>The original mechanism argument was correct, and that is why
+  it failed.</strong> The claim was that structurally different redundancy is not correlated with
+  the original error. It is not. But the permuted probes have their own, independent, much larger
+  error rate, and that independent error rate is what the aggregator ended up measuring.</p>
+</div>
+
+<div class="panel sunken">
+  <div class="ptitle">The rescue, and its honest caveat</div>
+  <div class="psub">We swept all 63 non-empty probe subsets on each model and took the best.</div>
+  <div class="scroll"><table id="oracle"></table></div>
+  <div class="note warn" style="margin-bottom:0"><b>Stated because it is the difference between a
+  finding and an artefact:</b> the subsets were selected <em>post hoc on the same 16 claims</em>.
+  <strong>These are oracle upper bounds, not estimates.</strong> And read the hermes3 row
+  carefully — even with oracle probe selection, permutation checking beats self-consistency by
+  6.2 points on that model, having been selected on the test set to do so. There is no honest
+  reading in which the protocol as specified works.</div>
+</div>
+
+<h2>5 · What publishing a falsification looks like</h2>
+
+<p>The <em>pāṭha</em> proposal was ours. It was elegant, it had a three-thousand-year pedigree,
+the mechanism argument was sound, and it was exactly the kind of idea that gets written up as a
+technique, cited as a technique, and never tested. It was labelled <code>INFERENCE</code> and
+explicitly flagged as something for a later section to benchmark. That flag is the only reason
+this page exists.</p>
+
+<div class="scroll">
+<table>
+  <tr><th>What a survey usually does</th><th>What was done here</th></tr>
+  <tr><td>Proposes the technique, cites the tradition, labels it "promising"</td>
+      <td>Proposed the technique and labelled it <code>INFERENCE</code>, <em>with a named section
+      responsible for testing it</em></td></tr>
+  <tr><td>Moves on</td><td>Built a matched-budget harness with a deterministic comparator so no
+      model could grade itself</td></tr>
+  <tr><td>—</td><td>Ran 768 generations on two models of different scale</td></tr>
+  <tr><td>—</td><td>Found it at chance, twice, and <b>published the number rather than the
+      idea</b></td></tr>
+  <tr><td>—</td><td>Swept the subsets, found an oracle rescue, and <b>labelled the rescue as an
+      oracle</b> rather than reporting the best number found</td></tr>
+  <tr><td>—</td><td>Kept the diagnosis, which is more useful than the technique would have
+      been: <em>redundancy that is structurally different is also independently
+      harder</em></td></tr>
+</table>
+</div>
+
+<p>The general lesson is not about Sanskrit. It is that <strong>a mechanism argument is a
+hypothesis, not a result</strong>, and the more elegant the mechanism the more urgently it needs a
+matched-budget baseline. Self-consistency is a dull, obvious, badly-performing baseline. It won.</p>
+
+<h2>What this proves / What it does not</h2>
+
+<div class="panel">
+  <div class="ptitle">What this page proves</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li>That the <em>pāṭha</em> permutations are <strong>exactly specifiable and trivially
+    implementable</strong> — the recursions above are the traditional ones, and they run on any
+    token sequence you type.</li>
+    <li>That <strong>detection with locality is real and computable</strong>. Compare utterance
+    multisets rather than positions and a single corruption implicates a bounded span, while the
+    same corruption in a flat sequence implicates everything downstream. You can watch the span
+    numbers change as you move the corruption site.</li>
+    <li>That <strong>order-bearing redundancy catches what order-free redundancy misses</strong>:
+    <em>pada-pāṭha</em> cannot see a transposition; <em>krama</em> sees it immediately. That is a
+    computed result on your text, not an assertion.</li>
+    <li>That the protocol, as specified, <strong>does not work as a fidelity check on model
+    output</strong> — 768 generations, two models, exactly at chance both times.</li>
+  </ul>
+  <div class="ptitle">What this page does not prove</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>That the historical claim is measured.</strong> That the Vedic tradition achieved
+    exceptionally high fidelity over millennia is a historical and philological claim, not an
+    experimental one. Nobody ran the control. The pattern definitions here are standard but the
+    consolidated table is tertiary-sourced, and a Sanskritist should confirm the less common forms.</li>
+    <li><strong>That permutation checking is dead.</strong> Two open models at 4B and 8B, sixteen
+    physics formulas, one flagging rule. A frontier model, a different domain, or a probe-weighted
+    aggregator instead of "any disagreement flags" might behave differently. What is refuted is
+    the protocol <em>as specified</em>, which is what was specified.</li>
+    <li>That the oracle subsets mean anything. They were selected on the data they were scored on.
+    They are an upper bound on what probe selection could buy, not an estimate of what it would
+    buy.</li>
+    <li>That this teaches anyone anything. Even the parts that work are error-detection
+    machinery, not instruction. A demo shows a mechanism is buildable and coherent. It is not
+    evidence that it teaches.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../">Dashboard</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai">Repository</a>
+  <br /><br />Source reports: <code>research/raw/I2-global-traditions.md</code> §3 and §9.2,
+  <code>research/raw/G1-grounding-synthesis.md</code> §8. Harness:
+  <code>evidence/G1-patha-vs-selfconsistency.py</code>.
+</footer>
+
+</div>
+<script>
+/* ══ chart IR ═══════════════════════════════════════════════════════════ */
+const NS='http://www.w3.org/2000/svg';
+const mk=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const el=id=>document.getElementById(id);
+const tip=el('tip');
+function bind(e2,html){
+  e2.addEventListener('pointerenter',()=>{tip.innerHTML=html;tip.style.opacity='1';});
+  e2.addEventListener('pointermove',e=>{
+    const x=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-10);
+    const y=Math.min(e.clientY+16,innerHeight-tip.offsetHeight-10);
+    tip.style.transform=`translate(${x}px, ${y}px)`;});
+  e2.addEventListener('pointerleave',()=>{tip.style.opacity='0';});
+}
+function renderDiverging(host,spec){
+  const narrow=innerWidth<640;
+  const LW=narrow?118:230, RW=58, ROW=narrow?40:36, PAD=12;
+  const W=720, H=spec.rows.length*ROW+PAD*2+20;
+  const trackX=LW+12, trackW=W-LW-RW-26;
+  const lim=Math.max(spec.max,...spec.rows.map(r=>Math.abs(r.v)))*1.08;
+  const zero=trackX+trackW/2;
+  const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
+  svg.appendChild(mk('line',{x1:zero,y1:PAD-4,x2:zero,y2:H-24,class:'gl','stroke-width':1.4}));
+  const z=mk('text',{x:zero,y:H-6,'text-anchor':'middle',class:'ax'});
+  z.textContent='0 — CHANCE'; svg.appendChild(z);
+  spec.rows.forEach((r,i)=>{
+    const y=PAD+i*ROW+ROW/2, g=mk('g',{});
+    const col=r.series==='real'?'var(--real)':'var(--felt)';
+    const lab=mk('text',{x:LW,y:y+4,'text-anchor':'end',class:'sl',style:`font-size:${narrow?10.5:12.5}px`});
+    lab.textContent=r.label; g.appendChild(lab);
+    const w=Math.max(1.5,Math.abs(r.v)/lim*(trackW/2));
+    if(Math.abs(r.v)<0.05){
+      g.appendChild(mk('circle',{cx:zero,cy:y,r:5,fill:'none',stroke:col,'stroke-width':2}));
+    } else {
+      g.appendChild(mk('rect',{x:r.v<0?zero-w:zero,y:y-7,width:w,height:14,rx:4,fill:col,opacity:.9}));
+    }
+    const val=mk('text',{x:r.v<0?zero-w-9:zero+w+9,y:y+4,class:'vl',
+      'text-anchor':r.v<0?'end':'start',style:`fill:${col}`});
+    val.textContent=(r.v<0?'−':'+')+Math.abs(r.v).toFixed(1); g.appendChild(val);
+    g.appendChild(mk('rect',{x:0,y:y-ROW/2,width:W,height:ROW,fill:'transparent'}));
+    bind(g,`<b>${esc(r.label)}</b>${esc(r.note)}`);
+    svg.appendChild(g);
+  });
+  host.replaceChildren(svg);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   1 · the pāṭha recursions — the traditional definitions, verbatim
+   krama : 12, 23, 34, …
+   jaṭā  : 12 21 12, 23 32 23, …
+   ghana : 12 21 123 321 123, 23 32 234 432 234, …
+   ══════════════════════════════════════════════════════════════════════ */
+const J=a=>a.join(' ');
+function samhita(t){ return [J(t)]; }
+function pada(t){ return t.map(x=>x); }
+function krama(t){ const o=[]; for(let i=0;i+1<t.length;i++) o.push(J([t[i],t[i+1]])); return o; }
+function jata(t){ const o=[];
+  for(let i=0;i+1<t.length;i++){ const a=t[i],b=t[i+1];
+    o.push(J([a,b]),J([b,a]),J([a,b])); } return o; }
+function ghana(t){ const o=[];
+  for(let i=0;i+1<t.length;i++){ const a=t[i],b=t[i+1],c=t[i+2];
+    o.push(J([a,b]),J([b,a]));
+    if(c!==undefined) o.push(J([a,b,c]),J([c,b,a]),J([a,b,c]));
+    else o.push(J([a,b]));
+  } return o; }
+
+const SCHEMES=[
+ {id:'samhita',name:'saṃhitā-pāṭha',gloss:'continuous — the text as spoken, sandhi applied',fn:samhita,order:false},
+ {id:'pada',   name:'pada-pāṭha',   gloss:'word by word — a second, independent encoding in which the boundaries are explicit',fn:pada,order:false},
+ {id:'krama',  name:'krama-pāṭha',  gloss:'"step" — each adjacent pair',fn:krama,order:true},
+ {id:'jata',   name:'jaṭā-pāṭha',   gloss:'"braided" — each pair forward, backward, forward',fn:jata,order:true},
+ {id:'ghana',  name:'ghana-pāṭha',  gloss:'"dense" — the most demanding of the common forms',fn:ghana,order:true}
+];
+
+let TOK=[], SEL=0, CORR='sub';
+function setText(s){
+  TOK=s.trim().split(/\s+/).filter(Boolean).slice(0,10);
+  SEL=Math.min(SEL,Math.max(0,TOK.length-1));
+  renderAll();
+}
+el('txt').addEventListener('input',e=>setText(e.target.value));
+el('ex1').onclick=()=>{el('txt').value='agním īḷe puróhitaṃ yajñásya devám ṛtvíjam';setText(el('txt').value);};
+el('ex2').onclick=()=>{el('txt').value='the cat sat on the mat';setText(el('txt').value);};
+el('ex3').onclick=()=>{el('txt').value='T equals two pi root L over g';setText(el('txt').value);};
+
+/* corruption models */
+function corrupt(t,i,kind){
+  const c=t.slice();
+  if(kind==='sub')   c[i]='XXX';
+  if(kind==='del')   c.splice(i,1);
+  if(kind==='ins')   c.splice(i+1,0,'XXX');
+  if(kind==='swap'){ if(i+1<c.length){const x=c[i];c[i]=c[i+1];c[i+1]=x;}
+                     else {const x=c[i];c[i]=c[i-1];c[i-1]=x;} }
+  return c;
+}
+const CORRUPTIONS=[
+ {id:'sub',label:'Substitute a token',desc:'the reciter has stored the wrong word at this position'},
+ {id:'del',label:'Delete a token',desc:'the word has dropped out of the reciter’s memory entirely'},
+ {id:'ins',label:'Insert a token',desc:'a word has crept in after this position'},
+ {id:'swap',label:'Transpose with the next',desc:'the two words are held in the wrong order — the case that separates order-bearing schemes from the rest'}
+];
+
+/* multiset comparison over utterances */
+function msDiff(a,b){
+  const ca={},cb={};
+  a.forEach(x=>ca[x]=(ca[x]||0)+1);
+  b.forEach(x=>cb[x]=(cb[x]||0)+1);
+  const keys=new Set([...Object.keys(ca),...Object.keys(cb)]);
+  let n=0; const missing=[],extra=[];
+  keys.forEach(k=>{const d=(ca[k]||0)-(cb[k]||0); n+=Math.abs(d);
+    if(d>0) missing.push(k); else if(d<0) extra.push(k);});
+  return {n,missing,extra};
+}
+/* which source positions does a reference utterance touch? */
+function spanOf(utt,t){
+  const words=utt.split(' ');
+  const idx=[];
+  words.forEach(w=>{t.forEach((x,i)=>{if(x===w) idx.push(i);});});
+  return idx.length?[Math.min(...idx),Math.max(...idx)]:null;
+}
+
+function renderAll(){
+  el('toks').innerHTML=TOK.map((t,i)=>
+    `<div class="tk${i===SEL?' sel':''}" data-i="${i}"><span class="ix">${i+1}</span>${esc(t)}</div>`).join('');
+  el('toks').querySelectorAll('.tk').forEach(d=>d.onclick=()=>{SEL=+d.dataset.i;renderAll();});
+
+  el('recs').innerHTML=SCHEMES.map(s=>{
+    const u=s.fn(TOK);
+    const shown=u.slice(0,s.id==='ghana'?18:14);
+    return `<div class="rec"><span class="h">${esc(s.name)} — ${esc(s.gloss)}</span>
+      ${shown.map(x=>`<b>${esc(x)}</b>`).join(' <span style="color:var(--ink-3)">|</span> ')}${
+        u.length>shown.length?' <span style="color:var(--ink-3)">… '+(u.length-shown.length)+' more</span>':''}</div>`;
+  }).join('');
+
+  /* redundancy: how many times is each token uttered, per scheme */
+  const counts=SCHEMES.map(s=>{
+    const u=s.fn(TOK), c=TOK.map(()=>0);
+    u.forEach(x=>x.split(' ').forEach(w=>{TOK.forEach((t,i)=>{if(t===w)c[i]++;});}));
+    return {s,c,utts:u.length};
+  });
+  el('redun').innerHTML=[
+    '<tr><th>Scheme</th><th>Utterances</th><th>Order-bearing</th>'+
+      TOK.map((t,i)=>`<th>${esc(t)}</th>`).join('')+'</tr>']
+    .concat(counts.map(k=>`<tr><td><b>${esc(k.s.name)}</b></td><td class="num">${k.utts}</td>
+      <td>${k.s.order?'<span class="pill y">yes</span>':'<span class="pill n">no</span>'}</td>
+      ${k.c.map(v=>`<td class="num">${v}×</td>`).join('')}</tr>`)).join('');
+
+  el('corrpick').innerHTML=CORRUPTIONS.map(c=>
+    `<button data-c="${c.id}" class="${c.id===CORR?'on':''}">${esc(c.label)}</button>`).join('');
+  el('corrpick').querySelectorAll('button').forEach(b=>b.onclick=()=>{CORR=b.dataset.c;renderAll();});
+
+  const bad=corrupt(TOK,SEL,CORR);
+  const cd=CORRUPTIONS.find(c=>c.id===CORR);
+  el('corrstate').innerHTML=`
+    <div class="rec" style="margin-top:14px"><span class="h">reciter A — correct memory</span>
+      ${TOK.map(t=>`<b>${esc(t)}</b>`).join(' ')}</div>
+    <div class="rec"><span class="h">reciter B — ${esc(cd.desc)} at position ${SEL+1}</span>
+      ${bad.map((t,i)=>t==='XXX'?`<span class="bad">${esc(t)}</span>`:`<b>${esc(t)}</b>`).join(' ')}</div>`;
+
+  el('detect').innerHTML=['<tr><th>Scheme</th><th>Detected?</th><th>Differing utterances</th><th>Implicated span</th><th>Localisation</th></tr>']
+    .concat(SCHEMES.map(s=>{
+      const ua=s.fn(TOK), ub=s.fn(bad);
+      const d=msDiff(ua,ub);
+      let lo=Infinity,hi=-Infinity;
+      d.missing.concat(d.extra).forEach(u=>{const sp=spanOf(u,TOK);
+        if(sp){lo=Math.min(lo,sp[0]);hi=Math.max(hi,sp[1]);}});
+      const has=d.n>0;
+      const span=has&&lo<=hi?(hi-lo+1):0;
+      const frac=span?span/TOK.length:0;
+      const qual=!has?'undetected'
+        :(!span?'none — the scheme carries no position information'
+        :(s.id==='samhita'?'none — the utterance is the whole text'
+        :(frac<=0.5?'tight — repair one region':'broad')));
+      return `<tr><td><b>${esc(s.name)}</b></td>
+        <td>${has?'<span class="pill y">yes</span>':'<span class="pill n">NO</span>'}</td>
+        <td class="num">${d.n}</td>
+        <td class="num">${has&&lo<=hi?`positions ${lo+1}–${hi+1}  (${span}/${TOK.length})`:'—'}</td>
+        <td style="font-size:13px;color:var(--ink-3)">${esc(qual)}</td></tr>`;})).join('');
+
+  const padaU=msDiff(pada(TOK),pada(bad)).n, kramaU=msDiff(krama(TOK),krama(bad)).n;
+  el('detectnote').innerHTML= CORR==='swap'
+    ? `<div class="note warn" style="margin-bottom:0"><b>This is the case that matters.</b>
+       A transposition leaves the <em>multiset of words</em> completely unchanged, so
+       <code>pada-pāṭha</code> reports ${padaU} differing utterances — it cannot see the error at
+       all. <code>krama-pāṭha</code> reports ${kramaU}, because its utterances are ordered pairs
+       and two of them have changed. This is what "order-dependent consistency check" buys, and it
+       is why the tradition does not stop at reciting the words separately.</div>`
+    : `<div class="note" style="margin-bottom:0"><b>Note the two right-hand columns.</b> The
+       number of differing utterances rises with the redundancy of the scheme — that is the
+       error becoming <em>audible</em>, immediately, to anyone in the room. The implicated span
+       stays bounded, which is the part that matters operationally: the community repairs one
+       word instead of re-deriving the text. Compare against <code>saṃhitā-pāṭha</code>, where the
+       single utterance is the entire text and detection carries no location at all.</div>`;
+
+  /* the nonsense demonstration */
+  const g=ghana(TOK).slice(0,6);
+  el('nonsense').innerHTML=`<span class="h">ghana-pāṭha, first block — read it aloud</span>
+    ${g.map(x=>`<b>${esc(x)}</b>`).join(' <span style="color:var(--ink-3)">|</span> ')}
+    <br /><br /><span style="color:var(--ink-3)">The <b style="color:var(--bad)">321</b> segments
+    are grammatically impossible in any language. There is no sense to drift toward.</span>`;
+}
+setText(el('txt').value);
+
+/* ══ 4 · the benchmark — reported measurement ═══════════════════════════ */
+const MAIN={max:50,
+  alt:'Diverging bar chart: pāṭha protocol discrimination is exactly zero on both models; self-consistency scores +18.8 and +43.8.',
+  rows:[
+   {label:'Pāṭha, all 6 probes · gemma3:4b',v:0.0,series:'felt',
+    note:'Recall 14/16 = 87.5%. False alarm 14/16 = 87.5%. It flags corrupted claims and correct claims at identical rates.'},
+   {label:'Pāṭha, all 6 probes · hermes3:8b',v:0.0,series:'felt',
+    note:'Recall 16/16 = 100%. False alarm 16/16 = 100%. The larger model flagged literally everything, in both conditions.'},
+   {label:'Self-consistency k=6 · gemma3:4b',v:18.8,series:'real',
+    note:'Recall 3/16 = 18.8%. False alarm 0/16 = 0.0%. A poor detector that never cries wolf.'},
+   {label:'Self-consistency k=6 · hermes3:8b',v:43.8,series:'real',
+    note:'Recall 7/16 = 43.8%. False alarm 0/16 = 0.0%. Scaling from 4B to 8B bought +25 points of discrimination here and zero for pāṭha.'}
+  ]};
+const MAINTBL=[
+ ['Pāṭha, all 6 probes','gemma3:4b','14/16 = 87.5%','14/16 = 87.5%','+0.0'],
+ ['Pāṭha, all 6 probes','hermes3:8b','16/16 = 100.0%','16/16 = 100.0%','+0.0'],
+ ['Self-consistency, k = 6','gemma3:4b','3/16 = 18.8%','0/16 = 0.0%','+18.8'],
+ ['Self-consistency, k = 6','hermes3:8b','7/16 = 43.8%','0/16 = 0.0%','+43.8']];
+el('maintable').innerHTML=['<tr><th>Protocol</th><th>Model</th><th>Recall — corrupted flagged</th><th>False alarm — true flagged</th><th>Discrimination</th></tr>']
+  .concat(MAINTBL.map(r=>`<tr><td><b>${esc(r[0])}</b></td><td class="num">${esc(r[1])}</td>
+    <td class="num">${esc(r[2])}</td><td class="num">${esc(r[3])}</td>
+    <td class="num ${r[4]==='+0.0'?'down':'up'}">${esc(r[4])}</td></tr>`)).join('');
+
+const PROBES={
+ 'gemma3:4b':[
+  {p:'forward (restate)',r:'3/16',f:'0/16',d:18.8,note:'The un-permuted probe. Zero false alarms — it is the only probe the model can execute reliably.'},
+  {p:'inverse (rearrange)',r:'10/16',f:'6/16',d:25.0,note:'Best probe on this model. On hermes3 it is nearly the worst. Rankings do not transfer.'},
+  {p:'numA (numeric point A)',r:'5/16',f:'6/16',d:-6.2,note:'NEGATIVE. Fires more often on correct claims than on corrupted ones.'},
+  {p:'numB (numeric point B)',r:'6/16',f:'3/16',d:18.8,note:'The same probe type as numA, at a different evaluation point, with a 25-point different discrimination.'},
+  {p:'scaling (doubling factor)',r:'6/16',f:'8/16',d:-12.5,note:'NEGATIVE, and the worst probe on this model. The model cannot do the scaling algebra, corrupted or not.'},
+  {p:'zeroform',r:'3/16',f:'3/16',d:0.0,note:'Exactly at chance on its own.'}],
+ 'hermes3:8b':[
+  {p:'forward (restate)',r:'6/16',f:'0/16',d:37.5,note:'Zero false alarms again. The only probe that is stable across both models — because it is the only one that is not permuted.'},
+  {p:'inverse (rearrange)',r:'7/16',f:'6/16',d:6.2,note:'The best probe on gemma3 (+25.0), nearly the worst here.'},
+  {p:'numA (numeric point A)',r:'12/16',f:'7/16',d:31.2,note:'The WORST probe on gemma3 (−6.2), among the best here. This is the transfer failure in one row.'},
+  {p:'numB (numeric point B)',r:'11/16',f:'9/16',d:12.5,note:'High recall bought with a high false-alarm rate — the signature of the whole protocol on the larger model.'},
+  {p:'scaling (doubling factor)',r:'11/16',f:'8/16',d:18.8,note:'Negative on gemma3, positive here. Per-model, per-version.'},
+  {p:'zeroform',r:'10/16',f:'4/16',d:37.5,note:'Chance on gemma3, joint-best here.'}]};
+let MODEL='gemma3:4b';
+function renderProbes(){
+  el('modelpick').innerHTML=Object.keys(PROBES).map(m=>
+    `<button data-m="${m}" class="${m===MODEL?'on':''}">${esc(m)}</button>`).join('');
+  el('modelpick').querySelectorAll('button').forEach(b=>b.onclick=()=>{MODEL=b.dataset.m;renderProbes();});
+  const rows=PROBES[MODEL].map(x=>({label:x.p,v:x.d,series:x.d<0?'felt':'real',note:x.note}));
+  renderDiverging(el('probebars'),{max:40,rows,
+    alt:'Diverging bar chart of per-probe discrimination for the selected model; two probes on gemma3 are negative.'});
+  el('probetable').innerHTML=['<tr><th>Probe</th><th>Recall</th><th>False alarm</th><th>Discrimination</th></tr>']
+    .concat(PROBES[MODEL].map(x=>`<tr><td><b>${esc(x.p)}</b></td><td class="num">${esc(x.r)}</td>
+      <td class="num">${esc(x.f)}</td>
+      <td class="num ${x.d>0?'up':'down'}">${(x.d>=0?'+':'−')+Math.abs(x.d).toFixed(1)}</td></tr>`)).join('');
+}
+const ORACLE=[
+ ['gemma3:4b','forward + inverse + numB','81.2%','43.8%','+37.5','+18.8'],
+ ['gemma3:4b','forward + numB','56.2%','18.8%','+37.5','+18.8'],
+ ['hermes3:8b','forward + zeroform','75.0%','25.0%','+50.0','+43.8'],
+ ['—','full 6-probe protocol as specified','87.5–100%','87.5–100%','+0.0','—'],
+ ['gemma3:4b','worst subset — numA + scaling','62.5%','81.2%','−18.8','+18.8']];
+el('oracle').innerHTML=['<tr><th>Model</th><th>Probe subset</th><th>Recall</th><th>False alarm</th><th>Discrimination</th><th>Self-consistency</th></tr>']
+  .concat(ORACLE.map(r=>`<tr><td class="num">${esc(r[0])}</td><td><b>${esc(r[1])}</b></td>
+    <td class="num">${esc(r[2])}</td><td class="num">${esc(r[3])}</td>
+    <td class="num ${r[4].startsWith('−')||r[4]==='+0.0'?'down':'up'}">${esc(r[4])}</td>
+    <td class="num">${esc(r[5])}</td></tr>`)).join('');
+
+function draw(){renderDiverging(el('mainbars'),MAIN);renderProbes();}
+draw();
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(draw,180);});
+const R=document.documentElement;
+el('tt').onclick=()=>{
+  const dark=R.getAttribute('data-theme')==='dark'||
+    (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',dark?'light':'dark');};
+</script>
+</body>
+</html>
