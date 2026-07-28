@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Protégé That Stays Wrong — Demo 01</title>
+<meta name="description" content="Teach a rule to a protégé that applies it literally, gets things wrong, and does not self-correct. The rule interpreter is real and runs in your browser." />
+<link rel="stylesheet" href="demo.css" />
+<style>
+.tag{font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;
+  border-radius:5px;border:1px solid var(--line-2);color:var(--ink-3)}
+.tag.ok{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
+.tag.no{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 45%,transparent)}
+.q{font:650 15px/1.45 var(--sans);color:var(--ink);margin:0 0 8px}
+.grid2{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:660px){.grid2{grid-template-columns:1fr 1fr}}
+.slot label{margin-bottom:6px}
+.slot input{font-family:var(--mono);font-size:14px}
+.work{font:13px/1.75 var(--mono);background:var(--sunken);border:1px solid var(--line);
+  border-radius:10px;padding:14px;margin-bottom:10px;color:var(--ink-2);overflow-x:auto}
+.work .hd{color:var(--ink);font-weight:700}
+.work .bad{color:var(--bad)} .work .ok{color:var(--good)} .work .dim{color:var(--ink-3)}
+.score{font:400 30px/1 var(--serif);color:var(--ink)}
+.score small{font:600 12px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);display:block;margin-top:8px}
+.err{color:var(--bad);font:13px/1.5 var(--mono);margin-top:8px}
+.lex{font-size:13px}
+.lex td{padding:7px 14px 7px 0}
+.lex code{font-size:12px}
+.bar{height:7px;border-radius:4px;background:var(--raise);overflow:hidden;margin-top:7px}
+.bar i{display:block;height:100%;background:var(--real)}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo Gallery</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 01 · The Village</div>
+  <h1>The Protégé That Stays Wrong</h1>
+  <p class="lede">You teach it. It adopts your explanation <em>including your errors</em>, applies
+  them visibly to fresh problems, and <strong>does not quietly self-correct</strong>. The gap
+  between what you meant and what you said is the entire pedagogical payload.</p>
+  <div class="chips">
+    <span class="chip m">Computed live</span>
+    <span class="chip n">g = −0.02 without expectancy</span>
+    <span class="chip">Mechanism untested</span>
+  </div>
+</header>
+
+<div class="note"><b>COMPUTED.</b> Everything below runs in your browser. The rule you type is
+parsed by a real recursive-descent expression parser (~60 lines, no library), evaluated on every
+test item, and compared against exact rational arithmetic. Nothing here is a replay, and nothing
+is a language model. The protégé is <em>literal on purpose</em>: it has no capacity to notice
+that your rule is wrong.</div>
+
+<h2>1 · The expectancy, set before you study anything</h2>
+<p>This ordering is not decoration. Kobayashi's 2024 meta-analysis (k = 39) found that teaching
+after studying <strong>with</strong> a teaching expectancy is <strong>g = 0.48 [0.34, 0.63]</strong>,
+while teaching after studying <strong>without</strong> one is <strong>g = −0.02 [−0.14, 0.11]</strong> —
+indistinguishable from zero. The obligation has to be announced <em>first</em>. So:</p>
+
+<div class="panel">
+  <div class="ptitle">Your obligation</div>
+  <div class="psub">Read this before you look at anything else on the page.</div>
+  <p style="margin-bottom:0"><strong>You are about to teach a protégé how to add fractions.</strong>
+  It knows nothing. It will believe exactly what you write, and only what you write. It will then
+  sit a test in front of you, and you will see its score. It will not correct your rule, cover for
+  you, or infer what you meant.</p>
+</div>
+
+<h2>2 · Teach the rule</h2>
+<p>The protégé works on problems of the form <code>a/b + c/d</code>. Say what its numerator and
+denominator should be. You may write it in words — the phrase table below shows exactly what
+vocabulary the parser recognises — or edit the formulas directly.</p>
+
+<div class="panel">
+  <div class="ptitle">Your explanation</div>
+  <div class="psub">Plain words. The parser matches phrases, it does not understand English.</div>
+  <textarea id="eng" spellcheck="false">To add fractions, add the tops and add the bottoms.</textarea>
+  <div class="row" style="margin-top:14px">
+    <button class="pri" id="teach">Teach it</button>
+    <button id="p1">“add tops, add bottoms”</button>
+    <button id="p2">“cross-multiply, multiply bottoms”</button>
+    <button id="p3">“multiply the bottoms only”</button>
+  </div>
+  <div id="parsed" class="mono-block" style="margin-bottom:14px"></div>
+
+  <div class="grid2">
+    <div class="slot"><label for="fn">Numerator formula</label><input id="fn" type="text" value="a + c" spellcheck="false" /></div>
+    <div class="slot"><label for="fd">Denominator formula</label><input id="fd" type="text" value="b + d" spellcheck="false" /></div>
+  </div>
+  <div class="row" style="margin:14px 0 0">
+    <button class="alt" id="run">Run the test suite</button>
+    <label style="text-transform:none;letter-spacing:0;margin:0;display:flex;gap:7px;align-items:center;font-weight:500;font-size:13.5px;color:var(--ink-2)">
+      <input type="checkbox" id="red" style="width:auto" /> reduce the final fraction
+    </label>
+  </div>
+  <div id="perr" class="err"></div>
+</div>
+
+<div class="scroll">
+<table class="lex">
+  <thead><tr><th>If your sentence contains…</th><th>The protégé writes</th></tr></thead>
+  <tbody id="lexb"></tbody>
+</table>
+</div>
+<p class="sub">That is the whole vocabulary. Anything else in your sentence is ignored, and the
+protégé says so rather than guessing — which is itself the point: an agent that silently repairs
+your phrasing hides your misconception from you.</p>
+
+<h2>3 · The protégé works the problems</h2>
+<p class="sub">Substitution shown line by line. This is what it actually did, not a summary of it.</p>
+<div id="works"></div>
+
+<h2>4 · The test suite</h2>
+<div class="panel sunken">
+  <div class="row" style="justify-content:space-between;align-items:flex-end;margin-bottom:0">
+    <div><div class="score" id="sc">—</div><small>Protégé score</small></div>
+    <div style="flex:1;min-width:180px">
+      <div class="bar"><i id="barf" style="width:0"></i></div>
+      <div class="psub" style="margin:8px 0 0" id="verdict"></div>
+    </div>
+  </div>
+</div>
+<div class="scroll">
+<table>
+  <thead><tr><th>Problem</th><th>Protégé</th><th>Correct</th><th>Result</th><th>Why it matters</th></tr></thead>
+  <tbody id="tb"></tbody>
+</table>
+</div>
+
+<div class="note" id="accid"></div>
+
+<h2>5 · The consequence it cannot see</h2>
+<p class="sub">The protégé answers a comprehension question by applying your rule and nothing else.
+It has no sanity check, no floor, no “that can’t be right”.</p>
+<div class="chat">
+  <div class="msg learner"><span class="who">You</span>Half a pizza plus half a pizza. Is that more
+  than half a pizza?</div>
+  <div class="msg agent" id="ans"><span class="who">Protégé</span>—</div>
+</div>
+<div class="note" id="selfc"></div>
+
+<h2>6 · What the evidence actually says</h2>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Contrast</th><th class="num">Effect</th><th>k</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr><td>Teaching after study <b>with</b> teaching expectancy</td><td class="num up">g = 0.48 [0.34, 0.63]</td><td>39</td><td>Kobayashi 2024, <code>MEASURED-META</code></td></tr>
+    <tr><td>Teaching after study <b>without</b> teaching expectancy</td><td class="num down">g = −0.02 [−0.14, 0.11]</td><td>39</td><td>Kobayashi 2024, <code>MEASURED-META</code> · <b>null</b></td></tr>
+    <tr><td>Preparing to teach, expectancy only, no delivery</td><td class="num">g = 0.35</td><td>28</td><td>Kobayashi 2019, <code>MEASURED-META</code></td></tr>
+    <tr><td>Delivery’s increment over expectancy-framed study alone</td><td class="num">g = 0.38 [0.17, 0.60]</td><td>14</td><td>Kobayashi 2024, <code>MEASURED-META</code></td></tr>
+    <tr><td>Human learning-by-teaching, pooled</td><td class="num">g = 0.56</td><td>—</td><td><b>Human</b> LBT — not this mechanism</td></tr>
+    <tr><td><b>An AI teachable agent that stays wrong</b></td><td class="num">no measurement exists</td><td>0</td><td>—</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note warn"><b>Do not let the numbers migrate.</b> g = 0.56 is <em>human</em>
+learning-by-teaching and g = 0.43 is peer tutoring’s tutor-side gain. Neither is a measurement of
+the artefact on this page. The honest statement is: the mechanism the strongest evidence points at
+has, as far as this survey could establish, <strong>never been built and tested in the form
+demonstrated here</strong> — a protégé that adopts a learner’s stated rule literally and refuses
+to repair it.</div>
+
+<h2>What this proves / what it does not</h2>
+
+<div class="panel">
+  <div class="ptitle">What it proves</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li>A protégé that is <em>faithful to a learner’s stated rule</em> is buildable in a few dozen
+    lines of deterministic code — no model, no network, no key.</li>
+    <li>Non-self-correction is implementable as an explicit property, not a hoped-for behaviour.
+    The engine has no path by which it could notice the rule is wrong.</li>
+    <li>A test suite can make a misconception <em>visible as a score</em>, including the case where
+    a bad rule accidentally passes an easy item — which is a real property of assessment design,
+    not a bug in the demo.</li>
+    <li>The teaching expectancy can be set reliably, for free, before every study episode. That is
+    the moderator carrying the effect, and software is unusually good at it.</li>
+  </ul>
+  <div class="ptitle">What it does not prove</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li><strong>That it teaches anyone anything.</strong> No learning outcome is measured on this
+    page, and none could be.</li>
+    <li>That the g = 0.48 expectancy effect transfers from human tutees to a symbolic engine. It
+    might; nobody has run the trial.</li>
+    <li>That this generalises beyond a domain with exact, checkable ground truth. Fraction addition
+    is the easy case. History, ethics and interpretation do not have an <code>=</code> operator.</li>
+    <li>That a learner who watches the protégé fail will revise their own rule rather than blame
+    the protégé. That attribution is exactly the thing the trial would have to measure.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../">Dashboard</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw">Research reports</a>
+  <br /><br />Sources: Kobayashi (2024), ERIC EJ1414484 · Kobayashi (2019) · Fiorella &amp; Mayer (2014).
+</footer>
+
+</div>
+<script>
+const tt=document.getElementById('tt'),R=document.documentElement;
+tt.onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+<script>
+/* ── expression engine ─────────────────────────────────────── */
+function parse(src){
+  const s=String(src).replace(/\s+/g,'');let i=0;
+  if(!s)throw new Error('empty formula');
+  function expr(){let v=term();while(s[i]==='+'||s[i]==='-'){const o=s[i++];v={o,l:v,r:term()};}return v;}
+  function term(){let v=un();while(s[i]==='*'||s[i]==='/'){const o=s[i++];v={o,l:v,r:un()};}return v;}
+  function un(){if(s[i]==='-'){i++;return{o:'neg',l:un()};}return atom();}
+  function atom(){
+    if(s[i]==='('){i++;const v=expr();if(s[i]!==')')throw new Error('missing ")"');i++;return v;}
+    if('abcd'.indexOf(s[i])>-1)return{v:s[i++]};
+    const m=/^\d+/.exec(s.slice(i));
+    if(!m)throw new Error('unexpected "'+(s[i]||'end of formula')+'" — allowed: a b c d 0-9 + - * / ( )');
+    i+=m[0].length;return{n:+m[0]};
+  }
+  const t=expr();
+  if(i<s.length)throw new Error('unexpected "'+s[i]+'" at position '+(i+1));
+  return t;
+}
+function ev(t,e){
+  if('n' in t)return t.n;
+  if('v' in t)return e[t.v];
+  if(t.o==='neg')return -ev(t.l,e);
+  const x=ev(t.l,e),y=ev(t.r,e);
+  return t.o==='+'?x+y:t.o==='-'?x-y:t.o==='*'?x*y:(y===0?NaN:x/y);
+}
+const gcd=(x,y)=>{x=Math.abs(x);y=Math.abs(y);while(y){[x,y]=[y,x%y];}return x||1;};
+const show=(src,e)=>String(src).replace(/[abcd]/g,ch=>e[ch]);
+
+/* ── phrase table (the entire vocabulary, printed on the page) ── */
+const LEX=[
+  {re:/add (the )?(tops|numerators)/i,      f:'n', x:'a + c',     say:'numerator = a + c'},
+  {re:/add (the )?(bottoms|denominators)/i, f:'d', x:'b + d',     say:'denominator = b + d'},
+  {re:/(multiply|times) (the )?(bottoms|denominators)/i, f:'d', x:'b * d', say:'denominator = b * d'},
+  {re:/(multiply|times) (the )?(tops|numerators)/i,      f:'n', x:'a * c', say:'numerator = a * c'},
+  {re:/cross[- ]?multiply/i,                f:'n', x:'a*d + c*b', say:'numerator = a*d + c*b'},
+  {re:/common denominator/i,                f:'d', x:'b * d',     say:'denominator = b * d'},
+  {re:/keep (the )?(bottom|denominator)/i,  f:'d', x:'b',         say:'denominator = b'},
+  {re:/keep (the )?(top|numerator)/i,       f:'n', x:'a',         say:'numerator = a'}
+];
+document.getElementById('lexb').innerHTML=LEX.map(r=>
+  '<tr><td><code>'+r.re.source.replace(/[\\^$]/g,'')+'</code></td><td class="num">'+r.say+'</td></tr>').join('');
+
+/* ── test suite ───────────────────────────────────────────── */
+const SUITE=[
+  {p:[1,2,1,2],why:'A half and a half. The canonical discriminator.'},
+  {p:[1,3,1,3],why:'Equal denominators — the denominator must not change.'},
+  {p:[1,2,1,3],why:'Unlike denominators. The case the rule is supposed to be for.'},
+  {p:[3,4,1,4],why:'Sums to a whole. Any rule that shrinks it is visibly wrong.'},
+  {p:[0,1,0,1],why:'Both zero. Almost every wrong rule passes this one.'},
+  {p:[2,3,0,1],why:'Adding zero must change nothing. An identity test.'},
+  {p:[5,6,1,6],why:'Crosses 1. Catches rules that always return a proper fraction.'},
+  {p:[1,10,3,10],why:'Small parts of a big whole — where the shrinking error hides.'}
+];
+
+/* ── state + rendering ────────────────────────────────────── */
+const $=id=>document.getElementById(id);
+function teach(){
+  const txt=$('eng').value;const hit=[];
+  let n=null,d=null;
+  LEX.forEach(r=>{if(r.re.test(txt)){hit.push(r.say);if(r.f==='n')n=r.x;else d=r.x;}});
+  const words=txt.toLowerCase().replace(/[^a-z ]/g,' ').split(/\s+/).filter(Boolean);
+  const stop=new Set(['to','add','fractions','the','and','then','you','a','of','it','is','by','with','together','just','first','same','fraction','both','each','over','tops','bottoms','numerators','denominators','multiply','times','cross','keep','top','bottom','numerator','denominator','common','simplify','reduce','down','up','number','numbers','put','result']);
+  const unknown=[...new Set(words.filter(w=>!stop.has(w)))];
+  let out='PARSE OF YOUR SENTENCE\n';
+  out+= hit.length? hit.map(h=>'  matched  → '+h).join('\n') : '  matched  → nothing';
+  out+='\n  ignored  → '+(unknown.length?unknown.join(', '):'(nothing)');
+  if(n)$('fn').value=n; if(d)$('fd').value=d;
+  if(!hit.length)out+='\n\n  I did not recognise a rule. I will keep the formulas I already have.\n  I am not going to guess what you meant.';
+  else out+='\n\n  Understood. Numerator = '+$('fn').value+' , denominator = '+$('fd').value+'\n  I will apply this exactly, to every problem, forever.';
+  $('parsed').textContent=out;
+  run();
+}
+function run(){
+  $('perr').textContent='';
+  let tn,td;
+  try{tn=parse($('fn').value);td=parse($('fd').value);}
+  catch(e){$('perr').textContent='The protégé cannot read your rule: '+e.message;
+    $('works').innerHTML='';$('tb').innerHTML='';$('sc').textContent='—';
+    $('barf').style.width='0';$('verdict').textContent='';$('accid').textContent='';
+    $('ans').innerHTML='<span class="who">Protégé</span>I do not have a rule I can apply.';return;}
+  const reduce=$('red').checked;
+  let pass=0,rows='',work='';
+  SUITE.forEach((t,idx)=>{
+    const [a,b,c,d]=t.p,e={a,b,c,d};
+    let pn=ev(tn,e),pd=ev(td,e);
+    const truthN=a*d+c*b, truthD=b*d;
+    const g0=gcd(truthN,truthD), tN=truthN/g0, tD=truthD/g0;
+    let dispN=pn,dispD=pd;
+    if(reduce&&Number.isFinite(pn)&&Number.isFinite(pd)&&pd!==0){const g=gcd(pn,pd);dispN=pn/g;dispD=pd/g;}
+    const bad=!Number.isFinite(pn)||!Number.isFinite(pd)||pd===0;
+    const ok=!bad&&(pn*truthD===truthN*pd);
+    if(ok)pass++;
+    const frac=(x,y)=>y===1?String(x):x+'/'+y;
+    const got=bad?'undefined (÷0)':frac(dispN,dispD);
+    const want=frac(tN,tD);
+    work+='<div class="work fade"><span class="hd">'+a+'/'+b+' + '+c+'/'+d+'</span>\n'+
+      '  numerator   = '+$('fn').value+'   = '+show($('fn').value,e)+'   = '+(Number.isFinite(pn)?pn:'?')+'\n'+
+      '  denominator = '+$('fd').value+'   = '+show($('fd').value,e)+'   = '+(Number.isFinite(pd)?pd:'?')+'\n'+
+      (reduce&&!bad&&(dispN!==pn)?'  reduce      → '+dispN+'/'+dispD+'\n':'')+
+      '  answer      → '+got+'\n'+
+      '  <span class="'+(ok?'ok':'bad')+'">'+(ok?'✓ matches '+want:'✗ correct answer is '+want)+'</span>'+
+      (ok?'':'\n  <span class="dim">protégé did not notice. rule unchanged.</span>')+'</div>';
+    rows+='<tr><td class="num">'+a+'/'+b+' + '+c+'/'+d+'</td><td class="num">'+got+'</td>'+
+      '<td class="num">'+want+'</td><td><span class="tag '+(ok?'ok':'no')+'">'+(ok?'pass':'fail')+'</span></td>'+
+      '<td>'+t.why+'</td></tr>';
+  });
+  $('works').innerHTML=work;
+  $('tb').innerHTML=rows;
+  $('sc').textContent=pass+' / '+SUITE.length;
+  $('barf').style.width=(100*pass/SUITE.length)+'%';
+  $('verdict').textContent = pass===SUITE.length
+    ? 'Every item passes. Your rule agrees with exact rational arithmetic on this suite.'
+    : (SUITE.length-pass)+' of '+SUITE.length+' items disagree with exact rational arithmetic. The protégé will keep answering this way until you change the rule.';
+  const lucky=[];
+  SUITE.forEach((t,i)=>{
+    const [a,b,c,d]=t.p,e={a,b,c,d};
+    const pn=ev(tn,e),pd=ev(td,e);
+    const okHere=Number.isFinite(pn)&&Number.isFinite(pd)&&pd!==0&&pn*(b*d)===(a*d+c*b)*pd;
+    if(okHere&&pass<SUITE.length)lucky.push(a+'/'+b+' + '+c+'/'+d);
+  });
+  $('accid').innerHTML = (pass>0&&pass<SUITE.length)
+    ? '<b>Note the items it got right.</b> '+lucky.join(', ')+' — a broken rule still passes these. '+
+      'A suite made only of items like <code>0/1 + 0/1</code> would have certified this rule as correct. '+
+      'Choosing items that <em>discriminate between the learner’s rule and the true rule</em> is the whole '+
+      'craft; it is the same problem as writing a distractor that models an error rather than a wrong number.'
+    : (pass===SUITE.length
+      ? '<b>Suite exhausted.</b> Passing this suite is not proof the rule is right — it is proof this suite cannot tell the difference. Try <code>a*c</code> over <code>b*d</code> and watch which items still pass.'
+      : '<b>Nothing passed.</b> The rule disagrees with rational arithmetic everywhere, including the degenerate cases.');
+  /* the comprehension question, answered by the rule itself */
+  const e={a:1,b:2,c:1,d:2};
+  const pn=ev(tn,e),pd=ev(td,e);
+  let msg;
+  if(!Number.isFinite(pn)||!Number.isFinite(pd)||pd===0){msg='Your rule gives me a division by zero here, so I have no answer. I am not going to invent one.';}
+  else{
+    const val=pn/pd, g=gcd(pn,pd);
+    const f=(pd/g===1)?String(pn/g):(pn/g)+'/'+(pd/g);
+    msg='Using your rule: numerator = '+show($('fn').value,e)+' = '+pn+', denominator = '+
+      show($('fd').value,e)+' = '+pd+'. So a half plus a half is <b>'+f+'</b>. '+
+      (val>0.5?'That is more than a half.':val===0.5?'That is exactly a half — so no, it is not more.'
+        :'That is <b>less</b> than a half, so no. Adding a half to a half makes it smaller.');
+  }
+  $('ans').innerHTML='<span class="who">Protégé</span>'+msg;
+  $('selfc').innerHTML = pass===SUITE.length
+    ? '<b>It still did not check.</b> It reached a correct answer because your rule is correct, not because it verified anything. Break the rule and watch it defend the absurdity with equal confidence.'
+    : '<b>That is the mechanism.</b> The protégé is not being obtuse; it is being faithful. It has no representation of “a fraction of a pizza”, no floor of 0, and no comparison against expectation. Everything it says is a consequence of the sentence you wrote. This is the property that makes the error yours to find.';
+}
+$('teach').onclick=teach;
+$('run').onclick=run;
+$('red').onchange=run;
+$('fn').oninput=$('fd').oninput=()=>{clearTimeout(window._t);window._t=setTimeout(run,220);};
+$('p1').onclick=()=>{$('eng').value='To add fractions, add the tops and add the bottoms.';teach();};
+$('p2').onclick=()=>{$('eng').value='To add fractions, cross-multiply for the top and multiply the bottoms.';teach();};
+$('p3').onclick=()=>{$('eng').value='Multiply the bottoms and add the tops.';teach();};
+teach();
+</script>
+</body>
+</html>
