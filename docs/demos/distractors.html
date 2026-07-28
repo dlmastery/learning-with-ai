@@ -411,6 +411,8 @@ const PIPE_SRC=
   }
   // An item needs three usable options. Fewer means these particular numbers
   // cannot discriminate between the errors, and the item is NOT shipped.
+  // Surplus survivors are held in reserve for a parallel form of the same item.
+  markReserve(log, 3);
   return { options: out.slice(0, 3), log, usable: out.length >= 3 };
 }`;
 el('pipesrc').textContent=PIPE_SRC;
@@ -426,6 +428,8 @@ function generateB(stem,params){
     else out.push(cand);
     log.push({err,cand,verdict});
   }
+  let k=0;
+  log.forEach(l=>{ if(l.verdict==='accepted'){ if(k>=3) l.verdict='accepted · held in reserve'; k++; } });
   return {options:out.slice(0,3),log,usable:out.length>=3,key};
 }
 function generateA(stem,params){
@@ -494,11 +498,12 @@ function renderAll(){
 
   el('pipeline').innerHTML=['<tr><th>Named error</th><th>Applied to these numbers</th><th>Yields</th><th>Filter verdict</th></tr>']
     .concat(B.log.map(l=>{
-      const ok=l.verdict==='accepted';
+      const ok=l.verdict.startsWith('accepted');
+      const cls=l.verdict==='accepted'?'y':(ok?'c':'n');
       return `<tr><td><b>${esc(l.err.name)}</b><br /><span style="font-size:12.5px;color:var(--ink-3)">${esc(l.err.note)}</span></td>
         <td style="font-size:12.5px;color:var(--ink-3)"><code>${esc(l.err.id)}</code></td>
         <td class="num" style="font-size:15px;color:${ok?'var(--ink)':'var(--ink-3)'}">${esc(l.cand.s)}</td>
-        <td><span class="pill ${ok?'y':'n'}">${esc(l.verdict)}</span></td></tr>`;})).join('');
+        <td><span class="pill ${cls}">${esc(l.verdict)}</span></td></tr>`;})).join('');
   el('pipeverdict').innerHTML=B.usable
     ? `<div class="note" style="margin-bottom:0"><b>Item shipped.</b> Three usable options, each
        derived from a distinct named error, none colliding with the key or with each other. A

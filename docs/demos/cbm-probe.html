@@ -544,7 +544,7 @@ GROWTH-CLAIM GATE
   Below that the system reports the points and REFUSES the claim.
 
 ERROR PROFILE          (skills-analysis feedback — Stecker/Fuchs/Fuchs)
-  for each item type: accuracy over the last 4 administered probes
+  for each item type: accuracy over the 4 probes that triggered the rule
   weakest ← argmin over types with ≥ 8 items observed
 
 PRESCRIPTION           (the component that carried the achievement effect)
@@ -585,8 +585,8 @@ function fired(){
   }
   return 0;
 }
-function profile(){
-  const last=RUN.weeks.slice(-4);
+function profile(uptoWeek){
+  const last=RUN.weeks.filter(x=>x.w<=uptoWeek).slice(-4);
   const agg={}; TYPES.forEach(t=>agg[t.id]={n:0,right:0});
   last.forEach(x=>TYPES.forEach(t=>{agg[t.id].n+=x.byType[t.id].n;agg[t.id].right+=x.byType[t.id].right;}));
   const rows=TYPES.map(t=>({t,n:agg[t.id].n,acc:agg[t.id].n?agg[t.id].right/agg[t.id].n*100:null}));
@@ -638,9 +638,9 @@ function renderRun(){
              :'The last four points are not all below the goal line, so no change is prescribed. Doing nothing is a decision, and it is the correct one here.'}</div>`;
     return;
   }
-  const p=profile(), ch=selectChange(p);
+  const p=profile(f), ch=selectChange(p);
   const prof=`<div class="scroll"><table>
-    <tr><th>Item type</th><th>Items over last 4 probes</th><th>Accuracy</th><th>Eligible</th></tr>
+    <tr><th>Item type</th><th>Items in the 4 triggering probes</th><th>Accuracy</th><th>Eligible</th></tr>
     ${p.rows.map(r=>`<tr><td><b>${esc(r.t.label)}</b></td><td class="num">${r.n}</td>
       <td class="num ${r.acc!==null&&r.acc<50?'down':'up'}">${r.acc===null?'—':r.acc.toFixed(0)+'%'}</td>
       <td>${r.n>=8?'<span class="pill y">yes</span>':'<span class="pill n">&lt; 8 items</span>'}</td></tr>`).join('')}
