@@ -647,41 +647,105 @@ The brief asked whether that generalises. **It does, and here is the census.**
 For each education-AI subfield I queried the **arXiv advanced-search UI** (the API was
 rate-limited throughout) for the subfield phrase, then for the subfield phrase **AND**
 each of four learning-outcome markers: `"learning gain"`, `"post-test"`, `"pre-test"`,
-`"randomized controlled"`. Counts are arXiv's own reported result totals. This is a
-**co-occurrence census, not a full-text audit** — a paper could measure learning without
-using any of these four phrases, and a paper could use a phrase without measuring
-learning. It is reproducible, which is the point, and the baseline row replicates C3's
-39 exactly.
+`"randomized controlled"`. Counts are arXiv's own reported result totals, parsed from the
+`of N results` string on `arxiv.org/search/advanced` with
+`classification-include_cross_list=include` and each term in the `all` field.
+
+This is a **co-occurrence census, not a full-text audit** — a paper could measure learning
+without using any of these four phrases, and a paper could use a phrase without measuring
+learning. Both directions of error exist. It is *reproducible*, which is the point, and
+the baseline row replicates C3's 39 exactly, which is the check that it is measuring what
+C3 measured. Re-run it before publication; these counts move.
 
 ### 6.2 Results
 
-<!--CENSUS_TABLE-->
+**20 subfields · 2,907 papers · 52 marker-hits.** Retrieved 2026-07-28. The four marker
+columns overlap, so "any" is an **upper bound** (a sum, not a union), which makes every
+percentage below *generous to the field*.
+
+| Subfield (arXiv phrase) | Papers | learning gain | post-test | pre-test | randomized controlled | any (≤) |
+|---|---:|---:|---:|---:|---:|---:|
+| **Generation family** | | | | | | |
+| `"slide generation"` | 39 | 0 | 0 | 0 | 0 | **0.0%** |
+| `"textbook generation"` | 4 | 0 | 0 | 0 | 0 | **0.0%** |
+| `"curriculum generation"` | 52 | 0 | 0 | 0 | 0 | **0.0%** |
+| `"automated essay scoring"` | 123 | 0 | 0 | 0 | 0 | **0.0%** |
+| `"programming feedback"` | 19 | 0 | 0 | 0 | 0 | **0.0%** |
+| `"explanation generation"` | 490 | 0 | 0 | 0 | 1 | 0.2% |
+| `"question generation"` | 768 | 1 | 2 | 0 | 1 | 0.5% |
+| `"math word problem"` | 181 | 1 | 0 | 0 | 0 | 0.6% |
+| `"concept map"` | 83 | 0 | 1 | 0 | 0 | 1.2% |
+| `"hint generation"` | 36 | 0 | 0 | 0 | 1 | 2.8% |
+| `"worksheet"` | 112 | 3 | 2 | 0 | 0 | 4.5% |
+| `"educational video"` | 77 | 1 | 2 | 2 | 0 | 6.5% |
+| `"lesson plan"` | 61 | 1 | 2 | 1 | 0 | 6.6% |
+| **Interaction family** | | | | | | |
+| `"spaced repetition"` | 19 | 0 | 0 | 0 | 0 | **0.0%** |
+| `"educational dialogue"` | 45 | 0 | 0 | 0 | 0 | **0.0%** |
+| `"student simulator"` | 33 | 0 | 0 | 0 | 0 | **0.0%** |
+| `"learning path"` | 156 | 0 | 0 | 0 | 1 | 0.6% |
+| `"knowledge tracing"` | 279 | 3 | 2 | 1 | 1 | 2.5% |
+| `"intelligent tutoring system"` | 297 | 9 | 5 | 1 | 1 | 5.4% |
+| `"LLM tutor"` | 33 | 2 | 3 | 1 | 0 | 18.2% |
+| **Generation family, pooled** | **2,045** | 6 | 9 | 3 | 4 | **≤1.08%** |
+| **Interaction family, pooled** | **862** | 14 | 10 | 3 | 3 | **≤3.48%** |
+| **All 20 subfields** | **2,907** | 20 | 19 | 6 | 7 | **≤1.79%** |
 
 ### 6.3 What the census shows
 
-**The pattern generalises, and it is stronger than "sparse."** Across the subfields
-surveyed, papers containing any learning-outcome marker are a **low-single-digit
-percentage** of each literature, and several substantial subfields return **exact zeros
-on all four markers**.
+**The pattern generalises — but it generalises with a shape, and the shape is the more
+useful finding.**
 
-The zero-on-all-four subfields are the finding. `"slide generation"` (39 papers),
-`"automated essay scoring"` (123 papers), `"spaced repetition"` (19), `"textbook
-generation"` (4) — four literatures, one of them with over a hundred papers, in which
-**not one abstract mentions a pre-test, a post-test, a learning gain, or a randomised
-control.**
+**(a) It generalises.** Across 2,907 papers in 20 education-AI subfields, at most **1.79%**
+carry any learning-outcome marker, and that figure is an upper bound built from
+overlapping columns. C3's slide-generation result was not an anomaly. It was
+representative.
 
-Automated essay scoring is the sharpest case. It is one of the oldest quantitative
-subfields in education technology, it has decades of psychometric infrastructure, and its
-arXiv literature optimises **agreement with human raters** — a *reliability* target. A
-scorer that agrees perfectly with graders while producing feedback nobody learns from
-scores 100% on every benchmark in that literature. The dependent variable is the wrong one
-by construction, and the field is internally consistent about it.
+**(b) Eight of twenty subfields return exact zero on all four markers** — 334 papers in
+which not one abstract mentions a pre-test, a post-test, a learning gain, or a randomised
+control:
 
-`"spaced repetition"` at 19 papers with four zeros is almost comic, given that spaced
-retrieval is among the best-replicated findings in all of learning science. The arXiv
-literature on it is about **scheduling algorithms**, evaluated against **recall-prediction
-accuracy** — again a proxy, and again one that a better algorithm can win without any
-human retaining anything more.
+> `"slide generation"` (39) · `"textbook generation"` (4) · `"curriculum generation"` (52) ·
+> `"automated essay scoring"` (123) · `"programming feedback"` (19) ·
+> `"spaced repetition"` (19) · `"educational dialogue"` (45) · `"student simulator"` (33)
+
+**(c) The split runs between *generating artifacts* and *interacting with learners*.**
+The generation family pools to **≤1.08%** (2,045 papers); the interaction family to
+**≤3.48%** (862 papers). Systems that make a thing for a learner overwhelmingly evaluate
+the thing. Systems that talk to a learner at least sometimes evaluate the learner. That
+is a three-fold difference and it is the actionable version of this census: **the
+measurement deficit is concentrated in exactly the subfields that are easiest to ship.**
+
+**(d) The pre-LLM literature measures learning more than the LLM literature does.**
+`"intelligent tutoring system"` — the classical, decades-old subfield — returns 297 papers
+with **16 marker-hits including 9 "learning gain"**, the largest absolute count in the
+census. The ITS tradition inherited its evaluation norms from education research, and it
+kept them. The generation subfields inherited theirs from NLP, and NLP evaluates outputs.
+**Nothing was forgotten here; two different research cultures simply collided, and the
+one with the weaker evaluation norms is the one with the funding.**
+
+Three subfields deserve individual comment because they are the most instructive.
+
+**Automated essay scoring (123 papers, four zeros)** is the sharpest case. It is one of the
+oldest quantitative subfields in education technology, with decades of psychometric
+infrastructure, and its arXiv literature optimises **agreement with human raters** — a
+*reliability* target. A scorer that agrees perfectly with graders while producing feedback
+nobody learns from scores 100% on every benchmark in that literature. The dependent
+variable is wrong by construction, and the field is entirely consistent about it.
+
+**Spaced repetition (19 papers, four zeros)** is almost comic, given that spaced retrieval
+is among the best-replicated findings in all of learning science. The arXiv literature is
+about **scheduling algorithms** evaluated against **recall-prediction accuracy** — a proxy
+a better algorithm can win without any human retaining anything more. (This is the same
+gap `F11` found in zemomemo.com, which implements FSRS-6 and cites no efficacy datum. The
+product and the literature share the defect.)
+
+**Student simulator (33 papers, four zeros)** is the load-bearing one. D1's cluster C4
+already flagged that simulated students are the *evaluation infrastructure* much of this
+field rests on, and that the simulators are themselves unvalidated (they treat corrective
+feedback as an abandonment cue rather than updating a misconception). The census confirms
+there is no human-outcome anchor anywhere in that subfield. **A tower of proxies with no
+foundation course is not a measurement system.**
 
 **The mechanism behind the pattern, stated once.** These are computer-science
 literatures, and CS evaluates artifacts. Measuring learning requires human subjects,
@@ -908,8 +972,9 @@ The editorial standard requires ≥1 per section; the brief asked for ≥3. Ther
    2024-09-22. The pedagogically decisive capability has no open implementation.
 8. **Voxtral Realtime is not full-duplex.** Widely assumed otherwise; its own card says
    streaming ASR. Speech in, text out.
-9. **arXiv census: four education-AI subfields return zero on all four learning-outcome
-   markers**, including automated essay scoring at 123 papers.
+9. **arXiv census: 8 of 20 education-AI subfields return zero on all four
+   learning-outcome markers** (334 papers), including automated essay scoring at 123.
+   Pooled across 2,907 papers, **≤1.79%** carry any marker.
 10. **ERIC: 7 RCTs against 1,565 ChatGPT-education records (~0.45%)**, and four of the
     seven are second-language learning.
 11. **ERIC `Kolibri` = 2 records, neither an RCT; ERIC `Oppia` = 0.** No self-hostable
@@ -963,9 +1028,13 @@ has demonstrably ended a business model — the answer-vending one — on an aud
    consistent, and together they say the returns to pedagogical design scale with how bad
    the alternative was. This is the survey's sharpest available statement about *where*
    to build, and it is independent support for the project's standing correction.
-4. **§6 — the census and its method.** The "zero learning outcomes" pattern generalises
-   beyond slide generation; four subfields return exact zeros. The method is a dozen
-   lines of Python against a public search UI and should be re-run before publication.
+4. **§6 — the census, its method, and its shape.** The "zero learning outcomes" pattern
+   generalises well beyond slide generation: 2,907 papers, ≤1.79% carrying any
+   learning-outcome marker, **8 of 20 subfields at exact zero**. But the shape matters
+   more than the headline — **generation subfields ≤1.08% vs interaction subfields
+   ≤3.48%**, and the pre-LLM ITS literature measures learning *more* than the LLM
+   literature does. The method is a dozen lines of Python against a public search UI and
+   should be re-run before publication.
 5. **§2.1 — Khanmigo's null and its diagnosis.** A correct mechanism defeated by
    invocation friction. The design lesson (remove the metacognitive prerequisite; put the
    tutor *inside* the task) is the most transferable thing in this report.
