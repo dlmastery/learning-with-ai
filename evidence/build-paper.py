@@ -30,10 +30,11 @@ PARTS = [
    "22-the-one-interaction-that-survived", "11-the-archivist"]),
 
  ("III", "The mechanisms",
-  "Seven techniques, each with a measured effect and a specified failure mode. "
+  "Eight techniques, each with a measured effect and a specified failure mode. "
   "These are the parts that do the teaching.",
   ["02-teach-to-learn", "05-the-explanation-is-the-work",
-   "25-the-ladder-of-explanation", "08-nobody-needs-a-better-scheduler",
+   "25-the-ladder-of-explanation", "29-explaining-hard-things",
+   "08-nobody-needs-a-better-scheduler",
    "26-beyond-the-tutor", "06-what-the-object-must-refuse", "17-showing"]),
 
  ("IV", "Correctness",
@@ -202,70 +203,4 @@ One of them documents a mechanism this project proposed, benchmarked, and
     print(f"PAPER.md — {stats['sections']} sections, {stats['words']:,} words, {len(PARTS)} parts")
     if missing: print(f"  declared but missing: {', '.join(missing)}")
     if orphans: print(f"  NOT IN THE PAPER: {', '.join(orphans)}")
-    return doc, stats
-
-
-def build_html():
-    """Render PAPER.md to a single readable web page with a sticky contents rail."""
-    import markdown
-    doc, stats = build()
-    body = markdown.markdown(doc, extensions=["tables", "toc", "fenced_code", "attr_list"])
-    # Wide content must scroll inside its own container, never the page body.
-    body = re.sub(r"<table>", '<div class="scroll"><table>', body)
-    body = re.sub(r"</table>", "</table></div>", body)
-    css = (ROOT / "docs" / "demos" / "demo.css").read_text()
-    page = f"""<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Learning in the New Frontier AI World — the paper</title>
-<meta name="description" content="A {stats['words']:,}-word survey of AI-native learning. Evidence-labelled throughout, nulls first-class, corrections published.">
-<style>
-{css}
-.wrap{{max-width:860px}}
-article h1{{font:400 clamp(30px,5vw,44px)/1.12 var(--serif);letter-spacing:-.022em;margin:0 0 10px}}
-article h2{{font:400 30px/1.2 var(--serif);margin:64px 0 14px;padding-top:16px;
-  border-top:1px solid var(--line);letter-spacing:-.018em;scroll-margin-top:20px}}
-article h3{{font:650 16px/1.4 var(--sans);margin:34px 0 10px}}
-article h1+h3{{font:400 19px/1.5 var(--serif);color:var(--ink-3);margin:0 0 26px}}
-article p{{max-width:74ch;margin-bottom:17px}}
-article ul,article ol{{max-width:74ch;margin:0 0 17px 22px;color:var(--ink-2)}}
-article li{{margin-bottom:7px}}
-article blockquote{{border-left:2px solid var(--felt);padding:2px 0 2px 18px;margin:22px 0;
-  color:var(--ink);font-size:16.5px;max-width:70ch}}
-article table{{min-width:0;margin:0}}
-article .scroll{{margin:22px 0}}
-article pre{{overflow-x:auto;background:var(--sunken);border:1px solid var(--line);
-  border-radius:9px;padding:14px;font-size:12.5px}}
-article img,article svg{{max-width:100%;height:auto}}
-article *{{overflow-wrap:anywhere}}
-article hr{{border:0;border-top:1px solid var(--line);margin:56px 0}}
-article sub{{color:var(--ink-3);font-size:12px}}
-article code{{font-size:12.5px}}
-.top{{position:fixed;bottom:20px;right:20px;z-index:40;padding:9px 13px;border-radius:9px;
-  background:var(--surface);border:1px solid var(--line-2);font-size:12.5px;cursor:pointer}}
-@media print{{.theme,.top,.crumb{{display:none}} body{{padding:0}}}}
-</style></head><body>
-<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
-<button class="top" onclick="scrollTo({{top:0,behavior:'smooth'}})">↑ Contents</button>
-<div class="wrap">
-<nav class="crumb"><a href="./">← Dashboard</a> · <a href="demos/">Demos</a> ·
-<a href="https://github.com/dlmastery/learning-with-ai">Repository</a></nav>
-<article>
-{body}
-</article>
-<footer>Evidence-labelled throughout. Nulls are first-class.
-Corrections are published in
-<a href="https://github.com/dlmastery/learning-with-ai/blob/main/CORRECTIONS.md">CORRECTIONS.md</a>.
-</footer>
-</div>
-<script>
-const R=document.documentElement;
-document.getElementById('tt').onclick=()=>{{const d=R.getAttribute('data-theme')==='dark'||
- (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
- R.setAttribute('data-theme',d?'light':'dark');}};
-</script></body></html>"""
-    (ROOT / "docs" / "paper.html").write_text(page, encoding="utf-8")
-    print(f"docs/paper.html — {len(page)//1024} KB")
-
-if __name__ == "__main__":
-    if "--html" in sys.argv: build_html()
+    return doc, stats, structure
