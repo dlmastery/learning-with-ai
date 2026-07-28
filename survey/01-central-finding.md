@@ -12,7 +12,7 @@ date: 2026-07-25
 | Result | Effect | Evidence |
 |---|---|---|
 | Guardrailed AI tutor | **+127% practice**; unassisted exam **−0.004 (ns)** — removes harm, adds no measured benefit | Randomised, ~1,000 students |
-| Gemini Guided Learning, Sierra Leone | **+0.258 SD (ANCOVA)** — but the **unadjusted estimate is +0.216 SD, SE 0.137, *not significant*** | Pre-registered RCT; 1,763 enrolled, **1,423 analysed**; model swapped mid-trial; Google.org + Gates funded |
+| Gemini Guided Learning, Sierra Leone (§09)| **+0.258 SD (ANCOVA)** — but the **unadjusted estimate is +0.216 SD, SE 0.137, *not significant*** | Pre-registered RCT; 1,763 enrolled, **1,423 analysed**; model swapped mid-trial; Google.org + Gates funded |
 | Retrieval practice | **g = 0.499** [0.442, 0.557] in labs *and* classrooms | 222 studies, 48,478 students; **I² = 88%** |
 | Learning by teaching (human tutee) | **g = 0.56**, robust at delay | Meta-analysis; expectancy must precede study |
 | Productive failure | **g = 0.36**, rising to **0.58** at high fidelity | Meta-analysis |
@@ -31,7 +31,7 @@ that was our error.
 113,344 *messages* were coded: **91.4% concept-building, scaffolding in 76.4% of
 responses, direct solutions in 2.1%.** But the paper states plainly that the team
 **could not link transcripts to individual students' assessment outcomes.** The
-coding and the effect estimate sit in the same report and are never joined. The
+coding and the effect estimate sit in the same report and are never joined (§09). The
 withholding is real; that the withholding *caused* the gain is an inference.
 
 ## The one design choice that decides it
@@ -138,7 +138,7 @@ The efficacy scoreboard revised three claims in this section. Recorded rather th
 quietly edited, per the editorial standard.
 
 1. **The Sierra Leone headline is fragile.** +0.258 SD holds only under ANCOVA;
-   Table C.4's unadjusted estimate is **+0.216 SD, SE 0.137 — not significant**.
+   Table C.4's unadjusted estimate is **+0.216 SD, SE 0.137 — not significant** (§09).
    1,423 of 1,763 analysed. The report itself is unusually honest; the distortion
    happened downstream, including here.
 2. **Restraint removes harm; it does not add measured benefit.** Bastani's

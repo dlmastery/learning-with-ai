@@ -94,7 +94,7 @@ Now line it up with two results already in this survey:
 
 | Study | Comparison | Result |
 |---|---|---|
-| Bastani | Guardrailed vs unguarded AI | Guardrails **removed harm** (−17% → −0.004 n.s.) |
+| Bastani | Guardrailed vs unguarded AI | Guardrails **removed harm** (−17% → −0.004 n.s.) (§01)|
 | Fütterer | Pedagogical design vs **plain ChatGPT** | **No advantage** |
 | Sierra Leone | Designed tutor vs **little instruction** | Benefit |
 

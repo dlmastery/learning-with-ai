@@ -2,7 +2,7 @@
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**33 sections · 80,312 words · 32 research reports · ~2,100 source citations**
+**33 sections · 80,330 words · 32 research reports · ~2,100 source citations**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -423,7 +423,7 @@ retrieval — for learners who have never had anyone to run them.
 | Result | Effect | Evidence |
 |---|---|---|
 | Guardrailed AI tutor | **+127% practice**; unassisted exam **−0.004 (ns)** — removes harm, adds no measured benefit | Randomised, ~1,000 students |
-| Gemini Guided Learning, Sierra Leone | **+0.258 SD (ANCOVA)** — but the **unadjusted estimate is +0.216 SD, SE 0.137, *not significant*** | Pre-registered RCT; 1,763 enrolled, **1,423 analysed**; model swapped mid-trial; Google.org + Gates funded |
+| Gemini Guided Learning, Sierra Leone (§09)| **+0.258 SD (ANCOVA)** — but the **unadjusted estimate is +0.216 SD, SE 0.137, *not significant*** | Pre-registered RCT; 1,763 enrolled, **1,423 analysed**; model swapped mid-trial; Google.org + Gates funded |
 | Retrieval practice | **g = 0.499** [0.442, 0.557] in labs *and* classrooms | 222 studies, 48,478 students; **I² = 88%** |
 | Learning by teaching (human tutee) | **g = 0.56**, robust at delay | Meta-analysis; expectancy must precede study |
 | Productive failure | **g = 0.36**, rising to **0.58** at high fidelity | Meta-analysis |
@@ -442,7 +442,7 @@ that was our error.
 113,344 *messages* were coded: **91.4% concept-building, scaffolding in 76.4% of
 responses, direct solutions in 2.1%.** But the paper states plainly that the team
 **could not link transcripts to individual students' assessment outcomes.** The
-coding and the effect estimate sit in the same report and are never joined. The
+coding and the effect estimate sit in the same report and are never joined (§09). The
 withholding is real; that the withholding *caused* the gain is an inference.
 
 ## The one design choice that decides it
@@ -549,7 +549,7 @@ The efficacy scoreboard revised three claims in this section. Recorded rather th
 quietly edited, per the editorial standard.
 
 1. **The Sierra Leone headline is fragile.** +0.258 SD holds only under ANCOVA;
-   Table C.4's unadjusted estimate is **+0.216 SD, SE 0.137 — not significant**.
+   Table C.4's unadjusted estimate is **+0.216 SD, SE 0.137 — not significant** (§09).
    1,423 of 1,763 analysed. The report itself is unusually honest; the distortion
    happened downstream, including here.
 2. **Restraint removes harm; it does not add measured benefit.** Bastani's
@@ -610,7 +610,7 @@ Now the AI results, all immediate post-tests unless stated:
 |---|---|---|---|---|---|
 | **Sierra Leone**, Gemini Guided Learning (RCT-P) | **+0.258 SD** adjusted; **+0.216 SD unadjusted, n.s.** | 1,423 analysed, 48 classrooms | 8 weeks | No | Blind-scored, curriculum-aligned |
 | **Nigeria**, Copilot after-school English (RCT) | +0.310 SD composite; **+0.206 SD on the school's own exam** | 759 analysed of 1,328 | 6 weeks | No | Yes |
-| **Bastani et al.**, Turkey (PNAS) | Assisted practice +127%. **Unassisted exam: −17% unguarded, −0.004 guarded** | ~1,000 | 4 sessions | AI-removed, same session | No |
+| **Bastani et al.**, Turkey (PNAS) | Assisted practice +127%. **Unassisted exam: −17% unguarded, −0.004 guarded** (§01)| ~1,000 | 4 sessions | AI-removed, same session | No |
 | **Kestin et al.**, Harvard physics | d ≈ 0.63 (to 1.3 ceiling-corrected) | 194 | **two ~1-hour lessons** | No | No |
 | **Tutor CoPilot** (RCT-P) | +4 p.p. exit ticket | 900 tutors, 1,800 students | 2 months | No | **Yes — and null** |
 | **Rori**, Ghana | 0.37 SD | ~1,000, **11 clusters** | 8 months | No | No |
@@ -719,7 +719,7 @@ closed-laptop exam on conceptually matched problems.
 | Outcome | GPT Base (unguarded) | GPT Tutor (guardrailed) |
 |---|---|---|
 | Assisted practice | +0.137 (SE 0.031) = **+48%** | +0.361 (SE 0.032) = **+127%** |
-| Unassisted exam | **−0.054 (SE 0.022) = −17%, p < 0.05** | −0.004 (SE 0.013), n.s. |
+| Unassisted exam | **−0.054 (SE 0.022) = −17%, p < 0.05** (§01)| −0.004 (SE 0.013), n.s. |
 
 Read the two columns against each other. The arm that performed **best** while
 assisted is the arm whose unassisted coefficient is indistinguishable from zero.
@@ -734,7 +734,7 @@ ahead of the evidence, including us.
 
 A note on provenance, because the correction is on this project's record: the PNAS
 notice attached to Bastani et al. is an affiliation erratum. It is not a correction
-to the result. The −17% stands.
+to the result. The −17% stands (§01).
 
 ---
 
@@ -966,7 +966,7 @@ Now line it up with two results already in this survey:
 
 | Study | Comparison | Result |
 |---|---|---|
-| Bastani | Guardrailed vs unguarded AI | Guardrails **removed harm** (−17% → −0.004 n.s.) |
+| Bastani | Guardrailed vs unguarded AI | Guardrails **removed harm** (−17% → −0.004 n.s.) (§01)|
 | Fütterer | Pedagogical design vs **plain ChatGPT** | **No advantage** |
 | Sierra Leone | Designed tutor vs **little instruction** | Benefit |
 
@@ -1849,7 +1849,7 @@ different evidence, different authority is a crew.
 ## 4. The five things this system does that nothing else does
 
 **1. It refuses.** Unguarded AI leaves learners **17% worse** once you take it
-away. The Mentor's highest-value act is declining to answer — asking instead,
+away (§01). The Mentor's highest-value act is declining to answer — asking instead,
 waiting instead, letting a struggle run to the exact edge of productive and no
 further.
 
@@ -1919,7 +1919,7 @@ hypothesis rather than a pitch. The rules stay:
   Gap-widening is therefore a design failure we can avoid, not a law we must
   accept. If ours widens gaps, it has failed, whatever the mean says.
 - **The Null-Learner Test** on every metric: simulate an agent maximising it while
-  teaching nothing. If the metric can't tell, it's the wrong metric.
+  teaching nothing (§14). If the metric can't tell, it's the wrong metric.
 - Publish the nulls. Especially ours.
 
 ---
@@ -2412,7 +2412,7 @@ unevidenced. The honest table is very short:
 | Interest and context of examples | **PLAUSIBLE** — small, real, easily oversold |
 | Learning styles / modality matching | **DEBUNKED** |
 | Personality or demographic tailoring | **DEBUNKED or unevidenced** |
-| Stated preference for difficulty | **ANTI-SIGNAL** — preference moves d ≈ 0.48 while knowledge moves 0 |
+| Stated preference for difficulty | **ANTI-SIGNAL** — preference moves d ≈ 0.48 while knowledge moves 0 (§01)|
 
 ---
 
@@ -2496,7 +2496,7 @@ useful.
 
 Retrieval practice (**g = 0.499**, 48,478 students), spacing (**d = 0.54**), and the
 teaching-expectancy framing (**g = 0.48** vs **−0.02** without) run for everyone,
-always. They are not personalisation candidates and they are not A/B tested against
+always (§24). They are not personalisation candidates and they are not A/B tested against
 nothing.
 
 This concedes the strongest form of the counter-argument **structurally rather than
@@ -3664,7 +3664,7 @@ week six.
 - **Four rungs exist as a library; a learner traverses two or three.** Three-step
   beat two-step at p = 0.032; five-step did not beat three-step at p = 0.738.
 - **Entry is measured, never chosen.** Preference moves d ≈ 0.48 while knowledge
-  moves zero, and the easiness effect survives explicit debiasing. The dropdown may
+  moves zero, and the easiness effect survives explicit debiasing (§01). The dropdown may
   exist as an override; it may never be the default input.
 - **Per prerequisite, take the weakest link.** No single global level per learner.
 - **Generate top-down.** A refinement chain cannot be checked against an account
@@ -3907,7 +3907,7 @@ What remains, in order of value:
    conjectures die in a millisecond.
 2. **The adversary, unannounced.** The referee who supplies the case the proof forgot.
    *Announced* devil's advocacy measurably produces bolstering of the original view
-   (§26), so the objection must be owned, not performed.
+  (§26), so the objection must be owned, not performed.
 3. **Explaining it back, with the expectancy set first** — g = 0.48 with, **g = −0.02**
    without (§05). This is why seminars work and "any questions?" does not.
 4. **Formal verification where it earns its cost**, and honestly: 97% autoformalisation
@@ -3955,7 +3955,7 @@ survey:
 
 | Practice | Effect | Base |
 |---|---|---|
-| **Retrieval practice** | **g = 0.499** [0.442, 0.557] | 222 classroom studies, 48,478 students — **I² = 88%** |
+| **Retrieval practice** | **g = 0.499** [0.442, 0.557] (§24)| 222 classroom studies, 48,478 students — **I² = 88%** |
 | **Spacing / distributed practice** | **d = 0.54** [0.31, 0.77] | 22 reports, 31 effects, N > 3,000 (classroom meta-analysis, 2025). Cepeda et al. 2006 is the canonical lab meta-analysis |
 
 These are among the largest, most replicated effects in all of learning science.
@@ -5894,7 +5894,7 @@ and never spent it on the capability and learning claims that now go unevidenced
 Second, the reframe that should reorganise priorities: **the emergency was never
 cheating.** In Bastani et al.'s trial of ~1,000 high-school maths students, unguarded
 assistance improved practice performance by 48% and left students **17% worse** on an
-unassisted exam than students who never had access. *(A note on provenance, since this
+unassisted exam than students who never had access (§01). *(A note on provenance, since this
 project publishes its corrections: the PNAS notice attached to that paper is an
 affiliation erratum. The −17% stands.)*
 
@@ -6122,7 +6122,7 @@ Unconstrained LLM access **widens** the gap between low- and high-prior-knowledg
 learners. The largest AI-tutoring trial in Nigeria found gains accruing
 disproportionately to students with **higher** initial performance. Sierra Leone's
 effect loaded at **+0.195 SD per SD of baseline mathematics** — the strong pulled
-further ahead.
+further ahead (§09).
 
 An unguarded answer-machine is not neutral technology that helps everyone a bit. It
 is a gap amplifier, and our learner is on the wrong side of it. The refusal engine —
@@ -6133,7 +6133,7 @@ one that widens it.
 There is an important asymmetry to state honestly, because it constrains what we may
 claim. Guardrails have been measured to **remove harm**: unguarded assistance left
 learners **17% worse** on later unassisted work, and the guardrailed arm's unassisted
-coefficient was **−0.004, not significant.** Harm removed. **Benefit not
+coefficient was **−0.004, not significant.** Harm removed (§01). **Benefit not
 demonstrated.** Anyone selling guardrails as a learning gain is ahead of the
 evidence, including us.
 
@@ -6477,7 +6477,7 @@ plausibly helps with more than it helps with anything else in this section.
 
 This survey has repeatedly warned that AI tutoring widens gaps — the strong pull
 further ahead. Sierra Leone's effect loaded at **+0.195 SD per SD of baseline
-mathematics**, and we have treated that as close to a law.
+mathematics**, and we have treated that as close to a law (§09).
 
 It is not a law. Across **eight targeted interventions**, examined together for
 this section: **not one widened gaps, and several sharply narrowed them.**
@@ -6504,7 +6504,7 @@ learning. The measurements say close to the opposite.
 | **Voice call + SMS** (5 countries, N = 8,902) | **+0.327 SD** |
 | SMS only | **+0.083 SD** — null in Kenya, Nepal, Botswana |
 | Interactive voice response | Null |
-| Sierra Leone live calls | **−0.008**, null |
+| Sierra Leone live calls (§09)| **−0.008**, null |
 
 A phone call plus a text message outperforms most of what this survey has
 examined. What the winning arm has that the others lack is **a human on the line
@@ -8751,7 +8751,7 @@ Two independent meta-analyses converge on a real, medium effect, and this survey
 | Meta-analysis | Effect |
 |---|---|
 | Sailer & Homner 2020 | **Cognitive g = .49** [.30, .69]; **motivational g = .36** [.18, .54]; **behavioural g = .25** [.04, .46] |
-| Bai, Hew & Huang 2020 (30 interventions, N = 3,202) | **Hedges' g = 0.504** [0.284, 0.723] |
+| Bai, Hew & Huang 2020 (30 interventions, N = 3,202) | **Hedges' g = 0.504** [0.284, 0.723] (§24)|
 
 So the headline is *not* "gamification doesn't work." Four caveats the marketing omits.
 
@@ -9127,7 +9127,7 @@ because nobody has named the failure.
 The longest outcome interval in this corpus is months. Most are a single session.
 The Sierra Leone trial, the largest deployment we examine, ran **eight weeks** — an
 earlier version of this sentence said "a school year", which was wrong and made the
-field's time horizon look better than it is. Almost nothing comes close even to eight
+field's time horizon look better than it is (§09). Almost nothing comes close even to eight
 weeks.
 
 Now consider a technique that measures **+0.5 SD at six weeks** and, over three
@@ -9138,7 +9138,7 @@ order of magnitude longer than the measurement.
 
 This is not hypothetical hand-wringing. It is the exact shape of the one long-horizon
 result we do have: unguarded AI produced **+48% during access** and **−17% once
-withdrawn.** The sign flipped when the window widened. We got that only because
+withdrawn.** The sign flipped when the window widened (§01). We got that only because
 someone thought to measure after taking the tool away — and almost nobody does.
 
 We are optimising on a horizon far shorter than the thing we claim to affect, and
@@ -9285,7 +9285,7 @@ claims in this field fail on the first three.
    Leone at **+0.195 SD per SD** of baseline.
 
 3. **Does your metric survive the Null-Learner Test?** Simulate an agent maximising
-   it while teaching nothing. Engagement, time-on-task, streaks, satisfaction and
+   it while teaching nothing (§14). Engagement, time-on-task, streaks, satisfaction and
    session count all fail.
 
 4. **Which arm isolates the AI from the humans around it?** In one trial, **44.3% of
@@ -9394,7 +9394,7 @@ the guardrailed arm was **−0.004 (SE 0.013), not significant.**
 
 That is the whole problem in one study. **A variable that moves an outcome from
 −17% to zero is not near a ceiling; it is near a decision.** And nobody has
-measured what happens six weeks later.
+measured what happens six weeks later (§01).
 
 This section lists the three experiments worth running first, each with its
 design and its pre-registered falsifier, and then states at full strength the
@@ -9499,7 +9499,7 @@ none of which anyone has measured either.
 **Why third, and why it is this survey's own thesis on trial.** The central
 design claim running through these sections is that **restraint is the active
 ingredient**. The evidence for that claim is currently *entirely* about harm
-removal. The guardrail took the unassisted effect from −17% to exactly zero. **No
+removal. The guardrail took the unassisted effect from −17% to exactly zero (§01). **No
 study has ever shown a constrained tutor beating a no-AI control on a delayed
 unassisted outcome.** Europe PMC, `"guardrails" AND "learning" AND "randomized"`:
 **0 hits**. The one relevant trial has not been replicated.
@@ -9584,7 +9584,7 @@ architectural refinement is optimising the small term.
 
 **Premise 5 — the field's positive results degrade under scrutiny in one
 direction only.** Sierra Leone's unadjusted estimate (**+0.216 SD, SE 0.137**) is
-not significant. The largest positive LLM-tutoring meta-analysis (g = 0.867) was
+not significant (§09). The largest positive LLM-tutoring meta-analysis (g = 0.867) was
 **retracted in 2026**. One prominent tutor was built and analysed by its first
 author with no funding statement. One trial has 11 clusters. Another lost 43% of
 its sample. **Where independence and rigour increase, effects shrink. That is the
@@ -9603,7 +9603,7 @@ holds**, and this survey's programme is explicitly mechanism-level.
 **Two: the dissociation results are sign results, not ceiling results.** A
 ceiling story predicts small positive effects everywhere. It does not predict
 −17%, and it does not predict the same model with a different interaction policy
-landing at zero in the same study.
+landing at zero in the same study (§01).
 
 **Three: the empty chair.** Zero randomised trials of AI tutoring on learners
 with disabilities is not a verdict. The ceiling argument cannot even be assessed

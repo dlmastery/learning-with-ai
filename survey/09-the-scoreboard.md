@@ -37,7 +37,7 @@ Now the AI results, all immediate post-tests unless stated:
 |---|---|---|---|---|---|
 | **Sierra Leone**, Gemini Guided Learning (RCT-P) | **+0.258 SD** adjusted; **+0.216 SD unadjusted, n.s.** | 1,423 analysed, 48 classrooms | 8 weeks | No | Blind-scored, curriculum-aligned |
 | **Nigeria**, Copilot after-school English (RCT) | +0.310 SD composite; **+0.206 SD on the school's own exam** | 759 analysed of 1,328 | 6 weeks | No | Yes |
-| **Bastani et al.**, Turkey (PNAS) | Assisted practice +127%. **Unassisted exam: −17% unguarded, −0.004 guarded** | ~1,000 | 4 sessions | AI-removed, same session | No |
+| **Bastani et al.**, Turkey (PNAS) | Assisted practice +127%. **Unassisted exam: −17% unguarded, −0.004 guarded** (§01)| ~1,000 | 4 sessions | AI-removed, same session | No |
 | **Kestin et al.**, Harvard physics | d ≈ 0.63 (to 1.3 ceiling-corrected) | 194 | **two ~1-hour lessons** | No | No |
 | **Tutor CoPilot** (RCT-P) | +4 p.p. exit ticket | 900 tutors, 1,800 students | 2 months | No | **Yes — and null** |
 | **Rori**, Ghana | 0.37 SD | ~1,000, **11 clusters** | 8 months | No | No |
@@ -146,7 +146,7 @@ closed-laptop exam on conceptually matched problems.
 | Outcome | GPT Base (unguarded) | GPT Tutor (guardrailed) |
 |---|---|---|
 | Assisted practice | +0.137 (SE 0.031) = **+48%** | +0.361 (SE 0.032) = **+127%** |
-| Unassisted exam | **−0.054 (SE 0.022) = −17%, p < 0.05** | −0.004 (SE 0.013), n.s. |
+| Unassisted exam | **−0.054 (SE 0.022) = −17%, p < 0.05** (§01)| −0.004 (SE 0.013), n.s. |
 
 Read the two columns against each other. The arm that performed **best** while
 assisted is the arm whose unassisted coefficient is indistinguishable from zero.
@@ -161,7 +161,7 @@ ahead of the evidence, including us.
 
 A note on provenance, because the correction is on this project's record: the PNAS
 notice attached to Bastani et al. is an affiliation erratum. It is not a correction
-to the result. The −17% stands.
+to the result. The −17% stands (§01).
 
 ---
 

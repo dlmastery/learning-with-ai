@@ -132,7 +132,7 @@ different evidence, different authority is a crew.
 ## 4. The five things this system does that nothing else does
 
 **1. It refuses.** Unguarded AI leaves learners **17% worse** once you take it
-away. The Mentor's highest-value act is declining to answer — asking instead,
+away (§01). The Mentor's highest-value act is declining to answer — asking instead,
 waiting instead, letting a struggle run to the exact edge of productive and no
 further.
 
@@ -202,7 +202,7 @@ hypothesis rather than a pitch. The rules stay:
   Gap-widening is therefore a design failure we can avoid, not a law we must
   accept. If ours widens gaps, it has failed, whatever the mean says.
 - **The Null-Learner Test** on every metric: simulate an agent maximising it while
-  teaching nothing. If the metric can't tell, it's the wrong metric.
+  teaching nothing (§14). If the metric can't tell, it's the wrong metric.
 - Publish the nulls. Especially ours.
 
 ---

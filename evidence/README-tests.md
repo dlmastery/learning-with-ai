@@ -31,3 +31,18 @@ those reports are an immutable record of what an agent found at a point in time.
 
 On its first run this caught four live violations, including the two the external
 reviewer had flagged in `CLAUDE.md`.
+
+## Repetition check
+
+```bash
+python3 evidence/check-repetition.py --strict
+```
+
+Eight load-bearing findings recur across the survey — Bastani's −17% appeared in ten
+of thirty-three sections, Sierra Leone in seven. Reuse is correct; each is doing
+different work in a different argument. **Unacknowledged** reuse is not: it inflates
+apparent breadth and makes a paper read as a binder of essays.
+
+The rule: outside its home section, a recurring claim must carry a section
+cross-reference within a paragraph, so a reader can tell they are meeting an old
+finding rather than a new one. First run flagged 21 bare restatements.

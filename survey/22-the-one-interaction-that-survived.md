@@ -90,7 +90,7 @@ unevidenced. The honest table is very short:
 | Interest and context of examples | **PLAUSIBLE** — small, real, easily oversold |
 | Learning styles / modality matching | **DEBUNKED** |
 | Personality or demographic tailoring | **DEBUNKED or unevidenced** |
-| Stated preference for difficulty | **ANTI-SIGNAL** — preference moves d ≈ 0.48 while knowledge moves 0 |
+| Stated preference for difficulty | **ANTI-SIGNAL** — preference moves d ≈ 0.48 while knowledge moves 0 (§01)|
 
 ---
 
@@ -174,7 +174,7 @@ useful.
 
 Retrieval practice (**g = 0.499**, 48,478 students), spacing (**d = 0.54**), and the
 teaching-expectancy framing (**g = 0.48** vs **−0.02** without) run for everyone,
-always. They are not personalisation candidates and they are not A/B tested against
+always (§24). They are not personalisation candidates and they are not A/B tested against
 nothing.
 
 This concedes the strongest form of the counter-argument **structurally rather than
