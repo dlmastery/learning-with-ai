@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Three Rungs, Not Five — Demo 09</title>
+<meta name="description" content="One concept at three genuinely distinct altitudes, entered by a measured probe rather than by preference, with the fidelity rule enforced in code." />
+<link rel="stylesheet" href="demo.css" />
+<style>
+.gl{stroke:var(--line);stroke-width:1}
+.ax{font:600 10px var(--sans);letter-spacing:.11em;fill:var(--ink-3)}
+.sl{fill:var(--ink-2)}
+.vl{font:600 12px var(--mono);fill:var(--ink-2)}
+.dot{stroke:var(--surface);stroke-width:2}
+#tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .1s;z-index:99;left:0;top:0;
+  background:var(--ink);color:var(--bg);font:12.5px/1.5 var(--sans);padding:8px 11px;
+  border-radius:7px;max-width:262px;box-shadow:0 4px 16px rgba(0,0,0,.18)}
+#tip b{color:var(--bg);display:block;font-weight:650;margin-bottom:2px}
+input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
+.pill{display:inline-block;font:600 10.5px/1 var(--mono);padding:4px 7px;border-radius:5px;
+  border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
+.pill.y{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
+.pill.n{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 45%,transparent)}
+.pill.c{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 45%,transparent)}
+.opts{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.opt{display:flex;gap:11px;align-items:flex-start;background:var(--sunken);border:1px solid var(--line);
+  border-radius:9px;padding:11px 13px;cursor:pointer;font-size:14.4px;color:var(--ink-2);line-height:1.5}
+.opt:hover{border-color:var(--line-2)}
+.opt input{margin:4px 0 0;flex:none;accent-color:var(--real)}
+.opt.picked{border-color:var(--real)}
+.item{border-top:1px solid var(--line);padding:20px 0 4px}
+.item:first-of-type{border-top:0;padding-top:2px}
+.item .qq{font:650 14.6px/1.5 var(--sans);color:var(--ink);margin-bottom:4px}
+.item .pre{font:600 10.5px/1 var(--sans);letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:9px}
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:22px 0}
+.door{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:19px 18px;
+  opacity:.5;transition:opacity .16s,border-color .16s}
+.door.in{opacity:1;border-color:var(--real)}
+.door .rn{font:400 15px/1 var(--serif);color:var(--ink-3);margin-bottom:11px}
+.door h4{font:650 15px/1.35 var(--sans);margin:0 0 8px;color:var(--ink)}
+.door p{font-size:13.6px;line-height:1.55;margin:0;color:var(--ink-2)}
+.door .st{margin-top:13px}
+.rung{background:var(--sunken);border:1px solid var(--line);border-radius:11px;padding:20px 21px;margin:18px 0}
+.rung h4{font:650 15.5px/1.35 var(--sans);margin:0 0 3px;color:var(--ink)}
+.rung .cap{font:12.5px/1.5 var(--sans);color:var(--ink-3);margin-bottom:14px}
+.rung p{font-size:15px;line-height:1.62;color:var(--ink-2)}
+.drops{font-size:13px;color:var(--ink-3);border-left:2px solid var(--line-2);padding-left:14px;margin-top:14px}
+.drops b{color:var(--ink-2);font-weight:650}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:18px 0}
+.stat div{background:var(--sunken);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+.stat .k{font:600 10px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+.stat .n{font:400 23px/1.1 var(--mono);color:var(--ink)}
+.stat .s{font:12px/1.4 var(--sans);color:var(--ink-3);margin-top:6px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px;font-size:12.5px;color:var(--ink-2)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div id="tip"></div>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo Gallery</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 09 · The mechanisms</div>
+  <h1>Three Rungs, Not Five</h1>
+  <p class="lede">One concept — <strong>entropy</strong> — written at three genuinely different
+  altitudes. Not a staircase you climb from the bottom: a <strong>library you enter</strong>,
+  with the door chosen by a short measured probe and never by what you say you want. The
+  fidelity rule that keeps a simplification honest is enforced here <em>in code</em>, and you
+  can watch it reject a simplification that sounds perfectly reasonable.</p>
+  <div class="chips">
+    <span class="chip m">Computed live</span>
+    <span class="chip">Fidelity rule enforced in code</span>
+  </div>
+</header>
+
+<p><strong>Computed</strong> means: the probe below is really administered, the prerequisite
+closure is really evaluated, the entry rung is really derived from a stated rule, and the
+fidelity checker really runs field-by-field over structured claims and really rejects the
+violating rung. Nothing on this page is a replayed transcript.</p>
+
+<div class="note"><b>Why three and not five.</b> The obvious design is ELI10 / ELI15 / ELI20 /
+ELI25 — four or five neat rungs. The one experiment that directly compared granularities found
+<strong>three-step beat two-step (p = 0.032)</strong> and <strong>five-step did not beat
+three-step (p = 0.738, Mdiff = 0.16, 95% CI [−0.78, 1.09])</strong>. The returns diminish, and
+they diminish early. Charts at the bottom.</div>
+
+<h2>1 · The probe that chooses the door</h2>
+<p class="sub">Three items over entropy's prerequisite closure, plus a load rating. Two minutes.</p>
+
+<div class="panel">
+  <div class="ptitle">Rapid dynamic assessment</div>
+  <div class="psub">These are first-step / verification items in the Kalyuga &amp; Sweller sense —
+  they probe what is currently in working memory, not what you can reconstruct given time. Each
+  one gates a specific rung.</div>
+
+  <div id="items"></div>
+
+  <div class="item">
+    <div class="pre">Load rating</div>
+    <div class="qq">How much mental effort did those three items take?</div>
+    <p style="font-size:13.5px;color:var(--ink-3);margin:8px 0 12px">1 = very, very low · 9 = very, very high. This is the Paas scale, and it is a real input to the rule, not decoration.</p>
+    <input type="range" id="load" min="1" max="9" value="4" />
+    <div style="font:600 12px var(--mono);color:var(--felt);margin-top:6px">rating = <span id="loadv">4</span></div>
+  </div>
+
+  <div class="item">
+    <div class="pre">Stated preference — recorded, then ignored</div>
+    <div class="qq">Which explanation would you <em>like</em>?</div>
+    <p style="font-size:13.5px;color:var(--ink-3);margin:8px 0 12px">The system stores this so
+    it can be audited. It is not an input to the rule. See the note underneath.</p>
+    <select id="pref">
+      <option value="1">Rung 1 — just tell me what happens</option>
+      <option value="2" selected>Rung 2 — I want the mechanism</option>
+      <option value="3">Rung 3 — give me the real thing</option>
+    </select>
+  </div>
+
+  <div class="row" style="margin:20px 0 0"><button class="pri" id="score">Compute entry rung</button>
+    <button id="clr">Clear</button></div>
+
+  <div id="verdict"></div>
+</div>
+
+<div class="note warn"><b>Why preference is inadmissible as an input.</b> Across three randomised
+comparisons, learners' <strong>preference between two versions moved d ≈ 0.48 while their
+knowledge moved zero</strong> — and the bias <strong>survives explicit debiasing</strong>.
+Worse, the direction is not random: a simplified account <em>raises</em> confidence and perceived
+credibility independently of competence, so a learner who has just read the easy rung is
+<em>more</em> confident and therefore <em>less</em> likely to ask for the harder one.
+Preference-driven laddering has a built-in downward ratchet. The dropdown above exists as an
+override and an audit trail. It may never be the default input.</div>
+
+<h2>2 · The library</h2>
+<p class="sub">Three doors into the same building. You are put through one of them.</p>
+
+<div class="doors" id="doors"></div>
+<div id="rungbody"></div>
+<div id="transfer"></div>
+
+<h2>3 · The fidelity rule, enforced</h2>
+<p class="sub">A rung may drop a great deal. There are exactly four things it may never falsify.</p>
+
+<div class="scroll">
+<table>
+  <tr><th>A rung MAY drop</th><th>A rung may NEVER falsify</th></tr>
+  <tr><td>Numeric precision; higher-order corrections</td><td><b>Ontological category</b> — thing vs. direct process vs. <em>emergent</em> process</td></tr>
+  <tr><td>Formal machinery — the derivation, the notation, the proof</td><td><b>Sign or direction of a causal relation</b></td></tr>
+  <tr><td>Mechanism depth — black-boxing a subcomponent, <em>iff the box is named as a box</em></td><td><b>Quantifier strength</b> — "all" asserted where only "some" or "overwhelmingly probable" holds</td></tr>
+  <tr><td>Edge cases outside the declared scope, <em>iff the scope is declared</em></td><td><b>Uniqueness of a mechanism</b> — presenting one of several as <em>the</em> mechanism</td></tr>
+</table>
+</div>
+
+<div class="panel">
+  <div class="ptitle">Run the checker</div>
+  <div class="psub">Each rung is stored as a structured claim, not as prose. The checker compares
+  it field-by-field against the reference account. Switch in a violating simplification and watch
+  it get rejected — the rejection is computed from the fields, not looked up.</div>
+  <div class="row" id="fpick"></div>
+  <div id="fout"></div>
+</div>
+
+<div class="panel sunken">
+  <div class="ptitle">The checker</div>
+  <div class="psub">This is the function that produced the table above — the same field comparisons, in the same order. Forty lines is the whole enforcement mechanism.</div>
+  <div class="mono-block" id="chksrc"></div>
+</div>
+
+<h2>4 · Why a semester does not fix it</h2>
+
+<p>The reason ontology is on the "never" list rather than the "prefer not to" list is empirical.
+Chi's account distinguishes two kinds of wrong belief. A misconception that lies <strong>within
+the correct ontological category</strong> — a wrong number, a missing term, a confused
+sub-mechanism — is revisable by ordinary instruction. A misconception that places the concept
+in <strong>the wrong ontological category</strong> is not. Instruction does not replace it; it
+produces a <em>synthetic model</em>, a hybrid in which the student holds the taught account and
+the miscategorised account simultaneously and deploys whichever the question cues.</p>
+
+<div class="note"><b>The measured instance.</b> A study of university chemistry students tracked
+the classical/quantum hybrid population — students who hold "electrons orbit the nucleus like
+planets" alongside the quantum account — and found that population <strong>unchanged across a
+full semester</strong> of instruction. The Bohr-orbit error is the textbook case of an
+ontological miscategorisation: it puts a stationary state into the category "object on a
+trajectory."<br /><br />
+<em>Applying that to entropy is</em> <code>INFERENCE</code>, <em>not measurement.</em> Nobody has
+run the semester-long study on "entropy is disorder" specifically. What is measured is that
+cross-category errors in general are robust, and that this particular cross-category error in
+chemistry survived a semester. The claim being made here is that "entropy is a measure of
+messiness" is the same <em>class</em> of error — it relocates an emergent statistical property
+of a distribution into the category of a visible property of an arrangement — and therefore
+carries the same prognosis.</div>
+
+<p>This is the whole argument for enforcing the rule at authoring time rather than fixing it at
+teaching time. A precision error costs a correction. An ontology error costs a re-categorisation,
+and the field's evidence says re-categorisation mostly does not happen.</p>
+
+<h2>5 · The evidence</h2>
+
+<figure class="panel">
+  <div class="ptitle">How many rungs? The direct comparison</div>
+  <div class="psub">Three between-groups pre/post experiments, 166 pupils aged 9–10, computer
+  network structure and routing. Post-test difference in raw points, with the 95% interval where
+  the paper reports one. Hover for statistics.</div>
+  <div id="ci"></div>
+  <div class="scroll"><table id="citable"></table></div>
+  <figcaption class="psub" style="margin:14px 0 0">Read the second row carefully. It is not
+  "five rungs are worse". It is <strong>"five rungs bought nothing you can distinguish from
+  zero, at 166 pupils"</strong> — a wide interval straddling zero. The honest reading is that
+  the third rung is where the evidence stops, not that a fourth is harmful.</figcaption>
+</figure>
+
+<figure class="panel">
+  <div class="ptitle">Why the learner cannot pick the rung</div>
+  <div class="psub">Left dot: what moved in the learner's experience. Right dot: what moved in
+  their knowledge.</div>
+  <div id="slope"></div>
+</figure>
+
+<h2>What this proves / What it does not</h2>
+
+<div class="panel">
+  <div class="ptitle">What this page proves</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li>That the <strong>fidelity rule is mechanisable</strong>. It is not a stylistic
+    aspiration — represent a rung as structured claims rather than prose and the four
+    never-falsify invariants become a forty-line pure function that returns pass or fail with a
+    named failure class.</li>
+    <li>That <strong>entry-by-probe is buildable</strong>, cheap, and produces a different answer
+    from entry-by-preference, which you can watch happen when your stated preference and your
+    computed rung disagree.</li>
+    <li>That three genuinely distinct altitudes of the <em>same</em> concept can be written such
+    that every proposition at rung 1 survives verbatim into rung 3 — nothing is retracted, only
+    added. That is a strong constraint and it is satisfiable.</li>
+  </ul>
+  <div class="ptitle">What this page does not prove</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>That the fidelity rule improves learning. It has never been tested.</strong> The
+    rule is assembled from Chi's ontological account plus the entailment requirement; the
+    assembly itself is <code>INFERENCE</code>. No trial has compared ladders written under this
+    rule against ladders written without it.</li>
+    <li>That the checker is complete. It enforces four invariants over hand-authored fields. It
+    cannot tell you whether the prose <em>actually says</em> what the fields claim — that gap is
+    real, and closing it needs an entailment check between rung <i>n</i> and rung <i>n</i>+1,
+    which is a different and harder problem.</li>
+    <li>That the probe is validated. Three items is far below what any measurement standard
+    would accept for a placement decision. The rule it feeds is the published one; the
+    <em>instrument</em> is a demonstration.</li>
+    <li>That three is the right number of rungs for <em>your</em> concept. The p = 0.032 /
+    p = 0.738 result is 166 nine-year-olds learning network routing. It is the only direct
+    granularity comparison anyone has run, which is a statement about how thin this literature
+    is, not about how strong the finding is.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../">Dashboard</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai">Repository</a>
+  <br /><br />Source report: <code>research/raw/F10-explanation-laddering.md</code> §11–12.
+</footer>
+
+</div>
+<script>
+/* ══ chart IR — declarative specs, deterministic renderers ═══════════════ */
+const NS='http://www.w3.org/2000/svg';
+const mk=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const el=id=>document.getElementById(id);
+const tip=el('tip');
+function bind(e2,html){
+  e2.addEventListener('pointerenter',()=>{tip.innerHTML=html;tip.style.opacity='1';});
+  e2.addEventListener('pointermove',e=>{
+    const x=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-10);
+    const y=Math.min(e.clientY+16,innerHeight-tip.offsetHeight-10);
+    tip.style.transform=`translate(${x}px, ${y}px)`;});
+  e2.addEventListener('pointerleave',()=>{tip.style.opacity='0';});
+}
+function renderCI(host,spec){
+  const narrow=innerWidth<640;
+  const LW=narrow?110:210, RW=20, ROW=narrow?54:50, PAD=16;
+  const W=720, H=spec.rows.length*ROW+PAD*2+22;
+  const trackX=LW+14, trackW=W-LW-RW-28;
+  const lo=spec.min, hi=spec.max;
+  const px=v=>trackX+(v-lo)/(hi-lo)*trackW;
+  const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
+  for(let v=Math.ceil(lo);v<=Math.floor(hi);v++){
+    svg.appendChild(mk('line',{x1:px(v),y1:PAD-6,x2:px(v),y2:H-26,class:'gl',
+      opacity:v===0?1:.55,'stroke-width':v===0?1.4:1}));
+    const t=mk('text',{x:px(v),y:H-8,'text-anchor':'middle',class:'ax'});
+    t.textContent=v===0?'0':(v>0?'+'+v:String(v)); svg.appendChild(t);
+  }
+  spec.rows.forEach((r,i)=>{
+    const y=PAD+i*ROW+ROW/2, g=mk('g',{});
+    const col=r.sig?'var(--real)':'var(--felt)';
+    const lab=mk('text',{x:LW,y:y-2,'text-anchor':'end',class:'sl',style:`font-size:${narrow?11:13}px`});
+    lab.textContent=r.label; g.appendChild(lab);
+    const p2=mk('text',{x:LW,y:y+14,'text-anchor':'end',class:'vl',style:'font-size:11px;fill:var(--ink-3)'});
+    p2.textContent=r.p; g.appendChild(p2);
+    if(r.ci){
+      g.appendChild(mk('line',{x1:px(r.ci[0]),y1:y,x2:px(r.ci[1]),y2:y,stroke:col,'stroke-width':2,opacity:.5}));
+      [r.ci[0],r.ci[1]].forEach(v=>g.appendChild(mk('line',{x1:px(v),y1:y-6,x2:px(v),y2:y+6,
+        stroke:col,'stroke-width':2,opacity:.5})));
+    }
+    g.appendChild(mk('circle',{cx:px(r.v),cy:y,r:7,fill:col,class:'dot'}));
+    const val=mk('text',{x:px(r.v),y:y-14,'text-anchor':'middle',class:'vl',style:`fill:${col}`});
+    val.textContent=(r.v>0?'+':'')+r.v.toFixed(2); g.appendChild(val);
+    g.appendChild(mk('rect',{x:0,y:y-ROW/2,width:W,height:ROW,fill:'transparent'}));
+    bind(g,`<b>${esc(r.label)}</b>${esc(r.note)}`);
+    svg.appendChild(g);
+  });
+  host.replaceChildren(svg);
+}
+function renderSlope(host,spec){
+  const narrow=innerWidth<640;
+  const LW=narrow?92:180, ROW=54, PAD=30;
+  const W=700, H=spec.rows.length*ROW+PAD*2;
+  const x1=LW+64, x2=W-124;
+  const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
+  svg.appendChild(mk('line',{x1,y1:14,x2:x1,y2:H-24,class:'gl'}));
+  svg.appendChild(mk('line',{x1:x2,y1:14,x2:x2,y2:H-24,class:'gl'}));
+  const t1=mk('text',{x:x1,y:H-6,'text-anchor':'middle',class:'ax'});t1.textContent='FELT';
+  const t2=mk('text',{x:x2,y:H-6,'text-anchor':'middle',class:'ax'});t2.textContent='LEARNED';
+  svg.appendChild(t1);svg.appendChild(t2);
+  spec.rows.forEach((r,i)=>{
+    const y=PAD+i*ROW, g=mk('g',{});
+    const lab=mk('text',{x:LW,y:y+4,'text-anchor':'end',class:'sl',style:`font-size:${narrow?11:13}px`});
+    lab.textContent=r.label; g.appendChild(lab);
+    g.appendChild(mk('line',{x1,y1:y,x2,y2:y,stroke:'var(--felt)','stroke-width':2,opacity:.28}));
+    g.appendChild(mk('circle',{cx:x1,cy:y,r:6,fill:'var(--felt)',class:'dot'}));
+    g.appendChild(mk('circle',{cx:x2,cy:y,r:6,fill:'var(--real)',class:'dot'}));
+    const a=mk('text',{x:x1-13,y:y+4,'text-anchor':'end',class:'vl',style:'fill:var(--felt)'});
+    a.textContent=r.a; g.appendChild(a);
+    const b=mk('text',{x:x2+13,y:y+4,class:'vl',style:r.bad?'fill:var(--bad)':''});
+    b.textContent=r.b; g.appendChild(b);
+    g.appendChild(mk('rect',{x:0,y:y-ROW/2,width:W,height:ROW,fill:'transparent'}));
+    bind(g,`<b>${esc(r.label)}</b>${esc(r.note)}`);
+    svg.appendChild(g);
+  });
+  host.replaceChildren(svg);
+}
+
+const RUNGCOUNT={
+  alt:'Interval chart: three rungs beat two by about one point; five rungs beat three by a value indistinguishable from zero.',
+  min:-1.4,max:1.8,
+  rows:[
+    {label:'Three rungs vs two',v:0.99,ci:null,sig:true,p:'F(2,56)=3.670 · p = 0.032',
+     note:'H3, supported. ANOVA F(2,56) = 3.670, p = 0.032, partial eta-squared = 0.116; pairwise Mdiff = 0.99, p = 0.037. The paper reports no interval for this contrast.'},
+    {label:'Five rungs vs three',v:0.16,ci:[-0.78,1.09],sig:false,p:'p = 0.738 · CI [−0.78, 1.09]',
+     note:'H4, not supported. Mdiff = 0.16, 95% CI [−0.78, 1.09], p = 0.738. The interval straddles zero and is nearly as wide as the whole effect found for the third rung.'}
+  ]
+};
+const PREF={
+  alt:'Slope chart: preference for a version moved by d = 0.48 while knowledge moved zero.',
+  rows:[
+    {label:'Preference between versions',a:'d ≈ 0.48',b:'0',
+     note:'Buljan et al. 2018 and two further randomised comparisons. Learners reliably prefer one rendering; the knowledge difference is nil.'},
+    {label:'Simplified account read',a:'confidence ↑',b:'no change',bad:true,
+     note:'Scharrer et al. 2017; Salzmann et al. 2025. Simplification raises confidence and perceived credibility independently of competence — and the bias survives explicit debiasing.'}
+  ]
+};
+
+/* ══ the probe ══════════════════════════════════════════════════════════ */
+const ITEMS=[
+  {id:'P1',pre:'Prerequisite P1 · counting arrangements — gates rung 2',
+   q:'Three distinguishable balls are dropped into two boxes, left and right, at random. How many of the possible arrangements put exactly one ball in the left box?',
+   opts:['1','6','3','8'],ans:2,
+   why:'Choose which single ball goes left: 3 ways. Total arrangements are 2³ = 8. If this is not immediate, rung 2 — which is entirely an argument about counting arrangements — will land as assertion rather than as reasoning.'},
+  {id:'P2',pre:'Prerequisite P2 · macrostate vs microstate — gates rung 2',
+   q:'A gas is described as "spread evenly through the box." Is that a description of one specific arrangement of the molecules, or of a set of arrangements?',
+   opts:['One specific arrangement','A set of arrangements','Neither — it describes the box, not the molecules','Both, depending on temperature'],ans:1,
+   why:'This is the single load-bearing distinction in the whole concept. Entropy is a property of the description, not of any arrangement the description covers. A learner who has not separated these two has nowhere to put the definition.'},
+  {id:'P3',pre:'Prerequisite P3 · additivity and the logarithm — gates rung 3',
+   q:'Two independent systems have W₁ and W₂ arrangements. Combined, they have W₁·W₂. We want a quantity that ADDS when systems are combined. Which of these does that?',
+   opts:['W','√W','ln W','1 / W'],ans:2,
+   why:'ln(W₁·W₂) = ln W₁ + ln W₂. This is the entire reason the logarithm is in the formula, and rung 3 is unreadable without it — otherwise k·ln W looks like an arbitrary choice of function.'}
+];
+const ANSW={};
+function renderItems(){
+  el('items').innerHTML=ITEMS.map((it,i)=>`
+    <div class="item">
+      <div class="pre">${esc(it.pre)}</div>
+      <div class="qq">${esc(it.q)}</div>
+      <div class="opts">${it.opts.map((o,j)=>`
+        <label class="opt${ANSW[it.id]===j?' picked':''}">
+          <input type="radio" name="${it.id}" value="${j}"${ANSW[it.id]===j?' checked':''} />
+          <span>${esc(o)}</span></label>`).join('')}</div>
+    </div>`).join('');
+  el('items').querySelectorAll('input[type=radio]').forEach(r=>{
+    r.onchange=()=>{ANSW[r.name]=+r.value;renderItems();};});
+}
+renderItems();
+el('load').oninput=()=>{el('loadv').textContent=el('load').value;};
+
+/* prerequisite closure → entry rung. Weakest link, then R4 "enter one low". */
+const GATES={1:[],2:['P1','P2'],3:['P1','P2','P3']};
+function entryRung(){
+  const ok={}; ITEMS.forEach(it=>{ok[it.id]=ANSW[it.id]===it.ans;});
+  let highest=1;
+  for(const r of [3,2]){ if(GATES[r].every(p=>ok[p])){highest=r;break;} }
+  const load=+el('load').value;
+  const adj=load>=6?-1:0;                       // R4: under load, enter one rung low
+  const entry=Math.min(3,Math.max(1,highest+adj));
+  return {ok,highest,load,adj,entry};
+}
+
+let ENTRY=null;
+el('clr').onclick=()=>{ITEMS.forEach(it=>delete ANSW[it.id]);el('load').value=4;
+  el('loadv').textContent='4';ENTRY=null;renderItems();el('verdict').innerHTML='';
+  el('doors').innerHTML='';el('rungbody').innerHTML='';el('transfer').innerHTML='';};
+
+el('score').onclick=()=>{
+  const unanswered=ITEMS.filter(it=>ANSW[it.id]===undefined);
+  if(unanswered.length){
+    el('verdict').innerHTML=`<div class="note warn" style="margin-bottom:0"><b>${unanswered.length} item(s) unanswered.</b> The rule needs the whole prerequisite vector; a missing item is not the same as a wrong one and the system will not guess.</div>`;
+    return;
+  }
+  const r=entryRung(); ENTRY=r;
+  const pref=+el('pref').value;
+  const gap=pref-r.entry;
+  el('verdict').innerHTML=`
+    <div class="stat">
+      <div><div class="k">Prerequisites passed</div><div class="n">${ITEMS.filter(it=>r.ok[it.id]).length} / 3</div>
+        <div class="s">${ITEMS.map(it=>it.id+(r.ok[it.id]?' ✓':' ✗')).join(' · ')}</div></div>
+      <div><div class="k">Highest rung unlocked</div><div class="n">${r.highest}</div>
+        <div class="s">weakest link over the closure</div></div>
+      <div><div class="k">Load adjustment</div><div class="n">${r.adj===0?'0':r.adj}</div>
+        <div class="s">rating ${r.load}${r.adj?' ≥ 6 → enter one rung low':' &lt; 6 → no adjustment'}</div></div>
+      <div><div class="k">Entry rung</div><div class="n" style="color:var(--real)">${r.entry}</div>
+        <div class="s">this is the door you get</div></div>
+    </div>
+    <div class="note" style="margin-bottom:0">
+      <b>Preference audit.</b> You asked for rung ${pref}. The probe put you at rung ${r.entry}.
+      ${gap===0?'They agree this time — which is exactly why the system does not need your preference: it is either redundant or wrong.'
+        :(gap>0?`You asked for a rung <b>${gap} higher</b> than the probe supports. Under the expertise-reversal evidence, over-shooting is the more expensive error: experts given assistance lose d = −0.428, but novices <em>denied</em> assistance lose more than that.`
+               :`You asked for a rung <b>${-gap} lower</b> than the probe supports. This is the downward ratchet — the simplified account feels more credible, so preference drifts down while competence does not.`)}
+    </div>`;
+  renderDoors();
+};
+
+/* ══ the three rungs, as structured claims ══════════════════════════════ */
+const SCOPE_LABEL={
+  'isolated-system':'the system is isolated',
+  'coarse-graining':'a macroscopic description has been chosen'
+};
+const REF={
+  ontology:'emergent statistical property of a distribution over microstates',
+  agency:'none — nothing pushes the system anywhere',
+  quantifier:'overwhelmingly probable',
+  conserved:false,
+  dimension:'energy / temperature',
+  mechanismUnique:false,
+  scope:['isolated-system','coarse-graining']
+};
+const QORD={'possible':0,'overwhelmingly probable':1,'always':2};
+
+const RUNGS=[
+ {n:1,title:'What happens, and what is surprising about it',
+  cap:'No mechanism asserted. This is a phenomenology rung — it states the fact and explicitly declines to explain it.',
+  ceiling:'Ceiling: recognise the asymmetry and predict which direction a process runs.',
+  prose:`Put one drop of ink into a glass of still water. It spreads until the water is uniformly tinted, and then it stops changing. Leave it for a day, a year, a century: it never gathers back into a drop.
+
+Here is what makes that strange. Nothing in the laws governing the individual molecules forbids the reverse. Run a film of the spreading backwards and every collision in it is legal. Each molecule could in principle retrace its path. The laws are reversible; the behaviour is not.
+
+Entropy is the name for what makes the difference. It is not a substance dissolved in the water, and nothing is pushing the ink outward — no force, no field, no tendency. What is actually going on is a statement about <em>counting</em>: there are overwhelmingly more ways for the ink molecules to be arranged spread-out than there are ways for them to be arranged gathered. That is the entire content, and rung 2 does the counting.`,
+  drops:[['the counting itself','rung 2',null],
+         ['what "overwhelmingly more ways" means precisely','rung 2',null],
+         ['the dependence on which macroscopic description you chose','rung 3','coarse-graining']],
+  assert:{ontology:REF.ontology,agency:REF.agency,quantifier:'overwhelmingly probable',
+    conserved:false,dimension:'energy / temperature',mechanismUnique:false,
+    scope:['isolated-system']}},
+
+ {n:2,title:'The counting argument',
+  cap:'The mechanism, with no formal machinery. Every sentence at rung 1 survives verbatim; this rung only adds.',
+  ceiling:'Ceiling: compute why a spontaneous reversal is astronomically unlikely, and say what "astronomically" means as a function of system size.',
+  prose:`Describe a box of gas <em>loosely</em>: "the molecules are spread through the box", or "the molecules are all in the left half". Each loose description is compatible with an enormous number of exact arrangements — which molecule is where, moving how fast.
+
+Entropy counts those arrangements. A description compatible with more exact arrangements has higher entropy. That is the definition; everything else follows from it.
+
+Now the asymmetry. Suppose there are N molecules. "All in the left half" is compatible with one arrangement out of every 2<sup>N</sup>, because each molecule independently has to land on the correct side. "Spread roughly evenly" is compatible with almost all of them. For a visible amount of gas N is around 10<sup>22</sup>, so the ratio is not large in any everyday sense — it is a number with ten thousand billion billion zeros.
+
+So the system, wandering blindly among arrangements, is essentially always found in a spread-out one. Not because it is pushed there. Because there is almost nowhere else to be. The reverse is <em>not forbidden</em> — it is merely improbable, and the improbability grows exponentially with N. Double the molecules and you square the unlikelihood.
+
+Note what has and has not changed from rung 1. Nothing was retracted. "Nothing pushes the ink" is still true. "It is about counting" is still true. Rung 2 tells you what is being counted.`,
+  drops:[['the logarithm, Boltzmann’s constant, and why entropy adds rather than multiplies','rung 3',null],
+         ['non-equiprobable microstates and continuous distributions','rung 3',null],
+         ['the dependence on which macroscopic description you chose','rung 3','coarse-graining']],
+  assert:{ontology:REF.ontology,agency:REF.agency,quantifier:'overwhelmingly probable',
+    conserved:false,dimension:'energy / temperature',mechanismUnique:false,
+    scope:['isolated-system']}},
+
+ {n:3,title:'The functional on the distribution',
+  cap:'The reference account. Everything above is checked against this one, top-down — you cannot check a non-falsification constraint against an account you have not written yet.',
+  ceiling:'Ceiling: derive, generalise to non-equiprobable ensembles, and explain why two observers can assign different entropies to the same microstate.',
+  prose:`For a macrostate compatible with W equally probable microstates, S = k<sub>B</sub> ln W. For a general distribution p over microstates, S = −k<sub>B</sub> Σ p<sub>i</sub> ln p<sub>i</sub>, which reduces to the first when p is uniform.
+
+The logarithm is not decoration. Two independent systems with W₁ and W₂ microstates jointly have W₁·W₂; if we want an extensive quantity — one that adds when you put two systems side by side — we must take a logarithm. That is the whole reason it is there.
+
+Entropy is a <strong>functional of a probability distribution</strong>. It is not defined for a single microstate; asking "what is the entropy of this exact configuration" is a category error, not a hard question. And the distribution is fixed by a <em>choice of macroscopic description</em>: two observers who coarse-grain differently — one tracking only pressure and volume, another also tracking a colour-labelled sub-population — assign different entropies to the same physical microstate. This is not a paradox and not observer-dependence in any mystical sense; it is the Gibbs mixing case, and it is the reason "a macroscopic description has been chosen" is part of the definition rather than a footnote.
+
+The second law is then a statement about measure, not a mechanical prohibition. For an isolated system the volume of phase space compatible with higher-entropy macrostates is overwhelmingly larger, so evolution toward higher S is overwhelmingly probable; downward fluctuations occur with probability falling exponentially in system size and are routinely observed in small systems. Entropy is created, not transported; it is not conserved; its dimensions are energy over temperature.`,
+  drops:[],
+  assert:{...REF}}
+];
+
+const VIOLATIONS=[
+ {id:'v1',label:'"Entropy is disorder"',
+  title:'The plausible simplification that breaks ontology',
+  cap:'This is the version in most textbooks, most popular science, and most LLM output. It reads well. It is a category error.',
+  prose:`Entropy is a measure of how disordered or messy a system is. A tidy system — everything in its place, all the gas in one corner, the ice cube still frozen — has low entropy. A messy one has high entropy. And things naturally become more disordered over time: that is the second law. Your desk, your bedroom, the universe.`,
+  drops:[],
+  assert:{ontology:'a visible property of an arrangement — something you can look at and grade',
+    agency:'an intrinsic tendency of things to become messier',
+    quantifier:'always',conserved:false,
+    dimension:'none stated — unitless "messiness"',mechanismUnique:true,scope:[]}},
+ {id:'v2',label:'"Entropy is unusable energy"',
+  title:'The other one, which breaks ontology and conservation together',
+  cap:'The heat-as-substance family. Chi’s original studies were built on exactly this miscategorisation.',
+  prose:`Entropy is a kind of degraded, unusable energy. Every time you do something, a bit of the energy you started with turns into entropy and flows out into the surroundings, where it builds up. The universe has a fixed amount of energy and an ever-growing store of entropy, and eventually all the energy will have been converted, which is the heat death.`,
+  drops:[],
+  assert:{ontology:'a substance that flows out of things and accumulates',
+    agency:'the entropy itself moves and builds up',quantifier:'always',conserved:true,
+    dimension:'energy',mechanismUnique:true,scope:[]}}
+];
+
+/* ══ the fidelity checker ═══════════════════════════════════════════════ */
+const CHK_SRC=
+`// A rung may drop precision, formalism and mechanism depth freely.
+// It may never falsify ontology, causal sign, quantifier strength, or
+// uniqueness of mechanism. Those four are compared field-by-field.
+
+const inv = (k, want, got, ok, cls) =>
+  ({ k, want: String(want), got: String(got), ok, cls });
+
+function checkFidelity(rung, ref) {
+  const rows = [], A = rung.assert;
+  const declared = key => rung.drops.some(d => d[2] === key);
+
+  // 1. ONTOLOGY — must be identical. Never relaxable.
+  rows.push(inv('Ontological category', ref.ontology, A.ontology,
+                A.ontology === ref.ontology, 'ontology'));
+
+  // 2. CAUSAL SIGN / AGENCY — must be identical. Never relaxable.
+  rows.push(inv('Causal direction & agency', ref.agency, A.agency,
+                A.agency === ref.agency, 'causal-sign'));
+
+  // 3. QUANTIFIER — may be WEAKER than the reference, never stronger.
+  //    possible < overwhelmingly probable < always
+  rows.push(inv('Quantifier strength', ref.quantifier, A.quantifier,
+                QORD[A.quantifier] <= QORD[ref.quantifier], 'quantifier'));
+
+  // 4. UNIQUENESS OF MECHANISM — may not assert sole mechanism where the
+  //    reference does not.
+  rows.push(inv('Uniqueness of mechanism', ref.mechanismUnique, A.mechanismUnique,
+                !(A.mechanismUnique && !ref.mechanismUnique), 'uniqueness'));
+
+  // Conservation / invariance and dimension are structure, not detail.
+  rows.push(inv('Conservation claim', ref.conserved, A.conserved,
+                A.conserved === ref.conserved, 'invariance'));
+  rows.push(inv('Dimension', ref.dimension, A.dimension,
+                A.dimension === ref.dimension, 'invariance'));
+
+  // Every scope condition in the reference must be PRESENT or DECLARED as a
+  // drop carrying a named destination rung. Silent drops are indistinguishable
+  // from planted misconceptions at retrieval time.
+  ref.scope.forEach(s => rows.push(inv('Scope — ' + SCOPE_LABEL[s], 'present or declared',
+    A.scope.includes(s) ? 'present' : (declared(s) ? 'declared as a drop' : 'MISSING, undeclared'),
+    A.scope.includes(s) || declared(s), 'scope-flag')));
+
+  return { rows, pass: rows.every(r => r.ok),
+           classes: [...new Set(rows.filter(r => !r.ok).map(r => r.cls))] };
+}`;
+el('chksrc').textContent=CHK_SRC;
+
+const inv=(k,want,got,ok,cls)=>({k,want:String(want),got:String(got),ok,cls});
+function checkFidelity(rung,ref){
+  const rows=[],A=rung.assert;
+  const declared=key=>rung.drops.some(d=>d[2]===key);
+  rows.push(inv('Ontological category',ref.ontology,A.ontology,A.ontology===ref.ontology,'ontology'));
+  rows.push(inv('Causal direction & agency',ref.agency,A.agency,A.agency===ref.agency,'causal-sign'));
+  rows.push(inv('Quantifier strength',ref.quantifier,A.quantifier,QORD[A.quantifier]<=QORD[ref.quantifier],'quantifier'));
+  rows.push(inv('Uniqueness of mechanism',ref.mechanismUnique,A.mechanismUnique,
+    !(A.mechanismUnique&&!ref.mechanismUnique),'uniqueness'));
+  rows.push(inv('Conservation claim',ref.conserved,A.conserved,A.conserved===ref.conserved,'invariance'));
+  rows.push(inv('Dimension',ref.dimension,A.dimension,A.dimension===ref.dimension,'invariance'));
+  ref.scope.forEach(s=>rows.push(inv('Scope — '+SCOPE_LABEL[s],'present or declared',
+    A.scope.includes(s)?'present':(declared(s)?'declared as a drop':'MISSING, undeclared'),
+    A.scope.includes(s)||declared(s),'scope-flag')));
+  return {rows,pass:rows.every(r=>r.ok),classes:[...new Set(rows.filter(r=>!r.ok).map(r=>r.cls))]};
+}
+
+/* ══ rendering ══════════════════════════════════════════════════════════ */
+function renderDoors(){
+  const e=ENTRY?ENTRY.entry:0;
+  el('doors').innerHTML=RUNGS.map(r=>`
+    <div class="door${r.n===e?' in':''}">
+      <div class="rn">Rung ${r.n}</div>
+      <h4>${esc(r.title)}</h4>
+      <p>${esc(r.ceiling)}</p>
+      <div class="st"><span class="pill ${r.n===e?'y':''}">${r.n===e?'YOU ARE HERE':(e?'not your entry':'run the probe')}</span></div>
+    </div>`).join('');
+  if(!e){el('rungbody').innerHTML='';el('transfer').innerHTML='';return;}
+  const r=RUNGS[e-1];
+  el('rungbody').innerHTML=`
+    <div class="rung fade">
+      <h4>Rung ${r.n} — ${esc(r.title)}</h4>
+      <div class="cap">${esc(r.cap)}</div>
+      ${r.prose.split('\n\n').map(p=>`<p>${p}</p>`).join('')}
+      ${r.drops.length?`<div class="drops"><b>Declared drops (each one is a named, retrievable marker, not a vague "it's more complicated"):</b><br />${
+        r.drops.map(d=>`· ${esc(d[0])} → <b>${esc(d[1])}</b>`).join('<br />')}</div>`
+        :`<div class="drops"><b>No drops.</b> This is the reference account; there is nothing above it to defer to.</div>`}
+    </div>`;
+  const t=TRANSFER[e-1];
+  el('transfer').innerHTML=`
+    <div class="panel">
+      <div class="ptitle">Transfer probe — not a recall probe</div>
+      <div class="psub">The rung's own self-evaluation must use a transfer item. The
+      expertise-reversal effect for instructional explanations replicated on transfer and
+      <em>not</em> on retention, so a ladder that checks itself with recall questions is
+      instrumented to be blind to its own primary failure mode.</div>
+      <div class="qq" style="font:650 14.6px/1.5 var(--sans);color:var(--ink);margin-bottom:4px">${esc(t.q)}</div>
+      <div class="opts" id="topts">${t.opts.map((o,j)=>
+        `<label class="opt"><input type="radio" name="tr" value="${j}" /><span>${esc(o)}</span></label>`).join('')}</div>
+      <div id="tout"></div>
+    </div>`;
+  el('topts').querySelectorAll('input').forEach(inp=>inp.onchange=()=>{
+    const ok=+inp.value===t.ans, load=+el('load').value;
+    const move=ok?(load<6?'CLIMB':'HOLD'):'DESCEND';
+    const why=ok?(load<6
+      ? 'Transfer correct and load low → climb one rung.'
+      : 'Transfer correct but load high → hold at this rung and give a second <em>aligned</em> instantiation of the same structure. This is not a stall: multiple instantiation of the same structure is the robust part of the concreteness-fading result. It must be an aligned contrast, not surface variety — unaligned variety is what harmed learners.')
+      : 'Transfer failed. One failure is not a decision. The rule descends only on <em>two consecutive</em> transfer failures — a single item is inside the noise.';
+    el('tout').innerHTML=`<div class="note ${ok?'':'warn'}" style="margin-bottom:0">
+      <b>${ok?'Correct':'Not correct'} — rule fires: ${move}.</b> ${why}<br /><br />${t.why}</div>`;
+  });
+}
+const TRANSFER=[
+ {q:'A physicist is shown a short film of six gas molecules bouncing inside a tiny sealed box, and asked whether the film is running forwards or backwards. Can she tell?',
+  opts:['Yes — backwards films always look wrong',
+        'Yes, but only if the box is heated',
+        'No — with only six molecules both directions are perfectly ordinary',
+        'No — the direction of time is not a physical property at all'],ans:2,
+  why:'The asymmetry is statistical, so it is a function of how many molecules there are. With six, gathering into one corner happens constantly and neither direction looks odd. With 10²² it never happens. A learner who answers "yes" has taken the arrow of time as a primitive rather than as a consequence of counting — which is the rung-1 error this rung is meant to prevent.'},
+ {q:'You double the number of molecules in the box, from N to 2N. What happens to the probability of spontaneously finding them all in the left half?',
+  opts:['It halves','It squares','It is unchanged','It falls by a factor of 2N'],ans:1,
+  why:'Each molecule independently has a 1/2 chance, so the probability is 2⁻ᴺ and doubling N squares it. The reason this is a transfer item and not a recall item is that rung 2 states the exponent but never states the doubling rule — you have to run the argument, not retrieve it.'},
+ {q:'Two observers examine the same box of gas in the same exact microstate. One tracks only pressure and volume. The other also tracks two colour-labelled sub-populations of otherwise identical molecules. Do they assign the same entropy?',
+  opts:['No — entropy is relative to the chosen macroscopic description',
+        'Yes — entropy is a physical property of the state',
+        'Yes, provided both use the same units',
+        'Only at equilibrium'],ans:0,
+  why:'This is the Gibbs mixing case. Entropy is a functional of the distribution the description induces, so a finer description gives a different number for the identical microstate. It is the sharpest available test of whether the learner has actually absorbed "functional of a distribution" or has quietly retained "property of the stuff".'}
+];
+
+let FSEL='all';
+function renderFidelity(){
+  const opts=[{id:'all',label:'All three rungs'},
+    ...VIOLATIONS.map(v=>({id:v.id,label:v.label}))];
+  el('fpick').innerHTML=opts.map(o=>
+    `<button data-f="${o.id}" class="${o.id===FSEL?'on':''}">${esc(o.label)}</button>`).join('');
+  el('fpick').querySelectorAll('button').forEach(b=>b.onclick=()=>{FSEL=b.dataset.f;renderFidelity();});
+  const targets=FSEL==='all'?RUNGS:[VIOLATIONS.find(v=>v.id===FSEL)];
+  el('fout').innerHTML=targets.map(t=>{
+    const res=checkFidelity(t,REF);
+    const head=t.n?`Rung ${t.n} — ${t.title}`:t.title;
+    const body=t.n?'':`<div class="rung" style="margin-top:14px"><div class="cap">${esc(t.cap)}</div><p>${t.prose}</p></div>`;
+    return `<div style="margin-top:20px">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px">
+        <span class="pill ${res.pass?'y':'n'}">${res.pass?'LEGAL SIMPLIFICATION':'REJECTED'}</span>
+        <b style="font:650 14.5px/1.4 var(--sans);color:var(--ink)">${esc(head)}</b></div>
+      ${res.pass?'':`<div style="font-size:13.5px;color:var(--bad);margin-bottom:8px">
+        ${res.classes.length} violation class${res.classes.length>1?'es':''}: <code>${res.classes.join('</code> <code>')}</code></div>`}
+      ${body}
+      <div class="scroll"><table>
+        <tr><th>Invariant</th><th>Reference account</th><th>This rung</th><th></th></tr>
+        ${res.rows.map(r=>`<tr><td><b>${esc(r.k)}</b></td><td>${esc(r.want)}</td>
+          <td${r.ok?'':' style="color:var(--bad)"'}>${esc(r.got)}</td>
+          <td><span class="pill ${r.ok?'y':'n'}">${r.ok?'ok':r.cls}</span></td></tr>`).join('')}
+      </table></div>
+      ${res.pass?'':`<div class="note warn" style="margin-top:0"><b>Why this one is not fixable by adding a caveat.</b>
+        ${FSEL==='v1'
+          ? 'Every one of those failures follows from the first. Once entropy has been placed in the category "visible property of an arrangement", the quantifier has to become "always" (because a messy desk really does stay messy), the dimension has to vanish (because messiness has no units), and the mechanism becomes unique (because there is nothing left to count). You cannot patch the quantifier while leaving the ontology in place — the rest of the account will keep regenerating it.'
+          : 'The conservation failure is the tell. Once entropy is a substance, it must be transported rather than created, and the second law becomes a bookkeeping claim about a fluid rather than a statement about measure. Chi’s original ontological-miscategorisation studies were built on exactly this family of error, in exactly this concept.'}</div>`}
+    </div>`;
+  }).join('');
+}
+renderFidelity();
+renderDoors();
+
+function draw(){renderCI(el('ci'),RUNGCOUNT);renderSlope(el('slope'),PREF);}
+draw();
+el('citable').innerHTML=['<tr><th>Contrast</th><th>Mdiff</th><th>95% CI</th><th>Statistics</th></tr>']
+  .concat(RUNGCOUNT.rows.map(r=>`<tr><td><b>${esc(r.label)}</b></td>
+    <td class="num">${(r.v>0?'+':'')+r.v.toFixed(2)}</td>
+    <td class="num">${r.ci?`[${r.ci[0]}, ${r.ci[1]}]`:'not reported'}</td>
+    <td>${esc(r.p)}</td></tr>`)).join('');
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(draw,150);});
+
+const R=document.documentElement;
+el('tt').onclick=()=>{
+  const dark=R.getAttribute('data-theme')==='dark'||
+    (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',dark?'light':'dark');};
+</script>
+</body>
+</html>

@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Six Rungs of Proof — Demo 03</title>
+<meta name="description" content="A dimensional, numeric and structural checker that really runs and really times itself in your browser, over a corpus of textbook formulas and five classes of mutation." />
+<link rel="stylesheet" href="demo.css" />
+<style>
+.tag{font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;
+  border-radius:5px;border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
+.tag.ok{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
+.tag.no{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 45%,transparent)}
+.tag.ab{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 45%,transparent)}
+.rungs{display:grid;grid-template-columns:1fr;gap:14px;margin:26px 0}
+@media(min-width:760px){.rungs{grid-template-columns:repeat(3,1fr)}}
+.rung{border:1px solid var(--line);border-radius:var(--r);padding:20px;background:var(--surface)}
+.rung .rn{font:600 10.5px/1 var(--sans);letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+.rung .big{font:400 30px/1 var(--serif);color:var(--real);margin-bottom:4px}
+.rung .lt{font:13px/1.5 var(--mono);color:var(--ink-2);margin-bottom:12px}
+.rung p{font-size:13.3px;line-height:1.55;margin:0;color:var(--ink-3)}
+input[type=range]{width:100%;accent-color:var(--real);height:22px;padding:0;border:0;background:none}
+.val{font:13px/1 var(--mono);color:var(--ink);float:right;text-transform:none;letter-spacing:0}
+.ctrl{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:640px){.ctrl{grid-template-columns:1fr 1fr}}
+.bar{height:9px;border-radius:5px;background:var(--raise);overflow:hidden;min-width:80px}
+.bar i{display:block;height:100%}
+.bar i.r{background:var(--real)} .bar i.l{background:var(--felt)}
+.matrix td:first-child{color:var(--ink)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3);margin-top:12px}
+.legend b{font-weight:600}
+.sw{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+.mini{font-size:12.5px;color:var(--ink-3)}
+.fx{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo Gallery</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 03 · Mechanisms</div>
+  <h1>Six Rungs of Proof</h1>
+  <p class="lede">A model asserts a formula. Before a learner sees it, something has to check it.
+  Three of those checks run below — <strong>on your machine, right now, timed with
+  <code>performance.now()</code></strong> — against a corpus of textbook formulas and five classes
+  of deliberate corruption.</p>
+  <div class="chips">
+    <span class="chip m">Computed live</span>
+    <span class="chip m">Timed on your hardware</span>
+    <span class="chip n">k = 8 buys nothing over k = 1</span>
+  </div>
+</header>
+
+<div class="note"><b>COMPUTED, and unusually literally.</b> There is no recorded result anywhere on
+this page. A hand-written expression parser, a dimensional-analysis engine, a numeric sampler and a
+canonical-form comparator are all in the page source. They build the mutant corpus at load, run
+every check, and report the wall-clock cost measured on the device you are holding. Your numbers
+will differ from the corpus figures quoted at the bottom, and that is the point: those were
+measured on a different machine, in a different language, and are reported here for comparison,
+not as this page's output.</div>
+
+<h2>1 · The corpus</h2>
+<p>Textbook formulas with declared dimensions, plus five mutation classes applied to each:
+<strong>sign flip</strong>, <strong>coefficient change</strong>, <strong>swapped variable</strong>,
+<strong>dropped term</strong>, <strong>wrong exponent</strong>. Mutants are generated at load by a
+seeded generator, so the corpus is identical every time you reload — and every mutant is printed,
+so you can check the generator did what it says.</p>
+
+<div class="panel">
+  <div class="ptitle">Corpus built at load</div>
+  <div class="psub" id="cstat">—</div>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Formula</th><th>Reference right-hand side</th><th>Dimension</th><th>Mutants</th></tr></thead>
+    <tbody id="ctb"></tbody>
+  </table>
+  </div>
+</div>
+
+<div class="note"><b>Some mutations are not errors.</b> Swapping <code>a</code> and <code>b</code>
+in <code>sqrt(a^2 + b^2)</code> produces a different string and the same function. The builder
+detects these with a 64-sample equivalence probe and files them as <b>null mutants</b>: cases where
+the correct answer is <em>pass</em>. Together with a hand-written set of identity rewrites, they
+form the false-alarm denominator. A detector with no false-alarm denominator is not a detector, it
+is an alarm.</p></div>
+
+<h2>2 · The controls</h2>
+<div class="panel">
+  <div class="ctrl">
+    <div>
+      <label for="k">Random substitutions per numeric check (k) <span class="val" id="kv">1</span></label>
+      <input type="range" id="k" min="1" max="16" step="1" value="1" />
+    </div>
+    <div>
+      <label for="dom">Sampling domain</label>
+      <select id="dom">
+        <option value="n">narrow positive — U(0.31, 0.87), the declared domain</option>
+        <option value="w">wide positive — U(0.05, 20)</option>
+        <option value="s">signed — ±U(0.05, 20), outside the declared domain</option>
+      </select>
+    </div>
+  </div>
+  <div class="row" style="margin:20px 0 0">
+    <button class="pri" id="go">Run all three rungs</button>
+    <button id="sweep">Run the k-sweep (the null result)</button>
+    <span class="mini" id="busy"></span>
+  </div>
+</div>
+
+<h2>3 · What the three rungs cost and catch</h2>
+<div class="rungs" id="rungs">
+  <div class="rung"><div class="rn">L1 · Dimensional</div><div class="big">—</div><div class="lt">not run</div><p>Reference-free. Needs only declared units, no correct answer to compare against — the only rung that can check a formula nobody has seen before.</p></div>
+  <div class="rung"><div class="rn">L2 · Numeric</div><div class="big">—</div><div class="lt">not run</div><p>Substitute random values into both the reference and the candidate, compare. Needs a reference. Cannot handle universals.</p></div>
+  <div class="rung"><div class="rn">L3 · Structural</div><div class="big">—</div><div class="lt">not run</div><p>Canonical-form comparison: flatten, fold, collect powers, sort, expand small integer powers, compare strings.</p></div>
+</div>
+<div class="mini">Times are per single check, obtained by running the whole corpus in a loop until at
+least 60&nbsp;ms of wall clock has elapsed and dividing — because <code>performance.now()</code> is
+deliberately coarsened by browsers and a single check is far below its resolution.</div>
+
+<h2>4 · Which rung catches which mutation</h2>
+<div class="scroll">
+<table class="matrix">
+  <thead><tr><th>Mutation class</th><th>n</th><th>L1 dimensional</th><th>L2 numeric</th><th>L3 structural</th><th>Cheapest rung that catches it</th></tr></thead>
+  <tbody id="mtb"><tr><td colspan="6" class="mini">Not run yet.</td></tr></tbody>
+</table>
+</div>
+
+<div class="panel sunken">
+  <div class="ptitle">False alarms — the cases where <em>pass</em> is the right answer</div>
+  <div class="psub">Null mutants and identity rewrites. Every row here is mathematically correct;
+  a rung that flags one has cried wolf.</div>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Reference</th><th>Equivalent form</th><th>Why it is equal</th><th>L1</th><th>L2</th><th>L3</th></tr></thead>
+    <tbody id="ftb"><tr><td colspan="6" class="mini">Not run yet.</td></tr></tbody>
+  </table>
+  </div>
+</div>
+
+<h2>5 · The null result: eight substitutions buy nothing over one</h2>
+<p>This is the finding worth more than the demo. Raising k multiplies the cost of the numeric rung
+almost linearly and does <em>not</em> move recall. Run it and read your own numbers.</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>k</th><th>Recall</th><th></th><th>Per-check time</th><th></th><th>Cost multiple</th></tr></thead>
+  <tbody id="stb"><tr><td colspan="6" class="mini">Not run yet.</td></tr></tbody>
+</table>
+</div>
+<div class="legend">
+  <span><i class="sw" style="background:var(--real)"></i><b>Recall</b> — mutants caught</span>
+  <span><i class="sw" style="background:var(--felt)"></i><b>Latency</b> — per-check cost</span>
+</div>
+<div class="note" id="snote" style="display:none"></div>
+
+<h2>6 · The corpus figures, for comparison</h2>
+<p class="sub">Measured elsewhere, on a 113-item claim corpus in Python. Quoted, not reproduced.</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Rung</th><th class="num">Cost</th><th class="num">Recall</th><th class="num">False alarms</th><th>The catch</th></tr></thead>
+  <tbody>
+    <tr><td><b>L2b numeric</b></td>
+      <td class="num">0.38 ms median at k = 1<br />0.49 ms at k = 8<br />p95 0.93 ms</td>
+      <td class="num up">112/113 = <b>99.1%</b><br />identical k = 1 → k = 16</td>
+      <td class="num up"><b>0 / 37</b> in the declared domain</td>
+      <td>Cannot certify a universal. Cannot see outside the sampled domain. 1 in 113 slips through and always will.</td></tr>
+    <tr><td><b>L3 symbolic</b></td>
+      <td class="num">1.8 ms median<br />10.8 ms p95<br /><b>unbounded worst case</b></td>
+      <td class="num up">113/113 = <b>100%</b> in-domain</td>
+      <td class="num">—</td>
+      <td><b>SymPy fails 152/397 = 38.3%</b> of the Wester suite: 150 <code>@XFAIL</code> + 3 <code>@SKIP</code>, three sections unimplemented, 57–70% failure in sums, definite integrals and transforms.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note warn"><b>The hole is where the teaching is.</b> Symbolic checking is complete in
+theory and 38.3% incomplete in the implementation everyone actually uses — and the failures cluster
+in sums, definite integrals and transforms, which is precisely the material a physics or
+engineering learner is working through. Meanwhile the numeric rung is 3–5× cheaper, has no domain
+holes of that kind, and loses one item in 113. Buying the last 0.9% costs you a 38.3% blind spot
+you cannot see into. That trade is the whole design decision.</div>
+
+<div class="note"><b>And the rule that governs L3’s output.</b> By Richardson’s theorem, a
+simplifier returning “not zero” is not a proof of inequality. A sound symbolic rung emits
+<code>PASS</code> or <code>ABSTAIN</code> — <b>never <code>FAIL</code></b>. The comparator on this
+page reports <em>differs</em>, which is a suspicion and is scored as a catch only because it is
+compared against a known-correct reference. Remove the reference and that column collapses.</div>
+
+<h2>What this proves / what it does not</h2>
+<div class="panel">
+  <div class="ptitle">What it proves</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li>Formula verification is <strong>cheap</strong> — sub-millisecond, in a browser, in plain
+    JavaScript, with no dependency. There is no cost argument for shipping unchecked formulas.</li>
+    <li>The rungs are genuinely different instruments: L1 is reference-free but blind to
+    coefficients and signs; L2 needs a reference and catches nearly everything; L3 is exact and
+    brittle. Ordering them cheapest-first is a measurable saving, not an aesthetic.</li>
+    <li>The k null replicates on your hardware: recall is flat, cost is not. Anyone who samples
+    eight points because eight feels safer is paying for a feeling.</li>
+    <li>Sampling domain is load-bearing. Switch to signed sampling and watch false alarms appear
+    from nothing but <code>sqrt</code> and <code>ln</code> of negative numbers.</li>
+  </ul>
+  <div class="ptitle">What it does not prove</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li><strong>That a verified formula teaches anybody anything.</strong> Grounding removes a
+    failure mode. It does not add instruction.</li>
+    <li>That this corpus is representative. Twenty clean algebraic formulas is the easy end. Nothing
+    here has a definite integral, a transform, a limit, or a universally quantified claim — the
+    exact places where the real corpus reports its holes.</li>
+    <li>That the mutations resemble how models actually fail. These are five mechanical corruptions.
+    Real model errors are more often <em>plausible substitutions from a neighbouring topic</em>,
+    which a numeric check catches just as easily but a human reader does not.</li>
+    <li>That L3 here is SymPy. It is a canonical-form comparator of about eighty lines. It handles
+    commutativity, associativity, constant folding, power collection and small integer expansion.
+    It does not do trigonometric identities, logarithm laws or partial fractions — and it tells you
+    so, in the false-alarm table, by getting the log rule wrong in front of you.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../">Dashboard</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw">Research reports</a>
+  <br /><br />Corpus figures from <code>G1-grounding-synthesis</code> and <code>F3-executable-verifiable</code>.
+  SymPy Wester suite counted from source, 2026-07-27.
+</footer>
+
+</div>
+<script>
+const tt=document.getElementById('tt'),R=document.documentElement;
+tt.onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+
+/* ══ 1. parser ═══════════════════════════════════════════════ */
+const FNS={sqrt:Math.sqrt,sin:Math.sin,cos:Math.cos,exp:Math.exp,ln:Math.log,abs:Math.abs};
+function P(src){
+  const T=[];let i=0;
+  while(i<src.length){const c=src[i];
+    if(/\s/.test(c)){i++;continue;}
+    if(/[0-9]/.test(c)){let j=i;while(j<src.length&&/[0-9.]/.test(src[j]))j++;T.push({t:'n',v:+src.slice(i,j)});i=j;continue;}
+    if(/[A-Za-z_]/.test(c)){let j=i;while(j<src.length&&/[A-Za-z0-9_]/.test(src[j]))j++;T.push({t:'id',v:src.slice(i,j)});i=j;continue;}
+    if('+-*/^()'.indexOf(c)>-1){T.push({t:c});i++;continue;}
+    throw new Error('bad character "'+c+'"');}
+  let p=0;const pk=()=>T[p]||{t:'eof'};
+  function ex(){let l=tm();while(pk().t==='+'||pk().t==='-'){const o=T[p++].t;l={t:'b',o,l,r:tm()};}return l;}
+  function tm(){let l=un();while(pk().t==='*'||pk().t==='/'){const o=T[p++].t;l={t:'b',o,l,r:un()};}return l;}
+  function un(){if(pk().t==='-'){p++;return{t:'u',l:un()};}return pw();}
+  function pw(){const b=at();if(pk().t==='^'){p++;return{t:'b',o:'^',l:b,r:un()};}return b;}
+  function at(){const k=T[p];if(!k)throw new Error('unexpected end of formula');
+    if(k.t==='('){p++;const e=ex();if(pk().t!==')')throw new Error('missing )');p++;return e;}
+    if(k.t==='n'){p++;return{t:'n',v:k.v};}
+    if(k.t==='id'){p++;if(pk().t==='('){p++;const a=ex();if(pk().t!==')')throw new Error('missing )');p++;return{t:'f',n:k.v,a};}
+      return{t:'v',n:k.v};}
+    throw new Error('unexpected token');}
+  const e=ex();if(p<T.length)throw new Error('trailing input');return e;}
+
+const PR={'+':1,'-':1,'*':2,'/':2,'^':3};
+function pr(n,c){c=c||0;let s,m;
+  if(n.t==='n')return String(+n.v.toPrecision(10));
+  if(n.t==='v')return n.n;
+  if(n.t==='f')return n.n+'('+pr(n.a,0)+')';
+  if(n.t==='u'){m=2.5;s='-'+pr(n.l,2.5);}
+  else{m=PR[n.o];const L=pr(n.l,n.o==='^'?m+0.5:m),Rr=pr(n.r,n.o==='^'?m:m+0.5);
+    s=L+(n.o==='+'?' + ':n.o==='-'?' - ':n.o)+Rr;}
+  return c>m?'('+s+')':s;}
+function clone(n){return JSON.parse(JSON.stringify(n));}
+
+/* ══ 2. numeric evaluation ═══════════════════════════════════ */
+function nv(n,e){
+  switch(n.t){
+    case 'n':return n.v;
+    case 'v':return n.n==='pi'?Math.PI:e[n.n];
+    case 'u':return -nv(n.l,e);
+    case 'f':return FNS[n.n](nv(n.a,e));
+    default:{const a=nv(n.l,e),b=nv(n.r,e);
+      return n.o==='+'?a+b:n.o==='-'?a-b:n.o==='*'?a*b:n.o==='/'?a/b:Math.pow(a,b);}}}
+
+/* ══ 3. dimensional analysis ═════════════════════════════════ */
+function dmul(a,b,s){const o=Object.assign({},a);
+  for(const k in b){const v=(o[k]||0)+s*b[k];if(Math.abs(v)<1e-12)delete o[k];else o[k]=v;}return o;}
+function dsc(a,s){const o={};for(const k in a){const v=a[k]*s;if(Math.abs(v)>1e-12)o[k]=v;}return o;}
+function deq(a,b){const ks={};for(const k in a)ks[k]=1;for(const k in b)ks[k]=1;
+  for(const k in ks)if(Math.abs((a[k]||0)-(b[k]||0))>1e-9)return false;return true;}
+function dstr(d){const ks=Object.keys(d).sort();
+  return ks.length?ks.map(k=>k+(d[k]===1?'':'^'+(+d[k].toPrecision(4)))).join('·'):'1';}
+function dim(n,V){
+  switch(n.t){
+    case 'n':return{};
+    case 'v':return n.n==='pi'?{}:(V[n.n]||{});
+    case 'u':return dim(n.l,V);
+    case 'f':{const x=dim(n.a,V);
+      if(n.n==='sqrt')return dsc(x,0.5);
+      if(n.n==='abs')return x;
+      if(Object.keys(x).length)throw new Error(n.n+'() needs a dimensionless argument, got '+dstr(x));
+      return{};}
+    default:{
+      if(n.o==='^'){const b=dim(n.l,V);
+        if(Object.keys(dim(n.r,V)).length)throw new Error('exponent carries dimension');
+        let k;try{k=nv(n.r,{});}catch(_){k=NaN;}
+        if(!isFinite(k)){if(Object.keys(b).length)throw new Error('non-constant exponent on a dimensional base');return{};}
+        return dsc(b,k);}
+      const a=dim(n.l,V),b=dim(n.r,V);
+      if(n.o==='*')return dmul(a,b,1);
+      if(n.o==='/')return dmul(a,b,-1);
+      if(!deq(a,b))throw new Error('cannot add ['+dstr(a)+'] to ['+dstr(b)+']');
+      return a;}}}
+
+/* ══ 4. canonical form ═══════════════════════════════════════ */
+const rz=x=>Math.abs(x)<1e-12?0:+x.toPrecision(12);
+function pkey(p){const ks=Object.keys(p).sort().filter(k=>Math.abs(p[k])>1e-12);
+  return ks.length?ks.map(k=>k+'^'+rz(p[k])).join('*'):'1';}
+function mk(c,p){const S={};if(Math.abs(c)>1e-12)S[pkey(p)]={c,p};return S;}
+function addS(A,B){const S={};
+  for(const k in A)S[k]={c:A[k].c,p:A[k].p};
+  for(const k in B){if(S[k]){S[k]={c:S[k].c+B[k].c,p:S[k].p};if(Math.abs(S[k].c)<1e-12)delete S[k];}
+    else S[k]={c:B[k].c,p:B[k].p};}
+  return S;}
+function sclS(A,s){const S={};for(const k in A)if(Math.abs(A[k].c*s)>1e-12)S[k]={c:A[k].c*s,p:A[k].p};return S;}
+function mulS(A,B){let S={};
+  for(const ka in A)for(const kb in B){
+    const p=Object.assign({},A[ka].p);
+    for(const b in B[kb].p){const v=(p[b]||0)+B[kb].p[b];if(Math.abs(v)<1e-12)delete p[b];else p[b]=v;}
+    S=addS(S,mk(A[ka].c*B[kb].c,p));}
+  return S;}
+function powT(t,k){const c=Math.pow(t.c,k);if(!isFinite(c))return null;
+  const p={};for(const b in t.p){const v=t.p[b]*k;if(Math.abs(v)>1e-12)p[b]=v;}return mk(c,p);}
+function cstr(S){const ks=Object.keys(S).sort();
+  return ks.length?ks.map(k=>rz(S[k].c)+'*'+k).join('+'):'0';}
+function opaque(name){const p={};p[name]=1;return mk(1,p);}
+function canon(n){
+  switch(n.t){
+    case 'n':return mk(n.v,{});
+    case 'v':{const p={};p[n.n]=1;return mk(1,p);}
+    case 'u':return sclS(canon(n.l),-1);
+    case 'f':{
+      if(n.n==='sqrt')return canon({t:'b',o:'^',l:n.a,r:{t:'n',v:0.5}});
+      return opaque(n.n+'{'+cstr(canon(n.a))+'}');}
+    default:{
+      const o=n.o;
+      if(o==='+')return addS(canon(n.l),canon(n.r));
+      if(o==='-')return addS(canon(n.l),sclS(canon(n.r),-1));
+      if(o==='*')return mulS(canon(n.l),canon(n.r));
+      if(o==='/'){const B=canon(n.r),ks=Object.keys(B);
+        if(ks.length===1){const inv=powT(B[ks[0]],-1);if(inv)return mulS(canon(n.l),inv);}
+        return mulS(canon(n.l),opaque('inv{'+cstr(B)+'}'));}
+      /* ^ */
+      let k=NaN;try{k=nv(n.r,{});}catch(_){}
+      const B=canon(n.l),ks=Object.keys(B);
+      if(isFinite(k)){
+        if(k===0)return mk(1,{});
+        if(k===1)return B;
+        if(ks.length===1){const t=powT(B[ks[0]],k);if(t)return t;}
+        if(Number.isInteger(k)&&k>=2&&k<=4){let acc=B;for(let i=1;i<k;i++)acc=mulS(acc,B);return acc;}
+        return opaque('pow{'+cstr(B)+'|'+rz(k)+'}');}
+      return opaque('pow{'+cstr(B)+'|'+cstr(canon(n.r))+'}');}}}
+
+/* ══ 5. the corpus ═══════════════════════════════════════════ */
+const F=[
+ {n:'Kinetic energy',        l:'E',  r:'(1/2)*m*v^2',                d:{M:1,L:2,T:-2},  v:{m:{M:1},v:{L:1,T:-1}}},
+ {n:'Newton’s second law',   l:'F',  r:'m*a',                        d:{M:1,L:1,T:-2},  v:{m:{M:1},a:{L:1,T:-2}}},
+ {n:'Momentum',              l:'p',  r:'m*v',                        d:{M:1,L:1,T:-1},  v:{m:{M:1},v:{L:1,T:-1}}},
+ {n:'Uniform acceleration',  l:'s',  r:'u*t + (1/2)*a*t^2',          d:{L:1},           v:{u:{L:1,T:-1},t:{T:1},a:{L:1,T:-2}}},
+ {n:'Gravitational PE',      l:'U',  r:'m*g*h',                      d:{M:1,L:2,T:-2},  v:{m:{M:1},g:{L:1,T:-2},h:{L:1}}},
+ {n:'Centripetal accel.',    l:'ac', r:'v^2/r',                      d:{L:1,T:-2},      v:{v:{L:1,T:-1},r:{L:1}}},
+ {n:'Pendulum period',       l:'Tp', r:'2*pi*sqrt(len/g)',           d:{T:1},           v:{len:{L:1},g:{L:1,T:-2}}},
+ {n:'Wave relation',         l:'c',  r:'f*lam',                      d:{L:1,T:-1},      v:{f:{T:-1},lam:{L:1}}},
+ {n:'Density',               l:'rho',r:'m/V',                        d:{M:1,L:-3},      v:{m:{M:1},V:{L:3}}},
+ {n:'Ohm’s law',             l:'Vd', r:'I*Res',                      d:{M:1,L:2,T:-3,I:-1}, v:{I:{I:1},Res:{M:1,L:2,T:-3,I:-2}}},
+ {n:'Ideal gas law',         l:'Pr', r:'nn*Rg*Th/Vo',                d:{M:1,L:-1,T:-2}, v:{nn:{N:1},Rg:{M:1,L:2,T:-2,K:-1,N:-1},Th:{K:1},Vo:{L:3}}},
+ {n:'Circle area',           l:'A',  r:'pi*r^2',                     d:{L:2},           v:{r:{L:1}}},
+ {n:'Sphere volume',         l:'Vs', r:'(4/3)*pi*r^3',               d:{L:3},           v:{r:{L:1}}},
+ {n:'Pythagoras',            l:'hy', r:'sqrt(a^2 + b^2)',            d:{L:1},           v:{a:{L:1},b:{L:1}}},
+ {n:'Exponential decay',     l:'N',  r:'N0*exp(-lm*t)',              d:{},              v:{N0:{},lm:{T:-1},t:{T:1}}},
+ {n:'Kinematic v²',          l:'vf', r:'sqrt(u^2 + 2*a*s)',          d:{L:1,T:-1},      v:{u:{L:1,T:-1},a:{L:1,T:-2},s:{L:1}}},
+ {n:'Compound interest',     l:'Am', r:'Pp*(1 + rr)^yy',             d:{},              v:{Pp:{},rr:{},yy:{}}},
+ {n:'Arithmetic series sum', l:'Sn', r:'nq*(a1 + an)/2',             d:{},              v:{nq:{},a1:{},an:{}}},
+ {n:'Binomial square',       l:'bq', r:'(a + b)^2',                  d:{},              v:{a:{},b:{}}},
+ {n:'Log product rule',      l:'lg', r:'ln(a*b)',                    d:{},              v:{a:{},b:{}}}
+];
+const IDENT=[
+ {n:'Kinetic energy',       e:'m*v*v/2',                why:'x·x written as x², the ½ moved to a divisor'},
+ {n:'Circle area',          e:'r^2*pi',                 why:'commutativity of multiplication'},
+ {n:'Uniform acceleration', e:'(1/2)*a*t^2 + u*t',      why:'terms reordered'},
+ {n:'Pendulum period',      e:'2*pi*sqrt(len)/sqrt(g)', why:'√ distributed across a quotient'},
+ {n:'Pythagoras',           e:'sqrt(b^2 + a^2)',        why:'commutativity under a radical'},
+ {n:'Binomial square',      e:'a^2 + 2*a*b + b^2',      why:'binomial expanded'},
+ {n:'Log product rule',     e:'ln(a) + ln(b)',          why:'the log product rule — true for a, b > 0'}
+];
+const KINDS=[
+ {k:'sign', label:'sign flip'},
+ {k:'coef', label:'coefficient change'},
+ {k:'swap', label:'swapped variable'},
+ {k:'drop', label:'dropped term'},
+ {k:'expo', label:'wrong exponent'}
+];
+
+/* ══ 6. seeded RNG + mutators ════════════════════════════════ */
+let SD=20260727;
+const seed=s=>{SD=s>>>0;};
+const rnd=()=>{SD=(Math.imul(SD,1664525)+1013904223)>>>0;return SD/4294967296;};
+function walk(n,f,path){path=path||[];f(n,path);
+  if(n.t==='b'){walk(n.l,f,path.concat('l'));walk(n.r,f,path.concat('r'));}
+  else if(n.t==='u')walk(n.l,f,path.concat('l'));
+  else if(n.t==='f')walk(n.a,f,path.concat('a'));}
+function at(root,path){let n=root;for(const s of path)n=n[s];return n;}
+function setAt(root,path,val){if(!path.length)return val;
+  let n=root;for(let i=0;i<path.length-1;i++)n=n[path[i]];n[path[path.length-1]]=val;return root;}
+function pick(a){return a.length?a[Math.floor(rnd()*a.length)]:null;}
+function mutate(src,kind){
+  const A=clone(src);
+  const sums=[],nums=[],vars=[],pows=[],names={};
+  walk(A,(n,p)=>{
+    if(n.t==='b'&&(n.o==='+'||n.o==='-'))sums.push(p);
+    if(n.t==='b'&&n.o==='^')pows.push(p);
+    if(n.t==='n')nums.push(p);
+    if(n.t==='v'&&n.n!=='pi'){vars.push(p);names[n.n]=1;}});
+  const vn=Object.keys(names);
+  if(kind==='sign'){
+    if(sums.length){const p=pick(sums);const n=at(A,p);n.o=n.o==='+'?'-':'+';return A;}
+    const p=pick(vars);if(!p)return null;return setAt(A,p,{t:'u',l:at(A,p)});}
+  if(kind==='coef'){
+    const cand=nums.filter(p=>{const par=p.slice(0,-1);if(!par.length)return true;
+      const q=at(A,par);return !(q.t==='b'&&q.o==='^'&&p[p.length-1]==='r');});
+    if(cand.length){const p=pick(cand);const n=at(A,p);n.v=n.v===2?3:n.v*2;return A;}
+    const p=pick(vars);if(!p)return null;
+    return setAt(A,p,{t:'b',o:'*',l:{t:'n',v:3},r:at(A,p)});}
+  if(kind==='swap'){
+    if(vn.length<2)return null;
+    const i=Math.floor(rnd()*vn.length);let j=Math.floor(rnd()*vn.length);
+    if(j===i)j=(i+1)%vn.length;
+    const x=vn[i],y=vn[j];
+    walk(A,n=>{if(n.t==='v'){if(n.n===x)n.n=' ';else if(n.n===y)n.n=x;}});
+    walk(A,n=>{if(n.t==='v'&&n.n===' ')n.n=y;});
+    return A;}
+  if(kind==='drop'){
+    if(!sums.length)return null;
+    const p=pick(sums);return setAt(A,p,at(A,p).l);}
+  if(kind==='expo'){
+    if(pows.length){const p=pick(pows);const n=at(A,p);
+      if(n.r.t==='n'){n.r.v=n.r.v+1;return A;}}
+    const p=pick(vars);if(!p)return null;
+    return setAt(A,p,{t:'b',o:'^',l:at(A,p),r:{t:'n',v:2}});}
+  return null;}
+
+/* ══ 7. sampling + the three checks ══════════════════════════ */
+const DOMS={n:[0.31,0.87,false],w:[0.05,20,false],s:[0.05,20,true]};
+function sample(vars,dom){
+  const [lo,hi,signed]=DOMS[dom],e={};
+  for(const k of vars){let x=lo+rnd()*(hi-lo);if(signed&&rnd()<0.5)x=-x;e[k]=x;}
+  return e;}
+function L1(cand,f){ /* dimensional. reference-free: candidate vs declared LHS dimension */
+  try{const d=dim(cand,f.v);return deq(d,f.d)?'pass':'fail';}
+  catch(err){return 'fail';}}
+function L1kind(f){ /* does the formula carry any dimension at all? */
+  for(const k in f.v)if(Object.keys(f.v[k]).length)return true;
+  return Object.keys(f.d).length>0;}
+function L2(ref,cand,f,k,dom){
+  const vars=Object.keys(f.v);
+  for(let i=0;i<k;i++){
+    const e=sample(vars,dom);
+    const x=nv(ref,e),y=nv(cand,e);
+    const bothBad=!isFinite(x)&&!isFinite(y);
+    if(bothBad)continue;
+    if(!isFinite(x)||!isFinite(y))return 'fail';
+    if(Math.abs(x-y)>1e-9*Math.max(1,Math.abs(x),Math.abs(y)))return 'fail';}
+  return 'pass';}
+function L3(refC,cand){return cstr(canon(cand))===refC?'pass':'fail';}
+
+/* ══ 8. build the corpus ═════════════════════════════════════ */
+let CASES=[],NEG=[],POS=[];
+function build(){
+  seed(20260727);
+  CASES=[];
+  F.forEach(f=>{
+    f.ast=P(f.r); f.canon=cstr(canon(f.ast)); f.dimOK=L1kind(f);
+    f.mut=[];
+    KINDS.forEach(K=>{
+      const m=mutate(f.ast,K.k);
+      if(!m){f.mut.push({kind:K.k,na:true});return;}
+      /* equivalence probe: 64 samples, wide positive */
+      seed(99000+CASES.length);
+      let same=true;
+      const vars=Object.keys(f.v);
+      for(let i=0;i<64&&same;i++){
+        const e=sample(vars,'w');
+        const x=nv(f.ast,e),y=nv(m,e);
+        if(!isFinite(x)&&!isFinite(y))continue;
+        if(!isFinite(x)||!isFinite(y)){same=false;break;}
+        if(Math.abs(x-y)>1e-9*Math.max(1,Math.abs(x),Math.abs(y)))same=false;}
+      const c={f,ast:m,kind:K.k,text:pr(m),expect:same?'pass':'fail',
+        why:same?'null mutant — the mutation produced an equivalent expression':''};
+      CASES.push(c); f.mut.push({kind:K.k,text:pr(m),nullm:same});});
+  });
+  IDENT.forEach(I=>{
+    const f=F.find(x=>x.n===I.n);
+    CASES.push({f,ast:P(I.e),kind:'ident',text:I.e,expect:'pass',why:I.why});});
+  NEG=CASES.filter(c=>c.expect==='fail');
+  POS=CASES.filter(c=>c.expect==='pass');
+  /* corpus table */
+  $('ctb').innerHTML=F.map(f=>'<tr><td><b>'+f.n+'</b></td><td class="fx">'+f.l+' = '+pr(f.ast)+
+    '</td><td class="fx">'+(Object.keys(f.d).length?dstr(f.d):'dimensionless')+'</td><td class="fx">'+
+    f.mut.map(m=>m.na?'<span style="color:var(--ink-3)">'+m.kind+': n/a</span>'
+      :m.kind+': '+m.text+(m.nullm?'  <span class="tag ab">null</span>':'')).join('<br />')+
+    '</td></tr>').join('');
+  $('cstat').textContent=F.length+' formulas · '+CASES.length+' cases · '+NEG.length+
+    ' true mutants (expect fail) · '+POS.length+' cases where pass is correct ('+
+    (POS.length-IDENT.length)+' null mutants + '+IDENT.length+' identity rewrites)';
+}
+
+/* ══ 9. timed run ════════════════════════════════════════════ */
+function timed(fn){
+  fn(); /* warm */
+  let reps=1,el=0,t0;
+  do{reps*=2;t0=performance.now();for(let i=0;i<reps;i++)fn();el=performance.now()-t0;}
+  while(el<60&&reps<1<<20);
+  return el/reps;}
+function fmtms(ms){
+  if(ms>=1)return ms.toFixed(3)+' ms';
+  if(ms>=0.001)return (ms*1000).toFixed(1)+' µs';
+  return (ms*1e6).toFixed(0)+' ns';}
+
+function runAll(){
+  const k=+$('k').value,dom=$('dom').value;
+  const res={L1:{},L2:{},L3:{}};
+  seed(31337);
+  CASES.forEach(c=>{res.L1[c.text+c.f.n]=L1(c.ast,c.f);});
+  seed(31337);
+  CASES.forEach(c=>{res.L2[c.text+c.f.n]=L2(c.f.ast,c.ast,c.f,k,dom);});
+  CASES.forEach(c=>{res.L3[c.text+c.f.n]=L3(c.f.canon,c.ast);});
+  const t1=timed(()=>{seed(31337);for(const c of CASES)L1(c.ast,c.f);})/CASES.length;
+  const t2=timed(()=>{seed(31337);for(const c of CASES)L2(c.f.ast,c.ast,c.f,k,dom);})/CASES.length;
+  const t3=timed(()=>{for(const c of CASES)L3(c.f.canon,c.ast);})/CASES.length;
+  /* rung cards */
+  const rec=r=>{let n=0;NEG.forEach(c=>{if(res[r][c.text+c.f.n]==='fail')n++;});return n;};
+  const fa =r=>{let n=0;POS.forEach(c=>{if(res[r][c.text+c.f.n]==='fail')n++;});return n;};
+  const noOp=NEG.filter(c=>!c.f.dimOK).length;
+  const cards=[
+   ['L1 · Dimensional',rec('L1'),fa('L1'),t1,
+    'Reference-free. It has <b>no opinion</b> on '+noOp+' of '+NEG.length+
+    ' mutants because their formulas are entirely dimensionless — the cheapest rung is also the one with the narrowest jurisdiction.'],
+   ['L2 · Numeric',rec('L2'),fa('L2'),t2,
+    'k = '+k+' random substitution'+(k>1?'s':'')+' per check, domain '+
+    ({n:'U(0.31, 0.87)',w:'U(0.05, 20)',s:'±U(0.05, 20)'}[dom])+
+    '. Needs the reference expression. Cannot certify a universal claim.'],
+   ['L3 · Structural',rec('L3'),fa('L3'),t3,
+    'Canonical form: '+(t1>0?(t3/t2).toFixed(1):'—')+'× the cost of the numeric rung on this run. '+
+    'Exact where it applies; silently outside its competence where it does not.']];
+  $('rungs').innerHTML=cards.map(([nm,r,f,t,note])=>
+    '<div class="rung fade"><div class="rn">'+nm+'</div><div class="big">'+
+    (100*r/NEG.length).toFixed(1)+'%</div>'+
+    '<div class="lt">'+r+'/'+NEG.length+' caught · '+f+'/'+POS.length+' false alarms<br />'+
+    fmtms(t)+' per check</div><p>'+note+'</p></div>').join('');
+  /* matrix */
+  let rows='';
+  KINDS.forEach(K=>{
+    const set=NEG.filter(c=>c.kind===K.k);
+    if(!set.length)return;
+    const cnt=r=>set.filter(c=>res[r][c.text+c.f.n]==='fail').length;
+    const c1=cnt('L1'),c2=cnt('L2'),c3=cnt('L3');
+    const cheap=c1===set.length?'<b style="color:var(--real)">L1 — free</b>'
+      :c2===set.length?'<b style="color:var(--real)">L2 — '+fmtms(t2)+'</b>'
+      :c3===set.length?'<b style="color:var(--felt)">L3 — '+fmtms(t3)+'</b>'
+      :'<b style="color:var(--bad)">none catches all of them</b>';
+    const cell=(c,n)=>'<span class="num">'+c+'/'+n+'</span> <div class="bar" style="margin-top:5px"><i class="r" style="width:'+(100*c/n)+'%"></i></div>';
+    rows+='<tr><td><b>'+K.label+'</b></td><td class="num">'+set.length+'</td><td>'+cell(c1,set.length)+
+      '</td><td>'+cell(c2,set.length)+'</td><td>'+cell(c3,set.length)+'</td><td>'+cheap+'</td></tr>';});
+  $('mtb').innerHTML=rows;
+  /* false alarms */
+  const tg=v=>'<span class="tag '+(v==='fail'?'no':'ok')+'">'+(v==='fail'?'flagged':'pass')+'</span>';
+  $('ftb').innerHTML=POS.map(c=>'<tr><td class="fx">'+pr(c.f.ast)+'</td><td class="fx">'+c.text+
+    '</td><td>'+(c.why||'equivalent')+'</td><td>'+tg(res.L1[c.text+c.f.n])+'</td><td>'+
+    tg(res.L2[c.text+c.f.n])+'</td><td>'+tg(res.L3[c.text+c.f.n])+'</td></tr>').join('');
+  $('busy').textContent='last run: k = '+k+', '+CASES.length+' cases, '+
+    ({n:'narrow',w:'wide',s:'signed'}[dom])+' domain';
+}
+
+/* ══ 10. the k-sweep ═════════════════════════════════════════ */
+function runSweep(){
+  const dom=$('dom').value,ks=[1,2,4,8,16],out=[];
+  ks.forEach(k=>{
+    seed(31337);
+    let caught=0;
+    NEG.forEach(c=>{if(L2(c.f.ast,c.ast,c.f,k,dom)==='fail')caught++;});
+    let falsePos=0;
+    seed(31337);
+    POS.forEach(c=>{if(L2(c.f.ast,c.ast,c.f,k,dom)==='fail')falsePos++;});
+    const t=timed(()=>{seed(31337);for(const c of CASES)L2(c.f.ast,c.ast,c.f,k,dom);})/CASES.length;
+    out.push({k,caught,falsePos,t});});
+  const t1=out[0].t,r1=out[0].caught;
+  $('stb').innerHTML=out.map(o=>
+    '<tr><td class="num"><b>'+o.k+'</b></td><td class="num">'+o.caught+'/'+NEG.length+' = '+
+    (100*o.caught/NEG.length).toFixed(1)+'%</td>'+
+    '<td style="min-width:120px"><div class="bar"><i class="r" style="width:'+(100*o.caught/NEG.length)+'%"></i></div></td>'+
+    '<td class="num">'+fmtms(o.t)+'</td>'+
+    '<td style="min-width:120px"><div class="bar"><i class="l" style="width:'+
+      Math.min(100,100*o.t/out[out.length-1].t)+'%"></i></div></td>'+
+    '<td class="num">'+(o.t/t1).toFixed(2)+'×</td></tr>').join('');
+  const last=out[out.length-1];
+  const flat=last.caught===r1;
+  $('snote').style.display='';
+  $('snote').innerHTML='<b>Your machine, just now.</b> Going from k = 1 to k = 16 changed recall by <b>'+
+    (last.caught-r1)+' item'+(Math.abs(last.caught-r1)===1?'':'s')+'</b> out of '+NEG.length+
+    ', and multiplied the cost of every check by <b>'+(last.t/t1).toFixed(1)+'×</b>. '+
+    (flat?'Recall is flat. Every sample after the first was paid for and returned nothing — which is exactly what the 113-item Python corpus found (99.1% identical from k = 1 to k = 16 while p95 latency rose 6.8×).'
+        :'Recall moved. That is worth knowing too — it means this corpus contains a mutant that agrees with its reference at some sampled points, which is the 1-in-113 case made visible.')+
+    ' The reason is structural, not lucky: a corrupted formula that agrees with the true one at a random point in a continuous domain is a measure-zero coincidence, and drawing more points from the same distribution does not find a different kind of error. Spending the budget on a <em>different rung</em> does.';
+}
+
+build();
+$('k').oninput=e=>{$('kv').textContent=e.target.value;};
+$('go').onclick=runAll;
+$('sweep').onclick=()=>{$('busy').textContent='sweeping…';setTimeout(runSweep,20);};
+runAll();
+</script>
+</body>
+</html>

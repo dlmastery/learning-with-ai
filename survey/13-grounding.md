@@ -49,17 +49,13 @@ learner's own numbers*. **Grounding is what buys a tutor permission to shut up.*
 > harms in this survey. Bounded failure is a policy setting on the learner model, not
 > a default.
 
-**The learner's own conjectures get the same ladder.** A learner who writes "I think
-the sum is n²/2" can have it evaluated at eight points and get back "that fails at
-n = 3, here is the value" — which is precisely what a working mathematician does and
-is currently available to approximately nobody below graduate school. Verification
-stops being surveillance of the learner and becomes an instrument the learner holds.
-
-**And a curriculum can be checked against itself.** With a claim graph and a
-sub-millisecond checker, every formula in a course can be instantiated at shared
-numeric points and cross-checked for mutual consistency — the chapter-7 constant
-against the chapter-3 constant, the worked example against the stated theorem. Nobody
-has published this. It is buildable today.
+Two more that follow directly. **The learner's own conjectures get the same ladder** —
+a learner who writes "I think the sum is n²/2" gets back "that fails at n = 3, here is
+the value," which is what a working mathematician does and is available to
+approximately nobody below graduate school. And **a curriculum can be checked against
+itself**: every formula in a course instantiated at shared numeric points and
+cross-checked for mutual consistency, the chapter-7 constant against the chapter-3
+constant. Nobody has published that. It is buildable today.
 
 The one-sentence version: **cheap, binding, legible verification does not mainly stop
 a tutor being wrong; it lets a tutor stop performing certainty.**
@@ -68,10 +64,10 @@ a tutor being wrong; it lets a tutor stop performing certainty.**
 
 ## 2. The invariant
 
-Four apparently unrelated engineering programmes — verifying formulas with a computer
-algebra system, verifying figures with a schema and a renderer, verifying assessment
-items against a cognitive model, arbitrating between agents by putting executable
-truth above every vote — are one mechanism seen from four angles.
+Verifying formulas with a computer algebra system, verifying figures with a schema and
+a renderer, verifying assessment items against a cognitive model, and arbitrating
+between agents by putting executable truth above every vote are one mechanism seen from
+four angles.
 
 > A claim is **grounded at rung R** if and only if:
 >
@@ -200,12 +196,11 @@ invariant predicts.
 earlier section proposed permutation-based fidelity checking, modelled on the Vedic
 *pāṭha* recitation protocols: instead of re-asking a model the same question k times,
 ask k structurally *different* questions about the same content — state it, invert it,
-evaluate it at two points, ask the scaling factor, write it in zero form — and check
-the answers against each other. The claim was that this is "strictly stronger than
-self-consistency sampling because the permutations are adversarial to semantic
-smoothing," flagged for benchmarking. It was benchmarked: 768 generations, two models,
-matched budget of six calls each, every verdict decided by a deterministic comparator
-so no model judges anything.
+evaluate it at two points, ask the scaling factor, write it in zero form — claiming this
+is "strictly stronger than self-consistency sampling because the permutations are
+adversarial to semantic smoothing," and flagging it for benchmarking. It was
+benchmarked: 768 generations, two models, matched budget of six calls each, every
+verdict decided by a deterministic comparator so no model judges anything.
 
 | Protocol | Model | Recall | False alarm | **Discrimination** |
 |---|---|---|---|---|
@@ -216,35 +211,26 @@ so no model judges anything.
 
 **Exactly at chance, on both models.** It flags corrupted and correct claims at
 identical rates. Self-consistency is a poor detector that never cries wolf, and
-therefore wins.
-
-The scaling direction is the part to notice: going from 4B to 8B improved
-self-consistency's discrimination by +25 points and improved pāṭha's by **zero** — the
-larger model simply flagged everything, in both conditions. **A protocol whose
-false-alarm rate rises exactly as fast as its recall does not get better with scale; it
-gets louder.**
+therefore wins. And going from 4B to 8B improved self-consistency's discrimination by
++25 points and improved pāṭha's by **zero** — the larger model simply flagged
+everything, in both conditions. **A protocol whose false-alarm rate rises exactly as
+fast as its recall does not get better with scale; it gets louder.**
 
 The diagnosis generalises: **permutation-based fidelity checking is confounded with
 probe competence.** It detects "the model cannot do algebra" far more reliably than "the
 claim is corrupted." The original mechanism argument — that structurally different
 redundancy is uncorrelated with the original error — is *correct*, and is precisely why
 it fails: the permuted probes have their own, independent, much larger error rate. On
-one model two of six probes have *negative* discrimination. And probe rankings do not
-transfer between models: `inverse` is the best probe on one and nearly the worst on the
-other.
+one model two of six probes have *negative* discrimination, and probe rankings do not
+transfer between models.
 
-The rescue, with its caveat stated because it is the difference between a finding and
-an artefact: sweeping all 63 non-empty probe subsets and taking the best gives +37.5
-and +50.0 points of discrimination — but those subsets were selected post hoc on the
-same 16 claims. **They are oracle upper bounds, not estimates**, and even so the margin
-over plain self-consistency on the stronger model is 6.2 points, which would not survive
-honest cross-validation at n = 16. What is robust is the negative: the protocol as
-specified is at chance.
-
-The doctrine that follows: **every probe in a permutation-based checker must carry a
-measured false-alarm rate on known-true claims, measured per model and per version, and
-probes above threshold must be dropped.** The calibration set is not amortisable
-infrastructure. It is a per-deployment artefact.
+Sweeping all 63 non-empty probe subsets and taking the best gives +37.5 and +50.0 points
+— but those subsets were selected post hoc on the same 16 claims, so **they are oracle
+upper bounds, not estimates.** What is robust is the negative. The doctrine that
+follows: **every probe in a permutation-based checker must carry a measured false-alarm
+rate on known-true claims, per model and per version, and probes above threshold must be
+dropped.** The calibration set is not amortisable infrastructure; it is a per-deployment
+artefact.
 
 **One more null, about the substrate:** only **1.54%** of valid public Python notebooks
 import any testing module. A printed output is not a check.
@@ -294,20 +280,20 @@ concluding that "compilation-based metrics substantially overstate formalization
 quality." That is obligation 3 failing while 1 and 2 pass. **The strongest available
 guarantee has a systematic blind spot in the direction of over-reporting.**
 
-The fix is not to verify the translator. Compiler verification has been here and has two
-answers, of which only one is affordable: prove the compiler correct once, or **validate
-each translation as it happens.** No autoformalizer, item generator or IR emitter will be
-proved correct; every one of them can be asked to produce a per-instance certificate.
+The fix is not to verify the translator. Compiler verification has been here: prove the
+compiler correct once, or **validate each translation as it happens.** No
+autoformalizer, item generator or IR emitter will be proved correct; every one can be
+asked for a per-instance certificate.
 
 Concretely: author an atomic question set against the *input*, **before** the
 translation, with answers fixed in advance; ask the same questions of the output in the
-output's own language; require identical answers, with disagreement a `FAIL` and
+output's own language; require identical answers, disagreement a `FAIL` and
 unanswerability an `ABSTAIN`. Only ask about identifiable quantities — a boxplot does not
-contain its samples, and asking a round-trip checker to recover them "encourages
-hallucination and over-specified code generation." And **back-translation alone is not
-enough**: translating the formal statement back to prose and comparing is an entailment
-check performed by a model correlated with the one that produced it, which violates the
-independence condition outright.
+contain its samples, and asking a checker to recover them "encourages hallucination and
+over-specified code generation." And **back-translation alone is not enough**: comparing
+the formal statement's prose rendering to the original is an entailment check performed
+by a model correlated with the one that produced it, which violates the independence
+condition outright.
 
 The ruling: **no chain of verified stages may be reported as verified end-to-end unless
 every interface carries a round-trip certificate.** "97% formalization and 69% proving"
@@ -341,9 +327,8 @@ harm.** Five properties a simplification may never falsify, each a property of t
 Those five and not others, for a reason with a measurement behind it: misconceptions
 *across* ontological kinds are robust and *within* kinds are repairable, and a
 classical–quantum hybrid conception was measured **unchanged across a full semester** of
-university chemistry. This is the machine-checkable subset of "which omissions produce
-non-repairable damage." An undeclared drop is, at retrieval time, indistinguishable from
-a planted misconception. **It is a type error, not an editorial judgement the checker
+university chemistry. An undeclared drop is, at retrieval time, indistinguishable from a
+planted misconception. **It is a type error, not an editorial judgement the checker
 cannot reach.**
 
 **(b) Omission of required coverage is a set difference against a blueprint.** "Did the
@@ -367,11 +352,11 @@ The general move, and it is the most useful idea in this section:
 >
 > **Verification does not need ground truth. It needs a commitment.**
 
-The obvious attack: a declaration can be gamed by declaring a trivially narrow scope so
-every fidelity check passes. This is real, and it is why the two checks must run as a
-*pair*. Narrowing the declared scope to escape a fidelity failure mechanically produces a
-**coverage** failure against the blueprint. The two checks pull in opposite directions,
-which is exactly what makes a pair sound where either alone is gameable.
+The obvious attack: declare a trivially narrow scope and every fidelity check passes.
+Real — and it is why the two checks run as a *pair*. Narrowing the scope to escape a
+fidelity failure mechanically produces a **coverage** failure against the blueprint. They
+pull in opposite directions, which is what makes a pair sound where either alone is
+gameable.
 
 And the sentence the earlier report got exactly right, which nothing above weakens:
 **verification is a floor, not a quality.** A fully verified explanation can be badly
@@ -386,30 +371,27 @@ virtue.
 
 The boundary moves from the model's fluency — an unbounded, undiagnosable surface — to the
 map from the learner's world into the checker's world: the units you assigned, the symbols
-you bound, the source you selected, the domain you declared, the formal statement you
-wrote, the scope you announced. That surface is **small, enumerable, auditable, and the
-same object at every rung.** You have not eliminated trust; you have compressed it into a
-finite list a human can review and a learner can be shown.
-
-It also explains why four sections' hardest problems are one problem: the
-autoformalization gap, "the IR does not encode the intended figure," the Q-matrix
-retrofitting problem, and shared-state semantics between agents are all **failures of the
-declaration, observed through four different arbiters.**
+you bound, the source you selected, the domain you declared, the scope you announced. That
+surface is **small, enumerable, auditable, and the same object at every rung.** You have
+not eliminated trust; you have compressed it into a finite list a human can review and a
+learner can be shown. It also explains why four sections' hardest problems are one
+problem: the autoformalization gap, "the IR does not encode the intended figure," the
+Q-matrix retrofitting problem, and shared-state semantics between agents are all failures
+of the declaration, seen through four different arbiters.
 
 Which makes the badge the contract. A badge that says "✓ Verified" is **worse than no
-badge**, because it transfers the arbiter's narrow guarantee onto the whole artefact —
-the exact error already documented in the field. Five requirements: state what was
-checked, operationally, in one sentence a twelve-year-old can read ("I checked this
-formula against 8 sets of numbers and it agreed every time"); state the declaration,
-including any assumption that was needed to make it pass, because **the assumption is part
-of the claim**; state what was *not* checked, by name; **show `ABSTAIN`**, because an
-explicit "I couldn't check this" is information and a missing badge is not; and make the
-verdict falsifiable by the learner — ship the check, not just its result, so they can
-change the numbers and watch it break.
+badge**, because it transfers the arbiter's narrow guarantee onto the whole artefact.
+State what was checked, operationally, in one sentence a twelve-year-old can read ("I
+checked this formula against 8 sets of numbers and it agreed every time"). State the
+declaration, including any assumption needed to make it pass, because **the assumption is
+part of the claim**. State what was *not* checked, by name. **Show `ABSTAIN`** — an
+explicit "I couldn't check this" is information and a missing badge is not. And make the
+verdict falsifiable: ship the check, not just its result, so the learner can change the
+numbers and watch it break.
 
-One measured constraint on all of it: groundedness and comprehensibility trade off —
-"humans prefer responses generated using RAG, but not when responses are too grounded in
-the textbook content." **Ground the claim; do not ground the prose.**
+One measured constraint: groundedness and comprehensibility trade off — "humans prefer
+responses generated using RAG, but not when responses are too grounded in the textbook
+content." **Ground the claim; do not ground the prose.**
 
 ---
 
@@ -419,18 +401,14 @@ the textbook content." **Ground the claim; do not ground the prose.**
 part. Nobody's tutor fails because it got a sign wrong in a derivation; it fails because
 it explained the wrong thing at the wrong moment to the wrong learner.*
 
-That is right, and it is the reason §7 ends where it does. As verification cost approaches
-zero, **100% of the remaining problem is the part verification does not address.** The
-unverifiable layer — intuition, appropriateness, sequencing, why this matters — is exactly
-where the teaching is, and it stays scarce.
+That is right. As verification cost approaches zero, **100% of the remaining problem is
+the part verification does not address**, and the unverifiable layer — intuition,
+appropriateness, sequencing, why this matters — is exactly where the teaching is.
 
-But two things follow the other way. Sign errors compound: a wrong constant memorised in
-chapter 3 is expensive to unlearn, and the survey's own remembering section says the
-irreversibility modifier is real. And more importantly, §1 is not a safety argument at all.
-The checker is what lets a tutor wait, let a wrong model run, hand the instrument to the
-learner, and settle a disagreement by experiment rather than by status. **The apparatus is
-not there to make the tutor correct. It is there to make the tutor able to stop
-performing.**
+But §1 is not a safety argument at all. The checker is what lets a tutor wait, let a wrong
+model run, hand the instrument to the learner, and settle a disagreement by experiment
+rather than by status. **The apparatus is not there to make the tutor correct. It is there
+to make the tutor able to stop performing.**
 
 ---
 

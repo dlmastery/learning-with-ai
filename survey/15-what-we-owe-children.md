@@ -13,16 +13,12 @@ text and you will find that the regulator has already written most of the
 architecture document for an AI tutor — with more precision, and more courage,
 than the field has managed for itself.
 
-That is the useful frame for this section. The legal floor is not an obstacle
-course laid across a good product. It is a set of load-bearing constraints that
-happen to coincide, almost line for line, with what the evidence in the rest of
-this survey independently says a tutor should do: keep the learner's record
-local and deletable, refuse to infer what the child *is*, put a named human at
-the end of every consequential path, and never ship a classifier whose errors
-land on the children it claims to serve.
-
-Everything below is a thing that becomes buildable once you accept the
-constraint. The constraint is stated first because it is the cheaper half.
+The legal floor is not an obstacle course laid across a good product. It is a set
+of load-bearing constraints that coincide, almost line for line, with what the
+evidence in the rest of this survey independently says a tutor should do: keep
+the learner's record local and deletable, refuse to infer what the child *is*,
+put a named human at the end of every consequential path, and never ship a
+classifier whose errors land on the children it claims to serve.
 
 ---
 
@@ -39,9 +35,7 @@ Article 6(3) offers a derogation for systems that perform a narrow procedural
 task, improve a completed human activity, detect deviations from prior
 decision-making, or prepare an assessment. Every adaptive-tutoring roadmap that
 plans to argue its way out of high-risk classification plans to argue one of
-those four.
-
-Then comes the sentence that closes it. A system
+those four. Then comes the sentence that closes it. A system
 
 > "shall always be considered to be high-risk where the AI system performs
 > profiling of natural persons."
@@ -90,134 +84,119 @@ includes behavioural characteristics, "such as facial images"), this means:
 | Voice-affect scoring in a spoken session | **Prohibited** (voice is biometric; COPPA agrees, §3) |
 | "Sensor-free" affect detection from clickstream and latency | **Grey zone** — turns on whether interaction traces are "behavioural characteristics" under 3(34) |
 
-That third row is the sharpest open legal question in the field, and it
-determines the legality of a substantial body of published AIED work in the EU.
-No authoritative construction was found. Treat it as prohibited until it is.
+That third row is the sharpest open legal question in the field — it determines
+the legality of a substantial body of published AIED work in the EU, and no
+authoritative construction was found. Treat it as prohibited until there is one.
 
 Here is why this is a gift rather than a loss. The design move it forces is
 **affect response without affect inference.** A tutor may respond to what the
 learner says ("I'm stuck", "this is boring") and to behavioural facts (three
 wrong answers, forty seconds idle, a session abandoned mid-problem). What it may
-not do is maintain a durable variable named `frustration_level`. The first is
-observation and pedagogy. The second is a psychological dossier assembled
-without clinical process, appeal rights, or accuracy guarantees.
-
-Generalise the rule and it becomes the cleanest single line in this section:
+not do is maintain a durable variable named `frustration_level`. Generalised:
 
 > **A learner model may hold what the child has demonstrated. It must not hold
 > what the child is.**
 
 Mastery of subtraction with regrouping is demonstrated. Dyscalculia is an
 identity claim. Article 5(1)(b) independently prohibits exploiting
-"vulnerabilities of a natural person... due to their age, disability" — which
-attaches directly to any engagement mechanic whose parameters are tuned using an
-inferred condition.
+"vulnerabilities of a natural person... due to their age, disability," which
+attaches directly to any engagement mechanic tuned using an inferred condition.
 
 The architecture that satisfies all of this is **derive-and-discard**. Computing
 within a single turn that a learner is probably struggling with phonological
 decoding, in order to choose the next scaffold, and then throwing it away, is
 teaching. Writing `suspected_dyslexia: 0.72` to a durable record creates health
 data under GDPR Art. 9(1), a retained record under 16 CFR 312.10, and an
-IDEA-destroyable record under 34 CFR 300.624 simultaneously. Data minimisation
-is conventionally read as a collection rule. For a learner model it is a
+IDEA-destroyable record under 34 CFR 300.624 simultaneously — with none of the
+clinical process, appeal rights, or accuracy guarantees of a diagnosis. Data
+minimisation is conventionally a collection rule. For a learner model it is a
 *persistence* rule.
 
 ---
 
 ## 3. Deletion is an architecture, not a policy page
 
-COPPA's 2025 amendments (16 CFR Part 312, source note 90 FR 16977, full
-compliance required since 22 April 2026) do two things that matter here.
-
-First, § 312.10 states categorically: **"Personal information collected online
-from a child may not be retained indefinitely."** A written retention policy is
-required, naming purpose, business need, and deletion timeframe, and it must be
-published in the § 312.4(d) notice.
-
-Second, § 312.2 now expressly counts as children's personal information
-"voiceprints... facial templates... or faceprints," plus "a photograph, video,
-or audio file where such file contains a child's image or voice." **A multimodal
-tutor collects COPPA-regulated biometrics by default, on turn one.** That is not
-a corner case of the live-video architecture in the next section; it is its
-baseline condition.
+COPPA's 2025 amendments (16 CFR Part 312, full compliance required since 22 April
+2026) do two things that matter here. § 312.10 states categorically: **"Personal
+information collected online from a child may not be retained indefinitely,"**
+with a written retention policy required and published. And § 312.2 now expressly
+counts as children's personal information "voiceprints... facial templates... or
+faceprints," plus "a photograph, video, or audio file where such file contains a
+child's image or voice." **A multimodal tutor collects COPPA-regulated biometrics
+by default, on turn one** — not a corner case of the live-video architecture in
+the next section but its baseline condition.
 
 IDEA is stricter still. 34 CFR § 300.624: when personally identifiable
 information is no longer needed to provide educational services, the agency must
 inform parents, and **"The information must be destroyed at the request of the
 parents."**
 
-This survey has already stated the consequence once, in the section on designing
-for the margin, and it is worth restating rather than cross-referencing because
-it is the most under-appreciated engineering fact in children's edtech. If a
-child's interaction history has been folded into model weights, a shared
-embedding index, or a cross-learner prior, **you can delete the row and you
-cannot delete the influence.** An undeletable learner state is therefore a
-compliance failure for precisely the population an adaptive tutor claims to
-serve best.
+This survey stated the consequence once already, in the section on designing for
+the margin, and it is worth restating because it is the most under-appreciated
+engineering fact in children's edtech. If a child's interaction history has been
+folded into model weights, a shared embedding index, or a cross-learner prior,
+**you can delete the row and you cannot delete the influence.** Undeletable
+learner state is a compliance failure for precisely the population an adaptive
+tutor claims to serve best. The positive form: per-learner state genuinely
+deletable, and no cross-learner training without irreversible, pre-storage
+de-identification.
 
-The positive form of the rule: per-learner state stored in a genuinely deletable
-form, and no cross-learner training without irreversible, pre-storage
-de-identification. Local, inspectable, correctable, deletable — or not
-shippable.
-
-A correction to a widely-held belief, worth stating plainly. The FTC's 2025
-final rule **did not** codify a school-authorisation exception for edtech. After
-roughly 300 comments the Commission recorded that it "decided against adopting
-some proposed changes, including... changes relating to the requirements
-applicable to educational technology companies operating in a school
-environment." Edtech continues to rely on non-binding enforcement-policy
-guidance. Any architecture premised on a codified school exception is premised
-on something the Commission explicitly declined to enact.
+A correction to a widely-held belief. The FTC's 2025 final rule **did not**
+codify a school-authorisation exception for edtech. After roughly 300 comments
+the Commission recorded that it "decided against adopting some proposed changes,
+including... changes relating to the requirements applicable to educational
+technology companies operating in a school environment." Edtech continues to rely
+on non-binding enforcement guidance. Any architecture premised on a codified
+school exception is premised on something the Commission explicitly declined to
+enact.
 
 ---
 
 ## 4. inBloom, and the null result inside it
 
 inBloom was a $100 million initiative funded by the Gates Foundation and
-Carnegie Corporation, launched publicly in February 2013, closed in April 2014 —
-barely over a year. Nine states committed, representing over 11 million
-students. The engineering was strong; contemporaneous accounts describe better
-security and more access controls than the incumbents. Its legacy is over 400
-pieces of state-level student-data-privacy legislation and this sentence from
-the definitive post-mortem: "To date, no large-scale educational technology
-initiative has succeeded in American K-12 schools."
+Carnegie Corporation, launched publicly in February 2013, closed in April 2014.
+Nine states committed, representing over 11 million students. The engineering was
+strong; contemporaneous accounts describe better security and more access
+controls than the incumbents. Its legacy is over 400 pieces of state-level
+student-data-privacy legislation and this sentence from the definitive
+post-mortem: "To date, no large-scale educational technology initiative has
+succeeded in American K-12 schools."
 
 The objection was never the schema. The mobilising parent letter names storage
 location, disclosure recipient, commercial purpose, and category sensitivity.
-The teachers' union managed to endorse the data model and reject the custody
-arrangement in a single sentence: gathering data on students is "a valuable
-tool," but sharing 400 categories of student-identifying data with private
-companies — "how can we possibly countenance that?" The killing blow was a
-custody rule in the New York state budget forbidding the state to share
-identifiable student data with any shared-learning-infrastructure provider.
-Closure was announced a month later.
+The teachers' union endorsed the data model and rejected the custody arrangement
+in a single sentence: gathering data on students is "a valuable tool," but
+sharing 400 categories of student-identifying data with private companies — "how
+can we possibly countenance that?" The killing blow was a custody rule in the New
+York state budget forbidding the state to share identifiable student data with
+any shared-learning-infrastructure provider. Closure came a month later.
 
 **And here is the documented disconfirmation, which deserves its own space
 because it is the strongest counter-argument available.** inBloom's own product
 lead, quoted in that same post-mortem: *"inBloom did not have a privacy problem,
 inBloom did not have a parent problem. InBloom had an advocacy and perception
 problem."* The Data & Society authors lean the same way, identifying the root
-cause as low public tolerance for risk plus a failure to communicate benefit and
-secure stakeholder buy-in. "Trust was one of the most frequently used words in
-our interviews."
+cause as low public tolerance for risk plus a failure to communicate benefit.
+"Trust was one of the most frequently used words in our interviews."
 
-That is a real disconfirmation of the naive custody thesis and it should be
-held, not waved away. The rebuttal is narrow: what could not be communicated
-*was* the custody arrangement. The answer to "who holds my child's health and
-discipline record, and who can they give it to?" was "a third-party non-profit,
-in a commercial cloud, disclosing to for-profit app vendors under district
-authorisation," and no communications strategy makes that sentence land. The
-report also records that answering custody questions with FERPA-compliance
-language actively hardened opposition.
+That is a real disconfirmation of the naive custody thesis and it should be held,
+not waved away. The rebuttal is narrow: what could not be communicated *was* the
+custody arrangement. The answer to "who holds my child's health and discipline
+record, and who can they give it to?" was "a third-party non-profit, in a
+commercial cloud, disclosing to for-profit app vendors under district
+authorisation," and no communications strategy makes that sentence land. The same
+report records that answering custody questions with FERPA-compliance language
+actively hardened opposition.
 
 The design rule that survives both readings: **if your custody architecture
 requires a communications strategy to survive contact with a parent, you have
 the wrong custody architecture.** The test is five questions answerable on one
-screen, without counsel — where does my child's record live and under whose
-legal control; who by name can read it; does it leave for any purpose other than
-teaching my child; does my child's data improve your product for other
-customers; how do I delete it and what survives deletion. If any answer needs a
-diagram, it is not shippable to a public school system.
+screen, without counsel — where does my child's record live and under whose legal
+control; who by name can read it; does it leave for any purpose other than
+teaching my child; does my child's data improve your product for other customers;
+how do I delete it and what survives deletion. If any answer needs a diagram, it
+is not shippable to a public school system.
 
 ---
 
@@ -237,25 +216,23 @@ any institution running more than one tool, essentially the entire non-native
 population is exposed.
 
 The mechanism is perplexity, and the mechanism is the whole argument. Non-native
-essays had significantly lower text perplexity (P = 9.74E-05); the authors
-confirmed the mechanism independently on 1,574 pre-ChatGPT ICLR 2023 abstracts,
-where authors in non-native-English countries wrote lower-perplexity text
-(P = 0.035), holding after controlling for review ratings. Enriching the TOEFL
-essays' word choice dropped the FPR from 61.22% to 11.77%. Running the reverse
-experiment — simplifying native 8th-grade essays "as if written by a non-native
-speaker" — moved them from 5.19% to 56.65%.
+essays had significantly lower text perplexity (P = 9.74E-05), confirmed
+independently on 1,574 pre-ChatGPT ICLR abstracts where authors in
+non-native-English countries wrote lower-perplexity text (P = 0.035). Enriching
+the TOEFL essays' word choice dropped the FPR from 61.22% to 11.77%; simplifying
+native 8th-grade essays "as if written by a non-native speaker" moved them from
+5.19% to 56.65%.
 
 Now name who is *taught* to write with low perplexity, as a documented
 accommodation: English learners given sentence frames and paragraph templates;
 students with dyslexia or dysgraphia given explicit paragraph schemas to offload
 working memory; autistic students given structural templates; and every student
-in a high-pressure school where the five-paragraph essay and claim-evidence-
-reasoning are the writing pedagogy. **The scaffold is the predictability.
-Therefore the better a student complies with their prescribed writing
-accommodation, the more likely a detector is to accuse them of cheating.** No
-threshold setting fixes this, because the accommodation and the detection signal
-are the same variable. The students most exposed are also the least equipped to
-contest an allegation.
+in a high-pressure school where the five-paragraph essay is the writing pedagogy.
+**The scaffold is the predictability. Therefore the better a student complies
+with their prescribed writing accommodation, the more likely a detector is to
+accuse them of cheating.** No threshold setting fixes this, because the
+accommodation and the detection signal are the same variable — and the students
+most exposed are the least equipped to contest an allegation.
 
 "Use with caution, as one signal among many" is not an available position. With
 a 61.22%/5.19% split there is no defensible Bayesian update to perform; "one
@@ -277,66 +254,61 @@ staged drafts.
 
 ## 6. The component four authorities independently asked for
 
-A tutor that is patient, never tired, non-judgemental, and available at 11pm on
-a Sunday is *structurally optimised* to receive disclosures a teacher will never
-receive. That is not a risk bolted onto the product. It is a consequence of the
+A tutor that is patient, never tired, non-judgemental and available at 11pm on a
+Sunday is *structurally optimised* to receive disclosures a teacher will never
+receive. That is not a risk bolted onto the product; it is a consequence of the
 product working.
 
 Statutory guidance is unusually specific about what follows. KCSIE 2026 Part One
 ¶14: staff "should never promise a child that they will not tell anyone about a
 report of any form of abuse." ¶15: a victim "should never be given the
-impression that they are creating a problem by reporting." ¶56: act on concerns
-"immediately." ¶59: unavailability of the safeguarding lead "should not delay
-appropriate action being taken." ¶60: "Staff should not assume a colleague or
-another professional will take action."
+impression that they are creating a problem by reporting." ¶56: act "immediately."
+¶59: unavailability of the safeguarding lead "should not delay appropriate action
+being taken." ¶60: "Staff should not assume a colleague or another professional
+will take action."
 
-Each of those is a product requirement. ¶14 forbids a tutor persona that says or
-implies *this is just between us*. ¶15 means a canned "I can't help with that,
-please talk to a trusted adult" deflection is a safeguarding failure, not a safe
-default. ¶59 forbids a weekly review queue. ¶60 forecloses "the school's own
-systems will catch it." The APA's June 2025 advisory ("mechanisms for human
-intervention and support should be readily available"), AI Act Art. 26(2) human
-oversight, and ICO AADC Standard 15 all converge on the same missing piece: a
-named human on the other end.
+Each is a product requirement. ¶14 forbids a persona that says or implies *this
+is just between us*. ¶15 means a canned "I can't help with that, please talk to a
+trusted adult" deflection is a safeguarding failure, not a safe default. ¶59
+forbids a weekly review queue. ¶60 forecloses "the school's own systems will
+catch it." The APA's June 2025 advisory, AI Act Art. 26(2) human oversight, and
+ICO AADC Standard 15 converge on the same missing piece: a named human on the
+other end.
 
 The evidence says this is tractable and says exactly where the failure mode is.
 Detection is good enough to route: on 540 annotated real hotline transcripts
-across 64 models, F1 = 0.880 for suicidal-ideation detection and 0.907 for risk
-assessment — comparable to trained human operators on plan identification.
-**Good enough to route, nowhere near good enough to decide.** And the dominant
+across 64 models, **F1 = 0.880 for suicidal-ideation detection and 0.907 for risk
+assessment** — comparable to trained human operators on plan identification.
+Good enough to route, nowhere near good enough to decide. And the dominant
 failure is not what people expect: against 2,075 structured mental-health
 prompts, hallucinations occurred in 6.5% of responses but **omissions in 13.2%,
 concentrated in crisis and suicidal-ideation prompts.** The model rarely says
-something harmful in a crisis; it fails to say the necessary thing. A safety
-eval that measures only harmful output will pass a system that silently drops
-the escalation. Omission rate, disaggregated by language and dialect, is the
+something harmful in a crisis; it fails to say the necessary thing. **A safety
+eval that measures only harmful output will pass a system that silently drops the
+escalation.** Omission rate, disaggregated by language and dialect, is the
 primary safety KPI.
 
 **Second documented null, and it cuts toward optimism.** An ecological audit of
 over 20,000 real conversations found that adversarial benchmarks substantially
 overstate real-world failure. A purpose-built mental-health AI with layered
 suicide/NSSI safeguards produced enabling or harmful content on 0.4–11.27% of
-suicide/NSSI benchmark prompts against 29.0–54.4% for general-purpose LLMs, and
-clinician review of flagged real conversations "identified zero cases of suicide
-risk that failed to receive crisis resources."
+benchmark prompts against 29.0–54.4% for general-purpose LLMs, and clinician
+review of flagged real conversations "identified zero cases of suicide risk that
+failed to receive crisis resources."
 
 The wrong inference is that safeguards are unnecessary. The right one is that
-**the safeguards worked** — the zero-miss came from layered engineering, not
-from a good base model with a careful system prompt, and the same paper's
-29–54% figure shows what the alternative looks like. Benchmarks are not
-deployment evidence in either direction; ecological audit is the method.
+**the safeguards worked** — the zero-miss came from layered engineering, not from
+a good base model with a careful system prompt, and the same paper's 29–54%
+figure shows the alternative. Benchmarks are not deployment evidence in either
+direction; ecological audit is the method.
 
-Two further nulls belong on the record. Teenagers may not be the most
-susceptible group: across three AI-companion communities, **adults and women
-anthropomorphised chatbots more than teens and men.** Child-specific protections
-therefore cannot rest on "children anthropomorphise more" — they rest on
-children's reduced capacity to exit, reduced legal agency, and developmental
-stakes, which is a different and sturdier argument. And the widely-cited
-OpenAI × MIT result is correlational, heterogeneous, tail-concentrated, and
-measured on **adults**; the authors describe voice-interaction effects as
-"highly nuanced" and note that a small number of users produce a
-disproportionate share of affective cues. Design for the tail. Do not claim the
-population.
+Two further nulls belong on the record. Across three AI-companion communities,
+**adults and women anthropomorphised chatbots more than teens and men** — so
+child-specific protections cannot rest on "children anthropomorphise more." They
+rest on reduced capacity to exit, reduced legal agency, and developmental stakes,
+which is a different and sturdier argument. And the widely-cited OpenAI × MIT
+dependence result is correlational, heterogeneous, tail-concentrated, and
+measured on **adults**. Design for the tail; do not claim the population.
 
 ---
 
@@ -347,20 +319,18 @@ population.
 - **Assume high-risk and ship the paperwork as a feature.** A learner model
   forecloses the Art. 6(3) derogation. The FRIA template is a sales asset.
 - **Deletable by construction.** No cross-learner training on identifiable
-  records; no indefinite retention; per-child state genuinely destroyable
-  (16 CFR 312.10, 34 CFR 300.624). The row *and* the influence.
+  records; no indefinite retention; per-child state genuinely destroyable. The
+  row *and* the influence.
 - **Hold what the child demonstrated, never what the child is.** Transient
   derivation is pedagogy; persistence is a dossier.
 - **Custody first, data model second.** Five questions, one screen, no diagram.
 - **No AI writing detector, in any configuration.** 61.22% vs 5.19%; 100% → 13%
   under one prompt. Abolition, not caution.
 - **No product for children without a named human escalation recipient**, a
-  published SLA, and omission rate tracked as the primary safety KPI.
+  published SLA, and omission rate as the primary safety KPI.
 
-The pattern is the one this survey keeps finding from other directions. What the
-law forbids here is almost exactly what the evidence says does not work anyway:
-inferring fixed traits, retaining what you cannot justify, tuning engagement to
-a vulnerability, and shipping a classifier whose errors land on the children who
-can least afford them.
-
-The floor turns out to be a good place to build from.
+What the law forbids here is almost exactly what the evidence says does not work
+anyway: inferring fixed traits, retaining what you cannot justify, tuning
+engagement to a vulnerability, and shipping a classifier whose errors land on the
+children who can least afford them. The floor turns out to be a good place to
+build from.
