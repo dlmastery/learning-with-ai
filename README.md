@@ -16,8 +16,8 @@ doctoral student who knows more than the tutor does.**
 If learning were designed today — with frontier AI assumed rather than bolted onto a
 nineteenth-century classroom — what would it look like?
 
-This repository answers that with a survey built on **30 research reports, ~380,000 words, and
-roughly 2,000 primary sources**. Every claim carries an evidence label. Every section carries at
+This repository answers that with a survey built on **32 research reports, ~406,000 words, and
+roughly 2,100 per-report source citations**. Every claim carries an evidence label. Every section carries at
 least one documented null result. And **every one of our own errors is published rather than
 quietly edited**.
 
@@ -195,8 +195,10 @@ tested across mobile, tablet and desktop in both colour schemes before they ship
 
 ## What we got wrong
 
-Eleven corrections, each caught by our own research reading a primary source, each published rather
-than silently edited. **This list is the reason to trust anything else here.**
+**23 corrections, and 7 of them were found by an adversarial reviewer rather than by us.**
+The full ledger with a provenance column is [`CORRECTIONS.md`](CORRECTIONS.md) — append-only, because
+an earlier version applied corrections by *rewriting the ledger rows in place*, inside a table headed
+"published rather than silently edited". That is C-23.
 
 | We said | Actually |
 |---|---|
@@ -240,11 +242,11 @@ for it.
 
 | Artifact | State |
 |---|---|
-| **Survey** — the deliverable | 22 sections · ~56,300 words (target ~45,000 — exceeded) |
-| **Research reports** — the input | 30 reports · ~380,000 words · complete |
-| Sections written from reports in hand | 22 of 32 |
-| Demo pages | Gallery + design system shipped; pages landing incrementally |
-| Published corrections | 11 |
+| **Survey** — the deliverable | 24 sections · ~60,300 words (target ~45,000 — exceeded) |
+| **Research reports** — the input | 32 reports · ~406,000 words · complete |
+| Sections written from reports in hand | 24 of 32 |
+| Demo pages | **13 of 13** live, all Playwright-tested |
+| Published corrections | **23** — see [`CORRECTIONS.md`](CORRECTIONS.md) |
 
 Built **incrementally** — one section at a time, committed as it lands. Never generated in one go.
 
