@@ -10,16 +10,55 @@ source_report: research/raw/H2-selpa-practitioner-reality.md
 
 A hostile reviewer read §04 — the section this project exists for — and judged it
 **costume over a genuine core.** The intervention evidence was real; the job was
-absent. PLAAFP, 504, LRE, caseload, prior written notice, escalation: all returned
-zero. A coordinator would recognise the research and would not recognise their week.
+absent. A coordinator would recognise the research and would not recognise their week.
 
-The verdict was accepted and this section is the repair. It is also, on the numbers
-below, where an AI's largest practical contribution to special education probably
-lies — and that is not a concession.
+So start with the week.
 
 ---
 
-## 1. Half of the legal test is procedural, and §04 argued only the other half
+## 1. The week
+
+Nothing here is invented. Each item is a statutory duty with a citation or a measured
+hour count.
+
+**The number that describes the job:** administrative work runs a median of
+**five hours a week against four available.** The deficit is structural. It does not
+clear on Friday.
+
+**Standing, every week.** Direct instruction — the part the job is named after.
+Consultation with every general-education teacher, who under §300.323(d)(2) must be
+informed of their specific responsibilities and of *"the specific accommodations,
+modifications, and supports that must be provided"* — which makes **every new teacher,
+every schedule change, and every substitute a re-notification event.** Progress
+probes, and graphing them, because the graph is the §300.309(b)(2) evidentiary record
+and not a wall display.
+
+**On a rolling cycle.** An IEP meeting is 1.5 hours in the room and **2 hours to write
+the document**, plus 2 hours a month scheduling and 1 hour mailing notices — and each
+one carries §300.322's parent-participation duties, including a **record of attempts**
+if the parent does not attend and a duty to *"take whatever action is necessary to
+ensure that the parent understands the proceedings."* Progress reports: **8 hours,
+every 7 weeks.** Initial evaluations: 7.5 hours a month administering, 4.2 reviewing.
+Behaviour logs 5, intervention plans 2, functional assessments 2.
+
+**On the compliance calendar**, each of these a date that arrives whatever else is
+happening: 60 days from consent to evaluation. 30 days from eligibility to the IEP
+meeting. An IEP in effect for every child on the first day of school. Annual review.
+Triennial reevaluation. Safeguards notice once a year plus on trigger. **Ten school
+days to a manifestation determination** after a disciplinary placement change.
+
+**And then the part no calendar holds.** A safeguarding disclosure — personal duty,
+immediate, routed around the parent. A behaviour crisis. A removal. A parent's request
+for an independent evaluation, which starts a clock the moment it is spoken. A
+transfer student arriving mid-year who must receive comparable services **immediately**.
+
+That is the week. Notice what it is mostly made of, and notice that the five-against-
+four deficit is not the paperwork *around* the job. **The paperwork is the job's
+second full-time role**, and it is the one with the legal exposure.
+
+---
+
+## 2. Half of the legal test is procedural, and §04 argued only the other half
 
 The federal standard for a free appropriate public education has **two prongs**
 (*Rowley*, 458 U.S. at 206–07). One asks whether the programme was reasonably
@@ -46,7 +85,7 @@ will generate advice that is wrong in both directions.
 
 ---
 
-## 2. The correction to our own prior-written-notice claim
+## 3. The correction to our own prior-written-notice claim
 
 An earlier framing in this project said: *an AI that changes a child's programme
 without generating prior written notice has created a procedural violation.*
@@ -74,7 +113,7 @@ placement, and that is a team decision with notice.
 
 ---
 
-## 3. Predetermination is the sharpest AI-specific legal risk
+## 4. Predetermination is the sharpest AI-specific legal risk
 
 This is the finding with the most immediate consequence for anyone building, and the
 regulator described the failure mode without being asked about AI at all.
@@ -98,7 +137,7 @@ load-bearing and it costs nothing to respect.
 
 ---
 
-## 4. Four prior attempts to cut the paperwork, all measured, all zero
+## 5. Four prior attempts to cut the paperwork, all measured, all zero
 
 The administrative burden in special education is not a new complaint, and the
 history of trying to fix it is a graveyard:
@@ -121,7 +160,7 @@ and judgement* — is a hypothesis, not a finding.
 
 ---
 
-## 5. Where the hours actually go
+## 6. Where the hours actually go
 
 In the only direct-observation study: **20% of class time on academic instruction,
 17% on paperwork.**
@@ -138,7 +177,7 @@ thing with 4,000 effect estimates behind it.
 
 ---
 
-## 6. Accommodations: mandated, and weak
+## 7. Accommodations: mandated, and weak
 
 §04 treated testing accommodations as part of the known-good base being scaled. That
 was wrong, and the correction is uncomfortable enough to state in full:
@@ -161,7 +200,7 @@ not run.
 
 ---
 
-## 7. Escalation, and a null that should temper every safeguarding feature
+## 8. Escalation, and a null that should temper every safeguarding feature
 
 Two figures define the gap. NIS-4 found that **≥80% of school-recognised maltreatment
 never reached investigation**, while CPS would have investigated **72%** of it. The
@@ -177,10 +216,11 @@ or completion of a module.
 
 ---
 
-## 8. The ownership line
+## 9. The ownership line
 
 The question a builder needs answered is not "can AI help" but "who owns this
-artefact." The full table is in the source report; the rule it produces is short:
+artefact." The full table is in the source report — 17 artefacts, four columns; the rule it
+produces is short:
 
 > **An AI may draft anything and may author nothing that a signature attaches to.**
 
@@ -195,7 +235,7 @@ recommendation.
 
 ---
 
-## 9. What this section commits us to
+## 10. What this section commits us to
 
 - **Argue both prongs of FAPE.** Substantive efficacy is half the statute. A system
   that ignores procedure is not deployable regardless of its effect size.
