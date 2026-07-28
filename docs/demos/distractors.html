@@ -70,6 +70,13 @@ input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
   </div>
 </header>
 
+<section class="orient">
+  <div class="o"><b>What this is</b><p>Two multiple-choice generators on the same stem, side by side. One asks for plausible wrong answers. The other models a named <em>misconception</em> first and derives the option from it.</p></div>
+  <div class="o"><b>Why it matters</b><p>LLMs produce distractors that are mathematically valid and pedagogically empty — they are &ldquo;less adept at anticipating common errors among real students&rdquo;, and that survived fine-tuning. Modelling the error as a first-class object lets a <b>7B model beat GPT-4o</b>.</p></div>
+  <div class="o"><b>How to use it</b><p>Generate from both and compare. Generator A's options are a function of the <em>key</em> — so a student choosing one tells you nothing. Generator B's map to specific errors, which makes a wrong answer diagnostic. Watch the collision counter reject options that two misconceptions would both produce.</p></div>
+</section>
+
+
 <p><strong>Computed</strong> means: both generators below really execute on the parameters you
 set. The collision checks, the plausibility filter, the diagnosticity accounting and the
 parameter sweep at the bottom are all real computation on real output, performed when you move a
