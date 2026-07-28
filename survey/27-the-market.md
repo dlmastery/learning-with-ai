@@ -68,15 +68,15 @@ randomisation across seven states, is the best large-scale evidence anyone has:
 **not** for middle schools, at roughly eight percentile points. The LLM generation
 inherited the marketing claim and none of the measurement.
 
-**Early literacy is the most defensible bet in the market**, and it is worth saying
-why in mechanism terms rather than enthusiasm terms. The AI does something a human
-demonstrably cannot scale — listening to twenty-five children read aloud at once.
-The output is a measured behaviour, oral reading fluency, not a self-report. And the
-pedagogy underneath, decoding practice with immediate corrective feedback, is among
-the best-replicated results in all of education. If AI-in-education works anywhere,
-it works here first. The headline claims in the cluster still need their qualifiers
-read: one vendor's "68% faster reading growth" is conditioned on students who used
-it "at dosage," which is a selection effect unless dosage was randomised.
+**Early literacy is the most defensible bet in the market**, in mechanism terms
+rather than enthusiasm terms. The AI does something a human demonstrably cannot
+scale — listening to twenty-five children read aloud at once. The output is a
+measured behaviour, oral reading fluency, not a self-report. And the pedagogy
+underneath, decoding practice with immediate corrective feedback, is among the
+best-replicated results in education. If AI-in-education works anywhere, it works
+here first. The headline claims still need their qualifiers read: one vendor's "68%
+faster reading growth" is conditioned on students who used it "at dosage," which is
+a selection effect unless dosage was randomised.
 
 ---
 
@@ -152,17 +152,17 @@ selling precision from a region of the design space where precision had run out.
 **AltSchool** raised $133M and built a network of schools in order to build software.
 The schools were the R&D cost centre for a product that did not exist yet; when the
 software pivot came, the schools — the thing families had actually bought — closed.
-Note the surviving artefact: the parent progress portal is now a table-stakes feature.
+The surviving artefact, a parent progress portal, is now a table-stakes feature.
 Right about the feature, wrong about the business.
 
 **2U** bought edX from the Harvard/MIT nonprofit for **$800M**, never made an annual
-profit, and filed Chapter 11 on 25 July 2024. The revenue-share structure made
-student *volume*, not student *outcome*, the only lever the company had.
+profit, and filed Chapter 11 on 25 July 2024. Its revenue-share structure made
+student *volume*, not student *outcome*, the only lever it had.
 
 **Byju's** reached a **$22bn valuation** and 150 million claimed registered users. Its
-founder said publicly in October 2024 that "the company is worth zero"; insolvency
-proceedings followed. Its reported 85% retention rate was never independently verified
-and this survey does not repeat it.
+founder said publicly in October 2024 that "the company is worth zero." Its reported
+85% retention rate was never independently verified and this survey does not repeat
+it.
 
 Six deaths, six different proximate causes, one structure:
 

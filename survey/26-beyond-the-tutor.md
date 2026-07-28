@@ -103,16 +103,15 @@ Two boundary results keep this honest.
 
 **Children experience persistent questioning as pushy.** A 2024 study of elementary
 students with a Socratic chatbot is titled "This Chatbot is Kind of Pushing It!" and
-the title is the finding. Satisfaction and pedagogical value diverge — which is
-exactly what desirable-difficulty theory predicts, and exactly what a five-star
-rating loop will destroy. An adversary role cannot be tuned on satisfaction.
+the title is the finding. Satisfaction and pedagogical value diverge, which is what
+desirable-difficulty theory predicts and what a five-star rating loop will destroy.
+**An adversary role cannot be tuned on satisfaction.**
 
 **And adding help to the struggle does not help.** Sinha & Kapur (2021) compared
 problem-solving-before-instruction, *scaffolded* problem-solving-before-instruction,
 and alternative sensemaking activities across **118 comparisons**: scaffolding
 showed a small descriptive advantage and **no significant difference, g = −0.08
-[−0.20, 0.04].** Bolting a helpful assistant onto the exploration phase adds
-nothing measurable. The struggle phase does not want a co-pilot.
+[−0.20, 0.04].** The struggle phase does not want a co-pilot.
 
 One more constraint, because "let them struggle" is as over-claimable as "give them
 a tutor": **the instruction phase is mandatory.** Productive failure is problem
@@ -136,26 +135,17 @@ followed with a second, isomorphic question answered individually:
 
 The mechanism is not transmission. It is articulation, commitment, and the
 reconciliation of conflicting commitments. **Two wrong students arguing produce
-understanding neither had.**
+understanding neither had.** Smith et al. (2011) added the sequencing: peer
+discussion **followed by** instructor explanation beat either alone, substantially.
 
-Smith et al. (2011) added the sequencing: peer discussion **followed by** instructor
-explanation beat either alone, substantially. Peer first, expert second — structurally
-identical to problem-solving-before-instruction.
-
-So can an AI hold the peer position? Three obstacles, and they are not equally
-tractable.
-
-**Known asymmetry.** The learner knows the model has read everything. A model
-asserting a wrong answer is either deferred to or dismissed as roleplaying. Neither
-is peer engagement.
-
-**No stakes symmetry.** A human peer is embarrassed to be wrong. That embarrassment
-is what makes the commitment real and the reconciliation effortful.
-
-**Capitulation.** A peer who abandons their position the moment you push back
-supplies no resistance and therefore nothing to reconcile. Measured capitulation
-rates sit around **58%**, with **78.5% [77.2, 79.8]** persistence once it happens —
-figures §02 works through in the sycophancy context.
+So can an AI hold the peer position? Three obstacles, not equally tractable.
+**Known asymmetry**: the learner knows the model has read everything, so a model
+asserting a wrong answer is either deferred to or dismissed as roleplaying, and
+neither is peer engagement. **No stakes symmetry**: a human peer is embarrassed to
+be wrong, and that embarrassment is what makes the commitment real. **Capitulation**:
+a peer who abandons their position the moment you push back supplies nothing to
+reconcile, and measured capitulation rates sit around **58%** with **78.5%
+[77.2, 79.8]** persistence once it happens — figures §02 works through.
 
 And one collaborative structure is flatly unavailable. Jigsaw works by **positive
 interdependence under genuine information asymmetry**: each learner holds a unique,
