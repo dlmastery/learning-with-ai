@@ -36,7 +36,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 # Published surfaces only. research/raw/ is an immutable record of what an agent
 # found at a point in time and is deliberately NOT rewritten (see CORRECTIONS.md).
-SURFACES = ["README.md", "CLAUDE.md", "AUDIT.md",
+SURFACES = ["README.md", "process/CLAUDE.md", "process/AUDIT.md",
             "docs/index.html", "survey/*.md", "docs/demos/*.html"]
 # CORRECTIONS.md is excluded: it is the ledger and must quote superseded values.
 
