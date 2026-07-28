@@ -85,7 +85,7 @@ in <code>sqrt(a^2 + b^2)</code> produces a different string and the same functio
 detects these with a 64-sample equivalence probe and files them as <b>null mutants</b>: cases where
 the correct answer is <em>pass</em>. Together with a hand-written set of identity rewrites, they
 form the false-alarm denominator. A detector with no false-alarm denominator is not a detector, it
-is an alarm.</p></div>
+is an alarm.</div>
 
 <h2>2 · The controls</h2>
 <div class="panel">
@@ -118,7 +118,12 @@ is an alarm.</p></div>
 </div>
 <div class="mini">Times are per single check, obtained by running the whole corpus in a loop until at
 least 60&nbsp;ms of wall clock has elapsed and dividing — because <code>performance.now()</code> is
-deliberately coarsened by browsers and a single check is far below its resolution.</div>
+deliberately coarsened by browsers and a single check is far below its resolution.
+<b>Expect the L3/L2 ratio here to be much larger than the corpus’s ~3×.</b> That is not a
+contradiction: the corpus timed a Python harness where fixed per-call overhead dominated both rungs
+and compressed the ratio, while these two rungs are bare JavaScript and the difference between
+“evaluate a float expression once” and “rebuild a canonical form and compare strings” is exposed
+in full. The ordering is the finding; the ratio is hardware.</div>
 
 <h2>4 · Which rung catches which mutation</h2>
 <div class="scroll">
@@ -201,10 +206,15 @@ compared against a known-correct reference. Remove the reference and that column
     <li>The rungs are genuinely different instruments: L1 is reference-free but blind to
     coefficients and signs; L2 needs a reference and catches nearly everything; L3 is exact and
     brittle. Ordering them cheapest-first is a measurable saving, not an aesthetic.</li>
-    <li>The k null replicates on your hardware: recall is flat, cost is not. Anyone who samples
-    eight points because eight feels safer is paying for a feeling.</li>
-    <li>Sampling domain is load-bearing. Switch to signed sampling and watch false alarms appear
-    from nothing but <code>sqrt</code> and <code>ln</code> of negative numbers.</li>
+    <li>The k null replicates on your hardware <em>inside the declared domain</em>: recall flat,
+    cost linear. Anyone who samples eight points because eight feels safer is paying for a feeling.</li>
+    <li>And the sharper version, which this page measures rather than asserts: <strong>k only helps
+    when the sampling domain is wrong.</strong> Switch to the wide or signed domain and recall at
+    k = 1 drops, then climbs back as k rises. Extra samples are a subsidy for a badly-declared
+    domain — and declaring it correctly costs nothing.</li>
+    <li>Sampling outside the declared domain also produces false alarms, on expressions that are
+    genuinely equal: √(a/b) and √a/√b separate the instant b goes negative. This reproduces the
+    corpus’s ordering (0 narrow, 1 wide, 2 signed) from independent code.</li>
   </ul>
   <div class="ptitle">What it does not prove</div>
   <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
@@ -497,13 +507,13 @@ function build(){
         if(!isFinite(x)&&!isFinite(y))continue;
         if(!isFinite(x)||!isFinite(y)){same=false;break;}
         if(Math.abs(x-y)>1e-9*Math.max(1,Math.abs(x),Math.abs(y)))same=false;}
-      const c={f,ast:m,kind:K.k,text:pr(m),expect:same?'pass':'fail',
+      const c={id:CASES.length,f,ast:m,kind:K.k,text:pr(m),expect:same?'pass':'fail',
         why:same?'null mutant — the mutation produced an equivalent expression':''};
       CASES.push(c); f.mut.push({kind:K.k,text:pr(m),nullm:same});});
   });
   IDENT.forEach(I=>{
     const f=F.find(x=>x.n===I.n);
-    CASES.push({f,ast:P(I.e),kind:'ident',text:I.e,expect:'pass',why:I.why});});
+    CASES.push({id:CASES.length,f,ast:P(I.e),kind:'ident',text:I.e,expect:'pass',why:I.why});});
   NEG=CASES.filter(c=>c.expect==='fail');
   POS=CASES.filter(c=>c.expect==='pass');
   /* corpus table */
@@ -533,16 +543,16 @@ function runAll(){
   const k=+$('k').value,dom=$('dom').value;
   const res={L1:{},L2:{},L3:{}};
   seed(31337);
-  CASES.forEach(c=>{res.L1[c.text+c.f.n]=L1(c.ast,c.f);});
+  CASES.forEach(c=>{res.L1[c.id]=L1(c.ast,c.f);});
   seed(31337);
-  CASES.forEach(c=>{res.L2[c.text+c.f.n]=L2(c.f.ast,c.ast,c.f,k,dom);});
-  CASES.forEach(c=>{res.L3[c.text+c.f.n]=L3(c.f.canon,c.ast);});
+  CASES.forEach(c=>{res.L2[c.id]=L2(c.f.ast,c.ast,c.f,k,dom);});
+  CASES.forEach(c=>{res.L3[c.id]=L3(c.f.canon,c.ast);});
   const t1=timed(()=>{seed(31337);for(const c of CASES)L1(c.ast,c.f);})/CASES.length;
   const t2=timed(()=>{seed(31337);for(const c of CASES)L2(c.f.ast,c.ast,c.f,k,dom);})/CASES.length;
   const t3=timed(()=>{for(const c of CASES)L3(c.f.canon,c.ast);})/CASES.length;
   /* rung cards */
-  const rec=r=>{let n=0;NEG.forEach(c=>{if(res[r][c.text+c.f.n]==='fail')n++;});return n;};
-  const fa =r=>{let n=0;POS.forEach(c=>{if(res[r][c.text+c.f.n]==='fail')n++;});return n;};
+  const rec=r=>{let n=0;NEG.forEach(c=>{if(res[r][c.id]==='fail')n++;});return n;};
+  const fa =r=>{let n=0;POS.forEach(c=>{if(res[r][c.id]==='fail')n++;});return n;};
   const noOp=NEG.filter(c=>!c.f.dimOK).length;
   const cards=[
    ['L1 · Dimensional',rec('L1'),fa('L1'),t1,
@@ -553,8 +563,8 @@ function runAll(){
     ({n:'U(0.31, 0.87)',w:'U(0.05, 20)',s:'±U(0.05, 20)'}[dom])+
     '. Needs the reference expression. Cannot certify a universal claim.'],
    ['L3 · Structural',rec('L3'),fa('L3'),t3,
-    'Canonical form: '+(t1>0?(t3/t2).toFixed(1):'—')+'× the cost of the numeric rung on this run. '+
-    'Exact where it applies; silently outside its competence where it does not.']];
+    'Canonical form: <b>'+(t2>0?(t3/t2).toFixed(1):'—')+'×</b> the cost of the numeric rung on this run. '+
+    'Exact where it applies; silently outside its competence where it does not — see the false-alarm table.']];
   $('rungs').innerHTML=cards.map(([nm,r,f,t,note])=>
     '<div class="rung fade"><div class="rn">'+nm+'</div><div class="big">'+
     (100*r/NEG.length).toFixed(1)+'%</div>'+
@@ -565,7 +575,7 @@ function runAll(){
   KINDS.forEach(K=>{
     const set=NEG.filter(c=>c.kind===K.k);
     if(!set.length)return;
-    const cnt=r=>set.filter(c=>res[r][c.text+c.f.n]==='fail').length;
+    const cnt=r=>set.filter(c=>res[r][c.id]==='fail').length;
     const c1=cnt('L1'),c2=cnt('L2'),c3=cnt('L3');
     const cheap=c1===set.length?'<b style="color:var(--real)">L1 — free</b>'
       :c2===set.length?'<b style="color:var(--real)">L2 — '+fmtms(t2)+'</b>'
@@ -578,8 +588,8 @@ function runAll(){
   /* false alarms */
   const tg=v=>'<span class="tag '+(v==='fail'?'no':'ok')+'">'+(v==='fail'?'flagged':'pass')+'</span>';
   $('ftb').innerHTML=POS.map(c=>'<tr><td class="fx">'+pr(c.f.ast)+'</td><td class="fx">'+c.text+
-    '</td><td>'+(c.why||'equivalent')+'</td><td>'+tg(res.L1[c.text+c.f.n])+'</td><td>'+
-    tg(res.L2[c.text+c.f.n])+'</td><td>'+tg(res.L3[c.text+c.f.n])+'</td></tr>').join('');
+    '</td><td>'+(c.why||'equivalent')+'</td><td>'+tg(res.L1[c.id])+'</td><td>'+
+    tg(res.L2[c.id])+'</td><td>'+tg(res.L3[c.id])+'</td></tr>').join('');
   $('busy').textContent='last run: k = '+k+', '+CASES.length+' cases, '+
     ({n:'narrow',w:'wide',s:'signed'}[dom])+' domain';
 }
@@ -600,20 +610,25 @@ function runSweep(){
   $('stb').innerHTML=out.map(o=>
     '<tr><td class="num"><b>'+o.k+'</b></td><td class="num">'+o.caught+'/'+NEG.length+' = '+
     (100*o.caught/NEG.length).toFixed(1)+'%</td>'+
-    '<td style="min-width:120px"><div class="bar"><i class="r" style="width:'+(100*o.caught/NEG.length)+'%"></i></div></td>'+
+    '<td style="min-width:110px"><div class="bar"><i class="r" style="width:'+(100*o.caught/NEG.length)+'%"></i></div></td>'+
+    '<td class="num'+(o.falsePos?' down':'')+'">'+o.falsePos+'/'+POS.length+'</td>'+
     '<td class="num">'+fmtms(o.t)+'</td>'+
-    '<td style="min-width:120px"><div class="bar"><i class="l" style="width:'+
+    '<td style="min-width:110px"><div class="bar"><i class="l" style="width:'+
       Math.min(100,100*o.t/out[out.length-1].t)+'%"></i></div></td>'+
     '<td class="num">'+(o.t/t1).toFixed(2)+'×</td></tr>').join('');
   const last=out[out.length-1];
   const flat=last.caught===r1;
+  const dn={n:'narrow positive — the declared domain',w:'wide positive',s:'signed'}[dom];
   $('snote').style.display='';
-  $('snote').innerHTML='<b>Your machine, just now.</b> Going from k = 1 to k = 16 changed recall by <b>'+
+  $('snote').innerHTML='<b>Your machine, just now — '+dn+'.</b> Going from k = 1 to k = 16 changed recall by <b>'+
     (last.caught-r1)+' item'+(Math.abs(last.caught-r1)===1?'':'s')+'</b> out of '+NEG.length+
     ', and multiplied the cost of every check by <b>'+(last.t/t1).toFixed(1)+'×</b>. '+
-    (flat?'Recall is flat. Every sample after the first was paid for and returned nothing — which is exactly what the 113-item Python corpus found (99.1% identical from k = 1 to k = 16 while p95 latency rose 6.8×).'
-        :'Recall moved. That is worth knowing too — it means this corpus contains a mutant that agrees with its reference at some sampled points, which is the 1-in-113 case made visible.')+
-    ' The reason is structural, not lucky: a corrupted formula that agrees with the true one at a random point in a continuous domain is a measure-zero coincidence, and drawing more points from the same distribution does not find a different kind of error. Spending the budget on a <em>different rung</em> does.';
+    (flat
+     ? 'Recall is flat: every sample after the first was paid for and returned nothing. That matches the 113-item Python corpus, which measured 99.1% recall identically at k = 1 and k = 16 while p95 latency rose 6.8×. The reason is structural, not lucky — a corrupted formula agreeing with the true one at a random point of a continuous domain is a measure-zero coincidence, and drawing more points from the <em>same</em> distribution cannot find a different <em>kind</em> of error.'
+     : 'Recall moved — and that is the more useful result. <b>Extra samples only buy you something when you are sampling from the wrong distribution.</b> Outside the declared domain, expressions start returning <code>NaN</code> on both sides; the checker sees two undefined values, agrees, and lets a corrupted formula through. More samples eventually stumble onto a point where the domains diverge. So k is not a safety margin — it is a subsidy for a badly-chosen domain, and declaring the domain correctly is free.')+
+    ' Switch the domain selector and run this again: it is the same corpus, the same code, and a different conclusion about k.';
+  const fa=out.map(o=>o.falsePos);
+  if(fa.some(x=>x>0))$('snote').innerHTML+=' <b>Note the false-alarm column.</b> Sampling outside the declared domain also makes the numeric rung cry wolf on expressions that are mathematically equal — √(a/b) and √a/√b part company the moment b goes negative. The Python corpus reports the same ordering: 0 false alarms narrow, 1 wide, 2 signed.';
 }
 
 build();

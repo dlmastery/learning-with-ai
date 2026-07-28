@@ -162,11 +162,10 @@ Two independent meta-analyses converge on a real, medium effect, and this survey
 
 So the headline is *not* "gamification doesn't work." Four caveats the marketing omits.
 
-**The cell vendors sell is the weakest one.** Sailer & Homner report that the cognitive
-effect "was stable in a subsplit analysis of studies employing high methodological
-rigor," whereas "effects on motivational and behavioral outcomes were **less stable**."
-The claim actually made — *it makes people keep coming back* — rests on g = .25 with a
-lower CI bound of .04.
+**The cell vendors sell is the weakest one.** The cognitive effect "was stable in a
+subsplit analysis of studies employing high methodological rigor," whereas "effects on
+motivational and behavioral outcomes were **less stable**." The claim actually made —
+*it makes people keep coming back* — rests on g = .25 with a lower CI bound of .04.
 
 **The moderators point away from points, badges and leaderboards.** The significant
 moderators were **game fiction** and **social interaction**, with "combining competition
@@ -177,14 +176,14 @@ ingredient.
 users have been using the service. And the best longitudinal test deliberately built
 *need-supporting*, SDT-designed elements and measured motivation four times over 15
 weeks: autonomous motivation was **curvilinear — an initial downward trend** that only
-later recovered. Even theory-driven, well-designed gamification produced a medium-run
-motivational **dip**.
+later recovered. Even theory-driven gamification produced a medium-run motivational
+**dip**.
 
 **And the undermining effect is the mechanism.** Across 128 experiments, tangible,
 expected, performance-contingent rewards significantly undermine intrinsic motivation for
-interesting tasks, measured by free-choice persistence. Verbal and informational feedback
-does not. *This was contested at the time and is reported as contested*, with the contest
-resolved mostly in SDT's favour for the interesting-task case. A useful refinement from a
+interesting tasks, measured by free-choice persistence; verbal and informational feedback
+does not. *Contested at the time and reported as contested*, with the contest resolved
+mostly in SDT's favour for the interesting-task case. A useful refinement from a
 forty-year meta-analysis: incentives predict the **quantity** of performance; intrinsic
 motivation predicts the **quality**.
 
@@ -348,21 +347,19 @@ of the material to their own lives showed increased interest and grades, **conce
 students with low initial success expectations**; a college biology replication **closed
 achievement gaps** for first-generation and underrepresented-minority students. *Caveat
 required by §3:* the 247-course scale-up found value-relevance effects only in courses that
-*had* a global achievement gap. The intervention is real and conditional, not universal.
-It is also a **generative** task — "write why this matters to you" — which is exactly what
-an LLM can elicit, read and respond to at scale and a multiple-choice platform cannot.
+*had* a global achievement gap — real and conditional, not universal. It is also a
+**generative** task, which is exactly what an LLM can elicit, read and respond to at scale
+and a multiple-choice platform cannot.
 
 **Manufactured curiosity.** Curiosity arises from awareness of a *gap* and is maximised at
 intermediate knowledge levels — you must know enough to know what you don't know. Curiosity
-states enhance hippocampus-dependent encoding, including of **incidental** material
-encountered while curious. And the actionable result: requiring learners to **generate a
-prediction before seeing an answer** raised both curiosity ratings and learning, relative to
-generating an example.
+states enhance hippocampus-dependent encoding, including of **incidental** material. And
+the actionable result: requiring learners to **generate a prediction before seeing an
+answer** raised both curiosity ratings and learning, relative to generating an example.
 
-Predict-before-reveal costs one extra turn, requires no rewards, produces a measurable
-curiosity state, improves memory including for material you were not trying to teach — and
-is **intrinsically incompatible with an engagement objective, because it adds friction.**
-That incompatibility is a feature. It is how you tell the two kinds of system apart.
+Predict-before-reveal costs one extra turn, requires no rewards, and is **intrinsically
+incompatible with an engagement objective, because it adds friction.** That incompatibility
+is a feature. It is how you tell the two kinds of system apart.
 
 ---
 
@@ -412,30 +409,28 @@ delayed unannounced assessment is a burden no consumer product can bear at full 
 scale. It is realistically measurable on a **sampled, compensated panel** with cheap online
 proxies calibrated against it — which is how ad-supported media measures reach, so the
 tooling pattern exists. And RTC/h says nothing about *who never enrolled*; it optimises the
-experience of people already inside the funnel, and the equity findings above suggest that
-is where the smaller problem lives.
+experience of people already inside the funnel.
 
 ---
 
 ## 10. The strongest counter-argument
 
 *A learner who quits learns nothing. Engagement is not the enemy of learning; it is the
-precondition for it. You have written a section that forbids every tool anyone has for
-keeping people around, on the strength of a distinction between "phase 2" and "phase 3"
-that no product manager can operationalise.*
+precondition for it. You have forbidden every tool anyone has for keeping people around, on
+the strength of a distinction between "phase 2" and "phase 3" that no product manager can
+operationalise.*
 
-The first sentence is true and the conclusion does not follow, for two reasons.
+The first sentence is true and the conclusion does not follow.
 
 **The tools do not work at scale.** 800,000 students, null. 250,000 students across 247
 courses, order-of-magnitude effect decay. 20,000 students over five years, null on
-outcomes. Alert tools and distraction blockers, null. This is not a philosophical objection
+outcomes. Alert tools and distraction blockers, null. That is not a philosophical objection
 to reminders; it is the measured record of reminders.
 
 **And phase 3 is operationalisable.** Unprompted Return Rate — sessions started with no
-notification in the previous 24 hours — is a number you can compute today from data every
-system already has. It is the free-choice-persistence paradigm, operationalised at scale.
-Any product manager can read it, and a system that raises DAU while flattening URR has
-learned to push rather than to teach.
+notification in the previous 24 hours — is computable today from data every system already
+has. It is the free-choice-persistence paradigm, operationalised at scale. A system that
+raises DAU while flattening URR has learned to push rather than to teach.
 
 What survives the objection is a genuine constraint on ambition: **a bounded habit scaffold
 is defensible.** Habit automaticity takes a median 66 days. An eight-to-ten-week scaffold

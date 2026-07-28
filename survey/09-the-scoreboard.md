@@ -281,9 +281,13 @@ shorter.
   reported as a performance result and labelled as one.
 - **Report the unadjusted estimate next to the adjusted one.** Sierra Leone's
   0.216 (n.s.) belongs beside its 0.258 every time.
-- **Treat gap-widening as the default expectation.** Three studies, three
-  countries, three age groups, three tools, same direction: +0.195 SD per baseline
-  SD, +0.151, and Lehmann's low-prior-knowledge harm. Any trial we run stratifies on
+- **Treat gap-widening as the default expectation *for untargeted delivery*.**
+  Three studies, three countries, three age groups, three tools, same direction:
+  +0.195 SD per baseline SD, +0.151, and Lehmann's low-prior-knowledge harm. But it
+  is not a law of the technology — across **eight targeted interventions examined in
+  §07, not one widened gaps and several sharply narrowed them.** Gap-widening is a
+  property of *distribution without targeting*, which makes it a design failure we
+  know how to avoid rather than a tax we must accept. Any trial we run stratifies on
   baseline attainment and powers the bottom stratum as a primary outcome.
 - **Assume the teacher is the active ingredient until a factorial design says
   otherwise.** g = 0.077 without one.

@@ -27,9 +27,12 @@ attrition differed by arm. It is a promising result from a hard setting. It is n
 the strongest evidence in the history of educational technology, and calling it
 that was our error.
 
-**And the mechanism is known.** In the Sierra Leone deployment, 113k conversations
-were coded: **91.4% concept-building, scaffolding in 76% of responses, direct
-solutions in 2%.** The system worked because it *withheld*.
+**The mechanism is suggested, not established.** In the Sierra Leone deployment
+113,344 *messages* were coded: **91.4% concept-building, scaffolding in 76.4% of
+responses, direct solutions in 2.1%.** But the paper states plainly that the team
+**could not link transcripts to individual students' assessment outcomes.** The
+coding and the effect estimate sit in the same report and are never joined. The
+withholding is real; that the withholding *caused* the gain is an inference.
 
 ## The one design choice that decides it
 
@@ -39,11 +42,14 @@ on a single property:
 | | Practice | Exam, unassisted |
 |---|---|---|
 | Answers freely | +48% | **−17%** |
-| Withholds, hints, requires reasoning | **+127%** | **no penalty** |
+| Withholds, hints, requires reasoning | **+127%** | **−0.004, n.s.** |
 
-That is the whole finding. **Restraint is the active ingredient; everything else
-is delivery.** Every positive result in this survey comes from a constrained
-system. Every harm comes from an unconstrained one.
+Read the second row precisely, because the obvious reading is wrong. The
+guardrailed arm's unassisted coefficient is **−0.004 and not significant** — that
+is *harm removed*, not *benefit added*. **Restraint is what removes the harm;
+it has not been shown to teach.** Every harm in this survey comes from an
+unconstrained system. That is a weaker claim than "restraint is the active
+ingredient," and it is the one the data supports.
 
 This is good news, and it is immediately actionable: the win needs no new model,
 no new capability, and no additional cost. It needs a loop that decides when

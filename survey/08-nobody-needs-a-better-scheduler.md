@@ -23,13 +23,24 @@ survey:
 
 | Practice | Effect | Base |
 |---|---|---|
-| **Retrieval practice** | **g ≈ 0.50** | 222 classroom studies, 48,478 students |
-| **Spacing / distributed practice** | **d ≈ 0.54** | Cepeda's meta-analytic tradition |
+| **Retrieval practice** | **g = 0.499** [0.442, 0.557] | 222 classroom studies, 48,478 students — **I² = 88%** |
+| **Spacing / distributed practice** | **d = 0.54** [0.31, 0.77] | 22 reports, 31 effects, N > 3,000 (classroom meta-analysis, 2025). Cepeda et al. 2006 is the canonical lab meta-analysis |
 
 These are among the largest, most replicated effects in all of learning science.
-Testing yourself beats re-reading. Spreading practice out beats massing it. If a
-system does nothing else, it should do these two things, and it should do them
-relentlessly.
+Testing yourself beats re-reading. Spreading practice out beats massing it.
+
+They are also **heterogeneous**, and honesty requires saying so in the same breath:
+retrieval practice carries **I² = 88%**, moderated by the control condition, test-format
+consistency, feedback, and number of repetitions. Two boundary conditions matter for
+design. At an *immediate* test, restudy often wins — the retrieval advantage appears at
+delay. And **unsuccessful retrieval without corrective feedback yields little or
+nothing**, which makes feedback part of the intervention rather than an add-on. Spacing
+is not scale-free either: **d = 0.11–0.42** for motor tasks, much larger for simple
+verbal material.
+
+None of that weakens the recommendation. If a system does nothing else, it should do
+these two things, and do them relentlessly — with feedback attached and the test
+delayed.
 
 Nothing that follows weakens either finding. What follows is about a **third**
 claim that has been quietly bundled with them — that the *scheduling algorithm*

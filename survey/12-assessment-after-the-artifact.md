@@ -49,20 +49,19 @@ Almost every confused argument in the current literature is a failure to say whi
 of the four is at stake. "AI-proof assessment" usually means securing the process
 claim. "Authentic assessment" usually means strengthening the capability claim.
 "Assessment for learning" abandons both for the learning claim. These are not
-competing schools. They are different jobs that now need different instruments.
+competing schools; they are different jobs that now need different instruments.
 
 What welded them was a cost asymmetry: **the cost of producing a credible fake
 exceeded the cost of actually learning.** Call the ratio the forgery margin.
-Supervised exams set it by impersonation risk. Coursework essays set it by the price
-of a ghostwriter — which is why contract cheating held steady at a reported 6–15.7%,
-a price point, not a moral fact.
+Coursework essays set it by the price of a ghostwriter — which is why contract
+cheating held steady at a reported 6–15.7%: a price point, not a moral fact.
 
 Generative AI did not cause an explosion of cheating. A pre/post survey of US high
 school students spanning ChatGPT's release found self-reported rates essentially
 flat. What it did was drive the *forgery cost* of one enormous class of artifacts to
 approximately zero while leaving the *learning cost* untouched. The proportion of
-people willing to exploit the gap barely moved; the population who *could* exploit
-it became everyone.
+people willing to exploit the gap barely moved; the population who *could* became
+everyone.
 
 This reframing is generative rather than gloomy, because it says the design problem
 is not "invent tasks AI cannot do" — a race whose finish line recedes annually. The
@@ -90,32 +89,29 @@ assessments.**
 What killed the viva was reliability, and the dominant source of unreliability in
 performance assessment is not examiner subjectivity. It is **content specificity**:
 performance on one task is a weak predictor of performance on another, so
-generalisable scores require sampling broadly across tasks. This is the central
-finding of the clinical competence literature. The OSCE's advantage over the long
-case was never that stations are more objective — it is that there are *more of
-them*.
+generalisable scores require sampling broadly across tasks. The OSCE's advantage over
+the long case was never that stations are more objective — it is that there are *more
+of them*.
 
 So the naive implementation — one AI-conducted thirty-minute high-stakes viva
 replacing the final exam — reproduces exactly the psychometric weakness that killed
-orals, now at scale, with an unappealable machine judge.
-
-The correct implementation is **many short, structured, low-stakes orals distributed
-across a term**, aggregated programmatically. Frequency is the entire point. And
-structure is the second lever: objective structured viva formats measurably
-outperform traditional ones, and an LLM examiner is *natively* structurable — its
-rubric, probe bank and follow-up policy are all inspectable artifacts, which is an
-underrated advantage over human examiners whose criteria are private.
+orals, now at scale, with an unappealable machine judge. The correct implementation is
+**many short, structured, low-stakes orals distributed across a term**, aggregated
+programmatically. Frequency is the entire point. Structure is the second lever:
+objective structured viva formats measurably outperform traditional ones, and an LLM
+examiner is *natively* structurable — rubric, probe bank and follow-up policy are all
+inspectable artifacts, an underrated advantage over human examiners whose criteria are
+private.
 
 The fairness picture is more encouraging than the prior suggests. The strongest
 datapoint available: 722 students across a bioscience course from 2009–2023, before
 and after introducing one-on-one interactive orals as the major final assessment.
 Performance and grades improved, and **there were no significant differences by
 gender, international status, or language background.** Anxiety was reported
-initially and declined with familiarity without depressing performance.
-
-The caveats belong in the same breath: single institution, single discipline, a
-cohort comparison across fourteen years rather than randomisation, confounded with
-everything else that changed, and **no reported reliability coefficients**.
+initially and declined with familiarity without depressing performance. The caveats
+belong in the same breath: single institution, single discipline, a cohort comparison
+across fourteen years rather than randomisation, and **no reported reliability
+coefficients**.
 
 The reading this survey adopts: **the equity case for AI-conducted orals rests on
 frequency and practice, not on the technology.** Every documented fairness risk of

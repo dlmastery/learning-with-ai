@@ -43,16 +43,16 @@ matter for teaching are not the model quality.
 | In-session tools | function calling, Search. **No code execution** | function calling + **MCP** |
 | Silent side-channel | — | **out-of-band responses** (`conversation: "none"`) |
 
-Three of these decide whether you have a tutor.
+Two of these decide whether you have a tutor.
 
 **Barge-in bookkeeping.** Gemini's rule is that on interruption "only the
-information already sent to the client is retained in the session history." The
+information already sent to the client is retained in the session history" — the
 model's memory of what it said matches what the student actually heard. OpenAI's
-WebRTC path matches this; the WebSocket path pushes truncation to the client,
-and their own docs concede the model "doesn't have enough information to
-precisely align transcript and audio." Get this wrong and the tutor believes it
-explained step 3 when the learner only heard step 2 — a correctness bug that
-looks like a student being obtuse.
+WebRTC path matches this; the WebSocket path pushes truncation to the client, and
+their own docs concede the model "doesn't have enough information to precisely
+align transcript and audio." Get this wrong and the tutor believes it explained
+step 3 when the learner only heard step 2 — a correctness bug that looks like a
+student being obtuse.
 
 **Endpointing is the latency budget.** Default server VAD is a 500 ms silence
 timer plus 300 ms prefix padding. **That configuration alone exceeds the human
@@ -195,34 +195,31 @@ exists.
 | **Physics-IQ** | "Physical understanding is severely limited, and **unrelated to visual realism**" |
 | **WorldModelBench** | 14 frontier video models, 67K human labels; explicitly detects "irregular changes in object size that breach the mass conservation law" |
 
-Six consequences make this worse for education than for entertainment.
+Five consequences make this worse for education than for entertainment.
 
 1. **The failure modes are the curriculum.** Conservation of mass and momentum,
-   object permanence, cause and effect. These are not cosmetic glitches.
+   object permanence, cause and effect. Not cosmetic glitches.
 2. **Fidelity decouples from correctness.** A photoreal world that violates
-   momentum conservation is *more* dangerous than a crude one, because realism
-   is the cue learners use to decide whether to trust what they see.
-3. **Scale does not fix it.** That has been tested directly and failed. "Wait
-   for the next model" is not an available argument.
+   momentum conservation is *more* dangerous than a crude one, because realism is
+   the cue learners use to decide whether to trust what they see.
+3. **Scale does not fix it.** Tested directly, and failed. "Wait for the next
+   model" is not an available argument.
 4. **There is no error signal.** In a hand-built simulation an incorrect
    behaviour is a bug someone can file. In a generated world there is no ground
    truth, no reference implementation, no test suite, and no way for a
-   fourteen-year-old to know that the pendulum they just watched had the wrong
-   period.
-5. **Text is illegible** unless it was in the prompt — Genie 3's own stated
-   limitation — which removes the one channel by which a world could label or
-   correct itself.
-6. **Misconceptions persist.** The entire conceptual-change literature exists
+   fourteen-year-old to know the pendulum they just watched had the wrong period.
+   Genie 3's own stated inability to render legible text unless it was in the
+   prompt removes the one channel by which a world could label itself.
+5. **Misconceptions persist.** The entire conceptual-change literature exists
    because they resist instruction once installed.
 
 The counter-argument deserves its space. A 2025 paper argues video models are
-zero-shot learners and reasoners, reporting emergent segmentation, edge
-detection, physical-property understanding, affordance recognition and "early
-forms of visual reasoning" in Veo 3. Two of its authors are also authors on
-Physics-IQ, the paper that found physical understanding "severely limited." The
-honest reading is that both are true: capability is rising fast and is real, and
-the paper's own hedges are "early forms" and "emergent," which is not the same
-as reliable. Teaching requires reliable.
+zero-shot learners and reasoners, reporting emergent segmentation, physical-
+property understanding, affordance recognition and "early forms of visual
+reasoning" in Veo 3. Two of its authors are also authors on Physics-IQ, the paper
+that found physical understanding "severely limited." Both are true: capability
+is rising fast and is real, and the paper's own hedges are "early forms" and
+"emergent," which is not the same as reliable. Teaching requires reliable.
 
 ---
 
@@ -253,38 +250,36 @@ conditions scored significantly higher than the physical-equipment condition**,
 with AI-generated not distinguishable from prebuilt. The mechanism was
 LLM-generated simulation *code*, and the pedagogy the authors highlight is
 "designing, refining, and validating" — students checking the AI's simulation
-against the physics they were learning. The model's fallibility was converted
-into the learning objective. This is the only pattern found anywhere in this
-research that is *robust to* model error rather than dependent on its absence.
-It is also a single preliminary study, one topic, one course. Do not inflate it
-into "generated worlds teach as well as PhET."
+against the physics they were learning. The model's fallibility became the
+learning objective. **This is the only pattern found anywhere in this research
+that is robust to model error rather than dependent on its absence.** It is also
+a single preliminary study, one topic, one course; do not inflate it into
+"generated worlds teach as well as PhET."
 
 **Symbolic worlds already work and are almost free.** ScienceWorld is an
 interactive text environment at fifth-grade science curriculum level, with state
 maintained by a symbolic simulator and therefore correct by construction. Its
-headline result belongs in any argument about substrate: **a 1.5M-parameter
-agent trained interactively for 100k steps outperforms an 11B model statically
-trained on millions of expert demonstrations.** Its diagnosis is the educational
-one too — models "can answer factual questions... but cannot reason about or
-explain learned science concepts in novel contexts." Learning by doing beat
-learning by reading, in a world that could not be wrong about itself.
+headline result belongs in any argument about substrate: **a 1.5M-parameter agent
+trained interactively for 100k steps outperforms an 11B model statically trained
+on millions of expert demonstrations.** Learning by doing beat learning by
+reading, in a world that could not be wrong about itself.
 
-**And the category error worth correcting explicitly.** Kimi K3 has been
-described in circulating summaries as a world model that creates interactive
-worlds. Moonshot's own release blog **never uses the words "world model,"
-"simulation," "physics," or "environment."** What it says is that K3 "combines
-strong 3D reasoning, coding, and vision capabilities to turn concepts, images,
-and videos into fully playable interactive experiences," achieving "vision in
-the loop" by iterating between code and live screenshots. That is code
-generation. There is no world model in Moonshot's catalogue, no K3 repository,
-and the one repo with a suggestive name — WorldVQA — is a *world-knowledge*
-visual-QA benchmark, not a generative environment. **K3 writes interactive
-software; Genie dreams pixels. Listing them together is a category error.**
+**And the category error worth correcting explicitly.** Kimi K3 circulates in
+summaries as a world model that creates interactive worlds. Moonshot's own
+release blog **never uses the words "world model," "simulation," "physics," or
+"environment."** What it says is that K3 "combines strong 3D reasoning, coding,
+and vision capabilities to turn concepts, images, and videos into fully playable
+interactive experiences," achieving "vision in the loop" by iterating between
+code and live screenshots. That is code generation. There is no world model in
+Moonshot's catalogue, no K3 repository, and the one repo with a suggestive
+name — WorldVQA — is a *world-knowledge* visual-QA benchmark. **K3 writes
+interactive software; Genie dreams pixels. Listing them together is a category
+error.**
 
-And this is good news, not bad. A programmed world's physics is whatever engine
-or update loop was emitted — inspectable, deterministic, debuggable,
-unit-testable against analytic solutions, version-controlled. Generated pixels
-are unauditable by construction.
+And this is good news. A programmed world's physics is whatever engine or update
+loop was emitted — inspectable, deterministic, debuggable, unit-testable against
+analytic solutions, version-controlled. Generated pixels are unauditable by
+construction.
 
 ---
 
@@ -304,21 +299,20 @@ stuffed context window destroys that affordance while adding cost and latency.
 number.** Solving ability and pedagogical ability correlate at **r = 0.421** on
 public benchmarks. The maths a learner needs help with is not Putnam; it is
 fractions, and the specific fraction misconception this specific child holds.
-Every current model solves that perfectly. The unsolved problem is diagnosing
-the misconception and choosing *not* to solve it, and no maths benchmark
-measures that. Note that two frontier labs published no maths claims at all in
-their most recent flagship posts.
+Every current model solves that perfectly. The unsolved problem is diagnosing the
+misconception and choosing *not* to solve it, and no maths benchmark measures
+that — note that two frontier labs published no maths claims at all in their most
+recent flagship posts.
 
 **And the pedagogy layer is permanently yours.** LearnLM no longer exists as a
-model family; Google's own documentation states that its capabilities were
-"integrated into Gemini starting with the 2.5 model series." There is no model
-ID that returns a tutor, and no switch to A/B. What survives is a product
-surface built from system instructions. OpenAI's Study Mode is described the
-same way. Independently, training-free prompt optimisation was found to beat
-RL-trained pedagogical baselines. Three separate lines pointing at one
-conclusion: **pedagogy is a prompt-and-product layer, not a weights layer.** No
-vendor is selling it to you, which is simultaneously the largest opportunity
-here and the reason most frontier model releases are irrelevant to this work.
+model family; Google's own documentation states its capabilities were "integrated
+into Gemini starting with the 2.5 model series." There is no model ID that
+returns a tutor. What survives is a product surface built from system
+instructions, and OpenAI's Study Mode is described the same way; independently,
+training-free prompt optimisation was found to beat RL-trained pedagogical
+baselines. **Pedagogy is a prompt-and-product layer, not a weights layer** — which
+is simultaneously the largest opportunity here and the reason most frontier model
+releases are irrelevant to this work.
 
 ---
 

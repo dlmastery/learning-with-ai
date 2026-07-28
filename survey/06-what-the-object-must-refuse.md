@@ -126,10 +126,15 @@ attention there instead of on explicit instruction.
 ## 5. The bridge, and the failure mode that must be fixed first
 
 None of this means the physical world is out of reach. Camera-in changes the
-boundary: a tutor can now *watch* a child manipulate a real object and comment on
-what they actually did. Handwriting and worked-page recognition are at **98.4%**
-with false-negative rates driven to **0.58%**. The child works on paper, with
-their hands, and the system sees it.
+boundary: a tutor can now *watch* a child work on paper and comment on it.
+
+State the capability precisely, because the headline number is narrower than it
+sounds. The **98.4%** figure is *answer-position recognition* on a 61-exam grading
+benchmark, and its **0.58%** false-negative rate is achieved **with the reference
+solution supplied**. The best measured rate for reading *error-correction* on
+handwritten work is **77%**. So: the system can reliably find and read what a child
+wrote. Diagnosing where the reasoning went wrong is a different and harder task
+that is not yet at that accuracy.
 
 One failure mode disqualifies naive deployment, and it is the most important
 sentence in this section for anyone building:
