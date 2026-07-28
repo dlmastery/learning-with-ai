@@ -101,21 +101,21 @@ is holding the semantics of the concept and the geometry of the page in the same
 forward pass.
 
 At least nine independent groups, across chart code, algorithm animation,
-technical illustration, geometry, and diagram evaluation, converged on the same
-shape — Raiven (a DSL compiling to D3, 100% compilation, up to 6× cheaper),
-Flint (a hierarchical data-semantic model compiling to Vega-Lite, ECharts, or
-Chart.js), GeoSVG-RL (a layout plan as "geometric contract"), DiagramIR (parse
-the TikZ back into an IR and compare IRs, not images), SciFlow-Bench (round-trip
-inverse-parsing), Socratic Chart, GeoBuildBench, Chart Specification.
+technical illustration, geometry and diagram evaluation, converged on the same
+shape — Raiven (a DSL compiling to D3, 100% compilation, up to 6× cheaper), Flint
+(a data-semantic model compiling to Vega-Lite, ECharts or Chart.js), GeoSVG-RL (a
+layout plan as "geometric contract"), DiagramIR (parse the TikZ back into an IR
+and compare IRs, not images), SciFlow-Bench, Socratic Chart, GeoBuildBench, Chart
+Specification.
 
 > **A generated educational figure must be produced by rendering a declarative
 > specification that the model emitted and a machine validated. The model must
 > not compute layout coordinates for any figure that ships to a learner.**
 
 Splitting also buys re-targeting for free: one trace renders to Manim *or* TikZ
-*or* Three.js; one spec renders to three chart libraries. For a system that must
-serve a static PDF, a screen-reader page, and an interactive widget from the
-same idea, that is not a convenience. It is the only affordable way to do it.
+*or* Three.js. For a system that must serve a static PDF, a screen-reader page
+and an interactive widget from the same idea, that is the only affordable way to
+do it.
 
 ---
 
@@ -185,21 +185,20 @@ narrated animations on transfer.** The cheapest artifact was often the best one.
 Line up the success rates this literature reports. TheoremExplainAgent: **93.8%
 success rate** — alongside the authors' own note that "most of the videos
 produced exhibit minor issues with visual element layout." A renderer-in-the-loop
-system: 94% render success rate, 85.7% visual similarity. ALGOGEN: 99.8%. Raiven:
-100% compilation.
+system: 94% render success, 85.7% visual similarity. ALGOGEN: 99.8%. Raiven: 100%
+compilation.
 
-**Every one of those is a measure of artifact existence or resemblance to a
-reference artifact. None is a measure of effect on a mind.** The 93.8%-success /
+**Every one is a measure of artifact existence or resemblance to a reference
+artifact. None is a measure of effect on a mind.** The 93.8%-success /
 most-videos-have-layout-defects pair is the field's own admission that its
 success metric is measuring compilation, not legibility.
 
 The two metrics that reach further are still proxies. DiagramIR compares
 intermediate representations and reports higher agreement with human raters than
-LLM-as-a-judge — genuinely better, and still a judgement about the figure.
-TeachQuiz, the most inventive metric in the area, measures how well a
-**vision-language model, after unlearning, can recover knowledge by watching the
-generated video**. It is a machine analogue of a learning-gain measure, and it is
-not evidence about humans.
+LLM-as-a-judge — better, and still a judgement about the figure. TeachQuiz, the
+most inventive metric in the area, measures how well a **vision-language model,
+after unlearning, can recover knowledge by watching the generated video**. A
+machine analogue of a learning-gain measure, and not evidence about humans.
 
 > **No study in the LLM-generated-explanatory-video literature measures whether a
 > human learns anything from the generated video.** The identical gap holds for
@@ -313,8 +312,8 @@ inaccuracies and hallucinations" plus "heavy reliance on automatic text-overlap
 metrics that poorly capture perceived usefulness and trust." Interviews with
 blind and low-vision scientists record the cost in behaviour rather than score:
 they **abandoned AI workflows** after vague or incorrect descriptions. Until an
-accuracy figure exists that licenses otherwise, alt text delivered to a BLV
-learner is human-reviewed.
+accuracy figure licenses otherwise, alt text delivered to a BLV learner is
+human-reviewed.
 
 ---
 

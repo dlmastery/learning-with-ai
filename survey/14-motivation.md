@@ -39,11 +39,10 @@ rationed by teacher time, and are now not.
 **Autonomy — AI is structurally the best autonomy-support technology ever built.**
 Choice enhances intrinsic motivation, effort, task performance and perceived
 competence across 41 studies. A generative system can offer choice over topic,
-sequence, pace, difficulty, representation, example domain, worked-example versus
-discovery, and *what the learner is learning it for*. No prior educational technology
-could offer real choice over the **content of the explanation** — only over the order
-of fixed assets. This is also the need that conventional schooling most systematically
-violates.
+sequence, pace, difficulty, representation, example domain, and *what the learner is
+learning it for*. No prior educational technology could offer real choice over the
+**content of the explanation** — only over the order of fixed assets. This is also the
+need conventional schooling most systematically violates.
 
 > *Guardrail, in the same breath:* autonomy in SDT is not "many options"; it is
 > volition and self-endorsement of one's own action. A system that generates 40 paths,
@@ -85,14 +84,14 @@ fourteen years.
 | Henderikx et al. 2017 | 2 MOOCs, completion-based | **6.5% and 5.6%** |
 
 And the load-bearing finding, from six years of HarvardX/MITx edX data: *"the vast
-majority of MOOC learners never return after their first year"*; growth in
-participation concentrated **almost entirely in the world's most affluent countries**;
-and *"the bane of MOOCs — low completion rates — has not improved over 6 years."*
+majority of MOOC learners never return after their first year"*; growth concentrated
+**almost entirely in the world's most affluent countries**; and *"the bane of MOOCs —
+low completion rates — has not improved over 6 years."*
 
-Read the third one against what the field shipped between 2012 and 2018: better video,
+Read the third against what the field shipped between 2012 and 2018: better video,
 better platforms, mobile apps, adaptive sequencing, mastery gating, cohorts, gamified
 progress, social forums, certificates, paid verification. **Completion did not move.**
-And the second one destroys the access narrative: the marginal MOOC user was not an
+And the second destroys the access narrative: the marginal MOOC user was not an
 underserved learner in a low-income country. It was an already-credentialed
 professional in a rich one.
 

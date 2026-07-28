@@ -124,8 +124,14 @@ Full matrix of 12 techniques × 5 bands on the [dashboard](https://dlmastery.git
 
 ## The system this argues for
 
-Not one tutor. A crew of seven, each narrow, each **certified against a published eval** — never
-merely prompted to be an expert, since persona prompting shows no measured accuracy gain.
+Not one tutor. A **registry of ten** specialist roles, each narrow, each **certified against a
+published eval** — never merely prompted to be an expert, since persona prompting shows no measured
+accuracy gain.
+
+The load-bearing number is not ten, though. **The active set for any learner-hour is 3–5.** The
+economics would permit roughly forty; the orchestration evidence permits three to five, and you
+design to the smaller number. A planner selects which roles are live for a given moment. The seven
+below are the ones that carry most of the pedagogy.
 
 | Role | What it does |
 |---|---|
@@ -234,7 +240,7 @@ for it.
 
 | Artifact | State |
 |---|---|
-| **Survey** — the deliverable | 22 sections · ~56,500 words (target ~45,000 — exceeded) |
+| **Survey** — the deliverable | 22 sections · ~56,300 words (target ~45,000 — exceeded) |
 | **Research reports** — the input | 30 reports · ~380,000 words · complete |
 | Sections written from reports in hand | 22 of 32 |
 | Demo pages | Gallery + design system shipped; pages landing incrementally |

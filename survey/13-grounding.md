@@ -132,11 +132,9 @@ rung that can falsify a claim buys nothing and costs a great deal.
 
 The instinct is that numeric checking is the cheap approximation and symbolic checking
 is the real thing you escalate to when it matters. **The measurement says the
-opposite, and the default should be numeric with symbolic as the escalation.**
-
-L3 buys about +0.9 points of recall over L2b for roughly 3× the median cost, an
-unbounded worst case — and a **38.3% hole**. That hole is not evenly spread. It is
-located precisely where physics and engineering teaching lives:
+opposite: the default is numeric and the escalation is symbolic.** L3 buys about +0.9
+points of recall over L2b for roughly 3× the median cost, an unbounded worst case —
+and a **38.3% hole** located precisely where physics and engineering teaching lives:
 
 | Wester section | Tests | Failing | Rate |
 |---|---|---:|---:|
@@ -167,13 +165,13 @@ universal quantifier, or when the claim is reused enough that the tail risk matt
 Four, and three of them contradict something a reasonable engineer would have assumed.
 
 **Eight random substitutions buy nothing over one.** Recall is flat at 112/113 across
-a 16× sampling budget — 99.1% at k=1, 99.1% at k=16. The cost is not flat: p95 latency
-rises **6.8×** for zero measured benefit. On textbook-scale expressions a single random
-substitution is the entire signal, because the mutation classes that matter (sign,
-factor, exponent, dropped term, wrong variable) perturb the value almost everywhere,
-not on a measure-zero set. The implication is that k should be set by the *structure*
-of the claim — a suspected removable singularity or a piecewise domain needs more
-points; a polynomial identity does not — and never by a fixed constant.
+a 16× sampling budget. The cost is not flat: p95 latency rises **6.8×** for zero
+measured benefit. On textbook-scale expressions a single substitution is the entire
+signal, because the mutation classes that matter (sign, factor, exponent, dropped
+term, wrong variable) perturb the value almost everywhere, not on a measure-zero set.
+So k should be set by the *structure* of the claim — a suspected removable singularity
+or a piecewise domain needs more points; a polynomial identity does not — never by a
+fixed constant.
 
 **Sampling wider makes the checker worse.** This inverts a natural instinct.
 

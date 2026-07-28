@@ -69,16 +69,15 @@ measurement practice of the entire field rather than one product.
 > and the field's existing evidence base is worth far more than this survey
 > credits it for.
 
-Note that the falsifier here is *good news for everyone else*. We should want to
-run it precisely because it can rescue a decade of published effect sizes.
+The falsifier here is *good news for everyone else*. We should want to run it
+precisely because it can rescue a decade of published effect sizes.
 
-Why it has not been run is worth stating plainly, because it is not an
-intellectual difficulty. A delayed unannounced test costs learner goodwill,
-requires re-contacting a dispersed cohort, and produces attrition that is almost
-certainly non-random — the students who show up are the ones who learned. It is
-also commercially unattractive: it is the one measurement that can turn a
-shipped product's headline number negative, and every party positioned to fund it
-has an interest in the immediate number.
+Why it has not been run is not an intellectual difficulty. A delayed unannounced
+test costs learner goodwill, requires re-contacting a dispersed cohort, and
+produces attrition that is almost certainly non-random — the students who show up
+are the ones who learned. It is also commercially unattractive: it is the one
+measurement that can turn a shipped product's headline number negative, and every
+party positioned to fund it has an interest in the immediate number.
 
 ---
 
@@ -113,20 +112,18 @@ prerequisite-dependent subscale and ≈ 0 on the topic-local subscale.** The
 Two design details carry most of the value. The control must be
 summary-carryover rather than a true amnesiac, or the comparison measures
 politeness rather than memory. And the typed/untyped sub-ablation converts a null
-into a **diagnosis** — because the deep obstacle here is knowledge-component
-alignment, and the numbers on that are not encouraging: expert KC models add
+into a **diagnosis** — because the deep obstacle is knowledge-component
+alignment, and the numbers there are not encouraging: expert KC models add
 **≤ 0.01 AUC on 7 of 9 datasets**, and on 4 of 9 the KC model is so poor that a
 skill-only model loses to an item-difficulty-only model. **A memory whose
-contents are badly typed may be worth exactly nothing**, and that is a
-mechanism-level reason the effect could be null.
+contents are badly typed may be worth exactly nothing.**
 
 The case for memory also cannot be "better next-item prediction," because that
-ceiling is already reached: a zero-parameter moving average beats every released
-FSRS version on log loss over 350 million reviews; cleaned of leakage, PFA
-matches deep knowledge tracing; SAKT fails independent replication on all nine
-datasets tested (0.85 reported → 0.73 observed). The case has to be continuity,
-diagnosis, and pivoting — none of which AUC measures and none of which anyone has
-measured either.
+ceiling is reached: a zero-parameter moving average beats every released FSRS
+version on log loss over 350 million reviews, and SAKT fails independent
+replication on all nine datasets tested (0.85 reported → 0.73 observed). The case
+has to be continuity, diagnosis and pivoting — none of which AUC measures and
+none of which anyone has measured either.
 
 > **Falsifier.** C = B = A on prerequisite-dependent transfer, with no advantage
 > even on redundant-re-explanation counts, would mean persistent state is an
@@ -186,9 +183,9 @@ assessment lands, where feedback lands, and where most well-implemented
 instructional technology lands once the trial is adequately powered and
 independently run. The regularity is not a fact about AI. It is a fact about how
 much of the variance in learning outcomes is available to be moved by *any*
-instructional manipulation given fixed time, fixed prior knowledge, and fixed
-motivation. **On this reading, the survey has mistaken a population parameter for
-a technology limitation.**
+instructional manipulation given fixed time, prior knowledge and motivation.
+**On this reading, the survey has mistaken a population parameter for a
+technology limitation.**
 
 **Premise 2 — the nulls already on record are the honest prior, and they are the
 most rigorous studies in their respective literatures.**

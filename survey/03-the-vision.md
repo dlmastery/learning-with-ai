@@ -116,7 +116,10 @@ Not one tutor. A crew.
 | **The Archivist** | The learner model. Everything, forever, learner-owned, on-device | The ship's computer |
 | **The Connector** | Brokers contact with *actual humans*. Never simulates friendship | Guinan |
 
-Seven roles. One shared learner model. **No votes** — a precedence ladder where
+Seven roles here; the full registry is ten, and the number that actually governs
+design is the **active set of 3–5 per learner-hour** — the economics would allow
+about forty, the orchestration evidence allows three to five, and you design to the
+smaller number. One shared learner model. **No votes** — a precedence ladder where
 executable ground truth wins outright and dissent is *recorded*, never averaged
 away. And the crew must be genuinely heterogeneous: three independent benchmarks
 find multi-agent debate does **not** reliably beat plain self-consistency, and one

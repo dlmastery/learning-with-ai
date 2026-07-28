@@ -263,9 +263,8 @@ random.** The theoretical result bounds the AUROC of the *best possible* detecto
 the total variation distance between human and machine text distributions — as
 models improve, achievable detection falls toward chance. Empirically, the largest
 comparative test of 14 systems concluded they are "neither accurate nor reliable."
-
-Then Liang et al., which is usually cited too weakly. Seven deployed detectors, run
-on TOEFL essays by non-native writers and on US eighth-graders' essays:
+Then Liang et al., usually cited too weakly — seven deployed detectors, run on TOEFL
+essays by non-native writers and on US eighth-graders' essays:
 
 | Measure | Value |
 |---|---|
@@ -331,21 +330,18 @@ is a property of the probe policy, not of the product.**
 | **T2 — Diagnostic profile** | "Mastered {A1, A3}; not yet {A2}" | All of T1, plus a Q-matrix derived from the cognitive model **before** generation, a fitted diagnostic model with reported classification accuracy, **and external validation of at least one attribute claim against evidence not produced by the same generator** | Profiles whose fit was assessed only against generator-produced data; profiles indistinguishable from a rescaled total score |
 | **T3 — Summative / consequential** | "This learner meets the standard" | All of T2, plus **100% human review of keyed answers on administered items**, documented equating, published subgroup invariance, an appeals path, and an independent validity study | — |
 
-Two observations about that table matter more than its contents.
+Two observations about that table matter more than its contents. **Most AI tutoring
+systems in 2026 sit at Tier 0 and report as if they were at Tier 2** — the single most
+common measurement error in the field. And **Tier 3 is not currently attainable by a
+purely generative system**: the largest systematic review of AI-generated MCQ validity
+concludes the evidence "does not yet support unsupervised use in summative
+assessment," and combined with the collapse of the process claim on unsupervised
+artifacts, consequential decisions require proctored or verification-anchored
+observation. Say so rather than approximating it.
 
-**Most AI tutoring systems in 2026 sit at Tier 0 and report as if they were at Tier
-2.** That is the single most common measurement error in the field.
-
-**And Tier 3 is not currently attainable by a purely generative system.** The largest
-systematic review of AI-generated MCQ validity concludes the evidence "does not yet
-support unsupervised use in summative assessment." Combined with the collapse of the
-process claim on unsupervised artifacts, the honest position is that consequential
-decisions require human-proctored or verification-anchored observation. Say so
-rather than approximating it.
-
-Explicitly permitted at every tier, and worth stating because the prohibitions are
-long: **telling the learner what they got wrong and why.** Diagnostic feedback is not
-a score claim.
+Explicitly permitted at every tier, worth stating because the prohibitions are long:
+**telling the learner what they got wrong and why.** Diagnostic feedback is not a
+score claim.
 
 Three standalone prohibitions. Never report α or ω for an assessment where learners
 receive different items — undefined, not merely inaccurate. Never present a
@@ -357,39 +353,34 @@ probes whose equivalence has not been empirically established.
 
 ## 7. The strongest counter-argument
 
-*This is an argument for making assessment more expensive at exactly the moment
-institutions can least afford it. Frequent secured orals, human review of every keyed
-answer, G-studies per generator — you have replaced a cheap system that mostly worked
-with an elaborate one nobody will build.*
+*This is an argument for making assessment far more elaborate. Frequent secured orals,
+human review of every keyed answer, G-studies per generator — you have replaced a
+simple system that mostly worked with one nobody will build.*
 
 Two answers.
 
-First, the cost has moved rather than grown. Human review, not generation, is now the
-cost centre — a system claiming "AI removes the item-writing bottleneck" has *moved*
-the bottleneck and should say so. And verification-first assessment makes the product
-claim genuinely free wherever the discipline has already agreed to submit to an
-oracle: mathematics agreed centuries ago, software by construction, empirical science
-via replication. Institutions that adopted autograders as a cost saving inverted the
-logic — they banked the savings and never spent them on the capability and learning
-claims that now go unevidenced.
+First, the burden moved rather than grew. Human review, not generation, is now the
+bottleneck — a system claiming "AI removes the item-writing bottleneck" has *moved* it
+and should say so. And verification-first assessment makes the product claim genuinely
+free wherever the discipline has already agreed to submit to an oracle: mathematics
+agreed centuries ago, software by construction, empirical science via replication.
+Institutions that adopted autograders as a saving inverted the logic — they banked it
+and never spent it on the capability and learning claims that now go unevidenced.
 
-Second, and this is the reframe that should reorganise priorities: **the emergency
-was never cheating.** In Bastani et al.'s trial of ~1,000 high-school maths students,
-unguarded assistance improved practice performance by 48% and left the students
-**17% worse** on an unassisted exam than students who never had access. *(A note on
-provenance, since this project publishes its corrections: the PNAS notice attached to
-that paper is an affiliation erratum. The −17% stands.)*
+Second, the reframe that should reorganise priorities: **the emergency was never
+cheating.** In Bastani et al.'s trial of ~1,000 high-school maths students, unguarded
+assistance improved practice performance by 48% and left students **17% worse** on an
+unassisted exam than students who never had access. *(A note on provenance, since this
+project publishes its corrections: the PNAS notice attached to that paper is an
+affiliation erratum. The −17% stands.)*
 
 The threat is not that students submit work they did not do. It is that they do work
 from which they learn nothing, and **the grading system cannot tell the difference —
 and in fact rewards it.** Cheating is a distribution-of-credit problem. This is a
 capability-destruction problem, and it operates on students who are not cheating at
-all.
-
-Which reassigns assessment's job. If learning happens in practice, and practice is now
-AI-saturated, then assessment's primary function is to **create the incentive to
-practise in the guardrailed mode.** That is a more consequential job than sorting, and
-only a frequent, secured, diagnostic system can do it.
+all. Which reassigns assessment's job: if practice is now AI-saturated, assessment's
+primary function is to **create the incentive to practise in the guardrailed mode.**
+Only a frequent, secured, diagnostic system can do that.
 
 ---
 

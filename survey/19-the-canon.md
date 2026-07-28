@@ -97,26 +97,25 @@ The evidence base is the strongest in this catalogue:
   "All of the estimated effects were positive and all were statistically
   significant except results from metaregressions involving affective outcomes."
 - **Characteristics of the publications, methodology and sample were not
-  systematically related to effect estimates** — that is, the absence of the
-  small-study and publication-bias signature that discredits most of this
-  literature.
+  systematically related to effect estimates** — the absence of the small-study
+  and publication-bias signature that discredits most of this literature.
 - Effects showed little decline during maintenance and grew with exposure.
-  Reported magnitude ≈ 0.6 SD.
-- In special education: 25 studies, **none** favouring comparison groups.
+  Reported magnitude ≈ 0.6 SD. In special education: 25 studies, **none**
+  favouring comparison groups.
 - Project Follow Through — roughly **352,000 children, 178 projects, 20 sponsored
-  models** — found DI strongest on basic skills, and, contrary to the standard
-  objection, found the structured models beat the unstructured ones on
-  affective and self-concept outcomes too.
+  models** — found DI strongest on basic skills and, contrary to the standard
+  objection, found the structured models beat the unstructured ones on affective
+  and self-concept outcomes too.
 
-And DI is **cheap**. Student workbooks around $20; teacher guides $180–232.
+And DI is **cheap**: student workbooks around $20, teacher guides $180–232.
 
 It won the largest educational experiment ever run and was then sidelined — for
 teacher resistance to scripting framed as a constraint on creativity, for
-ideological mismatch with constructivist orthodoxy in teacher education, and for
-a dissemination apparatus that went on to recommend programmes that had *not*
-been validated. A former US Education Commissioner called endorsing all models
-when "only one of the sponsors (Direct Instruction) was found to produce positive
-results more consistently" **"inappropriate and irresponsible."**
+ideological mismatch with constructivist orthodoxy, and for a dissemination
+apparatus that went on to recommend programmes that had *not* been validated. A
+former US Education Commissioner called endorsing all models when "only one of
+the sponsors (Direct Instruction) was found to produce positive results more
+consistently" **"inappropriate and irresponsible."**
 
 **Cost was never the binding constraint. Professional identity and institutional
 politics were, and AI has no purchase on those.** Attributing DI's fate to
@@ -275,8 +274,8 @@ Four mechanisms that pass the survival test, are implementable today, and almost
 nobody has built.
 
 **A named, citable feedback taxonomy.** Nyāya's *nigrahasthāna* enumerates
-twenty-two grounds for defeat in argument. The specific list matters less than
-the property: a fixed, published, learner-visible taxonomy makes feedback
+twenty-two grounds for defeat in argument. The list matters less than the
+property: a fixed, published, learner-visible taxonomy makes feedback
 **learnable** (the learner acquires the categories and self-diagnoses),
 **auditable** (a wrong category assignment is visibly wrong, unlike a wrong
 vibe), and **symmetric** (the learner can apply it back to the AI). Current
@@ -294,17 +293,15 @@ maximally accommodating, always offering another way to look at it, including at
 the stage where a beginner most needs to be told to do it exactly this way.
 
 **Precision-teaching rate measurement as telemetry.** Pinpoint a behaviour, time
-short trials, chart rate per minute, let the slope drive the decision. The
-evidence base is thin (11 studies, 170 participants) and the mechanism is pure
-measurement labour, which is free for software. Highest ratio of neglect to
-feasibility in the catalogue.
+short trials, chart rate per minute, let the slope drive the decision. Thin
+evidence base (11 studies, 170 participants), pure measurement labour, free for
+software. Highest ratio of neglect to feasibility in the catalogue.
 
-**AI-brokered human pairing.** For everything in Class C, the correct role is
+**AI-brokered human pairing.** For everything in Class C the correct role is
 orchestrator, not participant: matching chavruta partners with compatible level
-and incompatible blind spots, authoring ConcepTests for peer instruction,
-partitioning jigsaw groups and detecting free-riding, guaranteeing every seminar
-participant arrives having actually engaged the text. **AI supplies the
-objections; it does not supply the partner.**
+and incompatible blind spots, authoring ConcepTests, partitioning jigsaw groups
+and detecting free-riding, guaranteeing every seminar participant arrives having
+engaged the text. **AI supplies the objections; it does not supply the partner.**
 
 ---
 
