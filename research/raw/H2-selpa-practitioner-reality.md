@@ -63,7 +63,33 @@ secondary sources are still wrong about it — see §3.4.
    predetermination doctrine, and an AI recommendation engine is a predetermination
    machine unless deliberately designed not to be. See §5.4.
 
-5. **IEP services must be "based on peer-reviewed research to the extent practicable"
+5. **Three prior attempts to reduce this administrative load were measured and all returned
+   zero — and a fourth was never even attempted.** Computerisation: *"Using a computer to prepare
+   IEPs was not significantly related to time spent writing each IEP"* (SPeNSE, n = 972). Human
+   delegation: no significant effect, *"because much of the paperwork teachers complete cannot be
+   appropriately delegated to an aide or secretary."* Deregulation: ED priced its own
+   meeting-excusal provision at approximately nothing. And **IDEA §609's paperwork-waiver
+   authority has, in twenty-one years, produced no documented waiver and no required
+   effectiveness report.** The AI claim is the fifth attempt, and its entire measured evidence
+   base is one randomised trial of 22 novice teachers on one sub-task.
+
+6. **The single most widely deployed intervention in American special education —
+   accommodations — has a weak, inconsistent, sometimes-reversed evidence base, and the What
+   Works Clearinghouse has certified nothing about it in 30 Practice Guides.** Two meta-analyses
+   return overall nulls; teachers assign accommodations *at chance* (N = 1,218); benefit is
+   item-conditional rather than student-conditional, so better learner profiling cannot fix it.
+   `survey/04` argues AI's job is fidelity to known-good intervention. Accommodations are
+   mandated and not known-good, and the survey must hold both facts at once.
+
+7. **In safeguarding, the binding constraint is disclosure, not detection — which means an AI
+   flagging system intervenes on the wrong variable.** NIS-4: at least 80% of maltreatment
+   recognised by school staff never reached an investigation, and CPS would have investigated 72%
+   of what it never saw. Wyman's RCT: gatekeeper training moved confidence by ES 1.22 and moved
+   identification behaviour by nothing. Meanwhile GoGuardian's own figure is 4.6 alerts per
+   student per year, and a six-day census of 4,400 children produced 9,387 flags with **zero**
+   genuine suicide references.
+
+8. **IEP services must be "based on peer-reviewed research to the extent practicable"
    (34 CFR §300.320(a)(4)), and ED reads that as an obligation to *use methods research
    has shown to be effective, to the extent such methods are available* (71 FR 46665).**
    Cross this with H1's census — zero RCTs of generative AI with students with
@@ -1617,6 +1643,58 @@ priced the IEP-team-member excusal provision at approximately **nothing**, becau
 spent in meetings is likely to be offset by the time required to draft written input"* (71 FR
 46843). `OBSERVED` — a third documented null, this one from the regulator.
 
+### 7.5b ★ The largest documented failure: IDEA §609, twenty-one years, zero waivers
+
+This is the strongest single piece of evidence in the report that the paperwork problem is
+structural rather than technical, and it appears to be almost entirely unremarked.
+
+1. **2002** — the President's Commission recommends the Secretary *"determine up to **10 states**
+   that will be allowed to submit proposals for IDEA paperwork reduction."*
+2. **3 December 2004** — Congress enacts **IDEA §609 = 20 U.S.C. §1408, "Paperwork reduction."**
+   `STATUTE`, verbatim: *"the Secretary is authorized to grant waivers of statutory requirements
+   of, or regulatory requirements relating to, subchapter II for a period of time not to exceed
+   **4 years** with respect to **not more than 15 States**…"* And §1408(b) **requires** the
+   Secretary, *"Beginning 2 years after December 3, 2004,"* to report to Congress on waiver
+   effectiveness in *"reducing (A) the paperwork burden on teachers, principals, administrators,
+   and related service providers; and (B) noninstructional time spent by teachers."*
+3. **19 December 2005** — proposed requirements published.
+4. **6 July 2007** — final requirements, framed as *"a single, one-time-only competition."*
+5. **12 October 2007** — applications invited, deadline 11 February 2008 (72 FR 58066).
+6. **Then nothing.** A Federal Register API search for the paperwork-waiver programme across all
+   years returns **exactly one further document** — a 2020 proposed rule. **No award notice, no
+   granted waiver, and no §1408(b) effectiveness report has ever appeared.**
+7. **5 June 2020** — ED proposes the requirements *again*, explaining only that the 2007 criteria
+   *"were only eligible to be used once, which the Department did in 2007"* and that it is
+   *"proposing to use many of the same requirements… because we believe they still represent a
+   sensible and practical approach."* **It reports no results, no participating states and no
+   findings from the 2007–08 competition — despite the standing statutory duty to report exactly
+   that.**
+8. **The 2020 proposal was never finalised.** No final rule exists.
+
+`OBSERVED` — **the statutory paperwork-reduction mechanism Congress created in 2004 has produced
+no documented waiver and no documented hour of reduction in twenty-one years, and the
+effectiveness report the statute mandates has never been filed.**
+
+### 7.5c The one measured study of AI and IEP work
+
+`MEASURED-RCT` (small) — **Rakap, "Chatting with GPT: Enhancing Individualized Education Program
+Goal Development for Novice Special Education Teachers," *Journal of Special Education
+Technology*** (online 2023), DOI 10.1177/01626434231211295, ERIC EJ1434044. **n = 22** novice
+special-education teachers **randomly assigned** to a ChatGPT condition or control, writing IEP
+goals for five children with autism, scored on the Revised IEP/IFSP Goals and Objectives Rating
+Instrument. The ChatGPT group produced **significantly higher-quality goals** and **spent
+significantly less time.**
+
+**Report it with its limits attached, because they are severe.** n = 22, single site, novices
+only, goal drafting only — not the full IEP, and *not* the printing, copying, scheduling,
+notice-mailing, cross-teacher tracking and progress reporting that SPeNSE showed actually
+dominate the weekly hours. An ERIC query for `"ChatGPT" AND "individualized education program"`
+returns **numFound: 2**, of which this is the only study; the other is a practitioner article.
+
+**That is the entire measured evidence base for AI in special-education paperwork: one
+randomised trial of 22 novice teachers on one sub-task.** Every larger claim in the market is
+`VENDOR`.
+
 ### 7.6 What is *not* measured, and should be said plainly
 
 - **There is no current national time-use study.** The best federal data is from 2002. ED's own
@@ -1676,6 +1754,41 @@ Bureau/ACYF/ACF/HHS, *Mandatory Reporting of Child Abuse and Neglect*, State Sta
 - **Training is not universal.** 23 states, Puerto Rico and the Virgin Islands require
   mandated reporters to be trained; 22 states and DC do not require it in law.
 
+**How much of the national reporting volume schools actually carry — and a widely-repeated claim
+that is now out of date.** `MEASURED-ADMIN` — HHS/ACF, NCANDS *Child Maltreatment 2024*,
+verbatim: *"professionals submitted **70.9 percent** of reports… The highest percentages of
+reports are from **legal and law enforcement personnel (21.8%), education personnel (20.8%)**,
+and medical personnel (11.0%)."*
+
+| Federal fiscal year | #1 source | #2 source |
+|---|---|---|
+| 2018 | **Education 20.5%** | Legal/law enforcement 18.7% |
+| 2019 | **Education 21.0%** | Legal/law enforcement 19.1% |
+| 2020 | Legal/law enforcement 20.9% | Education **17.2%** |
+| 2021 | Legal/law enforcement 21.8% | Education **15.4%** |
+| 2022 | Legal/law enforcement 21.2% | Education 20.7% |
+| 2023 | Legal/law enforcement 21.4% | Education 21.1% |
+| 2024 | Legal/law enforcement 21.8% | Education 20.8% |
+
+**The common claim that education personnel are the largest single source of maltreatment
+referrals was true through FFY2019 and has not been true since.** Education was displaced during
+COVID school closures (21.0% → 17.2% → 15.4%) and has not regained the top position in any year
+FFY2020–FFY2024. **Correct phrasing: the largest or second-largest source, consistently about
+one in five of all referrals.** Context from CM2024: **4,365,000 referrals** covering ~7,693,000
+children; **47.1% screened in, 52.9% screened out**; 532,228 victims; mean CPS response time 104
+hours.
+
+**On substantiation by source — a number that does not exist and should not be invented.**
+NCANDS does not publish substantiation rate by report source. The closest is CM2022 Table 7–3, a
+special-focus table that does not recur in later editions: legal and law enforcement produced
+237,837 substantiated maltreatment types (**37.9%**) against 21.2% of reports, while education
+produced 72,189 (**11.5%**) against 20.7% of reports. **CM2022 itself warns that the two tables
+use different denominators, units and state coverage**, so the implied 3× conversion-rate
+difference is `INFERENCE` and must not be presented as a substantiation rate. What *is* clean:
+composition of education-source substantiations — neglect **58.6%**, physical abuse 20.1%,
+**sexual abuse 11.4%**, psychological 6.1%. **Schools are disproportionately where sexual abuse
+surfaces.**
+
 ### 8.2 The routing question — and why it is the crux for AI
 
 This is the part that decides whether an automated escalation path is safe or negligent.
@@ -1702,19 +1815,90 @@ And the clause that governs everything:
 > States**, an employer is expressly prohibited from retaliating against an employee who has
 > made a report."
 
-**Three consequences, stated flatly.**
+The 17 non-relief states: **AK, CA, FL, IN, IA, KY, ME, MI, MO, ND, OK, OR, SC, TN, TX, WV,
+WY.** The 9 where the institution head reports: **GA, ID, IN (hospitals), KY, ME, MA, SD, VA,
+WY**. The 10 where the staff member must report *first* and then notify the institution: **CA,
+CT, HI, IL, IN (schools), MI, NY, PA, TN, WV**.
 
-1. **The duty is personal and, in at least 17 states plus DC and the Virgin Islands, expressly
-   non-delegable.** It attaches to the human who formed the suspicion. **An AI cannot hold
-   it, cannot discharge it, and cannot be interposed between the human and the authority.**
-2. **The correct routing differs by state and it inverts.** In nine states the staff member
-   tells the head and *the head reports*. In ten states the staff member *reports first* and
-   then tells the institution. **A product with one hard-coded escalation flow is wrong in
-   roughly half the country**, and being wrong in the direction of "route to the principal"
-   is the documented failure mode — see §8.4.
-3. **A system that surfaces a disclosure to a designated adult and stops has not made a
-   report.** It has made a notification. Every product claim in this space should be tested
-   against that distinction, and most will fail it.
+**Three state statutes settle the AI question directly. Quoted verbatim because paraphrase
+would soften them.**
+
+`STATUTE` — **Texas Family Code §261.101(b)**:
+
+> "…the professional shall make a report not later than the 48th hour after the hour the
+> professional first has reasonable cause to believe… **A professional may not delegate to or
+> rely on another person to make the report.** …The term includes teachers, nurses, doctors,
+> day-care employees…"
+
+`STATUTE` — **California Penal Code §11166(i)(1)–(3)**:
+
+> "(1) **The reporting duties under this section are individual**, and no supervisor or
+> administrator may impede or inhibit the reporting duties… **An internal policy shall not
+> direct an employee to allow the employee's supervisor to file or process a mandated report
+> under any circumstances.**
+> (2) The internal procedures shall not require any employee… to disclose the employee's
+> identity to the employer.
+> (3) **Reporting the information… to an employer, supervisor, school principal, school
+> counselor, coworker, or other person shall not be a substitute for making a mandated report**
+> to an agency specified in Section 11165.9."
+
+The only sanctioned "someone else files for me" mechanism, §11166(h), requires two or more
+*mandated reporters* with *joint knowledge* who *agree*, and then: *"Any member who has
+knowledge that the member designated to report has failed to do so **shall thereafter make the
+report**."* **The personal duty revives and never extinguishes.**
+
+`STATUTE` — **Michigan MCL 722.623(1)(a)**: *"**A notification to the person in charge of a
+hospital, agency, or school does not relieve the member of the staff… of the obligation of
+reporting to the department** as required by this section."* And **Fla. Stat. §39.201(2)(b)**:
+*"Nothing in this section… may be construed to **remove or reduce the duty and responsibility of
+any person**… to report."*
+
+**Timeframes** `STATUTE`: California §11166(a) — *"immediately or as soon as is practicably
+possible,"* written follow-up **within 36 hours**. Texas §261.101 — universal duty
+*"immediately"*; professionals **not later than the 48th hour**. Michigan MCL 722.623(1)(a) —
+*"immediate report,"* written within **72 hours**. Florida §39.201(1)(a)1 — *"report
+**immediately** to the central abuse hotline."*
+
+**Penalties** `STATUTE` — Child Welfare Information Gateway, *Penalties for Failure to Report*
+(current through February 2019): *"Approximately **49 States**… impose penalties… Failure to
+report is classified as a **misdemeanor or similar charge in 40 States**… jail terms ranging
+from **30 days to 5 years**, fines ranging from **$300 to $10,000**."* Florida makes it a
+**felony** and imposes up to **$1 million** on an institution of higher learning that fails to
+report or prevents reporting. Civil liability in addition to criminal in AR, CO, IA, MI, MT, NY,
+RI. **Wyoming has no failure-to-report penalty statute at all** — and is one of the four pure
+"any person" states.
+
+**Federal floor, with a citation correction most secondary sources get wrong.** `STATUTE` — the
+CAPTA definition of "child abuse and neglect" is **no longer at 42 U.S.C. §5106g**; Pub. L.
+111-320 §142(b) (20 December 2010) struck it and relocated it to Pub. L. 93-247 §3, set out as a
+Definitions note under **42 U.S.C. §5101**. Anyone citing §5106g is citing pre-2010 law. The
+mandate hook is **42 U.S.C. §5106a(b)(2)(B)(i)**, a *funding condition on states* requiring *"a
+State law for mandatory reporting."* `INFERENCE` — **federal law says nothing about who or what
+may *perform* the reporting act. The delegation question is resolved entirely at state level,
+and at state level the answer is no.**
+
+**Four consequences, stated flatly.**
+
+1. **The duty is personal, and in at least 17 states plus DC and the Virgin Islands expressly
+   non-delegable — with Texas prohibiting delegation in terms.** It attaches to the human who
+   formed the suspicion. **An AI cannot hold it, cannot discharge it, and cannot be interposed
+   between the human and the authority.** Texas §261.101(b) forecloses both readings at once:
+   if an AI counts as "another person," delegating to it is prohibited conduct; if it does not,
+   the teacher has delegated to a non-person and has simply failed to report.
+2. **An in-product "flag to admin" workflow is not a report.** California §11166(i)(3) says so
+   in terms. And §11166(i)(2) additionally bars internal procedures that require the reporter to
+   disclose their identity to the employer — **which most SaaS audit logging does by default.**
+3. **The correct routing differs by state and it inverts.** In nine states the staff member
+   tells the head and *the head reports*; in ten the staff member *reports first*. **A product
+   with one hard-coded escalation flow is wrong in roughly half the country**, and being wrong
+   in the direction of "route to the principal" is the documented failure mode — see §8.4.
+4. **The statutes have no vocabulary for a system that forms the suspicion.** §11166(a) ties the
+   duty to the reporter's *"professional capacity"* and to that human's own knowledge. The
+   defensible claim is therefore narrower and sharper than "AI cannot report": **in no US
+   jurisdiction does an AI system's flag discharge the individual mandated reporter's duty, and
+   in Texas, California and Michigan — plus fourteen more per the Children's Bureau — the
+   statute forecloses the reading that routing a concern to any intermediary discharges it. An
+   AI can at most be a detection aid feeding a human who must then personally report.**
 
 ### 8.3 Academic concern vs safeguarding concern
 
@@ -1770,11 +1954,219 @@ or not anyone intended it, become a disclosure surface. `INFERENCE` — H1 §4.6
 language/reading-access archetype; the disclosure implication follows and is not optional to
 design for.
 
-**(4) The over-referral risk runs the other way.** An automated flag lowers the cost of raising
-a concern to nearly zero, and anything that lowers that cost raises volume. Volume is not
-neutral: referrals land disproportionately on families already under surveillance. **A
-sensitivity setting on a safeguarding classifier is a policy decision about which families get
-investigated, and it must never be set by a vendor default.** `INFERENCE`.
+**(4) The over-referral risk runs the other way, and the base rates are extreme.**
+`MEASURED-ADMIN` — Kim, Wildeman, Jonson-Reid & Drake (2017), *American Journal of Public
+Health* 107(2):274–280, DOI 10.2105/AJPH.2016.303545, PMID 27997240; NCANDS Child Files
+2003–2014 with Census denominators, synthetic-cohort life tables, verbatim:
+
+> "**37.4% of all children experience a child protective services investigation by age 18
+> years.** …a higher rate for **African American children (53.0%)** and the **lowest rate for
+> Asians/Pacific Islanders (10.2%)**."
+
+**A 5.2× spread, on a base rate where more than one child in three is investigated before
+adulthood.** An automated flag lowers the cost of raising a concern to nearly zero, and anything
+that lowers that cost raises volume — into a system with that distribution. `OBSERVED` — Krase
+(2015), *Children & Schools* 37(2), ERIC EJ1061332: *"**racial disproportionality and disparity
+in reporting by educational personnel exist at the national level and significantly differ
+within a state.**"*
+
+**A sensitivity setting on a safeguarding classifier is a policy decision about which families
+get investigated, and it must never be set by a vendor default.** `INFERENCE`.
+
+**(5) And more volume probably means worse signal, not better detection.**
+`MEASURED-QUASI` (natural experiment) — S. Kim (2025), EdWorkingPaper 25-1214,
+Annenberg/Brown, ERIC ED674099, exploiting county-level variation in remote-instruction weeks in
+2020–21 against NCANDS: counties with higher remote exposure had *"**fewer screened-in
+allegations of school-aged children, but a higher substantiated allegations and an increase in
+maltreatment-related child fatalities. The reduction in allegations was primarily driven by
+those reported by education personnel.**"*
+
+Both halves matter and they cut in opposite directions. Educator reporting does real detection
+work — removing it raised substantiated cases *and* fatalities. But its volume is partly
+threshold-driven: fewer reports, **higher** substantiation rate among those remaining.
+`INFERENCE` — **an AI that increases flag volume should be expected to lower the substantiation
+rate rather than raise detection.**
+
+### 8.4b ★ The failure quantified: NIS-4
+
+`MEASURED` — Sedlak et al. (2010), *Fourth National Incidence Study of Child Abuse and Neglect
+(NIS-4): Report to Congress*, HHS/ACF/OPRE. **10,791 sentinel professionals in 1,094 agencies.**
+Verbatim, §8.1 at 16–17:
+
+> "**School sentinels recognized 52% of the children who suffered Harm Standard maltreatment**
+> and 39% of the Endangerment Standard total."
+> "CPS investigated the maltreatment of **only 32%** of children who experienced Harm Standard
+> maltreatment…"
+> "**The lowest rates of investigation occurred for children recognized at schools (20% or less
+> across the definitional standards)**, day care (12% or less), or shelters (19% or less)."
+
+**Roughly 80% or more of the maltreatment recognised by school staff never reached a CPS
+investigation.** Police and sheriff sentinels: 53–64%.
+
+**And NIS-4 locates the failure precisely**, which is what makes it usable. Verbatim at 17:
+
+> "The CPS Screening Policies Study… indicated that **CPS probably would have investigated nearly
+> three-fourths (72%) of the uninvestigated children who experienced Harm Standard maltreatment**
+> and two-thirds (66%) of the uninvestigated children with Endangerment Standard maltreatment."
+
+`INFERENCE` — **the bottleneck is recognition→report, not CPS screening capacity.**
+
+**School staff are the worst non-reporters of the four sentinel groups.** Verbatim, §8.5.3 at
+8–41 to 8–43:
+
+> "Whereas an average of **23% of all sentinels** said they would not report the countable
+> maltreatment cases to CPS, **29% of school sentinels** did so… An average of **33% of school
+> sentinels say they would not report situations described in neglect vignettes** compared to
+> 21%–26% of sentinels in the other three agency groups."
+
+Table 8–6 (uninvestigated % / % of sentinels who would not report): all maltreatment 74% / 23%;
+sexual abuse 53% / 6%; all neglect 85% / 28%; **educational neglect 93% / 35%**.
+
+**And the "report it to the principal" failure mode, measured.** Verbatim, §8.1 at 18:
+
+> "More sentinels from health and law enforcement (**96% or more**) said their agencies allowed
+> them to **report directly to CPS (versus having to go through an agency representative or
+> committee) than did sentinels in schools (80%)**… Moreover, when allowed to do so, **fewer
+> sentinels in schools… said they had ever reported a case (54%…) compared to 87% of law
+> enforcement sentinels and 77% of sentinels in health agencies.**"
+
+**One in five school staff cannot report directly to CPS at all; among those who can, only 54%
+ever have.**
+
+**(6) Self-report on this topic is systematically optimistic.** `MEASURED` — Kenny (2001),
+*Child Abuse & Neglect* 25(1):81–92, PMID 11214815, n = 197 teachers: *"**Seventy-three percent
+of this sample reported that they had never made a report of child abuse**… **Only 11% of
+teachers reported that there were instances in which they believed abuse may have occurred, but
+failed to report.** …**The teachers' responses to the case vignettes were not consistent with
+their previous reports.** …when presented with legally reportable case vignettes, many failed to
+report."* Corroborated by Walsh et al. (2012), *Children and Youth Services Review*, whose title
+is the finding: *"Understanding teachers' reporting of child sexual abuse: **Measurement methods
+matter**."*
+
+**(7) ★ And training does not fix it — the Cochrane null.** `MEASURED-META` — Walsh, Eggins,
+Hine, Mathews, Kenny et al. (2022), "Child protection training for professionals to improve
+reporting of child abuse and neglect," *Cochrane Database of Systematic Reviews* Issue 7, DOI
+10.1002/14651858.CD011775.pub2, PMID 35788913. **11 trials, 1,484 participants.** Self-reported
+reports SMD 0.81 [0.18, 1.43], **very low certainty**, n = 42; vignette responses SMD 1.81
+[1.30, 2.32], **very low certainty**, n = 87. Verbatim:
+
+> "**We identified no studies that measured the number of cases of child abuse and neglect via
+> official records of reports made to child protection authorities, or adverse effects of
+> training.** …However, the evidence is very uncertain."
+
+**In eleven trials, zero measured reports against official CPS records and zero measured adverse
+effects.** The entire evidence base rests on the two measures Kenny showed diverge from each
+other.
+
+### 8.4c ★ Suicide-risk gatekeeping: the null that reframes the whole detection argument
+
+`MEASURED-RCT` — Wyman, Brown, LoMurray, Schmeelk-Cone et al. (2008), *Journal of Consulting and
+Clinical Psychology* 76(1):104–115, PMID 18229988. Group-randomised, **32 schools, 249 staff**,
+QPR gatekeeper training, ~1-year follow-up, plus 2,059 8th and 10th graders surveyed. Verbatim:
+
+> "Gatekeeper-training programs… are **widespread but largely untested**. …training increased
+> self-reported **knowledge (ES = 0.41)**, **appraisals of efficacy (ES = 1.22)**, and **service
+> access (ES = 1.07)**. …**Consistent with the communication model, increased knowledge and
+> appraisals were NOT sufficient to increase suicide identification behaviors.** Also
+> consistent… were results from 2,059 8th and 10th graders surveyed showing that **fewer students
+> with prior suicide attempts endorsed talking to adults about distress.**"
+
+**Large, clean effects on knowledge and confidence. No increase in the behaviour that matters.
+And the reason is on the student side: the highest-risk students are the least likely to talk to
+an adult at all.**
+
+Confirmed meta-analytically. `MEASURED-META` — *Prevention Science* 25:978–988 (2024), PMID
+39023720, **43 studies, 21,720 participants**: behavioural *intention* 1.03 [0.80, 1.25]
+post-training; actual *intervention behaviour* 0.33 [0.21, 0.46] short-term and **0.22 [0.14,
+0.30] long-term**. **Intention effects are roughly 4.7× larger than behaviour effects**, and the
+authors flag *"the low methodological quality of the currently available evidence."* A second
+meta-analysis, *BMC Public Health* 25:1206 (2025), PMID 40165179, 16 RCTs: knowledge SMD 0.72
+decaying to 0.25 long-term; offline self-efficacy **non-significant** (0.53, CI [−0.08, 1.17]).
+**Neither meta-analysis reports attempts or deaths as an outcome.**
+
+**The read-across, and it is the most important inference in this section.** `INFERENCE` — Wyman
+decomposes safeguarding into *detection capability* and *disclosure behaviour*, and shows the
+binding constraint is **disclosure**. NIS-4 shows the same thing from the other end: the failure
+is recognition→report, and CPS would have investigated 72% of what it never saw. **An AI that
+improves detection capability is intervening on the non-binding constraint.**
+
+There is one plausible counter — that children will disclose to a machine what they will not
+disclose to an adult. It is a real hypothesis, it is exactly the kind of thing this project
+should want to be true, and **Wyman does not test it and neither does anything else located
+here.** It needs its own evidence before anyone builds on it.
+
+For contrast, the interventions that *do* move behaviour work on the student side, not the staff
+side. `MEASURED-RCT` — Wyman et al. (2010), *AJPH* 100(9):1653–1661, PMID 20634440, **18 high
+schools randomised, 453 peer leaders, 2,675 students**: *"**Trained peer leaders in larger
+schools were 4 times as likely as were untrained peer leaders to refer a suicidal friend to an
+adult.** …**Perception of adult support increased most in students with a history of suicidal
+ideation.**"* Same author, opposite result, different target. And SOS Signs of Suicide
+(Aseltine & DeMartino 2004, *AJPH* 94(3), PMID 14998812; replicated Aseltine et al. 2007, *BMC
+Public Health* 7:161, 4,133 students across 9 schools) reports significantly lower self-reported
+attempt rates — with the authors themselves flagging that *"differential attrition is the most
+serious limitation"* and all outcomes being self-reported rather than record-based.
+
+### 8.4d ★ Automated flagging in schools: measured false-positive rates
+
+`OBSERVED` (primary documents via public-records requests) — Electronic Frontier Foundation,
+*GoGuardian: A Red Flag Machine By Design*, redflagmachine.com/research, based on FOIA requests
+to more than ten districts in CA, FL, NM, RI and TX.
+
+**Volume, from the vendor.** `VENDOR` — GoGuardian CEO Advait Shinde, 2021 letter to Senators
+Warren and Markey: *"Over the course of 2020, Admin generated **44 million alerts or
+approximately 4.6 alerts per student** over 2020… approximately 90% were for explicit or
+inappropriate content and **approximately 10% were for self-harm.**"* Across 6,700
+schools/districts and 9.5 million monitored accounts that is roughly **4.4 million self-harm
+alerts in a single year** (`INFERENCE`, arithmetic on the vendor's own figures). The same letter:
+*"some larger school districts can generate upwards of **50,000 alerts per day**."*
+
+**Precision, from the districts' own logs.** `OBSERVED`:
+
+- **Alvord ISD (TX)**, 15 Feb – 22 Mar 2023: 2,313 websites flagged, **14% for the keyword
+  "unblocked"** — students looking for video games.
+- **Imperial USD (CA)**, 10–17 Mar 2023: **more than 25% of 15,000 flags** were "unblocked."
+- **Imperial USD census, 6 days, ~4,400 students: 9,387 flagged website visits** — including 548
+  YouTube Shorts, 107 visits to the YouTube front page, 427 Spotify, 157 Wikipedia, **68 to the
+  district's own Instructure learning platform**, 72 searches for political cartoons, 44 job
+  searches, and **44 visits to the United States Holocaust Memorial Museum's website.** EFF,
+  verbatim: *"**We found no direct references to suicide**"* — the only near-hit was a rapper's
+  song titled *Suicidal*.
+- **Lake Travis ISD (TX)**, Feb–Mar 2023: **more than 900 website visits flagged for the term
+  "colon"** — punctuation, mathematical formulae, biographies of Cristóbal Colón, anatomy. Other
+  systematic false-positive keywords: "cox," "wang," "nazi" (WWII research), "sex" (biology).
+
+**The specific harm to the population this survey is about.** `OBSERVED` — Lake Travis ISD, 15
+Feb – 17 Mar 2023: *"more than 75 websites"* flagged with "transgender," "LGBT," "gay,"
+"homosexual," "non-binary" or "queer" in the URL — including an academic paper on family
+rejection and suicide among transgender adults, a Planned Parenthood transition resource, and
+the Wikipedia Transgender Rights page. Documented incident, Alvord ISD, May 2022: before school
+opened, a student searched *"am I gay test,"* opened a quiz site, and triggered an "explicit"
+alert escalated to administrators — flagged partly because the string "testi" appears in a
+**Finnish** translation entry in the page source. EFF's conclusion: the software *"effectively
+out[s] them to that staff."* Both GoGuardian and Gaggle removed LGBTQ keywords after EFF's 2022
+records requests, and the 2023 data still flagged the same content through "sex" and "breasts."
+
+`OBSERVED` — racial skew in the same corpus: *"of the **43 individual songs on Spotify flagged
+by GoGuardian in Imperial USD during a 30 day period, 85% were by Black artists**."*
+
+**The vendor's own admissions**, `VENDOR`: flags fire on **page source**, and *"the specific
+word(s) flagged may not have been visible to the student"*; the Smart Alerts feature exists *"to
+reduce some of the **unnecessary and often times innocuous noise** that Flagged Activity can
+create"*; its threshold is *"50% or more confident"*; *"a search for cats may cause what may
+appear to be inappropriate flagged activity."* And adoption: *"Of more than 10 school districts
+we queried, **only one was using Smart Alerts**."*
+
+**And the routing.** `OBSERVED` — Baltimore City Public Schools told *The Real News*: *"Clinical
+supervisors, school police, principals and designated school staff receive all GoGuardian
+alerts,"* and *"**wellness checks are conducted by school police.**"*
+
+**The arithmetic is the argument.** NIS-4 says at least 80% of school-recognised maltreatment
+never reaches an investigation and that CPS would have investigated 72% of it — so the binding
+constraint is human recognition and follow-through. GoGuardian generates 4.6 alerts per student
+per year and, in a six-day census of 4,400 children, produced 9,387 flags containing **zero**
+genuine suicide references. **Adding alert volume to a pipeline whose binding constraint is human
+follow-through is intervening on the wrong constraint, and it does so by routing children's
+searches to school police.** `INFERENCE`.
 
 ### 8.5 The discipline path, which is where safeguarding and IDEA collide
 
@@ -2437,7 +2829,9 @@ a caseload and a paper trail, and the section currently describes none of them.
 ## 13. Null and negative results ledger
 
 The brief asked for at least three documented negative/null results or systemic failures. There
-are eleven.
+are twenty-two.
+
+### 13.1 Administrative burden — the interventions that were measured and failed
 
 | # | Result | Type | Source |
 |---|---|---|---|
@@ -2453,11 +2847,42 @@ are eleven.
 | 10 | **A PWN with an admittedly invalid rationale can be cured post hoc.** *J.B. v. Kyrene*, 112 F.4th 1156 (9th Cir. 2024): the panel agreed the stated reason was illegitimate and affirmed for the district on harmless-error grounds, accepting reasons never contemporaneously given to the parent. | `CASE-LAW` | §10.4 |
 | 11 | **Federal data on the actual volume of IEP work does not exist.** ED, 2006: *"we lack detailed data on the number of IEP Team meetings conducted each year,"* working from an assumed 1.2 meetings/child/year at 1.5 hours. No newer national time-use study was located; the best available remains 2002. | `OBSERVED` (documented data gap) | 71 FR 46845 |
 
-**And the meta-finding.** Items 1, 2 and 3 are three independent, federally-measured attempts to
-reduce administrative burden in special education — through technology, through people, and
-through deregulation — and **all three measured at or near zero.** Any claim that AI will reduce
-this burden is the fourth attempt, and it is the first one that has not yet been measured. It
-should be stated as a hypothesis with a track record behind it, never as an expectation.
+| 12 | **★ IDEA §609 (20 U.S.C. §1408) paperwork-waiver authority: 21 years, 15 state slots available, one one-time competition run in 2007–08, zero documented waivers, and the effectiveness report the statute *requires* has never been filed.** ED re-proposed the same requirements in 2020, reported no results from 2007–08, and never finalised the rule. | `OBSERVED` (documented regulatory failure) | 20 U.S.C. §1408; 72 FR 58066; 2020-11416 |
+| 13 | **No national special-education-specific teacher attrition rate exists.** NTPS/TFS reports attrition by experience and sector, not by teaching field; IDEA §618 Personnel has no vacancy or attrition variable. The 2021–22 TFS "most important reason for leaving" instrument **contains no paperwork or caseload option** — the most-cited driver of the shortage is the one the federal instrument has no checkbox for. | `OBSERVED` (data gap) | §7.6 |
+| 14 | **The research infrastructure that produced these numbers has been dismantled.** COPSSE's site now redirects to a different centre; ERIC indexes two documents mentioning it, neither authored by it. Project Forum's 2011 *Paperwork in Special Education* (ED526876) has no ERIC full text (404) and nasdse.org returns 404. | `OBSERVED` | §14.4 |
+
+**The meta-finding for this group.** Items 1, 2, 3 and 12 are four independent, federally-run or
+federally-measured attempts to reduce administrative burden in special education — through
+technology, through people, through deregulation, and through statutory waiver — and **all four
+measured at or near zero, with the fourth never even reporting.** Any claim that AI will reduce
+this burden is the fifth attempt, and the only measured evidence for it is **one randomised trial
+of 22 novice teachers on one sub-task** (§7.5c). It should be stated as a hypothesis with a
+track record behind it, never as an expectation.
+
+### 13.2 Accommodations — the practice with the weakest evidence and the widest deployment
+
+| # | Result | Type | Source |
+|---|---|---|---|
+| 15 | **The interaction hypothesis failed.** Extended time *"tended to improve the performance of all students"*; the field retreated to the weaker "differential boost" claim. | `MEASURED-META` | Sireci, Scarpati & Li (2005), *RER* 75(4) |
+| 16 | **Differential boost appears in roughly a third to a half of tests of it.** 8/19 extended time (42%), 11/19 oral delivery (58%); Lane & Leventhal 4/11 (36%), falling to 30% at secondary and 30% in mathematics. | `MEASURED` | Kettler (2015); Lane & Leventhal (2015) |
+| 17 | **★ Kieffer et al.: overall accommodation effect g = .034, CI [−.016, .084], p = .180 — null.** Six of seven accommodation types non-significant; the Spanish-version accommodation **negative** (g = −.263, p = .010). Authors: *"a somewhat disheartening story."* | `MEASURED-META` | *RER* 79(3), 37 randomized samples |
+| 18 | **★ Rios et al.: *"none of the accommodations investigated were found to have intervention effects that were statistically different from zero."*** | `MEASURED-META` | *EMIP* (2020), 95 ES, N = 11,069 |
+| 19 | **★ Elbaum (2007): the differential boost *reversed*** — students **without** disabilities benefited more (ES 0.44) than students with LD (ES 0.20) on a secondary mathematics oral accommodation. | `MEASURED` | *J. Special Education* 40(4), N = 625 |
+| 20 | **Four further primary nulls on read-aloud and extended time:** Meloy et al. (2002) interaction n.s.; Elbaum et al. (2004) no differential benefit; McKevitt & Elliott (2003) no differential benefit; Fuchs et al. (2000) null for extended time and large print. | `MEASURED` | §2.6b |
+| 21 | **★ Teachers assign accommodations at chance.** *"Teachers were no more successful than chance at predicting which students would benefit… A developed student profile did not match accommodation outcomes."* | `MEASURED` | Helwig & Tindal (2003), N = 1,218 |
+| 22 | **The What Works Clearinghouse has certified nothing about accommodations.** All 30 Practice Guides (2007–2024) enumerated; none addresses accommodations; the product taxonomy has no accommodations topic, despite 509 studies tagged to the disability population facet. | `OBSERVED` (documented absence) | ies.ed.gov/ncee/wwc |
+
+### 13.3 Safeguarding — where the constraint actually is
+
+| # | Result | Type | Source |
+|---|---|---|---|
+| 23 | **★ NIS-4: at least 80% of maltreatment recognised by school staff never reached a CPS investigation** — and CPS *"probably would have investigated nearly three-fourths (72%)"* of what it never saw. The bottleneck is recognition→report, not screening. | `MEASURED` | Sedlak et al. (2010), 10,791 sentinels |
+| 24 | **School staff are the worst non-reporters of the four sentinel groups:** 29% would not report countable cases versus 23% overall; **33% would not report neglect vignettes**; 35% would not report educational neglect. | `MEASURED` | NIS-4 §8.5.3 |
+| 25 | **★ Wyman et al. (2008) RCT: gatekeeper training raised knowledge (ES 0.41), efficacy appraisals (ES 1.22) and service access (ES 1.07) — and did NOT increase suicide identification behaviour.** The binding constraint is student disclosure, not staff detection. | `MEASURED-RCT` | *JCCP* 76(1), 32 schools |
+| 26 | **Gatekeeper meta-analysis: intention effects are ~4.7× larger than behaviour effects** (1.03 versus 0.22 long-term), on evidence the authors describe as low quality. Neither of two meta-analyses reports attempts or deaths. | `MEASURED-META` | *Prevention Science* 25 (2024), 43 studies |
+| 27 | **★ Cochrane: in 11 trials of child-protection training, ZERO measured reports against official CPS records and ZERO measured adverse effects.** | `MEASURED-META` | Walsh et al. (2022), CD011775.pub2 |
+| 28 | **Self-report on reporting is systematically optimistic.** 73% of teachers had never made a report; only 11% admitted failing to report; *"the teachers' responses to the case vignettes were not consistent with their previous reports."* | `MEASURED` | Kenny (2001), n = 197 |
+| 29 | **★ Automated flagging: a six-day census of ~4,400 students produced 9,387 flags containing no genuine suicide references** — including 44 visits to the US Holocaust Memorial Museum, 68 to the district's own learning platform, and 900+ flags for the term "colon" in a neighbouring district. LGBTQ content flagged and escalated; 85% of flagged Spotify songs by Black artists. | `OBSERVED` (primary records) | EFF, *Red Flag Machine* |
 
 ---
 

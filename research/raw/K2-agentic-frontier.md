@@ -676,19 +676,238 @@ expensive in learner attention.
 
 ## 8. The honest ceiling
 
-*(Consolidated after §§4 and 6.)*
+### 8.1 The ceiling is the check, not the model
+
+Everything in §§1–7 is one rule wearing seven costumes. **An agentic loop is
+worth exactly as much as the external check it closes on, and pedagogy is the
+domain where that check is hardest to build.** Not because learning is
+mysterious, but because the signal is slow (retention is measured at delay),
+sparse (a learner produces a few dozen scorable acts per hour, not a few
+thousand), and confounded (the learner is also changing for other reasons).
+
+Three concrete measurements pin the ceiling:
+
+- **Chance-level step verification.** TutorGym: no LLM beat chance at labelling
+  an incorrect student action across 223 domains (`MEASURED-BENCH`).
+- **Judge-based selection is negative.** −3.20pp and −1.68pp
+  (`INTERNAL-PRIOR`).
+- **Selection methods without a verifier plateau.** Majority voting and reward
+  models "plateau beyond several hundred samples" (`MEASURED-BENCH`,
+  arXiv:2407.21787).
+
+### 8.2 Error compounding is a hard wall on autonomy
+
+*(See §4 for the measured numbers.)* The structural point: for a task of *n*
+sequential steps each succeeding independently with probability *p*, end-to-end
+success is *pⁿ*. At *p* = 0.95, a 20-step task succeeds 36% of the time; at 50
+steps, 8%. Agentic pedagogy proposals routinely imply 50–500-step autonomous
+sessions. `INFERENCE` from arithmetic — real agents are neither independent nor
+memoryless, and recovery behaviour changes the exponent, which is precisely what
+§4's measurements quantify.
+
+### 8.3 Verification cost is paid by the learner, and the learner is the scarce resource
+
+The PaperQA2 result is the model case: **superhuman on three literature tasks,
+and 30% of its flagged contradictions are wrong** (arXiv:2409.13740). Every
+capability in §7 is a candidate-generator whose output must be checked. If the
+agent checks it, you are back to §8.1. If the learner checks it, you have spent
+the learner's attention — the one input that does not scale, cannot be
+parallelised, and is *already* the binding constraint on every intervention in
+this survey.
+
+The engagement evidence says this is not hypothetical:
+
+`MEASURED-RCT` · Nie et al., *"The GPT Surprise"* (L@S 2025): randomised offer of
+a GPT tutor to **5,831 students in 146 countries** produced a **statistically
+significant average decrease in exam participation** (`INTERNAL-PRIOR`, B2 §3.6).
+The positive exam effect was among *adopters* — selection, not ITT.
+`NEGATIVE RESULT #11`.
+
+`MEASURED-META` · Wu & Yu (2023), *BJET*, 24 randomised studies: **short
+interventions outperform long ones**, which the authors attribute to novelty
+wearing off (`INTERNAL-PRIOR`, B2). Sophistication that must be *used* to pay
+off is competing against a decay curve.
+
+### 8.4 Is agentic sophistication competing with, or complementing, the low-tech floor?
+
+State it plainly. The largest measured effects in this survey are all universal
+and low-tech:
+
+| Intervention | Effect | Evidence base |
+|---|---|---|
+| Retrieval practice | **g = 0.499** [0.442, 0.557] | 222 studies, 48,478 students, classrooms; I² = 88% |
+| Spaced practice | **d = 0.54** [0.31, 0.77] | classroom meta-analysis |
+| Expectancy to teach, stated before study | **g = 0.48** [0.34, 0.63] vs **g = −0.02** without | meta-analysis |
+| Learning by teaching, with interaction | **g = 0.56** | meta-analysis |
+| Elaborated vs bare feedback | **d = 0.49** vs **d = 0.05** | 40 studies, 70 ES |
+| Simulation + scaffolding vs bare simulation | **g+ = 0.49** [0.36, 0.61] | k = 50, N = 3,342 |
+
+Against these, the best LLM-tutoring RCTs land in the same band as pre-LLM ITS
+and human tutoring (`INTERNAL-PRIOR`, B2: Nickow, Oreopoulos & Quan pooled human
+tutoring **0.288 SD**, 96 randomised studies).
+
+**The honest answer is: complementing, and specifically in one direction.**
+Every row of that table is a *policy* — do this thing, at this time, in this
+framing. None of them is hard to know and all of them are hard to *execute
+reliably for one learner over months*. Execution is exactly what sampling,
+execution, persistence and absence buy.
+
+The failure mode is precisely inverted from the usual fear. The risk is not that
+agentic systems are too weak to add anything on top of retrieval and spacing. It
+is that **they will be built to replace the floor rather than to enforce it** —
+generating explanations instead of demanding retrieval, answering instead of
+asking, producing the artifact instead of making the learner produce it. Bastani
+et al.'s −17% is what that looks like when it is measured
+(`MEASURED-RCT`, PNAS 2025).
+
+The strongest version of the affirmative case is therefore *not* "agents will
+outperform retrieval practice." It is:
+
+> **An agent is the first technology that can guarantee the floor is actually
+> delivered — the retrieval item asked at the right delay, the expectancy
+> sentence said before study and not after, the tutee that holds the error, the
+> spaced review that survives the learner's forgetting to come back — for every
+> learner, without a human in the loop, indefinitely.**
+
+That claim is worth more than any capability in §7, and unlike most of §7 it is
+buildable today with measured components. It also has never been tested: this
+survey found **no RCT of an agentic system against a non-agentic one**, and no
+RCT of *floor-enforcement-by-agent* against ordinary AI tutoring.
+`NEGATIVE RESULT #12`.
 
 ---
 
 ## 9. Capability table
 
-*(Below.)*
+*The deliverable. "Reliability today" is the best verified public number for the
+nearest measurable proxy, with its label. Where no number exists, the cell says
+so rather than guessing.*
+
+| # | What an agentic system can do | What a chatbot tutor structurally cannot | Measured reliability today | The specific blocker | What it unlocks pedagogically |
+|---|---|---|---|---|---|
+| 1 | **Generate k candidate explanations / problems / analogies and keep the one that survives an external check** | Sampling + external check. A chatbot emits one stream and cannot re-enter the loop | Selection *by test*: **+8.14pp** vs LLM-judge **−3.20pp** (`INTERNAL-PRIOR`). Coverage scales log-linearly over 4 orders of magnitude (`MEASURED-BENCH`, 2407.21787). Self-consistency **+17.9 GSM8K** (`MEASURED-BENCH`) | **The selector.** In pedagogy the only grounded check is the learner's own unseen-item accuracy — slow and attention-expensive. LLM step-verification is at **chance** (TutorGym, `MEASURED-BENCH`) | The explanation that works for *this* learner is found empirically instead of guessed once |
+| 2 | **Write, execute, and repair a runnable artifact inside the session** | Execution. A chatbot can emit code; it cannot know whether it ran | **93.8%** Manim explanatory video generation (2502.19400); **79.2%** SWE-bench Verified (396/500, verified from swe-bench/experiments); **83.8%** Terminal-Bench 2.1; **4.6%** SciCode novel research code; **21.0%** PaperBench (all `MEASURED-BENCH`) | **Artifact class.** Reliability tracks whether a compiler or test exists. Plus delivery: only **24.11%** of public notebooks execute at all, **4.03%** reproduce (`MEASURED-BENCH`, F3) | Simulation g+ = 0.62; sim + scaffold adds g+ = 0.49 (`MEASURED-META`). The lab arrives in the turn the confusion did |
+| 3 | **Hand the learner a sandbox and check what comes out, without typing in it** | Verification of the learner's own product | Elaborated feedback **d = 0.49** vs bare correctness **d = 0.05** (`MEASURED-META`); programming transfer **g = 0.49** (`MEASURED-META`) | **Restraint, not capability.** Every measured harm (Bastani **−17%**, Fan's dissociation, generation effect d = 0.40) comes from the agent driving instead of the learner | Productive failure **g = 0.36–0.58** with a real object to fail against |
+| 4 | **Work for hours between sessions on the learner's behalf** | Absence. A chatbot only exists when addressed | See §4 | See §4 | See §4 |
+| 5 | **Persist a per-learner error record across months and condition every future act on it** | Persistence beyond the context window | Trivially reliable as storage; **no measured pedagogical effect** — this survey found no trial | **Nothing technical.** The blocker is that no one has defined *what to store* such that it is machine-actionable (a misconception representation, not a transcript) | An adversary/tutee/problem-setter that draws from your actual history rather than a generic bank |
+| 6 | **Run a literature search overnight and return checked candidates** | Long-running tool use with no user present | PaperQA2 **matches or exceeds subject-matter experts** on retrieval, summarisation, contradiction detection vs experts with unrestricted tools; **2.34 ± 1.99 contradictions/paper, 70% expert-validated** (`MEASURED-BENCH`, 2409.13740) | **30% false-positive rate** → must be delivered as candidates. And no system knows the learner's confusion precisely enough to issue the query | The one paper that resolves your specific confusion, found while you slept |
+| 7 | **Stage two committed advocates and let the learner judge** | Genuine adversarial structure — a single stream cannot hold two committed positions | Non-expert humans **88% vs 60%** baseline; non-expert models **76% vs 48%** (`MEASURED-BENCH`, 2402.06782). Optimising debaters for *persuasiveness* **improved** truth-finding | **Untested on learning outcomes.** Also requires answer sets pre-verified, or debate amplifies error | +28pp for the non-expert judge is the largest measured multi-agent pedagogical effect in existence |
+| 8 | **Be taught by the learner, hold the error, and act on what it was taught** | Holding a false belief under corrective pressure | **Near-zero Selective Flip Score** across 7 models 4B–120B (`MEASURED-BENCH`, 2605.12748). SFT improves it **up to +0.56** | **Sycophancy at the model level.** Needs a fine-tuned tutee + an SFS-class certification eval | Learning by teaching **g = 0.56**, gated on expectancy stated *before* study (**g = 0.48 vs −0.02**) |
+| 9 | **Optimise its own instruction against outcome data** | Reading its own results and rewriting its own policy | See §6 | See §6 | See §6 |
+| 10 | **Guarantee the low-tech floor is actually delivered, per learner, indefinitely** | Persistence + absence: it must act when the learner has forgotten to come back | Component effects are the largest in the survey (retrieval **g = 0.499**, spacing **d = 0.54**, expectancy **g = 0.48**). **The composed system has never been trialled** | Nothing technical. **Nobody has built it because it is unglamorous** | The highest expected value in this section, and the least researched |
 
 ---
 
 ## 10. The five most valuable agentic capabilities nobody has built
 
-*(Below.)*
+*Ranked by expected value = (size of the measured effect it would unlock) ×
+(probability it works) ÷ (distance from existing components). Each is scoped so
+a team could start on Monday.*
+
+### 1. The misconception-faithful tutee, with a certification eval
+
+**What it is.** A model fine-tuned to *hold* an assigned misconception under
+corrective pressure, that the learner must teach; plus a public Selective Flip
+Score benchmark that certifies faithfulness before deployment. The tutee then
+attempts a downstream problem using only what it was taught, and its accuracy is
+the learner's score.
+
+**Why it is first.** It unlocks the largest under-deployed effect in the survey
+(**g = 0.56**, learning by teaching with interaction), it supplies the *grounded
+selector* §1 lacks (the tutee's downstream accuracy is an external check that
+does not require an LLM judge), and it converts the expectancy result
+(**g = 0.48 vs g = −0.02**) into an enforced product behaviour.
+
+**What it would take.** SFT + RL on misconception-conditioned dialogue —
+arXiv:2605.12748 shows **up to +0.56 SFS from SFT and better consistency from
+RL**, so the recipe is published. The eval is the harder half and the more
+valuable one. Estimated: one fine-tune, one benchmark, one RCT.
+
+### 2. The test-grounded parallel-exploration loop
+
+**What it is.** Generate *k* explanations of one concept; deliver under an
+assignment rule; score by the learner's accuracy on unseen retrieval items;
+retain the winner as this learner's policy and as a prior for the next learner.
+Never let an LLM judge touch the selection.
+
+**Why it is second.** It is the single most reliable agentic capability in
+existence (§1) applied to the one domain where it has never been closed, and the
+size of the prize is measured: **+8.14pp for test-based selection vs −3.20pp for
+the judge**, an eleven-point spread on the same candidate pool.
+
+**What it would take.** Nothing new in generation. It needs (a) an item bank the
+learner has not seen, at the right grain — the psychometrics work in C2; (b) an
+assignment rule that spends few enough items to be affordable in learner
+attention; (c) honest handling of the fact that one learner supplies very little
+signal, so the loop must pool across learners with per-learner shrinkage. That
+last point is where the adaptive-experimentation literature (§6) should be
+mined rather than reinvented.
+
+### 3. The step-level verifier for student work
+
+**What it is.** A model or ensemble that, given a domain and a student action,
+says *correct / incorrect and why* at materially better than chance.
+
+**Why it is third.** It is the missing component that blocks almost everything
+else. TutorGym measured **no LLM better than chance at labelling incorrect
+actions across 223 domains**, and next-step correctness at **~52–70%**. Coding
+agents work because `pytest` exists. Tutoring agents do not because this does
+not.
+
+**What it would take.** The data exists — decades of ITS logs with ground-truth
+step labels, which is precisely what TutorGym packaged. This is a supervised
+learning problem with a public testbed and a published chance-level baseline. It
+is the most tractable item on this list and the highest-leverage.
+
+### 4. The floor-enforcement agent
+
+**What it is.** An agent whose objective function is *not* to explain. Its job is
+to guarantee that, for this learner, over months: the expectancy sentence
+precedes study; retrieval is demanded at the right delay; spacing survives the
+learner's absence; feedback is elaborated rather than bare; scaffolding fades on
+measured evidence rather than schedule. It uses persistence and absence — the
+two agentic properties nothing else in edtech uses — and it deliberately does
+not use generation.
+
+**Why it is fourth.** It composes the six largest effects in the survey
+(g = 0.499, d = 0.54, g = 0.48, g = 0.56, d = 0.49, g+ = 0.49) and requires no
+capability that is not already reliable. It ranks below 1–3 only because those
+three create new evidence, whereas this one exploits existing evidence — but it
+is the most likely of the five to work.
+
+**What it would take.** A scheduler that is boring, a learner model that stores
+policy rather than transcript, and an RCT against ordinary AI tutoring. This
+survey found **no such trial**.
+
+### 5. The heterogeneous-arbiter ensemble
+
+**What it is.** Not four personas over one model. Four agents with four
+*different arbiters*: a proof assistant, a computer algebra system, a numerical
+simulation, and retrieval over a fixed corpus — each able to falsify the others,
+with disagreement surfaced to the learner as the pedagogical event rather than
+resolved silently.
+
+**Why it is fifth.** The measured multi-agent literature is clear that
+prompt-heterogeneity buys little (single strong prompt ≈ best discussion method,
+arXiv:2402.18272) while evidence-heterogeneity is untested. Disagreement between
+two *grounded* checkers is exactly the "authentic dissent" condition that
+Khan et al.'s **+28pp** result and the conceptual-change literature both require,
+and unlike debate between two prompted personas it cannot be faked.
+
+**What it would take.** The arbiters all exist and F3 documents their reliability
+individually. The unrun experiment is one line: **tool-heterogeneous vs
+prompt-heterogeneous ensembles on a matched task, with a learning outcome.** No
+one has run it.
+
+---
+
+### The five in one line each
+
+1. **A tutee that will not fold** — unlocks g = 0.56, and supplies the selector everything else needs.
+2. **Generate-and-select on the learner's own test, never on a judge** — an eleven-point spread is already measured.
+3. **A step-level verifier for student work** — the missing `pytest` of pedagogy; currently at chance.
+4. **An agent whose only job is to enforce the boring floor** — composes the six largest effects in the survey, needs no new capability.
+5. **Four different arbiters, not four personas** — heterogeneity of evidence, with disagreement as the lesson.
 
 ---
 

@@ -532,7 +532,45 @@ def build_html():
     (ROOT / "docs" / "paper.html").write_text(page, encoding="utf-8")
     print(f"docs/paper.html — {len(page)//1024} KB, {total_sections} sections, "
           f"{len(structure)} parts, contents rail generated from the outline")
+    sync_dashboard(stats)
 
+
+
+def sync_dashboard(stats):
+    """Write the live counts into docs/index.html.
+
+    C-23 was a correction about hand-maintained copies of a number drifting
+    from the thing they counted; the dashboard then carried "24 sections ·
+    60,300 words" against a 30-section, 75,352-word paper for a week. Any
+    figure a machine can count, a machine counts. Elements carrying
+    data-gen="<key>" have their text replaced here."""
+    f = ROOT / "docs" / "index.html"
+    if not f.exists(): return
+    ledger = (ROOT / "CORRECTIONS.md")
+    counts = {
+        "sections": f"{stats['sections']}",
+        "words":    f"{stats['words']:,}",
+        "parts":    f"{len(PARTS)}",
+        "reports":  str(len(list((ROOT / "research" / "raw").glob("*.md")))),
+        "demos":    str(len([d for d in (ROOT / "docs" / "demos").glob("*.html")
+                             if d.name != "index.html"])),
+        "corrections": str(len(re.findall(r"^\|\s*\*\*C-\d+\*\*\s*\|", 
+                                          ledger.read_text(encoding="utf-8"), re.M)))
+                       if ledger.exists() else "0",
+    }
+    src = f.read_text(encoding="utf-8")
+    out, changed = src, []
+    for key, val in counts.items():
+        pat = re.compile(r'(data-gen="%s"[^>]*>)[^<]*(</span>)' % key)
+        hits = pat.findall(out)
+        if hits and any(h for h in pat.finditer(out) if h.group(0).split(">")[1].split("<")[0] != val):
+            changed.append(f"{key}={val}")
+        out = pat.sub(lambda m: m.group(1) + val + m.group(2), out)
+    if out != src:
+        f.write_text(out, encoding="utf-8")
+    print("docs/index.html — counts synced: " +
+          ", ".join(f"{k}={v}" for k, v in counts.items()) +
+          (f"  (updated: {', '.join(changed)})" if changed else ""))
 
 HOW_TO_READ = """\
 Every claim carries an evidence label — `MEASURED-RCT`, `MEASURED-META`,

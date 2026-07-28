@@ -4,119 +4,82 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Learning in the New Frontier AI World</title>
-<meta name="description" content="A standard-setting survey of AI-native learning, from kindergarten to postgraduate research. Evidence-graded. Negative results first-class. Corrections published." />
+<meta name="description" content="A survey of what AI-native learning has actually been measured to do — and a specification for what it should be. Evidence-graded, nulls first-class, corrections published." />
+<link rel="stylesheet" href="site.css" />
+<script src="theme.js"></script>
 <style>
-:root{
-  --bg:#faf9f5; --surface:#fcfcfb; --raise:#f2f0e9; --sunken:#f6f4ee;
-  --ink:#171614; --ink-2:#413f3a; --ink-3:#7b7870; --line:#e5e2d8; --line-2:#cfcbbe;
-  --felt:#C4623D; --real:#1D6FA5;          /* categorical — validated: protan ΔE 16.7, normal 25.9 */
-  --good:#2f6d4f; --warn:#8a6d1f; --bad:#9d3f33;   /* status only — never a data series */
-  --serif:ui-serif,Georgia,"Iowan Old Style",serif;
-  --sans:ui-sans-serif,-apple-system,"Segoe UI",Inter,sans-serif;
-  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
-}
-@media (prefers-color-scheme:dark){
-  :root{--bg:#1a1917; --surface:#211f1d; --raise:#2a2825; --sunken:#161513;
-        --ink:#f6f4ef; --ink-2:#c6c2b8; --ink-3:#8e8a80; --line:#35322c; --line-2:#474339;
-        --felt:#D4784C; --real:#3D93CC;    /* validated dark: protan ΔE 18.3, normal 24.7 */
-        --good:#5fa583; --warn:#c9a94e; --bad:#d08a7e;}
-}
-:root[data-theme="dark"]{--bg:#1a1917;--surface:#211f1d;--raise:#2a2825;--sunken:#161513;
-  --ink:#f6f4ef;--ink-2:#c6c2b8;--ink-3:#8e8a80;--line:#35322c;--line-2:#474339;
-  --felt:#D4784C;--real:#3D93CC;--good:#5fa583;--warn:#c9a94e;--bad:#d08a7e;}
-:root[data-theme="light"]{--bg:#faf9f5;--surface:#fcfcfb;--raise:#f2f0e9;--sunken:#f6f4ee;
-  --ink:#171614;--ink-2:#413f3a;--ink-3:#7b7870;--line:#e5e2d8;--line-2:#cfcbbe;
-  --felt:#C4623D;--real:#1D6FA5;--good:#2f6d4f;--warn:#8a6d1f;--bad:#9d3f33;}
+/* ── page-specific: the dashboard's own components.
+   Tokens, type, spacing, tables, callouts and the theme toggle live in
+   site.css and are shared with the paper and all thirteen demos. */
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);
-  -webkit-font-smoothing:antialiased;padding:0 20px 90px;overflow-x:hidden}
-.wrap{max-width:980px;margin:0 auto}
-a{color:var(--felt);text-decoration:none;border-bottom:1px solid transparent}
-a:hover{border-bottom-color:currentColor}
-p{margin-bottom:16px;max-width:68ch;color:var(--ink-2)}
-strong{color:var(--ink);font-weight:650}
-code{font:12.5px/1.5 var(--mono);background:var(--raise);padding:2px 6px;border-radius:4px;color:var(--ink)}
+.hero{padding:76px 0 var(--s7);border-bottom:1px solid var(--line)}
+.hero h1{margin-bottom:var(--s5)}
+.hero .lede{font-size:20px;max-width:34ch;color:var(--ink-2)}
+.actions{display:flex;gap:var(--s3);flex-wrap:wrap;margin:var(--s6) 0 var(--s7)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,auto));
+  gap:20px 44px;justify-content:start;border-top:1px solid var(--line);padding-top:var(--s5)}
+.facts dt{font:600 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:7px}
+.facts dd{font:400 21px/1 var(--serif);color:var(--ink);letter-spacing:-.01em}
+.facts dd span.sep{color:var(--ink-3)}
 
-header{padding:74px 0 40px;border-bottom:1px solid var(--line)}
-.eyebrow{font:600 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--felt);margin-bottom:20px}
-h1{font:400 clamp(34px,6vw,54px)/1.08 var(--serif);letter-spacing:-.022em;margin-bottom:18px}
-.lede{font-size:19.5px;line-height:1.58;color:var(--ink-2);max-width:60ch}
-.meta{margin-top:28px;display:flex;gap:26px;flex-wrap:wrap;font-size:13px;color:var(--ink-3)}
-.meta b{color:var(--ink);font-weight:650}
-h2{font:400 31px/1.18 var(--serif);letter-spacing:-.018em;margin:70px 0 6px}
-h3{font:650 15.5px/1.4 var(--sans);margin:34px 0 10px}
-.sub{color:var(--ink-3);font-size:14.5px;margin-bottom:26px;max-width:66ch}
+/* ── the three findings ─────────────────────────────────── */
+.findings{counter-reset:f;display:grid;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:var(--s6) 0}
+@media (min-width:820px){.findings{grid-template-columns:repeat(3,1fr)}}
+.finding{background:var(--surface);padding:26px 24px}
+.finding .fn{counter-increment:f;font:400 30px/1 var(--serif);color:var(--felt);
+  display:block;margin-bottom:16px}
+.finding .fn::before{content:counter(f)}
+.finding h3{font:650 16px/1.35 var(--sans);margin:0 0 10px}
+.finding p{font-size:14.2px;line-height:1.56;margin:0;max-width:none}
 
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:13px;margin:34px 0}
-.tile{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:22px 20px}
-.tile .n{font:400 40px/1 var(--serif);letter-spacing:-.025em;color:var(--felt)}
-.tile .n.b{color:var(--real)}
-.tile .l{font-size:13px;color:var(--ink-2);margin-top:9px;line-height:1.45}
-.tile .s{font-size:11.5px;color:var(--ink-3);margin-top:8px}
-
-figure{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:26px 24px 20px;margin:28px 0}
-figcaption{font-size:13px;color:var(--ink-3);margin-top:16px;line-height:1.5;max-width:70ch}
-.ftitle{font:650 14.5px/1.35 var(--sans);color:var(--ink);margin-bottom:4px}
-.fsub{font-size:12.5px;color:var(--ink-3);margin-bottom:20px}
-.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:18px;font-size:12.5px;color:var(--ink-2)}
+/* ── figures ────────────────────────────────────────────── */
+figure{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px 24px 20px;margin:var(--s6) 0}
+figcaption{font-size:13px;color:var(--ink-3);margin-top:var(--s4);line-height:1.55;max-width:70ch}
+.ftitle{font:650 14.5px/1.35 var(--sans);color:var(--ink);margin-bottom:var(--s1)}
+.fsub{font-size:12.5px;color:var(--ink-3);margin-bottom:var(--s5);line-height:1.5}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:var(--s4);font-size:12.5px;color:var(--ink-2)}
 .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
-svg{display:block;width:100%;height:auto;overflow:visible}
 .gl{stroke:var(--line);stroke-width:1}
 .ax{font:600 10px var(--sans);letter-spacing:.11em;fill:var(--ink-3)}
 .sl{fill:var(--ink-2)}
 .vl{font:600 12px var(--mono);fill:var(--ink-2)}
 .dot{stroke:var(--surface);stroke-width:2}
 
-.callout{background:var(--sunken);border:1px solid var(--line);border-left:2px solid var(--felt);
-  border-radius:11px;padding:22px 24px;margin:26px 0}
-.callout .k{font:600 10.5px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;color:var(--felt);margin-bottom:12px}
-.callout p:last-child{margin-bottom:0}
-
-.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}
-table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
-th{text-align:left;font:600 11px/1.3 var(--sans);letter-spacing:.09em;text-transform:uppercase;
-  color:var(--ink-3);padding:0 14px 10px 0;border-bottom:1px solid var(--line-2);vertical-align:bottom}
-td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
-td b{color:var(--ink)}
-.num{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
-.up{color:var(--good);font-weight:650}.down{color:var(--bad);font-weight:650}
-.mut{color:var(--ink-3)}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:14px;margin:26px 0}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px}
+/* ── card grids ─────────────────────────────────────────── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:14px;margin:var(--s5) 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .card h4{font:650 15px/1.35 var(--sans);margin:10px 0 8px;color:var(--ink)}
-.card p{font-size:13.4px;line-height:1.52;margin:0;color:var(--ink-2)}
+.card p{font-size:13.4px;line-height:1.52;margin:0;color:var(--ink-2);max-width:none}
 .tag{font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:5px 8px;
-  border-radius:5px;border:1px solid var(--line-2);color:var(--ink-3);display:inline-block}
+  border-radius:var(--r-xs);border:1px solid var(--line-2);color:var(--ink-3);display:inline-block}
 
-.qlist{counter-reset:q;margin:24px 0}
-.q{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:18px 20px 18px 56px;
-  margin-bottom:11px;position:relative}
+/* ── numbered question lists ────────────────────────────── */
+.qlist{counter-reset:q;margin:var(--s5) 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:11px;
+  padding:18px 20px 18px 56px;margin-bottom:11px;position:relative}
 .q::before{counter-increment:q;content:counter(q);position:absolute;left:20px;top:17px;
   font:400 19px/1 var(--serif);color:var(--felt)}
 .q b{display:block;font:650 14.5px/1.4 var(--sans);color:var(--ink);margin-bottom:6px}
 .q p{font-size:13.5px;margin:0;color:var(--ink-2);max-width:none}
 
-.pill{display:inline-block;font:600 10.5px/1 var(--mono);padding:4px 7px;border-radius:5px;
-  border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
-.pill.y{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
-.pill.n{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 45%,transparent)}
-.pill.c{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 45%,transparent)}
+/* ── where to go next ───────────────────────────────────── */
+.onward{display:grid;gap:14px;margin:var(--s6) 0}
+@media (min-width:760px){.onward{grid-template-columns:1fr 1fr}}
+.onward a{display:block;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r);padding:26px 24px;color:inherit;transition:border-color .14s}
+.onward a:hover{border-color:var(--felt)}
+.onward .nt{font:400 23px/1.2 var(--serif);color:var(--ink);margin-bottom:9px;letter-spacing:-.014em}
+.onward .nt::after{content:" →";color:var(--felt);font-size:16px}
+.onward p{font-size:13.8px;line-height:1.55;margin:0 0 14px;max-width:none}
+.onward .nm{font:600 11px/1 var(--mono);color:var(--ink-3);letter-spacing:.05em}
 
 #tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .1s;z-index:99;left:0;top:0;
   background:var(--ink);color:var(--bg);font:12.5px/1.5 var(--sans);padding:8px 11px;
   border-radius:7px;max-width:264px;box-shadow:0 4px 16px rgba(0,0,0,.18)}
 #tip b{color:var(--bg);display:block;font-weight:650;margin-bottom:2px}
-.theme{position:fixed;top:16px;right:16px;z-index:50;width:38px;height:38px;padding:0;border-radius:10px;
-  background:var(--surface);border:1px solid var(--line-2);color:var(--ink);font-size:15px;cursor:pointer}
-details{margin:16px 0}
-summary{cursor:pointer;font:600 13px var(--sans);color:var(--ink-3);padding:8px 0}
-summary:hover{color:var(--felt)}
-footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
-footer a{color:var(--ink-3)}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -124,35 +87,61 @@ footer a{color:var(--ink-3)}
 <div id="tip" role="status" aria-live="polite"></div>
 <div class="wrap">
 
-<header>
-  <div class="eyebrow">Survey · built incrementally · evidence-graded</div>
+<header class="hero">
+  <div class="eyebrow">Survey · evidence-graded</div>
   <h1>Learning in the New&nbsp;Frontier AI&nbsp;World</h1>
-  <p class="lede">If learning were designed today — with frontier AI assumed rather than bolted
-  on — what would it look like? From a five-year-old decoding words to a doctoral student who
-  knows more than the tutor does. Every claim carries a label. Negative results are first-class.
-  <strong>Our own corrections are published, not quietly edited.</strong></p>
-  <div class="meta">
-    <span><b>24</b> survey sections · <b>60,300</b> words</span>
-    <span><b>32</b> research reports</span>
-    <span><b>~2,000</b> sources</span>
-    <span><b>23</b> published corrections</span>
-    <span>Updated <b>28 Jul 2026</b></span>
+  <p class="lede">If learning were designed today — with frontier AI assumed rather than
+  bolted on — what would it look like?</p>
+
+  <div class="actions">
+    <a class="go" href="paper.html">Read the survey</a>
+    <a class="go" href="demos/">Run the demos</a>
   </div>
+
+  <dl class="facts">
+    <div><dt>The survey</dt>
+      <dd><span data-gen="sections">31</span> sections <span class="sep">·</span>
+          <span data-gen="words">76,982</span> words</dd></div>
+    <div><dt>Built on</dt>
+      <dd><span data-gen="reports">35</span> reports <span class="sep">·</span> ~2,100 sources</dd></div>
+    <div><dt>Running demos</dt><dd><span data-gen="demos">13</span></dd></div>
+    <div><dt>Published corrections</dt><dd><span data-gen="corrections">25</span></dd></div>
+  </dl>
 </header>
 
-<h2>What is actually established</h2>
-<p class="sub">Measured effects, not projections. Every number here is a pooled estimate or a
-randomised trial — and every one is smaller than the marketing around it.</p>
+<h2>Three findings</h2>
+<p class="sub">Everything else in the survey is downstream of these. Each is a measured result,
+and each disqualifies something the field is currently building.</p>
 
-<div class="tiles">
-  <div class="tile"><div class="n b">g=0.50</div><div class="l">Retrieval practice — labs <em>and</em> classrooms</div><div class="s">222 studies · 48,478 students · I² = 88%</div></div>
-  <div class="tile"><div class="n b">d=0.54</div><div class="l">Spacing / distributed practice</div><div class="s">2025 classroom meta-analysis · 31 effects · N &gt; 3,000</div></div>
-  <div class="tile"><div class="n b">d≈0.63</div><div class="l">Best measured AI tutor — <b>in 49 minutes against 60</b></div><div class="s">Kestin RCT · developer-built and developer-evaluated</div></div>
-  <div class="tile"><div class="n">−17%</div><div class="l">Unguarded AI, measured <b>after you take it away</b></div><div class="s">Bastani PNAS · guardrails remove this</div></div>
+<div class="findings">
+  <div class="finding">
+    <span class="fn"></span>
+    <h3>Felt learning and real learning move in opposite directions</h3>
+    <p>Preference shifts at <b>d ≈ 0.48</b> while knowledge does not move, and the effect
+    survives explicit debiasing. Students in the condition that taught them <em>more</em>
+    reported learning <em>less</em>. Every metric a product can cheaply optimise is the
+    wrong one.</p>
+  </div>
+  <div class="finding">
+    <span class="fn"></span>
+    <h3>Measurement without a decision rule is inert</h3>
+    <p>In the randomised trial that settles it, both arms revised instruction more often —
+    and <b>only the arm told <em>what to change</em></b> moved achievement. Dashboards,
+    streaks, mastery bars and adaptive difficulty are all the arm that measured more and
+    moved nothing.</p>
+  </div>
+  <div class="finding">
+    <span class="fn"></span>
+    <h3>Unguarded assistance is an active harm</h3>
+    <p>It leaves learners <b>17% worse</b> on later unassisted work. The guardrailed arm's
+    unassisted coefficient is <b>−0.004, not significant</b>. Restraint removes the harm;
+    it has not been shown to teach. Anyone selling it as a learning gain is ahead of the
+    evidence — <em>including this page, in an earlier draft.</em></p>
+  </div>
 </div>
 
 <figure>
-  <div class="ftitle">Felt learning and real learning move in opposite directions</div>
+  <div class="ftitle">The first finding, in five studies</div>
   <div class="fsub">Paired outcomes, not a slope chart — the two columns are different units
   (percentages, <em>d</em>, and qualitative change), so they share no scale and the connector
   encodes pairing only, never magnitude. Hover a row.</div>
@@ -166,23 +155,14 @@ randomised trial — and every one is smaller than the marketing around it.</p>
   every optimisation loop can measure. Real learning is what almost none of them measure.</figcaption>
 </figure>
 
-<div class="callout">
-  <div class="k">Read this one precisely</div>
-  <p><strong>Guardrails remove a harm. They have not been shown to add a benefit.</strong>
-  Unguarded AI left learners <b>17% worse</b> on later unassisted work. The guardrailed arm's
-  unassisted coefficient was <b>−0.004, not significant</b>. Harm removed; benefit not
-  demonstrated. Anyone selling restraint as a learning gain is ahead of the evidence —
-  <em>including this page, in an earlier draft.</em></p>
-</div>
-
 <h2>The ladder</h2>
 <p class="sub">Pooled effect sizes, ordered. Blue is supported by replication; rust is overstated,
 contested, or null. Hover any row for the base and the caveat.</p>
 
 <figure>
   <div class="ftitle">What works, and by how much</div>
-  <div class="fsub">Charts here are generated from a declarative spec by a deterministic renderer —
-  never hand-positioned — per our own finding that hand-written SVG is Tier D.</div>
+  <div class="fsub">Generated from a declarative spec by a deterministic renderer. No coordinate on
+  this page is hand-positioned, because our own research rates hand-written SVG Tier D.</div>
   <div class="legend">
     <span><i style="background:var(--real)"></i>Supported</span>
     <span><i style="background:var(--felt)"></i>Overstated, contested, or null</span>
@@ -196,7 +176,7 @@ contested, or null. Hover any row for the base and the caveat.</p>
 </figure>
 
 <details>
-  <summary>▸ Table view of the ladder — accessible alternative, generated from the same spec</summary>
+  <summary>Table view of the ladder — accessible alternative, generated from the same spec</summary>
   <div class="scroll"><table id="bartable"></table></div>
 </details>
 
@@ -244,42 +224,9 @@ six-year-old and a PhD student? No — and the axis it varies along is not age.<
   <div class="card"><span class="tag">Postgraduate</span><h4>The learner knows more than the tutor</h4><p>Inside their niche the model is not the expert, and pretending otherwise is the failure mode. Its job inverts completely: adversary, verifier, literature memory, connector to humans. It must be <em>useful without being right</em>.</p></div>
 </div>
 
-<div class="callout">
-  <div class="k">Time-sensitive correction · verified 28 Jul 2026</div>
-  <p><strong>The EU AI Act's Annex III education obligations were deferred to
-  2 December 2027</strong> by Regulation (EU) 2026/1744 (Digital Omnibus on AI, in force
-  27 July 2026) — verified against the EUR-Lex primary text. But <strong>Article 50 —
-  chatbot disclosure and synthetic-content marking — still applies from 2 August
-  2026.</strong> For a conversational tutor that is the live deadline. Two sources a
-  reasonable person would check still give the wrong answer: <code>artificialintelligenceact.eu</code>
-  is stamped "last updated 1 August 2024," and the Commission's own Digital Omnibus page
-  still describes only the proposal.</p>
-</div>
-
-<h2>What we got wrong</h2>
-<p class="sub">23 corrections. <strong>8 of them were found by an adversarial
-reviewer, not by us</strong> — those are listed here, because they are the ones that matter. The
-full append-only ledger with provenance is
-<a href="https://github.com/dlmastery/learning-with-ai/blob/main/CORRECTIONS.md"><code>CORRECTIONS.md</code></a>;
-this table summarises it and is not maintained separately. The three review reports are checked in
-under <a href="https://github.com/dlmastery/learning-with-ai/tree/main/evidence"><code>evidence/</code></a>
-— the first two returned <em>not publishable</em>.</p>
-
-<div class="scroll">
-<table>
-  <tr><th>We said</th><th>Actually</th></tr>
-  <tr><td>C-12 — Nickow pooled tutoring **0.37**, published in five places including a chart bar labelled "the honest field-wide number"</td><td>**0.288.** The 0.37 is the superseded 2020 working-paper figure — and `survey/09` states our own rule to discount working-paper effect sizes. We broke our own rule on the front page</td></tr>
-  <tr><td>C-13 — Kestin AI tutor **"0.63–0.73"**</td><td>**A range that exists in no source.** 0.63 is the regression estimate; 0.73–1.3 is *ceiling-corrected* — two different estimands spliced, then the midpoint plotted. Correct: **d ≈ 0.63**, and the study is developer-built and developer-evaluated with no funding statement</td></tr>
-  <tr><td>C-14 — **98.4%** recognition proves a tutor "sees" handwritten work</td><td>It is **answer-position recognition** on a 61-exam grading benchmark, and its 0.58% false-negative rate requires **supplying the reference solution**. Error-*correction* on handwriting tops out at **77%**</td></tr>
-  <tr><td>C-15 — Spacing d = 0.54, from "the Cepeda meta-analytic tradition"</td><td>Sourced to a **2025 classroom meta-analysis** — 22 reports, 31 effects, N > 3,000, CI [0.31, 0.77]. Cepeda et al. 2006 is the canonical *lab* meta-analysis and gives different figures</td></tr>
-  <tr><td>C-16 — Retrieval practice g = 0.50, presented as settled</td><td>**I² = 88%** was omitted while I² was reported three times for null results — selective reporting, and exactly the failure this survey exists to name. Boundary conditions also added: at immediate test restudy often wins; unsuccessful retrieval **without feedback** yields little</td></tr>
-  <tr><td>C-17 — *(process)* `survey/01`'s Sierra Leone correction was appended 100 lines below the error, leaving "the strongest evidence in the history of educational technology" standing in the body</td><td>Corrected **in place**. A correction that does not reach the wrong sentence is not a correction</td></tr>
-  <tr><td>C-22 — The Sierra Leone trial "ran across a school year"</td><td>It ran **eight weeks.** The error made the field's time horizon look better than it is, in the very section arguing that the horizon is too short</td></tr>
-  <tr><td>C-23 — *(process)* Corrections were applied by **rewriting the ledger rows in place** — inside a table headed "each published rather than silently edited" — and the six corrections of 28 July appeared in no ledger at all</td><td>This file. Rows are append-only, carry provenance, and the count is generated from the filesystem</td></tr>
-</table>
-</div>
-
 <h2>Findings that change what you build</h2>
+<p class="sub">Twelve results with a direct consequence for a product decision.</p>
+
 <div class="grid">
   <div class="card"><span class="tag">Kills a product</span><h4>Measurement without a rule is inert</h4><p>Both arms revised programs more often; <b>only the arm told <em>what to change</em></b> moved achievement. Dashboards, streaks, mastery bars and adaptive difficulty are all the arm that measured more and moved nothing.</p></div>
   <div class="card"><span class="tag">Free fix</span><h4>Say it before they study</h4><p>Teaching with a prior expectancy: <b>g = 0.48</b>. Without: <b>g = −0.02</b>. "Now explain it back to me," asked at the end, is the null condition — and is how nearly every product ships it.</p></div>
@@ -293,6 +240,18 @@ under <a href="https://github.com/dlmastery/learning-with-ai/tree/main/evidence"
   <div class="card"><span class="tag">Reach</span><h4>A phone call beats the avatar</h4><p>Voice call + SMS: <b>+0.327 SD</b> across 5 countries, N = 8,902. SMS alone: +0.083, null in three. The mechanism is a human on the line at a scheduled time, not the bandwidth.</p></div>
   <div class="card"><span class="tag">Frontier</span><h4>Real-time is solved</h4><p>640×368 at 25 FPS with <b>~200 ms model-side latency</b> — inside the human conversational turn-gap — with a persistent world and a separate event stream.</p></div>
   <div class="card"><span class="tag">Empty chair</span><h4>Zero RCTs on disabled learners</h4><p>ERIC + Europe PMC, censused twice: 30 GenAI-education RCTs mention students, <b>0</b> mention disability. Every effect size in this field was measured on somebody else's child.</p></div>
+</div>
+
+<div class="callout">
+  <div class="k">Time-sensitive · verified 28 Jul 2026</div>
+  <p><strong>The EU AI Act's Annex III education obligations were deferred to
+  2 December 2027</strong> by Regulation (EU) 2026/1744 (Digital Omnibus on AI, in force
+  27 July 2026) — verified against the EUR-Lex primary text. But <strong>Article 50 —
+  chatbot disclosure and synthetic-content marking — still applies from 2 August
+  2026.</strong> For a conversational tutor that is the live deadline. Two sources a
+  reasonable person would check still give the wrong answer: <code>artificialintelligenceact.eu</code>
+  is stamped "last updated 1 August 2024," and the Commission's own Digital Omnibus page
+  still describes only the proposal.</p>
 </div>
 
 <h2>The unknown unknowns</h2>
@@ -407,46 +366,81 @@ field fail on the first three.</p>
   (<b>p = .738</b>), multiple representations harmed, mixed agent panels lost to one good agent.</p></div>
 </div>
 
-<h2>The paper</h2>
-<p class="sub">The survey itself — abstract, seven parts, continuous.</p>
-<p><a href="paper.html"><strong>→ Read the paper</strong></a> — 28 sections, ~71,000 words, one
-document. Also on GitHub as <a href="https://github.com/dlmastery/learning-with-ai/blob/main/PAPER.md"><code>PAPER.md</code></a>.</p>
+<h2>Where to go next</h2>
+<p class="sub">The dashboard is a summary. The argument is in the survey, and the mechanisms
+run in the demos.</p>
 
-<h2>Demos</h2>
-<p class="sub">Because a survey that only describes techniques is a reading list.</p>
-<p><a href="demos/"><strong>→ The demo gallery</strong></a> — thirteen techniques, each running in
-the browser, each stating what it proves and what it merely illustrates. Computed where computable,
-honestly labelled where scripted.</p>
+<div class="onward">
+  <a href="paper.html">
+    <div class="nt">The survey</div>
+    <p>Seven parts, from what the evidence establishes to the conditions under which we would have
+    to withdraw the central claim. Persistent contents, an abstract, and every claim carrying an
+    evidence label.</p>
+    <div class="nm"><span data-gen="sections">31</span> SECTIONS ·
+      <span data-gen="words">76,982</span> WORDS</div>
+  </a>
+  <a href="demos/">
+    <div class="nt">The demos</div>
+    <p>Because a survey that only describes techniques is a reading list. Each runs in the browser
+    with no server and no key, and states what it proves and what it merely illustrates — including
+    the one this project proposed, benchmarked and falsified.</p>
+    <div class="nm"><span data-gen="demos">13</span> TECHNIQUES · NO SIGN-IN</div>
+  </a>
+</div>
 
-<h2>Where the work stands</h2>
+<h2>How to check this</h2>
+<p class="sub">The claim that should make you suspicious of any survey is that it got everything
+right. This one did not, and the record is the point.</p>
+
+<p><b><span data-gen="corrections">25</span> corrections are published in an append-only ledger</b>
+with a provenance column naming who caught each one. Eight were found by an adversarial reviewer
+rather than by us — including the two most damaging, and one about the ledger itself, which we had
+been silently editing inside a table headed <em>"published rather than silently edited."</em></p>
+
 <div class="scroll">
 <table>
-  <tr><th>Artifact</th><th>State</th><th></th></tr>
-  <tr><td><b>The survey</b> — the deliverable</td><td class="num">24 sections · 60,300 words</td><td class="up">target exceeded</td></tr>
-  <tr><td><b>Research reports</b> — the input</td><td class="num">32 reports · ~406,000 words</td><td class="up">complete</td></tr>
-  <tr><td>Sections written from reports in hand</td><td class="num">24 of 32</td><td class="mut">10 remaining</td></tr>
-  <tr><td>Demo pages</td><td class="num">13 of 13</td><td class="up">complete</td></tr>
-  <tr><td>Published corrections</td><td class="num">23</td><td class="up">all on the record</td></tr>
+  <tr><th>We said</th><th>Actually</th></tr>
+  <tr><td><b>C-12</b> — Nickow pooled tutoring <b>0.37</b>, published in five places, including a
+    chart bar labelled "the honest field-wide number"</td>
+    <td><b>0.288.</b> The 0.37 is the superseded 2020 working-paper figure — and
+    <code>survey/09</code> states our own rule to discount working-paper effect sizes. We broke our
+    own rule on the front page</td></tr>
+  <tr><td><b>C-13</b> — Kestin AI tutor, a range spliced from two different estimands and then
+    plotted at its midpoint</td>
+    <td><b>A range that exists in no source.</b> 0.63 is the regression estimate; the upper figure
+    is <em>ceiling-corrected</em>. Correct: <b>d ≈ 0.63</b>, from a study that is developer-built
+    and developer-evaluated with no funding statement</td></tr>
+  <tr><td><b>C-23</b> — <em>(process)</em> Corrections were applied by <b>rewriting the ledger rows
+    in place</b>, inside a table headed "each published rather than silently edited"</td>
+    <td>Rows are now append-only and carry provenance, and the counts on this page are generated
+    from the filesystem rather than typed by hand</td></tr>
 </table>
 </div>
 
-<div class="callout">
-  <div class="k">Editorial standard</div>
-  <p>Every claim carries a source and an evidence label — <code>MEASURED-RCT</code>,
-  <code>MEASURED-META</code>, <code>MEASURED-BENCH</code>, <code>OBSERVED</code>,
-  <code>VENDOR</code>, <code>DEMO</code>, <code>INFERENCE</code>. A <code>VENDOR</code> claim is
-  never restated as a finding. Every section carries at least one documented null. Unverifiable
-  claims are reported as unverifiable — never laundered, never omitted. Effect sizes over
-  adjectives.</p>
-</div>
+<p>Two machine checks guard the ledger, and both are runnable. The first version of the corrections
+checker <strong>did not work</strong> — a reviewer planted the original errors back in and it
+reported zero violations. It now ships with a self-test that plants each violation and fails if the
+rule does not fire.</p>
+
+<details>
+  <summary>The full record — ledger, reviews, checkers, reports, audit</summary>
+  <div class="scroll"><table>
+    <tr><th>What</th><th>Where</th></tr>
+    <tr><td>The append-only corrections ledger, with provenance</td><td><a href="https://github.com/dlmastery/learning-with-ai/blob/main/CORRECTIONS.md"><code>CORRECTIONS.md</code></a></td></tr>
+    <tr><td>Three adversarial reviews. The first two returned <em>not publishable</em></td><td><a href="https://github.com/dlmastery/learning-with-ai/tree/main/evidence"><code>evidence/</code></a></td></tr>
+    <tr><td>Propagation check — no superseded value survives anywhere</td><td class="num">python3 evidence/check-corrections.py --self-test --strict</td></tr>
+    <tr><td>Render-and-run check on every demo page</td><td class="num">node evidence/test-demos.mjs</td></tr>
+    <tr><td>The research reports — the input, never rewritten</td><td><a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw"><code>research/raw/</code></a></td></tr>
+    <tr><td>Requirements audit against the original brief</td><td><a href="https://github.com/dlmastery/learning-with-ai/blob/main/AUDIT.md"><code>AUDIT.md</code></a></td></tr>
+  </table></div>
+</details>
 
 <footer>
-  <a href="https://github.com/dlmastery/learning-with-ai">Repository</a> ·
-  <a href="https://github.com/dlmastery/learning-with-ai/tree/main/survey">The survey</a> ·
-  <a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw">Research reports</a> ·
-  <a href="https://github.com/dlmastery/learning-with-ai/blob/main/process/AUDIT.md">Requirements audit</a> ·
-  <a href="demos/">Demos</a>
-  <br /><br />Built incrementally. Negative results are first-class. Corrections are published.
+  <a href="paper.html">The survey</a> ·
+  <a href="demos/">Demos</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai">Repository</a>
+  <br /><br />Every claim carries an evidence label. Every section carries a documented null.
+  Unverifiable claims are reported as unverifiable — never laundered, never omitted.
 </footer>
 
 </div>
