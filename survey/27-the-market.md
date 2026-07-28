@@ -57,16 +57,15 @@ Each primitive is a falsifiable hypothesis about how learning happens.
 
 Two clusters deserve their evidence stated rather than summarised.
 
-**Tutoring's real numbers are pre-LLM.** Kulik & Fletcher (2016) is the most-cited
-figure in the market — 50 controlled evaluations, **median 0.66 SD** — and it comes
-with its own debunking attached: the size of the improvement "depended to a great
-extent on whether improvement was measured on locally developed or standardized
-tests." §24 establishes that test alignment is worth a factor of 2–3 across this
-literature. Pane et al.'s Cognitive Tutor Algebra I trial, matched-pair school
-randomisation across seven states, is the best large-scale evidence anyone has:
-**no effect in year one**, positive in year two, significant for high schools and
-**not** for middle schools, at roughly eight percentile points. The LLM generation
-inherited the marketing claim and none of the measurement.
+**Tutoring's real numbers are pre-LLM.** Kulik & Fletcher (2016) — 50 controlled
+evaluations, **median 0.66 SD** — is the most-cited figure in the market and comes
+with its own debunking attached: the improvement "depended to a great extent on
+whether improvement was measured on locally developed or standardized tests," and
+§24 puts test alignment at a factor of 2–3. Pane et al.'s Cognitive Tutor Algebra I
+trial, matched-pair randomisation across seven states, is the best large-scale
+evidence anyone has: **no effect in year one**, positive in year two, significant
+for high schools and **not** for middle schools, at roughly eight percentile points.
+The LLM generation inherited the marketing claim and none of the measurement.
 
 **Early literacy is the most defensible bet in the market**, in mechanism terms
 rather than enthusiasm terms. The AI does something a human demonstrably cannot
@@ -192,13 +191,12 @@ The graveyard is retrospective. Two live failures matter more.
 
 **A core claim was falsified after sale.** Turnitin shipped AI-detection in early
 2023. Weber-Wulff et al. (2023, *International Journal for Educational Integrity*)
-tested twelve public tools plus two commercial systems in wide academic use,
-examining accuracy, error type, and the effect of machine translation and
-obfuscation. The tools are not reliable discriminators. Schools subsequently disabled
-the feature; students alleged false accusations, including cases involving
-grammar-correction software that schools themselves recommend. A vendor-stated
-false-positive rate of about 1%, applied to tens of millions of submissions, is a
-large number of accused innocents.
+tested twelve public tools plus two commercial systems in wide academic use for
+accuracy, error type, and robustness to machine translation and obfuscation. The
+tools are not reliable discriminators. Schools subsequently disabled the feature;
+students alleged false accusations, including cases involving grammar-correction
+software those schools recommend. A vendor-stated false-positive rate of about 1%,
+against tens of millions of submissions, is a large number of accused innocents.
 
 **And consolidation concentrated the blast radius.** In late April 2026 Canvas LMS
 suffered a security breach that *404 Media* described as the largest educational

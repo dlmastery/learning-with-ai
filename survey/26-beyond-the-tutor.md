@@ -45,16 +45,12 @@ transfer follows load.
 | **Environment** | No stance; holds consequences | The learner | Strong in principle, barely instrumented |
 | **Instrument** | Extends a human's capability | The human who owns the task | Best evidence-to-deployment ratio of the six |
 
-The tutor role is the only one that requires the AI to be knowledgeable and
-agreeable. It is also the only one with documented harm at scale: **§01 and §09
-carry the −17% unassisted-exam result and the guardrail correction, and this
-section does not re-argue them.** What it argues is that four of the other five
-roles are available now and nobody is building them.
-
-The student role is the exception, and it already has a section: **§02** works
-through the protégé effect, the knowledge-telling failure, capability leakage, and
-the Betty's Brain architecture. **§05** works through the learner as explainer.
-Everything below is what is left.
+The tutor role is the only one requiring the AI to be knowledgeable and agreeable.
+It is also the only one with documented harm at scale: **§01 and §09 carry the −17%
+unassisted-exam result and the guardrail correction, and this section does not
+re-argue them.** The student role already has a section too — **§02** on the protégé
+effect, knowledge-telling, capability leakage and the Betty's Brain architecture,
+and **§05** on the learner as explainer. Everything below is what is left.
 
 ---
 
@@ -187,15 +183,14 @@ monitoring.
 ### 4.2 The environment role
 
 The environment holds no epistemic stance toward the learner. It holds
-**consequences**. A simulation that diverges, a failing test suite, a patient that
-deteriorates, a quiz that the agent you taught then fails.
+**consequences**: a simulation that diverges, a failing test suite, a patient that
+deteriorates, a quiz the agent you taught then fails.
 
 This is the only role where **disconfirmation is structural rather than social**,
-and that single property does more work than any amount of model tuning. A unit
-test cannot be sycophantic. A simulation cannot be talked round. The learner's error
-surfaces as a consequence rather than as a correction from an authority, which also
-preserves the ego-protection property that makes teaching-an-agent work for
-low-confidence learners.
+and that property does more work than any amount of model tuning. A unit test cannot
+be sycophantic. A simulation cannot be talked round. The error surfaces as a
+consequence rather than a correction from an authority, which also preserves the
+ego-protection that makes teaching-an-agent work for low-confidence learners.
 
 > **If agreeableness is the master obstacle, the environment is the master
 > mitigation — and it is a systems-architecture choice, not a model-alignment

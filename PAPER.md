@@ -2,7 +2,7 @@
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**29 sections · 73,369 words · 32 research reports · ~2,100 source citations**
+**29 sections · 73,275 words · 32 research reports · ~2,100 source citations**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -3510,16 +3510,12 @@ transfer follows load.
 | **Environment** | No stance; holds consequences | The learner | Strong in principle, barely instrumented |
 | **Instrument** | Extends a human's capability | The human who owns the task | Best evidence-to-deployment ratio of the six |
 
-The tutor role is the only one that requires the AI to be knowledgeable and
-agreeable. It is also the only one with documented harm at scale: **§01 and §09
-carry the −17% unassisted-exam result and the guardrail correction, and this
-section does not re-argue them.** What it argues is that four of the other five
-roles are available now and nobody is building them.
-
-The student role is the exception, and it already has a section: **§02** works
-through the protégé effect, the knowledge-telling failure, capability leakage, and
-the Betty's Brain architecture. **§05** works through the learner as explainer.
-Everything below is what is left.
+The tutor role is the only one requiring the AI to be knowledgeable and agreeable.
+It is also the only one with documented harm at scale: **§01 and §09 carry the −17%
+unassisted-exam result and the guardrail correction, and this section does not
+re-argue them.** The student role already has a section too — **§02** on the protégé
+effect, knowledge-telling, capability leakage and the Betty's Brain architecture,
+and **§05** on the learner as explainer. Everything below is what is left.
 
 ---
 
@@ -3527,11 +3523,10 @@ Everything below is what is left.
 
 ### 2.1 Why dissent works, and why it does not need to be right
 
-Nemeth's core asymmetry (1986/1987) is that exposure to opposing views from a
-**minority** produces divergent thinking — the problem gets considered from multiple
-angles, and performance improves. Exposure to opposing **majority** views produces
-convergent thinking — narrowing onto the proposed view, which does not help and can
-impair.
+Nemeth's core asymmetry (1986/1987): exposure to opposing views from a **minority**
+produces divergent thinking, and performance improves. Exposure to opposing
+**majority** views produces convergent thinking — narrowing onto the proposed view,
+which does not help and can impair.
 
 **The dissenter's value does not depend on the dissenter being right.** It depends
 on the dissent being real.
@@ -3569,16 +3564,15 @@ Two boundary results keep this honest.
 
 **Children experience persistent questioning as pushy.** A 2024 study of elementary
 students with a Socratic chatbot is titled "This Chatbot is Kind of Pushing It!" and
-the title is the finding. Satisfaction and pedagogical value diverge — which is
-exactly what desirable-difficulty theory predicts, and exactly what a five-star
-rating loop will destroy. An adversary role cannot be tuned on satisfaction.
+the title is the finding. Satisfaction and pedagogical value diverge, which is what
+desirable-difficulty theory predicts and what a five-star rating loop will destroy.
+**An adversary role cannot be tuned on satisfaction.**
 
 **And adding help to the struggle does not help.** Sinha & Kapur (2021) compared
 problem-solving-before-instruction, *scaffolded* problem-solving-before-instruction,
 and alternative sensemaking activities across **118 comparisons**: scaffolding
 showed a small descriptive advantage and **no significant difference, g = −0.08
-[−0.20, 0.04].** Bolting a helpful assistant onto the exploration phase adds
-nothing measurable. The struggle phase does not want a co-pilot.
+[−0.20, 0.04].** The struggle phase does not want a co-pilot.
 
 One more constraint, because "let them struggle" is as over-claimable as "give them
 a tutor": **the instruction phase is mandatory.** Productive failure is problem
@@ -3602,26 +3596,17 @@ followed with a second, isomorphic question answered individually:
 
 The mechanism is not transmission. It is articulation, commitment, and the
 reconciliation of conflicting commitments. **Two wrong students arguing produce
-understanding neither had.**
+understanding neither had.** Smith et al. (2011) added the sequencing: peer
+discussion **followed by** instructor explanation beat either alone, substantially.
 
-Smith et al. (2011) added the sequencing: peer discussion **followed by** instructor
-explanation beat either alone, substantially. Peer first, expert second — structurally
-identical to problem-solving-before-instruction.
-
-So can an AI hold the peer position? Three obstacles, and they are not equally
-tractable.
-
-**Known asymmetry.** The learner knows the model has read everything. A model
-asserting a wrong answer is either deferred to or dismissed as roleplaying. Neither
-is peer engagement.
-
-**No stakes symmetry.** A human peer is embarrassed to be wrong. That embarrassment
-is what makes the commitment real and the reconciliation effortful.
-
-**Capitulation.** A peer who abandons their position the moment you push back
-supplies no resistance and therefore nothing to reconcile. Measured capitulation
-rates sit around **58%**, with **78.5% [77.2, 79.8]** persistence once it happens —
-figures §02 works through in the sycophancy context.
+So can an AI hold the peer position? Three obstacles, not equally tractable.
+**Known asymmetry**: the learner knows the model has read everything, so a model
+asserting a wrong answer is either deferred to or dismissed as roleplaying, and
+neither is peer engagement. **No stakes symmetry**: a human peer is embarrassed to
+be wrong, and that embarrassment is what makes the commitment real. **Capitulation**:
+a peer who abandons their position the moment you push back supplies nothing to
+reconcile, and measured capitulation rates sit around **58%** with **78.5%
+[77.2, 79.8]** persistence once it happens — figures §02 works through.
 
 And one collaborative structure is flatly unavailable. Jigsaw works by **positive
 interdependence under genuine information asymmetry**: each learner holds a unique,
@@ -3663,15 +3648,14 @@ monitoring.
 ### 4.2 The environment role
 
 The environment holds no epistemic stance toward the learner. It holds
-**consequences**. A simulation that diverges, a failing test suite, a patient that
-deteriorates, a quiz that the agent you taught then fails.
+**consequences**: a simulation that diverges, a failing test suite, a patient that
+deteriorates, a quiz the agent you taught then fails.
 
 This is the only role where **disconfirmation is structural rather than social**,
-and that single property does more work than any amount of model tuning. A unit
-test cannot be sycophantic. A simulation cannot be talked round. The learner's error
-surfaces as a consequence rather than as a correction from an authority, which also
-preserves the ego-protection property that makes teaching-an-agent work for
-low-confidence learners.
+and that property does more work than any amount of model tuning. A unit test cannot
+be sycophantic. A simulation cannot be talked round. The error surfaces as a
+consequence rather than a correction from an authority, which also preserves the
+ego-protection that makes teaching-an-agent work for low-confidence learners.
 
 > **If agreeableness is the master obstacle, the environment is the master
 > mitigation — and it is a systems-architecture choice, not a model-alignment
@@ -7119,15 +7103,15 @@ randomisation across seven states, is the best large-scale evidence anyone has:
 **not** for middle schools, at roughly eight percentile points. The LLM generation
 inherited the marketing claim and none of the measurement.
 
-**Early literacy is the most defensible bet in the market**, and it is worth saying
-why in mechanism terms rather than enthusiasm terms. The AI does something a human
-demonstrably cannot scale — listening to twenty-five children read aloud at once.
-The output is a measured behaviour, oral reading fluency, not a self-report. And the
-pedagogy underneath, decoding practice with immediate corrective feedback, is among
-the best-replicated results in all of education. If AI-in-education works anywhere,
-it works here first. The headline claims in the cluster still need their qualifiers
-read: one vendor's "68% faster reading growth" is conditioned on students who used
-it "at dosage," which is a selection effect unless dosage was randomised.
+**Early literacy is the most defensible bet in the market**, in mechanism terms
+rather than enthusiasm terms. The AI does something a human demonstrably cannot
+scale — listening to twenty-five children read aloud at once. The output is a
+measured behaviour, oral reading fluency, not a self-report. And the pedagogy
+underneath, decoding practice with immediate corrective feedback, is among the
+best-replicated results in education. If AI-in-education works anywhere, it works
+here first. The headline claims still need their qualifiers read: one vendor's "68%
+faster reading growth" is conditioned on students who used it "at dosage," which is
+a selection effect unless dosage was randomised.
 
 ---
 
@@ -7203,17 +7187,17 @@ selling precision from a region of the design space where precision had run out.
 **AltSchool** raised $133M and built a network of schools in order to build software.
 The schools were the R&D cost centre for a product that did not exist yet; when the
 software pivot came, the schools — the thing families had actually bought — closed.
-Note the surviving artefact: the parent progress portal is now a table-stakes feature.
+The surviving artefact, a parent progress portal, is now a table-stakes feature.
 Right about the feature, wrong about the business.
 
 **2U** bought edX from the Harvard/MIT nonprofit for **$800M**, never made an annual
-profit, and filed Chapter 11 on 25 July 2024. The revenue-share structure made
-student *volume*, not student *outcome*, the only lever the company had.
+profit, and filed Chapter 11 on 25 July 2024. Its revenue-share structure made
+student *volume*, not student *outcome*, the only lever it had.
 
 **Byju's** reached a **$22bn valuation** and 150 million claimed registered users. Its
-founder said publicly in October 2024 that "the company is worth zero"; insolvency
-proceedings followed. Its reported 85% retention rate was never independently verified
-and this survey does not repeat it.
+founder said publicly in October 2024 that "the company is worth zero." Its reported
+85% retention rate was never independently verified and this survey does not repeat
+it.
 
 Six deaths, six different proximate causes, one structure:
 
@@ -7243,13 +7227,12 @@ The graveyard is retrospective. Two live failures matter more.
 
 **A core claim was falsified after sale.** Turnitin shipped AI-detection in early
 2023. Weber-Wulff et al. (2023, *International Journal for Educational Integrity*)
-tested twelve public tools plus two commercial systems in wide academic use,
-examining accuracy, error type, and the effect of machine translation and
-obfuscation. The tools are not reliable discriminators. Schools subsequently disabled
-the feature; students alleged false accusations, including cases involving
-grammar-correction software that schools themselves recommend. A vendor-stated
-false-positive rate of about 1%, applied to tens of millions of submissions, is a
-large number of accused innocents.
+tested twelve public tools plus two commercial systems in wide academic use for
+accuracy, error type, and robustness to machine translation and obfuscation. The
+tools are not reliable discriminators. Schools subsequently disabled the feature;
+students alleged false accusations, including cases involving grammar-correction
+software those schools recommend. A vendor-stated false-positive rate of about 1%,
+against tens of millions of submissions, is a large number of accused innocents.
 
 **And consolidation concentrated the blast radius.** In late April 2026 Canvas LMS
 suffered a security breach that *404 Media* described as the largest educational
