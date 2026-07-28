@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Archivist — Demo 05</title>
+<meta name="description" content="A real persistent learner model in localStorage: inspectable, correctable, exportable, and genuinely destroyable — with the read-back that proves the deletion happened." />
+<link rel="stylesheet" href="demo.css" />
+<style>
+.tag{font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;
+  border-radius:5px;border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
+.tag.open{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 45%,transparent)}
+.tag.ret{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
+.q{font:650 16px/1.5 var(--sans);color:var(--ink);margin:0 0 14px}
+.opt{display:block;width:100%;text-align:left;margin-bottom:9px;padding:12px 15px;
+  font-weight:500;font-size:14.5px;font-family:var(--mono)}
+.opt.right{border-color:var(--good);color:var(--good)}
+.opt.wrong{border-color:var(--bad);color:var(--bad)}
+.pl{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.pl .nm{flex:1;font-size:14px;color:var(--ink)}
+.pl .bar{flex:0 0 130px;height:9px;border-radius:5px;background:var(--raise);overflow:hidden}
+.pl .bar i{display:block;height:100%;background:var(--real)}
+.pl .pv{font:13px/1 var(--mono);color:var(--ink-2);width:56px;text-align:right}
+#json{font-family:var(--mono);font-size:12px;line-height:1.55;min-height:320px;white-space:pre}
+.recpt{font:12.5px/1.8 var(--mono);background:var(--sunken);border:1px solid var(--line);
+  border-radius:10px;padding:15px;color:var(--ink-2);overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+.recpt b{color:var(--good)}
+.danger{border-color:color-mix(in oklab,var(--bad) 55%,transparent);color:var(--bad)}
+.danger:hover:not(:disabled){border-color:var(--bad)}
+.mini{font-size:12.5px;color:var(--ink-3)}
+.two{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:700px){.two{grid-template-columns:1fr 1fr}}
+.stars{font:400 42px/1 var(--serif);color:var(--felt)}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo Gallery</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 05 · The Village</div>
+  <h1>The Archivist</h1>
+  <p class="lede">A learner model that is <strong>actually persistent</strong>, entirely visible as
+  JSON, and <strong>genuinely destroyable</strong> — with the read-back that proves the destruction
+  happened. Everything a tutor believes about you should be a thing you can read and contradict.</p>
+  <div class="chips">
+    <span class="chip m">Computed live</span>
+    <span class="chip m">Writes to your browser</span>
+    <span class="chip n">Never measured vs stateless</span>
+  </div>
+</header>
+
+<div class="note"><b>COMPUTED.</b> This page writes a real record to
+<code>localStorage</code> on your device, under the key <code id="key1">—</code>. Nothing is sent
+anywhere — there is no server on the other end of this page. The knowledge estimate is Bayesian
+Knowledge Tracing (Corbett &amp; Anderson 1995), computed here, with its four parameters exposed
+and editable. The delete button really deletes, and the receipt is a genuine read-back, not a
+message.</div>
+
+<div class="note warn" id="lsWarn" style="display:none"><b><code>localStorage</code> is unavailable
+in this context.</b> The page has fallen back to memory only, so the model will not survive a
+reload. Everything else works. This is disclosed rather than hidden, because a tutor that silently
+loses your record is worse than one that never had it.</div>
+
+<h2>1 · Give it something to know</h2>
+<p class="sub">Six items across three topics. Each wrong option is attached to a named
+misconception, so a mistake writes a <em>diagnosis</em> to the record rather than a score.</p>
+
+<div class="panel">
+  <div class="ptitle" id="qtitle">—</div>
+  <div class="psub" id="qtopic">—</div>
+  <div class="q" id="qtext">—</div>
+  <div id="qopts"></div>
+  <div class="row" style="margin:16px 0 0">
+    <button id="next">Next item</button>
+    <span class="mini" id="fb"></span>
+  </div>
+</div>
+
+<h2>2 · What it now believes</h2>
+<div class="two">
+  <div class="panel" style="margin:0">
+    <div class="ptitle">Per-topic knowledge estimate</div>
+    <div class="psub">p(L) — the posterior probability the skill is learned, updated by BKT after
+    every response.</div>
+    <div id="pls"></div>
+    <div class="row" style="margin:16px 0 0"><button id="resetp">Reset all estimates</button></div>
+  </div>
+  <div class="panel" style="margin:0">
+    <div class="ptitle">Misconception flags</div>
+    <div class="psub">Each is a claim about you, with the evidence that produced it, and a button
+    that says it is wrong.</div>
+    <div id="miscs" class="mini">Nothing flagged yet.</div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="ptitle">BKT parameters — inspectable, and wrong by default</div>
+  <div class="psub">These four numbers govern every estimate above. In most tutoring systems they
+  are invisible, uncalibrated, and never shown to the person being modelled.</div>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Parameter</th><th>Meaning</th><th class="num">Value</th><th></th></tr></thead>
+    <tbody id="params"></tbody>
+  </table>
+  </div>
+  <div class="mini" style="margin-top:12px">Corbett &amp; Anderson (1995), <em>UMUAI</em>,
+  doi:10.1007/BF01099821. A two-state hidden Markov model per skill. It is thirty-one years old, it
+  is still the baseline, and its parameters are typically fitted to a population you are not in.</div>
+</div>
+
+<h2>3 · The record itself</h2>
+<p class="sub">Not a summary of the record. The record.</p>
+<div class="panel">
+  <div class="row">
+    <button id="inspect">Read it back from storage</button>
+    <button id="apply">Apply my edits</button>
+    <button class="alt" id="export">Export JSON</button>
+    <button class="danger" id="del">Delete permanently</button>
+  </div>
+  <div class="psub" id="meta">—</div>
+  <textarea id="json" spellcheck="false"></textarea>
+  <div class="mini" id="jerr" style="color:var(--bad);margin-top:8px"></div>
+</div>
+
+<h2>4 · Deletion, and the part deletion cannot reach</h2>
+<div class="panel sunken">
+  <div class="ptitle">Deletion receipt</div>
+  <div class="psub">Produced by reading the key back out of storage after the removal. If the key
+  still held anything, this box would say so.</div>
+  <div class="recpt" id="receipt">No deletion performed in this session.</div>
+</div>
+
+<p><strong>34 CFR § 300.624</strong> — <em>Destruction of information</em> — is not advisory.
+When personally identifiable information is no longer needed to provide educational services, the
+agency <b>must inform parents</b>, and, verbatim: <b>“The information must be destroyed at the
+request of the parents.”</b> Only a minimal permanent record — name, address, phone, grades,
+attendance, classes attended, grade level and year completed — may be kept without time limit.</p>
+
+<div class="note warn"><b>The architectural consequence, which is the actual finding.</b> You can
+delete the row. <b>You cannot delete the influence.</b> If a child's interaction history has been
+folded into model weights, into a shared embedding index, or into an aggregate learner-model prior,
+the destruction request cannot be honoured — not as a policy failure but as a mathematical one.
+Any product touching special-education populations therefore has to store per-learner state in a
+form that is genuinely deletable, and must never use it for cross-learner training without
+irreversible, pre-storage de-identification. § 300.624 makes that a precondition, not a feature.
+It is also why this demo keeps everything in one JSON blob under one key: <em>deletability is a
+schema decision, and it has to be made before the first write.</em></div>
+
+<div class="note"><b>And the flip side, stated with equal force.</b> Writing
+<code>suspected_dyslexia: 0.72</code> to a durable per-child record creates a health-data dossier
+under GDPR Art. 9(1), a retained record under COPPA § 312.10, and an IDEA-destroyable record under
+§ 300.624 — with none of the clinical process, none of the appeal rights, and none of the accuracy
+guarantees of an actual diagnosis. <b>Persistence is not automatically a good.</b> The
+misconception flags on this page are deliberately about <em>a rule the learner applied</em>, never
+about the learner.</div>
+
+<h2>5 · The measurement that does not exist</h2>
+
+<div class="panel">
+  <div class="ptitle">Persistent learner model vs stateless baseline</div>
+  <div class="psub">The controlled comparison that would justify all of the above.</div>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Question</th><th class="num">Evidence</th></tr></thead>
+    <tbody>
+      <tr><td>Does a tutor with a persistent learner model teach better than the same tutor without one?</td>
+        <td class="num"><b>No controlled study located</b></td></tr>
+      <tr><td>Does switching scheduling algorithm (SM-2 → FSRS) improve any learning outcome?</td>
+        <td class="num"><b>No controlled evidence.</b> FSRS predicts recall better and, in simulation, buys the same knowledge for less time. Different claims.</td></tr>
+      <tr><td>Do high-frequency spaced-repetition users perform better?</td>
+        <td class="num">+4 to +13 points on USMLE Step 1 — <b>all observational</b></td></tr>
+      <tr><td>Does knowledge tracing predict responses well?</td>
+        <td class="num">Yes, and that is a <b>different question</b> from whether it teaches</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="note warn"><b>Read that table before you build this.</b> Persistent state is the single
+most-assumed component of AI tutoring and, as far as this survey could establish, it has
+<strong>never been measured against a stateless baseline</strong>. Better prediction is not better
+teaching. A model that forecasts your next answer with high accuracy and changes nothing about what
+you are shown has bought you precisely nothing.</div>
+
+<h2>6 · The most-adopted AI tutor ever built</h2>
+<div class="panel">
+  <div class="two" style="align-items:center">
+    <div>
+      <div class="stars">29,606 ★</div>
+      <div class="mini" style="margin-top:6px">3,293 forks · created 2023-03-31 · last push 2025-09-30 ·
+      no license · 342 KB repo, of which the artifact is <b>one 14,095-byte text file</b></div>
+    </div>
+    <div>
+      <div class="mono-block" style="margin:0">JushBJJ/Mr.-Ranedeer-AI-Tutor
+README.md, line 1:
+
+# DISCONTINUED</div>
+    </div>
+  </div>
+</div>
+
+<p>Mr. Ranedeer contained more pedagogical mechanism than most funded products: a learner
+configuration as a first-class object, a prerequisite ladder from 0.1 to 0.9, a 3/6/9-difficulty
+familiar/unfamiliar test, python-verified problems, a <code>/test</code> command. It tried to
+persist a learner model <strong>twice</strong> — once by base64-encoding it into the transcript,
+once as a file in the code-interpreter sandbox — and both attempts were <em>requests to one vendor's
+model with one vendor's tool surface</em>. When the tool surface moved, both decayed. Roughly half
+the stars of nanoGPT conferred no immunity whatsoever.</p>
+
+<div class="note"><b>The rule it leaves behind.</b> Never make a vendor behaviour load-bearing. A
+prompt is not a mechanism; it is a <em>request</em> for a mechanism. The record on this page is
+forty lines of JSON in a key you own, on hardware you own, in a format you can read without us —
+which is a much less impressive engineering achievement and a much more durable one.</div>
+
+<h2>What this proves / what it does not</h2>
+<div class="panel">
+  <div class="ptitle">What it proves</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li>A learner model can be <strong>fully legible</strong>: every belief the system holds about
+    you, in a format you can read, edit and contradict, with the evidence attached to each claim.</li>
+    <li>Deletion can be made <strong>real and provable</strong> — not a confirmation dialogue but a
+    read-back showing the key returns <code>null</code>.</li>
+    <li>Persistence does not require a server, an account, or a vendor. One key, one JSON blob,
+    one storage API that has not changed since 2009.</li>
+    <li>The parameters that drive the estimates can be exposed. Most systems hide them, which means
+    the person being modelled cannot dispute the model, only its conclusions.</li>
+  </ul>
+  <div class="ptitle">What it does not prove</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li><strong>That any of this helps anyone learn.</strong> See §5: the comparison has not been
+    run. This demo makes the mechanism inspectable; it does not make it effective.</li>
+    <li>That BKT's estimates are accurate for you. The four parameters are defaults. Real
+    deployments fit them to a population, and you may not be in it — which is exactly why they are
+    editable here and, in most systems, are not.</li>
+    <li>That <code>localStorage</code> is an adequate answer for a real deployment. It is
+    per-device, per-browser, silently cleared, and offers no audit trail. It is the right
+    <em>shape</em> and the wrong <em>infrastructure</em>.</li>
+    <li>That legibility solves the § 300.624 problem. It solves the easy half. The hard half —
+    influence already folded into weights or shared indices — is not solvable after the fact by
+    any interface, including this one.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../">Dashboard</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw">Research reports</a>
+  <br /><br />Sources: Corbett &amp; Anderson (1995) doi:10.1007/BF01099821 · 34 CFR § 300.624 ·
+  <code>F5-learner-model</code>, <code>F8-safety-privacy-children</code>, <code>G3-future-of-learning-projects</code>.
+</footer>
+
+</div>
+<script>
+const tt=document.getElementById('tt'),R=document.documentElement;
+tt.onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const KEY='lnfaiw.learner.v1';
+$('key1').textContent=KEY;
+
+/* ── storage, with an honest fallback ─────────────────────── */
+let MEM=null,LS=true;
+try{localStorage.setItem(KEY+'.probe','1');localStorage.removeItem(KEY+'.probe');}
+catch(e){LS=false;$('lsWarn').style.display='';}
+const store={
+  get(){return LS?localStorage.getItem(KEY):MEM;},
+  set(v){if(LS)localStorage.setItem(KEY,v);else MEM=v;},
+  del(){if(LS)localStorage.removeItem(KEY);else MEM=null;}
+};
+
+/* ── the item bank ────────────────────────────────────────── */
+const TOPICS={'frac.add':'Adding fractions','int.sign':'Signed integers','dec.place':'Decimal place value'};
+const BANK=[
+ {t:'frac.add',q:'1/2 + 1/3 = ?',o:[
+   {a:'5/6',ok:1},
+   {a:'2/5',m:'add-across',s:'Adds numerators and denominators separately.'},
+   {a:'2/6',m:'denom-only',s:'Converts the denominators to a common value but leaves the numerators untouched.'}]},
+ {t:'frac.add',q:'2/5 + 1/5 = ?',o:[
+   {a:'3/5',ok:1},
+   {a:'3/10',m:'add-across',s:'Adds numerators and denominators separately.'},
+   {a:'2/25',m:'mult-not-add',s:'Multiplies the fractions when the operator is addition.'}]},
+ {t:'int.sign',q:'5 − (−3) = ?',o:[
+   {a:'8',ok:1},
+   {a:'2',m:'minus-minus',s:'Treats two adjacent minus signs as a single subtraction.'},
+   {a:'−8',m:'sign-of-larger',s:'Takes the sign from the numerically larger term regardless of operation.'}]},
+ {t:'int.sign',q:'−4 + 7 = ?',o:[
+   {a:'3',ok:1},
+   {a:'−3',m:'first-sign-sticks',s:'Keeps the sign of the first term whatever the arithmetic says.'},
+   {a:'11',m:'ignores-sign',s:'Adds magnitudes and discards the signs.'}]},
+ {t:'dec.place',q:'Which is larger — 0.7 or 0.35?',o:[
+   {a:'0.7',ok:1},
+   {a:'0.35',m:'longer-is-larger',s:'Reads a longer decimal string as a larger number ("0.35 has more digits").'},
+   {a:'they are equal',m:'ignores-place',s:'Compares digits without reference to place value.'}]},
+ {t:'dec.place',q:'0.4 + 0.06 = ?',o:[
+   {a:'0.46',ok:1},
+   {a:'0.10',m:'ignores-place',s:'Aligns the digits to the right and adds them as whole numbers.'},
+   {a:'0.64',m:'digit-swap',s:'Concatenates digits without regard to which column they belong in.'}]}
+];
+const MISC={
+ 'add-across':'Adds numerators and denominators separately',
+ 'denom-only':'Converts denominators without scaling numerators',
+ 'mult-not-add':'Multiplies when the operator is addition',
+ 'minus-minus':'Reads two minus signs as one subtraction',
+ 'sign-of-larger':'Takes the sign from the larger magnitude',
+ 'first-sign-sticks':'Keeps the sign of the first term',
+ 'ignores-sign':'Adds magnitudes and drops signs',
+ 'longer-is-larger':'Longer decimal string means larger number',
+ 'ignores-place':'Compares or adds digits without place value',
+ 'digit-swap':'Concatenates digits across columns'
+};
+
+/* ── the model ────────────────────────────────────────────── */
+function blank(){
+  const now=new Date().toISOString();
+  const topics={};
+  Object.keys(TOPICS).forEach(k=>topics[k]={name:TOPICS[k],pL:0.15,attempts:0,correct:0,last_seen:null});
+  return {schema:'learner-model/1',created:now,updated:now,
+    learner:{alias:'you',mode:'guided-discovery'},
+    bkt:{pL0:0.15,pT:0.25,pG:0.20,pS:0.10},
+    topics,misconceptions:[],retrieval:[]};
+}
+function load(){
+  const raw=store.get();
+  if(!raw)return blank();
+  try{const m=JSON.parse(raw);return (m&&m.schema==='learner-model/1')?m:blank();}
+  catch(e){return blank();}
+}
+let M=load();
+function save(){M.updated=new Date().toISOString();store.set(JSON.stringify(M,null,2));paint();}
+
+/* ── BKT ──────────────────────────────────────────────────── */
+function bkt(pL,correct,p){
+  const {pG,pS,pT}=p;
+  const post=correct
+    ? (pL*(1-pS))/(pL*(1-pS)+(1-pL)*pG)
+    : (pL*pS)/(pL*pS+(1-pL)*(1-pG));
+  return Math.min(0.999,Math.max(0.001,post+(1-post)*pT));
+}
+
+/* ── quiz ─────────────────────────────────────────────────── */
+let QI=Math.floor(Math.random()*BANK.length),ANS=-1,T0=performance.now();
+function paintQ(){
+  const it=BANK[QI];
+  $('qtitle').textContent='Item '+(QI+1)+' of '+BANK.length;
+  $('qtopic').textContent=TOPICS[it.t]+' · topic id '+it.t;
+  $('qtext').textContent=it.q;
+  $('qopts').innerHTML=it.o.map((o,i)=>'<button class="opt'+
+    (ANS<0?'':(o.ok?' right':(i===ANS?' wrong':'')))+'" data-i="'+i+'">'+o.a+'</button>').join('');
+  $('qopts').querySelectorAll('button').forEach(b=>b.onclick=()=>answer(+b.dataset.i));
+  if(ANS<0){$('fb').textContent='';T0=performance.now();}
+}
+function answer(i){
+  if(ANS>=0)return;
+  ANS=i;
+  const it=BANK[QI],o=it.o[i],ok=!!o.ok,lat=Math.round(performance.now()-T0);
+  const T=M.topics[it.t]||(M.topics[it.t]={name:TOPICS[it.t],pL:M.bkt.pL0,attempts:0,correct:0,last_seen:null});
+  const before=T.pL;
+  T.pL=+bkt(T.pL,ok,M.bkt).toFixed(4);
+  T.attempts++; if(ok)T.correct++;
+  T.last_seen=new Date().toISOString();
+  M.retrieval.push({at:new Date().toISOString(),topic:it.t,item:it.q,response:o.a,
+    correct:ok,latency_ms:lat,pL_before:+before.toFixed(4),pL_after:T.pL});
+  if(M.retrieval.length>40)M.retrieval=M.retrieval.slice(-40);
+  if(!ok&&o.m){
+    let f=M.misconceptions.find(x=>x.id===o.m);
+    if(!f){f={id:o.m,about:'a rule the learner applied',topic:it.t,statement:MISC[o.m],
+      status:'open',observations:0,evidence:[]};M.misconceptions.push(f);}
+    f.observations++; f.status='open';
+    f.evidence.push({at:new Date().toISOString(),item:it.q,chose:o.a,reading:o.s});
+    if(f.evidence.length>4)f.evidence=f.evidence.slice(-4);
+  }
+  $('fb').innerHTML=ok
+    ? 'Correct. p(L) for <b>'+TOPICS[it.t]+'</b> moved '+before.toFixed(3)+' → <b>'+T.pL.toFixed(3)+'</b>.'
+    : 'Wrong — and the record now says <em>why</em>: “'+(o.s||'no diagnosis attached')+'” p(L) moved '+
+      before.toFixed(3)+' → <b>'+T.pL.toFixed(3)+'</b>.';
+  save(); paintQ();
+}
+$('next').onclick=()=>{QI=(QI+1)%BANK.length;ANS=-1;paintQ();};
+
+/* ── painting the model ───────────────────────────────────── */
+const PDESC={pL0:'Prior probability the skill is already learned',
+  pT:'Probability of learning it on any one opportunity',
+  pG:'Probability of a correct answer without knowing (guess)',
+  pS:'Probability of a wrong answer while knowing (slip)'};
+function paint(){
+  $('pls').innerHTML=Object.keys(M.topics).map(k=>{
+    const T=M.topics[k];
+    return '<div class="pl"><span class="nm">'+T.name+'<br /><span class="mini">'+
+      T.correct+'/'+T.attempts+' correct</span></span>'+
+      '<span class="bar"><i style="width:'+(100*T.pL)+'%"></i></span>'+
+      '<span class="pv">'+T.pL.toFixed(3)+'</span></div>';}).join('');
+  $('miscs').innerHTML=M.misconceptions.length? M.misconceptions.map((f,i)=>
+    '<div style="padding:12px 0;border-bottom:1px solid var(--line)">'+
+    '<span class="tag '+(f.status==='open'?'open':'ret')+'">'+f.status+'</span> '+
+    '<b style="color:var(--ink)">'+f.statement+'</b>'+
+    '<div class="mini" style="margin:6px 0">'+f.observations+' observation'+(f.observations===1?'':'s')+
+    ' · topic '+f.topic+' · latest evidence: “'+f.evidence[f.evidence.length-1].chose+'” on '+
+    f.evidence[f.evidence.length-1].item+'</div>'+
+    '<button data-r="'+i+'" style="padding:6px 11px;font-size:12px">'+
+    (f.status==='open'?'This is wrong about me — retire it':'Re-open')+'</button></div>').join('')
+    : 'Nothing flagged yet. Answer an item incorrectly and a named diagnosis appears here, with its evidence.';
+  $('miscs').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    const f=M.misconceptions[+b.dataset.r];
+    f.status=f.status==='open'?'retired':'open';
+    f.corrected_by='learner'; f.corrected_at=new Date().toISOString(); save();});
+  $('params').innerHTML=Object.keys(M.bkt).map(k=>
+    '<tr><td><b>'+k+'</b></td><td>'+PDESC[k]+'</td><td class="num">'+M.bkt[k].toFixed(2)+'</td>'+
+    '<td><input type="range" min="1" max="60" value="'+Math.round(M.bkt[k]*100)+
+    '" data-p="'+k+'" style="width:120px;accent-color:var(--real)" /></td></tr>').join('');
+  $('params').querySelectorAll('input').forEach(r=>r.oninput=()=>{
+    M.bkt[r.dataset.p]=+(r.value/100).toFixed(2);save();});
+  const txt=JSON.stringify(M,null,2);
+  if(document.activeElement!==$('json'))$('json').value=txt;
+  const bytes=new Blob([txt]).size;
+  $('meta').innerHTML='key <code>'+KEY+'</code> · '+bytes+' bytes · '+M.retrieval.length+
+    ' retrieval events · '+M.misconceptions.length+' flag'+(M.misconceptions.length===1?'':'s')+
+    ' · last written '+M.updated+(LS?'':' · <b style="color:var(--bad)">memory only</b>');
+}
+
+/* ── the four buttons ─────────────────────────────────────── */
+$('inspect').onclick=()=>{
+  const raw=store.get();
+  $('json').value=raw===null?'null   // nothing stored under this key':raw;
+  $('jerr').textContent=raw===null
+    ? 'That is the literal return value of '+(LS?'localStorage':'the memory fallback')+'.getItem("'+KEY+'").'
+    : 'Read back from '+(LS?'localStorage':'memory')+' just now — '+raw.length+' characters.';
+};
+$('apply').onclick=()=>{
+  try{const m=JSON.parse($('json').value);
+    if(!m||m.schema!=='learner-model/1')throw new Error('schema must be "learner-model/1"');
+    if(!m.topics||!m.bkt)throw new Error('missing topics or bkt block');
+    M=m;save();$('jerr').textContent='Applied. Your edit is now the record — the page believes what you just wrote.';}
+  catch(e){$('jerr').textContent='Not applied: '+e.message;}
+};
+$('export').onclick=()=>{
+  const b=new Blob([JSON.stringify(M,null,2)],{type:'application/json'});
+  const u=URL.createObjectURL(b),a=document.createElement('a');
+  a.href=u;a.download='learner-model-'+new Date().toISOString().slice(0,10)+'.json';
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);
+  $('jerr').textContent='Exported. The file is the whole record — there is no second copy anywhere.';
+};
+$('del').onclick=()=>{
+  const before=store.get(), n=before?before.length:0;
+  store.del();
+  const after=store.get();
+  const gone=(after===null||after===undefined);
+  M=blank();
+  $('receipt').innerHTML=
+    '> '+(LS?'localStorage':'memory')+'.getItem("'+KEY+'")   // before\n'+
+    (before?('  '+n+' characters present\n'):'  null\n')+
+    '> '+(LS?'localStorage':'memory')+'.removeItem("'+KEY+'")\n'+
+    '> '+(LS?'localStorage':'memory')+'.getItem("'+KEY+'")   // after\n'+
+    '  '+String(after)+'\n\n'+
+    (gone?'<b>DESTROYED — verified by read-back at '+new Date().toISOString()+'</b>'
+         :'STILL PRESENT — the deletion did not take. This box would tell you.')+'\n\n'+
+    'No copy was retained. No copy was ever transmitted: this page makes no network requests, which\n'+
+    'you can confirm in your browser’s network panel. What it cannot prove to you is the negative\n'+
+    'in general — which is the reason § 300.624 compliance is a schema decision and not a promise.';
+  paint();paintQ();
+  $('json').value='null   // nothing stored under this key';$('jerr').textContent='';
+  $('meta').innerHTML='key <code>'+KEY+'</code> · <b style="color:var(--bad)">deleted</b> · a fresh blank record is in memory and will not be written until you answer something.';
+};
+$('resetp').onclick=()=>{Object.keys(M.topics).forEach(k=>{M.topics[k].pL=M.bkt.pL0;
+  M.topics[k].attempts=0;M.topics[k].correct=0;});save();};
+
+paintQ();paint();
+</script>
+</body>
+</html>

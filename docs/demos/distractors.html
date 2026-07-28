@@ -509,13 +509,12 @@ function renderAll(){
        discriminate and must not be shipped. This is the failure mode a generator without a
        collision check ships silently, and it is why the whole apparatus exists. Move a slider and
        watch it recover.</div>`;
-  bindOpts(A,B,K);
+  bindOpts();
   renderLearned(A,B,K,errVals);
 }
-function bindOpts(A,B,K){
+function bindOpts(){
   document.querySelectorAll('.optrow').forEach(r=>{r.onclick=()=>{
-    PICK={src:r.dataset.src,i:+r.dataset.i};
-    const s=stem();renderLearnedOnly();};});
+    PICK={src:r.dataset.src,i:+r.dataset.i};renderLearnedOnly();};});
 }
 function renderLearnedOnly(){
   const s=stem(),K=s.key(P);
@@ -553,10 +552,17 @@ function renderLearned(A,B,K,errVals){
 }
 
 /* ══ exhaustive sweep ═══════════════════════════════════════════════════ */
-function gridOf(s,cap){
+/* an evenly spaced lattice over each parameter's declared range, sized so the
+   total enumeration lands near `target`. Every point is then evaluated — this
+   is a full enumeration of the lattice, not a random sample of it.           */
+function gridOf(s,target){
+  const per=Math.max(2,Math.round(Math.pow(target,1/s.params.length)));
   const dims=s.params.map(q=>{
-    const n=q.max-q.min+1, step=Math.max(1,Math.ceil(n/Math.pow(cap,1/s.params.length)));
-    const vals=[]; for(let v=q.min;v<=q.max;v+=step) vals.push(v);
+    const vals=[];
+    for(let i=0;i<per;i++){
+      const v=Math.round(q.min+(q.max-q.min)*i/(per-1));
+      if(!vals.includes(v)) vals.push(v);
+    }
     return {k:q.k,vals};});
   let out=[{}];
   dims.forEach(d=>{const nx=[];out.forEach(o=>d.vals.forEach(v=>nx.push({...o,[d.k]:v})));out=nx;});
@@ -565,7 +571,7 @@ function gridOf(s,cap){
 function runSweep(){
   const t0=performance.now(), rows=[], detail=[];
   STEMS.forEach(s=>{
-    const grid=gridOf(s,12);
+    const grid=gridOf(s,4096);
     let aHit=0,bOk=0,coll=0,keyColl=0;
     grid.forEach(p=>{
       const K=s.key(p);
@@ -596,6 +602,13 @@ function runSweep(){
       <td class="num">${(d.keyColl/d.N*100).toFixed(1)}%</td></tr>`)).join('');
   const totColl=detail.reduce((a,d)=>a+d.coll+d.keyColl,0),totN=detail.reduce((a,d)=>a+d.N,0);
   el('sweepnote').innerHTML=`<div class="note" style="margin-bottom:0">
+    <b>Generator A is not always at zero, and that matters.</b> On the fractions stem a surface
+    perturbation lands on a named error a non-trivial fraction of the time — the arithmetic
+    neighbourhood of a correct answer and the arithmetic neighbourhood of a common slip overlap.
+    But the generator <em>does not know when it happened</em>, so it cannot label the option, and
+    the response therefore still carries no usable diagnosis. Accidental coverage is not partial
+    credit. It is the same zero, with noise on top.</div>
+    <div class="note" style="margin-bottom:0">
     <b>The two right-hand columns are the finding.</b> Across ${totN} enumerated items,
     ${totColl} rejections were caused by a misconception landing on another misconception or on
     the key. Those are items that a generator without a collision check produces happily and that
