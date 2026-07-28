@@ -58,20 +58,28 @@ edited — see C-12 and C-13, which are the reason this file exists.
 | **C-27** | 28 Jul | §04 treated testing accommodations as part of the "known-good intervention" base being scaled | **Legally mandated and evidentially weak.** Kieffer et al.: overall **g = .034, p = .180**. Rios et al.: **none statistically different from zero** across N = 11,069. Elbaum 2007: the effect **reverses** at secondary level. And teachers assign them **at chance** (N = 1,218). Both halves must be held: required by law, not established by evidence | SELF-RESEARCH (H2) |
 | **C-28** | 28 Jul | "An AI that changes a child's programme without generating prior written notice has created a procedural violation" | **Directionally right, wrong in three specifics.** The duty attaches to the **agency**, not the tool; it fires on identification, evaluation, placement and FAPE provision — **not on teaching methodology**, which §300.501(b)(3) places outside the meeting requirement; and a procedural violation denies FAPE only through §300.513(a)(2)'s three gates. ED's own line governs: *"placement refers to the provision of special education and related services rather than a specific place"* (71 FR 46588) | SELF-RESEARCH (H2) |
 | **C-29** | 28 Jul | Cited Doroudi et al. (2019) as a negative review, publishing only its **0-of-8** sub-cut on interdependent content | **The review's overall finding is positive.** Verbatim: *"We find that over half of the studies found that RL-induced policies significantly outperform baselines."* **21 of 41 studies (51%) significantly beat all baselines**; 10 no significant difference; 1 baseline win. Publishing the pessimistic sub-cut without the headline is selective reporting — the exact failure this survey exists to name. The authors' qualifier also favours us: RL works best *"constrained with ideas and theories from cognitive psychology and the learning sciences"* | SELF-RESEARCH (K2) |
+| **C-30** | 28 Jul | *(process)* Shipped a corrections-propagation checker and reported it green | **It did not work.** A reviewer copied the tree, planted the five superseded values in the exact form they had originally appeared — including the chart datum `v:0.37` — and it printed *0 violations* and exited 0. Two defects: `[^.]{0,80}` as a proximity window cannot cross the period in *"Nickow et al."*, the literal string that caused C-12; and the cure words were generic enough that an unrelated *"corrected"* nearby cleared a live error. Rewritten with a `--self-test` that plants each violation and fails if the rule does not fire | **EXTERNAL-REVIEW** |
+| **C-31** | 28 Jul | *(process)* Every one of the paper's 29 contents links was dead, and the generator's own docstring claimed a sticky contents rail that did not exist | Two hand-matched slugging rules — `build()` slugged the bare title, python-markdown slugged the rendered heading with its number — and **no test**. The outline is now a single declarative record that the rail, the contents and the headings all render from, so an anchor cannot exist in one and be missing in another | **EXTERNAL-REVIEW** |
+| **C-32** | 28 Jul | The dashboard's headline read "24 sections · 60,300 words · 23 corrections" | Against a 30-section, 75,352-word, 25-correction paper — **stale on the page whose entire pitch is that it publishes its own errors.** Counts are now written into `index.html` and `README.md` on every build | **EXTERNAL-REVIEW** |
+| **C-33** | 28 Jul | The effect-size chart was captioned "ordered" | **It was not sorted.** Applying C-12 changed Nickow's value from 0.37 to 0.288 and left the row in position, so 0.288 sat above 0.36. A correction that fixed a number and broke the artifact around it | **EXTERNAL-REVIEW** |
 
 ---
 
 ## Scoreboard
 
+*Generated from the rows above by `evidence/sync-ledger.py`. It drifted twice while
+hand-maintained, which is the whole argument for generating it.*
+
 | Source | Count |
 |---|---|
-| Caught by our own research | 17 |
-| Caught by our own verification (incl. of our own warnings) | 2 |
-| **Caught by an adversarial external reviewer** | **7** |
-| Caught by our own builders, against their own briefs | 3 |
-| **Total** | **29** |
+| Caught by our own research | 15 |
+| Caught by our own verification — including of our own warnings | 2 |
+| Caught by our own builders, working against their own briefs | 4 |
+| **Caught by an adversarial external reviewer** | **12** |
+| **Total** | **33** |
 
-Eight of twenty-nine were found by someone whose job was to fail us — including the
-two most damaging (C-12, C-13) and the one about the ledger itself (C-23). That ratio
-is the honest measure of how much an internal review process is worth, and it is the
-argument for commissioning the hostile read rather than trusting the self-audit.
+Twelve of 33 were found by someone whose job was to fail us — including
+the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
+that proved the propagation checker did not work (C-30). That ratio is the honest measure
+of what an internal review process is worth, and it is the argument for commissioning the
+hostile read rather than trusting the self-audit.
