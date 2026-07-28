@@ -36,8 +36,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 # Published surfaces only. research/raw/ is an immutable record of what an agent
 # found at a point in time and is deliberately NOT rewritten (see CORRECTIONS.md).
-SURFACES = ["README.md", "process/CLAUDE.md", "process/AUDIT.md",
-            "docs/index.html", "survey/*.md", "docs/demos/*.html"]
+SURFACES = ["README.md", "PAPER.md", "process/CLAUDE.md", "process/AUDIT.md",
+            "docs/index.html", "docs/paper.html", "survey/*.md", "docs/demos/*.html"]
 # CORRECTIONS.md is excluded: it is the ledger and must quote superseded values.
 
 WINDOW = 400   # chars either side that may carry the cure
@@ -46,11 +46,24 @@ WINDOW = 400   # chars either side that may carry the cure
 # identified structurally (a table row whose first cell is a C-nn id), not by any
 # keyword, so this cannot be used to launder prose. C-17 is exactly this case: a
 # process correction that must quote the sentence it is about.
-LEDGER_ROW = re.compile(r'^\s*(\|\s*(\*\*)?C-\d+|<tr><td>C-\d+)', re.M)
+LEDGER_ROW = re.compile(r'^\s*(?:\|\s*(?:\*\*)?(C-\d+)|<tr><td>(C-\d+))', re.M)
+
+def _real_ids():
+    """Only ids that actually exist in CORRECTIONS.md may claim the exemption.
+    Previously any '| C-99 |' prefix was trusted, so an invented id laundered
+    four retired values at once."""
+    led = ROOT / "CORRECTIONS.md"
+    if not led.exists(): return set()
+    return set(re.findall(r"^\| \*\*(C-\d+)\*\*", led.read_text(), re.M))
+
+REAL_IDS = _real_ids()
 
 def in_ledger_row(text, pos):
     start = text.rfind("\n", 0, pos) + 1
-    return bool(LEDGER_ROW.match(text, start))
+    m = LEDGER_ROW.match(text, start)
+    if not m: return False
+    cid = m.group(1) or m.group(2)
+    return cid in REAL_IDS
 
 class Rule:
     """bad: what must not appear.  cure: what makes it acceptable nearby.
@@ -92,7 +105,7 @@ RULES = [
          r"−0\.004|-0\.004|removes? (a )?harm",
          "Guardrails remove harm; the guardrailed unassisted coefficient is -0.004, n.s.",
          "+127% with no retention penalty"),
-    Rule("C-16", r"\b0\.4?99?\b[\s\S]{0,140}?222 (classroom )?studies|222 (classroom )?studies[\s\S]{0,140}?48,478",
+    Rule("C-16", r"(?:\b0\.(?:50|499)\b|g\s*=\s*0\.5)[\s\S]{0,140}?222 (classroom )?studies|222 (classroom )?studies[\s\S]{0,140}?48,478",
          r"I²\s*=\s*88|I2\s*=\s*88",
          "Retrieval practice g=0.50 must carry its heterogeneity, I² = 88%",
          "g = 0.50 | 222 classroom studies · 48,478 students"),
@@ -165,10 +178,15 @@ def main():
         rc |= self_test()
         if "--strict" not in argv:
             return rc
+    n_surfaces = len(surfaces())
+    if n_surfaces < 20:
+        print(f"corrections propagation: FAILED — only {n_surfaces} surfaces found. "
+              f"An empty or truncated scan is not a pass.")
+        return 1
     v = scan(ROOT)
     if not v:
         print(f"corrections propagation: OK — {len(RULES)} rules, "
-              f"{len(surfaces())} published surfaces, 0 violations")
+              f"{n_surfaces} published surfaces, {len(REAL_IDS)} ledger ids, 0 violations")
         return rc
     print(f"corrections propagation: {len(v)} VIOLATION(S)\n")
     for path, line, cid, snippet, note in v:

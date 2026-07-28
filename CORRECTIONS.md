@@ -62,6 +62,10 @@ edited — see C-12 and C-13, which are the reason this file exists.
 | **C-31** | 28 Jul | *(process)* Every one of the paper's 29 contents links was dead, and the generator's own docstring claimed a sticky contents rail that did not exist | Two hand-matched slugging rules — `build()` slugged the bare title, python-markdown slugged the rendered heading with its number — and **no test**. The outline is now a single declarative record that the rail, the contents and the headings all render from, so an anchor cannot exist in one and be missing in another | **EXTERNAL-REVIEW** |
 | **C-32** | 28 Jul | The dashboard's headline read "24 sections · 60,300 words · 23 corrections" | Against a 30-section, 75,352-word, 25-correction paper — **stale on the page whose entire pitch is that it publishes its own errors.** Counts are now written into `index.html` and `README.md` on every build | **EXTERNAL-REVIEW** |
 | **C-33** | 28 Jul | The effect-size chart was captioned "ordered" | **It was not sorted.** Applying C-12 changed Nickow's value from 0.37 to 0.288 and left the row in position, so 0.288 sat above 0.36. A correction that fixed a number and broke the artifact around it | **EXTERNAL-REVIEW** |
+| **C-34** | 28 Jul | The paper's internal cross-references | **83 of 87 pointed at the wrong section.** Sections are numbered 1–33 at build time; the prose carried source-file numbers, so *"a hostile reviewer read §04"* pointed at *Fifteen Hundred Papers*. Only four landed, by coincidence — and the commit that added 26 more cross-references made it worse. `build()` now assigns paper numbers in a first pass and rewrites both `§NN` and prose "Section NN" forms; unresolved refs are reported, never silently rewritten. **All 115 now resolve** | **EXTERNAL-REVIEW** |
+| **C-35** | 28 Jul | The abstract said "32 research reports · ~2,100 citations"; the head said 34; the filesystem said 35. And "eight of the twenty-nine corrections" against a generated scoreboard reading twelve of thirty-three | **C-32 reproduced inside the abstract** — hardcoded counts sitting beside computed ones. Every count in the paper head and abstract is now derived from the filesystem and the ledger at build time | **EXTERNAL-REVIEW** |
+| **C-36** | 28 Jul | *(process)* The hardened checker was reported as working | **Still defeatable: 17 evasions planted, 1 caught.** A `\| C-99 \|` row claimed the ledger exemption without the id needing to exist; `PAPER.md` was not a surface at all; C-16's regex could not match the plain `0.50` form; and deleting every surface printed *"OK, 0 violations"* and exited 0. Fixed: exemption now checks the id against the real ledger, PAPER.md and paper.html are surfaces, the regex is widened, and a scan finding fewer than 20 surfaces **fails** | **EXTERNAL-REVIEW** |
+| **C-37** | 28 Jul | §32: *"the value of an agentic loop **equals** the value of the external check it closes on"*, with SciCode tabled as having no check | **Overstated, and the table was wrong.** SciCode has hand-written tests and still lands at 4.6%. The rule is a **bound**, not an equality: a weak check caps you low; a strong one does not guarantee you reach the bound | **EXTERNAL-REVIEW** |
 
 ---
 
@@ -75,10 +79,10 @@ hand-maintained, which is the whole argument for generating it.*
 | Caught by our own research | 15 |
 | Caught by our own verification — including of our own warnings | 2 |
 | Caught by our own builders, working against their own briefs | 4 |
-| **Caught by an adversarial external reviewer** | **12** |
-| **Total** | **33** |
+| **Caught by an adversarial external reviewer** | **15** |
+| **Total** | **36** |
 
-Twelve of 33 were found by someone whose job was to fail us — including
+15 of 36 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the

@@ -2,7 +2,7 @@
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**33 sections · 80,330 words · 35 research reports · 33 published corrections**
+**33 sections · 80,386 words · 35 research reports · 37 published corrections**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -19,8 +19,8 @@ learned anything, and almost never measures it **after the tool is taken away**.
 This survey is an attempt to write the missing specification. It rests on 35 research
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
-errors is published in an append-only ledger rather than quietly edited — **13 of
-the 33 corrections were found by an adversarial reviewer rather than by us.**
+errors is published in an append-only ledger rather than quietly edited — **17 of
+the 37 corrections were found by an adversarial reviewer rather than by us.**
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
@@ -1544,7 +1544,8 @@ Strip the marketing and an agent differs from a chatbot in exactly four ways:
 Every one of those is a multiplier on something else. None of them produces value on
 its own. Which yields the rule:
 
-> **The value of an agentic loop equals the value of the external check it closes on.**
+> **The value of an agentic loop is bounded by the value of the external check it
+> closes on.**
 
 Sampling without a selector is noise. Execution without a test is output. Persistence
 without a schema is a transcript. Absence without a verifier is unsupervised drift.
@@ -1560,10 +1561,13 @@ Look at where agents work and where they do not, and it is not about difficulty:
 | SWE-bench Verified | **79.2%** (396/500) | Yes — `pytest` |
 | Terminal-Bench 2.1 | **83.8%** | Yes — the command either works |
 | PaperBench | **21.0%** | No |
-| SciCode | **4.6%** | No |
+| SciCode | **4.6%** | Weakly — hand-written tests |
 
-A twenty-fold spread, and the axis is not how hard the task is. It is whether
-something other than the model can say *wrong*.
+A twenty-fold spread, and the axis is not how hard the task is. It is **how good the
+check is**. Note that SciCode is not check-free — it has hand-written tests — and
+still lands at 4.6%, which is why the rule is stated as a *bound* rather than an
+equality. A weak check bounds you low. A strong one does not guarantee you reach the
+bound; it only stops you being capped below it.
 
 **Coding agents work because `pytest` exists.**
 
@@ -3692,7 +3696,7 @@ that would turn the ladder from an output into an instrument.
 
 <sub>Source report: `derived — see provenance note in §1`</sub>
 
-Section 25 established a rule for when a simplification is legal: **monotone
+Section14 established a rule for when a simplification is legal: **monotone
 refinement.** A rung may drop precision, formalism, or mechanism-depth. It may never
 falsify **ontology, causal sign, quantifier strength, or uniqueness of mechanism**.
 

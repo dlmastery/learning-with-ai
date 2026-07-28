@@ -31,7 +31,8 @@ Strip the marketing and an agent differs from a chatbot in exactly four ways:
 Every one of those is a multiplier on something else. None of them produces value on
 its own. Which yields the rule:
 
-> **The value of an agentic loop equals the value of the external check it closes on.**
+> **The value of an agentic loop is bounded by the value of the external check it
+> closes on.**
 
 Sampling without a selector is noise. Execution without a test is output. Persistence
 without a schema is a transcript. Absence without a verifier is unsupervised drift.
@@ -47,10 +48,13 @@ Look at where agents work and where they do not, and it is not about difficulty:
 | SWE-bench Verified | **79.2%** (396/500) | Yes — `pytest` |
 | Terminal-Bench 2.1 | **83.8%** | Yes — the command either works |
 | PaperBench | **21.0%** | No |
-| SciCode | **4.6%** | No |
+| SciCode | **4.6%** | Weakly — hand-written tests |
 
-A twenty-fold spread, and the axis is not how hard the task is. It is whether
-something other than the model can say *wrong*.
+A twenty-fold spread, and the axis is not how hard the task is. It is **how good the
+check is**. Note that SciCode is not check-free — it has hand-written tests — and
+still lands at 4.6%, which is why the rule is stated as a *bound* rather than an
+equality. A weak check bounds you low. A strong one does not guarantee you reach the
+bound; it only stops you being capped below it.
 
 **Coding agents work because `pytest` exists.**
 

@@ -165,7 +165,15 @@ def build():
                 return f"§{SRC2NUM[src]}"
             unresolved.add(src)
             return m.group(0)
-        return re.sub(r"§\s?(\d{2})\b", sub, text)
+        text = re.sub(r"§\s?(\d{2})\b", sub, text)
+        # prose form: "Section 25 established…" uses the same source numbering
+        def sub2(m):
+            src = m.group(2)
+            if src in SRC2NUM:
+                return f"{m.group(1)}{SRC2NUM[src]}"
+            unresolved.add(src)
+            return m.group(0)
+        return re.sub(r"\b(Section|section)\s+(\d{2})\b", sub2, text)
 
     unresolved = set()
     structure = []
