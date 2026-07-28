@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Kobayashi Maru Generator — Demo 04</title>
+<meta name="description" content="A parameterised problem generator with an addressable search space, a difficulty dial tied to structural features rather than surface ones, and the unannounced-objection rule." />
+<link rel="stylesheet" href="demo.css" />
+<style>
+.tag{font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;
+  border-radius:5px;border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
+.tag.on{color:var(--real);border-color:color-mix(in oklab,var(--real) 45%,transparent)}
+.tag.sf{color:var(--felt);border-color:color-mix(in oklab,var(--felt) 45%,transparent)}
+input[type=range]{width:100%;accent-color:var(--real);height:22px;padding:0;border:0;background:none}
+.val{font:13px/1 var(--mono);color:var(--ink);float:right;text-transform:none;letter-spacing:0}
+.item{font:16.5px/1.7 var(--serif);color:var(--ink);background:var(--sunken);
+  border:1px solid var(--line);border-radius:10px;padding:20px;margin-bottom:16px}
+.item .pad{color:var(--ink-3)}
+.idx{font:13px/1.5 var(--mono);color:var(--ink-3);margin-bottom:16px}
+.idx b{color:var(--real)}
+.two{display:grid;grid-template-columns:1fr;gap:14px;margin:22px 0}
+@media(min-width:700px){.two{grid-template-columns:1fr 1fr}}
+.meter{border:1px solid var(--line);border-radius:var(--r);padding:18px;background:var(--surface)}
+.meter .mn{font:600 10.5px/1 var(--sans);letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+.meter .mv{font:400 30px/1 var(--serif);margin-bottom:8px}
+.meter.s .mv{color:var(--real)} .meter.f .mv{color:var(--felt)}
+.meter p{font-size:13.2px;line-height:1.55;margin:0;color:var(--ink-3)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{counter-increment:s;position:relative;padding:9px 0 9px 34px;font-size:14.3px;
+  line-height:1.55;color:var(--ink-2);border-bottom:1px solid var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;
+  border-radius:6px;background:var(--raise);color:var(--ink-3);font:600 11px/22px var(--mono);text-align:center}
+.steps li.conv::before{background:color-mix(in oklab,var(--real) 22%,transparent);color:var(--real)}
+.flags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+.opt{display:block;width:100%;text-align:left;margin-bottom:9px;padding:13px 15px;font-weight:500;font-size:14.2px;line-height:1.5}
+.opt.sel{border-color:var(--real);background:color-mix(in oklab,var(--real) 7%,transparent)}
+.mini{font-size:12.5px;color:var(--ink-3)}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo Gallery</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 04 · The Village</div>
+  <h1>The Kobayashi Maru Generator</h1>
+  <p class="lede">A fresh problem, at a chosen structural difficulty, drawn from a space you can
+  count and address by number. Plus the two findings that decide whether such a generator helps or
+  hurts: <strong>difficulty must be semantic</strong>, and <strong>objection must be
+  unannounced</strong>.</p>
+  <div class="chips">
+    <span class="chip m">Computed live</span>
+    <span class="chip n">Perceptual difficulty: d = −0.05</span>
+    <span class="chip d">Objection wording is templated</span>
+  </div>
+</header>
+
+<div class="note"><b>COMPUTED.</b> The generator, the solver, the step count and the search-space
+arithmetic all run here. Every item is decoded from an integer index by a deterministic function,
+so you can type a number and get that exact item back — which is what makes the size claim
+checkable rather than rhetorical. <b>The one scripted element is the wording of the objection</b>
+in §5: its <em>content</em> is selected from the item's own structure, but the sentences are
+templates, and no learner response is simulated anywhere on this page.</div>
+
+<h2>1 · The space</h2>
+<div class="panel">
+  <div class="ptitle" id="spaceT">—</div>
+  <div class="psub" id="spaceS">—</div>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Parameter</th><th class="num">Options</th><th>Kind</th><th>What it changes</th></tr></thead>
+    <tbody id="rad"></tbody>
+  </table>
+  </div>
+</div>
+<div class="note" id="coll">—</div>
+
+<h2>2 · Generate</h2>
+<div class="panel">
+  <div class="row">
+    <button class="pri" id="roll">New item</button>
+    <input type="text" id="jump" placeholder="…or type an index and press Recall"
+      style="flex:1;min-width:180px;width:auto;font-family:var(--mono);font-size:13.5px" />
+    <button id="recall">Recall</button>
+  </div>
+  <div>
+    <label for="dial">Structural difficulty <span class="val" id="dialv">3</span></label>
+    <input type="range" id="dial" min="1" max="5" step="1" value="3" />
+  </div>
+  <div class="row" style="margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line)">
+    <label style="margin:0 10px 0 0">Surface difficulty</label>
+    <button id="sf1">Re-skin the cover story</button>
+    <button id="sf2">Add narrative padding</button>
+    <button id="sf3">Scramble sentence order</button>
+  </div>
+  <div class="psub" style="margin:12px 0 0">The three buttons on this row are the trap. Press them
+  and watch the meter on the left refuse to move.</div>
+</div>
+
+<div class="idx" id="idx">—</div>
+<div class="flags" id="flags"></div>
+<div class="item" id="item">—</div>
+
+<div class="two">
+  <div class="meter s">
+    <div class="mn">Structural load · computed</div>
+    <div class="mv" id="ms">—</div>
+    <p id="msn">Derivation steps required, counted from the solution the page actually computes.
+    This is the quantity with an evidence base.</p>
+  </div>
+  <div class="meter f">
+    <div class="mn">Surface difficulty · computed</div>
+    <div class="mv" id="mf">—</div>
+    <p id="mfn">Words, clauses and reading friction. Raising this changes what the item
+    <em>feels</em> like and provably not what it demands.</p>
+  </div>
+</div>
+
+<h2>3 · The solution the generator already knows</h2>
+<p class="sub">The item is not generated and then hoped about. It is generated <em>from</em> a
+solution plan, which is why the step count is a fact rather than an estimate.</p>
+<div class="panel">
+  <ol class="steps" id="steps"></ol>
+  <div class="row" style="margin:18px 0 0"><button id="reveal">Show / hide the numbers</button></div>
+</div>
+
+<h2>4 · Why the surface dial is a trap</h2>
+<p>Making a task feel harder is not the same as making it require more. The generation effect —
+the benefit of producing an answer rather than reading one — is <strong>d = 0.40</strong> overall,
+but it is <strong>null for nonwords (d = 0.05)</strong> and it <strong>reverses for anagrams
+(d = −0.05)</strong>. Bertsch et al. (2007), 445 effect sizes.</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Condition</th><th class="num">d</th><th>What it tells a generator</th></tr></thead>
+  <tbody>
+    <tr><td>Generation over meaningful semantic structure</td><td class="num up">0.40</td>
+      <td>The effect is real when the learner has to <b>build meaning</b>.</td></tr>
+    <tr><td>Cued recall (the strongest cell)</td><td class="num up">0.55</td>
+      <td>Production beats recognition (0.46) beats free recall (0.32).</td></tr>
+    <tr><td>Nonwords</td><td class="num">0.05</td>
+      <td>Nothing to elaborate against. Effort without semantics buys nothing.</td></tr>
+    <tr><td><b>Anagrams</b> — difficulty that is purely perceptual</td><td class="num down"><b>−0.05</b></td>
+      <td><b>It goes backwards.</b> A scrambled cue is harder and worse.</td></tr>
+    <tr><td>Generation sets larger than 50 items</td><td class="num">0.09</td>
+      <td>Near-vanishing. Unbounded generation is not a licence for unbounded dosage.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note warn"><b>The design rule this forces.</b> An item generator has one honest
+difficulty axis: how much has to be <em>derived</em>. Ugly numbers, longer sentences, unfamiliar
+nouns and scrambled clause order all raise perceived effort and none of them raise derivation
+depth. Bertsch's anagram cell is the measurement that says the difference is not a nicety — a
+cleverly obfuscated cue is closer to an anagram than to a memory palace, and anagrams score
+<b>d = −0.05</b>.</div>
+
+<h2>5 · The adversary, and why it must not announce itself</h2>
+<p>Pick the approach you would take. The objection that follows is selected from the structural
+traps this specific item contains — it is not generic.</p>
+
+<div class="panel">
+  <div class="ptitle">Your approach</div>
+  <div class="psub">One of these is right for this item. The others are the approaches this item was built to punish.</div>
+  <div id="opts"></div>
+</div>
+
+<div class="two">
+  <div class="meter">
+    <div class="mn" style="color:var(--felt)">Announced — the version that backfires</div>
+    <div class="chat" style="margin:0">
+      <div class="msg agent"><span class="who">Agent</span><span id="objA">—</span></div>
+    </div>
+  </div>
+  <div class="meter">
+    <div class="mn" style="color:var(--real)">Unannounced — the version to ship</div>
+    <div class="chat" style="margin:0">
+      <div class="msg agent"><span class="who">Agent</span><span id="objB">—</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="note warn"><b>Same objection. Same evidence. One framing sentence of difference.</b>
+A <em>role-played</em> devil's advocate produces, in the words of the finding, “thinking that was
+primarily aimed at <b>cognitive bolstering of the initial viewpoint</b> rather than stimulating
+divergent thought.” Announcing the role tells the learner the objection is not sincerely held, and
+a challenge you know to be theatre is a challenge you defend against rather than think with. The
+practical consequence for an AI adversary is uncomfortable: <b>the safety-flavoured disclaimer
+(“I'll argue the other side for a moment”) is the thing that destroys the mechanism.</b></div>
+
+<div class="note"><b>What this page refuses to do.</b> It does not show you a simulated learner
+bolstering their position, because that would be a claim dressed as a demonstration. The bolstering
+result is a citation, not an output of this page. What is computed here is the <em>objection
+selection</em> — which structural trap in this item to press on — and that much you can verify by
+changing the difficulty dial and watching the objection follow the flags.</div>
+
+<h2>What this proves / what it does not</h2>
+<div class="panel">
+  <div class="ptitle">What it proves</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li>Item generation can be <strong>counted and addressed</strong>. A generator whose space you
+    can state, index into, and sample for collisions is a different object from a model asked to
+    “make me a hard problem”.</li>
+    <li>Difficulty can be defined <strong>structurally and computed</strong> — derivation steps
+    counted from a solution plan the generator holds — rather than asserted on a 1–5 scale.</li>
+    <li>The surface/structure distinction is demonstrable in one screen: three buttons that change
+    the text substantially and the step count not at all.</li>
+    <li>Objection content can be derived from item structure rather than produced generically,
+    which is what makes an adversary specific enough to be worth arguing with.</li>
+  </ul>
+  <div class="ptitle">What it does not prove</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
+    <li><strong>That novel items teach better than reused ones.</strong> No trial here. Unbounded
+    generation solves a <em>leakage and reuse</em> problem, not a learning problem, and Bertsch's
+    &gt;50-item cell (d = 0.09) is a warning against assuming more items is more learning.</li>
+    <li>That derivation-step count is the right operationalisation of semantic difficulty. It is
+    <em>a</em> structural measure and a defensible one. It is not validated against learning.</li>
+    <li>That one template space generalises. This is rate-and-capacity word problems. The space is
+    large because the template is parameterised, not because the generator is creative — and a
+    domain without a closed-form solver does not get this treatment.</li>
+    <li>That an unannounced AI objection reproduces the human devil's-advocate finding. The
+    bolstering result is about humans role-playing for other humans. Whether a learner treats an
+    unannounced AI challenge as sincere is an open question, and arguably a harder one, because the
+    learner knows throughout that they are talking to a machine.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../">Dashboard</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw">Research reports</a>
+  <br /><br />Sources: Bertsch, Pesta, Wiscott &amp; McDaniel (2007), <em>Memory &amp; Cognition</em>
+  35(2):201–210, doi:10.3758/BF03193441 · devil's-advocate bolstering, reported in <code>F2-beyond-the-tutor</code>.
+</footer>
+
+</div>
+<script>
+const tt=document.getElementById('tt'),R=document.documentElement;
+tt.onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+
+/* ══ the parameter space ═════════════════════════════════════ */
+const SCEN=[
+ {a:'pump',b:'pump',o:'reservoir',u:'litres',v:'fills',w:'drains'},
+ {a:'printer',b:'printer',o:'print run',u:'pages',v:'prints',w:'pulps'},
+ {a:'conveyor',b:'chute',o:'silo',u:'kilograms',v:'loads',w:'unloads'},
+ {a:'crew',b:'crew',o:'order',u:'units',v:'assembles',w:'strips down'},
+ {a:'inlet',b:'outlet',o:'lock',u:'cubic metres',v:'fills',w:'empties'},
+ {a:'harvester',b:'harvester',o:'field',u:'square metres',v:'clears',w:'re-seeds'}
+];
+const NAMES=[['Nadia','Bo'],['Priya','Toma'],['Ines','Kwame'],['Yuki','Sam'],['Ada','Rafi'],
+             ['Mira','Otto'],['Zola','Henrik'],['Lena','Kofi'],['Nia','Joachim'],['Ravi','Elke'],
+             ['Suri','Marcel'],['Ayo','Greta']];
+const RA=[6,9,12,15,18,24], RB=[4,6,8,10,12,20], CAP=[180,240,360,480,600],
+      HS=[0.5,1,1.5], TT=[2,3,4,5];
+const RADIX=[
+ {n:6, k:'sc', kind:'surface',    d:'Cover story — machines, medium, verbs'},
+ {n:12,k:'nm', kind:'surface',    d:'Names'},
+ {n:6, k:'ra', kind:'structural', d:'Rate of the first agent'},
+ {n:6, k:'rb', kind:'structural', d:'Rate of the second agent'},
+ {n:5, k:'cp', kind:'structural', d:'Capacity of the job'},
+ {n:3, k:'hs', kind:'structural', d:'Length of the head start'},
+ {n:4, k:'tt', kind:'structural', d:'Total elapsed time (when it is given)'},
+ {n:3, k:'q',  kind:'structural', d:'Which quantity is unknown — time, rate, or capacity'},
+ {n:2, k:'s2', kind:'structural', d:'Is a rate stated directly, or over a different time base?'},
+ {n:2, k:'s3', kind:'structural', d:'Is the answer wanted in the natural unit?'},
+ {n:2, k:'s4', kind:'structural', d:'Is an irrelevant measurement present?'},
+ {n:2, k:'s5', kind:'structural', d:'Does one agent start earlier?'},
+ {n:2, k:'s6', kind:'structural', d:'Does the second agent remove instead of add?'}
+];
+const SPACE=RADIX.reduce((a,r)=>a*r.n,1);
+const fmt=n=>n.toLocaleString('en-US');
+
+function decode(i){const d={};let x=i;
+  for(let j=RADIX.length-1;j>=0;j--){d[RADIX[j].k]=x%RADIX[j].n;x=Math.floor(x/RADIX[j].n);}return d;}
+function encode(d){let x=0;for(let j=0;j<RADIX.length;j++)x=x*RADIX[j].n+d[RADIX[j].k];return x;}
+
+/* ══ build the item and its solution plan ════════════════════ */
+function itemOf(d){
+  const S=SCEN[d.sc],N=NAMES[d.nm];
+  const rA=RA[d.ra];
+  const drain=!!d.s6;
+  let rB=RB[d.rb];
+  if(drain&&rB>=rA-1)rB=Math.max(2,rA-4);          /* keep every item solvable */
+  const net=rA+(drain?-rB:rB);
+  const C=CAP[d.cp], h=d.s5?HS[d.hs]:0, T=TT[d.tt];
+  const q=d.q;
+  const steps=[],ans={};
+  /* stated rate for A: direct, or over a 15-minute base */
+  let aStated;
+  if(d.s2){const per15=rA/4;aStated=N[0]+'’s '+S.a+' '+S.v+' '+(+per15.toFixed(2))+' '+S.u+' every 15 minutes';
+    steps.push({t:'Convert the first rate to a per-hour figure: '+(+per15.toFixed(2))+' '+S.u+' / 15 min × 4 = <b>'+rA+' '+S.u+'/h</b>.',c:1});}
+  else aStated=N[0]+'’s '+S.a+' '+S.v+' '+rA+' '+S.u+' per hour';
+  const bStated=N[1]+'’s '+S.b+' '+(drain?S.w:S.v)+' '+rB+' '+S.u+' per hour';
+  if(drain)steps.push({t:'The second agent <b>removes</b>. The combined rate is a difference, not a sum: '+rA+' − '+rB+' = <b>'+net+' '+S.u+'/h</b>.',c:1});
+  else steps.push({t:'Combine the rates: '+rA+' + '+rB+' = <b>'+net+' '+S.u+'/h</b>.',c:0});
+  if(h)steps.push({t:'The first agent works alone for '+h+' h and moves '+h+' × '+rA+' = <b>'+(h*rA)+' '+S.u+'</b> before the second starts.',c:1});
+  let question,answer,unitOut=' hours';
+  if(q===0){
+    const t=(C-h*rA)/net, total=h+t;
+    steps.push({t:'Remaining work ÷ combined rate: ('+C+' − '+(h*rA)+') ÷ '+net+' = <b>'+(+t.toFixed(3))+' h</b> with both running.',c:0});
+    if(h)steps.push({t:'Add the head start back: '+h+' + '+(+t.toFixed(3))+' = <b>'+(+total.toFixed(3))+' h</b>.',c:1});
+    answer=total;question='How long does the whole '+S.o+' take, from the moment the first '+S.a+' starts?';
+  }else if(q===1){
+    const t=T-h, rb2=(C-h*rA-t*rA)/t;
+    steps.push({t:'The two run together for '+T+' − '+h+' = <b>'+(+t.toFixed(3))+' h</b>.',c:h?1:0});
+    steps.push({t:'Rearrange for the unknown rate: ('+C+' − '+(h*rA)+' − '+(+(t*rA).toFixed(2))+') ÷ '+(+t.toFixed(3))+' = <b>'+(+rb2.toFixed(3))+' '+S.u+'/h</b>.',c:1});
+    answer=rb2;unitOut=' '+S.u+'/h';
+    question='What rate must the second '+S.b+' work at for the '+S.o+' to be finished in exactly '+T+' hours?';
+  }else{
+    const t=T-h, cap=h*rA+t*net;
+    steps.push({t:'The two run together for '+T+' − '+h+' = <b>'+(+t.toFixed(3))+' h</b>.',c:h?1:0});
+    steps.push({t:'Total work = head-start work + joint work: '+(h*rA)+' + '+(+t.toFixed(3))+' × '+net+' = <b>'+(+cap.toFixed(2))+' '+S.u+'</b>.',c:0});
+    answer=cap;unitOut=' '+S.u;
+    question='How large is the '+S.o+', if it is exactly finished after '+T+' hours?';
+  }
+  if(d.s3&&q===0){steps.push({t:'The question asks for <b>minutes</b>: '+(+answer.toFixed(3))+' × 60 = <b>'+(+(answer*60).toFixed(1))+' minutes</b>.',c:1});
+    answer=answer*60;unitOut=' minutes';question=question.replace('How long','How many minutes');}
+  const irrel=d.s4?'The '+S.o+' is '+(2+d.cp)+' metres deep and was commissioned in 20'+(10+d.hs)+'. ':'';
+  ans.value=answer;ans.unit=unitOut;
+  return {S,N,rA,rB,drain,net,C,h,T,q,aStated,bStated,question,steps,ans,irrel,d};
+}
+
+/* ══ rendering ═══════════════════════════════════════════════ */
+let IDX=0, SURF={skin:0,pad:0,scr:0}, SHOW=false, PICK=-1;
+const PAD=[
+ 'The site foreman had asked for this in writing twice. ',
+ 'It was the last job before the inspection on Friday. ',
+ 'Nobody had checked the logbook since the spring. '];
+function order(a,scr){return scr?[a[1],a[0],a[2],a[3]]:a;}
+function render(){
+  const d=decode(IDX), it=itemOf(d);
+  const S=it.S,N=it.N;
+  const parts=[
+    it.aStated+'. ',
+    it.bStated+'. ',
+    it.h?(N[0]+' starts '+it.h+' hour'+(it.h===1?'':'s')+' before '+N[1]+'. '):'',
+    it.irrel
+  ];
+  const body=(SURF.pad?'<span class="pad">'+PAD[d.sc%3]+'</span>':'')+
+    order(parts,SURF.scr).join('')+'<br /><br /><b>'+it.question+'</b>';
+  $('item').innerHTML=body;
+  $('idx').innerHTML='Item <b>'+fmt(IDX)+'</b> of '+fmt(SPACE)+
+    ' &nbsp;·&nbsp; index digits ['+RADIX.map(r=>d[r.k]).join(', ')+']';
+  const F=[];
+  F.push(['structural','q'+it.q+': solve for '+(it.q===0?'time':it.q===1?'rate':'capacity')]);
+  if(d.s2)F.push(['structural','rate on a foreign time base']);
+  if(d.s3&&it.q===0)F.push(['structural','answer in a converted unit']);
+  if(d.s4)F.push(['structural','irrelevant datum present']);
+  if(d.s5)F.push(['structural','head start']);
+  if(d.s6)F.push(['structural','opposing sign']);
+  if(SURF.skin)F.push(['surface','re-skinned']);
+  if(SURF.pad)F.push(['surface','narrative padding']);
+  if(SURF.scr)F.push(['surface','clause order scrambled']);
+  $('flags').innerHTML=F.map(([k,t])=>'<span class="tag '+(k==='structural'?'on':'sf')+'">'+t+'</span>').join('');
+  /* meters */
+  const derive=it.steps.filter(s=>s.c).length;
+  $('ms').textContent=it.steps.length+' steps · '+derive+' derived';
+  $('msn').innerHTML='Counted from the solution plan below: <b>'+it.steps.length+'</b> operations, of which <b>'+
+    derive+'</b> cannot be read off the text and must be derived. Move the difficulty dial and this moves. '+
+    'Press any surface button and it will not.';
+  const words=$('item').textContent.trim().split(/\s+/).length;
+  const lvl=SURF.pad+SURF.scr+SURF.skin;
+  $('mf').textContent=words+' words · '+['low','raised','high','maximal'][lvl];
+  $('mfn').innerHTML='Reading load: <b>'+words+'</b> words'+
+    (SURF.scr?', with the clauses in a non-narrative order — the anagram condition, in prose form':'')+
+    '. Bertsch measured this axis at <b>d = −0.05</b> when it is the only thing that changes.';
+  /* steps */
+  $('steps').innerHTML=it.steps.map(s=>'<li class="'+(s.c?'conv':'')+'">'+
+    (SHOW?s.t:s.t.replace(/<b>.*?<\/b>/g,'<b>…</b>').replace(/[0-9]+(\.[0-9]+)?/g,'·'))+'</li>').join('')+
+    '<li class="conv">'+(SHOW?'<b>Answer: '+(+it.ans.value.toFixed(2))+it.ans.unit+'</b>':'<b>Answer hidden</b>')+'</li>';
+  /* approach options */
+  const wrong=[];
+  if(it.h)wrong.push({t:'Divide the capacity by the combined rate.',trap:'head'});
+  if(it.drain)wrong.push({t:'Add the two rates and divide.',trap:'sign'});
+  if(d.s2)wrong.push({t:'Use the stated figure as a per-hour rate.',trap:'base'});
+  if(d.s3&&it.q===0)wrong.push({t:'Give the answer in hours.',trap:'unit'});
+  if(d.s4)wrong.push({t:'Use the depth figure — it must be there for a reason.',trap:'irrel'});
+  if(!wrong.length)wrong.push({t:'Add the rates, divide the capacity, done.',trap:'none'});
+  const right={t:'Derive each rate in the same unit, net them, subtract any work already done, then solve for the unknown'+(d.s3&&it.q===0?' and convert the unit':'')+'.',trap:'ok'};
+  const opts=[right].concat(wrong.slice(0,2));
+  /* deterministic shuffle by index so it is not always first */
+  const rot=IDX%opts.length;const shown=opts.slice(rot).concat(opts.slice(0,rot));
+  $('opts').innerHTML=shown.map((o,i)=>'<button class="opt'+(PICK===i?' sel':'')+'" data-i="'+i+'" data-trap="'+o.trap+'">'+o.t+'</button>').join('');
+  $('opts').querySelectorAll('button').forEach(b=>b.onclick=()=>{PICK=+b.dataset.i;render();
+    object(b.dataset.trap,it);});
+  if(PICK>=0&&shown[PICK])object(shown[PICK].trap,it);
+  else{$('objA').textContent='Choose an approach above.';$('objB').textContent='Choose an approach above.';}
+}
+function object(trap,it){
+  const N=it.N,S=it.S;
+  const T={
+   head:'You divided the whole '+it.C+' '+S.u+' by the combined rate. But '+N[0]+' had already moved '+
+     (it.h*it.rA)+' '+S.u+' before '+N[1]+' started — the combined rate never applied to that part of the job.',
+   sign:'You added '+it.rA+' and '+it.rB+'. One of those two is going the other way. Adding them describes a '+
+     S.o+' that fills faster than either agent alone, which is the opposite of what the second one does.',
+   base:'The figure in the text is per fifteen minutes, not per hour. Everything downstream of that is four times too small.',
+   unit:'Your number is in hours and the question is in minutes. That is not a rounding issue; it is a factor of sixty.',
+   irrel:'The depth is in the text and is not usable. Nothing in the rate relation refers to it. What in the question makes it relevant?',
+   none:'Say why the rates are allowed to add. That step is doing the work and you have not defended it.',
+   ok:'Before you run it: you have four numbers and the relation uses three. Which one is not in the equation, and how do you know?'};
+  const body=T[trap]||T.none;
+  $('objA').innerHTML='<em>Let me play devil’s advocate for a moment.</em> '+body;
+  $('objB').innerHTML=body;
+}
+
+/* ══ space table + collision measurement ═════════════════════ */
+$('rad').innerHTML=RADIX.map(r=>'<tr><td><b>'+r.k+'</b></td><td class="num">'+r.n+'</td><td>'+
+  '<span class="tag '+(r.kind==='structural'?'on':'sf')+'">'+r.kind+'</span></td><td>'+r.d+'</td></tr>').join('')+
+  '<tr><td><b>product</b></td><td class="num"><b>'+fmt(SPACE)+'</b></td><td></td><td>Distinct index values</td></tr>';
+$('spaceT').textContent=fmt(SPACE)+' addressable items from one template';
+const perDay=(SPACE/365.25).toFixed(0), bday=Math.round(Math.sqrt(2*SPACE*0.001));
+$('spaceS').innerHTML='At one item per day this template alone runs for <b>'+fmt(+perDay)+
+  ' years</b>. Drawing items uniformly at random, you would need about <b>'+fmt(bday)+
+  '</b> of them before there is even a 1-in-1000 chance that any two coincide (birthday bound, computed).';
+(function(){
+  const N=20000,seen=new Set();let s=987654321;
+  for(let i=0;i<N;i++){
+    s=(Math.imul(s,1664525)+1013904223)>>>0;
+    const d=decode(s%SPACE),it=itemOf(d);
+    seen.add([d.sc,d.nm,it.rA,it.rB,it.drain,it.C,it.h,it.T,it.q,d.s2,d.s3,d.s4].join('|'));}
+  const rate=100*seen.size/N;
+  $('coll').innerHTML='<b>Measured, not claimed.</b> 20,000 indices were drawn at random just now and the '+
+   'resulting items hashed on their substantive content. <b>'+fmt(seen.size)+' were distinct ('+rate.toFixed(2)+
+   '%)</b>. The shortfall is real and has a cause: when the question asks for the capacity, the stated capacity '+
+   'digit is unused, and when the second agent drains, some rate digits are clamped to keep the item solvable. '+
+   'So the honest number is “<b>up to '+fmt(SPACE)+'</b>”, and the measured distinctness at this sample size is '+
+   rate.toFixed(2)+'%. A generator that quotes its space size without measuring its collisions is quoting a ceiling.';
+})();
+
+/* ══ wiring ══════════════════════════════════════════════════ */
+const LEVELS=[
+ {q:0,s2:0,s3:0,s4:0,s5:0,s6:0},
+ {q:0,s2:0,s3:0,s4:1,s5:0,s6:0},
+ {q:0,s2:1,s3:0,s4:1,s5:1,s6:0},
+ {q:2,s2:1,s3:0,s4:1,s5:1,s6:1},
+ {q:1,s2:1,s3:1,s4:1,s5:1,s6:1}];
+function applyDial(){
+  const d=decode(IDX),L=LEVELS[+$('dial').value-1];
+  Object.assign(d,L);IDX=encode(d);PICK=-1;render();}
+$('dial').oninput=e=>{$('dialv').textContent=e.target.value;applyDial();};
+$('roll').onclick=()=>{IDX=Math.floor(Math.random()*SPACE);PICK=-1;applyDial();};
+$('recall').onclick=()=>{const v=parseInt(($('jump').value||'').replace(/[^0-9]/g,''),10);
+  if(!isNaN(v)){IDX=((v%SPACE)+SPACE)%SPACE;PICK=-1;
+    const d=decode(IDX);const lv=LEVELS.findIndex(L=>Object.keys(L).every(k=>L[k]===d[k]));
+    if(lv>=0){$('dial').value=lv+1;$('dialv').textContent=lv+1;}
+    render();}};
+$('sf1').onclick=e=>{SURF.skin=1;const d=decode(IDX);
+  d.sc=(d.sc+1)%6;d.nm=(d.nm+5)%12;IDX=encode(d);e.target.classList.add('on');render();};
+$('sf2').onclick=e=>{SURF.pad=1-SURF.pad;e.target.classList.toggle('on',!!SURF.pad);render();};
+$('sf3').onclick=e=>{SURF.scr=1-SURF.scr;e.target.classList.toggle('on',!!SURF.scr);render();};
+$('reveal').onclick=()=>{SHOW=!SHOW;render();};
+IDX=Math.floor(Math.random()*SPACE);applyDial();
+</script>
+</body>
+</html>
