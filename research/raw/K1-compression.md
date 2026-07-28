@@ -3,7 +3,7 @@ title: "Compression — how much of a week is overhead, what the floor is, and t
 wave: K
 section: K1
 date_researched: 2026-07-28
-sources_count: 61
+sources_count: 75
 status: raw-research
 ---
 
@@ -1064,3 +1064,107 @@ load-bearing against its own thesis.
 4. **t_opp measured.** The wall-clock cost of one practice opportunity — read, attempt, feedback,
    process — is the term that converts opportunity counts into hours, and no one has published it.
    Without it, every compression factor in this literature is a conversion away from being real.
+
+---
+
+## 10. Bibliography
+
+Verification key: **[FT]** full text retrieved and quoted · **[AB]** abstract retrieved ·
+**[MD]** metadata only · **[UV]** number quoted in the field but **unverified this session**.
+
+**The time budget and its decomposition**
+1. Fisher, Berliner, Filby, Marliave, Cahen & Dishaw (1980). *Teaching Behaviors, Academic Learning Time, and Student Achievement.* In Denham & Lieberman (eds.), *Time to Learn*, NIE. ERIC **ED192454**. **[FT]**
+2. Babcock & Marks (2011). The Falling Time Cost of College. *Rev. Econ. Stat.* 93(2):468–478. `doi:10.1162/rest_a_00093` · NBER w15954 `doi:10.3386/w15954`. **[FT]**
+3. Karweit (1983). *Time-on-Task: A Research Review.* NIE. `doi:10.1037/e436792004-001`. **[MD]**
+4. Karweit (1988). Time-on-Task: The Second Time Around. *NASSP Bulletin* 72(505):31–39. `doi:10.1177/019263658807250507`. **[MD]** — *note: "Karweit 1984, Time on task reconsidered" does not exist in Crossref.*
+5. Karweit & Slavin (1981). *AERJ* 18(2):157. `doi:10.2307/1162379`. **[MD]**
+6. Pirolli & Card (2007). *Information Foraging Theory.* OUP. `doi:10.1093/acprof:oso/9780195173321`. **[MD]**
+7. US federal credit-hour definition, 34 CFR 600.2. Structural basis for §1.1. **[MD]**
+
+**Prerequisite state, learning rate, and the encoding floor**
+8. **Koedinger, Carvalho, Liu & McLaughlin (2023). An astonishing regularity in student learning rate. *PNAS* 120(13):e2221311120.** `doi:10.1073/pnas.2221311120` · PMC10068755. 1.3 M observations, 27 datasets. **[FT]** — *the load-bearing source of this section.*
+9. Beck & Gong (2013). Wheel-Spinning: Students Who Fail to Master a Skill. AIED, LNCS 7926. `doi:10.1007/978-3-642-39112-5_44`. **[MD]**; threshold restated in Park (2023), *TechTrends*, ERIC EJ1377740 **[AB]**. Prevalence figure **[UV]**.
+10. **Wan & Beck (2015). Considering the Influence of Prerequisite Performance on Wheel Spinning.** EDM 2015, ERIC **ED560558**. 50% vs 10%. **[AB]**
+11. Kai, Almeda, Baker, Heffernan & Heffernan (2018). *JEDM*, ERIC EJ1183799. **[AB]**
+12. Zhang et al. (2019). EDM, ERIC ED599222 — the two wheel-spinning criteria diverge. **[AB]**
+13. González-Esparza et al. (2022). ERIC ED629562, n = 4,217. **[AB]**
+14. Bloom (1974). Time and learning. *American Psychologist* 29(9):682–688. `doi:10.1037/h0037632`. **[MD]** — 5:1 ratio traces to **Glaser (1968)** and **Atkinson (1968)**, relayed via Borg in ED192454 **[FT]**. The 5:1→3:1 shrinkage (Anania, Burke, Arlin) **[UV]**.
+15. Gettinger (1984). *AERJ* 21(3):617. `doi:10.3102/00028312021003617`, N = 171. **[AB]** The "~5× time-needed variation" **[UV]**.
+16. Gettinger (1985). *JEP* 77(1):3–11. `doi:10.1037/0022-0663.77.1.3`. **[AB]**
+17. Carroll (1963). A model of school learning. *Teachers College Record* 64(8):723–733. **[UV]** citation details; ratio model confirmed via [15].
+18. Aleven, Stahl, Schworm, Fischer & Wallace (2003). *RER* 73(3):277–320. `doi:10.3102/00346543073003277`. **[MD]** — **no maladaptive-help fraction obtainable.**
+
+**What compresses: measured**
+19. **Kestin, Miller, Klales, Milbourne & Ponti (2025). AI tutoring outperforms in-class active learning. *Sci Rep* 15:17458.** `doi:10.1038/s41598-025-97652-6` · PMC12179260. 49 vs 60 min; d ≈ 0.63; no time/score correlation. **[FT]** Developer-evaluated **(D)** per B2.
+20. Bjork, Dunlosky & Kornell (2013). *Annu. Rev. Psychol.* 64:417–444. `doi:10.1146/annurev-psych-113011-143823`. 76% of 472 reread/underline. Verified in F11 §6.4.
+21. Dunlosky, Rawson, Marsh, Nathan & Willingham (2013). *PSPI* 14(1):4–58. `doi:10.1177/1529100612453266`. Utility table verified in F11. **[AB]**
+22. Yang, Luo, Vadillo, Yu & Shanks (2021). *Psych. Bulletin*. `doi:10.1037/bul0000309`. 222 studies, 48,478 students, g = 0.499. Carried from F11.
+23. Rowland (2014). *Psych. Bulletin*. `doi:10.1037/a0037559`. g = 0.50. Carried from F11.
+24. Donoghue & Hattie (2021). *Front. Educ.* `doi:10.3389/feduc.2021.581216`. 242 studies, 169,179 participants, mean ES 0.56. Carried from F11.
+25. **Dirkx, Camp, Kester & Kirschner (2019). Do students really prefer repeated rereading over testing? *Memory*.** `doi:10.1080/09658211.2019.1610177`. **[AB]** — the standing challenge to [26].
+26. Karpicke, Butler & Roediger (2009). *Memory* 17(4):471–479. `doi:10.1080/09658210802647009`. N = 177 **[AB]**; the 84%/55% percentages **[UV]**.
+27. Callender & McDaniel (2009). The limited benefits of rereading educational texts. *Contemp. Educ. Psychol.* 34(1):30–41. `doi:10.1016/j.cedpsych.2008.07.001`. **[MD]**
+
+**What does not compress**
+28. **Berres & Erdfelder (2021). The sleep benefit in episodic memory. *Psych. Bulletin* 147(12):1309–1353.** `doi:10.1037/bul0000350`. 823 ES / 271 samples / 177 articles; g = 0.44 → **0.28** corrected. **[AB]**
+29. **Pan & Rickard (2015). Sleep and motor learning: Is there room for consolidation? *Psych. Bulletin* 141(4):812–834.** `doi:10.1037/bul0000009`. 34 articles, 88 groups, 1,296 subjects. **[AB]**
+30. Walker, Brakefield, Morgan, Hobson & Stickgold (2002). *Neuron* 35(1):205–211. `doi:10.1016/S0896-6273(02)00746-8`. The 20% overnight motor gain. **[AB]** — never cite without [29].
+31. Hu, Cheng, Chiu & Paller (2020). TMR meta-analysis. *Psych. Bulletin*. `doi:10.1037/bul0000223`. 91 experiments, N = 2,004, g = 0.29. **[AB]**
+32. **Cepeda, Vul, Rohrer, Wixted & Pashler (2008). A temporal ridgeline of optimal retention. *Psych. Science* 19(11):1095–1102.** `doi:10.1111/j.1467-9280.2008.02209.x`. N > 1,350; gap 20–40% of a 1-week delay → **5–10% of a 1-year delay**. **[AB]** The "21 days" figure **[UV]**.
+33. Cepeda, Pashler, Vul, Wixted & Rohrer (2006). *Psych. Bulletin* 132(3):354–380. `doi:10.1037/0033-2909.132.3.354`. 839 assessments / 317 experiments. **[AB]** — **pooled d not in abstract, not printed here.**
+34. Donovan & Radosevich (1999). Now you see it, now you don't. *J. Appl. Psych.* 84(5):795–805. `doi:10.1037/0021-9010.84.5.795`. 63 studies, d = 0.46; effect larger in low-rigour studies. **[AB]**
+35. **Rohrer & Taylor (2006). Overlearning and distributed practise in mathematics. *Appl. Cogn. Psych.* 20(9):1209–1224.** `doi:10.1002/acp.1266`. N = 216. Exp. 1 = the clean test. **[AB]**
+36. Rohrer & Taylor (2004). The effect of overlearning on long-term retention. *Appl. Cogn. Psych.* `doi:10.1002/acp.1083`. N = 218. **[AB]**
+37. "No Robust Effect of Distributed Practice on … Mathematical Procedures" (2020). *Front. Psychol.* `doi:10.3389/fpsyg.2020.00811`. N = 235. **[AB]** Author list not retrieved.
+38. Macnamara, Hambrick & Oswald (2014). *Psych. Science*. `doi:10.1177/0956797614535810`. Games 26 / music 21 / sports 18 / education 4 / professions < 1%. **[AB]** Corrigendum `doi:10.1177/0956797618769891` **[UV]**.
+39. "Avoiding Surgical Skill Decay: … Spacing of Training Sessions" (2018). *J. Surg. Educ.* `doi:10.1016/j.jsurg.2017.08.002`. 1,955 screened → 11 included. **[AB]**
+40. Laparoscopic radical prostatectomy CUSUM series, N = 90. `doi:10.1186/s12893-026-03577-w`. **[AB]** Illustration only.
+41. Sentinel-node series, N = 337. `doi:10.3390/cancers17233813`. **[AB]** Illustration only.
+
+**Speed records**
+42. **Lesgold, Lajoie, Bunzo & Eggan (1988). *Sherlock: A Coached Practice Environment for an Electronics Troubleshooting Job.* ERIC ED299450 / DTIC ADA201748, `doi:10.21236/ada201748`.** 20–25 h ≈ 4 years OJT. **[FT]**
+43. Katz, Hall & Lesgold (1997). ERIC ED411309. n = 18 / 23 / 13. **[AB]**
+44. Gott et al. (1995). *Tutoring for Transfer of Technical Competence.* ERIC ED382817. 54 technicians; ES 1.27 SD. **[AB]**
+45. Fletcher (2011). *DARPA Education Dominance Program … Digital Tutor Assessments.* DTIC ADA542215, `doi:10.21236/ada542215`. **[AB via NTRL mirror]** — "d = 1.9–3.7" **[UV]**.
+46. Fletcher & Morrison (2014). *Accelerating Development of Expertise.* DTIC AD1002362. 16 wks vs 35 wks vs 9 yrs. **[AB via NTRL]** Sample sizes not stated.
+47. Fletcher (2010). *Phase 1 IWAR Test Results.* DTIC ADA518737, `doi:10.21236/ada518737`. n = 12 vs 12; **human tutors for 14 of 16 weeks**. **[AB]**
+48. Kulik, J. A. (1983). Synthesis of Research on Computer-Based Instruction. *Educational Leadership.* 51 studies; **39–88% learning-time savings**. **[AB]**
+49. Kulik & Kulik (1991). *Comput. Human Behav.* 7(1–2):75–94. `doi:10.1016/0747-5632(91)90030-5`. 254 evaluations. **[MD]** "one-third" **[UV]**.
+50. Anderson, Corbett, Koedinger & Pelletier (1995). *J. Learn. Sci.* 4(2):167–207. `doi:10.1207/s15327809jls0402_2`. **[MD]** LISP-tutor time saving **[UV]**.
+51. VanLehn (2011). *Educ. Psychologist* 46(4):197–221. `doi:10.1080/00461520.2011.611369`. d = 0.79 / 0.76. **[AB]**
+52. Kulik & Fletcher (2016). *RER* 86(1). `doi:10.3102/0034654315581420`. Median 0.66 SD, 50 evaluations. **[AB]**
+53. Kulik, Kulik & Cohen (1979). PSI meta-analysis. *American Psychologist* 34(4):307–318. `doi:10.1037/0003-066x.34.4.307`. 75 studies; **less variation in achievement**. **[AB]** The ~0.5 SD figure **[UV]**.
+54. **US Dept of State / FSI, "Foreign Language Training," state.gov.** Cat I–IV weeks and hours to ILR 3; 23 h class + 17 h self-study/week. **[FT]**
+55. **DLIFLC, dliflc.edu/about/languages-at-dliflc/.** Cat I–II 36 wks, III 48, IV 64. **[FT]** ILR target **[UV]**.
+
+**Intensive formats — the negative corpus**
+56. Scott & Conrad (1992). A Critique of Intensive Courses. ERIC **ED337087**. 110 references, **no pooled ES**. **[AB]**
+57. Harvey, Power & Wilson (2017). *J. Biol. Educ.* 51(3):315–325. `doi:10.1080/00219266.2016.1217912`. Qualitative. **[AB]**
+58. **Seamon (2004). Short- and Long-Term Differences … Intensive and Semester-Length Courses. *Teachers College Record* 106(4):852–874.** Immediate advantage; **3-year follow-up null**. **[AB]**
+59. **Whillier & Lystad (2013). *Anat. Sci. Educ.* 6(4).** `doi:10.1002/ase.1358`. Traditional grades higher, **P = 0.001**; intensive more satisfied. **[AB]**
+60. LaFountain (1995). *Innovative Higher Education* — 6-month follow-up null. **[AB]**
+61. Price (2024). *Decision Sci. J. Innovative Educ.* — mastery measures decline. **[AB]**
+62. Dixon & O'Gorman (2020). *J. Further & Higher Educ.* 44(5):583–595. `doi:10.1080/0309877X.2018.1564024`. **[AB]**
+63. Samarawickrema & Cleary (2021). *Student Success* 12(1):13–23. `doi:10.5204/ssj.1579`. VU Block Model: D+HD **+13.4 pp**; NESB pass 67→83%; low-SES 67→85%; equity gaps narrowed 11→4 pp, 10→3 pp. **No control group, no selection controls**, bundled with wholesale redesign. **[FT]**
+64. Wilson, Roche & Goode (2024). *Higher Education*. `doi:10.1007/s10734-024-01283-1`. Southern Cross Model — **the only institutional study with same-period control cohorts**; Cramér's V weak-to-moderate for block, negligible-to-weak for control; **satisfaction fell**. **[AB]**
+65. DeFeo, Watson, Gerken & Tran (2025). Spillover Effects. *J. Higher Education*. N = 1,457/908 vs 1,231 — downstream biology, concurrent courses and retention all **comparable**. **[AB]**
+66. Austin & Gustafson (2006). *J. Econ. Finance Educ.* 5(1):26–37. 45,000 observations; benefit peaking at 4 weeks. **[UV] — secondhand via [63] only.**
+
+**Polymathy and breadth**
+67. **Zeng, Shen, Zhou, Fan, Di, Wang, Stanley & Havlin (2019). Increasing trend of scientists to switch between topics. *Nat. Commun.* 10:3439.** `doi:10.1038/s41467-019-11401-8`. Topics/career peak at **3–4**; switching ↔ lower citations/paper at every stage. **[FT]**
+68. **Uzzi, Mukherjee, Stringer & Jones (2013). Atypical combinations and scientific impact. *Science* 342(6157):468–472.** `doi:10.1126/science.1240474`. 17.9 M papers; conventional core + atypical tail **2× more likely** to be top-cited; teams **37.7%** more likely than solo authors. **[AB]**
+69. Root-Bernstein et al. (2008). Arts Foster Scientific Success. *J. Psych. Sci. Tech.* 1(2):51–63. `doi:10.1891/1939-7054.1.2.51`. **[MD]** — **odds ratios [UV], not quoted.**
+70. LaMore/Root-Bernstein et al. (2019). *PNAS* 116(6). `doi:10.1073/pnas.1807189116`. N = 225 convenience sample, correlational. **[AB]**
+71. Sala & Gobet. Near and Far Transfer in Cognitive Training: A Second-Order Meta-Analysis. `doi:10.31234/osf.io/9efqd`. **[AB]**
+72. Pan & Rickard (2018). Transfer of test-enhanced learning. *Psych. Bulletin*. `doi:10.1037/bul0000151`. 192 ES, N = 10,382, d = 0.40. Carried from F11.
+
+**Carried from B2 (not re-verified here)**
+73. Bastani, Bastani, Sungu, Ge, Kabakcı & Mariman (2025). *PNAS*. `doi:10.1073/pnas.2422633122`. **−17%** unassisted exam.
+74. Ma, Adesope, Nesbit & Liu (2014). *JEP*. `doi:10.1037/a0037123`. ITS vs individual human tutoring **g = −0.11 (ns)**.
+75. Steenbergen-Hu & Cooper (2014). *JEP*. `doi:10.1037/a0034752`. g = 0.32–0.37; effects shrink in later studies.
+
+**Unreachable this session:** `export.arxiv.org` (empty bodies, all attempts) · `apps.dtic.mil`
+(HTML stub for both citation pages and PDFs; routed via NTIS/NTRL) · `journals.sagepub.com` (403) ·
+`www.nature.com` article HTML (303 to auth; routed via Europe PMC) · `api.semanticscholar.org`
+(429 for most of the session) · Purdue and WUSTL mirrors for [26] (404) · act-r.psy.cmu.edu,
+pact.cs.cmu.edu, cs.cmu.edu mirrors for [50] and [18] (404/403).

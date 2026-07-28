@@ -352,6 +352,159 @@ difficulty, as universally shipped, cannot answer that question about itself.
 
 `INFERENCE`, but tightly constrained by the three cited provisions.
 
+**And there is one measured reason to hold the line that has nothing to do with law.**
+`MEASURED-QUASI` — Sahli Lozano, Brandenberg, Ganz & Wüthrich (2022), *Educational Research
+and Evaluation* 27(5–6), DOI 10.1080/13803611.2022.2103571, multilevel analysis across **110
+lower-secondary classes**: students with *"reduced learning objectives […] or individual
+support by a special education teacher get systematically underestimated by their teachers
+regarding their cognitive abilities, **although this is NOT the case for students receiving
+accommodations**."* **Modifications carry a measurable teacher-expectancy penalty;
+accommodations do not.** The distinction practitioners defend so fiercely turns out to have an
+effect size attached to it.
+
+### 2.6b Do accommodations actually work? The evidence is far weaker than the practice
+
+This is the largest null-result cluster in the report and it is uncomfortable, because
+accommodations are the single most widely deployed intervention in American special education.
+
+**The "interaction hypothesis" — that an accommodation helps students with disabilities and
+not others — did not survive testing.** `MEASURED-META` — Sireci, Scarpati & Li (2005),
+*Review of Educational Research* 75(4):457–490, DOI 10.3102/00346543075004457, verbatim:
+*"Consistent conclusions were not found across studies… But two consistent findings emerged:
+**Extended time tended to improve the performance of all students**, although students with
+disabilities tended to exhibit relatively greater score gains; and oral accommodations on math
+tests were associated with increased test performance for **some** students with
+disabilities."* The field retreated to the weaker "differential boost" claim — the
+accommodation helps *both* groups but helps disabled students *more*.
+
+**Even the weaker claim holds only about a third to a half of the time.** `MEASURED` (review
+tallies, via NCEO Report 412, ERIC ED600669): Kettler (2015) found differential boost supported
+in **8 of 19** extended-time tests (42%), **11 of 19** oral-delivery tests (58%), **6 of 9**
+accommodation bundles (67%). Lane & Leventhal (2015), verbatim: *"of the **11 studies**
+examining the possibility of differential boosts for students with disabilities using
+accommodations, **four studies** reported evidence demonstrating differential boosts"* — 36%,
+falling to **30%** for middle/high school and **30%** for mathematics.
+
+**The differential for extended time is small enough to be a validity problem.**
+`MEASURED-META` — Chiu & Pearson (1999), ERIC ED433362, k = 30 studies: target population
+(students with disabilities plus English learners) **g = 0.16**; general-education students
+**g = 0.06**; **differential 0.10**. By accommodation type, the *relative* effect for
+extended time was **+0.07**; response-format accommodations **−0.11** and accommodation
+combinations **−0.17** — i.e. general-education students benefited *more*. `INFERENCE` — on a
+target-group extended-time effect of roughly 0.31–0.37 against a differential of 0.07,
+approximately **80% of the extended-time boost accrues to students without disabilities.**
+That is not an accommodation; that is a change to the test.
+
+**Two large meta-analyses return overall nulls.**
+
+`MEASURED-META` — Kieffer, Lesaux, Rivera & Francis (2009), *Review of Educational Research*
+79(3):1168–1201, DOI 10.3102/0034654309332490 (numbers from the identical technical-report
+version, Francis et al. 2006, ERIC ED517792). **37 randomized samples, 7 accommodations**,
+fixed effects:
+
+| Accommodation | k | g | 95% CI | p |
+|---|---|---|---|---|
+| English dictionary/glossary | 11 | **.146** | [.063, .230] | **.001** |
+| Simplified English | 15 | .020 | [−.064, .104] | .637 **null** |
+| Extra time | 2 | .209 | [−.069, .488] | .141 **null** |
+| Bilingual dictionary/glossary | 5 | −.096 | [−.223, .031] | .139 **null** |
+| Spanish version | 2 | **−.263** | [−.463, −.062] | **.010 negative** |
+| **OVERALL** | **37** | **.034** | **[−.016, .084]** | **.180 null** |
+
+Authors' verdict, verbatim: *"**The results in Table 2 tell a somewhat disheartening story. Of
+the seven types of accommodations used, only one had an overall positive effect on ELL
+outcomes.**"* And a moderator finding that should chasten any bundling instinct: the one
+effective accommodation got **worse** when combined with the popular one — English dictionary
+*without* extra time g = .238, *with* extra time g = .074.
+
+`MEASURED-META` — Rios, Ihlenfeldt & Chavez (2020), *Educational Measurement: Issues and
+Practice*, ERIC EJ1276694. **26 studies, 95 effect sizes, N = 11,069.** Overall +0.16 SD, but
+verbatim: *"**none of the accommodations investigated were found to have intervention effects
+that were statistically different from zero**."* Conclusion: currently employed accommodations
+*"lack evidence of their effectiveness."*
+
+**Read-aloud is the strongest case, and it inverts with age.** `MEASURED-META` — Li (2014),
+*EMIP* 33(3), DOI 10.1111/emip.12027, 114 effect sizes across 23 studies: both groups
+benefited, the disability effect significantly larger, stronger for reading than mathematics.
+Buzick & Stone (2014), *EMIP* 33(3), DOI 10.1111/emip.12040, verbatim: *"the read aloud
+accommodation increases reading test scores for **both groups, but more so for students with
+disabilities**, and […] mathematics score gains… are **small for both**."*
+
+But the primary studies keep returning nulls, and one returns a reversal:
+
+- `MEASURED` **Meloy, Deville & Frisbie (2002)**, ERIC EJ652089, N = 260: *"Students with
+  learning disabilities in reading, **as well as those without**, exhibited statistically
+  significant gains with the read aloud test administration. **Interaction effects were not
+  significant.**"*
+- `MEASURED` **Elbaum, Arguelles, Campbell & Saleh (2004)**, *Exceptionality* 12(2), N = 311
+  (230 with LD): *"students' test performance **did not differ in the 2 conditions**, and
+  **students with LD did not benefit more from the accommodation than students without LD.**
+  However, students with LD… were **almost twice as likely** as students without LD to show a
+  substantive change in test performance **in either the positive or negative direction**."*
+- `MEASURED` **★ Elbaum (2007)**, *Journal of Special Education* 40(4), ERIC EJ758191, N = 625
+  secondary students (388 with LD), oral accommodation on mathematics: *"**students without
+  disabilities benefited significantly more from the accommodation (ES = 0.44) than students
+  with LD (ES = 0.20).**"* Her pooled analysis found the boost favours LD students at
+  elementary level and *"for **secondary** students, **the converse was true**."*
+  **Differential boost inverts with age.**
+- `MEASURED` **McKevitt & Elliott (2003)**, ERIC EJ823576: accommodation packages *"had
+  **minimal benefit** […] and **did not differentially benefit one group of students over
+  another**,"* with the authors noting *"**reading aloud a reading test may have an
+  invalidating effect**."*
+- `MEASURED` **Fuchs, Fuchs, Eaton, Hamlett, Binkley & Crouch (2000)**, ERIC EJ613002, N = 181
+  LD + 184 non-LD: LD students *"profited differentially from reading aloud **but NOT from
+  extended time or large print**."*
+
+**For balance, the one clean positive.** `MEASURED-RCT` — Fletcher et al. (2006), *Exceptional
+Children*: grade-3 students with dyslexic decoding difficulty versus average decoders,
+randomly assigned. *"**Only** students with decoding problems benefited… a significant increase
+in average performance and a **7-fold increase in the odds of passing**."* The interaction
+hypothesis held — **with a narrowly and objectively defined deficit and an accommodation
+targeted precisely to that deficit.** That is the specification under which accommodations
+work, and it is not how they are assigned.
+
+**Because assignment is at chance.** `MEASURED` — **★ Helwig & Tindal (2003)**, *Exceptional
+Children* 69(2), ERIC EJ659301, **N = 1,218** (973 general education, 245 special education),
+experimental: *"**Teachers were no more successful than chance at predicting which students
+would benefit from the accommodation. A developed student profile did not match accommodation
+outcomes.**"*
+
+**And the reason profiling cannot fix it is structural.** `MEASURED-RCT` — Ketterlin-Geller,
+Yovanoff & Tindal (2007), *Exceptional Children*, ERIC EJ757111: grade-3 mathematics —
+lower-reading students differentially benefited from read-aloud **only on items with high
+mathematics difficulty *and* high linguistic complexity**, and did not benefit at all from
+simplified language. `INFERENCE` — **benefit is item-conditional, not student-conditional.** A
+student-level blanket assignment is mis-specified by construction, and no amount of better
+learner modelling repairs a mis-specification of that kind.
+
+Corroborating the practice gap: `OBSERVED` — Weis, Dean & Osborne (2016), *Journal of Learning
+Disabilities* 49(5), DOI 10.1177/0022219414559648, document audit: *"**Many of their
+recommendations for accommodations were not supported by objective evidence** from students'
+history, diagnosis, test data, and current functioning… **clinicians often recommended
+accommodations that were not specific to the student's diagnosis or area of disability.**"* And
+Crawford & Ketterlin-Geller (2013), ERIC EJ995079, interviews with 20 special-education
+teachers across five states: *"a **general lack of knowledge about the theoretical and
+empirical basis** for making accommodation assignment decisions."*
+
+**A documented federal absence.** `OBSERVED` — the What Works Clearinghouse product catalogue
+at `ies.ed.gov/ncee/wwc/` (HTTP 200) lists **all 30 Practice Guides** from 2007 to December
+2024. **None addresses testing or instructional accommodations for students with
+disabilities.** The catalogue holds 619 Intervention Reports and 1,949 study reviews, with 509
+tagged to the "Children and Youth with Disabilities" population facet — and **no accommodations
+topic in the taxonomy at all.** `INFERENCE` on the mechanism: WWC review protocols are built
+for between-subjects intervention designs, while the accommodations literature is dominated by
+within-subject counterbalanced designs that fall outside WWC group-design standards. The
+federal evidence clearinghouse has certified nothing about a practice applied to millions of
+students every year.
+
+**What this means for the survey, stated without softening.** `survey/04` argues that AI's job
+at the margin is fidelity and dosage of known-good intervention. **Accommodations are not
+known-good intervention.** They are a legally mandated, universally deployed practice with a
+weak, inconsistent, sometimes-reversed evidence base, assigned by professionals performing at
+chance, conferring benefit that is conditional on item properties nobody profiles. An AI that
+faithfully delivers a student's accommodations is doing something legally required and
+evidentially unsupported, and the survey should say both halves. `INFERENCE`.
+
 ### 2.7 Progress reporting
 
 §300.320(a)(3) requires the IEP to state *how* progress toward each annual goal will be
@@ -444,9 +597,59 @@ Four structural differences, all of which a coordinator will name:
 ### 3.3 The exhaustion question — and why it changed
 
 The practically important interaction is: when must a family run IDEA's due process
-machinery before suing under 504/ADA? Two Supreme Court decisions govern (*Fry* 2017;
-*Perez* 2023). This is assigned to the case-law strand — see §4 and the case-law block —
-and is stated there rather than here to keep the citations in one place.
+machinery before suing under 504/ADA? Two Supreme Court decisions govern — *Fry* (2017)
+supplies a **gravamen** test and *Perez* (2023) an independent **remedy-availability** test.
+Both are set out with verbatim holdings at **§10.5**, with the consequence that a family
+seeking damages may bypass IDEA's administrative process entirely.
+
+**The verbatim 504 provisions**, for the record, because practitioners argue about them and
+paraphrases drift. `STATUTE` — eCFR snapshot 2026-07-01:
+
+**§104.33(b)(1)** — the 504 definition of appropriate education:
+
+> "the provision of regular or special education and related aids and services that (i) are
+> designed to meet individual educational needs of handicapped persons **as adequately as the
+> needs of nonhandicapped persons are met** and (ii) are based upon adherence to procedures
+> that satisfy the requirements of §§ 104.34, 104.35, and 104.36."
+
+And **§104.33(b)(2)**: *"Implementation of an Individualized Education Program developed in
+accordance with the Education of the Handicapped Act is **one means** of meeting the standard."*
+Note the comparative standard — 504 asks whether the child's needs are met *as adequately as*
+a nondisabled child's. That is a different question from IDEA's *Endrew F.* progress standard,
+and it is why a 504 plan is not a small IEP but a different instrument answering a different
+question.
+
+**§104.34(a)** — the 504 LRE analogue, materially identical in structure to §300.114(a)(2):
+
+> "A recipient shall place a handicapped person in the regular educational environment operated
+> by the recipient **unless it is demonstrated by the recipient that the education of the person
+> in the regular environment with the use of supplementary aids and services cannot be achieved
+> satisfactorily.**"
+
+**§104.35(b)(1)** — evaluation, and note the wording, which is *tighter* than IDEA's on
+instrument validity:
+
+> "Tests and other evaluation materials have been **validated for the specific purpose for which
+> they are used** and are administered by trained personnel **in conformance with the
+> instructions provided by their producer**."
+
+**§104.36** — the entire procedural regime, in one sentence:
+
+> "A recipient […] shall establish and implement, with respect to actions regarding the
+> identification, evaluation, or educational placement of persons who, because of handicap, need
+> or are believed to need special instruction or related services, **a system of procedural
+> safeguards that includes notice, an opportunity for the parents or guardian of the person to
+> examine relevant records, an impartial hearing with opportunity for participation by the
+> person's parents or guardian and representation by counsel, and a review procedure.**
+> Compliance with the procedural safeguards of section 615 of the Education of the Handicapped
+> Act is **one means** of meeting this requirement."
+
+**Compare the length.** IDEA's procedural safeguards run from §300.500 to §300.536 — 37
+sections. Section 504's run to one sentence with four elements. **There is no PWN equivalent in
+Part 104, no 60-day clock, no composed team, no stay-put, and no IEE-at-public-expense right.**
+A district may voluntarily import IDEA's procedures, and many do — but where it has not, a
+system built to IDEA's procedural assumptions will demand artefacts that do not exist and that
+nobody is obliged to produce.
 
 ### 3.4 The ADA Title II web rule — and the date almost every secondary source has wrong
 
@@ -1019,9 +1222,759 @@ pathologist, or remedial reading teacher."*
 
 ---
 
-*(Sections 7–12 follow: caseload and workload; escalation and safeguarding; the
-coordinator's week; the ownership table; the null-results ledger; and what `survey/04` must
-say. Case-law block at §10.)*
+---
+
+## 7. Caseload, workload, and where the time actually goes
+
+This is the reality check, and it is where the largest practical finding in this report sits.
+
+### 7.1 The population being served
+
+`OBSERVED` — U.S. Department of Education, OSEP, **IDEA Section 618 Part B Child Count and
+Educational Environments, SY 2023–24**, Table 1 and Table 3, retrieved from data.ed.gov on
+2026-07-28.
+
+| Measure | SY 2023–24 |
+|---|---|
+| Children and students served under IDEA Part B, **ages 3–21** | **7,892,433** |
+| Students served, ages 5 (in kindergarten) through 21 | 7,304,525 |
+| Ages 3–5 (not in kindergarten) | 587,908 |
+| Ages 18–21 | 321,867 |
+
+Disability distribution, ages 5(K)–21, SY 2023–24:
+
+| Category | Count | Share |
+|---|---|---|
+| Specific learning disabilities | **2,445,500** | 33.5% |
+| Speech or language impairments | **1,298,318** | 17.8% |
+| Other health impairments | **1,197,312** | 16.4% |
+| Autism | 998,348 | 13.7% |
+| Intellectual disabilities | 419,334 | 5.7% |
+| Emotional disturbance | 317,641 | 4.3% |
+| Developmental delay | 297,478 | 4.1% |
+| Multiple disabilities | 123,735 | 1.7% |
+| Hearing impairments | 63,296 | 0.9% |
+| Orthopedic impairments | 27,010 | 0.4% |
+| Traumatic brain injury | 23,668 | 0.3% |
+| Visual impairments | 23,113 | 0.3% |
+| Deaf-blindness | 1,795 | 0.02% |
+
+**Three categories are two-thirds of the caseload.** SLD, speech/language and other health
+impairment together are **4,941,130 students — 67.6%** of the 5–21 count. `MEASURED` (my
+arithmetic on the OSEP file.) A product designed around the categories that dominate the
+public imagination is designed for the last third.
+
+`OBSERVED` — NCES, *Condition of Education*, "Students With Disabilities," last updated May
+2024: *"In 2022–23, the number of students ages 3–21 who received special education and/or
+related services under the Individuals with Disabilities Education Act (IDEA) was 7.5 million,
+or the equivalent of **15 percent of all public school students.** Among students receiving
+special education and/or related services, the most common category of disability was specific
+learning disabilities (32 percent)."*
+
+NCES Digest table 204.30 gives the same year as **7,526,000 served, ages 3–21 = 15.2% of total
+public enrolment**, up from 13.0% in 2010–11 and 14.1% in 2018–19. Computed directly from the
+§618 CSVs: **2023–24 = 7,783,464** across the 50 states and DC (New Mexico suppressed), and
+**2024–25 = 8,081,816** across all 51. `MEASURED` / `INFERENCE` on the recomputation, which was
+validated by reproducing the published 2022–23 figure to within 59 students.
+
+**This corrects `survey/04`.** The section says "roughly one child in seven" (14.3%). The
+published figure is **15.2%** and the count has risen from 7.53M to **8.08M** in two years.
+**"About one in six, and rising"** is the accurate phrasing.
+
+**And it excludes every Section 504-only student — who are not in this count at all, and whose
+numbers have doubled.** `MEASURED` — ED Office for Civil Rights, Civil Rights Data Collection
+national estimations (`b_DIS5Count`):
+
+| CRDC year | Enrolment | IDEA | **504-only** | 504-only % |
+|---|---|---|---|---|
+| 2011–12 | 49,756,058 | 6,082,307 | 760,114 | 1.53% |
+| 2015–16 | 50,574,476 | 6,352,285 | 1,156,811 | 2.29% |
+| 2017–18 | 50,922,401 | 6,728,064 | 1,380,146 | 2.71% |
+| **2020–21** (latest published) | 49,150,566 | 6,853,313 (13.94%) | **1,605,564** | **3.27%** |
+
+**Section 504-only enrolment has grown 2.11× in nine years.** IDEA plus 504 combined in 2020–21
+is **8,416,507**. This is a caseload channel with no IDEA procedural machinery, no federal
+personnel count, and no dedicated funding — and it is the fastest-growing part of the
+population a product in this space will serve.
+
+**One further distribution fact that changes where the work happens.** `OBSERVED` — NCES
+*Condition of Education*, 2022–23: **67%** of school-age students served under IDEA spend **80%
+or more of the day in general education classes**, up from 61% in 2012. State prevalence ranges
+from **12%** (Idaho, Hawaii) to **21%** (Pennsylvania, New York, Maine); Puerto Rico is 37%;
+males 18% versus females 10%. **Two-thirds of the caseload is mostly in the general-education
+room**, which means the special educator's load is disproportionately *consultative* — and
+consultation is the §300.323(d)(2) duty to inform every teacher of every accommodation, for
+every child, every time anything changes.
+
+### 7.2 Where the hours go — the SPeNSE Paperwork Substudy
+
+The best empirical answer to "what fraction of the week is instruction versus paperwork" is
+still a federal study from 2002, which is itself a finding about how little anyone has measured
+since.
+
+`MEASURED` (national probability survey) — **Study of Personnel Needs in Special Education
+(SPeNSE), Final Report of the Paperwork Substudy**, Westat for the Office of Special Education
+Programs, U.S. Department of Education, 2002. ERIC **ED479674**. Subsample **n = 972** special
+education teachers drawn from the main SPeNSE interview sample.
+
+**The headline numbers:**
+
+| Finding | Value |
+|---|---|
+| Time on administrative duties and paperwork | **median 5 hours/week, mean 6 hours/week** |
+| Time *available* in the school week for it | **4 hours/week** |
+| **The gap** | *"there was a two-hour discrepancy between the number of hours teachers needed to complete their administrative duties and paperwork and the number of hours they actually had available"* |
+| Class coverage granted for paperwork | **2 days per year** (= 0.07 hours/week) |
+| Time in the school day for paperwork | **50 minutes** |
+| Teachers with **no** help from a paraprofessional, volunteer, or secretary | **50%** |
+| Said paperwork interfered with teaching to a **moderate or great** extent | **88%** |
+| Said routine duties and paperwork interfered **to a great extent** (2000 SPeNSE survey) | **53%** |
+| Share of time on forms and administrative paperwork | *"over 10 percent"* |
+| Rank of paperwork among teachers' concerns | **third**, behind caseloads and planning time |
+
+**The per-task breakdown**, verbatim from the report:
+
+> "2 hours on each IEP (range: 0 to 30 hours) […] 1.5 hours attending each IEP meeting […]
+> 4 hours per month printing or copying special education forms […] 2 hours per month scheduling
+> IEP meetings […] 1 hour per month mailing notices to parents […] and 4 hours per month tracking
+> paperwork from other teachers that is required for the IEP process."
+
+Plus: **8 hours** to complete each cycle of written parent progress reports, which are due on
+average **every 7 weeks** — and **80%** of special education teachers reported their progress
+reports contain more detail than reports for nondisabled students. Behaviour work adds 5
+hours/month on behaviour logs, 2 on behaviour intervention plans, 2 on functional behavioural
+assessments. Of the 35% who conduct initial evaluations: 7.5 hours/month administering plus 4.2
+reviewing. Of the 51% who conduct triennials: 5 plus 3.
+
+**The caseload arithmetic, which is the number to carry:**
+
+> "On average, teachers spent **0.4 hours per week per child** on administrative duties and
+> paperwork for children they taught. That figure was **0.6 hours per week for children for whom
+> they served as case manager** […] The case management function was clearly tied to paperwork
+> responsibilities."
+
+Apply that to California's statutory cap. **34 CFR** has no caseload cap; California does.
+
+`STATUTE` — **California Education Code §56362(c)**, current text as amended by AB 560 (Stats.
+2025, Ch. 560), effective January 1, 2026, verbatim:
+
+> "Caseloads for resource specialists shall be stated in the local policies developed pursuant to
+> Section 56195.8 and in accordance with regulations established by the board. **A resource
+> specialist shall not have a caseload that exceeds 28 pupils.**"
+
+28 case-managed children × 0.6 hours/week = **16.8 hours per week of administrative work at a
+legal maximum caseload** — against 4 hours available. The SPeNSE mean of 5–6 hours/week is
+therefore not a measure of the work required; **it is a measure of how much of the required work
+gets done.** `INFERENCE` — and it reframes the entire question. The paperwork burden is not
+"teachers spend too long on forms." It is that the forms are being triaged, and the triage is
+invisible.
+
+### 7.2b The observational study, which is worse than the self-report
+
+`MEASURED` (direct observation) — **Vannest & Hagan-Burke, "Special Education Teacher Time Use
+in Four Types of Programs," *Journal of Educational Research* (2011)**, DOI
+10.1080/00220671003709898. Direct observation plus one-hour interval self-report; **more than
+7,000 data points, 31 teachers, 24 schools, 9 districts**, across one academic year, with
+interrater reliability established using concurrent observers. Verbatim:
+
+> "**only 20% of class time spent on academic instruction and nearly 17% spent on special and
+> general education paperwork.**"
+
+Companion studies from the same programme: *Teacher Time Use in Special Education*, *Remedial
+and Special Education* (2010), DOI 10.1177/0741932508327459 — **36 teachers, 2,200 hours**
+logged; and *Measuring Time*, *Journal of Special Education* (2010), which finds that roughly
+**10 days of sampling** are needed for a stable time-use estimate.
+
+**Twenty per cent of class time on academic instruction, measured by observers rather than by
+memory.** That is the number `survey/04` is implicitly assuming away.
+
+### 7.2c Three professions, two decades, one convergent estimate
+
+| Source | Method | Documentation share |
+|---|---|---|
+| SPeNSE (2002), n = 972 special ed teachers, nationally weighted | Self-report | **~12–13%** of a 40-hour week (5 h median) |
+| Vannest & Hagan-Burke (2011), 31 teachers, >7,000 data points | **Direct observation** | **~17%** |
+| ASHA Schools Survey (2024), n = 2,347 SLPs | Self-report | **15%** (6 of 40 hours) |
+
+**Independent methods, two decades apart, three professions, converging on 13–17% of
+professional time going to documentation — and the observational study, the one that does not
+rely on memory, returns the highest figure.** `MEASURED` / `MEASURED-META` on the convergence.
+
+### 7.2d Speech-language pathology, where the caseload-versus-workload distinction was invented
+
+`MEASURED`/`OBSERVED` — **ASHA 2024 Schools Survey**. Stratified random sample of 15,000
+ASHA-certified SLPs; 14,628 eligible; **3,749 respondents, 25.6% response rate** — itself down
+from 69.7% in 2004, which is a datum about the profession.
+
+- **Median actual monthly caseload: 50** (range 4–351, n = 2,815).
+- **Median caseload SLPs consider *manageable*: 40** (range 0–200, n = 2,776).
+- **The 50-versus-40 gap is the entire workload argument, quantified.**
+- Twenty-year trend: 50 (2004–2010) → 47–48 → **back to 50 in 2024**. No net progress.
+- State extremes: **Indiana 78**, **New York 32** — and New York is the state whose regulation
+  caps SLP caseload at 65 (below).
+- **80%** are required to make up missed sessions.
+
+Weekly hours by activity (n = 2,347): direct intervention **23** (57.5%); **documentation 6
+(15%)**; diagnostic evaluations 4; collaborative consultation 3; supervision and other 4.
+Corroborating: Katz et al. (2010), *LSHSS*, n = 634 full-time SLPs across 49 states — mean
+caseload **49**, and at the 41–50 band roughly **60%** already describe it as unmanageable.
+
+### 7.2e School psychologists — the assessment engine
+
+`MEASURED` — NASP Research Reports (Affrunti), computed from NCES Common Core of Data FTE
+counts. **NASP's recommended ratio is 1:500.**
+
+| School year | National students-per-school-psychologist ratio |
+|---|---|
+| 2019–20 | 1,211:1 |
+| 2020–21 | 1,151:1 |
+| 2021–22 | 1,127:1 |
+| 2022–23 | 1,119:1 |
+| 2023–24 | 1,065:1 |
+| **2024–25** | **1,071:1** |
+
+NASP on the latest year: the ratio *"essentially remained the same."* **Only 3 of 51
+jurisdictions meet 1:500** (Connecticut, Puerto Rico, District of Columbia); some states
+approach 1:5,000. Practitioner-reported ratios run higher still — 2020 NASP Membership Survey,
+full-time school-based psychologists, n = 993: mean **1,233** (SD 1,285, range 0 to 16,667).
+
+**And the volume of evaluations each one carries.** `MEASURED` — 2020 NASP Membership Survey
+Part 2 (Farmer et al. 2021), school-based n = 1,006: **55 evaluations per year on average
+(median 50)** — mean 23.5 initial plus 31.5 reevaluations. **88%** report spending *"a great
+deal of their time"* completing evaluations; **78%** are involved in IEP-meeting-related work.
+Psychologists serving more than 700 students showed practice significantly less consistent with
+the NASP Practice Model.
+
+Set that against the 60-day statutory clock in §300.301(c)(1). **Fifty-five evaluations a year,
+each on its own clock, at a national ratio more than double the professional recommendation.**
+That is the resource the whole eligibility system runs on.
+
+### 7.2f What the federal government said about this in 2002, and never fixed
+
+`OBSERVED` — **President's Commission on Excellence in Special Education (2002)**, ERIC
+ED473830, verbatim:
+
+> "Special education teachers feel excessive paperwork interferes with their ability to serve
+> children with disabilities more effectively… **The typical special education teacher spends
+> five hours per week completing forms and doing administrative paperwork. Moreover, special
+> educators spend more time on paperwork than grading papers, communicating with parents,
+> sharing expertise with colleagues, supervising paraprofessionals and attending IEP meetings
+> combined.**"
+
+And the diagnosis of where the load comes from: documentation *"driven by the more than **814
+federal monitoring requirements** for state and local special education programs to comply with
+IDEA."*
+
+### 7.3 California, and the fact that most of the country has no cap at all
+
+`STATUTE` — **Cal. Ed. Code §56362(f)**: *"At least 80 percent of the resource specialists within
+a local plan shall be provided with an instructional aide."* And, added by AB 560 in 2025, new
+subsection **(g)**: *"Local educational agencies shall take all reasonable steps to distribute the
+workload associated with initial assessments across all resource specialists employed by the
+local educational agency in an equal manner, unless otherwise collectively bargained."*
+
+**A state legislature passed a law in 2025 requiring districts to share out assessment
+workload fairly.** Legislatures do not legislate on problems that are not happening.
+
+More striking: **AB 560 also added Ed. Code §56364.3**, which requires the State Superintendent,
+*"on or before July 1, 2027,"* to *"**recommend** a maximum adult-to-pupil staffing ratio for
+special classes […] for pupils 3 to 22 years of age"* — after consulting current special-class
+teachers, administrators, paraprofessionals, parents, researchers and disability-rights
+advocates, and after considering *"other states' adult-to-pupil ratios for special classes"* and
+*"the effects on the education of pupils with disabilities in the least restrictive environment,
+as required by the federal Individuals with Disabilities Education Act."* `STATUTE`
+
+**Read that plainly. In 2026, the most heavily regulated special-education system in the United
+States has no staffing ratio for its most restrictive settings, and has just told its
+Superintendent to go and *recommend* one by 2027.** That is a documented systemic gap in the
+one place a builder would most expect a rule to exist.
+
+**There is no federal caseload cap, and this was verified rather than assumed.** The full text
+of 34 CFR Part 300 was pulled from the eCFR API and searched: `caseload` **0 occurrences**,
+`class size` **0**, `student-teacher ratio` **0**. The 20 hits for "ratio" are all *risk ratio*
+in §300.647 (significant disproportionality). `STATUTE` (verified absence).
+
+**Where caps do exist, they are state law and they vary by an order of magnitude.**
+
+`STATUTE` — **New York, 8 NYCRR §200.6**, the strictest regime located:
+- §200.6(d)(1): *"The total number of students with disabilities assigned to a consultant
+  teacher **shall not exceed 20**."*
+- §200.6(e)(2): speech and language — *"the total caseload of such students for teachers
+  providing such services **shall not exceed 65**."*
+- §200.6(f)(5): resource room caseload **20** (**25** in grades 7–12); §200.6(f)(3):
+  instructional group **5**.
+- §200.6(g)(1): integrated co-teaching — *"the number of students with disabilities in such
+  classes **shall not exceed 12 students**."*
+- §200.6(h)(4): special class **15**; **12** with management needs plus supplementary personnel;
+  **8** intensive; **6** highly intensive; **12** for severe multiple disabilities with an
+  additional **1:3** staff-to-student ratio.
+- §200.6(h)(5): *"The chronological age range within special classes of students with
+  disabilities who are less than 16 years of age **shall not exceed 36 months**."*
+- New York City receives a **+50%** variance on all of these.
+
+`STATUTE` — **Illinois, 23 Ill. Adm. Code §226.730(b)** (amended 47 Ill. Reg. 2244, effective
+6 February 2023): **15:1** where students are in special education ≤20% of the day; **10:1** for
+>20–60%; **8:1** for >60%; **5:1** for ages 3–5 — each expandable by +2/+5/+5/+5 with a
+paraprofessional assigned to the class for its entirety. And §226.730(a) requires general
+education classes to be *"composed of students of whom at least 70 percent are without IEPs."*
+
+`STATUTE` — **Illinois §226.735(c)**, the only explicit *workload* construction found in any
+state code, and the one worth copying:
+
+> "The number of children served by a speech and language pathologist shall be based on the
+> speech-language needs of each child. The other provisions of this Section notwithstanding,
+> **at no time shall the caseload of a speech and language pathologist exceed 60 students.**"
+
+§226.735(b) requires the workload limit to be built from *"1) individualized instruction;
+2) consultative services…; 3) attendance at IEP meetings and other staff conferences; and
+**4) paperwork and reporting**."* **An American state regulator has written paperwork into a
+statutory workload formula.** That is the closest thing in US law to an acknowledgement that
+documentation is part of the job rather than an overhead on it.
+
+`STATUTE` — **California §56363.3** (speech-language): *"The average caseload for language,
+speech, and hearing specialists in special education local plan areas **shall not exceed 55
+cases**, unless the local plan specifies a higher average caseload and the reasons for the
+greater average caseload."*
+
+**And the states with no numeric special-education cap at all**, each verified by full-text
+search of the relevant code rather than by absence of a citation:
+
+| State | What was searched | Result |
+|---|---|---|
+| **Texas** | 19 TAC Ch. 89 Subch. AA & D; TEC Ch. 29 & 30 | **0 hits.** Only "ratio" language is 19 TAC §89.1005(a)(1), listing *"reduction of ratio of students to instructional staff"* as an **example of a service**, not a limit. Generic caps only: TEC §25.112 = 22 (PreK–4) |
+| **Florida** | All **136** rules in FAC Ch. 6A-6 enumerated | No class-size or caseload rule exists; the historical programme rules (6A-6.03015, .03021, .03025, .0312) are all **repealed**. Generic §1003.03 F.S. caps only |
+| **Washington** | WAC 392-172A (~5,000 lines) and RCW 28A.155 | `caseload` **0**, `class size` **0**. Washington's numbers are *funding* assumptions in RCW 28A.150.260, not caps |
+| **Oregon** | All 177 rules of OAR Ch. 581 Div. 15 | None found |
+
+**So: the federal government, Texas, Florida, Washington and Oregon place no numeric limit on
+how many children one special educator may be responsible for.** `STATUTE` (verified absence).
+
+`STATUTE` — the SELPA structure `survey/04` names: **Cal. Ed. Code §56195** — *"Each special
+education local plan area, as defined in subdivision (d) of Section 56195.1, shall administer
+local plans […] and shall administer the allocation of funds."* **§56205(a)** requires each SELPA
+to have in effect policies consistent with state and federal law on FAPE, full educational
+opportunity, child find and referral, IEPs, **least restrictive environment**, procedural
+safeguards, annual and triennial assessments, confidentiality, Part C transition, private-school
+children, and compliance with IDEA, Section 504 and the ADA. A SELPA is, in law, a **compliance
+and funding administration layer** — which is exactly why an AI's contribution to it is likely to
+be administrative.
+
+### 7.4 The two null results that should govern every claim made about AI here
+
+Both are from the SPeNSE Paperwork Substudy, both are directly on point, and both are almost
+never cited.
+
+**NULL 1 — Computerisation produced no measured reduction in paperwork time.** Verbatim:
+
+> "**Access to reliable computers was not related to the time teachers spent on administrative
+> duties and paperwork.** […] Seventy percent of teachers reported using a computer, at least in
+> part, for writing IEPs. **Using a computer to prepare IEPs was not significantly related to time
+> spent writing each IEP or completing administrative duties and paperwork, in general.** Teachers
+> who used computers said their computer equipment was quite reliable and their access to the
+> equipment was good or excellent." `MEASURED` (null)
+
+The last sentence closes the obvious escape route: it was not a bad-tools problem. Seventy
+percent had good tools and it did not show up in the hours.
+
+**NULL 2 — Delegating the work to another person produced no measured reduction either, and the
+report says why.** Verbatim:
+
+> "**The amount of help teachers had was not significantly related to the time they spent on
+> administrative duties and paperwork or to whether administrative duties and paperwork interfered
+> with their job of teaching. This may be the case because much of the paperwork teachers complete
+> cannot be appropriately delegated to an aide or secretary.**" `MEASURED` (null)
+
+**That second null is the most important sentence in this report for anyone building an AI
+assistant in this space.** The work resisted delegation not because there was too much of it but
+because of *what it is*: professional judgement expressed in prose. An aide cannot write a
+PLAAFP. **The honest question is therefore not "can AI reduce paperwork" — the last two
+labour-saving interventions measured at zero — but "is a language model a different kind of
+delegate from an aide, given that the barrier was judgement rather than throughput?"** That
+question has not been answered, and this project should not pretend otherwise.
+
+### 7.5 What *did* measurably reduce the time
+
+Three things did, and all three are structural rather than technological:
+
+| Intervention | Effect |
+|---|---|
+| **Selecting goals from a pre-developed list** rather than composing from scratch | 2.2 hours per IEP vs **2.6** |
+| **Rewriting only the changed sections** at annual review rather than the whole document | 2.0 hours per IEP vs **2.5** |
+| Not rewriting the whole document (risk model) | Full rewriters had a **15 percent higher risk** of being in the group without enough time to complete their duties, *"after controlling for caseload and case management responsibilities […] regardless of their years of experience"* |
+
+`MEASURED` — all three from the SPeNSE Paperwork Substudy.
+
+**The goal-bank result is the pre-AI ancestor of AI goal drafting, and it is a warning as much as
+an encouragement.** Selecting from a fixed menu saved about 15% of the time on each IEP. It is
+also the mechanism most likely to produce the boilerplate, non-individualised goals that
+*Endrew F.* now makes substantively challengeable. **A goal bank is a time-saving device that
+trades individualisation for speed. A generative model is a much better goal bank, which means it
+is a much better version of both the saving and the hazard.** `INFERENCE`.
+
+The federal government's own paperwork-reduction moves show the same pattern: ED priced the
+removal of short-term objectives at $77.5M/year on a 15-minute assumption (71 FR 46843), and
+priced the IEP-team-member excusal provision at approximately **nothing**, because *"reduced time
+spent in meetings is likely to be offset by the time required to draft written input"* (71 FR
+46843). `OBSERVED` — a third documented null, this one from the regulator.
+
+### 7.6 What is *not* measured, and should be said plainly
+
+- **There is no current national time-use study.** The best federal data is from 2002. ED's own
+  2006 impact analysis admits *"we lack detailed data on the number of IEP Team meetings conducted
+  each year"* (71 FR 46845) and works from an assumed **1.2 meetings per child per year** at **1.5
+  hours** each. Twenty years on, the field is still estimating.
+- **The federal §618 collection does not code dispute issue categories.** There is no national
+  dataset answering "is it eligibility, LRE, services, or procedure?"
+- **School psychologist and speech-language pathologist caseload figures are published by NASP
+  and ASHA** and are the right sources; the NASP series (annual, using NCES counts) is at ERIC
+  ED662590 / ED662727 / **ED673365 (2023–24)**. The ED673365 full text returned **HTTP 404** from
+  files.eric.ed.gov on 2026-07-28 and the specific national ratio is therefore **UNVERIFIED
+  here** — do not quote a number for it without retrieving the brief.
+- **No published evaluation of AI paperwork reduction in special education met an evidence bar
+  in this search.** Treat all vendor time-savings claims as `VENDOR` until a controlled
+  comparison exists. Given NULL 1 and NULL 2 above, the prior should be sceptical.
+
+### 7.7 The finding, stated as the brief asked
+
+**If AI's contribution here is administrative rather than instructional, that is a finding — and
+it is the largest practical one in this section.** But it must be stated with the nulls attached,
+or it is just another promise:
+
+> The binding constraint on special education is adult hours, and a substantial and unmeasured
+> fraction of those hours is not instruction. At a legal maximum California caseload the
+> administrative load implied by federal per-child measurements is **four times** the time
+> teachers report having. Two prior labour-saving interventions — computerisation and human
+> delegation — were **measured and found to have no significant effect**, the second because the
+> work is judgement rather than throughput. That is the specific gap a language model might
+> genuinely close, and it is the specific reason no one should assume it will.
+
+---
+
+## 8. Escalation and safeguarding in a school context
+
+### 8.1 The federal floor and the state patchwork
+
+`STATUTE` — the federal requirement is **CAPTA, 42 U.S.C. §5106a(b)(2)(B)(i)**, which
+conditions state grants on the state having *"provisions or procedures for requiring certain
+individuals to report known or suspected instances of child abuse and neglect."* Federal law
+sets no reporter list, no standard, and no timeline. **All of the operative rules are state
+law**, and they differ in ways that matter to any product with a disclosure path.
+
+Source for all figures in this subsection: Child Welfare Information Gateway, Children's
+Bureau/ACYF/ACF/HHS, *Mandatory Reporting of Child Abuse and Neglect*, State Statutes series,
+**current through May 2023**. `STATUTE` (state-statute compilation)
+
+- **~46 states**, DC, American Samoa, Guam, CNMI and the Virgin Islands designate professions
+  as mandated reporters. School personnel are on every such list.
+- **~17 states and Puerto Rico require *any person* to report.** Of those, 13 states and
+  Puerto Rico name professions *and* also require all persons. **Four states — Indiana, New
+  Jersey, North Carolina, Wyoming — require all persons and name no professions at all.**
+- **Standards vary.** The common trigger is that the reporter, *in their official capacity*,
+  "suspects or has reason to believe" a child has been abused or neglected. A second common
+  formulation triggers on knowledge or observation of conditions that "would reasonably result
+  in harm."
+- **Training is not universal.** 23 states, Puerto Rico and the Virgin Islands require
+  mandated reporters to be trained; 22 states and DC do not require it in law.
+
+### 8.2 The routing question — and why it is the crux for AI
+
+This is the part that decides whether an automated escalation path is safe or negligent.
+
+Verbatim from the Child Welfare Information Gateway compilation:
+
+> "Statutes in 33 States, the District of Columbia, and the Virgin Islands provide procedures
+> that must be followed in those cases. In **18 States**, the District of Columbia, and the
+> Virgin Islands, **any staff member who suspects maltreatment must notify the head of the
+> institution** when the staff member feels that maltreatment or possible maltreatment should
+> be reported to an appropriate authority. In **nine States**, the District of Columbia, and
+> the Virgin Islands, **the staff member who suspects maltreatment notifies the head of the
+> institution first, and then the head or their designee is required to make the report.** In
+> **10 States**, **the person who suspects maltreatment must first make the report to the
+> appropriate child protection authority and then notify the institution that a report has
+> been made.**"
+
+And the clause that governs everything:
+
+> "Laws in **17 States**, the District of Columbia, and the Virgin Islands make clear that,
+> **regardless of any policies within the organization, the mandatory reporter is not relieved
+> of their responsibility to report.** In **12 States**, an employer is expressly prohibited
+> from taking action to prevent or discourage an employee from making a report. In **17
+> States**, an employer is expressly prohibited from retaliating against an employee who has
+> made a report."
+
+**Three consequences, stated flatly.**
+
+1. **The duty is personal and, in at least 17 states plus DC and the Virgin Islands, expressly
+   non-delegable.** It attaches to the human who formed the suspicion. **An AI cannot hold
+   it, cannot discharge it, and cannot be interposed between the human and the authority.**
+2. **The correct routing differs by state and it inverts.** In nine states the staff member
+   tells the head and *the head reports*. In ten states the staff member *reports first* and
+   then tells the institution. **A product with one hard-coded escalation flow is wrong in
+   roughly half the country**, and being wrong in the direction of "route to the principal"
+   is the documented failure mode — see §8.4.
+3. **A system that surfaces a disclosure to a designated adult and stops has not made a
+   report.** It has made a notification. Every product claim in this space should be tested
+   against that distinction, and most will fail it.
+
+### 8.3 Academic concern vs safeguarding concern
+
+The two look similar from inside a piece of software — both are "something is wrong with this
+child" — and they are governed by entirely different regimes with entirely different clocks.
+
+| | **Academic / educational concern** | **Safeguarding concern** |
+|---|---|---|
+| Trigger | Lack of expected progress, non-response to intervention, new skill deficit | Suspicion of abuse, neglect, self-harm, or immediate danger |
+| Who it goes to | Case manager → student support / MTSS team → IEP team | The named mandated reporter, then CPS or law enforcement per state routing |
+| Clock | Weeks. §300.324(b)(1)(ii)(A) requires revision on lack of expected progress; H1's trend rule says 7–10 weeks of probe data before a method change | **Immediately**, on suspicion. No accumulation of evidence, no confidence threshold |
+| Evidentiary standard | Data-based; §300.309(b)(2) documentation | **Suspicion**, expressly not proof. The reporter's job is to report, not to investigate |
+| Who decides | A team including the parent | The individual reporter, alone |
+| Consent | Parental consent required for evaluation (§300.300(a)) | **No parental consent, and no parental notification requirement** |
+
+**The last row is the one that breaks naive product design.** Every other flow in this report
+routes through the parent. Safeguarding does not, and must not — a system that notifies the
+parent of a safeguarding flag may be notifying the person the child needs protection from.
+**A product that has one "notify the guardian" pathway has built a mechanism for endangering
+children.** That is a design defect, not a policy preference. `INFERENCE` — from the structure
+of mandated reporting, and it is a hard requirement, not a recommendation.
+
+Two more asymmetries a coordinator would name:
+
+- **The academic path tolerates waiting; the safeguarding path punishes it.** The instinct an
+  AI system is trained into — gather more evidence, raise confidence, avoid false positives —
+  is correct for the left column and actively wrong for the right one.
+- **The academic path is reversible; the safeguarding path is not.** A wrongly-changed reading
+  intervention can be changed back. A report to CPS cannot be unmade, and §8.4 documents whom
+  those reports fall on.
+
+### 8.4 Documented failure modes
+
+**(1) "Report it to the principal" — the failure the statutes were written against.** In nine
+states plus DC and the Virgin Islands, telling the head of the institution *is* the required
+first step and the head then reports. In ten states it is expressly the wrong order. And in 17
+states plus DC and the Virgin Islands the statute has to say out loud that institutional policy
+does not relieve the individual — a clause legislatures do not write unless the failure is
+common. `STATUTE` — the existence and wording of the non-relief provisions is itself the
+documentation of the failure mode.
+
+**(2) Under-training.** 22 states and DC do not require mandated-reporter training by law
+(Child Welfare Information Gateway, current through May 2023). A duty that attaches personally,
+triggers on suspicion, carries criminal exposure in many states, and has no required training
+in nearly half the country is a system with a predictable error rate. `STATUTE`/`INFERENCE`.
+
+**(3) The disability interaction.** Children with disabilities are simultaneously at elevated
+risk of maltreatment and less likely to be able to disclose it in a form an adult recognises —
+which is exactly the population this survey is about, and exactly the population for whom a
+communication-mediating system sits between the child and the adults. A system that becomes the
+main channel through which a non-speaking or language-impaired child communicates has, whether
+or not anyone intended it, become a disclosure surface. `INFERENCE` — H1 §4.6 establishes the
+language/reading-access archetype; the disclosure implication follows and is not optional to
+design for.
+
+**(4) The over-referral risk runs the other way.** An automated flag lowers the cost of raising
+a concern to nearly zero, and anything that lowers that cost raises volume. Volume is not
+neutral: referrals land disproportionately on families already under surveillance. **A
+sensitivity setting on a safeguarding classifier is a policy decision about which families get
+investigated, and it must never be set by a vendor default.** `INFERENCE`.
+
+### 8.5 The discipline path, which is where safeguarding and IDEA collide
+
+`STATUTE` — **§300.530(e)(1)**: within **10 school days** of any decision to change a child's
+placement because of a code-of-conduct violation, the LEA, the parent, and relevant IEP Team
+members must review all relevant information to determine:
+
+> "(i) If the conduct in question was caused by, or had a direct and substantial relationship
+> to, the child's disability; or (ii) **If the conduct in question was the direct result of the
+> LEA's failure to implement the IEP.**"
+
+If either is met, the conduct **is** a manifestation (§300.530(e)(2)), and if it is (e)(1)(ii),
+*"the LEA must take immediate steps to remedy those deficiencies"* (§300.530(e)(3)).
+
+**Read (e)(1)(ii) as a builder.** It makes *non-implementation of the documented programme* a
+formal legal finding available at every disciplinary removal. A system that is responsible for
+delivering a documented service and silently fails — the session that did not run, the
+accommodation that was not applied, the minutes that were not delivered — has created evidence
+for a manifestation determination against its own district. **Reliable delivery logging is not
+a nice-to-have in this domain; it is the artefact that answers §300.530(e)(1)(ii).**
+`INFERENCE` from the regulation.
+
+The rest of the discipline frame, briefly: removals up to **10 consecutive school days** without
+special process (§300.530(b)(1)); services must continue after 10 cumulative days
+(§300.530(b)(2), (d)); a change of placement occurs at more than 10 consecutive days or a
+qualifying **pattern** of removals (§300.536(a)); and **45 school days** in an interim alternative
+setting regardless of manifestation for weapons, drugs, or serious bodily injury (§300.530(g)).
+
+---
+
+## 9. What a coordinator's week actually looks like — and which parts an AI may touch
+
+### 9.1 The week, assembled from the regulations and the measured hours
+
+Nothing below is invented. Each element is either a statutory duty with a citation or a measured
+time cost from §7.
+
+**Standing, every week**
+- Direct instruction and service delivery — the part of the job the job is named after.
+- Consultation with general-education teachers, who under §300.323(d)(2) must be informed of
+  their specific responsibilities and of *"the specific accommodations, modifications, and
+  supports that must be provided."* Every new teacher, every schedule change, every substitute
+  is a re-notification event.
+- Progress-monitoring probes and their graphing — the §300.320(a)(3) measurement method, and the
+  §300.309(b)(2) evidentiary record.
+- Administrative duties and paperwork: median **5 hours**, against **4** available (SPeNSE).
+
+**On a rolling cycle**
+- IEP meetings: **1.5 hours** each in attendance, **2 hours** to write the document, plus
+  **2 hours/month** scheduling and **1 hour/month** mailing notices — and each meeting carries
+  the §300.322 parent-participation duties, including the §300.322(d) record of attempts if the
+  parent does not attend and the §300.322(e) duty to *"take whatever action is necessary to
+  ensure that the parent understands the proceedings."*
+- Progress reports: **8 hours** per cycle, every **7 weeks**.
+- Evaluations: for the 35% who do initial evaluations, **7.5 hours/month** administering and
+  **4.2** reviewing; for the 51% who do triennials, **5** and **3**.
+- Behaviour: **5 hours/month** on behaviour logs, **2** on behaviour intervention plans, **2** on
+  functional behavioural assessments.
+
+**On the compliance calendar**
+- 60 days from consent to evaluation (§300.301(c)(1)).
+- 30 days from eligibility to the IEP meeting (§300.323(c)(1)).
+- An IEP in effect for every child at the start of the school year (§300.323(a)).
+- Annual review (§300.324(b)(1)(i)); triennial reevaluation (§300.303(b)(2)).
+- Procedural safeguards notice once a year and on the triggers in §300.504(a).
+- 10 school days to a manifestation determination after a disciplinary placement change
+  (§300.530(e)(1)).
+
+**Unscheduled, and non-deferrable**
+- A safeguarding disclosure. Personal duty, immediate, routed around the parent (§8).
+- A crisis: behaviour, a removal, a parent's IEE request that starts the §300.502(b) clock, a
+  transfer student arriving mid-year who must receive comparable services immediately
+  (§300.323(e)–(f)).
+
+### 9.2 Which of these an AI can touch
+
+**Can touch, and should.** Everything on the compliance calendar. Scheduling. Notice generation
+and translation. The §300.322(d) attempts log. Progress-report assembly against a stated
+criterion. First-draft PLAAFP prose with per-sentence provenance. Goal measurability checking.
+Internal-consistency checking of the document. Assembling the §300.305(a) existing-data review
+packet. Preparing the parent to participate. Generating §300.503(b)(6) alternatives-considered
+text. Logging service delivery against the IEP — which is the artefact that answers
+§300.530(e)(1)(ii).
+
+**Cannot touch.** The nine items in the prohibition column of §11: authorship of the IEP, the
+eligibility certification, the placement decision, service quantities, modifications, the
+determination that progress is or is not adequate, the safeguarding report, the consent, and the
+agency's stated reasons in a PWN.
+
+**Would be actively dangerous to touch.** Four, and they are not the same as "cannot":
+
+1. **Safeguarding triage.** Not merely prohibited — a confidence threshold on a disclosure is a
+   decision to let some children's disclosures fail silently, taken by a system whose error
+   profile nobody has characterised on this population. And it converts a personal, non-delegable
+   statutory duty into a queue.
+2. **Placement recommendation.** Four circuits, four incompatible tests (§10.2). A recommendation
+   is legally incoherent before it is even evaluated for accuracy, and it will be produced in
+   discovery as the district's contemporaneous reasoning.
+3. **Silent modification of the curriculum.** An adaptive system that shortens, simplifies or
+   accepts-partial has made a curricular decision reserved to the team and made it invisibly
+   (§2.6). It is dangerous specifically because it is *invisible* — it will not appear in any
+   log, any meeting, or any dispute, and its effects compound across years toward a diploma
+   track nobody chose.
+4. **Producing a confident recommendation before the meeting.** This is *Deal* (§10.3) and it is
+   dangerous because it is the most natural thing for the technology to do and the most useful to
+   the humans in the short run. A team that ratifies a machine draft has held a meeting that a
+   hearing officer can find was not meaningful.
+
+**The pattern.** An AI may operate on **documents, calendars and data**. It may not operate on
+**entitlements, determinations, or disclosures**. The dangerous zone is not where the
+prohibitions are obvious — nobody is shipping an IEP auto-signer. It is where a helpful
+behaviour quietly crosses into a reserved decision.
+
+### 9.3 The reframing this forces on `survey/04`
+
+`survey/04` §4.1 establishes that measurement without a decision rule is inert, and §4.2 that
+the slow loop takes 7–10 weeks. Both are correct. Both are also *instructional* framings of a
+job that is roughly half something else.
+
+The honest synthesis: **the fast loop is instruction, the slow loop is instruction, and the
+third loop — the one neither section names — is compliance, and it runs on a calendar rather
+than on data.** An AI that only serves the first two loops is helping with the part of the week
+that is already the most rewarding. **An AI that serves the third returns hours to the first
+two.** That is the mechanism by which an administrative contribution becomes an instructional
+one, and it is the argument `survey/04` is currently missing.
+
+### 9.4 What happens when it goes wrong — dispute volume and documented systemic failure
+
+`OBSERVED` — U.S. Department of Education, OSEP, **IDEA Part B Dispute Resolution Survey,
+2023–24** (EDFacts Metadata and Process System; data extracted 13 November 2024), national
+totals:
+
+| Measure | SY 2023–24 |
+|---|---|
+| Written, signed State complaints filed | **9,927** |
+| — reports issued | 5,894 |
+| — **reports with findings** | **3,696 (62.7% of reports issued)** |
+| Mediation requests | 12,914 |
+| — mediations held | 7,085 (54.9%) |
+| **Due process complaints filed** | **39,151** |
+| — resolution meetings held | 5,852 |
+| — resolution meetings reaching written settlement | 1,623 (27.7%) |
+| — **hearings fully adjudicated** | **8,621 (22.0%)** |
+| — pending at year end | 9,864 (25.2%) |
+| — **withdrawn or dismissed** | **20,666 (52.8%)** |
+| Expedited due process complaints | 618 |
+
+**Documented systemic failure 1 — the adversarial channel does not decide.** 52.8% of due process
+complaints are withdrawn or dismissed and only 22.0% are fully adjudicated, while the low-cost,
+paper-based state-complaint channel produces **findings against districts in 62.7%** of the cases
+it decides. A system in which the cheap channel finds violations two-thirds of the time and the
+expensive channel disposes of half its docket without a decision is not allocating disputes by
+merit. `MEASURED-META` (arithmetic on the OSEP file).
+
+**Documented systemic failure 2 — the volume is one state.** New York alone accounts for **26,708
+of 39,151** due process complaints (**68.2%**) and **7,640 of 8,621** fully adjudicated hearings
+(**88.6%**). The top five states are 88.9% of complaints and 96.6% of hearings. California files
+4,555 complaints and adjudicates **49**. `OBSERVED` — and it means national dispute statistics
+are, in practice, statistics about New York.
+
+**Documented systemic failure 3 — most states are not meeting IDEA requirements, on the
+Department's own assessment.** U.S. Department of Education, *2026 Determination Letters on State
+Implementation of IDEA*, **18 June 2026**. Part B, **"needs intervention"**: Bureau of Indian
+Education, District of Columbia, Maine, New Mexico, **New York**, Vermont. Part B, **"needs
+assistance for two or more consecutive years"**: **34 entities**, including Arizona, California,
+Georgia, Hawaii, Louisiana, Michigan, Mississippi, North Carolina, Oregon, Puerto Rico, Tennessee,
+Washington. **Only 22 entities met requirements.** Part C "needs intervention": Louisiana.
+`OBSERVED`
+
+The consequence is statutory, verbatim from the determination letters fact sheet: *"For States
+that received a determination of 'needs assistance' for two or more consecutive years, the
+Department must take one or more enforcement actions, including […] designating the State as a
+high-risk grantee, or directing the use of State set-aside funds."*
+
+**The co-occurrence worth naming:** New York is simultaneously the source of 68% of the nation's
+due process complaints and under a federal "needs intervention" determination. Dispute volume and
+formally-identified non-compliance co-occur. `OBSERVED` on the co-occurrence; `INFERENCE` on any
+causal reading, and it should not be asserted.
+
+**Documented systemic failure 4 — federal civil-rights enforcement capacity has fallen as demand
+has risen.** `OBSERVED` — ED Office for Civil Rights, *Report to the President and Secretary of
+Education* (FY 2024), verbatim: *"FY 2024 saw still another new record number of complaints filed
+with OCR, at **22,687 complaints received**, up from 19,201 in FY 2023. The total number of
+complaints has almost tripled since FY 2009, and during this same period OCR's number of full
+time equivalent (FTE) staff has decreased from 629 to 588. […] **OCR's overall staffing level has
+declined significantly – falling from nearly 1,100 FTE staff in FY 1981 to 588 FTE staff in FY
+2024.**"* Disability allegations were **37% (8,457)** of FY2024 complaints (all education levels,
+not K-12 only). Per-FTE caseload has moved from roughly 2.7 to 38.6 complaints per year.
+`MEASURED-META` on the per-FTE arithmetic.
+
+**Documented systemic failure 5 — child-find litigation is rising and districts win it.**
+`MEASURED-META` — Zirkel, *"The 'Red Flags' for Child Find under the IDEA: Separating the Law from
+the Lore," Exceptionality* (2015): 42 court decisions, late 1996 to early 2014, finding *"(a) an
+upward trajectory in their frequency; (b) an outcome ratio of 2:1 in favor of the defendant school
+districts."* Corroborated in the same author's *Exceptional Children* (2018) RTI/child-find
+analysis (*"the majority of the rulings have been in favor of school districts"*) and *School
+Psychology Review* (2011) ADHD analysis (51 rulings, *"the majority […] in favor of school
+districts"*). Rising volume with a stable pro-district outcome ratio is the signature of an
+under-identification problem that adjudication is not correcting. *(Read from ERIC abstracts;
+full texts not retrieved — percentages are as stated in the abstracts.)*
 
 ---
 
@@ -1285,3 +2238,304 @@ discrimination and seeking damages may go straight to federal court under ADA/§
 ever filing a due process complaint. The §618 due-process counts in §12 therefore
 **understate** total dispute volume by an unmeasured amount, and a product's exposure is not
 bounded by IDEA's administrative process.
+
+---
+
+## 11. THE TABLE — artefact by artefact: who owns it, what an AI may draft, what it may never author, what would be a violation
+
+The requested deliverable. `STATUTE` on every citation; the AI columns are `INFERENCE` from
+those citations and are stated as design rules, not legal advice.
+
+| Artefact / process | Who owns it legally | What an AI **may** draft | What an AI may **never** author | What would constitute a procedural violation |
+|---|---|---|---|---|
+| **PLAAFP** | IEP Team, in a meeting — §300.320(a), §300.321(a) | Prose synthesis of held data; a gap list of areas with no data; a first pass at the effect-of-disability statement, marked as a proposal | The final effect-of-disability determination; any statement not traceable to a source datum; a diagnostic characterisation of the child | An IEP adopted with a PLAAFP omitting functional performance, or lacking baselines sufficient to anchor its goals — facially deficient under §300.320(a)(1) |
+| **Measurable annual goals** | IEP Team — §300.320(a)(2) | Candidate goal language; a measurability check (condition / behaviour / criterion / timeframe); alignment check to identified needs | The target, the criterion level, or the judgement that the goal is ambitious enough — *Endrew F.*, 580 U.S. 386 | Goals not measurable, or an IEP with no goal for an identified area of need. Goals set by trend extrapolation risk *Endrew F.* insufficiency |
+| **Progress measurement method & reporting schedule** | IEP Team — §300.320(a)(3) | The graph, the trend line, the report text, the schedule reminder | The decision to change the programme when progress lags — §300.324(b)(1)(ii)(A) | Failure to issue promised periodic reports; reporting effort rather than performance against the stated criterion |
+| **Services grid (type, frequency, location, duration)** | IEP Team — §300.320(a)(4), (a)(7) | Options with their research base; a staffing-feasibility annotation; a consistency check of services against goals | Any change to type, frequency, location or duration. **This is placement** — 71 FR 46588 | Changing service minutes without PWN (§300.503(a)(1)) and without either a team meeting or a written amendment (§300.324(a)(4)) |
+| **Accommodations** | IEP Team — §300.320(a)(6); implementation duty §300.323(d)(2)(ii) | Candidate accommodations; a check that each maps to a documented access barrier; delivery logging | Applying an accommodation not in the IEP as if it were, or removing one that is | Non-implementation of a documented accommodation — a FAPE issue and a §300.530(e)(1)(ii) manifestation trigger |
+| **Modifications** | IEP Team | A flag that a proposed adaptation *is* a modification, routed to the team | **Applying any modification.** Shortening a task, lowering text complexity, reducing item count, accepting partial as complete — all are modifications | Silent modification: a curricular decision reserved to the team, taken invisibly. Also implicates §300.116(e) |
+| **Placement / LRE** | A group including the parents — §300.116(a)(1); LRE §300.114(a)(2) | A record of supplementary aids and services already tried and their measured effect — the evidentiary predicate for *Daniel R.R.* prong one | **Any placement recommendation.** Four circuits apply four different tests; there is no circuit-neutral recommendation | Placement decided before the IEP is written (*Spielberg*, 853 F.2d 256); placement decided without the parent (§300.116(a)(1)); removal without a supplementary-aids analysis |
+| **Prior Written Notice** | **The public agency** — §300.503(a). Not the team | The full §300.503(b)(1)–(7) skeleton, including (b)(6) options-considered-and-rejected; native-language rendering under §300.503(c) | The decision the notice describes; the agency's reasons | Acting on a change to identification, evaluation, placement or FAPE provision without PWN. Under §300.513(a)(2)(ii) this is the gate most likely to convert to a FAPE denial |
+| **Parental consent** | The parent — §300.9; §300.300 | Plain-language explanation of what is being consented to; tracking of the §300.300(d)(5)/§300.322(d) reasonable-efforts record | Consent itself; any inference of consent from non-response beyond §300.300(c)(2)'s narrow reevaluation exception | Evaluating without consent (§300.300(a)(1)); continuing services after written revocation (§300.300(b)(4)(i)); fabricating a reasonable-efforts record |
+| **Evaluation** | A group of qualified professionals + the parent — §300.306(a)(1) | Scheduling; consolidating existing data for the §300.305(a) review; drafting report sections from held results | The eligibility determination; any single score offered as decisive — §300.304(b)(2) forbids a single measure as sole criterion | Altering standardised administration conditions (§300.304(c)(1)(v)); missing the 60-day clock (§300.301(c)(1)); using an instrument outside its validity argument (§300.304(c)(1)(iii)) |
+| **Eligibility determination** | Named group members, **certifying individually in writing** — §300.311(b) | A summary of the evidence for each §300.309(a) element; the §300.309(b) instructional-adequacy documentation | The determination. **An AI cannot certify, and §300.311(b) requires individual certification with a written-dissent right** | A determination made without the required members (§300.308); determining SLD without the §300.309(b) data on prior appropriate instruction |
+| **Reevaluation** | Public agency + parent consent — §300.303, §300.300(c) | The triennial clock; the §300.305(a) existing-data review packet; the §300.305(d)(1) no-additional-data notice | The decision that no further data are needed | Exceeding three years without reevaluation or a documented parental agreement that it is unnecessary — §300.303(b)(2) |
+| **IEE at public expense** | The parent's right — §300.502(b)(1) | Nothing beyond providing the §300.502(a)(2) information about where an IEE may be obtained and agency criteria | Any gatekeeping. §300.502(b)(4): the agency *"may not require the parent to provide an explanation"* | Delay. §300.502(b)(2) leaves exactly two options — file for a hearing, or fund the IEE — *"without unnecessary delay"* |
+| **Instructional method inside an existing service** | The IEP Team **if** the IEP names a method; otherwise the provider — 71 FR 46665 | Hints, worked steps, re-representation, sequencing, item selection — §300.501(b)(3) puts teaching methodology outside the meeting requirement | A change to a method the IEP names, without amendment | Departing from an IEP-specified methodology without amending the IEP |
+| **Manifestation determination** | LEA + parent + relevant team members, within 10 school days — §300.530(e)(1) | The service-delivery record answering §300.530(e)(1)(ii) — was the IEP actually implemented? | The determination | Removal beyond 10 consecutive days, or a §300.536(a)(2) pattern, without a manifestation determination |
+| **Safeguarding disclosure** | The individual mandated reporter; non-delegable in ≥17 states + DC + VI | Preserving the child's exact words; surfacing to the correct human immediately; making the state's routing rule visible | **The report itself, and any triage, threshold, or delay.** An AI cannot hold a personal statutory duty | Routing to a supervisor in a state requiring direct report first; interposing a confidence threshold; **notifying the parent** |
+| **Records and confidentiality** | Public agency — §§300.610–300.627; FERPA | Access logs; retention-clock tracking; the §300.624(a) "no longer needed" notice | Disclosure decisions — §300.622(a) requires parental consent for disclosure outside participating agencies | Disclosing PII without consent where §300.622 requires it; failing to destroy on request under §300.624(b), subject to its permanent-record carve-out |
+
+### 11.1 The four flat prohibitions, restated without hedging
+
+1. **An AI may not recommend a placement.** Not because it would be inaccurate — because four
+   circuits apply four incompatible legal tests and there is no jurisdiction-neutral answer.
+2. **An AI may not apply a modification.** Accommodations adjust access; modifications adjust the
+   expectation, and the expectation belongs to the team. A system that cannot tell which of the
+   two it is doing must do neither.
+3. **An AI may not make, triage, delay, or threshold a safeguarding report,** and must never
+   route a safeguarding concern to the parent by default.
+4. **An AI may not certify an eligibility conclusion.** §300.311(b) requires named individuals to
+   certify in writing, with a dissent right. That is the statute refusing to average judgements.
+
+Everything else on the table is negotiable engineering. These four are not.
+
+---
+
+## 12. What `survey/04` must say to stop being costume
+
+Blunt list. Each item names the defect, the fix, and the citation the fix rests on.
+
+**1. It has no documents in it.** The section is about a child in the American special-education
+system and never once mentions the artefact that system runs on. Add the IEP's nine statutory
+components (34 CFR §300.320(a)), name the PLAAFP explicitly, and say who authors each part
+(§300.321(a)). A coordinator reads §5's "an AI may not author an IEP" and asks *which part were
+you going to author?* — and the section has no answer because it has never looked inside the
+document.
+
+**2. It asserts the IEP prohibition without the mechanism.** "It is a legally binding document
+authored by a team including the parent" is true and unfalsifiable-sounding. The mechanism is
+better: §300.320(a) says the IEP is *"developed, reviewed, and revised **in a meeting**"*;
+§300.321(a) names the seven required participants; §300.311(b) requires each SLD group member
+to *"certify in writing"* their own conclusion with a right of written dissent. **Authority in
+this statute is located in named humans in a room, individually attributable, with dissent
+preserved.** That is a much stronger sentence than "it is legally binding," and it explains
+*why* averaging judgements — which is what a model does — is the wrong shape.
+
+**3. Half the legal test is procedural and the section does not know it.** *Rowley*, 458 U.S. at
+206–07: *"First, has the State complied with the procedures set forth in the Act? And second, is
+the individualized educational program developed through the Act's procedures reasonably
+calculated to enable the child to receive educational benefits?"* `survey/04` is entirely about
+the second question. A practitioner's week is dominated by the first. Until the section says
+that procedure *is* half the entitlement — not friction around the entitlement — it will keep
+reading as a research summary wearing a school lanyard.
+
+**4. Add prior written notice, and get the framing right.** §300.503 in full: it fires on
+proposals *and refusals*, across identification, evaluation, educational placement, and provision
+of FAPE, and §300.503(b)(6) requires *"a description of other options that the IEP Team
+considered and the reasons why those options were rejected."* Then state the corrected rule from
+§5.5: **an AI does not commit procedural violations; agencies do — but an AI that changes a
+child's services without forcing the agency through PWN manufactures one for its operator, and it
+lands on §300.513(a)(2)(ii), the parent-participation gate.** And carry the limiting principle:
+changing *method* inside an unchanged service is not a PWN event, because §300.501(b)(3) puts
+*"teaching methodology, lesson plans, or coordination of service provision"* outside the meeting
+requirement entirely.
+
+**5. Add LRE, and admit it conflicts with the section's own thesis.** §300.114(a)(2)(ii) permits
+removal *"only if the nature or severity of the disability is such that education in regular
+classes with the use of supplementary aids and services cannot be achieved satisfactorily."* The
+intervention base `survey/04` celebrates is overwhelmingly evidence about intensive pull-out.
+The section currently presents dosage and fidelity as an unalloyed good; LRE says removal has to
+be justified every time. **Then make the forward-looking claim, which is the best idea in this
+whole report:** the reason intensity requires removal is a staffing constraint, not a pedagogical
+one, and a system that delivers fidelity and dosage *without physical removal* attacks the exact
+mechanism that forces the trade-off. Label it `INFERENCE`. No trial has tested it.
+
+**6. Correct the placement vocabulary before it is used.** ED, 71 FR 46588: *"placement refers to
+the provision of special education and related services rather than a specific place, such as a
+specific classroom or specific school."* Any sentence in the survey about "grouping,"
+"routing," or "moving a learner" is about placement in the legal sense whether or not anyone
+moves rooms. And §300.518(a) freezes it during a dispute — **stay-put means a per-child state
+that no adaptive loop may override.**
+
+**7. Add the accommodation/modification distinction, which the section currently collapses into
+"personalisation."** Accommodations change access; modifications change the expectation.
+§300.116(e) forbids removal *"solely because of needed modifications"*; §300.320(a)(6) treats
+assessment accommodations and alternate assessments as different legal objects. **The specific,
+sharp prohibition to add: an AI that silently shortens a task, lowers text complexity, reduces
+item count, or accepts a partial answer as complete has applied a modification, which is a
+curricular decision reserved to the team — and has applied it invisibly.** Adaptive difficulty,
+as universally shipped, cannot say whether its own adjustments are accommodations or
+modifications. That is a much sharper claim than "restraint matters," and it indicts a feature
+every product in the category ships.
+
+**8. Fix the eligibility framing — there are 13 categories and a second prong.** §300.8(a)(1)
+lists thirteen conditions; §300.8(a)(2)(i) says a child who has one but *"only needs a related
+service and not special education"* is **not** a child with a disability under Part B. And
+§300.306(b)(1)(i) bars eligibility where the determinant factor is *"lack of appropriate
+instruction in reading, including the essential components of reading instruction."* Set that
+against the section's own argument that explicit systematic decoding is the evidenced ingredient
+and is frequently not delivered: **the statute makes "we never taught them properly" a bar to
+services.** That is either a safeguard or a trapdoor depending entirely on the quality of core
+instruction, and the section should say so.
+
+**9. Add Section 504, and stop implying every child in scope has an IEP.** 34 CFR Part 104: a
+broader eligibility gate, no specially designed instruction requirement, no federal funding, and
+a thinner procedural regime (§104.36 requires notice, records access, an impartial hearing and a
+review procedure — and expressly permits IDEA compliance as *one means* of satisfying it).
+Many, possibly most, learners a product serves have a 504 plan and no IEP, and they are not in
+the IDEA child count. A product sized off the Part B number is undercounting its own users.
+
+**10. Get the peer-reviewed-research clause into the argument, because it is the survey's own
+thesis in statutory form.** §300.320(a)(4) requires services *"based on peer-reviewed research to
+the extent practicable,"* and ED reads it as: *"States, school districts, and school personnel
+must, therefore, select and use methods that research has shown to be effective, to the extent
+that methods based on peer-reviewed research are available"* (71 FR 46665). H1 argued
+"fidelity and dosage of known-good intervention" from effect sizes. **§300.320(a)(4) argues it
+from law.** And the corollary the section must not dodge: with zero RCTs of generative AI in this
+population, an AI tutor cannot be justified as an IEP *service* on the strength of evidence. It
+can be the delivery mechanism for a method that has one.
+
+**11. Add *Endrew F.*, because it is a judicial explainability requirement.** 580 U.S. 386: the
+IEP must be *"reasonably calculated to enable a child to make progress appropriate in light of
+the child's circumstances,"* a standard *"markedly more demanding than the 'merely more than de
+minimis' test."* And: *"A reviewing court may fairly expect those authorities to be able to offer
+a **cogent and responsive explanation for their decisions**."* **A district cannot meet that
+expectation with a recommendation it cannot explain.** This is the strongest argument available
+that interpretability here is a legal requirement, not a preference — and it is more persuasive
+than any appeal to good practice.
+
+**12. Add predetermination, and name it as the sharpest AI-specific risk in the domain.** *Deal
+v. Hamilton County*, 392 F.3d 840: predetermination *"effectively deprived Zachary's parents of
+meaningful participation in the IEP process,"* and therefore denied FAPE. The boundary, from
+*Knox County*: officials may *"form opinions and compile reports prior to IEP meetings"* but must
+*"come to the meeting with suggestions and open minds, not a required course of action."* And ED's
+own words, 71 FR 46691: issuing a proposal before the meeting *"could suggest… that the public
+agency's proposal was improperly arrived at before the meeting and without parent input."* **Every
+recommendation engine is a predetermination machine by default.** The design answers — drafts
+that look like drafts, mandatory alternatives, provenance on every clause, visible
+responsiveness to parent input in the room — are concrete and buildable and belong in the
+section.
+
+**13. Add the workload reality, and let it change the conclusion.** The section's implicit model
+is that the AI's job is instruction. §7 says the binding constraint on this system is adult
+hours, and that most of those hours are not instructional. **If AI's largest contribution here is
+administrative rather than instructional, the section should say so plainly — it is the most
+practically consequential finding in the H-wave and it is currently absent.** It also
+strengthens, rather than weakens, the instructional argument: hours returned to a caseload are
+hours available for the explicit instruction the evidence base actually supports.
+
+**14. Add escalation, and build the one-way door.** Mandated reporting is personal,
+non-delegable in at least 17 states plus DC and the Virgin Islands, triggers on *suspicion*, and
+routes **around** the parent. Every other flow in the survey routes *through* the parent. **A
+product with a single "notify the guardian" pathway has built a mechanism for endangering
+children.** State it as a flat prohibition, not a consideration.
+
+**15. Fix three factual details.**
+- *"Roughly one child in seven"* → NCES reports **15 percent** of all public school students,
+  7.5 million ages 3–21, for 2022–23; OSEP's §618 count for **2023–24 is 7,892,433**. "About one
+  in six and rising" is the accurate phrasing.
+- The §300.624 quotation is correct but **incomplete in a way that overstates the right**. The
+  destruction duty is conditioned by §300.624(a) — the agency must inform parents *"when
+  personally identifiable information […] is no longer needed to provide educational services"* —
+  and §300.624(b) carves out a permanent record of *"name, address, and phone number, his or her
+  grades, attendance record, classes attended, grade level completed, and year completed"* which
+  *"may be maintained without time limitation."* The deletability argument survives; the
+  quotation should not be presented as an unconditional right.
+- **WCAG 2.2 AA is above the legal floor, not equal to it.** 28 CFR §35.200(b) incorporates
+  **WCAG 2.1** Level A and AA, and the compliance dates were extended in April 2026 to **April 26,
+  2027** (population ≥50,000) and **April 26, 2028** (under 50,000 or special district) by 91 FR
+  20902. Describing 2.2 AA as compliance is wrong; describing it as a deliberate choice above the
+  floor is both accurate and a better argument.
+
+**16. And keep the empty chair.** The central image survives all of this intact. The correction
+is not that the chair is full. It is that the room the chair sits in has a statute, a calendar,
+a caseload and a paper trail, and the section currently describes none of them.
+
+---
+
+## 13. Null and negative results ledger
+
+The brief asked for at least three documented negative/null results or systemic failures. There
+are eleven.
+
+| # | Result | Type | Source |
+|---|---|---|---|
+| 1 | **Computerisation of IEP work produced no measured reduction in time.** *"Access to reliable computers was not related to the time teachers spent on administrative duties and paperwork […] Using a computer to prepare IEPs was not significantly related to time spent writing each IEP or completing administrative duties and paperwork, in general."* 70% used computers; they rated access good or excellent. | `MEASURED` null | SPeNSE Paperwork Substudy, ED479674, n=972 |
+| 2 | **Human delegation produced no measured reduction either, and the report explains why.** *"The amount of help teachers had was not significantly related to the time they spent […] This may be the case because much of the paperwork teachers complete cannot be appropriately delegated to an aide or secretary."* 50% had no help at all. | `MEASURED` null | ibid. |
+| 3 | **The IEP-team-member excusal provision (§300.321(e)) was priced by ED at approximately zero savings.** *"reduced time spent in meetings is likely to be offset by the time required to draft written input, send it to the parents and other IEP Team members, and secure the consent."* | `OBSERVED` (regulatory impact analysis) | 71 FR 46843 |
+| 4 | **A legal maximum caseload implies roughly four times the administrative time teachers report having.** 28 case-managed pupils (Cal. Ed. Code §56362(c)) × 0.6 hours/week/case (SPeNSE) = 16.8 h/week against 4 h available. The measured 5–6 h/week is therefore a measure of triage, not of requirement. | `INFERENCE` on measured inputs | §7.2 |
+| 5 | **California, the most regulated system in the country, has no adult-to-pupil ratio for special classes** and in 2025 instructed its Superintendent to *recommend* one by 1 July 2027 (Ed. Code §56364.3, added by AB 560). | `STATUTE` | Cal. Ed. Code §56364.3 |
+| 6 | **The due process system disposes of most of its docket without deciding anything.** 52.8% withdrawn or dismissed; 25.2% pending; 22.0% adjudicated — while the state-complaint channel finds against districts in 62.7% of decided cases. | `MEASURED-META` | OSEP IDEA Part B Dispute Resolution Survey 2023–24 |
+| 7 | **Most states are not meeting IDEA requirements on the Department's own assessment.** Part B: 6 entities "needs intervention," 34 at "needs assistance, two or more consecutive years," only 22 meeting requirements. | `OBSERVED` | ED, 2026 Determination Letters, 18 June 2026 |
+| 8 | **Federal civil-rights enforcement capacity has fallen while demand has risen.** 22,687 complaints against 588 FTE in FY2024, versus under 3,000 against ~1,100 FTE in FY1981. | `OBSERVED` + `MEASURED-META` | ED OCR Report to the President, FY2024 |
+| 9 | **Child-find litigation is rising and districts win it 2:1.** | `MEASURED-META` | Zirkel, *Exceptionality* (2015), 42 decisions; corroborated 2011, 2018 |
+| 10 | **A PWN with an admittedly invalid rationale can be cured post hoc.** *J.B. v. Kyrene*, 112 F.4th 1156 (9th Cir. 2024): the panel agreed the stated reason was illegitimate and affirmed for the district on harmless-error grounds, accepting reasons never contemporaneously given to the parent. | `CASE-LAW` | §10.4 |
+| 11 | **Federal data on the actual volume of IEP work does not exist.** ED, 2006: *"we lack detailed data on the number of IEP Team meetings conducted each year,"* working from an assumed 1.2 meetings/child/year at 1.5 hours. No newer national time-use study was located; the best available remains 2002. | `OBSERVED` (documented data gap) | 71 FR 46845 |
+
+**And the meta-finding.** Items 1, 2 and 3 are three independent, federally-measured attempts to
+reduce administrative burden in special education — through technology, through people, and
+through deregulation — and **all three measured at or near zero.** Any claim that AI will reduce
+this burden is the fourth attempt, and it is the first one that has not yet been measured. It
+should be stated as a hypothesis with a track record behind it, never as an expectation.
+
+---
+
+## 14. Sources, retrieval notes, and unreachable material
+
+### 14.1 Regulatory text
+
+All 34 CFR Part 300, 34 CFR Part 104 and 28 CFR Part 35 text in this report was retrieved
+verbatim from the **eCFR versioner API**, point-in-time snapshot **2026-07-01**, on 2026-07-28:
+`https://www.ecfr.gov/api/versioner/v1/full/2026-07-01/title-{34|28}.xml?part={300|104|35}&section={n}`
+— all requests HTTP 200. Sections retrieved: 300.8, 300.9, 300.34, 300.39, 300.101, 300.111,
+300.114, 300.115, 300.116, 300.300, 300.301, 300.303, 300.304, 300.305, 300.306, 300.307,
+300.308, 300.309, 300.311, 300.320, 300.321, 300.322, 300.323, 300.324, 300.501, 300.502,
+300.503, 300.504, 300.506, 300.507, 300.510, 300.511, 300.513, 300.517, 300.518, 300.530,
+300.536, 300.610, 300.622, 300.624; 104.3, 104.33, 104.34, 104.35, 104.36; 28 CFR 35.200,
+35.201, 35.202.
+
+Preamble material ("Analysis of Comments and Changes") is from the IDEA Part B final rule,
+**71 FR 46540 (14 August 2006)**, full text retrieved from federalregister.gov (HTTP 200).
+Page citations are to the printed Federal Register pagination as it appears in that text.
+
+The ADA Title II compliance-date extension is **91 FR 20902 (20 April 2026)**, DOJ interim final
+rule; the parallel HHS Section 504 extension is **91 FR 25496 (11 May 2026)**. Both confirmed via
+the federalregister.gov API.
+
+California statutes retrieved verbatim from leginfo.legislature.ca.gov (HTTP 200): Ed. Code
+§§56195, 56195.1, 56205, 56362 (as amended by AB 560, Stats. 2025 Ch. 560, effective 1 January
+2026), and AB 560's text adding §56364.3.
+
+### 14.2 Data
+
+- IDEA §618 Part B Child Count and Educational Environments, SY 2023–24, Tables 1 and 3 —
+  data.ed.gov CKAN API, XLSX parsed directly (HTTP 200).
+- IDEA Part B Dispute Resolution Survey, 2023–24 — same source, `bdispres2023-24.xlsx`.
+- ED, *2026 Determination Letters on State Implementation of IDEA*, 18 June 2026 —
+  sites.ed.gov/idea (HTTP 200).
+- ED OCR, *Report to the President and Secretary of Education*, FY2024 — ed.gov (HTTP 200).
+- NCES, *Condition of Education*, "Students With Disabilities" (updated May 2024) — nces.ed.gov
+  (HTTP 200).
+- SPeNSE Paperwork Substudy — files.eric.ed.gov/fulltext/ED479674.pdf (HTTP 200), read in full.
+- Child Welfare Information Gateway, *Mandatory Reporting of Child Abuse and Neglect*, State
+  Statutes series, current through May 2023 — retrieved from the CWIG S3 bucket (HTTP 200) after
+  childwelfare.gov returned HTTP 404.
+
+### 14.3 Case law
+
+Retrieved and read in full: *Rowley* (Library of Congress U.S. Reports PDF, HTTP 200);
+*Endrew F.* and *Fry* and *Perez* (supremecourt.gov slip opinions, HTTP 200 — note the *Perez*
+slip is `21-887_k53m.pdf`; the commonly-cited `_k53l.pdf` is a 404); *Roncker*, *Daniel R.R.*,
+*Oberti*, *Rachel H.*, *Hartmann*, *Deal*, *Spielberg*, *L.B. v. Nebo*, *C.D. v. Natick* (via the
+law.resource.org F.2d/F.3d mirror, HTTP 200 — note F3 volume directories are zero-padded to three
+digits); *J.B. v. Kyrene* (cdn.ca9.uscourts.gov, HTTP 200).
+
+### 14.4 Unreachable or unverified — flagged, not guessed
+
+| Item | Status |
+|---|---|
+| CourtListener `/api/rest/v4/opinions/{id}/` full-text endpoint | **HTTP 401** (token now required). Search endpoint `/v4/search/?type=o` works at 200 for metadata only. |
+| courtlistener.com HTML opinion pages | **HTTP 202**, Cloudflare challenge, empty body |
+| bulk.resource.org (the host CourtListener returns in `download_url`) | **dead / HTTP 000**; rewrite to law.resource.org |
+| law.justia.com, openjurist.org, casetext, findlaw | **HTTP 403** to both curl and WebFetch |
+| leagle.com | HTTP 200 but Cloudflare interstitial |
+| *P. ex rel. Mr. & Mrs. P. v. Newington Bd. of Educ.*, 546 F.3d 111 (2d Cir. 2008) | **Not retrieved** from four mirrors. **The 2d Circuit and D.C. Circuit LRE tests are therefore UNVERIFIED in this report.** Do not cite. |
+| *Schaffer v. Weast*, 546 U.S. 49 (2005) | **Not retrieved.** Needed to qualify *Oberti*'s burden-of-proof holding. `UNVERIFIED` |
+| GAO-20-22 full report body | **HTTP 403** on the PDF asset; only GAO's product-page summary was read |
+| CADRE national DR data summaries (August 2025) | Landing pages 200; PDF payloads not extractable. CADRE's source is the same OSEP §618 collection reported here, so the primary figures supersede them. |
+| NASP 2023–24 student:school-psychologist ratio brief (ERIC ED673365) | **files.eric.ed.gov HTTP 404.** The national ratio figure is **UNVERIFIED** in this report. |
+| NCANDS *Child Maltreatment* annual report (acf.gov / acf.hhs.gov) | **HTTP 202, zero bytes** — bot challenge. The claim that education personnel are the largest single source of maltreatment referrals is therefore **UNVERIFIED here** and must not be asserted without retrieval. |
+| Perry Zirkel litigation analyses | **ERIC abstracts only**; full texts not retrieved. Percentages are as stated in the abstracts. |
+| sites.ed.gov/idea site search | Returns HTTP 200 but reports no results for every query including controls — **the search endpoint is unusable**, so the absence of OSEP AI guidance could **not** be established this way. |
+| OSEP guidance on artificial intelligence under IDEA | **Not located.** The nearest official statement is ED OET, *Artificial Intelligence and the Future of Teaching and Learning* (May 2023): *"Laws such as the Individuals with Disabilities Education Act (IDEA) may likewise be considered as new situations arise in the use of AI-enabled learning technologies."* A Federal Register API search for documents containing both "artificial intelligence" and "individualized education program" since 2023 returned **5 results, all grant priorities or unrelated rules — none IDEA implementation guidance.** Best available characterisation: **regulatory silence**, stated as such. |
+| Empirical audits of PLAAFP and IEP-goal quality; testing-accommodation "differential boost" meta-analyses; measured evaluations of LLM-generated IEP goals | **Not retrieved in this pass** (the assigned research strand terminated on an API error). These are real literatures and remain a gap in this report. Treat any figure on "what percentage of IEP goals are measurable" as **UNVERIFIED** until sourced. |
+
+### 14.5 A note on method
+
+The one thing this report changed its mind about mid-research: the ADA Title II web-accessibility
+deadline. Every secondary source and most of this project's own priors said **April 2026**. The
+eCFR point-in-time text said April 2027, sourced to an amendment three months old. That was
+verified against the Federal Register API before it was written down. **The discipline that caught
+it — pull the regulation, never the summary of the regulation — is the same discipline this
+report is asking `survey/04` to adopt about special education generally.**

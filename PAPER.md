@@ -2,7 +2,7 @@
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**30 sections · 75,352 words · 32 research reports · ~2,100 source citations**
+**31 sections · 76,982 words · 32 research reports · ~2,100 source citations**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -85,46 +85,47 @@ One of them documents a mechanism this project proposed, benchmarked, and
 **Part II — The system the evidence forces**
 
 5. [The JARVIS Inversion — an ambient tutor is not an ambient assistant](#the-jarvis-inversion-an-ambient-tutor-is-not-an-ambient-assistant)
-6. [Ekalavya's Thumb — the system we are actually building](#ekalavya-s-thumb-the-system-we-are-actually-building)
-7. [The Village — what makes a crew of agents a crew](#the-village-what-makes-a-crew-of-agents-a-crew)
-8. [The One Interaction That Survived — personalisation as a measurement problem](#the-one-interaction-that-survived-personalisation-as-a-measurement-problem)
-9. [The Archivist — persistent learner state, and where to put it](#the-archivist-persistent-learner-state-and-where-to-put-it)
+6. [The Compression — a week's understanding in an hour, and what that sentence can honestly mean](#the-compression-a-week-s-understanding-in-an-hour-and-what-that-sentence-can-honestly-mean)
+7. [Ekalavya's Thumb — the system we are actually building](#ekalavya-s-thumb-the-system-we-are-actually-building)
+8. [The Village — what makes a crew of agents a crew](#the-village-what-makes-a-crew-of-agents-a-crew)
+9. [The One Interaction That Survived — personalisation as a measurement problem](#the-one-interaction-that-survived-personalisation-as-a-measurement-problem)
+10. [The Archivist — persistent learner state, and where to put it](#the-archivist-persistent-learner-state-and-where-to-put-it)
 
 **Part III — The mechanisms**
 
-10. [Teach to Learn — the highest-evidence, least-built intervention](#teach-to-learn-the-highest-evidence-least-built-intervention)
-11. [The Explanation Is the Work — generative slides, and the learner as explainer](#the-explanation-is-the-work-generative-slides-and-the-learner-as-explainer)
-12. [The Ladder of Explanation — ELI10 to ELI25, and the rule that makes a simplification legal](#the-ladder-of-explanation-eli10-to-eli25-and-the-rule-that-makes-a-simplification-legal)
-13. [Explaining Hard Things — the fidelity invariants, instantiated](#explaining-hard-things-the-fidelity-invariants-instantiated)
-14. [Nobody Needs a Better Scheduler — the science of durable remembering](#nobody-needs-a-better-scheduler-the-science-of-durable-remembering)
-15. [Beyond the Tutor — the five roles nobody is building](#beyond-the-tutor-the-five-roles-nobody-is-building)
-16. [What the Object Must Refuse — embodiment, manipulatives, and executable material](#what-the-object-must-refuse-embodiment-manipulatives-and-executable-material)
-17. [Showing — illustration, animation, and the arithmetic of a wrong picture](#showing-illustration-animation-and-the-arithmetic-of-a-wrong-picture)
+11. [Teach to Learn — the highest-evidence, least-built intervention](#teach-to-learn-the-highest-evidence-least-built-intervention)
+12. [The Explanation Is the Work — generative slides, and the learner as explainer](#the-explanation-is-the-work-generative-slides-and-the-learner-as-explainer)
+13. [The Ladder of Explanation — ELI10 to ELI25, and the rule that makes a simplification legal](#the-ladder-of-explanation-eli10-to-eli25-and-the-rule-that-makes-a-simplification-legal)
+14. [Explaining Hard Things — the fidelity invariants, instantiated](#explaining-hard-things-the-fidelity-invariants-instantiated)
+15. [Nobody Needs a Better Scheduler — the science of durable remembering](#nobody-needs-a-better-scheduler-the-science-of-durable-remembering)
+16. [Beyond the Tutor — the five roles nobody is building](#beyond-the-tutor-the-five-roles-nobody-is-building)
+17. [What the Object Must Refuse — embodiment, manipulatives, and executable material](#what-the-object-must-refuse-embodiment-manipulatives-and-executable-material)
+18. [Showing — illustration, animation, and the arithmetic of a wrong picture](#showing-illustration-animation-and-the-arithmetic-of-a-wrong-picture)
 
 **Part IV — Correctness**
 
-18. [Grounding — correctness that lives in the verifier](#grounding-correctness-that-lives-in-the-verifier)
-19. [Assessment After the Artifact — measuring a person when the work no longer indicates them](#assessment-after-the-artifact-measuring-a-person-when-the-work-no-longer-indicates-them)
+19. [Grounding — correctness that lives in the verifier](#grounding-correctness-that-lives-in-the-verifier)
+20. [Assessment After the Artifact — measuring a person when the work no longer indicates them](#assessment-after-the-artifact-measuring-a-person-when-the-work-no-longer-indicates-them)
 
 **Part V — Who it is for**
 
-20. [The Empty Chair — designing for the margin first](#the-empty-chair-designing-for-the-margin-first)
-21. [Who Is Not in the Room — reach, language, and the barriers attention does not remove](#who-is-not-in-the-room-reach-language-and-the-barriers-attention-does-not-remove)
-22. [What We Owe Children — the legal floor as a design specification](#what-we-owe-children-the-legal-floor-as-a-design-specification)
+21. [The Empty Chair — designing for the margin first](#the-empty-chair-designing-for-the-margin-first)
+22. [Who Is Not in the Room — reach, language, and the barriers attention does not remove](#who-is-not-in-the-room-reach-language-and-the-barriers-attention-does-not-remove)
+23. [What We Owe Children — the legal floor as a design specification](#what-we-owe-children-the-legal-floor-as-a-design-specification)
 
 **Part VI — The field, and what it has already built**
 
-23. [The Substrate — what the frontier actually supplies](#the-substrate-what-the-frontier-actually-supplies)
-24. [The Textbook That Writes Itself — and who it remembers](#the-textbook-that-writes-itself-and-who-it-remembers)
-25. [The Canon — what the history of pedagogy already settled](#the-canon-what-the-history-of-pedagogy-already-settled)
-26. [The Market — nine bets, one graveyard, and the number that shrinks as you look at it](#the-market-nine-bets-one-graveyard-and-the-number-that-shrinks-as-you-look-at-it)
-27. [Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration](#prior-art-what-thirty-five-builds-reveal-read-as-evidence-and-not-as-inspiration)
-28. [Motivation — wanting to continue](#motivation-wanting-to-continue)
+24. [The Substrate — what the frontier actually supplies](#the-substrate-what-the-frontier-actually-supplies)
+25. [The Textbook That Writes Itself — and who it remembers](#the-textbook-that-writes-itself-and-who-it-remembers)
+26. [The Canon — what the history of pedagogy already settled](#the-canon-what-the-history-of-pedagogy-already-settled)
+27. [The Market — nine bets, one graveyard, and the number that shrinks as you look at it](#the-market-nine-bets-one-graveyard-and-the-number-that-shrinks-as-you-look-at-it)
+28. [Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration](#prior-art-what-thirty-five-builds-reveal-read-as-evidence-and-not-as-inspiration)
+29. [Motivation — wanting to continue](#motivation-wanting-to-continue)
 
 **Part VII — What we do not know**
 
-29. [What We Cannot See From Here — the unknown unknowns, and the questions that expose them](#what-we-cannot-see-from-here-the-unknown-unknowns-and-the-questions-that-expose-them)
-30. [The Agenda — three experiments, and what would falsify this survey](#the-agenda-three-experiments-and-what-would-falsify-this-survey)
+30. [What We Cannot See From Here — the unknown unknowns, and the questions that expose them](#what-we-cannot-see-from-here-the-unknown-unknowns-and-the-questions-that-expose-them)
+31. [The Agenda — three experiments, and what would falsify this survey](#the-agenda-three-experiments-and-what-would-falsify-this-survey)
 
 ---
 
@@ -1279,7 +1280,233 @@ is the highest-value accommodation in the H1 archetype table.
    engagement; do not claim it teaches.
 
 
-## 6. Ekalavya's Thumb — the system we are actually building
+## 6. The Compression — a week's understanding in an hour, and what that sentence can honestly mean
+
+<sub>Source report: `research/raw/K1-compression.md`</sub>
+
+The claim is that an AI tutor collapses a week of learning into an hour, and makes
+polymaths of ordinary people. It deserves to be taken seriously rather than
+deflected, so this section tries to establish the actual bound.
+
+The answer is **10–40× on elapsed calendar time and 3–5× on engaged effort**, with
+one documented case at roughly **300×** — and a hard floor of **1×** on durability
+and on procedural skill. The mechanism is not that anyone thinks faster. It is that
+almost none of a week is spent learning.
+
+---
+
+## 1. Decompose the week
+
+A calendar week of a university course is **9 nominal student hours** inside 112
+waking ones. That is the Carnegie arithmetic and it is already an 12× gap before
+anyone opens a book.
+
+Now go inside the 9. The Beginning Teacher Evaluation Study followed the cascade
+from allocated time → engaged time → time at an appropriate success rate, and the
+median case loses about **65%**. Their arithmetic produces the single most useful
+number in this section:
+
+> The same nominal school day yields **~4 minutes** or **~52 minutes** of productive
+> learning, depending on allocation × engagement × success rate. **A 13× spread,
+> inside identical calendars.**
+
+So the encoding fraction is small and the headroom is enormous — which is what makes
+the original claim plausible rather than silly.
+
+**And here is the gap we could not close.** Two independent retrieval passes found
+**no study anywhere that decomposes a study session into search, orientation,
+practice, and stuck.** The proportions everyone in this field assumes are not
+measured. We flag that as this survey's highest-value missing measurement rather
+than fill it with a vendor figure — it would take one instrumented cohort and a
+fortnight.
+
+---
+
+## 2. Learning is counted in opportunities, not days
+
+This is the finding that reorganises the question. Koedinger et al. (PNAS 2023),
+**1.3 million observations across 27 datasets**:
+
+| Quantity | Spread, 25th → 75th percentile |
+|---|---|
+| Learning **rate** — opportunities needed per knowledge component | 7.89 → 6.94 — **1.14×** |
+| **Prior knowledge** — where you start | 13.13 → 3.66 — **3.6×** |
+
+Read those two rows against each other. **People do not differ much in how fast they
+learn. They differ enormously in where they begin** — and this was measured *within
+students who had formally passed the prerequisites.*
+
+And the paper is explicit about the variable everyone reaches for first:
+
+> *"A time-based model, time-AFM, systematically provides poor predictive fit."*
+
+Time does not predict learning. **Opportunities do.** Which means the question is not
+"how do we make the hour denser" but "how many correctly-targeted attempts can we
+put in front of this person, and are they starting from the right place."
+
+Downstream corroboration: students in the bottom quintile of prerequisite knowledge
+**wheel-spin 50% of the time**, against **10%** for the top quintile. Half of a weak
+learner's session is spent going nowhere, for a reason that was set before the
+session started.
+
+---
+
+## 3. The good hour is already near the floor
+
+There is exactly one randomised trial that measured both learning *and* time. Its
+learners took a **median 49 minutes against 60**, and learned **d ≈ 0.63** more.
+
+But the detail that matters is buried: **there was no correlation between
+time-on-task and score.**
+
+That kills the obvious model. You do not compress by making the productive hour more
+efficient — the productive hour is close to irreducible. **You compress the 111 hours
+around it**: the search, the waiting, the scheduling, the re-reading, and above all
+the time spent blocked on a prerequisite nobody diagnosed.
+
+---
+
+## 4. The speed records that already exist
+
+The most extreme documented result predates all of this. Sherlock, an avionics
+troubleshooting tutor, in the source's own words:
+
+> **20–25 hours of tutor time ≈ four extra years of on-the-job experience.**
+
+Roughly **300×**, achieved by nothing more exotic than opportunity density: 34
+problems in 20 hours, each targeted, each with feedback. Four years of a job
+contains very few genuine troubleshooting opportunities and a great deal of
+everything else.
+
+Broader and duller: Kulik's synthesis of 51 studies found **39–88% learning-time
+savings** for mastery-based approaches at equal or better outcomes.
+
+Two things we will not claim. Digital Tutor's widely-quoted "d = 1.9–3.7" is
+**unverified** — the documented language is only *"in excess of two standard
+deviations"* — and its Phase 1 result used **human tutors for 14 of its 16 weeks.**
+
+---
+
+## 5. The counter-anchor, and it is severe
+
+The Foreign Service Institute has spent seventy years removing every compressible
+element from language training. Its programmes still require **552–2,200 hours**.
+
+Compression there is approximately **1×**.
+
+That is the boundary of this entire section. **Procedural and production skill does
+not compress**, because the bottleneck is repetitions of the motor or productive act
+and nothing can perform them on your behalf. Speaking, playing, operating, drawing,
+surgery, sport — the hours are the mechanism, not overhead around it.
+
+Two more nulls, and the second is our own thesis biting back:
+
+- **Seamon (2004):** the intensive-format advantage is real immediately and **gone at
+  three years.**
+- **Whillier & Lystad:** the same contact hours compressed produced significantly
+  **worse** grades (P = 0.001) — and **higher satisfaction.** The felt-learning trap,
+  arriving exactly where a compression claim is most tempting to believe.
+
+There is also no meta-analysis of intensive versus traditional formats. Every review
+in the area is narrative, with no pooled effect size. The literature is thinner than
+its confidence.
+
+---
+
+## 6. Durability does not compress — but it is nearly free
+
+Retention is built by **elapsed time between retrievals**, and that cannot be
+accelerated. A memory durable for a year needs gaps of **18–36 days**. There is no
+version of this where you finish on Tuesday.
+
+But the cost of durability is routinely overstated, and one experiment settles it.
+Rohrer and Taylor obtained their large four-week benefit from **the same ten
+problems, merely split** across sessions instead of massed into one.
+
+**Same total effort. Same items. Different calendar.**
+
+So the honest shape of the claim is not "everything compresses" or "nothing does".
+It is:
+
+> **A week's understanding in an hour. A year's retention in six hours spread across
+> two months.**
+
+That is a *stronger* claim than the one it replaces, because it is specific enough to
+plan against — and it says the expensive part is calendar patience, not effort.
+
+---
+
+## 7. Polymathy, and why it is bounded by orientation
+
+Scientists work in **3–4 topics across an entire career**, and switching correlates
+with lower citation impact at every career stage.
+
+Why so few? Not learning rate — that varies by **1.14×**. Not practice hours —
+deliberate practice explains **4% of variance in education** and **under 1% in
+professions**. The binding constraint is the one parameter that varies by **3.6×**:
+**where you start**, which is to say the fixed cost of orientation in a new field.
+
+Orientation is knowing what the field's real question is, which of its words mean
+something different here, what a good question sounds like, which results are load-
+bearing and which are decoration, and who to read. It takes months, it is almost
+entirely search and social access, and **it is the part of expertise that has nothing
+to do with intelligence.**
+
+It is also the part an agent can collapse most completely — it is retrieval,
+structuring, and diagnosis, none of which require the learner's own working memory.
+
+> **What limits polymathy is not how many fields you can learn. It is how many times
+> you can afford to be a beginner.** That price is what falls.
+
+This is the strongest version of the claim in this section, and it is
+`INFERENCE` — it follows from the measured parameters rather than from a trial of
+anyone becoming a polymath. Nobody has run that study. It is eminently runnable.
+
+---
+
+## 8. The number, with its conditions
+
+**10–40× on elapsed calendar. 3–5× on engaged effort.**
+
+Rising above 40× — documented once at ~300× — when the baseline is *informal
+experience* rather than a structured course, because informal experience has the
+worst opportunity density of any learning arrangement.
+
+Falling to **1×** for procedural and production domains, and **1×** for durability.
+
+Three conditions, and all three are load-bearing:
+
+1. **Accurate diagnosis of the starting point.** The 3.6× lever is prior knowledge,
+   and it only pays if measured — see §22, where the measurement costs 15–40 seconds.
+2. **The learner actually attempts.** Unguarded assistance leaves learners **17%
+   worse** on later unassisted work. Compression achieved by watching someone else
+   solve it is not compression; it is substitution.
+3. **A short retention horizon, or a spaced schedule.** Compress acquisition, then be
+   patient. Those are different resources and conflating them is where the claim
+   becomes false.
+
+---
+
+## 9. What this section commits us to
+
+- **Never quote a compression factor without saying which resource.** Calendar,
+  engaged effort, and durability compress at wildly different rates, and a single
+  number that does not name one is marketing.
+- **Optimise opportunities, not minutes.** Time-based models of learning have
+  systematically poor fit. Count attempts at the right difficulty.
+- **Spend the compression budget on orientation and prerequisite repair**, which are
+  worth 3.6×, not on speeding up the productive hour, which is already near its
+  floor.
+- **Claim 1× on procedural skill**, out loud, every time. The FSI hours are real and
+  no model shortens them.
+- **Ship the session decomposition study.** Nobody has measured where a study hour
+  actually goes. It is the cheapest high-value experiment in this document.
+
+The sentence to keep: **almost none of a week is spent learning, and that — not
+processing speed, not talent, not effort — is what an agent takes back.**
+
+
+## 7. Ekalavya's Thumb — the system we are actually building
 
 
 Ekalavya wanted to learn archery. Drona refused him — wrong caste. So he built a
@@ -1508,7 +1735,7 @@ Ekalavya lost his thumb so the hierarchy could keep its best archer at the top.
 **Nobody's thumb, ever again — and this time, the record travels with them.**
 
 
-## 7. The Village — what makes a crew of agents a crew
+## 8. The Village — what makes a crew of agents a crew
 
 <sub>Source report: `research/raw/G2-agent-village.md`</sub>
 
@@ -1884,7 +2111,7 @@ are engineering guarantees, and this section claims exactly those and nothing
 more.**
 
 
-## 8. The One Interaction That Survived — personalisation as a measurement problem
+## 9. The One Interaction That Survived — personalisation as a measurement problem
 
 <sub>Source report: `research/raw/J1-personalisation-engine.md`</sub>
 
@@ -2167,7 +2394,7 @@ of a hall of mirrors, a fifteen-second measurement instead of a battery, and a
 pre-registered condition under which we delete the feature.
 
 
-## 9. The Archivist — persistent learner state, and where to put it
+## 10. The Archivist — persistent learner state, and where to put it
 
 <sub>Source report: `research/raw/F5-learner-model.md`</sub>
 
@@ -2555,7 +2782,7 @@ weak part. The place to put them was.**
 *Eight techniques, each with a measured effect and a specified failure mode. These are the parts that do the teaching.*
 
 
-## 10. Teach to Learn — the highest-evidence, least-built intervention
+## 11. Teach to Learn — the highest-evidence, least-built intervention
 
 
 **The claim:** the most effective available use of an AI in learning is not as a
@@ -2681,7 +2908,7 @@ alone, or requires fine-tuning, is — as far as this survey can determine —
 **unanswered and worth answering.**
 
 
-## 11. The Explanation Is the Work — generative slides, and the learner as explainer
+## 12. The Explanation Is the Work — generative slides, and the learner as explainer
 
 <sub>Source report: `research/raw/C3-slides-and-presentations.md`</sub>
 
@@ -2921,7 +3148,7 @@ against.
 The explanation is the work. The slides are just where you can see it.
 
 
-## 12. The Ladder of Explanation — ELI10 to ELI25, and the rule that makes a simplification legal
+## 13. The Ladder of Explanation — ELI10 to ELI25, and the rule that makes a simplification legal
 
 <sub>Source report: `research/raw/F10-explanation-laddering.md`</sub>
 
@@ -3243,7 +3470,7 @@ measured design. It is also the cheapest experiment in this section, and the one
 that would turn the ladder from an output into an instrument.
 
 
-## 13. Explaining Hard Things — the fidelity invariants, instantiated
+## 14. Explaining Hard Things — the fidelity invariants, instantiated
 
 <sub>Source report: `derived — see provenance note in §1`</sub>
 
@@ -3491,7 +3718,7 @@ The general form, which is the section in one line: **a simplification is legal 
 the reader can still tell what would break.**
 
 
-## 14. Nobody Needs a Better Scheduler — the science of durable remembering
+## 15. Nobody Needs a Better Scheduler — the science of durable remembering
 
 <sub>Source report: `research/raw/F11-scientific-remembering.md`</sub>
 
@@ -3728,7 +3955,7 @@ struggled, actually explained, and actually got told when they were wrong.**
 The machinery is worth building. It is just not worth mistaking for the mechanism.
 
 
-## 15. Beyond the Tutor — the five roles nobody is building
+## 16. Beyond the Tutor — the five roles nobody is building
 
 <sub>Source report: `research/raw/F2-beyond-the-tutor.md`</sub>
 
@@ -4054,7 +4281,7 @@ that the field does not appear to know there was a choice — and therefore has 
 sequenced them.
 
 
-## 16. What the Object Must Refuse — embodiment, manipulatives, and executable material
+## 17. What the Object Must Refuse — embodiment, manipulatives, and executable material
 
 <sub>Source report: `research/raw/F7-A3-embodiment-and-notebooks.md`</sub>
 
@@ -4272,7 +4499,7 @@ other direction: what teaches is not the richness of what the learner is given. 
 is the **precision of what they are not allowed to do wrong without noticing.**
 
 
-## 17. Showing — illustration, animation, and the arithmetic of a wrong picture
+## 18. Showing — illustration, animation, and the arithmetic of a wrong picture
 
 <sub>Source report: `research/raw/C1-illustration-generation.md, research/raw/A2-interactive-animation.md`</sub>
 
@@ -4631,7 +4858,7 @@ and only one of those is the job.
 *How a tutor can be wrong safely, and how a learner's work can be measured when the artifact no longer indicates the person who produced it.*
 
 
-## 18. Grounding — correctness that lives in the verifier
+## 19. Grounding — correctness that lives in the verifier
 
 <sub>Source report: `research/raw/G1-grounding-synthesis.md`</sub>
 
@@ -5069,7 +5296,7 @@ the correction can come from a program the learner can run themselves rather tha
 machine claiming to know.
 
 
-## 19. Assessment After the Artifact — measuring a person when the work no longer indicates them
+## 20. Assessment After the Artifact — measuring a person when the work no longer indicates them
 
 <sub>Source report: `research/raw/F1-assessment-reconstruction.md`</sub>
 
@@ -5486,7 +5713,7 @@ learned least.**
 *The learners the evidence was not collected on, the learners it cannot reach, and the legal floor that turns out to be a design specification.*
 
 
-## 20. The Empty Chair — designing for the margin first
+## 21. The Empty Chair — designing for the margin first
 
 <sub>Source report: `research/raw/H1-selpa-accessibility.md`</sub>
 
@@ -5738,7 +5965,7 @@ lands.
 The chair is empty because nobody sat down. Not because the seat was taken.
 
 
-## 21. Who Is Not in the Room — reach, language, and the barriers attention does not remove
+## 22. Who Is Not in the Room — reach, language, and the barriers attention does not remove
 
 <sub>Source report: `research/raw/F4-reach-economics.md`</sub>
 
@@ -5947,7 +6174,7 @@ should be checkable against a specific person who is **not in the room** — and
 their language.
 
 
-## 22. What We Owe Children — the legal floor as a design specification
+## 23. What We Owe Children — the legal floor as a design specification
 
 <sub>Source report: `research/raw/F8-safety-privacy-children.md`</sub>
 
@@ -6315,7 +6542,7 @@ build from.
 *The frontier's actual capabilities, the artifacts other people have shipped, the pedagogical canon that settled most of this decades ago, and the question of whether anyone wants to continue.*
 
 
-## 23. The Substrate — what the frontier actually supplies
+## 24. The Substrate — what the frontier actually supplies
 
 <sub>Source report: `research/raw/A4-live-multimodal.md, research/raw/A5-world-models.md, research/raw/D1-frontier-quarter.md`</sub>
 
@@ -6650,7 +6877,7 @@ whether it teaches — is the widest measurement gap in applied AI, and it is th
 subject of the last section in this survey.
 
 
-## 24. The Textbook That Writes Itself — and who it remembers
+## 25. The Textbook That Writes Itself — and who it remembers
 
 <sub>Source report: `research/raw/A1-ai-native-textbooks.md, research/raw/G3-future-of-learning-projects.md`</sub>
 
@@ -6963,7 +7190,7 @@ telling; the human still writes the doing — and the reason is now measured, no
 asserted. The doing is the only part with a right answer that can be wrong.
 
 
-## 25. The Canon — what the history of pedagogy already settled
+## 26. The Canon — what the history of pedagogy already settled
 
 <sub>Source report: `research/raw/I1-pedagogical-systems.md, research/raw/I2-global-traditions.md`</sub>
 
@@ -7298,7 +7525,7 @@ ever gated by the price of attention. Those are the ones to build. The rest are
 worth knowing so that we do not mistake a tradition for a finding.
 
 
-## 26. The Market — nine bets, one graveyard, and the number that shrinks as you look at it
+## 27. The Market — nine bets, one graveyard, and the number that shrinks as you look at it
 
 <sub>Source report: `research/raw/E1-E2-edtech-landscape-lessonorca.md, research/raw/E3-latest-sweep.md`</sub>
 
@@ -7601,7 +7828,7 @@ the school years it would take for anyone to notice the difference. The fix is n
 better claims. It is naming, in advance, the observation that would prove you wrong.
 
 
-## 27. Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration
+## 28. Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration
 
 <sub>Source report: `research/raw/D2-portfolio-case-studies.md`</sub>
 
@@ -7923,7 +8150,7 @@ that measure whether anyone learned are the parts that are always about to be bu
 next.
 
 
-## 28. Motivation — wanting to continue
+## 29. Motivation — wanting to continue
 
 <sub>Source report: `research/raw/F6-motivation-persistence.md`</sub>
 
@@ -8394,7 +8621,7 @@ whether they came back with nobody asking.**
 *The catalogued gaps, the uncatalogued ones, and the conditions under which this document's central claim would have to be withdrawn.*
 
 
-## 29. What We Cannot See From Here — the unknown unknowns, and the questions that expose them
+## 30. What We Cannot See From Here — the unknown unknowns, and the questions that expose them
 
 <sub>Source report: `synthesis across the corpus`</sub>
 
@@ -8691,7 +8918,7 @@ failures we have not measured, and put the falsifier in writing before the resul
 arrives.**
 
 
-## 30. The Agenda — three experiments, and what would falsify this survey
+## 31. The Agenda — three experiments, and what would falsify this survey
 
 <sub>Source report: `research/raw/F9-open-problems.md`</sub>
 

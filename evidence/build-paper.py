@@ -26,7 +26,7 @@ PARTS = [
   "What follows from that evidence if you take it seriously: an architecture, "
   "a division of labour, and a selection policy — each constrained by a "
   "measurement rather than a preference.",
-  ["00-north-star-jarvis", "03-the-vision", "10-the-village",
+  ["00-north-star-jarvis", "30-the-compression", "03-the-vision", "10-the-village",
    "22-the-one-interaction-that-survived", "11-the-archivist"]),
 
  ("III", "The mechanisms",
@@ -274,7 +274,7 @@ body{padding:0;overflow-x:hidden}
   #rail .close{position:absolute;top:16px;right:14px;width:32px;height:32px;border-radius:8px;
     border:1px solid var(--line-2);background:var(--surface);color:var(--ink);cursor:pointer;
     font:15px/1 var(--sans)}
-  .scrim{position:fixed;inset:0;z-index:75;background:rgba(0,0,0,.34);opacity:0;
+  .scrim{position:fixed;inset:0;z-index:75;background:rgba(0,0,0,.46);opacity:0;
     pointer-events:none;transition:opacity .22s}
   .scrim[data-open]{opacity:1;pointer-events:auto}
 }
