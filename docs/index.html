@@ -132,9 +132,9 @@ footer a{color:var(--ink-3)}
   knows more than the tutor does. Every claim carries a label. Negative results are first-class.
   <strong>Our own corrections are published, not quietly edited.</strong></p>
   <div class="meta">
-    <span><b>9</b> survey sections · <b>14,500</b> words</span>
-    <span><b>31</b> research reports</span>
-    <span><b>~1,900</b> sources</span>
+    <span><b>22</b> survey sections · <b>56,500</b> words</span>
+    <span><b>30</b> research reports</span>
+    <span><b>~2,000</b> sources</span>
     <span><b>11</b> published corrections</span>
     <span>Updated <b>28 Jul 2026</b></span>
   </div>
@@ -145,15 +145,17 @@ footer a{color:var(--ink-3)}
 randomised trial — and every one is smaller than the marketing around it.</p>
 
 <div class="tiles">
-  <div class="tile"><div class="n b">g=0.50</div><div class="l">Retrieval practice — labs <em>and</em> classrooms</div><div class="s">222 studies · 48,478 students</div></div>
-  <div class="tile"><div class="n b">d=0.54</div><div class="l">Spacing / distributed practice</div><div class="s">Cepeda meta-analytic tradition</div></div>
-  <div class="tile"><div class="n b">0.63–0.73</div><div class="l">Best measured AI tutor — <b>in 49 minutes against 60</b></div><div class="s">Kestin RCT · inside the human-tutoring range</div></div>
+  <div class="tile"><div class="n b">g=0.50</div><div class="l">Retrieval practice — labs <em>and</em> classrooms</div><div class="s">222 studies · 48,478 students · I² = 88%</div></div>
+  <div class="tile"><div class="n b">d=0.54</div><div class="l">Spacing / distributed practice</div><div class="s">2025 classroom meta-analysis · 31 effects · N &gt; 3,000</div></div>
+  <div class="tile"><div class="n b">d≈0.63</div><div class="l">Best measured AI tutor — <b>in 49 minutes against 60</b></div><div class="s">Kestin RCT · developer-built and developer-evaluated</div></div>
   <div class="tile"><div class="n">−17%</div><div class="l">Unguarded AI, measured <b>after you take it away</b></div><div class="s">Bastani PNAS · guardrails remove this</div></div>
 </div>
 
 <figure>
   <div class="ftitle">Felt learning and real learning move in opposite directions</div>
-  <div class="fsub">Each row is one capability measured on both axes in the same study. Hover a row.</div>
+  <div class="fsub">Paired outcomes, not a slope chart — the two columns are different units
+  (percentages, <em>d</em>, and qualitative change), so they share no scale and the connector
+  encodes pairing only, never magnitude. Hover a row.</div>
   <div class="legend">
     <span><i style="background:var(--felt)"></i>What the learner felt</span>
     <span><i style="background:var(--real)"></i>What was actually learned</span>
@@ -188,8 +190,9 @@ contested, or null. Hover any row for the base and the caveat.</p>
   <div id="bars"></div>
   <figcaption><strong>Bloom's 2σ does not appear</strong>, because it does not replicate. VanLehn
   measured human tutoring at 0.79 and intelligent tutoring at 0.76; Nickow's pooled tutoring RCTs
-  land at 0.37. Chasing 2σ inflates the target roughly 2.5× and makes everything real look like a
-  failure.</figcaption>
+  land at <strong>0.288</strong> — and that number itself fell from 0.37 in the working paper to
+  0.288 in peer review, which is why this survey discounts working-paper effect sizes. Chasing 2σ
+  inflates the target roughly 7× against the pooled estimate.</figcaption>
 </figure>
 
 <details>
@@ -253,7 +256,7 @@ every one published rather than silently edited. This list is the reason to trus
   <tr><td>Orton-Gillingham is decades-replicated</td><td><b>g = 0.22, p = .40</b> — non-significant against active comparison</td></tr>
   <tr><td>Expertise reversal d = 0.971</td><td>Unverifiable. Reported components imply <b>≈ 0.93</b></td></tr>
   <tr><td>Concreteness fading has a pooled effect size</td><td>Fyfe 2014 is a <b>systematic review</b>. No pooled ES exists anywhere</td></tr>
-  <tr><td>Bloom's 2σ as the target</td><td>Does not replicate. <b>VanLehn 0.79 · Nickow 0.37 · Kestin 0.63–0.73</b></td></tr>
+  <tr><td>Bloom's 2σ as the target</td><td>Does not replicate. <b>VanLehn 0.79 · Nickow 0.288 · Kestin d ≈ 0.63</b></td></tr>
   <tr><td>g = 0.56 is the teachable-agent effect</td><td>It is <b>human</b> learning-by-teaching. The agent version is <b>untested</b></td></tr>
   <tr><td>AI tutoring widens gaps, full stop</td><td>That is a property of <b>untargeted delivery</b>. Across 8 targeted interventions, <b>none widened gaps</b></td></tr>
   <tr><td>The pāṭha protocol should beat self-consistency</td><td>Benchmarked and <b>falsified</b> — exactly at chance on both models tested</td></tr>
@@ -400,9 +403,9 @@ honestly labelled where scripted.</p>
 <div class="scroll">
 <table>
   <tr><th>Artifact</th><th>State</th><th></th></tr>
-  <tr><td><b>The survey</b> — the deliverable</td><td class="num">9 sections · 14,500 words</td><td class="mut">target ~45,000</td></tr>
-  <tr><td><b>Research reports</b> — the input</td><td class="num">31 reports · ~280,000 words</td><td class="up">complete</td></tr>
-  <tr><td>Sections written from reports in hand</td><td class="num">9 of 32</td><td class="mut">23 remaining</td></tr>
+  <tr><td><b>The survey</b> — the deliverable</td><td class="num">22 sections · 56,500 words</td><td class="up">target exceeded</td></tr>
+  <tr><td><b>Research reports</b> — the input</td><td class="num">30 reports · ~380,000 words</td><td class="up">complete</td></tr>
+  <tr><td>Sections written from reports in hand</td><td class="num">22 of 32</td><td class="mut">10 remaining</td></tr>
   <tr><td>Demo pages</td><td class="num">gallery + design system</td><td class="mut">13 to build</td></tr>
   <tr><td>Published corrections</td><td class="num">11</td><td class="up">all on the record</td></tr>
 </table>
@@ -442,17 +445,17 @@ const LADDER = {
   rows: [
     {label:"Human tutoring",         note:"VanLehn — the real ceiling, not 2σ",                      v:0.79,  ok:true},
     {label:"Intelligent tutoring",   note:"VanLehn — statistically indistinguishable from human",    v:0.76,  ok:true},
-    {label:"Best AI tutor RCT",      note:"Kestin — 0.63–0.73, achieved in 49 minutes against 60",   v:0.68,  ok:true},
+    {label:"Best AI tutor RCT",      note:"Kestin — d ≈ 0.63 regression, in 49 min vs 60. Developer-built AND developer-evaluated; no funding statement", v:0.63, ok:true},
     {label:"Learning by teaching",   note:"Kobayashi 2019 — human tutee, expectancy set first",      v:0.56,  ok:true},
     {label:"Self-explanation",       note:"Bisra et al. pooled estimate",                            v:0.55,  ok:true},
-    {label:"Spacing",                note:"Cepeda meta-analytic tradition",                          v:0.54,  ok:true},
-    {label:"Retrieval practice",     note:"222 classroom studies · 48,478 students",                 v:0.50,  ok:true},
+    {label:"Spacing",                note:"2025 classroom meta-analysis · 31 effects · N > 3,000",    v:0.54,  ok:true},
+    {label:"Retrieval practice",     note:"222 classroom studies · 48,478 students · I² = 88%",       v:0.50,  ok:true},
     {label:"Worked examples",        note:"reverses for experts — d = −0.428",                       v:0.48,  ok:true},
     {label:"Teaching w/ expectancy", note:"Kobayashi 2024, k=39. Without expectancy: g = −0.02",     v:0.48,  ok:true},
     {label:"Scaffolding (computer)", note:"Belland, 144 studies — the only directly meta-validated computer-based form", v:0.46, ok:true},
     {label:"Interleaving",           note:"varies sharply by domain",                                v:0.42,  ok:true},
     {label:"Mayer design principles",note:"contiguity alone reaches 0.74",                           v:0.38,  ok:true},
-    {label:"Tutoring, pooled RCTs",  note:"Nickow et al. — the honest field-wide number",            v:0.37,  ok:true},
+    {label:"Tutoring, pooled RCTs",  note:"Nickow 2024 AERJ, 96 randomised studies — the honest field-wide number. Was 0.37 in the 2020 working paper", v:0.288, ok:true},
     {label:"Productive failure",     note:"requires prior knowledge; fails without it",              v:0.36,  ok:true},
     {label:"Voice call + SMS",       note:"5 countries · N = 8,902 — beats most of this list",       v:0.327, ok:true},
     {label:"VR vs desktop",          note:"35 RCTs — the presence premium, and it is modest",        v:0.24,  ok:false},
@@ -544,7 +547,7 @@ function renderSlope(host, spec){
   const W = 700, H = spec.rows.length * ROW + PAD * 2;
   const x1 = LW + 62, x2 = W - 118;
   const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, role:'img',
-    'aria-label':'Slope chart: five capabilities where what learners felt diverged from what they actually learned.'});
+    'aria-label':'Paired-outcome chart: five capabilities, each showing what learners felt beside what they actually learned. The two columns use different units and share no scale.'});
   svg.appendChild(mk('line', {x1, y1:14, x2:x1, y2:H-24, class:'gl'}));
   svg.appendChild(mk('line', {x1:x2, y1:14, x2:x2, y2:H-24, class:'gl'}));
   const t1 = mk('text', {x:x1, y:H-6, 'text-anchor':'middle', class:'ax'}); t1.textContent = 'FELT';
@@ -557,9 +560,10 @@ function renderSlope(host, spec){
                             style:`font-size:${narrow ? 11 : 13}px`});
     lab.textContent = r.label;
     g.appendChild(lab);
-    g.appendChild(mk('line', {x1, y1:y, x2, y2:y,
-      stroke: r.invert ? 'var(--real)' : 'var(--felt)', 'stroke-width':2,
-      opacity: r.invert ? 0.42 : 0.28}));
+    // connector encodes PAIRING only — never magnitude. Dotted so it cannot be
+    // misread as a slope; the columns share no scale.
+    g.appendChild(mk('line', {x1, y1:y, x2, y2:y, stroke:'var(--line-2)',
+      'stroke-width':1, 'stroke-dasharray':'2 4'}));
     g.appendChild(mk('circle', {cx:x1, cy:y, r:6, fill:'var(--felt)', class:'dot'}));
     g.appendChild(mk('circle', {cx:x2, cy:y, r:6, fill:'var(--real)', class:'dot'}));
     const a = mk('text', {x:x1-13, y:y+4, 'text-anchor':'end', class:'vl',

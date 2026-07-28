@@ -26,12 +26,11 @@ is capability.
 
 **A tutor can contradict a confident learner without asserting authority.** Today,
 when a tutor says you are wrong, it is staking status: *believe me, I am the machine
-that knows*. That is exactly the epistemic posture education research spends its time
-dismantling, and it fails badly with the learner who is already right and the learner
-who has learned not to argue. With a checker, the move changes from *assertion* to
-*experiment*: "I think that's off — let's evaluate both versions at x = 3 and see."
-The tutor stops being the authority and becomes the person who knows how to settle
-it.
+that knows* — exactly the posture that fails with the learner who is already right and
+the learner who has learned not to argue. With a checker, the move changes from
+*assertion* to *experiment*: "I think that's off — let's evaluate both versions at
+x = 3 and see." The tutor stops being the authority and becomes the person who knows
+how to settle it.
 
 > *Guardrail, in the same breath:* the check settles **the claim**, never the person,
 > and only claims of the type it can decide. A tutor that runs a numeric check and
@@ -258,13 +257,12 @@ That was stated as a fact about Lean. It is a fact about *chains*.
 
 Do the arithmetic. If the two checked obligations give 0.97 × 0.69 = 0.669 and the
 pipeline measures 0.36 end-to-end, the implied statement-fidelity rate is
-**0.36 / 0.669 ≈ 0.54.** That lands on top of the source paper's own qualitative
+**0.36 / 0.669 ≈ 0.54** — which lands on top of the source paper's own qualitative
 finding of formal/informal discrepancies in "more than half" of the problems. Two
 routes, one number. **The fidelity term is not a rounding error; it is the largest term
 in the product.**
 
-Once you know to look for obligation 3, it is already measured elsewhere under other
-names:
+Once you know to look for obligation 3, it is already measured under other names:
 
 | Chain | Obligation 3 | Measured fidelity |
 |---|---|---|

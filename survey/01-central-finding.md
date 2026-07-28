@@ -18,9 +18,14 @@ date: 2026-07-25
 | Productive failure | **g = 0.36**, rising to **0.58** at high fidelity | Meta-analysis |
 | Spaced practice | classroom **d = 0.54** | 12 of 271 comparisons failed |
 
-These are not incremental. A tutor that produces 1.2–1.7 years of maths progress
-in eight weeks, in one of the world's most resource-constrained school systems,
-is the strongest evidence in the history of educational technology.
+These are not incremental — but the Sierra Leone headline does not survive the
+appendix, and this document said otherwise in an earlier draft. **Corrected in
+place:** the ITT estimate is +0.258 SD (p = 0.029); the *unadjusted* estimate is
+**+0.216 SD, SE 0.137 — not significant.** The effect loads entirely on Grade 8
+(Grade 7 main effect −0.078), gaps widened at +0.195 SD per SD of baseline, and
+attrition differed by arm. It is a promising result from a hard setting. It is not
+the strongest evidence in the history of educational technology, and calling it
+that was our error.
 
 **And the mechanism is known.** In the Sierra Leone deployment, 113k conversations
 were coded: **91.4% concept-building, scaffolding in 76% of responses, direct

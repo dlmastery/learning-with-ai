@@ -16,8 +16,8 @@ doctoral student who knows more than the tutor does.**
 If learning were designed today — with frontier AI assumed rather than bolted onto a
 nineteenth-century classroom — what would it look like?
 
-This repository answers that with a survey built on **31 research reports, ~280,000 words, and
-roughly 1,900 primary sources**. Every claim carries an evidence label. Every section carries at
+This repository answers that with a survey built on **30 research reports, ~380,000 words, and
+roughly 2,000 primary sources**. Every claim carries an evidence label. Every section carries at
 least one documented null result. And **every one of our own errors is published rather than
 quietly edited**.
 
@@ -49,7 +49,7 @@ chair is what this document is for.
 | **Building a product** | [`survey/01`](survey/01-central-finding.md) (the felt-learning trap) → [`survey/04`](survey/04-the-empty-chair.md) (what the evidence forces) → [`survey/08`](survey/08-nobody-needs-a-better-scheduler.md) (what not to build) |
 | **A researcher** | [`research/raw/F9-open-problems.md`](research/raw/F9-open-problems.md) — 19 open problems, each with a runnable experiment, power justification, and pre-registered falsifier |
 | **A parent or teacher** | [`survey/04`](survey/04-the-empty-chair.md) and [`survey/05`](survey/05-the-explanation-is-the-work.md) |
-| **Sceptical** | [`AUDIT.md`](AUDIT.md) — our requirements audit, written against ourselves — and the corrections table below |
+| **Sceptical** | [`evidence/review-2026-07-28.md`](evidence/review-2026-07-28.md) — a hostile external review of this repo, verdict **not yet** — and the corrections table below |
 
 ---
 
@@ -59,11 +59,11 @@ chair is what this document is for.
 
 | Technique | Effect | Base |
 |---|---|---|
-| Retrieval practice | **g = 0.50** | 222 classroom studies · 48,478 students |
-| Spacing / distributed practice | **d = 0.54** | Cepeda meta-analytic tradition |
-| Human tutoring | **d = 0.79** | VanLehn — *not* Bloom's 2σ |
+| Retrieval practice | **g = 0.50** | 222 classroom studies · 48,478 students · **I² = 88%** |
+| Spacing / distributed practice | **d = 0.54** | 2025 classroom meta-analysis, 31 effects, N > 3,000 |
+| Human tutoring | **d = 0.79** | VanLehn. Pooled RCTs are lower: **0.288** |
 | Intelligent tutoring systems | **d = 0.76** | Statistically indistinguishable from human |
-| Best measured AI tutor | **0.63–0.73** | Kestin RCT — in 49 minutes against 60 |
+| Best measured AI tutor | **d ≈ 0.63** | Kestin RCT — 49 min vs 60. Developer-built, developer-evaluated |
 | Learning by teaching *with prior expectancy* | **g = 0.48** | Kobayashi 2024, k = 39 |
 | Computer-based scaffolding | **ḡ = 0.46** | Belland, 144 studies |
 
@@ -71,7 +71,7 @@ chair is what this document is for.
 
 | Claim | Reality |
 |---|---|
-| Bloom's **2 sigma** | Does not replicate. Pooled tutoring RCTs land at **0.37** |
+| Bloom's **2 sigma** | Does not replicate. Pooled tutoring RCTs land at **0.288** |
 | **Learning styles** matching | No credible support in four decades — yet 89.1% of educators believe it |
 | **Expanding** SRS intervals | **g = 0.032**, k = 54, **I² = 0%** — a clean, well-powered nothing |
 | **Orton-Gillingham** | **g = 0.22, p = .40** against active comparison |
@@ -199,7 +199,7 @@ than silently edited. **This list is the reason to trust anything else here.**
 | Orton-Gillingham is decades-replicated | **g = 0.22, p = .40** |
 | Expertise reversal d = 0.971 | Unverifiable. Components imply **≈0.93** |
 | Concreteness fading has a pooled effect size | Fyfe 2014 is a **systematic review**. No pooled ES exists |
-| Bloom's 2σ is the target | Does not replicate. **VanLehn 0.79 · Nickow 0.37** |
+| Bloom's 2σ is the target | Does not replicate. **VanLehn 0.79 · Nickow 0.288** |
 | g = 0.56 is the teachable-agent effect | It is **human** learning-by-teaching. The agent version is **untested** |
 | AI tutoring widens gaps, full stop | A property of **untargeted delivery**. Across 8 targeted interventions, **none widened gaps** |
 | The pāṭha protocol should beat self-consistency | Benchmarked and **falsified** — exactly at chance |
@@ -234,10 +234,10 @@ for it.
 
 | Artifact | State |
 |---|---|
-| **Survey** — the deliverable | 9 sections · ~14,500 words (target ~45,000) |
-| **Research reports** — the input | 31 reports · ~280,000 words · complete |
-| Sections written from reports in hand | 9 of 32 |
-| Demo pages | Gallery + design system shipped; 13 pages to build |
+| **Survey** — the deliverable | 22 sections · ~56,500 words (target ~45,000 — exceeded) |
+| **Research reports** — the input | 30 reports · ~380,000 words · complete |
+| Sections written from reports in hand | 22 of 32 |
+| Demo pages | Gallery + design system shipped; pages landing incrementally |
 | Published corrections | 11 |
 
 Built **incrementally** — one section at a time, committed as it lands. Never generated in one go.

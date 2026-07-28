@@ -47,7 +47,7 @@ methods as effective as one-to-one tutoring."
 
 **Two sigma is not the number, and we should stop quoting it.** VanLehn measured
 human tutoring at **d = 0.79** and intelligent tutoring systems at **0.76**;
-Nickow et al. pooled tutoring RCTs at **0.37 SD**. Kestin's Harvard AI-tutor RCT
+Nickow et al. pooled 96 randomised tutoring studies at **0.288 SD** in peer review. Kestin's Harvard AI-tutor RCT
 landed at **0.63–0.73 — in 49 minutes against 60.** That is *inside the human
 tutoring range*, which is the honest claim and still a remarkable one. Chasing 2σ
 inflates the target roughly 2.5× and guarantees that everything real looks like a

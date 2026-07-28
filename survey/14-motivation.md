@@ -96,26 +96,23 @@ And the second one destroys the access narrative: the marginal MOOC user was not
 underserved learner in a low-income country. It was an already-credentialed
 professional in a rich one.
 
-**The honest rebuttal, stated in full because it is measured rather than rhetorical.**
+**The honest rebuttal, stated because it is measured rather than rhetorical.**
 Completion is arguably the wrong denominator, because most enrollees never intended to
 complete. Henderikx et al. ran the same two MOOCs under both definitions:
 completion-based success **6.5% and 5.6%**; intention-adjusted success — did the
 learner achieve *their own* stated goal — **59% and 70%**. A tenfold swing from a
 definitional choice. Kizilcec's four-trajectory taxonomy (completing, auditing,
 disengaging, sampling) made this tractable by treating the clusters as different
-products being consumed rather than degrees of failure.
-
-*And the replication note that belongs with it:* an attempt to reproduce the
-four-cluster structure on a different, social-constructivist platform **failed to fully
-replicate**. Only two clusters were stable across platforms and re-runs — samplers and
-completers. Engagement patterns are shaped by pedagogy and learning design, not
+products being consumed rather than degrees of failure. *And the replication note that
+belongs with it:* an attempt to reproduce that structure on a different,
+social-constructivist platform **failed to fully replicate**, with only samplers and
+completers stable across platforms. Engagement patterns are shaped by pedagogy, not
 intrinsic to learners.
 
 **Where the rebuttal fails.** It rescues MOOCs from the charge of failure but not from
 irrelevance to the persistence problem. Reframing sampling as success does not produce
 one additional person who learned a hard thing they could not previously do. And
-platform-level non-return across a *year* is not a definitional artefact. You cannot
-intention-adjust your way out of it.
+platform-level non-return across a *year* is not a definitional artefact.
 
 > **Content supply was solved, and solving it moved almost nothing.** Any proposal whose
 > theory of change is "better, more personalised content" is pushing harder on the one
@@ -216,36 +213,33 @@ vocabulary retained, not level attained, not time-to-proficiency. It is a compet
 well-executed piece of engineering whose loss function contains **no learning term at
 all** — published honestly, and it is the industry-standard objective.
 
-The streak claims are vendor claims and are labelled as such, never restated as findings.
+The streak claims are vendor claims, labelled as such and never restated as findings.
 "Learners who reach a streak of just 7 days are 3.6 times more likely to complete their
-course" is **selection, not causation**: people who show up seven days running were
-already going to complete at a higher rate. New streak animations raised seven-day return
-by +1.7%. Two simultaneous streak freezes raised relative DAU by +0.38%. And the thing
-that is absent: **the published mechanism reports no data comparing learning outcomes
-between streak-holders and non-holders.** Every number is in engagement units.
+course" is **selection, not causation**. New streak animations raised seven-day return by
++1.7%. Two simultaneous streak freezes raised relative DAU by +0.38%. And the thing that
+is absent: **the published mechanism reports no data comparing learning outcomes between
+streak-holders and non-holders.** Every number is in engagement units.
 
 The mechanism is well-understood and not learning-specific. A streak counter is a pure
 **endowed-progress** device, and endowed progress is measured to drive retention in
-reward programmes. Past a certain length the streak is maintained to avoid losing it, not
+reward programmes; past a certain length the streak is maintained to avoid losing it, not
 to gain anything. Habit automaticity in the real world took a **median 66 days, range
-18–254** — which is a genuine reason to want daily return in the first two months and no
-reason at all to want it in year three.
+18–254** — a genuine reason to want daily return in the first two months and no reason at
+all to want it in year three.
 
 **And streaks get metagamed, documented.** Adolescents maintaining structurally identical
 Snapchat streaks develop strategies to uphold the counter while hollowing out the
 underlying activity: content becomes minimal, meaningless, purely instrumental to the
-number. The transfer is direct. **A streak counter measures counter-preservation, and any
-user under time pressure will find the cheapest lesson that preserves it** — which is the
-precise inverse of desirable difficulty.
-
-Run the Null-Learner Test on the streak. It maxes it.
+number. **A streak counter measures counter-preservation, and any user under time
+pressure will find the cheapest lesson that preserves it** — the precise inverse of
+desirable difficulty. Run the Null-Learner Test on it: it maxes it.
 
 On outcomes, the independent evidence is thin: a semester-long study with **nine**
 participants; company-affiliated studies of learners who *completed* beginner courses
 reaching roughly **CEFR A2**; and a flagship favourable efficacy study that is
 **vendor-commissioned and could not be retrieved through any bibliographic API used in
-this project** — reported here as unverifiable rather than omitted. A systematic review of
-35 Duolingo studies concluded the field's *"focus on app design marks an emphasis on the
+this project** — reported as unverifiable rather than omitted. A systematic review of 35
+Duolingo studies concluded the field's *"focus on app design marks an emphasis on the
 creation of tools rather than the process and outcomes of language learning."*
 
 > Duolingo is a genuine, under-appreciated achievement: it made hundreds of millions of
@@ -263,11 +257,11 @@ relationships significantly associated with engagement and achievement — with 
 
 The AI-companion evidence is real and should not be dismissed. Five studies find AI
 companions **do** reduce loneliness, "on par only with interacting with another person,"
-with the mediator being whether the chatbot makes users **feel heard**. A survey of 1,006
-student Replika users found them lonelier than typical student populations yet perceiving
-high social support, with **3% reporting the agent halted their suicidal ideation.** *That
-work is contested in the same journal*, on the grounds that important context was omitted,
-and is reported as contested. And an OpenAI × MIT Media Lab study — 3M+ conversations,
+mediated by whether the chatbot makes users **feel heard**. A survey of 1,006 student
+Replika users found them lonelier than typical student populations yet perceiving high
+social support, with **3% reporting the agent halted their suicidal ideation** — *work
+contested in the same journal* on the grounds that important context was omitted, and
+reported here as contested. And an OpenAI × MIT Media Lab study — 3M+ conversations,
 4,000+ surveyed, plus an IRB-approved RCT with ~1,000 participants over 28 days — found
 that *"very high usage correlates with increased self-reported indicators of dependence."*
 
@@ -323,9 +317,9 @@ result, and it applies with full force to any model tuned on learner preference.
 Hence the quarantine: **preference data may be used for tone and safety. Never for
 pedagogy.**
 
-Two footnotes. **Flow** is the most-cited motivational idea in edtech and the least useful
-as stated; its meta-analytic association with performance is correlational, and flow may be
-a consequence of competence rather than a cause of learning. Exactly two of its conditions
+A footnote on **flow**, the most-cited motivational idea in edtech and the least useful as
+stated: its meta-analytic association with performance is correlational, and flow may be a
+consequence of competence rather than a cause of learning. Exactly two of its conditions
 are engineerable — challenge calibrated to current skill, and immediate feedback — and both
 are already justified by competence support. Implement those and stop talking about flow.
 

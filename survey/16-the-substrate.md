@@ -11,20 +11,20 @@ source_report: research/raw/A4-live-multimodal.md, research/raw/A5-world-models.
 Humans take the floor in conversation with a modal gap of **100–200 ms**, and
 51–55% of all turn transitions across corpora happen in under 200 ms. That is
 faster than language production: encoding a single word takes about 600 ms from
-stimulus to speech onset, and a complex sentence roughly 1,500 ms. The
-arithmetic only works if the listener predicts the end of your turn and plans
-their reply *while you are still talking*.
+stimulus to speech onset, and a complex sentence roughly 1,500 ms. The arithmetic
+only works if the listener predicts the end of your turn and plans their reply
+*while you are still talking*.
 
 Moshi, the open full-duplex speech model, reports **160 ms theoretical latency,
 200 ms in practice** — inside the human window — and it gets there the same way
-people do, by modelling its own stream and the user's stream in parallel rather
-than waiting for a silence timer.
+people do, by modelling its own stream and the user's in parallel rather than
+waiting for a silence timer.
 
-That is the shape of the whole section. The frontier now supplies pieces that
-are genuinely new: a conversation that can be interrupted, a camera that can see
-a page of homework, a face that renders at video rate on one consumer GPU, and a
-world that can be conjured from a sentence. Each piece arrives with a hard edge,
-and in every case the edge is in a different place than the marketing suggests.
+That is the shape of the whole section. The frontier now supplies pieces that are
+genuinely new: a conversation that can be interrupted, a camera that can see a
+page of homework, a face that renders at video rate on one consumer GPU, and a
+world conjured from a sentence. Each arrives with a hard edge, and in every case
+the edge is somewhere other than the marketing suggests.
 
 ---
 
@@ -61,21 +61,18 @@ publishes an end-to-end latency figure anywhere in their documentation — any
 millisecond number in this survey comes from an academic system or a local
 measurement, never from a vendor page. `semantic_vad` — a model-based
 turn-*prediction* rather than a silence timer — is the closest shipped analogue
-of what Levinson's data says humans do.
+of what the turn-taking data says humans do.
 
-**And the pedagogically correct target is not minimal latency.** Silence longer
-than about 700 ms is socially marked, but in tutoring marked silence is often
-exactly right; wait time is an instructional variable. The design goal is
-**controllable** latency: fast for acknowledgement, deliberately slow for
-"think about it."
-
-| Target | Budget | Verdict |
-|---|---|---|
-| Human parity | ≤ 250 ms | Moshi-class full-duplex only. Not reachable on hosted APIs with default VAD. |
-| Feels natural | 300–800 ms | WebRTC + aggressive semantic VAD, no avatar. |
-| Acceptable tutor | 800–1500 ms | Comfortable, including a real-time avatar. |
-| Annoying | > 2 s | Where open avatar stacks currently sit (2.2 s self-reported). |
-| Broken | > 3 s | Cascaded VAD→ASR→LLM→TTS pipelines. |
+**And the pedagogically correct target is not minimal latency.** Silence beyond
+about 700 ms is socially marked, but in tutoring marked silence is often exactly
+right; wait time is an instructional variable. The design goal is
+**controllable** latency: fast for acknowledgement, deliberately slow for "think
+about it." Human parity (≤ 250 ms) needs Moshi-class full duplex and is not
+reachable on hosted APIs with default VAD; 300–800 ms feels natural on WebRTC
+with aggressive semantic VAD and no avatar; 800–1500 ms is a comfortable tutor
+including a real-time face; beyond 2 s — where open avatar stacks currently sit
+at a self-reported 2.2 s — is annoying, and cascaded VAD→ASR→LLM→TTS pipelines
+land past 3 s, which is broken.
 
 The genuinely new architecture arrived in July 2026 and you cannot build on it.
 GPT-Live listens and speaks simultaneously, backchannels, stays silent while you
@@ -103,13 +100,11 @@ That single constraint sorts the use cases cleanly.
   solve it" is over-claiming: it watches snapshots of the result.
 
 Two absences follow. There is **no code execution inside a live session** on
-Gemini Live at all; OpenAI's MCP support makes wiring a sandbox cheaper, but
-"watch me run your code" is your build either way. And neither API has any
-output channel other than audio, transcript, and tool calls — no cursor, no
-overlay, no highlight primitive. Deixis, the "*this* term, *that* bracket" that
-is among the most powerful moves a human tutor makes, has to be reconstructed by
-your own client from a model reasoning about coordinates in an image it saw at
-≤ 1 FPS.
+Gemini Live at all. And neither API has any output channel other than audio,
+transcript, and tool calls — no cursor, no overlay, no highlight primitive.
+Deixis, the "*this* term, *that* bracket" that is among the most powerful moves a
+human tutor makes, has to be reconstructed by your own client from a model
+reasoning about coordinates in an image it saw at ≤ 1 FPS.
 
 **A correction the project owes its readers here.** The research behind this
 section concluded flatly that "the pointing layer does not exist" and that
@@ -150,28 +145,27 @@ instructor:
 > presence can be shown**... but there are also no detrimental effects."
 
 That is the honest position: **a face reliably makes learners feel better and
-does not reliably make them learn more.** The supporting meta-analytic base
-agrees on the magnitude — pedagogical agents at **g ≈ 0.19** across 43 studies
-and 3,088 participants, and **g ≈ 0.20** in an independent multimedia synthesis.
-Both figures were recovered from citation contexts rather than the paywalled
-originals and should be re-verified before publication.
+does not reliably make them learn more.** The meta-analytic base agrees on
+magnitude — pedagogical agents at **g ≈ 0.19** across 43 studies and 3,088
+participants, and **g ≈ 0.20** in an independent multimedia synthesis. Both
+figures were recovered from citation contexts rather than the paywalled originals
+and should be re-verified before publication.
 
-Two moderators sharpen it. Agents helped K-12 more than post-secondary
-learners — and in the same analysis, **agents communicating via on-screen text
-outperformed agents communicating by narration**, which is the opposite of the
-voice-first, face-first product thesis. The larger 2025 GenAI-agent effects
-(g ≈ 0.36–0.40) compare *an AI tutor* to *no tutor*, not *an agent with a face*
-to *the same agent without one*: they measure the value of the model, not the
-value of the avatar.
+Two moderators sharpen it. Agents helped K-12 more than post-secondary learners —
+and in the same analysis, **agents communicating via on-screen text outperformed
+agents communicating by narration**, the opposite of the voice-first, face-first
+product thesis. The larger 2025 GenAI-agent effects (g ≈ 0.36–0.40) compare *an
+AI tutor* to *no tutor*, not *an agent with a face* to *the same agent without
+one*: they measure the value of the model, not the value of the avatar.
 
-What the evidence does support is narrower and useful. Embodiment helps
-*relative to a static agent* — a human-voiced agent with gestures, gaze and
-facial expression beat the same agent without them on a transfer test. That is
-an argument about how to animate, not whether to show a face. And the uncanny
-valley result is directly actionable: **reducing consistency in human realism
-increases the uncanny effect**, so a photoreal face with slightly-off mouth
-motion is worse than a stylised face with the same motion. Cartoon-quality
-avatars are an engineering choice, not a compromise.
+What the evidence does support is narrower. Embodiment helps *relative to a
+static agent* — a human-voiced agent with gestures, gaze and facial expression
+beat the same agent without them on a transfer test. That is an argument about
+how to animate, not whether to show a face. And the uncanny-valley result is
+directly actionable: **reducing consistency in human realism increases the
+uncanny effect**, so a photoreal face with slightly-off mouth motion is worse
+than a stylised face with the same motion. Cartoon-quality avatars are an
+engineering choice, not a compromise.
 
 **Build the face for social presence and willingness to keep going, and say
 exactly that.** Persistence is a learning input. It is not a learning gain, and
