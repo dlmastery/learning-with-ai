@@ -10,7 +10,12 @@ import pathlib, re, sys, collections
 P = pathlib.Path(__file__).resolve().parent.parent / "CORRECTIONS.md"
 t = P.read_text()
 
-rows = re.findall(r'^\| \*\*(C-\d+)\*\* \|(?:[^|]*\|){3}\s*([^|]+?)\s*\|$', t, re.M)
+rows = []
+for line in t.splitlines():
+    m = re.match(r"^\| \*\*(C-\d+)\*\* \|(.*)\|\s*$", line)
+    if m:                                     # provenance is the last cell; cells may
+        cells = m.group(2).rsplit("|", 1)     # contain escaped pipes, so split from the right
+        rows.append((m.group(1), cells[-1] if len(cells) > 1 else m.group(2)))
 if not rows:
     print("no ledger rows parsed — refusing to write"); sys.exit(1)
 

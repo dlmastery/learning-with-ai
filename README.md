@@ -17,11 +17,14 @@ what it should be.**
 An agent differs from a chatbot in four ways — **sampling, execution, persistence,
 absence** — and each is a multiplier on something else. Which gives a rule:
 
-> **The value of an agentic loop equals the value of the external check it closes on.**
+> **The value of an agentic loop is bounded by the value of the external check it
+> closes on.**
 
 That explains the entire reliability landscape. Where a check exists: **79.2%**
 (SWE-bench Verified), **83.8%** (Terminal-Bench). Where none does: **21.0%**
-(PaperBench), **4.6%** (SciCode). A twenty-fold spread, and the axis is not difficulty.
+(PaperBench), **4.6%** (SciCode — which has hand-written tests, and is why the rule is a
+*bound* rather than an equality: a weak check caps you low). A twenty-fold spread, and the
+axis is not difficulty — it is how good the check is.
 
 Teaching is in the second column. Across **223 real tutoring domains, no model beat
 chance at labelling an incorrect student action** — the most basic thing a tutor does.

@@ -79,10 +79,10 @@ hand-maintained, which is the whole argument for generating it.*
 | Caught by our own research | 15 |
 | Caught by our own verification — including of our own warnings | 2 |
 | Caught by our own builders, working against their own briefs | 4 |
-| **Caught by an adversarial external reviewer** | **15** |
-| **Total** | **36** |
+| **Caught by an adversarial external reviewer** | **16** |
+| **Total** | **37** |
 
-15 of 36 were found by someone whose job was to fail us — including
+16 of 37 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the

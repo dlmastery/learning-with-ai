@@ -62,7 +62,8 @@ PARTS = [
 
 N_REPORTS = len(list((ROOT / "research" / "raw").glob("*.md")))
 N_CORR = len(re.findall(r"^\| \*\*C-\d+\*\*", (ROOT / "CORRECTIONS.md").read_text(), re.M))
-N_EXT = len(re.findall(r"\| \*\*EXTERNAL-REVIEW\*\* \|", (ROOT / "CORRECTIONS.md").read_text()))
+N_EXT = len([1 for _l in (ROOT / "CORRECTIONS.md").read_text().splitlines()
+             if re.match(r"^\| \*\*C-\d+\*\*", _l) and "EXTERNAL-REVIEW" in _l])
 
 
 ABSTRACT = f"""\
@@ -79,10 +80,11 @@ errors is published in an append-only ledger rather than quietly edited — **{N
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
-something else, which gives a rule: *the value of an agentic loop equals the value of
-the external check it closes on.* That rule explains the whole reliability landscape.
+something else, which gives a rule: *the value of an agentic loop is **bounded by**
+the value of the external check it closes on.* That rule explains the whole reliability landscape.
 Where a check exists, agents reach **79.2%** (SWE-bench Verified) and **83.8%**
-(Terminal-Bench). Where none exists, **21.0%** (PaperBench) and **4.6%** (SciCode).
+(Terminal-Bench). Where the check is weak or absent, **21.0%** (PaperBench) and **4.6%**
+(SciCode, which has hand-written tests — hence a bound rather than an equality).
 Teaching is in the second column, and the reason is now measured: across **223 real
 tutoring domains, no model beat chance at labelling an incorrect student action.**
 Coding agents work because `pytest` exists. **Pedagogy has no `pytest`, and every
@@ -156,7 +158,7 @@ def build():
                 _k += 1
                 SRC2NUM[_s[:2]] = _k
 
-    def renumber(text):
+    def renumber(text, papernum=None):
         """§04 (source file) -> §5 (paper section). Unknown refs are left alone
         and reported, never silently rewritten."""
         def sub(m):
@@ -173,7 +175,14 @@ def build():
                 return f"{m.group(1)}{SRC2NUM[src]}"
             unresolved.add(src)
             return m.group(0)
-        return re.sub(r"\b(Section|section)\s+(\d{2})\b", sub2, text)
+        text = re.sub(r"\b(Section|section)\s+(\d{2})\b", sub2, text)
+        # Single-digit refs are always INTRA-section (source files are 00-32), and
+        # once assembled a bare "§3" reads as paper section 3. Qualify them.
+        # C-38: 23 of these landed on real, wrong sections.
+        if papernum is not None:
+            text = re.sub(r"§\s?(\d)(?!\d)((?:\.\d+)*)",
+                          lambda m: f"§{papernum}.{m.group(1)}{m.group(2)}", text)
+        return text
 
     unresolved = set()
     structure = []
@@ -186,7 +195,7 @@ def build():
             meta, text = read(slug)
             if text is None:
                 missing.append(slug); continue
-            text = renumber(text)
+            text = renumber(text, papernum=n)
             n += 1
             title = meta.get("title", slug)
             anchor = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
