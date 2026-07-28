@@ -60,18 +60,22 @@ PARTS = [
   ["21-what-we-cannot-see-from-here", "20-the-agenda"]),
 ]
 
-ABSTRACT = """\
+N_REPORTS = len(list((ROOT / "research" / "raw").glob("*.md")))
+N_CORR = len(re.findall(r"^\| \*\*C-\d+\*\*", (ROOT / "CORRECTIONS.md").read_text(), re.M))
+N_EXT = len(re.findall(r"\| \*\*EXTERNAL-REVIEW\*\* \|", (ROOT / "CORRECTIONS.md").read_text()))
+
+
+ABSTRACT = f"""\
 Generative AI arrived in education as a capability without a specification. Three
 years on, the field has produced roughly 2,900 papers and, by our census, **seven
 randomised controlled trials** — four of them second-language learning. It measures
 resemblance, preference and engagement. It very rarely measures whether anyone
 learned anything, and almost never measures it **after the tool is taken away**.
 
-This survey is an attempt to write the missing specification. It rests on 34 research
-reports and roughly 2,300 source citations; every claim carries an evidence label,
+This survey is an attempt to write the missing specification. It rests on {N_REPORTS} research
+reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
-errors is published in an append-only ledger rather than quietly edited — **eight of
-the twenty-nine corrections were found by an adversarial reviewer rather than by us.**
+errors is published in an append-only ledger rather than quietly edited — **{N_EXT} of\nthe {N_CORR} corrections were found by an adversarial reviewer rather than by us.**
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
@@ -141,6 +145,29 @@ def build():
     the 29 contents links was dead)."""
     parts_out, toc, n, missing = [], [], 0, []
     stats = {"sections": 0, "words": 0}
+    # PASS 1 — assign paper section numbers before rendering any prose, so that
+    # cross-references written as source-file numbers (§04) can be rewritten to
+    # paper numbers (§5). Without this, prose and headings use different schemes:
+    # 83 of 87 references pointed at the wrong section. See C-34.
+    SRC2NUM, _k = {}, 0
+    for _, _, _, _slugs in PARTS:
+        for _s in _slugs:
+            if (SURVEY / f"{_s}.md").exists():
+                _k += 1
+                SRC2NUM[_s[:2]] = _k
+
+    def renumber(text):
+        """§04 (source file) -> §5 (paper section). Unknown refs are left alone
+        and reported, never silently rewritten."""
+        def sub(m):
+            src = m.group(1)
+            if src in SRC2NUM:
+                return f"§{SRC2NUM[src]}"
+            unresolved.add(src)
+            return m.group(0)
+        return re.sub(r"§\s?(\d{2})\b", sub, text)
+
+    unresolved = set()
     structure = []
     for pi, (numeral, ptitle, blurb, slugs) in enumerate(PARTS, 1):
         toc.append(f"\n**Part {numeral} — {ptitle}**\n")
@@ -151,6 +178,7 @@ def build():
             meta, text = read(slug)
             if text is None:
                 missing.append(slug); continue
+            text = renumber(text)
             n += 1
             title = meta.get("title", slug)
             anchor = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
@@ -167,6 +195,9 @@ def build():
         structure.append(prec)
         parts_out.append("\n".join(body))
 
+    if unresolved:
+        print(f"  UNRESOLVED cross-refs (left as written): {', '.join(sorted(unresolved))}")
+
     covered = {s for _, _, _, ss in PARTS for s in ss}
     orphans = sorted(p.stem for p in SURVEY.glob("*.md") if p.stem not in covered)
 
@@ -174,7 +205,7 @@ def build():
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**{stats['sections']} sections · {stats['words']:,} words · 32 research reports · ~2,100 source citations**
+**{stats['sections']} sections · {stats['words']:,} words · {N_REPORTS} research reports · {N_CORR} published corrections**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
