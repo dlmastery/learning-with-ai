@@ -4,45 +4,51 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Learning in the New Frontier AI World</title>
-<meta name="description" content="A standard-setting survey of AI-native learning. Evidence-graded, negative results first-class." />
+<meta name="description" content="A standard-setting survey of AI-native learning, from kindergarten to postgraduate research. Evidence-graded. Negative results first-class. Corrections published." />
 <style>
 :root{
-  --bg:#faf9f5; --surface:#fcfcfb; --raise:#f2f0e9;
+  --bg:#faf9f5; --surface:#fcfcfb; --raise:#f2f0e9; --sunken:#f6f4ee;
   --ink:#171614; --ink-2:#413f3a; --ink-3:#7b7870; --line:#e5e2d8; --line-2:#cfcbbe;
-  --felt:#C4623D; --real:#1D6FA5;      /* validated light: protan ΔE 16.7 */
-  --good:#2f6d4f; --bad:#9d3f33;
+  --felt:#C4623D; --real:#1D6FA5;          /* categorical — validated: protan ΔE 16.7, normal 25.9 */
+  --good:#2f6d4f; --warn:#8a6d1f; --bad:#9d3f33;   /* status only — never a data series */
   --serif:ui-serif,Georgia,"Iowan Old Style",serif;
   --sans:ui-sans-serif,-apple-system,"Segoe UI",Inter,sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
 }
-:root[data-theme="dark"], html:not([data-theme="light"]) body.dark{}
 @media (prefers-color-scheme:dark){
-  :root{--bg:#1a1917; --surface:#211f1d; --raise:#2a2825;
+  :root{--bg:#1a1917; --surface:#211f1d; --raise:#2a2825; --sunken:#161513;
         --ink:#f6f4ef; --ink-2:#c6c2b8; --ink-3:#8e8a80; --line:#35322c; --line-2:#474339;
-        --felt:#D4784C; --real:#3D93CC;  /* validated dark: protan ΔE 18.3 */
-        --good:#5fa583; --bad:#d08a7e;}
+        --felt:#D4784C; --real:#3D93CC;    /* validated dark: protan ΔE 18.3, normal 24.7 */
+        --good:#5fa583; --warn:#c9a94e; --bad:#d08a7e;}
 }
+:root[data-theme="dark"]{--bg:#1a1917;--surface:#211f1d;--raise:#2a2825;--sunken:#161513;
+  --ink:#f6f4ef;--ink-2:#c6c2b8;--ink-3:#8e8a80;--line:#35322c;--line-2:#474339;
+  --felt:#D4784C;--real:#3D93CC;--good:#5fa583;--warn:#c9a94e;--bad:#d08a7e;}
+:root[data-theme="light"]{--bg:#faf9f5;--surface:#fcfcfb;--raise:#f2f0e9;--sunken:#f6f4ee;
+  --ink:#171614;--ink-2:#413f3a;--ink-3:#7b7870;--line:#e5e2d8;--line-2:#cfcbbe;
+  --felt:#C4623D;--real:#1D6FA5;--good:#2f6d4f;--warn:#8a6d1f;--bad:#9d3f33;}
+
 *{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);
-  -webkit-font-smoothing:antialiased;padding:0 20px 90px}
-.wrap{max-width:960px;margin:0 auto}
+  -webkit-font-smoothing:antialiased;padding:0 20px 90px;overflow-x:hidden}
+.wrap{max-width:980px;margin:0 auto}
 a{color:var(--felt);text-decoration:none;border-bottom:1px solid transparent}
 a:hover{border-bottom-color:currentColor}
+p{margin-bottom:16px;max-width:68ch;color:var(--ink-2)}
+strong{color:var(--ink);font-weight:650}
+code{font:12.5px/1.5 var(--mono);background:var(--raise);padding:2px 6px;border-radius:4px;color:var(--ink)}
 
-/* ── header ── */
-header{padding:76px 0 42px;border-bottom:1px solid var(--line)}
+header{padding:74px 0 40px;border-bottom:1px solid var(--line)}
 .eyebrow{font:600 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--felt);margin-bottom:20px}
 h1{font:400 clamp(34px,6vw,54px)/1.08 var(--serif);letter-spacing:-.022em;margin-bottom:18px}
 .lede{font-size:19.5px;line-height:1.58;color:var(--ink-2);max-width:60ch}
 .meta{margin-top:28px;display:flex;gap:26px;flex-wrap:wrap;font-size:13px;color:var(--ink-3)}
 .meta b{color:var(--ink);font-weight:650}
-
 h2{font:400 31px/1.18 var(--serif);letter-spacing:-.018em;margin:70px 0 6px}
-.sub{color:var(--ink-3);font-size:14.5px;margin-bottom:26px}
-p{margin-bottom:16px;max-width:68ch;color:var(--ink-2)}
-strong{color:var(--ink);font-weight:650}
+h3{font:650 15.5px/1.4 var(--sans);margin:34px 0 10px}
+.sub{color:var(--ink-3);font-size:14.5px;margin-bottom:26px;max-width:66ch}
 
-/* ── stat tiles ── */
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:13px;margin:34px 0}
 .tile{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:22px 20px}
 .tile .n{font:400 40px/1 var(--serif);letter-spacing:-.025em;color:var(--felt)}
@@ -50,226 +56,547 @@ strong{color:var(--ink);font-weight:650}
 .tile .l{font-size:13px;color:var(--ink-2);margin-top:9px;line-height:1.45}
 .tile .s{font-size:11.5px;color:var(--ink-3);margin-top:8px}
 
-/* ── figure ── */
 figure{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:26px 24px 20px;margin:28px 0}
-figcaption{font-size:13px;color:var(--ink-3);margin-top:16px;line-height:1.5}
+figcaption{font-size:13px;color:var(--ink-3);margin-top:16px;line-height:1.5;max-width:70ch}
 .ftitle{font:650 14.5px/1.35 var(--sans);color:var(--ink);margin-bottom:4px}
 .fsub{font-size:12.5px;color:var(--ink-3);margin-bottom:20px}
 .legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:18px;font-size:12.5px;color:var(--ink-2)}
 .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
 svg{display:block;width:100%;height:auto;overflow:visible}
 .gl{stroke:var(--line);stroke-width:1}
-.ax{fill:var(--ink-3);font:500 11px var(--sans)}
-.vl{fill:var(--ink-2);font:600 11.5px var(--mono)}
-.sl{fill:var(--ink);font:600 12.5px var(--sans)}
+.ax{font:600 10px var(--sans);letter-spacing:.11em;fill:var(--ink-3)}
+.sl{fill:var(--ink-2)}
+.vl{font:600 12px var(--mono);fill:var(--ink-2)}
 .dot{stroke:var(--surface);stroke-width:2}
 
-/* ── bars ── */
-.rows{display:flex;flex-direction:column;gap:13px;margin-top:6px}
-.row{display:grid;grid-template-columns:minmax(140px,1.35fr) 1fr 62px;gap:14px;align-items:center}
-.row .lab{font-size:13.5px;color:var(--ink-2);line-height:1.3}
-.row .lab b{color:var(--ink);display:block;font-weight:600}
-.track{background:var(--raise);border-radius:4px;height:9px;position:relative}
-.fill{height:100%;border-radius:4px;background:var(--real)}
-.fill.w{background:var(--felt)}
-.row .v{font:600 13px var(--mono);color:var(--ink-2);text-align:right}
-
-/* ── cards ── */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:13px;margin:24px 0}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:19px 21px}
-.card h4{font:650 14.5px/1.35 var(--sans);margin-bottom:9px;color:var(--ink)}
-.card p{font-size:13.5px;margin:0;color:var(--ink-2)}
-.tag{display:inline-block;font:650 10px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;
-  padding:5px 8px;border-radius:5px;background:var(--raise);color:var(--ink-3);margin-bottom:11px}
-
-.callout{background:var(--raise);border-left:3px solid var(--felt);border-radius:0 11px 11px 0;padding:22px 25px;margin:26px 0}
+.callout{background:var(--sunken);border:1px solid var(--line);border-left:2px solid var(--felt);
+  border-radius:11px;padding:22px 24px;margin:26px 0}
+.callout .k{font:600 10.5px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;color:var(--felt);margin-bottom:12px}
 .callout p:last-child{margin-bottom:0}
-.k{font:650 11px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;color:var(--felt);margin-bottom:11px}
 
-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;display:block;overflow-x:auto}
-th{text-align:left;font:650 11px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);
-  padding:0 14px 10px 0;border-bottom:1px solid var(--line-2);white-space:nowrap}
-td{padding:12px 14px 12px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th{text-align:left;font:600 11px/1.3 var(--sans);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);padding:0 14px 10px 0;border-bottom:1px solid var(--line-2);vertical-align:bottom}
+td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
 td b{color:var(--ink)}
-.num{font-family:var(--mono);font-size:13px;white-space:nowrap}
+.num{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
 .up{color:var(--good);font-weight:650}.down{color:var(--bad);font-weight:650}
-code{font-family:var(--mono);font-size:12.5px;background:var(--raise);padding:2px 6px;border-radius:4px}
+.mut{color:var(--ink-3)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:14px;margin:26px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px}
+.card h4{font:650 15px/1.35 var(--sans);margin:10px 0 8px;color:var(--ink)}
+.card p{font-size:13.4px;line-height:1.52;margin:0;color:var(--ink-2)}
+.tag{font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:5px 8px;
+  border-radius:5px;border:1px solid var(--line-2);color:var(--ink-3);display:inline-block}
+
+.qlist{counter-reset:q;margin:24px 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:18px 20px 18px 56px;
+  margin-bottom:11px;position:relative}
+.q::before{counter-increment:q;content:counter(q);position:absolute;left:20px;top:17px;
+  font:400 19px/1 var(--serif);color:var(--felt)}
+.q b{display:block;font:650 14.5px/1.4 var(--sans);color:var(--ink);margin-bottom:6px}
+.q p{font-size:13.5px;margin:0;color:var(--ink-2);max-width:none}
+
+.pill{display:inline-block;font:600 10.5px/1 var(--mono);padding:4px 7px;border-radius:5px;
+  border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
+.pill.y{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
+.pill.n{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 45%,transparent)}
+.pill.c{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 45%,transparent)}
+
+#tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .1s;z-index:99;left:0;top:0;
+  background:var(--ink);color:var(--bg);font:12.5px/1.5 var(--sans);padding:8px 11px;
+  border-radius:7px;max-width:264px;box-shadow:0 4px 16px rgba(0,0,0,.18)}
+#tip b{color:var(--bg);display:block;font-weight:650;margin-bottom:2px}
+.theme{position:fixed;top:16px;right:16px;z-index:50;width:38px;height:38px;padding:0;border-radius:10px;
+  background:var(--surface);border:1px solid var(--line-2);color:var(--ink);font-size:15px;cursor:pointer}
+details{margin:16px 0}
+summary{cursor:pointer;font:600 13px var(--sans);color:var(--ink-3);padding:8px 0}
+summary:hover{color:var(--felt)}
 footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
-@media (max-width:560px){.row{grid-template-columns:1fr;gap:5px}.row .v{text-align:left}}
+footer a{color:var(--ink-3)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div id="tip" role="status" aria-live="polite"></div>
 <div class="wrap">
 
 <header>
   <div class="eyebrow">Survey · built incrementally · evidence-graded</div>
   <h1>Learning in the New&nbsp;Frontier AI&nbsp;World</h1>
-  <p class="lede">If learning were designed today — with frontier AI assumed, not bolted on — what
-  would it look like? Every claim carries a source and an evidence label. Negative results are
-  first-class content.</p>
+  <p class="lede">If learning were designed today — with frontier AI assumed rather than bolted
+  on — what would it look like? From a five-year-old decoding words to a doctoral student who
+  knows more than the tutor does. Every claim carries a label. Negative results are first-class.
+  <strong>Our own corrections are published, not quietly edited.</strong></p>
   <div class="meta">
-    <span><b>24</b> sections</span><span><b>11</b> reports complete</span>
-    <span><b>13</b> researching now</span><span><b>~950</b> sources</span>
-    <span>Updated <b>27 Jul 2026</b></span>
+    <span><b>9</b> survey sections · <b>14,500</b> words</span>
+    <span><b>31</b> research reports</span>
+    <span><b>~1,900</b> sources</span>
+    <span><b>11</b> published corrections</span>
+    <span>Updated <b>28 Jul 2026</b></span>
   </div>
 </header>
 
-<h2>The headline is bullish</h2>
-<p class="sub">Measured effects, not projections.</p>
+<h2>What is actually established</h2>
+<p class="sub">Measured effects, not projections. Every number here is a pooled estimate or a
+randomised trial — and every one is smaller than the marketing around it.</p>
 
 <div class="tiles">
-  <div class="tile"><div class="n">+127%</div><div class="l">Guardrailed tutor, <b>practice</b> — and it removes the harm the unguarded one causes</div><div class="s">Randomised · ~1,000 students · unassisted exam −0.004 (ns)</div></div>
-  <div class="tile"><div class="n b">0.2–0.4σ</div><div class="l">Supervised LLM tutoring — the <b>same band</b> as human tutoring (0.288)</div><div class="s">No study in the corpus ran a delayed retention test</div></div>
-  <div class="tile"><div class="n b">g=0.56</div><div class="l">Learning by teaching — robust at delay. Human tutees; <b>expectancy must precede study</b></div><div class="s">Kobayashi 2019 meta-analysis</div></div>
-  <div class="tile"><div class="n b">g=0.50</div><div class="l">Retrieval practice, labs <em>and</em> classrooms</div><div class="s">222 studies · 48,478 students</div></div>
+  <div class="tile"><div class="n b">g=0.50</div><div class="l">Retrieval practice — labs <em>and</em> classrooms</div><div class="s">222 studies · 48,478 students</div></div>
+  <div class="tile"><div class="n b">d=0.54</div><div class="l">Spacing / distributed practice</div><div class="s">Cepeda meta-analytic tradition</div></div>
+  <div class="tile"><div class="n b">0.63–0.73</div><div class="l">Best measured AI tutor — <b>in 49 minutes against 60</b></div><div class="s">Kestin RCT · inside the human-tutoring range</div></div>
+  <div class="tile"><div class="n">−17%</div><div class="l">Unguarded AI, measured <b>after you take it away</b></div><div class="s">Bastani PNAS · guardrails remove this</div></div>
 </div>
 
-<!-- ── THE CENTRAL FIGURE ── -->
 <figure>
   <div class="ftitle">Felt learning and real learning move in opposite directions</div>
-  <div class="fsub">Each pair is one capability, measured on both axes in the same study.</div>
+  <div class="fsub">Each row is one capability measured on both axes in the same study. Hover a row.</div>
   <div class="legend">
-    <span><i style="background:var(--felt)"></i>What the learner felt / affect</span>
+    <span><i style="background:var(--felt)"></i>What the learner felt</span>
     <span><i style="background:var(--real)"></i>What was actually learned</span>
   </div>
-  <svg viewBox="0 0 700 262" role="img" aria-label="Slope chart: four capabilities where felt learning rose while measured learning fell or did not move.">
-    <line class="gl" x1="196" y1="30" x2="196" y2="222"/>
-    <line class="gl" x1="560" y1="30" x2="560" y2="222"/>
-    <text class="ax" x="196" y="242" text-anchor="middle">FELT</text>
-    <text class="ax" x="560" y="242" text-anchor="middle">LEARNED</text>
-
-    <!-- AI assistance -->
-    <text class="sl" x="184" y="52" text-anchor="end">AI assistance</text>
-    <line x1="196" y1="47" x2="560" y2="47" stroke="var(--line-2)" stroke-width="1" stroke-dasharray="3 3"/>
-    <path d="M196 47 L560 47" stroke="none"/>
-    <line x1="196" y1="47" x2="560" y2="47" stroke="var(--felt)" stroke-width="2" opacity=".28"/>
-    <circle class="dot" cx="196" cy="47" r="6" fill="var(--felt)"/>
-    <circle class="dot" cx="560" cy="47" r="6" fill="var(--real)"/>
-    <text class="vl" x="180" y="51" text-anchor="end" style="fill:var(--felt)">+48%</text>
-    <text class="vl" x="576" y="51" style="fill:var(--bad)">−17%</text>
-
-    <!-- Avatars -->
-    <text class="sl" x="184" y="102" text-anchor="end">Pedagogical avatars</text>
-    <line x1="196" y1="97" x2="560" y2="97" stroke="var(--felt)" stroke-width="2" opacity=".28"/>
-    <circle class="dot" cx="196" cy="97" r="6" fill="var(--felt)"/>
-    <circle class="dot" cx="560" cy="97" r="6" fill="var(--real)"/>
-    <text class="vl" x="180" y="101" text-anchor="end" style="fill:var(--felt)">d=.85–1.01</text>
-    <text class="vl" x="576" y="101">no change</text>
-
-    <!-- Animation -->
-    <text class="sl" x="184" y="152" text-anchor="end">Animation vs static</text>
-    <line x1="196" y1="147" x2="560" y2="147" stroke="var(--felt)" stroke-width="2" opacity=".28"/>
-    <circle class="dot" cx="196" cy="147" r="6" fill="var(--felt)"/>
-    <circle class="dot" cx="560" cy="147" r="6" fill="var(--real)"/>
-    <text class="vl" x="180" y="151" text-anchor="end" style="fill:var(--felt)">interest ↑</text>
-    <text class="vl" x="576" y="151">no change</text>
-
-    <!-- Active learning (inverted) -->
-    <text class="sl" x="184" y="202" text-anchor="end">Active learning</text>
-    <line x1="196" y1="197" x2="560" y2="197" stroke="var(--real)" stroke-width="2" opacity=".35"/>
-    <circle class="dot" cx="196" cy="197" r="6" fill="var(--felt)"/>
-    <circle class="dot" cx="560" cy="197" r="6" fill="var(--real)"/>
-    <text class="vl" x="180" y="201" text-anchor="end" style="fill:var(--bad)">felt worse</text>
-    <text class="vl" x="576" y="201" style="fill:var(--good)">learned more</text>
-  </svg>
-  <figcaption>The last row is the mirror image and the tell: students in the condition that taught
+  <div id="slope"></div>
+  <figcaption>The last row is the mirror image, and the tell: students in the condition that taught
   them <em>more</em> reported learning <em>less</em> (Deslauriers, PNAS 2019). Felt learning is what
-  every optimisation loop can measure; real learning is what none of them measure.</figcaption>
+  every optimisation loop can measure. Real learning is what almost none of them measure.</figcaption>
 </figure>
 
 <div class="callout">
-  <div class="k">The finding</div>
-  <p><strong>Restraint is the active ingredient. Everything else is delivery.</strong></p>
-  <table>
-    <tr><th>Same model, same students</th><th>Practice</th><th>Exam, unassisted</th></tr>
-    <tr><td>Answers freely</td><td class="num">+48%</td><td class="num down">−17%</td></tr>
-    <tr><td><b>Withholds · hints · requires reasoning</b></td><td class="num up">+127%</td><td class="num up">no penalty</td></tr>
-  </table>
-  <p>Read precisely: the guardrail <strong>removes a harm</strong>. The guardrailed arm's unassisted
-  exam coefficient is <strong>−0.004 (ns)</strong> — no measured learning benefit, but no damage
-  either. Unguarded access is an <em>actual harm</em>. Restraint is what buys back the loss.</p>
+  <div class="k">Read this one precisely</div>
+  <p><strong>Guardrails remove a harm. They have not been shown to add a benefit.</strong>
+  Unguarded AI left learners <b>17% worse</b> on later unassisted work. The guardrailed arm's
+  unassisted coefficient was <b>−0.004, not significant</b>. Harm removed; benefit not
+  demonstrated. Anyone selling restraint as a learning gain is ahead of the evidence —
+  <em>including this page, in an earlier draft.</em></p>
 </div>
 
-<!-- ── EFFECT SIZE LADDER ── -->
-<h2>What actually works</h2>
-<p class="sub">Effect sizes from meta-analysis, ordered. Blue = supported. Rust = overstated or contested.</p>
+<h2>The ladder</h2>
+<p class="sub">Pooled effect sizes, ordered. Blue is supported by replication; rust is overstated,
+contested, or null. Hover any row for the base and the caveat.</p>
 
 <figure>
-  <div class="rows">
-    <div class="row"><div class="lab"><b>Expertise reversal</b>novices +0.505 / experts −0.428</div><div class="track"><div class="fill" style="width:93%"></div></div><div class="v">d ≈0.93</div></div>
-    <div class="row"><div class="lab"><b>Learning by teaching</b>human tutee, expectancy first</div><div class="track"><div class="fill" style="width:56%"></div></div><div class="v">g 0.56</div></div>
-    <div class="row"><div class="lab"><b>Spaced practice</b>classroom</div><div class="track"><div class="fill" style="width:54%"></div></div><div class="v">d 0.54</div></div>
-    <div class="row"><div class="lab"><b>Retrieval practice</b>222 studies</div><div class="track"><div class="fill" style="width:50%"></div></div><div class="v">g 0.50</div></div>
-    <div class="row"><div class="lab"><b>Worked examples</b></div><div class="track"><div class="fill" style="width:48%"></div></div><div class="v">g 0.48</div></div>
-    <div class="row"><div class="lab"><b>Interleaving</b>varies by domain</div><div class="track"><div class="fill" style="width:42%"></div></div><div class="v">g 0.42</div></div>
-    <div class="row"><div class="lab"><b>Mayer's design principles</b>independently measured</div><div class="track"><div class="fill" style="width:38%"></div></div><div class="v">g 0.38</div></div>
-    <div class="row"><div class="lab"><b>Productive failure</b></div><div class="track"><div class="fill" style="width:36%"></div></div><div class="v">g 0.36</div></div>
-    <div class="row"><div class="lab"><b>Human tutoring</b>96 randomised studies</div><div class="track"><div class="fill w" style="width:29%"></div></div><div class="v">0.288</div></div>
-    <div class="row"><div class="lab"><b>Animation vs static</b></div><div class="track"><div class="fill w" style="width:23%"></div></div><div class="v">g 0.23</div></div>
-    <div class="row"><div class="lab"><b>Pedagogical avatars</b></div><div class="track"><div class="fill w" style="width:19%"></div></div><div class="v">g 0.19</div></div>
-    <div class="row"><div class="lab"><b>ITS vs human tutor</b></div><div class="track"><div class="fill w" style="width:5%"></div></div><div class="v">≈0.00</div></div>
-    <div class="row"><div class="lab"><b>Expanding SRS intervals</b>the folklore in every scheduler</div><div class="track"><div class="fill w" style="width:3%"></div></div><div class="v">0.034</div></div>
-    <div class="row"><div class="lab"><b>Learning styles</b>matching instruction to "style"</div><div class="track"><div class="fill w" style="width:1%"></div></div><div class="v">none</div></div>
+  <div class="ftitle">What works, and by how much</div>
+  <div class="fsub">Charts here are generated from a declarative spec by a deterministic renderer —
+  never hand-positioned — per our own finding that hand-written SVG is Tier D.</div>
+  <div class="legend">
+    <span><i style="background:var(--real)"></i>Supported</span>
+    <span><i style="background:var(--felt)"></i>Overstated, contested, or null</span>
   </div>
-  <figcaption><strong>Bloom's 2σ does not appear</strong> because across 96 randomised tutoring
-  studies <em>none</em> reproduced it; the pooled effect is 0.288. Learning styles has no credible
-  support after four decades — yet 89.1% of educators believe it.</figcaption>
+  <div id="bars"></div>
+  <figcaption><strong>Bloom's 2σ does not appear</strong>, because it does not replicate. VanLehn
+  measured human tutoring at 0.79 and intelligent tutoring at 0.76; Nickow's pooled tutoring RCTs
+  land at 0.37. Chasing 2σ inflates the target roughly 2.5× and makes everything real look like a
+  failure.</figcaption>
 </figure>
+
+<details>
+  <summary>▸ Table view of the ladder — accessible alternative, generated from the same spec</summary>
+  <div class="scroll"><table id="bartable"></table></div>
+</details>
+
+<h2>Kindergarten to doctorate</h2>
+<p class="sub">The question this survey gets asked most: does any of this work the same way for a
+six-year-old and a PhD student? No — and the axis it varies along is not age.</p>
+
+<div class="callout">
+  <div class="k">The organising principle</div>
+  <p><strong>Expertise reversal.</strong> The same instructional support measures
+  <b>d = +0.505</b> for novices and <b>d = −0.428</b> for experts. Not "less useful" — actively
+  harmful. Worked examples, explicit guidance and scaffolding are the strongest tools we have for
+  beginners, and become <em>obstacles</em> for people who already know the domain.</p>
+  <p>So the K-12 → postgraduate span is not a difficulty gradient. It is a <strong>reversal</strong>,
+  and it runs per-topic rather than per-person: the same learner is a novice in one chapter and an
+  expert in the next. A system that scales instruction <em>up</em> as the learner advances has it
+  exactly backwards.</p>
+</div>
+
+<div class="scroll">
+<table>
+  <tr><th>Technique</th><th>K–5</th><th>6–8</th><th>9–12</th><th>Undergrad</th><th>Grad / research</th><th>Basis</th></tr>
+  <tr><td><b>Retrieval practice</b></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td class="num">g 0.50</td></tr>
+  <tr><td><b>Spacing</b></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td class="num">d 0.54</td></tr>
+  <tr><td><b>Explicit / direct instruction</b></td><td><span class="pill y">strongest</span></td><td><span class="pill y">strong</span></td><td><span class="pill c">taper</span></td><td><span class="pill c">taper</span></td><td><span class="pill n">reverses</span></td><td class="num">328 studies</td></tr>
+  <tr><td><b>Worked examples</b></td><td><span class="pill y">strongest</span></td><td><span class="pill y">strong</span></td><td><span class="pill y">yes</span></td><td><span class="pill c">fade</span></td><td><span class="pill n">reverses</span></td><td class="num">g 0.48</td></tr>
+  <tr><td><b>Manipulatives &amp; gesture</b></td><td><span class="pill y">yes</span></td><td><span class="pill y">yes</span></td><td><span class="pill c">domain</span></td><td><span class="pill c">domain</span></td><td><span class="pill c">domain</span></td><td class="num">gesture &gt; action</td></tr>
+  <tr><td><b>Productive failure</b></td><td><span class="pill n">needs base</span></td><td><span class="pill c">emerging</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">central</span></td><td class="num">g 0.36</td></tr>
+  <tr><td><b>Learning by teaching</b></td><td><span class="pill y">yes</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">central</span></td><td class="num">g 0.48*</td></tr>
+  <tr><td><b>Withholding / Socratic</b></td><td><span class="pill n">harmful</span></td><td><span class="pill c">careful</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">central</span></td><td class="num">inverts for SELPA</td></tr>
+  <tr><td><b>Card-based scheduling</b></td><td><span class="pill y">facts</span></td><td><span class="pill y">facts</span></td><td><span class="pill c">facts only</span></td><td><span class="pill n">0 of 8</span></td><td><span class="pill n">0 of 8</span></td><td class="num">11/14 vs 0/8</td></tr>
+  <tr><td><b>Executable grounding</b></td><td><span class="pill c">implicit</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">essential</span></td><td><span class="pill y">essential</span></td><td><span class="pill y">essential</span></td><td class="num">99.1% @ 0.61 ms</td></tr>
+  <tr><td><b>Genuine adversary</b></td><td><span class="pill n">no</span></td><td><span class="pill c">light</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">central</span></td><td><span class="pill y">the whole job</span></td><td class="num">unannounced only</td></tr>
+  <tr><td><b>Open-ended research</b></td><td><span class="pill n">no</span></td><td><span class="pill n">no</span></td><td><span class="pill c">scaffolded</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">the whole job</span></td><td class="num">—</td></tr>
+</table>
+</div>
+<p class="sub">* <b>g = 0.48</b> when the expectancy to teach is set <em>before</em> study;
+<b>g = −0.02</b> without it. The ordering of one sentence is the whole effect.</p>
+
+<h3>What the tutor's job actually is, at each end</h3>
+<div class="grid">
+  <div class="card"><span class="tag">K–5</span><h4>Be the thing that cannot be argued with</h4><p>Explicit, systematic, high-dosage, and above all <em>consistent</em>. The object refuses illegal states; the child is wrong in private, repeatedly, without anyone's face changing. Withholding does damage here — this is where the Socratic instinct is wrong.</p></div>
+  <div class="card"><span class="tag">6–12</span><h4>Fade the scaffold on evidence, not schedule</h4><p>The band where the reversal actually happens, so it is the band where measuring prior knowledge <em>per topic</em> becomes load-bearing. Fading too early and fading too late are both failures, and they look the same from the outside.</p></div>
+  <div class="card"><span class="tag">Undergraduate</span><h4>Stop explaining. Start interrogating.</h4><p>Guidance now costs more than it gives. The high-value moves become productive failure, unannounced objection, and problems that have never existed before. Explanation becomes something the <em>learner</em> produces.</p></div>
+  <div class="card"><span class="tag">Postgraduate</span><h4>The learner knows more than the tutor</h4><p>Inside their niche the model is not the expert, and pretending otherwise is the failure mode. Its job inverts completely: adversary, verifier, literature memory, connector to humans. It must be <em>useful without being right</em>.</p></div>
+</div>
+
+<h2>What we got wrong</h2>
+<p class="sub">Eleven corrections, every one caught by our own research reading a primary source,
+every one published rather than silently edited. This list is the reason to trust the rest.</p>
+
+<div class="scroll">
+<table>
+  <tr><th>We said</th><th>Actually</th></tr>
+  <tr><td>Sierra Leone +0.258 SD — "strongest evidence in edtech history"</td><td><b>Unadjusted +0.216, SE 0.137 — not significant.</b> Loads entirely on Grade 8; gaps widened</td></tr>
+  <tr><td>Guardrails teach — "+127% with no retention penalty"</td><td>Guardrails <b>remove harm</b>. Unassisted coefficient −0.004, n.s.</td></tr>
+  <tr><td>Orton-Gillingham is decades-replicated</td><td><b>g = 0.22, p = .40</b> — non-significant against active comparison</td></tr>
+  <tr><td>Expertise reversal d = 0.971</td><td>Unverifiable. Reported components imply <b>≈ 0.93</b></td></tr>
+  <tr><td>Concreteness fading has a pooled effect size</td><td>Fyfe 2014 is a <b>systematic review</b>. No pooled ES exists anywhere</td></tr>
+  <tr><td>Bloom's 2σ as the target</td><td>Does not replicate. <b>VanLehn 0.79 · Nickow 0.37 · Kestin 0.63–0.73</b></td></tr>
+  <tr><td>g = 0.56 is the teachable-agent effect</td><td>It is <b>human</b> learning-by-teaching. The agent version is <b>untested</b></td></tr>
+  <tr><td>AI tutoring widens gaps, full stop</td><td>That is a property of <b>untargeted delivery</b>. Across 8 targeted interventions, <b>none widened gaps</b></td></tr>
+  <tr><td>The pāṭha protocol should beat self-consistency</td><td>Benchmarked and <b>falsified</b> — exactly at chance on both models tested</td></tr>
+  <tr><td>Deixis is complete greenfield</td><td>Substrate exists (arXiv:2604.02893, 49% IoU fine-tuned). The tutoring loop does not</td></tr>
+  <tr><td>Bastani's −17% carries a PNAS correction</td><td>That correction is an <b>author-affiliation erratum</b>. The finding stands</td></tr>
+</table>
+</div>
 
 <h2>Findings that change what you build</h2>
 <div class="grid">
-  <div class="card"><span class="tag">Verified</span><h4>Kimi K3 is not a world model</h4><p>Its release blog never says “world model,” “simulation,” “physics” or “environment.” It writes code and iterates on screenshots. The showcased world shipped as a 19-second video with no playable artifact.</p></div>
-  <div class="card"><span class="tag">Measured</span><h4>Generated worlds get physics wrong</h4><p>VideoPhy best case 39.6% adherence; hard subset 22%. Physics-IQ: understanding is <em>“unrelated to visual realism.”</em> Photorealism makes the error more persuasive.</p></div>
-  <div class="card"><span class="tag">Unlock</span><h4>The accuracy ceiling is a privacy gift</h4><p>Knowledge tracing peaked around 2011 — DKT’s result was inflated by 23.6% duplicate rows; PFA matches it cleaned. If 21 parameters is the ceiling, the learner model runs <b>on-device</b>.</p></div>
-  <div class="card"><span class="tag">Blocker</span><h4>A competent AI cannot be taught</h4><p>Teaching ChatGPT fails to build error-correction skill — the model <b>cannot stay wrong</b>. Sycophancy: 58.19% capitulation, 14.66% of it toward wrong answers.</p></div>
-  <div class="card"><span class="tag">Backfire</span><h4>Role-played devil’s advocate</h4><p>Announcing it produces cognitive <em>bolstering</em> of the learner’s original view. The exit is unannounced, model-owned objection — not pretending to disagree.</p></div>
-  <div class="card"><span class="tag">Equity</span><h4>Unconstrained AI is regressive</h4><p>No main effect overall — but a <b>widened gap</b> between low- and high-prior-knowledge students. It helps those who already know how to drive it.</p></div>
-  <div class="card"><span class="tag">Fairness</span><h4>Detectors are conventionality meters</h4><p>61.22% false-positive on non-native writers vs 5.19% native. Students taught formulaic structures <em>as an accommodation</em> are maximally exposed.</p></div>
+  <div class="card"><span class="tag">Kills a product</span><h4>Measurement without a rule is inert</h4><p>Both arms revised programs more often; <b>only the arm told <em>what to change</em></b> moved achievement. Dashboards, streaks, mastery bars and adaptive difficulty are all the arm that measured more and moved nothing.</p></div>
+  <div class="card"><span class="tag">Free fix</span><h4>Say it before they study</h4><p>Teaching with a prior expectancy: <b>g = 0.48</b>. Without: <b>g = −0.02</b>. "Now explain it back to me," asked at the end, is the null condition — and is how nearly every product ships it.</p></div>
+  <div class="card"><span class="tag">Inverts the ask</span><h4>The audience is a net cost</h4><p>Teaching to a camera beat teaching to one student and to seven — on transfer, with lower pulse rate, lower anxiety, lower load and <em>more</em> idea units. Presenting to a room is a barrier that buys nothing.</p></div>
+  <div class="card"><span class="tag">Must-fix bug</span><h4>Vision models erase the mistakes</h4><p>Asked to transcribe student work, VLMs silently <b>repair</b> the errors — the sign, the paren, the missing step. The mistakes are the entire reason for looking at the page.</p></div>
+  <div class="card"><span class="tag">Boundary</span><h4>Scheduling fails on structure</h4><p>Adaptive scheduling: <b>11 of 14</b> trials significant on flashcard-type material, <b>0 of 8</b> on interdependent content. Duolingo's scheduler vs plain Leitner on ~1M students: <b>−7.3% practice</b>.</p></div>
+  <div class="card"><span class="tag">Ceiling</span><h4>Knowledge tracing is exhausted</h4><p>An <em>untrained</em> LSTM is within 0.03 AUC of the trained one. An oracle that knows the exact moment of learning beats simple logistic PFA by <b>0.002</b>. The headroom is not in the model.</p></div>
+  <div class="card"><span class="tag">Backfire</span><h4>Announced devil's advocate</h4><p>Saying "let me play devil's advocate" produces cognitive <em>bolstering</em> of the learner's original view. The exit is unannounced, model-owned objection — not performed disagreement.</p></div>
+  <div class="card"><span class="tag">Fairness</span><h4>Detectors are conventionality meters</h4><p><b>61.22%</b> false-positive on non-native writers versus 5.19% native. Students taught sentence frames <em>as an accommodation</em> are maximally exposed, because the accommodation lowers perplexity by design.</p></div>
   <div class="card"><span class="tag">Objective</span><h4>The Null-Learner Test</h4><p>Simulate an agent maximising your metric while teaching nothing. DAU, streaks, XP and time-on-app all pass — so all are disqualified as objectives.</p></div>
-  <div class="card"><span class="tag">Substrate</span><h4>Real-time is solved</h4><p>Wan Streamer v0.3: 640×368 @ 25 FPS, <b>~200 ms model-side latency</b> — inside the human turn-gap budget — with a persistent world plus a separate event stream.</p></div>
+  <div class="card"><span class="tag">Reach</span><h4>A phone call beats the avatar</h4><p>Voice call + SMS: <b>+0.327 SD</b> across 5 countries, N = 8,902. SMS alone: +0.083, null in three. The mechanism is a human on the line at a scheduled time, not the bandwidth.</p></div>
+  <div class="card"><span class="tag">Frontier</span><h4>Real-time is solved</h4><p>640×368 at 25 FPS with <b>~200 ms model-side latency</b> — inside the human conversational turn-gap — with a persistent world and a separate event stream.</p></div>
+  <div class="card"><span class="tag">Empty chair</span><h4>Zero RCTs on disabled learners</h4><p>ERIC + Europe PMC, censused twice: 30 GenAI-education RCTs mention students, <b>0</b> mention disability. Every effect size in this field was measured on somebody else's child.</p></div>
 </div>
 
-<h2>The thesis under test</h2>
-<div class="callout">
-  <div class="k">Cost, not efficacy</div>
-  <p>Most great pedagogical systems were abandoned for <strong>cost, not evidence</strong>. The
-  Oxbridge tutorial, Socratic dialogue, apprenticeship, chavruta, the Keller Plan, one-to-one
-  mastery learning — all worked, all were labour-intensive, all lost to economics.</p>
-  <p>So the question is not <em>“what new pedagogy does AI enable?”</em> but
-  <strong>“which known-good pedagogy just became affordable?”</strong> — and, critically, which
-  mechanisms survive having the human replaced. Chavruta needs a genuine peer. A tutorial needs
-  an expert who can be wrong and argued with. Some do not survive.</p>
+<h2>The unknown unknowns</h2>
+<p class="sub">Not open problems — those are catalogued and specified with experiments. These are the
+places where the whole frame may be wrong, and where nobody is currently looking.</p>
+
+<div class="qlist">
+  <div class="q"><b>Correlated pedagogical error at population scale</b>
+  <p>A human teacher's blind spots are idiosyncratic — thirty teachers make thirty different
+  mistakes and the system averages them out. A model's blind spots are <em>systematic and identical
+  for every learner simultaneously</em>. Nobody has studied what happens when ten million children
+  are taught the same subtle misconception on the same afternoon. There is no monitoring for it and
+  no name for it.</p></div>
+
+  <div class="q"><b>Every effect we have is measured in weeks</b>
+  <p>The longest outcome in this corpus is months; most are a single session. A technique that
+  measures +0.5 SD at six weeks and quietly corrodes a learner's willingness to struggle over three
+  years would look <em>identical</em> in every study we cite. We are optimising on a horizon far
+  shorter than the thing we claim to affect.</p></div>
+
+  <div class="q"><b>What the model teaches implicitly, every single turn</b>
+  <p>Every interaction teaches epistemics — what counts as an answer, how much confidence is
+  appropriate, whether to defer, when a question is finished. That curriculum runs constantly, is
+  measured nowhere, and is plausibly larger than the subject-matter effect.</p></div>
+
+  <div class="q"><b>The learner model may be a category error</b>
+  <p>We assume a stable person to be modelled. In childhood the subject changes faster than the
+  model converges, and a good fit to who a child was in October may be an active constraint on who
+  they are becoming by March. Nobody has asked whether personalisation is developmentally
+  <em>anti</em>-adaptive.</p></div>
+
+  <div class="q"><b>Every study is one classroom in a world where nobody else has it</b>
+  <p>Education is heavily positional — credentials, ranking, admission. Every effect size quoted
+  here was measured where the treatment group had something the others did not. What the same
+  technique does when <em>everyone</em> has it is not a smaller version of that result. It is a
+  different question, and it has never been asked.</p></div>
+
+  <div class="q"><b>We cannot tell competence from performance any more</b>
+  <p>Every assessment instrument in existence assumes the artifact reflects the person who submitted
+  it. That assumption broke. The field's response has been detection — which runs
+  <b>61.22% false-positive on non-native writers</b>. Treating a measurement crisis as a cheating
+  problem may be the wrong frame entirely.</p></div>
+
+  <div class="q"><b>Nobody has checked whether a wrong-on-purpose agent is safe</b>
+  <p>The teachable agent is this survey's most promising untested mechanism, and it requires an agent
+  that <em>holds an error</em> without self-correcting. No one has measured whether learners repair
+  the error or internalise it. The failure mode is obvious in hindsight and entirely unstudied.</p></div>
+
+  <div class="q"><b>375 million children are unmeasured — and that number is itself an artifact</b>
+  <p>We can state that 21.7% of the world's children have no benchmark coverage in any of their
+  languages. What we cannot state is what happens to a language when its children are taught through
+  a model that speaks it badly — whether that accelerates a shift already underway, and on what
+  timescale.</p></div>
 </div>
 
-<h2>Progress</h2>
+<h2>The questions worth asking</h2>
+<p class="sub">Aimed at any vendor, any paper, any demo — and at this document. Most claims in this
+field fail on the first three.</p>
+
+<div class="qlist">
+  <div class="q"><b>Show me the delayed, unassisted, novel-item test.</b>
+  <p>Not the practice score. Not the same items. Weeks later, device closed, problems never seen
+  before. ERIC returns <b>0 records</b> for "retention test" AND "ChatGPT", and <b>0</b> for
+  "transfer test". Without a delayed unassisted outcome, nothing was measured about learning.</p></div>
+
+  <div class="q"><b>What happened to the gap, not the mean?</b>
+  <p>Report the interaction with prior attainment. An intervention with a healthy mean that loads on
+  already-strong learners has made things worse. Untargeted delivery reliably does this — Sierra
+  Leone loaded at <b>+0.195 SD per SD</b> of baseline.</p></div>
+
+  <div class="q"><b>Does your metric survive the Null-Learner Test?</b>
+  <p>Simulate an agent that maximises it while teaching nothing. If the metric cannot tell the
+  difference, it is not an objective. Engagement, time-on-task, streaks, satisfaction and session
+  count all fail.</p></div>
+
+  <div class="q"><b>Which arm isolates the AI from the humans around it?</b>
+  <p>Both real outcome trials of the best-resourced AI tutor wrapped it in human structure doing
+  visible work — in one, <b>44.3% of tutor edits were slowing the AI's questioning down</b>. No
+  published trial isolates prompt-alone pedagogy from tablets, pair-work and teacher lesson
+  design.</p></div>
+
+  <div class="q"><b>Is that a backtest or an intervention?</b>
+  <p>Log-loss on review histories is not a learning outcome. On a 350-million-review benchmark a
+  <b>zero-parameter moving average beats every FSRS version</b>. Predicting what a learner already
+  did is a different quantity from causing them to remember.</p></div>
+
+  <div class="q"><b>What is your inter-rater reliability on the thing you claim to measure?</b>
+  <p>Published once for the field's leading pedagogy rubric and never again: Krippendorff's α of
+  <b>0.066</b> for "inspires interest" and <b>0.023</b> for "monitors motivation". Two of five
+  principles rest on constructs experts cannot reliably identify. Human graders of code reach
+  α ≈ 0.20.</p></div>
+
+  <div class="q"><b>Active control, or nothing?</b>
+  <p>Against "no intervention", almost everything works. Orton-Gillingham looks excellent until it is
+  compared with other explicit instruction, where it is <b>g = 0.22, p = .40</b>. The robot
+  meta-analysis spans +0.75 versus nothing to <b>−0.06</b> versus a teacher.</p></div>
+
+  <div class="q"><b>What did you pre-register, and what did you report?</b>
+  <p>The largest AI-tutoring trial in this corpus abandoned its pre-registered subdomain analyses,
+  had differential attrition favouring treatment, and swapped models mid-trial. All three are visible
+  only in the appendix.</p></div>
+
+  <div class="q"><b>Who consented out?</b>
+  <p>Every result is conditioned on a connected, consenting, mostly curious population. The learners
+  this field most claims to serve are the ones least likely to be in the sample — and in one census,
+  <em>none</em> of them are.</p></div>
+
+  <div class="q"><b>What would falsify your thesis — and has it already happened?</b>
+  <p>The honest counter-case to this whole survey: 0.2–0.4 SD may be a population parameter rather
+  than a technology limit. The best-powered studies on record are nulls. And our own evidence
+  repeatedly shows elaboration losing to simplicity — five explanation rungs did not beat three
+  (<b>p = .738</b>), multiple representations harmed, mixed agent panels lost to one good agent.</p></div>
+</div>
+
+<h2>Demos</h2>
+<p class="sub">Because a survey that only describes techniques is a reading list.</p>
+<p><a href="demos/"><strong>→ The demo gallery</strong></a> — thirteen techniques, each running in
+the browser, each stating what it proves and what it merely illustrates. Computed where computable,
+honestly labelled where scripted.</p>
+
+<h2>Where the work stands</h2>
+<div class="scroll">
 <table>
-  <tr><th>Wave</th><th>Sections</th><th>State</th></tr>
-  <tr><td><b>A</b> Named frontier</td><td>animation · live-multimodal · world-models · textbooks</td><td class="up">3 done · 1 running</td></tr>
-  <tr><td><b>B</b> Evidence floor</td><td>learning science · efficacy scoreboard</td><td class="up">1 done · 1 running</td></tr>
-  <tr><td><b>C</b> Generation tech</td><td>illustration · psychometrics</td><td>2 running</td></tr>
-  <tr><td><b>D</b> Frontier</td><td>rolling quarter · portfolio · <b>LearnLM</b></td><td class="up">2 done · 1 running</td></tr>
-  <tr><td><b>E</b> Market</td><td>edtech landscape + graveyard · LessonOrca</td><td>running</td></tr>
-  <tr><td><b>F</b> Futures</td><td>assessment · beyond-the-tutor · learner-model · motivation · reach · grounding · safety · ELI-laddering</td><td class="up">5 done · 3 running</td></tr>
-  <tr><td><b>G</b> Synthesis</td><td>agent village · grounding ladder · research agenda</td><td>1 running</td></tr>
-  <tr><td><b>H</b> SELPA-first</td><td>accessibility-first design, learner archetypes</td><td>running</td></tr>
-  <tr><td><b>I</b> Pedagogical canon</td><td>Socratic · mastery · apprenticeship · global traditions</td><td>2 running</td></tr>
+  <tr><th>Artifact</th><th>State</th><th></th></tr>
+  <tr><td><b>The survey</b> — the deliverable</td><td class="num">9 sections · 14,500 words</td><td class="mut">target ~45,000</td></tr>
+  <tr><td><b>Research reports</b> — the input</td><td class="num">31 reports · ~280,000 words</td><td class="up">complete</td></tr>
+  <tr><td>Sections written from reports in hand</td><td class="num">9 of 32</td><td class="mut">23 remaining</td></tr>
+  <tr><td>Demo pages</td><td class="num">gallery + design system</td><td class="mut">13 to build</td></tr>
+  <tr><td>Published corrections</td><td class="num">11</td><td class="up">all on the record</td></tr>
 </table>
+</div>
 
 <div class="callout">
   <div class="k">Editorial standard</div>
-  <p>Every claim carries a source URL and an evidence label — <code>MEASURED-RCT</code>,
+  <p>Every claim carries a source and an evidence label — <code>MEASURED-RCT</code>,
   <code>MEASURED-META</code>, <code>MEASURED-BENCH</code>, <code>OBSERVED</code>,
-  <code>VENDOR</code>, <code>DEMO</code>, <code>INFERENCE</code>. A <code>VENDOR</code> claim may
-  never be restated as a finding. Every section must contain at least one documented negative or
-  null result. Effect sizes over adjectives.</p>
+  <code>VENDOR</code>, <code>DEMO</code>, <code>INFERENCE</code>. A <code>VENDOR</code> claim is
+  never restated as a finding. Every section carries at least one documented null. Unverifiable
+  claims are reported as unverifiable — never laundered, never omitted. Effect sizes over
+  adjectives.</p>
 </div>
 
 <footer>
-  <p><a href="https://github.com/dlmastery/learning-with-ai">github.com/dlmastery/learning-with-ai</a>
-  · Each section committed as its evidence lands. Palette validated for colour-vision deficiency
-  in both light and dark modes.</p>
+  <a href="https://github.com/dlmastery/learning-with-ai">Repository</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai/tree/main/survey">The survey</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw">Research reports</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai/blob/main/AUDIT.md">Requirements audit</a> ·
+  <a href="demos/">Demos</a>
+  <br /><br />Built incrementally. Negative results are first-class. Corrections are published.
 </footer>
 
 </div>
+
+<script>
+/* ── Chart IR ──────────────────────────────────────────────────────────────
+   Charts are DATA; a deterministic renderer turns them into SVG. No coordinate
+   on this page is hand-positioned — per C1's finding that hand-written SVG is
+   Tier D and that a declarative spec plus a deterministic renderer is the
+   correct target. The accessible table view is generated from the same spec,
+   so it can never drift from the chart.                                      */
+
+const LADDER = {
+  max: 0.85,
+  rows: [
+    {label:"Human tutoring",         note:"VanLehn — the real ceiling, not 2σ",                      v:0.79,  ok:true},
+    {label:"Intelligent tutoring",   note:"VanLehn — statistically indistinguishable from human",    v:0.76,  ok:true},
+    {label:"Best AI tutor RCT",      note:"Kestin — 0.63–0.73, achieved in 49 minutes against 60",   v:0.68,  ok:true},
+    {label:"Learning by teaching",   note:"Kobayashi 2019 — human tutee, expectancy set first",      v:0.56,  ok:true},
+    {label:"Self-explanation",       note:"Bisra et al. pooled estimate",                            v:0.55,  ok:true},
+    {label:"Spacing",                note:"Cepeda meta-analytic tradition",                          v:0.54,  ok:true},
+    {label:"Retrieval practice",     note:"222 classroom studies · 48,478 students",                 v:0.50,  ok:true},
+    {label:"Worked examples",        note:"reverses for experts — d = −0.428",                       v:0.48,  ok:true},
+    {label:"Teaching w/ expectancy", note:"Kobayashi 2024, k=39. Without expectancy: g = −0.02",     v:0.48,  ok:true},
+    {label:"Scaffolding (computer)", note:"Belland, 144 studies — the only directly meta-validated computer-based form", v:0.46, ok:true},
+    {label:"Interleaving",           note:"varies sharply by domain",                                v:0.42,  ok:true},
+    {label:"Mayer design principles",note:"contiguity alone reaches 0.74",                           v:0.38,  ok:true},
+    {label:"Tutoring, pooled RCTs",  note:"Nickow et al. — the honest field-wide number",            v:0.37,  ok:true},
+    {label:"Productive failure",     note:"requires prior knowledge; fails without it",              v:0.36,  ok:true},
+    {label:"Voice call + SMS",       note:"5 countries · N = 8,902 — beats most of this list",       v:0.327, ok:true},
+    {label:"VR vs desktop",          note:"35 RCTs — the presence premium, and it is modest",        v:0.24,  ok:false},
+    {label:"Animation vs static",    note:"affect moves; learning mostly does not",                  v:0.23,  ok:false},
+    {label:"Orton-Gillingham",       note:"p = .40 — NOT significant against active comparison",     v:0.22,  ok:false},
+    {label:"Robot vs same on tablet",note:"78 studies — but −0.06 when the robot replaces a teacher",v:0.20,  ok:false},
+    {label:"Pedagogical avatars",    note:"43 studies — affect d ≈ .85–1.01, learning ≈ 0",          v:0.19,  ok:false},
+    {label:"Slides vs no slides",    note:"CI [−0.103, 0.236] — the deck itself is worth nothing",   v:0.067, ok:false},
+    {label:"Expanding SRS intervals",note:"k = 54, I² = 0% — a clean, well-powered nothing",         v:0.032, ok:false},
+    {label:"Lesson study",           note:"181 schools · 12,747 pupils · p = 0.65 · no dose-response",v:0.02, ok:false},
+    {label:"Teaching w/o expectancy",note:"'now explain it back to me' — the null condition",        v:-0.02, ok:false},
+    {label:"Alternative seating",    note:"moderate-strength evidence of NO effect on attention",    v:0.0,   ok:false},
+    {label:"Learning styles",        note:"no credible support in four decades — 89.1% of educators believe it", v:0.0, ok:false}
+  ]
+};
+
+const SLOPE = {
+  rows:[
+    {label:"AI assistance",          a:"+48%",        b:"−17%",         bad:true,  note:"Practice soared. Unassisted exam collapsed."},
+    {label:"Preference vs knowledge",a:"d ≈ 0.48",    b:"0",            bad:false, note:"Three RCTs. Preference moves; knowledge does not. Survives explicit debiasing."},
+    {label:"Pedagogical avatars",    a:"d = .85–1.01",b:"no change",    bad:false, note:"Three 2024 field experiments. Affect moved a lot; learning did not move."},
+    {label:"Animation vs static",    a:"interest ↑",  b:"no change",    bad:false, note:"Engagement is real. Transfer is not."},
+    {label:"Active learning",        a:"felt worse",  b:"learned more", bad:false, invert:true, note:"Deslauriers PNAS 2019 — the mirror image, and the tell."}
+  ]
+};
+
+const tip = document.getElementById('tip');
+const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const NS  = 'http://www.w3.org/2000/svg';
+const mk  = (n,a) => { const e = document.createElementNS(NS,n);
+                       for (const k in a) e.setAttribute(k, a[k]); return e; };
+
+function bind(el, html){
+  el.addEventListener('pointerenter', () => { tip.innerHTML = html; tip.style.opacity = '1'; });
+  el.addEventListener('pointermove', e => {
+    const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 10);
+    const y = Math.min(e.clientY + 16, innerHeight - tip.offsetHeight - 10);
+    tip.style.transform = `translate(${x}px, ${y}px)`;
+  });
+  el.addEventListener('pointerleave', () => { tip.style.opacity = '0'; });
+}
+
+function fmt(v){
+  if (v === 0) return '—';
+  const dec = Math.abs(v) < 0.1 ? 3 : 2;
+  return (v < 0 ? '−' : '') + Math.abs(v).toFixed(dec);
+}
+
+function renderBars(host, spec){
+  const narrow = innerWidth < 640;
+  const LW = narrow ? 132 : 212, RW = 52, ROW = narrow ? 29 : 26, PAD = 8;
+  const W = 720, H = spec.rows.length * ROW + PAD * 2;
+  const trackX = LW + 10, trackW = W - LW - RW - 22;
+  const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, role:'img',
+    'aria-label':'Bar chart of pooled effect sizes for learning techniques, ordered largest to smallest. A table view follows.'});
+  spec.rows.forEach((r, i) => {
+    const y = PAD + i * ROW + ROW / 2;
+    const g = mk('g', {});
+    const lab = mk('text', {x:LW, y:y+4, 'text-anchor':'end', class:'sl',
+                            style:`font-size:${narrow ? 11 : 13}px`});
+    lab.textContent = r.label;
+    g.appendChild(lab);
+    g.appendChild(mk('rect', {x:trackX, y:y-5, width:trackW, height:10, rx:5, fill:'var(--raise)'}));
+    const w = Math.max(2, Math.abs(r.v) / spec.max * trackW);
+    if (r.v < 0){
+      // A negative effect must never read as a short positive bar. Draw it to the
+      // LEFT of the zero baseline, outlined rather than filled.
+      g.appendChild(mk('rect', {x:trackX - w - 2, y:y-5, width:w, height:10, rx:5,
+        fill:'none', stroke:'var(--bad)', 'stroke-width':1.5}));
+      g.appendChild(mk('line', {x1:trackX, y1:y-7, x2:trackX, y2:y+7,
+        stroke:'var(--bad)', 'stroke-width':1.5}));
+    } else if (r.v > 0){
+      g.appendChild(mk('rect', {x:trackX, y:y-5, width:w, height:10, rx:5,
+        fill: r.ok ? 'var(--real)' : 'var(--felt)', opacity: r.ok ? 1 : 0.74}));
+    }
+    const val = mk('text', {x:trackX + trackW + 8, y:y+4, class:'vl'});
+    val.textContent = fmt(r.v);
+    g.appendChild(val);
+    g.appendChild(mk('rect', {x:0, y:y-ROW/2, width:W, height:ROW, fill:'transparent'}));
+    bind(g, `<b>${esc(r.label)}</b>${esc(r.note)}`);
+    svg.appendChild(g);
+  });
+  host.replaceChildren(svg);
+}
+
+function renderSlope(host, spec){
+  const narrow = innerWidth < 640;
+  const LW = narrow ? 96 : 184, ROW = 50, PAD = 28;
+  const W = 700, H = spec.rows.length * ROW + PAD * 2;
+  const x1 = LW + 62, x2 = W - 118;
+  const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, role:'img',
+    'aria-label':'Slope chart: five capabilities where what learners felt diverged from what they actually learned.'});
+  svg.appendChild(mk('line', {x1, y1:14, x2:x1, y2:H-24, class:'gl'}));
+  svg.appendChild(mk('line', {x1:x2, y1:14, x2:x2, y2:H-24, class:'gl'}));
+  const t1 = mk('text', {x:x1, y:H-6, 'text-anchor':'middle', class:'ax'}); t1.textContent = 'FELT';
+  const t2 = mk('text', {x:x2, y:H-6, 'text-anchor':'middle', class:'ax'}); t2.textContent = 'LEARNED';
+  svg.appendChild(t1); svg.appendChild(t2);
+  spec.rows.forEach((r, i) => {
+    const y = PAD + i * ROW;
+    const g = mk('g', {});
+    const lab = mk('text', {x:LW, y:y+4, 'text-anchor':'end', class:'sl',
+                            style:`font-size:${narrow ? 11 : 13}px`});
+    lab.textContent = r.label;
+    g.appendChild(lab);
+    g.appendChild(mk('line', {x1, y1:y, x2, y2:y,
+      stroke: r.invert ? 'var(--real)' : 'var(--felt)', 'stroke-width':2,
+      opacity: r.invert ? 0.42 : 0.28}));
+    g.appendChild(mk('circle', {cx:x1, cy:y, r:6, fill:'var(--felt)', class:'dot'}));
+    g.appendChild(mk('circle', {cx:x2, cy:y, r:6, fill:'var(--real)', class:'dot'}));
+    const a = mk('text', {x:x1-13, y:y+4, 'text-anchor':'end', class:'vl',
+      style:`fill:${r.invert ? 'var(--bad)' : 'var(--felt)'}`});
+    a.textContent = r.a; g.appendChild(a);
+    const b = mk('text', {x:x2+13, y:y+4, class:'vl',
+      style: r.invert ? 'fill:var(--good)' : (r.bad ? 'fill:var(--bad)' : '')});
+    b.textContent = r.b; g.appendChild(b);
+    g.appendChild(mk('rect', {x:0, y:y-ROW/2, width:W, height:ROW, fill:'transparent'}));
+    bind(g, `<b>${esc(r.label)}</b>${esc(r.note)}`);
+    svg.appendChild(g);
+  });
+  host.replaceChildren(svg);
+}
+
+/* generated from the same spec, so it can never drift from the chart */
+function renderTable(host, spec){
+  host.innerHTML = ['<tr><th>Technique</th><th>Effect</th><th>Note</th></tr>']
+    .concat(spec.rows.map(r =>
+      `<tr><td><b>${esc(r.label)}</b></td><td class="num">${fmt(r.v)}</td><td>${esc(r.note)}</td></tr>`))
+    .join('');
+}
+
+function draw(){
+  renderBars(document.getElementById('bars'), LADDER);
+  renderSlope(document.getElementById('slope'), SLOPE);
+}
+draw();
+renderTable(document.getElementById('bartable'), LADDER);
+let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(draw, 150); });
+
+const R = document.documentElement;
+document.getElementById('tt').onclick = () => {
+  const dark = R.getAttribute('data-theme') === 'dark' ||
+    (!R.getAttribute('data-theme') && matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme', dark ? 'light' : 'dark');
+};
+</script>
 </body>
 </html>
