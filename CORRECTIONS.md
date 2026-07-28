@@ -57,6 +57,7 @@ edited — see C-12 and C-13, which are the reason this file exists.
 | **C-26** | 28 Jul | "WCAG 2.2 AA is the accessibility floor", published in two survey sections | **The ADA Title II web rule incorporates WCAG 2.1**, not 2.2 — and the compliance dates moved twelve months in April 2026 (91 FR 20902), to **26 April 2027** and **26 April 2028**. Most published guidance still says 2.2 and April 2026 | SELF-RESEARCH (H2) |
 | **C-27** | 28 Jul | §04 treated testing accommodations as part of the "known-good intervention" base being scaled | **Legally mandated and evidentially weak.** Kieffer et al.: overall **g = .034, p = .180**. Rios et al.: **none statistically different from zero** across N = 11,069. Elbaum 2007: the effect **reverses** at secondary level. And teachers assign them **at chance** (N = 1,218). Both halves must be held: required by law, not established by evidence | SELF-RESEARCH (H2) |
 | **C-28** | 28 Jul | "An AI that changes a child's programme without generating prior written notice has created a procedural violation" | **Directionally right, wrong in three specifics.** The duty attaches to the **agency**, not the tool; it fires on identification, evaluation, placement and FAPE provision — **not on teaching methodology**, which §300.501(b)(3) places outside the meeting requirement; and a procedural violation denies FAPE only through §300.513(a)(2)'s three gates. ED's own line governs: *"placement refers to the provision of special education and related services rather than a specific place"* (71 FR 46588) | SELF-RESEARCH (H2) |
+| **C-29** | 28 Jul | Cited Doroudi et al. (2019) as a negative review, publishing only its **0-of-8** sub-cut on interdependent content | **The review's overall finding is positive.** Verbatim: *"We find that over half of the studies found that RL-induced policies significantly outperform baselines."* **21 of 41 studies (51%) significantly beat all baselines**; 10 no significant difference; 1 baseline win. Publishing the pessimistic sub-cut without the headline is selective reporting — the exact failure this survey exists to name. The authors' qualifier also favours us: RL works best *"constrained with ideas and theories from cognitive psychology and the learning sciences"* | SELF-RESEARCH (K2) |
 
 ---
 
@@ -64,13 +65,13 @@ edited — see C-12 and C-13, which are the reason this file exists.
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 16 |
+| Caught by our own research | 17 |
 | Caught by our own verification (incl. of our own warnings) | 2 |
 | **Caught by an adversarial external reviewer** | **7** |
 | Caught by our own builders, against their own briefs | 3 |
-| **Total** | **28** |
+| **Total** | **29** |
 
-Eight of twenty-eight were found by someone whose job was to fail us — including the
+Eight of twenty-nine were found by someone whose job was to fail us — including the
 two most damaging (C-12, C-13) and the one about the ledger itself (C-23). That ratio
 is the honest measure of how much an internal review process is worth, and it is the
 argument for commissioning the hostile read rather than trusting the self-audit.

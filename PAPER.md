@@ -2,7 +2,7 @@
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**32 sections · 78,652 words · 32 research reports · ~2,100 source citations**
+**33 sections · 80,312 words · 32 research reports · ~2,100 source citations**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -86,47 +86,48 @@ One of them documents a mechanism this project proposed, benchmarked, and
 
 5. [The JARVIS Inversion — an ambient tutor is not an ambient assistant](#the-jarvis-inversion-an-ambient-tutor-is-not-an-ambient-assistant)
 6. [The Compression — a week's understanding in an hour, and what that sentence can honestly mean](#the-compression-a-week-s-understanding-in-an-hour-and-what-that-sentence-can-honestly-mean)
-7. [Ekalavya's Thumb — the system we are actually building](#ekalavya-s-thumb-the-system-we-are-actually-building)
-8. [The Village — what makes a crew of agents a crew](#the-village-what-makes-a-crew-of-agents-a-crew)
-9. [The One Interaction That Survived — personalisation as a measurement problem](#the-one-interaction-that-survived-personalisation-as-a-measurement-problem)
-10. [The Archivist — persistent learner state, and where to put it](#the-archivist-persistent-learner-state-and-where-to-put-it)
+7. [Pedagogy Has No Pytest — what an agent is, and the one thing it is missing](#pedagogy-has-no-pytest-what-an-agent-is-and-the-one-thing-it-is-missing)
+8. [Ekalavya's Thumb — the system we are actually building](#ekalavya-s-thumb-the-system-we-are-actually-building)
+9. [The Village — what makes a crew of agents a crew](#the-village-what-makes-a-crew-of-agents-a-crew)
+10. [The One Interaction That Survived — personalisation as a measurement problem](#the-one-interaction-that-survived-personalisation-as-a-measurement-problem)
+11. [The Archivist — persistent learner state, and where to put it](#the-archivist-persistent-learner-state-and-where-to-put-it)
 
 **Part III — The mechanisms**
 
-11. [Teach to Learn — the highest-evidence, least-built intervention](#teach-to-learn-the-highest-evidence-least-built-intervention)
-12. [The Explanation Is the Work — generative slides, and the learner as explainer](#the-explanation-is-the-work-generative-slides-and-the-learner-as-explainer)
-13. [The Ladder of Explanation — ELI10 to ELI25, and the rule that makes a simplification legal](#the-ladder-of-explanation-eli10-to-eli25-and-the-rule-that-makes-a-simplification-legal)
-14. [Explaining Hard Things — the fidelity invariants, instantiated](#explaining-hard-things-the-fidelity-invariants-instantiated)
-15. [Nobody Needs a Better Scheduler — the science of durable remembering](#nobody-needs-a-better-scheduler-the-science-of-durable-remembering)
-16. [Beyond the Tutor — the five roles nobody is building](#beyond-the-tutor-the-five-roles-nobody-is-building)
-17. [What the Object Must Refuse — embodiment, manipulatives, and executable material](#what-the-object-must-refuse-embodiment-manipulatives-and-executable-material)
-18. [Showing — illustration, animation, and the arithmetic of a wrong picture](#showing-illustration-animation-and-the-arithmetic-of-a-wrong-picture)
+12. [Teach to Learn — the highest-evidence, least-built intervention](#teach-to-learn-the-highest-evidence-least-built-intervention)
+13. [The Explanation Is the Work — generative slides, and the learner as explainer](#the-explanation-is-the-work-generative-slides-and-the-learner-as-explainer)
+14. [The Ladder of Explanation — ELI10 to ELI25, and the rule that makes a simplification legal](#the-ladder-of-explanation-eli10-to-eli25-and-the-rule-that-makes-a-simplification-legal)
+15. [Explaining Hard Things — the fidelity invariants, instantiated](#explaining-hard-things-the-fidelity-invariants-instantiated)
+16. [Nobody Needs a Better Scheduler — the science of durable remembering](#nobody-needs-a-better-scheduler-the-science-of-durable-remembering)
+17. [Beyond the Tutor — the five roles nobody is building](#beyond-the-tutor-the-five-roles-nobody-is-building)
+18. [What the Object Must Refuse — embodiment, manipulatives, and executable material](#what-the-object-must-refuse-embodiment-manipulatives-and-executable-material)
+19. [Showing — illustration, animation, and the arithmetic of a wrong picture](#showing-illustration-animation-and-the-arithmetic-of-a-wrong-picture)
 
 **Part IV — Correctness**
 
-19. [Grounding — correctness that lives in the verifier](#grounding-correctness-that-lives-in-the-verifier)
-20. [Assessment After the Artifact — measuring a person when the work no longer indicates them](#assessment-after-the-artifact-measuring-a-person-when-the-work-no-longer-indicates-them)
+20. [Grounding — correctness that lives in the verifier](#grounding-correctness-that-lives-in-the-verifier)
+21. [Assessment After the Artifact — measuring a person when the work no longer indicates them](#assessment-after-the-artifact-measuring-a-person-when-the-work-no-longer-indicates-them)
 
 **Part V — Who it is for**
 
-21. [The Empty Chair — designing for the margin first](#the-empty-chair-designing-for-the-margin-first)
-22. [The Coordinator's Week — what special education actually consists of](#the-coordinator-s-week-what-special-education-actually-consists-of)
-23. [Who Is Not in the Room — reach, language, and the barriers attention does not remove](#who-is-not-in-the-room-reach-language-and-the-barriers-attention-does-not-remove)
-24. [What We Owe Children — the legal floor as a design specification](#what-we-owe-children-the-legal-floor-as-a-design-specification)
+22. [The Empty Chair — designing for the margin first](#the-empty-chair-designing-for-the-margin-first)
+23. [The Coordinator's Week — what special education actually consists of](#the-coordinator-s-week-what-special-education-actually-consists-of)
+24. [Who Is Not in the Room — reach, language, and the barriers attention does not remove](#who-is-not-in-the-room-reach-language-and-the-barriers-attention-does-not-remove)
+25. [What We Owe Children — the legal floor as a design specification](#what-we-owe-children-the-legal-floor-as-a-design-specification)
 
 **Part VI — The field, and what it has already built**
 
-25. [The Substrate — what the frontier actually supplies](#the-substrate-what-the-frontier-actually-supplies)
-26. [The Textbook That Writes Itself — and who it remembers](#the-textbook-that-writes-itself-and-who-it-remembers)
-27. [The Canon — what the history of pedagogy already settled](#the-canon-what-the-history-of-pedagogy-already-settled)
-28. [The Market — nine bets, one graveyard, and the number that shrinks as you look at it](#the-market-nine-bets-one-graveyard-and-the-number-that-shrinks-as-you-look-at-it)
-29. [Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration](#prior-art-what-thirty-five-builds-reveal-read-as-evidence-and-not-as-inspiration)
-30. [Motivation — wanting to continue](#motivation-wanting-to-continue)
+26. [The Substrate — what the frontier actually supplies](#the-substrate-what-the-frontier-actually-supplies)
+27. [The Textbook That Writes Itself — and who it remembers](#the-textbook-that-writes-itself-and-who-it-remembers)
+28. [The Canon — what the history of pedagogy already settled](#the-canon-what-the-history-of-pedagogy-already-settled)
+29. [The Market — nine bets, one graveyard, and the number that shrinks as you look at it](#the-market-nine-bets-one-graveyard-and-the-number-that-shrinks-as-you-look-at-it)
+30. [Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration](#prior-art-what-thirty-five-builds-reveal-read-as-evidence-and-not-as-inspiration)
+31. [Motivation — wanting to continue](#motivation-wanting-to-continue)
 
 **Part VII — What we do not know**
 
-31. [What We Cannot See From Here — the unknown unknowns, and the questions that expose them](#what-we-cannot-see-from-here-the-unknown-unknowns-and-the-questions-that-expose-them)
-32. [The Agenda — three experiments, and what would falsify this survey](#the-agenda-three-experiments-and-what-would-falsify-this-survey)
+32. [What We Cannot See From Here — the unknown unknowns, and the questions that expose them](#what-we-cannot-see-from-here-the-unknown-unknowns-and-the-questions-that-expose-them)
+33. [The Agenda — three experiments, and what would falsify this survey](#the-agenda-three-experiments-and-what-would-falsify-this-survey)
 
 ---
 
@@ -1507,7 +1508,211 @@ The sentence to keep: **almost none of a week is spent learning, and that — no
 processing speed, not talent, not effort — is what an agent takes back.**
 
 
-## 7. Ekalavya's Thumb — the system we are actually building
+## 7. Pedagogy Has No Pytest — what an agent is, and the one thing it is missing
+
+<sub>Source report: `research/raw/K2-agentic-frontier.md`</sub>
+
+The complaint that prompts this section is a good one: given agentic AI, why is
+everything in this survey so modest? Agents write software, run experiments, and
+operate for hours unattended. Why does the tutoring chapter read like 2019?
+
+The answer turns out to be a single sentence, and once you have it the entire
+reliability landscape of agentic AI resolves into one line.
+
+---
+
+## 1. What an agent actually is
+
+Strip the marketing and an agent differs from a chatbot in exactly four ways:
+
+| | |
+|---|---|
+| **Sampling** | It can try many times instead of once |
+| **Execution** | It can run things and see what happened |
+| **Persistence** | It can carry state across a boundary a conversation does not survive |
+| **Absence** | It can work while nobody is watching |
+
+Every one of those is a multiplier on something else. None of them produces value on
+its own. Which yields the rule:
+
+> **The value of an agentic loop equals the value of the external check it closes on.**
+
+Sampling without a selector is noise. Execution without a test is output. Persistence
+without a schema is a transcript. Absence without a verifier is unsupervised drift.
+
+---
+
+## 2. The rule explains the entire reliability gradient
+
+Look at where agents work and where they do not, and it is not about difficulty:
+
+| Benchmark | Score | Is there a check? |
+|---|---|---|
+| SWE-bench Verified | **79.2%** (396/500) | Yes — `pytest` |
+| Terminal-Bench 2.1 | **83.8%** | Yes — the command either works |
+| PaperBench | **21.0%** | No |
+| SciCode | **4.6%** | No |
+
+A twenty-fold spread, and the axis is not how hard the task is. It is whether
+something other than the model can say *wrong*.
+
+**Coding agents work because `pytest` exists.**
+
+Now place teaching on that table. It sits firmly in the second column, and the reason
+is measured rather than asserted:
+
+> Across **223 real tutoring domains, no LLM beat chance at labelling an incorrect
+> student action.**
+
+Not "performed poorly." **Chance.** The single most basic operation a tutor
+performs — look at what a learner did and say what is wrong with it — is currently
+unverifiable by the systems being sold to do it.
+
+That is why this survey reads modest. It is not a failure of ambition. **Pedagogy has
+no `pytest`, and every agentic capability is waiting on one.**
+
+---
+
+## 3. The field is optimising against two instruments that do not work
+
+This is the section's most damaging finding and it is structural.
+
+The leading agentic-education systems — DeepTutor, CogEvo-Edu, AgentSchool — are
+**optimised against LLM-simulated students** and **scored by LLM-as-judge**.
+
+Both instruments are measured, and both fail:
+
+- Across seven models, simulated students show **near-zero misconception
+  faithfulness**. They do not hold the belief they are role-playing.
+- Selection by LLM judge measures **−3.20pp**. Selection by test measures **+8.14pp**.
+  An eleven-point spread, in the wrong direction for the judge.
+
+> **The field is tuning tutors against a student model that holds no beliefs, using a
+> judge that is worse than not selecting at all.**
+
+Fix nothing else and fix this, and the measured quality of everything downstream moves.
+
+---
+
+## 4. What is genuinely, measurably possible right now
+
+The pessimism above is about one missing component, not about capability. Where a
+check exists, the numbers are startling.
+
+**Sampling is a real multiplier.** Coverage scales log-linearly across **four orders
+of magnitude** of samples — and a *weak* model at 250 samples beat a *strong* model at
+1: **56% against 43%.** Compute spent on breadth substitutes for model quality,
+provided you can select.
+
+**Structured disagreement makes non-experts better judges.** Debate raised non-expert
+human accuracy from **60% to 88%.** Note what this is not: it is not agents agreeing
+with each other more efficiently. It is a human adjudicating a genuine disagreement
+and getting the right answer.
+
+**Literature synthesis is solved well enough to rely on.** PaperQA2 matches or exceeds
+subject-matter experts, with **70% of flagged contradictions validated.** The "find me
+the three papers that resolve my confusion" capability is real today.
+
+**Explanatory animation renders at 93.8%.** The visual half of §17's argument has a
+working pipeline.
+
+**And the horizon is doubling every ~129 days** — the length of task an agent can
+complete unattended. Whatever the reliable autonomous unit is when you read this, it
+is roughly twice that four months later.
+
+---
+
+## 5. Two priors this survey had wrong
+
+**Doroudi et al. (2019) is not a negative review.** An earlier draft cited its
+0-of-8 sub-cut on interdependent content and omitted the headline: **21 of 41 studies
+(51%) significantly beat all baselines.** The authors' verbatim conclusion is *"over
+half of the studies found that RL-induced policies significantly outperform
+baselines."* And their qualifier is an argument *for* this document's architecture:
+RL *"has been most successful in cases where it has been constrained with ideas and
+theories from cognitive psychology and the learning sciences."* Corrected in §08 and
+§22; logged as C-29.
+
+**The "Google rots your memory" result has failed replication twice** (BF01 = 5.07).
+It is one of the most-cited claims in every argument about AI and cognition, and it is
+not standing.
+
+---
+
+## 6. The absence that is worth more than any capability
+
+Two literatures exist. They have never met.
+
+**Self-improvement optimisers** — GEPA, DGM, AlphaEvolve — have spent three years
+getting very good at optimising a system against a fitness signal. Their fitness
+signal has been benchmark accuracy, every time.
+
+**Instructional-policy research** closed the loop on real human retention with 2014
+machinery, and got **+16.5% semester retention** in a middle-school course.
+
+Six arXiv queries and ten ERIC queries confirm it: **zero optimiser-in-the-loop trials
+on human learners.** Nobody has ever pointed a modern optimiser at a fitness function
+made of delayed unassisted human retention.
+
+That is not a hard research problem. It is two fields that do not read each other, and
+it is the largest unclaimed prize in this document.
+
+---
+
+## 7. The five things worth building, in order
+
+**1 · A tutee that will not fold.** A misconception-faithful student model, certified
+by a Selective-Flip-Score eval — does it hold the wrong belief under pressure and
+abandon it only on genuine disconfirmation? This unlocks learning-by-teaching, and its
+*downstream accuracy* is the grounded selector everything else is missing. It is both
+the highest-evidence technique and the missing instrument, which is why it is first.
+
+**2 · Generate-and-select on the learner's own test, never on a judge.** The
+eleven-point spread is already measured. The scaled version — an optimiser whose
+fitness is human retention at delay — is §6's unclaimed prize.
+
+**3 · A step-level verifier for student work.** Pedagogy's missing `pytest`. Currently
+at chance, with a public testbed and decades of labelled intelligent-tutoring logs
+already sitting there. Whoever builds this unblocks the other four.
+
+**4 · An agent whose only job is enforcing the boring floor.** Retrieval, spacing,
+expectancy-before-study, feedback attached to failed retrieval, delayed unassisted
+testing. It composes the six largest effects in this survey, requires **no new
+capability at all**, and is by some distance the most likely of the five to work.
+
+**5 · Four different arbiters, not four personas.** Heterogeneity of *evidence* — a
+symbolic checker, a numeric checker, a corpus, a human — rather than heterogeneity of
+prompt. And the disagreement between them surfaced to the learner *as the lesson*,
+which is the one use of multi-agent structure the evidence supports.
+
+Note the ordering. **The least sophisticated item on that list is the one most likely
+to work**, and the most sophisticated is the one that unblocks the rest.
+
+---
+
+## 8. What this section commits us to
+
+- **Never ship an agentic loop without naming its external check.** If you cannot say
+  what plays the role of `pytest`, you have built a chatbot with extra steps.
+- **Never optimise against a simulated student.** Near-zero misconception faithfulness
+  across seven models. It holds no beliefs to diagnose.
+- **Never select by LLM judge.** −3.20pp against +8.14pp. Worse than not selecting.
+- **Spend compute on breadth, then select on a test.** A weak model at 250 samples beat
+  a strong model at one.
+- **Build the verifier first.** It is the bottleneck for every other capability here,
+  and the training data already exists.
+- **Ship the boring floor while you wait.** It needs no capability that does not exist
+  and it composes the largest effects in this survey.
+
+The honest summary of agentic AI in education, as of now: **the sampling is
+extraordinary, the execution is extraordinary, the persistence is a solved engineering
+problem, and the thing that decides whether any of it teaches anybody anything has not
+been built.**
+
+It is one component. It is buildable. Nobody has built it.
+
+
+## 8. Ekalavya's Thumb — the system we are actually building
 
 
 Ekalavya wanted to learn archery. Drona refused him — wrong caste. So he built a
@@ -1736,7 +1941,7 @@ Ekalavya lost his thumb so the hierarchy could keep its best archer at the top.
 **Nobody's thumb, ever again — and this time, the record travels with them.**
 
 
-## 8. The Village — what makes a crew of agents a crew
+## 9. The Village — what makes a crew of agents a crew
 
 <sub>Source report: `research/raw/G2-agent-village.md`</sub>
 
@@ -2112,7 +2317,7 @@ are engineering guarantees, and this section claims exactly those and nothing
 more.**
 
 
-## 9. The One Interaction That Survived — personalisation as a measurement problem
+## 10. The One Interaction That Survived — personalisation as a measurement problem
 
 <sub>Source report: `research/raw/J1-personalisation-engine.md`</sub>
 
@@ -2243,7 +2448,10 @@ from primary sources read in full:
 
 **Most of the literature contains no test.** Of 89 reinforcement-learning-in-
 education papers, **54 ran no statistical test at all** — and **45 of those 54 are
-content-sequencing papers**, precisely the cluster that measured **0 for 8** in
+content-sequencing papers**, precisely the cluster that measured **0 for 8** — though
+that sub-cut sits inside a review whose overall finding is that **21 of 41 studies
+(51%) significantly beat all baselines**, a headline an earlier draft of this survey
+omitted. The narrow negative is real; the review is not negative. See §08. It is in
 earlier work. Only **14 of 89** included a non-adaptive control condition.
 
 **The wins are not where people think.** Of 18 documented wins, **14 are
@@ -2395,7 +2603,7 @@ of a hall of mirrors, a fifteen-second measurement instead of a battery, and a
 pre-registered condition under which we delete the feature.
 
 
-## 10. The Archivist — persistent learner state, and where to put it
+## 11. The Archivist — persistent learner state, and where to put it
 
 <sub>Source report: `research/raw/F5-learner-model.md`</sub>
 
@@ -2783,7 +2991,7 @@ weak part. The place to put them was.**
 *Eight techniques, each with a measured effect and a specified failure mode. These are the parts that do the teaching.*
 
 
-## 11. Teach to Learn — the highest-evidence, least-built intervention
+## 12. Teach to Learn — the highest-evidence, least-built intervention
 
 
 **The claim:** the most effective available use of an AI in learning is not as a
@@ -2909,7 +3117,7 @@ alone, or requires fine-tuning, is — as far as this survey can determine —
 **unanswered and worth answering.**
 
 
-## 12. The Explanation Is the Work — generative slides, and the learner as explainer
+## 13. The Explanation Is the Work — generative slides, and the learner as explainer
 
 <sub>Source report: `research/raw/C3-slides-and-presentations.md`</sub>
 
@@ -3149,7 +3357,7 @@ against.
 The explanation is the work. The slides are just where you can see it.
 
 
-## 13. The Ladder of Explanation — ELI10 to ELI25, and the rule that makes a simplification legal
+## 14. The Ladder of Explanation — ELI10 to ELI25, and the rule that makes a simplification legal
 
 <sub>Source report: `research/raw/F10-explanation-laddering.md`</sub>
 
@@ -3471,7 +3679,7 @@ measured design. It is also the cheapest experiment in this section, and the one
 that would turn the ladder from an output into an instrument.
 
 
-## 14. Explaining Hard Things — the fidelity invariants, instantiated
+## 15. Explaining Hard Things — the fidelity invariants, instantiated
 
 <sub>Source report: `derived — see provenance note in §1`</sub>
 
@@ -3719,7 +3927,7 @@ The general form, which is the section in one line: **a simplification is legal 
 the reader can still tell what would break.**
 
 
-## 15. Nobody Needs a Better Scheduler — the science of durable remembering
+## 16. Nobody Needs a Better Scheduler — the science of durable remembering
 
 <sub>Source report: `research/raw/F11-scientific-remembering.md`</sub>
 
@@ -3831,6 +4039,20 @@ builds:
 |---|---|
 | Paired associates / flashcard-type material | **11 of 14** |
 | **Interdependent content** — where one idea depends on another | **0 of 8** |
+
+**And the headline this table omitted, which an earlier draft should not have.** Across
+the review's full set of **41 studies from 34 papers**, the authors write: *"We find
+that over half of the studies found that RL-induced policies significantly outperform
+baselines."* **21 of 41 (51%) significantly beat all baselines**; 10 found no
+significant difference; 1 where the baseline won. Publishing the 0-of-8 sub-cut
+without the 21-of-41 headline is selective reporting, and it is the exact failure this
+survey exists to name. The domain split above is real and it sits inside a review whose
+overall verdict is **positive**.
+
+The authors' own qualifier is the load-bearing part: RL *"has been most successful in
+cases where it has been **constrained with ideas and theories from cognitive
+psychology and the learning sciences**."* Which is an argument for the architecture in
+this document rather than against it.
 
 Adaptive scheduling works on material with no internal structure and has **never**
 worked on material with structure. Every trial that tried failed.
@@ -3956,7 +4178,7 @@ struggled, actually explained, and actually got told when they were wrong.**
 The machinery is worth building. It is just not worth mistaking for the mechanism.
 
 
-## 16. Beyond the Tutor — the five roles nobody is building
+## 17. Beyond the Tutor — the five roles nobody is building
 
 <sub>Source report: `research/raw/F2-beyond-the-tutor.md`</sub>
 
@@ -4282,7 +4504,7 @@ that the field does not appear to know there was a choice — and therefore has 
 sequenced them.
 
 
-## 17. What the Object Must Refuse — embodiment, manipulatives, and executable material
+## 18. What the Object Must Refuse — embodiment, manipulatives, and executable material
 
 <sub>Source report: `research/raw/F7-A3-embodiment-and-notebooks.md`</sub>
 
@@ -4500,7 +4722,7 @@ other direction: what teaches is not the richness of what the learner is given. 
 is the **precision of what they are not allowed to do wrong without noticing.**
 
 
-## 18. Showing — illustration, animation, and the arithmetic of a wrong picture
+## 19. Showing — illustration, animation, and the arithmetic of a wrong picture
 
 <sub>Source report: `research/raw/C1-illustration-generation.md, research/raw/A2-interactive-animation.md`</sub>
 
@@ -4859,7 +5081,7 @@ and only one of those is the job.
 *How a tutor can be wrong safely, and how a learner's work can be measured when the artifact no longer indicates the person who produced it.*
 
 
-## 19. Grounding — correctness that lives in the verifier
+## 20. Grounding — correctness that lives in the verifier
 
 <sub>Source report: `research/raw/G1-grounding-synthesis.md`</sub>
 
@@ -5297,7 +5519,7 @@ the correction can come from a program the learner can run themselves rather tha
 machine claiming to know.
 
 
-## 20. Assessment After the Artifact — measuring a person when the work no longer indicates them
+## 21. Assessment After the Artifact — measuring a person when the work no longer indicates them
 
 <sub>Source report: `research/raw/F1-assessment-reconstruction.md`</sub>
 
@@ -5714,7 +5936,7 @@ learned least.**
 *The learners the evidence was not collected on, the learners it cannot reach, and the legal floor that turns out to be a design specification.*
 
 
-## 21. The Empty Chair — designing for the margin first
+## 22. The Empty Chair — designing for the margin first
 
 <sub>Source report: `research/raw/H1-selpa-accessibility.md`</sub>
 
@@ -5971,7 +6193,7 @@ lands.
 The chair is empty because nobody sat down. Not because the seat was taken.
 
 
-## 22. The Coordinator's Week — what special education actually consists of
+## 23. The Coordinator's Week — what special education actually consists of
 
 <sub>Source report: `research/raw/H2-selpa-practitioner-reality.md`</sub>
 
@@ -6182,7 +6404,7 @@ a different question, and a coordinator would ask it first: **what is this allow
 touch, and who signs.**
 
 
-## 23. Who Is Not in the Room — reach, language, and the barriers attention does not remove
+## 24. Who Is Not in the Room — reach, language, and the barriers attention does not remove
 
 <sub>Source report: `research/raw/F4-reach-economics.md`</sub>
 
@@ -6391,7 +6613,7 @@ should be checkable against a specific person who is **not in the room** — and
 their language.
 
 
-## 24. What We Owe Children — the legal floor as a design specification
+## 25. What We Owe Children — the legal floor as a design specification
 
 <sub>Source report: `research/raw/F8-safety-privacy-children.md`</sub>
 
@@ -6759,7 +6981,7 @@ build from.
 *The frontier's actual capabilities, the artifacts other people have shipped, the pedagogical canon that settled most of this decades ago, and the question of whether anyone wants to continue.*
 
 
-## 25. The Substrate — what the frontier actually supplies
+## 26. The Substrate — what the frontier actually supplies
 
 <sub>Source report: `research/raw/A4-live-multimodal.md, research/raw/A5-world-models.md, research/raw/D1-frontier-quarter.md`</sub>
 
@@ -7094,7 +7316,7 @@ whether it teaches — is the widest measurement gap in applied AI, and it is th
 subject of the last section in this survey.
 
 
-## 26. The Textbook That Writes Itself — and who it remembers
+## 27. The Textbook That Writes Itself — and who it remembers
 
 <sub>Source report: `research/raw/A1-ai-native-textbooks.md, research/raw/G3-future-of-learning-projects.md`</sub>
 
@@ -7407,7 +7629,7 @@ telling; the human still writes the doing — and the reason is now measured, no
 asserted. The doing is the only part with a right answer that can be wrong.
 
 
-## 27. The Canon — what the history of pedagogy already settled
+## 28. The Canon — what the history of pedagogy already settled
 
 <sub>Source report: `research/raw/I1-pedagogical-systems.md, research/raw/I2-global-traditions.md`</sub>
 
@@ -7742,7 +7964,7 @@ ever gated by the price of attention. Those are the ones to build. The rest are
 worth knowing so that we do not mistake a tradition for a finding.
 
 
-## 28. The Market — nine bets, one graveyard, and the number that shrinks as you look at it
+## 29. The Market — nine bets, one graveyard, and the number that shrinks as you look at it
 
 <sub>Source report: `research/raw/E1-E2-edtech-landscape-lessonorca.md, research/raw/E3-latest-sweep.md`</sub>
 
@@ -8045,7 +8267,7 @@ the school years it would take for anyone to notice the difference. The fix is n
 better claims. It is naming, in advance, the observation that would prove you wrong.
 
 
-## 29. Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration
+## 30. Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration
 
 <sub>Source report: `research/raw/D2-portfolio-case-studies.md`</sub>
 
@@ -8367,7 +8589,7 @@ that measure whether anyone learned are the parts that are always about to be bu
 next.
 
 
-## 30. Motivation — wanting to continue
+## 31. Motivation — wanting to continue
 
 <sub>Source report: `research/raw/F6-motivation-persistence.md`</sub>
 
@@ -8838,7 +9060,7 @@ whether they came back with nobody asking.**
 *The catalogued gaps, the uncatalogued ones, and the conditions under which this document's central claim would have to be withdrawn.*
 
 
-## 31. What We Cannot See From Here — the unknown unknowns, and the questions that expose them
+## 32. What We Cannot See From Here — the unknown unknowns, and the questions that expose them
 
 <sub>Source report: `synthesis across the corpus`</sub>
 
@@ -9135,7 +9357,7 @@ failures we have not measured, and put the falsifier in writing before the resul
 arrives.**
 
 
-## 32. The Agenda — three experiments, and what would falsify this survey
+## 33. The Agenda — three experiments, and what would falsify this survey
 
 <sub>Source report: `research/raw/F9-open-problems.md`</sub>
 

@@ -117,6 +117,20 @@ builds:
 | Paired associates / flashcard-type material | **11 of 14** |
 | **Interdependent content** — where one idea depends on another | **0 of 8** |
 
+**And the headline this table omitted, which an earlier draft should not have.** Across
+the review's full set of **41 studies from 34 papers**, the authors write: *"We find
+that over half of the studies found that RL-induced policies significantly outperform
+baselines."* **21 of 41 (51%) significantly beat all baselines**; 10 found no
+significant difference; 1 where the baseline won. Publishing the 0-of-8 sub-cut
+without the 21-of-41 headline is selective reporting, and it is the exact failure this
+survey exists to name. The domain split above is real and it sits inside a review whose
+overall verdict is **positive**.
+
+The authors' own qualifier is the load-bearing part: RL *"has been most successful in
+cases where it has been **constrained with ideas and theories from cognitive
+psychology and the learning sciences**."* Which is an argument for the architecture in
+this document rather than against it.
+
 Adaptive scheduling works on material with no internal structure and has **never**
 worked on material with structure. Every trial that tried failed.
 

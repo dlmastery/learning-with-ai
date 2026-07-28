@@ -26,7 +26,7 @@ PARTS = [
   "What follows from that evidence if you take it seriously: an architecture, "
   "a division of labour, and a selection policy — each constrained by a "
   "measurement rather than a preference.",
-  ["00-north-star-jarvis", "30-the-compression", "03-the-vision", "10-the-village",
+  ["00-north-star-jarvis", "30-the-compression", "32-pedagogy-has-no-pytest", "03-the-vision", "10-the-village",
    "22-the-one-interaction-that-survived", "11-the-archivist"]),
 
  ("III", "The mechanisms",

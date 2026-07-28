@@ -135,7 +135,10 @@ from primary sources read in full:
 
 **Most of the literature contains no test.** Of 89 reinforcement-learning-in-
 education papers, **54 ran no statistical test at all** — and **45 of those 54 are
-content-sequencing papers**, precisely the cluster that measured **0 for 8** in
+content-sequencing papers**, precisely the cluster that measured **0 for 8** — though
+that sub-cut sits inside a review whose overall finding is that **21 of 41 studies
+(51%) significantly beat all baselines**, a headline an earlier draft of this survey
+omitted. The narrow negative is real; the review is not negative. See §08. It is in
 earlier work. Only **14 of 89** included a non-adaptive control condition.
 
 **The wins are not where people think.** Of 18 documented wins, **14 are
