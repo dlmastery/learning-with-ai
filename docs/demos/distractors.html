@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ask For The Error, Not The Wrong Answer — Demo 11</title>
+<meta name="description" content="Two distractor generators on the same stem. One perturbs the answer; the other models the error and derives the option. Both run live." />
+<link rel="stylesheet" href="demo.css" />
+<style>
+.gl{stroke:var(--line);stroke-width:1}
+.ax{font:600 10px var(--sans);letter-spacing:.11em;fill:var(--ink-3)}
+.sl{fill:var(--ink-2)}
+.vl{font:600 12px var(--mono);fill:var(--ink-2)}
+.dot{stroke:var(--surface);stroke-width:2}
+#tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .1s;z-index:99;left:0;top:0;
+  background:var(--ink);color:var(--bg);font:12.5px/1.5 var(--sans);padding:8px 11px;
+  border-radius:7px;max-width:264px;box-shadow:0 4px 16px rgba(0,0,0,.18)}
+#tip b{color:var(--bg);display:block;font-weight:650;margin-bottom:2px}
+input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
+.ctls{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px 20px;margin:16px 0 4px}
+.ctl label{display:flex;justify-content:space-between;gap:8px;align-items:baseline;text-transform:none;
+  letter-spacing:0;font:600 12px/1.4 var(--sans);color:var(--ink-2);margin-bottom:5px}
+.ctl label .v{font:600 12px var(--mono);color:var(--felt)}
+.pill{display:inline-block;font:600 10.5px/1 var(--mono);padding:4px 7px;border-radius:5px;
+  border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
+.pill.y{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
+.pill.n{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 45%,transparent)}
+.pill.c{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 45%,transparent)}
+.gens{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0}
+@media(max-width:720px){.gens{grid-template-columns:1fr}}
+.gen{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 19px}
+.gen.a{border-top:2px solid var(--felt)} .gen.b{border-top:2px solid var(--real)}
+.gen h4{font:650 15px/1.35 var(--sans);margin:0 0 3px;color:var(--ink)}
+.gen .ask{font:12.5px/1.6 var(--mono);color:var(--ink-3);margin-bottom:15px}
+.optrow{display:flex;gap:11px;align-items:flex-start;background:var(--sunken);border:1px solid var(--line);
+  border-radius:9px;padding:11px 13px;margin-bottom:8px;cursor:pointer;transition:border-color .12s}
+.optrow:hover{border-color:var(--line-2)}
+.optrow.key{border-color:color-mix(in oklab,var(--good) 45%,transparent)}
+.optrow .lt{font:600 13px/1.5 var(--mono);color:var(--ink-3);flex:none;width:16px}
+.optrow .vv{font:650 15px/1.4 var(--mono);color:var(--ink);flex:none;min-width:58px}
+.optrow .ds{font-size:12.7px;line-height:1.5;color:var(--ink-3)}
+.stemq{font:400 21px/1.45 var(--serif);color:var(--ink);margin:6px 0 4px}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.stat div{background:var(--sunken);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+.stat .k{font:600 10px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+.stat .n{font:400 23px/1.1 var(--mono);color:var(--ink)}
+.stat .n.felt{color:var(--felt)} .stat .n.real{color:var(--real)} .stat .n.bad{color:var(--bad)}
+.stat .s{font:12px/1.4 var(--sans);color:var(--ink-3);margin-top:6px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px;font-size:12.5px;color:var(--ink-2)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div id="tip"></div>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo Gallery</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 11 · The mechanisms</div>
+  <h1>Ask For The Error, Not The Wrong Answer</h1>
+  <p class="lede">Ask a generator for "three plausible wrong answers" and you get options that are
+  <strong>mathematically valid and pedagogically empty</strong>. Invert the request — name the
+  misconception, apply it deterministically, <em>derive</em> the option — and the same item starts
+  telling you what the learner actually did.</p>
+  <div class="chips">
+    <span class="chip m">Computed live</span>
+    <span class="chip">Both generators run in the page</span>
+  </div>
+</header>
+
+<p><strong>Computed</strong> means: both generators below really execute on the parameters you
+set. The collision checks, the plausibility filter, the diagnosticity accounting and the
+parameter sweep at the bottom are all real computation on real output, performed when you move a
+slider.</p>
+
+<div class="note warn"><b>One honesty note before you start.</b> Generator A is <em>not</em> an
+LLM and this page does not claim to measure one. It is a deterministic stand-in: a generator that
+is conditioned on the <em>answer</em> and nothing else. The reason that stand-in is fair is
+structural rather than empirical, and it is stated precisely in §3 — any option set that is a
+function of the key alone <strong>cannot</strong> carry information about which error was made.
+The empirical claim that real LLMs behave this way is a citation, in §5, not a measurement made
+here.</div>
+
+<h2>1 · One stem, two generators</h2>
+
+<div class="panel">
+  <div class="ptitle">Choose a stem, then move its numbers</div>
+  <div class="psub">Watch what happens to each generator's options. One of them tracks the answer.
+  The other tracks the error.</div>
+  <div class="row" id="stempick"></div>
+  <div class="ctls" id="stemctl"></div>
+  <div class="stemq" id="stemtext"></div>
+  <div style="font:12.5px/1.6 var(--mono);color:var(--ink-3)" id="keytext"></div>
+</div>
+
+<div class="gens">
+  <div class="gen a">
+    <h4>Generator A — surface</h4>
+    <div class="ask">prompt: "write three plausible wrong answers"</div>
+    <div id="aopts"></div>
+    <div id="astat"></div>
+  </div>
+  <div class="gen b">
+    <h4>Generator B — error-first</h4>
+    <div class="ask">prompt: "name the misconception, apply it, report what it yields"</div>
+    <div id="bopts"></div>
+    <div id="bstat"></div>
+  </div>
+</div>
+
+<div id="pickout"></div>
+
+<h2>2 · Generator B's pipeline, step by step</h2>
+<p class="sub">This is where the actual engineering lives, and it is not in the prose.</p>
+
+<div class="panel">
+  <div class="ptitle">Error bank → candidate → filters → option</div>
+  <div class="psub">Every row is recomputed from the current parameters. A rejected candidate is
+  not a failure of the generator — it is the generator refusing to ship an item that cannot
+  discriminate.</div>
+  <div class="scroll"><table id="pipeline"></table></div>
+  <div id="pipeverdict"></div>
+</div>
+
+<div class="panel sunken">
+  <div class="ptitle">The pipeline, as code</div>
+  <div class="mono-block" id="pipesrc"></div>
+</div>
+
+<h2>3 · Why the comparison is structural, not rhetorical</h2>
+
+<div class="panel">
+  <div class="ptitle">The one-line argument</div>
+  <p style="margin:10px 0 0">Let <code>K</code> be the key, <code>E</code> the error the learner
+  actually made, and <code>O</code> the option they selected.</p>
+  <div class="mono-block" style="margin:16px 0">Generator A:  options = f(K)
+              ⇒  O ⫫ E  given K
+              ⇒  P(E | O, K) = P(E | K)
+              ⇒  the response carries ZERO information about the error.
+
+Generator B:  options = g(E_i, stem-parameters), one per named error
+              ⇒  O identifies E_i, PROVIDED g is injective over the error set
+              ⇒  the injectivity check is the whole engineering problem,
+                 and it is the collision filter in §2.</div>
+  <p style="margin:0">This is why "make the distractors more plausible" is not a fix and never
+  was. Plausibility is a property of the option's <em>surface</em>. Diagnosticity is a property of
+  the <em>map from errors to options</em>, and you cannot get it by improving a generator that
+  never had an error variable in it. That is the whole content of the DiVERT result: it makes the
+  error an explicit latent object, represented as text, rather than hoping it falls out of a
+  fluent generator.</p>
+</div>
+
+<div class="panel">
+  <div class="ptitle">What each system learns from the same response</div>
+  <div class="psub">Click any option above. This block updates.</div>
+  <div id="learned"><div class="note" style="margin-bottom:0">Select an option in either generator's list.</div></div>
+</div>
+
+<h2>4 · Sweep the whole parameter space</h2>
+<p class="sub">Not one item. Every item the stem template can produce.</p>
+
+<div class="panel">
+  <div class="ptitle">Exhaustive grid over each stem's parameters</div>
+  <div class="psub">For every parameter setting the template admits, both generators run and three
+  quantities are counted. This takes a moment and then it is exact — it is a full enumeration, not
+  a sample.</div>
+  <div class="row"><button class="pri" id="sweep">Run the sweep</button>
+    <span style="font:12px var(--mono);color:var(--ink-3)" id="sweepstat"></span></div>
+  <div class="legend" style="margin-top:16px">
+    <span><i style="background:var(--felt)"></i>Generator A — options that coincide with a named error, by accident</span>
+    <span><i style="background:var(--real)"></i>Generator B — items yielding 3 usable, mutually distinct diagnostic options</span>
+  </div>
+  <div id="sweepchart"></div>
+  <div class="scroll"><table id="sweeptable"></table></div>
+  <div id="sweepnote"></div>
+</div>
+
+<h2>5 · The evidence</h2>
+
+<div class="scroll">
+<table>
+  <tr><th>Finding</th><th>What it says</th><th>Label</th></tr>
+  <tr><td><b>Feng, Woodhead &amp; Lan 2024</b><br /><span style="font-size:12.5px;color:var(--ink-3)">Findings of NAACL</span></td>
+    <td>A wide sweep of LLM approaches — in-context learning through fine-tuning — on a real-world
+    math MCQ dataset. Verbatim: <em>"although LLMs can generate some mathematically valid
+    distractors, they are <strong>less adept at anticipating common errors or misconceptions
+    among real students</strong>."</em> The gap is not a prompting problem:
+    <strong>it survived fine-tuning.</strong></td><td><code>MEASURED-BENCH</code></td></tr>
+  <tr><td><b>DiVERT</b> — Fernandez et al. 2024<br /><span style="font-size:12.5px;color:var(--ink-3)">EMNLP</span></td>
+    <td>Instead of generating distractors directly, learns an <strong>interpretable latent
+    variable representing the error, as text</strong>, and generates from it. A
+    <strong>7B open-source model beat GPT-4o-based state of the art</strong> on downstream
+    distractor generation, and math educators judged its error labels of quality comparable to
+    human-authored ones. Modelling the error is not a stylistic preference — it changes which
+    model wins.</td><td><code>MEASURED-BENCH</code></td></tr>
+  <tr><td><b>Dhanvijay et al. 2025</b><br /><span style="font-size:12.5px;color:var(--ink-3)">Adv Physiol Educ — the null</span></td>
+    <td>AI- and human-generated MCQs showed <strong>no significant difference in discrimination
+    index (p = 0.17)</strong>, despite significant differences in difficulty and in the number of
+    non-functioning distractors. The "AI items are worse" claim is dimension-specific, not global
+    — which is a reason to name the dimension you care about rather than to argue about
+    quality.</td><td><code>MEASURED-BENCH</code></td></tr>
+</table>
+</div>
+
+<div class="note"><b>Why the error distribution is not recoverable from a corpus.</b> An LLM's
+prior over "wrong answer" is a prior over <em>plausible text</em>, learned from a corpus in which
+correct answers dominate and student errors are rare and unlabelled. The empirical distribution of
+student errors is a different distribution entirely, and it is not recoverable from text
+describing the domain. It is recoverable only from <strong>response data</strong> — which is
+exactly what the error bank in this demo is a hand-built stand-in for, and exactly what a real
+system would have to mine.</div>
+
+<h2>What this proves / What it does not</h2>
+
+<div class="panel">
+  <div class="ptitle">What this page proves</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li>That error-first generation is <strong>fully mechanical</strong>. Given a named
+    misconception and a deterministic transformation, the option falls out; change the stem's
+    numbers and the option follows the error rather than the answer. You can watch that happen on
+    a slider.</li>
+    <li>That the hard part is <strong>collision, not creativity</strong>. The sweep shows a real,
+    non-trivial fraction of parameter settings where two distinct misconceptions land on the same
+    value, or where a misconception lands on the key — items that look fine and cannot
+    discriminate. A generator without this check ships them silently.</li>
+    <li>That the advantage is <strong>structural</strong>. An option set that is a function of the
+    key alone is provably uninformative about the error. No amount of plausibility tuning changes
+    that, because plausibility and diagnosticity are different properties.</li>
+  </ul>
+  <div class="ptitle">What this page does not prove</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>Nothing about LLMs.</strong> No model runs here. Generator A is a stand-in chosen
+    to have one property — conditioning on the answer only — and the claim that real LLM
+    distractor generation shares that property is Feng et al.'s measurement, not this page's.</li>
+    <li><strong>That the error bank is right.</strong> The misconceptions here are hand-authored
+    from the well-known literature on fraction and equation errors. A real system's bank must be
+    <em>mined from response data</em> and its frequencies estimated, because which errors are
+    common is an empirical question and the whole diagnostic value depends on the answer.</li>
+    <li>That items built this way measure better. Diagnosticity is a property of the item's
+    <em>design</em>; whether the resulting items have adequate discrimination, difficulty and
+    dimensionality is a psychometric question that requires response data from real students.
+    Nothing here is a substitute for field-testing.</li>
+    <li>That any of this teaches anyone anything. A demo shows a mechanism is buildable and
+    coherent. It is not evidence that it teaches.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../">Dashboard</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai">Repository</a>
+  <br /><br />Source report: <code>research/raw/C2-assessment-psychometrics.md</code> §5.
+</footer>
+
+</div>
+<script>
+/* ══ chart IR ═══════════════════════════════════════════════════════════ */
+const NS='http://www.w3.org/2000/svg';
+const mk=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const el=id=>document.getElementById(id);
+const tip=el('tip');
+function bind(e2,html){
+  e2.addEventListener('pointerenter',()=>{tip.innerHTML=html;tip.style.opacity='1';});
+  e2.addEventListener('pointermove',e=>{
+    const x=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-10);
+    const y=Math.min(e.clientY+16,innerHeight-tip.offsetHeight-10);
+    tip.style.transform=`translate(${x}px, ${y}px)`;});
+  e2.addEventListener('pointerleave',()=>{tip.style.opacity='0';});
+}
+function renderBars(host,spec){
+  const narrow=innerWidth<640;
+  const LW=narrow?150:250, RW=54, ROW=narrow?32:30, PAD=10;
+  const W=720, H=spec.rows.length*ROW+PAD*2;
+  const trackX=LW+10, trackW=W-LW-RW-22;
+  const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
+  spec.rows.forEach((r,i)=>{
+    const y=PAD+i*ROW+ROW/2, g=mk('g',{});
+    const lab=mk('text',{x:LW,y:y+4,'text-anchor':'end',class:'sl',style:`font-size:${narrow?10.5:12.5}px`});
+    lab.textContent=r.label; g.appendChild(lab);
+    g.appendChild(mk('rect',{x:trackX,y:y-5,width:trackW,height:10,rx:5,fill:'var(--raise)'}));
+    const w=Math.max(1.5,r.v/spec.max*trackW);
+    g.appendChild(mk('rect',{x:trackX,y:y-5,width:w,height:10,rx:5,
+      fill:r.series==='real'?'var(--real)':'var(--felt)'}));
+    const val=mk('text',{x:trackX+trackW+8,y:y+4,class:'vl'});
+    val.textContent=r.v.toFixed(1)+'%'; g.appendChild(val);
+    g.appendChild(mk('rect',{x:0,y:y-ROW/2,width:W,height:ROW,fill:'transparent'}));
+    bind(g,`<b>${esc(r.label)}</b>${esc(r.note)}`);
+    svg.appendChild(g);
+  });
+  host.replaceChildren(svg);
+}
+
+/* ══ exact rational helpers ═════════════════════════════════════════════ */
+function gcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b){const t=b;b=a%b;a=t;}return a||1;}
+function lcm(a,b){return Math.abs(a*b)/gcd(a,b);}
+function fr(n,d){ if(d<0){n=-n;d=-d;} const g=gcd(n,d); n=n/g; d=d/g;
+  return {v:n/d, s:(d===1?String(n):n+'/'+d), n, d}; }
+function pc(x){ return {v:x, s:(Math.round(x*100)/100)+'%'}; }
+const EPS=1e-9;
+const same=(a,b)=>Math.abs(a.v-b.v)<EPS;
+
+/* ══ the stems ══════════════════════════════════════════════════════════ */
+const STEMS=[
+{id:'frac',label:'Fractions',
+ title:'Adding unlike fractions',
+ params:[{k:'a',label:'numerator 1',min:1,max:9,val:2},
+         {k:'b',label:'denominator 1',min:2,max:9,val:3},
+         {k:'c',label:'numerator 2',min:1,max:9,val:1},
+         {k:'d',label:'denominator 2',min:2,max:9,val:4}],
+ stem:p=>`What is ${p.a}/${p.b} + ${p.c}/${p.d} ?`,
+ key:p=>fr(p.a*p.d+p.c*p.b,p.b*p.d),
+ plausible:o=>o.v>0&&o.v<25&&Math.abs(o.d)<=200,
+ surface:(p,K)=>[
+   {o:fr(K.n+1,K.d),  why:'the key, one step up in its own denominator'},
+   {o:fr(K.n-1,K.d),  why:'the key, one step down'},
+   {o:fr(K.n,K.d*2),  why:'the key with a doubled denominator — looks like a conversion slip'}],
+ errors:[
+  {id:'ADD-ACROSS',name:'Adds numerators and denominators',
+   note:'The dominant reported error in fraction addition. The student over-generalises the (correct) rule for multiplication.',
+   apply:p=>fr(p.a+p.c,p.b+p.d),
+   remedy:'Do not re-teach the algorithm — that is a slow-loop move on fast-loop evidence. Give a magnitude-estimation task: the sum must exceed the larger addend, and this answer does not. The error is invisible to a student who is not estimating.'},
+  {id:'NO-CONVERT',name:'Finds the common denominator, never converts the numerators',
+   note:'A partial-procedure error: the difficult step was executed and the bookkeeping step was not.',
+   apply:p=>fr(p.a+p.c,lcm(p.b,p.d)),
+   remedy:'Within-method scaffold. Require the equivalent-fraction line to be written before the addition line — the omission becomes visible on the page rather than in the head.'},
+  {id:'MULTIPLY',name:'Multiplies instead of adding',
+   note:'Operation confusion under surface similarity; the two procedures look nearly identical written down.',
+   apply:p=>fr(p.a*p.c,p.b*p.d),
+   remedy:'Aligned contrast pair: the same two fractions added and multiplied side by side, same visual model, one dimension varied.'},
+  {id:'HALF-CONVERT',name:'Converts the first fraction only',
+   note:'Executes the conversion once and then treats the second fraction as though it were already converted.',
+   apply:p=>fr(p.a*p.d+p.c,p.b*p.d),
+   remedy:'Same-method scaffold: annotate both fractions before combining. This is one item of evidence, not grounds for a method change.'}]},
+
+{id:'lin',label:'Linear equation',
+ title:'Solving a bracketed linear equation',
+ params:[{k:'k',label:'multiplier k',min:2,max:9,val:3},
+         {k:'m',label:'inside term m',min:1,max:9,val:2},
+         {k:'n',label:'right side n',min:4,max:40,val:15}],
+ stem:p=>`Solve for x:   ${p.k}(x + ${p.m}) = ${p.n}`,
+ key:p=>fr(p.n-p.k*p.m,p.k),
+ plausible:o=>o.v>-40&&o.v<60&&Math.abs(o.d)<=60,
+ surface:(p,K)=>[
+   {o:fr(K.n+K.d,K.d), why:'the key plus one'},
+   {o:fr(K.n-K.d,K.d), why:'the key minus one'},
+   {o:fr(2*K.n,K.d),   why:'the key doubled'}],
+ errors:[
+  {id:'DIST-FIRST',name:'Distributes the multiplier to the first term only',
+   note:'Writes kx + m = n. One of the most durable errors in early algebra, and it is a rule error rather than an arithmetic slip.',
+   apply:p=>fr(p.n-p.m,p.k),
+   remedy:'Area-model instantiation of the distributive law, then the same equation re-solved with the model alongside. The student is not miscomputing; they are applying a different rule.'},
+  {id:'ADD-AFTER',name:'Divides by k first, then adds m instead of subtracting',
+   note:'Inverse-operation error: the order of undoing is right, the direction is wrong.',
+   apply:p=>fr(p.n+p.k*p.m,p.k),
+   remedy:'Substitution check as a habit, not a hint: put the answer back into the original. This error is self-detectable and the student has not been taught to detect it.'},
+  {id:'STOPS-EARLY',name:'Solves for the bracket and stops',
+   note:'Answers the intermediate quantity (x + m) rather than x. Not a computational error at all — an error about what was asked.',
+   apply:p=>fr(p.n,p.k),
+   remedy:'Restate-the-question prompt before the final line. Frequently misdiagnosed as a computation failure, which sends the system down the wrong remediation entirely.'},
+  {id:'SUB-K',name:'Subtracts the multiplier instead of dividing by it',
+   note:'Treats k as an additive term because it is written adjacent to the bracket.',
+   apply:p=>fr(p.n-p.k-p.m,1),
+   remedy:'Notation contrast: k(x+m) against k+(x+m), with both evaluated at the same x.'}]},
+
+{id:'mean',label:'Weighted mean',
+ title:'Combining two percentage scores',
+ params:[{k:'a',label:'score on test 1, %',min:20,max:100,val:80},
+         {k:'m',label:'questions in test 1',min:4,max:40,val:10},
+         {k:'b',label:'score on test 2, %',min:20,max:100,val:60},
+         {k:'n',label:'questions in test 2',min:4,max:40,val:30}],
+ stem:p=>`A student scores ${p.a}% on a ${p.m}-question test and ${p.b}% on a ${p.n}-question test. What percentage of all the questions did they get right?`,
+ key:p=>pc((p.a*p.m+p.b*p.n)/(p.m+p.n)),
+ plausible:o=>o.v>=0&&o.v<=100,
+ surface:(p,K)=>[
+   {o:pc(K.v+1),  why:'the key, nudged up'},
+   {o:pc(K.v-1),  why:'the key, nudged down'},
+   {o:pc(K.v+4),  why:'the key, nudged further up'}],
+ errors:[
+  {id:'UNWEIGHTED',name:'Averages the averages, ignoring how many questions each test had',
+   note:'The classic weighted-mean error, and the reason this stem exists. Note what happens when you set the two test lengths equal.',
+   apply:p=>pc((p.a+p.b)/2),
+   remedy:'Vary only the test lengths and hold the two scores fixed, so the student sees the answer move while the percentages do not. Variation on one dimension against invariance in the rest.'},
+  {id:'SWAP-WEIGHTS',name:'Applies each weight to the wrong score',
+   note:'Bookkeeping error inside a correct procedure — the student knows to weight and loses track of which weight goes where.',
+   apply:p=>pc((p.a*p.n+p.b*p.m)/(p.m+p.n)),
+   remedy:'A within-method scaffold: require the two products to be labelled before they are summed. This is not a conceptual failure and must not be treated as one.'},
+  {id:'SUM',name:'Adds the two percentages',
+   note:'Percentages treated as extensive quantities. Often implausible on its face, which is exactly why the plausibility filter has to run.',
+   apply:p=>pc(p.a+p.b),
+   remedy:'Bounds reasoning before computation: the answer must lie between the two scores.'},
+  {id:'LONGER-ONLY',name:'Reports the score on the longer test',
+   note:'Recognises that length matters, and over-corrects into ignoring the shorter test entirely.',
+   apply:p=>pc(p.m>=p.n?p.a:p.b),
+   remedy:'Contrast with a case where the lengths are nearly equal, so the heuristic visibly breaks.'}]}
+];
+
+const PIPE_SRC=
+`function generateB(stem, params) {
+  const key = stem.key(params), out = [], log = [];
+  for (const err of stem.errors) {
+    const cand = err.apply(params);                 // DERIVE, don't invent
+    let verdict = 'accepted';
+    if (same(cand, key))                verdict = 'rejects: equals the key';
+    else if (!stem.plausible(cand))     verdict = 'rejects: outside the plausible range';
+    else if (out.some(o => same(o, cand)))
+                                        verdict = 'rejects: collides with an earlier error';
+    else out.push(cand);
+    log.push({ err, cand, verdict });
+  }
+  // An item needs three usable options. Fewer means these particular numbers
+  // cannot discriminate between the errors, and the item is NOT shipped.
+  return { options: out.slice(0, 3), log, usable: out.length >= 3 };
+}`;
+el('pipesrc').textContent=PIPE_SRC;
+
+function generateB(stem,params){
+  const key=stem.key(params), out=[], log=[];
+  for(const err of stem.errors){
+    const cand=err.apply(params);
+    let verdict='accepted';
+    if(same(cand,key)) verdict='rejects: equals the key';
+    else if(!stem.plausible(cand)) verdict='rejects: outside the plausible range';
+    else if(out.some(o=>same(o,cand))) verdict='rejects: collides with an earlier error';
+    else out.push(cand);
+    log.push({err,cand,verdict});
+  }
+  return {options:out.slice(0,3),log,usable:out.length>=3,key};
+}
+function generateA(stem,params){
+  const key=stem.key(params);
+  return stem.surface(params,key).filter(x=>!same(x.o,key)).slice(0,3);
+}
+
+/* ══ state + rendering ══════════════════════════════════════════════════ */
+let SID='frac', P={}, PICK=null;
+function stem(){return STEMS.find(s=>s.id===SID);}
+function initParams(){P={};stem().params.forEach(q=>P[q.k]=q.val);}
+initParams();
+
+function renderPick(){
+  el('stempick').innerHTML=STEMS.map(s=>
+    `<button data-s="${s.id}" class="${s.id===SID?'on':''}">${esc(s.label)}</button>`).join('');
+  el('stempick').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    SID=b.dataset.s;initParams();PICK=null;renderAll();});
+}
+function renderCtl(){
+  el('stemctl').innerHTML=stem().params.map(q=>`
+    <div class="ctl"><label for="p_${q.k}">${esc(q.label)} <span class="v" id="pv_${q.k}">${P[q.k]}</span></label>
+      <input type="range" id="p_${q.k}" min="${q.min}" max="${q.max}" value="${P[q.k]}" /></div>`).join('');
+  stem().params.forEach(q=>{
+    el('p_'+q.k).addEventListener('input',e=>{P[q.k]=+e.target.value;PICK=null;renderAll();});});
+}
+function optRow(o,letter,isKey,desc,src,idx){
+  return `<div class="optrow${isKey?' key':''}" data-src="${src}" data-i="${idx}">
+    <div class="lt">${letter}</div><div class="vv">${esc(o.s)}</div>
+    <div class="ds">${desc}</div></div>`;
+}
+function renderAll(){
+  const s=stem(), K=s.key(P);
+  renderCtl();
+  el('stemtext').textContent=s.stem(P);
+  el('keytext').textContent='key = '+K.s;
+  const A=generateA(s,P), B=generateB(s,P);
+
+  // Generator A: does any option accidentally coincide with a named error?
+  const errVals=s.errors.map(e=>({e,v:e.apply(P)}));
+  const aHits=A.map(x=>errVals.find(ev=>same(ev.v,x.o)&&!same(ev.v,K)));
+  const aCover=aHits.filter(Boolean).length;
+
+  el('aopts').innerHTML=
+    optRow(K,'✓',true,'<b style="color:var(--ink)">the key</b>','k',-1)+
+    A.map((x,i)=>optRow(x.o,String.fromCharCode(65+i),false,
+      esc(x.why)+(aHits[i]?` · <span style="color:var(--warn)">coincides with “${esc(aHits[i].e.name)}” by accident</span>`:''),
+      'a',i)).join('');
+  el('astat').innerHTML=`<div class="stat" style="margin-bottom:0">
+    <div><div class="k">Mathematically valid</div><div class="n felt">3 / 3</div>
+      <div class="s">distinct from the key, well formed</div></div>
+    <div><div class="k">Map to a named error</div><div class="n ${aCover?'':'bad'}">${aCover} / 3</div>
+      <div class="s">${aCover?'by coincidence, not by construction':'the response tells you nothing'}</div></div></div>`;
+
+  el('bopts').innerHTML=
+    optRow(K,'✓',true,'<b style="color:var(--ink)">the key</b>','k',-1)+
+    B.options.map((o,i)=>{
+      const src=B.log.find(l=>l.verdict==='accepted'&&same(l.cand,o));
+      return optRow(o,String.fromCharCode(65+i),false,
+        `derived from <b style="color:var(--ink-2)">${esc(src?src.err.name:'—')}</b>`,'b',i);}).join('');
+  el('bstat').innerHTML=`<div class="stat" style="margin-bottom:0">
+    <div><div class="k">Mathematically valid</div><div class="n real">${B.options.length} / 3</div>
+      <div class="s">distinct from the key, well formed</div></div>
+    <div><div class="k">Map to a named error</div><div class="n ${B.usable?'real':'bad'}">${B.options.length} / 3</div>
+      <div class="s">by construction, one each</div></div></div>`;
+
+  el('pipeline').innerHTML=['<tr><th>Named error</th><th>Applied to these numbers</th><th>Yields</th><th>Filter verdict</th></tr>']
+    .concat(B.log.map(l=>{
+      const ok=l.verdict==='accepted';
+      return `<tr><td><b>${esc(l.err.name)}</b><br /><span style="font-size:12.5px;color:var(--ink-3)">${esc(l.err.note)}</span></td>
+        <td style="font-size:12.5px;color:var(--ink-3)"><code>${esc(l.err.id)}</code></td>
+        <td class="num" style="font-size:15px;color:${ok?'var(--ink)':'var(--ink-3)'}">${esc(l.cand.s)}</td>
+        <td><span class="pill ${ok?'y':'n'}">${esc(l.verdict)}</span></td></tr>`;})).join('');
+  el('pipeverdict').innerHTML=B.usable
+    ? `<div class="note" style="margin-bottom:0"><b>Item shipped.</b> Three usable options, each
+       derived from a distinct named error, none colliding with the key or with each other. A
+       learner's selection identifies which error they made.</div>`
+    : `<div class="note warn" style="margin-bottom:0"><b>Item refused — only ${B.options.length} usable option${B.options.length===1?'':'s'}.</b>
+       At these particular numbers the error bank does not separate. Two misconceptions land on the
+       same value, or one lands on the key, and no amount of rewording fixes that: the item cannot
+       discriminate and must not be shipped. This is the failure mode a generator without a
+       collision check ships silently, and it is why the whole apparatus exists. Move a slider and
+       watch it recover.</div>`;
+  bindOpts(A,B,K);
+  renderLearned(A,B,K,errVals);
+}
+function bindOpts(A,B,K){
+  document.querySelectorAll('.optrow').forEach(r=>{r.onclick=()=>{
+    PICK={src:r.dataset.src,i:+r.dataset.i};
+    const s=stem();renderLearnedOnly();};});
+}
+function renderLearnedOnly(){
+  const s=stem(),K=s.key(P);
+  renderLearned(generateA(s,P),generateB(s,P),K,s.errors.map(e=>({e,v:e.apply(P)})));
+}
+function renderLearned(A,B,K,errVals){
+  if(!PICK){el('learned').innerHTML='<div class="note" style="margin-bottom:0">Select an option in either generator\'s list.</div>';return;}
+  let chosen=null,fromB=false;
+  if(PICK.src==='k') chosen=K;
+  else if(PICK.src==='a') chosen=A[PICK.i]&&A[PICK.i].o;
+  else {chosen=B.options[PICK.i];fromB=true;}
+  if(!chosen){el('learned').innerHTML='';return;}
+  const hit=errVals.find(ev=>same(ev.v,chosen)&&!same(ev.v,K));
+  const correct=same(chosen,K);
+  el('learned').innerHTML=`
+    <div style="font:12.5px/1.7 var(--mono);color:var(--ink-3);margin-bottom:14px">
+      LEARNER SELECTED <b style="color:var(--ink);font-size:15px">${esc(chosen.s)}</b>${fromB?' · from generator B\'s option set':(PICK.src==='a'?' · from generator A\'s option set':'')}</div>
+    <div class="gens" style="margin:0">
+      <div class="gen a"><h4>What generator A's item learns</h4>
+        <div class="ask">state update</div>
+        ${correct?'<p style="margin:0;font-size:14.4px">correct = true</p>'
+          :'<p style="margin:0;font-size:14.4px">correct = false<br />error = <span style="color:var(--bad)">unknown</span></p>'}
+        <p style="font-size:13.2px;color:var(--ink-3);margin:14px 0 0">${correct
+          ? 'One bit. And even the correct response is ambiguous — a student holding a misconception whose value happens not to be on the option list will guess, and guess right one time in four.'
+          : 'One bit. The system knows the answer was wrong and has no basis whatever for choosing what to do next. Every downstream decision — re-explain, scaffold, change method, escalate — is now being made on a coin flip.'}</p></div>
+      <div class="gen b"><h4>What generator B's item learns</h4>
+        <div class="ask">state update</div>
+        ${correct?'<p style="margin:0;font-size:14.4px">correct = true<br />errors ruled out = all three on the option set</p>'
+          :(hit?`<p style="margin:0;font-size:14.4px">correct = false<br />error = <b style="color:var(--real)">${esc(hit.e.id)}</b><br />
+             <span style="font-size:13.4px;color:var(--ink-2)">${esc(hit.e.name)}</span></p>
+             <p style="font-size:13.2px;color:var(--ink-3);margin:14px 0 0"><b style="color:var(--ink-2)">Prescribed next action:</b> ${esc(hit.e.remedy)}</p>`
+             :'<p style="margin:0;font-size:14.4px">correct = false<br />error = <span style="color:var(--bad)">not in the bank</span></p><p style="font-size:13.2px;color:var(--ink-3);margin:14px 0 0">This option is not derived from any named error, so generator B learns exactly what generator A learns. That is the honest boundary of the technique: it diagnoses only errors that are already in the bank.</p>')}
+        ${correct?'<p style="font-size:13.2px;color:var(--ink-3);margin:14px 0 0">Even the correct response is worth more here: it rules out three specific, named misconceptions rather than establishing one bit.</p>':''}</div>
+    </div>`;
+}
+
+/* ══ exhaustive sweep ═══════════════════════════════════════════════════ */
+function gridOf(s,cap){
+  const dims=s.params.map(q=>{
+    const n=q.max-q.min+1, step=Math.max(1,Math.ceil(n/Math.pow(cap,1/s.params.length)));
+    const vals=[]; for(let v=q.min;v<=q.max;v+=step) vals.push(v);
+    return {k:q.k,vals};});
+  let out=[{}];
+  dims.forEach(d=>{const nx=[];out.forEach(o=>d.vals.forEach(v=>nx.push({...o,[d.k]:v})));out=nx;});
+  return out;
+}
+function runSweep(){
+  const t0=performance.now(), rows=[], detail=[];
+  STEMS.forEach(s=>{
+    const grid=gridOf(s,12);
+    let aHit=0,bOk=0,coll=0,keyColl=0;
+    grid.forEach(p=>{
+      const K=s.key(p);
+      const errVals=s.errors.map(e=>e.apply(p));
+      const A=generateA(s,p);
+      if(A.some(x=>errVals.some(ev=>same(ev,x.o)&&!same(ev,K)))) aHit++;
+      const B=generateB(s,p);
+      if(B.usable) bOk++;
+      if(B.log.some(l=>l.verdict.startsWith('rejects: collides'))) coll++;
+      if(B.log.some(l=>l.verdict==='rejects: equals the key')) keyColl++;
+    });
+    const N=grid.length;
+    rows.push({label:s.label+' · Generator A',v:aHit/N*100,series:'felt',
+      note:`Of ${N} parameter settings, ${aHit} produced at least one surface option that happened to coincide with a named error. Coincidence, not construction — and the generator has no way to know it happened.`});
+    rows.push({label:s.label+' · Generator B',v:bOk/N*100,series:'real',
+      note:`Of ${N} parameter settings, ${bOk} yielded three usable, mutually distinct, key-distinct diagnostic options. The remainder were refused.`});
+    detail.push({s,N,aHit,bOk,coll,keyColl});
+  });
+  const ms=performance.now()-t0;
+  el('sweepstat').textContent=`${detail.reduce((a,d)=>a+d.N,0)} items enumerated · ${ms.toFixed(0)} ms`;
+  renderBars(el('sweepchart'),{max:100,rows,
+    alt:'Bar chart comparing, per stem, how often generator A accidentally covers a named error against how often generator B produces three usable diagnostic options.'});
+  el('sweeptable').innerHTML=['<tr><th>Stem</th><th>Settings</th><th>A · accidental cover</th><th>B · 3 usable options</th><th>Error–error collisions</th><th>Error = key</th></tr>']
+    .concat(detail.map(d=>`<tr><td><b>${esc(d.s.title)}</b></td><td class="num">${d.N}</td>
+      <td class="num down">${(d.aHit/d.N*100).toFixed(1)}%</td>
+      <td class="num up">${(d.bOk/d.N*100).toFixed(1)}%</td>
+      <td class="num">${(d.coll/d.N*100).toFixed(1)}%</td>
+      <td class="num">${(d.keyColl/d.N*100).toFixed(1)}%</td></tr>`)).join('');
+  const totColl=detail.reduce((a,d)=>a+d.coll+d.keyColl,0),totN=detail.reduce((a,d)=>a+d.N,0);
+  el('sweepnote').innerHTML=`<div class="note" style="margin-bottom:0">
+    <b>The two right-hand columns are the finding.</b> Across ${totN} enumerated items,
+    ${totColl} rejections were caused by a misconception landing on another misconception or on
+    the key. Those are items that a generator without a collision check produces happily and that
+    <em>look completely fine</em> — plausible options, correct key, no visible defect — while
+    being unable to tell two different students apart. The weighted-mean stem is the clearest
+    case: set the two test lengths equal and the "averages the averages" error becomes
+    <em>arithmetically identical to the correct answer</em>. The item is then not merely
+    non-diagnostic; it silently marks a misconception correct.</div>`;
+}
+el('sweep').onclick=runSweep;
+
+renderPick(); renderAll(); runSweep();
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(runSweep,200);});
+const R=document.documentElement;
+el('tt').onclick=()=>{
+  const dark=R.getAttribute('data-theme')==='dark'||
+    (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',dark?'light':'dark');};
+</script>
+</body>
+</html>

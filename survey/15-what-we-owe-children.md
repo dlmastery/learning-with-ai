@@ -8,10 +8,33 @@ source_report: research/raw/F8-safety-privacy-children.md
 
 # What We Owe Children
 
-On 2 August 2026 the EU AI Act's Annex III obligations begin to apply. Read the
-text and you will find that the regulator has already written most of the
-architecture document for an AI tutor — with more precision, and more courage,
-than the field has managed for itself.
+**Corrected 2026-07-28, and the correction is time-sensitive.** An earlier draft of
+this section said the EU AI Act's Annex III education obligations begin to apply on
+2 August 2026. They do not. **Regulation (EU) 2026/1744** — the Digital Omnibus on
+AI, done at Strasbourg 8 July 2026, published as OJ L 2026/1744 on 24 July, in force
+**27 July 2026** — replaced Article 113's third paragraph point (c). Verified against
+the EUR-Lex primary text:
+
+> *"…it is appropriate that the date of application of Sections 1, 2 and 3 of Chapter
+> III is set to **2 December 2027** for AI systems classified as high-risk pursuant to
+> Article 6(2) and Annex III, and to **2 August 2028** for AI systems classified as
+> high-risk"* pursuant to Article 6(1).
+
+Note what did **not** move. Article 113's first paragraph is unamended and Chapter IV
+is not carved out, so **Article 50 — transparency, chatbot disclosure, synthetic-content
+marking — still applies from 2 August 2026.** For a conversational tutor that is the
+live deadline, and it is days away, not eighteen months.
+
+Two sources that a reasonable person would check both give the wrong answer today:
+`artificialintelligenceact.eu` is still stamped "last updated 1 August 2024," and the
+Commission's own Digital Omnibus page still describes only the proposal. This is
+exactly the case our editorial standard exists for — we published an unverified date,
+flagged it as unverified, and corrected it against the primary text within a day.
+
+The deferral changes the *deadline*, not the *design*. Read the Act and you will find
+that the regulator has already written most of the architecture document for an AI
+tutor — with more precision, and more courage, than the field has managed for
+itself.
 
 The legal floor is not an obstacle course laid across a good product. It is a set
 of load-bearing constraints that coincide, almost line for line, with what the
