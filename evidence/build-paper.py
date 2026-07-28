@@ -225,7 +225,8 @@ body{padding:0;overflow-x:hidden}
 .bar{position:sticky;top:0;z-index:55;display:flex;align-items:center;gap:14px;
   height:52px;padding:0 16px;background:color-mix(in oklab,var(--bg) 88%,transparent);
   backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
-.bar .home{font:650 13px/1 var(--sans);color:var(--ink);white-space:nowrap}
+.bar .home{font:650 13px/1 var(--sans);color:var(--ink);white-space:nowrap;border-bottom:0}
+@media (max-width:760px){.bar .home .ht{display:none}}
 .bar .home:hover{color:var(--felt)}
 .bar .where{font:13px/1.3 var(--sans);color:var(--ink-3);overflow:hidden;
   text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
@@ -238,7 +239,7 @@ body{padding:0;overflow-x:hidden}
 
 .shell{display:grid;grid-template-columns:1fr;max-width:1320px;margin:0 auto}
 .doc{min-width:0;padding:0 20px 120px}
-.doc .col{max-width:44rem;margin:0 auto}
+.doc .col{max-width:41rem;margin:0 auto}
 
 /* ── contents rail ────────────────────────────────────────── */
 #rail{background:var(--bg)}
@@ -261,7 +262,7 @@ body{padding:0;overflow-x:hidden}
   #rail{position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto;
     border-right:1px solid var(--line);scrollbar-width:thin}
   #rail .scrim,#rail .close{display:none}
-  .bar .toc{display:none}
+  .bar .tocbtn{display:none}
   .doc{padding:0 56px 140px}
 }
 @media (max-width:1079px){
@@ -282,9 +283,10 @@ body{padding:0;overflow-x:hidden}
 .front{padding:64px 0 0}
 .front h1{font:400 clamp(31px,5.6vw,50px)/1.08 var(--serif);letter-spacing:-.024em;margin:0 0 16px}
 .front .standfirst{font:400 clamp(18px,2.4vw,21px)/1.5 var(--serif);color:var(--ink-3);
-  max-width:34ch;margin:0 0 32px}
-.facts{display:flex;flex-wrap:wrap;gap:0 40px;border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:8px}
+  max-width:42ch;margin:0 0 36px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,auto));
+  gap:20px 44px;justify-content:start;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);padding:20px 0;margin-bottom:8px}
 .facts div{min-width:0}
 .facts dt{font:600 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;
   color:var(--ink-3);margin-bottom:6px}
@@ -292,8 +294,7 @@ body{padding:0;overflow-x:hidden}
 
 h2.fm{font:400 27px/1.2 var(--serif);margin:64px 0 var(--s4);letter-spacing:-.018em;
   scroll-margin-top:72px}
-.abstract p{font-size:17px;line-height:1.72;max-width:40rem}
-.abstract p:first-of-type::first-line{font-variant-caps:small-caps;letter-spacing:.03em}
+.abstract p{font-size:17px;line-height:1.72;max-width:38rem}
 
 /* ── contents page ────────────────────────────────────────── */
 .toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
@@ -330,7 +331,7 @@ h2.fm{font:400 27px/1.2 var(--serif);margin:64px 0 var(--s4);letter-spacing:-.01
 .sec .src{font:11.5px/1.4 var(--mono);color:var(--ink-3);margin:0 0 var(--s6)}
 .sec .src code{background:none;padding:0;color:var(--ink-3);font-size:11.5px}
 
-.prose p,.prose ul,.prose ol,.prose blockquote{max-width:40rem}
+.prose p,.prose ul,.prose ol,.prose blockquote{max-width:38rem}
 .prose{font-size:17px;line-height:1.72}
 .prose p{margin-bottom:var(--s4);color:var(--ink-2);overflow-wrap:break-word}
 .prose h3{font:650 17px/1.35 var(--sans);margin:var(--s7) 0 var(--s3);color:var(--ink)}
@@ -560,8 +561,8 @@ PAGE_TEMPLATE = r"""<!doctype html>
 <div class="progress" id="prog" role="presentation"></div>
 
 <div class="bar">
-  <button id="toctoggle" class="toc" aria-expanded="false" aria-controls="rail">Contents</button>
-  <a class="home" href="./">Learning in the New Frontier AI World</a>
+  <button id="toctoggle" class="tocbtn" aria-expanded="false" aria-controls="rail">Contents</button>
+  <a class="home" href="./"><span aria-hidden="true">←</span> <span class="ht">Learning in the New Frontier AI World</span></a>
   <div class="where" id="where" aria-live="polite"></div>
   <button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
 </div>
@@ -570,7 +571,7 @@ PAGE_TEMPLATE = r"""<!doctype html>
 
 <div class="shell">
   <nav id="rail" aria-label="Contents">
-    <button id="railclose" aria-label="Close contents">✕</button>
+    <button id="railclose" class="close" aria-label="Close contents">✕</button>
     <div class="inner">
       <div class="rt">Contents · @@SECTIONS@@ sections</div>
       @@RAIL@@
