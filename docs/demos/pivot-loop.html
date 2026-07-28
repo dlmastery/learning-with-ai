@@ -187,9 +187,8 @@ they fire on a learner who is doing perfectly well.</div>
   <div class="psub">A learner whose <em>true</em> growth exactly matches the goal — i.e. a learner
   who needs no change at all. The dots are what the system sees. The dashed line is the goal.</div>
   <div class="legend">
-    <span><i style="background:var(--felt)"></i>Observed weekly probe score</span>
-    <span><i style="background:var(--real)"></i>True underlying skill</span>
-    <span><i class="ln" style="background:var(--ink-3)"></i>Goal line</span>
+    <span><i style="background:var(--felt)"></i>Observed weekly probe score — what the system sees</span>
+    <span><i class="ln" style="background:var(--ink-3)"></i>Goal line — <em>and</em> this learner's true growth, exactly</span>
   </div>
   <div id="onedraw"></div>
   <div id="fires"></div>
@@ -616,8 +615,7 @@ function oneDraw(){
     x:{min:1,max:P.weeks,label:'WEEK'},y:{min:Math.floor(lo),max:Math.ceil(hi)},
     refline:{from:[1,P.base+P.goal],to:[P.weeks,P.base+P.goal*P.weeks],label:'GOAL'},
     marks:fire?[{at:fire,label:'RULE FIRES',tone:'bad'}]:[],
-    series:[{kind:'line',series:'real',pts:s.truth,faint:true},
-            {kind:'dots',series:'felt',pts:s.obs}]});
+    series:[{kind:'dots',series:'felt',pts:s.obs}]});
   el('fires').innerHTML=fire
     ? `<div class="note warn" style="margin-bottom:0"><b>The rule fired at week ${fire}.</b>
        This learner's true growth is <em>exactly</em> the goal slope — there is nothing to fix and

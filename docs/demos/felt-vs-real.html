@@ -492,9 +492,9 @@ function run(){
   const SPEC={
     max:0.4, alt:'Diverging bar chart of standardised mean differences for satisfaction and delayed retention.',
     rows:[
-      {label:'Satisfaction (felt)',v:+dS.d.toFixed(3),series:'felt',
+      {label:'Satisfaction (felt)',v:+dS.d.toFixed(2),series:'felt',
        note:`Arm B − Arm A. t(${dS.df.toFixed(1)}) = ${dS.t.toFixed(2)}, ${pfmt(dS.p)}. Computed from this sample.`},
-      {label:'Delayed retention',v:+dR.d.toFixed(3),series:'real',
+      {label:'Delayed retention',v:+dR.d.toFixed(2),series:'real',
        note:`Arm B − Arm A. t(${dR.df.toFixed(1)}) = ${dR.t.toFixed(2)}, ${pfmt(dR.p)}. Computed from this sample.`}
     ]
   };
