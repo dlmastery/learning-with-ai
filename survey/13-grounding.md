@@ -9,8 +9,12 @@ source_report: research/raw/G1-grounding-synthesis.md
 # Grounding
 
 Substituting one random set of numbers into two expressions and comparing the
-results takes **0.38 ms** and catches **112 of 113** seeded derivation errors —
-99.1% recall, with **zero** false alarms across 37 semantically-equivalent rewrites.
+results takes **0.38–0.61 ms** — two harnesses in this project measured each, and
+both are reported rather than the flattering one — and catches **112 of 113** seeded
+derivation errors: 99.1% recall, with **zero** false alarms across 37
+semantically-equivalent rewrites. (A third, independent implementation in
+`docs/demos/grounding-ladder.html` measures 170 ns on a smaller formula set; the
+figures are not directly comparable and the demo says so.)
 
 That is the whole economic argument, and it is over before it starts. **There is no
 engineering, pedagogical, or performance reason to ever ship an unchecked formula.**

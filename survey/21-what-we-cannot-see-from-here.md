@@ -60,8 +60,10 @@ because nobody has named the failure.
 ## 2. Every effect in this document is measured in weeks
 
 The longest outcome interval in this corpus is months. Most are a single session.
-The Sierra Leone trial, the largest deployment we examine, ran across a school year;
-almost nothing else comes close.
+The Sierra Leone trial, the largest deployment we examine, ran **eight weeks** — an
+earlier version of this sentence said "a school year", which was wrong and made the
+field's time horizon look better than it is. Almost nothing comes close even to eight
+weeks.
 
 Now consider a technique that measures **+0.5 SD at six weeks** and, over three
 years, gradually teaches a learner that difficulty is a signal to ask rather than a

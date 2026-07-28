@@ -206,9 +206,12 @@ digitising a social mechanism — not a hypothesis, a number.
 
 The correction already on this project's record belongs here too, because it is
 the same species of error: Bloom's two-sigma claim did not replicate. Human
-tutoring is **d = 0.79**, and intelligent tutoring systems were already at
-**0.76** before LLMs existed. Expert one-to-one is worth about eight tenths of a
-standard deviation, not two.
+tutoring is **d = 0.79** in VanLehn's synthesis, and intelligent tutoring systems
+were already at **0.76** before LLMs existed. But the figure that should be quoted
+alongside it — and which an earlier version of this paragraph omitted — is the pooled
+randomised estimate: **0.288 SD across 96 RCTs**. Expert one-to-one is worth roughly
+eight tenths of a standard deviation under favourable synthesis and **under three
+tenths** when you pool the trials. Not two.
 
 **And a correction this survey must publish about its own work.** The research
 behind this section proposed a *pāṭha* protocol — permutation-based fidelity
