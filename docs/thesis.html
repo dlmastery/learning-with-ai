@@ -382,7 +382,149 @@ economy</strong> — and no engagement metric may serve as an objective, because
 DAU and time-on-app all pass the Null-Learner Test, meaning an agent that teaches nothing can
 max them out.</p>
 
-<h2>11. What makes it hard, which is the point</h2>
+<h2>11. The wedge: high-stakes exams are the one place the loop closes for free</h2>
+
+<p>Everything above says the hard part is the third tier of the fitness function — a delayed,
+unassisted, novel-item outcome. It is slow, sparse, expensive, and it costs conversion to
+collect.</p>
+
+<p>In competitive-exam preparation, <strong>somebody else administers it, and the student wants
+you to have the result.</strong></p>
+
+<div class="claim">SAT · PSAT · JEE · NEET · GATE · EAMCET · gaokao. Proctored. Novel items
+each cycle. Months after study. Scored, ranked, and reported.</div>
+
+<p>Read that against the requirements. <strong>Proctored</strong> means genuinely unassisted —
+the condition almost no edtech study achieves. <strong>New paper each cycle</strong> means novel
+items, not the ones practised. <strong>Months later</strong> means delayed. And the score comes
+back <em>because the candidate cares about it more than you do.</em></p>
+
+<p>The truth signal that costs everyone else a research programme is, in this segment, the
+customer's own objective. That is the sharpest structural fit in this document.</p>
+
+<h3>Four more things line up in the same direction</h3>
+
+<div class="step"><div class="n">1</div><div><p><strong>The verifier's cold-start problem is smallest here.</strong> Past papers with
+published keys, official rubrics, and — for the big exams — decades of item-level response data.
+A closed syllabus and a definitive answer key is the nearest thing education has to
+<code>pytest</code>.</p></div></div>
+
+<div class="step"><div class="n">2</div><div><p><strong>The counterfactual is bad, which is where returns are largest.</strong> This survey's
+reading of three trials together: <em>the measured return on pedagogical design scales with how
+bad the counterfactual was</em>. Against a competent chatbot in a well-resourced classroom,
+designed pedagogy has not yet demonstrated an advantage. Against an overcrowded coaching batch,
+or nothing, it does.</p></div></div>
+
+<div class="step"><div class="n">3</div><div><p><strong>The motivation problem is solved by the exam, not by you.</strong> Which matters more
+than it sounds, because §10 shows that the engagement machinery everyone ships is the weakest
+cell in its own evidence base. An externally imposed, dated, high-stakes goal removes the need
+for a points economy — the thing that measurably undermines intrinsic motivation.</p></div></div>
+
+<div class="step"><div class="n">4</div><div><p><strong>Expertise reversal is per-topic, and a syllabus is a topic list.</strong> The one
+aptitude–treatment interaction that survived fifty years of searching needs a per-topic prior
+knowledge estimate. A closed, enumerated syllabus makes that measurable in
+<strong>15–40 seconds per topic</strong> rather than being a modelling problem.</p></div></div>
+
+<h2>12. Publishers hold the asset, and it is not the content</h2>
+
+<p>The instinct is that a publisher brings distribution and curriculum alignment. Both true and
+both replaceable. The asset that is not replaceable is buried in the psychometrics:</p>
+
+<div class="claim">An item bank was never valuable because it held items. It was valuable because
+it held <em>calibrated</em> items. Generation drove item-production cost to zero and left
+calibration cost untouched.</div>
+
+<p>Automatic item generation reaches break-even at <strong>173–247 items per fine-grained
+content area</strong> — and that is per <em>area</em>, not per programme. Producing questions is
+free now. Knowing an item's difficulty, its discrimination, and which misconception each
+distractor actually catches is not, and it requires <strong>response data from real students at
+scale</strong>.</p>
+
+<p>A textbook publisher with decades of item-level response data is sitting on the calibration
+corpus that a verifier needs, in a form nobody else can assemble — and most of them are
+valuing themselves on the content instead. <strong>The deal to do is for the response data, not
+the pages.</strong></p>
+
+<p>The integration is also the least threatening thing a publisher can be sold. Not a platform
+migration, not a replacement — <strong>an addendum</strong>: the same book, with the practice
+loop instrumented and the diagnosis attached. It preserves their product and their channel, and
+it produces the data that makes the next edition genuinely adaptive.</p>
+
+<h2>13. What the market evidence says before you commit</h2>
+
+<div class="kill">
+  <div class="k">Three findings that should change the plan, not just caveat it</div>
+  <p><strong>China is a policy risk, not a market.</strong> The 2021 <em>double reduction</em>
+  order — retrieved in full from the Ministry of Education — states that no new approvals will
+  be issued for core-subject tutoring institutions and that existing ones re-register as
+  <strong>non-profits</strong>. One listed operator's revenue fell <strong>62% in twelve
+  months</strong>, per its filing. Gaokao preparation is not an addressable commercial market
+  under current policy.</p>
+  <p><strong>The market-size figures you will be shown do not exist.</strong> No official Chinese
+  statistic on tutoring market size could be located, before or after 2021. Every
+  "$100bn+ market" number in circulation descends from vendor reports rather than from a
+  national statistics office. <strong>The destroyed value is itself unmeasurable</strong> —
+  which should be sobering about the downside, not just the upside.</p>
+  <p><strong>And this segment is maximally positional.</strong> Exam preparation buys
+  <em>rank</em>. Every effect size in this survey was measured where the treatment group had
+  something the control group did not. If a tool that lifts everyone by 0.4 SD reaches everyone,
+  the absolute learning is real and the <em>rank</em> is unchanged. That does not break the
+  business in the short run. It does mean the durable claim has to be about capability, and the
+  company should know which one it is selling.</p>
+</div>
+
+<h2>14. The product: every book comes with a live mentor</h2>
+
+<div class="claim">The book stays the book. What changes is the substrate underneath it.</div>
+
+<p>The Kindle comparison is worth taking literally, because Kindle did not win on the reading
+experience. The device was commoditised deliberately. What Amazon actually built was an
+<strong>account, a sync layer, and a telemetry stream</strong> — and publishers kept publishing
+the whole time.</p>
+
+<p>The mapping is close enough to be operational:</p>
+
+<div class="scroll">
+<table class="moat">
+  <tr><th>Kindle</th><th>The equivalent here</th><th>Why it matters</th></tr>
+  <tr><td>The book, unchanged</td><td>The book, unchanged</td><td>Non-threatening to the publisher. No migration, no replacement — an <b>addendum</b></td></tr>
+  <tr><td>Whispersync — position, notes, highlights follow you</td><td><b>The learner model</b> — what you know, what you got wrong, what is still live</td><td>The switching cost. And it has <b>never been measured against a stateless baseline</b> — so it is also an experiment worth running</td></tr>
+  <tr><td>Reading telemetry — where people stop, what they highlight</td><td><b>The instrumented practice loop</b> — what was attempted, where it stalled, which error</td><td>Nobody else has it, and it is generated by ordinary use</td></tr>
+  <tr><td>Popular Highlights — emergent, from aggregate behaviour</td><td><b>Where readers of this chapter go wrong</b> — aggregate misconception data</td><td>This <em>is</em> the calibration corpus. It is the verifier's training set, arriving free</td></tr>
+  <tr><td>X-Ray — terms and characters, generated from the text</td><td><b>The three-rung ladder</b>, per concept, entered by a measured probe</td><td>Fifteen to forty seconds to place a reader, not a placement test</td></tr>
+</table>
+</div>
+
+<h3>Why this composes with everything above</h3>
+
+<div class="step"><div class="n">1</div><div><p><strong>The publisher keeps their product and their channel.</strong> That is what makes the
+deal signable. They are not being platformed; they are being instrumented.</p></div></div>
+<div class="step"><div class="n">2</div><div><p><strong>The mentor is the surface; the learner model is the asset.</strong> Same structure as
+the device being sold at cost while the account is the moat. Give away the conversation. Own the
+state and the verifier.</p></div></div>
+<div class="step"><div class="n">3</div><div><p><strong>And in exam prep the loop closes.</strong> Aggregate misconception data supplies the
+volume, the verifier supplies the surrogate signal, and <strong>the exam supplies the truth</strong>
+— proctored, novel, delayed, and reported back because the candidate wants it reported. That is
+the three-tier fitness function from §7, fully instantiated, in one product.</p></div></div>
+
+<h3>Two things the metaphor should also warn you about</h3>
+
+<div class="kill">
+  <div class="k">Both from this survey's own findings</div>
+  <p><strong>Publishers eventually fought Amazon.</strong> A partner who comes to feel
+  disintermediated will litigate the pricing and take the channel back. The deal structure has to
+  leave the publisher owning something that compounds too — which is an argument for giving them
+  the <em>calibration outputs</em> on their own catalogue, not just a revenue share.</p>
+  <p><strong>And one live mentor across every book is this survey's named unstudied risk.</strong>
+  Thirty teachers make thirty different mistakes, and the system averages them out. A single
+  mentor's errors are <em>systematic and identical for every reader simultaneously</em> — what
+  §21 calls <b>correlated pedagogical error</b>, for which there is currently no monitoring and
+  no name in the literature. Shipping this product at scale <em>is</em> the experiment. The
+  mitigation is the same instrument as the moat: an ensemble of independent verifiers, with
+  disagreement in the <em>explanation</em> — not the answer — treated as the alarm.</p>
+</div>
+
+<h2>15. What makes it hard, which is the point</h2>
 
 <p>If it were easy it would not be a moat. Three things make it hard, and all three are
 surmountable by an operator rather than by a lab:</p>
@@ -395,7 +537,7 @@ you need the delivery relationship, not just the transcripts.</p></div></div>
 <div class="step"><div class="n">c</div><div><p><strong>Decades of labelled intelligent-tutoring logs already exist and are public.</strong>
 The cold-start is smaller than it looks. The public testbed exists. Nobody has done it.</p></div></div>
 
-<h2>12. The three questions to ask any competitor</h2>
+<h2>16. The three questions to ask any competitor</h2>
 
 <div class="step"><div class="n">1</div><div><p><strong>"Show me the delayed, unassisted, novel-item outcome."</strong> Not the practice
 score, not the same items. Weeks later, device closed. ERIC returns <strong>zero records</strong>
@@ -407,7 +549,7 @@ ChatGPT</strong>, because that is what a learner has for free.</p></div></div>
 loads on already-strong learners. A healthy mean concealing a widened gap has made things
 worse.</p></div></div>
 
-<h2>13. What would kill this thesis</h2>
+<h2>17. What would kill this thesis</h2>
 
 <div class="kill">
   <div class="k">Stated in advance, so it can be checked</div>
@@ -427,10 +569,14 @@ worse.</p></div></div>
   teachers.</p>
 </div>
 
-<h2>14. The one-line version</h2>
+<h2>18. The one-line version</h2>
 
 <div class="claim">Everyone is building the tutor. The bottleneck is the examiner — and a
 human-in-the-loop operation is the only structure that produces one while it trades.</div>
+
+<p>The product that does it: <strong>every book comes with a live mentor.</strong> The publisher
+keeps the book. The mentor is given away. The learner model and the verifier are kept — and in
+exam preparation, the examiner that validates them is one somebody else already administers.</p>
 
 <footer>
   <a href="paper.html">The full survey</a> · <a href="./">Dashboard</a> ·

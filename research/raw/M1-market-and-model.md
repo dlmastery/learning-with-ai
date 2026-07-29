@@ -834,7 +834,8 @@ finding**; vendor language is quoted and labelled.
 
 The issuers who use "AI tutor" in a filing at all: Nerdy, Chegg, Pearson, Docebo,
 Synthesis School, Classover Holdings, Youdao, NetEase, Gaotu Techedu, VEON, Nebius,
-Adtalem, and one S-1 registrant. **There is no public comparable set for an AI-native
+Adtalem Global Education (renamed **Covista Inc.**, ticker CVSA, on 2026-01-28 —
+`OBSERVED`, EDGAR former-names record), and one S-1 registrant. **There is no public comparable set for an AI-native
 tutoring company.** Every revenue multiple offered to an investor in this category is
 therefore borrowed from a company with a different cost structure — most often a
 software company with 75–85% gross margins, which §3 shows this business does not have.
@@ -1494,3 +1495,149 @@ The section standard requires ≥4. There are ten.
 | N10 | **A single regulation removed 62% of a tutoring company's revenue in one year**, with no return to operating profit five years on. | Gaotu Techedu 20-F | `FILING` |
 
 ---
+
+## 10. Untraceable figures, retrieval failures, and corrections
+
+### 10.1 Figures reported as untraceable rather than cited
+
+Per the section's constraint, these circulate widely and are **not restated as numbers**
+anywhere above.
+
+| Figure | Why untraceable |
+|---|---|
+| Global private tutoring market size (any vendor) | No house publishes a reproducible method, sample frame, or data (§1.2). Two are HTTP-403/404; one report could not be shown to exist; one figure is internally inconsistent by three orders of magnitude |
+| "Global education & training spend $10T by 2030" | No sources, no data, no method on the free source |
+| Japan national tutoring aggregate | MEXT publishes **per-student means only**; every aggregate is a third-party multiplication |
+| Chinese tutoring market size, pre- or post-2021 | No NBS or MoE statistic located. **The value destroyed by 双减 is itself unmeasurable** |
+| All Byju's / Think & Learn figures — valuation, revenue, users | No SEC filing under any name variant; Indian MCA accounts paywalled and filed years late |
+| Chegg subscriber counts, FY2022–FY2025 | **Zero** occurrences of a subscriber figure in four consecutive 10-Ks and the FY2025 earnings release |
+| Coursera "Degrees" segment revenue, FY2024–25 | Degrees is **no longer a reportable segment**; the word appears three times, never as a revenue line |
+| Grand Canyon Education gross margin | GCE presents **no gross profit subtotal**; any figure is a third-party allocation |
+| 2U gross margin | 2U **never reported a gross profit line**; costs are functional |
+| Duolingo's absolute AI / inference spend | Bundled inside cost of revenues with payment processing and hosting; not separately quantified |
+| MagicSchool AI, Speak, Ello round sizes | **No EDGAR presence at all** — no Form D, no CIK. All circulating round sizes are press-only |
+| Khan Academy FY2024–FY2025 financials | Latest public Form 990 is FY2023. **The largest AI-tutoring deployment in the world has no post-launch-scale audited financials in the public record** |
+| Average district contract value / K-12 AI enterprise ACV / higher-ed tutoring licence pricing | No aggregate primary source reachable (§2.4) |
+| National US per-pupil special-education expenditure | See §1.6 — the only national estimate is a quarter-century old |
+
+### 10.2 Retrieval failures, with status codes
+
+| Endpoint | Status | Workaround used |
+|---|---|---|
+| `grandviewresearch.com` (3 URLs) | **403** to curl (3 UAs) and WebFetch | none — reported as inaccessible |
+| `ibisworld.com` tutoring report | **404** → site search | none |
+| `marketsandmarkets.com` private-tutoring report | **302** → report-search page | none |
+| `holoniq.com/edtech`, `/notes/...` | **404** | none |
+| `unesdoc.unesco.org/ark:/48223/pf0000381495` | **403** | none |
+| `bls.gov/cex/*` | **403** (all UAs) | **BLS public API v2** + `download.bls.gov` with a contact-email UA |
+| `bls.gov/oes/current/oes253041.htm` | **301** → tables index | Downloaded and parsed `oesm25nat.zip` / `oesm25st.zip` directly |
+| `api.worldbank.org` `PER.*` household indicators | **HTTP 000**, timeout ×4 (30/55/90/95s) | none — reported as a structural gap |
+| `efts.sec.gov/LATEST/search-index` | **500** on 4 consecutive calls | Succeeded on retry ~30s later. Pace full-text queries |
+| `sec.gov/cgi-bin/browse-edgar` company search | **200 but empty** — now a JS shell; `output=atom` returns an empty feed | Use `efts.sec.gov` full-text search instead. **This endpoint is dead for scripted name lookup** |
+| `ilga.gov` `.asp` statute endpoints | 404/500 | `ilga.gov/Documents/legislation/ilcs/documents/...htm` |
+| `kostat.go.kr` | **302 → mods.go.kr** | Agency renamed to Ministry of Data and Statistics |
+| `moe.gov.cn/srcsite/A29/...546566.html` | **404** | Correct path is `/jyb_xxgk/moe_1777/moe_1778/202107/t20210724_546576.html` |
+| `ftc.gov` | **403** to curl and WebFetch | Browser User-Agent |
+| AICPA SOC 2 Type 1 / Type 2 definitions | Paywalled | **Not cited.** Flagged as needing the purchased Guide |
+| FTC *"Policy Statement Concerning the Suppression of Accuracy in AI Systems"* (7 Jul 2026) | Federal Register listing retrieved; **text not fetched** | Flagged `UNVERIFIED`; not used as evidence |
+
+### 10.3 Corrections this section makes to the corpus
+
+| # | Correction | Basis |
+|---|---|---|
+| **M1-C1** | **Section 508 (36 CFR 1194) incorporates WCAG 2.0 AA, not 2.1 AA.** "WCAG 2.0" appears 23× in the regulation; "WCAG 2.1" appears **0×** (702.10.1 pins the 11 Dec 2008 REC). **ADA Title II** is the instrument that requires **WCAG 2.1 AA** (28 CFR 35.200(b)). The corpus's standing note is right about Title II and must not be extended to 508 | Machine-verified against 36 CFR 1194 |
+| **M1-C2** | **The corpus's ADA Title II citation is confirmed exactly**: final rule 89 FR 31320 (24 Apr 2024); compliance dates extended by **91 FR 20902** (published 20 Apr 2026) to **26 Apr 2027** (population ≥50,000) and **26 Apr 2028** (<50,000 / special districts) | Federal Register + eCFR |
+| **M1-C3** | A **second, distinct** accessibility extension exists and is easily conflated: **91 FR 25496** (11 May 2026, HHS, RIN 0945-AA30) extends **Section 504** web/app compliance to 11 May 2027 / 10 May 2028. Different agency, different statute. Public universities taking HHS funds hit both | Federal Register |
+| **M1-C4** | The COPPA amended rule is **90 FR 16918**, published **22 April 2025** (document runs to p. 16983; the Part 312 amendatory text begins at 16977, which is the citation the eCFR source note carries). Effective 23 Jun 2025; **full compliance 22 Apr 2026** | Federal Register API |
+| **M1-C5** | **The FTC did not codify a school-authorization exception to COPPA.** It proposed one and withdrew it: *"the Commission is not finalizing the proposed amendments to the Rule related to ed tech and the role of schools at this time."* The word "school" appears **nowhere** in 16 CFR Part 312. The district-consent mechanism rests on a 2022 policy statement and an FAQ | 90 FR 16918 preamble; full-text search of Part 312 |
+| **M1-C6** | The tutoring meta-analytic pooled effect is **0.288 SD** (Nickow, Oreopoulos & Quan, *AERJ* 2023, doi:10.3102/00028312231208687). The widely quoted **0.37 SD** is the **superseded 2020 NBER working paper** (w27476), whose abstract this section retrieved and confirms says 0.37. A deck citing 0.37 is citing a working paper | Both documents retrieved |
+| **M1-C7** | **Pearson has not stopped filing with the SEC.** It remains an SEC registrant and NYSE-listed (PSO), with an unbroken 20-F series; FY2025 20-F filed 2026-03-13 | EDGAR submissions metadata |
+| **M1-C8** | **SDPC's National Data Privacy Agreement is at v2.2 (19 Nov 2025)**, and **1EdTech certification requires active membership plus annual recertification** — both are recurring obligations, not one-time artefacts | a4l.org, 1edtech.org |
+
+---
+
+## 11. What an investor should verify before wiring money
+
+Six checks, each cheap, each decisive, each answerable from a primary source in under a
+day.
+
+1. **Ask for the realised leverage ratio as a monthly time series** — learner-hours
+   delivered ÷ paid tutor-hours. If it is flat, the AI is decorative and the company is
+   a staffing business. If the company cannot produce it, it does not know its own unit
+   economics.
+2. **Ask what fraction of COGS is inference.** If the answer is above ~2%, either the
+   architecture is wasteful or the human component is smaller than claimed. If it is
+   below 1% — which §3.2 says it will be — then ask why the deck's thesis is about
+   inference costs falling.
+3. **Ask for the contract term distribution and the share of ARR on ≤12-month
+   contracts.** Compare against the audited comparable's *"generally short-term in
+   duration (one year or less)."*
+4. **Ask for the delayed novel-item transfer number**, and its n, and who held the item
+   bank. If the only outcome data is in-product mastery, the company has measured its
+   own metric.
+5. **Ask whether the product has ever been compared to plain ChatGPT.** Fütterer et al.
+   is the reason. The absence of that comparison is not neutral — it is an unpriced risk.
+6. **Ask for the New York DPA, the WCAG 2.1 AA ACR, and the SOC 2 Type II report by
+   date.** These take months and cost money; a company that has them has already paid
+   for §5.7's moat, and a company that has not has an undisclosed liability on its
+   critical path.
+
+---
+
+## 12. Primary sources
+
+**SEC filings (`FILING`).** Nerdy Inc. 10-K FY2025 (CIK 1819404, filed 2026-02-26) and
+10-Q Q1 2026 (filed 2026-05-07) · Chegg Inc. 10-K FY2025 (CIK 1364954, filed 2026-03-09)
+and 10-Q Q1 2026 (filed 2026-05-11) · Coursera Inc. 10-K FY2025 (CIK 1651562, filed
+2026-02-23) · Duolingo Inc. 10-K FY2025 (CIK 1562088, filed 2026-02-27) · Stride Inc.
+10-K FY2025 and 10-Q Q3 FY2026 (CIK 1157408) · Docebo Inc. 40-F FY2025 (CIK 1829959) ·
+Skillsoft Corp. 10-K FY2026 (CIK 1774675) · Grand Canyon Education 10-K FY2025 (CIK
+1434588) · American Public Education 10-K FY2025 (CIK 1201792) · Laureate Education 10-K
+FY2025 (CIK 912766) · Pearson plc 20-F FY2025 (CIK 938323, filed 2026-03-13) · Youdao
+Inc. 20-F (CIK 1781753) · Gaotu Techedu Inc. 20-F (CIK 1768259) · 2U Inc. 10-K FY2023
+(CIK 1459417, filed 2024-03-06), 8-Ks of 2024-07-25 and 2024-09-10, Form 15-12G of
+2024-09-25 · Synthesis School Inc. Form C-AR FY2025 and Form C-TR (CIK 1857145, filed
+2026-04-10) · Amira Learning Inc. Form D ×4 (CIK 1785128) · Blackstone Private Credit
+Fund 10-Q (CIK 1803498, Byjus Alpha position) · EDGAR full-text search (`efts.sec.gov`).
+
+**Government statistics (`GOV-STAT`).** BLS Occupational Employment and Wage Statistics,
+May 2025, `oesm25nat.zip` and `oesm25st.zip`, SOC 25-3041 · BLS Consumer Expenditure
+Survey, UCC 670903, via `api.bls.gov` v2 and `download.bls.gov/pub/time.series/cx/` ·
+Ministry of Data and Statistics (Korea) & MoE, *Private Education Expenditures Survey…
+2025*, Designated Statistics No. 920011 · MEXT (Japan), 子供の学習費調査 FY2023 ·
+World Bank indicator API `SE.XPD.TOTL.GD.ZS` · USAspending.gov award API ·
+IRS Form 990 via ProPublica Nonprofit Explorer API (Khan Academy EIN 26-1544963; Zearn
+EIN 37-1665745; CommonLit EIN 46-4255260).
+
+**Legal instruments (`VERIFIED`).** Regulation (EU) 2024/1689 (AI Act), Arts. 50, 99,
+113, Annex III(3), via EUR-Lex CELEX:32024R1689 · Regulation (EU) 2026/1744 (Digital
+Omnibus on AI), OJ L 2026/1744, 24.7.2026 · 16 CFR Part 312 and 90 FR 16918 · 34 CFR
+Part 99, §§99.3, 99.31(a)(1)(i)(B), 99.33(a), 99.37 · Cal. Bus. & Prof. Code §22584;
+Cal. Ed. Code §49073.1 · N.Y. Educ. Law §2-d; 8 NYCRR Part 121 · 105 ILCS 85 · 28 CFR
+35.200; 89 FR 31320; 91 FR 20902 · 36 CFR 1194 · 91 FR 25496 · 《关于进一步减轻义务教育
+阶段学生作业负担和校外培训负担的意见》(24 Jul 2021), moe.gov.cn · FTC orders: *United
+States v. Edmodo, LLC* (N.D. Cal. 2023); *FTC & DOJ v. Amazon.com* (W.D. Wash. 2023);
+*In re Chegg, Inc.* (2022/2023).
+
+**Research (`MEASURED-RCT` / `MEASURED-META`).** LearnLM Team Google & Eedi, *"AI
+tutoring can safely and effectively support students: An exploratory RCT in UK
+classrooms,"* arXiv:2512.23633 (Appendices D.1 and H retrieved in full) · Wang, Ribeiro,
+Robinson, Loeb & Demszky, *"Tutor CoPilot,"* arXiv:2410.03017 (Appendix "Study Costs")
+· Guryan, Ludwig, Bhatt, Cook, Davis, Dodge, Farkas, Fryer, Mayer, Pollack & Steinberg,
+*"Not Too Late,"* NBER w28531 / *AER* 2023, doi:10.1257/aer.20210434 · Nickow, Oreopoulos
+& Quan, *AERJ* 2023, doi:10.3102/00028312231208687 (and superseded NBER w27476) ·
+Fütterer, Bardach, Kuhn, Keller & Gerjets, *Educational Psychology Review* 2026,
+doi:10.1007/s10648-026-10133-8 · Bastani et al., *PNAS*, doi:10.1073/pnas.2422633122 ·
+Bray, *Asia Pacific Education Review*, doi:10.1007/s12564-009-9056-6 · Kovanović et al.,
+doi:10.18608/jla.2015.23.6.
+
+**Other (`OBSERVED`).** Hugging Face dataset API (`Eedi/Question-Anchored-Tutoring-
+Dialogues-2k`; `ASSISTments/FoundationalASSIST`) · ITI VPAT 2.5Rev · AICPA SSAE No. 18
+and 2017 Trust Services Criteria · 1EdTech certification and TrustEd Apps AI rubric ·
+SDPC/A4L National Data Privacy Agreement v2.2 · lessonorca.com (`VENDOR`).
+
+**Internal priors (`INTERNAL-PRIOR`), not re-derived here.** B2 (efficacy scoreboard) ·
+D3 (LearnLM/Eedi analysis) · E1–E2 (market taxonomy, graveyard, LessonOrca) · E3 (latest
+sweep, EU AI Act verification, Chegg 10-Q) · F4 (reach economics, inference pricing,
+Epoch AI price trends) · F6 (Null-Learner Test) · F8 (safety and privacy) · G2 (agent
+cost discipline) · K2 (the external-check finding).
