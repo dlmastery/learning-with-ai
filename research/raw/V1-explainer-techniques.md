@@ -896,3 +896,228 @@ Interactive figures were peer-reviewed artifacts, not supplements. The claim and
 manipulable demonstration were the same object, under version control.
 
 ---
+
+### 1.13 — Mass-scale exam preparation: Khan, India, China
+
+This is the largest body of explanation practice on Earth and it is almost entirely unstudied
+in English-language sources. The constraints are different — a fixed, high-stakes, timed exam;
+an audience of millions who did not choose the subject; teachers who are regional celebrities
+— and the craft that grew under those constraints is different craft, not worse craft.
+
+**T73 · Khan Academy · Remove the observer** — **A** · `OBSERVED`
+
+No face. No stage. A digital blackboard and a voice slightly off-mic. Khan's own stated
+rationale, verbatim, is not about production cost:
+
+> *"That way, it doesn't seem like I'm up on a stage lecturing down at you. It's intimate,
+> like we're both sitting at a table and we're working through something together."*
+> *"The worst time to learn something is when someone is standing over your shoulder going,
+> 'Do you get it?'"* (*WIRED*, 2011-07-15)
+>
+> *"Probably the least-appreciated aspect of this is the notion that the very first time that
+> you're trying to get your brain around a new concept, the very last thing you need is
+> another human being saying, 'Do you understand this?'"* (TED 2011)
+
+**This is the most consequential warning in the document for anyone building a responsive
+tutor**, and it comes from the person with the most learner-hours in history. The absence of
+an observer is not a limitation Khan worked around — it is a **feature he chose**, and it is in
+direct tension with the thesis of Part 3. §2.8 takes this seriously rather than dismissing it.
+Classified **A** because it is compensation for an absence, but it is the one A whose
+replacement must be built with great care.
+
+**T74 · Khan Academy · Real-time handwriting; production pace equals thinking pace** —
+**B** · `OBSERVED`
+
+The writing happens at writing speed. The learner's processing has the same clock as the
+teacher's production. Same mechanism as Numberphile's brown paper (T35) and Alakh Pandey's
+board work (T77) — **three independent inventions of pace-limiting by material constraint.**
+That convergence is the strongest `CRAFT`-level evidence in the document.
+
+> ⚠️ Two widely-repeated Khan claims are wrong and must not propagate (`N4` §5.2): the
+> "never edits, single take" line is **Clive Thompson's paraphrase in *WIRED*, not Khan's
+> words** (`UNVERIFIED`); and the ten-minute length was **not** chosen for attention span —
+> Khan Academy's own 2010 FAQ says it was chosen for *"viewing on the computer"* and for
+> **standards-mapping granularity** (`HISTORICAL`). A format constraint has been rationalised
+> as a cognitive finding for fifteen years.
+
+**T75 · Khan Academy · Granular decomposition to a mappable unit** — **C** · `HISTORICAL`
+
+*"Because of the granular nature of the 10 minute videos, the content can be mapped to almost
+any state's or nation's standards."* The atomisation exists to satisfy **an institutional
+indexing requirement**, not a cognitive one. In a system that can compose an explanation on
+demand at any granularity, the fixed unit dissolves — although the *mapping* requirement does
+not, and any real deployment still has to satisfy it.
+
+**T76 · Physics Wallah (Alakh Pandey) · The one-shot** — **C, with a B residue** · `OBSERVED`
+
+An entire chapter — sometimes an entire subject — taught in a single unbroken multi-hour
+video. This is the format that took a teacher from a Kanpur classroom to a company valued in
+the billions, and it is the exact opposite of every Western guideline about segmenting.
+
+Mostly **C**: the bundling is a distribution decision — one upload, one URL, one thing to
+share in a WhatsApp group, one artifact a student can commit an evening to. But there is a
+**B residue** that the segmenting literature misses: a chapter taught continuously preserves
+**cross-topic dependency structure inside a single working context**. Segmented delivery
+forces the learner to reload the context at every boundary, and the reload cost is real and
+unmeasured. `CRAFT` for the residue; the segmenting principle (§B1) points the other way and
+the disagreement is genuine.
+
+**T77 · Physics Wallah · Derivation at board speed, uncut, with the algebra shown** —
+**B** · `OBSERVED`
+
+The full derivation, every line, in real time, on a physical or digital board. Nothing is
+"left as an exercise" and nothing is pre-rendered. See T74.
+
+**T78 · Physics Wallah · Direct affective address as a persistence mechanism** — **A** ·
+`CRAFT`
+
+*"Bacho"* — "children." The register is not neutral-instructional; it is a specific adult
+speaking to specific young people about their futures, with anger at their circumstances and
+open belief in their capacity. Mid-lecture the content stops and a two-minute address about
+effort, family, and the exam takes its place.
+
+**This is scheduled motivational intervention, delivered blind.** He cannot see who is
+discouraged, so he addresses everyone, periodically, at a rate tuned to the modal aspirant.
+Classified **A** — and it is a large A, because in a market where the alternative was a
+coaching centre nobody could afford, the parasocial bond is a substantial part of what the
+product *is*.
+
+*Cognitive job:* persistence and belonging (§F6). Note the direction of the evidence on
+pedagogical-agent persona effects, which is weak (§B1/§F6) — but those studies measure a
+cartoon on a slide, not a person whose life story the learner knows. The comparison is not
+close and the literature does not cover this case.
+
+**T79 · Indian exam prep · The previous-year question as the unit of explanation** —
+**B** · `CRAFT`
+
+A concept is not finished when it has been explained; it is finished when it has been **cashed
+out against an actual item from an actual past exam**. The transfer target is stated,
+concrete, and public. Every concept arrives pre-attached to the form in which it will be
+tested.
+
+*Cognitive job:* this is **transfer-appropriate processing made explicit**, and it is the
+technique the Western explainer corpus most conspicuously lacks. `N4` §5.6 records that
+Kozyrkov's five-hour series contains **no quiz, exercise, or assessment anywhere**. The Indian
+format has the opposite failure mode — item-drilling that never reaches the concept — and the
+right design takes one from each. `CRAFT`.
+
+**T80 · Indian exam prep · The shortcut economy** — **B/negative** · `CRAFT`
+
+"Tricks" — procedural compressions that produce the right answer faster than the principled
+method (options-elimination heuristics, dimensional shortcuts, memorised special cases). Real
+craft, honestly optimised for a timed multiple-choice exam, and **actively harmful to
+conceptual understanding**, which is a trade the students are making knowingly.
+
+Kept in the inventory because a system serving these learners must decide explicitly whether
+to teach the trick, and pretending the trick does not work is not an option. `CRAFT`.
+
+**T81 · Live batch teaching at scale with a doubt channel** — **A, partially resolved** ·
+`OBSERVED`
+
+Unacademy, Vedantu, PW Live, and the Byju's-era live formats: a teacher streams to tens or
+hundreds of thousands of concurrent learners, with a chat and a "doubt" queue. **This is the
+field's own attempt to build the return channel**, and it is instructive precisely because it
+half-works: the channel exists, but it is one-to-N with N in the tens of thousands, so what
+comes back is a *sample of the distribution*, not this learner's state. The teacher answers
+the modal doubt. Everyone else watches someone else's question get answered.
+
+**T82 · The dual-teacher classroom (双师课堂) — the human proof-of-concept** — **B** ·
+`OBSERVED`
+
+The most important entry in this section. In the Chinese model (Xueersi/TAL, Yuanfudao,
+Zuoyebang, and the wider sector before the July 2021 "double reduction" policy largely
+dismantled private tutoring), **a star teacher delivers the explanation by live stream to many
+classrooms, and in each room a local tutor watches the actual students** — checks work, flags
+confusion, re-explains locally, manages attention, and reports back.
+
+That is exactly the architecture this repo is arguing for, implemented with humans, at
+national scale, for years:
+
+| Layer | Chinese dual-teacher | This project |
+|---|---|---|
+| Authored explanation | star teacher, streamed | curated/generated artifact |
+| Per-learner observation | local tutor, one room | model, one learner |
+| Repair | local re-explanation | re-render / branch |
+| Feedback to the author | tutor reports | telemetry to the atlas |
+
+**The design insight it delivers for free:** the two layers are *separable*, and the expensive
+one (world-class explanation) can be amortised across everyone while the cheap-per-unit one
+(watching) is what has to be local. Nobody in the English-language AI-tutoring discussion
+cites this, and it is the single strongest existing argument that the architecture works.
+`OBSERVED` for the practice; the outcome literature is thin and mostly Chinese-language.
+
+**T83 · Shadow education generally · Extreme dosage as the actual mechanism** — `OBSERVED`
+
+The uncomfortable finding lurking behind every one of these systems: a substantial part of
+their measured effect is plausibly **time-on-task at a dosage no school can match** — six-hour
+days, seven-day weeks, for two years. Any comparison of a technique against "the Indian
+coaching result" must control for dosage or it is measuring hours, not craft. Flagged here so
+that no technique in this section gets credit that belongs to the clock.
+
+---
+
+### 1.14 — Techniques nobody attributes to one person
+
+**T84 · The anticipated objection ("you might be thinking…")** — **A** · `CRAFT`
+
+Universal across the corpus. The explainer voices the learner's likely objection and answers
+it. This is **the single most common compensation technique in existence** and it is entirely
+guesswork: the explainer guesses the modal objection at the modal point, and every learner
+whose objection differs gets an answer to a question they did not have — which is *worse than
+silence*, because it introduces a doubt they were not carrying.
+
+**T85 · The deliberate false start** — **A** · `CRAFT`
+
+*"So you might try to solve it like this… and that doesn't work, and here's why."* Related to
+T4 but distinct: T4 is a genuine simplification-then-refinement; this is a **staged error**,
+performed so the learner sees the error corrected without having made it.
+
+**T86 · Modal-learner targeting** — **A** · `INFERENCE`
+
+**The invisible master-technique of the entire field, and the one nobody names.** Every choice
+in every artifact — vocabulary, assumed prerequisites, pace, how much algebra to show, whether
+to define "eigenvalue" — is a **point estimate of a distribution the explainer cannot see**.
+The artifact is pitched at an imagined median learner and is therefore, by construction, too
+fast for the bottom half and too slow for the top half, on every axis, simultaneously.
+
+Everything else in bucket A is downstream of this. The anticipated objection, the recap, the
+caveat aside, the footnote video, the "if you already know X, skip to 4:20" — all are patches
+on a single unavoidable lossy compression: **one artifact, one pitch, a distribution of
+learners.**
+
+This is what a responsive system actually removes. Not the animation. Not the voice. **The
+point estimate.**
+
+**T87 · The recap after the break; the "as we saw earlier"** — **C** · `CRAFT`
+
+Re-statement inserted at fixed intervals because the explainer cannot know whether this
+learner still has the earlier material active. A system that can ask — or that can infer from
+a two-second probe — restates only for the learners who need it.
+
+**T88 · Chapter timestamps as the navigation affordance** — **C** · `OBSERVED`
+
+The state of the art in explanation navigation is a list of labelled time offsets in a
+description box. `N4` §5.3 records that the largest channel in the class does not even provide
+those. Replaced entirely by query.
+
+**T89 · The retention-engineered cold open** — **C** · `OBSERVED`
+
+The first fifteen seconds are designed against an algorithmic retention curve, not against
+comprehension. Per T14, that curve is measuring *dull* and *too long* — the two axes on which
+the `d = 0.79` format lost. **This technique is optimising against learning and there is a
+measured trial saying so.** It dissolves the moment the artifact is not competing for a click.
+
+**T90 · Rewind as the sole repair mechanism** — **C** · `OBSERVED`
+
+When comprehension fails, the only available action is to replay the same words. `N4` §3.7
+records that when rewinding was finally tested against an outcome, **the sign was backwards**.
+The repair affordance the medium offers is not a repair.
+
+**T91 · The comment section as the return channel** — **A/C** · `OBSERVED`
+
+The listener does exist — asynchronously, self-selected, and with a latency of days to years,
+aggregated across millions, and reaching the author rather than the learner. Corrections
+surface in pinned comments and in follow-up videos (T16, T33). It is a real feedback loop
+operating at approximately 10⁻⁷ of the bandwidth of a person in a room.
+
+---
