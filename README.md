@@ -2,7 +2,7 @@
 
 **A survey of what AI-native learning has actually been measured to do — and a specification for
 what it should be.**
-<!--gen:sections-->37<!--/gen--> sections, <!--gen:words-->86,790<!--/gen--> words, built on
+<!--gen:sections-->38<!--/gen--> sections, <!--gen:words-->88,078<!--/gen--> words, built on
 ~2,100 sources.
 
 **[Read it on the web](https://dlmastery.github.io/learning-with-ai/paper.html)** ·
