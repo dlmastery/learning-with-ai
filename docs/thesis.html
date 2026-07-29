@@ -52,10 +52,11 @@ h3{font:650 15.5px/1.4 var(--sans);margin:var(--s6) 0 var(--s3)}
 <header class="hero">
   <div class="eyebrow">The core competency</div>
   <h1>Pedagogy has no <code>pytest</code></h1>
-  <p class="lede">A five-hundred-dollar-an-hour tutor for everyone, at token cost. Half of that
-  sentence is already true and the other half is bounded by <strong>one missing instrument</strong>
-  — which nobody has built, and which a human-in-the-loop operation produces as a
-  <em>by-product of operating</em>.</p>
+  <p class="lede">A five-hundred-dollar-an-hour tutor for everyone. The part people get wrong is
+  <em>"at token cost"</em> — in a human-in-the-loop model, inference is <strong>0.43% of
+  delivered cost</strong> and falling prices are economically irrelevant. The entire question is
+  leverage, and leverage is bounded by <strong>one missing instrument</strong> nobody has
+  built.</p>
   <p class="src">Everything on this page is drawn from
   <a href="paper.html">the survey</a> and traces to a labelled source. Numbers that could not
   be verified are not here.</p>
@@ -194,8 +195,15 @@ outcome is not competing on features.</p></div></div>
 evidence says the opposite, and it comes from the only trial that measured a
 human-supervised AI tutor at scale.</p>
 
-<p>Tutors accepted <strong>74.4% of 3,617 AI-generated drafts unedited.</strong> That number
-is usually quoted as an efficiency win. The interesting number is the other one:</p>
+<p>Tutors accepted <strong>74.4% of 3,617 AI-generated drafts unedited</strong> — a figure that
+verifies exactly (2,691/3,617, zero harmful messages, five factual errors). It is usually quoted
+as an efficiency win, and <strong>that reading is not supported</strong>: the authors state
+their design <em>"precludes a rigorous measurement of throughput or efficiency."</em> The
+published throughput gain comes from a <strong>six-tutor role-play simulation</strong>, and the
+labour rate underpinning its saving is cited to a tutoring marketplace's blog post.</p>
+
+<p>So take the acceptance rate as what it is — a measured <em>signal stream</em>, not a measured
+productivity gain. The interesting number is the other one:</p>
 
 <div class="claim">44.3% of tutor edits were slowing the AI's questioning down before it
 exasperated the student.</div>
@@ -295,7 +303,50 @@ that distribution and product craft did the work and the model followed. Assume 
 least partly true here — <strong>the verifier is the durable asset, and it will not save a
 product nobody uses.</strong></p>
 
-<h2>7. Which moats survive a frontier release</h2>
+<h2>7. The economics, corrected — and why "at token cost" is the wrong frame</h2>
+
+<div class="claim">Inference is <b>0.43%</b> of the delivered cost of a human-supervised tutoring
+session. Falling token prices are economically irrelevant to this P&amp;L.</div>
+
+<p>Two independent measurements converge on it. A published cost model puts tokens at
+<strong>£0.0037 of a £0.861 session</strong>. And a deployed programme's measured API bill was
+<strong>$1,419.66 for 429 tutors over two months</strong> — $19.86 per tutor per year, against a
+tutor working 200 hours at the US mean tutor wage. Same number, from two directions.</p>
+
+<p>Which retires a whole category of pitch. <em>"Our costs fall as models get cheaper"</em> is
+true and worth 0.43%. <strong>The entire margin question is the leverage ratio</strong> — how
+many learner-hours one paid tutor-hour can supervise — and that is the number nobody has
+measured.</p>
+
+<h3>The one audited comparable went the wrong way</h3>
+
+<p>A listed tutoring company rebuilt, in its own words, <em>"on entirely new, AI-native
+codebases."</em> In that year its gross margin moved <strong>67.5% → 58.0%</strong>, with expert
+costs <strong>up $5.2M on revenue down $11.2M</strong>. The following quarter recovered to
+66.2% — on price rises and expert incentives, not on AI. Its own 10-K states:</p>
+
+<div class="claim">"There can be no assurance that our investments in AI will be beneficial to
+our business."</div>
+
+<p>That is the only audited evidence of an AI-native rebuild in this exact business model, and
+it is negative. It does not mean the thesis is wrong. It means <strong>the leverage has to be
+demonstrated, not assumed</strong>, and that anyone claiming it should be asked for the ratio
+monthly.</p>
+
+<h3>Two market facts that change where you look</h3>
+
+<div class="step"><div class="n">1</div><div><p><strong>The funding wave never arrived.</strong> Summed from the education department's own
+state-level data, the reported tutoring line of the pandemic relief appropriation is
+<strong>$994.7M — 0.52%</strong> of $189.5bn. Anyone modelling a district-funded tutoring market
+on that wave is modelling something that did not happen.</p></div></div>
+
+<div class="step"><div class="n">2</div><div><p><strong>Six of six analyst houses fail traceability on the tutoring TAM</strong> — two dead
+links, one report not shown to exist, one figure internally inconsistent by three orders of
+magnitude. And the US has not measured per-pupil special-education spending since
+<strong>1999–2000</strong>. The numbers in the deck you are shown mostly do not have a source
+behind them.</p></div></div>
+
+<h2>9. Which moats survive a frontier release</h2>
 
 <p>The test that matters for any AI-native company: <em>when the next model ships, does your
 advantage survive or does it get handed to your competitors for free?</em></p>
@@ -314,7 +365,7 @@ advantage survive or does it get handed to your competitors for free?</em></p>
 
 <p>One row survives cleanly, and it is the one nobody is building.</p>
 
-<h2>8. The recursive loop — and why it is the same asset again</h2>
+<h2>9. The recursive loop — and why it is the same asset again</h2>
 
 <p>The deep-tech version of this is a system that improves its own instruction from its own
 outcome data. It is the most valuable unbuilt thing in the field, and the reason nobody has it
@@ -353,7 +404,7 @@ outcome at the frequency an optimiser needs. Build it and the loop follows; skip
 optimising plausibility at scale, which is the failure mode already documented in the field's
 leading systems.</p>
 
-<h2>9. Auto-research: one half is done, the other is not automatable</h2>
+<h2>10. Auto-research: one half is done, the other is not automatable</h2>
 
 <p><strong>Reading is solved well enough to rely on.</strong> PaperQA2 matches or exceeds
 subject-matter experts on literature synthesis, with <strong>70% of flagged contradictions
@@ -371,7 +422,7 @@ cannot accelerate their running. The realistic claim is a system that continuous
 what is known, flags where the corpus contradicts itself, and proposes the next experiment —
 which is worth a great deal and is not the same as a self-improving tutor.</p>
 
-<h2>10. Video-in: there is a legal wall, and it is in the wrong place</h2>
+<h2>11. Video-in: there is a legal wall, and it is in the wrong place</h2>
 
 <div class="kill">
   <div class="k">Prohibited, not merely regulated</div>
@@ -415,7 +466,7 @@ The limit is equally real: generated worlds get physics wrong, at <strong>39.6%<
 adherence in the best case and <strong>22%</strong> on the hard subset. <strong>Keep the world
 generative and the physics symbolic.</strong></p>
 
-<h2>11. Gamification: the moderators point away from what everyone ships</h2>
+<h2>12. Gamification: the moderators point away from what everyone ships</h2>
 
 <p>Gamification's cognitive effect is real and survives a high-rigour subsplit. The claim
 vendors actually make — <em>it keeps people coming back</em> — rests on the
@@ -446,7 +497,7 @@ economy</strong> — and no engagement metric may serve as an objective, because
 DAU and time-on-app all pass the Null-Learner Test, meaning an agent that teaches nothing can
 max them out.</p>
 
-<h2>12. The wedge: high-stakes exams are the one place the loop closes for free</h2>
+<h2>13. The wedge: high-stakes exams are the one place the loop closes for free</h2>
 
 <p>Everything above says the hard part is the third tier of the fitness function — a delayed,
 unassisted, novel-item outcome. It is slow, sparse, expensive, and it costs conversion to
@@ -489,7 +540,7 @@ aptitude–treatment interaction that survived fifty years of searching needs a 
 knowledge estimate. A closed, enumerated syllabus makes that measurable in
 <strong>15–40 seconds per topic</strong> rather than being a modelling problem.</p></div></div>
 
-<h2>13. Publishers hold the asset, and it is not the content</h2>
+<h2>14. Publishers hold the asset, and it is not the content</h2>
 
 <p>The instinct is that a publisher brings distribution and curriculum alignment. Both true and
 both replaceable. The asset that is not replaceable is buried in the psychometrics:</p>
@@ -514,7 +565,7 @@ migration, not a replacement — <strong>an addendum</strong>: the same book, wi
 loop instrumented and the diagnosis attached. It preserves their product and their channel, and
 it produces the data that makes the next edition genuinely adaptive.</p>
 
-<h2>14. What the market evidence says before you commit</h2>
+<h2>15. What the market evidence says before you commit</h2>
 
 <div class="kill">
   <div class="k">Three findings that should change the plan, not just caveat it</div>
@@ -537,7 +588,7 @@ it produces the data that makes the next edition genuinely adaptive.</p>
   company should know which one it is selling.</p>
 </div>
 
-<h2>15. The product: every book comes with a live mentor</h2>
+<h2>16. The product: every book comes with a live mentor</h2>
 
 <div class="claim">The book stays the book. What changes is the substrate underneath it.</div>
 
@@ -588,7 +639,7 @@ the three-tier fitness function from §7, fully instantiated, in one product.</p
   disagreement in the <em>explanation</em> — not the answer — treated as the alarm.</p>
 </div>
 
-<h2>16. Why it has to be the whole ecosystem, and not one publisher</h2>
+<h2>17. Why it has to be the whole ecosystem, and not one publisher</h2>
 
 <p>This is not a scale argument. It is structural, and it follows from what the asset actually
 is.</p>
@@ -667,7 +718,7 @@ page.</p>
   neutral position, is defensible against them.</p>
 </div>
 
-<h2>17. What makes it hard, which is the point</h2>
+<h2>18. What makes it hard, which is the point</h2>
 
 <p>If it were easy it would not be a moat. Three things make it hard, and all three are
 surmountable by an operator rather than by a lab:</p>
@@ -680,7 +731,7 @@ you need the delivery relationship, not just the transcripts.</p></div></div>
 <div class="step"><div class="n">c</div><div><p><strong>Decades of labelled intelligent-tutoring logs already exist and are public.</strong>
 The cold-start is smaller than it looks. The public testbed exists. Nobody has done it.</p></div></div>
 
-<h2>18. The three questions to ask any competitor</h2>
+<h2>19. The three questions to ask any competitor</h2>
 
 <div class="step"><div class="n">1</div><div><p><strong>"Show me the delayed, unassisted, novel-item outcome."</strong> Not the practice
 score, not the same items. Weeks later, device closed. ERIC returns <strong>zero records</strong>
@@ -692,7 +743,7 @@ ChatGPT</strong>, because that is what a learner has for free.</p></div></div>
 loads on already-strong learners. A healthy mean concealing a widened gap has made things
 worse.</p></div></div>
 
-<h2>19. What would kill this thesis</h2>
+<h2>20. What would kill this thesis</h2>
 
 <div class="kill">
   <div class="k">Stated in advance, so it can be checked</div>
@@ -712,7 +763,7 @@ worse.</p></div></div>
   teachers.</p>
 </div>
 
-<h2>20. The one-line version</h2>
+<h2>21. The one-line version</h2>
 
 <div class="claim">Everyone is building the tutor. The bottleneck is the examiner — and a
 human-in-the-loop operation is the only structure that produces one while it trades.</div>

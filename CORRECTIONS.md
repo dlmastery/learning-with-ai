@@ -70,6 +70,9 @@ edited — see C-12 and C-13, which are the reason this file exists.
 | **C-39** | 28 Jul | *(process)* Reported all counts derived after C-35 | **The external total was computed twice, differently** — one site counted the provenance-key legend row as a correction (17), the other did not (16) — and `sync-ledger.py`'s row regex silently dropped C-36, whose cells contain escaped pipes. Three different figures were published simultaneously: 17 of 37, 16 of 37, 15 of 36. **Truth: 16 of 37.** Now computed once, from ledger rows only | **EXTERNAL-REVIEW** |
 | **C-40** | 28 Jul | *(process)* Reported the C-37 overstatement fixed | Fixed in the section body and **not in the abstract or the README**, both of which still said *"equals"* and filed SciCode under *"where none exists"*. The correction reached one of three surfaces — the failure named in C-17, recurring | **EXTERNAL-REVIEW** |
 | **C-41** | 28 Jul | *(process)* Reported the checker hardened after C-36 | **Fifth hole: 14 rules against 37 ledger rows.** C-23 through C-37 had no rule at all — including the C-37 violation that was live in the abstract while the checker reported green. A propagation checker that only covers the first two-thirds of its own ledger is measuring its own age. Now 19 rules | **EXTERNAL-REVIEW** |
+| **C-42** | 29 Jul | *"A $500/hour tutor for everyone **at token cost**"* — published on the thesis page as the headline promise | **Wrong frame for a human-in-the-loop model.** Two independent measurements converge: inference is **0.43% of delivered session cost** (£0.0037 of £0.861; and $19.86/tutor/year measured API spend against a tutor at the US mean wage). **Falling token prices are economically irrelevant to this P&L.** The entire margin question is the leverage ratio, which nobody has measured | SELF-RESEARCH (M1) |
+| **C-43** | 29 Jul | Cited the Eedi trial's **74.4% draft acceptance** in a way that implied a measured efficiency gain | The acceptance figure verifies exactly (2,691/3,617). The efficiency reading does not: the authors state their design **"precludes a rigorous measurement of throughput or efficiency."** The published throughput gain comes from a **six-tutor role-play simulation**, and its labour rate is cited to a marketplace blog post. Treat 74.4% as a measured *signal stream*, never as measured productivity | SELF-RESEARCH (M1) |
+| **C-44** | 29 Jul | *(omission)* No audited comparable was cited for an AI-native rebuild of a tutoring business | One exists and it is negative. A listed tutoring company rebuilt *"on entirely new, AI-native codebases"* and its gross margin moved **67.5% → 58.0%**, expert costs **up $5.2M on revenue down $11.2M**. Its 10-K: *"There can be no assurance that our investments in AI will be beneficial to our business."* Omitting the only audited comparable because it is inconvenient is the failure this project exists to name | SELF-RESEARCH (M1) |
 
 ---
 
@@ -80,13 +83,13 @@ hand-maintained, which is the whole argument for generating it.*
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 15 |
+| Caught by our own research | 18 |
 | Caught by our own verification — including of our own warnings | 2 |
 | Caught by our own builders, working against their own briefs | 4 |
 | **Caught by an adversarial external reviewer** | **20** |
-| **Total** | **41** |
+| **Total** | **44** |
 
-20 of 41 were found by someone whose job was to fail us — including
+20 of 44 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the

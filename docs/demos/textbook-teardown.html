@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Teardown — one textbook page, and eight strategies against it</title>
+<meta name="description" content="A real textbook treatment of limits, torn down against the fidelity invariants, then attacked by eight strategies selected from a measured probe. The quantifier checker and the numeric falsifier run for real." />
+<link rel="stylesheet" href="demo.css" />
+<style>
+.book{background:var(--sunken);border:1px solid var(--line-2);border-radius:var(--r);
+  padding:26px 28px;margin:22px 0;font:16.5px/1.72 var(--serif);color:var(--ink);position:relative}
+.book::before{content:"TEXTBOOK · §4.2 LIMITS";position:absolute;top:-9px;left:20px;
+  background:var(--bg);padding:0 8px;font:600 10px/1 var(--sans);letter-spacing:.14em;color:var(--ink-3)}
+.book em{color:var(--ink)}
+.flag{border-left:2px solid var(--bad);padding:2px 0 2px 16px;margin:18px 0;font-size:14.5px;color:var(--ink-2)}
+.flag b{color:var(--bad);display:block;font:600 10.5px/1 var(--sans);letter-spacing:.12em;
+  text-transform:uppercase;margin-bottom:7px}
+.probe{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}
+.probe button{flex:1 1 240px;text-align:left;padding:13px 15px;font:14.5px/1.45 var(--sans)}
+.probe button.sel{border-color:var(--real);box-shadow:inset 0 0 0 1px var(--real)}
+.verdict{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px 22px;margin:18px 0}
+.verdict .lbl{font:600 10.5px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;
+  color:var(--real);margin-bottom:9px}
+.strat{border:1px solid var(--line);border-radius:var(--r);margin:11px 0;background:var(--surface);
+  overflow:hidden}
+.strat > summary{padding:15px 18px;cursor:pointer;display:grid;
+  grid-template-columns:26px 1fr auto;gap:14px;align-items:center;font:15px/1.4 var(--sans)}
+.strat > summary::-webkit-details-marker{display:none}
+.strat .i{font:400 19px/1 var(--serif);color:var(--felt)}
+.strat .ev{font:12px/1 var(--mono);color:var(--ink-3);white-space:nowrap}
+.strat[open] > summary{border-bottom:1px solid var(--line);background:var(--raise)}
+.strat .body{padding:18px}
+.strat .body p{font-size:14.5px}
+.strat .fire{font:12.5px/1.5 var(--sans);color:var(--ink-3);border-top:1px solid var(--line);
+  padding-top:12px;margin-top:14px}
+.strat.on{border-color:var(--real)}
+.strat.on .i{color:var(--real)}
+.q-out{font:13px/1.7 var(--mono);white-space:pre-wrap;background:var(--sunken);
+  border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:12px;color:var(--ink-2)}
+.pass{color:var(--good);font-weight:650}.fail{color:var(--bad);font-weight:650}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../thesis.html">The thesis</a>
+· <a href="../paper.html">The paper</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 14 · End to end</div>
+  <h1>One textbook page, and eight strategies against it</h1>
+  <p class="lede">A standard treatment of limits — the kind in every calculus text. We tear it
+  down against the fidelity invariants, then let a diagnosis select which of eight strategies
+  fires. The quantifier checker and the numeric falsifier run for real; the mentor's sentences
+  are scripted.</p>
+  <div class="chips">
+    <span class="chip m">Checkers computed</span>
+    <span class="chip d">Dialogue scripted</span>
+    <span class="chip n">Shows a documented null</span>
+  </div>
+</header>
+
+<section class="orient">
+  <div class="o"><b>What this is</b><p>A worked teardown and rebuild of one hard concept. The
+  textbook passage is representative, not quoted from any single book. Everything flagged against
+  it is a named, checkable failure — not a matter of taste.</p></div>
+  <div class="o"><b>Why it matters</b><p>Students compute limits correctly for two years and then
+  cannot understand uniform convergence. The trace goes back to two sentences nobody flagged.
+  This shows exactly which two, and what a system does instead.</p></div>
+  <div class="o"><b>How to use it</b><p>Read the passage, then open the flags. Take the probe
+  honestly — it selects the strategy. Then run the two checkers at the bottom on claims of your
+  own; they are real and they will disagree with you.</p></div>
+</section>
+
+<h2>1 · The page, as written</h2>
+
+<div class="book">
+<p><strong>Definition.</strong> We say that the limit of <em>f(x)</em> as <em>x</em> approaches
+<em>a</em> is <em>L</em>, written lim<sub>x→a</sub> <em>f(x)</em> = <em>L</em>, if
+<em>f(x)</em> gets arbitrarily close to <em>L</em> as <em>x</em> gets sufficiently close to
+<em>a</em>.</p>
+<p>Intuitively, the limit describes the value the function is <em>heading towards</em>. We do not
+care what happens at <em>x = a</em> itself — only what happens nearby. Think of walking along
+the curve towards <em>a</em>: the height you are approaching is the limit.</p>
+<p><strong>Example.</strong> lim<sub>x→2</sub> (x² − 4)/(x − 2) = 4, since we may cancel the
+factor (x − 2) to obtain x + 2, which equals 4 at x = 2.</p>
+<p class="sub" style="font:14px/1.6 var(--sans);color:var(--ink-3);margin-top:18px">
+<strong>Exercises 4.2</strong> &nbsp;1–18: evaluate each limit. &nbsp;19–22: state whether the
+limit exists.</p>
+</div>
+
+<p>Nothing there is <em>wrong</em>, exactly. It is the treatment most students meet, and most of
+them pass the exercises. Here is what it does to them.</p>
+
+<h2>2 · The teardown</h2>
+
+<div class="flag"><b>Failure 1 — quantifier strength</b>
+<p>“<em>arbitrarily close … sufficiently close</em>” is a natural-language paraphrase of
+<strong>∀ε ∃δ</strong>. It does not encode the <em>order</em>. A reader cannot recover from this
+sentence whether δ may depend on ε — and that dependency <em>is</em> the definition. It is also
+the difference between continuity and <strong>uniform</strong> continuity, which is the second
+half of a real-analysis course.</p>
+<p>This is the invariant a simplification may never falsify, and it is the one mathematics
+breaks most often. It is also <em>mechanically checkable</em> — see §5 below.</p></div>
+
+<div class="flag"><b>Failure 2 — ontological crossing</b>
+<p>“<em>heading towards</em>”, “<em>walking along the curve</em>”, “<em>approaching</em>” place
+the limit in the <strong>process</strong> category. A limit is an <strong>object</strong> — a
+number that exists.</p>
+<p>Chi's test: errors <em>within</em> a category are repairable; errors <em>across</em>
+categories are robust. Measured instance from chemistry — the Bohr-model hybrid population was
+<strong>unchanged across a full semester</strong> of university instruction. A student holding
+“limit” as a process computes correctly for years and cannot understand uniform convergence,
+because uniform convergence quantifies over a <em>space of functions</em> — which requires
+functions to be objects first.</p></div>
+
+<div class="flag"><b>Failure 3 — the example teaches the wrong skill</b>
+<p>Cancelling (x − 2) is <em>algebra</em>. It rehearses a manipulation and never touches the
+definition. A student can complete all eighteen exercises without once using ε or δ — and will,
+because the exercises are the same skill eighteen times.</p></div>
+
+<div class="flag"><b>Failure 4 — one rung, no entry point</b>
+<p>Three explanation rungs beat two (<strong>p = 0.032</strong>); five did not beat three
+(p = 0.738). This page has <strong>one</strong>, pitched at a reader who does not exist. For
+anyone above it, added exposition is measurably <em>harmful</em> — expertise reversal runs
+<strong>+0.505</strong> for novices and <strong>−0.428</strong> for experts.</p></div>
+
+<div class="flag"><b>Failure 5 — no retrieval, no spacing, no feedback, no rule</b>
+<p>Retrieval practice is <strong>g = 0.50</strong>; the page's affordance is re-reading. Spacing
+is <strong>d = 0.54</strong>; the page is linear and §4.2 never returns. The answer key says
+<em>what</em>, never <em>why</em>. And with no measurement there can be no decision rule — the
+component that, in the randomised trial, was the only thing that moved achievement.</p></div>
+
+<h2>3 · The probe that selects the strategy</h2>
+
+<p>Entry is <strong>measured, never preferred</strong> — stated preference moves at
+<em>d</em> ≈ 0.48 while knowledge moves zero. One question, fifteen seconds, and it probes the
+<em>obstacle</em> rather than the definition.</p>
+
+<div class="panel">
+  <div class="ptitle">Why can a limit exist at a point where the function is undefined?</div>
+  <div class="psub">Answer honestly. The system is not scoring you; it is choosing what to do next.</div>
+  <div class="probe" id="probe">
+    <button data-k="process">Because the function gets closer and closer to it as you approach.</button>
+    <button data-k="algebra">Because you can cancel the factor that causes the problem.</button>
+    <button data-k="object">Because the limit is about values <em>near</em> a, and never uses the value <em>at</em> a.</button>
+    <button data-k="quant">Because for any tolerance you name, I can find a neighbourhood that meets it — without using a.</button>
+  </div>
+  <div id="verdict"></div>
+</div>
+
+<h2>4 · The eight strategies, and which one fires</h2>
+
+<p>Each is a technique with a measured effect and a stated failure condition. The diagnosis
+selects; it does not run all eight. Ones the probe selected are outlined.</p>
+
+<div id="strats"></div>
+
+<h2>5 · The two checkers, running</h2>
+
+<p>These are computed. The first is the quantifier-order predicate from the teardown; the second
+is the cheap rung of the grounding ladder. Both will disagree with you if you are wrong.</p>
+
+<div class="panel">
+  <div class="ptitle">Quantifier-order check</div>
+  <div class="psub">A statement is legal iff its quantifier prefix is entailed by the formal
+  statement's. Pick a phrasing.</div>
+  <div class="row">
+    <select id="qsel">
+      <option value="AE">"for every ε there exists δ" — ∀ε ∃δ</option>
+      <option value="EA">"there exists δ such that for every ε" — ∃δ ∀ε</option>
+      <option value="NONE">"gets arbitrarily close as x gets sufficiently close" — unordered</option>
+      <option value="AEU">"for every ε there exists δ, independent of the point" — ∀ε ∃δ (uniform)</option>
+    </select>
+    <button class="pri" id="qrun">Check against the definition of continuity at a point</button>
+  </div>
+  <div class="q-out" id="qout">Ready.</div>
+</div>
+
+<div class="panel">
+  <div class="ptitle">Numeric falsification — before you prove anything</div>
+  <div class="psub">Claim a limit. The checker samples points approaching <em>a</em> from both
+  sides and reports whether your claim survives. Measured elsewhere in this project at 99.1%
+  recall on seeded errors, in 0.38–0.61 ms, with zero false alarms.</div>
+  <div class="row">
+    <select id="fsel">
+      <option value="0">(x²−4)/(x−2) as x→2, claim L = 4</option>
+      <option value="1">(x²−4)/(x−2) as x→2, claim L = 0</option>
+      <option value="2">sin(x)/x as x→0, claim L = 1</option>
+      <option value="3">|x|/x as x→0, claim L = 1</option>
+      <option value="4">(1+x)^(1/x) as x→0, claim L = 2.718281828</option>
+    </select>
+    <button class="alt" id="frun">Run</button>
+  </div>
+  <div class="q-out" id="fout">Ready.</div>
+</div>
+
+<h2>6 · What the learner leaves with</h2>
+
+<div class="scroll">
+<table>
+  <tr><th></th><th>The page</th><th>The rebuilt loop</th></tr>
+  <tr><td><b>Quantifier order</b></td><td class="fail">Unrecoverable from the text</td><td class="pass">Stated, and checked</td></tr>
+  <tr><td><b>Ontological category</b></td><td class="fail">Process — and it persists</td><td class="pass">Object, with the process語 flagged</td></tr>
+  <tr><td><b>Entry level</b></td><td class="fail">One, for nobody</td><td class="pass">Three, chosen by a 15-second probe</td></tr>
+  <tr><td><b>Retrieval</b></td><td class="fail">Re-reading</td><td class="pass">Generated, spaced, with feedback</td></tr>
+  <tr><td><b>Diagnosis on error</b></td><td class="fail">An answer key</td><td class="pass">A named misconception and the rule that fired</td></tr>
+  <tr><td><b>Evidence it worked</b></td><td class="fail">None — the failure is silent</td><td class="pass">A delayed unassisted item on a novel function</td></tr>
+</table>
+</div>
+
+<div class="note warn"><b>What this does not show.</b> That the rebuilt loop teaches better. No
+trial has compared these. The page opposite is <em>structurally incapable</em> of six things that
+are measured to work — that is a claim about the artifact, not a measured superiority of ours.
+The delayed unassisted test in the last row is the one that would settle it, and shipping it is
+the obligation this project accepts.</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../thesis.html">The thesis</a> ·
+  <a href="../paper.html">The paper</a>
+  <br /><br />Every number here is traceable in the survey.
+</footer>
+
+</div>
+<script>
+/* ─ strategies: data, not markup ─────────────────────────────── */
+const STRATS = [
+ {k:"object",   n:"Ontological repair", ev:"Chi — errors across categories are robust",
+  d:"Stop explaining the limit and change what kind of thing it is. Show two functions with identical <em>approach</em> behaviour and different values at the point; the limit is unchanged. The limit is a <b>number</b>, and the number does not consult f(a).",
+  f:"Fires when the probe shows process-category language. If the learner still says “heading towards” after two exchanges, the repair failed — escalate, do not repeat."},
+ {k:"quant",    n:"Quantifier game", ev:"the invariant that may never be falsified",
+  d:"Make ε and δ into moves. You name a tolerance; the system must produce a neighbourhood. Then reverse it. The <em>order of play</em> is the definition — and playing it makes the dependency of δ on ε unmissable.",
+  f:"Fires when the learner has the object category but cannot say whether δ depends on ε. Fails if they win the game and still cannot state the definition — that means they learned the game, not the concept."},
+ {k:"adversary",n:"The counterexample", ev:"unannounced objection only",
+  d:"Hand them 1/x on (0,1). Continuous everywhere on the interval. Ask them to find a single δ that works for every ε. They cannot — and that failure <em>is</em> uniform continuity, discovered rather than told.",
+  f:"Fires once the quantifier order is secure. Announcing it as a trick destroys it — role-played devil's advocacy measurably produces <b>bolstering</b> of the original view."},
+ {k:"numeric",  n:"Falsify before proving", ev:"99.1% recall · 0.38–0.61 ms",
+  d:"Before proving anything, substitute. Most wrong conjectures die in under a millisecond, and the habit transfers: check, then prove. This is the cheapest rung of the grounding ladder and it should be the default.",
+  f:"Always available. Never sufficient — it can refute, and it cannot establish."},
+ {k:"teach",    n:"Teach it to a protégé that stays wrong", ev:"g = 0.48 with expectancy · −0.02 without",
+  d:"The learner states the rule; an agent applies it <em>literally</em> to fresh functions and does not quietly self-correct. The gap between what they meant and what they said is the whole payload.",
+  f:"Requires the expectancy to be set <b>before</b> study — that ordering is the entire effect. Asked afterwards, it measures −0.02."},
+ {k:"ladder",   n:"Move a rung, not louder", ev:"3 &gt; 2 (p = .032) · 5 ≯ 3 (p = .738)",
+  d:"Three altitudes held as a library the learner <em>enters</em>, not a staircase they climb. Monotone refinement: a rung may drop precision and formalism. It may never falsify ontology or quantifier strength.",
+  f:"Fires on a wrong answer whose error type indicates the wrong altitude — not on any wrong answer. Re-explaining at the same rung, louder, is the failure this replaces."},
+ {k:"algebra",  n:"Decouple the skill from the concept", ev:"the exercises rehearse one thing",
+  d:"The learner who cancels fluently has a real skill and no definition. Separate the tracks explicitly: algebraic evaluation on one, the ε–δ object on the other, and never let success on the first count as evidence for the second.",
+  f:"Fires when the probe shows algebraic confidence. The trap is treating fluent computation as understanding — which the exercises are designed to reward."},
+ {k:"spaced",   n:"Return, on a schedule", ev:"d = 0.54 · gaps of 18–36 days for year-durable",
+  d:"The concept returns at a widening interval, on a novel function each time. Durability does not compress — but it is nearly free: the same items, merely split, produced the large delayed benefit.",
+  f:"Always on. The one thing here that cannot be accelerated, and the one most often dropped from a product because it costs conversion."}
+];
+const MAP = {
+  process:  {say:"Process category. The limit is a thing that <em>moves</em>. This is the robust error — it survives instruction, and it is why uniform convergence will be impossible later.", fire:["object","ladder","teach","spaced"]},
+  algebra:  {say:"Procedural confidence, no definition. You can pass the exercise set. The exercises measure algebra, and so did your answer.", fire:["algebra","object","numeric","spaced"]},
+  object:   {say:"Object category secured — the limit does not consult f(a). The open question is whether δ may depend on ε, which is where the next two years live.", fire:["quant","adversary","numeric","spaced"]},
+  quant:    {say:"Quantifier order secured, and stated without prompting. Explanation is now the wrong move — guidance measures −0.428 for learners at this level.", fire:["adversary","numeric","teach","spaced"]}
+};
+const H=document.getElementById('strats');
+function render(fire){
+  H.innerHTML = STRATS.map(s=>{
+    const on = fire && fire.includes(s.k);
+    return `<details class="strat${on?' on':''}"${on?' open':''}>
+      <summary><span class="i">${on?'●':'○'}</span><span>${s.n}</span><span class="ev">${s.ev}</span></summary>
+      <div class="body"><p>${s.d}</p><div class="fire"><b>When it fires · how it fails:</b> ${s.f}</div></div>
+    </details>`;}).join('');
+}
+render(null);
+document.getElementById('probe').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-k]'); if(!b) return;
+  [...document.querySelectorAll('#probe button')].forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel');
+  const m=MAP[b.dataset.k];
+  document.getElementById('verdict').innerHTML =
+    `<div class="verdict fade"><div class="lbl">Diagnosis · 15 seconds</div><p style="margin:0">${m.say}</p>
+     <p style="margin:10px 0 0;font-size:13.5px;color:var(--ink-3)">Selected ${m.fire.length} of 8 strategies. The other ${8-m.fire.length} are withheld — not unavailable.</p></div>`;
+  render(m.fire);
+});
+
+/* ─ quantifier-order checker (computed) ──────────────────────── */
+const TRUTH = {form:"AE", name:"continuity at a point", note:"∀ε>0 ∃δ>0 : |x−a|<δ ⟹ |f(x)−L|<ε"};
+document.getElementById('qrun').onclick=()=>{
+  const v=document.getElementById('qsel').value, o=document.getElementById('qout');
+  const R={
+   AE:{ok:true, m:"ENTAILED. Matches the definition: δ is chosen after ε and may depend on it."},
+   EA:{ok:false,m:"NOT ENTAILED — quantifiers reversed. ∃δ∀ε is strictly STRONGER and is false for most continuous functions. This is the single most common falsification in calculus exposition."},
+   NONE:{ok:false,m:"NOT ENTAILED — no order encoded. The reader cannot recover whether δ depends on ε, and the dependency is the definition. This is the textbook phrasing."},
+   AEU:{ok:false,m:"NOT ENTAILED for continuity AT A POINT — 'independent of the point' is UNIFORM continuity, a strictly stronger claim. Legal as a definition; illegal as a paraphrase of this one."}
+  }[v];
+  o.innerHTML = `target : ${TRUTH.name}\n         ${TRUTH.note}\n\n`
+    + `verdict: <span class="${R.ok?'pass':'fail'}">${R.ok?'PASS':'FAIL'}</span>  ${R.m}`;
+};
+
+/* ─ numeric falsifier (computed) ─────────────────────────────── */
+const CASES=[
+ {f:x=>(x*x-4)/(x-2), a:2, L:4, s:"(x²−4)/(x−2) → 4"},
+ {f:x=>(x*x-4)/(x-2), a:2, L:0, s:"(x²−4)/(x−2) → 0"},
+ {f:x=>Math.sin(x)/x, a:0, L:1, s:"sin(x)/x → 1"},
+ {f:x=>Math.abs(x)/x, a:0, L:1, s:"|x|/x → 1"},
+ {f:x=>Math.pow(1+x,1/x), a:0, L:2.718281828, s:"(1+x)^(1/x) → e"}
+];
+document.getElementById('frun').onclick=()=>{
+  const c=CASES[+document.getElementById('fsel').value], o=document.getElementById('fout');
+  const t0=performance.now(); const rows=[]; let worst=0, sided=[[],[]];
+  for(let k=1;k<=7;k++){
+    const h=Math.pow(10,-k);
+    for(const sgn of [1,-1]){
+      const x=c.a+sgn*h, y=c.f(x);
+      const err=Math.abs(y-c.L);
+      if(isFinite(err)){ worst=Math.max(worst,k>=5?err:0); sided[sgn>0?0:1].push(y); }
+      if(k<=3||k===7) rows.push(`  x = a ${sgn>0?'+':'−'} 1e-${k}   f(x) = ${isFinite(y)?y.toFixed(9):'undefined'}   |f−L| = ${isFinite(err)?err.toExponential(2):'—'}`);
+    }
+  }
+  const ms=(performance.now()-t0).toFixed(3);
+  const lft=sided[1].at(-1), rgt=sided[0].at(-1);
+  const twoSided = isFinite(lft)&&isFinite(rgt)&&Math.abs(lft-rgt)>1e-6;
+  let verdict, msg;
+  if(twoSided){ verdict=false; msg="REFUTED — one-sided limits disagree ("+lft.toFixed(3)+" vs "+rgt.toFixed(3)+"). No two-sided limit exists, so no value of L can be correct."; }
+  else if(worst>1e-4){ verdict=false; msg="REFUTED — |f(x) − L| does not shrink toward 0. The claimed L is wrong."; }
+  else { verdict=true; msg="SURVIVED — consistent with L on every sample. This is refutation-only: it has NOT proved the limit."; }
+  o.innerHTML = `claim  : ${c.s}\n\n${rows.join("\n")}\n\n`
+    + `elapsed: ${ms} ms\nverdict: <span class="${verdict?'pass':'fail'}">${verdict?'SURVIVED':'REFUTED'}</span>  ${msg}`;
+};
+
+const R=document.documentElement;
+document.getElementById('tt').onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+ (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+ R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+</body>
+</html>

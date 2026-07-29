@@ -3,7 +3,7 @@ title: "The Investment Case, Audited: market size, unit economics, defensibility
 wave: M
 section: M1
 date_researched: 2026-07-29
-sources_count: 58
+sources_count: 96
 status: raw-research
 ---
 
@@ -32,6 +32,9 @@ status: raw-research
 >   **`FILING` outranks every press figure in this section.**
 > - **`GOV-STAT`** — an official government statistical product with published
 >   methodology (BLS OEWS, NCES, Census, Statistics Korea).
+> - **`MEASURED`** — a directly measured *operational* quantity reported in a study
+>   (an API bill, a token count, a session duration), as distinct from a measured
+>   *learning outcome*, which keeps its `MEASURED-RCT` / `MEASURED-META` label.
 > - **`UNTRACEABLE`** — a figure in wide circulation whose primary source could not be
 >   reached, or which traces only to a paywalled report with no disclosed method. The
 >   figure is named as untraceable and **is not restated**.
@@ -560,8 +563,8 @@ tractable.**
 
 `INFERENCE` throughout. The point of showing it is that it can be attacked.
 
-| Step | US B2C | US district (K-12) |
-|---|---|---|
+| Step | US B2C parent-pay | US district (K-12) | US higher education |
+|---|---|---|---|
 | **Measured spend** | **~$4.3bn** US household test-prep-and-tutoring, 2024 (`GOV-STAT`-derived) | **$983.7bn** total K-12 expenditure FY2024; **~$32.8bn/yr** steady-state federal categorical base | **$813.1bn** US higher-ed expenditure FY2023–24 |
 | **× what is even nominally the category** | Tutoring **is** the whole line | The **reported ESSER tutoring line was $994.7m = 0.52%** of ESSER. That is the sector's own revealed allocation to this category when it had $189.5bn to spend | **Unknown** — IPEDS has no tutoring line item; $65.2bn "academic support" is a ceiling on a bucket that is mostly libraries and academic administration |
 | **× procurable by a startup** | High — a credit card | **Low** — §2.2's gate stack, 13,000 separately contracting buyers, annual re-competition | Low — faculty governance, 6–18 months |
@@ -1694,6 +1697,15 @@ commonly modelled away.
   revenue from Institutions such as schools and school districts may be adversely
   affected by decreased government funding of education… the government appropriations
   process is often slow and unpredictable."*
+- **And the underlying pot was never as large as the sector believed.** ESSER's reported
+  tutoring line was **0.52%** of a $189.5bn appropriation (§1.6). Every verifiable state
+  high-dosage-tutoring appropriation has a cliff written into it — Virginia's $418.3M
+  explicitly one-time, Colorado's programme **repealed by its own terms on 1 July 2026**,
+  Texas from $1.568bn all-funds to $30M general revenue, Louisiana's 2024 act releasing
+  boards from any obligation to fund `VERIFIED`. **The Texas mandate was legally
+  triggered by receipt of federal COVID money**, and its successor bill loosened the
+  group-size cap from three students to four — a 33% dosage reduction written into
+  statute, and a direct hit on the delivered-hours revenue of any tutoring vendor.
 
 **The modelling error to avoid:** treating a district win as ARR. It is a one-year
 contract that must be re-won inside a budget cycle whose timing you do not control, in a
@@ -1781,7 +1793,7 @@ this company needs will not be built by the incumbents.
 
 ## 9. Negative results and documented failures
 
-The section standard requires ≥4. There are ten.
+The section standard requires ≥4. There are fourteen.
 
 | # | Negative result | Evidence | Label |
 |---|---|---|---|
@@ -1795,6 +1807,10 @@ The section standard requires ≥4. There are ten.
 | N8 | **District contracts are "generally short-term in duration (one year or less)."** The switching-cost moat is contradicted by the audited comparable's own disclosure. | Nerdy 10-K FY2025 | `FILING` |
 | N9 | **The proprietary-data moat is contradicted by the data holders' own behaviour** — Eedi and ASSISTments publish their corpora under CC-BY-NC-4.0. | Hugging Face dataset API, 2026-07-29 | `OBSERVED` |
 | N10 | **A single regulation removed 62% of a tutoring company's revenue in one year**, with no return to operating profit five years on. | Gaotu Techedu 20-F | `FILING` |
+| N11 | **ESSER's reported tutoring allocation was 0.52%.** $994,662,975 across 52 grantees against a $189.5bn appropriation. The category's supposed funding wave largely did not reach it. | ED `api.covid-relief-data.ed.gov`, RY2023 | `INFERENCE` from `GOV-STAT` |
+| N12 | **No national per-pupil special-education expenditure estimate has been produced since reference year 1999–2000.** NCES runs no such survey; Census F-33 has no breakout. | ERIC ED481398; NCES data-collection programme list | `OBSERVED` (documented absence) |
+| N13 | **Six of six analyst houses fail traceability on the tutoring TAM.** Two return 403/404; one report could not be shown to exist; one published figure is internally inconsistent by three orders of magnitude; none publishes a sample frame. | §1.2 | `UNTRACEABLE` |
+| N14 | **Every verifiable state high-dosage-tutoring appropriation has a cliff in it.** Virginia $418.3M explicitly one-time; Colorado's programme repealed by its own terms on 1 July 2026; Texas from $1.568bn all-funds to $30M general revenue; Louisiana's 2024 act released school boards from any obligation to fund. And the Texas mandate was legally triggered by receipt of federal COVID money. | State statutes and appropriations acts | `VERIFIED` |
 
 ---
 
@@ -1819,8 +1835,12 @@ anywhere above.
 | Duolingo's absolute AI / inference spend | Bundled inside cost of revenues with payment processing and hosting; not separately quantified |
 | MagicSchool AI, Speak, Ello round sizes | **No EDGAR presence at all** — no Form D, no CIK. All circulating round sizes are press-only |
 | Khan Academy FY2024–FY2025 financials | Latest public Form 990 is FY2023. **The largest AI-tutoring deployment in the world has no post-launch-scale audited financials in the public record** |
-| Average district contract value / K-12 AI enterprise ACV / higher-ed tutoring licence pricing | No aggregate primary source reachable (§2.4) |
-| National US per-pupil special-education expenditure | See §1.6 — the only national estimate is a quarter-century old |
+| Average district contract value / K-12 AI enterprise ACV | No aggregate primary source reachable (§2.4) |
+| **US higher-education tutoring spend** | **IPEDS has no tutoring line item.** "Academic support" ($65.2bn) is a bucket spanning libraries, museums, academic computing and academic administration. Any higher-ed tutoring TAM is a construction |
+| **National US per-pupil special-education expenditure, post-2000** | The only national estimate is SEEP, reference year 1999–2000. NCES runs **no** special-education expenditure survey; Digest tables break out by function only; Census F-33 has no breakout (§1.6) |
+| **Tennessee TN ALL Corps "$200 million"** | Not verifiable from any Tennessee state source. TDOE says only that the programme was "initially supported by ESSER" |
+| Cumulative multi-year ESSER tutoring spend | ED's reporting year 2022 has **no tutoring line item at all**, so no multi-year total is constructible from the published data |
+| ESSER SEA-reserve tutoring spend | ED's SEA-reserve API endpoint returns **403**; the $994.7m figure covers **LEA mandatory subgrants only** |
 
 ### 10.2 Retrieval failures, with status codes
 
@@ -1842,6 +1862,15 @@ anywhere above.
 | `ftc.gov` | **403** to curl and WebFetch | Browser User-Agent |
 | AICPA SOC 2 Type 1 / Type 2 definitions | Paywalled | **Not cited.** Flagged as needing the purchased Guide |
 | FTC *"Policy Statement Concerning the Suppression of Accuracy in AI Systems"* (7 Jul 2026) | Federal Register listing retrieved; **text not fetched** | Flagged `UNVERIFIED`; not used as evidence |
+| `nces.ed.gov/programs/digest/d24/tables/dt24_236.10.asp` (and `dt24_204.30`, `dt24_236.55`, `dt24_334.10`) | **404** | **The Digest 2024 edition omits the finance and IDEA chapters entirely.** Use `d23` or `d25` |
+| `www2.ed.gov/about/overview/budget/budget2{4,5,6}/summary/appendix1.pdf`; `www2.ed.gov/fund/data/award/idea/index.html` | **404** | ED migrated off `www2`; use `ed.gov/.../budget-tables` and the Congressional Justification PDFs |
+| `crsreports.congress.gov/product/pdf/R/R41833` | **403** to curl **and** WebFetch; `sgp.fas.org` mirror returned 202/empty | Not used |
+| `gao.gov` search/browse | **403** on all paths | GAO evidence reported as unavailable |
+| `congress.gov/bill/...` | **403** to WebFetch | **govinfo.gov works** — use `PLAW-*` packages for enacted statutes |
+| `data.ed.gov/dataset/...` (IDEA §618 static tables) | **403** to WebFetch | NCES Digest / Condition of Education used instead |
+| `api.census.gov`; `www.census.gov` | timeout, then recovery | Data obtained from `www2.census.gov` XLSX directly |
+| `statutes.capitol.texas.gov` | JS shell, no statute text | Use `capitol.texas.gov/tlodocs/…` enrolled-bill text |
+| `api.covid-relief-data.ed.gov/.../sea-reserve/...` | **403** | LEA mandatory-subgrant endpoint used; limitation stated in §1.6 |
 
 ### 10.3 Corrections this section makes to the corpus
 
@@ -1855,6 +1884,10 @@ anywhere above.
 | **M1-C6** | The tutoring meta-analytic pooled effect is **0.288 SD** (Nickow, Oreopoulos & Quan, *AERJ* 2023, doi:10.3102/00028312231208687). The widely quoted **0.37 SD** is the **superseded 2020 NBER working paper** (w27476), whose abstract this section retrieved and confirms says 0.37. A deck citing 0.37 is citing a working paper | Both documents retrieved |
 | **M1-C7** | **Pearson has not stopped filing with the SEC.** It remains an SEC registrant and NYSE-listed (PSO), with an unbroken 20-F series; FY2025 20-F filed 2026-03-13 | EDGAR submissions metadata |
 | **M1-C8** | **SDPC's National Data Privacy Agreement is at v2.2 (19 Nov 2025)**, and **1EdTech certification requires active membership plus annual recertification** — both are recurring obligations, not one-time artefacts | a4l.org, 1edtech.org |
+| **M1-C9** | **Colorado's high-impact tutoring statute is HB21-1234, not HB22-1202.** The signed HB22-1202 is an at-risk school-finance measure appropriating $163,338 GF for nutrition and school-finance administration and has nothing to do with tutoring. The programme it created (C.R.S. Art. 105, $4,981,720) is **repealed by its own terms effective 1 July 2026** | Signed bill texts, leg.colorado.gov |
+| **M1-C10** | **The Texas high-dosage-tutoring mandate was legally conditioned on receipt of federal COVID money.** Tex. Educ. Code §28.0211(a-4) as enacted by HB 4545 opens *"If a district receives funding under Section 29.0881 … the Coronavirus Response and Relief Supplemental Appropriations Act, 2021 … or the American Rescue Plan Act of 2021, then …"*. HB 1416 (88R) broadened the trigger to state streams **and simultaneously loosened the group-size cap from three students to four** | Enrolled bill texts, capitol.texas.gov |
+| **M1-C11** | **Pandemic relief did not fund tutoring at the scale the sector believes.** ED's own state-reported "Tutoring" line for reporting year 2023 sums to **$994,662,975 across 52 grantees — 0.52% of the $189.5bn ESSER appropriation.** ED publishes the per-state values and no national roll-up; caveats in §1.6 | `api.covid-relief-data.ed.gov` |
+| **M1-C12** | **The two independent US school-finance series agree.** NCES SY2022–23 current per-pupil **$16,560** vs Census F-33 FY2023 **$16,526** — 0.21% apart. Where a market *is* measured, independent measurements converge. That is the contrast §1.2 exists to draw | NCES Digest 2025; Census F-33 |
 
 ---
 
@@ -1905,11 +1938,36 @@ Fund 10-Q (CIK 1803498, Byjus Alpha position) · EDGAR full-text search (`efts.s
 **Government statistics (`GOV-STAT`).** BLS Occupational Employment and Wage Statistics,
 May 2025, `oesm25nat.zip` and `oesm25st.zip`, SOC 25-3041 · BLS Consumer Expenditure
 Survey, UCC 670903, via `api.bls.gov` v2 and `download.bls.gov/pub/time.series/cx/` ·
+**US Census Bureau, Annual Survey of School System Finances (F-33), FY2024**
+(`www2.census.gov/programs-surveys/school-finances/tables/2024/…/elsec24_sumtables.xlsx`)
+· **NCES Digest of Education Statistics 2025**, tables 235.10, 236.10, 236.55, 334.10,
+334.30, 334.50; **Digest 2023** table 204.30; *Condition of Education* indicators on
+public school expenditures and students with disabilities · **ED FY2027 Congressional
+Justification, Special Education** (appropriations history; federal share of APPE) and
+FY2024 Congressional Action table · **ED ESSER Annual Performance Report API**,
+`api.covid-relief-data.ed.gov/reporting-v2/esser/mandatory-subgrants/{STATE}/{YEAR}` ·
 Ministry of Data and Statistics (Korea) & MoE, *Private Education Expenditures Survey…
 2025*, Designated Statistics No. 920011 · MEXT (Japan), 子供の学習費調査 FY2023 ·
-World Bank indicator API `SE.XPD.TOTL.GD.ZS` · USAspending.gov award API ·
-IRS Form 990 via ProPublica Nonprofit Explorer API (Khan Academy EIN 26-1544963; Zearn
-EIN 37-1665745; CommonLit EIN 46-4255260).
+World Bank indicator API `SE.XPD.TOTL.GD.ZS` · USAspending.gov award and
+`spending_over_time` APIs · IRS Form 990 via ProPublica Nonprofit Explorer API (Khan
+Academy EIN 26-1544963; Zearn EIN 37-1665745; CommonLit EIN 46-4255260).
+
+**US statutes and appropriations (`VERIFIED`, via govinfo.gov `PLAW-*` packages and
+state legislature bill text).** CARES Act §§18001, 18003 (P.L. 116-136) · CRRSA §§311,
+313 (P.L. 116-260) · ARP §2001 (P.L. 117-2, 135 Stat. 19) · P.L. 118-47 · P.L. 119-4 ·
+**P.L. 119-75** (Further Consolidated Appropriations Act, 2026, signed 3 Feb 2026) ·
+IDEA §611(a)(2)(A), 20 U.S.C. §1411 · GEPA §421(b), 20 U.S.C. §1225(b); 2 C.F.R.
+§200.344(c) · ED Secretary's letters of 28 Mar 2025 and 26 Jun 2025 on ESF liquidation;
+*New York v. U.S. Dep't of Education*, No. 1:25-cv-02990-ER (S.D.N.Y.) · Tex. Educ. Code
+§§28.0211, 29.0881 (HB 4545, 87R; HB 1416, 88R) · Va. HB/SB 6001, 2023 Spec. Sess. I,
+Ch. 1 · La. R.S. 17:100.13, 17:4032.1 (Acts 771 and 649, 2024) · Colo. HB21-1234,
+HB23-1231 · Tenn. Code Ann. §49-6-1507.
+
+**Special education expenditure.** Chambers, Shkolnik & Perez, *Total Expenditures for
+Students with Disabilities, 1999–2000: Spending Variation by Disability*, SEEP Report 5,
+AIR/CSEF, June 2003, ED/OSERS contract ED99C00091 — ERIC **ED481398**; and *What Are We
+Spending on Special Education Services in the United States, 1999–2000?* — ERIC
+**ED471888**.
 
 **Legal instruments (`VERIFIED`).** Regulation (EU) 2024/1689 (AI Act), Arts. 50, 99,
 113, Annex III(3), via EUR-Lex CELEX:32024R1689 · Regulation (EU) 2026/1744 (Digital
