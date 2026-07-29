@@ -2,7 +2,7 @@
 title: "The Technique Inventory — what the world's best explainers invented, which half of it is scar tissue from not being able to see the learner, and what replaces it"
 wave: V
 date_researched: 2026-07-29
-sources_count: 0
+sources_count: 118
 ---
 
 # V1 — The Technique Inventory
@@ -2685,3 +2685,223 @@ Stated plainly, because a specification without a falsifier is a wish:
    it should be deleted rather than defended, because a tutor nobody finishes teaches nothing.
 
 ---
+
+## §4 — The inventory table
+
+**This table is the point of the document.** 104 rows: 95 techniques with bucket assignments,
+plus 9 evidence/finding rows marked `—` that carry no bucket but are load-bearing for decisions
+elsewhere.
+
+**Columns.** `#` · **Technique** · **Who** · **Bucket** (A compensation / B intrinsic /
+C medium-constraint / D authored-invariant) · **What it does** · **What replaces or extends it
+in a responsive system** · **What it needs** · **Build?** (`yes` = shippable now,
+`part` = pieces exist, integration or assets missing, `no` = requires research).
+
+| # | Technique | Who | B | What it does | Replacement / extension | Needs | Build? |
+|---|---|---|---|---|---|---|---|
+| T1 | Continuous transformation preserves referential identity | 3b1b | **B** | Morph, never cut, so the learner never re-binds referents | Same, generated; morph *between the learner's model and the correct one* | Parameterised scene graph; interpolation between two models | part |
+| T2 | Colour as persistent variable binding | 3b1b | **B** | Offloads symbol→referent lookup to perception | Same, plus **decay the scaffold as fluency rises** (signaling shows expertise reversal) | Fluency estimate per symbol | part |
+| T3 | Obstacle before machinery | 3b1b | **B** | Delays named machinery to 31–83% of runtime | Obstacle chosen from *this* learner's stated difficulty | Difficulty elicitation | yes |
+| T4 | Naive-flawed-then-refine | 3b1b | **B** | Manufactures a gap, then fills it | The naive solution is **the learner's own** (§3.2) | Misconception→parameter map | part |
+| T5 | Reinvent the notation rather than present it | 3b1b | **B** | Definition arrives as forced, not arbitrary | Same; branch on which constraint the learner accepts | Derivation graph | part |
+| T6 | Spared-pain callback ("this would have felt out of the blue") | 3b1b | **A** | Narrates that the structure worked | **Check empirically instead of asserting rhetorically** | A probe | yes |
+| T7 | "Pause and ponder" (34 videos) | 3b1b | **A** | Requests prediction before reveal; compliance unobservable | **Enforced gate** (§3.1). Gate only load-bearing steps; accept guesses | Gate placement policy | yes |
+| T8 | Manim as authored language; parameterisation discarded at render | 3b1b | **C** | Explanation is a program, collapsed to one evaluation | **Keep the parameters open.** Highest-value C in the document | A substrate that ships the model, not the frames | yes |
+| T9 | Example-density floor (one example, four minutes) | 3b1b | **B** | Depth over coverage | Density set per learner; more examples only where the first failed | Per-example mastery signal | yes |
+| T9a | Choosing an explorable over a video (quaternions) | 3b1b + Eater | **C** | The field's own admission of where video stops | It is already the target substrate | — | yes |
+| T10 | SoME as technique-discovery engine | 3b1b | **D** | Combinatorial search over explanation designs, human-judged | Generate-and-evaluate at machine scale (§3.12) | An outcome-linked grader | part |
+| T11 | Street-interview misconception elicitation | Veritasium | **A** | Surfaces the modal wrong model as a proxy for asking you | **Elicit this learner's model 30 s earlier** (§3.3) | Elicitation surface + classifier | yes |
+| T12 | Refutation — name the wrong belief, mark it wrong | Veritasium | **B** | `d = 0.79` vs matched exposition; meta `g = 0.28` adjusted | Same, targeted at the named misconception rather than the modal one | Misconception inventory per concept | yes |
+| T13 | Dialogue confederate holding the misconception | Veritasium | **A** | `d = 0.83`; a manufactured listener | Learner's own answer — **with deferred attribution** (§2.4) | Affect-ordering policy | yes |
+| T14 | The felt/real dissociation on his own format | Veritasium | **—** | Perceived learning flat (5.7/5.6) while actual differed `d = 0.71`; better explanation felt duller and too long | Never optimise on satisfaction; pre-register the felt items | — | — |
+| T15 | Engineered adjudication at absurd scale | Veritasium | **B** | Makes the physical world the referee | Simulation as referee, parameterised by the learner (§3.14) | Executable models of rival accounts | part |
+| T16 | Public self-refutation | Veritasium | **B** | Models epistemic revision as routine | Same — and now *auditable*: retract to the learners who saw v1 (§3.10) | Per-learner claim ledger | part |
+| T17 | The simulation **is** the argument | Primer | **B** | Conclusion emitted, not asserted; author gives up control | Same, with the learner setting the rules | Correct generated models | part |
+| T18 | Generations as the exposition's timeline | Primer | **B** | The narrative clock is the model's clock | Learner controls the clock; system controls the stopping point | Time-control API | yes |
+| T19 | Ablate a parameter, re-run, show the regime change | Primer | **B** | Shows the family, not the instance | Continuous; the learner holds the parameter (§3.5) | Parameter sweep + regime detection | part |
+| T20 | Minimally-anthropomorphic agents ("blobs") | Primer | **B** | Prevents the teleology misconception by visual constraint | Same discipline applied to generated agents | A style constraint in the generator | yes |
+| T21 | Build from nothing, in real time, nothing hidden | Eater | **B** | Collapses felt distance to the target system | **Stops at the node you cannot predict** (§3.4) | Executable prerequisite DAG | part |
+| T22 | The instrument as ground truth | Eater | **B** | Warrant is external, not narratorial | Learner-runnable measurement in the artifact | Instrumented simulations | part |
+| T23 | Debug on camera; the diagnosis is the content | Eater | **B** | Makes expert troubleshooting visible | **Debug the learner's own broken artifact**, live | Learner artifact + fault localisation | part |
+| T24 | Physical instantiation of an abstraction | Eater | **B** | Abstraction and implementation in one frame | Same, in simulation, with the learner able to cut a wire | Manipulable structural models | part |
+| T24a | Reddit-upvote topic queue | Eater | **A** | Crude aggregate demand signal, honestly labelled | Per-learner demand, continuously, without a poll | Intent + gap telemetry | yes |
+| T25 | The visible iteration loop (v1 is bad and you see it) | Lague | **B** | Corrects "experts produce finished work in one pass" | Same, plus **the learner's v1 in the sequence** | Version capture | yes |
+| T26 | Failure retained as content, not as blooper | Lague | **B** | Frames failure as method | Same; the governor must not delete the learner's failures either (§3.7) | Withholding policy | part |
+| T27 | The executable artifact (code shipped, 1 repo per video) | Lague | **B** | Explanation runnable after it ends | Native: the artifact *is* the runnable thing | Sandbox | yes |
+| T28 | Spectacle → principle | Rober | **B** | Constructs a situation in which the concept is forced | Simulated set-piece at zero marginal cost; keep it **transient** (coherence: persistent `g = 0.43` vs transient `0.12 n.s.`) | Cheap high-production simulation | part |
+| T29 | Stakes-first cold open | Rober | **A** | Buys attention from an uncommitted viewer | Mostly unnecessary — the learner arrived on purpose | — | yes |
+| T30 | Consequence-bearing test (a real target that can win) | Rober | **B** | Distinguishes demonstration from rigged demo | Adversarial simulation the learner can try to break | Falsifiable models | part |
+| T31 | The apparatus that refuses to behave | Mould | **B** | Cognitive conflict delivered by an object | **Conflict guaranteed by construction** (§3.2) | Misconception→parameter map | part |
+| T32 | Two-explanation shootout + discriminating experiment | Mould | **B** | Teaches hypothesis discrimination, not the answer | Same, generated per disagreement in the corpus (§3.14) | Claim extraction + conflict detection | part |
+| T33 | Self-refutation across a 13-year thread | Mould | **B** | An explanation improved by public adversarial pressure | Corpus-level: the atlas revises under evidence | Versioned explanation store | part |
+| T34 | The interviewer as designated novice | Numberphile | **A** | Asks the question the viewer cannot | **The learner asks.** The cheapest A to retire | Nothing | yes |
+| T35 | Brown paper — rate-limiting the expert | Numberphile | **B** | Medium enforces a followable pace | Pace slaved to demonstrated processing rate, not to a material | Processing-rate estimate | part |
+| T36 | Unscripted generation, hesitation retained | Numberphile | **B** | Shows mathematics being done, at its real speed | Same; deliberately expose the model's search, not only its answer | Reasoning-trace surfacing | part |
+| T37 | One expert, one concept, no institutional frame | Numberphile | **D** | The unit of publication is *interesting*, not *curricular* | Curate. No learner model produces Graham's number | Library + taste | yes |
+| T38 | The scale ladder (chained familiar anchors) | Kurzgesagt | **B** | Makes an ungraspable magnitude representable stepwise | Anchors drawn from **this learner's known referents** | Per-learner referent inventory | part |
+| T39 | Metaphor with a published per-claim source graph | Kurzgesagt | **B** | Lets a metaphor take risk without installing a false model | **Boundary rendered inline at the sentence it qualifies** | Claim→source graph; `nutshell`-style expansion | yes |
+| T40 | Aesthetic constancy as retrieval cue (the birds) | Kurzgesagt | **D** | Consistent visual grammar; also a seductive-details risk | Curate. Do not generate a house style and call it pedagogy | — | yes |
+| T41 | Emotional frame baked around a factual payload | Kurzgesagt | **A** | Motivational framing pitched at a modal emotional state | Delivered **when discouragement is detected**, not on a schedule | Affect signal | part |
+| T42 | Definitional destabilisation | Vsauce | **B** | Turns an over-confident concept into a live problem | Attack the definition **the learner actually holds** | Definition elicitation | yes |
+| T43 | The tangent chain | Vsauce | **A** | Attention maintenance against drop-off | Detect disengagement; or let the learner take the tangent | Engagement signal | yes |
+| T44 | Host fails publicly at a motor task (backwards bicycle) | SmarterEveryDay | **B** | Unarguable knowledge-vs-ability dissociation | **Continuous calibration measurement** (§3.11) | Confidence + performance probes | yes |
+| T45 | The instrument that changes the timebase (high-speed) | SmarterEveryDay | **B** | Moves a phenomenon into the perceptual band | Learner-controlled timebase on any simulated process | Time-scaling in the substrate | yes |
+| T46 | Reproduce the canonical apparatus in a garage | Applied Science | **B** | Converts institutional knowledge into reachable knowledge | Serve the BOM to the 1-in-6 who want it, not to everyone | Intent classification (§3.13) | yes |
+| T47 | Instrument before claim | Applied Science | **B** | Validates the measurement against a known before measuring the unknown | Same, as a required step in generated demonstrations | Generator constraint | yes |
+| T48 | The useful lie, declared | CGP Grey | **B** | Attaches level-of-abstraction metadata to a simplification | **Retractable across sessions** (§3.10) — the missing infrastructure | Per-learner abstraction ledger | no |
+| T48a | Retroactive A/B retitling of published videos | CGP Grey | **C** | Optimises the artifact's *name* against click-through | Dissolves. **Key any atlas on video ID, not title** | — | yes |
+| T49 | The footnote video (second artifact for the pedants) | CGP Grey | **C** | Serves a bimodal audience by shipping two artifacts | **Inline expansion.** Already built: `ncase/nutshell` | Expansion UI | yes |
+| T50 | Invented concrete referents for abstract systems | CGP Grey | **D** | Gives a system a fictional but consistent physical instantiation | Curate. Generated metaphors are the median of the corpus | Library | yes |
+| T51 | Standing where it happened | Tom Scott | **B** | Grounds the claim by co-presence with the referent | Grounding in the learner's own environment (camera, location) | Multimodal input | part |
+| T52 | Do it the stupid way, at scale | Stand-up Maths | **B** | Makes an algorithm's cost physically felt | Run the naive algorithm at absurd N and let the learner watch it not finish | Cheap simulation | yes |
+| T53 | Explanation at the speed of thought, against the pacing norm | Vihart | **D** | Rejects the modal-pacing compromise for a specific register | Curate. No optimiser produces this | Library | yes |
+| T54 | History as the scaffold | Welch Labs | **B** | Legitimises the learner's confusion — the field had it too | Same, selected to match *the learner's specific* stuck point | Concept→historical-obstacle map | part |
+| T55 | Live coding with errors retained; read the error aloud | Coding Train | **B** | Turns the feared object into an information source | Same, on the learner's own errors, immediately | Error interpretation | yes |
+| T56 | Build the whole thing from zero in a notebook | Karpathy | **B** | Nothing imported that has not been built | **Halts at your actual gap** (§3.4) | Prerequisite DAG | part |
+| T57 | Empirical adjudication *between* explainers | AlphaPhoenix | **B** | The corpus becomes self-correcting via third-party measurement | System function over the whole corpus (§3.14) | Claim extraction | part |
+| T58 | Scale-model failure (build a dam, break it) | Practical Engineering | **B** | Reproduces a failure too dangerous to stage | Simulated failure with learner-set parameters | Physics simulation | yes |
+| T59 | The reference work that is not an explanation | Org Chem Tutor | **B** | Lookup surface; lowest first-decile replay mass (0.081 vs 0.291) | **Intent classification** — serve index or lesson (§3.13) | Query-intent classifier | yes |
+| T60 | One manipulable figure per claim, adjacent to it | Ciechanowski | **B** | Contiguity past the limit the literature has tested | Generated at ≥1 figure per 4 paragraphs (§3.8) | Correct widget generation | part |
+| T61 | Progressive degrees of freedom (one control at a time) | Ciechanowski | **B** | Load management by DOF sequencing; the thing generators get wrong | Same, with the schedule derived from the model's dependency order | Automatic DOF ordering | no |
+| T61a | **Manipulate first, explain second** — 30–120× per article | Ciechanowski | **B** | Prediction-before-reveal with no clock and no request to pause | **The highest-transferability pattern in the document** (§3.8) | Widget generation + ordering | part |
+| T62 | The reader generates the counterexample | Ciechanowski | **B** | Self-administered refutation; **no confession cost** | Generated-minimal counterexample from the learner's claim (§3.6) | Formal falsification search | part |
+| T63 | No clock | Ciechanowski | **C** | Dwell time unbounded; every pacing technique becomes moot | Native to the substrate | — | yes |
+| T64 | 22 articles in 11 years, from a weekend hobby | Ciechanowski | **—** | The authoring-cost argument for generation, stated by the practitioner | — | — | — |
+| T65 | The reactive document | Victor | **B** | Live numbers in prose; four reading depths from one artifact | Depth chosen per learner rather than per reader-intent | Reactive text engine | yes |
+| T65a | Victor's 2024 retraction of what the term became | Victor | **—** | "A written argument… whose facts, assumptions and calculations are visible and editable. **The reader rebuts by modifying the models**" | Reframes interactivity as a **rebuttal channel**, not a comprehension aid | — | — |
+| T66 | Up and down the ladder of abstraction | Victor | **B** | Makes abstraction a navigable direction; stepping down matters as much as up | **Rung chosen by where predictions fail** (§3.5) | 3-level representations + correspondence map | no |
+| T67 | Contextual information on demand | Victor | **B** | Definition, provenance, instance — one hover away, in place | Same; already shipped as `ncase/nutshell` | Expansion UI | yes |
+| T68 | The mechanic carries the argument (Parable of the Polygons) | Case | **B** | The learner *produces* the result and cannot dismiss it | Same, with the learner's own parameters and their own data | Playable models | part |
+| T69 | Lose first, then learn why (Evolution of Trust) | Case | **B** | Productive failure actually experienced, not watched | Governed so the loss completes before help arrives (§3.7) | Struggle/flounder classifier | part |
+| T69a | **Invisible scaffolding** — guidance you cannot detect | Case | **B** | Resolves agency-vs-guidance: constrain the space, not the learner | **The design answer to §2.9** and to Khan's observer objection (§2.8) | Constraint design in the generator | part |
+| T69b | Manipulate the rules, not the sliders | Case | **B** | Lets the learner change the model, not just its parameters | Direct manipulation of model structure | Editable model representation | no |
+| T69c | Expandable explanations (`nutshell`, 620★) | Case | **B** | Recursive in-place expansion; no navigation | Replaces T49 and T39's external documents outright | — | yes |
+| T70 | Hand over authorship at the end ("now make one") | Case | **B** | Learning by teaching; `g = 0.48` **with** teaching expectancy, `−0.02` without | Same — and **the expectancy must be real**, not simulated | A genuine audience for the learner's artifact | part |
+| T71 | "Research debt" named and decomposed | Distill | **—** | Poor exposition · bad abstractions · undigested ideas · unavailable tools · noise | The five components are five separate product surfaces | — | — |
+| T72 | The diagram as the paper's argument, publicly peer-reviewed | Distill | **B** | Claim + manipulable demonstration + review as one versioned object | Same, per explanation, per learner cohort | Versioned artifact store | part |
+| T72a | Idyll dead since 2023; Manim 88,991★ vs Idyll 2,036★ | tooling | **—** | The better substrate was abandoned at the authoring layer | **That layer is what generation is for** | — | — |
+| T73 | Remove the observer (no face, no stage) | Khan | **A** | Removes time-cost guilt and embarrassment — *learners chose it* | **Silent by default; probe the manipulation, not the learner; allow opt-out** (§2.8) | Long default intervention latency | yes |
+| T74 | Real-time handwriting — production pace = thinking pace | Khan | **B** | Three independent inventions of pace-limiting by material constraint | Pace slaved to the learner's demonstrated rate | Processing-rate estimate | part |
+| T74a | The mastery gate ("10 in a row") | Khan | **B** | Progression gated on production, not time; **+0.031 SD at 11 min/wk, linear to +0.085, regressive** | Gate on transfer, not repetition; watch the regressivity | Generated item bank + transfer items | yes |
+| T75 | Granular decomposition for standards mapping | Khan | **C** | An institutional indexing requirement, not a cognitive one | Compose at any granularity on demand; keep the mapping as an export | Standards crosswalk | yes |
+| T76 | The one-shot / marathon (11 h 54 m, 4.3M views) | Physics Wallah | **C** | Bundling as distribution; a **B residue** in preserved cross-topic context | Continuous context with no artifact boundary at all | Session-level context | yes |
+| T77 | Derivation at board speed, uncut, every line shown | Physics Wallah | **B** | Nothing "left as an exercise"; nothing pre-rendered | Same, with steps the learner has mastered collapsed | Step-level mastery | part |
+| T78 | Affective address as the persistence mechanism | Physics Wallah | **A** | Hinglish access, voice modulation, vernacular mnemonics, family framing, ritual | Targeted, rare, and honest about what it is | Affect signal + a register the learner accepts | part |
+| T79 | The previous-year question as the unit of completion | Indian exam prep | **B** | Transfer target stated, concrete, and public | Same, generated per learner from live item pools | Item pool + transfer alignment | yes |
+| T79a | Coaching pedagogy displacing school pedagogy (Punjabi 2019) | Indian exam prep | **—** | The format won on prestige, on an axis nobody measured | — | — | — |
+| T80 | The shortcut economy ("tricks") | Indian exam prep | **B(neg)** | Procedural compression that wins the exam and costs the concept | **Decide explicitly.** Teach the trick *and* mark it as a trick (T48) | Abstraction-level metadata | yes |
+| T81 | Live batch teaching with a doubt channel | Unacademy / Vedantu / PW | **A** | A return channel with N ≈ 10⁵ — answers the modal doubt | A return channel with N = 1 | — | yes |
+| T82 | **The dual-teacher classroom (双师课堂)** | China | **B** | Star teacher streams; local tutor watches one room. The human proof-of-concept | **§3.9 — the architecture.** Authored artifact + per-learner observer | Anchored artifact semantics + observer + telemetry | part |
+| T82a | Double reduction (2021): −84% institutions, 10M jobs, depression 9.9%→9.4% | China | **—** | A state deleted the sector and mental health moved half a point | The pressure was never in the tutoring | — | — |
+| T83 | Extreme dosage as the actual mechanism | shadow ed | **—** | Linear dose-response with no plateau is a clock effect, not a craft effect | Control for dosage or you are measuring hours | — | — |
+| T83a | The Kota suicide cluster (32 in 2023; 44.45% high stress) | shadow ed | **—** | These techniques were invented in an environment that kills some children in it | Port the techniques; do not port the intensity | — | — |
+| T84 | The anticipated objection ("you might be thinking…") | universal | **A** | Pre-answers the modal objection; plants doubts in everyone else | **Answer the objection actually raised; stay silent otherwise** | Objection detection | yes |
+| T85 | The deliberate false start | universal | **A** | Stages an error so the learner sees it corrected without making it | Let the learner make it — guessing is `g = 0.65` vs `0.22` | Prediction gate | yes |
+| T86 | **Modal-learner targeting** | universal | **A** | The master compensation: a point estimate of an unseen distribution | **The point estimate becomes a measurement.** Everything else in A is downstream | A learner model that is actually used | part |
+| T87 | Scheduled recap / "as we saw earlier" | universal | **C** | Restates at fixed intervals for learners who may have lost it | Restate for the ones who did | Retention signal | yes |
+| T88 | Chapter timestamps as the navigation affordance | universal | **C** | The state of the art in explanation navigation is a list of time offsets | Query | Semantic index | yes |
+| T89 | The retention-engineered cold open | universal | **C** | Optimises against *dull* and *too long* — the axes the `d = 0.79` format lost on | Dissolves when the artifact is not competing for a click | — | yes |
+| T90 | Rewind as the sole repair mechanism | universal | **C** | Replays the same words; tested against outcome, **the sign was backwards** | Re-run the step with the variable you missed held fixed | Step-level parameterisation | part |
+| T91 | The comment section as the return channel | universal | **A** | Real feedback at ~10⁻⁷ bandwidth and months of latency, to the author not the learner | Feedback within the sentence | — | yes |
+
+### 4.1 The build order, if a team has one quarter
+
+Ranked by (measured or mechanistic warrant) × (buildability) ÷ (cost). Every item is drawn from
+the table above and each names its evidence.
+
+| Rank | Ship | From | Warrant | Build |
+|---|---|---|---|---|
+| 1 | **Prediction gate on load-bearing steps** | T7 → §3.1 | Prequestion `g = 0.54` specific; guessing `0.65` vs `0.22`; expectancy-violation interaction `p = .002` | yes |
+| 2 | **Elicit → name → refute → attribute-after** | T11/T12/T13 → §3.3 | `d = 0.79`/`0.83`, replicated `0.71`; **no expertise reversal** | yes |
+| 3 | **Log wrong answers as beliefs, not as errors** | T11 → §3.12 | The single most valuable discarded data in the sector | yes |
+| 4 | **Abstraction-level metadata + cross-session retraction** | T48/T80 → §3.10 | Unbuilt anywhere; small; prevents simplifications becoming misconceptions | yes |
+| 5 | **Intent classification: index vs lesson** | T59 → §3.13 | 1.76B views say the index is a real product; replay data says it is a different one | yes |
+| 6 | **Manipulate-before-explain widgets at density** | T61a/T60 → §3.8 | Contiguity `g = 0.63–0.78`; Ciechanowski's existence proof; hostile prior at `g = −0.07` | part |
+| 7 | **Productive-failure governor** | §2.5 → §3.7 | `g = 0.36–0.58`; "adding help to the struggle does not help"; Schworm & Renkl reversal | part |
+| 8 | **Learner-parameterised animation, run until it breaks** | T31/T17 → §3.2 | Expectancy violation is the whole effect | part |
+| 9 | **Canonical artifact + observing agent (dual-teacher)** | T82 → §3.9 | National-scale human precedent; **the load-bearing experiment** | part |
+| 10 | **Executable prerequisite DAG that halts at your gap** | T21/T56 → §3.4 | Expertise reversal `+0.505 / −0.428` is the reason one artifact cannot work | no |
+
+---
+
+## §5 — Limitations, once
+
+Two-thirds of this inventory is `CRAFT`: real practice, mechanised, unmeasured. That is the
+state of the field and not a defect of the document, but it means the bucket assignments are
+**arguments, not findings** — I have classified techniques by asking what a good tutor would do,
+and reasonable people will move a dozen of these rows. The A/B/C/D scheme itself is a claim that
+the technique space decomposes this way, and §2.6 exists because it does not decompose cleanly.
+Six of the practitioner sections rest on a handful of retrievable first-person statements and a
+larger amount of watching, and where a quote could not be retrieved — Haran's "dumb questions,"
+Pandey's vocative, Ciechanowski's hours per article — I have said so rather than reconstruct it.
+The mass-scale section is the weakest evidentially and the most important strategically: the two
+canonical private-tutoring meta-analyses are paywalled with empty abstracts and **no effect size
+is quoted for them**, ERIC returns exactly one record for the dual-teacher classroom, and the
+entire Chinese livestream-tutoring outcome literature was unreachable in English. The
+prioritisation in §4.1 mixes measured effects with mechanistic reasoning and does not pretend
+the two are the same. And the largest uncertainty is not in the inventory at all but in §3: the
+prior these proposals must beat is genuinely unfavourable — van Peppen et al. found **no format
+differences at three weeks and nine months**, Hefter et al. found video, text, and graphic novel
+equivalent on outcomes, Noetel's more-interactive comparison came back **`g = −0.07`**, and
+LectureScape's replay interface was **null on every task while feeling significantly better**.
+Any of §3.15's four falsifiers would take a large piece of this document with it, which is the
+condition under which it is worth building.
+
+---
+
+## Sources
+
+**Retrieved and verified this session** (2026-07-29) via `curl`, `WebFetch`, `gh api`, Crossref,
+ERIC, and Semantic Scholar; repo-internal citations are to `research/raw/` and `survey/`.
+
+**Practitioner primary sources.** 3blue1brown.com/about · Numberphile Podcast transcript,
+*The Hope Diamond with 3blue1brown* (2018-12-12) · YouTube channel metadata for 3b1b,
+Veritasium, Primer, Ben Eater, Sebastian Lague, Mark Rober, Steve Mould, Physics Girl, Vsauce,
+Applied Science, CGP Grey, Numberphile, Computerphile, Physics Wallah (×6 channels), Organic
+Chemistry Tutor · veritasium.com/publications · eater.net/{about,faq,8bit,6502,vga,quaternions}
+· github.com/{3b1b/manim, ManimCommunity/manim, Helpsypoo/primerpython, Primer-Learning/
+PrimerTools, SebLague/*, ncase/*, distillpub/template, idyll-lang/idyll, observablehq/*,
+mathigon/textbooks, Ciechan} · ciechanow.ski/archives + article HTML/JS for Gears, Lights and
+Shadows, Internal Combustion Engine, Curves and Surfaces, Mechanical Watch, Moon ·
+patreon.com/ciechanowski · ncase.me/projects + blog.ncase.me (*Chocolate-Covered Broccoli*,
+*The Explorables Jam*) · explorabl.es + its explorables.csv · worrydream.com/
+{ExplorableExplanations, LadderOfAbstraction, LearnableProgramming, Tangle} · distill.pub/
+{about, 2017/research-debt, 2021/distill-hiatus} · kurzgesagt.org/what-we-do + per-video sources
+documents · ted.com/talks/salman_khan_let_s_use_video_to_reinvent_education (full transcript) ·
+Forbes India and Business Today profiles of Physics Wallah · sebi.gov.in Physicswallah UDRHP-1
+filing page · numberphile.com/{about, podcast-transcripts} · bradyharanblog.com · oeis.org/A247698.
+
+**Peer-reviewed and measured.** Muller, Bewes, Sharma & Reimann `10.1111/j.1365-2729.2007.00248.x`
+· Muller, Sharma & Reimann `10.1002/sce.20244` · Muller `10.1007/s11251-007-9017-6` · Muller, Lee
+& Sharma `10.14742/ajet.1223` · Eames, Brunskill, Yamkovenko, Weatherholtz & Oreopoulos,
+*PNAS* `10.1073/pnas.2507708123` · Jiang, Yuan & He `10.1080/10494820.2025.2470321` · Punjabi
+`10.1177/0973184919885485` · Zhang & Liu `10.1016/j.ijer.2022.101949` (no number quoted) ·
+Zhang et al. `10.1016/j.lindif.2026.102877` (no number quoted) · Bray `10.1080/02103702.2023.2194792`
+· Ku, Lee & Kim (ERIC EJ1454879) · Berberoglu & Tansel (ERIC EJ1055529) ·
+`10.1016/j.ssresearch.2024.103053` · Kota mental-health cluster: `10.1177/09731342251359022`,
+`10.1177/09710973251356797`, `10.4103/ijph.ijph_1000_25`, `10.4103/indianjpsychiatry_537_25` ·
+double-reduction policy literature: `10.1080/03057925.2023.2170173`, `10.1080/02680939.2025.2479151`,
+`10.1057/s41599-025-05966-7`, `10.1016/j.ijedudev.2025.103451`, `10.1177/21582440241255864` ·
+Distill `10.23915/distill.00005`, `10.23915/distill.00031` · misconception-aware tutoring:
+`10.1145/3770761.3777289`, `10.1145/3774398.3811609`.
+
+**Effect sizes carried from this repo's own corpus, with their existing labels** (§B1, §N2, §N4,
+§C3, §01, §24): Schroeder & Kucera refutation `g = 0.41 → 0.28` adjusted · Peltier et al.
+`η² = 0.33 / 0.175` · Mason et al. 2019/2020 nulls · Noetel et al. multimedia meta-meta
+`g = 0.38`, video swap `g = 0.28`, 19% harmful, more-interactive control `g = −0.07` · Ginns
+contiguity `g = 0.74` · Schroeder & Cenkci spatial contiguity `g = 0.63` · Schneider signaling
+`g = 0.43` · Rey et al. segmenting `g = 0.34` (system `0.41` / learner `0.20`; time cost `0.92`)
+· Berney & Bétrancourt animation `g = 0.23` (representational `0.40` / decorative `−0.05`) ·
+Sundararajan & Adesope coherence `g = 0.33` (persistent `0.43` / transient `0.12 n.s.`) ·
+Cheng et al. seductive details `g = −0.16` · Adesope & Nesbit redundancy `g = 0.15` ·
+Schroeder pedagogical agents `g = 0.19` · Sinha & Kapur productive failure `g = 0.36–0.58` ·
+St. Hilaire, Chan & Ahn prequestions `g = 0.54 / 0.04`, guessing `0.65 / 0.22`, age `0.62 / 0.22`
+· Theobald & Brod prediction `b = −0.090 n.s.`, expectancy violation `b = 0.195, p = .002` ·
+Bertsch et al. generation `d = 0.40` · Yang et al. retrieval practice `g = 0.499` · Bisra et al.
+self-explanation `g = 0.55` · Kobayashi learning-by-teaching `g = 0.56`, with expectancy `0.48`
+/ without `−0.02` · Barbieri et al. worked examples `g = 0.48`, correct-only superiority ·
+Tetzlaff et al. expertise reversal `+0.505 / −0.428` · Brunmair & Richter interleaving `g = 0.42`
+· spacing `d = 0.54` · Buljan et al. preference `d = 0.48`, knowledge null · Kizilcec et al.
+N = 12,468, grade `d = 0.01 n.s.` · LectureScape null · Brinton et al. reversed skip-back sign ·
+van Peppen et al. N = 170 four-format null at 3 weeks and 9 months · Hefter et al. mode-invariance
+· Schworm & Renkl explanation-induced reversal.
