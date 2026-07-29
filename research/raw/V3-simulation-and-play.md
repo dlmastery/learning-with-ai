@@ -51,6 +51,62 @@ requirements. Conflating them is why the effect-size literature on "educational 
 is so noisy — a meta-analysis that pools a falsifier with a rehearsal drill is averaging
 across machines that do not share a mechanism.
 
+**The pooled numbers, so the floor is on the record.** Simulation-based learning in higher
+education: **g = 0.85, SE 0.08, 95% CI [0.69, 1.02], k = 145** (Chernikova, Heitzmann,
+Stadler, Holzberger, Seidel & Fischer 2020, *RER* 90(4)) `MEASURED-META`. Computer
+simulation and conceptual understanding in K-12 science: **g = 0.898, 95% CI [0.719, 1.076],
+k = 47, n = 5,715** (Hu, Jia, Mi & Bi 2026, *JOST*) `MEASURED-META`. Game-based learning in
+science: **g = 0.705, 95% CI [0.603, 0.807], k = 41, N = 6,256** (Lei, Chiu, Wang, Wang &
+Xie 2022) `MEASURED-META`. Digital games vs. non-game instruction: **ḡ = 0.33, 95% CI
+[0.19, 0.48], k = 57** (Clark, Tanner-Smith & Killingsworth 2016, *RER* 86(1)) `MEASURED-META`.
+Serious games: learning **d = 0.29**, retention **d = 0.36**, and **motivation d = 0.26,
+p > .05 — not significant, k = 31, N = 2,216** (Wouters, van Nimwegen, van Oostendorp & van
+der Spek 2013, *JEP*) `MEASURED-META`.
+
+Two things follow immediately. **(a) The spread — 0.29 to 0.90 — is the taxonomy problem, not
+sampling noise.** These are the same intervention class measured across different machines.
+**(b) Serious games are measured not to be more motivating than conventional instruction**,
+which independently corroborates F6 §3 from a literature that had every incentive to find
+otherwise.
+
+And a discount factor worth carrying through the whole section: Wouters & van Oostendorp
+(2013), *Computers & Education* 60(1), quantified publication bias in this exact literature —
+**journals d = 0.44, conference proceedings d = 0.08, unpublished d = 0.14** `MEASURED-META`.
+Sitzmann (2011), k = 65, N = 6,476, reports "strong evidence of publication bias"
+`MEASURED-META`. **Treat any single-source simulation effect size above ~0.5 as
+provisional.**
+
+**The three moderators that survive across all of these and should govern design:**
+
+1. **Guidance matters; the *kind* of guidance does not.** Lazonder & Harmsen (2016), *RER*
+   86(3), k = 72: guidance vs. less/none — learning activities **d = 0.66 [0.44, 0.88]**,
+   performance success **d = 0.71 [0.52, 0.90]**, learning outcomes **d = 0.50 [0.37, 0.62]**;
+   and **type of guidance moderated performance success but not learning activities and not
+   learning outcomes** `MEASURED-META`. This licenses the `frozen` block: the point is that
+   the world constrains, not which flavour of constraint you picked.
+2. **Augmenting a game helps roughly as much as the game itself.** Clark et al.'s value-added
+   comparisons — augmented game design vs. standard game design — **ḡ = 0.34 [0.17, 0.51],
+   k = 20** `MEASURED-META`, essentially equal to the media effect. Tsai & Tsai (2020)
+   replicate the shape: gameplay design **g = 0.646, k = 14**; game-mechanism design
+   **adjusted g = 0.270, k = 12** `MEASURED-META`. The design *inside* the simulation is
+   where the second half of the effect lives, which is precisely what a schema makes
+   generatable.
+3. **Learner navigation beats system dictation, and the reversal is real.** Vogel et al.
+   (2006), k not extractable: **student-navigated programs showed a significant advantage for
+   games/simulations; teacher-controlled showed no significant advantage; and
+   computer-dictated sequence FAVOURED traditional teaching over games/simulations**
+   `MEASURED-META` (directional; the abstract carries no effect sizes and none are quoted).
+   Sitzmann (2011) converges: trainees learned more when material was conveyed **actively
+   rather than passively**, when they could **re-access the game at will**, and when it was a
+   **supplement rather than stand-alone**. PhET's own methodology paper says the same thing
+   from the qualitative side: Adams et al. (2008), **275+ individual student think-aloud
+   interviews**, concluded simulations are effective *"only if the student's interaction with
+   the simulation is directed by the student's own questioning"* `OBSERVED`.
+
+> **Moderator 3 is the argument for the `controls` block being a first-class, verified field
+> rather than a rendering detail.** A simulation the learner cannot steer measures worse than
+> the lecture it replaced.
+
 ### 1.1 The falsifier
 
 **You state a wrong model; the system runs *your* model forward until it visibly breaks.**
@@ -82,6 +138,70 @@ falsifier must say so and change the scenario. A dishonest one shows a divergenc
 the integrator, the initial conditions, or a parameter the learner never touched. This is
 not a hypothetical — see §5.4, where the reference implementation produced exactly this
 false-negative on its first run.
+
+#### 1.1b — The literature that says a falsifier will not work, and what it actually says
+
+This is the objection that must be met before anything else, because it is well-evidenced and
+the naive falsifier walks straight into it.
+
+**Chinn & Brewer (1993),** *Review of Educational Research* 63(1), is the structural argument.
+Confronted with anomalous data, a person has **seven** available responses — ignore it, reject
+it, exclude it from the theory's scope, hold it in abeyance, reinterpret it, make a peripheral
+change, or change the theory — and **only one of the seven is theory change** `MEASURED-META`
+(taxonomy; their 1998 *JRST* empirical test required an eighth category). **Chinn & Malhotra
+(2002),** *J. Educational Psychology* 94(2): four experiments with 4th–6th graders found
+conceptual change was blocked **most strongly at observation** — before interpretation,
+generalisation or retention. Students do not see the discrepant result. `MEASURED-RCT`
+
+The rest of the cognitive-conflict literature converges:
+
+- **Limón (2001)**, *Learning and Instruction* — the canonical sceptical review, organised
+  around "controversial results from studies applying cognitive conflict."
+- **Kang, Scharmann, Kang & Noh (2010)**, N = 183 Korean 7th graders, discrepant-event
+  density task with a 4-week retention test: **cognitive conflict had only an *indirect*
+  effect on conceptual understanding, fully mediated by attention and effort — and
+  situational interest exerted a stronger influence on conceptual change than conflict did**
+  `MEASURED-RCT`. Kang et al. (2005), N = 159: field dependence/independence was the *only*
+  variable significantly correlated with degree of cognitive conflict.
+- **Lee & Byun (2012)**, N = 96 Korean 9th graders, counterintuitive demonstration:
+  **"superficial conceptual change was the most common response"** `MEASURED-RCT`.
+- **Dega, Kriek & Mogese (2013)**, *JRST* 50(6) — the direct head-to-head, **and it is run on
+  simulations**: n = 45 undergraduates, electricity and magnetism, ANCOVA
+  **F(1, 36) = 4.66, p = 0.04, partial η² = 0.12, favouring *cognitive perturbation* over
+  *cognitive conflict*** `MEASURED-RCT`.
+
+**And the cheap comparator is strong.** Refutation text — a paragraph that states the
+misconception, says it is wrong, and explains why — gets **g = 0.41, p < .001, 44 independent
+comparisons, n = 3,869** (Schroeder & Kucera 2022, *Educ. Psych. Review*) `MEASURED-META`.
+Danielson et al. (2025), *Educational Psychologist*, pre-registered: **71 articles, 76 studies,
+111 samples, 294 effect sizes, 26 moderators examined — a consistent significant advantage,
+and none of the 26 moderators enhanced or diminished it** `MEASURED-META`. Guzzetti et al.
+(1993) found the effective conceptual-change procedures shared "a common element of producing
+conceptual conflict" `MEASURED-META` (per-strategy effect sizes not retrievable this pass —
+not quoted).
+
+> **So the honest bar is this: a falsifier that costs 240 lines, a law registry, and a
+> compilation step must beat a paragraph of text that costs nothing and reliably delivers
+> g = 0.41.** Anyone building this who does not know that number is building on vibes.
+
+**What the objection does *not* say, and this is the whole design opening.** Every study above
+tests conflict *presented to* the learner: a demonstration, an anomalous datum, a text
+asserting the correction. None of them tests the learner's **own compiled rule** run forward
+under conditions the learner chose, from a starting point the learner can verify is identical.
+Chinn & Brewer's seven escape routes are all available because the anomaly is *someone else's
+claim about the world*. Three of them close mechanically when it is your own rule:
+
+| Escape route (Chinn & Brewer) | Why it stays open for a demonstration | What closes it in a twin run |
+|---|---|---|
+| **Reject the data** | the demo could be rigged, mis-set-up, a trick | §3.2 twin identity: one line differs, and the diff is on screen |
+| **Exclude it from scope** | "that's not what I meant / not my case" | §5.3 stage 3 consent gate: the learner confirmed this law *by watching it behave* |
+| **Ignore / fail to observe** — the biggest one, Chinn & Malhotra | nothing forces attention to the moment | §5.3 stage 5: predict the next second **before** it runs, at t\* − ε |
+| Reinterpret / peripheral change / abeyance | remain open | remain open. **Stage 7 consolidation is where these are addressed, and it is mandatory** |
+
+`SPEC`. The design consequence is specific and it is why stages 3 and 5 exist rather than
+being nice-to-haves: **a falsifier without prediction-before-observation and without a
+verifiable identity guarantee is a discrepant-event demonstration, and the discrepant-event
+demonstration is the thing that has been measured to mostly not work.**
 
 ### 1.2 The explorable
 
@@ -198,6 +318,31 @@ makes tractable what aggregate-level description makes hard. This is the machine
 segregation without a segregationist, traffic jams with no crash, evolution with no designer.
 Nicky Case & Vi Hart's *Parable of the Polygons* is a Schelling model and is the most-read
 explorable ever made `OBSERVED`.
+
+**The measured anchor, and the routing rule that comes with it.** Computational modelling's
+effect on systems thinking: **g = 0.470, 62 effect sizes from 25 studies (2009–2024)**, K-16
+(Sun, Ren, Liu, Xu, Gao & Li 2026, *JRST*); by sub-outcome, applying and evaluating systems
+**g = 0.617**, identifying system structure **g = 0.447**, analysing system behaviour
+**g = 0.318**; and the moderator that matters for build cost — **larger effects with
+low-complexity tools such as agent-based block modelling than with high-complexity tools**
+`MEASURED-META`. The cheap version measures better.
+
+The routing rule is sharper still, and it comes from the one controlled head-to-head in this
+literature. **Samon & Levy (2017)**, *Science Education* 101(6), experimental n = 47 vs.
+comparison n = 45, 7th-grade gases: the agent-based complexity approach produced significant
+gains with strong effect sizes overall (verbal magnitudes only — no numeric ES in the
+retrieved abstract), **but the advantage was concentrated in concepts with *low micro-macro
+compatibility* — diffusion, density, kinetic molecular theory. Pressure, temperature and the
+gas laws were learned equally well either way.** `MEASURED-RCT`
+
+> `SPEC`. **Micro-macro compatibility is a generation-time routing predicate.** If the
+> macro-level description of a concept already behaves like its micro-level description,
+> an agent world buys nothing over a direct explanation and costs 2,000 agents' worth of
+> compute and attention. SimSpec should carry
+> `targets.micro_macro_compatibility: low | high`, and a `high` value should route away from
+> `kind: agent-world`. No other simulation format has a field that says *this concept does
+> not need this machine* — and the absence of that field is why the internet is full of
+> agent-based demos of things that did not need one.
 
 Cost to generate: **medium and unusually favourable.** The agent rules are short; the world
 is a grid; the interesting output is statistical rather than trajectory-exact. There is a
@@ -324,6 +469,10 @@ level:       {band: "14-16", prior: ["free fall", "F = ma"]}
 targets:                                            # what this world is FOR
   proposition: "an object in a resisting medium approaches a constant speed
                 that depends on its mass"
+  micro_macro_compatibility: high   # low | high — a ROUTING predicate, not a note.
+                                    # `high` forbids kind: agent-world, because the
+                                    # aggregate already behaves like the parts and the
+                                    # agent machine buys nothing (Samon & Levy 2017, §1.4)
   misconception:                                    # optional; required if kind=falsifier
     id:   aristotelian.heavier-falls-faster
     text: "heavier objects fall faster"
@@ -687,6 +836,30 @@ need-supporting, SDT-designed game elements and found autonomous motivation
 Koivisto & Hamari: perceived benefits decline with time using the service `OBSERVED`. So
 "design it well" is not the answer; well-designed is what dipped.
 
+**And there is now a second, larger, independent measurement of the same curve, which is the
+most useful single fact in this subsection.** Rodrigues, Pereira, Toda, Palomino, Pessoa,
+Carvalho, Fernandes, Oliveira, Cristea & Isotani (2022), *IJETHE*: **N = 756** Brazilian STEM
+students in an intro programming course, **2 × 7 quasi-experimental design over 14 weeks with
+seven measurement points**, gamified vs. non-gamified version of the same system, on
+**behavioural** measures (attempts, usage time, system access) rather than self-report.
+Result: the gamification effect **began to decrease after week 4; the decline lasted 2–6
+weeks; the overall trajectory was U-shaped**, recovering afterwards — which the authors name
+the *familiarization effect*. `MEASURED-RCT`-adjacent longitudinal.
+
+Two independent studies, different populations, different measures, self-report and
+behavioural — **same U.** That converts "novelty decay" from a hedge into a **schedule you
+can design against**: the trough is weeks ~6–10 and it is survivable, not terminal.
+
+The honest counter-evidence, since this document does not get to have it both ways. Tsay,
+Kofinas, Trivedi & Yang (2020), *JCAL*, N = 333 treatment + 175 control over 3 years and 2
+cohorts, found **engagement higher in year 2 than year 1** of the gamified condition — the
+opposite of what a pure novelty account predicts, once the design was iterated
+`MEASURED-RCT`-adjacent. And the dose–response relationship is not consistently negative
+across literatures: Lei et al. (2022) find interventions of 4 hours to 1 week produce the
+largest effects and **> 1 week the smallest**, while an AR meta-analysis finds **6–8 weeks
+g = 1.63 vs. 1–3 weeks g = 0.72** — the reverse. **Do not present novelty decay as
+universal.** Present it as a measured U with a known trough, and design the trough response.
+
 `SPEC`. **The week-fifteen rule:**
 
 > **No mechanic may be in the system whose expected value is highest on first exposure.**
@@ -809,9 +982,18 @@ alongside it (§3.2 guarantees it is one line). The learner sees: same initial s
 seed, same integrator, same dt, same everything, **one line different, and here is where the
 world noticed.**
 
-**Stage 7 · Consolidation, mandatory.** Kapur: failure alone is failure; the instruction phase
-is not optional and consolidation must contrast the learner's own attempt with the canonical
-one `MEASURED-META`. Three moves, in order:
+**Stage 7 · Consolidation, mandatory — and the design features are not optional either.**
+Kapur: failure alone is failure; the instruction phase is not optional. **Loibl, Roll &
+Rummel (2017)**, *Educ. Psych. Review* 29, is the qualifier that most builders skip:
+problem-solving-before-instruction fosters learning **only if specific design features are
+implemented — namely contrasting cases, or building the subsequent instruction on the
+students' own solutions.** Without those, PS-I does not beat instruction-first
+`MEASURED-META` (systematic review, no pooled ES). The twin run supplies the second feature
+by construction — the instruction *is* built on the learner's own compiled law — and stage 7
+must supply the first. (Note also that Sinha & Kapur's publication-bias correction moves the
+estimate **up** to g = 0.87, which is unusual enough that the trim-and-fill details should be
+read before anyone quotes it; the uncorrected **g = 0.36 [0.20, 0.51]** is what this document
+uses.) Three moves, in order:
   1. State the canonical law.
   2. **Characterise the learner's rule as a domain error or a special case, never as
      stupidity.** For the terminal-velocity example this is not a courtesy — it is factually
@@ -944,6 +1126,11 @@ checkable predicate, which is why this is the runner-up and not the pick.
 | 43 | **Symbolic CAS step-checking inside the sim** | any | that the algebra and the motion agree | high | CAS is the oracle | **partial** — mathjs 9.43 MB unpacked; Algebrite last released **2021-04-14** |
 | 44 | **Constraint-solved manipulative via SMT** | constrained object | arbitrary legality predicates | high | Z3 is the oracle | **no** — `z3-solver` **33–35.5 MB**, 2026-07-17 |
 | 45 | **Python-authored sim the learner reads** | any | code literacy alongside the model | high | as any spec | **capped** — Pyodide 314.0.3: `pyodide.asm.wasm` **9.15 MB** + stdlib **2.43 MB**; ≤3 chapters (repo rule) |
+| 46 | **Contrasting cases at consolidation** — the learner's failed law shown beside 2–3 near-miss laws, not just canon | falsifier | the boundary, via the Loibl design feature PS-I requires | low | the near-misses must be *near* — each must diverge from canon later than the learner's did | **yes** |
+| 47 | **Refutation-text arm** — a paragraph stating the misconception and why it is wrong, shipped alongside every sim | any | the measured baseline (**g = 0.41**) the sim must beat | trivial | none; it is text | **yes** — and it is the control condition for every experiment in §7.3 |
+| 48 | **Micro-macro routing gate** — refuse `kind: agent-world` when compatibility is `high` | agent world | — (economy) | trivial | the field must be set by a human or a checked classifier, not asserted by the generator | **yes** |
+| 49 | **Observation commitment** — learner marks *what they expect to see change* before any run | falsifier / explorable | closes Chinn & Malhotra's observation-stage block | trivial | commitment recorded before render; immutable after | **yes** |
+| 50 | **Guidance-presence audit** — every world must have a non-empty `frozen` set | any | that guidance beats none, whatever kind it is (Lazonder d = 0.50) | trivial | G0 extension | **yes** |
 
 ---
 
@@ -1028,10 +1215,15 @@ Stated as open problems with the shape of the answer, not as caveats.
 4. **Does twin-run divergence actually produce conceptual change?** **This is the falsifier
    hypothesis and it is untested.** The mechanism it borrows (PS-I, g = 0.36) is measured; the
    specific claim that *the learner's own compiled rule, run to visible divergence, beats a
-   tutor asserting the correction* is not. It is a clean two-arm experiment with a delayed
-   unassisted-transfer outcome, and the `refuted_law` record (§5.3 stage 8) is the instrument.
-   **If this loses, the falsifier machine is expensive theatre and this document is wrong
-   about its central claim.**
+   tutor asserting the correction* is not. **The experiment is now fully specified by §1.1b,
+   and it is not two arms but four:** (i) refutation text — the free baseline at **g = 0.41**;
+   (ii) discrepant-event demonstration — the arm the cognitive-conflict literature says mostly
+   fails; (iii) twin run **without** stage 3 consent and stage 5 prediction; (iv) the full
+   mechanic. Outcome: delayed unassisted transfer. The `refuted_law` record (§5.3 stage 8) is
+   the instrument. Arm (iii) is the one that matters scientifically, because it isolates
+   whether the *identity guarantee plus prediction* — and not merely the animation — is doing
+   the work. **If (iv) does not beat (i), the falsifier machine is expensive theatre and this
+   document is wrong about its central claim.**
 5. **The week-15 dip response.** Whether a role change (consumer → author → reviewer) beats a
    novelty injection when the dip is detected. van Roy & Zaman gives the dip; nothing gives
    the response.
@@ -1056,8 +1248,15 @@ Koivisto & Hamari 2014 [10.1016/j.chb.2014.03.007]; van Roy & Zaman 2018
 et al. 2017 [10.1145/3027385.3027411]; Sinha & Kapur 2021 [10.3102/00346543211019105]; Kapur
 2016 [10.1080/00461520.2016.1155457]; Kobayashi 2019 [10.1111/jpr.12221]; Roscoe & Chi 2007
 [10.3102/0034654307309920]; Biswas, Leelawong, Schwartz & Vye 2005 [10.1080/08839510590910200]
-(Betty's Brain, 493 cites) and Chase et al. 2009 on the protégé effect
-[10.1007/S10956-009-9180-4] (368 cites); Ploetzner, Berney & Bétrancourt 2020
+(Betty's Brain; the repo's F2 records 310 citations, Semantic Scholar returned 493 for the
+same DOI this pass — reported as retrieved, not reconciled) and Chase, Chin, Oppezzo &
+Schwartz 2009 on the protégé effect [10.1007/S10956-009-9180-4] (368 cites, S2, this pass);
+Novack & Goldin-Meadow on gesture vs. action on objects (via `survey/06`); Wilensky &
+Reisman, "Thinking Like a Wolf, a Sheep, or a Firefly"; Grimm et al., the **ODD protocol**
+for agent-based model description; Hamari, Koivisto & Sarsa 2014 [10.1109/HICSS.2014.377];
+Cerasoli, Nicklin & Ford 2014 [10.1037/a0035661]; VanLehn 2011
+[10.1080/00461520.2011.611369]; Bjork & Bjork 2020 [10.1016/j.jarmac.2020.09.003];
+Ploetzner, Berney & Bétrancourt 2020
 [10.1111/jcal.12476] and 2021 [10.1007/s11251-021-09541-w]; Finkelstein et al. 2005
 [10.1103/PhysRevSTPER.1.010103]; Wieman, Adams & Perkins 2008 [10.1126/science.1161948];
 de Jong, Linn & Zacharia 2013 [10.1126/science.1230579]; Rutten, van Joolingen & van der Veen

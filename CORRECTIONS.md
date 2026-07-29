@@ -108,6 +108,7 @@ measured, or it is a pitch.
 | **C-46** | 29 Jul | *(process)* A correction inserted into §29 left the paragraph beneath it **reasserting the retracted rule** under the heading "The rule" | Same class as C-17 and the §15 defect: an in-place correction that did not reach the sentence below it. The rule is now narrowed to what Muller's Refutation condition actually isolates — naming the misconception aloud — rather than the ordering the section originally claimed | **EXTERNAL-REVIEW** |
 | **C-47** | 29 Jul | *(process)* Volume metrics were published as the opening line of the README, the paper masthead, deck slide 1 and the thesis footer | *"38 sections, 88,078 words, built on ~2,100 sources"* tells a reader nothing except that we would like to be found impressive — and it was **injected by the build script on every rebuild**, so it was stale as well as vain. Removed from every prose surface; the builder no longer writes counts outside the dashboard | SELF-VERIFY |
 | **C-48** | 29 Jul | Four survey sections and five demo pages closed on the same sentence | *"What teaches is not the richness of what the learner is given…"* appeared in §06 and §13 with one verb changed; an identical honesty paragraph closed five demos. **Reusing an ending retroactively cheapens every claim of independent convergence** — which this survey makes often. All rewritten to say something specific to their own section | **EXTERNAL-REVIEW** |
+| **C-49** | 29 Jul | Published in the frontier sweep and repeated in the survey: *"no maintained open full-duplex voice implementation"* (Moshi's last release 2024-09-22) | **Wrong on both counts.** `NVIDIA/personaplex` — 10,274 stars, MIT, 7B, Moshi-derived, weights on Hugging Face, created 2026-01-05, last push 2026-03-02, not archived — verified via the GitHub API. And Moshi's own **commits** run to 2026-05-16; only its release *tag* is stale. Judging a project by its release tag rather than its commit history is the mistake, and this repo's own brief tells agents not to make it | SELF-RESEARCH (V4) |
 
 ---
 
@@ -118,13 +119,13 @@ hand-maintained, which is the whole argument for generating it.*
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 25 |
+| Caught by our own research | 26 |
 | Caught by our own verification — including of our own warnings | 3 |
 | Caught by our own builders, working against their own briefs | 4 |
 | **Caught by an adversarial external reviewer** | **23** |
-| **Total** | **55** |
+| **Total** | **56** |
 
-23 of 55 were found by someone whose job was to fail us — including
+23 of 56 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the

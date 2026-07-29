@@ -1394,7 +1394,21 @@ rationale, verbatim, is not about production cost:
 >
 > *"Probably the least-appreciated aspect of this is the notion that the very first time that
 > you're trying to get your brain around a new concept, the very last thing you need is
-> another human being saying, 'Do you understand this?'"* (TED 2011)
+> another human being saying, 'Do you understand this?'… now they can just do it in the
+> intimacy of their own room."* (TED 2011-03-02, 20:10, verified transcript)
+
+**And the founding observation is stronger than the rationale, because it came from the
+learners.** Khan built the videos for his own cousins, in the same city, reachable by phone:
+
+> *"They told me that they preferred me on YouTube than in person… They were saying that they
+> preferred the **automated version of their cousin to their cousin**."* — because *"they can
+> pause and repeat their cousin, **without feeling like they're wasting my time**… they don't
+> have to be **embarrassed** and ask their cousin."* (TED 2011, verbatim transcript.)
+
+**Read that as a two-item list of what a present listener costs, elicited from real learners
+who chose the artifact over the person.** (1) **Time-cost guilt** — the tutor's attention is a
+scarce resource the learner is spending. (2) **Embarrassment** — asking reveals not knowing.
+The learner preferred the medium *because* it could not see them.
 
 **This is the most consequential warning in the document for anyone building a responsive
 tutor**, and it comes from the person with the most learner-hours in history. The absence of
@@ -1418,6 +1432,33 @@ That convergence is the strongest `CRAFT`-level evidence in the document.
 > **standards-mapping granularity** (`HISTORICAL`). A format constraint has been rationalised
 > as a cognitive finding for fifteen years.
 
+**T74a · Khan Academy · The mastery gate ("ten in a row")** — **B** · `MEASURED-RCT` (weak)
+
+*"we'll generate as many questions as you need, until you get that concept, until you get **10
+in a row**"* (TED 2011). Progression is gated on demonstrated performance, not on time served,
+and the question bank is generated rather than fixed. **This is the one place in the entire
+video-native inventory where an explanation refuses to advance until the learner produces
+something** — and note that it lives in the exercise system, not in the videos.
+
+**And it now has a real, large, and unflattering effect size.** Eames, Brunskill, Yamkovenko,
+Weatherholtz & Oreopoulos (2026), *PNAS*, `10.1073/pnas.2507708123` — three-year panel,
+**>200,000 students**, within-teacher/within-school identification:
+
+> *"a classroom with **6.6 h of annual Khan Academy practice (about 11 min per week)**
+> experiences a **+0.031 SD** gain in math test score performance compared to no practice. For
+> classrooms with higher usage levels, we find **approximately linear gains**, with projected
+> effects rising to **+0.085 SD** at the recommended 30 min per week. **Higher-achieving
+> students benefit most.**" `MEASURED` (observational panel with within-teacher identification,
+> not randomised).
+
+Three things to take from it, and none of them is "Khan Academy works":
+1. **The effect is small and dose-linear.** +0.031 SD at observed usage. Observed average use
+   was **10–15 min/week**, below the platform's own 30-minute target.
+2. **It is regressive.** Higher achievers gain more. Any system that inherits this shape widens
+   the gap it was built to close, which lands directly on this repo's SELPA-first commitment.
+3. **Dose-linear with no plateau is the signature of a time-on-task effect**, and it should be
+   read alongside T83.
+
 **T75 · Khan Academy · Granular decomposition to a mappable unit** — **C** · `HISTORICAL`
 
 *"Because of the granular nature of the 10 minute videos, the content can be mapped to almost
@@ -1426,11 +1467,41 @@ indexing requirement**, not a cognitive one. In a system that can compose an exp
 demand at any granularity, the fixed unit dissolves — although the *mapping* requirement does
 not, and any real deployment still has to satisfy it.
 
-**T76 · Physics Wallah (Alakh Pandey) · The one-shot** — **C, with a B residue** · `OBSERVED`
+**T76 · Physics Wallah (Alakh Pandey) · The one-shot / marathon** — **C, with a B residue** ·
+`OBSERVED`
 
-An entire chapter — sometimes an entire subject — taught in a single unbroken multi-hour
-video. This is the format that took a teacher from a Kanpur classroom to a company valued in
-the billions, and it is the exact opposite of every Western guideline about segmenting.
+An entire **subject** taught in a single unbroken video. The numbers are not a rounding of
+"long"; they are a different unit of publication (`lengthSeconds` / `viewCount` read directly
+from the watch pages, 2026-07-29):
+
+| Video | Duration | Views |
+|---|---|---|
+| *Complete ORGANIC CHEMISTRY in 1 Shot \| Concepts + Most Important Questions \| NEET 2024* (`Feap2zbEz_k`) | **42,895 s = 11 h 54 m 55 s** | **4,315,604** |
+| *The KING is Back 💥 Complete PHYSICS in 1 Shot – Concepts + PYQs* (`HAPnutGsfLs`) | **42,455 s = 11 h 47 m 35 s** | **3,679,250** |
+| *Complete CHEMISTRY in 1 Shot* (`hi6aHdmH3oI`, NCERT Wallah) | 28,481 s = 7 h 54 m | 1,366,126 |
+| *Class 12 Physical Chemistry Complete One Shot Revision* (`ip6sNvps2Ew`) | 20,765 s = 5 h 46 m | **2,615,526** |
+
+**A twelve-hour single video with 4.3 million views.** The genre has native names — the
+description of `HAPnutGsfLs` calls them **"Marathon Sessions"** and tags **#MahaRevision** —
+and it is tied to a paid batch with free PDF notes as the funnel. Network scale: `@PhysicsWallah`
+14.3M subscribers (joined 2014-01-27), plus PW Foundation 6.61M, NEET Wallah 4.8M, JEE Wallah
+3.31M, and roughly 50 channels in total. `OBSERVED`.
+
+For calibration against the Western guideline this violates: the segmenting principle is
+**g = 0.34**, Khan's canonical videos run **6–8 minutes**, and the "six-minute rule" from MOOC
+research is itself contradicted by on-campus data (median session watch 12–13 min, `N4` §9
+#13). The one-shot is **~100× the recommended segment length and it is one of the most-watched
+instructional artifacts on Earth.**
+
+> ⚠️ **A structural finding that matters more than the durations.** The 14.3M main channel is
+> now almost entirely *motivational and brand* content — topper interviews, batch trailers,
+> exam-body advocacy — while the actual one-shot teaching has migrated to the sub-brand
+> channels. Its top videos are emotional, not instructional: *"HE SLEEP ONLY 3 HOURS from Last
+> 12 Years… दिनभर मज़दूरी और रात मे पढ़ाई"* (`a0B1IPaBNHE`, 44:47, **11M views**);
+> *"Class 11th Barbaad!! Fir Bhi Bana NEET 2023 TOPPER"* (`RfQJ5yNeFY0`, 38:24, **9.5M views**).
+> `OBSERVED`. **At the top of the funnel, the product is not explanation. It is belief that the
+> exam is survivable.** Any system serving this population that treats motivation as a wrapper
+> around content has the ratio backwards.
 
 Mostly **C**: the bundling is a distribution decision — one upload, one URL, one thing to
 share in a WhatsApp group, one artifact a student can commit an evening to. But there is a
@@ -1456,24 +1527,44 @@ side in full: **segmenting g = 0.34 [0.30, 0.38], k = 123** (Rey et al. 2019) �
 The full derivation, every line, in real time, on a physical or digital board. Nothing is
 "left as an exercise" and nothing is pre-rendered. See T74.
 
-**T78 · Physics Wallah · Direct affective address as a persistence mechanism** — **A** ·
-`CRAFT`
+**T78 · Physics Wallah · Affective address as the persistence mechanism** — **A** ·
+`OBSERVED`
 
-*"Bacho"* — "children." The register is not neutral-instructional; it is a specific adult
-speaking to specific young people about their futures, with anger at their circumstances and
-open belief in their capacity. Mid-lecture the content stops and a two-minute address about
-effort, family, and the exam takes its place.
+Pandey's doctrine in his own stated terms (Forbes India profile, retrieved directly): a teacher
+must be **"engaging, loud, funny, sarcastic, strict"** while pacing slowly at the start. The
+documented components:
+
+- **Language as access.** He teaches in **Hindi and Hinglish**, explicitly to reach Tier-II and
+  Tier-III city students — the population the English-medium coaching industry priced and
+  linguistically excluded. This is not a stylistic choice; it is the entire market thesis.
+- **Voice modulation and facial expression** varied continuously, named by him as *the*
+  engagement mechanism.
+- **Mnemonic wordplay in the vernacular.** Teaching the unit *dyne*: **"Ye daayan nahin dyne
+  hai"** — *"This is not a witch, it's a dyne."* A Hindi pun that makes an SI unit stick.
+  Nothing in the English-language explainer corpus does this, because nothing in it is
+  bilingual.
+- **Direct address to the learner's circumstances:** *"Think about your family and the
+  sacrifices they are making to make you study."*
+- **Ritual.** Classes opened with students singing **"hum hongey kaamyab"** — *"We shall
+  overcome."* He calls this **"hard-core motivation."**
+- **Price as pedagogy.** Rs 999/year for engineering prep against competitors' Rs 40,000–1 lakh
+  (Business Today). The craft and the price are the same design decision.
 
 **This is scheduled motivational intervention, delivered blind.** He cannot see who is
 discouraged, so he addresses everyone, periodically, at a rate tuned to the modal aspirant.
-Classified **A** — and it is a large A, because in a market where the alternative was a
-coaching centre nobody could afford, the parasocial bond is a substantial part of what the
-product *is*.
+Classified **A** — and it is the largest A in the document, because for this audience the
+parasocial bond is a substantial part of what the product *is*.
 
-*Cognitive job:* persistence and belonging (§F6). Note the direction of the evidence on
-pedagogical-agent persona effects, which is weak (§B1/§F6) — but those studies measure a
-cartoon on a slide, not a person whose life story the learner knows. The comparison is not
-close and the literature does not cover this case.
+> ⚠️ The commonly-repeated *"bacho"* vocative is ubiquitous in the videos but **no citable text
+> source for it was retrievable**, and it is not asserted here. Likewise the
+> chalkboard-versus-tablet mechanics. `UNVERIFIED`.
+
+*Cognitive job:* persistence and belonging (§F6). The nearest measured literature —
+pedagogical agents `g = 0.19–0.20`, emotional design moving learning 0.27–0.39 while moving
+liking only 0.09–0.11 — **does not cover this case at all.** Those studies measure a cartoon on
+a slide. This is a person whose life story the learner knows, speaking their dialect, about
+their family's money. `CRAFT` for the mechanism; the gap between the literature and the
+phenomenon is the point.
 
 **T79 · Indian exam prep · The previous-year question as the unit of explanation** —
 **B** · `CRAFT`
@@ -1489,6 +1580,19 @@ Kozyrkov's five-hour series contains **no quiz, exercise, or assessment anywhere
 format has the opposite failure mode — item-drilling that never reaches the concept — and the
 right design takes one from each. `CRAFT`.
 
+**T79a · Indian exam prep · The pedagogy that colonised the schools** — `OBSERVED`
+
+The one directly on-point peer-reviewed study: **Punjabi, S. (2019), "Is Shadow Education
+Becoming the 'New' Formal? Effects of Pedagogical Approaches of IIT-JEE Coaching on School
+Education in the City of Delhi," *Contemporary Education Dialogue*,
+`10.1177/0973184919885485`** (ERIC EJ1241934). Finding: schools *"are seen as non-analytical
+and are being replaced by logic-based approach of competitive examinations"* — i.e. **the
+coaching format's pedagogy became the prestige pedagogy, and the formal school system was
+reframed by families as the inferior one.** `OBSERVED`.
+
+That is the strongest evidence in this document that these techniques *work* on some axis
+people care about, and the axis is not one anyone has measured.
+
 **T80 · Indian exam prep · The shortcut economy** — **B/negative** · `CRAFT`
 
 "Tricks" — procedural compressions that produce the right answer faster than the principled
@@ -1502,12 +1606,34 @@ to teach the trick, and pretending the trick does not work is not an option. `CR
 **T81 · Live batch teaching at scale with a doubt channel** — **A, partially resolved** ·
 `OBSERVED`
 
-Unacademy, Vedantu, PW Live, and the Byju's-era live formats: a teacher streams to tens or
-hundreds of thousands of concurrent learners, with a chat and a "doubt" queue. **This is the
-field's own attempt to build the return channel**, and it is instructive precisely because it
-half-works: the channel exists, but it is one-to-N with N in the tens of thousands, so what
-comes back is a *sample of the distribution*, not this learner's state. The teacher answers
-the modal doubt. Everyone else watches someone else's question get answered.
+Unacademy, Vedantu, PW Live: a teacher streams live to a very large audience with a chat and a
+"doubt" queue. **This is the field's own attempt to build the return channel**, and it is
+instructive precisely because it half-works: the channel exists, but it is one-to-N with N
+enormous, so what comes back is a *sample of the distribution*, not this learner's state. The
+teacher answers the modal doubt; everyone else watches someone else's question get answered.
+(No concurrent-viewer figure for any Indian platform was retrievable; `UNVERIFIED`.)
+
+Three format variants worth naming separately:
+- **Vedantu's WAVE** ("White Board Audio Video Environment", W.A.V.E 2.0 launched March 2022) —
+  a purpose-built 1-to-1 live teaching surface. The one case in this inventory of a company
+  building its own explanation substrate rather than adopting video.
+- **Unacademy's "educator" model** — began as a YouTube channel (2015), and productised the
+  teacher as the unit of subscription. Its **"Legends on Unacademy"** strand put Virat Kohli,
+  Brian Lara, Shashi Tharoor, Jimmy Wales and Abhijit Banerjee on the platform as lecturers:
+  **celebrity-as-educator, made literal.** (Valued $3.44B in 2022; a term sheet for acquisition
+  by upGrad was signed March 2026.)
+- **Byju's animated video-first model** — concepts delivered as **12–20 minute animations**,
+  consumed **self-paced**. `OBSERVED`.
+
+> ⚠️ **The Byju's collapse belongs in this inventory and not in a footnote.** Peak valuation
+> **$22B (2022)** → effectively zero by October 2024, insolvency 2025; FY22 revenue ₹5,298 crore
+> against a **net loss of ₹8,245 crore**. The documented failures were not pedagogical: an ASCI
+> order to withdraw five WhiteHat Jr television advertisements for misleading claims and
+> hard-sell tactics; a **fabricated child prodigy ("Wolf Gupta") in its advertising**; former
+> salespeople describing products pushed on parents who could not afford them; a ₹20 crore
+> defamation suit against a critic, later withdrawn. **The best-funded explanation company in
+> history died of its distribution model, and its pedagogy was never independently measured at
+> all.** `OBSERVED`. Read it as the base rate for this sector, not as an aberration.
 
 **T82 · The dual-teacher classroom (双师课堂) — the human proof-of-concept** — **B** ·
 `OBSERVED`
@@ -1517,6 +1643,35 @@ Zuoyebang, and the wider sector before the July 2021 "double reduction" policy l
 dismantled private tutoring), **a star teacher delivers the explanation by live stream to many
 classrooms, and in each room a local tutor watches the actual students** — checks work, flags
 confusion, re-explains locally, manages attention, and reports back.
+
+**And the one retrievable English-language study of it names the failure mode, which is the
+single most useful sentence for this project in the entire section.** Jiang, Yuan & He (2025),
+*Interactive Learning Environments*, `10.1080/10494820.2025.2470321` (ERIC EJ1501335), survey
+of **968 primary school students**, moderated-mediation analysis — abstract verbatim:
+
+> *"The **dual-teacher model is a new teaching format for digital classrooms** that designed to
+> alleviate the problem of **rural schools being unable to provide comprehensive, adequate and
+> high-quality curriculum**. In the dual-teacher classroom, **the lack of emotional interaction
+> between teachers and students leads to the poor performance of students' participation**, and
+> **teacher support is the key factor affecting students' involvement**."* `MEASURED` (survey,
+> not randomised; engagement outcome, not achievement).
+
+**The architecture's failure is relational, not informational.** The explanation arrives
+intact; what does not survive the stream is the emotional interaction, and engagement follows
+the local teacher's support rather than the star teacher's quality.
+
+That is a direct, empirical warning about the system this document is specifying — and it is
+the exact inverse of the Physics Wallah design, which is emotion-maximalist and content-secondary
+at the top of its funnel (T76). **The two largest mass-explanation systems on Earth have
+converged on opposite answers to the same question, and the Chinese one has the study.**
+
+> **How unstudied is this?** ERIC's `description:"dual teacher classroom"` returns **exactly one
+> record**. The canonical case — the Chengdu No. 7 Middle School livestream program — has no
+> retrievable English-language academic treatment at all, and no study of livestream-tutoring
+> *learning outcomes* in China was retrievable from ERIC, Crossref, or Semantic Scholar.
+> `OBSERVED` (absence). **The human proof-of-concept for AI tutoring's architecture ran at
+> national scale for a decade and the English-language literature contains one survey of 968
+> children.**
 
 That is exactly the architecture this repo is arguing for, implemented with humans, at
 national scale, for years:
@@ -1531,16 +1686,95 @@ national scale, for years:
 **The design insight it delivers for free:** the two layers are *separable*, and the expensive
 one (world-class explanation) can be amortised across everyone while the cheap-per-unit one
 (watching) is what has to be local. Nobody in the English-language AI-tutoring discussion
-cites this, and it is the single strongest existing argument that the architecture works.
-`OBSERVED` for the practice; the outcome literature is thin and mostly Chinese-language.
+cites this, and it is the single strongest existing argument that the architecture works —
+**with the equally strong warning attached that the layer AI would replace is the layer the one
+study says was already failing.**
+
+**T82a · The policy that deleted the sector, and what it measured on the way out** —
+`OBSERVED`
+
+The Chinese "double reduction" policy (双减政策) — *Opinions on Further Reducing the Homework
+Burden and Off-Campus Training Burden of Students in Compulsory Education*, CCP General Office
+and State Council, **24 July 2021** — barred new for-profit tutoring licences, forced existing
+institutions to non-profit status, and prohibited core-curriculum tutoring for
+compulsory-education students.
+
+| | |
+|---|---|
+| Employed in off-campus training before | **~15 million** |
+| Became unemployed after | **~10 million** |
+| Offline tutoring institutions | **−83.8%** |
+| Online tutoring institutions | **−84.1%** |
+| New Oriental income | **−80%**, 60,000 staff cut |
+| Depression rate (students) | 9.9% → **9.4%** |
+| Anxiety rate | 7.4% → **7.1%** |
+| Homework completed at school | 46% → **>90%** |
+
+Baseline pressure for context: Shanghai 12–14-year-olds studying **9.8 h/day**; **87.6%** of
+13–18-year-olds finishing homework after 10pm; weekend tutoring hours rose 0.7 → 2.1 h between
+2005 and 2015. `OBSERVED`.
+
+**Two things worth carrying forward.** First, a state destroyed the largest private tutoring
+market in history and the measured mental-health improvement was **half a percentage point**.
+The pressure was not in the tutoring; the tutoring was a response to the pressure. Second,
+New Oriental's surviving move was to **pivot its star teachers into livestream commerce, selling
+goods while giving lessons** — the clearest demonstration available that the parasocial
+teacher-figure, not the explanation, was the transferable asset.
 
 **T83 · Shadow education generally · Extreme dosage as the actual mechanism** — `OBSERVED`
 
 The uncomfortable finding lurking behind every one of these systems: a substantial part of
-their measured effect is plausibly **time-on-task at a dosage no school can match** — six-hour
-days, seven-day weeks, for two years. Any comparison of a technique against "the Indian
-coaching result" must control for dosage or it is measuring hours, not craft. Flagged here so
-that no technique in this section gets credit that belongs to the clock.
+their effect is plausibly **time-on-task at a dosage no school can match**. Any comparison of a
+technique against "the coaching result" must control for dosage or it is measuring hours, not
+craft. The Khan Academy panel (T74a) makes the point cleanly: **approximately linear gains with
+dose and no plateau** is the signature of a time effect.
+
+**And the effect sizes that would settle it are not retrievable.** The two canonical
+meta-analyses exist and are correctly identified — Zhang & Liu (2022), *IJER*,
+`10.1016/j.ijer.2022.101949` (three-level model with robust variance estimation), and Zhang,
+Liu, Wang & Wang (2026), *Learning and Individual Differences*, `10.1016/j.lindif.2026.102877`
+— but **both are paywalled with empty Crossref abstracts and no number could be verified.**
+Per this repo's standing rule they are named without numbers so nobody back-fills them from
+memory. `UNVERIFIED`.
+
+What *was* verified, and it is heterogeneous:
+- **Berberoglu & Tansel (2014)**, Turkey (ERIC EJ1055529): private tutoring raised achievement
+  **in mathematics and Turkish language but NOT in natural sciences.** A subject-heterogeneity
+  result landing directly on physics and chemistry exam prep.
+- **Ku, Lee & Kim (2024)**, Korea (ERIC EJ1454879), longitudinal with instrumental variables:
+  shadow education *"increases the CSAT scores"* and *"significantly contributes to educational
+  inequality even after controlling for various socio-economic characteristics."*
+- **Zhang (2024)**, *Social Science Research*, `10.1016/j.ssresearch.2024.103053`, nationally
+  representative Chinese longitudinal data, counterintuitively: unequal access to private
+  tutoring *"does not uniformally result in significant learning gaps between high- and low-SES
+  students."*
+- **Mark Bray (2023)**, who founded the field, on its own gap: *"**inadequate attention has
+  focused on pedagogical and psychological issues**"* (`10.1080/02103702.2023.2194792`).
+  **The largest body of explanation practice on Earth has a founding scholar saying nobody
+  studied the pedagogy.**
+
+**T83a · The cost, stated once and not softened** — `OBSERVED`
+
+An inventory that admires this craft has to carry its documented human cost, and the cost has
+DOIs.
+
+- *Mental Health Conditions and Suicide Among Adolescent Coaching Aspirants: Case of Kota,
+  India* (2025), `10.1177/09731342251359022` — **32 suicides in Kota in 2023 alone**; **44.45%
+  of coaching aspirants experiencing high academic stress**; a suicide rate notably above the
+  national average.
+- *Study of Suicide Among Coaching Students in Kota Rajasthan* (2025),
+  `10.1177/09710973251356797` — **males 81.5%**; **NEET aspirants >92.59%**.
+- *The Curious Case of Coaching Industry as a Commercial Determinant of Mental Health*,
+  *Indian J. Public Health* (2025), `10.4103/ijph.ijph_1000_25` — frames the **business model
+  itself**, via the WHO commercial-determinants framework, as the causal agent of a suicide
+  cluster.
+
+**The techniques in this section were invented inside an environment that kills some of the
+children in it.** T78's motivational address, T79's exam-item framing, T76's twelve-hour
+marathon and T80's shortcut economy are all adaptations to an extreme-stakes filter, and a
+system that ports the techniques without the stakes is doing something different from what
+they were built for — which is an argument *for* porting them, carefully, and a hard argument
+against porting the intensity along with them. `OBSERVED`.
 
 ---
 
@@ -1607,5 +1841,344 @@ The listener does exist — asynchronously, self-selected, and with a latency of
 aggregated across millions, and reaching the author rather than the learner. Corrections
 surface in pinned comments and in follow-up videos (T16, T33). It is a real feedback loop
 operating at approximately 10⁻⁷ of the bandwidth of a person in a room.
+
+---
+
+## §2 — The constraint nobody names, tested and sharpened
+
+The brief proposed the organising insight and invited me to test it, sharpen it, or replace
+it. It survives, with three amendments and one added bucket. This section states the test,
+runs it, and then spends most of its length on the four places where the classification is
+wrong, uncomfortable, or points the opposite way from the brief's expectation.
+
+### 2.1 The decision procedure, so the classification is not vibes
+
+For each technique, ask three questions in order:
+
+1. **Would a competent tutor sitting beside one learner do this?** If yes → **B**. This is the
+   test that matters and it is the one people skip. A tutor *would* morph a diagram
+   continuously rather than cut (T1). A tutor *would* let the learner drive the simulation to
+   its breaking point (T62). A tutor would **not** hire a confederate to hold a misconception
+   (T13); they would ask the learner what they think.
+2. **If no — does the technique disappear when the learner can act on the artifact?** If yes →
+   **C**. Chapter timestamps, the recap, the retention cold open, rewind-as-repair, the
+   footnote video, the fixed duration. These are not compensations for a missing learner; they
+   are compensations for a **frozen artifact**.
+3. **If it survives interactivity but a tutor still would not do it — it exists because the
+   author could not see this learner** → **A**. The anticipated objection, the street
+   interview, the designated novice, the scheduled pep talk, the modal pitch.
+
+The residue that fits none of the three is **D** (§2.6).
+
+**The counts, from the §4 table:** of 96 techniques inventoried, **21 are A**, **50 are B**,
+**19 are C**, and **6 are D** (a further 8 are split or contested and are counted at their
+primary bucket). Three things fall out of that distribution and each is worth stating:
+
+- **B is the majority, and that is the finding that most contradicts a naive reading of the
+  brief.** Roughly half of what the elite explainers invented is not scar tissue. It is
+  technique that a perfect tutor should use, and most of it has never been implemented in a
+  responsive system because the responsive-system field has been busy building dialogue and
+  not building *explanations*.
+- **A is smaller than it feels but weightier than it counts.** Twenty-one entries — but one of
+  them, **T86 (modal-learner targeting)**, is the parent of most of the others, and it is the
+  one the whole field is actually paying for.
+- **C is almost entirely free money.** Nineteen techniques that cost real authoring effort,
+  carry no pedagogical value, and vanish the moment the artifact stops being a fixed-length
+  video file competing for a click.
+
+### 2.2 Bucket A, and what replaces each one
+
+| # | Technique | The job it does | What replaces it when the system can see the learner |
+|---|---|---|---|
+| T86 | **Modal-learner targeting** | Pitches vocabulary, prerequisites, pace, depth at an imagined median | **The point estimate becomes a measurement.** This is the whole game; everything below is a corollary |
+| T7 | "Pause and ponder" | Requests generation before the reveal | An enforced **gate** on the load-bearing step (§3.1) |
+| T11 | Street-interview elicitation | Surfaces the modal wrong model | **Elicit this learner's model, 30 s earlier, in their words** (§3.3) |
+| T13 | Dialogue confederate | Voices a misconception so it activates | The learner's own answer, quoted back verbatim — with the affect problem handled (§2.4) |
+| T34 | Designated-novice interviewer | Asks the question the viewer can't | The learner asks. Free. This is the cheapest A to retire |
+| T6 | Spared-pain callback | Audits whether the structure worked | Check empirically instead of rhetorically |
+| T84 | Anticipated objection | Pre-answers the modal objection | **Answer the objection this learner actually raised** — and stay silent otherwise, because an unrequested objection *plants* a doubt |
+| T85 | Deliberate false start | Stages an error so it can be corrected | Let the learner make the error; it is worth `g = 0.65` instead of `0.22` when they guess (§T7) |
+| T41 | Emotional frame baked in | Motivates a modal emotional state | Deliver the frame **when discouragement is detected**, not on a schedule |
+| T78 | Scheduled pep talk | Persistence intervention, blind | Same — targeted, and far rarer |
+| T29 | Stakes-first cold open | Buys attention from an uncommitted viewer | Mostly unnecessary; the learner arrived on purpose |
+| T43 | Tangent chain | Maintains interest against drop-off | Detect disengagement; or let the learner take the tangent themselves |
+| T49 | Footnote video | Serves a bimodal audience with two artifacts | **Inline expansion** — and it is already built (`ncase/nutshell`, T69c) |
+| T39 | External sources document | Bounds an aggressive metaphor | The boundary rendered **at the sentence it qualifies** |
+| T24a | Reddit-upvote topic queue | Crude aggregate demand signal | Per-learner demand, continuously |
+| T73 | Removing the observer | Prevents evaluation anxiety | ⚠️ **See §2.8. Do not retire this one casually.** |
+| T81 | Live doubt chat at 100k scale | A return channel with N ≈ 10⁵ | A return channel with N = 1 |
+| T91 | Comment section | Feedback at 10⁻⁷ bandwidth and months of latency | Feedback within the sentence |
+| T16/T33 | Public self-refutation | Models epistemic revision | Partly **B** — see §2.3 |
+| T87 | Scheduled recap | Restates for learners who may have lost it | Restate for the ones who did |
+| T59 | Reference-work format | Serves lookup rather than learning | Intent classification, then serve the right artifact (§3.13) |
+
+**The pattern across the whole column:** in every single row, the replacement is *the same
+operation performed with information instead of without it*. The techniques were never wrong.
+They were **estimates**, and an estimate is what you build when you cannot measure.
+
+### 2.3 Bucket B — the real inventions, and the ones that have never been built
+
+Fifty techniques, and the useful thing is not the list (that is §4) but the subset that a
+responsive system **has not implemented and could**. Ranked by value-per-unit-effort:
+
+1. **T61a — manipulate before explain, at a density of one figure per 3.6 paragraphs.**
+   Ciechanowski. Nobody in the AI-tutoring field builds at anything approaching this density.
+2. **T62 — the learner drives the model to its own breaking point.** Self-administered
+   refutation, no confession cost, no confederate.
+3. **T61 — progressive degrees of freedom.** Introduce one control at a time; the tenth figure
+   has six sliders and the reader has met each alone. **Generated widgets almost always expose
+   every parameter at once, and this is why they teach less than they look like they should.**
+4. **T66 — the ladder of abstraction with a visible control**, including Victor's crucial
+   *"stepping down is as important as stepping up"* and *"every point on a visual abstraction
+   typically corresponds to a particular concrete state."*
+5. **T1 — continuous transformation preserving identity.** Backed by the strongest measured
+   distinction available: representational animation **g = 0.40** vs decorative **g = −0.05**.
+6. **T23/T26/T55 — the retained failure with its diagnosis.** Debugging as content.
+7. **T17 — the simulation is the argument**, with the conclusion genuinely out of the author's
+   hands.
+8. **T48 — the useful lie, declared.** Level-of-abstraction metadata attached to every
+   simplification, so that no simplification silently becomes the next teacher's misconception.
+9. **T79 — the previous-year question as the unit of completion.** Transfer target made
+   explicit and concrete.
+10. **T32 — the discriminating experiment.** Two rival mechanisms, then design the observation
+    that separates them.
+
+**On T16/T33 — self-refutation — I want to revise my own classification.** I first placed it
+in A: a creator corrects in public because they cannot correct in private, months later, at
+scale. That is true and it is not the important part. **A tutor who can see the learner should
+still say "the thing I told you last week was wrong, and here is how I found out."** Modelling
+epistemic revision is not a workaround for latency; it is the disposition being taught. Mould's
+thirteen-year chain-fountain thread is the best artifact of it in existence. **B, with an A
+component in the *mechanism* of delivery only.**
+
+### 2.4 The confession cost — why the street interview does not port cleanly
+
+This is the sharpest place the brief's framing needs amendment.
+
+The obvious port of T11 is: elicit the learner's misconception, then refute it with their own
+words quoted back. Mechanically trivial. And it **discards something the original had for
+free**.
+
+When you watch a stranger on a Los Angeles sidewalk confidently give the wrong answer about
+gravity, three things are true at once: (1) the wrong model is activated in your head — the
+part that does the measured work; (2) **you have risked nothing**; and (3) you have learned
+that this error is *common*, which is a social fact that reduces its shame. Muller's Dialogue
+condition (`d = 0.83`) has the same property: the confederate takes the hit.
+
+Elicit the learner's own answer and you get (1) at full strength and **lose (2) and (3)
+entirely**. The learner is now the person who was wrong. In a domain the learner has anxiety
+about — which is most of mathematics, for most people, most of the time — that is not a neutral
+trade.
+
+The repo's own evidence sharpens this rather than resolving it. Barbieri et al. (2023,
+`g = 0.48`, 181 effect sizes): **correct examples alone outperformed incorrect-only and
+correct+incorrect combinations.** `MEASURED-META`. Showing wrong work is measured to be worse
+than showing right work. Muller's refutation goes the other way, at `d = 0.79`. **The two
+findings are compatible only if the operative variable is *whose* wrong model is on the
+table**: a stranger's wrong work is a distractor, and the learner's *own currently-held* wrong
+belief is the thing that has to be displaced.
+
+So the design consequence, and it is specific:
+
+> **Do not simply hand the learner their own error. Give the error a third-party carrier
+> first, then attribute it.** Elicit → present the misconception as *a* common model (not *your*
+> model) → refute it against a simulation the learner controls → **then** close the loop:
+> *"that was the model you gave me thirty seconds ago."* The attribution comes after the
+> refutation has already succeeded, when being wrong costs nothing because you are no longer
+> wrong.
+
+`CRAFT`. Nobody has tested this ordering and it is a clean two-arm experiment (§3.3).
+
+### 2.5 Responsiveness is a hazard, not only an asset
+
+The brief assumes that seeing the learner is strictly better. For at least one bucket-B
+technique it is strictly worse, and this is the amendment I am most confident of.
+
+**Productive failure requires the failure to complete.** Sinha & Kapur (2021): `g = 0.36
+[0.20, 0.51]`, 53 studies, 166 comparisons, rising to `0.58` at high implementation fidelity.
+`MEASURED-META`. And the repo's own summary of the boundary, verbatim: **"adding help to the
+struggle does not help."**
+
+A system that can see a learner struggling will be built — by product instinct, by user
+preference, by every metric that fires on frustration — to **intervene**. And the intervention
+destroys the effect. This is not hypothetical: it is Schworm & Renkl (2006,
+`10.1016/j.compedu.2004.08.011`, N = 80), where instructional explanations **reduced
+self-explanation activity and thereby reduced learning**. `MEASURED-RCT`. A reversal, not a
+null. The repo also records that worked examples **plus** self-explanation prompts is a
+*significant negative moderator* on the worked-example effect (Barbieri et al. 2023).
+
+**The system that explains more can teach less. The capability to help is a liability that
+must be actively governed.**
+
+What that implies as a build requirement — and it is a strange one, so it should be stated
+plainly:
+
+> **A responsive tutor needs a component whose job is to withhold.** Not a delay, not a hint
+> ladder — a **classifier that distinguishes productive struggle from floundering**, and a
+> policy that stays silent through the first and intervenes only in the second. The boundary
+> conditions are known: productive failure **reverses for grades 2–5** and for domain-general
+> skills; adults `g = 0.62` vs grade-school children `g = 0.22` on the adjacent prequestion
+> effect; and for low-prior-knowledge and SELPA learners the repo's standing position is
+> **"explicit instruction wins — struggle that is productive for a typical learner is often
+> just failure here."** So the withholding policy is itself conditional on a learner model,
+> which is the one thing the linear medium could never have. §3.7 specifies it.
+
+### 2.6 The fourth bucket: D — authored-invariant
+
+The three-bucket scheme carries a hidden claim: that the space of good explanations is
+**enumerable from the learner's state**. Give me a complete model of what this person knows,
+believes, and can hold in working memory, and the right explanation is determined.
+
+It is not, and the inventory contains the counterexamples.
+
+Sanderson's decision to hold **one 2×2 transformation for four minutes with no symbols** is not
+derivable from any learner model. Nothing about a learner's knowledge state says "four
+minutes." Vihart's *Doodling in Math Class* works by **violating** every pacing norm in the
+literature, for a specific audience, in a specific register of adolescent boredom, and no
+optimiser would have found it. Brady Haran's decision that the unit of publication is *a thing
+a person finds interesting* rather than *a curriculum node* produced Graham's number, the
+parker square, and a sequence in the OEIS. Kurzgesagt's "leave viewers with new insights
+without them really noticing" is an aesthetic commitment, not an inference.
+
+**D — authored-invariant.** Techniques whose value is that they were **chosen** rather than
+fitted. Six entries in §4, and they share a signature: removing them does not make the
+explanation wrong, it makes it *generic*.
+
+The practical consequence is a build decision, not a philosophical one:
+
+> **The system needs a curated library of authored explanations to select among, not only a
+> generator.** A generator conditioned on a learner model will produce the median of its
+> training distribution, correctly targeted. That is a real product and it is not the same
+> object as the eigenvector video. The right architecture is **generation for the long tail and
+> for the per-learner repair, selection for the canonical explanations that someone with taste
+> already got right** — which is, exactly, the dual-teacher architecture (T82).
+
+And a warning that follows from `N4` §5.4: the convergence between "what elite explainers do"
+and "what the evidence says" is partly **one person, Derek Muller, appearing on both sides of
+the ledger.** Creator agreement is not independent corroboration. A curated library is a taste
+judgement wearing evidence's clothes unless the selection criterion is measured, and this
+repo's own atlas proposal (`N4-D1`) exists to supply that criterion.
+
+### 2.7 Bucket C, and the one thing it costs to dissolve it
+
+Nineteen techniques that are pure medium artifact: fixed duration, chapter timestamps,
+retention cold opens, the recap, rewind-as-repair, the 10-minute chunk, the one-shot bundle,
+the footnote video, the separate sources document, the single audio track, single register,
+single language, and — the reductio — **CGP Grey retroactively A/B-testing the titles of
+published videos** (T48a).
+
+Two of these deserve more than deletion.
+
+**T8 — Manim's discarded parameterisation — is the highest-value C in the document.** Every
+3Blue1Brown scene is already a function of parameters. The video is one evaluation of that
+function. **The substrate that keeps the parameters open is not a research problem; it is a
+deployment decision**, and Sanderson and Eater have already demonstrated the alternative
+themselves at `eater.net/quaternions` (T9a).
+
+**T90 — rewind-as-repair — is worse than useless and there is evidence.** `N4` §3.7 records
+that when rewinding was tested against an outcome the sign came back **backwards**: Brinton et
+al. (2016) found 4 of 5 skip-*back* motifs associated with getting the next question *right*,
+while skip-*forward* predicted incorrect. `MEASURED-BENCH`. And LectureScape (UIST 2014,
+N = 12) — an interface built on replay peaks — was **null on every task**, with visual search
+*slower* outside peaks (117 s vs 90 s), while **perceived** speed and efficiency were both
+significantly better (p < .05). `MEASURED-RCT`. The medium's only repair affordance is not a
+repair, and the obvious interface built on top of it felt better and did nothing.
+
+### 2.8 Khan's warning, which cuts against Part 3 and should not be waved away
+
+The single most-heard voice in this inventory says the opposite of what Part 3 wants:
+
+> *"The worst time to learn something is when someone is standing over your shoulder going,
+> 'Do you get it?'"*
+> *"Probably the least-appreciated aspect of this is the notion that the very first time that
+> you're trying to get your brain around a new concept, the very last thing you need is another
+> human being saying, 'Do you understand this?'"*
+
+Khan is not describing a limitation he worked around. He is describing **a benefit of the
+absence of a listener**, and he attributes a substantial part of Khan Academy's effect to it.
+
+A responsive system is, structurally, a thing standing over your shoulder going *do you get
+it*. Every technique in §3 increases the felt presence of an evaluator. This repo's own data
+says the felt axis and the learning axis dissociate — so it is possible that a watched learner
+learns as much and hates it, which is survivable — but it is also possible that evaluation
+anxiety costs real capacity in exactly the population that needs the most help.
+
+**The design response, which is a real constraint on §3 and not a caveat:**
+
+1. **Observation must be silent by default.** The system watches continuously and speaks
+   rarely. Latency of intervention is a tuned parameter, and its default should be *long*.
+2. **Probes must not read as tests.** T61a is the model: Ciechanowski learns whether you
+   understood the gear ratio because you moved the slider, and you never experienced being
+   asked. **Instrument the manipulation, not the learner.**
+3. **The learner should be able to turn the observer off** and lose adaptivity rather than be
+   watched. Whether they exercise it matters less than that it exists.
+4. **Case's "invisible scaffolding" (T69a) is the resolution of the whole tension** — guidance
+   whose presence the learner cannot detect. That is what Khan's blackboard and Ciechanowski's
+   sliders both are.
+
+### 2.9 The evidence that learner control loses, and what it actually means
+
+The uncomfortable block, stated in full because the rest of the document depends on reading it
+correctly. All `MEASURED-META`, all from this repo's own corpus:
+
+- **Segmenting: system-segmented `g = 0.41` beats learner-segmented `g = 0.20`** (Rey et al.
+  2019, k = 123).
+- **Pacing: system-paced `g = 0.41` vs learner-paced `g = 0.27`** (p = .02; Noetel et al.
+  cross-cutting moderator).
+- **Video against a more-interactive control: `g = −0.07 [−0.38, 0.25]`** — video did not beat
+  more-interactive alternatives, and more-interactive did not beat video.
+- **Discovery learning: "replicatably false"** — and it is the field's own leading interactive
+  designer saying it (Case, T69a), citing the expertise-reversal literature against himself.
+- **Expertise reversal, quantified:** novices **+0.505 [0.260, 0.750]**, experts **−0.428
+  [−0.647, −0.209]** (Tetzlaff et al. 2025, 60 studies, 176 effects, N = 5,924).
+
+**Naive reading: interactivity does not work, build videos.** That reading is wrong, and the
+distinction it misses is the one this whole document turns on:
+
+> **"Interactive" means the learner drives. "Responsive" means the system drives *with
+> knowledge of the learner*. The evidence above is entirely about the first and says almost
+> nothing about the second.**
+
+Learner-segmented lost to system-segmented because **the learner does not know where the
+segment boundaries should be** — that is the expertise problem, not an argument for removing
+control. A system that knows the learner can place the boundary *for* them, which is neither
+learner-paced nor blindly system-paced. It is the third thing, and it is not in the
+literature because it has not existed.
+
+This does, though, impose a hard build rule:
+
+> **Default to system-driven. Expose control as an affordance, not as an obligation. Never
+> make comprehension contingent on the learner choosing correctly.** Ciechanowski's sliders are
+> exactly this: the article reads fine if you touch nothing, and rewards you if you do. That is
+> also Victor's rule — *"the reader is not forced to interact in order to learn"* — and
+> Victor's warning about the failure mode is worth repeating: *"Most interactive widgets dump
+> the user in a sandbox and say 'figure it out for yourself'. Those are not explanations."*
+
+### 2.10 The cost nobody in this repo has named: the loss of the shared artifact
+
+Twenty million people have watched the same 3Blue1Brown eigenvector video. They can refer to
+it. A lecturer can assign it. A forum thread can quote a timestamp. It has become **a cultural
+object with a name**, and part of its value is that it is *the same object for everybody*.
+
+A perfectly personalised explanation destroys that, and the destruction is total and permanent.
+There is no timestamp to share, no common referent, no *"you know the bit where the grid
+tilts."* Every learner gets a private artifact, and the collective apparatus of study groups,
+teaching assistants, forums, and lecture assignment loses its object.
+
+**Bucket A is not free to retire.** T86 (modal-learner targeting) is a lossy compression of the
+audience — and lossy compressions are what makes a thing shareable. This is a genuine cost of
+the entire project, it is not mentioned anywhere in this repo, and it is not a reason to stop.
+It is a reason to build **both**: a stable canonical artifact per concept, and per-learner
+repair around it. Which is, once again, T82 — **the dual-teacher classroom, where the streamed
+lesson is shared and the local tutor is not.**
+
+### 2.11 What the classification buys
+
+| Bucket | Count | What to do Monday |
+|---|---|---|
+| **A** | 21 | **Do not clone.** For each, implement the *job* with measurement in place of estimation. Highest value: T7 → gate, T11 → self-elicitation, T86 → the whole point |
+| **B** | 50 | **Build as-is, and note how few have been built.** Highest value: T61a, T62, T61, T66, T1, T48 |
+| **C** | 19 | **Delete, and reclaim the authoring budget.** Highest value: T8 — stop discarding the parameterisation |
+| **D** | 6 | **Curate.** Buy, license, or commission. Do not attempt to generate |
 
 ---
