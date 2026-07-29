@@ -2,7 +2,7 @@
 title: "The Explanation Atlas — grading the best explanations in the world against a fidelity standard nobody has applied"
 wave: N
 date_researched: 2026-07-29
-sources_count: 58
+sources_count: 76
 ---
 
 # The Explanation Atlas
@@ -709,6 +709,9 @@ measured as percent-through-video, first and last 5% excluded to remove the rest
 | transformers | 10 | 21, 32, 34, 56, 57, 60, 62, 66, 73, 77 | 17.7 pp |
 | Fourier transform | 8 | 29, 33, 50, 57, 62, 67, 71, 74 | 15.8 pp |
 
+(The sample was assembled from search results, so it is popularity-selected; view counts were
+recorded but are **not** used as a variable anywhere in this analysis, per the standing rule.)
+
 - **Mean within-concept SD: 20.7 pp**
 - **Total SD across all videos: 22.6 pp**
 - **SD of a uniform distribution on [5, 95]: 26.0 pp**
@@ -1248,7 +1251,9 @@ shorter than the shorthand.
 ### 5.3 The counterexample, and it is the biggest channel of the four
 
 **The Organic Chemistry Tutor**: 10.8M subscribers, 3,106 videos, **1,762,799,135 total
-views**, channel opened 2015-02-28. `OBSERVED`.
+views**, channel opened 2015-02-28. `OBSERVED` — and, per the standing rule, **1.76 billion
+views is evidence about reach and about nothing else.** It is quoted here only because the
+argument requires knowing that the counterexample is the *largest* case, not a marginal one.
 
 He does **none** of it. Across 23 videos fetched, **zero descriptions contain chapter
 timestamps** and `DESCRIPTION_CHAPTERS` is 0 on every one — where markers exist at all they
@@ -1455,6 +1460,32 @@ Made operational, so it can actually fail:
    per-population atlases, and the shared-object economics collapse. This is the exact
    falsifier `N1-D1` carries for misconception prevalence, and it should be tested the same
    way, on the same cohorts, at the same time.
+
+**And there is a fourth test that costs nothing, requires no learners, and can be run this
+week.** Muller's thesis contains **four explanations of the same content whose learning
+outcomes are already measured** — Exposition 1.77, Extended Exposition 2.41, Refutation 4.41,
+Dialogue 4.77 (§5.2(4)), with the scripts published.
+
+> **Run the §4.5 grader on all four and check whether it recovers the measured ordering.**
+
+This is a genuine pre-registered-style test of the entire design against ground truth that
+already exists, on a four-arm set specifically constructed to vary explanation quality while
+holding content constant. It has three properties that make it better than anything else in
+this list:
+
+- **It is nearly free** — four transcripts, one grader run, no cohort, no trial, no IRB.
+- **It is discriminating rather than merely confirmatory.** The Extended Exposition is the
+  Exposition *plus interesting-but-irrelevant material*, and it scored 2.41 against 1.77 —
+  so the grader must distinguish two conditions that differ only by seductive detail. And
+  Refutation versus Dialogue (4.41 vs 4.77) differ by presentation form at nearly equal
+  outcome, so a grader that separates them sharply is measuring something the outcome does
+  not care about.
+- **It can fail informatively.** If the grader ranks Exposition highest — which is entirely
+  possible, since the Exposition is the cleanest, most fidelity-compliant, best-organised
+  text of the four — then **§29's invariants are measuring cleanliness rather than teaching**,
+  and that is a finding about the survey's own standard rather than about the pipeline.
+
+`DESIGN`. If this fails, do not proceed to Step 3.
 
 ### 6.5 The cheapest version that is still worth building
 
@@ -1792,6 +1823,13 @@ a five-hour series end-to-end is planning against the behaviour of the top quart
 Restating the standing rule: **none of these numbers is evidence about learning.** 211,453
 views establishes that a great many people found it worth starting.
 
+**And there is nothing else to measure, because there is nothing else there.** MFML has **no
+quiz, exercise, or assessment attached anywhere in the series**, and no authored chapter
+structure — the chapters YouTube shows are auto-generated (§5.6). `OBSERVED`. So for the
+proposal's own worked example, the complete set of available outcome data is: three view
+counts, two like counts, two replay heatmaps, and a funnel. That is the state of the art for
+the best-regarded machine-learning course on the platform.
+
 ### 8.2 The compression arithmetic
 
 §30 establishes the bounds, and they are not one number:
@@ -2015,10 +2053,12 @@ table.
 - **Treat the replay heatmap as a localiser, never a ranker.** It is min–max normalised
   within each video in 51 of 51 cases, which makes cross-video comparison impossible by
   construction, and it is chapter-confounded and popularity-gated besides.
-- **Run the grader falsifier before building the atlas.** Three transcripts, one day, and
-  it decides whether §6 is a real design or a taste ranking. The lexical prototype missed
-  the bar by a factor of three, which is informative rather than fatal — but only if the
-  two-stage version is actually tested rather than assumed.
+- **Run the grader falsifier before building the atlas, and run Muller's four scripts
+  first.** Four published transcripts with measured outcomes (1.77 / 2.41 / 4.41 / 4.77),
+  one grader run, no learners. It decides whether §6 is a real design or a taste ranking,
+  and it costs a day. The lexical prototype missed the precision bar by a factor of three,
+  which is informative rather than fatal — but only if the two-stage version is actually
+  tested rather than assumed.
 - **Index explanations by learner state, not by concept alone.** Kalyuga's reversal and
   §29's **d = −0.428 for experts** both say a single ranking per concept is wrong on its
   face.

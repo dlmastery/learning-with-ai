@@ -3,7 +3,7 @@ title: "The Two-Hour School, Graded: Alpha School, 2 Hour Learning, and what a p
 wave: N
 section: N3
 date_researched: 2026-07-29
-sources_count: 71
+sources_count: 96
 status: raw-research
 ---
 
@@ -49,6 +49,16 @@ status: raw-research
 > uniformly across every grade K–12. A "top 1% class" and a class of "top 1% students" are
 > not the same object, and the published claim does not say which is meant.
 >
+> **And there is one number the operator produced under conditions that reward candour.**
+> When the same programme applied for a Pennsylvania cyber charter, its application projected
+> that in year two the school would rank **in the top half of all Pennsylvania schools**. The
+> same programme is sold to fee-paying parents as producing classes **"in the top 1–2%
+> nationally"**. Five states received applications; **four refused**, and the Pennsylvania
+> Department of Education found *"deficiencies in all five of the required criteria"* and
+> called the model **"untested"**. In the version written for a regulator, the "guides"
+> become **certificated teachers at a 1:20 ratio — more adults per student than a typical
+> school**.
+>
 > **None of this shows the school does not work.** It shows that *nobody, including the
 > operator, has produced a measurement capable of showing whether it works.* There is no
 > peer-reviewed evaluation, no state accountability data, no external administration of the
@@ -89,7 +99,7 @@ of the claim*, never the number.
 | # | Finding | Label |
 |---|---|---|
 | **0** | **The operator's own forecast to a regulator is "top half", not "top 1%".** The Pennsylvania cyber-charter application projected that in year two the school would rank **in the top half of all Pennsylvania schools** (Chalkbeat, reading the application). The same programme is marketed to fee-paying parents as producing classes "in the top 1–2% nationally". **The gap between those two numbers is the operator's own estimate of how much of its claim survives an unselected intake.** | `OBSERVED` |
-| **0b** | **Five states received cyber-charter applications; one approved.** Utah, Arkansas, North Carolina and Pennsylvania declined; Arizona approved. The Pennsylvania Department of Education found **"deficiencies in all five of the required criteria"** and described the model as "untested". | `OBSERVED` (regulator) |
+| **0b** | **Six states received cyber-charter applications; one approval is on record.** Utah, Arkansas and North Carolina rejected; Pennsylvania denied; Arizona approved. The Pennsylvania Department of Education found **"deficiencies in all five of the required criteria"** and described the instructional model as **"untested"**. | `OBSERVED` (regulator) |
 | **0c** | **In the regulated version, the teachers come back.** The Arizona application specifies certificated teachers as the minimum qualification for "guides" and a **guide-to-student ratio of 1:20 against 1:30 in typical schools** — i.e. *more* certificated adults per student than a conventional school, in a programme marketed as having replaced teachers with AI. | `OBSERVED` |
 | 1 | **"Two hours" means two hours of *academics*, not a two-hour school day.** The day runs 8:15 am–4:00 pm. The remaining ~4 hours are "life skills workshops". The operator states this plainly in its own FAQ; the ambiguity is created by third-party retelling, not by the school. | `VENDOR` (verbatim) |
 | 2 | **Two hours of academic learning time is roughly parity with a conventional day, not a 3× compression.** BTES's cascade puts academic learning time at ~35% of allocated time in the median classroom; a 3.5–5 hour academic allocation therefore yields ~1.2–1.75 h. Alpha's two hours are engineered for high engagement and a 70–95% success band. The *clock* compresses ~3×; the *learning time* does not. | `INFERENCE` on `OBSERVED` (Fisher et al. 1980) |
@@ -517,7 +527,10 @@ marketing. The comparison is the finding.
 
 **Unbound Academic Institute** — affiliated with the same founders — filed cyber-charter
 applications in **Arizona, Utah, Arkansas, North Carolina, South Carolina and Pennsylvania**.
-**Only Arizona approved.** `OBSERVED` (Meyer 2025; Chalkbeat 2025; Bucks County Beacon 2025).
+**Utah, Arkansas and North Carolina rejected them; Pennsylvania denied its application in
+2025; Arizona is the only approval on record.** (The South Carolina outcome was not
+established in this session — `UNVERIFIED`.) `OBSERVED` (Meyer 2025; Chalkbeat 2025; Bucks
+County Beacon 2025).
 
 **Pennsylvania denied it.** From the denial, quoted in Meyer's 26 March 2025 update:
 
@@ -1015,8 +1028,9 @@ Ranked by how much of the claim each would absorb:
 ## 8. Precedents and the graveyard
 
 This is not the first claim to have reinvented school. The base rate matters, and it is bad.
-Below are the documented negatives — **six**, against the project's requirement of three —
-with the primary evidence for each.
+Below are **six named negative results** (§8.1–§8.6) against the project's requirement of
+three, plus **nine documented precedents** (§8.7) — every one of them retrieved this session,
+with the source and HTTP status recorded in §11.
 
 ### 8.1 NEGATIVE 1 — Mastery learning itself, on external tests
 
@@ -1153,32 +1167,109 @@ section where every outcome number is `VENDOR`, it is the decisive one.
 
 ### 8.7 The wider graveyard
 
-**AltSchool → Altitude Learning.** Founded 2013 by Max Ventilla around a personalized-learning
-model with per-student "playlists" and a parent-facing progress portal; **$33 M** raised in
-2014 and **$100 M** in 2015; **six schools** open by 2016 across San Francisco, Palo Alto and
-Brooklyn, plus a New York middle school in 2017. The company then **closed or divested its
-schools and, in 2019, ceased operating schools directly**, rebranding as the software company
-Altitude Learning. `OBSERVED` — retrieved from the encyclopaedic record; the underlying
-funding and closure reporting was **not** re-verified against primary filings in this session
-and no additional figure is asserted. **The structural parallel is exact: a
-venture-funded, technology-first school network that grew fast on a personalisation claim and
-exited the schooling business without ever publishing an independent outcome evaluation.**
+Five more, each with the closest thing to evidence that exists for it.
 
-**Summit Learning · Khan Lab School · Teach to One · Rocketship · Carpe Diem.** Named in the
-brief, and **not verified in this session**. GDELT returned HTTP **429** on most calls, the
-Wikipedia articles for Summit Public Schools and Khan Lab School are about a New Jersey
-district and a school description respectively and contain **no evaluation data**, and no
-primary evaluation was retrieved for any of them. **They are therefore not used, and no
-closure, withdrawal or effect size is restated for any of them.** This is recorded as a gap
-rather than filled: `UNVERIFIED`. The six negatives in §8.1–§8.6 stand on retrieved primary
-or peer-reviewed sources and are sufficient without them.
+**AltSchool → Altitude Learning.** Max Ventilla, founded 2013; **~$174 M raised** (Zuckerberg,
+Thiel, Powell Jobs, Omidyar, Andreessen among investors); peak **~8 campuses**; tuition
+**~$27–28 k**. Reported burn **$30–40 M/year against ~$7 M/year revenue**. Palo Alto and SF
+Dogpatch campuses closed at the end of 2017–18 and the Chicago expansion was cancelled; on
+**1 July 2019** the company handed its four remaining schools (**240 students**) to Higher
+Ground Education, Ventilla stepped down as CEO, and it renamed itself Altitude Learning. In
+**January 2021** it sold the learning platform itself and pivoted again to consulting.
+Ventilla, in Forbes at the exit: **"We might not be around in five years."**
+`OBSERVED` — journalism (Palo Alto Online 2017, Forbes 2019, EdSurge 2021), all retrieved.
+**Independent evaluation: none exists.** In six years and $174 M, AltSchool never published a
+third-party achievement result. **That is the structural precedent — not the closure, the
+absence.**
 
-**The pattern across the graveyard, stated once.** Every entrant in this category has
-published spectacular internal numbers and no external ones; every external evaluation that
-has ever been performed on the category — RAND on personalized learning, CREDO and its
-successors on virtual charters, Cristia et al. on device access — has returned a number
-between **zero and slightly negative**. **The prior on "school reinvented around software"
-is not neutral. It is bad, and Alpha has to beat it, not merely differ from it.**
+**Summit Learning (Chan Zuckerberg Initiative).** Five Facebook engineers assigned in 2014;
+**$99.1 M** in CZI grants since 2016; a 2016 grant plan projecting **~50,000 schools by 2025**.
+Actual peak **~380 schools / 74,000 students** (NYT, April 2019). The decisive facts:
+
+- **Summit paid the Harvard Center for Education Policy Research to design an evaluation in
+  2016 and then chose not to participate in it** (NYT, 21 Apr 2019). `OBSERVED`. **An operator
+  that commissions an independent study and then declines to run it has told you its own
+  estimate of the result.**
+- Attrition: Summit stated 10% of schools quit annually; **Chalkbeat recomputed the
+  enrolment-weighted figure at 18%, with 25% of schools quitting in their first year**
+  (23 May 2019). `OBSERVED`.
+- Withdrawals and revolts, all documented: **~100 students walked out** of Brooklyn's
+  Secondary School for Journalism (Nov 2018), after which NYC DOE dropped Summit for grades
+  11–12; a walkout in **McPherson, Kansas** (Jan 2019) followed by a district survey in which
+  **77% of middle-school parents preferred their child not be in a Summit classroom**; a
+  sit-in and withdrawals in **Wellington, Kansas**; termination by vote in **Indiana,
+  Pennsylvania** after a survey found **70% of students wanted it dropped or made optional**;
+  suspension and non-return in **Cheshire, Connecticut**. `OBSERVED` (NYT; New York Post).
+- **NEPC (Boninger, Molnar & Saldaña, 2020), *Big Claims, Little Evidence, Lots of Money***:
+  expansion proceeded *"despite a lack of transparency and the absence of convincing evidence
+  that it can deliver on its promises."* `OBSERVED`.
+
+**Teach to One / New Classrooms — and a correction to this section's own brief.** There is
+**no MarGrady 2020 evaluation of Teach to One on New Jersey state tests**; that report does
+not exist. The two real studies point in opposite directions and the contrast is the finding:
+
+- **Independent, federally funded, and null.** Ready, Conn, Bretas & Daruwala, *Final Impact
+  Results from the i3 Implementation of Teach to One: Math*, CPRE at Teachers College (Jan
+  2019). Comparative interrupted time series, **36,158 student-level measurements, 209
+  school-by-year cohorts, 5 treatment vs 16 comparison schools in Elizabeth NJ**, seven
+  pre-years. Verbatim: *"the TtO estimates for each of the three implementation years were
+  **statistically non-significant**"*; year-two estimate slightly **negative**. The authors'
+  own honest caveat: *"This heterogeneity … leaves us unable to draw generalizable
+  conclusions, positive or negative."* `MEASURED-BENCH`.
+- **Vendor-favourable, weaker, and positive.** MarGrady Research (Feb 2019), Gates-funded,
+  non-experimental, **NWEA MAP growth** against a national reference group, 14 schools:
+  *"scores on the math MAP test for consistently-enrolled TtO students improved sufficiently
+  to raise the average school-level percentile by **20 points**"*. `OBSERVED`.
+
+**Read those two together and the whole methodological argument of this section is
+reproduced in miniature: on MAP growth, self-selected schools, "consistently-enrolled"
+students — a large positive. On the state test states actually hold schools to, with a
+comparison group and seven years of pre-trend — nothing.** Alpha reports only the first kind
+of number.
+
+**Rocketship and Carpe Diem — the "learning lab" generation.** Rocketship's original model
+replaced one credentialed teacher per grade with software and an hourly aide, saving a
+reported **$500,000 per school per year**. Education Week commissioned the **California
+Department of Education** to compute network-wide proficiency across five years: *"As the
+Rocketship charter network has added schools and students, the percentage of its students
+scoring proficient on California state tests has **steadily declined**."* The 2012–13
+flexible-classroom redesign — also a cost play, at **$200,000/school/year** — produced *"sharp
+networkwide test-score drops"* and was rolled back. Rocketship's own leaders conceded the
+model scaled *"to nine schools and 5,200 students, before its impact could be rigorously
+studied."* `OBSERVED`.
+
+Carpe Diem put students in individual computer cubicles at roughly **50:1** student-to-teacher
+ratios (226 students, 5 teachers, 4 aides in Yuma in 2012). Its 2010 marketing results carried
+**wrong-to-right answer erasure rates seven times the state average**; passing rates then fell
+**10–30%** below that baseline in 2011–12. Indiana's charter board voted **5–1 not to renew**
+Carpe Diem Meridian in 2017. The executive who ran the national expansion, on the cause of
+death: **"kids just didn't want to enroll, and when they did, they didn't want to stay."**
+Surviving campuses removed the cubicles. `OBSERVED`.
+
+**Khan Lab School.** Independent private school, Mountain View CA, founded by Sal Khan;
+mastery-based progression, mixed-age grouping, extended day. Tuition for 2026–27, from the
+school's own page: **$34,750** (TK–5) and **$38,850** (6–12), plus a $750 registration fee and
+a deposit of 10% of tuition. **Published outcome data: none.** No independent evaluation, no
+achievement study, no peer-reviewed work. `OBSERVED`. **After a decade, the most
+learning-science-literate school-reinvention project in America has published nothing an
+outsider can check.** That is the base rate Alpha sits inside, and it is worth noticing that
+Alpha publishes *more* than Khan Lab School does — it just publishes it about itself.
+
+**LAUSD's iPad programme (2013–15).** A **$1.3 bn** plan to put a Pearson-loaded iPad in the
+hands of ~650,000 students. The number that survives: the district's own first formal
+internal evaluation found that **in 245 classrooms, one teacher was using the curriculum.**
+The superintendent resigned; the FBI seized documents; the successor cancelled the programme
+as unaffordable. **No independent evaluation of learning outcomes was ever produced.**
+`OBSERVED`.
+
+**The pattern across the graveyard, stated once.** Every entrant publishes spectacular
+internal numbers and no external ones. Every external evaluation ever performed on the
+category — RAND on personalized learning (+0.09/+0.07 SD), CPRE on Teach to One (null),
+CREDO on virtual charters (−0.25/−0.10 SD), Ahn & McEachin on Ohio e-schools (negative,
+worst for the weakest students), Cristia et al. on devices (0.003 SD, SE 0.055) — has
+returned a number **between zero and substantially negative**. **The prior on "school
+reinvented around software" is not neutral. It is bad. Alpha does not merely have to differ
+from it; it has to beat it, and it has not yet produced a number capable of doing so.**
 
 ---
 
@@ -1314,7 +1405,12 @@ REST API and the Alpha School community story; **NWEA `teach.mapnwea.org/impl/no
 | `tea.texas.gov` private-schools page | **404** | |
 | `cognia.org/find-a-school/` | **404** | institution search not reachable |
 | `api.cognia.org`, `certification.cognia.org` | **DNS failure** | |
-| CREDO *Online Charter School Study* (2015) PDF, five candidate URLs | **404** | **the headline SD figures from that report are therefore NOT restated anywhere in this section**; the virtual-schooling negative is carried entirely by the two peer-reviewed papers in §8.3 |
+| CREDO *Online Charter School Study* (2015) PDF, five live URLs | **404** | **recovered in full from the Internet Archive (HTTP 200, 1.34 MB)** and quoted verbatim in §8.3 |
+| Fitzpatrick et al. (2020) full text, `journals.sagepub.com` | **403** | two mirrors gave abstract only; **numeric effect sizes not obtained and not stated** |
+| MarGrady "2020 Teach to One state-test evaluation" | **404 — does not exist** | the brief's premise was wrong; the real i3/CPRE evaluation (null) and the real MarGrady report (Feb 2019, MAP growth, positive) are both used, and the discrepancy is the finding |
+| `nytimes.com`, `latimes.com`, `npr.org`, `nypost.com`, `edweek.org` direct | **403 / refused / timeout** | all recovered via the Internet Archive, HTTP 200 |
+| `washingtonpost.com`, `fastcompany.com`, `the74million.org` (Summit walkout coverage) | **403** | not used; the same events are carried by NYT and NY Post |
+| SRI *Rocketship middle-school outcomes* interim brief | **200** | design read; **achievement point estimates not extracted, and no direction is claimed from it** |
 | Alpha `/tuition/` | **404** | tuition is on campus pages only |
 | `alpha.school` pages under a short user-agent | **403** | full browser UA required; noted so the retrieval is reproducible |
 | GDELT DOC API | **429** on ~60% of calls | one request per 6 s enforced; coverage window short |
@@ -1360,6 +1456,12 @@ records, or internal documents.
 14. **Fitzpatrick, B. R., Berends, M., Ferrare, J. J., & Waddington, R. J. (2020).** *Virtual Illusion.* **Educational Researcher** 49(3):161–175. `doi:10.3102/0013189X20909814`. **NEGATIVE.** `MEASURED-BENCH`. **[AB — verbatim]**
 15. **Cordes, S. (2023).** *Cyber versus Brick and Mortar.* **Education Finance and Policy** 19(2):361–384. `doi:10.1162/edfp_a_00399`. **NEGATIVE.** `MEASURED-BENCH`. **[AB — verbatim]**
 16. **Cristia, J., Ibarrarán, P., Cueto, S., Santiago, A., & Severín, E. (2017).** *Technology and Child Development: Evidence from the One Laptop per Child Program.* **AEJ: Applied Economics** 9(3):295–320. `doi:10.1257/app.20150385`. **NEGATIVE, randomised, 318 schools.** `MEASURED-RCT`. **[AB — verbatim]**
+16b. **CREDO / Mathematica / CRPE (2015).** *Online Charter School Study 2015.* Center for Research on Education Outcomes, Stanford. Recovered via the Internet Archive. **−0.25 SD math (≈180 fewer days), −0.10 SD reading (≈72 fewer days); 67% of online charters weaker, 88% weaker in math; 2% outperform.** `MEASURED-BENCH`. **[FT]**
+16c. Gill, B., Walsh, L., Smither Wulsin, C., et al. (2015). *Inside Online Charter Schools.* Mathematica Policy Research. ERIC **ED560967**. **[FT]**
+16d. **Ahn, J., & McEachin, A. (2017).** *Student Enrollment Patterns and Achievement in Ohio's Online Charter Schools.* **Educational Researcher.** `doi:10.3102/0013189X17692999`. ~1.7 M Ohio students. **NEGATIVE.** Companion: RAND RB-9964. `MEASURED-BENCH`. **[AB + brief FT]**
+16e. **Ready, D., Conn, K., Bretas, S., & Daruwala, I. (2019).** *Final Impact Results from the i3 Implementation of Teach to One: Math.* CPRE, Teachers College, Columbia University. CITS, 36,158 measurements, 5 vs 16 schools, 7 pre-years. **NULL.** `MEASURED-BENCH`. **[FT]**
+16f. MarGrady Research (Feb 2019). *Three-Year MAP Growth at Teach to One Schools.* Non-experimental, MAP growth, 14 schools; **+20 school-level percentile points**. `OBSERVED` — included as the *contrast* to 16e, not as a finding.
+16g. Boninger, F., Molnar, A., & Saldaña, C. (2020). *Big Claims, Little Evidence, Lots of Money: The Reality Behind the Summit Learning Program…* National Education Policy Center. `OBSERVED`.
 17. Wilson, R. C., Shenhav, A., Straccia, M., & Cohen, J. D. (2019). *The Eighty Five Percent Rule for optimal learning.* **Nature Communications** 10:4646. `doi:10.1038/s41467-019-12552-4`.
 18. Fisher, C. W., Berliner, D. C., Filby, N. N., Marliave, R., Cahen, L. S., & Dishaw, M. M. (1980). *Teaching Behaviors, Academic Learning Time, and Student Achievement* (BTES). ERIC **ED192454**. — carried from this project's K1 report.
 19. Koedinger, K. R., Carvalho, P. F., Liu, R., & McLaughlin, E. A. (2023). *An astonishing regularity in student learning rate.* **PNAS**. PMC10068755. — carried from K1.
@@ -1381,3 +1483,18 @@ records, or internal documents.
 29. Heath, K. (16 Jan 2026), *Austin American-Statesman*; Yu, I. & Sander, E. (4 Feb 2026), *Houston Chronicle* — Texas voucher programme and Cognia-only accreditation. Cited via citation index; **bodies not read**; nothing beyond the headline fact restated.
 30. Cobler, N. (28 May 2024), *Axios Austin*; Farrell, J. (31 Jul 2025), *WFAE*; Suri, Z. (25 Aug 2025), *KUT/Texas Standard*; NBC Bay Area (25 Jul 2025) — campus-expansion coverage, used only for the existence and grade span of campuses.
 31. *Alpha School*, English Wikipedia (accessed 2026-07-29) — used **only as a citation index** to locate items 24–30 and the AltSchool record. **No claim in this section rests on it.**
+
+**Graveyard journalism (all retrieved; Internet Archive where marked)**
+
+32. Kadvany, E. (10 Nov 2017). *AltSchool Palo Alto to close at end of year.* **Palo Alto Online.** HTTP 200.
+33. Adams, S. (1 Jul 2019). *Zuckerberg-Backed AltSchool Gives Up On Schools And Focuses On Tech.* **Forbes.** HTTP 200. Source for $174 M, campus count, 240 students, "We might not be around in five years."
+34. Wan, T. (15 Jan 2021). *The Edtech Company Formerly Known as AltSchool Sold Its Tech. So What's Left?* **EdSurge.** HTTP 200.
+35. Bowles, N. (21 Apr 2019). *Silicon Valley Came to Kansas Schools. That Started a Rebellion.* **New York Times** (via Internet Archive, HTTP 200). Source for the Harvard CEPR study Summit declined, and the Kansas/Connecticut/Pennsylvania withdrawals.
+36. Barnum, M. (23 May 2019). *Summit Learning … says 10% of schools quit each year. The real figure…* **Chalkbeat.** HTTP 200. Enrolment-weighted 18%; 25% first-year quit.
+37. Edelman, S. (10 Nov 2018). *Brooklyn students hold walkout in protest of Facebook-designed online program.* **New York Post** (via Internet Archive, HTTP 200).
+38. Herold, B. (21 Jan 2014). *Growing Pains for Rocketship's Blended-Learning Juggernaut.* **Education Week** (via Internet Archive, HTTP 200). Includes the California Department of Education proficiency series.
+39. Herold, B. (21 Feb 2019). *Teach to One … Has No Effect on Students' Math Scores, Federal Evaluation Finds.* **Education Week.** HTTP 200.
+40. Safier, D. (19 Jun 2017). *Carpe Diem Charters Are Failing to Seize the Day.* **Tucson Weekly.** HTTP 200. Erasure rates 7× state average; Indiana non-renewal 5–1.
+41. Hechinger Report. *Students sat in cubicles using computers. It wasn't popular.* HTTP 200.
+42. Khan Lab School, *Tuition & Affordability* (2026–27). HTTP 200. $34,750 / $38,850 + fees.
+43. Blume, H. (21 Feb 2017). *No charges in LAUSD iPad probe.* **Los Angeles Times** (via Internet Archive, HTTP 200); Gilbertson, A. (27 Aug 2014). *The L.A. School iPad Scandal: What You Need To Know.* **NPR** (via Internet Archive, HTTP 200).

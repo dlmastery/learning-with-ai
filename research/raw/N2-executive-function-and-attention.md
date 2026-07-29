@@ -1551,3 +1551,246 @@ and the result should not be believed.
 **`DESIGN` claim; not a finding.** No source combines these five. The evidence supports each
 component separately and says nothing about their combination.
 
+
+---
+
+## 8. Negative and null results register
+
+The editorial standard requires at least one per section and the brief requires at least four. There
+are seventeen, each with numbers.
+
+| # | Null / negative result | The numbers | Why it matters here |
+|---|---|---|---|
+| 1 | **The "transient details are harmless" cell is not a null — it is unmeasured** | g = 0.12, **95% CI [−0.33, 0.57]**, k = 18. The interval contains the persistent estimate of 0.43 | The corpus's hinge cannot bear the weight placed on it. §1 is rebuilt on referential status instead |
+| 2 | **Decorative animation does nothing** | **g = −0.05 [−0.17, 0.07]**, k = 17, vs representational animation g = 0.40 [0.34, 0.46], k = 59 (Höffler & Leutner 2007) | Kills "extraneousness" as the mechanism. Non-referential decoration is inert, not harmful |
+| 3 | **Decorative page furniture does nothing** | N = 95, 3 × 3 degrees of decoration in header/footer and flow chart: **no significant effect on retention, transfer, or time** (Rey 2012, JEMH) | Same conclusion, from a primary experiment |
+| 4 | **Emotional design does not work by making learners feel good** | Learning d+ = 0.317–0.387; **liking d+ = 0.109, positive affect d+ = 0.113; perceived learning 0.097 n.s., perceived effort 0.051 n.s., ps > .227** (Brom et al. 2018). Replicated: learning 0.27–0.35, affect 0.09, liking 0.10 (Wong & Adesope 2021) | Falsifies the "make it fun" theory of engagement, twice, independently |
+| 5 | **Interruption count does not drive the seductive-details effect; dose does** | Five details grouped (one interruption) vs interspersed (five): **no significant difference**; load ↑ and transfer ↓ in both (Wirzberger group 2025) | Removes the last structural rescue for the transience reading |
+| 6 | **Prequestions do nothing for the material they did not ask about** | **g = 0.04 [−0.04, 0.11], k = 91, p = .349**; 46% of studies at or below zero (St. Hilaire et al. 2024) | A question is a spotlight, not floodlighting. Governs §3.7 |
+| 7 | **Prequestions failed in an actual classroom** | Chemical engineering course: no difference postquestions vs new questions at end of class, and none on weekly quizzes — **while retrieval practice worked in the same study** (Geller et al. 2017) | Lab-to-classroom transfer of the prequestion effect is not established |
+| 8 | **Teaching 5–7-year-olds to ask questions produced no learning gain** | Preregistered RCT, N = 103: science learning **b = 7.74, 95% CI [−1.93, 17.40], p = .12, p_FDR = .20**; persistence null; prompted question-asking null; **cued exploration significantly worse (p = .02)** (Park et al. 2025) | The best-designed test of the owner's instinct in young children. Only "valuing information" moved |
+| 9 | **Teaching adolescents to generate questions lowered self-regulatory self-efficacy** | Question Formulation Technique over one school year: positive on curiosity, **negative on self-regulatory self-efficacy and cognitive engagement** (Clark et al. 2021) | Question training is not free |
+| 10 | **Socratic questioning has essentially no experimental base in education** | No meta-analysis located. The one randomised study with a standardised outcome (N = 25): **no significant influence on critical thinking; no effect on participation frequency** (Lowenstein 2010) | A canonical method with a near-empty evidence file |
+| 11 | **Fixing help-seeking behaviour did not improve learning** | Help Tutor: lasting behaviour change months after removal; **"we did not find improved domain-level learning"** — the authors' "main disappointment," paralleled by Tai et al. 2013 (Aleven et al. 2016) | The load-bearing null of §4. Repairing one executive demand in isolation is not enough |
+| 12 | **Hints do not help at low or high skill** | Help helps only at **intermediate** skill; at low or high skill, attempting without help was more effective (Roll et al. 2014 EDM) | The always-available help button is the wrong affordance at both ends |
+| 13 | **Training an executive function does not transfer to untrained ones** | **g = 0.11, k = 17, p = .11** (Kassai et al. 2019). Training attention did not improve attention; training mixed EF did not improve targeted EF, both 95% CIs include 0.0 (Rapport et al. 2013) | Confirms the corpus. Externalise, do not train |
+| 14 | **ADHD is not primarily a deficit in sustaining over time** | Vigilance-decrement omissions **δ = 0.54, 80% CV −0.14 to 1.22 (crosses zero)**; commissions 0.24, RT 0.27, SDRT 0.22 — against overall omissions δ = 1.34 and d′ d = 0.98 (Huang-Pollock et al. 2012) | The folk model that drives "shorter lessons" is wrong. §5.2 |
+| 15 | **Blinding removes most behavioural and cognitive-training effects in ADHD** | Under probably-blinded assessment, **only free fatty acids (0.16) and food-colour exclusion (0.42) survived**; behavioural interventions, neurofeedback, cognitive training and elimination diets all attenuated to non-significance (Sonuga-Barke et al. 2013, 54 RCTs). Cognitive training: blinded ADHD total **SMD 0.12 [−0.01, 0.25]**, academics n.s. (Westwood et al. 2023) | The vendor-visible effect and the real effect differ by the rater |
+| 16 | **School-based ADHD interventions do not reliably move achievement** | Between-subjects behaviour **0.18 n.s.**; academic **0.43 n.s.** between and **0.42 n.s.** within (DuPaul et al. 2012). Organisational skills training: organisational deficits d = 0.96–1.20, **"effects on academic measures were not significant"** (Nissley-Tsiopinis et al. 2024); parent-rated d = .63–1.05, **teacher ratings not significant** (Langberg et al. 2012) | Organisational training reliably teaches organisation |
+| 17 | **Extended time shows no differential boost for ADHD, and once the wrong sign** | Three independent failures; **Lovett & Leja (2015): more ADHD/EF symptoms → *less* benefit**, and self-perceived need did not predict benefit. No ADHD-specific meta-analysis exists | Mandated and unevidenced. §5.6 |
+| 18 | **Prediction does not raise average memory** | 60.42% vs 59.52%, **t(28) = 0.41, p = .682, d = .077** (Brod & Breitwieser 2019); no main effect b = −0.090, p = .330 (Theobald & Brod 2022) | It routes memory; it does not amplify it. §7.5 |
+| 19 | **Interleaving reverses for word learning** | **g = −0.39**; n.s. for expository texts and tastes (Brunmair & Richter 2019). And a classroom null: subtraction-strategy adaptivity F(1,193) = 0.13, p = .72, no group × time p = .94 (Nemeth et al. 2019) | Interleaving is a discrimination tool, not a schedule |
+| 20 | **Contrasting cases buy nothing on procedure, and cost in-lesson performance** | Word problems **d = .04, p = .65**; worksheet **84.7% vs 91.8%, p = .037** (Schwartz et al. 2011). Reversal: worked examples beat inventing on transfer, **BF₊₀ > 313** (Glogger-Frey et al. 2022) | The trade is real and must be sold honestly |
+| 21 | **Generation reverses when what is generated has no semantic relation to the target** | Anagram generation **d = −.05**, CI excluding zero, 18 studies, >1,000 subjects (Bertsch et al. 2007) | Same referential rule as §1, in a different literature |
+| 22 | **SRL activity only partially mediates SRL interventions' effect on achievement** | "Contrary to popular belief, the results only provide evidence for **partial mediation**" (Jansen et al. 2019, MASEM) | Bounds the externalisation argument in §4 |
+| 23 | **Prior knowledge did not moderate multimedia design principles** | 30 pooled effects, R² = 0.14, **p = .14**; education level p = .95, format p = .24, subject p = .22 (Noetel et al. 2021) | Coherence discipline is not something advanced learners can be spared |
+| 24 | **Sequencing did not matter in the perceptual learning module; retirement criteria did** | Sequencing **F(1,72) = 0.44, p = .509**; retirement **F(1,72) = 4.861, p = .031** (Kellman et al. 2023) | Mastery gating, not clever ordering |
+
+---
+
+## 9. `OPEN` — questions nobody has asked, and why not
+
+**O1. Nobody has measured the transient seductive detail with adequate power.**
+k = 18, CI [−0.33, 0.57]. *Why not:* the seductive-details paradigm is built on text-and-static-image
+materials — Cheng et al. (2026) find the effect cleanest in "paper-and-pencil learning settings" —
+where transience is difficult to manipulate at all. Transience lives in live instruction and video,
+where randomisation is expensive and the unit of assignment is a class rather than a page. The
+result is that the single most common instructional act in the world — the teacher's aside — has a
+literature of eighteen effect sizes.
+
+**O2. Nobody has asked whether a question and a joke are the same intervention.**
+Both open a gap and close it. Kang et al.'s curiosity → caudate anticipation → enhanced encoding of
+the surprising resolution is structurally identical to setup → tension → punchline, and the two have
+never been contrasted in one design. *Why not:* instructional humour research lives in communication
+studies and uses satisfaction, immediacy and rating-scale outcomes; curiosity research lives in
+cognitive neuroscience and uses delayed cued recall and fMRI. There is no shared instrument, so
+there has been no shared experiment.
+
+**O3. Nobody has measured executive-function demand as a property of a product.**
+*Why not:* every instrument in the field — BRIEF, CPT, n-back, Stroop, Tower — operationalises
+executive function as a property of a *person*. There is no validated instrument that scores an
+*interface* for how much executive function it charges its user. The measurement tradition has no
+place to put the question, so the question does not get asked. This is what §4.5's ledger proposes to
+change.
+
+**O4. Body doubling has zero controlled outcome data despite mass adoption.**
+Europe PMC `TITLE:"body doubling"` returns **0 results**; the only two academic sources are the same
+220-person descriptive survey, whose authors state that "no academic exploration exists on the
+topic." *Why not:* the practice was invented and propagated by the ADHD community outside clinical
+research, it has no pharmaceutical or device sponsor, and it does not map onto any existing funded
+trial category. It is a plausible external supply for §4.4 row 1 and row 4 with nothing to cite.
+
+**O5. Whether the prequestion age penalty is developmental or scaffolding-dependent.**
+Adults g = 0.62, grade-school children g = 0.22, and the entire children's cell is **k = 20**. It is
+unknown whether children benefit less because the mechanism requires metacognitive machinery they do
+not yet have, or because the questions used with children were not scaffolded to produce genuine
+attempts. *Why not:* the studies have not been run. The literature grew out of adult list-learning
+paradigms and has migrated into classrooms only recently.
+
+**O6. Whether acquisition compression borrows from durability at matched effort.**
+The central assumption of every "learn X fast" claim, including §6.4's, is that the two clocks are
+independent. *Why not:* testing it requires a primary endpoint 90+ days after the product stops
+being used, on a compressed-acquisition arm, with total effort held constant across arms. Nobody
+funds a trial whose primary outcome is measured three months after the intervention ends and whose
+best possible result is "no worse."
+
+**O7. Whether the five profile-derived triggers in §5.7 harm the learners who do not need them.**
+The whole SELPA-first / curb-cut argument in this project rests on universal application being
+harmless-or-better for the majority. *Why not:* universal-design research measures whether
+accommodations *help* the target group, not whether they *cost* the non-target group, because the
+non-target group is the control condition rather than an outcome of interest.
+
+---
+
+## 10. What to build — the constructive summary
+
+Six things, ordered by evidence strength per unit of engineering effort. None of these is a `DESIGN`
+claim; each is an application of a measured effect.
+
+1. **Delete every element that has no referent in the target schema, and add elements that point at
+   it.** Signalling g = 0.43 (k = 209) is the best-evidenced single design act available; removing
+   competing referents is worth g = 0.16–0.43; and non-referential decoration is *free* (g = −0.05),
+   so the discipline is about competing stories, not about visual austerity.
+2. **Write in the second person.** Personalisation g = 0.33 [0.23, 0.44], k = 55. This is the
+   cheapest measured effect in instructional design and it is the one thing on this list that costs
+   a prompt line.
+3. **Segment for the learner; do not let them segment for themselves.** g = 0.41 vs 0.20, and accept
+   that it takes longer (g = 0.92) because the time between segments is where consolidation happens.
+4. **One attemptable prequestion per knowledge component, with a required guess and immediate
+   correction.** Specific g = 0.54; guessing 0.65 vs reading 0.22. And do not expect it to cover
+   anything it did not ask about (general g = 0.04).
+5. **Never require the learner to recognise that they need help.** Trigger on the observable state —
+   the three-error run, the sub-second hint dwell, the wheel-spinning signature — and deliver a
+   worked step with a required response rather than text. The 34% and 68% figures are the
+   justification, and the Help Tutor null is the warning that this alone will not be sufficient.
+6. **Give away the accommodation that has evidence.** Read-aloud is the one accommodation with a
+   differential-boost finding in ADHD, and it is free in software, universal, and requires no
+   eligibility determination. Extended time is mandated, must be provided, and should not be
+   described to a family as an intervention that is known to work.
+
+---
+
+## 11. Bibliography
+
+Ordered by first appearance. `†` marks sources whose full text was recovered and quoted verbatim;
+`‡` marks sources with numbers flagged **UNVERIFIED** at point of use.
+
+**Coherence, seductive details, emotional design**
+
+1. † Noetel, M., Griffith, S., Delaney, O., Harris, N. R., Sanders, T., & Parker, P. D. (2021). Multimedia design for learning: An overview of reviews with meta-meta-analysis. *Review of Educational Research*. `10.3102/00346543211052329` (preprint recovered via `osf.io/pynzr/download`). `MEASURED-META`
+2. Sundararajan, N., & Adesope, O. (2020). Keep it coherent: A meta-analysis of the seductive details effect. *Educational Psychology Review*, 32, 707–734. `10.1007/s10648-020-09522-4`. `MEASURED-META`
+3. Cheng, C., Wu, Y., Wang, R., & Wang, Z. (2026). Seductive details, cognitive load, and learning outcomes: A multi-level meta-analysis and MASEM. *Educational Psychology Review*. `10.1007/s10648-025-10099-z` (ERIC EJ1510171). `MEASURED-META`
+4. Rey, G. D. (2012). A review of research and a meta-analysis of the seductive detail effect. *Educational Research Review*, 7(3), 216–237. `10.1016/j.edurev.2012.05.003` (ERIC EJ986386). `MEASURED-META`
+5. Rey, G. D. (2012). How seductive are decorative elements in learning materials? *Journal of Educational Multimedia and Hypermedia* (ERIC EJ981639). `MEASURED-RCT` (null)
+6. Rey, G. D., & Steib, N. (2018). The moderating role of arousal on the seductive detail effect in a multimedia learning setting. *Applied Cognitive Psychology*. `10.1002/acp.3473` (ERIC EJ1263899). `MEASURED-RCT`
+7. Wirzberger group (2025). Seductive details in learning text — less harmful if they are grouped together instead of interspersed? *Applied Cognitive Psychology*. `10.1002/acp.70065` (ERIC EJ1474777). `MEASURED-RCT`
+8. † Brom, C., Stárková, T., & D'Mello, S. K. (2018). How effective is emotional design? *Educational Research Review*, 25, 100–119. `10.1016/j.edurev.2018.09.004`. `MEASURED-META`
+9. Wong, R. M., & Adesope, O. (2021). Meta-analysis of emotional designs in multimedia learning: A replication and extension study. *Educational Psychology Review*. `10.1007/s10648-020-09545-x` (ERIC EJ1295978). `MEASURED-META`
+10. Höffler, T. N., & Leutner, D. (2007). Instructional animation versus static pictures: A meta-analysis. *Learning and Instruction*, 17(6), 722–738. `10.1016/j.learninstruc.2007.09.013` (numbers via Noetel). `MEASURED-META`
+11. Schneider, S., Beege, M., Nebel, S., & Rey, G. D. (2018). Signalling meta-analysis (numbers via Noetel). `MEASURED-META`
+12. Ginns, P., Martin, A. J., & Marsh, H. W. (2013). Designing instructional text in a conversational style: A meta-analysis. *Educational Psychology Review*, 25, 445–472. `10.1007/s10648-013-9228-0`. `MEASURED-META`
+13. Rey, G. D., Beege, M., Nebel, S., et al. (2019). Segmenting meta-analysis (numbers via Noetel). `MEASURED-META`
+14. Schroeder, N. L., Adesope, O. O., & Gilbert, R. B. (2013). How effective are pedagogical agents for learning? *Journal of Educational Computing Research*, 49(1). `10.2190/ec.49.1.a`. `MEASURED-META`
+15. Davis, R. O. (2018); Castro-Alonso, J. C., et al. (2021) — pedagogical-agent moderators (numbers via Noetel). `MEASURED-META`
+16. Alemdag, E., & Cagiltay, K. (2018). Eye-tracking review of multimedia learning (via Noetel). `MEASURED-META`
+17. Adesope, O. O., & Nesbit, J. C. (2012). Verbal redundancy meta-analysis (via Noetel). `MEASURED-META`
+
+**Narrative**
+
+18. † Mar, R. A., Li, J., Nguyen, A. T. P., & Ta, C. P. (2021). Memory and comprehension of narrative versus expository texts: A meta-analysis. *Psychonomic Bulletin & Review*, 28, 732–749. `10.3758/s13423-020-01853-1`. `MEASURED-META`
+19. Clinton, V., et al. (2020). Genre differences in inferential comprehension (via Mar et al.). `MEASURED-META`
+20. Walkington, C. A. (2013). Using adaptive learning technologies to personalize instruction to student interests. *Journal of Educational Psychology*, 105(4), 932–945. `10.1037/a0031882` (ERIC EJ1054444). `MEASURED-RCT` ‡ (effect sizes UNVERIFIED)
+
+**Questions, curiosity, pretesting**
+
+21. † St. Hilaire, K. J., Chan, J. C. K., & Ahn, D. (2024). Guessing as a learning intervention: A meta-analytic review of the prequestion effect. *Psychonomic Bulletin & Review*, 31, 411–441. `10.3758/s13423-023-02353-8`. `MEASURED-META`
+22. Pan, S. C., & Carpenter, S. K. (2023). Prequestioning and pretesting effects. *Educational Psychology Review*. `10.1007/s10648-023-09814-5`. `MEASURED-META`
+23. Geller, J., Carpenter, S. K., Lamm, M. H., Rahman, S., Armstrong, P. I., & Coffman, C. R. (2017). Prequestions do not enhance the benefits of retrieval in a STEM classroom. *Cognitive Research: Principles and Implications*, 2, 42. `10.1186/s41235-017-0078-z`. `MEASURED-RCT` (null)
+24. Kang, M. J., Hsu, M., Krajbich, I. M., et al. (2009). The wick in the candle of learning. *Psychological Science*, 20(8), 963–973. `MEASURED-BENCH`
+25. Gruber, M. J., Gelman, B. D., & Ranganath, C. (2014). States of curiosity modulate hippocampus-dependent learning via the dopaminergic circuit. *Neuron*, 84(2), 486–496. `10.1016/j.neuron.2014.08.060`. `MEASURED-BENCH`
+26. Loewenstein, G. (1994). The psychology of curiosity. *Psychological Bulletin*, 116(1), 75–98. `INFERENCE` (theory)
+27. † Park, A. T., Colantonio, J., Delgado Reyes, L., et al. (2025). Question asking practice fosters aspects of curiosity in science content in young children. *npj Science of Learning*. `10.1038/s41539-025-00384-5`, PMC12770468. `MEASURED-RCT`
+28. Clark, S., Harbaugh, A. G., & Seider, S. (2021). Teaching questioning fosters adolescent curiosity. *Applied Developmental Science* (ERIC EJ1263074). `OBSERVED`
+29. Lowenstein, A. (2010). The influence of Socratic questioning in online discussions on the critical thinking skills of undergraduate students. ProQuest, ERIC ED514978. `MEASURED-RCT` (null, N = 25)
+30. Reichardt, R., Polner, B., & Simor, P. (2023). Influencing prior knowledge through a short reading impacts curiosity and learning. *Applied Cognitive Psychology*. `MEASURED-RCT`
+31. Sinha, T., & Kapur, M. (2021). When problem solving followed by instruction works. *Review of Educational Research*, 91(5). `10.3102/00346543211019105` (ERIC EJ1308129). `MEASURED-META` ‡
+32. Bertsch, S., Pesta, B. J., Wiscott, R., & McDaniel, M. A. (2007). The generation effect: A meta-analytic review. *Memory & Cognition*, 35(2), 201–210. `10.3758/BF03193441`. `MEASURED-META`
+33. Adesope, O. O., Trevisan, D. A., & Sundararajan, N. (2017). Rethinking the use of tests. *Review of Educational Research*, 87(3), 659–701. `10.3102/0034654316689306` [carried from B1]. `MEASURED-META`
+
+**Executive function, help seeking, self-regulation**
+
+34. † Aleven, V., Roll, I., McLaren, B. M., & Koedinger, K. R. (2016). Help helps, but only so much: Research on help seeking with intelligent tutoring systems. *IJAIED*, 26, 205–223. `10.1007/s40593-015-0089-1`. `OBSERVED` + `MEASURED-RCT` (null)
+35. Aleven, V., & Koedinger, K. R. (2000). Limitations of student control: Do students know when they need help? *ITS 2000*. `10.1007/3-540-45108-0_33`. `OBSERVED`
+36. Roll, I., Aleven, V., McLaren, B. M., & Koedinger, K. R. (2010). Improving students' help-seeking skills using metacognitive feedback in an intelligent tutoring system. *Learning and Instruction*. `10.1016/j.learninstruc.2010.07.004`. `MEASURED-RCT` — **note the tension with #34, reported in §4.3**
+37. Kassai, R., Futó, J., Demetrovics, Z., & Takács, Z. K. (2019). A meta-analysis of the experimental evidence on near- and far-transfer among children's executive function skills. *Psychological Bulletin*. `10.1037/bul0000180`. `MEASURED-META` (null)
+38. Guo, L. (2022). Using metacognitive prompts to enhance self-regulated learning and learning outcomes. *JCAL*. `10.1111/jcal.12650` (ERIC). `MEASURED-META`
+39. Dignath, C., & Büttner, G. (2008). Components of fostering self-regulated learning among students. *Metacognition and Learning* (ERIC EJ817558). `MEASURED-META`
+40. Jansen, R. S., van Leeuwen, A., Janssen, J., Jak, S., & Kester, L. (2019). Self-regulated learning partially mediates the effect of SRL interventions on achievement in higher education. *Educational Research Review*. `10.1016/j.edurev.2019.100292`. `MEASURED-META`
+41. Xu, Z., Zhao, Y., Zhang, B., Liew, J., & Kogut, A. (2022). A meta-analysis of SRL interventions in online and blended environments. *Behaviour & Information Technology*. `10.1080/0144929x.2022.2151935`. `MEASURED-META`
+42. Donker, A., de Boer, H., Kostons, D., Dignath van Ewijk, C., & van der Werf, M. (2014). Effectiveness of learning strategy instruction on academic performance. *Educational Research Review*. `10.1016/j.edurev.2013.11.002`. `MEASURED-META`
+43. Breitwieser, J., & Reinelt, T. (2026). The effectiveness of implementation intentions in children: A systematic review and meta-analysis. *British Journal of Psychology*. `10.1111/bjop.70065`. `MEASURED-META`
+44. Gollwitzer, P. M., & Sheeran, P. (2006). Implementation intentions and goal achievement: A meta-analysis of effects and processes. *Advances in Experimental Social Psychology*, 38, 69–119. `10.1016/S0065-2601(06)38002-1`. `MEASURED-META` ‡ (the widely cited d = 0.65 could not be verified from a retrieved source this session)
+
+**ADHD**
+
+45. Willcutt, E. G., Doyle, A. E., Nigg, J. T., Faraone, S. V., & Pennington, B. F. (2005). Validity of the executive function theory of ADHD. *Biological Psychiatry*. `10.1016/j.biopsych.2005.02.006`. `MEASURED-META` ‡
+46. Kofler, M. J., Rapport, M. D., Sarver, D. E., et al. (2013). Reaction time variability in ADHD: A meta-analytic review of 319 studies. *Clinical Psychology Review*. `10.1016/j.cpr.2013.06.001`. `MEASURED-META`
+47. Karalunas, S. L., Huang-Pollock, C. L., & Nigg, J. T. (2013). Is reaction time variability in ADHD mainly at low frequencies? *JCPP*. `10.1111/jcpp.12028`. `MEASURED-META` (null: diagnosis × frequency p = .954)
+48. † Huang-Pollock, C. L., Karalunas, S. L., Tam, H., & Moore, A. N. (2012). Evaluating vigilance deficits in ADHD: A meta-analysis of CPT performance. *Journal of Abnormal Psychology*. `10.1037/a0027205`, PMC3664643. `MEASURED-META`
+49. Alderson, R. M., Rapport, M. D., & Kofler, M. J. (2007). Attention-deficit/hyperactivity disorder and behavioral inhibition: A meta-analytic review of the stop-signal paradigm. *JACP*. `10.1007/s10802-007-9131-6`. `MEASURED-META`
+50. Jackson, J. N. S., & MacKillop, J. (2016). Attention-deficit/hyperactivity disorder and monetary delay discounting: A meta-analysis. *Biological Psychiatry: CNNI*. `10.1016/j.bpsc.2016.01.007`. `MEASURED-META`
+51. Patros, C. H. G., Alderson, R. M., Kasper, L. J., et al. (2016). Choice-impulsivity in children and adolescents with ADHD: A meta-analytic review. *Clinical Psychology Review*. `10.1016/j.cpr.2015.11.001`. `MEASURED-META`
+52. Marco, R., et al. (2009). Delay and reward choice in ADHD. *Neuropsychology*. `10.1037/a0014914`. `MEASURED-BENCH`
+53. † Dovis, S., Van der Oord, S., Wiers, R. W., & Prins, P. J. M. (2012). Can motivation normalize working memory and task persistence in children with ADHD? *JACP*. `10.1007/s10802-011-9601-8`, PMC3375007. `MEASURED-RCT`
+54. Antrop, I., Roeyers, H., Van Oost, P., & Buysse, A. (2000). Stimulation seeking and hyperactivity in children with ADHD. *JCPP*. `10.1111/1469-7610.00603`; re-analysis Antrop et al. (2002), *Perceptual and Motor Skills*, `10.2466/pms.2002.95.1.71`. `OBSERVED` (weak: 2 of 25 target behaviours)
+55. Kortekaas-Rijlaarsdam, A. F., Luman, M., Sonuga-Barke, E., & Oosterlaan, J. (2019). Does methylphenidate improve academic performance? *European Child & Adolescent Psychiatry*. `10.1007/s00787-018-1106-3`. `MEASURED-META`
+56. Prasad, V., Brogan, E., Mulvaney, C., Grainge, M., Stanton, W., & Sayal, K. (2013). How effective are drug treatments for children with ADHD at improving on-task behaviour and academic achievement? *European Child & Adolescent Psychiatry*. `10.1007/s00787-012-0346-x`. `MEASURED-META`
+57. Cerrillo-Urbina, A. J., et al. (2018). Prevalence and effects of stimulants: network meta-analysis. *J Child Adolesc Psychopharmacol*. `10.1089/cap.2017.0151`. `MEASURED-META`
+58. Rapport, M. D., Orban, S. A., Kofler, M. J., & Friedman, L. M. (2013). Do programs designed to train working memory, other executive functions, and attention benefit children with ADHD? *Clinical Psychology Review*. `10.1016/j.cpr.2013.08.005`. `MEASURED-META` (null)
+59. Cortese, S., et al. (2015). Cognitive training for ADHD: Meta-analysis of clinical and neuropsychological outcomes from randomized controlled trials. *JAACAP*. `10.1016/j.jaac.2014.12.010`. `MEASURED-META` (null on academics)
+60. Westwood, S. J., Parlatini, V., Rubia, K., Cortese, S., & Sonuga-Barke, E. J. S. (2023). Computerized cognitive training in ADHD: A meta-analysis of RCTs with blinded and objective outcomes. *Molecular Psychiatry*. `10.1038/s41380-023-02000-7`. `MEASURED-META` (null)
+61. Sonuga-Barke, E. J. S., et al. (2013). Nonpharmacological interventions for ADHD: Systematic review and meta-analyses of randomized controlled trials of dietary and psychological treatments. *American Journal of Psychiatry*. `10.1176/appi.ajp.2012.12070991`. `MEASURED-META`
+62. Daley, D., van der Oord, S., Ferrin, M., et al. (2014). Behavioral interventions in ADHD: Meta-analysis of RCTs across multiple outcome domains. *JAACAP*. `10.1016/j.jaac.2014.05.013`. `MEASURED-META`
+63. Fabiano, G. A., Pelham, W. E., Coles, E. K., et al. (2009). A meta-analysis of behavioral treatments for ADHD. *Clinical Psychology Review*. `10.1016/j.cpr.2008.11.001`. `MEASURED-META`
+64. DuPaul, G. J., Eckert, T. L., & Vilardo, B. (2012). The effects of school-based interventions for ADHD: A meta-analysis 1996–2010. *School Psychology Review* (ERIC). `MEASURED-META`
+65. Abikoff, H., Gallagher, R., Wells, K. C., et al. (2013). Remediating organizational functioning in children with ADHD. *Journal of Consulting and Clinical Psychology*. `10.1037/a0029648`. `MEASURED-RCT`
+66. Nissley-Tsiopinis, J., et al. (2024). Organizational skills training, tier 2. *Journal of Consulting and Clinical Psychology*. `10.1037/ccp0000909`. `MEASURED-RCT`
+67. Langberg, J. M., Epstein, J. N., Becker, S. P., Girio-Herrera, E., & Vaughn, A. J. (2012). Evaluation of the Homework, Organization, and Planning Skills (HOPS) intervention. *School Psychology Review*, PMC4209597. `MEASURED-RCT`
+68. Evans, S. W., Owens, J. S., & Bunford, N. (2014). Evidence-based psychosocial treatments for children and adolescents with ADHD. *JCCAP*. `10.1080/15374416.2013.850700`; updated Evans, Owens, Wymbs & Ray (2018), `10.1080/15374416.2017.1390757`. `MEASURED-META`
+69. Lovett, B. J., & Nelson, J. M. (2021). Systematic review: Educational accommodations for children and adolescents with ADHD. *JAACAP*. `10.1016/j.jaac.2020.07.891`. `MEASURED-META`
+70. Lewandowski, L. J., Lovett, B. J., Parolin, R., Gordon, M., & Codding, R. S. (2007). Extended time accommodations and the mathematics performance of students with and without ADHD. *Journal of Psychoeducational Assessment* (ERIC). `MEASURED-RCT` (null)
+71. Miller, L. A., Lewandowski, L. J., & Antshel, K. M. (2015). Effects of extended time for college students with and without ADHD. *Journal of Attention Disorders*. `10.1177/1087054713483308`. `MEASURED-RCT` (null)
+72. Lovett, B. J., & Leja, A. M. (2015). ADHD symptoms and benefit from extended time testing accommodations. *Journal of Attention Disorders*. `10.1177/1087054713510560`. `MEASURED-RCT` (negative direction)
+73. Spiel, C. F., Mixon, C. S., Holdaway, A. S., Evans, S. W., Harrison, J. R., Zoromski, A. K., & Yost, J. S. (2016). *Remedial and Special Education*; and Spiel, Evans & Harrison (2019), *Journal of Applied School Psychology* (ERIC). `MEASURED-RCT` ‡
+74. Gregg, N., & Nelson, J. M. (2012). Meta-analysis on the effectiveness of extra time as a test accommodation for transitioning adolescents with learning disabilities. *Journal of Learning Disabilities* (ERIC). `MEASURED-META`
+75. Malcon, M., et al. (2026). Extra time accommodation RCT protocol. *JMIR Research Protocols*. `10.2196/80271`, NCT06063382. `OBSERVED` (no results)
+76. Eagle, T., Baltaxe-Admony, L. B., & Ringland, K. E. (2023). "Proceed with care": Body doubling. ASSETS '23, `10.1145/3597638.3614486`; extension *ACM TACCESS* (2024), `10.1145/3689648`. `OBSERVED` (descriptive; no outcome data)
+77. Xu, Zhao & Hu (2026). *Psychology of Sport and Exercise*, `10.1016/j.psychsport.2026.103088`; Li et al. (2025), *J Affective Disorders*, `10.1016/j.jad.2025.01.155`; Cheng, Song & Hong (2025), *Frontiers in Psychiatry*, `10.3389/fpsyt.2025.1578614`; Carcelén-Fraile et al. (2025), *Healthcare*, `10.3390/healthcare13192415`. `MEASURED-META`
+78. Kieffer, M. J., Lesaux, N. K., Rivera, M., & Francis, D. J. (2009). *Review of Educational Research* [carried from H2]. `MEASURED-META`
+79. Rios, J. A., Ihlenfeldt, S. D., & Chavez, C. (2020). *Educational Measurement: Issues and Practice*, ERIC EJ1276694 [carried from H2]. `MEASURED-META`
+
+**Intuition, perceptual learning, comparison, gesture**
+
+80. † Kellman, P. J., Massey, C. M., & Son, J. Y. (2010). Perceptual learning modules in mathematics. *Topics in Cognitive Science*, 2(2), 285–305. `10.1111/j.1756-8765.2009.01053.x`, PMC6124488. `MEASURED-RCT`
+81. Krasne, S., Hillman, J. D., Kellman, P. J., & Drake, T. A. (2013). Applying perceptual and adaptive learning techniques for teaching introductory histopathology. *Journal of Pathology Informatics*, 4, 34. `10.4103/2153-3539.123991`, PMC3908489. `MEASURED-RCT`
+82. Ahmad, S., Ashraf, M., Kellman, P. J., Krasne, S., & Ramanathan, S. (2021). Ophthalmology PALM randomised comparison. `10.21203/rs.3.rs-806381/v1`. `MEASURED-RCT`
+83. † Kellman, P. J., Krasne, S., Massey, C. M., & Mettler, E. (2023). Adaptive learning schedules in a skin-cancer perceptual learning module. *CogSci*, eScholarship qt83z22046. `MEASURED-RCT`
+84. Guerlain, S., et al. (2003). *Proceedings of HFES*, `10.1177/154193120304700330`. `MEASURED-RCT`
+85. † Schwartz, D. L., Chase, C. C., Oppezzo, M. A., & Chin, D. B. (2011). Practicing versus inventing with contrasting cases. *Journal of Educational Psychology*, 103(4), 759–775. `10.1037/a0025140`. `MEASURED-RCT`
+86. Schwartz, D. L., & Martin, T. (2004). Inventing to prepare for future learning. *Cognition and Instruction*, 22(2). `10.1207/s1532690xci2202_1`. `MEASURED-RCT` ‡
+87. Glogger-Frey, I., Treier, A.-K., & Renkl, A. (2022). *Instructional Science*. `10.1007/s11251-022-09577-6`. `MEASURED-RCT` (reversal)
+88. Brunmair, M., & Richter, T. (2019). Similarity matters: A meta-analysis of interleaved learning and its moderators. *Psychological Bulletin*, 145(11). `10.1037/bul0000209`. `MEASURED-META`
+89. Nemeth, L., Werker, K., Arend, J., Vogel, S., & Lipowsky, F. (2019). Interleaved learning in elementary school mathematics. *Frontiers in Psychology*, 10, 86. `10.3389/fpsyg.2019.00086`, PMC6385790. `MEASURED-RCT` (null)
+90. Kornell, N., & Bjork, R. A. (2008). Learning concepts and categories: Is spacing the enemy of induction? *Psychological Science*, 19(6). `10.1111/j.1467-9280.2008.02127.x`. `MEASURED-RCT` ‡
+91. † Brod, G., & Breitwieser, J. (2019). Lighting the wick in the candle of learning: Generating a prediction stimulates curiosity. *npj Science of Learning*, 4, 17. `10.1038/s41539-019-0056-y`, PMC6803639. `MEASURED-RCT`
+92. † Theobald, M., & Brod, G. (2022). Tackling scientific misconceptions: The element of surprise. *Psychonomic Bulletin & Review*, 29(6). `10.3758/s13423-022-02124-x`, PMC9722848. `MEASURED-RCT`
+93. Alfieri, L., Nokes-Malach, T. J., & Schunn, C. D. (2013). Learning through case comparisons: A meta-analytic review. *Educational Psychologist*, 48(2). `10.1080/00461520.2013.775712`. `MEASURED-META`
+94. † Gentner, D., Loewenstein, J., & Thompson, L. (2003). Learning and transfer: A general role for analogical encoding. *Journal of Educational Psychology*, 95(2), 393–408. `10.1037/0022-0663.95.2.393`. `MEASURED-RCT`
+95. † Novack, M. A., Congdon, E. L., Hemani-Lopez, N., & Goldin-Meadow, S. (2014). From action to abstraction: Using the hands to learn math. *Psychological Science*, 25(4). `10.1177/0956797613518351`, PMC3984351. `MEASURED-RCT`
+96. Chi, M. T. H., Feltovich, P. J., & Glaser, R. (1981). Categorization and representation of physics problems by experts and novices. *Cognitive Science*, 5(2), 121–152. `10.1207/s15516709cog0502_2`. `OBSERVED` ‡
+
+**Carried from the corpus, not re-derived:** Sailer & Homner (2020) gamification moderators; Deci,
+Koestner & Ryan (1999) 128 experiments on tangible rewards; Koedinger et al. (2023) PNAS
+opportunities-to-mastery; Wan & Beck (2015) wheel-spinning; Cepeda et al. (2008) optimal spacing
+gap; Fisher et al. (1980) BTES productive learning time; Pashler et al. learning styles;
+Khan Academy (2026) on Khanmigo v1.
