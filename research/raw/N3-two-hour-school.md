@@ -95,6 +95,7 @@ of the claim*, never the number.
 | 5 | **The white paper's stated national norm (4 RIT/year, grade-5 math, p50) is wrong under every definition NWEA publishes** (9.61 fall→spring; 8.32 spring→spring; 5.47 fall→fall). | `RECOMPUTED` |
 | 6 | **The 99th *school* percentile ≈ the 90th *student* percentile in maths, 84th–87th in reading, at every grade.** The class-level "top 1%" claim is compatible with an average student around the 85th–90th percentile. | `RECOMPUTED` |
 | 7 | **There is no independent measurement of any kind.** No peer-reviewed evaluation; the only two academic items naming Alpha School are non-peer-reviewed preprints. No state accountability data, because the schools are private. No external test administration. No control group. | `OBSERVED` |
+| 7b | **One exception is arriving.** **Unbound Academy** — listed by 2 Hour Learning as one of its schools — is an Arizona **tuition-free public virtual charter** for grades 4–8, opening 3 Aug. Public charters report state assessment results and A–F grades. It is also the variant that advertises *"certified teachers live on screen"*, which the flagship explicitly does not have. | `OBSERVED` |
 | 8 | **Selection is documented by the operator itself**: $100 application fee, information session, shadow day, prior school records, a MAP exam reviewed at enrolment, a $1,000 non-refundable deposit, tuition $10k–$75k, and an explicit statement that "parental alignment" is a precondition and that the model "works for 80–90% of children". | `VENDOR` (verbatim) |
 | 9 | **The operator's own numbers are internally inconsistent.** The same site reports the top-20% cohort as **6.5×** (home page) and **3.9×** (results page); the white paper says "nearly 4x". `timeback.com` metadata advertises "10x faster learning gains". | `OBSERVED` |
 | 10 | **Mechanically, this is the Personalized System of Instruction with software.** Mastery criterion, self-pacing, unit-by-unit gating, proctors reassigned to motivation. PSI has real evidence — and a real ceiling. That is the correct prior, and it predicts a genuine but modest effect, not a top-1% one. | `INFERENCE` on `MEASURED-META` |
@@ -107,9 +108,10 @@ of the claim*, never the number.
 
 | Entity | What it is | Source |
 |---|---|---|
-| **Alpha School** | Private PreK–12 school network. Flagship campus Austin, TX, opened 2014 ("now in year 11", "more than 150 students"). Location pages exist for ~40 sites across 18 states plus Puerto Rico, most marked as launching. | `alpha.school` (HTTP 200) |
+| **Alpha School** | Private PreK–12 school network. Flagship campus Austin, TX, opened 2014 ("now in year 11", "more than 150 students"). The site's own location menu lists **44 campus entries across 16 states, DC and Puerto Rico**; many are marked "launching soon" and enrolment is not stated for most. | `alpha.school` (HTTP 200) |
 | **2 Hour Learning** | The instructional programme/company. Site lists schools: Alpha School, Alpha High, Alpha Anywhere, Texas Sports Academy, GT School, NextGen Academy, Nova Academy, Prequel, **Unbound Academy**, The Novatio School, learn+earn. | `2hourlearning.com` (HTTP 200) |
 | **Timeback** | The platform brand. `timeback.com` metadata: *"Revolutionary AI-powered EducationOS helping children master academics in just 2 hours per day. Personalized learning with 10x faster gains. Join the waitlist for 2026 launch."* `timeback.app` renders only "Launching Soon". | `timeback.com` (HTTP 200), `timeback.app` (HTTP 200) |
+| **Unbound Academy** | **Arizona tuition-free public virtual charter, grades 4–8**, school year starting 3 Aug. *"Certified teachers live on screen"*; *"2.8× faster learning, measured by NWEA MAP Growth"*. The only public-sector, publicly-reporting entity in the group. | `unbound.school` (HTTP 200) |
 | **GT School** | Sibling K–8 school for gifted students, same model. *"1400+ SAT. AP 5s. 3X learning velocity."*; *"Our students outperform 91% of students nationally"*; *"Median MAP growth at 3X velocity"*. | `gt.school` (HTTP 200) |
 | **Founders** | MacKenzie Price (co-founder, "innovated by"); Joe Liemandt (Trilogy/ESW Capital). Alpha's own podcast page titles Liemandt "Alpha School Principal". | `alpha.school`, `2hourlearning.com` |
 
@@ -189,6 +191,21 @@ The same organisation's own properties carry, simultaneously:
 | "3X learning velocity" | gt.school | GT School students |
 | **"10x faster gains"** | timeback.com `<meta>` description | unspecified |
 | "4.6x" | white paper | 7 named boys, 6 months |
+
+And the same organisation's claim culture beyond the school itself. **Prequel**
+(`joinprequel.com`, HTTP 200), listed by 2 Hour Learning among its schools:
+
+> "**Go from a 4% to a 75% chance of acceptance to the Ivy League.** How? By putting
+> yourself in the top 1% of real-world achievement." · "If you have an outstanding academic
+> record and a world-class extracurricular, **your chances jump to 90%**." · "Reaching the
+> top 1% in your field—and a **75% chance at Ivy League acceptance**—takes long-term
+> commitment." `VENDOR`, `UNVERIFIABLE`
+
+These are quantified causal claims about admissions probability, published without a
+population, a denominator, a comparison, or a source. They cannot be checked and are not
+checked here. They are recorded because **the standard of evidence an organisation applies
+to its least checkable claim is information about the standard it applies to its most
+checkable one.**
 
 `OBSERVED`. The 3.9× and 6.5× figures describe the same cohort on the same website. No
 methodology note reconciles them. **A number that moves by 67% between two pages of the
@@ -345,6 +362,28 @@ or school/grade-level.** Nobody asked because the distinction is invisible to a 
 audience and costs nothing to leave ambiguous. It is a one-sentence disclosure and it would
 change the reader's estimate by roughly ten percentile points.
 
+### 2.4a "Nationally" means "of American public-school students"
+
+One more property of the reference population, stated in the norms document's own opening
+sentence of Chapter 3:
+
+> "The primary goal of this study is to estimate achievement and growth norms that support
+> inferences about the relative performance and changes in performance of K-12 students
+> attending **U.S. public schools** who take the English versions of MAP Growth …"
+> — Thum & Kuhfeld (2020), §3
+
+The sampling frame is explicitly U.S. **public** schools; NWEA partners were "more than a
+quarter of … some 92,000 U.S. public schools in 2016-17". `RECOMPUTED`/`OBSERVED`.
+
+A $40,000–$75,000 private school reporting that its students are "in the top 1% nationally"
+is therefore reporting a rank **against a population that excludes private-school students
+altogether** — roughly a tenth of American enrolment, skewed towards exactly the
+socioeconomic profile Alpha recruits from. This is not deceptive; it is how MAP works and
+every MAP user is in the same position. It does mean the phrase "top 1% nationally" is doing
+more rhetorical work than the underlying statistic supports, and it compounds with §2.4: the
+claim is a **class-level rank against public-school students**, which is a considerably
+weaker statement than "our students are the top 1% of American children."
+
 ### 2.5 Who administers the test, and does it matter
 
 MAP Growth is administered **by the school**, on the school's own devices, on a schedule the
@@ -457,6 +496,48 @@ retrieval pass; the items below are what was retrieved directly.)*
   investigation, primary documents claimed but not visible to this retrieval. The remainder
   of the article is behind a paywall and **was not read**; nothing beyond the lede is
   asserted here.
+### 3.5 The natural experiment that is about to happen — and it is the whole ballgame
+
+**Unbound Academy** (`unbound.school`, HTTP 200, accessed 2026-07-29) is, in its own words:
+
+> "Arizona · Grades 4–8 · Tuition-Free Public Charter … Unbound Academy is Arizona's
+> tuition-free virtual charter school for grades 4–8. **Real teachers on screen all day**, a
+> curriculum personalized to each child, and a school day that runs 8 to 2 — with core
+> academics mastered by 11 AM." · "✓ Tuition free — funded by Arizona · ✓ Laptop provided ·
+> ✓ **Certified teachers live on screen**" · "**2.8× faster learning, measured by NWEA MAP
+> Growth**" `VENDOR`
+
+It is listed by 2 Hour Learning as one of its schools. **It is a public charter.** Public
+charters in Arizona sit inside state accountability: statewide assessment (AASA), an A–F
+letter grade, and published, disaggregated results.
+
+**This is the single most important fact in this section.** Every verification route
+described in §3.1–§3.4 is closed by the schools' private status. Unbound Academy closes none
+of them voluntarily — it closes them by operation of law. Within one to two assessment
+cycles there will exist, for the first time, an **externally administered, externally scored,
+publicly reported** outcome for a 2 Hour Learning school, with a state-defined comparison
+population and mandatory reporting of enrolment and mobility.
+
+Two caveats before anyone treats it as the answer:
+
+1. **It is the online variant**, and §8.3 documents that online delivery of schooling has a
+   uniformly bad externally-measured record. A poor Unbound result would be confounded with
+   virtuality; a *good* one would be extraordinary precisely because it would break that
+   pattern.
+2. **The model is not the same model.** The flagship sells *"There are no academic teachers"*
+   (white paper) and *"the AI tutor"* as the instructional engine. Unbound sells *"Certified
+   teachers are on screen all morning — our students go to them first, not the software"* and
+   *"AI builds the plan. Teachers teach the kid."* `OBSERVED` — this is a direct comparison of
+   two texts published by the same organisation. **When the same programme enters a regulated
+   environment, the human teacher reappears in the marketing.** Whatever Unbound's results
+   turn out to be, they will be results for a *teacher-led* variant, and a `2.8×` claim
+   attached to it cannot be transferred back to the teacherless one.
+
+Note also the schedule arithmetic: 8:00–8:30 launch, **8:30–11:00 core academics** (a
+2.5-hour block described as "2 Focused Hours" with breaks inside it), 11:00–12:00 break,
+12:00–2:00 workshops. `OBSERVED`. The two-hour figure is again a description of *content
+time inside a longer block*, not of the block.
+
 - **Oklahoma Watch / KGOU**, **20 July 2026** (retrieved via GDELT, HTTP 200): Alpha opening
   Edmond and Tulsa campuses 12 Aug 2026 with **26 and 32 students** respectively; Oklahoma
   tuition **$40,000** (reduced to $30,000 for a founding cohort); "guides" are **not
@@ -890,6 +971,11 @@ that "below the national norm" is *not* the falsifier — the relevant counterfa
 $40,000 private school, not the nation.
 **Report both:** the class/school percentile *and* the student percentile (§2.4). Reporting
 only one is the current failure mode.
+**And note that a weak version of this study is now running by accident**: Arizona will
+publish AASA results and an A–F grade for **Unbound Academy** (§3.5). It is the online,
+teacher-led variant, so it does not test the flagship model — but it is the first
+externally-scored number this group will ever have, and the way its results are received will
+tell us how much of the claim was ever meant to be checkable.
 
 ### 9.3 The study that would settle growth
 

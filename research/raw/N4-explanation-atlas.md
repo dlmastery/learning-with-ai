@@ -714,7 +714,299 @@ it becomes exactly the taste ranking its own falsifier warns about.
 
 ## §7 — Rights, and the honest constraint
 
-<!--AGENT3-->
+This decides whether the design is buildable, so it is treated at length rather than
+waved at. The finding that reorganises it:
+
+> **Every US decision in 2025 held the *analysis* lawful and the *acquisition* unlawful.
+> The binding constraint on the explanation atlas is contract, not copyright.**
+
+You can win the fair-use argument completely and still lose, because the ways of getting
+the text are foreclosed by terms of service, and terms of service are a separate cause of
+action that fair use does not answer.
+
+### 7.1 The copyright doctrine is favourable, and it is not the problem
+
+`HISTORICAL` / case law, retrieved 2026-07-29.
+
+- **Authors Guild v. HathiTrust**, 755 F.3d 87 (2d Cir. 2014): *"the creation of a full-text
+  searchable database is a quintessentially transformative use."* And on the argument a
+  creator would make against the atlas: *"Lost licensing revenue counts under Factor Four
+  only when the use serves as a substitute for the original, and the full-text-search use
+  does not."*
+- **Authors Guild v. Google**, 804 F.3d 202 (2d Cir. 2015): Google Books was fair use
+  because it *"augments public knowledge by making available information about Plaintiffs'
+  books without providing the public with a substantial substitute."* The operative design
+  constraints are quantitative and worth copying directly: the blacklisting *"permanently
+  blocks about 22% of a book's text from snippet view"*, and *"in no case were they able to
+  access as much as 16% of the text."*
+- **Bartz v. Anthropic**, No. C 24-05417 WHA (N.D. Cal., June 23, 2025), Alsup J.: training
+  was *"transformative — spectacularly so"*, and *"such a market for that use is not one the
+  Copyright Act entitles Authors to exploit."* **And**: *"Anthropic had no entitlement to use
+  pirated copies for its central library. Creating a permanent, general-purpose library was
+  not itself a fair use excusing Anthropic's piracy."* Settled; **final approval 2026-07-20**,
+  **$1.5 billion**, non-reversionary, roughly **$3,000 per work**.
+
+**Read the two halves of Bartz together.** Anthropic won every fair-use question about what
+it did with the files and paid $1.5 billion for how it got them. That is the exact risk
+profile of a transcript pipeline built with `yt-dlp`.
+
+**And one case cuts directly against this section's design.** **Thomson Reuters v. Ross
+Intelligence**, 765 F. Supp. 3d 382 (D. Del., Feb. 2025), Bibas J.: *"Ross's use is not
+transformative because it does not have a 'further purpose or different character'… Ross was
+using Thomson Reuters's headnotes as AI data to create a legal research tool to compete with
+Westlaw. It is undisputed that Ross's AI is not generative AI."* And the sentence that names
+the atlas's exposure: *"it does not matter whether Thomson Reuters has used the data to
+train its own legal search tools; the effect on a potential market for AI training data is
+enough."* Bibas expressly limited the ruling — *"only non-generative AI is before me
+today"* — and it is on interlocutory appeal (3d Cir. No. 25-2153, briefed, **undecided**).
+
+> **`OPEN` — is the explanation atlas Bartz or Ross?** An atlas that *retrieves and ranks
+> existing explanations* looks like Ross: non-generative, same purpose as the original,
+> competing for the same attention. An atlas whose graded features are used to *generate new
+> explanations* looks like Bartz: transformative, producing something the source did not.
+> **This is a design choice with a legal consequence and it should be made deliberately, not
+> discovered later.** §6.5's cheapest version — a published fidelity audit with snippet-level
+> quotation, linking rather than reproducing — sits on the HathiTrust/Google Books side of
+> the line and is the safest thing to build first. *Why nobody asked:* the question only
+> arises for an artifact that grades third-party explanations at scale, and nobody has built
+> one.
+
+### 7.2 The contract forecloses the acquisition, and this is where it dies
+
+`MEASURED-BENCH`, quoted from the live documents.
+
+**YouTube Terms of Service** (effective 2023-12-15) grants a viewer *"personal,
+non-commercial use"* and the embeddable player, and prohibits: *"access, reproduce,
+download… any part of the Service or any Content except… as expressly authorized"*, and
+*"access the Service using any automated means (such as robots, botnets or scrapers)."*
+The clause that ends the argument about what a public video licenses you to do:
+
+> *"You also grant each other user of the Service a worldwide, non-exclusive, royalty-free
+> license to access your Content through the Service… **only as enabled by a feature of the
+> Service**… **For clarity, this license does not grant any rights or permissions for a user
+> to make use of your Content independent of the Service.**"*
+
+**`robots.txt`** disallows `/get_video`, `/get_video_info`, `/timedtext_video`, `/youtubei/`,
+`/results` — which is to say, precisely the endpoints every transcript tool calls, including
+the search-results endpoint this survey used in §3.
+
+**Developer Policies** (updated 2026-06-24): III.E.2 bans downloading, caching or storing
+copies of audiovisual content; III.E.6 bans scraping **"or obtain[ing] scraped YouTube data
+or content"** — a clause that reaches downstream users of somebody else's scrape; III.I bans
+using *"any technology other than YouTube API Services to access or retrieve API Data."*
+
+**And there is no compliant path to a third party's transcript.** `captions.download`
+states: *"This method requires the user to have permission to edit the video."*
+`captions.list` will enumerate someone else's caption tracks and will not give you the text.
+
+This survey's own §4.1 measurement is the technical face of that policy: **the unauthenticated
+`timedtext` endpoint returns HTTP 200 with a zero-byte body**, across four format parameters,
+verified 2026-07-29. The door is not merely locked contractually; it has been closed.
+
+**A note on honesty about the ecosystem.** `youtube-transcript-api` and `yt-dlp` exist, are
+widely used, and violate four separate prohibitions simultaneously (automated access;
+download; III.I non-API access; robots.txt). `youtube-transcript-api`'s own README warns it
+*"uses an undocumented part of the YouTube API."* YouTube's CEO has said it on the record:
+*"It does not allow for things like transcripts or video bits to be downloaded, and that is
+a clear violation of our terms of service."* **"Everyone does it" is a risk statement, not a
+permission**, and this section will not pretend otherwise.
+
+**The 30-day rule breaks the atlas as an artifact even where access is legitimate.**
+Developer Policies III.E.4.c–d cap storage of API data at **30 calendar days**, after which
+it must be deleted or refreshed. An atlas is a *versioned, durable, citable public object*
+(§6). A 30-day-refresh corpus is a cache. The **derived-metrics amendment** (added 2026-05-04,
+clarified 2026-06-01) lets audited developers store derived metrics for **36 months** — but
+explicitly: *"Other data (such as video titles, creator names, descriptions, and comment
+text) must still follow the 30-day refresh and deletion policy"*, and it does not cover
+transcripts or audiovisual content at all. It is worth applying for; it does not solve this.
+
+### 7.3 The live litigation risk, which is new and specific
+
+**Ted Entertainment, Inc. v. Nvidia / OpenAI / Apple** (N.D. Cal., 5:25-cv-10287-EJD filed
+2025-11-26; 3:26-cv-02935 and 3:26-cv-02936 filed 2026-04-03). Plaintiffs are YouTube
+creators, including a golf *instructional* channel. **The sole cause of action is DMCA
+§1201(a) anti-circumvention, not copyright infringement**, and the pleading explains exactly
+why:
+
+> *"Most YouTube videos are not registered with the U.S. Copyright Office. That lack of
+> registration, however, does not render them valueless or leave them unprotected… Because
+> copyright registration is not a prerequisite for protection against unlawful
+> circumvention of access controls…"*
+
+This theory routes around everything that sank the earlier **Millette v. OpenAI/Google/Nvidia**
+wave (state-law claims dismissed with prejudice 2025-03-24; the Google and Nvidia actions
+voluntarily dismissed). No registration is required. **Fair use is not a defence to §1201**,
+because §1201 governs *access*, not *use*. And it converts YouTube's own terms of service
+into something a *creator* can enforce.
+
+**Nvidia's motion to dismiss is set for hearing 2026-08-27 — four weeks from this survey's
+date, and undecided.** `OBSERVED`. If it survives, scraping YouTube becomes independently
+actionable by any creator whose video was touched, with no fair-use answer available. **This
+is the single largest legal risk to the design and it will be resolved, one way or the other,
+within a month.** Anything built before then is built on an open question.
+
+### 7.4 What the named channels actually permit
+
+`MEASURED-BENCH`, from the licence documents themselves.
+
+| Source | Licence | Covers the video? | Commercial use |
+|---|---|---|---|
+| **MIT OpenCourseWare** | CC BY-NC-SA 4.0 | **Yes — whole corpus, transcripts included** | **No** |
+| **Khan Academy** | CC BY-NC-SA **3.0 US** (opt-in per item) | Yes | **No** |
+| Khan Academy CS module code | MIT | n/a | Yes |
+| **3Blue1Brown — `manim`** | MIT | n/a (library) | Yes |
+| **3Blue1Brown — `videos` repo** | CC BY-NC-SA 4.0 | **No — scene source code only** | No |
+| **3Blue1Brown — the actual videos** | All rights reserved | — | **No** |
+| **Veritasium** | None (© Electrify US LLC) | — | **No** |
+| **Cassie Kozyrkov** | None ("All rights reserved") | — | **No** |
+
+Details that matter operationally:
+
+- **MIT OCW is the one clean corpus, and it is why §4 used it.** Transcripts are published as
+  PDFs directly on `ocw.mit.edu`, no scraping required, no API involved, licence stated on
+  the page. MIT's own gloss is useful: *"Determination of commercial vs. non-commercial
+  purpose is based on the use, not the user"* — a corporation may use OCW materials for
+  internal training. But: *"Commercialization is prohibited… A commercial education or
+  training business may not offer courses based on OCW materials if students pay a fee."*
+  **A trap worth flagging: OCW's YouTube uploads carry the Standard YouTube Licence** — the
+  CC grant lives in the description text — so a `videoLicense=creativeCommon` API filter will
+  not find them.
+- **Khan Academy's §7.4 is stricter than CC-NC's own definition**, expressly banning *"the
+  sale or rental of… any derivative works based at least in part on the Licensed Educational
+  Content."* Their help centre adds that advertisements on a website count as commercial.
+- **3Blue1Brown permits under 60 seconds with on-screen attribution** and requires a
+  licensing enquiry for anything more, including *"uploading full lessons to an alternate
+  educational platform."* The CC BY-NC-SA on the GitHub repo is for the Python that renders
+  the animations, not for the videos. This is a common and consequential misreading.
+- **YouTube's own CC option offers only CC BY** — no NC, SA or ND variants — so the API's
+  `videoLicense=creativeCommon` flag is a **floor, not a ceiling**: its absence tells you
+  nothing.
+
+> **Null result: no reliable count of CC-BY videos on YouTube exists.** Creative Commons'
+> *State of the Commons* does not report one; YouTube's old announcement 404s and is not in
+> the Wayback Machine; `search.list` caps at ~500 results so the corpus cannot be enumerated
+> either. Any circulating figure is unsourced. `UNVERIFIED`.
+
+**The bind, stated plainly.** The clean corpus (MIT OCW, Khan) is non-commercial. The
+commercially clean corpus (arbitrary CC-BY uploads) is unvetted and does not contain any of
+the explainers the proposal is actually about. And the explainers the proposal *is* about —
+Kozyrkov, Veritasium, 3Blue1Brown — are all rights reserved, with no licence and, in two
+cases, no stated reuse policy at all.
+
+### 7.5 What a creator would want, and what has actually been paid
+
+**YouTube built the permission rail and explicitly declined to build the payment rail.** The
+third-party AI training setting is **off by default**; training permission status is exposed
+per video ID; companies *"can apply to join the list"*. And then:
+
+> *"YouTube isn't facilitating payments between third-party companies and creators or other
+> rights holders at this time."*
+
+`MEASURED-BENCH`. That sentence is the entire commercial gap. Consent is brokered;
+compensation is not.
+
+**The documented complaints are from educational creators, and one of them is in this
+section's own data.** Proof News (2024-07-16) established that EleutherAI's "YouTube
+Subtitles" dataset — **173,536 videos from 48,000+ channels, plain-text subtitles only,
+5.7 GB, 489 million words** — was used by Anthropic, Nvidia, Apple and Salesforce, and
+*"contains video transcripts from educational and online learning channels like Khan Academy,
+MIT, and Harvard."* The named objectors:
+
+- **Julie Walsh Smith, CEO of Complexly** (Crash Course, SciShow): *"We are frustrated to
+  learn that our thoughtfully produced educational content has been used in this way without
+  our consent."*
+- **Dave Farina, "Professor Dave Explains"**: *"If you're profiting off of work that I've
+  done [to build a product] that will put me out of work or people like me out of work, then
+  there needs to be a conversation on the table about compensation or some kind of
+  regulation."*
+- **David Pakman**: *"No one came to me and said, 'We would like to use this.'"*
+- Proof News: *"Of the creators we spoke to, none were aware their information had been
+  taken."*
+
+Note the coincidence and take it seriously: **"Professor Dave Explains" is one of the 51
+videos in this section's own §3 harvest** — his eigenvalue video, 1,362,273 views, appears in
+the peak-clustering table. The person whose explanation this survey measured is on the record
+objecting to exactly the class of use this section is designing. That is not a reason not to
+build it. It is a reason the design must have an answer for him, and §7.6 is that answer.
+
+**The compensation anchors, from SEC filings rather than press:**
+
+| Benchmark | Figure |
+|---|---|
+| Coursera content cost, consumer | **38.6%** of revenue (2025); 40.3% (2024) |
+| Coursera content cost, enterprise | **30.3%** (2025); 31.4% (2024) |
+| Udemy instructor share, subscription | 20% (2024) → 17.5% (2025) → **15% (2026)** |
+| Reddit AI data licensing | **$203.0M aggregate contract value**, 2–3 year terms (S-1); "other revenue" $15.2M → $114.7M → **$140.0M** |
+| Shutterstock data/distribution revenue | $137.3M → $175.3M → **$203.3M**, contributors paid per licence on a tiered schedule |
+
+`OBSERVED` (SEC filings). **Educational platforms pay creators roughly 15–40% of
+attributable revenue and the trend is sharply downward** — Coursera has moved to
+engagement-based allocation and introduced a platform fee, noting it *"experienced opposition
+to our content fee terms"*; Udemy's absolute instructor payouts fell ~$22.8M year over year
+while gross margin rose from 63% to 66%. Anyone designing a creator deal should know that the
+existing market is contracting, not expanding.
+
+Do **not** cite: the 2U/edX 60/40 split (in no 10-K; press folklore), Skillshare's royalty
+pool (sources conflict), or the Reddit–Google $60M/yr and News Corp–OpenAI $250M/5yr figures
+(single-source, "people familiar"). `UNVERIFIED`.
+
+**Shutterstock is the structurally correct model** and the only one in the set that pays
+contributors specifically for machine-learning use: content *"is also made available for
+delivery to our data offering partners for machine learning purposes"*, with contributors
+earning a royalty on a tiered schedule. It is a marketplace where the creator opts in, is
+identified, and is paid per use. That is the shape of the thing that does not exist for
+educational video.
+
+### 7.6 What is actually buildable, in order
+
+`DESIGN`. The architecture the constraints leave standing:
+
+1. **Grade the licence-clean corpus first, and say so.** MIT OCW (CC BY-NC-SA, full
+   transcripts, no scraping) and Khan Academy. This is enough to run §6.4's falsifiers,
+   which is what matters — you do not need Veritasium to find out whether §29's predicates
+   predict transfer. **§4's prototype already ran on exactly this corpus, without violating
+   anything.** The research question is fully answerable inside the permissible set.
+2. **Publish as a fidelity audit with links and snippets, not reproductions.** Copy Google
+   Books' quantitative discipline: hard-cap the fraction of any source reproduced, embed
+   rather than host, keep YouTube's attribution intact where the player is used. This sits
+   on the transformative side of HathiTrust and away from Ross.
+3. **Take the EU Article 3 route seriously if this is research.** DSM Art. 3 covers research
+   organisations doing scientific research, has **no opt-out**, and permits copies to be
+   *"retained for the purposes of scientific research, including for the verification of
+   research results"* — i.e. exactly the durable versioned corpus a 30-day API rule forbids.
+   Art. 4 (the general commercial exception) is almost certainly unavailable, because
+   Recital 18 counts *"terms and conditions of a website or a service"* as a valid
+   reservation and YouTube's ToS plus robots.txt are a textbook one. The UK's s.29A
+   similarly covers non-commercial research only — but note s.29A(5): *"To the extent that a
+   term of a contract purports to prevent or restrict the making of a copy [under this
+   section], that term is unenforceable."* **Within its scope, UK research use beats the
+   YouTube ToS.** That is a real and underused asymmetry.
+4. **Ask, per creator, with something specific to offer.** Not "may we use your video."
+   Rather: *here is a fidelity audit of your explanation against a published standard, here
+   is the replay-density localiser for it, here is where your explanation was measured to
+   produce transfer and where it was not, you keep it, and the atlas links to you rather
+   than replacing you.* The measured transfer estimate is a thing no creator can currently
+   obtain at any price, and it is the only chip on the table that is not money. Whether it is
+   enough is unknown.
+5. **Apply for the audited derived-metrics status** for the metadata layer (36-month
+   retention on derived metrics) and **apply to YouTube's third-party training list**, which
+   is the only sanctioned route to creator-consented YouTube training data.
+
+> **What would show this was the wrong approach.** If the licence-clean corpus (MIT OCW plus
+> Khan) proves too narrow to contain **two or more genuinely different explanations of the
+> same concept** across enough concepts to run §6.4's tests, then the falsifier cannot be
+> evaluated inside the permissible set, and the whole design becomes contingent on licences
+> nobody has granted. **This is checkable in an afternoon** by counting concept overlap
+> between OCW courses and the Khan library, and it should be checked before anything else in
+> §7 is acted on.
+>
+> **A partial check, already done, is encouraging.** For *eigenvectors and eigenvalues* alone,
+> the licence-clean set already contains at least four distinct explanations: MIT OCW 18.06
+> Lecture 21 (Strang, ~51 min, transcript published as PDF), OCW 18.06 Lecture 22
+> (diagonalisation and powers), and two Khan Academy treatments (`PhfbEr2btGQ`, 7m42s,
+> 1,335,271 views; `3Md5KCCQX-0`, 15m34s, 612,864 views) — differing sharply in length,
+> formalism, and order of presentation. `OBSERVED (own harvest, 2026-07-29)`. One concept is
+> not a corpus, but it establishes that the permissible set is not degenerate.
 
 ---
 
@@ -855,14 +1147,17 @@ more, and because the negative results are load-bearing rather than decorative.
    real YouTube videos graded against a rubric — surface features *"do not seem to be
    suitable indicators."* `MEASURED-BENCH`. The direct measurement of this section's
    central collision.
-8. **Four explanation formats, 3 weeks and 9 months, no difference.** van Peppen,
-   Verkoeijen, Heijltjes, Janssen et al. (2021), *Instructional Science*, DOI
-   `10.1007/s11251-021-09559-0`, **N = 170**, four conditions (correct + erroneous examples
-   / correct only / erroneous only / practice problems), pretest, immediate posttest,
-   **3-week and 9-month delayed posttest**: *"no differences in learning gains or transfer
-   performance between the four conditions."* `MEASURED-RCT`. **The strongest null against
-   this section's whole premise** — the longest-delay head-to-head format comparison in the
-   literature found nothing.
+8. **Four presentation formats, 3 weeks and 9 months, no difference.** van Peppen,
+   Verkoeijen, Heijltjes, Janssen & van Gog (2021), "Enhancing students' critical thinking
+   skills: is comparing correct and erroneous examples beneficial?", *Instructional Science*,
+   DOI `10.1007/s11251-021-09559-0`, **N = 170**, four conditions (correct + erroneous
+   examples / correct only / erroneous only / practice problems), pretest, immediate
+   posttest, **3-week and 9-month delayed posttest**: *"no differences in learning gains or
+   transfer performance between the four conditions."* `MEASURED-RCT`. The domain is
+   critical-thinking/reasoning-bias tasks rather than conceptual explanation, so it is not a
+   direct test of this section's premise — but it is **the longest-delay head-to-head
+   format comparison located anywhere in this literature, and it found nothing.** Read it as
+   the prior an atlas has to beat.
 9. **Instructional explanations are minimal per se.** Wittwer & Renkl (2010), *EPR*, k = 21:
    *"benefits… are minimal"*, and not necessarily better than self-explaining.
    `MEASURED-META`.
