@@ -3,7 +3,7 @@ title: "The Two-Hour School, Graded: Alpha School, 2 Hour Learning, and what a p
 wave: N
 section: N3
 date_researched: 2026-07-29
-sources_count: 96
+sources_count: 118
 status: raw-research
 ---
 
@@ -59,6 +59,12 @@ status: raw-research
 > become **certificated teachers at a 1:20 ratio — more adults per student than a typical
 > school**.
 >
+> Since then: **IXL Learning deactivated Alpha's account in July 2025** for "violating our
+> terms of service" — so the platform stack that produced the published results is not the
+> one now running; **New York State declined to recognise the $65,000 Manhattan campus as a
+> school at all**; and the group's entire corporate structure files nothing — no Form 990, no
+> Form D, no SEC filing of any kind.
+>
 > **None of this shows the school does not work.** It shows that *nobody, including the
 > operator, has produced a measurement capable of showing whether it works.* There is no
 > peer-reviewed evaluation, no state accountability data, no external administration of the
@@ -101,6 +107,9 @@ of the claim*, never the number.
 | **0** | **The operator's own forecast to a regulator is "top half", not "top 1%".** The Pennsylvania cyber-charter application projected that in year two the school would rank **in the top half of all Pennsylvania schools** (Chalkbeat, reading the application). The same programme is marketed to fee-paying parents as producing classes "in the top 1–2% nationally". **The gap between those two numbers is the operator's own estimate of how much of its claim survives an unselected intake.** | `OBSERVED` |
 | **0b** | **Six states received cyber-charter applications; one approval is on record.** Utah, Arkansas and North Carolina rejected; Pennsylvania denied; Arizona approved. The Pennsylvania Department of Education found **"deficiencies in all five of the required criteria"** and described the instructional model as **"untested"**. | `OBSERVED` (regulator) |
 | **0c** | **In the regulated version, the teachers come back.** The Arizona application specifies certificated teachers as the minimum qualification for "guides" and a **guide-to-student ratio of 1:20 against 1:30 in typical schools** — i.e. *more* certificated adults per student than a conventional school, in a programme marketed as having replaced teachers with AI. | `OBSERVED` |
+| **0d** | **A supplier terminated the account.** IXL Learning told WIRED that **Alpha School's account was deactivated in July 2025** and that Alpha is *"no longer an IXL customer due to violating our terms of service"*, adding that IXL "is not intended… as a replacement" for "trained, caring teachers." IXL is one of the three named third-party platforms in the charter applications. **The system that produced the published results is not the system now in operation.** | `OBSERVED` (vendor statement) |
+| **0e** | **A second regulator refused the model.** NYSED declined Alpha's application to incorporate as an independent school, writing that instruction is *"primarily online… with little to no supervision or competent teacher delivering such instruction."* The $65,000 New York campus operates as a homeschool co-op; families file as homeschoolers. | `OBSERVED` (regulator) |
+| **0f** | **Where an outsider got a denominator, it was five.** A sympathetic insider review found the affiliated GT School's "5× faster" claim rested on **five children** who sat both the fall and winter tests. No published multiplier from this group carries an N. | `OBSERVED` |
 | 1 | **"Two hours" means two hours of *academics*, not a two-hour school day.** The day runs 8:15 am–4:00 pm. The remaining ~4 hours are "life skills workshops". The operator states this plainly in its own FAQ; the ambiguity is created by third-party retelling, not by the school. | `VENDOR` (verbatim) |
 | 2 | **Two hours of academic learning time is roughly parity with a conventional day, not a 3× compression.** BTES's cascade puts academic learning time at ~35% of allocated time in the median classroom; a 3.5–5 hour academic allocation therefore yields ~1.2–1.75 h. Alpha's two hours are engineered for high engagement and a 70–95% success band. The *clock* compresses ~3×; the *learning time* does not. | `INFERENCE` on `OBSERVED` (Fisher et al. 1980) |
 | 3 | **The "2x" multiplier's denominator is the adjacent-grade RIT gap at fixed percentile, not observed growth.** Verified against the white paper's own two worked examples, both of which reproduce exactly from NWEA's Spring achievement tables. | `RECOMPUTED` |
@@ -591,12 +600,29 @@ recommended for rejection by the Lancaster (PA) district administration in Janua
 the affiliated Texas charter application was reported as vetoed by the Texas Education Agency
 in June 2025. `OBSERVED`, second item `UNVERIFIED` to a primary source in this session.
 
-And on the Texas voucher programme: the Austin American-Statesman (16 Jan 2026) and Houston
-Chronicle (4 Feb 2026) reported that the Texas comptroller's office excluded schools
-accredited solely by Cognia from the state's new voucher programme, affecting dozens of
-Austin private schools including Alpha; the exclusion was later resolved for most affected
-schools. `OBSERVED` — **headlines and dates retrieved via a citation index; the article
-bodies were not read in this session and no figure from them is restated.**
+**And both state subsidy programmes it approached have excluded it, at least temporarily.**
+
+- **Texas.** The Austin American-Statesman (Heath, 16 Jan 2026, HTTP 200) reports that of
+  roughly **40 Austin private schools accredited solely by Cognia, one was approved** for the
+  state's new Education Freedom Accounts (SB2) programme — Alpha School Austin was shut out —
+  while ~90 Austin schools in total were approved. The comptroller had sought an attorney-
+  general opinion over alleged foreign ties among *some* Cognia-accredited schools; Alpha was
+  collateral. The account is worth ~**$10,500 per pupil** (~$30,000 for special education),
+  and eligibility requires accreditation, two years of operation, **and a nationally
+  norm-referenced test from grade 3**. The Houston Chronicle (4 Feb 2026) reports the block
+  was later resolved for most affected schools. `OBSERVED`.
+- **Oklahoma.** Oklahoma Watch (Henry, 21 Jul 2026, HTTP 200): **Alpha was listed on the
+  Oklahoma Tax Commission's Parental Choice Tax Credit approved-schools list and was removed
+  after Oklahoma Watch inquired**; Alpha then stated it had not applied to the programme. A
+  follow-up two days later was headlined *"New AI-Powered Private School Won't Qualify for Tax
+  Credit Program This Year"* (headline confirmed via a news index; **body HTTP 429, not
+  read**). `OBSERVED`.
+
+**The pattern is worth naming without over-reading it.** Four charter refusals, one
+independent-school incorporation refused, and exclusion (temporary or otherwise) from two
+state subsidy programmes. None of these is a judgement about learning. All of them are
+judgements by bodies whose job is to check, and **every one of them went against the
+operator.** The one approval is the one that will now have to report.
 
 ### 3.4b The one substantive independent technical analysis
 
@@ -638,9 +664,124 @@ comment Meyer endorses); and the Arizona application's description of the Browns
 as serving *"students from underprivileged backgrounds"* while, per Meyer, charging
 **$15,000** tuition — the campus page today states **$10,000**. `OBSERVED`.
 
+### 3.4c The courseware vendor terminated the account
+
+The most consequential single fact retrieved in this session, and it comes from a supplier's
+own statement rather than from a critic. Reporting the Brownsville campus, **WIRED (Todd
+Feathers, 27 Oct 2025)** — retrieved via `curl`, HTTP **200**; `wired.com` refuses WebFetch:
+
+> **IXL Learning told WIRED that Alpha School's account was deactivated in July [2025] and
+> that Alpha is "no longer an IXL customer due to violating our terms of service,"** adding
+> that IXL "is not intended—and we do not recommend its use—as a replacement" for "trained,
+> caring teachers."
+
+`OBSERVED` — a named vendor statement to a named publication. IXL is one of the three
+third-party platforms the charter applications name as the instructional engine (§3.4a). Two
+things follow. First, **the supplier of a core component publicly disclaims the use it is
+being put to.** Second, whatever the platform stack was when the 2023/24 MAP results were
+generated, it is **not** the stack in operation afterwards — which means the published
+outcome figures and the current product are not describing the same system.
+
+The same report documents the mechanism failing in the direction the design predicts: a
+nine-year-old locked in an IXL remediation loop on three-digit multiplication for 20-plus
+repetitions with a guide refusing an exception; the child skipping lunch to catch up and
+losing weight; children barred from rooms, field trips and off-campus lunches for missing
+learning goals. **And the Brownsville head of school is quoted saying the adult guides "don't
+do any teaching."** `OBSERVED`.
+
+This section does not treat one investigation as proof of a systemic condition. It records
+that the only two long-form investigations that obtained internal documents and named
+sources — WIRED (Oct 2025, Jun 2026) and 404 Media (Feb 2026) — **both** report the software
+producing bad instructional decisions, and that a supplier independently ended the
+relationship.
+
+### 3.4d The New York campus is not a school
+
+**WIRED (Feathers, 4 Jun 2026)**, HTTP **200**, quoting the New York State Education
+Department's counsel refusing Alpha's application to incorporate as an independent school
+(late summer 2025):
+
+> "Instruction as proposed is primarily online, with an AI-based platform called 2 Hour
+> Learning™ that delivers instruction in core academic subjects **with little to no
+> supervision or competent teacher delivering such instruction**… Generally, [NYSED] does not
+> recognize online schools as proposed."
+
+`OBSERVED` (regulator, via a document obtained by the publication). Alpha then operated the
+**$65,000** Maiden Lane site as an *"Alpha Anywhere Center"* homeschool co-op — parents file
+as homeschoolers — and re-applied in April 2026; **still pending**. Reported scale: *"more
+than a dozen families."*
+
+**This is a second regulator, in a second state, refusing the same model on the same
+ground.** Alpha's own New York City page lists a $65,000 tuition and carries the same
+percentile claims as every other campus; it does not disclose that the state has declined to
+recognise it as a school.
+
+The same piece quotes internal Trilogy documents on the expansion's own stated priority
+order — *"Opening date > safety > operability > cost efficiency > permanence"*; *"We will
+commence the buildout at risk. We are willing to trade off the financial risk if permits are
+not obtained"*; *"many permits exist by habit, not necessity"* — and reports that **Miami-Dade
+Fire Rescue confirmed** the Miami campus holds no annual Life Safety Operating Permit and
+operates on a temporary certificate of occupancy, with students relocated off-site for
+several days. `OBSERVED`. This corpus's §15 (*what we owe children*) and F8 (safety) would
+treat that as disqualifying independent of any outcome claim, and it is recorded here for
+that reason rather than as evidence about learning.
+
+### 3.4e Corporate form: nothing files anything
+
+Searched directly: **IRS** (ProPublica Nonprofit Explorer, the IRS Business Master File) and
+**SEC EDGAR** full-text search.
+
+| Query | Result |
+|---|---|
+| "2 Hour Learning" (IRS) | **0 organisations** |
+| "Trilogy Enterprises" / "Trilogy Foundation" / "Legacy of Education" (IRS) | **0 matching organisations** |
+| "Alpha School" (IRS, national and TX) | 27 hits, **none** the Austin network |
+| **"Unbound Academic Institute"** (IRS) | **EIN 33-3639402**, Goodyear AZ, 501(c)(3), NTEE B19, **IRS ruling date 1 Apr 2026**, **zero Form 990 filings on record** |
+| "Alpha School", "2 Hour Learning", "Timeback", (SEC EDGAR full text) | **no filings**; all hits are unrelated companies. **No Form D.** |
+
+`OBSERVED`. **The entire group files nothing that a regulator or the public can read.** There
+is one recognised non-profit in it, it was recognised three months ago, and it has never
+filed a 990. There is no Form D, consistent with self-funding rather than outside capital.
+
+Reported ownership chain (**The Lever**, 24 Jun 2025, HTTP 200; corroborated by Bucks County
+Beacon): **Legacy of Education, Inc.** — formerly a Trilogy subsidiary — owns **both** Alpha
+School and 2 Hour Learning, Inc.; **Trilogy** owns the 2 Hour Learning patent and software;
+**Andrew Price** is CFO of Trilogy and ESW Capital and president of **YYYYY, LLC**, a Delaware
+entity that supplied *"general and administrative services"* to the schools and **~$2 million
+in private grants to the charter applicants**; **Crossover Markets** recruits the virtual
+educators. `OBSERVED`.
+
+And the fee schedule, which differs by state by a factor of ~3 and was retrieved twice with
+slightly different figures — recorded here **with the discrepancy intact**: 2 Hour Learning's
+per-pupil charge to the public purse is **$2,000 in Arizona and Arkansas**, and **either
+$5,500 (Bucks County Beacon) or $6,500 (Mathworlds)** in Pennsylvania; Trilogy's revenue
+share is 2.5% capped at **$350,000/year in Pennsylvania** against **$150,000** elsewhere.
+`OBSERVED`, `UNVERIFIED` as to which Pennsylvania figure is right.
+
+**One widely repeated number is not supported.** The claim that Joe Liemandt "committed
+$1 billion" to the project **could not be traced to any reachable source**. The nearest item
+is a Forbes headline referring to his *net worth*; the Texas ESA programme is itself a
+$1 billion programme, which is a plausible source of the conflation. `UNVERIFIABLE` — **the
+figure is not restated in this report.**
+
 ### 3.5 The natural experiment that is about to happen — and it is the whole ballgame
 
-**Unbound Academy** (`unbound.school`, HTTP 200, accessed 2026-07-29) is, in its own words:
+**Approved by the Arizona State Board for Charter Schools on a 4–3 vote, 19 December 2024.**
+`OBSERVED`. It is registered in Arizona's accountability system: querying the ADE School
+Report Cards API directly returns `Unbound Academic Institute` as
+`educationOrganizationId` **1002639** (Charter District) and `Unbound Academy` as
+**1002640**, typed both **"Charter School"** and **"Online School"** (HTTP **200**).
+
+**And the record is empty.** The report-card detail page for 1002640 renders with **no AASA
+results and no A–F letter grade**, and Unbound appears in **neither** the NCES Common Core of
+Data directory for SY2023-24 nor SY2024-25 (2,613 and 2,633 Arizona schools scanned via the
+Urban Institute Education Data API; zero matches). `OBSERVED` — consistent with a school that
+has not yet operated a testable year.
+
+**So the state file exists and is blank.** That is the precise current position: the
+verification mechanism is in place, registered, and has produced nothing yet.
+
+`unbound.school` (HTTP 200, accessed 2026-07-29) describes it in its own words:
 
 > "Arizona · Grades 4–8 · Tuition-Free Public Charter … Unbound Academy is Arizona's
 > tuition-free virtual charter school for grades 4–8. **Real teachers on screen all day**, a
@@ -744,6 +885,36 @@ discount; "Alpha tuition remains on par with the nation's best private schools."
 
 Enrolment, where the operator states it: **Alpha Austin, "more than 150 students", year 11.**
 Oklahoma launch campuses, **26 and 32** students. `VENDOR` / `OBSERVED`.
+
+**And the scale, honestly.** The marketing menu lists **44 campus entries**; the campus table
+maintained from the operator's own locations page as of April 2026 lists **13 operating
+campuses**. Reported enrolments: Austin flagship **~90 students** (K–8) as of 2020 and
+Alpha High Austin **152**; the four campuses opened in 2024 each opened with **fewer than ten
+students**; NYC *"more than a dozen families"*; Oklahoma **26 and 32**. `OBSERVED`, with the
+per-campus figures resting on one insider account (Astral Codex Ten, 27 Jun 2025) and two
+news reports.
+
+**Two consequences.** First, **the denominators behind "our classes score in the top 1–2%"
+are small** — plausibly tens of students per grade-subject cell, and in the one case where an
+outside reader checked, five. Second, this is a network reported in the press as a national
+phenomenon whose total enrolment has never been stated by anyone, including the operator.
+
+**The sample-size finding, from a sympathetic source.** The most detailed independent account
+of the programme is a book-length review by a parent who *moved to Austin in October 2024* to
+try it (**Astral Codex Ten, 27 Jun 2025**, HTTP 200) — a source predisposed to believe it.
+Two of its findings are load-bearing:
+
+> "there is nowhere on the internet that provides a detailed, non-partisan description of what
+> the '2 hour learning' program actually is."
+
+and, on the affiliated gifted school's headline multiplier: **GT School's "5× faster" figure
+rested on only five children who took both the fall and the winter test.** `OBSERVED`.
+
+**n = 5.** That is the only occasion on which anyone outside the organisation has been able to
+put a denominator under one of these multipliers, and it collapsed. It does not follow that
+Alpha's own figures rest on five students. It does follow that **the published figures carry
+no N, that at least one of them was tiny, and that the burden of showing otherwise has never
+been met.**
 
 ### 4.2 The admissions funnel, in the operator's words
 
@@ -1416,7 +1587,18 @@ REST API and the Alpha School community story; **NWEA `teach.mapnwea.org/impl/no
 | GDELT DOC API | **429** on ~60% of calls | one request per 6 s enforced; coverage window short |
 | `nwea.org` 2025 norms tables (four candidate URLs) | **404** | the **2020** norms are used throughout, which is also the edition the white paper cites |
 | `penncapital-star.com` (PDE denial report) | **403** | content corroborated through Mathworlds and Chalkbeat, both retrieved in full |
-| `azreportcards.azed.gov/schools` | **200, no data** | search interface only; Unbound Academy has no published accountability record yet, consistent with a first year of operation |
+| `azreportcards.azed.gov` search UI | **200, no data** | search interface only |
+| `azreportcards.azed.gov/api/Search/GetByName?name=Unbound` and `/Schools/Detail/1002640` | **200 / 200** | entity registered (IDs 1002639 / 1002640, "Charter School" + "Online School"); **no AASA results, no A–F grade published** |
+| NCES Common Core of Data, AZ directory SY2023-24 and SY2024-25 (Urban Institute API) | **200** | **zero matches** for Unbound / Novatio / Alpha — consistent with no operating year yet |
+| `asbcs.az.gov`, `online.asbcs.az.gov`, `www.azed.gov` | **403 / 000 / 403** | Cloudflare; charter contract, enrolment cap and opening date **not obtained**; Wayback CDX returned zero matching rows |
+| ProPublica Nonprofit Explorer / IRS BMF (7 queries) | **200** | only `Unbound Academic Institute` EIN 33-3639402 exists; **zero Form 990s**; nothing for 2 Hour Learning, Trilogy, Legacy of Education |
+| SEC EDGAR full-text (`efts.sec.gov`) | **200** (500 on one query) | **no filings, no Form D** for any group entity |
+| `wired.com` | **WebFetch refused; curl 200** | both investigations retrieved in full via curl |
+| `oktaxcredit.ok.gov`, Texas Comptroller ESA school database | **000 / 404** | approved-school lists not obtained directly |
+| Oklahoma Watch follow-up (23 Jul 2026) body | **429** | headline only |
+| Hechinger Report site search | **200 — "Nothing Found"** | **confirmed zero coverage**, recorded because absence is informative |
+| The 74 article body | **403** | not used |
+| "Liemandt committed $1 billion" | **not traceable** | nearest item is a Forbes headline about net worth; **figure not restated** |
 | Summit Learning, Khan Lab School, Teach to One, Rocketship, Carpe Diem evaluations | **not retrieved** | GDELT 429; no primary evaluation reached. **No figure for any of them appears in this report.** |
 | NYT, Austin American-Statesman, Houston Chronicle article bodies | **not read** (subscription) | referenced only for the existence and date of the event; no content restated |
 
@@ -1483,6 +1665,18 @@ records, or internal documents.
 29. Heath, K. (16 Jan 2026), *Austin American-Statesman*; Yu, I. & Sander, E. (4 Feb 2026), *Houston Chronicle* — Texas voucher programme and Cognia-only accreditation. Cited via citation index; **bodies not read**; nothing beyond the headline fact restated.
 30. Cobler, N. (28 May 2024), *Axios Austin*; Farrell, J. (31 Jul 2025), *WFAE*; Suri, Z. (25 Aug 2025), *KUT/Texas Standard*; NBC Bay Area (25 Jul 2025) — campus-expansion coverage, used only for the existence and grade span of campuses.
 31. *Alpha School*, English Wikipedia (accessed 2026-07-29) — used **only as a citation index** to locate items 24–30 and the AltSchool record. **No claim in this section rests on it.**
+
+**Investigations and regulator-quoting reports on the subject**
+
+31a. **Feathers, T. (27 Oct 2025).** *Parents Fell in Love With Alpha School's Promise. Then They Wanted Out.* **WIRED.** Retrieved in full via curl, HTTP 200. **Source for IXL's termination statement**, the Brownsville remediation-loop account, and the head of school's "don't do any teaching". `OBSERVED`. **[FT]**
+31b. **Feathers, T. (4 Jun 2026).** *Alpha School's Ritzy New York City Campus Costs $65,000 a Year—but Isn't Actually a School.* **WIRED.** HTTP 200. **Source for the NYSED refusal quote**, the internal Trilogy priority-order documents, and the Miami-Dade Fire Rescue confirmation. `OBSERVED`. **[FT]**
+31c. **Astral Codex Ten (27 Jun 2025).** *Your Review: Alpha School.* HTTP 200. Insider parent account. **Source for the GT School n=5 finding** and per-campus enrolments. `OBSERVED`. **[FT]**
+31d. **The Lever (24 Jun 2025).** *The Headmaster Of The AI Apocalypse.* HTTP 200. Ownership chain: Legacy of Education → Alpha School + 2 Hour Learning; Trilogy holds the patent; YYYYY, LLC and ~$2 M in grants to charter applicants. `OBSERVED`. **[FT]**
+31e. **Henry, M. (21 Jul 2026).** *A $40,000-per-year AI school with no teachers is opening in Oklahoma this August.* **Oklahoma Watch.** HTTP 200. Oklahoma Tax Commission list removal; Edmond/Tulsa enrolments. `OBSERVED`. **[FT]**
+31f. **Heath, K. (16 Jan 2026).** *Dozens of Austin private schools shut out of Texas voucher program. Here's why.* **Austin American-Statesman.** HTTP 200. `OBSERVED`. **[FT]**
+31g. ProPublica Nonprofit Explorer API (IRS Business Master File) and SEC EDGAR full-text search, 9 queries, 2026-07-29. **Primary databases.**
+31h. Arizona Department of Education, **AZ School Report Cards API** (`azreportcards.azed.gov/api/Search/GetByName`) and NCES Common Core of Data via the Urban Institute Education Data API. **Primary / regulator.**
+31i. Texas Observer (18 Jul 2023). *$1M Donation to Glenn Youngkin Linked to Associates of Austin Area Billionaire Investor.* `OBSERVED`.
 
 **Graveyard journalism (all retrieved; Internet Archive where marked)**
 
