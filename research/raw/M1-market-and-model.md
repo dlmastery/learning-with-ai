@@ -270,6 +270,146 @@ market" figure in circulation descends from vendor reports, not from NBS or MoE.
 `UNTRACEABLE`. **The destroyed value is itself unmeasurable** — which should be sobering
 for anyone modelling this category's downside.
 
+### 1.6 US institutional spend — the pot that district-sold products are sold into
+
+This is a different market from §1.3's household spend, with a different buyer, a
+different sales cycle and a different failure mode. It is also much better measured.
+
+#### The base
+
+**NCES, Common Core of Data, National Public Education Financial Survey** `GOV-STAT`:
+
+| Metric | Value | Reference year |
+|---|---|---|
+| **Total expenditure, US public elementary and secondary schools** | **$927 billion** (constant 2022–23 dollars) | **2020–21** |
+| **Total expenditure per pupil** | **$18,614** | 2020–21 |
+| Range across states | **$11,686** (Idaho) → **$37,835** (District of Columbia) | 2020–21 |
+| Salaries and benefits as a share of current expenditure | **79%** | 2020–21 |
+
+**Note the vintage and the composition.** The most recent NCES national figure has a
+2020–21 reference year, and NCES states it **includes CARES / CRRSA / ARP-funded
+expenditure** — i.e. the $927B is inflated by the COVID bolus that has since ended
+(below). And 79% of it is salaries and benefits, which is the structural reason
+districts cannot easily redirect money to software.
+
+#### The federal categorical lines, and the cliff, from award records
+
+`GOV-STAT` — USAspending.gov award API, obligations by fiscal year, assistance listing
+numbers as shown. Retrieved 2026-07-29.
+
+| Assistance listing | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 | FY2026* |
+|---|---|---|---|---|---|---|---|
+| **84.425 — Education Stabilization Fund** (ESSER I/II/III, GEER, HEERF) | **$30.01B** | **$229.84B** | **$17.33B** | −$0.01B | −$0.07B | −$0.00B | −$0.09B |
+| **84.010 — Title I-A** | $16.11B | $16.33B | $17.31B | $18.17B | $18.18B | **$18.22B** | $10.79B* |
+| **84.027 — IDEA Part B §611 State Grants** | $12.75B | $15.49B | $13.33B | $14.14B | $14.16B | **$14.03B** | $9.24B* |
+| **84.173 — IDEA Part B §619 Preschool** | $0.39B | $0.60B | $0.41B | $0.41B | $0.41B | **$0.40B** | −$0.01B |
+
+\* FY2026 is partial (fiscal year ends 30 September 2026).
+
+> **This table is the ESSER cliff, and it is the single most important market fact in
+> §1 for anyone selling to districts.** Roughly **$277 billion** was obligated through
+> the Education Stabilization Fund across FY2020–FY2022. Since FY2023 the annual figure
+> has been **negative** — de-obligations only. **Nothing replaced it.** The steady-state
+> federal categorical base for K-12 is Title I-A (~$18.2B) plus IDEA Part B (~$14.4B) =
+> **~$32.6B a year.** The COVID bolus was **~8.5× one full year of that entire base**,
+> and it arrived and left inside three fiscal years.
+
+**What this means commercially, stated plainly.** Every district-facing edtech company
+founded between 2020 and 2023 grew into a demand curve that no longer exists. Nerdy's
+Institutional revenue **−22%** and its non-recurring **$7.44M** state programme (§2.3)
+are what that looks like in an audited income statement `FILING`; Zearn's expenses
+tripling to $40.5M while revenue plateaued at ~$45M is what it looks like in a Form 990
+`FILING`. **A district-channel plan that does not name its post-ESSER funding stream is
+not a plan.**
+
+#### Special education — the line the brief specifically asked for, and the answer is uncomfortable
+
+**Population** `GOV-STAT` (NCES, *Condition of Education*, Students With Disabilities):
+in **2022–23**, **7.5 million** students ages 3–21 received special education and/or
+related services under IDEA — **15% of all public school students**, up from 6.4 million
+(13%) in 2012–13. Most common category: specific learning disabilities (32%).
+
+**Federal appropriation** `GOV-STAT`: IDEA Part B §611 + §619 ≈ **$14.4 billion a year**,
+flat in nominal terms across FY2023–FY2025. IDEA authorises a federal contribution of up
+to **40% of the national average per-pupil expenditure × the number of children served**
+— that 40% is a statutory *maximum authorisation*, never an appropriation floor, and it
+has never been reached. Any pitch that treats "IDEA full funding" as addressable is
+treating an authorisation ceiling as a budget.
+
+**Per-pupil special-education expenditure — and here is the finding.** The only national
+estimate is the **Special Education Expenditure Project (SEEP)**, reference year
+**1999–2000** (ERIC ED471888, published 2002; synthesis 2006). Its headline results:
+
+| SEEP 1999–2000 | Value |
+|---|---|
+| Total special education spending | **~$50 billion** |
+| Total regular + special education spending on students with disabilities | **$77.3 billion** |
+| **Additional** expenditure per special-education student | **~$5,918** |
+| Share of total K-12 education expenditure | **21%** |
+| **Total spending ratio, student with disabilities : typical student** | **1.9×** |
+| Federal funding | **$3.7B = $605 per special-education student = 7.5% of total special-education spending** |
+
+> **A systematic ERIC search returns no more recent national estimate.** The newest
+> national work in the index is the 2006 *synthesis* of the same 1999–2000 data.
+> **The United States has not measured what it spends per special-education pupil for
+> twenty-six years**, across a period in which the served population grew from ~6.0m to
+> 7.5m and its composition shifted substantially. `OBSERVED`, and it is a documented
+> absence, not a search failure.
+
+**Two illustrative derivations, both clearly labelled `INFERENCE`, neither offered as a
+market size:**
+
+- Applying SEEP's **21%** share to NCES's **$927B** (2020–21) gives **~$195B** of
+  US spending associated with students with disabilities. Likely a **floor**, since the
+  served share of enrolment rose from ~13% to 15% over the interval.
+- Applying SEEP's **1.9×** ratio to NCES's **$18,614** per-pupil gives **~$35,400** per
+  special-education pupil; × 7.5m ≈ **$265B**.
+
+**Both numbers are built on a twenty-six-year-old cost ratio and should be used only to
+establish an order of magnitude.** The honest statement is: *US spending on students
+with disabilities is somewhere in the low hundreds of billions of dollars annually, and
+nobody has measured the per-pupil figure this century.* **That is a real finding for a
+SELPA-first product** — it means the buyer cannot benchmark your price against anything,
+in either direction.
+
+#### Structural facts about the buyer
+
+| Fact | Value | Source |
+|---|---|---|
+| Number of US school districts a vendor may have to contract with individually | **"over 13,000"** | SDPC/A4L's own statement of why the National Data Privacy Agreement exists `OBSERVED` |
+| Standard DPAs executed through the SDPC Resource Registry since 2016 | **275,000+**; **222,261 active** across **16,972 applications** at retrieval | SDPC Resource Registry `OBSERVED` |
+| Share of district current expenditure that is salaries and benefits | **79%** | NCES `GOV-STAT` |
+
+Those three rows together are §2's thesis in numeric form: **the addressable buyer is
+13,000 separately-contracting entities, 79% of whose money is already committed to
+people, and the sector had to build a shared legal instrument executed a quarter of a
+million times just to make contracting tractable.**
+
+### 1.7 Addressable revenue — the derivation, in the open
+
+`INFERENCE` throughout. The point of showing it is that it can be attacked.
+
+| Step | US B2C | US district (K-12) |
+|---|---|---|
+| Measured spend | **~$4.3bn** household test-prep-and-tutoring, 2024 (`GOV-STAT` derived) | **~$32.6bn/yr** federal categorical base; **$927bn** total K-12 expenditure (2020–21) |
+| × addressable share | Tutoring is the whole line. But **supplemental**, not core — this is the entire pot | Supplemental services compete for a **small discretionary slice**; 79% is salaries |
+| × procurable by a startup | High — a credit card | **Low** — §2.2's gate stack, 13,000 buyers, annual re-competition |
+| ÷ cycle survivability | Weeks | **9–18 months, cost incurred before contract** `FILING` |
+| **Honest read** | **A ~$4bn US household market, currently flat-to-declining, in which the substitute is free** | **A large pot with a narrow, heavily gated, annually re-competed aperture, whose growth funding expired in FY2022** |
+
+**The conclusion §1 supports, and no more than this:**
+
+1. **The measured, traceable global figure does not exist.** Korea ₩27.5trn, Japan
+   per-student only, US ~$4.3bn household. Those are the only numbers with published
+   sampling designs anywhere in this domain.
+2. **The US household tutoring market is roughly $4bn and is not obviously growing.**
+   It doubled 2020→2023 and dipped in 2024.
+3. **The US institutional pot is enormous and almost entirely committed.** 79% salaries;
+   the discretionary growth money was a one-time $277bn that ended in FY2022.
+4. **Therefore the honest positioning is share-of-existing-spend, not
+   category-creation.** Any model that requires the tutoring market to grow to work is
+   betting on something no primary source supports.
+
 ### 1.5 The multilateral gap, reported because its absence is informative
 
 | Source | Result |
