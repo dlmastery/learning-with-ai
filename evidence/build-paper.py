@@ -223,7 +223,6 @@ def build():
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**{stats['sections']} sections · {stats['words']:,} words · {N_REPORTS} research reports · {N_CORR} published corrections**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -258,7 +257,7 @@ One of them documents a mechanism this project proposed, benchmarked, and
 """
     doc = head + "\n".join(parts_out)
     (ROOT / "PAPER.md").write_text(doc, encoding="utf-8")
-    print(f"PAPER.md — {stats['sections']} sections, {stats['words']:,} words, {len(PARTS)} parts")
+    print(f"PAPER.md — {stats['sections']} sections, , {len(PARTS)} parts")
     if missing: print(f"  declared but missing: {', '.join(missing)}")
     if orphans: print(f"  NOT IN THE PAPER: {', '.join(orphans)}")
     return doc, stats, structure
@@ -546,8 +545,7 @@ def build_html():
         for s in p["sections"]:
             toc.append(f'<li><a href="#{s["anchor"]}"><span class="tn">{s["n"]}</span>'
                        f'<span>{html.escape(s["title"])}</span></a></li>')
-        toc.append(f'</ol><div class="pw">{len(p["sections"])} sections · '
-                   f'{p["words"]:,} words</div></section>')
+        toc.append('</ol></section>')
     toc_html = "\n".join(toc)
 
     # ── the document ──────────────────────────────────────────────────────
@@ -686,10 +684,9 @@ PAGE_TEMPLATE = r"""<!doctype html>
         <p class="standfirst">What AI-native learning has actually been measured to do,
         and a specification for what it should be.</p>
         <dl class="facts">
-          <div><dt>Length</dt><dd>@@WORDS@@ words</dd></div>
-          <div><dt>Structure</dt><dd>@@PARTS@@ parts · @@SECTIONS@@ sections</dd></div>
-          <div><dt>Built on</dt><dd>~2,100 sources</dd></div>
-          <div><dt>Reading time</dt><dd>≈@@MINUTES@@ min</dd></div>
+          <div><dt>Structure</dt><dd>@@PARTS@@ parts, read in any order</dd></div>
+          <div><dt>Every claim</dt><dd>labelled and sourced</dd></div>
+          <div><dt>Every section</dt><dd>carries a null result</dd></div>
         </dl>
       </div>
 

@@ -435,8 +435,7 @@ to make the tutor able to stop performing.**
 - **The badge states what was checked, what was assumed, and what was not checked** — and
   ships the check so the learner can re-run it.
 
-The through-line is the same one this survey keeps arriving at from other directions. What
-teaches is not the richness of what the learner is given. It is **the precision of what
-they are not allowed to get wrong without noticing** — and, increasingly, the fact that
-the correction can come from a program the learner can run themselves rather than from a
-machine claiming to know.
+A verifier does not make an explanation better. It makes wrongness **discoverable by the
+learner instead of assertable by the tutor** — and that is the only kind of correction
+that does not require them to believe you. Which is why the rung that matters most is not
+the strongest one. It is the one the learner can run themselves.

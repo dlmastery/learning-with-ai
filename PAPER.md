@@ -2,7 +2,6 @@
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**38 sections · 88,078 words · 40 research reports · 51 published corrections**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -5754,11 +5753,10 @@ to make the tutor able to stop performing.**
 - **The badge states what was checked, what was assumed, and what was not checked** — and
   ships the check so the learner can re-run it.
 
-The through-line is the same one this survey keeps arriving at from other directions. What
-teaches is not the richness of what the learner is given. It is **the precision of what
-they are not allowed to get wrong without noticing** — and, increasingly, the fact that
-the correction can come from a program the learner can run themselves rather than from a
-machine claiming to know.
+A verifier does not make an explanation better. It makes wrongness **discoverable by the
+learner instead of assertable by the tutor** — and that is the only kind of correction
+that does not require them to believe you. Which is why the rung that matters most is not
+the strongest one. It is the one the learner can run themselves.
 
 
 ## 22. Assessment After the Artifact — measuring a person when the work no longer indicates them
@@ -6967,16 +6965,14 @@ the system anyway.
 Two secondary readings are open rather than settled. Annex III 3(b) lacks the
 institutional limiter that 3(c) and 3(d) carry, which on plain text pulls
 direct-to-consumer tutors into scope; no authoritative construction was found.
-And the application date itself needs re-verification — the best available
-timeline source is stamped 1 August 2024, EUR-Lex was unreachable during the
-research pass that produced this paragraph — **it was reached on 2026-07-28 and the
-delay is real; see the correction at the head of this section. The paragraph below is
-retained as written, and superseded.** The stale reasoning ran:
-research (HTTP 202, empty body), and a simplification package proposing deferral
-has been publicly discussed. ~~Do not plan on a delay.~~ **Superseded — the delay
-was enacted by Reg. (EU) 2026/1744 on 27 July 2026. Annex III now applies from
-2 December 2027; Article 50 still applies from 2 August 2026.** Check Article 113 against
-EUR-Lex before making a compliance decision.**
+The second is now settled, and settled against what this paragraph originally said.
+It was drafted from a timeline source stamped 1 August 2024, with EUR-Lex
+unreachable, and it concluded: *do not plan on a delay.* EUR-Lex was reached on
+2026-07-28. **The delay is real.** Regulation (EU) 2026/1744 defers Annex III to
+**2 December 2027**, while Article 50 still applies from **2 August 2026** — the
+correction at the head of this section carries the operative text. Check Article 113
+against EUR-Lex before making any compliance decision; a claim of this kind sourced
+from a secondary tracker was wrong within eighteen months.
 
 The practical consequence for a builder is not defensive. The conformity
 artefacts — risk management, data governance, logging, human oversight, and a

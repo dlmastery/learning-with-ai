@@ -76,16 +76,14 @@ the system anyway.
 Two secondary readings are open rather than settled. Annex III 3(b) lacks the
 institutional limiter that 3(c) and 3(d) carry, which on plain text pulls
 direct-to-consumer tutors into scope; no authoritative construction was found.
-And the application date itself needs re-verification — the best available
-timeline source is stamped 1 August 2024, EUR-Lex was unreachable during the
-research pass that produced this paragraph — **it was reached on 2026-07-28 and the
-delay is real; see the correction at the head of this section. The paragraph below is
-retained as written, and superseded.** The stale reasoning ran:
-research (HTTP 202, empty body), and a simplification package proposing deferral
-has been publicly discussed. ~~Do not plan on a delay.~~ **Superseded — the delay
-was enacted by Reg. (EU) 2026/1744 on 27 July 2026. Annex III now applies from
-2 December 2027; Article 50 still applies from 2 August 2026.** Check Article 113 against
-EUR-Lex before making a compliance decision.**
+The second is now settled, and settled against what this paragraph originally said.
+It was drafted from a timeline source stamped 1 August 2024, with EUR-Lex
+unreachable, and it concluded: *do not plan on a delay.* EUR-Lex was reached on
+2026-07-28. **The delay is real.** Regulation (EU) 2026/1744 defers Annex III to
+**2 December 2027**, while Article 50 still applies from **2 August 2026** — the
+correction at the head of this section carries the operative text. Check Article 113
+against EUR-Lex before making any compliance decision; a claim of this kind sourced
+from a secondary tracker was wrong within eighteen months.
 
 The practical consequence for a builder is not defensive. The conformity
 artefacts — risk management, data governance, logging, human oversight, and a
