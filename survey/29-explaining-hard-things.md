@@ -55,8 +55,12 @@ reorders those quantifiers, because the reordered version is easier to say. The
 student computes correctly for two years and then cannot understand uniform
 convergence, and the trace goes back to a sentence nobody flagged.
 
-**This is mechanically checkable**, which makes it the most valuable entry in the
-table. An explanation is legal iff **its quantifier prefix is entailed by the formal
+**This is mechanically checkable on written statements** — with a scope limit we
+established by testing it. Implemented and run against 1,524 sentences of lecture
+transcript, the check **fired zero times**: speech *elides* quantifiers rather than
+reordering them, so there is no prefix to compare. It is a check for **authored
+technical prose and generated output**, not for transcript mining (C-50). Within that
+scope: an explanation is legal iff **its quantifier prefix is entailed by the formal
 statement's, under the declared scope.** That is a predicate, not a matter of taste,
 and it is decidable at the cheap rung of the grounding ladder given both statements.
 

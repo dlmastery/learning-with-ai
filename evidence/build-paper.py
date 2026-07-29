@@ -33,7 +33,7 @@ PARTS = [
   "Eight techniques, each with a measured effect and a specified failure mode. "
   "These are the parts that do the teaching.",
   ["02-teach-to-learn", "05-the-explanation-is-the-work",
-   "25-the-ladder-of-explanation", "29-explaining-hard-things",
+   "25-the-ladder-of-explanation", "29-explaining-hard-things", "35-the-explanation-atlas",
    "08-nobody-needs-a-better-scheduler",
    "26-beyond-the-tutor", "06-what-the-object-must-refuse", "17-showing"]),
 
@@ -58,7 +58,7 @@ PARTS = [
   "The catalogued gaps, the uncatalogued ones, what we would build with none of the "
   "existing containers, and the conditions under which this document's central claim "
   "would have to be withdrawn.",
-  ["21-what-we-cannot-see-from-here", "33-greenfield", "20-the-agenda"]),
+  ["21-what-we-cannot-see-from-here", "34-attention-and-the-missing-executive", "33-greenfield", "20-the-agenda"]),
 ]
 
 N_REPORTS = len(list((ROOT / "research" / "raw").glob("*.md")))

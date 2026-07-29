@@ -2,7 +2,7 @@
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**34 sections · 82,966 words · 40 research reports · 48 published corrections**
+**36 sections · 85,684 words · 40 research reports · 50 published corrections**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -20,7 +20,7 @@ This survey is an attempt to write the missing specification. It rests on 40 res
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
 errors is published in an append-only ledger rather than quietly edited — **20 of
-the 48 corrections were found by an adversarial reviewer rather than by us.**
+the 50 corrections were found by an adversarial reviewer rather than by us.**
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
@@ -108,37 +108,39 @@ One of them documents a mechanism this project proposed, benchmarked, and
 13. [The Explanation Is the Work — generative slides, and the learner as explainer](#the-explanation-is-the-work-generative-slides-and-the-learner-as-explainer)
 14. [The Ladder of Explanation — ELI10 to ELI25, and the rule that makes a simplification legal](#the-ladder-of-explanation-eli10-to-eli25-and-the-rule-that-makes-a-simplification-legal)
 15. [Explaining Hard Things — the fidelity invariants, instantiated](#explaining-hard-things-the-fidelity-invariants-instantiated)
-16. [Nobody Needs a Better Scheduler — the science of durable remembering](#nobody-needs-a-better-scheduler-the-science-of-durable-remembering)
-17. [Beyond the Tutor — the five roles nobody is building](#beyond-the-tutor-the-five-roles-nobody-is-building)
-18. [What the Object Must Refuse — embodiment, manipulatives, and executable material](#what-the-object-must-refuse-embodiment-manipulatives-and-executable-material)
-19. [Showing — illustration, animation, and the arithmetic of a wrong picture](#showing-illustration-animation-and-the-arithmetic-of-a-wrong-picture)
+16. [The Explanation Atlas — mining the best explainers, and what that is worth](#the-explanation-atlas-mining-the-best-explainers-and-what-that-is-worth)
+17. [Nobody Needs a Better Scheduler — the science of durable remembering](#nobody-needs-a-better-scheduler-the-science-of-durable-remembering)
+18. [Beyond the Tutor — the five roles nobody is building](#beyond-the-tutor-the-five-roles-nobody-is-building)
+19. [What the Object Must Refuse — embodiment, manipulatives, and executable material](#what-the-object-must-refuse-embodiment-manipulatives-and-executable-material)
+20. [Showing — illustration, animation, and the arithmetic of a wrong picture](#showing-illustration-animation-and-the-arithmetic-of-a-wrong-picture)
 
 **Part IV — Correctness**
 
-20. [Grounding — correctness that lives in the verifier](#grounding-correctness-that-lives-in-the-verifier)
-21. [Assessment After the Artifact — measuring a person when the work no longer indicates them](#assessment-after-the-artifact-measuring-a-person-when-the-work-no-longer-indicates-them)
+21. [Grounding — correctness that lives in the verifier](#grounding-correctness-that-lives-in-the-verifier)
+22. [Assessment After the Artifact — measuring a person when the work no longer indicates them](#assessment-after-the-artifact-measuring-a-person-when-the-work-no-longer-indicates-them)
 
 **Part V — Who it is for**
 
-22. [The Empty Chair — designing for the margin first](#the-empty-chair-designing-for-the-margin-first)
-23. [The Coordinator's Week — what special education actually consists of](#the-coordinator-s-week-what-special-education-actually-consists-of)
-24. [Who Is Not in the Room — reach, language, and the barriers attention does not remove](#who-is-not-in-the-room-reach-language-and-the-barriers-attention-does-not-remove)
-25. [What We Owe Children — the legal floor as a design specification](#what-we-owe-children-the-legal-floor-as-a-design-specification)
+23. [The Empty Chair — designing for the margin first](#the-empty-chair-designing-for-the-margin-first)
+24. [The Coordinator's Week — what special education actually consists of](#the-coordinator-s-week-what-special-education-actually-consists-of)
+25. [Who Is Not in the Room — reach, language, and the barriers attention does not remove](#who-is-not-in-the-room-reach-language-and-the-barriers-attention-does-not-remove)
+26. [What We Owe Children — the legal floor as a design specification](#what-we-owe-children-the-legal-floor-as-a-design-specification)
 
 **Part VI — The field, and what it has already built**
 
-26. [The Substrate — what the frontier actually supplies](#the-substrate-what-the-frontier-actually-supplies)
-27. [The Textbook That Writes Itself — and who it remembers](#the-textbook-that-writes-itself-and-who-it-remembers)
-28. [The Canon — what the history of pedagogy already settled](#the-canon-what-the-history-of-pedagogy-already-settled)
-29. [The Market — nine bets, one graveyard, and the number that shrinks as you look at it](#the-market-nine-bets-one-graveyard-and-the-number-that-shrinks-as-you-look-at-it)
-30. [Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration](#prior-art-what-thirty-five-builds-reveal-read-as-evidence-and-not-as-inspiration)
-31. [Motivation — wanting to continue](#motivation-wanting-to-continue)
+27. [The Substrate — what the frontier actually supplies](#the-substrate-what-the-frontier-actually-supplies)
+28. [The Textbook That Writes Itself — and who it remembers](#the-textbook-that-writes-itself-and-who-it-remembers)
+29. [The Canon — what the history of pedagogy already settled](#the-canon-what-the-history-of-pedagogy-already-settled)
+30. [The Market — nine bets, one graveyard, and the number that shrinks as you look at it](#the-market-nine-bets-one-graveyard-and-the-number-that-shrinks-as-you-look-at-it)
+31. [Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration](#prior-art-what-thirty-five-builds-reveal-read-as-evidence-and-not-as-inspiration)
+32. [Motivation — wanting to continue](#motivation-wanting-to-continue)
 
 **Part VII — What we do not know**
 
-32. [What We Cannot See From Here — the unknown unknowns, and the questions that expose them](#what-we-cannot-see-from-here-the-unknown-unknowns-and-the-questions-that-expose-them)
-33. [Greenfield — what you would build with no school, no textbook and no exam](#greenfield-what-you-would-build-with-no-school-no-textbook-and-no-exam)
-34. [The Agenda — three experiments, and what would falsify this survey](#the-agenda-three-experiments-and-what-would-falsify-this-survey)
+33. [What We Cannot See From Here — the unknown unknowns, and the questions that expose them](#what-we-cannot-see-from-here-the-unknown-unknowns-and-the-questions-that-expose-them)
+34. [Attention, and the Missing Executive — what the best teachers actually do](#attention-and-the-missing-executive-what-the-best-teachers-actually-do)
+35. [Greenfield — what you would build with no school, no textbook and no exam](#greenfield-what-you-would-build-with-no-school-no-textbook-and-no-exam)
+36. [The Agenda — three experiments, and what would falsify this survey](#the-agenda-three-experiments-and-what-would-falsify-this-survey)
 
 ---
 
@@ -203,7 +205,7 @@ else in the multimedia corpus has had the same treatment applied.
 | **Expertise reversal** | novices **+0.505 [0.260, 0.750]**, experts **−0.428 [−0.647, −0.209]** | 60 studies, 176 effects, N = 5,924 (Tetzlaff et al. 2025) | **I² ≈ 88–91%** |
 | **Multimedia design, averaged** | **g = 0.38 [0.27, 0.49]** | meta-meta: 29 reviews, 1,189 primary studies, 78,177 participants | principle explains nearly all between-review variance |
 
-Retrieval and spacing are carried in **§16**, and expertise reversal is the
+Retrieval and spacing are carried in **§17**, and expertise reversal is the
 organising result of **§10**; they are restated here only so that their confidence
 intervals and their heterogeneity sit on the same page as everything else. The
 interval on spacing is the one to notice: **[0.31, 0.77]** is a range in which the
@@ -356,7 +358,7 @@ inaccurate endorsement. An AI that grills a learner for a sensory-modality label
 automating a forty-year null at scale.
 
 Bloom's two sigma is retired in this survey; the argument and the replacement
-figures are in **§28** and **§0.8**, and are not repeated here.
+figures are in **§29** and **§0.8**, and are not repeated here.
 
 ---
 
@@ -860,7 +862,7 @@ shorter.
   Three studies, three countries, three age groups, three tools, same direction:
   +0.195 SD per baseline SD, +0.151, and Lehmann's low-prior-knowledge harm. But it
   is not a law of the technology — across **eight targeted interventions examined in
-  §24, not one widened gaps and several sharply narrowed them.** Gap-widening is a
+  §25, not one widened gaps and several sharply narrowed them.** Gap-widening is a
   property of *distribution without targeting*, which makes it a design failure we
   know how to avoid rather than a tax we must accept. Any trial we run stratifies on
   baseline attainment and powers the bottom stratum as a primary outcome.
@@ -1017,7 +1019,7 @@ capability.
 **Gemma 4 is Apache-2.0 and ungated.** Weights can go to a school on a USB stick.
 No API key, no account, no per-seat licence, no data leaving the building, no
 vendor able to deprecate the model a district built its year around. For the
-populations in §24 — the ones behind connectivity, language, and permission
+populations in §25 — the ones behind connectivity, language, and permission
 barriers — that is a larger change than another point of benchmark accuracy.
 
 And a genuinely maintained local stack now exists end to end: **Kolibri** for
@@ -1054,7 +1056,7 @@ evidence. This is a question about somebody writing an adapter.
 
 ## 7. The regulatory correction, because it is days away
 
-This sweep also caught a live error in our own §25, and the correction is
+This sweep also caught a live error in our own §26, and the correction is
 time-sensitive enough to repeat here.
 
 The EU AI Act's **Annex III** education obligations were widely expected to apply
@@ -1628,7 +1630,7 @@ and getting the right answer.
 subject-matter experts, with **70% of flagged contradictions validated.** The "find me
 the three papers that resolve my confusion" capability is real today.
 
-**Explanatory animation renders at 93.8%.** The visual half of §19's argument has a
+**Explanatory animation renders at 93.8%.** The visual half of §20's argument has a
 working pipeline.
 
 **And the horizon is doubling every ~129 days** — the length of task an agent can
@@ -1645,7 +1647,7 @@ is roughly twice that four months later.
 half of the studies found that RL-induced policies significantly outperform
 baselines."* And their qualifier is an argument *for* this document's architecture:
 RL *"has been most successful in cases where it has been constrained with ideas and
-theories from cognitive psychology and the learning sciences."* Corrected in §16 and
+theories from cognitive psychology and the learning sciences."* Corrected in §17 and
 §10; logged as C-29.
 
 **The "Google rots your memory" result has failed replication twice** (BF01 = 5.07).
@@ -1895,9 +1897,9 @@ any of this.** A tutor that answers freely, has no memory, cannot see the work,
 cannot point, never pivots, and agrees with everything — measured at 0.2–0.4 SD.
 
 We call that *the floor with the brakes on* — and it is worth being exact about the
-status of that phrase, because §34 is, and this section was not. **"Nobody has built
+status of that phrase, because §36 is, and this section was not. **"Nobody has built
 and measured the assembled system" is proven. "It would do better" is a hypothesis,
-not a finding.** It is the project's central bet, it is stated as falsifiable in §34
+not a finding.** It is the project's central bet, it is stated as falsifiable in §36
 with its concession conditions named in advance, and nothing in this survey
 establishes it.
 
@@ -1925,7 +1927,7 @@ hypothesis rather than a pitch. The rules stay:
   Gap-widening is therefore a design failure we can avoid, not a law we must
   accept. If ours widens gaps, it has failed, whatever the mean says.
 - **The Null-Learner Test** on every metric: simulate an agent maximising it while
-  teaching nothing (§31). If the metric can't tell, it's the wrong metric.
+  teaching nothing (§32). If the metric can't tell, it's the wrong metric.
 - Publish the nulls. Especially ours.
 
 ---
@@ -2466,7 +2468,7 @@ education papers, **54 ran no statistical test at all** — and **45 of those 54
 content-sequencing papers**, precisely the cluster that measured **0 for 8** — though
 that sub-cut sits inside a review whose overall finding is that **21 of 41 studies
 (51%) significantly beat all baselines**, a headline an earlier draft of this survey
-omitted. The narrow negative is real; the review is not negative. See §16. It is in
+omitted. The narrow negative is real; the review is not negative. See §17. It is in
 earlier work. Only **14 of 89** included a non-adaptive control condition.
 
 **The wins are not where people think.** Of 18 documented wins, **14 are
@@ -3745,8 +3747,12 @@ reorders those quantifiers, because the reordered version is easier to say. The
 student computes correctly for two years and then cannot understand uniform
 convergence, and the trace goes back to a sentence nobody flagged.
 
-**This is mechanically checkable**, which makes it the most valuable entry in the
-table. An explanation is legal iff **its quantifier prefix is entailed by the formal
+**This is mechanically checkable on written statements** — with a scope limit we
+established by testing it. Implemented and run against 1,524 sentences of lecture
+transcript, the check **fired zero times**: speech *elides* quantifiers rather than
+reordering them, so there is no prefix to compare. It is a check for **authored
+technical prose and generated output**, not for transcript mining (C-50). Within that
+scope: an explanation is legal iff **its quantifier prefix is entailed by the formal
 statement's, under the declared scope.** That is a predicate, not a matter of taste,
 and it is decidable at the cheap rung of the grounding ladder given both statements.
 
@@ -3961,12 +3967,12 @@ What remains, in order of value:
    conjectures die in a millisecond.
 2. **The adversary, unannounced.** The referee who supplies the case the proof forgot.
    *Announced* devil's advocacy measurably produces bolstering of the original view
-  (§17), so the objection must be owned, not performed.
+  (§18), so the objection must be owned, not performed.
 3. **Explaining it back, with the expectancy set first** — g = 0.48 with, **g = −0.02**
    without (§13). This is why seminars work and "any questions?" does not.
 4. **Formal verification where it earns its cost**, and honestly: 97% autoformalisation
    × 69% proving yields **36% end-to-end**, because the formal statement stops matching
-   the informal one (§20). The kernel moves the trust boundary; it does not remove it.
+   the informal one (§21). The kernel moves the trust boundary; it does not remove it.
 
 Explanation is fourth at best, and it is the learner's output rather than the tutor's.
 
@@ -3990,7 +3996,178 @@ The general form, which is the section in one line: **a simplification is legal 
 the reader can still tell what would break.**
 
 
-## 16. Nobody Needs a Better Scheduler — the science of durable remembering
+## 16. The Explanation Atlas — mining the best explainers, and what that is worth
+
+<sub>Source report: `research/raw/N4-explanation-atlas.md`</sub>
+
+There is an outstanding explainer in almost every field, and their work is public.
+The obvious idea is to find the best explanation of each concept, learn what makes it
+work, and build delivery on that.
+
+The idea survives investigation. Almost nothing about how you would *identify* the
+best explanation does.
+
+---
+
+## 1. The literature exists, filed under a name nobody looks up
+
+We predicted this literature would be empty. It is not — head-to-head comparisons of
+explanations live under **refutation text**, and finding them was worth more than the
+prediction.
+
+Pooled across 44 studies: **g = 0.41 raw, g = 0.28 after trim-and-fill.** A real
+effect, with a publication-bias correction that removes a third of it.
+
+Then the part that matters for anyone building on it:
+
+> **Exactly two studies in that meta-analysis exceeded one month. Transfer was never
+> coded at all.**
+
+So the field knows that naming a misconception beats explaining cleanly, at short
+delay, on retention-style items. It does not know whether the advantage survives to a
+month, and it has never asked whether it transfers.
+
+And the strict question — *two real published explanations, head to head, on a
+learning outcome* — has **one journal-quality instance in the entire literature.**
+
+---
+
+## 2. The signal we hoped for does not exist, and the way it died is instructive
+
+Views and likes are the felt axis; this survey has said so throughout. The hope was
+that **behavioural** platform signals might be diagnostic where attitudinal ones are
+not — specifically that **rewind density** marks where comprehension failed.
+
+That hypothesis is dead, and it died three separate times.
+
+**Measured.** YouTube's "most replayed" heatmap was extracted for 51 videos and
+analysed. Median entropy **0.976**, where 1.0 is perfectly flat. Enrichment over
+uniform: **1.95×**. Peaks explain roughly **16%** of variance by concept, and land
+**closer to chapter boundaries than chance** (49.8s versus 87.6s) — that is, they
+mostly mark navigation, not confusion.
+
+**Structurally foreclosed.** The signal is **min–max normalised within each video in
+51 of 51 cases.** Every video has a peak at 1.0 by construction. Cross-video
+comparison — the entire point of an atlas — is impossible from this data.
+
+**And it was already built.** LectureScape (UIST 2014) implemented exactly this
+interface. It was **null on every task**, *slower* than baseline outside peaks, and
+significantly better on **perceived** efficiency. The felt/real dissociation, appearing
+in the tool built to escape it.
+
+**Worse, the sign may be backwards.** Brinton et al. found backward-scrubbing predicts
+getting the *next question right* — engagement, not confusion.
+
+The distinction between attitudinal and behavioural signals was the right one to
+draw. Drawing it properly is what killed the proposal.
+
+---
+
+## 3. We ran our own predicate as code, and it mostly did not fire
+
+Section15 proposed that a simplification is legal iff its **quantifier prefix** is
+entailed by the formal statement's, and called this *"decidable, cheap, and the most
+valuable entry in the table."*
+
+It was implemented and run against **1,524 sentences of MIT OpenCourseWare
+transcripts.**
+
+> **The quantifier-prefix check fired zero times.**
+
+Not because the explanations were flawless. Because **speech elides quantifiers rather
+than reordering them.** A lecturer says "as close as you like" and never utters ∀ or ∃
+in any recoverable form. The predicate is decidable on *formal statements* and
+near-inert on *spoken explanation*, which is the medium this whole section is about.
+
+Overall lexical precision across all §15 predicates: **7 true positives from 30 flags —
+23%.**
+
+That does not refute the design. It relocates it: these predicates are for **authored
+technical prose and generated output**, where quantifiers are written, and not for
+transcript mining. A stage-two check on a generator's output, not a stage-one filter
+on the world's video.
+
+We are recording this because a predicate this survey called its most valuable
+contribution has now been tested, by us, and mostly did not work.
+
+---
+
+## 4. What does predict a good explanation — the one thing with a number
+
+Amid all of that, one feature has a measured effect size, and it is the one Muller's
+thesis isolates: **which misconception the explanation names.**
+
+His four versions of the same physics content, measured:
+
+| Version | Gain |
+|---|---|
+| Exposition — clear, correct | 1.77 |
+| Extended — same, longer | 2.41 |
+| **Refutation — the same script, plus the misconception named** | **4.41** |
+| **Dialogue — two speakers, one holding the misconception** | **4.77** |
+
+And in the same work, perceived learning was **flat (5.7 vs 5.6)** while real learning
+differed by **d = 0.71** — with the better format rated significantly **duller**,
+**too long**, and **less wanted in lectures.**
+
+Every one of those three is a signal a recommender system acts on. **A platform
+optimising for watch-through would systematically down-rank the version that
+teaches.**
+
+---
+
+## 5. The design, and the falsifier that is free today
+
+`DESIGN` — **the explanation atlas.** Harvest candidate explanations per concept, grade
+them mechanically, measure delayed unassisted transfer on a subset, and learn which
+graded features predict the outcome. Once features predict, you can select or generate
+without running a trial each time.
+
+But the ordering has changed, and the reasoning is the useful part:
+
+**Build the error atlas first.** The explanation atlas's only feature with a measured
+effect is *which misconception it names* — which is worthless unless you know which
+misconceptions a population actually holds. That is precisely the error atlas's output.
+The two are sequenced, not parallel.
+
+Two practical constraints reinforce it. The error atlas has a corpus already built and
+lawfully available. The explanation atlas's interesting corpus is **legally
+foreclosing** — captions now return 200 with zero bytes, and an anti-circumvention suit
+was heard in August.
+
+**And the decisive test costs nothing.** Muller published four explanations of the
+same content with measured outcomes. Grade them with §15's predicates and see whether
+the grader recovers the order.
+
+> **If it ranks the clean Exposition highest, §15 measures tidiness rather than
+> teaching.**
+
+That is a day's work, it needs no learners, and it should be done before anything is
+spent.
+
+---
+
+## 6. What this section commits us to
+
+- **Never rank an explanation by platform metrics** — including behavioural ones. The
+  replay signal is flat, normalised within video, already built, already null, and
+  possibly sign-reversed.
+- **Name the misconception.** It is the only explanation feature with a measured effect
+  size, and it beats clarity by more than double.
+- **Confine §15's predicates to authored and generated text.** They do not fire on
+  speech, and we said they were our most valuable contribution before testing them.
+- **Sequence the atlases.** Errors first; explanations are graded *against* the errors
+  they name.
+- **Run the free falsifier first.** Four published explanations, known outcomes, one
+  day.
+
+The instinct behind this section is sound: somewhere there is a better explanation of
+every concept than the one in the book, and it is probably free. What this survey can
+now say is that **finding it by popularity selects against it** — and that the one
+property worth grading for is whether it names the thing the learner already believes.
+
+
+## 17. Nobody Needs a Better Scheduler — the science of durable remembering
 
 <sub>Source report: `research/raw/F11-scientific-remembering.md`</sub>
 
@@ -4009,7 +4186,7 @@ survey:
 
 | Practice | Effect | Base |
 |---|---|---|
-| **Retrieval practice** | **g = 0.499** [0.442, 0.557] (§15.1)| 222 classroom studies, 48,478 students — **I² = 88%** |
+| **Retrieval practice** | **g = 0.499** [0.442, 0.557] (§16.1)| 222 classroom studies, 48,478 students — **I² = 88%** |
 | **Spacing / distributed practice** | **d = 0.54** [0.31, 0.77] | 22 reports, 31 effects, N > 3,000 (classroom meta-analysis, 2025). Cepeda et al. 2006 is the canonical lab meta-analysis |
 
 These are among the largest, most replicated effects in all of learning science.
@@ -4210,7 +4387,7 @@ Concretely, and falsifiably:
   perceptual rather than conceptual — is **d = −0.05**. Making the *reading* harder
   is not a desirable difficulty. Making the *retrieval* harder is.
 
-And the cheapest experiment in the document, which follows directly from §15.3:
+And the cheapest experiment in the document, which follows directly from §16.3:
 
 > **Push the first retrieval later.** One parameter, a meta-analytic prior, and a
 > mechanism dissociated in an existing experiment. If the effect is where
@@ -4241,7 +4418,7 @@ struggled, actually explained, and actually got told when they were wrong.**
 The machinery is worth building. It is just not worth mistaking for the mechanism.
 
 
-## 17. Beyond the Tutor — the five roles nobody is building
+## 18. Beyond the Tutor — the five roles nobody is building
 
 <sub>Source report: `research/raw/F2-beyond-the-tutor.md`</sub>
 
@@ -4283,7 +4460,7 @@ transfer follows load.
 | **Instrument** | Extends a human's capability | The human who owns the task | Best evidence-to-deployment ratio of the six |
 
 The tutor role is the only one requiring the AI to be knowledgeable and agreeable.
-It is also the only one with documented harm at scale: **§16.2 and §16.3 carry the −17%
+It is also the only one with documented harm at scale: **§17.2 and §17.3 carry the −17%
 unassisted-exam result and the guardrail correction, and this section does not
 re-argue them.** The student role already has a section too — **§12** on the protégé
 effect, knowledge-telling, capability leakage and the Betty's Brain architecture,
@@ -4452,7 +4629,7 @@ part: **the largest gains went to the least experienced tutors** — the inverse
 the pattern where unstructured AI access widens the gap between low- and
 high-prior-knowledge students.
 
-The result is also honestly limited, and §16.3 carries the numbers: a proximal exit-
+The result is also honestly limited, and §17.3 carries the numbers: a proximal exit-
 ticket gain alongside a distal null. Treat it as the cleanest demonstration that the
 instrument role is real and that its distal effects are unproven, not as a headline.
 
@@ -4463,7 +4640,7 @@ instrument role is real and that its distal effects are unproven, not as a headl
 **Announced adversarialism backfires.** Nemeth, Brown & Rogers (2001). The obvious
 implementation of "AI adversary" — tell the learner you are about to argue the other
 side — is the one that produces bolstering rather than divergence. This is the most
-consequential negative result in the section and it is why §16.2.2 exists.
+consequential negative result in the section and it is why §17.2.2 exists.
 
 **Fluency raises confidence and ratings with no effect on learning.** Carpenter and
 colleagues, across **five studies from 2013 to 2020**, found that a fluent
@@ -4471,7 +4648,7 @@ instructor produced higher judgments of learning and higher instructor ratings w
 **zero** gain in actual learning. An LLM is a maximally fluent instructor by
 construction. This is the most directly transferable warning in educational
 psychology and it is essentially absent from AI-education discourse. The felt/real
-dissociation itself is established in **§31** and **§19**; the transferable part
+dissociation itself is established in **§32** and **§20**; the transferable part
 here is that *fluency of delivery* is one of its cheapest triggers.
 
 **Perceptual disfluency failed to replicate.** Bjork & Yue (2016), from the
@@ -4484,7 +4661,7 @@ an AI that is gratuitously hard to read. Build one that makes you generate.**
 entirely in the *usage pattern*: substitution use — generate the solution — broadened
 coverage while reducing depth; complementation use — ask for an explanation —
 deepened understanding without broadening. And LLM access widened the gap between
-low- and high-prior-knowledge students, a property §24 establishes belongs to
+low- and high-prior-knowledge students, a property §25 establishes belongs to
 untargeted delivery rather than to the technology.
 
 **The socially engaging agent is not a universal win.** Tärning, Haake & Gulz (2011)
@@ -4505,7 +4682,7 @@ that nobody, including us, launders it later.
 
 The strongest objection is that the tutor role is not empty. Kestin et al. (2025)
 is a genuine randomised result in an authentic course, at **d ≈ 0.63**, and it
-belongs in the ledger — with the caveats §16.3 records, including that the tutor was
+belongs in the ledger — with the caveats §17.3 records, including that the tutor was
 built and evaluated by its developers and was **explicitly pedagogically
 constrained** rather than a helpful assistant. The comparison was
 AI-with-pedagogy against classroom-with-pedagogy.
@@ -4567,7 +4744,7 @@ that the field does not appear to know there was a choice — and therefore has 
 sequenced them.
 
 
-## 18. What the Object Must Refuse — embodiment, manipulatives, and executable material
+## 19. What the Object Must Refuse — embodiment, manipulatives, and executable material
 
 <sub>Source report: `research/raw/F7-A3-embodiment-and-notebooks.md`</sub>
 
@@ -4785,7 +4962,7 @@ other direction: what teaches is not the richness of what the learner is given. 
 is the **precision of what they are not allowed to do wrong without noticing.**
 
 
-## 19. Showing — illustration, animation, and the arithmetic of a wrong picture
+## 20. Showing — illustration, animation, and the arithmetic of a wrong picture
 
 <sub>Source report: `research/raw/C1-illustration-generation.md, research/raw/A2-interactive-animation.md`</sub>
 
@@ -5144,7 +5321,7 @@ and only one of those is the job.
 *How a tutor can be wrong safely, and how a learner's work can be measured when the artifact no longer indicates the person who produced it.*
 
 
-## 20. Grounding — correctness that lives in the verifier
+## 21. Grounding — correctness that lives in the verifier
 
 <sub>Source report: `research/raw/G1-grounding-synthesis.md`</sub>
 
@@ -5545,7 +5722,7 @@ That is right. As verification cost approaches zero, **100% of the remaining pro
 the part verification does not address**, and the unverifiable layer — intuition,
 appropriateness, sequencing, why this matters — is exactly where the teaching is.
 
-But §19.1 is not a safety argument at all. The checker is what lets a tutor wait, let a wrong
+But §20.1 is not a safety argument at all. The checker is what lets a tutor wait, let a wrong
 model run, hand the instrument to the learner, and settle a disagreement by experiment
 rather than by status. **The apparatus is not there to make the tutor correct. It is there
 to make the tutor able to stop performing.**
@@ -5582,7 +5759,7 @@ the correction can come from a program the learner can run themselves rather tha
 machine claiming to know.
 
 
-## 21. Assessment After the Artifact — measuring a person when the work no longer indicates them
+## 22. Assessment After the Artifact — measuring a person when the work no longer indicates them
 
 <sub>Source report: `research/raw/F1-assessment-reconstruction.md`</sub>
 
@@ -5948,7 +6125,7 @@ and never spent it on the capability and learning claims that now go unevidenced
 Second, the reframe that should reorganise priorities: **the emergency was never
 cheating.** In Bastani et al.'s trial of ~1,000 high-school maths students, unguarded
 assistance improved practice performance by 48% and left students **17% worse** on an
-unassisted exam than students who never had access (§20.2). *(A note on provenance, since this
+unassisted exam than students who never had access (§21.2). *(A note on provenance, since this
 project publishes its corrections: the PNAS notice attached to that paper is an
 affiliation erratum. The −17% stands.)*
 
@@ -5999,7 +6176,7 @@ learned least.**
 *The learners the evidence was not collected on, the learners it cannot reach, and the legal floor that turns out to be a design specification.*
 
 
-## 22. The Empty Chair — designing for the margin first
+## 23. The Empty Chair — designing for the margin first
 
 <sub>Source report: `research/raw/H1-selpa-accessibility.md`</sub>
 
@@ -6176,7 +6353,7 @@ Unconstrained LLM access **widens** the gap between low- and high-prior-knowledg
 learners. The largest AI-tutoring trial in Nigeria found gains accruing
 disproportionately to students with **higher** initial performance. Sierra Leone's
 effect loaded at **+0.195 SD per SD of baseline mathematics** — the strong pulled
-further ahead (§21.3).
+further ahead (§22.3).
 
 An unguarded answer-machine is not neutral technology that helps everyone a bit. It
 is a gap amplifier, and our learner is on the wrong side of it. The refusal engine —
@@ -6187,7 +6364,7 @@ one that widens it.
 There is an important asymmetry to state honestly, because it constrains what we may
 claim. Guardrails have been measured to **remove harm**: unguarded assistance left
 learners **17% worse** on later unassisted work, and the guardrailed arm's unassisted
-coefficient was **−0.004, not significant.** Harm removed (§21.2). **Benefit not
+coefficient was **−0.004, not significant.** Harm removed (§22.2). **Benefit not
 demonstrated.** Anyone selling guardrails as a learning gain is ahead of the
 evidence, including us.
 
@@ -6256,11 +6433,11 @@ lands.
 The chair is empty because nobody sat down. Not because the seat was taken.
 
 
-## 23. The Coordinator's Week — what special education actually consists of
+## 24. The Coordinator's Week — what special education actually consists of
 
 <sub>Source report: `research/raw/H2-selpa-practitioner-reality.md`</sub>
 
-A hostile reviewer read §22 — the section this project exists for — and judged it
+A hostile reviewer read §23 — the section this project exists for — and judged it
 **costume over a genuine core.** The intervention evidence was real; the job was
 absent. A coordinator would recognise the research and would not recognise their week.
 
@@ -6310,7 +6487,7 @@ second full-time role**, and it is the one with the legal exposure.
 
 ---
 
-## 2. Half of the legal test is procedural, and §22 argued only the other half
+## 2. Half of the legal test is procedural, and §23 argued only the other half
 
 The federal standard for a free appropriate public education has **two prongs**
 (*Rowley*, 458 U.S. at 206–07). One asks whether the programme was reasonably
@@ -6318,7 +6495,7 @@ calculated to confer educational benefit. The other asks whether the state compl
 with the **procedures** set out in the Act.
 
 A survey that discusses only instructional efficacy has addressed one half of the
-statute. That is why §22 read as research wearing a lanyard: it was arguing about
+statute. That is why §23 read as research wearing a lanyard: it was arguing about
 whether the intervention works while the practitioner's week is largely governed by
 whether the paperwork is defensible.
 
@@ -6421,7 +6598,7 @@ Read those two numbers next to each other. The instructional minutes and the
 compliance minutes are nearly the same quantity.
 
 This changes what the honest pitch is. This survey has argued that AI's contribution
-at the margin is *fidelity and dosage of known-good intervention* (§22). That remains
+at the margin is *fidelity and dosage of known-good intervention* (§23). That remains
 true. But the largest **practical** contribution available today is probably
 **administrative** — and saying so strengthens the instructional argument rather than
 conceding it, because every hour returned from paperwork is an hour available for the
@@ -6431,7 +6608,7 @@ thing with 4,000 effect estimates behind it.
 
 ## 7. Accommodations: mandated, and weak
 
-§22 treated testing accommodations as part of the known-good base being scaled. That
+§23 treated testing accommodations as part of the known-good base being scaled. That
 was wrong, and the correction is uncomfortable enough to state in full:
 
 - Kieffer et al., overall **g = .034, p = .180**
@@ -6482,7 +6659,7 @@ that a decision rule has fired. It may not author the IEP, determine eligibility
 decide placement, select a disability category, or arrive at a meeting with a
 recommendation.
 
-And one more, from §22.3: it may prepare **options with their evidence**. Never a
+And one more, from §23.3: it may prepare **options with their evidence**. Never a
 recommendation.
 
 ---
@@ -6502,12 +6679,12 @@ recommendation.
 - **Measure safeguarding on referrals**, not on confidence. ES 1.22 on feeling ready
   and zero on doing anything is the whole warning.
 
-§22 asked what the evidence says a system should teach. This section is the answer to
+§23 asked what the evidence says a system should teach. This section is the answer to
 a different question, and a coordinator would ask it first: **what is this allowed to
 touch, and who signs.**
 
 
-## 24. Who Is Not in the Room — reach, language, and the barriers attention does not remove
+## 25. Who Is Not in the Room — reach, language, and the barriers attention does not remove
 
 <sub>Source report: `research/raw/F4-reach-economics.md`</sub>
 
@@ -6571,7 +6748,7 @@ plausibly helps with more than it helps with anything else in this section.
 
 This survey has repeatedly warned that AI tutoring widens gaps — the strong pull
 further ahead. Sierra Leone's effect loaded at **+0.195 SD per SD of baseline
-mathematics**, and we have treated that as close to a law (§23.3).
+mathematics**, and we have treated that as close to a law (§24.3).
 
 It is not a law. Across **eight targeted interventions**, examined together for
 this section: **not one widened gaps, and several sharply narrowed them.**
@@ -6598,7 +6775,7 @@ learning. The measurements say close to the opposite.
 | **Voice call + SMS** (5 countries, N = 8,902) | **+0.327 SD** |
 | SMS only | **+0.083 SD** — null in Kenya, Nepal, Botswana |
 | Interactive voice response | Null |
-| Sierra Leone live calls (§23.3)| **−0.008**, null |
+| Sierra Leone live calls (§24.3)| **−0.008**, null |
 
 A phone call plus a text message outperforms most of what this survey has
 examined. What the winning arm has that the others lack is **a human on the line
@@ -6685,7 +6862,7 @@ worked in trials — TaRL's own scaling nulls prove it against a friendly exampl
 And the least-connected are the least reachable, which no amount of capability
 fixes.
 
-What we do not concede is the inference. Every null in §23.1 shares a structure:
+What we do not concede is the inference. Every null in §24.1 shares a structure:
 **something was distributed, and nothing was targeted.** The interventions that
 worked all targeted. Abundant attention is precisely an input to targeting — it is
 what makes meeting each learner where they are affordable at population scale for
@@ -6716,7 +6893,7 @@ should be checkable against a specific person who is **not in the room** — and
 their language.
 
 
-## 25. What We Owe Children — the legal floor as a design specification
+## 26. What We Owe Children — the legal floor as a design specification
 
 <sub>Source report: `research/raw/F8-safety-privacy-children.md`</sub>
 
@@ -6821,7 +6998,7 @@ includes behavioural characteristics, "such as facial images"), this means:
 | Technique | Status |
 |---|---|
 | Webcam frustration / boredom / engagement detection | **Prohibited** |
-| Voice-affect scoring in a spoken session | **Prohibited** (voice is biometric; COPPA agrees, §24.3) |
+| Voice-affect scoring in a spoken session | **Prohibited** (voice is biometric; COPPA agrees, §25.3) |
 | "Sensor-free" affect detection from clickstream and latency | **Grey zone** — turns on whether interaction traces are "behavioural characteristics" under 3(34) |
 
 That third row is the sharpest open legal question in the field — it determines
@@ -7084,7 +7261,7 @@ build from.
 *The frontier's actual capabilities, the artifacts other people have shipped, the pedagogical canon that settled most of this decades ago, and the question of whether anyone wants to continue.*
 
 
-## 26. The Substrate — what the frontier actually supplies
+## 27. The Substrate — what the frontier actually supplies
 
 <sub>Source report: `research/raw/A4-live-multimodal.md, research/raw/A5-world-models.md, research/raw/D1-frontier-quarter.md`</sub>
 
@@ -7419,7 +7596,7 @@ whether it teaches — is the widest measurement gap in applied AI, and it is th
 subject of the last section in this survey.
 
 
-## 27. The Textbook That Writes Itself — and who it remembers
+## 28. The Textbook That Writes Itself — and who it remembers
 
 <sub>Source report: `research/raw/A1-ai-native-textbooks.md, research/raw/G3-future-of-learning-projects.md`</sub>
 
@@ -7732,7 +7909,7 @@ telling; the human still writes the doing — and the reason is now measured, no
 asserted. The doing is the only part with a right answer that can be wrong.
 
 
-## 28. The Canon — what the history of pedagogy already settled
+## 29. The Canon — what the history of pedagogy already settled
 
 <sub>Source report: `research/raw/I1-pedagogical-systems.md, research/raw/I2-global-traditions.md`</sub>
 
@@ -8067,7 +8244,7 @@ ever gated by the price of attention. Those are the ones to build. The rest are
 worth knowing so that we do not mistake a tradition for a finding.
 
 
-## 29. The Market — nine bets, one graveyard, and the number that shrinks as you look at it
+## 30. The Market — nine bets, one graveyard, and the number that shrinks as you look at it
 
 <sub>Source report: `research/raw/E1-E2-edtech-landscape-lessonorca.md, research/raw/E3-latest-sweep.md`</sub>
 
@@ -8124,7 +8301,7 @@ Two clusters deserve their evidence stated rather than summarised.
 evaluations, **median 0.66 SD** — is the most-cited figure in the market and comes
 with its own debunking attached: the improvement "depended to a great extent on
 whether improvement was measured on locally developed or standardized tests," and
-§28.1 puts test alignment at a factor of 2–3. Pane et al.'s Cognitive Tutor Algebra I
+§29.1 puts test alignment at a factor of 2–3. Pane et al.'s Cognitive Tutor Algebra I
 trial, matched-pair randomisation across seven states, is the best large-scale
 evidence anyone has: **no effect in year one**, positive in year two, significant
 for high schools and **not** for middle schools, at roughly eight percentile points.
@@ -8157,13 +8334,13 @@ the only quantity anyone measures. That is not a criticism in itself — teacher
 is real and scarce. But it needs one distinction that no vendor in this survey makes:
 **teacher time saved is a legitimate benefit; learner time saved is the documented
 signature of harm.** The unguarded arm of the Bastani trial also saved the student
-enormous time, and §28.2 carries what happened when the tool was taken away.
+enormous time, and §29.2 carries what happened when the tool was taken away.
 
 **Finding three: mechanism claims are checkable and outcome claims usually are not.**
 "Guides rather than answers." "Listens as students read aloud." "Makes teaching
 decisions in the moment." Each of those describes what the system *does*, and each is
 verifiable by inspection. That makes them worth more than an unreproducible outcome
-number — and §28.4 records the case that limits the principle, where a fully true
+number — and §29.4 records the case that limits the principle, where a fully true
 mechanism claim bought nothing because the mechanism only fired when a student first
 recognised they needed help.
 
@@ -8202,7 +8379,7 @@ wrong.
 
 **inBloom** was a $100 million student-data warehouse. Every district and state
 withdrew after parent protests and it closed in April 2014. The technology worked;
-every customer left. §11 and §25 carry the custody lesson.
+every customer left. §11 and §26 carry the custody lesson.
 
 **Knewton** raised roughly **$157M disclosed** across seven rounds against a claim —
 "sophisticated, real-time analysis of reams of student performance data" — that was
@@ -8299,7 +8476,7 @@ and not with the features.
 **The architecture puts the AI behind the human.** The positioning — "AI will not
 replace tutors, but it will redefine how they work" — is structurally the Tutor
 CoPilot configuration, which is the one AI-tutoring architecture with a
-live-classroom randomised trial behind it (§28.3, §17). The wedge identified from
+live-classroom randomised trial behind it (§29.3, §18). The wedge identified from
 interviewing tutors was **continuity**, not comprehension: nobody remembers what
 happened last Wednesday. That is the correct read of the literature, reached without
 reading it.
@@ -8321,14 +8498,14 @@ answer, a profile update, or a parent opening a transcript. **The product in thi
 survey most explicitly designed around a falsifiable pedagogical claim has not
 instrumented the claim.** It measures acquisition precisely and pedagogy not at all.
 
-That is the §28.3 pathology — measuring what the organisation controls — appearing in
+That is the §29.3 pathology — measuring what the organisation controls — appearing in
 the survey author's own work. It is reported rather than omitted because the survey's
 credibility depends on applying its own test to itself first.
 
 Three further criticisms follow from the same evidence base, and they are not
 softened. **The refusal is unverified**: no transcript audit, no red-team result, no
 refusal-failure rate. "Never gives answers directly" is currently an assertion about
-a prompt. **"Socratic only" is stronger than the evidence supports**: §22's archetype
+a prompt. **"Socratic only" is stronger than the evidence supports**: §23's archetype
 work is explicit that for reasoning and abstraction gaps, discovery learning is
 actively harmful and explicit instruction is required. The defensible version is
 narrower — *never answer the question the student was assigned; may directly instruct
@@ -8370,7 +8547,7 @@ the school years it would take for anyone to notice the difference. The fix is n
 better claims. It is naming, in advance, the observation that would prove you wrong.
 
 
-## 30. Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration
+## 31. Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration
 
 <sub>Source report: `research/raw/D2-portfolio-case-studies.md`</sub>
 
@@ -8395,7 +8572,7 @@ learner reads and runs. **The learner is never asked to produce anything.** And 
 method's own stated success criterion says so out loud: *"a student can narrate
 every cell in a 1-hour video."*
 
-Narrating is not retrieving. §29.1 and §16 establish what that distinction costs: the
+Narrating is not retrieving. §30.1 and §17 establish what that distinction costs: the
 two largest replicated effects in learning science are retrieval practice and
 distributed practice, and this corpus contains neither. It is optimised, with real
 craft and enormous discipline, for the felt sense of understanding.
@@ -8448,7 +8625,7 @@ What that machine demonstrably does, in production, today:
   path in one call, conditioned on grade, location, culture, interests, dialect and
   stated goal.
 
-The technical substrate §26 describes as newly available is not a research problem
+The technical substrate §27 describes as newly available is not a research problem
 for this practitioner. **It is shipped, six times over.** That is the first thing
 the portfolio reveals that the literature does not: the field's discourse treats
 multimodal tutoring as a frontier, and at the level of plumbing it is a solved
@@ -8609,7 +8786,7 @@ live generated avatar is not.
 **Nothing was evaluated.** No A/B test, no learning-outcome measurement, no user
 study, no telemetry beyond a token counter, across nine deployed apps and 128
 notebooks. An analytics project exists in the same environment and is unused for
-this purpose. §29 records the same pathology in the same owner's commercial product,
+this purpose. §30 records the same pathology in the same owner's commercial product,
 independently.
 
 **Grounding is applied uniformly where it should be applied selectively.** Web-search
@@ -8618,7 +8795,7 @@ guidance delivered in the voice of a deity. No source allowlist, no provenance
 display, no medical disclaimer in the extracted strings. One app in the set asserts
 uncited clinical statistics as fact — *"diagnostic simulation benchmarks outperform
 junior residents in 8/10 categories"* — with no citation mechanism anywhere in the
-bundle. §20 argues that correctness must live in a verifier rather than in the
+bundle. §21 argues that correctness must live in a verifier rather than in the
 generator; this is what the alternative ships as. **The same portfolio contains a
 codified "citation rigor" discipline. It is not applied to the consumer apps.**
 
@@ -8675,7 +8852,7 @@ more useful artefact than either half alone.
 - **Ground selectively, and display provenance.** Uniform web grounding across a
   maths lesson and a health claim is not a grounding strategy.
 - **Instrument before you narrate.** Nine apps, 128 notebooks, zero outcome
-  measurements — and the same absence appears independently in §29.
+  measurements — and the same absence appears independently in §30.
 - **Publish the gap between the requirements document and the deployment.** Ours is
   large, it is in this section, and stating it is the only thing that makes the rest
   of the section credible.
@@ -8692,7 +8869,7 @@ that measure whether anyone learned are the parts that are always about to be bu
 next.
 
 
-## 31. Motivation — wanting to continue
+## 32. Motivation — wanting to continue
 
 <sub>Source report: `research/raw/F6-motivation-persistence.md`</sub>
 
@@ -8845,7 +9022,7 @@ Two independent meta-analyses converge on a real, medium effect, and this survey
 | Meta-analysis | Effect |
 |---|---|
 | Sailer & Homner 2020 | **Cognitive g = .49** [.30, .69]; **motivational g = .36** [.18, .54]; **behavioural g = .25** [.04, .46] |
-| Bai, Hew & Huang 2020 (30 interventions, N = 3,202) | **Hedges' g = 0.504** [0.284, 0.723] (§30.1)|
+| Bai, Hew & Huang 2020 (30 interventions, N = 3,202) | **Hedges' g = 0.504** [0.284, 0.723] (§31.1)|
 
 So the headline is *not* "gamification doesn't work." Four caveats the marketing omits.
 
@@ -9033,7 +9210,7 @@ AI-native.
 of the material to their own lives showed increased interest and grades, **concentrated in
 students with low initial success expectations**; a college biology replication **closed
 achievement gaps** for first-generation and underrepresented-minority students. *Caveat
-required by §30.3:* the 247-course scale-up found value-relevance effects only in courses that
+required by §31.3:* the 247-course scale-up found value-relevance effects only in courses that
 *had* a global achievement gap — real and conditional, not universal. It is also a
 **generative** task, which is exactly what an LLM can elicit, read and respond to at scale
 and a multiple-choice platform cannot.
@@ -9163,7 +9340,7 @@ whether they came back with nobody asking.**
 *The catalogued gaps, the uncatalogued ones, what we would build with none of the existing containers, and the conditions under which this document's central claim would have to be withdrawn.*
 
 
-## 32. What We Cannot See From Here — the unknown unknowns, and the questions that expose them
+## 33. What We Cannot See From Here — the unknown unknowns, and the questions that expose them
 
 <sub>Source report: `synthesis across the corpus`</sub>
 
@@ -9237,7 +9414,7 @@ because nobody has named the failure.
 The longest outcome interval in this corpus is months. Most are a single session.
 The Sierra Leone trial, the largest deployment we examine, ran **eight weeks** — an
 earlier version of this sentence said "a school year", which was wrong and made the
-field's time horizon look better than it is (§31.3). Almost nothing comes close even to eight
+field's time horizon look better than it is (§32.3). Almost nothing comes close even to eight
 weeks.
 
 Now consider a technique that measures **+0.5 SD at six weeks** and, over three
@@ -9248,7 +9425,7 @@ order of magnitude longer than the measurement.
 
 This is not hypothetical hand-wringing. It is the exact shape of the one long-horizon
 result we do have: unguarded AI produced **+48% during access** and **−17% once
-withdrawn.** The sign flipped when the window widened (§31.2). We got that only because
+withdrawn.** The sign flipped when the window widened (§32.2). We got that only because
 someone thought to measure after taking the tool away — and almost nobody does.
 
 We are optimising on a horizon far shorter than the thing we claim to affect, and
@@ -9395,7 +9572,7 @@ claims in this field fail on the first three.
    Leone at **+0.195 SD per SD** of baseline.
 
 3. **Does your metric survive the Null-Learner Test?** Simulate an agent maximising
-   it while teaching nothing (§31). Engagement, time-on-task, streaks, satisfaction and
+   it while teaching nothing (§32). Engagement, time-on-task, streaks, satisfaction and
    session count all fail.
 
 4. **Which arm isolates the AI from the humans around it?** In one trial, **44.3% of
@@ -9476,7 +9653,201 @@ failures we have not measured, and put the falsifier in writing before the resul
 arrives.**
 
 
-## 33. Greenfield — what you would build with no school, no textbook and no exam
+## 34. Attention, and the Missing Executive — what the best teachers actually do
+
+<sub>Source report: `research/raw/N2-executive-function-and-attention.md`</sub>
+
+Every great teacher grabs attention. They joke, they tell a story, they ask the
+question that makes you lean forward. The instinct is universal and the folk theory
+around it — *make it fun, make it engaging* — is wrong in a specific and fixable way.
+
+This section replaces the folk theory with one rule, and then turns to the harder
+problem underneath it: the capacity every learning product silently requires and
+none of them supplies.
+
+---
+
+## 1. The rule is referential status, not entertainment
+
+Order the evidence by **what the element points at**, and it lines up cleanly:
+
+| The element | Effect |
+|---|---|
+| **Points at the target** — signalling, emphasis, "watch this bit" | **g = 0.43** (k = 209) |
+| **Is the target, dressed** — emotional design applied to the content itself | **d⁺ = 0.32–0.39** |
+| **Adjacent, with no referent** — decorative animation, decorative borders | **g = −0.05** (k = 17), and flat null |
+| **Carries a competing referent** — a vivid aside that is *about something else* | **g = −0.16 to −0.43** |
+
+Read the third row carefully, because it kills the usual explanation. Pure decoration
+is **inert, not harmful**. So "extraneousness" is not the mechanism. What harms is a
+detail that installs a *different* referent and competes for the one the learner is
+trying to build.
+
+> **A great teacher's joke is about the thing.** That is why it works — not because it
+> is brief, and not because it is entertaining.
+
+### The correction to our own account
+
+An earlier draft of this survey, and a claim made directly to its owner, said the
+hinge was **persistence**: seductive details harm at g = 0.43 when persistent and
+g = 0.12, non-significant, when transient — so a teacher's four-second aside was in
+the harmless regime.
+
+**That over-read a null.** The transient cell is **g = 0.12, 95% CI [−0.33, 0.57],
+k = 18** — an interval that *contains* the persistent estimate of 0.43. Transience is
+**unmeasured, not null**, and treating a wide non-significant interval as evidence of
+no effect is exactly the error this survey exists to catch.
+
+### And "make it fun" is falsified twice, independently
+
+In the same studies where learning moves **0.27–0.39**, liking moves **0.09–0.11**.
+The manipulation that works barely moves enjoyment at all.
+
+What it moves instead is **perceived difficulty, at −0.21.** The lever is
+**approachability, not amusement** — making the thing feel *possible*, not making it
+feel fun. Those are different design targets and the field routinely conflates them.
+
+---
+
+## 2. Story: the effect is real and mostly unmeasured
+
+Narrative beats expository text at **g = 0.55** — and only **28% of those effect
+sizes come from studies that controlled content across genres**. Egger's test is
+significant (b = 2.68, p = .01). Most of the literature compares a good story to a
+worse essay about a different thing.
+
+The one direct randomised test of narrative *as framing* (N = 145) found it helped at
+exactly one step: **mapping the situation to the symbol** — and most for struggling
+students.
+
+Which is the same rule again. Narrative works where **the story is the referent** —
+where the situation being described *is* the structure to be learned. Narrative
+wrapped around unchanged content is decoration with a plot.
+
+---
+
+## 3. The question is right, for the wrong reason
+
+The instinct that great explainers *ask* rather than *tell* is correct. The
+mechanism is not curiosity.
+
+**Prequestions — being asked before you know — measure g = 0.54 when specific and
+g = 0.04 when general (p = .349).** And the work is in the attempt: **guessing scores
+0.65 against reading at 0.22.**
+
+Then the result that cuts against the curiosity account: **factual prequestions
+(0.58) beat conceptual ones (0.28).** If the mechanism were an information gap opened
+by an intriguing question, the deep conceptual question should win. It loses.
+
+> **A question holds attention because it can be *attempted*. An exhortation cannot
+> be attempted, which is why "pay attention, this is important" does nothing.**
+
+Two boundaries that matter for the learner this project is built for. The effect runs
+**0.62 in adults against 0.22 in children**. Productive failure **reverses for grades
+2–5**. And the best trial of teaching young children to ask questions (N = 103,
+preregistered) is a **null on learning**, positive only on *valuing* information.
+
+The Socratic method, for the record, has **no meta-analysis and one N = 25 null.**
+
+---
+
+## 4. The executive function nobody supplies
+
+Now the harder half, and the reframe this section exists for.
+
+The corpus already says: do not build a working-memory trainer, because it does not
+transfer. **Externalise instead.** That remains right and it is not the whole
+picture.
+
+**Executive function is not only a learner trait to accommodate. It is a resource
+every learning product silently requires and never supplies.**
+
+A normal session assumes the learner can initiate, notice confusion, decide to seek
+help, sustain across an interruption, resume after a break, and abandon a failing
+strategy. A learner whose binding constraint is executive function fails at the
+*first* of those and never reaches the pedagogy at all.
+
+**And this was measured twenty-five years before anyone said "AI tutor."** In
+Cognitive Tutor logs: after **three consecutive errors**, a hint request followed only
+**34%** of the time — and **68% of hint levels were viewed for under one second.** The
+help was there. It was not summoned, and when summoned it was not read.
+
+That is the Khanmigo diagnosis, a quarter of a century early: the mechanism worked and
+only fired when a student recognised they needed it.
+
+### The null that has to be respected
+
+Carnegie Mellon then did the obvious thing. They built help-seeking support, and it
+**worked** — help-seeking improved, durably, months after the support was removed.
+
+**Domain learning did not move.**
+
+Fixing the metacognition did not fix the learning. That is the single most important
+constraint on everything in this section, and any design that supplies executive
+function externally must explain why it would not land in the same place.
+
+The honest reading: help-seeking was a *necessary* condition that turned out not to
+be *sufficient*. Supplying it removes a blocker and does not, on its own, teach.
+
+### The ledger
+
+The source report audits **twelve points** in a normal session where the design makes
+an unaided executive demand, and specifies an external supply for each. `DESIGN` —
+falsified if the count of unaided demands fails to predict non-completion once
+time-on-task and prior knowledge are controlled.
+
+That falsifier matters. If the demand count predicts nothing, the whole framing is a
+story about why learners quit, and the real cause is elsewhere.
+
+---
+
+## 5. ADHD: the sustaining myth is wrong
+
+The folk model says attention is fine at first and decays — so accommodations focus on
+breaks, chunking and sustaining.
+
+The measurement says otherwise. The **vigilance decrement** — the decay itself — runs
+**δ = 0.54 with an 80% credibility interval from −0.14 to 1.22**, an interval that
+includes zero. Against that: overall omission errors at **δ = 1.34** and detection
+sensitivity at **d′ = 0.98**.
+
+**The deficit is present in the first block.** It is not that attention fades. It is
+that it starts impaired.
+
+That inverts the design. Chunking and breaks address a decay that may not be the
+problem. **Initiation and re-entry** — starting, and getting back in after any
+interruption — are where the measured deficit actually is. And this survey already
+records that testing accommodations are **legally mandated and evidentially weak**;
+both halves must be held at once.
+
+Nothing here licenses diagnosis. An AI may observe that a strategy is not working and
+say so in behavioural terms. It may not label a child.
+
+---
+
+## 6. What this section commits us to
+
+- **Every attention-getting element must point at the target.** If it installs a
+  competing referent it measures negative; if it points at nothing it is merely
+  wasted.
+- **Optimise approachability, not amusement.** The lever is perceived difficulty at
+  −0.21, and liking barely moves at all.
+- **Ask questions that can be attempted.** Specific beats general by an order of
+  magnitude; guessing beats reading; and an exhortation is not a question.
+- **Do not over-read a wide null.** A non-significant interval containing the effect
+  you are dismissing is not evidence of absence — we made that error in this very
+  section.
+- **Count the unaided executive demands** in every flow, and supply each one — while
+  accepting that the one time this was done well, help-seeking improved and learning
+  did not.
+- **Design for initiation, not for sustaining.** The measured deficit is in the first
+  block.
+
+The through-line: the best teachers are not making the material *fun*. They are making
+it **attemptable**, and pointing everything they say at the thing itself.
+
+
+## 35. Greenfield — what you would build with no school, no textbook and no exam
 
 <sub>Source report: `research/raw/N1-greenfield.md`</sub>
 
@@ -9626,7 +9997,7 @@ Together they would be **the first curriculum in history with a deletion
 procedure** — an edge that stops predicting gets removed, on evidence, rather than
 surviving because a committee approved it in 1994.
 
-> **What would show it wrong:** §32.3.1. If misconceptions do not transfer across
+> **What would show it wrong:** §34.3.1. If misconceptions do not transfer across
 > populations, the atlas is a local artifact and the graph is unmaintainable.
 
 ---
@@ -9648,7 +10019,7 @@ reproduced the tradition's actual mechanism rather than its stated one.
 ## 5. The risk that scales with the idea
 
 The population-scale versions of these designs — one error atlas, one graph, one
-mentor — concentrate exactly the risk §32 named as *correlated pedagogical error*.
+mentor — concentrate exactly the risk §33 named as *correlated pedagogical error*.
 
 An earlier draft of that section claimed it had no name in the literature. **That was
 wrong, and the correction makes the risk sharper.** Kleinberg and Raghavan's
@@ -9689,7 +10060,7 @@ process that could only see one direction. Both are fixed. What remains is the h
 discipline: **construction, anchored, with its own falsifier attached.**
 
 
-## 34. The Agenda — three experiments, and what would falsify this survey
+## 36. The Agenda — three experiments, and what would falsify this survey
 
 <sub>Source report: `research/raw/F9-open-problems.md`</sub>
 
@@ -9717,7 +10088,7 @@ the guardrailed arm was **−0.004 (SE 0.013), not significant.**
 
 That is the whole problem in one study. **A variable that moves an outcome from
 −17% to zero is not near a ceiling; it is near a decision.** And nobody has
-measured what happens six weeks later (§33.2).
+measured what happens six weeks later (§35.2).
 
 This section lists the three experiments worth running first, each with its
 design and its pre-registered falsifier, and then states at full strength the
@@ -9822,7 +10193,7 @@ none of which anyone has measured either.
 **Why third, and why it is this survey's own thesis on trial.** The central
 design claim running through these sections is that **restraint is the active
 ingredient**. The evidence for that claim is currently *entirely* about harm
-removal. The guardrail took the unassisted effect from −17% to exactly zero (§33.2). **No
+removal. The guardrail took the unassisted effect from −17% to exactly zero (§35.2). **No
 study has ever shown a constrained tutor beating a no-AI control on a delayed
 unassisted outcome.** Europe PMC, `"guardrails" AND "learning" AND "randomized"`:
 **0 hits**. The one relevant trial has not been replicated.
@@ -9907,7 +10278,7 @@ architectural refinement is optimising the small term.
 
 **Premise 5 — the field's positive results degrade under scrutiny in one
 direction only.** Sierra Leone's unadjusted estimate (**+0.216 SD, SE 0.137**) is
-not significant (§33.3). The largest positive LLM-tutoring meta-analysis (g = 0.867) was
+not significant (§35.3). The largest positive LLM-tutoring meta-analysis (g = 0.867) was
 **retracted in 2026**. One prominent tutor was built and analysed by its first
 author with no funding statement. One trial has 11 clusters. Another lost 43% of
 its sample. **Where independence and rigour increase, effects shrink. That is the
@@ -9926,7 +10297,7 @@ holds**, and this survey's programme is explicitly mechanism-level.
 **Two: the dissociation results are sign results, not ceiling results.** A
 ceiling story predicts small positive effects everywhere. It does not predict
 −17%, and it does not predict the same model with a different interaction policy
-landing at zero in the same study (§33.2).
+landing at zero in the same study (§35.2).
 
 **Three: the empty chair.** Zero randomised trials of AI tutoring on learners
 with disabilities is not a verdict. The ceiling argument cannot even be assessed
