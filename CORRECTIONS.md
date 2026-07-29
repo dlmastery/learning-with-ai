@@ -103,6 +103,7 @@ measured, or it is a pitch.
 | **C-48** | 29 Jul | §29 proposed **"machinery before obstacle"** as an original checkable failure mode, implying the *ordering* is what carries the effect | **Narrowed by the one experiment that isolates it.** Muller (Sydney, 2008) ran a **Refutation** condition that was the Exposition script *verbatim, plus explicit statements of the misconception* — same definitions-first order, no reordering — and it scored **d = 0.79** (N = 364, F(3,461) = 13.625, p < .001). The load-bearing variable is **naming the wrong idea**, not the order. Ordering may still help; it has not been shown to be what does the work. Same thesis supplies the dissociation in measured form: perceived learning **flat at 5.7 vs 5.6** while real learning differed by d = 0.71, and students *preferred* the worse format (p < .05) | SELF-RESEARCH (N4) |
 | **C-49** | 29 Jul | Hypothesised that **rewind/replay density** on video is a behavioural signal marking where comprehension failed — proposed as this project's own contribution | **Dead three ways.** Measured across 51 videos: median entropy **0.976** (1.0 = flat), enrichment **1.95×**, peaks land *closer to chapter boundaries than chance* — they mark navigation. Structurally, the signal is **min–max normalised within each video in 51 of 51 cases**, so cross-video ranking is impossible by construction. And it was already built: **LectureScape (UIST 2014)** was null on every task, slower outside peaks, and better on *perceived* efficiency. Brinton et al. find backward-scrubbing predicts getting the next question **right** — the sign may be inverted | SELF-RESEARCH (N4) |
 | **C-50** | 29 Jul | §29 called the **quantifier-prefix check** *"decidable, cheap, and the most valuable entry in the table"* | **Implemented and run against 1,524 sentences of MIT OCW transcripts: it fired zero times.** Speech *elides* quantifiers rather than reordering them — a lecturer says "as close as you like" and never utters a recoverable ∀ or ∃. Overall lexical precision across §29's predicates: **7 true positives from 30 flags (23%)**. Not refuted — relocated: these are checks for authored technical prose and generated output, not for transcript mining | SELF-RESEARCH (N4) |
+| **C-51** | 29 Jul | *(our own brief)* Instructed a research agent that a **MarGrady 2020 state-test study of Teach to One** existed, as a precedent to check | **It does not exist.** The independent i3/CPRE evaluation is **null**; the real MarGrady report is **MAP-growth-based and positive**. The agent checked rather than accepting the citation, and the contrast it found is more useful than the study we invented — same programme, same period, different instrument, opposite conclusion. Recorded because the error originated in our brief, not in the research | SELF-RESEARCH (N3) |
 
 ---
 
@@ -113,13 +114,13 @@ hand-maintained, which is the whole argument for generating it.*
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 24 |
+| Caught by our own research | 25 |
 | Caught by our own verification — including of our own warnings | 2 |
 | Caught by our own builders, working against their own briefs | 4 |
 | **Caught by an adversarial external reviewer** | **20** |
-| **Total** | **50** |
+| **Total** | **51** |
 
-20 of 50 were found by someone whose job was to fail us — including
+20 of 51 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the

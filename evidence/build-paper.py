@@ -52,7 +52,7 @@ PARTS = [
   "the pedagogical canon that settled most of this decades ago, and the "
   "question of whether anyone wants to continue.",
   ["16-the-substrate", "18-the-textbook-that-writes-itself", "19-the-canon",
-   "27-the-market", "28-prior-art", "14-motivation"]),
+   "27-the-market", "36-the-two-hour-school", "28-prior-art", "14-motivation"]),
 
  ("VII", "What we do not know",
   "The catalogued gaps, the uncatalogued ones, what we would build with none of the "

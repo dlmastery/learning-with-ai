@@ -2,7 +2,7 @@
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**36 sections · 85,684 words · 40 research reports · 50 published corrections**
+**37 sections · 86,790 words · 40 research reports · 51 published corrections**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -20,7 +20,7 @@ This survey is an attempt to write the missing specification. It rests on 40 res
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
 errors is published in an append-only ledger rather than quietly edited — **20 of
-the 50 corrections were found by an adversarial reviewer rather than by us.**
+the 51 corrections were found by an adversarial reviewer rather than by us.**
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
@@ -132,15 +132,16 @@ One of them documents a mechanism this project proposed, benchmarked, and
 28. [The Textbook That Writes Itself — and who it remembers](#the-textbook-that-writes-itself-and-who-it-remembers)
 29. [The Canon — what the history of pedagogy already settled](#the-canon-what-the-history-of-pedagogy-already-settled)
 30. [The Market — nine bets, one graveyard, and the number that shrinks as you look at it](#the-market-nine-bets-one-graveyard-and-the-number-that-shrinks-as-you-look-at-it)
-31. [Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration](#prior-art-what-thirty-five-builds-reveal-read-as-evidence-and-not-as-inspiration)
-32. [Motivation — wanting to continue](#motivation-wanting-to-continue)
+31. [The Two-Hour School — one claim that holds and one that does not](#the-two-hour-school-one-claim-that-holds-and-one-that-does-not)
+32. [Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration](#prior-art-what-thirty-five-builds-reveal-read-as-evidence-and-not-as-inspiration)
+33. [Motivation — wanting to continue](#motivation-wanting-to-continue)
 
 **Part VII — What we do not know**
 
-33. [What We Cannot See From Here — the unknown unknowns, and the questions that expose them](#what-we-cannot-see-from-here-the-unknown-unknowns-and-the-questions-that-expose-them)
-34. [Attention, and the Missing Executive — what the best teachers actually do](#attention-and-the-missing-executive-what-the-best-teachers-actually-do)
-35. [Greenfield — what you would build with no school, no textbook and no exam](#greenfield-what-you-would-build-with-no-school-no-textbook-and-no-exam)
-36. [The Agenda — three experiments, and what would falsify this survey](#the-agenda-three-experiments-and-what-would-falsify-this-survey)
+34. [What We Cannot See From Here — the unknown unknowns, and the questions that expose them](#what-we-cannot-see-from-here-the-unknown-unknowns-and-the-questions-that-expose-them)
+35. [Attention, and the Missing Executive — what the best teachers actually do](#attention-and-the-missing-executive-what-the-best-teachers-actually-do)
+36. [Greenfield — what you would build with no school, no textbook and no exam](#greenfield-what-you-would-build-with-no-school-no-textbook-and-no-exam)
+37. [The Agenda — three experiments, and what would falsify this survey](#the-agenda-three-experiments-and-what-would-falsify-this-survey)
 
 ---
 
@@ -1897,9 +1898,9 @@ any of this.** A tutor that answers freely, has no memory, cannot see the work,
 cannot point, never pivots, and agrees with everything — measured at 0.2–0.4 SD.
 
 We call that *the floor with the brakes on* — and it is worth being exact about the
-status of that phrase, because §36 is, and this section was not. **"Nobody has built
+status of that phrase, because §37 is, and this section was not. **"Nobody has built
 and measured the assembled system" is proven. "It would do better" is a hypothesis,
-not a finding.** It is the project's central bet, it is stated as falsifiable in §36
+not a finding.** It is the project's central bet, it is stated as falsifiable in §37
 with its concession conditions named in advance, and nothing in this survey
 establishes it.
 
@@ -1927,7 +1928,7 @@ hypothesis rather than a pitch. The rules stay:
   Gap-widening is therefore a design failure we can avoid, not a law we must
   accept. If ours widens gaps, it has failed, whatever the mean says.
 - **The Null-Learner Test** on every metric: simulate an agent maximising it while
-  teaching nothing (§32). If the metric can't tell, it's the wrong metric.
+  teaching nothing (§33). If the metric can't tell, it's the wrong metric.
 - Publish the nulls. Especially ours.
 
 ---
@@ -4648,7 +4649,7 @@ instructor produced higher judgments of learning and higher instructor ratings w
 **zero** gain in actual learning. An LLM is a maximally fluent instructor by
 construction. This is the most directly transferable warning in educational
 psychology and it is essentially absent from AI-education discourse. The felt/real
-dissociation itself is established in **§32** and **§20**; the transferable part
+dissociation itself is established in **§33** and **§20**; the transferable part
 here is that *fluency of delivery* is one of its cheapest triggers.
 
 **Perceptual disfluency failed to replicate.** Bjork & Yue (2016), from the
@@ -8547,7 +8548,161 @@ the school years it would take for anyone to notice the difference. The fix is n
 better claims. It is naming, in advance, the observation that would prove you wrong.
 
 
-## 31. Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration
+## 31. The Two-Hour School — one claim that holds and one that does not
+
+<sub>Source report: `research/raw/N3-two-hour-school.md`</sub>
+
+A school in Texas teaches academics for about two hours a day and reports students at
+top percentiles. It is the closest thing to a live test of this survey's compression
+argument, and it deserves a careful reading rather than either enthusiasm or a sneer.
+
+Two claims are being made and they are sold as one. **One holds. The other is not
+established**, and the arithmetic that produces it is checkable.
+
+---
+
+## 1. The two-hour claim holds, and it vindicates §30.6 at the low end
+
+Section6 argues that a school week is mostly overhead: 9 nominal hours inside 112,
+and the engagement cascade loses about 65% of the 9, so the same nominal day yields
+**4 minutes or 52 minutes** of productive learning depending on allocation,
+engagement and success rate.
+
+Run that against two hours of high-engagement work held at 70–95% accuracy, and the
+result is **roughly parity in academic learning time with a median six-hour day.**
+
+That is a real removal of overhead and it is exactly what this survey predicted — at
+the **low end** of §30.6's stated range, which is the honest place for a real-world
+implementation to land.
+
+**And it is precisely why the two-hour figure cannot explain the attainment claim.**
+If two hours buys parity, it buys parity. Something else has to account for students
+scoring above their peers — and the candidates are **targeting** and **selection**,
+not the clock.
+
+That distinction is the whole section. The compression is real; it is not the
+mechanism being advertised.
+
+---
+
+## 2. The attainment claim rests on a denominator
+
+The operator's white paper contains one worked example of its "2×" figure. Its
+denominator is **the RIT gap between adjacent grades at a fixed percentile** — how far
+apart grade 5 and grade 6 sit on the scale, at the same percentile.
+
+That is not a growth norm. The published growth norm for the same cell is **9.61 RIT**
+against the **4** the paper uses.
+
+The consequences follow arithmetically:
+
+- The **8 points** the paper credits to a student sits at about the **40th conditional
+  growth percentile** — *below* median growth for that starting point.
+- Fed a nationally average student, the same metric returns **1.2×–2.4× in maths,
+  1.0×–1.7× in reading, and ∞ at grade 8.**
+
+Read the second line again. **The metric produces a multiple greater than one for an
+average student.** It is a property of the denominator, not of the instruction.
+
+Two further mismatches compound it. The frequently quoted **99th *school* percentile
+corresponds to roughly the 90th *student* percentile** in maths and 84th–87th in
+reading. And the norms are built on **US public-school students** — a comparison a
+private school will win on composition alone.
+
+None of this shows the school does not work. It shows **the published number does not
+demonstrate that it does**, and that a reader can check this in an afternoon from two
+public PDFs.
+
+---
+
+## 3. The regulatory record is the most informative document
+
+Marketing is `VENDOR`. A charter application is a filing with consequences, and it says
+something different.
+
+In its Pennsylvania application the same operator projected ranking **in the top half
+of Pennsylvania schools** — not the top percentile. **Four of five states refused**,
+with the Pennsylvania department finding *"deficiencies in all five of the required
+criteria."*
+
+And in the regulated version of the model, the "guides" become **certificated teachers
+at a 1:20 ratio.** The staffing structure that survives regulatory scrutiny is a
+conventional one.
+
+Three more facts a diligent reader should have:
+
+- The adaptive software vendor **deactivated the school's account in July 2025 for
+  *"violating our terms of service."*** The stack that produced the published results
+  is therefore not the current stack.
+- A state education department **declined to recognise** the $65,000-tuition Manhattan
+  campus as a school.
+- The group files **no Form 990, no Form D, nothing.** There is no audited financial
+  or enrolment record to check anything against.
+
+And where an outside reader finally obtained a denominator underneath a published
+multiplier, it was **n = 5.**
+
+---
+
+## 4. The precedent that matters most
+
+Nine "school reinvented" precedents are on the record — AltSchool, Summit Learning,
+Teach to One, Rocketship, Carpe Diem, Khan Lab School among them. One is worth
+isolating because its evidence pattern is exactly the one under examination here.
+
+**Teach to One** has two evaluations. The independent one, on state tests, is
+**null**. The positive one is **MAP-growth-based.**
+
+Same programme. Same period. Different instrument, opposite conclusion.
+
+That is the shape to watch for. **A growth-metric result and a state-test result are
+not two measurements of one thing** — and when only the first is offered, the reader
+should ask for the second rather than treat its absence as neutral.
+
+*(This survey's own brief for this section cited a state-test study of Teach to One
+that does not exist. The agent checked and corrected it. Recorded because the error was
+ours.)*
+
+---
+
+## 5. What would settle it
+
+The bar is the same one this survey applies to everyone, including itself:
+
+- **An externally administered assessment** — not one the operator gives and scores.
+- **A comparison group that is a real alternative**, ideally a matched private school,
+  since selection is the live confound and cannot be ruled out without one.
+- **A delayed, unassisted, novel-item outcome**, which is the only trustworthy signal
+  in this entire document.
+- **A denominator published with every multiplier.** Most of the arithmetic problems
+  above disappear the moment the denominator is stated.
+
+And one caveat that applies to the whole category: **percentile rank is zero-sum by
+construction.** A model that lifts everyone cannot lift everyone's rank. If the claim
+is capability, say capability; if the claim is rank, it is positional and does not
+survive scale.
+
+---
+
+## 6. What this section commits us to
+
+- **Separate the compression claim from the attainment claim.** The first is
+  supported and modest; the second is unestablished. They are routinely sold as one
+  sentence.
+- **Check the denominator before the multiplier.** A metric that returns 2× for an
+  average student is measuring its own construction.
+- **Read the filing, not the site.** The regulated version of a model is the version
+  its operator will defend under consequence.
+- **Ask which instrument.** Growth-metric positive with state-test null has happened
+  before, in this exact category.
+- **Report our own errors in the brief**, not only in the findings.
+
+The honest summary: **a two-hour academic day is a real and defensible removal of
+overhead, and it is not evidence of extraordinary learning.** Those are two different
+claims, and this survey's own argument only supports the first one.
+
+
+## 32. Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration
 
 <sub>Source report: `research/raw/D2-portfolio-case-studies.md`</sub>
 
@@ -8572,7 +8727,7 @@ learner reads and runs. **The learner is never asked to produce anything.** And 
 method's own stated success criterion says so out loud: *"a student can narrate
 every cell in a 1-hour video."*
 
-Narrating is not retrieving. §30.1 and §17 establish what that distinction costs: the
+Narrating is not retrieving. §31.1 and §17 establish what that distinction costs: the
 two largest replicated effects in learning science are retrieval practice and
 distributed practice, and this corpus contains neither. It is optimised, with real
 craft and enormous discipline, for the felt sense of understanding.
@@ -8869,7 +9024,7 @@ that measure whether anyone learned are the parts that are always about to be bu
 next.
 
 
-## 32. Motivation — wanting to continue
+## 33. Motivation — wanting to continue
 
 <sub>Source report: `research/raw/F6-motivation-persistence.md`</sub>
 
@@ -9022,7 +9177,7 @@ Two independent meta-analyses converge on a real, medium effect, and this survey
 | Meta-analysis | Effect |
 |---|---|
 | Sailer & Homner 2020 | **Cognitive g = .49** [.30, .69]; **motivational g = .36** [.18, .54]; **behavioural g = .25** [.04, .46] |
-| Bai, Hew & Huang 2020 (30 interventions, N = 3,202) | **Hedges' g = 0.504** [0.284, 0.723] (§31.1)|
+| Bai, Hew & Huang 2020 (30 interventions, N = 3,202) | **Hedges' g = 0.504** [0.284, 0.723] (§32.1)|
 
 So the headline is *not* "gamification doesn't work." Four caveats the marketing omits.
 
@@ -9210,7 +9365,7 @@ AI-native.
 of the material to their own lives showed increased interest and grades, **concentrated in
 students with low initial success expectations**; a college biology replication **closed
 achievement gaps** for first-generation and underrepresented-minority students. *Caveat
-required by §31.3:* the 247-course scale-up found value-relevance effects only in courses that
+required by §32.3:* the 247-course scale-up found value-relevance effects only in courses that
 *had* a global achievement gap — real and conditional, not universal. It is also a
 **generative** task, which is exactly what an LLM can elicit, read and respond to at scale
 and a multiple-choice platform cannot.
@@ -9340,7 +9495,7 @@ whether they came back with nobody asking.**
 *The catalogued gaps, the uncatalogued ones, what we would build with none of the existing containers, and the conditions under which this document's central claim would have to be withdrawn.*
 
 
-## 33. What We Cannot See From Here — the unknown unknowns, and the questions that expose them
+## 34. What We Cannot See From Here — the unknown unknowns, and the questions that expose them
 
 <sub>Source report: `synthesis across the corpus`</sub>
 
@@ -9414,7 +9569,7 @@ because nobody has named the failure.
 The longest outcome interval in this corpus is months. Most are a single session.
 The Sierra Leone trial, the largest deployment we examine, ran **eight weeks** — an
 earlier version of this sentence said "a school year", which was wrong and made the
-field's time horizon look better than it is (§32.3). Almost nothing comes close even to eight
+field's time horizon look better than it is (§33.3). Almost nothing comes close even to eight
 weeks.
 
 Now consider a technique that measures **+0.5 SD at six weeks** and, over three
@@ -9425,7 +9580,7 @@ order of magnitude longer than the measurement.
 
 This is not hypothetical hand-wringing. It is the exact shape of the one long-horizon
 result we do have: unguarded AI produced **+48% during access** and **−17% once
-withdrawn.** The sign flipped when the window widened (§32.2). We got that only because
+withdrawn.** The sign flipped when the window widened (§33.2). We got that only because
 someone thought to measure after taking the tool away — and almost nobody does.
 
 We are optimising on a horizon far shorter than the thing we claim to affect, and
@@ -9572,7 +9727,7 @@ claims in this field fail on the first three.
    Leone at **+0.195 SD per SD** of baseline.
 
 3. **Does your metric survive the Null-Learner Test?** Simulate an agent maximising
-   it while teaching nothing (§32). Engagement, time-on-task, streaks, satisfaction and
+   it while teaching nothing (§33). Engagement, time-on-task, streaks, satisfaction and
    session count all fail.
 
 4. **Which arm isolates the AI from the humans around it?** In one trial, **44.3% of
@@ -9653,7 +9808,7 @@ failures we have not measured, and put the falsifier in writing before the resul
 arrives.**
 
 
-## 34. Attention, and the Missing Executive — what the best teachers actually do
+## 35. Attention, and the Missing Executive — what the best teachers actually do
 
 <sub>Source report: `research/raw/N2-executive-function-and-attention.md`</sub>
 
@@ -9847,7 +10002,7 @@ The through-line: the best teachers are not making the material *fun*. They are 
 it **attemptable**, and pointing everything they say at the thing itself.
 
 
-## 35. Greenfield — what you would build with no school, no textbook and no exam
+## 36. Greenfield — what you would build with no school, no textbook and no exam
 
 <sub>Source report: `research/raw/N1-greenfield.md`</sub>
 
@@ -9997,7 +10152,7 @@ Together they would be **the first curriculum in history with a deletion
 procedure** — an edge that stops predicting gets removed, on evidence, rather than
 surviving because a committee approved it in 1994.
 
-> **What would show it wrong:** §34.3.1. If misconceptions do not transfer across
+> **What would show it wrong:** §35.3.1. If misconceptions do not transfer across
 > populations, the atlas is a local artifact and the graph is unmaintainable.
 
 ---
@@ -10019,7 +10174,7 @@ reproduced the tradition's actual mechanism rather than its stated one.
 ## 5. The risk that scales with the idea
 
 The population-scale versions of these designs — one error atlas, one graph, one
-mentor — concentrate exactly the risk §33 named as *correlated pedagogical error*.
+mentor — concentrate exactly the risk §34 named as *correlated pedagogical error*.
 
 An earlier draft of that section claimed it had no name in the literature. **That was
 wrong, and the correction makes the risk sharper.** Kleinberg and Raghavan's
@@ -10060,7 +10215,7 @@ process that could only see one direction. Both are fixed. What remains is the h
 discipline: **construction, anchored, with its own falsifier attached.**
 
 
-## 36. The Agenda — three experiments, and what would falsify this survey
+## 37. The Agenda — three experiments, and what would falsify this survey
 
 <sub>Source report: `research/raw/F9-open-problems.md`</sub>
 
@@ -10088,7 +10243,7 @@ the guardrailed arm was **−0.004 (SE 0.013), not significant.**
 
 That is the whole problem in one study. **A variable that moves an outcome from
 −17% to zero is not near a ceiling; it is near a decision.** And nobody has
-measured what happens six weeks later (§35.2).
+measured what happens six weeks later (§36.2).
 
 This section lists the three experiments worth running first, each with its
 design and its pre-registered falsifier, and then states at full strength the
@@ -10193,7 +10348,7 @@ none of which anyone has measured either.
 **Why third, and why it is this survey's own thesis on trial.** The central
 design claim running through these sections is that **restraint is the active
 ingredient**. The evidence for that claim is currently *entirely* about harm
-removal. The guardrail took the unassisted effect from −17% to exactly zero (§35.2). **No
+removal. The guardrail took the unassisted effect from −17% to exactly zero (§36.2). **No
 study has ever shown a constrained tutor beating a no-AI control on a delayed
 unassisted outcome.** Europe PMC, `"guardrails" AND "learning" AND "randomized"`:
 **0 hits**. The one relevant trial has not been replicated.
@@ -10278,7 +10433,7 @@ architectural refinement is optimising the small term.
 
 **Premise 5 — the field's positive results degrade under scrutiny in one
 direction only.** Sierra Leone's unadjusted estimate (**+0.216 SD, SE 0.137**) is
-not significant (§35.3). The largest positive LLM-tutoring meta-analysis (g = 0.867) was
+not significant (§36.3). The largest positive LLM-tutoring meta-analysis (g = 0.867) was
 **retracted in 2026**. One prominent tutor was built and analysed by its first
 author with no funding statement. One trial has 11 clusters. Another lost 43% of
 its sample. **Where independence and rigour increase, effects shrink. That is the
@@ -10297,7 +10452,7 @@ holds**, and this survey's programme is explicitly mechanism-level.
 **Two: the dissociation results are sign results, not ceiling results.** A
 ceiling story predicts small positive effects everywhere. It does not predict
 −17%, and it does not predict the same model with a different interaction policy
-landing at zero in the same study (§35.2).
+landing at zero in the same study (§36.2).
 
 **Three: the empty chair.** Zero randomised trials of AI tutoring on learners
 with disabilities is not a verdict. The ceiling argument cannot even be assessed
