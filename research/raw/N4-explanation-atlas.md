@@ -47,7 +47,23 @@ and should not be built.
 Nobody knows which explanation of eigenvectors, or entropy, or the limit definition,
 produces the best **delayed unassisted transfer**. This section spent its budget
 establishing that this sentence is literally true rather than rhetorically true, and it
-survives (§1.5, §5's falsifier).
+survives (§1.4, §2.3, §6.4).
+
+The scale of the wrong measurement is documentable rather than rhetorical. Reich &
+Ruipérez-Valiente (2019, *Science*) report **565 course iterations, 12.67 million
+registrations, more than 4.4 billion events and more than 48 million hours** — with **no
+learning outcome reported anywhere in the paper**. Veletsianos & Shepherdson (2016) coded
+183 empirical MOOC studies: **clickstream data in 73.2%, tests in 8.7%.**
+
+### One thing this section got wrong, stated up front
+
+The brief proposed that **rewind/replay density** might be a behavioural — and therefore
+diagnostic — alternative to the attitudinal metrics. This section found the signal, extracted
+it, measured it (§3.2–3.5), and then found that **it had already been built into an interface
+and evaluated (null, §3.6), and that the one study testing backward-seeking against a
+learning outcome found the opposite sign (§3.7).** The distinction between attitudinal and
+behavioural signals was the right distinction to draw. Drawing it correctly is what showed
+that this particular behavioural signal does not do the job it was wanted for.
 
 ### A standing rule for this section
 
@@ -498,30 +514,85 @@ students, and it is the only well-powered outcome in the study.** The pattern §
 reproduces itself perfectly: the attitudinal variable is measured precisely and at scale;
 the learning variable is declared not yet measurable.
 
-### 2.3 The one controlled Khan Academy study, and the trap inside its second finding
+**And the finding that reframes the entire question about Khan Academy.** From SRI's own
+Table 4, median annual minutes per student:
 
-**Kelly & Rutherford (2017), "Khan Academy as Supplemental Instruction: A Controlled Study
-of a Computer-Based Mathematics Intervention," *International Review of Research in Open and
-Distributed Learning*.** Seventh-grade students, four weeks, Khan Academy as intervention
-versus control, plus a comparison of students with and without supplemental maths
-instruction. `MEASURED-RCT`.
+| Site / Year | N | **Video minutes** | Problem-set minutes |
+|---|---|---|---|
+| Site 1, 2011-12 | 1,005 | **50** | 712 |
+| Site 2, 2011-12 | 207 | **109** | 2,869 |
+| Site 8, 2012-13 | 140 | **26** | 2,794 |
+| Site 9, 2012-13 | 247 | **41** | 1,941 |
 
-> *"In both cases, we found **no statistically significant differences in student test
-> scores.**"*
+**Video watching was 1–6% of platform time at every site**, and the report notes *"few
+teachers used the videos in their lessons to introduce new concepts and skills."*
+`OBSERVED`. Khan Academy's fame rests entirely on the video library. **The artifact that was
+actually studied is the exercise engine.**
 
-And then, in the very next sentence of the abstract:
+> **`OPEN` — nobody has ever isolated video-watching as a predictor of learning on the Khan
+> Academy platform.** SRI collected per-video telemetry and constructed a "videos and video
+> minutes" variable, but the variables entered into the use↔achievement analyses were
+> **total minutes (videos and exercises combined)** and **problem sets to proficiency**.
+> **The test was never run**, and two independent retrieval passes found it nowhere else
+> either. *Why nobody asked:* on the platform, videos are the on-ramp to the exercises, and
+> the product question is whether the *system* works. Separating the two is a research
+> question with no product consequence — which is exactly why it is unanswered and exactly
+> why an atlas needs it answered.
 
-> *"Khan Academy has several internal metrics used to track student performance and use.
-> **We found significant relationships between these metrics and student test scores** in
-> this study."*
+### 2.6 The one controlled Khan Academy study, and the trap inside its second finding
 
-**Read those two findings together, because together they are this section's thesis in
-miniature.** The platform's own engagement metrics correlate with test scores. The platform
-itself, randomised, moves test scores by nothing. Cross-sectional correlation between
-engagement and achievement is exactly what you would expect if stronger students engage
-more — it is a selection signature, not a causal one. **A metric can correlate with learning
-and still be worthless as a target**, and this is a measured instance rather than a
-theoretical worry.
+**Kelly & Rutherford (2017), "Khan Academy as supplemental instruction: A controlled study
+of a computer-based mathematics intervention," *IRRODL* 18(4), DOI
+`10.19173/irrodl.v18i4.2984`.**
+
+⚠️ **Not an RCT.** It is a post-test-only **quasi-experiment with non-equivalent groups**
+(assignment by elective enrichment scheduling) and **no pretest**. N = 114 seventh-graders,
+one North Carolina charter school, one teacher, four weeks, self-directed; treatment n = 39,
+control n = 75. `OBSERVED`.
+
+**Null on all three contrasts:**
+
+- Khan versus combined control: **M = 73.75 (SD 14.28) vs 72.22 (SD 14.75); MD = 1.53,
+  p = .596** (implied d ≈ 0.10; no effect size reported)
+- Khan versus traditional maths enrichment: **t(60) = −1.009, p = .842**
+- Any maths supplement versus an English supplement: **t(112) = .649, p = .259**
+
+**And the within-treatment correlations are the part that matters here** (N = 39):
+
+| Khan Academy internal metric | r with test score | p |
+|---|---|---|
+| **Minutes spent** | **.13** | **.422 — not significant** |
+| Topics mastered | .51 | .001 |
+| Points attained | .41 | .009 |
+
+The authors' own reading, verbatim:
+
+> *"Minutes Spent was the metric arguably **most unrelated to prior student ability** and
+> therefore the **least biased test of the potential impact of Khan Academy use. It was not
+> associated with student test score.**"*
+
+**Read the table as the authors do.** The metric that is *causally interpretable* — time on
+the platform — correlates with achievement at **r = .13, n.s.** The metrics that *do*
+correlate are mastery counts, which are contaminated by prior ability by construction
+(minutes ↔ topics-mastered r = .76). **This is the selection signature made visible in a
+single table**: engagement predicts achievement only through the channel where prior ability
+is doing the work.
+
+**The rest of the Khan evidence base tightens toward the same small number.** As
+identification gets stricter, the estimate shrinks:
+
+| Study | Design | Estimate |
+|---|---|---|
+| Grimaldi, Weatherholtz & Hill (2022), EDM, ERIC ED624104 — all authors Khan employees | Quasi-experimental dosage contrast **among users**, N ≈ 181,000, 99 districts, NWEA MAP | **+0.26 SD** (≥30 min/wk vs <15 min/wk) |
+| Eames, Brunskill, Yamkovenko, Weatherholtz & Oreopoulos (2026), *PNAS*, DOI `10.1073/pnas.2507708123` | Observational 3-year panel, N > 200,000, within-teacher/within-school identification | **+0.031 SD** at ~11 min/wk → **+0.085 SD** projected at 30 min/wk |
+| Newark North Ward white paper (2025) | Two-way fixed-effects panel, N = 5,200, 13 schools | +0.10 SD [0.008, 0.123] projected at +30 min/wk |
+| Oreopoulos, Keyes-Krysakowski & Agarwal (2026), NBER WP 34683 | **School-level RCT**, 83 schools, Uttar Pradesh | **~+0.5 SD — but both arms had Khan Academy.** The randomised variable was an on-site "lab-in-charge" |
+
+**Khan's own 2022 figure is roughly 3× its own 2026 *PNAS* figure at the same dose, and the
+gap between them is the finding.** `OBSERVED`. And the one genuine RCT in the set did not
+randomise the platform at all — it randomised **human supervision**, which is a result about
+staffing, not about video. Note also that **Khan Academy has no What Works Clearinghouse
+intervention report**; it is absent from WWC's *Find What Works* mathematics list.
 
 `OPEN` — **there is no adequately-powered randomised trial of Khan Academy's video corpus
 as such.** *Why nobody asked:* SRI states the reason precisely — an RCT *"would have
@@ -1015,6 +1086,16 @@ to correct against — which is more informative than stating it as a virtue:
 That is §29 §3.1 — *lead with the constraint that forces the design* — arrived at
 independently and stated in almost the same words.
 
+> ⚠️ **And the one experiment that isolates this variable says it is not the one doing the
+> work.** Muller's **Refutation** condition is the Exposition script **verbatim, plus
+> explicit statements of the misconception** — identical definitions-first ordering, no
+> reordering whatsoever — and it scored **d = 0.79**, against Dialogue's 0.83 (§29 §3.3,
+> corrected 2026-07-29). **Obstacle-before-machinery and misconception-naming are separable,
+> Muller separated them, and the effect loaded on the naming.** Ordering may still help; it
+> has not been shown to be what teaches, and this section originally implied that it was.
+> Treat the ordering feature as a **plausible but untested** atlas predicate, and the
+> misconception feature as the measured one.
+
 **And it is measurable from artifacts alone, without watching anything.** The position of
 the first piece of named machinery, as a fraction of runtime, is readable off published
 chapter timestamps. `OBSERVED`:
@@ -1079,11 +1160,52 @@ weakest, and it is exactly what §8.3's bolt-ons exist to supply.
 **(4) Explicit naming of the misconception being displaced — MEASURABLE, and it is the only
 one with a randomised trial attached.**
 
-This is Muller's manipulation, and §1.1's numbers are the evidence: **Refutation d = 0.79,
-Dialogue d = 0.83, against Exposition, N = 364.** The feature is countable in a transcript —
-does the explanation state a wrong belief and mark it as wrong before correcting it —
-and it is the highest-value entry in the atlas's feature set because it is the one whose
-effect size is already known.
+This is Muller's manipulation and it is **the single strongest result in the whole
+literature on explanation quality.** From §29 §3.3, four conditions, N = 364,
+F(3,461) = 13.625, p < .001:
+
+| Condition | Content | Length | Gain |
+|---|---|---|---|
+| Exposition | Clear, correct | 7:02 | 1.77 |
+| Extended Exposition | Same, longer | 11:22 | 2.41 |
+| **Refutation** | **Exposition verbatim + the misconception named** | 9:33 | **4.41** |
+| **Dialogue** | Two speakers, one holding the misconception | 11:22 | **4.77** |
+
+**d = 0.79** (Refutation) and **d = 0.83** (Dialogue) against Exposition; replicated at
+n = 73 on quantum tunnelling, **d = 0.71**. The feature is countable in a transcript — does
+the explanation state a wrong belief and mark it as wrong — and it is the highest-value
+entry in the atlas's feature set because it is the one whose effect size is already known.
+
+**And the same thesis contains the felt/real dissociation, measured on the opinion form**
+(7-point scale, quantum tunnelling replication). This is the most important table in this
+section:
+
+| Item | Dialogue | Exposition | |
+|---|---|---|---|
+| I learned something from the video | 5.7 | 5.6 | **n.s.** |
+| I could follow the explanations | 5.4 | 5.6 | **n.s.** |
+| I found the video easy to follow | 5.2 | 5.6 | **n.s.** |
+| **I found the video dull** | **3.4** | **2.6** | **p < .01** |
+| **The video was too long** | **3.2** | **2.4** | **p < .01** |
+| **I'd enjoy seeing stuff like this in lectures** | **4.8** | **5.5** | **p < .05** |
+
+**Perceived learning was flat — 5.7 against 5.6 — while actual learning differed by
+d = 0.71.** And the direction of the *significant* differences is worse for the naive
+position than a confusion effect would have been. It is not that the better explanation felt
+harder; **perceived clarity did not differ at all.** The better explanation felt **duller**,
+felt **too long**, and students **significantly preferred the worse one for their own
+lectures.** In Experiment 2 (N = 364), confidence gain did not differ across treatments while
+mean gains ran from 1.77 to 4.77. `MEASURED-RCT`.
+
+⚠️ One honest caveat: the Dialogue genuinely was longer (11:22 versus 7:02), so *"too long"*
+is partly veridical rather than purely attitudinal.
+
+**This is the collision at its sharpest, and it lands directly on the proposal.** A creator
+optimising for the metrics YouTube provides — watch-through, likes, "would you want more of
+this" — is optimising against **dull** and **too long**, which is to say against the format
+that measured d = 0.79. Every one of those three significant rows is a signal a recommender
+system reads and acts on. **The felt/real gap here is not merely that platforms measure the
+wrong thing; it is that the thing they measure moves in the wrong direction.**
 
 **(5) Long single-take duration as a signal of coherence — NOT VERIFIABLE, and the claim
 should be dropped in its current form.**
@@ -1174,9 +1296,9 @@ better evidence than his self-report precisely because it is about a corpus he d
 
 | Feature | Measurable from artifact? | Trial evidence? |
 |---|---|---|
-| Position of first named machinery (% runtime) | **Yes** — chapter timestamps | Indirect (§29 §3.1; refutation d = 0.79) |
+| **Misconception named explicitly** | **Yes** — transcript predicate | **Direct: d = 0.79 / 0.83, N = 364; replicated d = 0.71** |
+| Position of first named machinery (% runtime) | **Yes** — chapter timestamps | **None — and Muller's Refutation shows the effect survives without it** |
 | Example density (seconds per example) | **Yes** — description + timestamps | Indirect (Muller: worked examples grouped with Exposition) |
-| Misconception named explicitly | **Yes** — transcript predicate | **Direct: d = 0.79 / 0.83, N = 364** |
 | Prediction requested before reveal | Partly — marker countable, compliance not | Productive failure g = 0.36–0.58 (§01) |
 | Presence of authored chapter structure | **Yes** — `DESCRIPTION_CHAPTERS` | None |
 | Duration | Yes | Swap g = 0.28 (§2.1); nothing on length |
@@ -1184,9 +1306,23 @@ better evidence than his self-report precisely because it is about a corpus he d
 | Voice, animation quality, humour, "intimacy" | No | None |
 | Being off-camera | Yes (trivially) | None |
 
-The first three rows are what the atlas grades. The last four are style, and this section
-takes no position on them beyond noting that they are where almost all of the public
+The first three rows are what the atlas grades, **and they are ranked in that order for a
+reason: only the first has a measured effect size.** The last four are style, and this
+section takes no position on them beyond noting that they are where almost all of the public
 discussion lives.
+
+### 5.6 The one the proposal's own worked example is missing
+
+Kozyrkov's MFML has **no authored chapter structure** — the chapters YouTube displays are
+`AUTO_CHAPTERS`, not authorial — and, more consequentially, **no quiz, exercise, or
+assessment attached anywhere in the series.** `OBSERVED`. Five hours of high-density
+explanation with no point at which the learner is required to produce anything.
+
+Against §01 (learning by teaching **g = 0.56**; retrieval practice **g = 0.499**), §29 §3.3
+(Muller's *prompting questions* did measurable work), and §30 (*"compression achieved by
+watching someone else solve it is not compression; it is substitution"*), that is the single
+largest gap between what the series is and what §8.3 says it would need to be. It is also
+the cheapest gap to close, and closing it requires nothing from the creator.
 
 ---
 
@@ -1216,9 +1352,23 @@ localiser and explicitly **not** as a ranking input (§3.6).
 **Step 2 — Grade mechanically.** §4.5's two-stage grader. **No learners are required for
 this step**, which is what makes the atlas cheap enough to be comprehensive. Output per
 explanation: a fidelity record (which invariants are respected, which are falsified, which
-are unstated), an obstacle-before-machinery ordering verdict, a constant-labelling
-completeness score, and a misconception-naming inventory. Every finding carries a timestamp
-into the source so it is auditable.
+are unstated), a **misconception-naming inventory**, an obstacle-before-machinery ordering
+verdict, and a constant-labelling completeness score. Every finding carries a timestamp into
+the source so it is auditable.
+
+**Order those four deliberately.** The misconception inventory goes first because it is the
+only feature in the set with a measured effect size (**d = 0.79 / 0.83**, §5.2(4)), and
+because Muller's Refutation condition — the Exposition script *verbatim* plus named
+misconceptions, identical ordering — demonstrates that the effect survives without any
+reordering at all. **The ordering predicate, which is §29's original contribution and this
+survey's favourite, currently has no direct trial support.** If Step 4's regression finds
+that misconception-naming predicts transfer and ordering does not, that is not a failure of
+the atlas; it is the atlas doing its job on its own authors.
+
+**And the misconception inventory is the join to `N1-D1`.** A misconception named in an
+explanation is an entry in the error atlas. This is not an analogy — it is the same
+vocabulary, and it means Step 2's output is directly indexable against `N1-D1`'s prevalence
+data without any additional work.
 
 **Step 3 — Measure delayed unassisted transfer on a subset. This is the part nobody has
 done.** §1.3 establishes that exactly two studies in a 44-comparison meta-analysis exceeded
@@ -1748,11 +1898,50 @@ more, and because the negative results are load-bearing rather than decorative.
 
 **From the literature:**
 
-7. **Views and likes do not indicate explaining quality.** Bitzenbauer et al. 2023, N = 60
+**From the prior work on the exact mechanism this section proposed:**
+
+7. **The replay-peak interface was built and evaluated, and was null.** LectureScape
+   (UIST 2014, N = 12): every task-performance result null, visual search **slower** when
+   the target fell outside a peak (117 s vs 90 s), and **perceived speed and efficiency both
+   significantly better** (p < .05). Participants rated "peaks matched my points of interest"
+   at **4.4/7**. `MEASURED-RCT`.
+8. **Backward scrubbing predicts getting the next question RIGHT, not confusion.**
+   Brinton et al. 2016, *IEEE TSP*: 4 of 5 local skip-back motifs significantly associated
+   with correct-on-first-attempt; skip-*forward* predicts incorrect. Maximum probability
+   shift **3.3 percentage points**. `MEASURED-BENCH`. **The section's founding hypothesis,
+   tested against an outcome, came back with the opposite sign.**
+9. **Rewatching before a retry helps on average and the average conceals sign flips.**
+   Abbakumov et al. 2020 (preprint only): +0.31 logits overall (.52 → .59), **item-level
+   SD 0.32**, and **one of four courses significantly negative (−0.28, p = .005)**.
+10. **A 12,468-person randomised trial of the most-recommended video production variable
+    moved the felt measures and not the learning measure.** Kizilcec, Bailenson & Gomez 2015,
+    *JEP*: cognitive load +2.5% (p = .016), social presence +2.2% (p = .037), **course grade
+    d = 0.01, n.s.** `MEASURED-RCT`.
+11. **Lecture-capture viewing does not predict attainment, and its availability lowered
+    grades.** Edwards & Clinton 2019: viewing ↔ grade **r = 0.096, n.s.** against attendance
+    ↔ grade r = 0.416. Baillie et al. 2022, n = 847: final course grade **−3.01%
+    (p = 0.005)** and failure rate **8.78% → 14.25% (p = 0.012)** with attendance unchanged.
+    Williams et al. 2016: **<3% of variance**. Owston et al. 2011: **higher achievers view
+    recordings *less*.**
+12. **Fewer than one MOOC paper in eleven administered a test.** Veletsianos & Shepherdson
+    2016, 183 empirical papers: **tests 8.7%**, clickstream 73.2%. `MEASURED-META`.
+13. **The six-minute rule does not generalise.** Lagerstrom et al. 2015: median single-session
+    watch time **12.1 and 13.0 minutes** on-campus, ~4× the MOOC figure it is quoted from;
+    per-video median percentage viewed **91.3% and 74.0%**.
+14. **19% of video-swap effects are harmful.** Noetel et al. 2021 preprint: g < −0.2 in 19%
+    of true effects [13%, 25%]; **no dose–response** (minutes p = .73); **no study rated low
+    risk of bias.**
+15. **Video-watching was never isolated on the Khan Academy platform**, where it was **1–6%
+    of platform time**, and time-on-platform correlated with achievement at **r = .13,
+    p = .422** in the one controlled study.
+
+**From the literature on explanation quality:**
+
+16. **Views and likes do not indicate explaining quality.** Bitzenbauer et al. 2023, N = 60
    real YouTube videos graded against a rubric — surface features *"do not seem to be
    suitable indicators."* `MEASURED-BENCH`. The direct measurement of this section's
    central collision.
-8. **Four presentation formats, 3 weeks and 9 months, no difference.** van Peppen,
+17. **Four presentation formats, 3 weeks and 9 months, no difference.** van Peppen,
    Verkoeijen, Heijltjes, Janssen & van Gog (2021), "Enhancing students' critical thinking
    skills: is comparing correct and erroneous examples beneficial?", *Instructional Science*,
    DOI `10.1007/s11251-021-09559-0`, **N = 170**, four conditions (correct + erroneous
@@ -1763,31 +1952,31 @@ more, and because the negative results are load-bearing rather than decorative.
    direct test of this section's premise — but it is **the longest-delay head-to-head
    format comparison located anywhere in this literature, and it found nothing.** Read it as
    the prior an atlas has to beat.
-9. **Instructional explanations are minimal per se.** Wittwer & Renkl (2010), *EPR*, k = 21:
+18. **Instructional explanations are minimal per se.** Wittwer & Renkl (2010), *EPR*, k = 21:
    *"benefits… are minimal"*, and not necessarily better than self-explaining.
    `MEASURED-META`.
-10. **Instructional explanations can actively reduce learning.** Schworm & Renkl (2006),
+19. **Instructional explanations can actively reduce learning.** Schworm & Renkl (2006),
     *Computers & Education*, DOI `10.1016/j.compedu.2004.08.011`, N = 80: instructional
     explanations **reduced self-explanation activity and thereby reduced learning
     outcomes.** A reversal, not a null. `MEASURED-RCT`.
-11. **Presentation mode does not matter, only time does.** Hefter, ten Hagen, Krense et al.
+20. **Presentation mode does not matter, only time does.** Hefter, ten Hagen, Krense et al.
     (2019), *J. Educational Psychology*, N₁ = 57, N₂ = 43: **video versus written versus
     graphic-novel worked examples of the same content** produced *"similar learning
     processes… as well as a large effect on learning outcomes"* regardless of mode. Formats
     differed in **efficiency**, not effectiveness. `MEASURED-RCT`. Directly relevant: it
     says the *video-ness* of a great video explainer is not where the value is.
-12. **Refutation advantage absent in two well-powered replications.** Mason, Zaccoletti &
+21. **Refutation advantage absent in two well-powered replications.** Mason, Zaccoletti &
     Carretti (2019), *IJSME*, N = 85: students improved *"regardless of text read"*; Mason,
     Borella & Diakidoy (2020), *Discourse Processes*, N = 110: same. `MEASURED-RCT`.
-13. **Immediate structure effects vanish at two weeks.** Troyer (1992), ERIC, N = 71:
+22. **Immediate structure effects vanish at two weeks.** Troyer (1992), ERIC, N = 71:
     collection beat comparison at immediate posttest; *"no significant differences among the
     groups at the delayed posttest."* `UNVERIFIED` (ERIC, no DOI).
-14. **No meta-analysis of the expertise reversal effect exists.** The canonical source
+23. **No meta-analysis of the expertise reversal effect exists.** The canonical source
     (Kalyuga et al. 2003, DOI `10.1207/s15326985ep3801_4`, 1,336 citations) is a narrative
     review with no pooled effect size; the nearest quantitative synthesis is Whitener (1989),
     *RER*, **k = 9**, which predates the term. A 1,336-citation effect with no pooled
     estimate.
-15. **The Data API exposes nothing behavioural.** Five statistics properties, two
+24. **The Data API exposes nothing behavioural.** Five statistics properties, two
     deprecated, none relating to retention, watch time, replay or rewind.
     `MEASURED-BENCH`.
 
@@ -1808,6 +1997,18 @@ table.
   subscribers, retention: `OBSERVED`, felt axis, and directly measured not to track
   explaining quality (Bitzenbauer 2023, N = 60). Say it every time, because the failure mode
   is silent.
+- **Grade the misconception inventory first and the ordering second.** Naming the
+  misconception has **d = 0.79**; obstacle-before-machinery has no direct trial support, and
+  Muller's Refutation — same script, same order, misconceptions added — shows the effect does
+  not require it. This survey's favourite predicate is the unproven one.
+- **Do not optimise on the replay heatmap.** It was built into an interface (LectureScape),
+  and it produced null task performance with significantly better *perceived* performance.
+  Rebuilding it would reproduce that result.
+- **Expect the better explanation to be rated duller and too long.** Muller's opinion form:
+  perceived learning flat (5.7 vs 5.6) while actual learning differed by d = 0.71, with
+  *dull* (p < .01), *too long* (p < .01) and *would not want this in lectures* (p < .05) all
+  significant against the better format. Any selection loop reading engagement signals is
+  reading three signals that point the wrong way.
 - **Quote the swap, not the add.** Video's honest meta-analytic effect is **g = 0.28**
   (swap), not g = 0.80 (add), and the difference is that one of them is a dose effect.
 - **Quote refutation text at g = 0.28 adjusted, not g = 0.41 raw**, and say which.

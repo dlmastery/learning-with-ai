@@ -744,6 +744,13 @@ Oklahoma launch campuses, **26 and 32** students. `VENDOR` / `OBSERVED`.
 
 `VENDOR`, verbatim from `alpha.school/admission/`.
 
+And the point a private school's own materials will never make, made by an outside reader of
+the charter applications (Meyer 2025): these are *"private schools … each of which **can
+admit, expel, and counsel out students for reasons that are not legal in public
+schooling**."* `OBSERVED`. Selection is not only at the gate. It operates continuously, and
+it operates on exactly the two variables the operator names as decisive — student engagement
+and parental alignment.
+
 **A MAP exam is taken before enrolment and reviewed at the enrolment meeting.** The operator
 does not describe it as a selection instrument, and it plausibly functions as placement. But
 the distinction is invisible from outside, and a school that (a) tests applicants on the same
@@ -795,7 +802,7 @@ description of the design, not an endorsement of its effects):
 | Component | What it actually is |
 |---|---|
 | **Session structure** | 4 × 25-minute focused blocks (Maths, Science/Social Science, Language/Writing, Reading) + 20 minutes mostly maths and "learning strategies, test-taking techniques, Depth of Knowledge exercises" + breaks = 120 minutes. Explicitly Pomodoro. |
-| **Content** | Adaptive apps, a mix of in-house (**AlphaRead, AlphaFlash, AlphaWrite**) and third-party. AlphaFlash is a flashcard/fact-fluency app — retrieval practice by another name. |
+| **Content** | Adaptive apps, a mix of in-house (**AlphaRead, AlphaFlash, AlphaWrite**) and third-party. AlphaFlash is a flashcard/fact-fluency app — retrieval practice by another name. **The third-party component is named in the charter applications and by the founder: IXL, Khan Academy (Khanmigo), Amplify.** Price is on record that "AI" here does **not** mean a large language model but adaptive courseware of the IXL/Khanmigo class. `OBSERVED` |
 | **Placement** | Diagnostic on entry; students placed at knowledge level, not age grade. "A 2nd grader ready for 5th-grade math will engage with that level." |
 | **Mastery criterion** | **90%** on a concept before progression; **90%** on a grade-completion exam (STAAR/FAST used internally) to close a grade level. |
 | **What happens on failure** | The **"Struggle Detector"** identifies difficulty and injects "additional targeted or easier lessons"; the paper explicitly states that this is why a 25-hour grade takes 40 hours in practice. For maths specifically: mandatory return to fact fluency ("Fast Math skills … memorizing basic addition, subtraction, multiplication and division tables"). |
@@ -1039,12 +1046,49 @@ norm table.
 
 ### 8.3 NEGATIVE 3 — Virtual charter schools: large, persistent, negative
 
+**CREDO / Mathematica / CRPE (2015), *Online Charter School Study*, Center for Research on
+Education Outcomes, Stanford.** Virtual-control-record matched design, 17 states + DC.
+Retrieved in full via the Internet Archive (live CREDO URLs all **404**; Wayback capture
+**200**, 1.34 MB). Verbatim:
+
+> "Across all tested students in online charters, the typical academic gains for math are
+> **−0.25 standard deviations (equivalent to 180 fewer days of learning)** and **−0.10
+> (equivalent to 72 fewer days) for reading** … the sizes of the coefficients leave little
+> doubt attending an online charter school leads to lessened academic growth for the average
+> student."
+
+> "Only **two percent** of the online charter schools outperform their comparison schools,
+> **32 percent** perform no differently, and **67 percent** have weaker growth … In math, a
+> full **88 percent** of online charter schools had significantly weaker growth than their
+> comparison."
+
+> "In math, **none** of the online charter schools had average achievement scores higher than
+> their state average."
+
+`MEASURED-BENCH`. **This is the largest and most directly analogous negative result in
+education technology, and it is the number the 2 Hour Learning group's online expansion is
+betting against.** A −0.25 SD baseline is not a headwind; it is roughly the size of the
+largest positive effects anyone in this literature has ever produced, pointing the other way.
+
 **Fitzpatrick, B. R., Berends, M., Ferrare, J. J., & Waddington, R. J. (2020), "Virtual
 Illusion", *Educational Researcher* 49(3):161–175, `doi:10.3102/0013189X20909814`.**
 Abstract, verbatim: *"We found that students who switched to virtual charter schools
 experienced **large, negative effects on mathematics and English/language arts achievement
 that persisted over time** and that these effects could not be explained by observed teacher
-or classroom characteristics."* `MEASURED-BENCH`.
+or classroom characteristics."* `MEASURED-BENCH`. **The numeric effect sizes could not be
+retrieved** (SAGE full text **403**; two mirrors gave abstract only) and are therefore not
+stated; the paper is used for direction and persistence only.
+
+**Ahn, J., & McEachin, A. (2017), "Student Enrollment Patterns and Achievement in Ohio's
+Online Charter Schools", *Educational Researcher*, `doi:10.3102/0013189X17692999`.** ERIC
+abstract, verbatim: *"We utilize state data of nearly **1.7 million students in Ohio** … Our
+results also show that **students in e-schools are performing worse on standardized
+assessments than their peers in traditional charter and traditional public schools**."*
+The RAND brief on the same work (RB-9964, 2017) adds: *"Across all subjects and grade spans,
+students in e-schools score significantly lower … even when controlling for prior
+achievement, previous school attended, and student demographics"*, and — the sentence that
+matters most for a model claiming to close gaps — ***"The lowest-performing students fare the
+worst in e-schools."*** `MEASURED-BENCH`.
 
 **Cordes, S. (2023), "Cyber versus Brick and Mortar", *Education Finance and Policy*
 19(2):361–384, `doi:10.1162/edfp_a_00399`.** Pennsylvania. Abstract, verbatim: *"attending a
@@ -1066,11 +1110,17 @@ question.**
 
 **Cristia, J., Ibarrarán, P., Cueto, S., Santiago, A., & Severín, E. (2017), "Technology and
 Child Development: Evidence from the One Laptop per Child Program", *AEJ: Applied Economics*
-9(3), `doi:10.1257/app.20150385`.** Randomised, **318 primary schools**, 15 months. Abstract,
-verbatim: *"The program increased the ratio of computers per student from 0.12 to 1.18 in
-treatment schools. This expansion in access translated into substantial increases in use of
-computers both at school and at home. **No evidence is found of effects on test scores in
-math and language.**"* `MEASURED-RCT`.
+9(3), `doi:10.1257/app.20150385`; working paper IZA DP 6401 (2012), retrieved in full.**
+Randomised, **319 primary schools** in rural Peru, 15 months. Abstract, verbatim: *"The
+program increased the ratio of computers per student from 0.12 to 1.18 in treatment schools.
+This expansion in access translated into substantial increases in use of computers both at
+school and at home. **No evidence is found of effects on test scores in math and language.**"*
+
+The point estimate, verbatim from the working paper: *"The estimated effect on the average
+Math and Language score is **0.003 standard deviations**, and the associated standard error
+is **0.055**."* Precision: *"we can rule out effects larger than 0.11 standard deviations."*
+Mechanism checks were null on attendance, homework time, motivation and reading habits.
+`MEASURED-RCT`.
 
 The canonical demonstration that **device access and software time are not the mechanism**.
 2 Hour Learning agrees, in writing — *"Edtech constitutes only 10% of the solution, while 90%
@@ -1269,6 +1319,14 @@ REST API and the Alpha School community story; **NWEA `teach.mapnwea.org/impl/no
 | `alpha.school` pages under a short user-agent | **403** | full browser UA required; noted so the retrieval is reproducible |
 | GDELT DOC API | **429** on ~60% of calls | one request per 6 s enforced; coverage window short |
 | `nwea.org` 2025 norms tables (four candidate URLs) | **404** | the **2020** norms are used throughout, which is also the edition the white paper cites |
+| `penncapital-star.com` (PDE denial report) | **403** | content corroborated through Mathworlds and Chalkbeat, both retrieved in full |
+| `azreportcards.azed.gov/schools` | **200, no data** | search interface only; Unbound Academy has no published accountability record yet, consistent with a first year of operation |
+| Summit Learning, Khan Lab School, Teach to One, Rocketship, Carpe Diem evaluations | **not retrieved** | GDELT 429; no primary evaluation reached. **No figure for any of them appears in this report.** |
+| NYT, Austin American-Statesman, Houston Chronicle article bodies | **not read** (subscription) | referenced only for the existence and date of the event; no content restated |
+
+**Retrieved late and used**: `danmeyer.substack.com` (**200**, full text), `chalkbeat.org`
+(**200**, full text), `buckscountybeacon.com` (**200**, full text), `unbound.school/program`
+(**200**), `en.wikipedia.org` action API (**200**, used as a citation index only).
 
 **Not attempted / out of scope:** any attempt to obtain non-public student data, enrolment
 records, or internal documents.
@@ -1315,3 +1373,11 @@ records, or internal documents.
 
 22. Maiberg, E. (17 Feb 2026). *"Students Are Being Treated Like Guinea Pigs" Inside an AI-Powered Private School.* **404 Media**. Free lede only; body paywalled. `OBSERVED`.
 23. Oklahoma Watch / KGOU (20 July 2026). *A $40,000-per-year AI school with no teachers is opening in Oklahoma this August.* `OBSERVED`.
+24. **Meyer, D. (8 Jan 2025, updated 26 Mar 2025).** *The Truth About 2 Hour Learning, Unbound Academy, and Alpha School a/k/a The School "Replacing Teachers with AI".* **Mathworlds** (`danmeyer.substack.com`). **Retrieved in full, HTTP 200.** The only retrieved third-party analysis that reads the primary charter applications. Quotes the Pennsylvania denial: *"deficiencies in all five of the required criteria."* `OBSERVED`. **[FT]**
+25. **Sitrin, C. (24 Jan 2025).** *Two AI-powered charter schools could soon open in Pennsylvania.* **Chalkbeat Philadelphia.** **Retrieved in full, HTTP 200.** Source for the Pennsylvania application's staffing, 90% projected retention, and the **"top half of all Pennsylvania schools"** year-two projection. `OBSERVED`. **[FT]**
+26. **Greene, P. (17 Jan 2025).** *Texas Businesswoman Wants to Open AI-Driven, Teacherless Cyber Charter School in Pennsylvania.* **Bucks County Beacon.** **Retrieved in full, HTTP 200.** Source for governance structure (2 Hour Learning / Trilogy / Crossover / ESW Capital) and for Price's own statement that "AI" here means IXL/Khanmigo-class adaptive apps, not an LLM. `OBSERVED`. **[FT]**
+27. Karbal, I. (29 Jan 2025). *State rejects application for cyber charter school with AI teacher and two hours of daily class.* **Pennsylvania Capital-Star.** Direct retrieval **403**; content corroborated via (24) and (25). `OBSERVED`.
+28. Salhotra, P. (27 Jul 2025). *Alpha School, AI-Driven Education Founded in Austin, Is Coming to More Cities.* **New York Times.** Cited via citation index; **body not read**; nothing restated from it.
+29. Heath, K. (16 Jan 2026), *Austin American-Statesman*; Yu, I. & Sander, E. (4 Feb 2026), *Houston Chronicle* — Texas voucher programme and Cognia-only accreditation. Cited via citation index; **bodies not read**; nothing beyond the headline fact restated.
+30. Cobler, N. (28 May 2024), *Axios Austin*; Farrell, J. (31 Jul 2025), *WFAE*; Suri, Z. (25 Aug 2025), *KUT/Texas Standard*; NBC Bay Area (25 Jul 2025) — campus-expansion coverage, used only for the existence and grade span of campuses.
+31. *Alpha School*, English Wikipedia (accessed 2026-07-29) — used **only as a citation index** to locate items 24–30 and the AltSchool record. **No claim in this section rests on it.**

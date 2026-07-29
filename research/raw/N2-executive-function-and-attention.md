@@ -1218,3 +1218,336 @@ reintroduces exactly the eligibility determination this design exists to avoid. 
 possible outcome and it is the falsifier that matters most, because the entire SELPA-first argument
 in this project rests on the curb-cut holding.
 
+
+---
+
+## 6. The pacing question — "not super-slow classes"
+
+### 6.1 What the corpus already prices
+
+From K1: acquisition compresses **10–40× on elapsed calendar** and **3–5× on engaged effort**;
+durability compresses **1×**; procedural skill compresses **1×**. Acquisition is counted in
+**opportunities**, not minutes (≈7 to 80% mastery of a knowledge component, median 6.54); the
+dominant source of time variance is **prerequisite state (3.6×)**, not learner speed (1.14×); and a
+time-based model of learning "systematically provides poor predictive fit."
+
+The owner's instinct is therefore correct about the target and wrong about the lever. **The slowness
+of a slow class is not caused by the pace of delivery.** It is caused by delivering opportunities
+that are wrong for the learner's prerequisite state, which is a 3.6× tax, and by the fact that most
+of an allocated hour is not encoding at all (corpus K1: 4 minutes vs 52 minutes of productive
+learning time inside the same allocated day).
+
+### 6.2 The finding the owner will not expect
+
+Going faster and **handing the pace to the learner** are different things, and the second one is
+measured, and it is not good news for the EF-constrained learner.
+
+- **Multimedia design principles are worth more when the system paces than when the learner does:**
+  **g = 0.41 [0.33, 0.49] system-paced vs g = 0.27 [0.19, 0.35] learner-paced**, p = .02
+  (Noetel et al. 2021, 22 pooled effects). Sundararajan & Adesope independently list *learner
+  pacing* among the significant moderators of the seductive-details effect.
+- **Instructor-segmented content beats learner-segmented content by more than 2×:**
+  **g = 0.41 [0.32, 0.50] vs g = 0.20 [0.11, 0.28]**, k = 32 each (Rey et al. 2019), "presumably
+  because instructors can more easily ensure that the chunks are meaningful and appropriately
+  sized."
+- **Prequestions worked better under experimenter-paced than self-paced study** (St. Hilaire et al.
+  2024, ps < .05 for both specific and general effects), and the general effect grew with **more**
+  study time per unit of material (reading-speed regression β = −0.004, p = .005).
+- **Segmented content takes longer to study and teaches better:** **g = 0.92 [0.82, 1.02], k = 19**
+  on time taken (Rey et al. 2019) — "suggesting they used time between segments to consolidate."
+
+`MEASURED-META` throughout.
+
+Noetel et al.'s explanation of the pacing moderator is the operative one: "when self-paced, learners
+can more easily use their **own strategies** to manage high levels of cognitive load." That is
+exactly the resource §4 says the struggling learner does not have. **Learner-paced is not faster. It
+is a design that offloads the load-management problem onto the learner's executive function.**
+
+### 6.3 The two clocks that must not be conflated
+
+| | **Clock A — acquisition** | **Clock B — durability** |
+|---|---|---|
+| Unit | Opportunities, correctly targeted | Elapsed days |
+| What compresses it | Correct prerequisite diagnosis; opportunity delivery rate; immediacy of feedback | **Nothing** |
+| Measured compression | **3–5× on effort, 10–40× on calendar** (corpus K1) | **1×** |
+| Governing number | ≈7 opportunities to 80% mastery; prior-knowledge spread 3.6× | Optimal gap = **5–10% of the retention interval** (Cepeda et al. 2008, N > 1,350) |
+| Whose job | The learner's — this is where effort goes | **The system's** — the learner should never compute a schedule |
+| Honest sales claim | "A week's understanding in an hour" | "A year's retention costs a month of calendar and about forty minutes of extra effort" |
+
+Corpus K1 supplies both right-hand columns. The contribution here is the insistence that they are
+**two different products** and that conflating them is the standard failure of every "learn X in a
+weekend" claim.
+
+### 6.4 `DESIGN` — the two-clock zero-to-hero plan
+
+**The artifact.** A learning plan that runs two schedules with different owners and different units,
+and that reports them separately to the learner:
+
+1. **Clock A, front-loaded and system-paced.** Diagnose prerequisites first (the 3.6× term).
+   Deliver correctly-difficult opportunities at the maximum rate the learner's
+   read–attempt–feedback loop supports. Instructor-segmented, not learner-segmented. One
+   attemptable prequestion per knowledge component (§3.7). Terminate on measured competence, not on
+   a clock. **Target: functional competence in days.**
+2. **Clock B, deferred, thin, and never the learner's responsibility.** Consolidation runs on
+   calendar at 5–10% of the retention interval, scheduled by the system (FSRS, corpus F11),
+   costing the learner minutes per session. **The learner is never asked to decide when to
+   review.**
+3. **Two separate progress reports.** "You can now do X" (Clock A) and "You will still be able to do
+   X in ninety days if you complete N minutes across M days" (Clock B). Products currently report
+   one number and imply both.
+
+**What the learner has to accept in exchange for the speed.** Three things, all measured:
+
+- **In-session performance will be worse.** Schwartz, Chase, Oppezzo & Chin (2011): the
+  contrasting-cases group did **worse on the in-lesson worksheet (84.7% vs 91.8%, F(1,113) = 4.5,
+  p = .037)** and better on delayed transfer (**d = .33**). Segmentation *increases* study time
+  (g = 0.92). The fast curve feels slower and worse from inside it.
+- **Procedural and motor skill does not compress at all** (corpus, 1×). Anything with a fluency or
+  motor component runs on its own clock regardless of how well the conceptual material is
+  compressed.
+- **The fast curve is a comprehension curve.** Selling it as a retention curve is the specific
+  dishonesty this design exists to prevent.
+
+**What would show this was the wrong design.** Two falsifiers, and the first is decisive:
+
+- **It is the wrong design if learners on the compressed Clock-A schedule with system-run Clock B
+  show worse 90-day retention than learners on a conventional distributed schedule *at matched
+  total effort*.** If durability degrades under compression once effort is held constant, then Clock
+  A is borrowing from Clock B, the separation is false, and the compression is not free.
+- **It is also the wrong design if compressed acquisition with deferred consolidation produces
+  higher dropout than a slower uniform schedule.** A plan that is correct in the lab and produces
+  abandonment in the field is wrong, and the correct object is then the slower one. Note that this
+  falsifier is more likely to fire for the EF-constrained learner than for anyone else — an intense
+  front-loaded phase makes the largest single demand on task initiation and sustained effort in the
+  whole design.
+
+**`DESIGN` claim; not a finding.** Nothing here asserts that the two-clock plan produces better
+outcomes. What is measured is the compression asymmetry (K1), the pacing and segmentation
+moderators (§6.2), and the in-session cost of the desirable difficulties it recommends (§6.4). The
+plan is a proposal for testing whether the asymmetry survives being built into a product.
+
+---
+
+## 7. Intuition formation
+
+### 7.1 An operational definition, since the word is doing real work in this project
+
+The brief asks for a definition "rather than gesturally." Here is one, constructed so that every
+clause names a measurement:
+
+> **A learner has intuition in a domain when, on *novel* instances, they can (a) classify by deep
+> structure rather than surface features, (b) do so *fluently* — correctly within a time gate, not
+> merely eventually, (c) judge legality or plausibility *without executing the procedure*, and (d)
+> generate a correct expectation before the answer is revealed, and be surprised in the right
+> places.**
+
+Each clause is measurable and each has a source:
+
+- **(a) Deep-structure classification.** Chi, Feltovich & Glaser (1981), *Cognitive Science*,
+  `10.1207/s15516709cog0502_2` — the founding demonstration that experts sort physics problems by
+  underlying principle and novices by literal surface features. The **exact sorting data are
+  UNVERIFIED**; no open-access copy exists and Wiley returns 403. The construct is standard; the
+  numbers are not quoted here.
+- **(b) Fluency, not just accuracy.** Krasne, Hillman, Kellman & Drake (2013), *J Pathology
+  Informatics*, `10.4103/2153-3539.123991`: on a skin-histopathology perceptual learning module,
+  **raw accuracy declined at the 6–7 week delay while "Score" — correct *within 12 seconds* — did
+  not.** Fluency is the thing that retains. `MEASURED-RCT`.
+- **(c) Judging without executing.** Kellman, Massey & Son (2010), *Topics in Cognitive Science*,
+  `10.1111/j.1756-8765.2009.01053.x`: the Algebraic Transformations PLM trained learners only to
+  *recognise which transformations were legal*. Learners never solved equations. Pretest solving
+  accuracy was already ~80% but took **~28 s per problem**; after the module, **~12 s per problem**,
+  "fully preserved after a two-week delay." N = 30, 8th–9th graders, two 40-minute sessions.
+  `MEASURED-RCT`.
+- **(d) Expectation and calibrated surprise.** Theobald & Brod (2022), *Psychonomic Bulletin &
+  Review*, `10.3758/s13423-022-02124-x` — see §7.5.
+
+**The instrument this definition names: a timed classification test on untrained instances.**
+Nothing in it asks the learner to report a feeling. That is the point — "intuition" as normally used
+is a phenomenological report, and the phenomenological report is not what transfers.
+
+### 7.2 Many varied instances, under a classification-only regime
+
+This is the strongest-evidenced generator of the thing defined above, and it is almost entirely
+absent from commercial learning products.
+
+**Kellman, Massey & Son (2010)**, three studies, full text via NCBI efetch (PMC6124488):
+
+- **MultiRep PLM** — N = 68, 9th–10th graders, two sessions × 60 mapping trials. No pretest
+  difference (t(67) = 1.11, p = .27); **test × condition interaction F(1,66) = 21.17**. The control
+  group practised **the exact posttest task** (32 generation problems with answer keys). The PLM
+  group, which never generated a graph or an equation, still beat them.
+- **Algebraic Transformations PLM** — the ~28 s → ~12 s result above.
+- **Linear Measurement PLM** — N = 63 6th graders against 78 uninstructed 7th/8th graders, on a
+  44-point assessment in which "virtually all items were transfer items": **F(2,138) = 19.687,
+  p < .001**, with 6th graders scoring "nearly identical" at a **four-month** delayed posttest.
+  Before instruction, the 6th graders scored the same as students two years further through the
+  curriculum — i.e. two years of ordinary schooling had moved this competence not at all.
+
+`MEASURED-RCT`. **Krasne et al. (2013)**: 261 images, 8 categories, 12 s target response time,
+category retired after 3 consecutive correct-within-time; **median completion 17.5 min (2011 cohort)
+and 11.5 min (2012)**; test items were **unseen exemplars**; effect sizes on Score **0.8–1.6,
+P < 0.0001** at 6–7 weeks.
+
+**Ahmad, Ashraf, Kellman, Krasne & Ramanathan (2021)**, `10.21203/rs.3.rs-806381/v1` — a randomised
+comparison of an ophthalmology PALM against a narrated video lecture, **N = 83**, five optic-nerve
+findings, mastery = 3 consecutive correct within 8 s. Pre → immediate post: PALM **accuracy
+d = 2.94, fluency d = 3.39**; lecture **d = 2.32 / d = 1.06**. **At one month: PALM accuracy
+d = 0.89 and fluency d = 1.16 (P < 0.001); the lecture retained accuracy only (d = 0.44, P = 0.02)
+and did not retain fluency.** `MEASURED-RCT`.
+
+**Kellman, Krasne, Massey & Mettler (2023)**, CogSci, escholarship qt83z22046 — a skin-cancer PALM
+with 10 confusable lesion categories and four adaptive scheduling conditions plus a
+conventional-instruction control. Efficiency: condition **F(4,90) = 13.977, p < .001, ηp² = .383**,
+with every adaptive-vs-control comparison at **Cohen's d 2.24–2.53** immediate and **2.32–2.68**
+delayed. Accuracy: **F(4,90) = 44.098, p < .001, ηp² = .662**, ds **2.66–2.97 / 2.45–3.16**.
+
+And the useful **null inside it**: signal-detection-based *retirement criteria* mattered
+(**F(1,72) = 4.861, p = .031, ηp² = .063**) while signal-detection-based *sequencing* did **not**
+(**F(1,72) = 0.44, p = .509, ηp² = .006**; t(78) = 0.625, p = .534). **The mechanism is mastery
+gating, not clever ordering.** `MEASURED-RCT`.
+
+### 7.3 Comparison of two cases
+
+**Alfieri, Nokes-Malach & Schunn (2013)**, *Educational Psychologist*, `10.1080/00461520.2013.775712`:
+**57 experiments, 336 tests**, random-effects **d = .50 [.44, .56]**. Only **4 of 15 moderators**
+were reliable: the comparison objective being **finding similarities**; the principle presented
+**after** the comparison; **perceptual** content; and a **short** lag to test. `MEASURED-META`.
+
+**Gentner, Loewenstein & Thompson (2003)**, *JEP* 95(2):393–408, `10.1037/0022-0663.95.2.393`:
+Exp 1, N = 64 — **47%** of the guided-analogy group produced the target structure vs **6%** of
+baseline, χ²(1, N = 64) = 9.06, p < .01. Exp 2, N = 128 — comparing two cases gave **48% vs 19%**
+transfer against studying them separately, χ²(1, N = 128) = 11.85, p < .01; full schema articulated
+**42% vs 13%**, χ²(2, N = 128) = 15.64, p < .01. Exp 3, live dyads — contingent contracts formed by
+**90%** guided-analogy, **70%** comparison, **55%** separate study, **37%** baseline. `MEASURED-RCT`.
+
+Note the ordering constraint from Alfieri: **principle after comparison.** That is the same shape as
+productive failure and prequestions — the generative attempt precedes the formalism.
+
+### 7.4 Contrasting cases before instruction — and its boundary
+
+**Schwartz, Chase, Oppezzo & Chin (2011)**, *Journal of Educational Psychology* 103(4):759–775,
+`10.1037/a0025140`:
+
+- **Exp 1, N = 128 8th graders.** Deep-structure recall **F(1,120) = 11.0, p = .001, d = .30**;
+  **surface-feature recall null, F(1,120) = 1.5, p = .223, d = .11**; interaction F(1,120) = 11.9,
+  p < .001. Immediate transfer **F(1,94) = 6.8, p = .011, d = .27**; **delayed transfer at three
+  weeks F(1,124) = 13.6, p < .001, d = .33**, means **35.2% vs 13.8%**. **Word-problem computation:
+  null, F(1,124) = 1.7, p = .20.** Students who used ratios ranked stiffness correctly **96%** of
+  the time vs **1%** for non-ratio users, χ²(1, N = 126) = 113.7, p < .001.
+- **Exp 2, N = 120.** Deep-structure recall d = .28; transfer **d = .31**; **word problems null,
+  d = .04, p = .65**; no treatment × achievement interaction (p = .67). **And the invention group
+  did worse in-lesson: 84.7% vs 91.8%, F(1,113) = 4.5, p = .037.**
+
+`MEASURED-RCT`. The selectivity is the finding: **structure and transfer move; surface memory and
+procedural computation do not; and in-lesson performance goes down.**
+
+The boundary conditions are real and should not be smoothed:
+
+- **Glogger-Frey, Treier & Renkl (2022)**, *Instructional Science*, `10.1007/s11251-022-09577-6`,
+  N = 45: the **worked-example group clearly outperformed the inventing-with-contrasting-cases group
+  on transfer, BF₊₀ > 313**. `MEASURED-RCT` (reversal).
+- **Sinha & Kapur (2021)**: effect sizes favoured **instruction-first for grades 2–5** and for
+  domain-general skills (§3.5). The conceptual-knowledge and transfer sub-cells are **UNVERIFIED** —
+  SAGE and the ETH repository both returned 403.
+
+### 7.5 Prediction before reveal — a router, not an amplifier
+
+The brief lists prediction-before-reveal as a candidate. The measured answer is more interesting
+than the candidate.
+
+- **Bertsch et al. (2007)** generation-effect meta-analysis: **d = .40** overall (86 studies, 445
+  effect sizes, N = 17,711); **incidental learning d = .65 vs intentional d = .32**; **anagram
+  generation reverses at d = −.05** across 18 studies and >1,000 subjects. `MEASURED-META`.
+- **Brod & Breitwieser (2019)**, *npj Science of Learning*, `10.1038/s41539-019-0056-y`, N = 29:
+  predicting rather than generating an example raised the share of high-curiosity facts (55.55% vs
+  46.43%, t(28) = 1.78, p = .043, **d = .330**), raised curiosity ratings (d = .411) and raised
+  anticipation-phase pupil dilation (d = .417) — **and memory was flat: 60.42% vs 59.52%,
+  t(28) = 0.41, p = .682, d = .077.** `MEASURED-RCT` (null on the outcome that matters).
+- **Theobald & Brod (2022)**, `10.3758/s13423-022-02124-x`, Exp 1 N = 23 / Exp 2 N = 28: **no main
+  effect of prediction vs postdiction (b = −0.090, p = .330)**, but a **condition ×
+  expectancy-violation interaction, b = 0.195, SE = 0.062, p = .002** — prediction produced a
+  U-shaped memory curve (quadratic b = 0.044, p = .012) while postdiction decayed linearly with
+  unexpectedness (b = −0.254, p < .001). `MEASURED-RCT`.
+
+**Prediction does not raise average memory. It reallocates memory to the cases that violate
+expectation.** For intuition formation that is exactly the right property — the boundary cases are
+where deep structure lives — and it is exactly not the property claimed when "predict before you
+look" is sold as a memory technique.
+
+### 7.6 Interleaving — a discrimination tool, not a general one
+
+**Brunmair & Richter (2019)**, *Psychological Bulletin* 145(11), `10.1037/bul0000209`: **59 studies,
+238 effect sizes, 158 samples**, overall **Hedges' g = 0.42**. By material:
+
+| Material | g |
+|---|---|
+| Paintings (artist style) | **0.67** |
+| Mathematical tasks | **0.34** |
+| Expository texts | **n.s.** |
+| Tastes | **n.s.** |
+| **Words** | **−0.39 — blocking wins** |
+
+Metaregression: interleaving is stronger with **higher between-category similarity**, **lower
+within-category similarity**, and **more complex** material. `MEASURED-META`.
+
+That moderator profile is the perceptual-discrimination profile exactly. **Interleave confusable
+categories; do not interleave a syllabus.**
+
+Null in the same space: **Nemeth, Werker, Arend, Vogel & Lipowsky (2019)**, *Frontiers in
+Psychology* 10:86, `10.3389/fpsyg.2019.00086`, N = 233 — interleaved vs blocked practice of
+subtraction strategies: adaptive use of the stepwise strategy showed **no group effect
+(F(1,193) = 0.13, p = .72, ηp² = .00)** and **no group × time interaction (F(2.88, 555.96) = 0.13,
+p = .94)**; interleaved students' adaptive algorithm use **declined** from T3 to T4 (p = .02,
+d = −0.26). `MEASURED-RCT`.
+
+### 7.7 Gesture as representational compression
+
+The corpus's finding that **gesture beat action on objects for transfer** is confirmed at full
+precision. **Novack, Congdon, Hemani-Lopez & Goldin-Meadow (2014)**, *Psychological Science* 25(4),
+`10.1177/0956797613518351`, PMC3984351, **N = 142 third-graders**:
+
+- **Trained problems: no condition effect.** Action β = −0.22, z = −0.41, p = .68; concrete gesture
+  β = 0.71, z = 1.27, p = .20 (abstract gesture as baseline).
+- **Near transfer:** action worse than abstract gesture, **β = −1.58, z = −1.97, p = .049**;
+  concrete vs abstract **null (β = −0.031, p = .962)**; concrete beat action β = 1.55, p = .04.
+- **Far transfer:** action vs abstract gesture **β = −2.06, z = −2.30, p = .02**; concrete vs
+  abstract marginal (β = −1.15, p = .09).
+- Parroted-strategy × success correlation: concrete gesture **R = .76**, abstract **R = .64** (both
+  p < .001), **action R = .25, p = .17**.
+
+`MEASURED-RCT`. **Equal training performance; ordered transfer.** The abstraction of the movement,
+not the movement, is what generalises — which is the same claim as (c) in §7.1: representing the
+operation without executing it is what produces the transferable representation.
+
+### 7.8 `DESIGN` — the intuition trainer
+
+**The artifact.** A training object that combines the five things that each independently produce
+transfer at d ≈ 0.3–1.2 and that no shipping product combines:
+
+1. A bank of **many varied novel instances** — not worked examples, instances.
+2. Presented as **classification under a time gate**, with **signal-detection-based mastery
+   retirement** (which mattered, F(1,72) = 4.861, p = .031) and **no clever sequencing** (which did
+   not, p = .509).
+3. **Interleaved across confusable categories only**, per Brunmair & Richter's moderator profile —
+   and blocked wherever the categories are not confusable, since that cell is g = −0.39.
+4. **Prediction before reveal** on every instance, to route encoding to the expectancy violations
+   (Theobald & Brod's interaction, p = .002) rather than to raise the average (which it does not,
+   d = .077).
+5. **Paired-case comparison** with *finding similarities* as the stated objective and the principle
+   stated **after** (Alfieri's four reliable moderators).
+
+Measured on the instrument §7.1 names: **accuracy-under-time-gate on untrained instances at four
+weeks or more.**
+
+**What would show this was the wrong design.** It is wrong if a matched-time cohort trained this way
+does **not** beat a worked-example cohort on timed classification of untrained instances at 4+ weeks.
+And there is a second, sharper check that must be run in the same trial: on **in-lesson accuracy**
+and on **routine procedural problems**, the evidence predicts this design will *lose* — Schwartz
+et al.'s word-problem nulls (d = .04, p = .65), their worksheet deficit (84.7% vs 91.8%, p = .037),
+and Glogger-Frey's transfer reversal (BF₊₀ > 313). **If it wins on those too, the comparison is
+broken** — most likely because the control condition was not a genuine worked-example condition —
+and the result should not be believed.
+
+**`DESIGN` claim; not a finding.** No source combines these five. The evidence supports each
+component separately and says nothing about their combination.
+
