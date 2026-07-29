@@ -774,11 +774,33 @@ incomprehension into steps that are individually comprehensible. Nearest measure
 the analogy/comparison literature (structure mapping); no measured effect on *chained* anchors
 specifically. `CRAFT`.
 
-**T39 · The metaphor with a published boundary** — **B** · `CRAFT`
+**T39 · The metaphor with a published, per-claim source graph** — **B** · `OBSERVED`
 
-Every Kurzgesagt video ships a **public sources document**. This is not a citation ritual: it
-is the mechanism by which an aggressive metaphor stays honest. The metaphor is allowed to be
-extreme in the video because the document states where it stops.
+Every Kurzgesagt video ships a **public sources document** at a predictable URL
+(`sites.google.com/view/sources-<slug>`; e.g. the *Loneliness* video `n3Xv_g3g-mA` →
+`https://sites.google.com/view/sourcesloneliness/startseite`). This is not a citation ritual.
+The document is organised **line by line against the script**, mapping individual spoken
+sentences to citations with `Quote:` and `Summary:` fields:
+
+> *"– In the UK 60% of 18 to 34 year olds say that they often feel lonely. (source displayed in
+> video) #The lonely society?, 2010"* — `OBSERVED`, verbatim from the live document.
+
+**That per-claim granularity is a provenance graph, hand-built, for a general audience,
+by an animation studio.** It is the artifact this repo's grounding work (§F3, §G1) argues for,
+and the fact that a YouTube channel ships it and academic publishing does not is worth sitting
+with.
+
+Their published process (`https://kurzgesagt.org/what-we-do`) states the mechanism in the
+research phase: *"The last step is **preparing a sourcesheet for each video to prove our claims
+and make our process transparent**."* The script phase: *"**This can take about a dozen
+drafts**… The ultimate goal is to offer a new perspective on a topic and leave viewers with new
+insights – **without them really noticing**."* The illustration phase: *"After **deliberating
+over the best visual metaphors** and ideas for each scene…"*
+
+> ⚠️ Note the exception that proves it: *Optimistic Nihilism* (`MBRqu0YOH14`), described in one
+> line as *"The philosophy of Kurzgesagt"*, ships **no sources document**. The boundary is
+> enforced by the presence or absence of the artifact, which is a cleaner signal than any
+> hedging language could be.
 
 *Cognitive job:* lets an explanation take metaphorical risk without the learner acquiring a
 false model — **provided the learner reads the document, which is a `C` problem** (§2.7). The
@@ -990,14 +1012,35 @@ speak (§3.13).
 ### 1.11 — Bartosz Ciechanowski — the closest existing thing to the target
 
 If one practitioner's work should be read end-to-end before building anything, it is
-`ciechanow.ski`. The articles (*Gears*, *Mechanical Watch*, *Internal Combustion Engine*,
-*Lights and Shadows*, *Curves and Surfaces*, *GPS*, *Cameras and Lenses*, *Airfoil*, *Sound*,
-*Bicycle*, *Color Spaces*, *Alpha Compositing*, *Tesseract*) are, structurally, **the design
-this repo is trying to reach, built by one person with no adaptivity at all.**
+`ciechanow.ski`. The articles are, structurally, **the design this repo is trying to reach,
+built by one person with no adaptivity at all.**
+
+**The density, measured from the served HTML rather than estimated** (`OBSERVED`, 2026-07-29 —
+counting `div.drawer_container` placeholders, which is exactly one per interactive figure):
+
+| Article | Date | Interactive figures | Sections | ~words | JS bundle |
+|---|---|---|---|---|---|
+| *Gears* | 2020-02-12 | **30** | 10 | ~5.0k | `gears.js`, 117 KB |
+| *Lights and Shadows* | 2020-07-01 | **44** | 14 | ~5.0k | `light.js`, 264 KB |
+| *Internal Combustion Engine* | 2021-04-29 | **69** | 8 | ~6.0k | `ice.js`, 282 KB |
+| *Curves and Surfaces* | 2021-11-02 | **90** | 13 | ~8.2k | `curves.js`, 337 KB |
+| *Mechanical Watch* | 2022-05-04 | **93** | 13 | ~8.2k | `watch.js`, 327 KB |
+| *Moon* | 2024-12-17 | **120** | 10 | — | `moon.js` |
+
+*Gears* has **30 figures, 26 dedicated slider controls, and 108 paragraphs — one manipulable
+figure per 3.6 paragraphs.** *Moon* has 120. For comparison, a well-regarded interactive
+article in a mainstream publication ships two or three.
+
+**The stack is hand-rolled and has no dependencies.** A shared `base.js` (34 KB) supplies
+matrix math, a Canvas2D wrapper, a pointer/slider input layer, and a `requestAnimationFrame`
+tick; the richer articles add raw WebGL with inline GLSL (14 fragment shaders in `curves.js`,
+11 in `ice.js`, 10 in `light.js`) and *Sound* adds Web Audio. No React, no D3, no Three.js, no
+lazy instantiation. **The article source is closed** — his GitHub (`github.com/Ciechan`, 1,352
+followers) holds only pre-2018 iOS work. `OBSERVED`.
 
 **T60 · One manipulable figure per claim, adjacent to the claim** — **B** · `CRAFT`
 
-Not "an interactive at the end of the section." Every few paragraphs there is a widget, and
+Not "an interactive at the end of the section." Every 3.6 paragraphs there is a widget, and
 the widget instantiates **exactly the sentence above it**. The reader never holds a claim in
 memory while scrolling to find its illustration.
 
@@ -1021,6 +1064,29 @@ is a better-specified version of "scaffolding" than anything in the instructiona
 It is also the exact mechanism a generated interactive most often gets wrong — generated
 widgets tend to expose all parameters at once. `CRAFT`. **High priority to port.**
 
+**T61a · Manipulate first, explain second — and this is the finding that should change the
+build** — **B** · `CRAFT`
+
+Reading the raw HTML of *Gears* exposes an ordering that is invisible when you read the page
+normally, and it is consistent:
+
+> *"In the demonstration below you can control the fan's speed using a slider:"*
+> `<div class="drawer_container" id="gears_angular_velocity"></div>`
+> `<div id="gears_angular_velocity_slider_container"></div>`
+> *"The speed of a rotating fan is a different kind of speed than that of a car…"*
+
+**The invitation to manipulate precedes the concept. The conceptual payoff arrives in the
+paragraph *after* the reader has already played.** That is prediction-before-reveal (T7),
+explore-then-explain, and productive failure — implemented **thirty to a hundred and twenty
+times per article**, silently, without ever asking the reader to pause, because the artifact
+has no clock to pause.
+
+Ciechanowski has, in other words, solved the exact problem Sanderson names and concedes he
+cannot solve. Sanderson says the prediction is where the learning happens and that *"a lot of
+people are a little bit more passive in that moment."* Ciechanowski never asks for the pause;
+he removes the thing that would have to be paused. `CRAFT` — and it is the single most
+transferable structural pattern in this document.
+
 **T62 · The reader generates the counterexample** — **B** · `CRAFT`
 
 Because the parameters are open, the reader can drive the model to its breaking point
@@ -1043,11 +1109,36 @@ here**.
 
 **T64 · Absurd authoring cost, and what it implies** — **OBSERVED**
 
-These articles take months each; the output rate is a handful per year. This is the strongest
-possible argument for generation — **not because generation would match the quality, but
-because the quality demonstrably exists at a production rate of ~3/year and the demand is
-every concept in every syllabus.** The gap is five orders of magnitude and it is not going to
-be closed by hiring.
+In his own words, from the Patreon campaign page (`https://www.patreon.com/ciechanowski`,
+868 patrons at retrieval):
+
+> *"I write interactive articles about physics, math, and engineering. **It's a weekend hobby
+> of mine, so I only end up making a few articles per year.** I want to keep the content of my
+> website accessible to everyone without annoying ads or paywalls."*
+
+`OBSERVED`. (The widely-quoted "months per article" figure is **not** a claim he has made
+publicly — his process commentary lives in patron-gated *"On '\<Title>'"* posts. Do not
+attribute a number to him.)
+
+**Twenty-two articles in eleven years, from a weekend hobby, and they are the best interactive
+explanations that exist.** That is the argument for generation in one sentence — not because
+generation would match the quality, but because the quality demonstrably exists at ~2–3
+artifacts per year against a demand of every concept in every syllabus. The gap is five orders
+of magnitude and hiring will not close it.
+
+**Distill's hiatus is the same finding arriving from the research side, and it is more
+precise.** From the hiatus notice (2021-07-02, `10.23915/distill.00031`), verbatim:
+
+> *"we don't believe that having a venue is the primary bottleneck… Instead, we believe **the
+> primary bottleneck is the amount of effort it takes to produce these articles and the
+> unusual combination of scientific and design expertise required**."*
+> *"For some of our early articles, **we provided more than 50 hours of help** with designing
+> diagrams, improving writing style, and shaping scientific communication."*
+> *"Distill is volunteer run and these frictions have caused our team to **struggle with
+> burnout**."*
+
+**Two independent efforts, one solo and one institutional, both stopped for the same reason:
+the labour.** `OBSERVED`. And the tooling picture confirms it — see T72a.
 
 ---
 
@@ -1060,8 +1151,55 @@ live**. The reader changes a value in a sentence and every dependent value in th
 text updates. The reader is not reading a claim; they are reading a *model* rendered as
 English.
 
+He defines all three of his coined techniques in one place, and they should be kept verbatim
+because everyone paraphrases them into mush:
+
+> **"A *reactive document* allows the reader to play with the author's assumptions and
+> analyses, and see the consquences."** [sic]
+> **"An *explorable example* makes the abstract concrete, and allows the reader to develop an
+> intuition for how a system works."**
+> **"*Contextual information* allows the reader to learn related material just-in-time, and
+> cross-check the author's claims."**
+
+And the design constraint that most implementations violate:
+
+> *"There are no UI elements screaming for attention. The reader is not transported off to a
+> separate 'interactive' context. **Most interactive widgets dump the user in a sandbox and
+> say 'figure it out for yourself'. Those are not explanations.** … an essential aspect of the
+> 'explorable explanation' concept is that **the author holds up their end of the
+> conversation**."*
+
 *Cognitive job:* collapses the gap between a stated result and the parameter regime that
-produced it. Coined term to keep: **"reactive document."**
+produced it. The reactive document is *"like a spreadsheet without the spreadsheet"*, readable
+at four depths from one artifact: *"The hurried reader can skim it. The casual reader can read
+it as-is. The curious reader can adjust the author's scenarios. The engaged reader can explore
+scenarios of their own devising."* **That is a four-level ladder served by a single artifact
+with no branching and no learner model — the cheapest possible answer to T86's modal-learner
+problem, and it predates every system in this repo by fifteen years.**
+
+**T65a · Victor's own 2024 retraction of what the term came to mean** — `OBSERVED`
+
+The postscript he added to the 2011 essay in **February 2024** is the most important paragraph
+in the explorable-explanations literature and is almost never cited:
+
+> *"Since this was written, the term 'explorable explanation' has gained some currency… **It
+> has now been applied so broadly that it seems to mean 'any article with interactive
+> pictures'.** … almost all of these articles are pedagogical, and that's not really what I
+> was going for here. **What I meant by 'explorable explanation' was more like, 'a written
+> argument whose assertions are backed by explorable computational models, whose facts,
+> assumptions, and calculations are all visible and editable'.** The author's role here is not
+> just to teach, but to convince. The reader's role is not to believe, but to critically
+> evaluate, rebut, and come to a broad understanding. **The reader rebuts by modifying the
+> models.**"*
+
+**Take this as a design requirement rather than as a quibble about terminology.** An
+explanation whose parameters are open is not merely easier to follow; it is *falsifiable by
+its reader*. The interactivity is not a comprehension aid — it is the **rebuttal channel**.
+That reframing changes what §3 should build: not "explanations the learner can play with," but
+**explanations the learner can attack, with the attack surface being the model's own
+assumptions.** He also notes he has *"given up on the computer screen as a medium for
+model-grounded discussion"* and points at Dynamicland instead, which is a disagreement worth
+recording and not resolving here.
 
 **T66 · Bret Victor · Up and down the ladder of abstraction** — **B** · `OBSERVED`
 
@@ -1100,6 +1238,64 @@ the defeat and lands on a prepared surface.
 *Cognitive job:* productive failure (`g = 0.36`/`0.58`, §01) with the failure *actually
 experienced* rather than watched. This is what T4 and T25 are proxies for.
 
+**T69a · Nick Case · Invisible scaffolding, and the public retraction that produced it** —
+**B** · `OBSERVED`
+
+The most valuable single document by any practitioner in this inventory is Case's *"Curse of
+the Chocolate-Covered Broccoli (or: Emotion in Learning)"* (2019-12-05,
+`https://blog.ncase.me/curse-of-the-chocolate-covered-broccoli-or-emotion-in-learning/`).
+It opens:
+
+> *"So earlier this year, I learnt my whole career was based on a lie. As one does. I make
+> games to help folks learn by doing. … Of course beginners learn better from pure
+> exploration, rather than being railroaded through step-by-step instructions. Anyway, this
+> idea's been experimentally tested, and it's **replicatably false**."*
+
+He then names what he redesigned around: **the expertise reversal effect** (*"'active'
+learning-by-exploring is ineffective for beginner students, but very effective for advanced
+students"*), **cognitive load theory**, **the zone of proximal development**,
+**Yerkes–Dodson**, and **Mayer's multimedia principles**. And the technique that came out of
+it, verbatim:
+
+> *"it turns out the designers add tons of hand-holding guidance – **they just keep it
+> invisible so you can feel smart**."*
+
+**That is the technique: guidance whose presence the learner cannot detect.** The learner
+experiences discovery; the designer has constrained the space so that discovery is nearly
+forced. It is the resolution of the "learner control measures worse than system control"
+finding (§2.9): **you do not choose between guidance and agency — you deliver guidance in a
+form indistinguishable from agency.**
+
+`OBSERVED` for the practice, `MEASURED-META` for every mechanism he cites, and note the rarity:
+**a leading practitioner publicly retracting his field's founding premise on the basis of
+replication evidence.** Nobody in the video half of this inventory has done that.
+
+Case also runs his own randomised experiments on his own pedagogy —
+`https://ncase.me/experiment-stats/results/`, *"Does guessing first improve memory? — a
+randomized-controlled web experiment"* — which is the T7 question, asked by the person best
+placed to answer it. `OBSERVED`.
+
+**T69b · Nick Case · Manipulate the rules, not the sliders** — **B** · `CRAFT`
+
+From his *Explorables Jam* write-up (2018-08-28, `https://blog.ncase.me/the-explorables-jam/`),
+as a self-criticism:
+
+> *"you can change the simulation's rules by **directly manipulating the simulation itself**!
+> (In contrast, **almost all my sims have you change rules with sliders & buttons**) I wanna
+> see more sims designed this way!"*
+
+A slider varies a parameter inside a fixed model. **Direct manipulation of the rules lets the
+learner change the model.** The distinction is the difference between exploring a family of
+answers and questioning the question, and it is the more valuable of the two and the rarer.
+Victor's 2024 postscript (T65a) is asking for the same thing from the other direction.
+
+**T69c · Nick Case · Expandable explanations (Nutshell)** — **B/C** · `OBSERVED`
+
+`ncase.me/nutshell` (620 ★) — inline, in-place expansion of any phrase into its explanation,
+recursively, without navigation. **This is the mechanical replacement for CGP Grey's footnote
+video (T49) and for Kurzgesagt's external sources document (T39), and it already exists as a
+shipped, public-domain library.** Victor's *contextual information* (T67), built.
+
 **T70 · Nick Case · Hand over authorship at the end** — **B** · `CRAFT`
 
 *Loopy* ends by letting you build and share your own causal-loop model; *Explorable
@@ -1122,17 +1318,60 @@ they will have to teach it.** Peer tutoring's gain to the *tutor* is **0.43** (L
 
 **T71 · Distill · "Research debt" as the named target** — **OBSERVED**
 
-Distill's *Research Debt* essay names the thing the whole field of explanation is paying down:
-the accumulated cost of ideas that are understood by their originators and by nobody else,
-because nobody was paid to explain them. Distill went on hiatus in 2021, and the stated reason
-— that this work is enormously effortful and structurally unrewarded — is the same finding as
-T64 arriving from the research side.
+*Research Debt* (Olah & Carter, `10.23915/distill.00005`) names the thing the whole field of
+explanation is paying down, by analogy to technical debt, and decomposes it into five
+components that are individually actionable: **poor exposition**; **bad definitions,
+abstractions, and notation** — *"Formalisms like abstractions and notation are **the user
+interface of research**"*; **undigested ideas**; **unavailable tools**; and **noise** —
+*"When hundreds of papers are published each day, with no easy way to filter or summarize
+them, the energy needed to keep up with a field is too high… we think noise is the main way
+experts experience research debt."*
 
-**T72 · Distill · The diagram as the paper's argument, versioned and reviewable** — **B** ·
+The framing sentence, which is the best one-line statement of this project's premise written
+by anyone: *"Achieving a research-level understanding of most topics is like climbing a
+mountain. … **The climb isn't progress: the climb is a mountain of debt.**"* And: *"The
+insidious thing about research debt is that **it's normal**."*
+
+**T72 · Distill · The diagram as the paper's argument, publicly peer-reviewed** — **B** ·
 `OBSERVED`
 
-Interactive figures were peer-reviewed artifacts, not supplements. The claim and its
-manipulable demonstration were the same object, under version control.
+Interactive figures were peer-reviewed artifacts, not supplements — and the **review itself was
+public, conducted as GitHub issues on a per-article repository** (e.g.
+`github.com/distillpub/post--activation-atlas`, `label:peer-review`). The claim, its
+manipulable demonstration, and the argument about whether it was right were **one versioned
+object**. Nothing in education publishing works this way. Their masthead named the goal
+directly: *"Machine Learning Research Should Be Clear, Dynamic and Vivid"*, with **$10,000
+prizes** attached — an explicit attempt to price a form of labour the academy does not pay for.
+ISSN 2476-0757; operated 2016–2021; 32 articles.
+
+**T72a · The tooling asymmetry, which is the most damning number in this document** —
+`OBSERVED`
+
+`gh api`, 2026-07-29:
+
+| Repo | Purpose | ★ | Last push |
+|---|---|---|---|
+| `3b1b/manim` | **linear video** animation engine | **88,991** | 2026-07-28 |
+| `ManimCommunity/manim` | linear video | **39,784** | 2026-07-29 |
+| `observablehq/plot` | data viz | 5,331 | 2026-07-13 |
+| `observablehq/framework` | data apps | 3,559 | 2026-05-15 |
+| **`idyll-lang/idyll`** | **"Create explorable explanations and interactive essays"** | **2,036** | **2023-02-04 — stale** |
+| `distillpub/template` | interactive article framework | 990 | — |
+| `ncase/nutshell` | expandable explanations | 620 | — |
+| `mathigon/textbooks` | interactive textbooks | 392 | 2025-02-25 |
+
+**The single tool built explicitly for explorable explanations has been dead since February
+2023, and the tool for making linear videos has forty-four times its stars and shipped
+yesterday.** `explorabl.es` curates 180 explorables, of which **10 are tools**, several of them
+now unmaintained (Tangle, Apparatus, dat.gui, g9, Kinetic Graphs, LOOPY, Joy.js, Emoji
+Simulator, Idyll, Observable).
+
+Read that as an opportunity rather than as a verdict. The *demand* for explanation is
+enormous and demonstrably met by video. The *superior substrate* has been identified, prototyped
+by the best practitioners in the field, and abandoned at the tooling layer **because authoring
+in it costs 30–120 hand-built figures per article.** That authoring cost is precisely what
+generation attacks. **This is the clearest statement of the opportunity in the entire
+document.**
 
 ---
 
