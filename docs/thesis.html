@@ -250,7 +250,139 @@ advantage survive or does it get handed to your competitors for free?</em></p>
 
 <p>One row survives cleanly, and it is the one nobody is building.</p>
 
-<h2>7. What makes it hard, which is the point</h2>
+<h2>7. The recursive loop — and why it is the same asset again</h2>
+
+<p>The deep-tech version of this is a system that improves its own instruction from its own
+outcome data. It is the most valuable unbuilt thing in the field, and the reason nobody has it
+is not ambition.</p>
+
+<div class="claim">Self-improvement optimisers have spent three years maximising benchmark
+accuracy. Instructional-policy research closed the loop on real human retention with 2014
+machinery. The two literatures have never met.</div>
+
+<p>Six arXiv queries and ten ERIC queries confirm it: <strong>zero optimiser-in-the-loop trials
+on human learners.</strong> Meanwhile a model-based personalised scheduler, deployed for a full
+semester in a middle-school course, produced <strong>+16.5% retention</strong> — with the
+machinery of 2014.</p>
+
+<h3>The engineering problem, stated exactly</h3>
+
+<p>An optimiser needs thousands of fitness evaluations. A delayed unassisted retention test
+yields <strong>one evaluation per learner per six weeks</strong>, with enormous variance. That
+gap — not compute, not model quality — is why the loop does not exist.</p>
+
+<p>Which forces a three-tier fitness function, and the middle tier is the thing this whole page
+is about:</p>
+
+<div class="scroll">
+<table class="moat">
+  <tr><th>Tier</th><th>Signal</th><th>Latency</th><th>Volume</th><th>Trustworthy?</th></tr>
+  <tr><td><b>Fast</b></td><td>Tutor accept / reject / edit</td><td>Seconds</td><td>Enormous</td><td class="v-no">No — it measures plausibility</td></tr>
+  <tr><td><b>Surrogate</b></td><td><b>The verifier</b></td><td>Seconds</td><td>Enormous</td><td class="v-mid">Only if calibrated against truth</td></tr>
+  <tr><td><b>Truth</b></td><td>Delayed, unassisted, novel item</td><td>Weeks</td><td>Sparse</td><td class="v-yes">Yes</td></tr>
+</table>
+</div>
+
+<p><strong>The recursive loop is not a separate play. It is what the verifier unlocks.</strong>
+The verifier is the surrogate fitness function — the only thing that can stand in for a six-week
+outcome at the frequency an optimiser needs. Build it and the loop follows; skip it and you are
+optimising plausibility at scale, which is the failure mode already documented in the field's
+leading systems.</p>
+
+<h2>8. Auto-research: one half is done, the other is not automatable</h2>
+
+<p><strong>Reading is solved well enough to rely on.</strong> PaperQA2 matches or exceeds
+subject-matter experts on literature synthesis, with <strong>70% of flagged contradictions
+validated</strong>. This survey is an existence proof of the same thing at scale: 35 research
+reports, ~2,300 sources, and <strong>41 published corrections — 20 of them found by adversarial
+review rather than by the authors.</strong></p>
+
+<p><strong>Generating new evidence is not.</strong> It needs learners, consent, and elapsed
+time. And there is a constraint people underestimate: across 16 studies and 5,873 participants,
+people object to being <em>experimented on</em> even when they find either arm individually
+acceptable — and the effect is <strong>undiminished among professionals</strong>.</p>
+
+<p>So auto-research accelerates the <em>reading</em> and the <em>design</em> of experiments, and
+cannot accelerate their running. The realistic claim is a system that continuously re-derives
+what is known, flags where the corpus contradicts itself, and proposes the next experiment —
+which is worth a great deal and is not the same as a self-improving tutor.</p>
+
+<h2>9. Video-in: there is a legal wall, and it is in the wrong place</h2>
+
+<div class="kill">
+  <div class="k">Prohibited, not merely regulated</div>
+  <p><strong>EU AI Act Article 5(1)(f) bans emotion inference in education.</strong> Not
+  high-risk — <em>prohibited</em>, and in force since February 2025. Reading a student's face
+  to infer frustration, confusion or engagement is the one thing on this list that is illegal
+  rather than difficult.</p>
+  <p>Article 3(39) restricts the ban to <em>biometric-derived</em> inference, which leaves
+  clickstream-based affect detection — the dominant technique in the research literature — in a
+  grey zone. That is the highest-value unresolved legal question in the field.</p>
+</div>
+
+<p>And it would be the wrong thing to build anyway. Pedagogical avatars measure
+<strong>g ≈ 0.19</strong>, and three 2024 field experiments improved affect at
+<strong>d = .85–1.01 while learning did not move at all.</strong> Emotion-responsive tutoring
+optimises the felt axis — the one this survey shows runs <em>opposite</em> to the real one.</p>
+
+<h3>What video-in is genuinely for</h3>
+
+<div class="step"><div class="n">1</div><div><p><strong>Watching the work, not the face.</strong> Answer-position recognition on student
+work reaches <strong>98.4%</strong>. One mandatory caveat: <strong>vision-language models
+silently repair student errors while transcribing them</strong> — they return the corrected
+work, because that is what training rewards. The mistakes are the entire reason for looking.
+Transcription must be constrained to a verbatim, error-preserving task and checked against
+exactly that.</p></div></div>
+
+<div class="step"><div class="n">2</div><div><p><strong>Watching gesture — and this is the unexploited one.</strong> In a three-arm trial
+teaching the same strategy as physical action, concrete gesture and abstract gesture,
+<strong>only gesture transferred</strong>. Handling the objects produced learning that stayed
+stuck to the objects.</p>
+<p>Gesture is <em>representational compression</em> — it has already thrown away the specific
+instance and kept the structure. So a camera watching a learner's hands is watching the leading
+indicator of transfer, weeks before a test could show it. It is legal, it is grounded in the one
+result that reverses the manipulatives intuition, and nobody is building it.</p></div></div>
+
+<h3>Video-out</h3>
+
+<p>The substrate is real: <strong>640×368 at 25 FPS, ~200 ms model-side latency</strong> —
+inside the human conversational turn-gap — with a persistent world and a separate event stream.
+The limit is equally real: generated worlds get physics wrong, at <strong>39.6%</strong>
+adherence in the best case and <strong>22%</strong> on the hard subset. <strong>Keep the world
+generative and the physics symbolic.</strong></p>
+
+<h2>10. Gamification: the moderators point away from what everyone ships</h2>
+
+<p>Gamification's cognitive effect is real and survives a high-rigour subsplit. The claim
+vendors actually make — <em>it keeps people coming back</em> — rests on the
+<strong>weakest and least stable cell in the table: behavioural g = .25, with the confidence
+interval's lower bound at .04.</strong></p>
+
+<p>And the moderator analysis points somewhere else entirely:</p>
+
+<div class="claim">The significant moderators are game fiction and social interaction — with
+combining competition <em>and</em> collaboration particularly effective. Nothing supports
+points, badges or leaderboards as the active ingredient.</div>
+
+<p>Three further results that should govern any roadmap here:</p>
+
+<div class="step"><div class="n">a</div><div><p><strong>Novelty decay is measured, not folklore.</strong> Perceived benefit declines with
+time on the service.</p></div></div>
+<div class="step"><div class="n">b</div><div><p><strong>Even theory-driven design dips.</strong> A deliberately need-supporting
+implementation, measured four times across 15 weeks, produced a <em>curvilinear</em> autonomous
+motivation curve — an initial <strong>downward</strong> trend that only later recovered. The
+companion paper is titled <em>"Unravelling the ambivalent motivational power of
+gamification."</em></p></div></div>
+<div class="step"><div class="n">c</div><div><p><strong>The undermining effect is specific.</strong> Across 128 experiments: tangible,
+expected, performance-contingent rewards significantly undermine intrinsic motivation. That is
+the exact description of an XP bar.</p></div></div>
+
+<p>So the buildable version is <strong>fiction and genuine social structure, never a points
+economy</strong> — and no engagement metric may serve as an objective, because streaks, XP,
+DAU and time-on-app all pass the Null-Learner Test, meaning an agent that teaches nothing can
+max them out.</p>
+
+<h2>11. What makes it hard, which is the point</h2>
 
 <p>If it were easy it would not be a moat. Three things make it hard, and all three are
 surmountable by an operator rather than by a lab:</p>
@@ -263,7 +395,7 @@ you need the delivery relationship, not just the transcripts.</p></div></div>
 <div class="step"><div class="n">c</div><div><p><strong>Decades of labelled intelligent-tutoring logs already exist and are public.</strong>
 The cold-start is smaller than it looks. The public testbed exists. Nobody has done it.</p></div></div>
 
-<h2>8. The three questions to ask any competitor</h2>
+<h2>12. The three questions to ask any competitor</h2>
 
 <div class="step"><div class="n">1</div><div><p><strong>"Show me the delayed, unassisted, novel-item outcome."</strong> Not the practice
 score, not the same items. Weeks later, device closed. ERIC returns <strong>zero records</strong>
@@ -275,7 +407,7 @@ ChatGPT</strong>, because that is what a learner has for free.</p></div></div>
 loads on already-strong learners. A healthy mean concealing a widened gap has made things
 worse.</p></div></div>
 
-<h2>9. What would kill this thesis</h2>
+<h2>13. What would kill this thesis</h2>
 
 <div class="kill">
   <div class="k">Stated in advance, so it can be checked</div>
@@ -295,7 +427,7 @@ worse.</p></div></div>
   teachers.</p>
 </div>
 
-<h2>10. The one-line version</h2>
+<h2>14. The one-line version</h2>
 
 <div class="claim">Everyone is building the tutor. The bottleneck is the examiner — and a
 human-in-the-loop operation is the only structure that produces one while it trades.</div>

@@ -105,9 +105,6 @@ Ordered by how much they should move a decision.
 
 ## 1. Market size, honestly
 
-*(§1 is completed below after the primary-source sweep; see §1.1 for the method that
-governs every figure in it.)*
-
 ### 1.1 The method, stated first because it does most of the work
 
 Three tiers, and an investor should refuse to mix them:
@@ -121,6 +118,305 @@ Three tiers, and an investor should refuse to mix them:
 **The discipline this section enforces: no figure moves up a tier.** A reported TAM is
 never used as if it were measured spend, and measured spend is never used as if it were
 addressable.
+
+### 1.2 The reported TAM, chased to its source — and it is not there
+
+Six analyst houses supply the numbers that appear in every edtech deck. Each was chased
+to its primary source on 2026-07-29.
+
+| House | The circulating figure | Method disclosed? | Access | Grade |
+|---|---|---|---|---|
+| **Global Market Insights** | Private tutoring market "exceeded **USD 90 billion in 2020**", **USD 140bn by 2027**, 5% CAGR | Boilerplate only — *"~80% primary / ~20% secondary"*, "bottom-up approach". **No sample frame, no country build-up, no definition of what counts as tutoring** | Landing page free; report **$2,450** | **Vendor estimate, method undisclosed** |
+| **Technavio** | "valued to increase by **USD 124.9 million** at a CAGR of 11.8%, 2024–2029" | Mixed-methods boilerplate; inputs undisclosed | $2,500 | **`UNTRACEABLE` and internally inconsistent** — the stated unit is *million*, against another house's *ninety billion* for the whole market. Either a unit error on its own page or a differently-scoped segment. **Discarded** |
+| **HolonIQ** | "$10T by 2030" global education & training spend | **No sources, no data, no method on the free note** | Everything behind "Request Demo" | **`UNTRACEABLE`**, and it publishes **no free tutoring line item at all** |
+| **Grand View Research** | — | — | **HTTP 403** to curl (3 UAs) and WebFetch, on three separate URLs | **F — inaccessible** |
+| **IBISWorld** | — | — | **HTTP 404**, redirects to site search | **F — inaccessible** |
+| **MarketsandMarkets** | — | — | **HTTP 302** to a report-search page; **the report does not exist at that slug** | **F — the report could not be shown to exist** |
+
+> **Finding: of six vendors supplying the tutoring TAM, zero publish a reproducible
+> methodology, a sample frame, or underlying data. Two are wholly inaccessible. One's
+> report could not be shown to exist. One's published figure is internally inconsistent
+> by three orders of magnitude.** The claim "the global private tutoring market is
+> $X billion" is **not traceable to any published estimation procedure**, and this
+> section does not restate it as a number.
+
+**And the academic literature agrees, on the record.** Mark Bray, *"Researching shadow
+education: methodological challenges and directions,"* **Asia Pacific Education Review**,
+doi:10.1007/s12564-009-9056-6 (ERIC EJ877899) — the canonical statement of why this
+market resists measurement: definitional instability, informality, cash payment, tutor
+moonlighting, and no register of providers. `MEASURED-META`-adjacent, and the correct
+citation for the untraceability claim itself. **The academic field, which has studied
+this for thirty years, deliberately does not produce a global TAM.** Anyone who does
+should be asked how.
+
+### 1.3 Measured spend — the honest floor, from three national statistical agencies
+
+#### South Korea — the best-measured shadow-education market on earth
+
+**Ministry of Data and Statistics (formerly Statistics Korea) with the Ministry of
+Education, *Private Education Expenditures Survey of Elementary, Middle and High School
+Students in 2025*, released 12 March 2026.** `GOV-STAT`. Designated Statistics Approval
+No. **920011**; ~**3,013 schools**, 3,111 classes, ~**73,000 parents**; two collection
+rounds per year; 100% online since 2013; denominators from the MoE *Basic Education
+Statistics*. This is a published sampling design, which is exactly what §1.2 could not
+find anywhere else.
+
+| Metric | 2024 | **2025** | Change |
+|---|---|---|---|
+| **Total private education expenditure** | ₩29.19 trn | **₩27.54 trn** | **−5.7%** |
+| Participation rate | 80.0% | **75.7%** | −4.3 pp |
+| Monthly spend per student (all) | ₩474k | ₩458k | −3.5% |
+| **Monthly spend per *participating* student** | ₩592k | **₩604k** | **+2.0%** |
+| Weekly hours per student | 7.6 | 7.1 | −0.5 |
+| Total students | 5.14m | 5.02m | −2.3% |
+
+**Two readings an investor should take.**
+
+1. **The aggregate is shrinking while intensity per remaining customer rises.** Total
+   spend −5.7%, participation −4.3 pp, but spend per participating student **+2.0%**.
+   That is a market consolidating onto fewer, higher-value households — a **premium**
+   dynamic, not a volume one. It is also, precisely, the dynamic Nerdy's filings show in
+   the US: Active Members −11.5%, ARPM +21% (§3.5). **Two independent markets, same
+   shape.** `GOV-STAT` + `FILING`.
+2. **The scale check that breaks the TAM.** ₩27.54trn is roughly **US$19–20bn** at
+   ~1,380 KRW/USD (`INFERENCE` — my conversion, not a source figure). South Korea has
+   ~0.06% of world population and ~5m students. If Korea alone is **~20% of the claimed
+   $90bn global market**, then either the global figure is far too low, or it was never
+   built bottom-up from anything. **Either reading destroys the vendor number.**
+
+#### Japan — per-student, published; national aggregate, not published
+
+**MEXT, 子供の学習費調査 (Survey on Children's Learning Expenses), FY2023, published
+25 Dec 2024, corrected 16 Jan 2026.** `GOV-STAT`. 1,603 schools, **53,025 students**;
+parents respond; valid response rates **34.3%–64.1%** (public elementary worst).
+
+**学習塾費 — cram-school fees, annual per student (¥):**
+
+| | Public | Private |
+|---|---|---|
+| Elementary | 75,000 | 259,000 |
+| **Junior high** | **230,000** | 168,000 |
+| High (full-time) | 147,000 | 167,000 |
+
+Among spenders only: elementary ¥193k / ¥361k; JHS ¥349k / ¥328k; HS ¥381k / ¥444k.
+Highest single cell: private elementary sixth grade **¥443,000**. Out-of-school activity
+spend is **70.0%** of total public-elementary education spend.
+
+**The caveat is the finding.** MEXT publishes **per-student means only — there is no
+official national aggregate yen figure.** Any "Japan tutoring market = ¥X trillion" is
+somebody multiplying these means by enrolment. That multiplication is defensible, but it
+is a derivation, not a statistic, and the 34% response rate on the largest cell is a real
+weakness. `UNTRACEABLE` at the aggregate level.
+
+#### United States — tutoring is separately identified, and the number is small
+
+**BLS Consumer Expenditure Survey, UCC `670903` "Test preparation and tutoring
+services."** `GOV-STAT`. (Note: `bls.gov/cex/*` returns HTTP 403 to scripted retrieval;
+the working paths are the BLS public API v2 and `download.bls.gov`.)
+
+Average annual expenditure **per consumer unit**:
+
+| Year | **Test prep & tutoring (670903)** | Elem/HS tuition | College tuition | Total education | Consumer units (000s) |
+|---|---|---|---|---|---|
+| 2020 | **$15** | $222 | $789 | $1,271 | 131,234 |
+| 2021 | $21 | $199 | $774 | $1,226 | 133,595 |
+| 2022 | $27 | $199 | $875 | $1,335 | 134,090 |
+| 2023 | **$35** | $277 | $937 | $1,656 | 134,556 |
+| **2024** | **$32** | $281 | $985 | $1,569 | 135,760 |
+
+**Derived US household tutoring spend, 2024: $32 × 135.76m ≈ US$4.3bn.** `INFERENCE`
+from two `GOV-STAT` series — my arithmetic, shown so it can be attacked.
+
+**Three things about that number.**
+
+- **It more than doubled 2020→2023** ($15 → $35) and then **dipped in 2024**. The dip is
+  worth watching: it coincides with the arrival of free generative chatbots, and it is
+  the same period in which Chegg's Academic Services revenue fell 43% `FILING`. Whether
+  those are the same phenomenon is not established by this data — but a board should
+  want the question asked.
+- **It is a floor, not a ceiling.** CEX is household-reported; it excludes employer- and
+  school-funded tutoring and misses informal cash payment.
+- **It is roughly an order of magnitude below** what a per-capita allocation of the
+  circulating global TAM would imply for the US. That gap is not resolved by any source
+  I could reach, and it is the single strongest reason to refuse the TAM.
+
+### 1.4 China — the policy is traceable; the market it destroyed is not
+
+**《关于进一步减轻义务教育阶段学生作业负担和校外培训负担的意见》** ("double reduction"),
+CPC Central Committee & State Council General Offices, **24 July 2021**, full official
+text retrieved from moe.gov.cn. `VERIFIED`. The operative clauses, verbatim (¶13):
+
+> *"各地不再审批新的面向义务教育阶段学生的学科类校外培训机构，现有学科类培训机构统一登记为**非营利性机构**。"*
+> — no new approvals for core-subject tutoring institutions; existing ones **re-registered as non-profits**.
+
+> *"学科类培训机构**一律不得上市融资，严禁资本化运作**；…**外资不得通过兼并收购、受托经营、加盟连锁、利用可变利益实体（VIE）等方式控股或参股**学科类培训机构。"*
+> — core-subject tutoring institutions **may not list or raise capital**, capitalised
+> operation is **strictly prohibited**, and **foreign capital may not hold or take
+> stakes**, including **via VIE structures**.
+
+And ¶15 bans **拍照搜题** — photo-search homework answering — as *"惰化学生思维能力"*
+(dulling students' thinking ability). **A named prohibition on a specific AI tutoring
+modality, five years ago.** ¶19 makes reduction in household tutoring spend an
+**evaluation KPI for local government officials**.
+
+> **The investor-relevant shape: a single overnight administrative act converted an
+> entire category to non-profit status, banned listing and foreign capital including
+> VIEs, and made destroying the market a bureaucratic performance target.** The audited
+> consequence is in §4.6 — Gaotu Techedu, −62% revenue in twelve months `FILING`.
+
+**And the untraceability finding compounds:** I located **no official Chinese statistic
+on tutoring market size, before or after 2021**. Every "China tutoring was a $100bn+
+market" figure in circulation descends from vendor reports, not from NBS or MoE.
+`UNTRACEABLE`. **The destroyed value is itself unmeasurable** — which should be sobering
+for anyone modelling this category's downside.
+
+### 1.5 The multilateral gap, reported because its absence is informative
+
+| Source | Result |
+|---|---|
+| **World Bank `SE.XPD.TOTL.GD.ZS`** (government education spend, % GDP) | Retrievable: China 3.90 (2023), Japan 3.34 (2021), Korea 5.41 (2022), USA 5.42 (2021). **Government spend — says nothing about tutoring** |
+| **World Bank BOOST/EdStats household indicators** (`PER.SOR.HH.LOC`, `PER.BAS.HH.TUIT`, ~91 codes) | Codes exist in the indicator registry; **every data query timed out (HTTP 000, four attempts at 30s/55s/90s/95s)**. Effectively no retrievable data |
+| **UNESCO GEM Report 2021/2, "Non-state actors in education"** | Landing page reachable; **contains no private-tutoring market figure and no household tutoring spend data** |
+| `unesdoc.unesco.org` full text | **HTTP 403** |
+
+> **There is no multilateral, cross-country dataset of private tutoring expenditure.**
+> The World Bank has *designed* indicator codes for household education spending and
+> they are not populated or not retrievable through the public API. This is a structural
+> gap in the world's education statistics, not a search failure — and it is why the
+> vendor TAMs have no data to be built from.
+
+---
+
+## 2. Who is actually paying, and through what channel
+
+Five channels exist. They have almost nothing in common except the word "education", and
+a company that has not chosen one is not a company. The single most important thing in
+this section: **procurement friction is the real barrier to entry in this market, it is
+systematically under-modelled by founders, and it is measurable in advance.**
+
+### 2.1 The five channels, compared
+
+| | **B2C parent-pay** | **B2B2C district** | **Institutional licence (higher-ed)** | **Publisher / OEM partnership** | **Public programme** |
+|---|---|---|---|---|---|
+| Who decides | A parent, alone | Curriculum director / superintendent / school board | Provost, dean, CIO, faculty senate | Product manager at the publisher | State legislature or agency |
+| Who pays | Same person | District, from a named funding stream | Institution | Publisher (rev-share) | Taxpayer |
+| Who uses it | Their child | Students the district selects | Students | The publisher's customers | Whoever qualifies |
+| **Sales cycle** | minutes–days | **school-year aligned; the audited comparable calls the approval processes "lengthy and cumbersome"** | 6–18 months, faculty governance | 6–18 months, then their cycle | Legislative session — 12–36 months |
+| Contract length | monthly, cancel anytime | **"generally short-term… one year or less"** `FILING` | 1–3 years | multi-year | appropriation-limited |
+| Gates | payment + COPPA | **the full stack — §2.2** | + accessibility, + SSO/LTI, + security review | the publisher's own review | + audit, + procurement code |
+| Churn driver | the child's motivation | **budget cycle, board composition, funding source** | curriculum change | the publisher's strategy | an election |
+| **Structural hazard** | CAC vs a free chatbot | you are re-sold every June | long cycle, small ACV per campus | you are a feature | the money ends |
+
+### 2.2 The procurement gate stack, with citations
+
+This is what actually stands between a working product and revenue. Each item is a real
+artefact with a real cost and a real elapsed time, and none of them is affected by how
+good your model is.
+
+| Gate | Instrument | What it actually requires | Notes |
+|---|---|---|---|
+| **FERPA "school official"** | 34 CFR 99.31(a)(1)(i)(B) | The vendor must perform a function the school would otherwise use employees for, be **"under the direct control of the agency or institution with respect to the use and maintenance of education records,"** and be bound by § 99.33(a) | This is the *only* mechanism by which a vendor gets student data without parental consent. §99.33(a)(2): the recipient may use the information **"only for the purposes for which the disclosure was made"** — **this is the provision that blocks training a general model on district data** `VERIFIED` |
+| **COPPA** | 16 CFR Part 312; amended rule **90 FR 16918**, published **22 Apr 2025**, effective 23 Jun 2025, **full compliance 22 Apr 2026** | New §312.10 written data-retention policy, published in the notice; §312.5(a)(2) **separate** verifiable parental consent for third-party disclosure; §312.8(b) written information-security programme; biometric identifiers (incl. **voiceprints**) added to "personal information" | The load-bearing sentence, verbatim from the preamble: *"Disclosures of a child's personal information to third parties… **to train or otherwise develop artificial intelligence technologies, are not integral** to the website or online service and would require consent."* `VERIFIED` |
+| ↳ **and the gap that matters most** | — | **The FTC proposed a codified school-authorization exception and withdrew it.** Verbatim: *"the Commission is **not finalizing the proposed amendments to the Rule related to ed tech and the role of schools at this time**."* The word "school" appears **nowhere** in 16 CFR Part 312 | **The entire "the district consents for the parents" mechanism rests on guidance, not regulation** — the May 2022 Ed Tech Policy Statement and FAQ Section N. That is a materially weaker legal footing than most decks assume `VERIFIED` |
+| **California** | **SOPIPA**, Cal. Bus. & Prof. Code §22584 | A **direct statutory duty on the operator**, triggered by *actual knowledge* that the service is used primarily for K-12 — **signature-independent and not waivable by district contract**. Bans targeted advertising, profile amassing outside K-12 purposes, and selling pupil information | Plus **Cal. Ed. Code §49073.1**: nine mandatory contract terms; a non-conforming contract *"shall be rendered void"* `VERIFIED` |
+| **New York** | **Educ. Law §2-d** + **8 NYCRR Part 121** | A **Data Privacy Agreement *and* a signed Parents' Bill of Rights supplement** per contract (§2-d(3)(a), (3)(c), (5)(e)); alignment to **NIST CSF v1.1** (121.9(a)(1)); encryption in motion and at rest; **breach notice to the district within 7 calendar days of discovery** (121.10(a)), with the vendor paying downstream notification cost | **The hardest US clause for an AI company**: 8 NYCRR 121.1(c)+121.9(a)(8) define prohibited "commercial purpose" to include *"the use of student data… to develop, improve or market products or services to students."* **No model-improvement carve-out** — unlike California §22584(c) and Illinois. Debarment for up to five years from **any** NY educational agency (§2-d(6)(e)) `VERIFIED` |
+| **Illinois** | **SOPPA**, 105 ILCS 85 | Written agreement is a **precondition to any data transfer**, with six mandatory contents including §85/15(4)(C), which forces the vendor to *recite* the FERPA school-official/direct-control designation in the contract; mandatory **breach cost-allocation clause**; operator→school breach notice within **30 days**; the school must **publish the agreement** | §85/27(b): *"Any agreement or contract entered into in violation of this Act is **void and unenforceable as against public policy**."* `VERIFIED` |
+| **Accessibility (the binding one)** | **ADA Title II**, 28 CFR 35.200; final rule **89 FR 31320** (24 Apr 2024); compliance dates extended by **91 FR 20902** (20 Apr 2026) | **WCAG 2.1 Level A and AA**, from **26 April 2027** (population ≥50,000) and **26 April 2028** (<50,000 / special districts). 35.200(a) reaches vendors: web content the entity *"provides or makes available, **directly or through contractual, licensing, or other arrangements**."* | The corpus's prior citation **91 FR 20902 / 2027 / 2028 is confirmed exactly** `VERIFIED`. WCAG version is pinned to the **2018 REC**, not the 2023 update |
+| ↳ **and a correction to the corpus** | **Section 508**, 36 CFR 1194 | E205.4 and E207.2 both specify **WCAG 2.0** Level A/AA (702.10.1 pins the 11 Dec 2008 REC). *"WCAG 2.1" appears zero times in 36 CFR 1194.* | **Any claim that Section 508 incorporates WCAG 2.1 AA is legally wrong.** Title II does; 508 does not. Practical consequence: buyers will still ask for a **WCAG 2.1 AA** ACR, because 28 CFR 35.200 is what binds *them* `VERIFIED` |
+| ↳ a second, distinct clock | **Section 504**, HHS, **91 FR 25496** (11 May 2026) | Extends 504 web/app compliance to **11 May 2027** (≥15 employees) and **10 May 2028** (<15) | Different agency, different statute. **Public universities taking HHS funds hit both.** Do not conflate with 91 FR 20902 `VERIFIED` |
+| **VPAT / ACR** | ITI VPAT **2.5Rev**, 24 Apr 2025 | A completed VPAT with documented test results becomes an **Accessibility Conformance Report** | **Self-attested. ITI imposes no audit.** Free, no membership. It is a procurement artefact, not evidence `OBSERVED` |
+| **SOC 2** | AICPA, **SSAE No. 18** (AT-C 100/200/300), **2017 Trust Services Criteria (revised points of focus, 2022)** | An **examination/attestation report by a CPA firm — not a certification.** AICPA issues no certificate and the word "certification" appears nowhere in its own product framing | Type 1 is point-in-time; Type 2 covers an observation period. **Those definitions could not be verified from a free AICPA URL** — they sit inside the paywalled SOC 2 Guide. Flagged rather than cited `OBSERVED` / partly `UNVERIFIED` |
+| **Interoperability** | **1EdTech**: LTI 1.3 / LTI Advantage, OneRoster 1.2, Caliper 1.2 | Self-run test suite, then 1EdTech validation. **"Active 1EdTech membership is required to maintain certification"** and **"Products must be recertified annually"** | Recurring dues plus an annual re-test, not a one-time badge. 1EdTech also publishes a **Generative AI Data rubric** under TrustEd Apps — directly on point for this category `OBSERVED` |
+| **The sign-once shortcut** | **SDPC National Data Privacy Agreement, v2.2 (19 Nov 2025)**, A4L | Standard / Vendor-Specific / District-Modified variants; a Resource Registry that lets a signed DPA be reused across districts | Built precisely because vendors *"previously had to sign 'one off' contracts with each of the over 13,000 US school districts."* At retrieval: **222,261 active agreements across 16,972 applications**, 275,000+ standard DPAs executed since 2016 `OBSERVED` |
+
+### 2.3 What the audited comparable says about the district channel, verbatim
+
+Nerdy's FY2025 10-K is the best available primary description of this sales motion,
+because it carries liability. `FILING`, all quotes verbatim:
+
+> *"Selling to Institutions such as school districts can be **highly competitive,
+> expensive, and time-consuming, often requiring significant upfront time and expense**.
+> Government entities often require contract terms that differ from our standard
+> arrangements…"*
+
+> *"Many of the contracts that we have entered into with Institutions are **school-year
+> contracts subject to annual renewal at the option of the Institution**."*
+
+> *"the approval processes of some Institutions, which are required for formal contract
+> execution, are **lengthy and cumbersome** and, in many cases, **are not completed prior
+> to the time we begin performance**. This means that at times **we incur substantial
+> costs prior to the formal execution of these agreements**."*
+
+> *"Our contracts with schools and school districts are typically school-year contracts
+> subject to annual renewal at the option of the school or school district, and **in many
+> instances the school or school district can terminate or modify the contracts at their
+> convenience**."*
+
+> *"…a **termination or non-renewal caused by our failure to improve the poor academic
+> performance of students** enrolled in our programs could adversely affect our ability
+> to secure contracts with other Institutions."*
+
+> *"…the **moderation of our investment in the Institutional business given school
+> district funding uncertainties in 2025**."*
+
+**Five things an investor should take from those six sentences**, each of which
+contradicts a common pitch-deck assumption:
+
+1. **Work starts before the contract is signed.** The company books cost before it books
+   revenue, by its own admission. Model negative working capital per district win.
+2. **Every district contract is re-sold annually**, at the district's option, and can be
+   modified at their convenience. It is not ARR.
+3. **Board composition and administration turnover are churn drivers** — named as such in
+   the risk factors. That is churn a product cannot fix.
+4. **Efficacy failure is contagious across accounts.** The company states that
+   non-renewal for failing to improve academic performance would damage its ability to
+   win *other* districts. This is the commercial mechanism by which §8.2's
+   evidence risk becomes a revenue risk.
+5. **A portion of institutional sales go through resellers** to government institutions
+   — so the channel has an intermediary margin the model must carry.
+
+### 2.4 Typical contract size — what is actually knowable
+
+**Honestly: very little, from primary sources.** District-level contract values are
+disclosed in local procurement records that have no aggregate API, and no filer breaks
+out per-district ACV. What can be triangulated from filings:
+
+| Anchor | Value | Source |
+|---|---|---|
+| **Total institutional tutoring revenue of the largest US listed pure-play** | **$27.6M** (FY2025, down 22%) | Nerdy 10-K `FILING` |
+| **US consumer tutoring membership price** | **$364/month** ARPM (Dec 2025); **$374** (Mar 2026) | Nerdy 10-K / 10-Q `FILING` |
+| **US tutoring-centre B2C price point** | *"~$200/mo × 8 months avg"* | LessonOrca homepage `VENDOR` — a derivation with inputs shown, not restated as a finding |
+| **Per-pupil delivered cost of in-school high-dosage tutoring** | **$3,500–$4,300/student/year** at 2:1 (2013–15); **$1,800** at 4:1 with a $15,000/fellow AmeriCorps subsidy | Guryan et al., NBER w28531 fn.12 `MEASURED-RCT` |
+| **State-funded programme scale, one instance** | **$7.44M** in a single year, and it did not recur | Nerdy 10-K `FILING` |
+
+`UNTRACEABLE`: average district contract value; median enterprise ACV for K-12 AI
+tools; higher-ed tutoring licence pricing. These circulate widely and I could not reach
+a primary source for any of them. **They are therefore not stated here as numbers.**
+
+### 2.5 The three structural conclusions of §2
+
+1. **The gates are the moat, and they are the moat for whoever clears them first.** A
+   startup experiences SOC 2, a NY DPA, a WCAG 2.1 AA ACR and 1EdTech recertification as
+   friction. An incumbent experiences them as a wall around its customers. Whether that
+   asymmetry works for you depends entirely on whether you clear them *before* you need
+   the revenue (§5.7).
+2. **The New York clause is the design constraint for the whole product.** 8 NYCRR
+   121.1(c) prohibits using student data "to develop, improve or market products or
+   services to students," with no model-improvement carve-out, while California and
+   Illinois permit product improvement. **If you want to sell in all three, you build to
+   New York** — which means the data-flywheel architecture in most AI-tutoring decks is
+   not legal in the largest state that regulates it. This directly undercuts §5.1's
+   proprietary-data moat, on top of the empirical objection.
+3. **Model training on student data is the enforcement theory the FTC has already run,
+   twice.** *United States v. Edmodo* (N.D. Cal., May 2023) — the order requires Edmodo
+   *"to delete models or algorithms developed using personal information collected from
+   children without verifiable parental consent or school authorization"* and **bans the
+   company from using schools as intermediaries in the parental-consent process**.
+   *FTC & DOJ v. Amazon* (W.D. Wash., May 2023), $25M — *"COPPA does not allow companies
+   to keep children's data forever for any reason, and **certainly not to train their
+   algorithms**."* `OBSERVED` (agency press releases and orders). **Algorithmic
+   disgorgement is a live remedy in this sector.** It should be modelled as an
+   existential, not a compliance, risk.
 
 ---
 
@@ -156,9 +452,11 @@ per-occupation HTML pages now 301 to the tables index.
 | Hourly **mean** | **$23.10** |
 | Hourly **median** | **$20.84** |
 | Hourly 10th percentile | **$14.15** |
-| Hourly 25th percentile | *see file* |
-| Hourly 75th percentile | **$36.53** (90th) |
+| Hourly 25th percentile | $16.83 |
+| Hourly 75th percentile | $26.38 |
+| Hourly 90th percentile | **$36.53** |
 | Annual mean | **$48,050** |
+| Annual median | $43,350 |
 
 Geographic spread, same file, state level (`GOV-STAT`):
 
