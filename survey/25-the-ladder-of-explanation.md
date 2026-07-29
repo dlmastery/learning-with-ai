@@ -322,5 +322,5 @@ simply is itself a learning act — and at g ≈ 0.55 it is — then the stronge
 available is to ask the learner to write the ELI10 and **diff it against the
 system's**. The diff localises the defect by class: a missing relation, an
 over-extended analogy, or a wrong ontological category. That is `INFERENCE`, not a
-measured design. It is also the cheapest experiment in this section, and the one
+measured design. It costs one prompt change against a meta-analytic prior, and it is the one
 that would turn the ladder from an output into an instrument.

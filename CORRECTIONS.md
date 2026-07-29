@@ -104,6 +104,10 @@ measured, or it is a pitch.
 | **C-49** | 29 Jul | Hypothesised that **rewind/replay density** on video is a behavioural signal marking where comprehension failed — proposed as this project's own contribution | **Dead three ways.** Measured across 51 videos: median entropy **0.976** (1.0 = flat), enrichment **1.95×**, peaks land *closer to chapter boundaries than chance* — they mark navigation. Structurally, the signal is **min–max normalised within each video in 51 of 51 cases**, so cross-video ranking is impossible by construction. And it was already built: **LectureScape (UIST 2014)** was null on every task, slower outside peaks, and better on *perceived* efficiency. Brinton et al. find backward-scrubbing predicts getting the next question **right** — the sign may be inverted | SELF-RESEARCH (N4) |
 | **C-50** | 29 Jul | §29 called the **quantifier-prefix check** *"decidable, cheap, and the most valuable entry in the table"* | **Implemented and run against 1,524 sentences of MIT OCW transcripts: it fired zero times.** Speech *elides* quantifiers rather than reordering them — a lecturer says "as close as you like" and never utters a recoverable ∀ or ∃. Overall lexical precision across §29's predicates: **7 true positives from 30 flags (23%)**. Not refuted — relocated: these are checks for authored technical prose and generated output, not for transcript mining | SELF-RESEARCH (N4) |
 | **C-51** | 29 Jul | *(our own brief)* Instructed a research agent that a **MarGrady 2020 state-test study of Teach to One** existed, as a precedent to check | **It does not exist.** The independent i3/CPRE evaluation is **null**; the real MarGrady report is **MAP-growth-based and positive**. The agent checked rather than accepting the citation, and the contrast it found is more useful than the study we invented — same programme, same period, different instrument, opposite conclusion. Recorded because the error originated in our brief, not in the research | SELF-RESEARCH (N3) |
+| **C-45** | 29 Jul | Three sections each called their own proposal *"the cheapest experiment in this document/section"* (§25, §30, §33) | **They cannot all be.** Twenty-seven self-referential superlatives of this shape across the second half — *"the single most X in this survey"* — of which this set is also a factual contradiction. Two withdrawn; the third now argues from dependency rather than cost | **EXTERNAL-REVIEW** |
+| **C-46** | 29 Jul | *(process)* A correction inserted into §29 left the paragraph beneath it **reasserting the retracted rule** under the heading "The rule" | Same class as C-17 and the §15 defect: an in-place correction that did not reach the sentence below it. The rule is now narrowed to what Muller's Refutation condition actually isolates — naming the misconception aloud — rather than the ordering the section originally claimed | **EXTERNAL-REVIEW** |
+| **C-47** | 29 Jul | *(process)* Volume metrics were published as the opening line of the README, the paper masthead, deck slide 1 and the thesis footer | *"38 sections, 88,078 words, built on ~2,100 sources"* tells a reader nothing except that we would like to be found impressive — and it was **injected by the build script on every rebuild**, so it was stale as well as vain. Removed from every prose surface; the builder no longer writes counts outside the dashboard | SELF-VERIFY |
+| **C-48** | 29 Jul | Four survey sections and five demo pages closed on the same sentence | *"What teaches is not the richness of what the learner is given…"* appeared in §06 and §13 with one verb changed; an identical honesty paragraph closed five demos. **Reusing an ending retroactively cheapens every claim of independent convergence** — which this survey makes often. All rewritten to say something specific to their own section | **EXTERNAL-REVIEW** |
 
 ---
 
@@ -115,12 +119,12 @@ hand-maintained, which is the whole argument for generating it.*
 | Source | Count |
 |---|---|
 | Caught by our own research | 25 |
-| Caught by our own verification — including of our own warnings | 2 |
+| Caught by our own verification — including of our own warnings | 3 |
 | Caught by our own builders, working against their own briefs | 4 |
-| **Caught by an adversarial external reviewer** | **20** |
-| **Total** | **51** |
+| **Caught by an adversarial external reviewer** | **23** |
+| **Total** | **55** |
 
-20 of 51 were found by someone whose job was to fail us — including
+23 of 55 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the

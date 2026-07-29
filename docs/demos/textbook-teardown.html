@@ -136,7 +136,7 @@ component that, in the randomised trial, was the only thing that moved achieveme
 <h2>3 · The probe that selects the strategy</h2>
 
 <p>Entry is <strong>measured, never preferred</strong> — stated preference moves at
-<em>d</em> ≈ 0.48 while knowledge moves zero. One question, fifteen seconds, and it probes the
+<em>d</em> ≈ 0.48 while knowledge moves zero — a <em>preference</em> effect, unrelated to the teaching-expectancy <em>g</em> = 0.48 in §4. One question, fifteen seconds, and it probes the
 <em>obstacle</em> rather than the definition.</p>
 
 <div class="panel">
@@ -217,6 +217,25 @@ are measured to work — that is a claim about the artifact, not a measured supe
 The delayed unassisted test in the last row is the one that would settle it, and shipping it is
 the obligation this project accepts.</div>
 
+<h2>What this proves / What it does not</h2>
+
+<p><strong>It proves</strong> that the two failures flagged in §2 are mechanically checkable, not
+matters of taste. The quantifier predicate and the numeric falsifier both run here, on your
+machine, and both will reject a claim you make.</p>
+
+<ul>
+  <li><strong>It does not prove</strong> the rebuilt loop teaches better than the page. No trial
+  has compared them. The claim on this page is about what the artifact is structurally
+  <em>incapable</em> of, which is a different and smaller claim.</li>
+  <li><strong>The passage is representative, not quoted.</strong> It is written to match the
+  treatment in common calculus texts; no single book is being criticised.</li>
+  <li><strong>The strategy selection is a rule engine, not a model.</strong> Eight strategies, one
+  probe, deterministic mapping. A real system would need the diagnosis to work on free-form student
+  work — which is the thing measured at chance across 223 domains.</li>
+  <li><strong>The numeric checker refutes; it never establishes.</strong> Surviving every sample is
+  consistent with the claim and is not a proof of it.</li>
+</ul>
+
 <footer>
   <a href="index.html">Demo gallery</a> · <a href="../thesis.html">The thesis</a> ·
   <a href="../paper.html">The paper</a>
@@ -239,7 +258,7 @@ const STRATS = [
  {k:"numeric",  n:"Falsify before proving", ev:"99.1% recall · 0.38–0.61 ms",
   d:"Before proving anything, substitute. Most wrong conjectures die in under a millisecond, and the habit transfers: check, then prove. This is the cheapest rung of the grounding ladder and it should be the default.",
   f:"Always available. Never sufficient — it can refute, and it cannot establish."},
- {k:"teach",    n:"Teach it to a protégé that stays wrong", ev:"g = 0.48 with expectancy · −0.02 without",
+ {k:"teach",    n:"Teach it to a protégé that stays wrong", ev:"learning g = 0.48 with expectancy · −0.02 without",
   d:"The learner states the rule; an agent applies it <em>literally</em> to fresh functions and does not quietly self-correct. The gap between what they meant and what they said is the whole payload.",
   f:"Requires the expectancy to be set <b>before</b> study — that ordering is the entire effect. Asked afterwards, it measures −0.02."},
  {k:"ladder",   n:"Move a rung, not louder", ev:"3 &gt; 2 (p = .032) · 5 ≯ 3 (p = .738)",

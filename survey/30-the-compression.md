@@ -224,7 +224,7 @@ Three conditions, and all three are load-bearing:
 - **Claim 1× on procedural skill**, out loud, every time. The FSI hours are real and
   no model shortens them.
 - **Ship the session decomposition study.** Nobody has measured where a study hour
-  actually goes. It is the cheapest high-value experiment in this document.
+  actually goes. One instrumented cohort and a fortnight would close it.
 
 The sentence to keep: **almost none of a week is spent learning, and that — not
 processing speed, not talent, not effort — is what an agent takes back.**

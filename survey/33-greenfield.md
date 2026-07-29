@@ -110,7 +110,7 @@ corpora, one rank correlation. No new data, no learners, no consent.
 > **What would show it wrong:** a low or unstable rank correlation of misconception
 > frequency between independent populations on matched items.
 
-Build this first. It is the cheapest experiment in this document and it gates the
+Build this first — not because it is cheap, though it is, but because it gates the
 rest.
 
 ### 3.2 The decaying capability portfolio

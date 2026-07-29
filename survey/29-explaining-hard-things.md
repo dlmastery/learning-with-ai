@@ -109,8 +109,11 @@ reconstruct it, and cannot tell which parts are essential and which are incident
 which is precisely the failure that makes an explanation feel clear and leave nothing
 behind. It is a fluency illusion with a specific cause.
 
-**The rule: lead with the constraint that forces the design.** Name the thing that
-does not work before naming what was done about it.
+**The rule, narrowed by the correction above: name the wrong idea explicitly.** The
+obstacle-first *ordering* is a plausible way to do that and is not what the evidence
+isolates — Muller's Refutation condition kept the original order and simply stated the
+misconception aloud. So: say what does not work, out loud, before or after the
+machinery. The naming is the mechanism; the position is a preference.
 
 This is checkable in a weak but useful sense — for a technical explanation, does the
 obstacle appear before the first piece of machinery it motivates? A structural

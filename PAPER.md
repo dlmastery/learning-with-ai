@@ -18,8 +18,8 @@ learned anything, and almost never measures it **after the tool is taken away**.
 This survey is an attempt to write the missing specification. It rests on 40 research
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
-errors is published in an append-only ledger rather than quietly edited — **20 of
-the 51 corrections were found by an adversarial reviewer rather than by us.**
+errors is published in an append-only ledger rather than quietly edited — **23 of
+the 55 corrections were found by an adversarial reviewer rather than by us.**
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
@@ -1516,7 +1516,7 @@ Three conditions, and all three are load-bearing:
 - **Claim 1× on procedural skill**, out loud, every time. The FSI hours are real and
   no model shortens them.
 - **Ship the session decomposition study.** Nobody has measured where a study hour
-  actually goes. It is the cheapest high-value experiment in this document.
+  actually goes. One instrumented cohort and a fortnight would close it.
 
 The sentence to keep: **almost none of a week is spent learning, and that — not
 processing speed, not talent, not effort — is what an agent takes back.**
@@ -3693,7 +3693,7 @@ simply is itself a learning act — and at g ≈ 0.55 it is — then the stronge
 available is to ask the learner to write the ELI10 and **diff it against the
 system's**. The diff localises the defect by class: a missing relation, an
 over-extended analogy, or a wrong ontological category. That is `INFERENCE`, not a
-measured design. It is also the cheapest experiment in this section, and the one
+measured design. It costs one prompt change against a meta-analytic prior, and it is the one
 that would turn the ladder from an output into an instrument.
 
 
@@ -3802,8 +3802,11 @@ reconstruct it, and cannot tell which parts are essential and which are incident
 which is precisely the failure that makes an explanation feel clear and leave nothing
 behind. It is a fluency illusion with a specific cause.
 
-**The rule: lead with the constraint that forces the design.** Name the thing that
-does not work before naming what was done about it.
+**The rule, narrowed by the correction above: name the wrong idea explicitly.** The
+obstacle-first *ordering* is a plausible way to do that and is not what the evidence
+isolates — Muller's Refutation condition kept the original order and simply stated the
+misconception aloud. So: say what does not work, out loud, before or after the
+machinery. The naming is the mechanism; the position is a preference.
 
 This is checkable in a weak but useful sense — for a technical explanation, does the
 obstacle appear before the first piece of machinery it motivates? A structural
@@ -10274,7 +10277,7 @@ corpora, one rank correlation. No new data, no learners, no consent.
 > **What would show it wrong:** a low or unstable rank correlation of misconception
 > frequency between independent populations on matched items.
 
-Build this first. It is the cheapest experiment in this document and it gates the
+Build this first — not because it is cheap, though it is, but because it gates the
 rest.
 
 ### 3.2 The decaying capability portfolio

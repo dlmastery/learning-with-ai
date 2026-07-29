@@ -215,3 +215,92 @@ PNAS "correction" to Bastani is an affiliation erratum only — the −17% stand
 ### Open decision for the user
 `research/raw/E1-E2-*.md` is public and contains LessonOrca operating figures
 (churn cost, pricing). Scrub from history or leave — user's call.
+
+---
+
+## 9. Writing rules — earned the hard way, each from a shipped defect
+
+Every rule below exists because the failure happened, was found by an adversarial
+reviewer, and is in `CORRECTIONS.md`. They are not style preferences.
+
+### 9.1 Never open with a volume metric
+
+**"38 sections, 88,078 words, built on ~2,100 sources"** was the first line of the
+README. It tells a reader nothing except that we would like to be found impressive.
+A word count is not a finding.
+
+- No document opens with its own size. Not the README, not the paper masthead, not
+  slide one, not a page footer.
+- **Never let a generator write counts into a prose surface.** That line was
+  *injected* by `build-paper.py` on every rebuild, and it was stale as well as vain
+  ("thirteen demos" when there were fourteen). Counts belong on the dashboard, where
+  somebody has come looking for status.
+- The same applies to correction counts. *"51 corrections, 20 external"* is the same
+  flex in a different costume. Say what it means — *a substantial minority were found
+  by adversarial reviewers* — and let the ledger carry the number.
+
+### 9.2 A closing line may be used once
+
+Four sections ended on a variant of *"what teaches is not the richness of what the
+learner is given…"*. Five demos closed on the identical paragraph. **Reusing an
+ending retroactively cheapens every claim of independent convergence in the
+document** — which this survey makes often.
+
+Before writing a closing paragraph, grep for its distinctive phrase across `survey/`
+and `docs/`. If it exists, write a different one or delete the section's ending.
+
+### 9.3 Rationed constructions
+
+Frequency analysis across the corpus, not a checklist. Counted at the time of writing:
+
+| Construction | Count | Rule |
+|---|---|---|
+| `X is not Y. It is Z.` | 147 in the first half alone | Once per section, maximum |
+| `Two things follow.` / enumerative preamble | 69, of which 38 begin "Two" | Say the things; drop the announcement |
+| `the honest ___` | 133 across 39 of 40 reports | Once per document |
+| `which is precisely` | 23 | Delete; it announces precision instead of being precise |
+| `, and it is [appositive]` | 47 | Halve it |
+| Em-dash | 578, ~1.8 per 100 words | 3.5–9× literate non-fiction. Halve it |
+| Bold | one span per 48 words | **Cut 60%.** Emphasis every 40 words signals nothing |
+
+The standard slop lexicon (`delve`, `tapestry`, `realm`, `myriad`, `crucial`,
+metaphorical `navigate`) scores **zero** across the corpus. The tics are one layer
+down, which is why frequency analysis is the tool and a banned-word list is not.
+
+### 9.4 A template becomes visible at about ten uses
+
+`## What this section commits us to` closes 14 of 19 sections. Fourteen demo
+orientation panels run the identical *imperative → "Then" → "watch"* rhythm; 14 of 14
+"What this is" panels are verbless noun phrases.
+
+When generating N instances from one brief, **vary the shape deliberately** or expect
+a reviewer to count it. The generator that produced them is in the repo, so the brief
+is not merely visible — it is committed.
+
+### 9.5 Verify the sentence a correction lands in
+
+An in-place correction to §15 deleted the subject of a live sentence and left an
+unmatched `**`, producing unread text — **in the section whose argument is that we
+correct in public within a day.** After any in-place edit, read the whole paragraph
+back, not the diff.
+
+### 9.6 Never claim independence between two of our own workstreams
+
+The thesis said *"when a gap is visible independently from both directions, it is
+usually real."* Both directions were workstreams of this project. That is the same
+team reaching one conclusion twice, which is weaker evidence, and a document selling
+its corrections ledger cannot afford the elision.
+
+### 9.7 Renumbering is a build step, never a regex
+
+Repeated `sed`-style bumps left the thesis with two sections numbered 9, no section 8,
+and three cross-references pointing at unrelated content. **A reference that resolves
+to a real but wrong section is worse than a dead one, because nothing flags it.**
+Numbering and cross-references are generated from one declarative outline, and the
+builder reports orphans.
+
+### 9.8 Cite an effect size with its estimand
+
+`d ≈ 0.48` (preference) and `g = 0.48` (teaching expectancy) appeared on one page,
+undisambiguated. Two unrelated results, one number. Always name what the effect is
+*of*.
