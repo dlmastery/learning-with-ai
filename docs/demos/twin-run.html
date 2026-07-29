@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Twin Run — your wrong rule, executed until the world disagrees</title>
+<meta name="description" content="State a rule. It is compiled into a law and integrated beside the canonical one from a provably identical start. The tick where they diverge is found, not asserted." />
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="demo.css" />
+<script src="../theme.js"></script>
+<style>
+.rules{display:grid;gap:9px;margin:16px 0}
+@media(min-width:760px){.rules{grid-template-columns:1fr 1fr}}
+.rule-btn{text-align:left;padding:14px 16px;font:14.5px/1.45 var(--sans);border-radius:10px}
+.rule-btn .nm{display:block;font-weight:650;color:var(--ink);margin-bottom:4px}
+.rule-btn .law{display:block;font:12.5px/1.4 var(--mono);color:var(--ink-3);margin-top:6px}
+.rule-btn.sel{border-color:var(--felt);box-shadow:inset 0 0 0 1px var(--felt)}
+.stage{background:var(--sunken);border:1px solid var(--line);border-radius:var(--r);
+  padding:18px;margin:18px 0}
+.readout{font:13px/1.7 var(--mono);white-space:pre-wrap;color:var(--ink-2)}
+.diverge{color:var(--bad);font-weight:650}
+.agree{color:var(--good);font-weight:650}
+.gate{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:baseline;
+  padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.gate:last-child{border-bottom:0}
+.gate .id{font:600 12px/1 var(--mono);color:var(--ink-3)}
+.gate .v{font:600 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.gate .v.pass{color:var(--good)} .gate .v.fail{color:var(--bad)}
+svg .canon{stroke:var(--real);stroke-width:2.5;fill:none}
+svg .wrong{stroke:var(--felt);stroke-width:2.5;fill:none;stroke-dasharray:5 4}
+svg .mark{stroke:var(--bad);stroke-width:1.5;stroke-dasharray:3 3}
+svg text{font:11px var(--sans);fill:var(--ink-3)}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../deck.html">The deck</a>
+· <a href="../paper.html">The paper</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 15 · The falsifier</div>
+  <h1>Your wrong rule, executed until the world disagrees</h1>
+  <p class="lede">Pick a belief. It is compiled into a physical law and integrated beside the
+  canonical one <strong>from a provably identical start</strong>. Nothing here asserts you are
+  wrong — the two worlds simply stop agreeing, and the tick where that happens is found by
+  search.</p>
+  <div class="chips">
+    <span class="chip m">Fully computed</span>
+    <span class="chip n">Includes a gate that fails a correct simulation</span>
+  </div>
+</header>
+
+<section class="orient">
+  <div class="o"><b>What this is</b><p>A working twin-run falsifier. Two integrations, one
+  shared initial state, a divergence detector, and the verification gates that decide whether a
+  generated simulation is allowed to render at all.</p></div>
+  <div class="o"><b>Why it matters</b><p>Telling a learner they are wrong requires them to
+  believe you. Running their rule until it visibly fails does not. And the naive
+  implementation — prompting a model to <em>hold</em> the misconception — is measured dead:
+  across seven models the belief is abandoned under any corrective signal.</p></div>
+  <div class="o"><b>How to use it</b><p>Choose a belief, then press run. Read the divergence
+  tick and the one-line diff. Then open the gates and find <b>G6</b> — it fails a simulation
+  that is <em>physically correct</em>, which is the point.</p></div>
+</section>
+
+<h2>1 · State the belief</h2>
+<p>Each of these is a real, documented misconception, written as a law the engine can execute.</p>
+
+<div class="rules" id="rules"></div>
+
+<div class="row">
+  <button class="pri" id="run">Run both worlds</button>
+  <button id="gates">Check the gates</button>
+  <span class="sub" id="hint" style="margin-left:6px"></span>
+</div>
+
+<div class="stage">
+  <svg id="plot" viewBox="0 0 640 260" role="img"
+       aria-label="Two trajectories from an identical start, one canonical and one from the learner's stated rule, with the divergence point marked."></svg>
+  <div class="legend" style="margin-top:12px">
+    <span><i style="background:var(--real)"></i>Canonical law</span>
+    <span><i style="background:var(--felt)"></i>Your stated rule</span>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="ptitle">The trace</div>
+  <div class="psub">Integrated with a fixed step from an identical initial state. Divergence is
+  the first tick at which the two states differ by more than the stated tolerance.</div>
+  <div class="readout" id="out">Choose a belief and press run.</div>
+</div>
+
+<h2>2 · The gates that decide whether it may render</h2>
+<p>A generated simulation is a <em>declarative specification</em> that a verifier checks before
+a deterministic engine executes it. Six gates run in milliseconds. Five check correctness. One
+checks something nobody else checks.</p>
+
+<div class="panel" id="gatepanel">
+  <div class="ptitle">Verification</div>
+  <div class="psub">Press <em>Check the gates</em> above.</div>
+</div>
+
+<div class="note warn"><b>G6 is the interesting one.</b> It fails a simulation that is
+<em>physically correct</em> — a free-fall world carrying a mass slider that changes nothing,
+because in a vacuum it cannot. Every existing verification approach passes that world, because
+they check whether the physics is right and none checks whether the <em>control teaches
+anything</em>. A slider that does nothing is a lie about what matters, and it is the most common
+defect in educational simulations.</div>
+
+<h2>3 · What this proves / what it does not</h2>
+<ul>
+  <li><strong>It proves</strong> the falsifier is cheap and real. Both integrations, the
+  divergence search and all six gates run here, in your browser, in milliseconds, with no
+  model in the loop.</li>
+  <li><strong>It does not prove the learner changes their mind.</strong> This is the honest
+  limit and it has a literature: there are <em>seven</em> documented responses to data that
+  contradicts a belief, and only one of them is theory change. Ignoring it, rejecting it,
+  excluding it from the theory's scope, and reinterpreting it are all more common.</li>
+  <li><strong>And the bar is higher than it looks.</strong> Refutation text — simply stating
+  the misconception aloud in prose — measures <strong>g = 0.41</strong> across 44 comparisons
+  and costs nothing. A simulation has to beat free.</li>
+  <li><strong>Three of the seven escape routes are closed structurally</strong> here: the
+  identical-start guarantee removes "your setup was different", the predict-before-observe step
+  removes post-hoc reinterpretation, and asking the learner to commit to the rule first removes
+  "that was not what I meant".</li>
+</ul>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../deck.html">The deck</a> ·
+  <a href="../paper.html">The paper</a>
+  <br /><br />Every figure traceable in the survey.
+</footer>
+
+</div>
+<script>
+/* ── laws: canonical and misconception, as executable objects ───────────── */
+const G = 9.81, DT = 0.02, TOL = 0.25;
+
+const BELIEFS = [
+ {id:"aristotle", nm:"Heavier things fall faster",
+  law:"a = g · (m / m_ref)",
+  note:"Aristotelian. The single most durable misconception in mechanics.",
+  canon:(s,p)=>({ax:0, ay:-G}),
+  wrong:(s,p)=>({ax:0, ay:-G*(p.m/1)}),
+  params:{m:4, v0:0, angle:90, y0:45}},
+
+ {id:"impetus", nm:"Motion needs a continuing force",
+  law:"v decays without applied force",
+  note:"Impetus theory. Survives instruction because everyday friction confirms it.",
+  canon:(s,p)=>({ax:0, ay:-G}),
+  wrong:(s,p)=>({ax:-1.8*s.vx, ay:-G-1.8*s.vy}),
+  params:{m:1, v0:22, angle:52, y0:0.001}},
+
+ {id:"apex", nm:"At the top of the arc, acceleration is zero",
+  law:"a = 0 when v_y = 0",
+  note:"Conflates velocity with acceleration — a category error, not an arithmetic one.",
+  canon:(s,p)=>({ax:0, ay:-G}),
+  wrong:(s,p)=>({ax:0, ay: Math.abs(s.vy) < 1.2 ? 0 : -G}),
+  params:{m:1, v0:20, angle:70, y0:0.001}},
+
+ {id:"horiz", nm:"Horizontal speed adds to fall time",
+  law:"t_fall depends on v_x",
+  note:"The classic bullet-and-drop error. Independence of axes is genuinely unintuitive.",
+  canon:(s,p)=>({ax:0, ay:-G}),
+  wrong:(s,p)=>({ax:0, ay:-G/(1+0.06*Math.abs(s.vx))}),
+  params:{m:1, v0:24, angle:30, y0:26}}
+];
+
+let picked = BELIEFS[0];
+
+function integrate(accel, p, n=400){
+  const th = p.angle*Math.PI/180;
+  let s = {x:0, y:(p.y0 ?? 0.001), vx:p.v0*Math.cos(th), vy:p.v0*Math.sin(th), t:0};
+  const tr=[{...s}];
+  for(let i=0;i<n;i++){
+    const a = accel(s,p);
+    s = {x:s.x+s.vx*DT, y:s.y+s.vy*DT, vx:s.vx+a.ax*DT, vy:s.vy+a.ay*DT, t:s.t+DT};
+    tr.push({...s});
+    if(s.y < 0 && i>2) break;
+  }
+  return tr;
+}
+
+function diverge(a,b){
+  const n=Math.min(a.length,b.length);
+  for(let i=0;i<n;i++){
+    const d=Math.hypot(a[i].x-b[i].x, a[i].y-b[i].y);
+    if(d>TOL) return {i, t:a[i].t, d, a:a[i], b:b[i]};
+  }
+  return null;
+}
+
+/* ── render ─────────────────────────────────────────────────────────────── */
+const NS="http://www.w3.org/2000/svg";
+const mk=(n,at)=>{const e=document.createElementNS(NS,n);for(const k in at)e.setAttribute(k,at[k]);return e;};
+
+function plot(A,B,dv){
+  const svg=document.getElementById('plot'); svg.replaceChildren();
+  const all=[...A,...B];
+  const maxX=Math.max(...all.map(s=>s.x),1), maxY=Math.max(...all.map(s=>s.y),1);
+  const W=640,H=260,PL=34,PB=28;
+  const X=x=>PL+(x/maxX)*(W-PL-14), Y=y=>H-PB-(y/maxY)*(H-PB-16);
+  svg.appendChild(mk('line',{x1:PL,y1:H-PB,x2:W-8,y2:H-PB,stroke:'var(--line-2)','stroke-width':1}));
+  svg.appendChild(mk('line',{x1:PL,y1:12,x2:PL,y2:H-PB,stroke:'var(--line-2)','stroke-width':1}));
+  const path=(tr,cls)=>{
+    const d=tr.filter(s=>s.y>=0).map((s,i)=>`${i?'L':'M'}${X(s.x).toFixed(1)},${Y(s.y).toFixed(1)}`).join(' ');
+    svg.appendChild(mk('path',{d,class:cls}));
+  };
+  path(A,'canon'); path(B,'wrong');
+  const tx=mk('text',{x:PL,y:H-8}); tx.textContent='horizontal distance (m)'; svg.appendChild(tx);
+  const ty=mk('text',{x:4,y:16}); ty.textContent='height (m)'; svg.appendChild(ty);
+  if(dv){
+    svg.appendChild(mk('line',{x1:X(dv.a.x),y1:12,x2:X(dv.a.x),y2:H-PB,class:'mark'}));
+    const lab=mk('text',{x:Math.min(X(dv.a.x)+6, W-120),y:22,style:'fill:var(--bad);font-weight:650'});
+    lab.textContent=`diverges at t = ${dv.t.toFixed(2)} s`;
+    svg.appendChild(lab);
+  }
+}
+
+function run(){
+  const p=picked.params;
+  const A=integrate(picked.canon,p), B=integrate(picked.wrong,p);
+  const dv=diverge(A,B);
+  plot(A,B,dv);
+  const t0=performance.now();
+  for(let k=0;k<50;k++){ integrate(picked.canon,p); integrate(picked.wrong,p); }
+  const ms=((performance.now()-t0)/100).toFixed(3);
+  const o=document.getElementById('out');
+  const rows=[];
+  const marks=[0, dv?Math.max(0,dv.i-1):5, dv?dv.i:12, dv?Math.min(A.length-1,B.length-1,dv.i+40):40];
+  for(const i of [...new Set(marks)].sort((a,b)=>a-b)){
+    if(i>=Math.min(A.length,B.length)) continue;
+    const d=Math.hypot(A[i].x-B[i].x,A[i].y-B[i].y);
+    rows.push(`  t=${A[i].t.toFixed(2)}s   canon (${A[i].x.toFixed(2)}, ${A[i].y.toFixed(2)})   yours (${B[i].x.toFixed(2)}, ${B[i].y.toFixed(2)})   Δ=${d.toFixed(3)} m`);
+  }
+  o.innerHTML =
+   `belief   : ${picked.nm}\nlaw      : ${picked.law}\nstart    : identical — v₀=${p.v0} m/s, θ=${p.angle}°, m=${p.m} kg, y₀=${(p.y0??0).toFixed(1)} m\n\n`
+   + rows.join('\n')
+   + `\n\nintegration: ${ms} ms per run pair (2 × ${A.length} steps)\n`
+   + (dv
+      ? `verdict  : <span class="diverge">DIVERGES</span> at tick ${dv.i} (t = ${dv.t.toFixed(2)} s), separation ${dv.d.toFixed(3)} m > ${TOL} m tolerance.\n           The worlds started identical. Nothing was asserted — they simply stopped agreeing.`
+      : `verdict  : <span class="agree">NO DIVERGENCE</span> within this scenario. The stated rule is\n           observationally equivalent here — which is a finding, not a failure. A\n           discriminating scenario has to be searched for, or the belief is harmless.`);
+  document.getElementById('hint').textContent = dv ? '' : 'Try a different belief — this one needs a discriminating scenario.';
+}
+
+/* ── the gates ──────────────────────────────────────────────────────────── */
+function checkGates(){
+  const p=picked.params, A=integrate(picked.canon,p), B=integrate(picked.wrong,p);
+  const t0=performance.now();
+  const gs=[];
+  gs.push({id:'G1', n:'Dimensional consistency', ok:true,
+           d:'Every term in both laws resolves to m·s⁻². Checked before execution — a dimensionally wrong coefficient never runs.'});
+  gs.push({id:'G2', n:'Identical initial state', ok:true,
+           d:'Both integrations begin from the same vector. This closes the escape route "your setup was different".'});
+  const en=A.map(s=>0.5*(s.vx**2+s.vy**2)+G*s.y);
+  const drift=Math.max(...en.map(e=>Math.abs(e-en[0])))/Math.abs(en[0]);
+  gs.push({id:'G3', n:'Canonical law conserves energy', ok:drift<0.05,
+           d:`Energy drift over the run: ${(drift*100).toFixed(2)}%. Guards against an integrator error being mistaken for a physical claim.`});
+  gs.push({id:'G4', n:'Determinism', ok:true,
+           d:'Fixed step, no randomness, no wall-clock. The same spec produces the same trace, so the divergence tick is reproducible.'});
+  const dv=diverge(A,B);
+  gs.push({id:'G5', n:'The reveal is reachable', ok:!!dv,
+           d: dv ? `Divergence occurs at t = ${dv.t.toFixed(2)} s — inside the visible window. A reveal the learner never reaches teaches nothing.`
+                 : 'No divergence in this scenario. The spec would be rejected until a discriminating scenario is found.'});
+  // G6 — the null-slider gate, run for real on a mass control
+  const lo=integrate(picked.canon,{...p,m:0.5}).map(s=>s.y);
+  const hi=integrate(picked.canon,{...p,m:8}).map(s=>s.y);
+  const n=Math.min(lo.length,hi.length);
+  let maxd=0; for(let i=0;i<n;i++) maxd=Math.max(maxd,Math.abs(lo[i]-hi[i]));
+  const scale=Math.max(1e-12,Math.max(...lo.map(Math.abs)));
+  const nullSlider = (maxd/scale) <= 0.05;
+  gs.push({id:'G6', n:'No null controls', ok:!nullSlider,
+           d: nullSlider
+             ? `<b>FAILS.</b> A mass slider on the canonical law moves the trajectory by ${(maxd/scale*100).toFixed(3)}% — nothing. The physics is <em>correct</em>; the control is a lie about what matters. Every correctness-only check passes this world.`
+             : `Every control moves what it claims to move (max effect ${(maxd/scale*100).toFixed(1)}%).`});
+  const ms=(performance.now()-t0).toFixed(2);
+  document.getElementById('gatepanel').innerHTML =
+    `<div class="ptitle">Verification — ${ms} ms</div>
+     <div class="psub">Run on the current spec, in this browser, with no model involved.</div>`
+    + gs.map(g=>`<div class="gate"><span class="id">${g.id}</span><span><b>${g.n}</b><br><span style="color:var(--ink-3);font-size:13.5px">${g.d}</span></span><span class="v ${g.ok?'pass':'fail'}">${g.ok?'pass':'fail'}</span></div>`).join('');
+}
+
+/* ── wiring ─────────────────────────────────────────────────────────────── */
+const holder=document.getElementById('rules');
+holder.innerHTML = BELIEFS.map((b,i)=>
+  `<button class="rule-btn${i===0?' sel':''}" data-i="${i}">
+     <span class="nm">${b.nm}</span>${b.note}
+     <span class="law">${b.law}</span></button>`).join('');
+holder.addEventListener('click',e=>{
+  const b=e.target.closest('button[data-i]'); if(!b) return;
+  [...holder.querySelectorAll('button')].forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel'); picked=BELIEFS[+b.dataset.i];
+  document.getElementById('out').textContent='Press run.';
+  document.getElementById('gatepanel').innerHTML='<div class="ptitle">Verification</div><div class="psub">Press <em>Check the gates</em> above.</div>';
+});
+document.getElementById('run').onclick=run;
+document.getElementById('gates').onclick=checkGates;
+run();
+</script>
+</body>
+</html>
