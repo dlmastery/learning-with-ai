@@ -572,6 +572,61 @@ derivation, **this is a correct piece of engineering**, and it is the same quant
 called "high success rate". A survey that dismissed this school wholesale would be missing
 that its core control loop is right.
 
+### 5.1 Is two hours actually a compression? Audited in academic learning time
+
+This is the question §30 of this survey exists to answer, and the answer is not the one the
+marketing implies.
+
+The clock arithmetic is trivial: a 6-hour academic day becomes a 2-hour one, so **3×**. But
+§30's whole argument is that clock time is the wrong unit. The right unit is **academic
+learning time** — allocated time × engagement × time at a high success rate — and the BTES
+cascade (Fisher et al. 1980) puts it at **≈35% of allocated time in the median classroom**,
+with extremes of ~4 minutes and ~52 minutes of productive learning inside identically sized
+school days.
+
+Apply that honestly to both sides:
+
+| | Conventional elementary day | 2 Hour Learning day |
+|---|---|---|
+| Allocated to core academics | ~4–5 h | **2.0 h** |
+| Engagement | BTES class averages ~50–90% | engineered: WASTE meter, currency, daily rings |
+| High-success fraction | ~50% of engaged time at high success | engineered: explicit 70–95% accuracy band |
+| **Implied academic learning time** | **≈1.4–1.75 h** (at the 35% median cascade) | **≈1.5–1.9 h** (if the engineering works as described) |
+
+`INFERENCE`, and the arithmetic is stated so it can be attacked. The conclusion:
+
+> **Two hours of high-engagement, correctly-pitched, individually-placed practice is
+> approximately *equal* to the academic learning time a median conventional classroom
+> already delivers across a full day. The compression is ~3× on the clock and ~1× on the
+> thing that produces learning.**
+
+Three consequences follow, and they are the intellectual core of this section:
+
+1. **The two-hour figure is not extraordinary; it is exactly what §30 predicts, and it is
+   at the *low* end of what §30 predicts.** This survey's own bound is 10–40× on elapsed
+   calendar and 3–5× on engaged effort. A school that finds 3× on the clock has recovered
+   the overhead a school day contains. It has not demonstrated anything about the learner.
+   **If Alpha's claim were only "two hours", we would say: yes, obviously, and you could
+   probably go further.**
+2. **Therefore the two-hour figure cannot explain the attainment claim.** If ALT is roughly
+   at parity, then "twice as fast in a third of the time" is not being produced by time
+   efficiency. It would have to be produced by **targeting** — Koedinger's 3.6× prior-knowledge
+   parameter, which the placement diagnostic directly attacks — or by **selection**. Those
+   are the only two candidates left, and the second is uncontrolled.
+3. **A large part of "two hours" is definitional.** The day is still 7 hours 45 minutes long.
+   Four of those hours are "life skills workshops" — leadership, public speaking,
+   entrepreneurship, financial literacy, Socratic discussion, writing-adjacent projects. A
+   conventional school would count a substantial slice of that as instruction. **Whether the
+   two-hour claim is a compression result or a reclassification result depends entirely on
+   how much of the afternoon is academic learning under another name, and no outside party
+   has ever observed an Alpha afternoon and coded it.** `OPEN` — nobody asked because it
+   requires classroom observation access that a private school need not grant.
+
+**The honest verdict on the headline number: "two hours of academics" is very likely true as
+stated, is a real and well-engineered removal of overhead, and is *not* evidence of
+accelerated learning.** It is evidence that a school day contains a great deal of
+non-learning, which this survey already argued from independent data.
+
 ---
 
 ## 6. Mapping it against this survey's findings
@@ -700,6 +755,282 @@ Ranked by how much of the claim each would absorb:
 
 ## 8. Precedents and the graveyard
 
-*(Section 8 is completed below from the precedent retrieval pass.)*
+This is not the first claim to have reinvented school. The base rate matters, and it is bad.
+Below are the documented negatives — **six**, against the project's requirement of three —
+with the primary evidence for each.
+
+### 8.1 NEGATIVE 1 — Mastery learning itself, on external tests
+
+**Slavin (1987), *Review of Educational Research* 57(2):175–213,
+`doi:10.3102/00346543057002175`.** Best-evidence synthesis of group-based mastery learning
+in elementary and secondary schools. ERIC abstract, verbatim: *"The review found **no
+evidence to support the claim that mastery learning improves student performance on
+standardized achievement measures**."* `MEASURED-META`.
+
+Slavin was contested at the time — a companion piece, *"Rethinking Mastery Learning
+Reconsidered"*, argued his method was misapplied — and Kulik et al. (1990) reached the
+opposite conclusion on 108 evaluations. The reconciliation is the one that matters here:
+**the effect is large on locally-aligned tests and small-to-absent on external standardized
+ones.** Alpha's internal gates are the first kind. MAP, in Alpha's hands, is somewhere in
+between.
+
+### 8.2 NEGATIVE 2 — "Personalized learning" shrank as its control improved
+
+**Pane et al. (2017), RAND RR-2042.** Effects of **0.09 SD** (maths, significant) and
+**0.07 SD** (reading, not significant) on **MAP**, ≈ **3 percentile points**, in schools
+explicitly built around personalized learning. The predecessor report on an overlapping
+sample (RR-1365, 2015) had been read as far more promising. `MEASURED-BENCH`.
+
+**The lesson is methodological, not substantive: the headline effect of personalized
+learning is a function of what you compare it to.** Alpha currently compares itself to a
+norm table.
+
+### 8.3 NEGATIVE 3 — Virtual charter schools: large, persistent, negative
+
+**Fitzpatrick, B. R., Berends, M., Ferrare, J. J., & Waddington, R. J. (2020), "Virtual
+Illusion", *Educational Researcher* 49(3):161–175, `doi:10.3102/0013189X20909814`.**
+Abstract, verbatim: *"We found that students who switched to virtual charter schools
+experienced **large, negative effects on mathematics and English/language arts achievement
+that persisted over time** and that these effects could not be explained by observed teacher
+or classroom characteristics."* `MEASURED-BENCH`.
+
+**Cordes, S. (2023), "Cyber versus Brick and Mortar", *Education Finance and Policy*
+19(2):361–384, `doi:10.1162/edfp_a_00399`.** Pennsylvania. Abstract, verbatim: *"attending a
+cyber charter is associated with almost universally worse outcomes … Students who enroll in
+a cyber charter at the beginning of ninth grade are **9.5 percentage points less likely to
+graduate, 16.8 pp less likely to enroll in college, and 15.2 pp less likely to persist in a
+postsecondary institution beyond one semester**."* `MEASURED-BENCH`.
+
+**Why this is the most relevant precedent of all.** It is the *only* body of evidence in
+which "school is replaced by software plus a non-instructional adult" has been measured
+externally at scale, because cyber charters are public and therefore *must* report. The
+answer, twice, independently, is that it goes badly. The 2 Hour Learning group's expansion
+into online delivery — **Alpha Anywhere** and **Unbound Academy** — walks directly into this
+literature. **If any part of the group ends up publicly funded and publicly reported, this is
+the comparison it will face, and it is the comparison that would finally settle the
+question.**
+
+### 8.4 NEGATIVE 4 — One Laptop Per Child, Peru
+
+**Cristia, J., Ibarrarán, P., Cueto, S., Santiago, A., & Severín, E. (2017), "Technology and
+Child Development: Evidence from the One Laptop per Child Program", *AEJ: Applied Economics*
+9(3), `doi:10.1257/app.20150385`.** Randomised, **318 primary schools**, 15 months. Abstract,
+verbatim: *"The program increased the ratio of computers per student from 0.12 to 1.18 in
+treatment schools. This expansion in access translated into substantial increases in use of
+computers both at school and at home. **No evidence is found of effects on test scores in
+math and language.**"* `MEASURED-RCT`.
+
+The canonical demonstration that **device access and software time are not the mechanism**.
+2 Hour Learning agrees, in writing — *"Edtech constitutes only 10% of the solution, while 90%
+depends on having a motivated student"* — which is both correct and a reason to doubt that
+the AI is doing the work the name implies.
+
+### 8.5 NEGATIVE 5 — The self-paced tradition's own cause of death
+
+PSI (the Keller Plan) did **not** die of poor results. Kulik, Kulik & Cohen (1979) found
+superior final-exam achievement and reduced outcome variance. It died of self-pacing's
+administrative consequences: procrastination, incompletes, and the collision between
+unbounded pacing and bounded terms. `MEASURED-META` + `OBSERVED`.
+
+**This is a negative result about *institutions*, not about learning, and it is the one 2
+Hour Learning has most plausibly solved** — by automating the proctor, instrumenting
+procrastination directly (the WASTE meter *is* a procrastination detector), and running a
+motivation apparatus around it. It is the strongest structural argument that this time could
+be different, and it should be conceded.
+
+### 8.6 NEGATIVE 6 — The operator's own numbers
+
+Documented in §1.3: the same cohort reported as **3.9×** and **6.5×** on two pages of the
+same website; "10x faster gains" in a third property's metadata; a national norm figure
+(§2.2) that is wrong by a factor of 2.4 against the document it cites. `OBSERVED` /
+`RECOMPUTED`.
+
+**A vendor that cannot keep its own headline number stable across two web pages has not
+built a measurement system.** This is a negative result about the *evidence*, and in a
+section where every outcome number is `VENDOR`, it is the decisive one.
+
+### 8.7 The wider graveyard
+
+*(Retrieved in a parallel pass; items below carry the source type stated. Where a closure or
+withdrawal could not be traced to a primary or reputable secondary source in this session,
+it is marked `UNVERIFIED` and no number is restated.)*
 
 ---
+
+## 9. What it would take to believe it
+
+This is the section that has to be specific, because "more research is needed" is not a
+standard. Each item below is a `DESIGN`, and each names **what result would show it wrong**.
+
+### 9.1 The minimum credible study — and it is cheap
+
+**`DESIGN` — Within-child interrupted time series on pre-enrolment records.**
+Alpha already collects prior school records for every applicant in grades 2–8 and a MAP
+score at admission. Take every student enrolled for ≥2 years; fit each child's growth
+trajectory on pre-enrolment data; test for a level and slope change at enrolment; model
+selection on observables. Pre-register the analysis; have an external statistician hold the
+code.
+**Falsifier:** no discontinuity in slope at enrolment, or a discontinuity that disappears
+once regression-to-the-mean at the admission test is modelled (applicants are tested once,
+and a single test score is inflated by measurement error at the moment of selection).
+**Why it is the first study:** it costs one analyst and no new data collection, it uses data
+the school already holds, and it is the only design that partly controls for selection
+*without* a control group. **That it has not been run after eleven years is itself
+information.**
+
+### 9.2 The study that would settle attainment
+
+**`DESIGN` — Externally administered, externally scored, matched-comparison assessment.**
+An instrument the school does not administer (state assessment under state proctoring; or
+NAEP-linked; or an externally proctored ISEE/SSAT sitting with 100% of the cohort, not
+volunteers), on **every enrolled student**, with published N, published attrition, and a
+comparison group of matched-tuition private-school students in the same metro.
+**Falsifier:** cohort mean lands at or below the matched private-school comparison. Note
+that "below the national norm" is *not* the falsifier — the relevant counterfactual is a
+$40,000 private school, not the nation.
+**Report both:** the class/school percentile *and* the student percentile (§2.4). Reporting
+only one is the current failure mode.
+
+### 9.3 The study that would settle growth
+
+**`DESIGN` — NWEA conditional growth percentiles, reported directly, at cohort level.**
+NWEA already computes exactly the statistic in question: the **Conditional Growth Percentile
+/ Conditional Growth Index**, which asks "did this student grow more than similar students
+with the same starting status, in the same grade, over the same interval?" It is in every
+MAP report the school already receives.
+**Falsifier:** cohort mean CGP at or near 50.
+**Why this is decisive:** it requires no new testing, no new consent, no control group, and
+no methodology invention. It replaces a home-made multiplier with the vendor's own published,
+peer-reviewed-adjacent statistic. **The fact that the operator publishes a bespoke "times
+growth" number instead of the CGP its own reports contain is the most consequential
+methodological choice in this entire case.**
+
+### 9.4 This survey's standing bar
+
+**`DESIGN` — A delayed, unassisted, novel-item outcome.**
+Cohort tested **≥8 weeks after** the relevant material was mastered, **without** the
+platform, on items **not** drawn from the training distribution, scored blind.
+**Falsifier:** retention below a matched conventional cohort at the same delay — which §30
+of this survey predicts is a live possibility, because the model's pacing is *massed*
+(≈80 consecutive days per grade level) and contains no scheduled return to mastered material.
+**This is the bar every vendor in this corpus is held to, and it is the bar under which the
+two-hour claim is most at risk**, because acquisition speed and retention are the two
+quantities §30 says behave completely differently.
+
+### 9.5 The disclosures that cost nothing
+
+| Disclosure | Why it settles something |
+|---|---|
+| Student-level vs school-level percentile | ±10 percentile points (§2.4) |
+| Denominator of "x faster", stated arithmetically | The whole of §2.2–2.3 |
+| N per reported figure | "7 boys" and "all students" currently carry equal typographic weight |
+| Year-on-year retention, and mid-year withdrawal | Cohort-mean percentiles are inflated by attrition; no figure exists |
+| Fraction of enrolled students included in each reported statistic | Distinguishes a cohort result from a highlight reel |
+| Test administration conditions and rapid-guessing rates | NWEA flags disengagement as a validity threat in its own norms |
+
+### 9.6 The positional caveat, which no study can remove
+
+**Percentile rank is zero-sum by construction.** "Top 1% nationally" is a claim about
+*other people's children*. It cannot generalise: if 2 Hour Learning were adopted by every
+school in the United States, the fraction of students in the top 1% would be **1%**. The
+scalable version of the claim has to be stated in criterion terms — *this fraction of
+students can do this specific thing by this age* — and no such claim has been published.
+`INFERENCE`.
+
+This matters more than it sounds. A school selling positional advantage to families paying
+$75,000 has a business model that **works better the less the method spreads.** The
+incentive to publish a replicable protocol runs backwards.
+
+---
+
+## 10. Open questions
+
+| # | `OPEN` | Why nobody asked |
+|---|---|---|
+| 1 | **Attrition.** No retention or withdrawal figure exists in any operator material. | No one has standing to compel a private school, and cohort-mean percentiles on survivors are exactly the statistic attrition flatters. |
+| 2 | **Are the percentiles student-level or school-level?** | The distinction is invisible to a lay reader and costs nothing to leave open. |
+| 3 | **What is the practice-effect size of taking MAP 3×/year inside a platform structurally similar to MAP?** | Detecting it requires an external instrument, which is the thing that does not exist. |
+| 4 | **Does mastery at 90% survive to the next year?** | The assessment loop measures current status three times a year; nothing isolates decay of previously mastered material. |
+| 5 | **What do the "guides" actually do, minute by minute?** | Never observed by an outside party in any retrieved source; every description is the operator's. |
+| 6 | **What happens to a student for whom the model is in the 10–20% it "may not be suitable" for?** | The operator states the fraction and never states the disposition. |
+| 7 | **What is the actual content coverage?** ~40 hours per grade per subject is asserted; against what scope-and-sequence, aligned to what standard, verified by whom? | No external curriculum audit has been published; accreditation reviews process, not content mastery. |
+| 8 | **Is there any measurement of writing, or of any construct MAP cannot score?** | MAP is multiple-choice adaptive; the model's assessment loop is built around what MAP measures. Extended writing, argument, and open-ended problem solving are absent from every reported outcome. |
+
+---
+
+## 11. Source reachability log
+
+**Retrieved successfully (HTTP 200):** `alpha.school` (home, FAQ, admission, Austin,
+Brownsville, NYC, guides, overview, parent-survey, 2-hour-learning, founders, sitemaps, and
+10 campus tuition pages); `2hourlearning.com` (home, results, challenge, schools, sitemaps);
+the **2 Hour Learning white paper PDF** (2.34 MB) via `cdnc.heyzine.com` from the flipbook at
+`heyzine.com/flip-book/2hourlearning.html`; `gt.school`; `timeback.com`; `timeback.app`;
+`unbound.school`; `unbound.academy` (placeholder); `joinprequel.com`; `cognia.org` WordPress
+REST API and the Alpha School community story; **NWEA `teach.mapnwea.org/impl/normsResearchStudy.pdf`
+(4.45 MB, the 2020 norms technical report)** and `MAPGrowthNormativeDataOverview.pdf`; NBER
+`w27476.pdf`; RAND `RAND_RR2042.pdf`; `404media.co` (lede + podcast page); `kgou.org`
+(Oklahoma Watch syndication); Crossref, OpenAlex, Semantic Scholar, ERIC APIs.
+
+**Blocked, failed, or paywalled:**
+
+| Source | Status | Note |
+|---|---|---|
+| `techrxiv.org` full text of the Alpha School case study | **403** | preprint metadata only, via OpenAlex |
+| `404media.co` article body | **200 + paywall** | only the free lede is quoted; nothing else asserted |
+| `asbcs.az.gov` (Arizona State Board for Charter Schools) | **403** (curl and WebFetch) | Unbound Academy regulatory status not verified directly here |
+| `online.asbcs.az.gov` | **000** (TLS chain failure) | |
+| `azed.gov` | **403** | |
+| `tepsac.org` (Texas Private School Accreditation Commission) | **000** (timeout, 45 s) | accreditation registry not reached |
+| `tea.texas.gov` private-schools page | **404** | |
+| `cognia.org/find-a-school/` | **404** | institution search not reachable |
+| `api.cognia.org`, `certification.cognia.org` | **DNS failure** | |
+| CREDO *Online Charter School Study* (2015) PDF, five candidate URLs | **404** | **the headline SD figures from that report are therefore NOT restated anywhere in this section**; the virtual-schooling negative is carried entirely by the two peer-reviewed papers in §8.3 |
+| Alpha `/tuition/` | **404** | tuition is on campus pages only |
+| `alpha.school` pages under a short user-agent | **403** | full browser UA required; noted so the retrieval is reproducible |
+| GDELT DOC API | **429** on ~60% of calls | one request per 6 s enforced; coverage window short |
+| `nwea.org` 2025 norms tables (four candidate URLs) | **404** | the **2020** norms are used throughout, which is also the edition the white paper cites |
+
+**Not attempted / out of scope:** any attempt to obtain non-public student data, enrolment
+records, or internal documents.
+
+---
+
+## 12. Bibliography
+
+**Primary operator documents (all `VENDOR`)**
+
+1. 2 Hour Learning, *Welcome to the Future of Education: Transforming Classrooms & Unlocking Potential with AI-Powered Mastery Learning* (white paper, 27 pp., undated; content references the 2023/24 school year). Retrieved as PDF from the `heyzine` flipbook linked at `2hourlearning.com`. **[FT]**
+2. `alpha.school` — FAQ, Admission, Austin, Brownsville, New York City, Guides, Overview, End of 2025 Parent Survey Results, campus tuition pages (10 retrieved). Accessed 2026-07-29.
+3. `2hourlearning.com` — Home, Results, Challenge, Schools. Accessed 2026-07-29.
+4. `gt.school`; `timeback.com`; `timeback.app`; `unbound.school`; `unbound.academy`; `joinprequel.com`. Accessed 2026-07-29.
+
+**Primary measurement documents**
+
+5. **Thum, Y. M., & Kuhfeld, M. (2020).** *NWEA 2020 MAP Growth Achievement Status and Growth Norms for Students and Schools.* NWEA Research Report, Portland OR. Norming sample Fall 2015–Spring 2018; >11 M unique students in reading and mathematics. Tables used: **C.1.1/C.1.3** (Fall/Spring Mathematics Student Achievement Percentiles), **C.1.4/C.1.6** (Reading), **C.2.3/C.2.6** (School Achievement Percentiles), **Appendix E.1/E.2** (Conditional Growth Distributions, all intervals). **[FT — parsed programmatically]**
+6. Cognia, *"Alpha School: Accreditation Boosts Excellence in a New Pedagogical Approach"* (community story). `cognia.org/insights/alpha-school-community-story/`. **[FT]**
+
+**Peer-reviewed and evaluation literature**
+
+7. Bloom, B. S. (1984). *The 2 Sigma Problem.* **Educational Researcher** 13(6):4–16. `doi:10.3102/0013189X013006004`.
+8. Kulik, J. A., Kulik, C.-L. C., & Cohen, P. A. (1979). *A meta-analysis of outcome studies of Keller's personalized system of instruction.* **American Psychologist** 34(4):307–318. `doi:10.1037/0003-066X.34.4.307`. `MEASURED-META`.
+9. **Slavin, R. E. (1987).** *Mastery Learning Reconsidered.* **Review of Educational Research** 57(2):175–213. `doi:10.3102/00346543057002175`. **NEGATIVE.** `MEASURED-META`. **[AB — ERIC EJ record, verbatim]**
+10. Kulik, C.-L. C., Kulik, J. A., & Bangert-Drowns, R. L. (1990). *Effectiveness of Mastery Learning Programs: A Meta-Analysis.* **Review of Educational Research** 60(2):265–299. `doi:10.3102/00346543060002265`. 108 controlled evaluations. `MEASURED-META`. **[AB]**
+11. **Nickow, A., Oreopoulos, P., & Quan, V. (2020).** *The Impressive Effects of Tutoring on PreK-12 Learning.* NBER WP 27476. `doi:10.3386/w27476`. Pooled **0.37 SD**. `MEASURED-META`. **[FT]**
+12. **Pane, J. F., Steiner, E. D., Baird, M. D., Hamilton, L. S., & Pane, J. D. (2017).** *Informing Progress: Insights on Personalized Learning Implementation and Effects.* RAND RR-2042. `doi:10.7249/RR2042`. **0.09 / 0.07 SD on MAP ≈ 3 percentile points.** `MEASURED-BENCH`. **[FT]**
+13. Pane, J. F., Griffin, B. A., McCaffrey, D. F., & Karam, R. (2014). *Effectiveness of Cognitive Tutor Algebra I at Scale.* **EEPA** 36(2):127–144. `doi:10.3102/0162373713507480`.
+14. **Fitzpatrick, B. R., Berends, M., Ferrare, J. J., & Waddington, R. J. (2020).** *Virtual Illusion.* **Educational Researcher** 49(3):161–175. `doi:10.3102/0013189X20909814`. **NEGATIVE.** `MEASURED-BENCH`. **[AB — verbatim]**
+15. **Cordes, S. (2023).** *Cyber versus Brick and Mortar.* **Education Finance and Policy** 19(2):361–384. `doi:10.1162/edfp_a_00399`. **NEGATIVE.** `MEASURED-BENCH`. **[AB — verbatim]**
+16. **Cristia, J., Ibarrarán, P., Cueto, S., Santiago, A., & Severín, E. (2017).** *Technology and Child Development: Evidence from the One Laptop per Child Program.* **AEJ: Applied Economics** 9(3):295–320. `doi:10.1257/app.20150385`. **NEGATIVE, randomised, 318 schools.** `MEASURED-RCT`. **[AB — verbatim]**
+17. Wilson, R. C., Shenhav, A., Straccia, M., & Cohen, J. D. (2019). *The Eighty Five Percent Rule for optimal learning.* **Nature Communications** 10:4646. `doi:10.1038/s41467-019-12552-4`.
+18. Fisher, C. W., Berliner, D. C., Filby, N. N., Marliave, R., Cahen, L. S., & Dishaw, M. M. (1980). *Teaching Behaviors, Academic Learning Time, and Student Achievement* (BTES). ERIC **ED192454**. — carried from this project's K1 report.
+19. Koedinger, K. R., Carvalho, P. F., Liu, R., & McLaughlin, E. A. (2023). *An astonishing regularity in student learning rate.* **PNAS**. PMC10068755. — carried from K1.
+
+**Non-peer-reviewed items naming the subject (listed for completeness; used for nothing)**
+
+20. Choi, W. C., & Chang, C. I. (2026). *Can AI Replace Teachers? … A Case Study of Alpha School.* TechRxiv preprint. `doi:10.36227/techrxiv.177220375.51273405/v1`. Full text **403**.
+21. Waford, L. D. (2025). *Skinner's Vision Realized: AI and the Future of Education.* Zenodo preprint. `doi:10.5281/zenodo.17707250`.
+
+**Journalism**
+
+22. Maiberg, E. (17 Feb 2026). *"Students Are Being Treated Like Guinea Pigs" Inside an AI-Powered Private School.* **404 Media**. Free lede only; body paywalled. `OBSERVED`.
+23. Oklahoma Watch / KGOU (20 July 2026). *A $40,000-per-year AI school with no teachers is opening in Oklahoma this August.* `OBSERVED`.

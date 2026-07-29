@@ -1,0 +1,930 @@
+---
+title: "The Explanation Atlas — grading the best explanations in the world against a fidelity standard nobody has applied"
+wave: N
+date_researched: 2026-07-29
+sources_count: 58
+---
+
+# The Explanation Atlas
+
+> *"There is some YouTube creator-educator in every field who is like this — zero to hero
+> in a few hours. The point is researching the best-of-best in the field or chapter or
+> module from YouTube, and deciding a plan to deliver the best way."*
+
+The instinct is correct and the trap is real, and this section is about the distance
+between them. It resolves in a specific place: **the candidate explanations are public,
+free, and enormous in number; the grading standard exists (§29); the outcome data does
+not exist and never has.** The first two are assets. The third is the whole opportunity.
+
+---
+
+## §0 — Lead with what becomes possible
+
+Three things are true simultaneously, and holding all three is the section's job.
+
+1. **The corpus is already built.** Several thousand hours of the best explanation
+   humans have produced, for essentially every concept in the undergraduate canon, sitting
+   in public at zero marginal cost. Nothing in the pre-AI world had this.
+2. **Every number attached to it measures the wrong variable.** Views, likes, subscribers,
+   average view duration, audience retention — all of these live on the *felt* axis, which
+   §01 establishes moves at **d ≈ 0.48 while knowledge moves zero**. `MEASURED-META`,
+   §01/§22. And this is not merely an inference from the general finding: it has been
+   measured directly on this exact corpus (§1.4 below).
+3. **The grading predicates exist and require no learners.** §29's four fidelity
+   invariants plus its two failure modes can be evaluated against a transcript. If those
+   mechanical grades predict delayed unassisted transfer, you can select — and eventually
+   generate — explanations without running a trial each time.
+
+**Step 3 is the compounding part and it is also the falsifier.** If mechanically graded
+features do not predict delayed transfer, the atlas is a taste ranking with extra steps
+and should not be built.
+
+### The observation this section is organised around
+
+> **YouTube has run the largest uncontrolled experiment in explanation in human history —
+> billions of hours — and instrumented entirely the wrong variable.**
+
+Nobody knows which explanation of eigenvectors, or entropy, or the limit definition,
+produces the best **delayed unassisted transfer**. This section spent its budget
+establishing that this sentence is literally true rather than rhetorically true, and it
+survives (§1.5, §5's falsifier).
+
+### A standing rule for this section
+
+**Creator and platform metrics are `OBSERVED` at best and are never evidence of learning.**
+This is restated at every point where a platform number appears, because the entire failure
+mode this section guards against is a reader carrying a view count forward as if it meant
+something about teaching. 211,453 views tells you a video is watchable. It tells you
+nothing about whether it teaches.
+
+### Original measurement in this section
+
+Unusually for this survey, §3 and §4 report **measurements taken by this survey rather than
+retrieved from a literature.** They are labelled `OBSERVED (own harvest, 2026-07-29)` with
+n stated, and the extraction method is described well enough to be re-run. They are
+observational and popularity-biased, and §3.6 says exactly how.
+
+---
+
+## §1 — What is actually known about explanation quality
+
+The brief for this section predicted this literature would be nearly empty. **That
+prediction was wrong, and the correction is the more useful result.** The literature is
+large, decades old, and filed under a name nobody searching for "explanation quality"
+would find: **refutation text**.
+
+### 1.1 The head-to-head studies exist
+
+These take two or more different explanations of the *same* concept, randomise learners,
+and measure a learning outcome.
+
+| Study | Design | Outcome | Delay |
+|---|---|---|---|
+| **Muller, Bewes, Sharma & Reimann (2008)**, *J. Computer Assisted Learning* 24(2), DOI `10.1111/j.1365-2729.2007.00248.x` | **N = 364** first-year physics students randomised to **four different explanations of the same content** (Newton's First and Second Laws): Exposition / Extended Exposition / Refutation / Dialogue | Mechanics conceptual inventory items. **d = 0.79** (Refutation vs Exposition), **d = 0.83** (Dialogue vs Exposition). Low prior knowledge benefited most; high prior knowledge **not** disadvantaged | **None.** Pre/post, same session |
+| **Kulgemeyer (2020)**, *Research in Science Education*, DOI `10.1007/s11165-018-9787-7` | Two purpose-built explanation videos, **same topic, both scientifically correct, same learning opportunities** — one high explaining quality, one low. **n = 90 vs 86** | Declarative knowledge **d = 0.42, p = 0.007**. Conceptual knowledge measured but not reported as significant — treat as a **partial null** | **None** |
+| **Peltier, Heddy & Peltier (2020)**, *Annals of Dyslexia* | **n = 97** preservice teachers randomised to a researcher-written refutation text **or an actual published document** — the International Dyslexia Association's "Dyslexia Basics" fact sheet | **η² = 0.33** posttest; **η² = 0.175** delayed posttest (n = 75 retained) | Yes, interval not retrieved |
+
+All `MEASURED-RCT`.
+
+Muller is the load-bearing one for this section, and not only for its effect size. **The
+person who ran it is Derek Muller, who then founded Veritasium.** The single most
+successful science explainer on the platform built his format out of a randomised trial he
+ran himself. That is the strongest existing bridge between the literature and the corpus,
+and §5 returns to it.
+
+### 1.2 The meta-analytic picture
+
+**Schroeder & Kucera (2022)**, "Refutation Text Facilitates Learning: A Meta-Analysis of
+Between-Subjects Experiments," *Educational Psychology Review* 34, DOI
+`10.1007/s10648-021-09656-z`. `MEASURED-META`.
+
+- Overall **g = 0.41, 95% CI [0.30, 0.51], k = 44 independent comparisons, n = 3,869**.
+- Against **expository text on the same topic specifically: k = 30, g = 0.36**.
+- Heterogeneity **Q(43) = 109.59, p < .001, I² = 60.76**.
+- Publication bias: Egger t(42) = 0.55, one-tailed p = .29; **trim-and-fill imputed 10
+  studies and adjusted the estimate down to g = 0.28 [0.16, 0.39]**; fail-safe N = 1,625.
+
+Quote the adjusted **g = 0.28**, not the headline 0.41, and say which.
+
+**Danielson, Jacobson, Patall & Sinatra (2024)**, *Educational Psychologist*, DOI
+`10.1080/00461520.2024.2365628` — pre-registered; **71 articles (53 published, 18
+unpublished), 76 studies, 111 samples, 294 effect sizes, 26 moderators**; consistent
+significant advantage for refutation, and **"moderators neither enhanced nor diminished"**
+it. The overall g **could not be retrieved** (paywalled, no OA copy, no preprint located).
+Do not quote a number for this one.
+
+**Guzzetti (2000)**, *Reading & Writing Quarterly*, states two things worth carrying:
+*"only refutational text shows long-term effects"* and *"students prefer refutational
+text."* A preference/learning statement made in 2000, in the same sentence pair, in the
+one place where they happen to agree. They usually do not.
+
+### 1.3 Delay is where the evidence thins to nothing
+
+This is the finding that matters most for the atlas, because delayed unassisted transfer
+is the atlas's outcome variable.
+
+Schroeder & Kucera coded delay and found it **did not moderate**: same day k = 17
+(g = 0.39); 2 days–1 week k = 11 (g = 0.38); 8 days–1 month k = 13 (g = 0.43); **more than
+one month k = 2 (g = 0.56)**. **Qb(4) = 0.48, p = .98.** `MEASURED-META`.
+
+Read the k values, not the g values. **Exactly two studies in a 44-comparison meta-analysis
+looked past one month**, and both were on light and heat/temperature. The non-moderation
+result is real but it rests on almost no long-delay data.
+
+Worse for our purposes: **Schroeder & Kucera did not code transfer at all.** They coded item
+*format* (multiple choice, open-ended, true/false, Likert), which did not moderate either
+(Qb(5) = 3.76, p = .58). The multimedia-principle meta-analyses that *do* separate transfer
+from retention — Ginns et al. on personalisation, Rey et al. on segmenting — test transfer
+**immediately**.
+
+**Rittle-Johnson, Loehr & Durkin (2017)**, *ZDM*, DOI `10.1007/s11858-017-0834-z`, states
+the gap plainly for the adjacent self-explanation literature: gains appear *"when assessed
+immediately after the intervention,"* but *"evidence that self-explanation reliably promotes
+learning within a classroom context or retention of knowledge over a delay is much more
+limited."*
+
+> **`OPEN` — nobody has measured delayed unassisted transfer as a function of which
+> explanation you read.** *Why nobody asked:* the refutation-text literature is a
+> conceptual-change literature. Its research question is whether a misconception was
+> displaced, which is naturally tested immediately and with recognition items, because
+> that is what conceptual-change theory predicts about. Nobody framed the question as
+> *ranking explanations*, so nobody needed the outcome that ranking requires. The
+> instruments exist; the framing did not.
+
+### 1.4 Real published explanations: rated, never tested
+
+Here the brief's prediction *was* right, and precisely. The field does study real published
+explanations — and it stops at rating them.
+
+- **Kulgemeyer & Peters (2016)**, "Exploring the explaining quality of physics online
+  explanatory videos," *European Journal of Physics* 37(6), DOI
+  `10.1088/0143-0807/37/6/065705`. Rates real YouTube videos against a rubric. **No
+  learning outcome.**
+- **Bitzenbauer et al. (2023)**, "Exploring the Relationship Between Surface Features and
+  Explaining Quality of YouTube Explanatory Videos," *Int. J. Science and Mathematics
+  Education*, DOI `10.1007/s10763-022-10351-w`. **N = 60 real YouTube videos** on quantum
+  entanglement and tunnelling, coded for explaining quality, correlated against YouTube's
+  public metrics. **No learners tested.** The abstract states the result this section needs,
+  verbatim:
+
+  > *"the surface features provided by YouTube (e.g. number of views or likes) do not seem
+  > to be suitable indicators of the videos' explaining quality. Instead, the number of
+  > content-related comments was found to be statistically significantly correlated with
+  > the explaining quality."*
+
+  `MEASURED-BENCH`. **This is the direct measurement of the collision.** It is not a
+  general argument about felt-versus-real learning applied to YouTube by analogy — someone
+  graded sixty real videos and checked. Views and likes did not track quality. Note
+  carefully what the positive result is and is not: *content-related comment count*
+  correlates with a **rubric score for explaining quality**, not with any learning outcome.
+  It is the best public signal anyone has found and it is still two steps from the thing
+  we care about.
+- **Abed & Barzilai (2023)**, *J. Computer Assisted Learning*. Eighth-graders rank six real
+  YouTube climate-change videos. The outcome is **students' evaluation criteria and quality
+  judgments** — the preference-for-learning substitution, executed deliberately, as the
+  study's actual research question.
+- **Mikk (2002)** (ERIC, conference paper, no DOI, not peer-reviewed) reports an
+  experimental comparison of **two Estonian textbooks** on comprehension, acquisition,
+  information gain and persistence of knowledge. **This is the only textbook-versus-textbook
+  learning experiment located, and it is grey literature.** `UNVERIFIED`.
+
+So the strict version of the question — *take two real, already-published explanations of
+the same concept and test which one teaches better* — has, as far as this survey can
+establish, **one journal-quality instance (Peltier et al. 2020, against a dyslexia fact
+sheet) and one grey-literature instance (Mikk 2002)**, in the entire literature.
+
+### 1.5 The expert blind spot literature does not measure learning
+
+This is a clean, locatable gap and it is worth stating exactly, because the phrase is
+often invoked as though it carried outcome evidence.
+
+- **Nathan & Petrosino (2003)**, "Expert Blind Spot Among Preservice Teachers," *AERJ*
+  40(4), DOI `10.3102/00028312040004905`, **N = 48**. The outcome variable is preservice
+  teachers' **judgments** of student problem difficulty, checked against known student
+  performance patterns. **No student learning outcome. No explanation is delivered to any
+  learner.**
+- **Nathan & Koedinger (2000)**, *Cognition and Instruction* 18(2), DOI
+  `10.1207/s1532690xci1802_03`, and *JRME* 31(2), DOI `10.2307/749750`. Outcome:
+  **teacher belief rankings.**
+
+A terminology warning that matters for anyone reading downstream: **the "reversal effect"
+in this literature is a reversal of the expected *difficulty ordering*** — students solve
+story problems better than the matching symbolic equations — **and is unrelated to the
+cognitive-load "expertise reversal effect"** of Kalyuga et al. Two literatures, one phrase.
+
+> **`OPEN` — nobody has closed the loop from expert misprediction to learner outcome.**
+> No study takes an expert-generated explanation and a novice-informed explanation of the
+> same concept and compares what learners actually learn from each. *Why nobody asked:*
+> the expert-blind-spot programme sits in teacher-education research, where the dependent
+> variable of interest is teacher cognition; the outcome-measurement programme sits in
+> instructional design, where the manipulation is a design principle rather than an
+> author's expertise. The two never had a reason to meet.
+
+### 1.6 And a null that undercuts the whole premise of "instructional explanation"
+
+**Wittwer & Renkl (2010)**, "How Effective are Instructional Explanations in Example-Based
+Learning? A Meta-Analytic Review," *Educational Psychology Review*, DOI
+`10.1007/s10648-010-9136-5`, **k = 21**. Verbatim: *"the benefits of instructional
+explanations for example-based learning per se are minimal"* — they help conceptual more
+than procedural knowledge, and are *"not necessarily more effective than other methods
+supporting example processing such as self-explaining."* `MEASURED-META`.
+
+Two cautions. First, **the numeric d/g could not be retrieved** (paywalled, no OA copy);
+quote the qualitative conclusion and k = 21 only. Second, **a correction to this section's
+own brief**: the 2008 paper often cited here — Wittwer & Renkl, "Why Instructional
+Explanations Often Do Not Work," *Educational Psychologist* 43(1), DOI
+`10.1080/00461520701756420` — is a **theoretical framework paper with no pooled effect
+sizes.** The meta-analysis is the 2010 one.
+
+This null is the one that should worry an atlas-builder most, and §6 treats it as a
+boundary condition rather than a refutation: it says that *being explained to* is a weak
+intervention relative to *explaining*, which is exactly what §05 and §02 of this survey
+already say (learning by teaching **g = 0.56**, robust at delay). An atlas of explanations
+is therefore an input to a loop that ends in the learner producing, not a product on its
+own. That constraint is load-bearing in the design.
+
+---
+
+## §2 — Is video instruction measured at all?
+
+Yes, once, well, and the headline number is routinely misread.
+
+### 2.1 The meta-analysis
+
+**Noetel, Griffith, Delaney, Sanders, Parker, Cruz & Lonsdale (2021)**, "Video Improves
+Learning in Higher Education: A Systematic Review," *Review of Educational Research*, DOI
+`10.3102/0034654321990713`, 333 citations. `MEASURED-META`.
+
+- Five databases, 27 keywords, **9,677 unique records**, 329 full texts screened,
+  **105 studies met inclusion**, pooled **N = 7,776** students. Randomised trials only.
+- **Swapping video for existing teaching: g = 0.28.**
+- **Adding video to existing teaching: g = 0.80.**
+
+**The g = 0.80 is a dose effect, not a medium effect.** Adding video to existing teaching
+adds instruction; the comparison is more-instruction versus less-instruction, and it would
+look similar if you added anything. The fair comparison — the one that asks whether video
+is a good way to explain — is the **swap**, and it is **g = 0.28**. Anyone quoting 0.80 as
+evidence that video teaches well is quoting the wrong row.
+
+g = 0.28 is a real, positive, modest effect. It is smaller than retrieval practice
+(g = 0.499, §01), smaller than learning by teaching (g = 0.56, §01), smaller than refutation
+text over expository text before publication-bias correction (g = 0.36, §1.2), and roughly
+equal to it after (g = 0.28). **Video is not a strong intervention. A good explanation
+delivered any way is a moderate one.**
+
+<!--AGENT2-->
+
+---
+
+## §3 — Is any YouTube-side signal behavioural rather than attitudinal?
+
+This is the section's first original contribution, and the answer is **partly yes, and it is
+much weaker than the hypothesis predicted.**
+
+The hypothesis worth testing: views, likes and subscribers are attitudinal and therefore on
+the felt axis, but **where viewers scrub backwards** is a *behaviour*, and is plausibly
+where comprehension failed. Similarly, **drop-off location** (as distinct from drop-off
+rate) is behavioural. Are either measured, and are either exposed?
+
+### 3.1 What the APIs expose — the negative result first
+
+`MEASURED-BENCH`, from the API documentation, retrieved 2026-07-29.
+
+**YouTube Data API v3** (`videos.list`, `statistics` part) exposes exactly five properties:
+`viewCount`, `likeCount`, `dislikeCount` (deprecated), `favoriteCount` (deprecated, always
+0), `commentCount`. **There is no property relating to retention, watch time, average view
+duration, replays or rewinds.** All five surviving fields are attitudinal or aggregate-count.
+
+**YouTube Analytics API** does expose exactly the two metrics we want:
+- **`audienceWatchRatio`** — the proportion of viewers watching at a given point in the
+  video, requiring the `elapsedVideoTimeRatio` dimension. This is drop-off *location*.
+- **`relativeRetentionPerformance`** — retention against similar-length videos, 0–1 scale,
+  same dimension.
+
+**And it is owner-only.** The scopes are `yt-analytics.readonly` and
+`yt-analytics-monetary.readonly`, both scoped to *"your YouTube content"*; the resource
+documentation restricts groups to content *"you have uploaded or claimed or that are linked
+to a channel that you administer."* You cannot obtain retention curves for a video you do
+not own.
+
+> **`OBSERVED` — the single most diagnostic signal YouTube computes is computed for every
+> video on the platform, shown to one person per video, and exposed to nobody else.**
+
+### 3.2 What *is* public: the replay heatmap
+
+The exception is real and, as far as this survey can establish, unexploited by the research
+literature.
+
+Fetching a watch page with an ordinary browser user-agent returns, inside the page's
+embedded JSON, a `macroMarkersListEntity` with `"markerType": "MARKER_TYPE_HEATMAP"` — the
+data behind the player's *"Most replayed"* graph. Each entry is
+`{startMillis, durationMillis, intensityScoreNormalized}`, plus a `markersDecoration`
+carrying the literal label *"Most replayed"* at the peak.
+
+This is **behavioural**. It is aggregated rewatch density. It requires no API key, no OAuth,
+and no channel ownership.
+
+`OBSERVED (own harvest, 2026-07-29)`. Extraction confirmed on 51 videos; method is a single
+`curl` with a browser user-agent plus a regular expression over the returned JSON.
+
+### 3.3 Four structural properties, measured, that constrain every use of it
+
+`OBSERVED (own harvest, 2026-07-29, n = 51 educational videos)`.
+
+**(a) It is exactly 100 buckets, always.** Bucket duration is video length ÷ 100, verified
+across lengths from 175 s to 9,500 s. So the temporal resolution *degrades linearly with
+video length*: 2.4 s per bucket for a 4-minute explainer, **30.8 s per bucket for MIT
+OpenCourseWare's 51-minute eigenvalue lecture**, and roughly 230 s per bucket for a
+6-hour compiled course. **For long-form single-take teaching — precisely the format the
+owner's proposal is about — the signal cannot localise below a four-minute window.**
+
+**(b) It is min–max normalised inside each video.** Of 51 videos, **51 had a minimum of
+exactly 0.0 and 51 had a maximum of exactly 1.0.** Not approximately — exactly, in all
+cases. **Cross-video comparison of replay amplitude is therefore impossible by
+construction.** You cannot use this to rank two explanations of the same concept against
+each other. You can only use it to locate the hardest spot *within* one explanation. This
+single property removes the most obvious application.
+
+**(c) Coverage is gated on popularity.** 51 of 60 search-returned educational videos (85%)
+exposed a heatmap. The lowest view count *with* a heatmap was **54,373**; the videos
+*without* had a median of **8,173** views. Cassie Kozyrkov's MFML Part 1 (211,453 views) and
+Part 2 (65,603) both expose heatmaps; **Part 3 (47,699 views) does not.** So the one
+non-attitudinal signal on the platform is only available where the attitudinal signal is
+already large — **popularity selection re-enters through the only door that was supposed to
+be free of it.** The 85% figure is itself popularity-biased, since the sample came from
+search results; the true coverage over all educational video is far lower.
+
+**(d) It is weak.** This is the important one. Normalised entropy of the interior replay
+distribution has a **median of 0.976** across the 51 videos (1.0 = perfectly flat), range
+0.862–0.992. The top decile of buckets holds a **median 19.5%** of interior replay mass
+against 10% under uniformity — **a 1.95× enrichment**. Half the replay mass is spread over
+**33% of the video** where uniformity would give 50%.
+
+> **The replay heatmap is a real behavioural signal with roughly a 2× signal-to-background
+> ratio. It is not a comprehension-failure detector. It is a faint tilt.**
+
+### 3.4 The decisive test: peaks do not track the concept
+
+If replay density tracked *where a concept is intrinsically hard*, then different
+explanations of the same concept should peak in the same place — because expositions of a
+canonical topic run in roughly canonical order.
+
+`OBSERVED (own harvest, 2026-07-29)`. Six concepts, 49 videos with heatmaps, peak position
+measured as percent-through-video, first and last 5% excluded to remove the restart artifact:
+
+| Concept | n | Interior peak positions | SD |
+|---|---|---|---|
+| eigenvectors | 8 | 14, 14, 32, 39, 48, 57, 67, 85 | 23.4 pp |
+| entropy | 8 | 24, 37, 45, 47, 48, 48, 82, 89 | 20.6 pp |
+| derivative / limit | 6 | 47, 49, 56, 64, 77, 85 | 14.1 pp |
+| Bayes' theorem | 9 | 10, 12, 19, 27, 53, 71, 79, 92, 95 | 32.7 pp |
+| transformers | 10 | 21, 32, 34, 56, 57, 60, 62, 66, 73, 77 | 17.7 pp |
+| Fourier transform | 8 | 29, 33, 50, 57, 62, 67, 71, 74 | 15.8 pp |
+
+- **Mean within-concept SD: 20.7 pp**
+- **Total SD across all videos: 22.6 pp**
+- **SD of a uniform distribution on [5, 95]: 26.0 pp**
+
+Knowing which concept the video is about explains roughly **16% of the variance in peak
+position** (1 − 20.7²/22.6²), and some of that is contamination — the "transformer" query
+returned electrical transformers alongside attention transformers, which are genuinely
+different topics and inflate the between-concept term.
+
+**Null result.** Replay density is **not** a property of the concept. Two readings survive
+the data and they have opposite consequences:
+
+- *(a) It is mostly noise*, in which case the signal is useless.
+- *(b) It is a property of the specific explanation rather than of the concept*, in which
+  case it is exactly the per-explanation diagnostic an atlas wants.
+
+> **`OPEN` — which of these is true is not decidable from the heatmap alone**, and the
+> discriminating experiment is cheap: instrument one cohort on one video, collect both the
+> scrub log and a delayed transfer test, and check whether individual rewind location
+> predicts individual item failure. *Why nobody asked:* the people with scrub logs are
+> platforms optimising watch time, for whom "this bit was confusing" is a retention risk to
+> be edited out rather than a diagnostic to be published; the people who want the diagnostic
+> have never had the logs.
+
+### 3.5 The confound that damages it further
+
+`OBSERVED (own harvest, 2026-07-29, n = 10 videos with ≥4 chapter timestamps)`. For each
+video, distance from the interior replay peak to the nearest chapter start, against a
+Monte-Carlo null of 2,000 random interior points per video:
+
+- Mean distance, **observed peak → nearest chapter start: 49.8 s**
+- Mean distance, **random point → nearest chapter start: 87.6 s**
+- Peaks closer to a chapter boundary than chance: **7 of 10**
+
+n = 10 is small and this should not be over-read, but the direction is unambiguous and the
+mechanism is obvious: **the chapter UI generates navigation clicks, and navigation clicks
+land in the replay data.** A chunk of what looks like "viewers went back because they were
+confused" is "viewers clicked a chapter link."
+
+This is a third `OBSERVED` negative, and it is the one that most directly damages the
+proposal to mine rewinds for comprehension failure: **the signal is contaminated by the
+navigation affordance, and the contamination scales with how well-structured the video
+is** — which is to say, it is worst precisely for the carefully-chaptered videos that the
+atlas would most want to grade.
+
+### 3.6 What §3 concludes
+
+| Signal | Nature | Public? | Diagnostic of learning? |
+|---|---|---|---|
+| Views, likes, subscribers | Attitudinal | Yes (Data API) | **No** — measured null, Bitzenbauer 2023 |
+| Comment count | Attitudinal-behavioural mix | Yes (Data API) | Only *content-related* comments, and only against a rubric, not an outcome |
+| Average view duration, retention curve | Behavioural | **No** — owner-only | Untested by anyone |
+| Drop-off *location* | Behavioural | **No** — owner-only | Untested by anyone |
+| **Replay / rewind density** | **Behavioural** | **Yes** — undocumented, page-embedded | **~2× enrichment, concept-independent, chapter-confounded, popularity-gated, 100-bucket resolution** |
+
+The honest summary: **the distinction between attitudinal and behavioural signals is real
+and worth making, it does identify one public behavioural signal nobody in the research
+literature appears to have used, and that signal is too weak and too confounded to grade
+explanations on its own.** It belongs in the atlas as a *localiser* — a hint about where
+inside a given explanation to look — and never as a ranker.
+
+---
+
+## §4 — Can a pipeline grade explanations mechanically? A prototype, and what it caught
+
+§29 supplies four fidelity invariants a legal simplification may never falsify —
+**ontology, causal sign, quantifier strength, uniqueness of mechanism** — plus two failure
+modes: **machinery presented before the obstacle it dodges**, and **a determined quantity
+presented as tunable.** §29 argues that several of these are *checkable predicates* rather
+than judgements, and singles out the quantifier prefix as *"decidable, cheap, and where the
+damage is."*
+
+This survey built the checker and ran it. `DESIGN`, with the prototype's measured results
+reported as `OBSERVED (own harvest, 2026-07-29)`.
+
+### 4.1 The corpus, and why it is that corpus
+
+Three MIT OpenCourseWare 18.06 (Linear Algebra, Gilbert Strang) lecture transcripts —
+Lecture 1 (geometry of linear equations), Lecture 21 (eigenvalues and eigenvectors),
+Lecture 22 (diagonalisation and powers of A). **1,524 sentences, 17,164 words.** Published
+by MIT under **CC BY-NC-SA**, fetched directly from `ocw.mit.edu` as PDF transcripts.
+
+The corpus is OCW rather than YouTube for a reason that turns out to be structural, and §7
+develops it: **YouTube caption endpoints now return HTTP 200 with a zero-byte body for
+unauthenticated requests.** Verified 2026-07-29 against 3Blue1Brown's Chapter 1 caption
+track across four format parameters (none, `fmt=json3`, `fmt=srv3`, `fmt=vtt`). Every one
+returned 200/0 bytes. The transcripts the pipeline needs are, on YouTube, no longer freely
+fetchable.
+
+### 4.2 What the predicates were
+
+Six checks, implemented as lexical patterns over sentence-segmented transcript:
+
+- **P1 — quantifier prefix order.** Sentences containing both a universal marker (*for
+  every/all/any, whenever, no matter what*) and an existential marker (*there is/exists, we
+  can find*), reporting the order. §29's flagship predicate.
+- **P2 — obstacle before machinery.** First-occurrence index of an obstacle marker (*the
+  problem is, can't, won't work, fails, hopeless, no way to*) versus a machinery marker
+  (*define, we introduce, the algorithm/method/trick/formula, here's the trick*).
+- **P3 — unlabelled numeric constants.** Every numeric constant with no
+  determined/fitted/arbitrary marker within a ±1-sentence window.
+- **P3b — determined-but-tunable.** Knob language (*hyperparameter, you can tune, up to
+  you*) within ±2 sentences of a determination marker.
+- **P4 — unhedged causal claim.** Causal verb with no correlational hedge in the sentence.
+- **P5 — ontology balance.** Process-language sentences versus object-language sentences.
+
+### 4.3 What it caught, hand-adjudicated
+
+Every flag was read and judged individually. This is the whole point of the exercise; a
+grader you have not adjudicated is a grader whose precision you do not know.
+
+| Predicate | Flags | True positives | Precision |
+|---|---|---|---|
+| **P1 — quantifier prefix** | **0** | — | **no recall at all** |
+| P2 — obstacle marker | 8 | 6 | **75%** |
+| P2 — machinery marker | 3 | 1 | **33%** |
+| P3 — unlabelled constant | 5 | 0 | **0%** |
+| P3b — determined-but-tunable | 0 | — | — |
+| P4 — unhedged causal | 14 | 0 | **0%** |
+| P5 — ontology | 3 (all "PROCESS-ONLY") | 0 | vacuous — object lexicon never fired |
+| **Total** | **30** | **7** | **23%** |
+
+Over 1,524 sentences of graduate mathematics.
+
+### 4.4 The four things this measurement establishes
+
+**(i) §29's most confident claim about mechanical checkability does not survive contact
+with spoken explanation.** P1 — the quantifier prefix, which §29 calls decidable and cheap
+and the place where the damage is — **fired zero times in 1,524 sentences of a linear
+algebra course.** The reason is not that the checker is bad. It is that **spoken
+mathematics does not utter quantifiers; it elides them.** Strang says *"Ax is some multiple
+— and everybody calls that multiple lambda — of x"*, not *"for every x there exists a
+lambda."* And **elision is not detectable as falsification.** You cannot flag a quantifier
+that was never said. The invariant is correct; the predicate has no purchase on the medium
+where the explanations actually live. This is the section's most useful negative result,
+because it is a negative about *our own* prior section.
+
+**(ii) The false-positive risk is concentrated and diagnosable, not diffuse.** P4's 0/14
+is not random error — it is one systematic failure. Mathematical *production* language
+looks exactly like causal language: *"let me make it easy"*, *"combine these three vectors
+to produce this one"*, *"this S inverse makes the whole thing diagonal."* Every P4 flag was
+this. Similarly, three of five P3 flags were the string `18.06` — the course number. A
+lexical grader in a technical domain fails on domain-specific idiom, and it fails the same
+way every time, which means the failures are enumerable.
+
+**(iii) The one predicate that half-works is §29's own original contribution.** P2's
+obstacle marker reached 75% precision — genuine hits included *"there's just no way to find
+out what A plus B does"* (eigenvalues do not add), *"If we don't have n independent
+eigenvectors, we can't diagonalize the matrix"*, and *"you can't really visualize it."*
+The false positives were an idiom (*"Two by two, it can't be that tough"*) and a sense
+collision (*"the problem"* meaning exercise, not obstacle). But **recall was terrible** —
+2 to 3 obstacle markers per 500-sentence lecture, and Strang names far more obstacles than
+that. So the ordering verdict for P2 rests on a handful of hits and flips on any one of
+them: Lecture 21 was scored a violation entirely because a single machinery marker
+(*"Here's the trick"*) appeared at sentence 174 and the first surviving obstacle marker at
+409.
+
+**(iv) The design is not refuted — it is relocated.** §29's predicates are defined over
+**propositional content**: a quantifier prefix, a causal sign, a labelled constant, an
+ontological category. They are not defined over surface strings. Running them as regular
+expressions asks a string matcher to do semantics, and it gets 23%.
+
+### 4.5 The corrected design
+
+`DESIGN`.
+
+**Two stages, not one.** An extraction stage produces a structured claim representation
+from the transcript — for each substantive assertion: the proposition, its quantifier
+prefix made explicit (including where the speaker elided it), each numeric constant tagged
+determined / fitted / arbitrary / unstated, each causal claim tagged causal / correlational
+/ unmarked, and each concept's ontological category. A predicate stage then checks §29's
+invariants against **that** representation, where they are genuinely decidable and cheap.
+
+**Why this is the right split.** The expensive, error-prone, model-dependent work is
+extraction, and it is *auditable*: a human can check an extracted claim against a
+timestamp. The predicate check is deterministic, free, and reproducible. This is the same
+architecture §13 argues for on the grounding ladder, and it inherits §13's honest ceiling
+— **97% autoformalisation × 69% proving = 36% end-to-end**, because the formal statement
+stops matching the informal one. Expect the extraction step to be the whole error budget.
+
+**What it would catch that the lexical version misses:** elided quantifiers (the whole of
+P1, currently at zero recall); obstacles stated without any lexical marker, which is most
+of them; constants whose determination is stated three paragraphs earlier.
+
+**What it will still miss:** anything requiring domain ground truth. Whether *"√ε is the
+unique scale at which the stationary distribution equals p"* is *true* is not a linguistic
+property (§29 §4.3). The grader can check that the explanation **says which kind of
+constant it is**; it cannot check that the answer is right without a domain oracle.
+
+> **What would show this was the wrong design.** If a two-stage extractor-plus-predicate
+> grader does not clear **80% precision at 60% recall against a hand-adjudicated set of
+> 200 flagged spans** — the standard the lexical prototype missed by a factor of three —
+> then §29's invariants are not mechanically checkable at all, and every downstream use of
+> mechanical grading in this section collapses. That test costs three transcripts and a
+> day, and it should be run **before** anything else in §6 is built.
+
+---
+
+## §5 — What the elite explainers actually do
+
+<!--AGENT4-->
+
+---
+
+## §6 — `N4-D1`: the explanation atlas
+
+`DESIGN`. **Brownfield flag: none.** There has never been a graded, outcome-linked census
+of explanations, because the explanations were not public in one place and the grading
+standard did not exist. Both changed. What follows is the counterpart to `N1-D1`'s error
+atlas and the same class of asset: a public, versioned, shared scientific object rather
+than a product feature.
+
+**Anchor.** §29's four invariants and two failure modes (the grading standard); Schroeder &
+Kucera 2022, g = 0.41 raw / **0.28 publication-bias adjusted**, k = 44, n = 3,869 (proof
+that explanation *format* moves learning at all); Muller et al. 2008, N = 364, d = 0.79/0.83
+(proof it moves it a lot when the manipulation is right); Bitzenbauer et al. 2023, N = 60
+(proof that public metrics do not track quality); Noetel et al. 2021, swap **g = 0.28**
+(the honest size of the video medium's own contribution).
+
+### 6.1 The four steps
+
+**Step 1 — Harvest.** Candidate explanations per concept, keyed to the same concept
+vocabulary as `N1-D1`'s error atlas so the two objects join. Sources ordered by licence
+cleanliness, not by fame (§7). Per candidate: transcript, structure (chapters, section
+headings), duration, format class, and — where exposed — the replay heatmap, stored as a
+localiser and explicitly **not** as a ranking input (§3.6).
+
+**Step 2 — Grade mechanically.** §4.5's two-stage grader. **No learners are required for
+this step**, which is what makes the atlas cheap enough to be comprehensive. Output per
+explanation: a fidelity record (which invariants are respected, which are falsified, which
+are unstated), an obstacle-before-machinery ordering verdict, a constant-labelling
+completeness score, and a misconception-naming inventory. Every finding carries a timestamp
+into the source so it is auditable.
+
+**Step 3 — Measure delayed unassisted transfer on a subset. This is the part nobody has
+done.** §1.3 establishes that exactly two studies in a 44-comparison meta-analysis exceeded
+one month, that transfer was not coded at all, and that the multimedia literature tests
+transfer immediately. So the measurement is genuinely absent rather than merely scattered.
+The trial: same concept, 4–6 real published explanations as arms, random assignment,
+**unassisted transfer at ≥ 21 days**, plus §22's 15–40-second dynamic-assessment probe at
+entry so prior knowledge — the 3.6× lever from §30 — is measured rather than assumed. Two
+design constraints inherited from this survey, both non-negotiable:
+
+- **Probe on the obstacle, not the definition** (§29 §5). *"Why can't we just compute the
+  probability directly?"* rather than *"what is an energy-based model?"*
+- **Collect the felt-learning rating too, and expect it to diverge.** §01's Deslauriers
+  result — students in the condition that taught them more reported learning less — and
+  §30's Whillier & Lystad (worse grades at **P = 0.001**, higher satisfaction) both predict
+  the divergence. If the trial does *not* find preference and outcome dissociating, that is
+  itself a surprise worth reporting.
+
+**Step 4 — Learn what predicts transfer from the checkable features.** Regress the delayed
+transfer outcome on the Step-2 mechanical features. **This is the compounding step**: once
+graded features predict outcome, selection and eventually generation no longer require a
+trial per explanation. Steps 1, 2 and 4 scale at ~zero marginal cost. Step 3 is the only
+part that costs money, and its cost falls as Step 4's model improves, because you only need
+to run trials where the model is uncertain.
+
+### 6.2 Inputs, outputs, and what joins to what
+
+**Inputs.** Concept vocabulary shared with `N1-D1`; licence-clean transcripts (§7);
+§29's predicate set; one instrumented cohort for Step 3.
+
+**Outputs.** Per concept: a ranked list of explanations with fidelity records, the specific
+invariant each one falsifies if any, the obstacle each one leads with, the misconceptions
+each one names, and — for the subset that has been through Step 3 — a measured delayed
+transfer estimate with its interval. Published openly, versioned, with a changelog.
+
+**The join to `N1-D1` is the reason both are worth more than either.** The error atlas says
+*which wrong models a population actually occupies for this concept*. The explanation atlas
+says *which explanations name and displace which wrong models*. Together they answer a
+question neither can answer alone: **given that this learner holds this specific wrong
+model, which published explanation has been measured to displace it?** Muller's refutation
+result (d = 0.79) is precisely the claim that this pairing is the active ingredient. Neither
+atlas contains that claim; the pair does.
+
+### 6.3 Failure modes
+
+- **The felt-learning trap re-entering through the harvest.** If Step 1's candidate set is
+  assembled by view count, the atlas grades a popularity-selected sample and will report
+  that popular explanations are good. Mitigation: harvest by concept coverage and licence,
+  and **record the view count as a covariate to be controlled, never as an inclusion
+  criterion.** §3.3(c) shows this bites even for the replay heatmap, whose coverage is
+  popularity-gated at roughly 54,000 views.
+- **Extraction error is the whole error budget.** §4.5. Inherits §13's 36% end-to-end
+  ceiling as a warning.
+- **Explanations are not independent of the learner.** The expertise reversal effect
+  (Kalyuga et al. 2003, DOI `10.1207/s15326985ep3801_4`, 1,336 citations — **a review, not
+  a meta-analysis; no pooled effect size exists**) and §29 §6's **d = −0.428 for experts**
+  both say the best explanation is conditional on prior knowledge. A single ranking per
+  concept is therefore wrong on its face; the atlas must be indexed by *(concept, learner
+  state)*, which multiplies the Step-3 trial cost by the number of states.
+- **Rating drift.** If the predicate set is revised faster than the transfer estimates
+  accumulate, no entry is ever stable — the same failure `N1-D1` names for misconception
+  vocabulary.
+- **Wittwer & Renkl's null (§1.6) as a ceiling.** Instructional explanation is a weak
+  intervention *per se*. The atlas is an input to a loop that ends in the learner producing
+  and being verified, not a delivery product. Build it as the former or it will underperform
+  its own anchors.
+
+### 6.4 What would show it was the wrong design
+
+> **If mechanically graded features do not predict delayed unassisted transfer, the atlas
+> is a taste ranking with extra steps.**
+
+Made operational, so it can actually fail:
+
+1. **The primary falsifier.** Step 4's regression of delayed transfer on Step-2 features
+   fails to beat a baseline of *(video length + view count + a fluency rating)* by a
+   pre-registered margin. If §29's invariants carry no more information than a popularity
+   metric and a vibes score, the grading standard is decorative.
+2. **The prerequisite falsifier**, and it is cheaper and comes first: **§4.5's grader fails
+   to clear 80% precision at 60% recall.** If the features cannot be extracted reliably,
+   step 1 of the primary test cannot even be run. **Run this before anything else.**
+3. **The scope falsifier.** If the ranking of explanations for a concept reorders
+   substantially between two learner-state strata, there is no atlas — there are
+   per-population atlases, and the shared-object economics collapse. This is the exact
+   falsifier `N1-D1` carries for misconception prevalence, and it should be tested the same
+   way, on the same cohorts, at the same time.
+
+### 6.5 The cheapest version that is still worth building
+
+Because Step 3 is the only expensive part, there is a real version at a fraction of the
+cost: **grade mechanically, publish the fidelity records, run no trial, and claim nothing
+about learning.** That object is honest, immediately useful (an author can check their own
+explanation against §29 before publishing), and it is the substrate Step 3 later attaches
+to. It must be labelled for what it is — **a fidelity audit, not a quality ranking** — or
+it becomes exactly the taste ranking its own falsifier warns about.
+
+---
+
+## §7 — Rights, and the honest constraint
+
+<!--AGENT3-->
+
+---
+
+## §8 — "Zero to hero in a few hours", tested
+
+### 8.1 The worked example, verified
+
+`OBSERVED (own harvest, 2026-07-29)`, from video page metadata. The owner's two figures
+check out exactly:
+
+| Video | Duration | Views | Likes | Replay heatmap? |
+|---|---|---|---|---|
+| MFML Part 1 — *Introduction to ML and AI* (`lYWt-aCnE2U`) | 5,260 s = **1h 27m 40s** | **211,453** | 3,770 | Yes |
+| MFML Part 2 — *Life of an AI project* (`lIFLeHDanmA`) | 5,005 s = **1h 23m 25s** | **65,603** | 966 | Yes |
+| MFML Part 3 — *Taking AI from prototype to production* (`fwK5xKUwQbw`) | 7,246 s = **2h 00m 46s** | **47,699** | — | **No** |
+
+**Total series: 17,511 s = 4 hours 52 minutes.** "A few hours" is literally accurate.
+
+**And the series funnel is the most informative number on the page.** 211,453 → 65,603 →
+47,699 is **31.0%** and **22.6%** of Part 1. `OBSERVED`. This is a behavioural measure, not
+an attitudinal one, and it is the one thing on the page that is not on the felt axis: it
+says that **roughly three-quarters of the people who started the course did not reach the
+end of it.** That is a completion figure in the normal MOOC range, and it is a fact about
+the *series*, not about Kozyrkov — the same shape appears in every multi-part course ever
+measured. Note the corollary for the proposal: a curation plan that assumes learners consume
+a five-hour series end-to-end is planning against the behaviour of the top quartile.
+
+Restating the standing rule: **none of these numbers is evidence about learning.** 211,453
+views establishes that a great many people found it worth starting.
+
+### 8.2 The compression arithmetic
+
+§30 establishes the bounds, and they are not one number:
+
+| Resource | Compression |
+|---|---|
+| Elapsed calendar time | **10–40×** (once ~300×, Sherlock) |
+| Engaged effort | **3–5×** |
+| Durability / retention | **1×** |
+| Procedural and production skill | **1×** |
+
+Applied to a 4h52m video series:
+
+**What it can plausibly deliver.** At 3–5× on engaged effort, five focused hours of a
+high-density, well-ordered explanation is a defensible substitute for **15–25 hours of
+engaged study** — comfortably a week's or two weeks' *understanding* of a field's
+orientation layer. §30 identifies orientation as the part that compresses most completely,
+because it is retrieval, structuring and diagnosis, none of which require the learner's own
+working memory: *"what limits polymathy is not how many fields you can learn. It is how
+many times you can afford to be a beginner."* A great explainer series is an
+orientation-compression device, and orientation is exactly what the 3.6× prior-knowledge
+lever is made of.
+
+**What it cannot deliver, and the reasons are measured, not rhetorical.**
+
+- **Durability is 1×.** A memory durable for a year needs retrieval gaps of **18–36 days**
+  (§30 §6). There is no version where you finish on Tuesday. Watching five hours on Tuesday
+  produces something that will be substantially gone by August.
+- **Procedural fluency is 1×.** The Foreign Service Institute has spent seventy years
+  removing every compressible element from language training and still needs **552–2,200
+  hours** (§30 §5). Nothing in a video shortens the repetitions of the productive act.
+- **Watching is not attempting, and this one is a measured harm rather than a mere absence.**
+  §01/§30: unguarded assistance leaves learners **17% worse on later unassisted work**,
+  while practice scores rise **+48%**. §30 states the principle exactly: *"compression
+  achieved by watching someone else solve it is not compression; it is substitution."* A
+  brilliant explanation is the most efficient possible delivery of watching-someone-else.
+  It is on the wrong side of that line by construction.
+- **Time does not predict learning; opportunities do.** Koedinger et al. (PNAS 2023), 1.3
+  million observations, 27 datasets: *"A time-based model, time-AFM, systematically provides
+  poor predictive fit"* (§30 §2). "Five hours of video" is a time quantity. It is the
+  category of thing measured not to predict the outcome.
+- **And the intensive-format nulls point straight at this format.** Seamon (2004): the
+  intensive-format advantage is real immediately and **gone at three years.** Whillier &
+  Lystad: the same contact hours compressed produced significantly **worse** grades
+  (**P = 0.001**) — **and higher satisfaction.** §30. The felt-learning trap arrives exactly
+  where a compression claim is most tempting to believe, which is here.
+
+### 8.3 The honest claim, and what must be bolted on
+
+> **A great explainer series delivers a week's orientation in an evening. It delivers
+> approximately none of the retention and none of the skill. It is the cheapest known way
+> to buy the 3.6× prior-knowledge lever, and it is not a course.**
+
+What must be bolted on, in order of measured effect size, all from §01 and §30:
+
+1. **Retrieval practice** — g = 0.499 [0.442, 0.557], 222 studies, 48,478 students. The
+   video is the encoding event; without retrieval there is no durability at any price.
+2. **Spacing on an 18–36-day gap** — classroom d = 0.54. §30's Rohrer & Taylor result is
+   the key economic fact: the four-week benefit came from **the same ten problems, merely
+   split** across sessions. **Same total effort, same items, different calendar.**
+   Durability is nearly free; it is only slow.
+3. **Explaining it back, with the expectancy set first** — g = 0.48 with, **g = −0.02**
+   without (§05). Ordering matters and is free.
+4. **Unassisted attempts with the answer withheld** — the guardrail that turns +48%
+   practice with −17% exam into +127% practice with a null exam coefficient (§01).
+5. **Entry diagnosis** — 15–40 seconds, r = 0.66–0.92 against full diagnostics (§22). The
+   whole value of a curated explanation is that it is aimed at the right rung; §29 §5 says
+   probe on the obstacle, not the definition.
+
+Item 2 is the one that makes the proposal's economics work rather than break: **the
+expensive resource is calendar patience, not effort.** A curation plan that hands someone
+five hours of the best explanations in the world and nothing else has bought the cheapest
+component and skipped the four that compound.
+
+---
+
+## §9 — The nulls ledger
+
+Collected because the brief asked for at least three and this section found substantially
+more, and because the negative results are load-bearing rather than decorative.
+
+**From this survey's own measurements:**
+
+1. **The replay heatmap is nearly flat.** Median normalised entropy **0.976** (1.0 =
+   uniform) across n = 51; top decile of buckets holds 19.5% of mass against 10% under
+   uniformity — **1.95× enrichment**. The hypothesised comprehension-failure detector is a
+   faint tilt. `OBSERVED (own harvest)`.
+2. **Replay peaks do not track the concept.** Mean within-concept SD of peak position
+   **20.7 pp** against a total SD of **22.6 pp** and a uniform-distribution SD of 26.0 pp,
+   over 49 videos across 6 concepts. Concept identity explains ~16% of variance.
+   `OBSERVED (own harvest)`.
+3. **Replay peaks are contaminated by the chapter UI.** Peak-to-nearest-chapter distance
+   **49.8 s** against a Monte-Carlo null of **87.6 s**; 7 of 10 videos closer than chance.
+   `OBSERVED (own harvest)`.
+4. **§29's flagship predicate has zero recall on spoken mathematics.** The quantifier-prefix
+   check fired **0 times in 1,524 sentences** of graduate linear algebra, because speech
+   elides quantifiers rather than reordering them, and elision is not detectable as
+   falsification. `OBSERVED (own harvest)`.
+5. **Lexical fidelity grading has 23% precision** (7 true positives from 30 flags), with
+   P4 at **0/14** and P3 at **0/5**. Surface-string grading of §29's invariants does not
+   work. `OBSERVED (own harvest)`.
+6. **YouTube caption endpoints return empty for unauthenticated requests.** HTTP **200 with
+   0 bytes** across four format parameters, verified 2026-07-29. `OBSERVED (own harvest)`.
+
+**From the literature:**
+
+7. **Views and likes do not indicate explaining quality.** Bitzenbauer et al. 2023, N = 60
+   real YouTube videos graded against a rubric — surface features *"do not seem to be
+   suitable indicators."* `MEASURED-BENCH`. The direct measurement of this section's
+   central collision.
+8. **Four explanation formats, 3 weeks and 9 months, no difference.** van Peppen,
+   Verkoeijen, Heijltjes, Janssen et al. (2021), *Instructional Science*, DOI
+   `10.1007/s11251-021-09559-0`, **N = 170**, four conditions (correct + erroneous examples
+   / correct only / erroneous only / practice problems), pretest, immediate posttest,
+   **3-week and 9-month delayed posttest**: *"no differences in learning gains or transfer
+   performance between the four conditions."* `MEASURED-RCT`. **The strongest null against
+   this section's whole premise** — the longest-delay head-to-head format comparison in the
+   literature found nothing.
+9. **Instructional explanations are minimal per se.** Wittwer & Renkl (2010), *EPR*, k = 21:
+   *"benefits… are minimal"*, and not necessarily better than self-explaining.
+   `MEASURED-META`.
+10. **Instructional explanations can actively reduce learning.** Schworm & Renkl (2006),
+    *Computers & Education*, DOI `10.1016/j.compedu.2004.08.011`, N = 80: instructional
+    explanations **reduced self-explanation activity and thereby reduced learning
+    outcomes.** A reversal, not a null. `MEASURED-RCT`.
+11. **Presentation mode does not matter, only time does.** Hefter, ten Hagen, Krense et al.
+    (2019), *J. Educational Psychology*, N₁ = 57, N₂ = 43: **video versus written versus
+    graphic-novel worked examples of the same content** produced *"similar learning
+    processes… as well as a large effect on learning outcomes"* regardless of mode. Formats
+    differed in **efficiency**, not effectiveness. `MEASURED-RCT`. Directly relevant: it
+    says the *video-ness* of a great video explainer is not where the value is.
+12. **Refutation advantage absent in two well-powered replications.** Mason, Zaccoletti &
+    Carretti (2019), *IJSME*, N = 85: students improved *"regardless of text read"*; Mason,
+    Borella & Diakidoy (2020), *Discourse Processes*, N = 110: same. `MEASURED-RCT`.
+13. **Immediate structure effects vanish at two weeks.** Troyer (1992), ERIC, N = 71:
+    collection beat comparison at immediate posttest; *"no significant differences among the
+    groups at the delayed posttest."* `UNVERIFIED` (ERIC, no DOI).
+14. **No meta-analysis of the expertise reversal effect exists.** The canonical source
+    (Kalyuga et al. 2003, DOI `10.1207/s15326985ep3801_4`, 1,336 citations) is a narrative
+    review with no pooled effect size; the nearest quantitative synthesis is Whitener (1989),
+    *RER*, **k = 9**, which predates the term. A 1,336-citation effect with no pooled
+    estimate.
+15. **The Data API exposes nothing behavioural.** Five statistics properties, two
+    deprecated, none relating to retention, watch time, replay or rewind.
+    `MEASURED-BENCH`.
+
+### 9.1 Numbers deliberately not quoted
+
+Retrieved as citations but with values unobtainable behind paywalls, listed so nobody
+back-fills them from memory: **Danielson et al. (2024)** overall g; **Wittwer & Renkl
+(2010)** numeric d/g and its conceptual-versus-procedural moderators; **Sundararajan &
+Adesope (2020)** seductive-details g; **Rey (2012)** retention/transfer values;
+**Rey, Beege & Nebel (2019)** segmenting values; **Noetel et al. (2022)** per-principle
+table.
+
+---
+
+## §10 — What this section commits us to
+
+- **Never carry a platform metric forward as evidence of teaching.** Views, likes,
+  subscribers, retention: `OBSERVED`, felt axis, and directly measured not to track
+  explaining quality (Bitzenbauer 2023, N = 60). Say it every time, because the failure mode
+  is silent.
+- **Quote the swap, not the add.** Video's honest meta-analytic effect is **g = 0.28**
+  (swap), not g = 0.80 (add), and the difference is that one of them is a dose effect.
+- **Quote refutation text at g = 0.28 adjusted, not g = 0.41 raw**, and say which.
+- **Treat the replay heatmap as a localiser, never a ranker.** It is min–max normalised
+  within each video in 51 of 51 cases, which makes cross-video comparison impossible by
+  construction, and it is chapter-confounded and popularity-gated besides.
+- **Run the grader falsifier before building the atlas.** Three transcripts, one day, and
+  it decides whether §6 is a real design or a taste ranking. The lexical prototype missed
+  the bar by a factor of three, which is informative rather than fatal — but only if the
+  two-stage version is actually tested rather than assumed.
+- **Index explanations by learner state, not by concept alone.** Kalyuga's reversal and
+  §29's **d = −0.428 for experts** both say a single ranking per concept is wrong on its
+  face.
+- **Claim orientation, not durability, and never procedural fluency.** A five-hour series
+  buys a week's understanding at 3–5× on engaged effort and **1× on everything that lasts**.
+- **Bolt on retrieval, spacing, teach-back and withheld answers, or do not ship it.** The
+  explanation is the cheapest component and the only one that does not compound.
+
+The sentence to keep: **the best explanations in the world are already public, already
+free, and have never once been measured against the only outcome that matters.**
