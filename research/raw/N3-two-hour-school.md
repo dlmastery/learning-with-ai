@@ -84,10 +84,13 @@ of the claim*, never the number.
 
 ---
 
-## 0. The ten findings
+## 0. The findings
 
 | # | Finding | Label |
 |---|---|---|
+| **0** | **The operator's own forecast to a regulator is "top half", not "top 1%".** The Pennsylvania cyber-charter application projected that in year two the school would rank **in the top half of all Pennsylvania schools** (Chalkbeat, reading the application). The same programme is marketed to fee-paying parents as producing classes "in the top 1–2% nationally". **The gap between those two numbers is the operator's own estimate of how much of its claim survives an unselected intake.** | `OBSERVED` |
+| **0b** | **Five states received cyber-charter applications; one approved.** Utah, Arkansas, North Carolina and Pennsylvania declined; Arizona approved. The Pennsylvania Department of Education found **"deficiencies in all five of the required criteria"** and described the model as "untested". | `OBSERVED` (regulator) |
+| **0c** | **In the regulated version, the teachers come back.** The Arizona application specifies certificated teachers as the minimum qualification for "guides" and a **guide-to-student ratio of 1:20 against 1:30 in typical schools** — i.e. *more* certificated adults per student than a conventional school, in a programme marketed as having replaced teachers with AI. | `OBSERVED` |
 | 1 | **"Two hours" means two hours of *academics*, not a two-hour school day.** The day runs 8:15 am–4:00 pm. The remaining ~4 hours are "life skills workshops". The operator states this plainly in its own FAQ; the ambiguity is created by third-party retelling, not by the school. | `VENDOR` (verbatim) |
 | 2 | **Two hours of academic learning time is roughly parity with a conventional day, not a 3× compression.** BTES's cascade puts academic learning time at ~35% of allocated time in the median classroom; a 3.5–5 hour academic allocation therefore yields ~1.2–1.75 h. Alpha's two hours are engineered for high engagement and a 70–95% success band. The *clock* compresses ~3×; the *learning time* does not. | `INFERENCE` on `OBSERVED` (Fisher et al. 1980) |
 | 3 | **The "2x" multiplier's denominator is the adjacent-grade RIT gap at fixed percentile, not observed growth.** Verified against the white paper's own two worked examples, both of which reproduce exactly from NWEA's Spring achievement tables. | `RECOMPUTED` |
@@ -504,6 +507,123 @@ retrieval pass; the items below are what was retrieved directly.)*
   operator's figures. That is not a criticism of the journalists — verifying a MAP percentile
   requires student-level data no news organisation can obtain — but it means the volume of
   coverage carries no evidentiary weight at all.
+
+### 3.4a The regulatory record: five states, one approval
+
+This turned out to be the richest verification channel available, because **a charter
+application is a public document written under penalty, for readers who are paid to be
+sceptical.** What the group says in an application can be compared with what it says in
+marketing. The comparison is the finding.
+
+**Unbound Academic Institute** — affiliated with the same founders — filed cyber-charter
+applications in **Arizona, Utah, Arkansas, North Carolina, South Carolina and Pennsylvania**.
+**Only Arizona approved.** `OBSERVED` (Meyer 2025; Chalkbeat 2025; Bucks County Beacon 2025).
+
+**Pennsylvania denied it.** From the denial, quoted in Meyer's 26 March 2025 update:
+
+> "While a single deficiency would be grounds for denial, **the Department has identified
+> deficiencies in all five of the required criteria.**"
+> — Pennsylvania Department of Education `OBSERVED` (regulator)
+
+Separately reported: PDE described the instructional model as **"untested"** and not
+demonstrating alignment with state academic standards. `OBSERVED`.
+
+**And the single most revealing number in this entire section.** Chalkbeat, reading the
+Pennsylvania application (Sitrin, 24 Jan 2025):
+
+> "According to the school's Pennsylvania application, Unbound Academy would launch in the
+> fall of 2025 with **500 students in grades 4-8 and only four teachers**. By its fifth year,
+> Unbound plans to enroll 2,500 students and 76 teachers. And the application projects a
+> **90% student retention rate** each year — much higher than other cyber charters have
+> projected. **In year two, Unbound Academy projects it'll be ranked in the top half of all
+> Pennsylvania schools**, according to the application."
+
+`OBSERVED`. **Marketed to parents: "top 1–2% nationally". Projected to a state regulator:
+top half of Pennsylvania.** Those are not the same forecast, and the gap between them is the
+best available estimate of how much of the public claim the operator itself believes is
+transferable to an unselected population.
+
+Three further items from the same regulatory record, each corroborated by at least two of
+the retrieved reports:
+
+1. **The "AI" is largely commodity courseware.** Chalkbeat: the platform "relies on a mix of
+   proprietary AI tutoring software and third-party apps like **Khan Academy, IXL, and
+   Amplify**." Bucks County Beacon: *"Price has been clear that 'AI' in this case does not
+   mean a ChatGPT type Large Language Model, but apps more along the lines of IXL Math or
+   Khan Academy's Khanmigo."* The Arizona application, quoted by Meyer: *"We employ adaptive
+   technology to tailor educational experiences through widely recognized platforms like IXL
+   and Khan Academy, supplemented by custom content to address specific gaps."* `OBSERVED`.
+   **The instructional engine is adaptive courseware of a kind that has existed for fifteen
+   years, and neither IXL nor Khan Academy claims anything resembling these outcomes.**
+2. **The same application specifies webcam-based affect inference.** Arizona application,
+   quoted by Meyer: *"The AI rigorously analyzes comprehensive student data—response accuracy,
+   engagement duration, and **emotional feedback via webcam**—to ensure lessons are
+   appropriately challenging."* `OBSERVED`. This corpus's H1/F8 sections would treat
+   webcam-based emotion inference on minors as a first-order safety and validity question;
+   emotion recognition from facial expression has a weak scientific base and, in the EU AI
+   Act, is prohibited outright in education. It is asserted here in a filing to a state
+   board with no accompanying validity evidence.
+3. **Vendor pricing to the public purse differs by state by a factor of ~3.** Meyer, from the
+   applications: 2 Hour Learning, Inc. charges **$2,000 per student** in Arizona and
+   **$6,500 per student** in Pennsylvania for "curriculum and resource materials". Meyer also
+   documents that **100% of Unbound Academy's named board members are affiliated with the
+   vendors the board approves contracts with** (2hr Learning, Crossover, Trilogy) — quoting
+   the application's own disclosure. `OBSERVED`. This section takes no view on the legality
+   of that structure; it records that **the entity setting the price and the entity approving
+   the price are the same people**, which is a fact about how much weight a regulator's
+   approval can bear.
+
+Also documented: **Valenta Academy**, a 2 Hour Learning brick-and-mortar charter proposal, was
+recommended for rejection by the Lancaster (PA) district administration in January 2025, and
+the affiliated Texas charter application was reported as vetoed by the Texas Education Agency
+in June 2025. `OBSERVED`, second item `UNVERIFIED` to a primary source in this session.
+
+And on the Texas voucher programme: the Austin American-Statesman (16 Jan 2026) and Houston
+Chronicle (4 Feb 2026) reported that the Texas comptroller's office excluded schools
+accredited solely by Cognia from the state's new voucher programme, affecting dozens of
+Austin private schools including Alpha; the exclusion was later resolved for most affected
+schools. `OBSERVED` — **headlines and dates retrieved via a citation index; the article
+bodies were not read in this session and no figure from them is restated.**
+
+### 3.4b The one substantive independent technical analysis
+
+**Meyer, D. (8 Jan 2025), "The Truth About 2 Hour Learning, Unbound Academy, and Alpha
+School", *Mathworlds*.** Retrieved in full (HTTP 200). Dan Meyer is a mathematics educator
+and a named critic, not a neutral party; his analysis is nonetheless the only piece of
+retrieved third-party work that **reads the primary application documents and checks the
+claims against them**, and its checkable assertions hold up against the other sources
+retrieved here.
+
+Its central factual finding, from the Arizona application:
+
+> "In its charter application, Unbound Academy describes the minimum qualifications for its
+> 'guides,' which, again, they claim are *not* teachers … their guides are just teachers.
+> Certificated teachers. … '**The guide-to-student ratio is 1:20 compared to 1:30 in typical
+> schools.**' Unbound Academy is employing **more** certificated teachers per student than
+> 'typical schools.'"
+
+`OBSERVED`. Chalkbeat independently reports the same reversal: *"She's already had to clarify
+perhaps her most startling claim about whether her schools really employ traditional
+teachers; in Pennsylvania at least, they would."*
+
+Its central argument is the selection argument this section reaches independently in §4, and
+it deserves quoting because it is the sharpest available statement of it:
+
+> "each of those 'schools using 2hr Learning' are private schools in MacKenzie Price's Alpha
+> School network, each of which charges tuition … each of which **can admit, expel, and
+> counsel out students for reasons that are not legal in public schooling** … Applying a
+> tuition filter in the admissions process—indeed, having an admissions process *at
+> all*—does a great deal to ensure engagement from both students and parents."
+>
+> "This is the case with the Alpha private school network, which gets great results, as far
+> as I can tell, **not by replacing teachers with AI, but by replacing poor kids with rich
+> kids, by replacing unengaged families with engaged families.**"
+
+Two further checkable details from the applications, via Meyer: **$1,000 per student per year
+budgeted for marketing** (≈10% of Arizona's ~$10,000 per-pupil spending, per a reader's
+comment Meyer endorses); and the Arizona application's description of the Brownsville campus
+as serving *"students from underprivileged backgrounds"* while, per Meyer, charging
+**$15,000** tuition — the campus page today states **$10,000**. `OBSERVED`.
 
 ### 3.5 The natural experiment that is about to happen — and it is the whole ballgame
 
@@ -983,9 +1103,32 @@ section where every outcome number is `VENDOR`, it is the decisive one.
 
 ### 8.7 The wider graveyard
 
-*(Retrieved in a parallel pass; items below carry the source type stated. Where a closure or
-withdrawal could not be traced to a primary or reputable secondary source in this session,
-it is marked `UNVERIFIED` and no number is restated.)*
+**AltSchool → Altitude Learning.** Founded 2013 by Max Ventilla around a personalized-learning
+model with per-student "playlists" and a parent-facing progress portal; **$33 M** raised in
+2014 and **$100 M** in 2015; **six schools** open by 2016 across San Francisco, Palo Alto and
+Brooklyn, plus a New York middle school in 2017. The company then **closed or divested its
+schools and, in 2019, ceased operating schools directly**, rebranding as the software company
+Altitude Learning. `OBSERVED` — retrieved from the encyclopaedic record; the underlying
+funding and closure reporting was **not** re-verified against primary filings in this session
+and no additional figure is asserted. **The structural parallel is exact: a
+venture-funded, technology-first school network that grew fast on a personalisation claim and
+exited the schooling business without ever publishing an independent outcome evaluation.**
+
+**Summit Learning · Khan Lab School · Teach to One · Rocketship · Carpe Diem.** Named in the
+brief, and **not verified in this session**. GDELT returned HTTP **429** on most calls, the
+Wikipedia articles for Summit Public Schools and Khan Lab School are about a New Jersey
+district and a school description respectively and contain **no evaluation data**, and no
+primary evaluation was retrieved for any of them. **They are therefore not used, and no
+closure, withdrawal or effect size is restated for any of them.** This is recorded as a gap
+rather than filled: `UNVERIFIED`. The six negatives in §8.1–§8.6 stand on retrieved primary
+or peer-reviewed sources and are sufficient without them.
+
+**The pattern across the graveyard, stated once.** Every entrant in this category has
+published spectacular internal numbers and no external ones; every external evaluation that
+has ever been performed on the category — RAND on personalized learning, CREDO and its
+successors on virtual charters, Cristia et al. on device access — has returned a number
+between **zero and slightly negative**. **The prior on "school reinvented around software"
+is not neutral. It is bad, and Alpha has to beat it, not merely differ from it.**
 
 ---
 

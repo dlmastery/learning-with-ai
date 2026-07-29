@@ -272,7 +272,191 @@ text over expository text before publication-bias correction (g = 0.36, §1.2), 
 equal to it after (g = 0.28). **Video is not a strong intervention. A good explanation
 delivered any way is a moderate one.**
 
-### 2.2 Khan Academy's own evaluation says, in its own words, that it is not an evaluation
+**The detail underneath is worse than the headline.** From the preprint
+(`10.31234/osf.io/kynez`), swap **g = 0.28, 95% CI [0.14, 0.42], n = 166 effects, k = 83
+studies**:
+
+- **19% of true swap effects are harmful** (g < −0.2), 95% CI [13%, 25%]; 50% helpful
+  (g > 0.2), CI [40%, 59%]. One video in five, swapped in, makes things worse.
+- **Video beats static media (g = 0.51 [0.27, 0.75]) far more than it beats a teacher
+  (g = 0.18 [0.02, 0.34])**, p = .03. The comparison that matters for a curation proposal is
+  the second one.
+- **It moves skills (g = 0.44) about 2.4× as much as knowledge (g = 0.18)**, p = .02. The
+  explanation atlas is about knowledge.
+- **When the control condition is more interactive than the video, the effect is g = −0.07
+  [−0.38, 0.25]** — a null, trending negative.
+- **There is no dose–response.** Minutes of intervention did not moderate (p = .73). More
+  video is not more learning.
+- **Risk of bias, verbatim: *"no studies were evaluated as low risk of bias; all were either
+  unclear (k = 62) or high risk (k = 43)."*** And for the supplement analysis, **funding was
+  a significant moderator (p = .011): funded projects g = 1.22, unfunded g = 0.59.**
+
+⚠️ **Quote the swap figure, not the supplement figure, and know that the supplement figure is
+unstable**: the published RER abstract says g = 0.80, the OSF preprint says **g = 0.88
+[0.62, 1.13]**. The swap estimate is identical across both. `MEASURED-META`.
+
+**And there is a published re-analysis that narrows the claim further.** Trenholm &
+Marmolejo-Ramos (2024), *Education Sciences* 14(3), 311, DOI `10.3390/educsci14030311`
+(open access), re-ran Noetel's own public data: **more than 80% of the included studies are
+health sciences, and 88.8% are applied-science contexts** under Biglan's taxonomy. Their
+conclusion is that the results are *"only applicable to learning requiring lower-level
+cognitive processing."* Their re-analysis also **fails to replicate Noetel's
+knowledge-versus-skills moderator** (t_perm = 1.26, **p = .238**), while finding a
+discipline effect Noetel did not report (soft domains 0.37 vs hard domains 0.15,
+**p = .008**). `MEASURED-META`.
+
+**The same confound is twenty years old.** Means, Toyama, Murphy, Bakia & Jones (2010),
+US Dept. of Education, ERIC ED505824: 51 contrasts, overall **g+ = +0.24**; purely online
+versus face-to-face **+0.14**; blended versus face-to-face **+0.35**. And the moderator that
+explains it — studies where online learners **spent more time: +0.46**; where they did not:
+**+0.19** (Q = 3.88, p < .05). Their own caveat, verbatim: *"the observed advantage for
+online learning in general, and blended learning conditions in particular, **is not
+necessarily rooted in the media used per se** and may reflect differences in content,
+pedagogy and learning time."* The journal version (Means, Toyama, Murphy & Baki 2013, *TCR*)
+reports the purely-online contrast as **not significant**. `MEASURED-META`.
+
+### 2.2 The engagement literature that shaped how educational video is made measured no learning
+
+Three papers from 2014 did more than any others to define how instructional video is
+produced. **All three are built on the same corpus, and none of them measured learning.**
+
+**Guo, Kim & Rubin (2014)**, "How video production affects student engagement: an empirical
+study of MOOC videos," *ACM L@S '14*, DOI `10.1145/2556325.2566239`. Four edX courses,
+**862 videos, 127,839 students, 6,902,358 video-watching sessions.** `OBSERVED`.
+
+The outcome variables are engagement time and **whether a student *attempted* a follow-up
+problem within 30 minutes** — attempt, not correctness, and **only 32% of videos had a
+follow-up problem at all.** The paper is admirably explicit:
+
+> *"We choose to study engagement because it is a **necessary (but not sufficient)
+> prerequisite for learning**, and because it can be quantified by retrospectively mining
+> user interaction logs."*
+> *"…its inherent limitation is that it cannot capture whether a watcher is actively paying
+> attention to the video or just playing it in the background while multitasking."*
+> ***"it is important not to draw any conclusions about student learning solely from our
+> findings about video engagement."***
+
+That last sentence has been ignored for twelve years. This is the source of the "six-minute
+rule" — *"median engagement time is at most 6 minutes, regardless of total video length"* —
+which is now cited as a fact about attention and was measured as a fact about MOOC dropout.
+Even the paper's own signature finding did not replicate internally: the talking-head effect
+was 46% vs 33% problem attempts in one course and **33% vs 33% in the second.**
+
+> **Null result: the six-minute rule does not generalise off the MOOC platform.**
+> Lagerstrom, Johanes & Ponsukcharoen (2015), *"The Myth of the Six-Minute Rule,"* ASEE, DOI
+> `10.18260/p.24895`. Two Stanford on-campus courses, **13,107 and 17,034 sessions**: median
+> single-session watch time **12.1 and 13.0 minutes — roughly 4× Guo's figure** — and
+> stitching sessions together, the mean of per-video median percentage viewed was **91.3%
+> and 74.0%**. Their own caveat: *"This does not necessarily mean that longer videos are
+> equally as effective as shorter videos."* They measured no learning either. `OBSERVED`.
+
+**Kim, Guo, Seaton, Mitros, Gajos & Miller (2014)**, "Understanding in-video dropouts and
+interaction peaks in online lecture videos," *ACM L@S '14*, DOI `10.1145/2556325.2566237`.
+Same corpus, **39,319,757 processed play/pause events.** This is the paper that put
+"interaction peaks indicate points of interest and confusion" into circulation, and §3.7
+below takes it apart, because it is the closest anyone has come to this section's own
+hypothesis.
+
+**The decisive test of the whole genre**, and it is a randomised field experiment:
+**Kizilcec, Bailenson & Gomez (2015)**, "The Instructor's Face in Video Instruction," *Journal
+of Educational Psychology* 107(3), DOI `10.1037/edu0000013`. **N = 12,468**, 57 lecture
+videos, 10 weeks. `MEASURED-RCT`.
+
+| Outcome | Result |
+|---|---|
+| Cognitive load | **+2.5% [0.5, 4.6], z = 2.4, p = .016** |
+| Social presence | **+2.2% [0.1, 4.2], z = 2.1, p = .037** |
+| **Course grade** | 8.9 (SD 26.1) vs 8.6 (SD 26.0), χ²(1) = 0.33, **n.s., d = 0.01** |
+
+**A twelve-thousand-person randomised trial of the most-recommended production variable in
+educational video moved the felt measures significantly and the learning measure by
+d = 0.01.** Their companion eye-tracking study (CHI '14, N = 22) is the same shape:
+preference for the instructor's face **d = 1.19**, retention **F(2,19) = 0.275, p = 0.76 —
+null**, immediately and at 5 days. ⚠️ A correction notice exists for the JEP paper
+(DOI `10.1037/edu0000046`) whose content could not be retrieved; check it before quoting.
+
+### 2.3 The field's own census of what it measures
+
+**Veletsianos & Shepherdson (2016)**, "A Systematic Analysis and Synthesis of the Empirical
+MOOC Literature Published in 2013–2015," *IRRODL* 17(2), DOI `10.19173/irrodl.v17i2.2448`.
+**183 empirical MOOC papers**, coded by data collection method. `MEASURED-META`.
+
+| Method | Share of papers |
+|---|---|
+| Automated collection of trace/clickstream data | **73.2%** |
+| Questionnaires | 55.7% |
+| Interviews | 13.7% |
+| **Tests** | **8.7%** |
+
+**Fewer than one empirical paper in eleven administered a test.** Clickstream data was the
+sole source in 26.8%. This is the single most useful number in this section: it is the
+measurement asymmetry, counted.
+
+**Reich (2015)**, *Science* 347(6217), DOI `10.1126/science.1261627`, said it at the time,
+under a section heading reading **"WATCHING WITHOUT LEARNING"**:
+
+> *"Few MOOC studies make robust claims about student learning, and fewer claim that
+> particular instructional moves caused improved learning. **We have terabytes of data about
+> what students clicked and very little understanding of what changed in their heads.**"*
+> ***"Course developers optimizing for engagement statistics can create pleasurable media
+> experiences that keep students watching without necessarily learning."***
+
+And the scale of the thing that was measured instead — **Reich & Ruipérez-Valiente (2019)**,
+*Science* 363(6423), DOI `10.1126/science.aav7958`: **565 course iterations, 12.67 million
+registrations, 5.63 million learners, more than 4.4 billion events, more than 48 million
+hours.** 52% never enter the courseware; per-course certification **mean 5.03%, median
+2.88%**; second-year retention fell from 38% to 7% across five cohorts. **No learning
+outcome is reported anywhere in the paper.** `OBSERVED`.
+
+That is the observation this section opened with, in someone else's numbers: **4.4 billion
+events, 48 million hours, and no measurement of what anyone learned.**
+
+### 2.4 Watch time does not predict learning — six results, one direction
+
+`MEASURED-RCT` / `OBSERVED` as marked.
+
+1. **Edwards & Clinton (2019)**, *Higher Education* 77, DOI `10.1007/s10734-018-0275-9`,
+   N = 321 matched cohorts. **Lecture-capture viewing ↔ final grade r = 0.096, n.s.**;
+   **attendance ↔ final grade r = 0.416, p < .001**. Partial correlations controlling for
+   attendance: 0.128 and 0.115, both n.s. Availability had a significant *negative* indirect
+   effect on grade via reduced attendance (β = −0.051, p < .05).
+2. **Williams, Aguilar-Roca & O'Dowd (2016)**, *ETR&D* 64(1), DOI
+   `10.1007/s11423-015-9406-5`: *"**less than 3% of the variance** in actual minus predicted
+   exam performance was correlated with the number of podcasts viewed… these data suggest
+   that lecture capture, even for the students who attend class and use them heavily,
+   **do not increase learning gains**."*
+3. **Baillie, Banow & Botterill (2022)**, *Education and Information Technologies* 27, DOI
+   `10.1007/s10639-022-10903-1`, n = 847 matched cohorts with attendance measured
+   objectively. Lecture capture availability produced **final exam −3.67% (p = 0.001)**,
+   **final course grade −3.01% (p = 0.005)**, and **failure rate 8.78% → 14.25%
+   (χ² = 6.257, p = 0.012)** — with **attendance statistically unchanged** (p = 0.776) and
+   incoming GPA not significantly different. Availability of the recording, not its use, made
+   things worse.
+4. **Owston, Lupshenyuk & Wideman (2011)**, ERIC ED518072, N = 439: *"**higher achieving
+   students view recordings significantly less often than low achievers**."* This is the
+   confound that inverts naive watch-time correlations, measured directly.
+5. **Trenholm et al. (2019 / 2021)**, *IJMEST*, DOIs `10.1080/0020739X.2018.1458339` and
+   `10.1080/0020739X.2021.1930221`: dependence on recorded lecture video was associated with
+   *"an increase in **surface approaches** to learning"*, and regular users were significantly
+   more likely to exhibit judgements of learning associated with achieving *"**feelings of
+   rightness**."* The author's summary: *"evidence suggests regular RLV use, overall, is
+   depressing student learning."*
+6. **The only engagement measure with real learning validation is neural, not behavioural.**
+   Cohen et al. (2018), *Neurobiology of Learning and Memory* 155, DOI
+   `10.1016/j.nlm.2018.06.011`: EEG inter-subject correlation ↔ test score **r = 0.57,
+   p = .01 (N = 18)** in the intentional-learning cohort, **r = 0.41, p = .07 (n.s.)** in the
+   incidental cohort, with a clean negative control (r ≈ 0 in the disattend condition).
+   Madsen & Parra (2025), *iScience*, DOI `10.1016/j.isci.2025.113622`, **N = 152**: neural
+   synchrony predicted retention (p < .001) while trait inattention did not (p > .05).
+
+> **`OPEN` — no study anywhere reports a plain bivariate correlation between average view
+> duration or percent-completion and test score in an educational-video context.** Two
+> independent retrieval passes found none. *Why nobody asked:* the parties who hold both
+> variables are platforms, for whom the answer is commercially awkward and operationally
+> useless — they cannot change what a video teaches, only whether it is watched. Everyone
+> else holds one variable and not the other.
+
+### 2.5 Khan Academy's own evaluation says, in its own words, that it is not an evaluation
 
 This is the most-cited evidence about the most-used educational video corpus in the world,
 and it is routinely misread.
@@ -499,7 +683,123 @@ navigation affordance, and the contamination scales with how well-structured the
 is** — which is to say, it is worst precisely for the carefully-chaptered videos that the
 atlas would most want to grade.
 
-### 3.6 What §3 concludes
+### 3.6 The prior work — somebody already built this, and it was null
+
+This subsection was added after the measurements above, and it changes their
+interpretation. **The hypothesis that replay density localises confusion has been proposed,
+operationalised into a working interface, and evaluated. It did not survive.**
+
+**Kim, Guo, Seaton, Mitros, Gajos & Miller (2014)**, *ACM L@S '14*, DOI
+`10.1145/2556325.2566237`. 862 videos, 127,839 students, **39,319,757 processed play/pause
+events.** `OBSERVED`.
+
+They found **3.7 interaction peaks per video (SD 2.1)** — one roughly every two minutes —
+with **median peak width 9 seconds.** They also measured in-video dropout: mean **55.2%
+(SD 14.7)**, of which **36.6% occurs in the first 3% of the video**; predicted dropout rises
+from **53% for a 5-minute video to 71% for a 20-minute one** (log length: b = 0.13,
+t(848) = 32.22, p < .001). And a finding that should stop anyone who wants to read replay as
+diligence: **re-watchers drop out far more than first-time viewers, 78.6% versus 48.6%
+(r = 0.74).**
+
+The abstract says peaks *"indicate points of interest and confusion."* **The paper contains
+no comprehension measure, no quiz score, no self-reported confusion, and no validation
+against any learning outcome.** The causal taxonomy comes from a manual content analysis of
+**80 of 862 videos (9.3%)**, labelled in the second phase by **a single researcher with no
+inter-rater reliability reported.** Its results:
+
+| Cause of peak | Share |
+|---|---|
+| **Repeating a non-visual explanation** (no visual transition) | **39%** |
+| Starting from the beginning of new material | 25% |
+| **Returning to missed content** — the "confusion" reading | **23%** |
+| Following a tutorial step | 7% |
+| Replaying a brief segment | 6% |
+
+**61% of categorised peaks involve a visual transition**, which is the mechanised version of
+this survey's own chapter-boundary confound (§3.5) — and note that the single largest
+category is not confusion at all. The authors' own limitations are blunt:
+
+> *"While our analysis methods identified video navigation patterns, **understanding why we
+> see these patterns is difficult.** Because MOOCs do not have access to a broader learning
+> context of a student, **log entries cannot accurately represent learners' real intent**."*
+> *"**While our categorization is not conclusive**… no one reason can explain all peaks."*
+
+Their own examples of the largest peak category include *"making a joke that results in a
+burst of laughter."*
+
+**Then they built the interface.** **LectureScape** (Kim, Guo, Cai, Li, Gajos & Miller,
+*UIST '14*, DOI `10.1145/2642918.2647389`) turned interaction peaks into navigation
+affordances. N = 12, within-subjects, eight tasks. `MEASURED-RCT` (small).
+
+| Task | LectureScape | Baseline | Result |
+|---|---|---|---|
+| Visual search, target **near** a peak | 85 s (σ 51) | 80 s (σ 73) | n.s. |
+| Visual search, target **outside** peak range | **117 s (σ 44)** | **90 s (σ 50)** | **slower with the peaks** |
+| Problem search | 96 s | 106 s | n.s. |
+| *Believed* it was faster | **5.8** | 4.8 | **p < .05** |
+| *Believed* it was more efficient | **6.1** | 4.8 | **p < .05** |
+
+**Every task-performance result was null, one was worse, and both perception measures were
+significantly better.** The felt/real dissociation, reproduced inside the exact mechanism
+this section set out to evaluate. And participants rated *"interaction peaks matched my
+personal points of interest"* at **4.4 out of 7** — barely above the midpoint. The authors
+state the epistemic problem without flinching:
+
+> *"A challenge in using interaction data to support learning is that **the meaning of an
+> interaction peak can be ambiguous (e.g., interest, confusion, or importance)**. In this
+> paper, **we do not assume a specific meaning** behind interaction peaks, but do assume they
+> are worth emphasizing regardless of the real cause."*
+
+Asked *why* peaks occur, their participants guessed "confusing" (8/12) and "important"
+(6/12) — folk belief, recorded as folk belief.
+
+### 3.7 And when rewinding was finally tested against an outcome, the sign was backwards
+
+This is the result that should have been the section's headline hypothesis and instead
+refutes it.
+
+**Brinton, Buccapatnam, Chiang & Poor (2016)**, "Mining MOOC Clickstreams: Video-Watching
+Behavior vs. In-Video Quiz Performance," *IEEE Transactions on Signal Processing* 64(14),
+DOI `10.1109/TSP.2016.2546228` (arXiv:1503.06489). Two Coursera courses; 92 videos / 3,770
+users / 314,632 events, and 115 videos / 2,680 users / 416,214 events. `MEASURED-BENCH`.
+
+They mined motifs over a quantised event alphabet (play, pause, **skip-back**, skip-forward,
+rate change) and tested each against **correct-on-first-attempt** on the in-video quiz —
+which is to say, they did the experiment §3.4 called for.
+
+- **Local skip-back motifs — "revising" — predict getting the next question RIGHT.**
+  **Four of the five motifs** containing local backward-seek behaviour were significantly
+  associated with correct-on-first-attempt (p < .05).
+- **Skip-forward — "skimming" — predicts getting it wrong** (3 of 5 significant, p ≤ .03).
+- Their explicit adjudication: *"a revising motif could presumably come from a student
+  **reinforcing material prior to the quiz** (in line with CFA) or from **excess confusion**
+  caused by the material (in line with non-CFA), but **the results indicate the former is
+  more likely.**"*
+
+**So backward scrubbing is closer to a study behaviour than a confusion signal.** The
+premise this section started from — *where viewers scrub backwards is where comprehension
+failed* — is not merely unvalidated; the one study that tested it against an outcome found
+the opposite sign.
+
+Two limits keep this from being decisive in either direction. The effects are **tiny**:
+maximum motif support 28.5%, and **the maximum deviation from a 50% success probability is
+3.3 percentage points.** And Brinton et al. point out that Kim et al.'s peak sequences
+cannot even be classified: *"the sequence Pl Sb Pl Sb identified in [Kim et al.] cannot be
+associated with revising, because it is not clear how far back the student has skipped."*
+**Skip distance is the discriminating variable, and YouTube's public heatmap does not contain
+it** — it is a density over positions, not a record of transitions.
+
+**Abbakumov, Kravchenko, Kuskin & Urban (2020)**, EdArXiv DOI `10.35542/osf.io/vcd5g`
+(⚠️ **preprint only, no journal version located**), asked the adjacent question — does
+rewatching before a retry help? Four Coursera courses, cross-classified multilevel logistic
+model. Overall **+0.31 logits, p < .001**, moving P(correct on retry) from **.52 to .59**.
+But **item-level SD is 0.32**, i.e. as large as the effect: *"for some items there is **no
+effect**… or even a **negative effect** of rewatching videos."* And **one of the four courses
+showed a significantly negative overall effect (−0.28, p = .005).** Their own conclusion:
+*"the generalized recommendation that students rewatch videos before they retake a failed
+assessment **is not an absolute truth.**"*
+
+### 3.8 What §3 concludes
 
 | Signal | Nature | Public? | Diagnostic of learning? |
 |---|---|---|---|
@@ -507,13 +807,36 @@ atlas would most want to grade.
 | Comment count | Attitudinal-behavioural mix | Yes (Data API) | Only *content-related* comments, and only against a rubric, not an outcome |
 | Average view duration, retention curve | Behavioural | **No** — owner-only | Untested by anyone |
 | Drop-off *location* | Behavioural | **No** — owner-only | Untested by anyone |
-| **Replay / rewind density** | **Behavioural** | **Yes** — undocumented, page-embedded | **~2× enrichment, concept-independent, chapter-confounded, popularity-gated, 100-bucket resolution** |
+| Drop-off *rate* (in-video) | Behavioural | **No** — owner-only | Measured (Kim 2014): 55.2% mean, driven by video length, **never linked to comprehension** |
+| **Replay / rewind density** | **Behavioural** | **Yes** — undocumented, page-embedded | **~2× enrichment, concept-independent, chapter-confounded, popularity-gated, 100-bucket resolution — and the one test against an outcome found the *opposite* sign** |
 
-The honest summary: **the distinction between attitudinal and behavioural signals is real
-and worth making, it does identify one public behavioural signal nobody in the research
-literature appears to have used, and that signal is too weak and too confounded to grade
-explanations on its own.** It belongs in the atlas as a *localiser* — a hint about where
-inside a given explanation to look — and never as a ranker.
+**The honest summary, revised in light of §3.6–3.7.** The attitudinal/behavioural distinction
+is real and worth making, and it does identify a public behavioural signal that the
+explanation-quality literature has not used. But the strong version of the hypothesis —
+*rewinds mark comprehension failure* — is now in a worse position than "unvalidated":
+
+1. **It has been operationalised and evaluated.** LectureScape put interaction peaks into a
+   navigation interface and got **null task performance, one significantly worse condition,
+   and significantly inflated perceived efficiency.**
+2. **The one study that tested backward-seeking against an outcome found the opposite
+   sign** — local skip-back predicts answering the *next question correctly* (Brinton et al.
+   2016), with a maximum probability shift of 3.3 percentage points.
+3. **The largest measured cause of replay peaks is not confusion** — it is repeating a
+   non-visual explanation (39%), with "returning to missed content" at 23%, from a
+   single-rater analysis of 9.3% of the corpus that its own authors call "not conclusive."
+4. **And YouTube's public heatmap is strictly weaker than the data those studies used.** It
+   is a density over positions, not a record of transitions, so it does not contain **skip
+   distance** — which Brinton et al. identify as the variable that distinguishes revising
+   from confusion in the first place.
+
+So the section's first contribution stands, but inverted from the form it was proposed in.
+**The distinction between attitudinal and behavioural signals is the right distinction, and
+making it correctly is what reveals that the behavioural signal available here does not
+support the use it was wanted for.** The replay heatmap belongs in the atlas as a **weak
+localiser with a known confound** — a hint about where inside one explanation to look when a
+human is already looking — and never as a ranker, never as a confusion detector, and never
+as an optimisation target. Anything stronger reproduces LectureScape: a measurable
+improvement in how good the system feels and none in what it does.
 
 ---
 

@@ -100,6 +100,7 @@ measured, or it is a pitch.
 | **C-45** | 29 Jul | *(structural)* The editorial standard had seven evidence labels, all of which describe things that already exist | **The omission had a measurable effect.** Counted across the survey: **756 critique markers against 24 construction markers; 19 of 33 sections at zero.** The standard rewarded what could be cited and punished what could only be argued, so the document drifted 31:1 toward critique — and every adversarial review deepened it, because the past is falsifiable and the future is not. Two labels added: **`DESIGN`** (a specified artifact that does not exist, which must name what would show it wrong) and **`OPEN`** (a question nobody asked, which must say why not) | SELF-RESEARCH (posture audit) |
 | **C-46** | 29 Jul | §21 named *correlated pedagogical error* and claimed it had **"no name for it in the literature"** | **Wrong, and the correction strengthens the argument.** Kleinberg & Raghavan, *algorithmic monoculture* (PNAS 2021), proves convergence on one algorithm can **reduce collective decision quality even when it is more accurate for each agent in isolation**, with no shock required. Our risk, as a theorem, five years earlier. Plus measured support: **71% of a model's misconception-detection failures concentrate in two question types**. Name kept for the education-specific case; novelty claim withdrawn | SELF-RESEARCH (N1) |
 | **C-47** | 29 Jul | *(latent)* The project repeatedly invoked "the calendar", "seat time" and the Prussian origin of age-graded schooling as the constraint that killed mastery learning — always as unsourced `INFERENCE` | **The Prussian-origins story does not survive checking and is now `UNVERIFIED`.** McClusky (1920) records it as a specific claim by Bunker in 1916, "a subject of controversy" at the time, whose motive was that he *"sees in the present system a foreign and un-American type of organization which should be superseded."* The story's rhetorical function predates its evidentiary status by 110 years. **The sourced constraint is the monitorial system** — designed so one master could instruct 200–1,000 pupils, and **abandoned when it proved ineffective.** Two of three origin stories checked had published corrections attached | SELF-RESEARCH (N1) |
+| **C-48** | 29 Jul | §29 proposed **"machinery before obstacle"** as an original checkable failure mode, implying the *ordering* is what carries the effect | **Narrowed by the one experiment that isolates it.** Muller (Sydney, 2008) ran a **Refutation** condition that was the Exposition script *verbatim, plus explicit statements of the misconception* — same definitions-first order, no reordering — and it scored **d = 0.79** (N = 364, F(3,461) = 13.625, p < .001). The load-bearing variable is **naming the wrong idea**, not the order. Ordering may still help; it has not been shown to be what does the work. Same thesis supplies the dissociation in measured form: perceived learning **flat at 5.7 vs 5.6** while real learning differed by d = 0.71, and students *preferred* the worse format (p < .05) | SELF-RESEARCH (N4) |
 
 ---
 
@@ -110,13 +111,13 @@ hand-maintained, which is the whole argument for generating it.*
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 21 |
+| Caught by our own research | 22 |
 | Caught by our own verification — including of our own warnings | 2 |
 | Caught by our own builders, working against their own briefs | 4 |
 | **Caught by an adversarial external reviewer** | **20** |
-| **Total** | **47** |
+| **Total** | **48** |
 
-20 of 47 were found by someone whose job was to fail us — including
+20 of 48 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the

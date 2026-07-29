@@ -746,3 +746,475 @@ the overt guess increases session abandonment enough to cancel the 0.65-vs-0.22 
 requirement must be dropped, and the design is wrong in the field regardless of being right in the
 meta-analysis.
 
+
+---
+
+## 4. Executive function — the reframe
+
+### 4.1 The corpus says don't train it. Here is why that is not the interesting half.
+
+The training nulls are settled and are not re-derived here. For the record, three independent
+confirmations retrieved this session:
+
+- **Kassai, Futó, Demetrovics & Takács (2019)**, *Psychological Bulletin*, `10.1037/bul0000180`:
+  "training a component **did not have a significant effect on the untrained components**
+  (g = 0.11, k = 17, **p = .11**). By showing the absence of benefits that generalize beyond the
+  trained components, **we question the practical relevance of training specific executive function
+  skills in isolation**." `MEASURED-META`.
+- **Rapport, Orban, Kofler & Friedman (2013)**, *Clinical Psychology Review*, 25 studies:
+  short-term-memory training improved short-term memory (d = 0.63); **training attention did not
+  improve attention**, and **training mixed executive functions did not improve the targeted
+  executive functions** — both 95% CIs include 0.0. Far transfer to academics and to blinded
+  behaviour ratings: non-significant. `MEASURED-META`.
+- **Westwood, Parlatini, Rubia, Cortese & Sonuga-Barke (2023)**, *Molecular Psychiatry*, 36 RCTs,
+  blinded-outcome subset: ADHD total **SMD 0.12 [−0.01, 0.25]**; inattention 0.17 [0.02, 0.31],
+  rising to 0.40 [0.09, 0.71] **only when measured inside the training setting** — "a
+  setting-specific effect"; **no effect on attention, inhibition, reading or arithmetic**.
+  `MEASURED-META`.
+
+So: externalise. The interesting question is *what*, exactly, to externalise. The literature that
+answers it is not the EF-training literature. It is the twenty-five years of intelligent-tutoring
+log data that measured, action by action, where a struggling learner's session falls apart.
+
+### 4.2 The Khanmigo diagnosis, quantified — twenty-five years early
+
+The corpus records that Khanmigo's mechanism worked and "only fired when a student recognised they
+needed help and went to get it." That is precisely the failure Carnegie Mellon measured in 2000 and
+has been publishing about ever since.
+
+From **Aleven, Roll, McLaren & Koedinger (2016)**, "Help Helps, But Only So Much," *IJAIED*
+26:205–223, `10.1007/s40593-015-0089-1`, full text recovered, quoted verbatim:
+
+> "Students frequently used the tutor's on-demand help facilities in ways that seemed unlikely to
+> help them learn. For example, they often clicked through the hint levels really quickly to get to
+> the last level (the 'bottom-out hint'), which gave the answer. That is, **they viewed 68% of the
+> hint levels prior to the last for less than 1 second** (Aleven and Koedinger 2001), not enough
+> time to read and understand the content. Also, students often appeared reluctant to ask for hints.
+> For example, **even after 3 errors on a step, the student's next action was a hint request only
+> 34% of the time** (2000). Further, we found a **negative correlation between the frequency with
+> which students used the tutor's on-demand help and their learning gains** … the finding also
+> suggests that any positive effect on learning from hints is not strong, at least not strong enough
+> to offset the selection effect."
+
+`OBSERVED` — educational data mining on Geometry Cognitive Tutor logs, tens of thousands of actions.
+
+> "The finding of widespread ineffective help seeking was at odds with (in retrospect, idealized)
+> notions at the time of how learners approach learning with an ITS, for example, that they
+> **continuously and carefully monitor their comprehension, seeking help when things are not
+> clear**."
+
+That idealised notion is the design assumption inside every conversational tutor shipping today.
+
+### 4.3 And then they fixed it, and learning did not move
+
+This is the result that makes the reframe necessary rather than merely elegant. Carnegie Mellon
+built the **Help Tutor** — a model-tracing tutor agent for help-seeking itself, ~80 production
+rules, with a taxonomy of maladaptive behaviours (Help Abuse, Help Avoidance, Try-step Abuse),
+delivering real-time metacognitive feedback ("Repeated errors may mean that you are not learning …
+Perhaps ask for a hint?"). Two classroom studies.
+
+The 2010 *Learning and Instruction* abstract (Roll, Aleven, McLaren & Koedinger,
+`10.1016/j.learninstruc.2010.07.004`, Study 1 N = 58, Study 2 N = 67) reports that the Help Tutor
+improved help-seeking behaviour and that "the improved help-seeking skills **transferred to learning
+new domain-level content** during the month following the intervention, while the help-seeking
+support was no longer in effect."
+
+The same authors' 2016 retrospective states it differently, and more starkly:
+
+> "We found that this feedback led to a **lasting improvement in help-seeking behavior, even months
+> after the Help Tutor was turned off**. Specifically, students who had received feedback on help
+> seeking used the hints more deliberately … **However, we did not find improved domain-level
+> learning due to feedback on help seeking.**"
+>
+> "**The main disappointment was that despite improvement in help-seeking behavior, the Help Tutor
+> had no influence on students' domain-level learning outcomes.** It is perhaps worth noting that at
+> least one related project found, in a close parallel to our findings, that an intervention aimed
+> at improving help seeking had an influence on the targeted learning behaviors but not on
+> domain-level learning outcomes (Tai et al. 2013). After years of agonizing and soul searching, we
+> have come to view **this null result as interesting and important in its own right**."
+
+`MEASURED-RCT` (null). **Both statements are reported here; the tension between them is real and is
+not resolved by the sources.** The 2016 paper is the same team's considered position eleven years
+into the programme and is the one this section relies on.
+
+Two further findings from the same paper close the loop:
+
+> "When students have a **medium level of skills**, hints do have beneficial effect on student
+> learning within the tutor. Specifically, help use led to better performance on the next
+> opportunity to apply the same skill. … When students have a **low or high level of skill, attempts
+> at solving (without help) are more effective**." `OBSERVED` (Roll et al. 2014 EDM).
+
+> "principle-based hints during tutored problem solving may aid conceptual learning … For these
+> beneficial effects to occur, **students must self-explain the hints or otherwise make sense of
+> them, which however cannot be taken for granted**."
+
+**The full diagnosis, then, is two-layered.** Layer one: the learner does not recognise the need
+(34%). Layer two: even when they do, the help is a hard piece of domain text that requires a second
+executive act — sense-making — to convert into learning, and that act "cannot be taken for granted."
+Fixing layer one alone moves behaviour and not learning. That is exactly what happened to Khanmigo,
+and it is exactly what the Help Tutor predicted a decade and a half earlier.
+
+### 4.4 The audit: every point in a session where the design assumes an executive function
+
+This is the section's core deliverable. Each row names a moment, the executive function it silently
+requires, what products currently assume, and what would supply it externally.
+
+| # | Moment in the session | Executive function silently required | What products assume | External supply | Supporting number |
+|---|---|---|---|---|---|
+| 1 | **Initiating** | Task initiation; overriding delay aversion | The learner opens the app because they decided to | An **if-then cue bound to an existing routine**, and the session opens *itself* at the cue with the first item already on screen and answerable in one action | Implementation intentions in children **g = 0.31 [0.21, 0.41]**, N = 12,957, stronger in younger children and in ADHD (Breitwieser & Reinelt 2026) |
+| 2 | **Choosing what to work on** | Goal setting, prioritisation, resisting the easy option | A menu, a dashboard, a course tree | **No menu.** One next item, selected by the learner model. The choice is made upstream and is not shown | Prior-knowledge spread drives 3.6× of time-to-mastery vs 1.14× for learning rate (corpus K1, Koedinger et al. 2023) |
+| 3 | **Holding the goal while working** | Working-memory maintenance of the objective | The learner remembers why they are here | The objective is **rendered continuously**, in the learner's own words, not in curriculum language | Signalling **g = 0.43 [0.35, 0.50]**, k = 209 — an on-screen element that points at the target is the best-evidenced design act available |
+| 4 | **Sustaining within a segment** | Sustained attention | Uninterrupted attention for the length of the material | **Instructor-segmented, not learner-segmented**, chunks | Rey et al. 2019: instructor-segmented **g = 0.41 [0.32, 0.50]** vs learner-segmented **g = 0.20 [0.11, 0.28]**, k = 32 each |
+| 5 | **Noticing confusion** | Metacognitive monitoring | The learner notices they are lost | **Monitoring is instrumented, not asked.** Latency, error runs, hint-mining pattern, response-time variability | The 34% figure: after three consecutive errors, only a third of learners act. The trigger must therefore be the system's, not the learner's |
+| 6 | **Deciding to seek help** | Help-seeking; tolerating the admission of not knowing | A help button, always available, never pressed | **Never a button.** The system *offers* at the measured trigger, and offers **content**, not an invitation to ask | Aleven & Koedinger: help-seeking is the measured bottleneck, and fixing the *request* behaviour did not fix learning |
+| 7 | **Making sense of the help** | Self-explanation | The learner reads the hint and integrates it | Help arrives as a **worked step with a required response**, not as text to be read | 68% of hint levels viewed for <1 s; "students must self-explain the hints … which cannot be taken for granted" |
+| 8 | **Sustaining across an interruption** | Working memory; prospective memory | The learner holds the thread | An externalised, continuously-written **state card**: current goal, last action, next action, the open question | Segmentation improves learning while *increasing* study time (g = 0.92) — the gap between segments is where state is lost |
+| 9 | **Resuming after a break** | Task re-entry, re-orientation | The learner reconstructs where they were from the screen | Resumption is a **re-entry item**, not a screen: one retrieval question about the last thing done, answerable in seconds | Prequestion specific effect **g = 0.54**; retrieval practice **g = 0.51 vs restudy** (corpus B1) |
+| 10 | **Self-terminating a wasteful strategy** | Inhibition, set-shifting | The learner notices they are stuck and changes approach | A **wheel-spinning detector** with a forced strategy change, not a hint | Corpus: bottom prerequisite quintile wheel-spins at **50%** vs 10% for the top quintile (Wan & Beck 2015) |
+| 11 | **Stopping at the right time** | Self-monitoring of satiation and diminishing return | The learner stops when they feel done | The session **terminates itself** at a measured competence threshold, not at a clock | Corpus K1: ≈7 opportunities to 80% mastery; time-based models "systematically provide poor predictive fit" |
+| 12 | **Returning tomorrow** | Prospective memory | A notification, and the learner's intent | The **schedule is the system's job** (FSRS, corpus F11). The learner is never asked to remember a date | Optimal gap = 5–10% of the retention interval (Cepeda et al. 2008) — a computation no learner performs |
+
+`INFERENCE` for the mapping; every number in the right-hand column is `MEASURED-META` or
+`OBSERVED` and is sourced above or in the named corpus section.
+
+**Three observations about the table.**
+
+First, **eleven of the twelve supplies are things software can do and a human teacher cannot do at
+scale.** This is the constructive core: the machine's comparative advantage over a human tutor is
+not explanation quality — it is *never getting tired of supplying executive function*.
+
+Second, **the supplies are not exotic.** Segmentation, signalling, scheduling, retrieval prompts and
+if-then cues are the best-evidenced interventions in instructional psychology. What does not exist
+is a product that treats them as a **single coherent obligation** rather than as twelve unrelated
+features.
+
+Third, **the external-supply literature is directly supportive and honestly bounded.** Metacognitive
+prompts in computer-based environments: **Guo (2022)**, *JCAL*, `10.1111/jcal.12650` — "metacognitive
+prompts significantly enhanced **SRL activities (g = 0.50 [0.37, 0.63])** and **learning outcomes
+(g = 0.40 [0.31, 0.49])** … the effects varied as a function of three prompt features: **feedback,
+specificity and adaptability**." `MEASURED-META`. Prompts *do* transfer to learning when they are
+specific, adaptive and paired with feedback — which is exactly the difference between the Help
+Tutor's generic "perhaps ask for a hint?" and a supplied worked step.
+
+Two bounding results that must be held alongside it:
+
+- **Dignath & Büttner (2008)**, *Metacognition and Learning*, 84 studies / 357 effect sizes, average
+  **ES = 0.69** — and, verbatim, "for both school levels, **effect sizes were higher when the
+  training was conducted by researchers instead of regular teachers**." `MEASURED-META`. This is the
+  fidelity-and-dosage argument the corpus already makes about special education, and it is the
+  strongest single argument for a machine: a machine delivers at researcher fidelity on every
+  session, to every learner, forever. (Corroborated in online/blended settings: **Xu et al. (2022)**,
+  *Behaviour & Information Technology*, ES = 0.69 across elementary through higher education.)
+- **Jansen, van Leeuwen, Janssen, Jak & Kester (2019)**, *Educational Research Review*, meta-analytic
+  SEM: "**Contrary to popular belief, the results only provide evidence for partial mediation**" —
+  SRL activity only partly explains why SRL interventions raise achievement; "other factors, such as
+  **task motivation and time on task**, potentially influence the effectiveness." `MEASURED-META`.
+  So supplying executive function is not the whole story even where it works, and the honest claim
+  is bounded accordingly.
+
+### 4.5 `DESIGN` — the Executive Function Ledger
+
+**The artifact.** A per-session, per-learner record with exactly three columns for each of the
+twelve demand points in §4.4: *demanded* (did this session require it), *supplied* (did the system
+provide it externally), *unaided* (did the learner have to produce it alone). It emits a single
+scalar per session — the **unaided-demand count** — and a per-learner trajectory of that scalar over
+time.
+
+**Why it does not exist.** Every instrument in the field measures executive function as a property
+of a *person*: BRIEF, CPT, n-back, Stroop, the Tower tasks. There is no instrument anywhere that
+scores an **interface** for how much executive function it charges the user. Products publish
+engagement, completion, time-on-task and learning gain. None publishes a demand ledger, and no
+meta-analysis codes for one, because the construct has never been operationalised on the product
+side.
+
+**What it buys.** It makes the reframe falsifiable and it makes the twelve supplies prioritisable.
+Right now "reduce cognitive load" and "support self-regulation" are exhortations with no unit. The
+unaided-demand count is a unit.
+
+**What would show this was the wrong design.** The ledger is wrong if, across a real cohort, the
+**unaided-demand count does not predict session non-completion over and above time-on-task and
+prior knowledge**. Those two predictors are already available, cheap, and known to work. If adding
+the EF-demand count to a model containing them produces no significant increment in explained
+variance in non-completion — and no significant increment in predicting the *next-session return*
+rate — then executive-function demand is not a distinct product property, the reframe is decorative,
+and the ledger should be abandoned rather than refined.
+
+A second, harder falsifier: if the ledger's count is highly correlated with a simple proxy — number
+of screens, number of decisions, or number of clicks per knowledge component — then it is a
+complicated way of saying "fewer steps," and the simple proxy should be used instead.
+
+**This is a `DESIGN` claim. It is not a finding and may not be restated as one.** Nothing in §4.4 or
+§4.5 asserts that supplying executive function externally *does* improve learning. What is measured
+is: the demands exist and are unmet (34%, 68%); repairing one of them in isolation moved behaviour
+and not learning (the Help Tutor null); and adaptive, specific, feedback-paired prompts move both
+(g = 0.50 / g = 0.40). The ledger is a proposal for finding out whether the twelve together do what
+the one alone did not.
+
+
+---
+
+## 5. ADHD, specifically and carefully
+
+**Standing constraint, restated before anything else.** Per `CLAUDE.md` §3, an AI may not diagnose
+or label a child. Nothing in this section is a screening instrument, a diagnostic aid, or a basis
+for assigning a child to a category. Everything below describes **a measured profile that some
+learners have**, so that a system can be designed to serve it **without ever needing to identify who
+has it**. The design consequences in §5.7 are deliberately constructed from *observable task states*
+— error runs, response latency, response-time variability, time-to-first-action — which are
+properties of the interaction, not inferences about the person.
+
+### 5.1 What is actually measured
+
+**Executive function.** **Willcutt, Doyle, Nigg, Faraone & Pennington (2005)**, *Biological
+Psychiatry*, `10.1016/j.biopsych.2005.02.006`: 83 studies, ADHD N = 3,734 vs non-ADHD N = 2,969.
+Verbatim: "Effect sizes for all measures fell in the medium range (**.46–.69**), but the strongest
+and most consistent effects were obtained on measures of **response inhibition, vigilance, working
+memory, and planning**." And the authors' own conclusion: the "moderate effect sizes and lack of
+universality of EF deficits … suggest that **EF weaknesses are neither necessary nor sufficient**."
+`MEASURED-META`. Domain-by-domain effect sizes are **UNVERIFIED** — the paper is closed access
+(Unpaywall `is_oa: false`); only the .46–.69 range is source-verified here.
+
+**Response-time variability — the most robust signal, and non-specific.** **Kofler, Rapport,
+Sarver, Raiker, Orban, Friedman & Kolomeyer (2013)**, *Clinical Psychology Review*,
+`10.1016/j.cpr.2013.06.001`, **319 studies**, corrected for measurement unreliability and
+publication bias: children/adolescents **Hedges' g = 0.76**; adults **g = 0.46**. Psychostimulants
+attenuate it (**g = −0.74**) and it is "**unaffected by non-stimulant medical and psychosocial
+interventions**." Critically: "Individuals with ADHD did **not** evince slower processing speed
+(mean RT) after accounting for RT variability, whereas large magnitude RT variability deficits
+remained after accounting for mean RT." And: adolescents/adults with ADHD were **indistinguishable
+from clinical controls**; children only **g = 0.25** vs clinical controls. `MEASURED-META`.
+
+Read carefully, that last clause matters enormously for a SELPA-serving product: **RT variability
+separates ADHD from typical development and does not separate it from other clinical
+presentations.** It is a good design signal and a bad diagnostic one — which is precisely the
+combination this project needs.
+
+### 5.2 The sustaining myth, falsified
+
+This is the finding that should change how a product is built, and it contradicts the folk model
+that underlies nearly every "shorter lessons for shorter attention spans" design.
+
+**Huang-Pollock, Karalunas, Tam & Moore (2012)**, *Journal of Abnormal Psychology*,
+`10.1037/a0027205`, PMC3664643 — 47 between-group continuous-performance-test studies.
+
+**Overall performance** (the deficit that is definitely there):
+
+| Measure | k | N | δ | 80% credibility interval |
+|---|---|---|---|---|
+| Omission errors | 39 | 3,192 | **1.34** (SD 0.28) | 0.98 – 1.69 |
+| Commission errors | 33 | 3,165 | **0.98** (0.27) | 0.63 – 1.32 |
+| Reaction time | 26 | 1,342 | 0.61 (0.73) | −0.33 – 1.55 |
+| SD of reaction time | 16 | 930 | 0.93 (0.38) | 0.45 – 1.41 |
+
+**Performance over time — the vigilance decrement** (the deficit the folk model assumes):
+
+| Measure | k | N | δ | 80% credibility interval |
+|---|---|---|---|---|
+| Omission errors | 7 | 488 | **0.54** (0.53) | **−0.14 – 1.22** *(crosses zero)* |
+| Commission errors | 5 | 431 | **0.24** | — |
+| Reaction time | 5 | 338 | **0.27** | — |
+| SD of reaction time | 4 | 299 | **0.22** | — |
+
+**The mechanism**, from signal-detection and diffusion modelling in the same paper: perceptual
+sensitivity **d′ = 2.68 (0.89) in ADHD vs 3.57 (0.93) in controls, d = 0.98, p < .001**; drift rate
+**v = 0.18 (0.11) vs 0.28 (0.16), d = 0.75, p = .001**; **response bias ln β: d = 0.04, n.s.**
+
+`MEASURED-META`. **The impairment is present from the first block, in the rate at which evidence
+accumulates from each stimulus — not in a steeper decline across time.** The decrement effects are
+a quarter to a third the size of the overall effects and the largest one's interval includes zero.
+
+**Design consequence.** `INFERENCE`, and it is the most actionable inference in the section:
+**"short attention span" is the wrong design target. "Lower signal-to-noise per opportunity" is the
+right one.** Do not shorten the lesson. Raise the discriminability of each item — signalling
+(g = 0.43), contiguity (g = 0.63–0.78), removing competing referents (§1) — and increase the
+*number* of opportunities, since acquisition is counted in opportunities (corpus K1: ≈7 to 80%
+mastery) and each one is worth less to this learner than to the next one.
+
+### 5.3 Delay is the largest clean effect
+
+**Jackson & MacKillop (2016)**, *Biological Psychiatry: CNNI*, `10.1016/j.bpsc.2016.01.007`: 21
+investigations, 25 case-control comparisons, **N = 3,913**, delay discounting **d = 0.43,
+p < 10⁻¹⁵**. No moderation by age (<18 vs >18), by real vs hypothetical reward, or by comorbid
+conduct/oppositional disorder. Minimal heterogeneity, minimal publication bias. `MEASURED-META`.
+
+**Patros, Alderson, Kasper, Tarle, Lea & Hudec (2016)**, *Clinical Psychology Review*,
+`10.1016/j.cpr.2015.11.001`: 28 tasks / 26 studies, **N = 4,320** (2,360 ADHD, 1,960 typically
+developing), choice impulsivity **g = .47**. `MEASURED-META`.
+
+**Marco et al. (2009)**, *Neuropsychology*, `10.1037/a0014914`: 360 ADHD probands, 349 siblings, 112
+controls — the smaller-sooner preference was elevated in ADHD under both conditions **and larger
+when the smaller-sooner choice reduced total trial delay**, which is the design signature that
+separates *delay aversion* from *pure impulsive drive*. `MEASURED-BENCH`.
+
+**Design consequence.** The interval between an action and its payoff is a design parameter, and it
+carries the cleanest, largest, most replicated effect in this literature. Every architectural choice
+that lengthens that interval — batching feedback, end-of-unit grading, deferred results — is a
+tax levied specifically on this population, at d ≈ 0.43–0.47.
+
+### 5.4 Does high-interest material normalise performance? The precise answer.
+
+**Dovis, Van der Oord, Wiers & Prins (2012)**, *Journal of Abnormal Child Psychology*,
+`10.1007/s10802-011-9601-8`, PMC3375007: 30 children with ADHD vs 31 controls on a visuospatial
+working-memory task under four reinforcement conditions — feedback-only, €1, €10, and a computer-game
+condition. Verbatim:
+
+> "In the Feedback-only condition, children with ADHD performed worse … Although incentives
+> significantly improved the WM performance of children with ADHD, **even the strongest incentives
+> (10 euros and Gaming) were unable to normalize their performance** … **Only children with ADHD
+> showed a decrease in performance over time. Importantly, the strongest incentives (10 euros and
+> Gaming) normalized persistence of performance in these children**, whereas 1 euro had no such
+> effect."
+
+`MEASURED-RCT`. This is the single most precise answer to the "make it engaging" question in the
+ADHD context, and it splits the outcome in two:
+
+- **Level of performance: not normalised, by any incentive tested.**
+- **Persistence within the session: normalised, but only by the strongest incentives.** €1 did
+  nothing. The dose mattered.
+
+Set alongside the corpus's gamification finding — Sailer & Homner (2020): cognitive g = .49,
+motivational g = .36, **behavioural g = .25 [.04, .46]**, the weakest cell; moderators are game
+fiction and social interaction, not points/badges/leaderboards; and 128 experiments show tangible
+expected performance-contingent rewards undermine intrinsic motivation — the design reading is
+sharp: **the legitimate target of a game layer is within-session persistence, not accuracy and not
+motivation.** And it must not be a tangible expected performance-contingent reward, which is the
+only kind Dovis actually tested. That tension is real and unresolved: the manipulation with the
+measured persistence benefit is the manipulation the motivation literature warns against.
+`INFERENCE`.
+
+The weaker cousin of this claim should be marked down. **Optimal stimulation theory** — Antrop,
+Roeyers, Van Oost & Buysse (2000), *JCPP* — is often cited for "novelty normalises ADHD behaviour."
+The authors' own 2002 re-analysis states that in the original study "confirmation for this
+hypothesis was only found for **2 of 25 target behaviors**." `OBSERVED`, weak, and should not be
+carried as support.
+
+### 5.5 The dissociation that defines the opportunity: throughput vs accuracy
+
+Medication is the best-evidenced intervention in this space. What it buys is very specific.
+
+**Symptom ratings.** Cerrillo-Urbina et al. (2018), *J Child Adolesc Psychopharmacol*, 15 RCTs,
+N = 4,648: ADHD-RS-IV **SMD −0.70 [−0.85, −0.55]**; stimulants **−0.83 [−1.11, −0.54]**. Note for
+calibration that the **placebo arm itself was SMD −0.68 [−0.82, −0.54]**. `MEASURED-META`.
+
+**Academic outcomes.** **Kortekaas-Rijlaarsdam, Luman, Sonuga-Barke & Oosterlaan (2019)**, *European
+Child & Adolescent Psychiatry*, `10.1007/s00787-018-1106-3`, 34 studies: methylphenidate improved
+**math productivity +7.8%, p < .001**; **math accuracy +3.0%, p = .001**; **reading speed SMD .47,
+p < .001**; **reading accuracy: not significant.** The authors' summary: "Academic improvements were
+**small compared to symptom improvements**; qualitative changes limited to math." `MEASURED-META`.
+
+**Prasad, Brogan, Mulvaney, Grainge, Stanton & Sayal (2013)**, *European Child & Adolescent
+Psychiatry*, 43 studies, pooled N = 2,110: work *completed* up by **up to 15%**; on-task time up by
+**up to 14%**; accuracy improved "less consistently." **Atomoxetine (2 studies): no significant
+effect.** `MEASURED-META`.
+
+**This is the design opportunity, stated plainly.** The best pharmacological intervention available
+buys **throughput** — more work done, more time on task — and buys **accuracy** barely at all
+(+3.0% in math, nothing in reading). A learning system's job is the accuracy half: the correctness
+of the next opportunity, the immediacy of its correction, the discriminability of its signal. That
+is the half medication does not deliver, and it is the half §5.2 identifies as the actual deficit.
+`INFERENCE`.
+
+### 5.6 Which accommodations have evidence, and which are folklore
+
+The corpus already records the general finding: testing accommodations are **legally mandated and
+evidentially weak** — Kieffer, Lesaux, Rivera & Francis (2009), overall **g = .034, p = .180**;
+Rios, Ihlenfeldt & Chavez (2020), 26 studies / 95 effect sizes / **N = 11,069**, overall +0.16 SD
+with none statistically different from zero. Both halves are held here without softening either.
+
+The ADHD-specific picture, retrieved this session, is sharper.
+
+**The systematic review.** **Lovett & Nelson (2021)**, *JAACAP*, `10.1016/j.jaac.2020.07.891`, 510
+documents screened, 68 included, verbatim:
+
+> "**most accommodations fail to show evidence of benefits that are specific to students with ADHD,
+> and many of the more common accommodations have few or no experimental studies supporting them.
+> An exception is read-aloud accommodations, which have two randomized experiments finding specific
+> benefits for younger students with ADHD.**"
+
+`MEASURED-META`. The authors recommend clinicians "be hesitant to recommend accommodations
+immediately after a diagnosis."
+
+**Extended time — three independent failures.**
+
+- **Lewandowski, Lovett, Parolin, Gordon & Codding (2007)**, *J Psychoeducational Assessment*,
+  grades 5–7, time-and-a-half on mathematics: "**The results did not support the differential boost
+  hypothesis in that the ADHD group did not make more gains than the control group with extended
+  time**," despite the ADHD group having lower processing speed and math fluency. `MEASURED-RCT`
+  (null).
+- **Miller, Lewandowski & Antshel (2015)**, *J Attention Disorders*, `10.1177/1087054713483308`, 38
+  college students with ADHD vs 38 matched controls on the Nelson-Denny under standard / 1.5× / 2×
+  time: "**Groups did not differ in the number of items attempted or correctly answered at standard
+  time, time and one half, or double time.**" Authors conclude extended time is "not specific and
+  perhaps not necessary." `MEASURED-RCT` (null).
+- **Lovett & Leja (2015)**, *J Attention Disorders*, `10.1177/1087054713510560`: "**Students
+  reporting more symptoms of ADHD and executive functioning deficits actually benefited LESS from
+  extended time**, and students' perceptions of their timing needs did not predict benefit."
+  `MEASURED-RCT` (negative direction).
+
+No ADHD-specific meta-analysis of extended time was located. Gregg & Nelson (2012), *J Learning
+Disabilities*, meta-analysed extra time for transitioning adolescents with **learning disabilities**
+and concluded the results "raised **more questions than answers**." The first purpose-built RCT is
+only now running — Malcon et al. (2026), *JMIR Research Protocols*, `10.2196/80271`, NCT06063382,
+103 enrolled, 25% vs 50% extra time — **with no results yet**. `OBSERVED`.
+
+**The constructive move.** The one accommodation in this space with a differential-boost finding —
+**read-aloud, two randomised experiments, younger students** (Spiel, Mixon, Holdaway, Evans,
+Harrison, Zoromski & Yost 2016, *Remedial and Special Education*, n = 36; Spiel, Evans & Harrison
+2019, *J Applied School Psychology*, n = 45, grades 5–6, randomised; exact effect sizes **UNVERIFIED**
+from ERIC abstracts) — is **the one a machine supplies for free, universally, to everyone, with no
+eligibility determination and no stigma**. That is the curb-cut argument in its cleanest form: the
+accommodation with evidence is the accommodation software gives away.
+
+**Task initiation.** **Breitwieser & Reinelt (2026)**, *British Journal of Psychology*,
+`10.1111/bjop.70065`, a **registered-report** meta-analysis: 52 effect sizes from 42 studies,
+**N = 12,957**, mean age 10.67, spanning 1975–2025. **Hedges' g = 0.31 [0.21, 0.41]**;
+Q(51) = 146.47, p < .001, I² = 65.2%. "The effects were **stronger in studies with younger children
+and (in some analyses) children with ADHD**, suggesting that implementation intentions are
+**particularly effective when self-regulation abilities are limited**." `MEASURED-META`. This is
+the best-evidenced task-initiation lever available and it is the warrant for §4.4 row 1. Primary
+ADHD studies exist (Gawrilow & Gollwitzer 2008, `10.1007/s10608-007-9150-1`; Gawrilow, Gollwitzer &
+Oettingen 2011 ×2; Gawrilow et al. 2013) but their **effect sizes are UNVERIFIED** — Springer
+deposited no abstracts for that era and no OA copies were reachable.
+
+**Body doubling.** Widely practised, entirely unmeasured. Exhaustive retrieval returns exactly two
+academic sources, both the same 220-person descriptive survey with no control condition, no task
+measure and no effect size — **Eagle, Baltaxe-Admony & Ringland (2023)**, ASSETS '23,
+`10.1145/3597638.3614486`, which states outright that "**no academic exploration exists on the
+topic**," and its 2024 *ACM TACCESS* extension, `10.1145/3689648`. Europe PMC `TITLE:"body doubling"`
+returns **0 results**. Reported honestly: this is a community practice with **zero controlled
+outcome data**. Folklore in the evidentiary sense, which is not the same as false. `OPEN` — see §9.
+
+**Exercise.** The best-replicated finding is acute, not chronic: **Xu, Zhao & Hu (2026)**,
+*Psychology of Sport and Exercise*, `10.1016/j.psychsport.2026.103088` — acute exercise on
+inhibitory control **Hedges' g = 0.55 [0.32, 0.79], p < 0.001**; core symptoms **g = 0.23 [0.03,
+0.43], p = 0.024**; chronic exercise "mixed results." In children: working memory **SMD 0.51 [0.34,
+0.69]** (Cheng, Song & Hong 2025, 11 studies, N = 667); cognitive flexibility **SMD 0.70 [0.09,
+1.31]** but **inhibition switching SMD −0.35 [−0.74, 0.03], crossing zero** (Li et al. 2025, 19
+studies); and a flat null on executive functioning across neurodevelopmental disorders —
+**g = 0.492, p = 0.215, 95% CI [−0.286, 1.269]** (Carcelén-Fraile et al. 2025, 16 RCTs).
+`MEASURED-META`, heterogeneous and mutually inconsistent. A movement break before a hard segment has
+the best-replicated number in this space and costs nothing; the chronic-training claims should not
+be carried.
+
+### 5.7 The non-diagnostic route
+
+Everything above describes a profile. The system must serve the profile **without assigning it**.
+That is technically possible because every design trigger in §4.4 is defined on an **observable task
+state**, not on an inference about the child:
+
+| Design trigger | What it observes | What it does **not** claim |
+|---|---|---|
+| Three-error run → offer worked step | A sequence of responses in this session | That the learner has an attention disorder |
+| Response-time variability above the learner's own rolling baseline → shorten the current opportunity's evidence demand | Within-learner variance | That variability indicates a diagnosis (it does not — g = 0.25 vs clinical controls) |
+| Time-to-first-action beyond threshold → fire the if-then cue and pre-load the first item | Latency at session start | That the learner has a task-initiation deficit |
+| Hint dwell-time < 1 s → replace text hint with required-response step | Dwell time | Anything about the person |
+| Wheel-spinning signature → forced strategy change | Opportunity count without accuracy gain | Anything about the person |
+
+`DESIGN`. **What would show this was the wrong design:** if these five triggers, applied
+universally, produce **worse** outcomes for learners without the profile than a non-triggered
+baseline — that is, if universal application of profile-derived design costs the majority anything
+measurable — then the curb-cut assumption fails here and the triggers must be gated, which
+reintroduces exactly the eligibility determination this design exists to avoid. That is a real
+possible outcome and it is the falsifier that matters most, because the entire SELPA-first argument
+in this project rests on the curb-cut holding.
+

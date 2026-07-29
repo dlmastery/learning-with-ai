@@ -2,7 +2,7 @@
 
 ### A survey of what AI-native learning has actually been measured to do, and a specification for what it should be
 
-**34 sections · 82,527 words · 37 research reports · 47 published corrections**
+**34 sections · 82,966 words · 40 research reports · 48 published corrections**
 Corrections ledger: [`CORRECTIONS.md`](CORRECTIONS.md) · Adversarial reviews: [`evidence/`](evidence/)
 Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/>
 
@@ -16,11 +16,11 @@ randomised controlled trials** — four of them second-language learning. It mea
 resemblance, preference and engagement. It very rarely measures whether anyone
 learned anything, and almost never measures it **after the tool is taken away**.
 
-This survey is an attempt to write the missing specification. It rests on 37 research
+This survey is an attempt to write the missing specification. It rests on 40 research
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
 errors is published in an append-only ledger rather than quietly edited — **20 of
-the 47 corrections were found by an adversarial reviewer rather than by us.**
+the 48 corrections were found by an adversarial reviewer rather than by us.**
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
@@ -3773,10 +3773,22 @@ the process/object literature in mathematics education.
 
 These are the section's original contributions, and both are checkable.
 
-### 3.1 Machinery before obstacle
+### 3.1 Machinery before obstacle — and the experiment that narrows it
 
 **An explanation that presents machinery before the obstacle the machinery exists to
 dodge makes the machinery look arbitrary.**
+
+**Corrected 2026-07-29, and the correction is more useful than the original claim.**
+Muller's doctoral work (Sydney, 2008) ran the nearest thing to a controlled test of
+this, and it points somewhere else. His **Refutation** condition is the Exposition
+script **verbatim, plus explicit statements of the misconception** — the same
+definitions-first order, no reordering at all. It scored **d = 0.79** against the
+Exposition.
+
+So in the one experiment that isolates it, the load-bearing variable is **naming the
+wrong idea**, not the order in which the machinery arrives. Ordering may still help;
+it has not been shown to be what does the work, and this section originally implied
+it was. See §14.3.3.
 
 The reader has no slot to put it in. They remember it as a list of tricks, cannot
 reconstruct it, and cannot tell which parts are essential and which are incidental —
@@ -3803,6 +3815,42 @@ breaks, because they were told it was theirs to set.
 **The check:** for each numeric constant in an explanation, is it (a) determined by a
 stated condition, (b) empirically fitted, or (c) arbitrary? All three are fine. Not
 saying which is the violation.
+
+### 3.3 Name the misconception — the strongest single result on explanation
+
+Three experiments, one thesis, and it is the closest thing the field has to a direct
+test of what makes an explanation teach.
+
+| Condition | Content | Gain |
+|---|---|---|
+| Exposition | Clear, correct, 7:02 | 1.77 |
+| Extended | Same, longer, 11:22 | 2.41 |
+| **Refutation** | Exposition **verbatim + the misconception named**, 9:33 | **4.41** |
+| **Dialogue** | Two speakers, one holding the misconception, 11:22 | **4.77** |
+
+N = 364, F(3,461) = 13.625, p < .001; **d = 0.83** for Dialogue, **d = 0.79** for
+Refutation. Replicated at n = 73 on quantum tunnelling (d = 0.71).
+
+**And the same thesis contains the felt/real dissociation, measured.** On the opinion
+form, *"I learned something from the video"* scored **5.7 for Dialogue against 5.6 for
+Exposition — flat**, while actual learning differed by d = 0.71. Perceived clarity did
+not differ either. What *did* differ: students found the better format **more dull**
+(p < .01) and said they would rather see the worse one in lectures (**p < .05**).
+
+The author's own conclusion is the sentence this survey has been circling for eighty
+thousand words:
+
+> *"They believed they learned the same amount as students with double their learning
+> gains. Thus the expositions actually strengthened misconceptions."*
+
+**A clear explanation of a concept the learner has a wrong model of does not overwrite
+the wrong model. It sits alongside it, and raises confidence.** That is why clarity is
+not the goal, and why "was it well explained?" is the wrong question.
+
+One further result from the same work, on the prediction step this survey recommends
+elsewhere: *"students who witness demonstrations without being asked to make a
+prediction perform as well on follow-up tests as those who don't see the demonstration
+at all."* The demonstration is worth nothing without the commitment that precedes it.
 
 ---
 

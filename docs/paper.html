@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Learning in the New Frontier AI World — the survey</title>
-<meta name="description" content="A 82,527-word survey of what AI-native learning has actually been measured to do. Evidence-labelled throughout, nulls first-class, corrections published.">
+<meta name="description" content="A 82,966-word survey of what AI-native learning has actually been measured to do. Evidence-labelled throughout, nulls first-class, corrections published.">
 <link rel="stylesheet" href="site.css">
 <style>
 /* ============================================================
@@ -400,10 +400,10 @@ h2.fm{font:400 27px/1.2 var(--serif);margin:64px 0 var(--s4);letter-spacing:-.01
         <p class="standfirst">What AI-native learning has actually been measured to do,
         and a specification for what it should be.</p>
         <dl class="facts">
-          <div><dt>Length</dt><dd>82,527 words</dd></div>
+          <div><dt>Length</dt><dd>82,966 words</dd></div>
           <div><dt>Structure</dt><dd>7 parts · 34 sections</dd></div>
           <div><dt>Built on</dt><dd>~2,100 sources</dd></div>
-          <div><dt>Reading time</dt><dd>≈344 min</dd></div>
+          <div><dt>Reading time</dt><dd>≈346 min</dd></div>
         </dl>
       </div>
 
@@ -414,11 +414,11 @@ years on, the field has produced roughly 2,900 papers and, by our census, <stron
 randomised controlled trials</strong> — four of them second-language learning. It measures
 resemblance, preference and engagement. It very rarely measures whether anyone
 learned anything, and almost never measures it <strong>after the tool is taken away</strong>.</p>
-<p>This survey is an attempt to write the missing specification. It rests on 37 research
+<p>This survey is an attempt to write the missing specification. It rests on 40 research
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
 errors is published in an append-only ledger rather than quietly edited — <strong>20 of
-the 47 corrections were found by an adversarial reviewer rather than by us.</strong></p>
+the 48 corrections were found by an adversarial reviewer rather than by us.</strong></p>
 <p><strong>The organising finding is about agents.</strong> An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
 something else, which gives a rule: <em>the value of an agentic loop is </em><em>bounded by</em><em>
@@ -498,7 +498,7 @@ proposed, benchmarked, and <strong>falsified</strong>.</p>
 <li><a href="#s17"><span class="tn">17</span><span>Beyond the Tutor — the five roles nobody is building</span></a></li>
 <li><a href="#s18"><span class="tn">18</span><span>What the Object Must Refuse — embodiment, manipulatives, and executable material</span></a></li>
 <li><a href="#s19"><span class="tn">19</span><span>Showing — illustration, animation, and the arithmetic of a wrong picture</span></a></li>
-</ol><div class="pw">8 sections · 16,955 words</div></section>
+</ol><div class="pw">8 sections · 17,394 words</div></section>
 <section><div class="pn">Part IV</div><h3>Correctness</h3><p class="pb">How a tutor can be wrong safely, and how a learner&#x27;s work can be measured when the artifact no longer indicates the person who produced it.</p><ol>
 <li><a href="#s20"><span class="tn">20</span><span>Grounding — correctness that lives in the verifier</span></a></li>
 <li><a href="#s21"><span class="tn">21</span><span>Assessment After the Artifact — measuring a person when the work no longer indicates them</span></a></li>
@@ -4293,9 +4293,19 @@ the process/object literature in mathematics education.</p>
 <hr />
 <h3>3. Two failure modes worth naming</h3>
 <p>These are the section's original contributions, and both are checkable.</p>
-<h4>3.1 Machinery before obstacle</h4>
+<h4>3.1 Machinery before obstacle — and the experiment that narrows it</h4>
 <p><strong>An explanation that presents machinery before the obstacle the machinery exists to
 dodge makes the machinery look arbitrary.</strong></p>
+<p><strong>Corrected 2026-07-29, and the correction is more useful than the original claim.</strong>
+Muller's doctoral work (Sydney, 2008) ran the nearest thing to a controlled test of
+this, and it points somewhere else. His <strong>Refutation</strong> condition is the Exposition
+script <strong>verbatim, plus explicit statements of the misconception</strong> — the same
+definitions-first order, no reordering at all. It scored <strong>d = 0.79</strong> against the
+Exposition.</p>
+<p>So in the one experiment that isolates it, the load-bearing variable is <strong>naming the
+wrong idea</strong>, not the order in which the machinery arrives. Ordering may still help;
+it has not been shown to be what does the work, and this section originally implied
+it was. See §14.3.3.</p>
 <p>The reader has no slot to put it in. They remember it as a list of tricks, cannot
 reconstruct it, and cannot tell which parts are essential and which are incidental —
 which is precisely the failure that makes an explanation feel clear and leave nothing
@@ -4315,6 +4325,60 @@ breaks, because they were told it was theirs to set.</p>
 <p><strong>The check:</strong> for each numeric constant in an explanation, is it (a) determined by a
 stated condition, (b) empirically fitted, or (c) arbitrary? All three are fine. Not
 saying which is the violation.</p>
+<h4>3.3 Name the misconception — the strongest single result on explanation</h4>
+<p>Three experiments, one thesis, and it is the closest thing the field has to a direct
+test of what makes an explanation teach.</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Content</th>
+<th>Gain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exposition</td>
+<td>Clear, correct, 7:02</td>
+<td>1.77</td>
+</tr>
+<tr>
+<td>Extended</td>
+<td>Same, longer, 11:22</td>
+<td>2.41</td>
+</tr>
+<tr>
+<td><strong>Refutation</strong></td>
+<td>Exposition <strong>verbatim + the misconception named</strong>, 9:33</td>
+<td><strong>4.41</strong></td>
+</tr>
+<tr>
+<td><strong>Dialogue</strong></td>
+<td>Two speakers, one holding the misconception, 11:22</td>
+<td><strong>4.77</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>N = 364, F(3,461) = 13.625, p &lt; .001; <strong>d = 0.83</strong> for Dialogue, <strong>d = 0.79</strong> for
+Refutation. Replicated at n = 73 on quantum tunnelling (d = 0.71).</p>
+<p><strong>And the same thesis contains the felt/real dissociation, measured.</strong> On the opinion
+form, <em>"I learned something from the video"</em> scored <strong>5.7 for Dialogue against 5.6 for
+Exposition — flat</strong>, while actual learning differed by d = 0.71. Perceived clarity did
+not differ either. What <em>did</em> differ: students found the better format <strong>more dull</strong>
+(p &lt; .01) and said they would rather see the worse one in lectures (<strong>p &lt; .05</strong>).</p>
+<p>The author's own conclusion is the sentence this survey has been circling for eighty
+thousand words:</p>
+<blockquote>
+<p><em>"They believed they learned the same amount as students with double their learning
+gains. Thus the expositions actually strengthened misconceptions."</em></p>
+</blockquote>
+<p><strong>A clear explanation of a concept the learner has a wrong model of does not overwrite
+the wrong model. It sits alongside it, and raises confidence.</strong> That is why clarity is
+not the goal, and why "was it well explained?" is the wrong question.</p>
+<p>One further result from the same work, on the prediction step this survey recommends
+elsewhere: <em>"students who witness demonstrations without being asked to make a
+prediction perform as well on follow-up tests as those who don't see the demonstration
+at all."</em> The demonstration is worth nothing without the commitment that precedes it.</p>
 <hr />
 <h3>4. Worked example: energy-based models</h3>
 <p>A test of whether any of this improves an explanation that is already good. The
