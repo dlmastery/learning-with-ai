@@ -100,8 +100,29 @@ table is §4.
 
 ### 1.1 — 3Blue1Brown (Grant Sanderson)
 
+8.51M subscribers · 241 videos · 761,430,994 total views · channel opened 2015-03-03.
+`OBSERVED` (scraped 2026-07-29). Per the repo's standing rule, **reach is evidence about reach
+and nothing else** — the numbers are here so the reader knows the case is not marginal.
+
 Sanderson is the most-studied case in the repo (`N4` §5.1–5.2) and the most misread. The
-public discussion is about *animation quality*. The animation quality is the least of it.
+public discussion is about *animation quality*. The animation quality is the least of it — and
+he says so himself, in the one methodology statement that should anchor this entire section:
+
+> *"the thing that I try to make the channel do more than anything else is look visually
+> distinctive and **put animations first in the explanation rather than making them a
+> supplement to the explanation**. Like if I'm thinking of a topic it's better if I think this
+> is the core visual around which the narrative will revolve. Rather than writing a script and
+> then later thinking, hmm what visuals will I put to this? I am definitely a big advocate
+> also of while I'm animating things **letting what I discover while creating the visuals
+> change what the words will be**."*
+> — Numberphile Podcast, *"The Hope Diamond – with 3blue1brown"*, 2018-12-12
+> (transcript PDF: `https://www.numberphile.com/s/The-Hope-Diamond-with-3blue1brown.pdf`)
+
+Read the second half twice. **The visual is not the output of the explanation; it is the
+instrument he uses to find the explanation, and what he learns from building it rewrites the
+script.** That is a claim about animation as an epistemic tool, from the person with the
+strongest track record in the medium, and it is the deepest thing anyone in this inventory has
+said about their own craft. It also has a direct measured correlate — see T1.
 
 **T1 · Continuous transformation preserves referential identity** — **B** · `CRAFT`
 
@@ -116,15 +137,22 @@ thrown ball. The learner never has to ask "is that the same thing?" because thei
 system already answered.
 
 *Example:* the four-minute unbroken 2×2 linear transformation in *Eigenvectors and
-eigenvalues* (`https://www.youtube.com/watch?v=PFDu9oVAE-g`, 1:20–5:27) — the grid deforms
+eigenvalues* (`https://www.youtube.com/watch?v=PFDu9oVAE-g`, 2016, 6,213,617 views, 1:20–5:27) — the grid deforms
 continuously, and the eigenvector is identified as *the arrow that stayed on its own span*
 during the deformation. That identification is not narrated. It is **seen**, and it is only
 seeable because nothing cut.
 
-*Cognitive job:* eliminates the referent-rebinding cost of representational change. Maps
-partially onto Mayer's **spatial contiguity** and **signaling** principles (§B1) but is not
-the same thing — the multimedia literature measures *co-location*, not *continuity of
-identity through change*. This is a genuinely unmeasured mechanism. `CRAFT`.
+*Cognitive job:* eliminates the referent-rebinding cost of representational change.
+
+**And this is the one place where "animation as argument rather than decoration" is not a
+slogan but a measured distinction.** Berney & Bétrancourt (2016): animation overall
+**g = 0.23 [0.12, 0.33]**; **representational animation g = 0.40 [0.34, 0.46], k = 59**;
+**decorative animation g = −0.05 [−0.17, 0.07], k = 17 — a null.** `MEASURED-META` (§B1).
+The entire value of animation sits in whether the motion *carries the referent's state
+change*. Continuous morphing is the strongest possible form of representational: the motion
+**is** the state change. Nothing measures continuity-of-identity-through-change specifically —
+the multimedia literature measures *co-location*, not *continuity* — so the specific mechanism
+stays `CRAFT` while the representational/decorative split behind it is `MEASURED-META`.
 
 **T2 · Colour as a persistent variable binding** — **B** · `CRAFT`
 
@@ -134,10 +162,16 @@ in, in every video in *Essence of Linear Algebra*. The binding between notation 
 therefore offloaded from working memory to a perceptual channel that has essentially unlimited
 capacity for a handful of hues.
 
-*Cognitive job:* removes the symbol-lookup step that split-attention costs are made of. Nearest
-measured relative: Mayer's **signaling principle** and the **split-attention effect** (§B1).
-The 3b1b version is stronger than either — it is a *persistent* binding maintained across
-hours of runtime, which the split-attention literature has never tested. `CRAFT`.
+*Cognitive job:* removes the symbol-lookup step that split-attention costs are made of.
+Nearest measured relatives (§B1): **signaling g = 0.43 [0.35, 0.50], k = 209** (Schneider
+et al. 2018) and **spatial contiguity / split attention g = 0.63 [0.55, 0.71], k = 58**
+(Schroeder & Cenkci 2018). `MEASURED-META`. Two caveats the repo insists on: signaling is
+**subject to expertise reversal** (Richter et al. 2016 — the effect concentrates in
+low-prior-knowledge learners, r = 0.17), and nobody has tested a *persistent* binding
+maintained across hours of runtime, which is what 3b1b actually does. `CRAFT` for the
+persistence. **Expertise reversal here is a direct argument for responsiveness: the colour
+scaffold should decay as the learner's fluency with the notation rises, and only a system that
+can see the learner knows when.**
 
 **T3 · Obstacle before machinery / concrete-to-abstract descent** — **B** · `OBSERVED`,
 effect **not isolated**
@@ -197,10 +231,34 @@ more passive in that moment."*
 measured. The *form* — an unenforceable spoken request — exists only because the medium cannot
 gate. §3.1 specifies the replacement.
 
+**Three measured facts constrain how it must be ported, and every one of them narrows the
+design:**
+
+1. **The prequestion effect is specific, not general.** St. Hilaire, Chan & Ahn (2024,
+   preregistered): questioned content **g = 0.54 [0.42, 0.66], k = 97, p < .001**; everything
+   *else* in the lesson **g = 0.04 [−0.04, 0.11], k = 91, p = .349**. `MEASURED-META` (§N2).
+   A prediction gate buys you the step you gated and nothing around it. **Gate the load-bearing
+   step; gating everywhere costs attention and returns 0.04.**
+2. **Guessing is the moderator.** **g = 0.65 when learners guess vs g = 0.22 when they do
+   not**, p < .001. `MEASURED-META`. The gate must accept a wrong answer, not require a right
+   one — "I don't know" must not be an accepted token.
+3. **Prediction only pays when the prediction is violated.** Theobald & Brod (2022): no main
+   effect of predicting before a reveal (**b = −0.090, p = .330**); the **condition ×
+   expectancy-violation interaction was b = 0.195, SE = .062, p = .002**. `MEASURED-RCT`.
+   **Predicting correctly buys nothing. Being surprised is the whole effect.** This single
+   result is the strongest argument in the document for §3.2 — an animation parameterised by
+   the learner's own wrong model, run until it visibly breaks, is *engineered expectancy
+   violation*, and it is the only technique here whose mechanism has a measured interaction
+   term behind it.
+
+And one age boundary that governs deployment: **adults g = 0.62 vs grade-school children
+g = 0.22**, p = .020. `MEASURED-META`.
+
 **T8 · Manim as an authored language, and the parameterisation that gets thrown away** —
 **C** · `OBSERVED`
 
-Manim (`github.com/3b1b/manim`, and the community fork `github.com/ManimCommunity/manim`) is
+Manim (`github.com/3b1b/manim` — 88,991 ★, MIT, created 2015-03-22; community fork
+`github.com/ManimCommunity/manim` — 39,784 ★, created 2020-05-19; `gh api`, 2026-07-29) is
 not a rendering tool; it is a **language in which explanations are programs**. This matters far
 more than the aesthetic. Every 3Blue1Brown scene is a *function of parameters* — the matrix
 entries, the number of terms, the sample size — and the published video is **one evaluation of
@@ -210,6 +268,19 @@ The parameterisation already exists, in source, in public. The medium throws it 
 **This is the single largest C in the inventory**, and the highest-value one: the substrate
 that keeps the parameters open is not a research problem, it is a deployment decision.
 
+Sanderson's own framing of the tool is a warning against treating it as a rendering pipeline:
+*"A good litmus test for whether it's the right tool is whether the idea of writing code to
+create visuals feels inhibiting or liberating"* (`https://www.3blue1brown.com/about`). And on
+the codebase itself: *"It began as a scrappy playground of code for my own use cases… The
+version I use is probably best viewed as a testing ground."* `OBSERVED`.
+
+> ⚠️ **Rights, from `N4` §7.4, because it governs what can actually be shipped.** `manim` is
+> MIT; the `videos` repo is CC BY-NC-SA 4.0 but contains **scene source only, no transcripts**;
+> **the videos themselves are all rights reserved.** He permits clips under 60 seconds with
+> on-screen attribution. Veritasium is all-rights-reserved (© Electrify US LLC) with no
+> licence. **The technique inventory is portable; the artifacts are not.** Build from the
+> techniques.
+
 **T9 · The example-density floor** — **B** · `OBSERVED`
 
 One example held for four minutes, against The Organic Chemistry Tutor's ~52 seconds per
@@ -218,6 +289,15 @@ thousands of SoME entries — an observation over a corpus he did not author, wh
 better evidence than a self-report: *"entries that struck me as especially clear would often
 keep one or two examples front and center… giving the viewer a chance to build their own
 intuitions before general rules are presented"* (`cDofhN-RJqg`, 11:14).
+
+**T9a · The explorable he built when video would not do it** — **C, demonstrated** ·
+`OBSERVED`
+
+`https://eater.net/quaternions` — an interactive explorable on quaternions, built by Sanderson
+**with Ben Eater**. Two of the strongest video explainers in the world, collaborating, chose a
+manipulable web artifact rather than a video for the one topic where the rotation group has to
+be *turned by hand*. This is the field's own admission of where its medium stops, and it is
+the most direct existing evidence for this document's bucket C. `OBSERVED`.
 
 **T10 · SoME as a technique-discovery engine** — **D** · `OBSERVED`
 
@@ -236,6 +316,35 @@ the format he built a career on. His PhD (University of Sydney, 2008, *Designing
 Multimedia for Physics Education*) is the strongest single result in the literature on
 explanation quality and it is his own channel's design document.
 
+21M subscribers · 523 videos · 4,443,828,399 total views · opened 2010-07-21. `OBSERVED`.
+
+**The primary sources, since `N4` cites the thesis second-hand.** Muller's peer-reviewed
+papers are retrievable and the key one carries the N = 364 result in its abstract:
+
+| Year | Paper | Venue | DOI |
+|---|---|---|---|
+| 2008 | **Saying the wrong thing: improving learning with multimedia by including misconceptions** (Muller, Bewes, Sharma, Reimann) | *J. Computer Assisted Learning* 24(2):144–155 | `10.1111/j.1365-2729.2007.00248.x` |
+| 2008 | Raising cognitive load with linear multimedia to promote conceptual change (Muller, Sharma, Reimann) | *Science Education* 92(2):278–296 | `10.1002/sce.20244` |
+| 2007 | Conceptual change through vicarious learning in an authentic physics setting | *Instructional Science* 35(6):519–533 | `10.1007/s11251-007-9017-6` |
+| 2008 | Coherence or interest: which is most important in online multimedia learning? | *AJET* 24(2):211–221 | `10.14742/ajet.1223` |
+
+The thesis (*Designing Effective Multimedia for Physics Education*, Univ. Sydney, 2008) is
+linked from `https://www.veritasium.com/publications`; the USyd repository handle
+(`hdl.handle.net/2123/3526`) **returns 403 to non-interactive clients** and could not be
+retrieved directly.
+
+**A fact in the abstract that `N4` does not carry and that changes the design conclusion:**
+
+> *"**Students with low prior knowledge benefited most, however high prior knowledge learners
+> were not disadvantaged.**"* — Muller et al. 2008, `10.1111/j.1365-2729.2007.00248.x`,
+> Crossref abstract, verbatim. `MEASURED-RCT`.
+
+**Refutation does not show expertise reversal.** Almost every other technique in this
+inventory does — signaling (Richter 2016), worked examples (Tetzlaff 2025: novices **+0.505**,
+experts **−0.428**), scaffolding generally. Misconception-naming is the rare intervention that
+is safe to apply without knowing the learner's level, which makes it **the correct default for
+a cold start** and the first thing a responsive system should do before it knows anything.
+
 **T11 · Misconception-first elicitation by street interview** — **A** · `CRAFT` (the form),
 `MEASURED-RCT` (the job)
 
@@ -248,9 +357,14 @@ mechanism has two halves that must be separated because they port differently:
   learner's own version of it, which is a precondition for displacing it — you cannot
   restructure a belief that is not currently in working memory.
 
-*Example:* the canonical form runs through most of the channel; *The Most Common Cognitive
-Bias* is the tightest instance — viewers are made to commit to a wrong rule before the rule is
-named.
+*Example:* *The Most Common Cognitive Bias*
+(`https://www.youtube.com/watch?v=vKA4w2O61Xo`, 2014-02-24, 16,703,768 views) is the tightest
+instance — viewers are made to commit to a rule (the 2-4-6 task) before the rule is named. The
+origin artifact is *Khan Academy and the Effectiveness of Science Videos*
+(`https://www.youtube.com/watch?v=eVtCO84MDj8`, 2011-03-17, 1,677,772 views), in which he
+explains his own thesis result on camera three months after finishing it — **the only case in
+this inventory of a creator publishing the trial that justifies their format before building
+the format.**
 
 *Cognitive job:* pre-activation of the to-be-displaced conception; refutation-text structure.
 `MEASURED-RCT` — see T12.
@@ -271,6 +385,26 @@ quantum tunnelling, `d = 0.71`. **This is the only technique in the entire inven
 direct randomised effect size attached to the technique itself rather than to a distant
 cousin.** Note the design: Refutation was Exposition **verbatim plus one feature**. That
 ablation design is the template for every test proposed in §3.
+
+**The meta-analytic picture is smaller and the repo mandates the smaller number.**
+Schroeder & Kucera (2022): refutation texts **g = 0.41 [0.30, 0.51], k = 44, n = 3,869** raw,
+**trim-and-fill adjusted to g = 0.28 [0.16, 0.39]**. `MEASURED-META`. *Quote 0.28, and say
+which.* Against a *published* document (an IDA dyslexia fact sheet) the refutation version
+gave **η² = 0.33** at posttest and **η² = 0.175** delayed (Peltier et al. 2020, n = 75) —
+one of only two head-to-head tests of real published explanations that exist anywhere.
+
+**And two well-powered replications found nothing.** Mason, Zaccoletti & Carretti (2019,
+N = 85) and Mason, Borella & Diakidoy (2020, N = 110): students improved *"regardless of text
+read."* `MEASURED-RCT`. The strongest technique in the inventory has a live null attached and
+the inventory says so.
+
+> ⚠️ **The adjacent finding that constrains every "show the wrong model" design in §3.**
+> Barbieri et al. (2023) on worked examples (**g = 0.48**, 55 studies, 181 effect sizes):
+> **correct examples alone outperformed incorrect-only and correct+incorrect combinations.**
+> `MEASURED-META`. Showing learners *someone else's* wrong work is measured to be worse than
+> showing them right work. Refutation is not the same operation — it names a belief **the
+> learner already holds** and marks it wrong — and the distinction between those two things is
+> load-bearing for §3.2 and §3.3. Get it wrong and you have built the losing condition.
 
 **T13 · The dialogue form — a confederate who holds the misconception** — **A** · `MEASURED-RCT`
 
@@ -340,9 +474,22 @@ agent behaviour, presses run, and **reports what came out**. The distinction is 
 *generated* and could have come out otherwise. The explainer has given up control of the
 conclusion — and the viewer can tell.
 
-*Example:* the natural-selection and aggression series (*Simulating Natural Selection*,
-*Simulating the Evolution of Aggression*) — hawk/dove dynamics emerge from the encoded payoff
-rules rather than being asserted from them.
+*Example:* *Simulating the Evolution of Aggression*
+(`https://www.youtube.com/watch?v=YNMkADpvO4w`, 2019-07-27, 24,858,944 views) and *Simulating
+Natural Selection* (`https://www.youtube.com/watch?v=0ZGbIKd0XrM`, 2018-11-14, 15,596,157
+views) — hawk/dove dynamics emerge from the encoded payoff rules rather than being asserted
+from them. The channel has **24 videos and 98.2M views**; the views-per-video ratio is the
+highest in this inventory by a wide margin, which is what a technique with no substitutes looks
+like. `OBSERVED`.
+
+**The lineage is documented and it matters.** Helps's first engine,
+`github.com/Helpsypoo/primerpython` (★1,364, 2018, now archived), says in its own README:
+*"This is a library of tools that lets you write high-level functions to build and animate
+objects in **Blender**… **Much of the structure comes from manim, 3blue1brown's animation
+engine.**"* He has since moved to C#/Godot (`github.com/Primer-Learning/PrimerTools`, ★119,
+active 2026). **Manim's real contribution was not the renderer; it was establishing that an
+explanation should be a program.** T8's parameterisation argument applies to Primer with more
+force, because in Primer the program is a *model* and not only a *drawing*.
 
 *Cognitive job:* transfers the warrant from the narrator's authority to the model's mechanics.
 This is the *executable-and-verifiable* property this repo argues for in §F3, arrived at
@@ -384,8 +531,16 @@ visible. There is no "and now we add the ALU" — you watch the ALU get wired, a
 of 74LS181s and jumper cable, and it works. The technique's claim is: **the abstraction you
 find intimidating is made of things you can see**.
 
-*Example:* the *Building an 8-bit breadboard computer* series and the *world's worst video
-card* series (`eater.net`).
+*Example:* the *Building an 8-bit breadboard computer* series — 44 videos, hub at
+`https://eater.net/8bit` — and the *world's worst video card* series
+(`https://www.youtube.com/watch?v=l7rce6IQDWs`, 2019-07-05, 6,961,306 views, plus three
+sequels). Channel: 1.38M subscribers, 130 videos, 107.6M views. `OBSERVED`.
+
+Two biographical facts that are not decoration. Eater states on `https://eater.net/about` that
+he **has no degree** — *"I went to school for computer science, but failed out after the first
+year"* — and that he spent seven years at **Khan Academy**, joining in 2011 as lead exercise
+developer. The person who built the most rigorous build-it-from-nothing corpus in existence
+came out of the largest exercise-generation system in existence, and left it to do this.
 
 *Cognitive job:* collapses the felt distance between the learner's competence and the target
 system. Nearest measured relative: none. Grounding/embodiment work in this repo (§F7) is the
@@ -422,10 +577,24 @@ in the same frame at the same time.
 
 ### 1.5 — Sebastian Lague
 
+**T24a · Demand-ranked topic selection** — **A** · `OBSERVED`
+
+Eater's FAQ documents that he takes topic requests **only via a Reddit thread, ranked by
+upvotes**: *"Requests I get through email/twitter/etc. are much more likely to be ignored,
+since the Reddit thread is what I look at when considering what people want."* This is a
+deliberately-built, low-bandwidth, aggregate return channel — a creator constructing the
+crudest possible instrument for seeing his audience, because none is supplied. Pure **A**, and
+the honesty of the design is instructive: he does not pretend it tells him about any
+individual.
+
 **T25 · The visible iteration loop** — **B** · `CRAFT`
 
 The *Coding Adventures* series shows v1, which looks bad; v2, which looks bad differently;
-and v5, which looks good — with the reasoning for each change. The learner sees that the
+and v5, which looks good — with the reasoning for each change. Channel: 1.4M subscribers, 296
+videos, 114.7M views; exemplars include *Coding Adventure: Chess*
+(`https://www.youtube.com/watch?v=U4ogK0MIzqk`, 2021, 4.26M views), *Simulating Fluids*
+(`rSKMYc1CQHE`, 2.57M), *Simulating an Ecosystem* (`r_It_X7v-1E`, 2.34M), *Ant and Slime
+Simulations* (`X-iSQQgOd1A`, 2.18M). The learner sees that the
 polished result is the *end* of a process, not a property of the author.
 
 *Cognitive job:* corrects the "expert produces finished work in one pass" misconception,
@@ -438,12 +607,19 @@ Approaches that did not work are kept in the main narrative with their diagnosis
 to an outtake. The distinction matters: a blooper frames failure as entertainment; a retained
 failure frames it as method.
 
-**T27 · The executable artifact** — **B** · `OBSERVED`
+**T27 · The executable artifact, and the tournament** — **B** · `OBSERVED`
 
-The code is published. The explanation is therefore **runnable and modifiable by the learner**
-after the video ends. This is the one technique in the video-native set that already carries
-its own interactivity — smuggled in through a GitHub link because the medium would not carry
-it.
+The code is published, one repo per episode, matched 1:1 (`Fluid-Sim` ★1,276, `Boids` ★945,
+`Ant-Simulation` ★260 — whose entire description is the video URL; `Digital-Logic-Sim` ★4,627).
+The explanation is therefore **runnable and modifiable by the learner** after the video ends.
+This is the one technique in the video-native set that already carries its own interactivity —
+smuggled in through a GitHub link because the medium would not carry it.
+
+And once, it went further: `Chess-Challenge` (★1,779, 2023) — *"Create your own tiny chess
+bot!"* — turned the explanation into **an entry condition for a public tournament**, which he
+then ran and published as a video. The explanation's terminal state was not "you understood
+it" but "you submitted an agent that competed." That is T70 (hand over authorship) achieved
+inside the video ecosystem, and it required leaving the video to do it.
 
 ---
 
@@ -459,13 +635,23 @@ it is a **constructed situation in which the principle is forced**.
 *Cognitive job:* creates a need-to-know that precedes the content. This is the "motivating
 question" of T3/T7 built out of physical materials at a five-figure budget.
 
-> ⚠️ **The nearest measured relative points the other way.** Mayer's **coherence principle**
-> and the **seductive details** literature (§B1) find that interesting-but-tangential material
-> *reduces* learning. Rober's spectacle is defensible only to the extent that it is
-> **non-tangential** — that the concept is genuinely load-bearing for the outcome. Where it is
-> not, this technique is a seductive detail with a large budget. That is a real risk and the
-> inventory keeps the technique with the caveat attached. `MEASURED-META` (against, for the
-> tangential case), `CRAFT` (for the load-bearing case).
+> ⚠️ **The nearest measured relative points the other way, and it has numbers.** The
+> **coherence principle**: removing seductive detail is worth **g = 0.33 [0.18, 0.48], k = 68**
+> (Sundararajan & Adesope 2020); a 2026 MASEM (Cheng et al., 177 effect sizes / 50 studies)
+> puts seductive details at **g = −0.16** overall (comprehension −0.19, recall −0.17, transfer
+> −0.12), **mediated by extraneous load only** — intrinsic and germane load do not mediate.
+> `MEASURED-META` (§B1, §N2).
+>
+> **But the moderator rescues Rober specifically, and this is worth knowing.** The coherence
+> effect splits hard by persistence: **persistent on-screen seductive detail g = 0.43 [0.29,
+> 0.57], k = 47** versus **transient g = 0.12 [−0.33, 0.57], k = 18 — not significant.** A
+> spectacle that happens, resolves, and gets out of the way is in the transient class. A
+> decorative element that sits on screen during the explanation is in the expensive one.
+>
+> The technique is therefore defensible exactly when the spectacle is (a) **transient** and
+> (b) **non-tangential** — the concept is genuinely load-bearing for the outcome. Where it is
+> neither, this is a seductive detail with a five-figure budget. `MEASURED-META` for the
+> boundary, `CRAFT` for the load-bearing case.
 
 **T29 · Stakes-first cold open** — **A/C** · `CRAFT`
 
@@ -509,8 +695,15 @@ none. `CRAFT`.
 **T33 · Self-refutation across videos, against his own prior explanation** — **B** · `CRAFT`
 
 Mould's chain-fountain explanation was revised in public — including against work by others
-(Biggins & Warner) — over multiple videos. Same structure as T16, iterated, on a mechanism he
-had personally publicised.
+(Biggins & Warner) — over multiple videos, and the thread has now run **thirteen years**:
+2013 demonstration → *World Record Chain Fountain? The Mould Effect Explained* (2.72M views) →
+*NASA tested my chain theory in space* (`NtZaP8VMv0c`, 14.3M views, his best-performing video
+on the thread). The effect is now called the **Mould effect** in the physics literature.
+
+**This is the longest-running single explanation in the inventory and it is a correction
+sequence, not a lesson.** An artifact that improves for thirteen years under public
+adversarial pressure is a thing no curriculum produces and no LLM currently produces either.
+Same structure as T16, iterated. `OBSERVED`.
 
 ---
 
@@ -526,6 +719,16 @@ answers **a person**, not a camera.
 (T13) with the roles reversed: instead of a wrong model being voiced, an *absence of model* is
 voiced. The technique exists entirely because the actual learner cannot interrupt.
 
+*Example, and it is the cleanest possible demonstration:* **OEIS A247698 is named "Brady
+numbers"** (`https://oeis.org/A247698`) — a sequence that exists because Haran, who is not a
+mathematician, asked a naive question on camera and the mathematician present found it was
+worth answering. The designated-novice role produced a citable mathematical object. Combined
+scale: Numberphile 4.76M subs / 812 videos / 725.9M views; Computerphile 2.63M / 915 / 238.5M.
+`OBSERVED`. Haran's own account of the method is in his Zeeman Medal lecture *Treasure Trove*
+(`https://www.youtube.com/watch?v=tsZkzxEhpHk`, 2025-07-27) and the Numberphile Podcast Q&A
+(`https://www.numberphile.com/podcast/brady-haran-qa`); **no verbatim "I ask the dumb
+questions" sentence was retrievable** and none is invented here.
+
 *Cognitive job:* supplies the questions the learner cannot ask; forces the expert out of
 expert register. Related measured effect: the **expert blind spot** literature (`N4` §1.5) —
 which, note, does not measure learning.
@@ -540,7 +743,7 @@ follow.**
 *Cognitive job:* pacing control by material constraint rather than by discipline. Nearest
 measured relative: **segmenting principle** (§B1) — but segmenting chunks *content*, whereas
 this throttles *rate*. Unmeasured in that form. `CRAFT`. Identical in mechanism to Khan's
-real-time handwriting (T60) and to Alakh Pandey's board derivations (T64) — three
+real-time handwriting (T74) and to Alakh Pandey's board derivations (T77) — three
 independent inventions of the same constraint.
 
 **T36 · Unscripted generation, hesitation retained** — **B** · `CRAFT`
@@ -629,9 +832,13 @@ ride it, and it takes him eight months to learn. The technique is to make a
 body, over months, on camera.
 
 *Cognitive job:* directly attacks the "I understood the explanation, therefore I can do it"
-illusion — which is precisely this repo's felt/real gap (`d ≈ 0.48` on felt while knowledge
-moves zero, §01/§22) expressed in a form nobody can argue with. This is the best existing
-*intervention* against illusion-of-competence in the entire corpus. `CRAFT`.
+illusion — this repo's felt/real gap expressed in a form nobody can argue with. The canonical
+measurement of that gap is Buljan et al. (2018, *J Clin Epi*, three parallel RCTs, n = 171 /
+99 / 64): infographic versus plain-language summary produced **no difference in knowledge**
+while **preference moved d = 0.48** and user-friendliness **d = 0.46**. `MEASURED-RCT`.
+Sandlin's bicycle is that dissociation staged on a human body for eight months. It is the
+best existing *intervention* against illusion-of-competence in the entire corpus, and a
+responsive system can run it continuously and cheaply (§3.11). `CRAFT`.
 
 **T45 · SmarterEveryDay · The instrument that changes the timebase** — **B** · `CRAFT`
 
@@ -642,8 +849,13 @@ perceptual band** rather than describing it.
 **T46 · Applied Science (Ben Krasnow) · Reproduce the canonical apparatus in a garage** —
 **B** · `CRAFT`
 
-Scanning electron microscope, X-ray backscatter imaging, thermoacoustic engines — built at
-home from purchasable parts. The claim is not "here is how an SEM works"; it is **"an SEM is a
+Scanning electron microscope (`https://www.youtube.com/watch?v=VdjYVF4a6iU`, 616K views),
+X-ray backscatter imaging, thermoacoustic engines — built at home from purchasable parts. The
+signature is the companion video *DIY SEM – Sources, Costs and References*
+(`L6HxTk9tfQk`, 94,552 views): **a tenth of the audience, and it is the bill of materials.**
+The 522,000-view gap between the demonstration and its reproducibility appendix is the
+clearest measurement in this document of how much of an audience actually wants to build the
+thing — and a system that can ask *which learner you are* does not have to choose. The claim is not "here is how an SEM works"; it is **"an SEM is a
 thing a person can build, and here is the actual bill of materials."**
 
 *Cognitive job:* converts institutional knowledge into reachable knowledge; kills the belief
@@ -666,6 +878,19 @@ are standing on. Without it, every simplification silently becomes a misconcepti
 teacher has to refute. Maps onto this repo's `F10` explanation-laddering work (ELI10/15/20/25)
 — and note that **Grey's version supplies the metadata that makes the ladder navigable**,
 which the ELI-n framing alone does not. `CRAFT`.
+
+**T48a · CGP Grey · Retroactive A/B retitling of the back catalogue** — **C** · `OBSERVED`
+
+Grey systematically re-titles published videos to test performance: *Humans Need Not Apply*
+(2014-08-13, 19.3M views) now displays as *"What Happened to Horses Is Happening to Us"*;
+*The Trouble With Tumbleweed* (14.2M) now displays as *"Tumbleweeds Kill Themselves on
+Purpose"*. `OBSERVED` (verified by upload date + description, 2026-07-29).
+
+Keep this in the inventory as the **reductio of bucket C**. The artifact's *name* — the handle
+by which a learner and a citation and a syllabus refer to it — is now a mutable field optimised
+against a click-through metric. There is no pedagogical variable here at all. It is a pure
+distribution artifact, and it has the practical consequence that **any explanation atlas
+keyed on titles will silently break.** Key on video ID.
 
 **T49 · CGP Grey · The footnote video** — **A/C** · `OBSERVED`
 
@@ -776,9 +1001,13 @@ Not "an interactive at the end of the section." Every few paragraphs there is a 
 the widget instantiates **exactly the sentence above it**. The reader never holds a claim in
 memory while scrolling to find its illustration.
 
-*Cognitive job:* spatial and temporal contiguity (§B1) taken to the limit — the illustration
-is not merely near the text, it is *the text's referent, live*. `MEASURED-META` for
-contiguity; `CRAFT` for this density.
+*Cognitive job:* contiguity taken past the limit the literature has tested. Measured
+relatives (§B1): **contiguity overall g = 0.74 [0.67, 0.82], k = 46** (Ginns 2006);
+**temporal contiguity g = 0.78 [0.64, 0.92], k = 13**; **spatial contiguity / split attention
+g = 0.63 [0.55, 0.71], k = 58, n = 2,426** (Schroeder & Cenkci 2018), validated by
+eye-tracking and the most mechanically checkable principle in the set. `MEASURED-META`.
+Ciechanowski's version is past all of them: the illustration is not merely *near* the text, it
+is *the text's referent, live, under the reader's hand*. `CRAFT` for that density.
 
 **T61 · Progressive degrees of freedom** — **B** · `CRAFT`
 
@@ -877,9 +1106,19 @@ experienced* rather than watched. This is what T4 and T25 are proxies for.
 Explanations* (explorabl.es) is a curated commons; the works are CC0 and remixable. The last
 move of the explanation is **"now make one."**
 
-*Cognitive job:* learning-by-teaching / generation. This repo rates learning by teaching at
-`g = 0.56` (§01) — one of the largest effects in the corpus — and it is the technique the
-entire video field structurally cannot use.
+*Cognitive job:* learning-by-teaching / generation — one of the largest effects in the corpus,
+and the technique the entire video field structurally cannot use.
+
+The numbers, with the repo's standing correction attached (Kobayashi 2019/2024, §C3):
+preparing to teach **g = 0.35**; preparing **and delivering g = 0.56**; and the decisive
+moderator — **with teaching expectancy g = 0.48 [0.34, 0.63]; without it g = −0.02 [−0.14,
+0.11], k = 39.** `MEASURED-META`. **The effect is entirely carried by the learner believing
+they will have to teach it.** Peer tutoring's gain to the *tutor* is **0.43** (Leung 2018).
+
+> ⚠️ Standing correction C-7: *g = 0.56 is human learning-by-teaching, not teachable agents.*
+> **The teachable-agent version is untested** — arXiv returns 18 results total for the term and
+> Europe PMC returns **zero** for `"teachable agent" AND "randomized"`. Do not launder the
+> human number onto an AI agent that plays dumb.
 
 **T71 · Distill · "Research debt" as the named target** — **OBSERVED**
 
@@ -959,8 +1198,18 @@ share in a WhatsApp group, one artifact a student can commit an evening to. But 
 **B residue** that the segmenting literature misses: a chapter taught continuously preserves
 **cross-topic dependency structure inside a single working context**. Segmented delivery
 forces the learner to reload the context at every boundary, and the reload cost is real and
-unmeasured. `CRAFT` for the residue; the segmenting principle (§B1) points the other way and
-the disagreement is genuine.
+unmeasured.
+
+The literature points the other way and the disagreement is genuine, so here is the other
+side in full: **segmenting g = 0.34 [0.30, 0.38], k = 123** (Rey et al. 2019) — but
+**system-segmented g = 0.41 beats learner-segmented g = 0.20**, and segmenting carries a
+**time-on-task cost of g = 0.92 [0.82, 1.02]**. `MEASURED-META` (§B1).
+
+> **Read that middle row again, because it is the sharpest evidence against this whole
+> document's thesis.** When the *system* chooses the segment boundaries the effect roughly
+> doubles relative to when the *learner* does. Handing control to the learner measured worse.
+> §2.9 takes this seriously; the short version is that **"responsive" and "learner-controlled"
+> are different things, and the evidence favours the first and not the second.**
 
 **T77 · Physics Wallah · Derivation at board speed, uncut, with the algebra shown** —
 **B** · `OBSERVED`
