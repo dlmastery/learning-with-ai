@@ -52,15 +52,79 @@ h3{font:650 15.5px/1.4 var(--sans);margin:var(--s6) 0 var(--s3)}
 <header class="hero">
   <div class="eyebrow">The core competency</div>
   <h1>Pedagogy has no <code>pytest</code></h1>
-  <p class="lede">Every agentic capability in education is bounded by one missing instrument.
-  Nobody has built it. And a human-in-the-loop tutoring model is the only structure that
-  builds it as a <em>by-product of operating</em>.</p>
+  <p class="lede">A five-hundred-dollar-an-hour tutor for everyone, at token cost. Half of that
+  sentence is already true and the other half is bounded by <strong>one missing instrument</strong>
+  — which nobody has built, and which a human-in-the-loop operation produces as a
+  <em>by-product of operating</em>.</p>
   <p class="src">Everything on this page is drawn from
   <a href="paper.html">the survey</a> and traces to a labelled source. Numbers that could not
   be verified are not here.</p>
 </header>
 
-<h2>1. The rule</h2>
+<h2>1. The artifact is structurally incapable of what works</h2>
+
+<p>This is not a complaint about badly written textbooks. Most are carefully made. The
+indictment is narrower and worse: <strong>a printed book cannot do the things that are
+measured to work</strong>, and every one of those things is now cheap.</p>
+
+<div class="scroll">
+<table class="moat">
+  <tr><th>What is measured to work</th><th>Effect</th><th>What a book can do about it</th></tr>
+  <tr><td><b>Retrieval practice</b> — testing yourself</td><td class="num">g = 0.50</td><td class="v-no">Its primary affordance is re-reading — which students report using most and which <em>"does not consistently boost performance"</em></td></tr>
+  <tr><td><b>Spacing</b> — returning to material</td><td class="num">d = 0.54</td><td class="v-no">A book is linear. Chapter 3 never comes back</td></tr>
+  <tr><td><b>Matching support to prior knowledge</b></td><td class="num">+0.505 / −0.428</td><td class="v-no">One text, one level. Calibrated for a reader who does not exist — and <em>actively harmful</em> to those above it</td></tr>
+  <tr><td><b>Explanation at more than one altitude</b></td><td class="num">3 &gt; 2, p = .032</td><td class="v-no">A book has exactly one rung</td></tr>
+  <tr><td><b>Feedback on a wrong answer</b></td><td class="num">required</td><td class="v-no">An answer key says <em>what</em>, never <em>why</em> — and unsuccessful retrieval without corrective feedback yields little</td></tr>
+  <tr><td><b>A decision rule when something is not working</b></td><td class="num">the active ingredient</td><td class="v-no">A book has no measurement, so it cannot have a rule</td></tr>
+</table>
+</div>
+
+<p>And the failure is silent. The book cannot tell whether it worked, so nothing in the system
+knows it failed. A learner who has read the chapter and understood nothing has produced exactly
+the same observable as one who mastered it.</p>
+
+<h3>The number that is the deal-breaker</h3>
+
+<p>All of this is usually defended by saying the book was never meant to work alone — a teacher
+supplies what it cannot. That defence is correct, and it has been quantified:</p>
+
+<div class="claim">g = 1.426 with teacher support. <b>g = 0.077 without.</b></div>
+
+<p>A meta-analysis of 19 studies reports an overall effect of 0.683 that decomposes almost
+entirely onto the human. Take the teacher out and the effect is <strong>not smaller — it is
+gone.</strong></p>
+
+<p>Which is the whole problem stated in one line. <strong>The material is a delivery vehicle for
+a teacher's judgement, and there are not enough teachers.</strong> Every learner without a good
+one is holding an artifact operating at 0.077.</p>
+
+<h3>Two failures that survive the teacher</h3>
+
+<div class="step"><div class="n">1</div><div><p><strong>Fluent exposition feels like learning and is not.</strong> The clearest,
+best-designed chapter produces the strongest sense of understanding. In the controlled
+comparison, students in the condition that taught them <em>more</em> reported learning
+<em>less</em>. A well-written book is optimised for the axis that runs opposite to the real
+one.</p></div></div>
+<div class="step"><div class="n">2</div><div><p><strong>A simplification in the wrong ontological category is permanent.</strong> The
+Bohr-model hybrid population was <strong>unchanged across a full semester</strong> of university
+chemistry. When a book puts a concept in the wrong category to make it approachable, it creates
+a misconception that a semester of instruction does not shift — and nobody discovers it, because
+nothing is measuring.</p></div></div>
+
+<h3>And the end-of-chapter questions were never calibrated</h3>
+
+<p>An item bank was valuable because it held <em>calibrated</em> items — known difficulty, known
+discrimination, distractors mapped to real student errors. Practically no textbook's exercises
+have ever been validated against response data. They are plausible questions written by an
+expert, which is exactly the thing the assessment literature says is insufficient: experts
+classify their own items' quality at <strong>below chance</strong>.</p>
+
+<p><strong>The honest version of the problem, then:</strong> the book is not bad. It is a fixed
+artifact, written at one altitude, for a reader who does not exist, with no memory, no schedule,
+no diagnosis and no feedback — and it has been carrying the entire load in every setting where
+the teacher is absent, overloaded, or teaching thirty other children.</p>
+
+<h2>2. The rule</h2>
 
 <p>An agent differs from a chatbot in exactly four ways — it can <strong>sample</strong> many
 times, <strong>execute</strong> and see what happened, <strong>persist</strong> state across a
@@ -73,7 +137,7 @@ it closes on.</div>
 <p>Sampling without a selector is noise. Execution without a test is output. Persistence
 without a schema is a transcript. Absence without a verifier is unsupervised drift.</p>
 
-<h2>2. The rule predicts the whole landscape</h2>
+<h2>3. The rule predicts the whole landscape</h2>
 
 <p>Look at where agents work and where they collapse. The axis is not task difficulty.</p>
 
@@ -99,7 +163,7 @@ incorrect student action.</div>
 performs — look at what a learner did and say what is wrong with it — is currently
 unverifiable by the systems being sold to do it.</p>
 
-<h2>3. What that means commercially</h2>
+<h2>4. What that means commercially</h2>
 
 <div class="step"><div class="n">1</div><div>
 <p><strong>Every AI-tutoring capability is downstream of the verifier.</strong> Adaptive
@@ -124,7 +188,7 @@ holds 1,565 records on ChatGPT in education and <strong>seven randomised trials<
 of them second-language learning. The first company that can demonstrate a delayed unassisted
 outcome is not competing on features.</p></div></div>
 
-<h2>4. Why humans-in-the-loop is the wedge, not the cost line</h2>
+<h2>5. Why humans-in-the-loop is the wedge, not the cost line</h2>
 
 <p>The usual framing treats human tutors as the expensive part to be automated away. The
 evidence says the opposite, and it comes from the only trial that measured a
@@ -151,7 +215,7 @@ a step-level verifier, generated as a by-product of delivering the service.</p>
 compounds.</strong> A pure-AI competitor has no mechanism to generate this data. A pure-human
 competitor generates it and does not capture it.</p></div></div>
 
-<h2>5. The Cursor pattern, and where it breaks in education</h2>
+<h2>6. The Cursor pattern, and where it breaks in education</h2>
 
 <p>The closest existing template is what happened in coding. It is worth stating precisely,
 because the analogy holds in three places and fails in one — and the one where it fails is
@@ -231,7 +295,7 @@ that distribution and product craft did the work and the model followed. Assume 
 least partly true here — <strong>the verifier is the durable asset, and it will not save a
 product nobody uses.</strong></p>
 
-<h2>6. Which moats survive a frontier release</h2>
+<h2>7. Which moats survive a frontier release</h2>
 
 <p>The test that matters for any AI-native company: <em>when the next model ships, does your
 advantage survive or does it get handed to your competitors for free?</em></p>
@@ -250,7 +314,7 @@ advantage survive or does it get handed to your competitors for free?</em></p>
 
 <p>One row survives cleanly, and it is the one nobody is building.</p>
 
-<h2>7. The recursive loop — and why it is the same asset again</h2>
+<h2>8. The recursive loop — and why it is the same asset again</h2>
 
 <p>The deep-tech version of this is a system that improves its own instruction from its own
 outcome data. It is the most valuable unbuilt thing in the field, and the reason nobody has it
@@ -289,7 +353,7 @@ outcome at the frequency an optimiser needs. Build it and the loop follows; skip
 optimising plausibility at scale, which is the failure mode already documented in the field's
 leading systems.</p>
 
-<h2>8. Auto-research: one half is done, the other is not automatable</h2>
+<h2>9. Auto-research: one half is done, the other is not automatable</h2>
 
 <p><strong>Reading is solved well enough to rely on.</strong> PaperQA2 matches or exceeds
 subject-matter experts on literature synthesis, with <strong>70% of flagged contradictions
@@ -307,7 +371,7 @@ cannot accelerate their running. The realistic claim is a system that continuous
 what is known, flags where the corpus contradicts itself, and proposes the next experiment —
 which is worth a great deal and is not the same as a self-improving tutor.</p>
 
-<h2>9. Video-in: there is a legal wall, and it is in the wrong place</h2>
+<h2>10. Video-in: there is a legal wall, and it is in the wrong place</h2>
 
 <div class="kill">
   <div class="k">Prohibited, not merely regulated</div>
@@ -351,7 +415,7 @@ The limit is equally real: generated worlds get physics wrong, at <strong>39.6%<
 adherence in the best case and <strong>22%</strong> on the hard subset. <strong>Keep the world
 generative and the physics symbolic.</strong></p>
 
-<h2>10. Gamification: the moderators point away from what everyone ships</h2>
+<h2>11. Gamification: the moderators point away from what everyone ships</h2>
 
 <p>Gamification's cognitive effect is real and survives a high-rigour subsplit. The claim
 vendors actually make — <em>it keeps people coming back</em> — rests on the
@@ -382,7 +446,7 @@ economy</strong> — and no engagement metric may serve as an objective, because
 DAU and time-on-app all pass the Null-Learner Test, meaning an agent that teaches nothing can
 max them out.</p>
 
-<h2>11. The wedge: high-stakes exams are the one place the loop closes for free</h2>
+<h2>12. The wedge: high-stakes exams are the one place the loop closes for free</h2>
 
 <p>Everything above says the hard part is the third tier of the fitness function — a delayed,
 unassisted, novel-item outcome. It is slow, sparse, expensive, and it costs conversion to
@@ -425,7 +489,7 @@ aptitude–treatment interaction that survived fifty years of searching needs a 
 knowledge estimate. A closed, enumerated syllabus makes that measurable in
 <strong>15–40 seconds per topic</strong> rather than being a modelling problem.</p></div></div>
 
-<h2>12. Publishers hold the asset, and it is not the content</h2>
+<h2>13. Publishers hold the asset, and it is not the content</h2>
 
 <p>The instinct is that a publisher brings distribution and curriculum alignment. Both true and
 both replaceable. The asset that is not replaceable is buried in the psychometrics:</p>
@@ -450,7 +514,7 @@ migration, not a replacement — <strong>an addendum</strong>: the same book, wi
 loop instrumented and the diagnosis attached. It preserves their product and their channel, and
 it produces the data that makes the next edition genuinely adaptive.</p>
 
-<h2>13. What the market evidence says before you commit</h2>
+<h2>14. What the market evidence says before you commit</h2>
 
 <div class="kill">
   <div class="k">Three findings that should change the plan, not just caveat it</div>
@@ -473,7 +537,7 @@ it produces the data that makes the next edition genuinely adaptive.</p>
   company should know which one it is selling.</p>
 </div>
 
-<h2>14. The product: every book comes with a live mentor</h2>
+<h2>15. The product: every book comes with a live mentor</h2>
 
 <div class="claim">The book stays the book. What changes is the substrate underneath it.</div>
 
@@ -524,7 +588,7 @@ the three-tier fitness function from §7, fully instantiated, in one product.</p
   disagreement in the <em>explanation</em> — not the answer — treated as the alarm.</p>
 </div>
 
-<h2>15. Why it has to be the whole ecosystem, and not one publisher</h2>
+<h2>16. Why it has to be the whole ecosystem, and not one publisher</h2>
 
 <p>This is not a scale argument. It is structural, and it follows from what the asset actually
 is.</p>
@@ -603,7 +667,7 @@ page.</p>
   neutral position, is defensible against them.</p>
 </div>
 
-<h2>16. What makes it hard, which is the point</h2>
+<h2>17. What makes it hard, which is the point</h2>
 
 <p>If it were easy it would not be a moat. Three things make it hard, and all three are
 surmountable by an operator rather than by a lab:</p>
@@ -616,7 +680,7 @@ you need the delivery relationship, not just the transcripts.</p></div></div>
 <div class="step"><div class="n">c</div><div><p><strong>Decades of labelled intelligent-tutoring logs already exist and are public.</strong>
 The cold-start is smaller than it looks. The public testbed exists. Nobody has done it.</p></div></div>
 
-<h2>17. The three questions to ask any competitor</h2>
+<h2>18. The three questions to ask any competitor</h2>
 
 <div class="step"><div class="n">1</div><div><p><strong>"Show me the delayed, unassisted, novel-item outcome."</strong> Not the practice
 score, not the same items. Weeks later, device closed. ERIC returns <strong>zero records</strong>
@@ -628,7 +692,7 @@ ChatGPT</strong>, because that is what a learner has for free.</p></div></div>
 loads on already-strong learners. A healthy mean concealing a widened gap has made things
 worse.</p></div></div>
 
-<h2>18. What would kill this thesis</h2>
+<h2>19. What would kill this thesis</h2>
 
 <div class="kill">
   <div class="k">Stated in advance, so it can be checked</div>
@@ -648,7 +712,7 @@ worse.</p></div></div>
   teachers.</p>
 </div>
 
-<h2>19. The one-line version</h2>
+<h2>20. The one-line version</h2>
 
 <div class="claim">Everyone is building the tutor. The bottleneck is the examiner — and a
 human-in-the-loop operation is the only structure that produces one while it trades.</div>

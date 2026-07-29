@@ -43,7 +43,7 @@ status: raw-research
 
 ---
 
-## 0. The eight findings that should change an investor's behaviour
+## 0. The ten findings that should change an investor's behaviour
 
 Ordered by how much they should move a decision.
 
@@ -94,7 +94,25 @@ Ordered by how much they should move a decision.
    product thesis is "our pedagogy is the moat," this is the result that must be
    beaten. `MEASURED-RCT` — §5.2, §8.5.
 
-8. **The category barely exists in the public markets, which cuts both ways.** EDGAR
+8. **ESSER allocated about half a percent to tutoring, by the government's own
+   reporting.** $189.5bn was appropriated across ESSER I/II/III; the reported "Tutoring"
+   line summed across all 52 grantees for reporting year 2023 is **$994,662,975 —
+   0.52%**. `INFERENCE` from `GOV-STAT` inputs (ED publishes the per-state values and no
+   national roll-up; caveats in §1.6). **The belief that ESSER poured tens of billions
+   into high-dosage tutoring is not supported by ED's own data.** The post-ESSER
+   contraction is therefore a smaller absolute loss than feared — and the pre-ESSER
+   baseline was a smaller market than assumed.
+
+9. **The United States has not measured per-pupil special-education spending in
+   twenty-six years.** The only national estimate is SEEP, reference year **1999–2000**
+   ($12,525 vs $6,556, ratio **1.91×**; ERIC ED481398). NCES runs no special-education
+   expenditure survey; Digest tables break out expenditure by function only; Census F-33
+   has no special-education breakout. `OBSERVED`. Meanwhile the federal share of average
+   per-pupil expenditure under IDEA is **10.2%** against a 40% authorised maximum — its
+   lowest since FY2000. For a SELPA-first product this is a strategic fact, not trivia:
+   **the buyer has no benchmark to price you against, in either direction.**
+
+10. **The category barely exists in the public markets, which cuts both ways.** EDGAR
    full-text search returns **47 filings ever** containing "AI tutor", **24**
    containing "AI tutoring", and **47** containing "high-dosage tutoring" — of which
    the high-dosage hits come from a single issuer. There is no public comparable set
@@ -270,146 +288,6 @@ market" figure in circulation descends from vendor reports, not from NBS or MoE.
 `UNTRACEABLE`. **The destroyed value is itself unmeasurable** — which should be sobering
 for anyone modelling this category's downside.
 
-### 1.6 US institutional spend — the pot that district-sold products are sold into
-
-This is a different market from §1.3's household spend, with a different buyer, a
-different sales cycle and a different failure mode. It is also much better measured.
-
-#### The base
-
-**NCES, Common Core of Data, National Public Education Financial Survey** `GOV-STAT`:
-
-| Metric | Value | Reference year |
-|---|---|---|
-| **Total expenditure, US public elementary and secondary schools** | **$927 billion** (constant 2022–23 dollars) | **2020–21** |
-| **Total expenditure per pupil** | **$18,614** | 2020–21 |
-| Range across states | **$11,686** (Idaho) → **$37,835** (District of Columbia) | 2020–21 |
-| Salaries and benefits as a share of current expenditure | **79%** | 2020–21 |
-
-**Note the vintage and the composition.** The most recent NCES national figure has a
-2020–21 reference year, and NCES states it **includes CARES / CRRSA / ARP-funded
-expenditure** — i.e. the $927B is inflated by the COVID bolus that has since ended
-(below). And 79% of it is salaries and benefits, which is the structural reason
-districts cannot easily redirect money to software.
-
-#### The federal categorical lines, and the cliff, from award records
-
-`GOV-STAT` — USAspending.gov award API, obligations by fiscal year, assistance listing
-numbers as shown. Retrieved 2026-07-29.
-
-| Assistance listing | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 | FY2026* |
-|---|---|---|---|---|---|---|---|
-| **84.425 — Education Stabilization Fund** (ESSER I/II/III, GEER, HEERF) | **$30.01B** | **$229.84B** | **$17.33B** | −$0.01B | −$0.07B | −$0.00B | −$0.09B |
-| **84.010 — Title I-A** | $16.11B | $16.33B | $17.31B | $18.17B | $18.18B | **$18.22B** | $10.79B* |
-| **84.027 — IDEA Part B §611 State Grants** | $12.75B | $15.49B | $13.33B | $14.14B | $14.16B | **$14.03B** | $9.24B* |
-| **84.173 — IDEA Part B §619 Preschool** | $0.39B | $0.60B | $0.41B | $0.41B | $0.41B | **$0.40B** | −$0.01B |
-
-\* FY2026 is partial (fiscal year ends 30 September 2026).
-
-> **This table is the ESSER cliff, and it is the single most important market fact in
-> §1 for anyone selling to districts.** Roughly **$277 billion** was obligated through
-> the Education Stabilization Fund across FY2020–FY2022. Since FY2023 the annual figure
-> has been **negative** — de-obligations only. **Nothing replaced it.** The steady-state
-> federal categorical base for K-12 is Title I-A (~$18.2B) plus IDEA Part B (~$14.4B) =
-> **~$32.6B a year.** The COVID bolus was **~8.5× one full year of that entire base**,
-> and it arrived and left inside three fiscal years.
-
-**What this means commercially, stated plainly.** Every district-facing edtech company
-founded between 2020 and 2023 grew into a demand curve that no longer exists. Nerdy's
-Institutional revenue **−22%** and its non-recurring **$7.44M** state programme (§2.3)
-are what that looks like in an audited income statement `FILING`; Zearn's expenses
-tripling to $40.5M while revenue plateaued at ~$45M is what it looks like in a Form 990
-`FILING`. **A district-channel plan that does not name its post-ESSER funding stream is
-not a plan.**
-
-#### Special education — the line the brief specifically asked for, and the answer is uncomfortable
-
-**Population** `GOV-STAT` (NCES, *Condition of Education*, Students With Disabilities):
-in **2022–23**, **7.5 million** students ages 3–21 received special education and/or
-related services under IDEA — **15% of all public school students**, up from 6.4 million
-(13%) in 2012–13. Most common category: specific learning disabilities (32%).
-
-**Federal appropriation** `GOV-STAT`: IDEA Part B §611 + §619 ≈ **$14.4 billion a year**,
-flat in nominal terms across FY2023–FY2025. IDEA authorises a federal contribution of up
-to **40% of the national average per-pupil expenditure × the number of children served**
-— that 40% is a statutory *maximum authorisation*, never an appropriation floor, and it
-has never been reached. Any pitch that treats "IDEA full funding" as addressable is
-treating an authorisation ceiling as a budget.
-
-**Per-pupil special-education expenditure — and here is the finding.** The only national
-estimate is the **Special Education Expenditure Project (SEEP)**, reference year
-**1999–2000** (ERIC ED471888, published 2002; synthesis 2006). Its headline results:
-
-| SEEP 1999–2000 | Value |
-|---|---|
-| Total special education spending | **~$50 billion** |
-| Total regular + special education spending on students with disabilities | **$77.3 billion** |
-| **Additional** expenditure per special-education student | **~$5,918** |
-| Share of total K-12 education expenditure | **21%** |
-| **Total spending ratio, student with disabilities : typical student** | **1.9×** |
-| Federal funding | **$3.7B = $605 per special-education student = 7.5% of total special-education spending** |
-
-> **A systematic ERIC search returns no more recent national estimate.** The newest
-> national work in the index is the 2006 *synthesis* of the same 1999–2000 data.
-> **The United States has not measured what it spends per special-education pupil for
-> twenty-six years**, across a period in which the served population grew from ~6.0m to
-> 7.5m and its composition shifted substantially. `OBSERVED`, and it is a documented
-> absence, not a search failure.
-
-**Two illustrative derivations, both clearly labelled `INFERENCE`, neither offered as a
-market size:**
-
-- Applying SEEP's **21%** share to NCES's **$927B** (2020–21) gives **~$195B** of
-  US spending associated with students with disabilities. Likely a **floor**, since the
-  served share of enrolment rose from ~13% to 15% over the interval.
-- Applying SEEP's **1.9×** ratio to NCES's **$18,614** per-pupil gives **~$35,400** per
-  special-education pupil; × 7.5m ≈ **$265B**.
-
-**Both numbers are built on a twenty-six-year-old cost ratio and should be used only to
-establish an order of magnitude.** The honest statement is: *US spending on students
-with disabilities is somewhere in the low hundreds of billions of dollars annually, and
-nobody has measured the per-pupil figure this century.* **That is a real finding for a
-SELPA-first product** — it means the buyer cannot benchmark your price against anything,
-in either direction.
-
-#### Structural facts about the buyer
-
-| Fact | Value | Source |
-|---|---|---|
-| Number of US school districts a vendor may have to contract with individually | **"over 13,000"** | SDPC/A4L's own statement of why the National Data Privacy Agreement exists `OBSERVED` |
-| Standard DPAs executed through the SDPC Resource Registry since 2016 | **275,000+**; **222,261 active** across **16,972 applications** at retrieval | SDPC Resource Registry `OBSERVED` |
-| Share of district current expenditure that is salaries and benefits | **79%** | NCES `GOV-STAT` |
-
-Those three rows together are §2's thesis in numeric form: **the addressable buyer is
-13,000 separately-contracting entities, 79% of whose money is already committed to
-people, and the sector had to build a shared legal instrument executed a quarter of a
-million times just to make contracting tractable.**
-
-### 1.7 Addressable revenue — the derivation, in the open
-
-`INFERENCE` throughout. The point of showing it is that it can be attacked.
-
-| Step | US B2C | US district (K-12) |
-|---|---|---|
-| Measured spend | **~$4.3bn** household test-prep-and-tutoring, 2024 (`GOV-STAT` derived) | **~$32.6bn/yr** federal categorical base; **$927bn** total K-12 expenditure (2020–21) |
-| × addressable share | Tutoring is the whole line. But **supplemental**, not core — this is the entire pot | Supplemental services compete for a **small discretionary slice**; 79% is salaries |
-| × procurable by a startup | High — a credit card | **Low** — §2.2's gate stack, 13,000 buyers, annual re-competition |
-| ÷ cycle survivability | Weeks | **9–18 months, cost incurred before contract** `FILING` |
-| **Honest read** | **A ~$4bn US household market, currently flat-to-declining, in which the substitute is free** | **A large pot with a narrow, heavily gated, annually re-competed aperture, whose growth funding expired in FY2022** |
-
-**The conclusion §1 supports, and no more than this:**
-
-1. **The measured, traceable global figure does not exist.** Korea ₩27.5trn, Japan
-   per-student only, US ~$4.3bn household. Those are the only numbers with published
-   sampling designs anywhere in this domain.
-2. **The US household tutoring market is roughly $4bn and is not obviously growing.**
-   It doubled 2020→2023 and dipped in 2024.
-3. **The US institutional pot is enormous and almost entirely committed.** 79% salaries;
-   the discretionary growth money was a one-time $277bn that ended in FY2022.
-4. **Therefore the honest positioning is share-of-existing-spend, not
-   category-creation.** Any model that requires the tutoring market to grow to work is
-   betting on something no primary source supports.
-
 ### 1.5 The multilateral gap, reported because its absence is informative
 
 | Source | Result |
@@ -424,6 +302,290 @@ million times just to make contracting tractable.**
 > they are not populated or not retrievable through the public API. This is a structural
 > gap in the world's education statistics, not a search failure — and it is why the
 > vendor TAMs have no data to be built from.
+
+---
+
+### 1.6 US institutional spend — the pot that district-sold products are sold into
+
+A different market from §1.3's household spend: different buyer, different cycle,
+different failure mode. It is also, unlike the global TAM, very well measured — by two
+independent federal series that agree with each other to within a quarter of a percent.
+
+#### The base, from two independent federal surveys
+
+**US Census Bureau, Annual Survey of School System Finances (F-33), FY2024** `GOV-STAT`:
+
+| Line | FY2024 | FY2023 |
+|---|---|---|
+| **Total elementary-secondary expenditure** | **$983.71bn** | $918.57bn |
+| — current spending | $842.34bn | — |
+| — capital outlay | $113.09bn | — |
+| — other | $28.28bn | — |
+| **Per-pupil current spending** | **$17,619** | $16,526 |
+| Total revenue | **$994.92bn** — federal $115.08bn / state $450.04bn / local $429.79bn | — |
+| Enrollment | 46,370,928 | — |
+
+**NCES Digest 2025, Table 236.10 / 236.55, SY2022–23** `GOV-STAT` (independent series,
+lags one year): total $945.28bn, current $818.18bn; per pupil in fall enrolment **$18,905
+total / $16,560 current**; per pupil in ADA $20,638 / $18,077. Revenue shares SY2022–23:
+**federal 12.9% / state 45.1% / local 42.0%** — a federal share inflated by ESSER, against
+a long-run norm nearer 8%.
+
+> **Cross-validation, and it is worth stating because §1.2 could not validate anything:**
+> NCES SY2022–23 current per-pupil **$16,560** vs Census FY2023 **$16,526** — **0.21%
+> apart**. Two independently collected federal series agree. This is what a measured
+> market looks like, and it is the standard against which the vendor TAMs in §1.2 should
+> be judged.
+
+Also: **79% of current expenditure is salaries and benefits** (NCES, 2020–21). That is
+the structural reason a district cannot simply redirect money to software.
+
+#### The federal categorical lines, and the cliff
+
+**Appropriations** `GOV-STAT` — ED Congressional Justification and the enacted statutes:
+
+| Programme | FY2024 | FY2025 | FY2026 | Authority |
+|---|---|---|---|---|
+| **IDEA Part B §611 State Grants** | **$14,213,704,000** | **$14,213,704,000** (flat, full-year CR) | **$14,233,704,000** | P.L. 118-47 · P.L. 119-4 · **P.L. 119-75** (signed 3 Feb 2026) |
+| IDEA Part B §619 Preschool | ~$0.42bn | ~$0.42bn | $420,000,000 | same |
+| Title I-A | ~$18.2bn | ~$18.2bn | — | annual appropriations |
+
+**Obligations by fiscal year** `GOV-STAT` — USAspending.gov award API, retrieved
+2026-07-29 (this is the flow, and it is where the cliff is visible):
+
+| Assistance listing | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 | FY2026* |
+|---|---|---|---|---|---|---|---|
+| **84.425 — Education Stabilization Fund** | **$30.01bn** | **$229.84bn** | **$17.33bn** | −$0.01bn | −$0.07bn | −$0.00bn | −$0.09bn |
+| 84.010 — Title I-A | $16.11bn | $16.33bn | $17.31bn | $18.17bn | $18.18bn | $18.22bn | $10.79bn* |
+| 84.027 — IDEA Part B §611 | $12.75bn | $15.49bn | $13.33bn | $14.14bn | $14.16bn | $14.03bn | $9.24bn* |
+| 84.173 — IDEA Part B §619 | $0.39bn | $0.60bn | $0.41bn | $0.41bn | $0.41bn | $0.40bn | −$0.01bn |
+
+\* FY2026 partial — the fiscal year ends 30 September 2026.
+
+**ESSER, from the statutes** `GOV-STAT`:
+
+| Fund | Amount | Authority |
+|---|---|---|
+| **ESSER I** | **$13,229,265,000** | CARES §18001(b)(2) + §18003, P.L. 116-136 |
+| **ESSER II** | **$54,311,004,000** | CRRSA §311(b)(2) + §313, P.L. 116-260 |
+| **ARP ESSER appropriation** | **$122,774,800,000** | ARP §2001(a), P.L. 117-2, 135 Stat. 19 — the dollar figure is written into the statute |
+| ↳ SEA grants (the commonly quoted "$121.9bn") | $121,974,800,000 | ARP §2001(b)(2) |
+| **Total, ESSER I + II + III SEA grants** | **$189,515,069,000** | ≈ **19.3% of one year's total US K-12 expenditure** |
+
+The ESSER I and II figures were recomputed from the statutory percentages and match ED's
+published methodology tables to the dollar (30.75bn × 0.98 × 0.439; 81.88bn × 0.99 × 0.67).
+
+**Deadlines and the 2025 reversal** `VERIFIED`. Obligation deadline under the Tydings
+amendment (GEPA §421(b), 20 U.S.C. §1225(b)): **30 September 2024**; regulatory
+liquidation 120 days later (**28 January 2025**, 2 C.F.R. §200.344(c)); late-liquidation
+extensions of up to 14 months → **28 March 2026**. Then, materially for any
+ESSER-dependent revenue model: on **28 March 2025** the Secretary cut the liquidation
+period off same-day, replacing blanket extensions with project-specific requests;
+preliminary injunctions followed in ***New York v. U.S. Dep't of Education*, No.
+1:25-cv-02990-ER (S.D.N.Y.)**, covering 16 states and DC; on **26 June 2025** ED restored
+pre-28-March approved extensions pending litigation.
+
+> **The ESSER cliff, in one paragraph.** ~$189.5bn was appropriated and ~$277bn obligated
+> through the Education Stabilization Fund across FY2020–FY2022. Since FY2023 the annual
+> obligation figure has been **negative** — de-obligations only. The steady-state federal
+> categorical base is Title I-A (~$18.2bn) plus IDEA Part B (~$14.6bn) = **~$32.8bn a
+> year**. The bolus was **~8.5× one full year of that entire base**, it arrived and left
+> inside three fiscal years, and in 2025 the government tried to claw back the tail and
+> was enjoined. **Every district-facing edtech company founded 2020–2023 grew into a
+> demand curve that no longer exists.**
+
+#### How much of ESSER actually went to tutoring — the number that falsifies the narrative
+
+ED collects a per-state "Tutoring" line item in the ESSER Annual Performance Report and
+**publishes no national roll-up**. Summing ED's own state-reported values via its public
+API (`api.covid-relief-data.ed.gov`), reporting year 2023, 52 grantees:
+
+| Fund | Tutoring | Total "Academic" |
+|---|---|---|
+| ESSER I | $3,511,112 | $203,123,263 |
+| ESSER II | $218,400,503 | $6,327,312,736 |
+| ARP ESSER | $772,751,360 | $16,516,992,386 |
+| **Total** | **$994,662,975** | $23,047,428,385 |
+
+> **$994.7 million — 0.52% of ESSER — is the reported tutoring line.** `INFERENCE` from
+> `GOV-STAT` inputs (my summation of ED's own state-reported values; one state,
+> California ESSER III at $75,601,523.03, was verified against the endpoint exactly).
+
+**Carry the caveats, because they matter in both directions.** This is a derived sum, not
+an ED publication. RY2022 has no tutoring line item at all, so no cumulative multi-year
+total is constructible. It covers **LEA mandatory subgrants only** — the SEA-reserve
+endpoint returned 403. And ED's own guidance directs LEAs to report some tutoring under
+adjacent categories, so it **understates**. Even allowing generously for all three, the
+figure is not going to move by an order of magnitude.
+
+**The commercial reading, and it cuts against the founder consensus:** the belief that
+"ESSER poured tens of billions into high-dosage tutoring" is not supported by the
+government's own reporting. **The category was never as well funded as the sector
+believed, which means the post-ESSER contraction is a smaller absolute loss than feared
+and the pre-ESSER baseline was a smaller market than assumed.** Both halves of that
+sentence are bad news for a plan built on public tutoring money.
+
+#### State-funded tutoring programmes, and their cliffs
+
+`VERIFIED` from state statutes and appropriations acts:
+
+| State / programme | Amount | Fund source | Note |
+|---|---|---|---|
+| **Texas** HB 4545 accelerated instruction (Tex. Educ. Code §28.0211) | **$0 appropriated** | **Unfunded mandate on districts** | Requires ≥30 hours, "individually or in a group of **no more than three students**," at least weekly |
+| **Texas** HB 1416 (successor, 88R 2023) | **$0** | — | Loosened to **no more than four** students; ≥15 hours (30 for significantly-below students) |
+| **Texas** "Launch Quality Statewide High-Dosage Tutoring Infrastructure" | $100,000,000 | **100% federal ESSER, $0 general revenue** | GAA 22-23 Rider 88(a)(3) |
+| **Texas** Intensive Educational Supports | $1.568bn all funds FY22 ($1.094bn federal) → **$30M GR/yr** by FY24/FY26 | mixed → GR only | **A 98% collapse** |
+| **Virginia** ALL In VA | **$418.3M** (~70% to grades 3–8 high-intensity tutoring) | State, **one-time** | HB/SB 6001, 2023 Spec. Sess. I, Ch. 1. No successor appropriation |
+| **Louisiana** Accelerate high-dosage tutoring | **$30,000,000** | State General Fund | R.S. 17:100.13 as amended by Act 771 (2024) — which also **released school boards from any obligation to fund if money is unavailable** |
+| **Louisiana** Steve Carter tutoring vouchers | $40M ESSER (**only $2.4M spent**) → **$5M** | ESSER → SGF | Act 649 (2024) |
+| **Colorado** High-Impact Tutoring Program | **$4,981,720** + 1.1 FTE | General Fund | C.R.S. Art. 105, **HB21-1234** — **repealed by its own terms effective 1 July 2026** |
+| **Colorado** Academic Accelerator Grant | $24,500,000 | General Fund | HB23-1231 |
+| **Tennessee** TN ALL Corps | **`UNTRACEABLE`** | TDOE says "initially supported by **ESSER**" | Tenn. Code Ann. §49-6-1507. **The widely cited "$200M" figure is not verifiable from any Tennessee state source** |
+
+> **The single most investor-relevant statutory fact in this table.** Texas
+> §28.0211(a-4) opens: *"**If a district receives funding under Section 29.0881** …
+> **the Coronavirus Response and Relief Supplemental Appropriations Act, 2021 … or the
+> American Rescue Plan Act of 2021**, then supplemental instruction … must …"*. **The
+> largest state high-dosage-tutoring mandate in the country was legally triggered by
+> receipt of federal COVID money.** HB 1416 later broadened the trigger to state streams
+> precisely so the mandate would survive ESSER — and simultaneously loosened the group
+> size from three to four, which is a 33% reduction in delivered dosage per student
+> written into statute. `VERIFIED`.
+
+Every other row has a cliff in it: Virginia one-time, Colorado repealed 1 July 2026,
+Texas down 98%, Louisiana with a statutory escape clause.
+
+#### Special education — the line the brief specifically asked for, and the answer is uncomfortable
+
+**Population** `GOV-STAT` (NCES Digest 2023 Table 204.30; *Condition of Education*):
+**7,526,000** students ages 3–21 served under IDEA Part B in **SY2022–23** = **15% of
+public school enrolment**, up from 6.4 million (13%) in 2012–13. Most common category:
+specific learning disabilities (32%). ED's own forward estimates: 7,941,565 (FY2025),
+8,328,852 (FY2027).
+
+**Federal share against the 40% authorised maximum** `GOV-STAT` — ED's own published
+figures (FY2027 Congressional Justification, Special Education, "Summary of Request"):
+
+| | FY2025 | FY2027 request |
+|---|---|---|
+| Average federal share per child | $1,786 | $1,846 |
+| Average per-pupil expenditure (APPE) | $17,442 | $18,377 |
+| **Federal funding as % of APPE** | **10.2%** | **10.0%** |
+
+Historical series in the same table: peak **18%** (FY2004–06) → 13% (FY2019–23) → 11%
+(FY2024) → **10% (FY2025–27)**. IDEA §611(a)(2)(A) (20 U.S.C. §1411) authorises up to
+**40% of APPE**. **The federal share is at its lowest level since FY2000 and is
+one-quarter of the authorised ceiling.** Any pitch that treats "IDEA full funding" as
+addressable is treating an authorisation ceiling as a budget.
+
+**Per-pupil special-education expenditure — and here is the finding.** The only national
+estimate is the **Special Education Expenditure Project**: Chambers, Shkolnik & Perez,
+*Total Expenditures for Students with Disabilities, 1999–2000: Spending Variation by
+Disability*, **SEEP Report 5**, AIR / Center for Special Education Finance, June 2003,
+sponsored by ED/OSERS under contract ED99C00091 (ERIC **ED481398**). Reference year
+**1999–2000**:
+
+| SEEP measure | Value |
+|---|---|
+| Per-pupil, student receiving special education | **$12,525** |
+| Per-pupil, regular education student | $6,556 |
+| **Ratio** | **1.91×** |
+| By disability | $10,558 (specific learning disability, 1.6×) → $20,095 (multiple disabilities, 3.1×) |
+| Non-public / other-agency placement | **$25,580 (3.9×)** |
+| Total special education spending | ~$50bn |
+| Total regular + special spending on students with disabilities | $77.3bn (**21% of total K-12 expenditure**) |
+| **Additional** expenditure per special-education student | ~$5,918 |
+| Federal share | $3.7bn = $605 per special-education student = **7.5%** of total special-education spending |
+
+> **There is no more recent national estimate, and the absence is traceable.** NCES's own
+> list of data collection programmes contains **no** special-education expenditure survey;
+> Digest tables 236.10 / 236.55 / 236.75 break expenditure out **by function only**, with
+> no special-education category; Census F-33 has **no special-education breakout**.
+> **The United States has not measured what it spends per special-education pupil for
+> twenty-six years**, across a period in which the served population grew from ~6.0m to
+> 7.5m and its composition shifted substantially. `OBSERVED` — a documented absence, not
+> a search failure.
+
+**Two illustrative derivations, both `INFERENCE`, neither offered as a market size:**
+
+- SEEP's **21%** share applied to Census's **$983.7bn** (FY2024) → **~$207bn** of US
+  spending associated with students with disabilities. Likely a **floor**, since the
+  served share of enrolment rose from ~13% to 15% over the interval.
+- SEEP's **1.91×** ratio applied to Census's **$17,619** current per-pupil → **~$33,650**
+  per special-education pupil; × 7.53m ≈ **$253bn**.
+
+**Both rest on a twenty-six-year-old cost ratio and establish an order of magnitude and
+nothing more.** The honest statement is: *US spending on students with disabilities is
+somewhere in the low-to-mid hundreds of billions annually, and nobody has measured the
+per-pupil figure this century.* **For a SELPA-first product that is a real strategic
+fact** — the buyer has no benchmark to price you against, in either direction, and the
+most defensible commercial claim in that segment is *fidelity and dosage of a known-good
+intervention at a stated cost per hour*, which is exactly what §3 makes computable.
+
+#### Higher education
+
+`GOV-STAT` — NCES Digest 2025, Tables 334.10 / 334.30 / 334.50, FY2023–24:
+
+| Sector | Total expenditure | Academic support |
+|---|---|---|
+| Public | $515.23bn | $41.52bn |
+| Private nonprofit | $283.44bn | $23.68bn |
+| Private for-profit | $14.39bn | not separable |
+| **Total** | **$813.05bn** | **$65.20bn** (public + nonprofit) |
+
+> **IPEDS has no tutoring line item.** NCES defines "Academic support" as *"Activities and
+> services that support the institution's primary mission of instruction, research, and
+> public service"* — a bucket spanning libraries, museums, academic computing and academic
+> administration. **Any national or per-institution "US higher-education tutoring spend"
+> figure is `UNTRACEABLE` from federal data.** The $65.2bn academic-support line is a
+> ceiling on a category that mostly is not tutoring, and it should never be presented as
+> a tutoring TAM.
+
+#### Structural facts about the buyer
+
+| Fact | Value | Source |
+|---|---|---|
+| US school districts a vendor may have to contract with individually | **"over 13,000"** | SDPC/A4L's own statement of why the National Data Privacy Agreement exists `OBSERVED` |
+| Standard DPAs executed through the SDPC Resource Registry since 2016 | **275,000+**; **222,261 active** across **16,972 applications** at retrieval | SDPC Resource Registry `OBSERVED` |
+| Share of district current expenditure that is salaries and benefits | **79%** | NCES `GOV-STAT` |
+| Federal share of K-12 revenue | **11.6%** FY2024 ($115.08bn of $994.92bn); 12.9% SY2022–23 at the ESSER peak | Census F-33 / NCES `GOV-STAT` |
+
+Those four rows are §2's thesis in numeric form: **the buyer is 13,000 separately
+contracting entities, 79% of whose money is already committed to people, ~88% of whose
+revenue is state and local rather than federal — and the sector had to build a shared
+legal instrument, executed a quarter of a million times, just to make contracting
+tractable.**
+
+### 1.7 Addressable revenue — the derivation, in the open
+
+`INFERENCE` throughout. The point of showing it is that it can be attacked.
+
+| Step | US B2C | US district (K-12) |
+|---|---|---|
+| **Measured spend** | **~$4.3bn** US household test-prep-and-tutoring, 2024 (`GOV-STAT`-derived) | **$983.7bn** total K-12 expenditure FY2024; **~$32.8bn/yr** steady-state federal categorical base | **$813.1bn** US higher-ed expenditure FY2023–24 |
+| **× what is even nominally the category** | Tutoring **is** the whole line | The **reported ESSER tutoring line was $994.7m = 0.52%** of ESSER. That is the sector's own revealed allocation to this category when it had $189.5bn to spend | **Unknown** — IPEDS has no tutoring line item; $65.2bn "academic support" is a ceiling on a bucket that is mostly libraries and academic administration |
+| **× procurable by a startup** | High — a credit card | **Low** — §2.2's gate stack, 13,000 separately contracting buyers, annual re-competition | Low — faculty governance, 6–18 months |
+| **÷ cycle survivability** | Weeks | **9–18 months, with cost incurred before the contract exists** `FILING` | 6–18 months |
+| **Honest read** | **A ~$4bn US household market, flat-to-declining, in which the substitute is free** | **An enormous pot, 79% committed to salaries, whose growth funding expired in FY2022 and which allocated ~0.5% to tutoring even at its peak** | **Not sizeable from federal data. Any number offered is untraceable** |
+
+**The conclusion §1 supports, and no more than this:**
+
+1. **The measured, traceable global tutoring figure does not exist.** Korea ₩27.5trn,
+   Japan per-student only, US ~$4.3bn household. Those are the only numbers in this
+   domain with a published sampling design.
+2. **The US household tutoring market is roughly $4bn and is not obviously growing.**
+   It more than doubled 2020→2023 and dipped in 2024 — in the same window in which the
+   free substitute arrived and Chegg's Academic Services revenue fell 43%.
+3. **The US institutional pot is enormous and almost entirely committed.** $983.7bn,
+   79% salaries, ~88% state and local. The discretionary growth money was a one-time
+   $189.5bn appropriation that stopped obligating in FY2022.
+4. **Even at the peak of that bolus, the reported tutoring allocation was 0.52%.** The
+   category was never as well funded as the sector believed. This is the most important
+   single correction §1 makes, and it cuts both ways: the post-ESSER loss is smaller
+   than feared, and the pre-ESSER baseline was smaller than assumed.
+5. **Therefore the honest positioning is share-of-existing-spend, not
+   category-creation.** Any model that requires the tutoring market to grow to work is
+   betting on something no primary source supports.
 
 ---
 
