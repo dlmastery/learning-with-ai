@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Verifier — where the defensible innovation is in AI tutoring</title>
+<meta name="description" content="Every agentic capability in education is bounded by one missing instrument. Whoever builds it owns the category — and a human-in-the-loop model is the only structure that builds it as a by-product." />
+<link rel="stylesheet" href="site.css" />
+<style>
+.hero{padding:var(--s8) 0 var(--s7);border-bottom:1px solid var(--line)}
+h1{font:400 clamp(32px,5.6vw,50px)/1.08 var(--serif);letter-spacing:-.022em;margin:var(--s4) 0}
+h1 code{font:400 .84em/1 var(--mono);background:none;padding:0;letter-spacing:-.01em;
+  color:var(--felt);vertical-align:baseline}
+.claim{font:400 clamp(20px,2.6vw,26px)/1.42 var(--serif);color:var(--ink);
+  border-left:2px solid var(--felt);padding-left:var(--s5);margin:var(--s6) 0;max-width:38ch}
+h2{font:400 30px/1.2 var(--serif);letter-spacing:-.018em;margin:var(--s8) 0 var(--s3)}
+h3{font:650 15.5px/1.4 var(--sans);margin:var(--s6) 0 var(--s3)}
+.step{display:grid;grid-template-columns:44px 1fr;gap:var(--s4);margin:var(--s5) 0;align-items:start}
+.step .n{font:400 26px/1 var(--serif);color:var(--felt);padding-top:2px}
+.step p{margin:0}
+.step p+p{margin-top:var(--s3)}
+.gradient{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:var(--s5) 0}
+.gradient .g{background:var(--surface);padding:var(--s4) var(--s5);display:grid;
+  grid-template-columns:1fr auto auto;gap:var(--s4);align-items:baseline}
+.gradient .g .b{font:650 14.5px/1.3 var(--sans);color:var(--ink)}
+.gradient .g .v{font:400 30px/1 var(--serif);letter-spacing:-.02em}
+.gradient .g .c{font:12.5px/1.4 var(--sans);color:var(--ink-3);text-align:right;min-width:12ch}
+.gradient .g.y .v{color:var(--real)} .gradient .g.n .v{color:var(--felt)}
+.moat{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.moat th{text-align:left;font:600 11px/1.3 var(--sans);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);padding:0 var(--s4) var(--s3) 0;border-bottom:1px solid var(--line-2)}
+.moat td{padding:var(--s3) var(--s4) var(--s3) 0;border-bottom:1px solid var(--line);
+  color:var(--ink-2);vertical-align:top}
+.moat td b{color:var(--ink)}
+.v-no{color:var(--bad);font-weight:650}.v-yes{color:var(--good);font-weight:650}.v-mid{color:var(--warn);font-weight:650}
+.kill{background:var(--sunken);border:1px solid var(--line);border-left:2px solid var(--bad);
+  border-radius:var(--r);padding:var(--s5);margin:var(--s5) 0}
+.kill .k{font:600 10.5px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;
+  color:var(--bad);margin-bottom:var(--s3)}
+.src{font-size:12.5px;color:var(--ink-3);margin-top:var(--s2)}
+.src a{color:var(--ink-3)}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap narrow">
+
+<nav class="crumb"><a href="./">← Dashboard</a> · <a href="paper.html">The paper</a> ·
+<a href="demos/">Demos</a></nav>
+
+<header class="hero">
+  <div class="eyebrow">The core competency</div>
+  <h1>Pedagogy has no <code>pytest</code></h1>
+  <p class="lede">Every agentic capability in education is bounded by one missing instrument.
+  Nobody has built it. And a human-in-the-loop tutoring model is the only structure that
+  builds it as a <em>by-product of operating</em>.</p>
+  <p class="src">Everything on this page is drawn from
+  <a href="paper.html">the survey</a> and traces to a labelled source. Numbers that could not
+  be verified are not here.</p>
+</header>
+
+<h2>1. The rule</h2>
+
+<p>An agent differs from a chatbot in exactly four ways — it can <strong>sample</strong> many
+times, <strong>execute</strong> and see what happened, <strong>persist</strong> state across a
+boundary, and work in your <strong>absence</strong>. Every one of those is a multiplier on
+something else. None produces value alone.</p>
+
+<div class="claim">The value of an agentic loop is bounded by the value of the external check
+it closes on.</div>
+
+<p>Sampling without a selector is noise. Execution without a test is output. Persistence
+without a schema is a transcript. Absence without a verifier is unsupervised drift.</p>
+
+<h2>2. The rule predicts the whole landscape</h2>
+
+<p>Look at where agents work and where they collapse. The axis is not task difficulty.</p>
+
+<div class="gradient">
+  <div class="g y"><span class="b">SWE-bench Verified</span><span class="v">79.2%</span><span class="c">strong check — <code>pytest</code></span></div>
+  <div class="g y"><span class="b">Terminal-Bench 2.1</span><span class="v">83.8%</span><span class="c">strong check — it runs or it doesn't</span></div>
+  <div class="g n"><span class="b">PaperBench</span><span class="v">21.0%</span><span class="c">no check</span></div>
+  <div class="g n"><span class="b">SciCode</span><span class="v">4.6%</span><span class="c">weak check — hand-written tests</span></div>
+</div>
+
+<p>A twenty-fold spread on how good the check is. <strong>Coding agents work because
+<code>pytest</code> exists.</strong> SciCode is not check-free — it has hand-written tests —
+and still lands at 4.6%, which is why the rule is a <em>bound</em> and not an equality: a weak
+check caps you low; a strong one only stops you being capped.</p>
+
+<p>Now place tutoring on that scale. It sits in the bottom half, and the reason is measured
+rather than argued:</p>
+
+<div class="claim">Across 223 real tutoring domains, no model beat chance at labelling an
+incorrect student action.</div>
+
+<p>Not "performed poorly." <strong>Chance.</strong> The most basic operation a tutor
+performs — look at what a learner did and say what is wrong with it — is currently
+unverifiable by the systems being sold to do it.</p>
+
+<h2>3. What that means commercially</h2>
+
+<div class="step"><div class="n">1</div><div>
+<p><strong>Every AI-tutoring capability is downstream of the verifier.</strong> Adaptive
+pivoting needs to know the learner is wrong and how. Generate-and-select needs a selector —
+and selection by test measures <strong>+8.14pp</strong> against <strong>−3.20pp</strong> for
+selection by LLM judge, an eleven-point spread in the wrong direction for the judge. A
+teachable agent needs its tutee's downstream accuracy as ground truth. None of it works
+without the instrument.</p></div></div>
+
+<div class="step"><div class="n">2</div><div>
+<p><strong>The field is currently optimising against two instruments that do not work.</strong>
+The leading agentic-education systems are tuned against <em>LLM-simulated students</em> and
+scored by <em>LLM-as-judge</em>. Simulated students show near-zero misconception faithfulness
+across seven models — they do not hold the belief they are role-playing. And the judge is
+worse than not selecting at all.</p></div></div>
+
+<div class="step"><div class="n">3</div><div>
+<p><strong>Nobody can currently prove efficacy, which means nobody can win procurement on
+it.</strong> A census across 20 education-AI subfields: <strong>2,907 arXiv papers, at most
+1.79% carrying any learning-outcome marker, eight subfields at exactly zero.</strong> ERIC
+holds 1,565 records on ChatGPT in education and <strong>seven randomised trials</strong>, four
+of them second-language learning. The first company that can demonstrate a delayed unassisted
+outcome is not competing on features.</p></div></div>
+
+<h2>4. Why humans-in-the-loop is the wedge, not the cost line</h2>
+
+<p>The usual framing treats human tutors as the expensive part to be automated away. The
+evidence says the opposite, and it comes from the only trial that measured a
+human-supervised AI tutor at scale.</p>
+
+<p>Tutors accepted <strong>74.4% of 3,617 AI-generated drafts unedited.</strong> That number
+is usually quoted as an efficiency win. The interesting number is the other one:</p>
+
+<div class="claim">44.3% of tutor edits were slowing the AI's questioning down before it
+exasperated the student.</div>
+
+<p>Read what that describes. The human was not writing the content. <strong>The human was
+acting as the verifier</strong> — catching the cases where the model's pedagogical judgement
+was wrong, in a domain where no automated check exists.</p>
+
+<p>Which yields the structural argument:</p>
+
+<div class="step"><div class="n">→</div><div>
+<p>A human-in-the-loop tutoring operation is <strong>a labelled-data engine for exactly the
+instrument the category is missing</strong>. Every accept, every edit, and every rejection is
+a labelled judgement about whether a pedagogical action was correct — the training signal for
+a step-level verifier, generated as a by-product of delivering the service.</p>
+<p><strong>The humans are not the cost to be removed. They are the reason the asset
+compounds.</strong> A pure-AI competitor has no mechanism to generate this data. A pure-human
+competitor generates it and does not capture it.</p></div></div>
+
+<h2>5. Which moats survive a frontier release</h2>
+
+<p>The test that matters for any AI-native company: <em>when the next model ships, does your
+advantage survive or does it get handed to your competitors for free?</em></p>
+
+<div class="scroll">
+<table class="moat">
+  <tr><th>Candidate moat</th><th>Survives?</th><th>Why</th></tr>
+  <tr><td><b>Model quality</b></td><td class="v-no">No</td><td>A frontier release hands it to everyone simultaneously</td></tr>
+  <tr><td><b>Prompt / pedagogy design</b></td><td class="v-no">No</td><td>Copyable in an afternoon — and in a controlled trial, two designed interventions <b>failed to beat plain ChatGPT</b></td></tr>
+  <tr><td><b>Content library</b></td><td class="v-no">No</td><td>Generation cost went to zero; calibration cost did not, and libraries are not calibrated</td></tr>
+  <tr><td><b>Brand / distribution</b></td><td class="v-mid">Partly</td><td>Real, slow, and not technology — the incumbents already have it</td></tr>
+  <tr><td><b>Procurement conformance</b></td><td class="v-mid">Partly</td><td>SOC 2, FERPA, COPPA, accessibility, and from 2 Aug 2026 the EU AI Act's Article 50. A durable barrier and a commodity once cleared</td></tr>
+  <tr><td><b>Learner-error corpus + verifier</b></td><td class="v-yes">Yes</td><td>Not a model capability. Compounds with usage. A better base model makes it <em>more</em> valuable, not less — because everything downstream of it improves</td></tr>
+</table>
+</div>
+
+<p>One row survives cleanly, and it is the one nobody is building.</p>
+
+<h2>6. What makes it hard, which is the point</h2>
+
+<p>If it were easy it would not be a moat. Three things make it hard, and all three are
+surmountable by an operator rather than by a lab:</p>
+
+<div class="step"><div class="n">a</div><div><p><strong>The labels must come from real student work, in the wild.</strong> Simulated
+students have near-zero misconception faithfulness. You cannot synthesise this corpus.</p></div></div>
+<div class="step"><div class="n">b</div><div><p><strong>Judgement of a pedagogical action is not a single ground truth.</strong> It needs
+the tutor's decision, the learner's subsequent behaviour, and a delayed outcome — which means
+you need the delivery relationship, not just the transcripts.</p></div></div>
+<div class="step"><div class="n">c</div><div><p><strong>Decades of labelled intelligent-tutoring logs already exist and are public.</strong>
+The cold-start is smaller than it looks. The public testbed exists. Nobody has done it.</p></div></div>
+
+<h2>7. The three questions to ask any competitor</h2>
+
+<div class="step"><div class="n">1</div><div><p><strong>"Show me the delayed, unassisted, novel-item outcome."</strong> Not the practice
+score, not the same items. Weeks later, device closed. ERIC returns <strong>zero records</strong>
+for "retention test" AND "ChatGPT". Without it, nothing was measured about learning.</p></div></div>
+<div class="step"><div class="n">2</div><div><p><strong>"What was your control condition?"</strong> If it was <em>nothing</em>, the result is
+uninformative — against nothing, almost everything works. The bar is <strong>plain
+ChatGPT</strong>, because that is what a learner has for free.</p></div></div>
+<div class="step"><div class="n">3</div><div><p><strong>"What happened to the gap, not the mean?"</strong> Untargeted delivery reliably
+loads on already-strong learners. A healthy mean concealing a widened gap has made things
+worse.</p></div></div>
+
+<h2>8. What would kill this thesis</h2>
+
+<div class="kill">
+  <div class="k">Stated in advance, so it can be checked</div>
+  <p><strong>A frontier release that labels student errors reliably.</strong> If a general
+  model crosses from chance to competent at step-level error diagnosis, the verifier stops
+  being a proprietary asset and becomes an API call. This is the single largest risk and it
+  is not remote.</p>
+  <p><strong>The counterfactual result generalising.</strong> In a controlled trial, two
+  designed pedagogical interventions produced <em>no significant advantage</em> over plain
+  ChatGPT. One reading of the whole corpus is that returns on pedagogical design scale with
+  how bad the counterfactual was — largest where instruction is scarce, near zero in a
+  well-resourced classroom. If that holds, the addressable market is not where the money is.</p>
+  <p><strong>And the honest prior on the adjacent claim:</strong> four separate attempts to
+  reduce special-education administrative burden — computerisation, delegation, deregulation,
+  and a statutory waiver authority — were measured, and <strong>all four returned zero.</strong>
+  The AI claim is the fifth attempt, and its entire measured base is one RCT of 22 novice
+  teachers.</p>
+</div>
+
+<h2>9. The one-line version</h2>
+
+<div class="claim">Everyone is building the tutor. The bottleneck is the examiner — and a
+human-in-the-loop operation is the only structure that produces one while it trades.</div>
+
+<footer>
+  <a href="paper.html">The full survey</a> · <a href="./">Dashboard</a> ·
+  <a href="demos/">Demos</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai/blob/main/CORRECTIONS.md">Corrections</a>
+  <br /><br />
+  Every figure here is labelled and traceable in the survey. Twenty of this project's
+  forty-one published corrections were found by adversarial reviewers rather than by its
+  authors — which is the reason to trust the numbers on this page, and the standard any
+  competitor's should be held to.
+</footer>
+
+</div>
+<script src="theme.js"></script>
+</body>
+</html>
