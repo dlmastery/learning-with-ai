@@ -39,10 +39,26 @@ conditional probability, then every child using it receives the same defect on t
 same afternoon — and the defect is invisible precisely because it is universal.
 There is no dissenting teacher down the corridor.
 
-Nobody has studied this. There is no monitoring for it, no benchmark that would
-detect it, and — as far as we can determine — **no name for it in the literature.**
-We propose *correlated pedagogical error*, and we think it is the most important
-unstudied risk in the field.
+Nobody has studied this **in education**, and there is no monitoring for it and no
+benchmark that would detect it. But a claim in an earlier draft of this section — that
+it has *no name in the literature* — was wrong, and the correction strengthens the
+argument rather than weakening it.
+
+**It has a formal result, in another field.** Kleinberg and Raghavan's *algorithmic
+monoculture* (PNAS 2021) proves that convergence on a single algorithm can **reduce
+collective decision quality even when that algorithm is more accurate for each agent
+in isolation** — and with no exogenous shock required. The harm is a consequence of
+correlation itself, not of the model being bad.
+
+That is our risk, stated as a theorem, five years before anyone applied it here. And
+there is now a measured hint of the mechanism: **71% of one model's
+misconception-detection failures concentrate in two question types** — reported
+incidentally by researchers studying something else entirely. Model pedagogical blind
+spots are not diffuse. They are structurally concentrated, which is exactly the
+condition under which monoculture bites hardest.
+
+We keep the name *correlated pedagogical error* for the education-specific case, and
+withdraw the claim of novelty.
 
 The reason it is invisible is worth stating precisely. Every evaluation we have
 compares a model against a *reference answer*. Correlated error is the case where

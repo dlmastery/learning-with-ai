@@ -98,6 +98,8 @@ measured, or it is a pitch.
 | **C-43** | 29 Jul | Cited the Eedi trial's **74.4% draft acceptance** in a way that implied a measured efficiency gain | The acceptance figure verifies exactly (2,691/3,617). The efficiency reading does not: the authors state their design **"precludes a rigorous measurement of throughput or efficiency."** The published throughput gain comes from a **six-tutor role-play simulation**, and its labour rate is cited to a marketplace blog post. Treat 74.4% as a measured *signal stream*, never as measured productivity | SELF-RESEARCH (M1) |
 | **C-44** | 29 Jul | *(omission)* No audited comparable was cited for an AI-native rebuild of a tutoring business | One exists and it is negative. A listed tutoring company rebuilt *"on entirely new, AI-native codebases"* and its gross margin moved **67.5% → 58.0%**, expert costs **up $5.2M on revenue down $11.2M**. Its 10-K: *"There can be no assurance that our investments in AI will be beneficial to our business."* Omitting the only audited comparable because it is inconvenient is the failure this project exists to name | SELF-RESEARCH (M1) |
 | **C-45** | 29 Jul | *(structural)* The editorial standard had seven evidence labels, all of which describe things that already exist | **The omission had a measurable effect.** Counted across the survey: **756 critique markers against 24 construction markers; 19 of 33 sections at zero.** The standard rewarded what could be cited and punished what could only be argued, so the document drifted 31:1 toward critique — and every adversarial review deepened it, because the past is falsifiable and the future is not. Two labels added: **`DESIGN`** (a specified artifact that does not exist, which must name what would show it wrong) and **`OPEN`** (a question nobody asked, which must say why not) | SELF-RESEARCH (posture audit) |
+| **C-46** | 29 Jul | §21 named *correlated pedagogical error* and claimed it had **"no name for it in the literature"** | **Wrong, and the correction strengthens the argument.** Kleinberg & Raghavan, *algorithmic monoculture* (PNAS 2021), proves convergence on one algorithm can **reduce collective decision quality even when it is more accurate for each agent in isolation**, with no shock required. Our risk, as a theorem, five years earlier. Plus measured support: **71% of a model's misconception-detection failures concentrate in two question types**. Name kept for the education-specific case; novelty claim withdrawn | SELF-RESEARCH (N1) |
+| **C-47** | 29 Jul | *(latent)* The project repeatedly invoked "the calendar", "seat time" and the Prussian origin of age-graded schooling as the constraint that killed mastery learning — always as unsourced `INFERENCE` | **The Prussian-origins story does not survive checking and is now `UNVERIFIED`.** McClusky (1920) records it as a specific claim by Bunker in 1916, "a subject of controversy" at the time, whose motive was that he *"sees in the present system a foreign and un-American type of organization which should be superseded."* The story's rhetorical function predates its evidentiary status by 110 years. **The sourced constraint is the monitorial system** — designed so one master could instruct 200–1,000 pupils, and **abandoned when it proved ineffective.** Two of three origin stories checked had published corrections attached | SELF-RESEARCH (N1) |
 
 ---
 
@@ -108,13 +110,13 @@ hand-maintained, which is the whole argument for generating it.*
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 19 |
+| Caught by our own research | 21 |
 | Caught by our own verification — including of our own warnings | 2 |
 | Caught by our own builders, working against their own briefs | 4 |
 | **Caught by an adversarial external reviewer** | **20** |
-| **Total** | **45** |
+| **Total** | **47** |
 
-20 of 45 were found by someone whose job was to fail us — including
+20 of 47 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the

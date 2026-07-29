@@ -55,9 +55,10 @@ PARTS = [
    "27-the-market", "28-prior-art", "14-motivation"]),
 
  ("VII", "What we do not know",
-  "The catalogued gaps, the uncatalogued ones, and the conditions under which "
-  "this document's central claim would have to be withdrawn.",
-  ["21-what-we-cannot-see-from-here", "20-the-agenda"]),
+  "The catalogued gaps, the uncatalogued ones, what we would build with none of the "
+  "existing containers, and the conditions under which this document's central claim "
+  "would have to be withdrawn.",
+  ["21-what-we-cannot-see-from-here", "33-greenfield", "20-the-agenda"]),
 ]
 
 N_REPORTS = len(list((ROOT / "research" / "raw").glob("*.md")))

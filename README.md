@@ -2,7 +2,7 @@
 
 **A survey of what AI-native learning has actually been measured to do — and a specification for
 what it should be.**
-<!--gen:sections-->33<!--/gen--> sections, <!--gen:words-->80,725<!--/gen--> words, built on
+<!--gen:sections-->34<!--/gen--> sections, <!--gen:words-->82,527<!--/gen--> words, built on
 ~2,100 sources.
 
 **[Read it on the web](https://dlmastery.github.io/learning-with-ai/paper.html)** ·
@@ -108,7 +108,7 @@ whichever way it lands. Especially the nulls.
 The claim that should make you suspicious of any survey is that it got everything right. This one
 did not, and the record is the point.
 
-**<!--gen:corrections-->41<!--/gen--> corrections, published in an append-only ledger with a
+**<!--gen:corrections-->47<!--/gen--> corrections, published in an append-only ledger with a
 provenance column.** <!--gen:external-->20<!--/gen--> were found by an adversarial reviewer, not by us — including the two most
 damaging, and one about the corrections ledger itself, which we had been silently editing inside a
 table headed *"published rather than silently edited."*
