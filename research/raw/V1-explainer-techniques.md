@@ -1870,19 +1870,21 @@ For each technique, ask three questions in order:
 
 The residue that fits none of the three is **D** (§2.6).
 
-**The counts, from the §4 table:** of 96 techniques inventoried, **21 are A**, **50 are B**,
-**19 are C**, and **6 are D** (a further 8 are split or contested and are counted at their
-primary bucket). Three things fall out of that distribution and each is worth stating:
+**The counts, from the §4 table:** 104 numbered entries, of which **95 are techniques** and 9
+are evidence or findings that carry no bucket. Of the 95: **16 are A**, **63 are B**,
+**11 are C**, **5 are D**. Split cases are counted at their primary bucket and the split is
+recorded in the table. Three things fall out of that distribution and each is worth stating:
 
 - **B is the majority, and that is the finding that most contradicts a naive reading of the
   brief.** Roughly half of what the elite explainers invented is not scar tissue. It is
   technique that a perfect tutor should use, and most of it has never been implemented in a
   responsive system because the responsive-system field has been busy building dialogue and
   not building *explanations*.
-- **A is smaller than it feels but weightier than it counts.** Twenty-one entries — but one of
+- **A is smaller than it feels but weightier than it counts.** Sixteen entries — but one of
   them, **T86 (modal-learner targeting)**, is the parent of most of the others, and it is the
-  one the whole field is actually paying for.
-- **C is almost entirely free money.** Nineteen techniques that cost real authoring effort,
+  one the whole field is actually paying for. A bucket-count is a bad measure of a bucket's
+  importance when one entry is the cause of the rest.
+- **C is almost entirely free money.** Eleven techniques that cost real authoring effort,
   carry no pedagogical value, and vanish the moment the artifact stops being a fixed-length
   video file competing for a click.
 
@@ -2176,9 +2178,510 @@ lesson is shared and the local tutor is not.**
 
 | Bucket | Count | What to do Monday |
 |---|---|---|
-| **A** | 21 | **Do not clone.** For each, implement the *job* with measurement in place of estimation. Highest value: T7 → gate, T11 → self-elicitation, T86 → the whole point |
-| **B** | 50 | **Build as-is, and note how few have been built.** Highest value: T61a, T62, T61, T66, T1, T48 |
-| **C** | 19 | **Delete, and reclaim the authoring budget.** Highest value: T8 — stop discarding the parameterisation |
-| **D** | 6 | **Curate.** Buy, license, or commission. Do not attempt to generate |
+| **A** | 16 | **Do not clone.** For each, implement the *job* with measurement in place of estimation. Highest value: T7 → gate, T11 → self-elicitation, T86 → the whole point |
+| **B** | 63 | **Build as-is, and note how few have been built.** Highest value: T61a, T62, T61, T66, T1, T48 |
+| **C** | 11 | **Delete, and reclaim the authoring budget.** Highest value: T8 — stop discarding the parameterisation |
+| **D** | 5 | **Curate.** Buy, license, or commission. Do not attempt to generate |
+
+---
+
+## §3 — What becomes possible that no human explainer can do
+
+Not "AI makes videos like theirs." That is the small idea, it is what most of the market is
+building, and Hefter et al. (2019) already suggests the ceiling: video versus written versus
+graphic-novel worked examples produced *"similar learning processes… as well as a large effect
+on learning outcomes"* regardless of mode — the formats differed in **efficiency, not
+effectiveness**. `MEASURED-RCT`. **The video-ness of a great video explainer is not where the
+value is.** Cloning the surface buys nothing.
+
+The moves below are the ones that are **structurally unavailable** to a single artifact.
+
+**The test design is the same for all of them, and it is Muller's.** His Refutation condition
+was the Exposition script *verbatim, plus one feature*, and that is why the `d = 0.79` means
+something. Every proposal here is specified as a **one-feature ablation against a matched
+linear artifact**, with:
+
+- **Outcome: delayed unassisted transfer at 1–2 weeks**, not immediate recognition. `N4` §1.3
+  establishes that the delay evidence in this literature is essentially absent (>1 month:
+  **k = 2**), and van Peppen et al. (2021, N = 170, 3 weeks and 9 months, four formats) found
+  **no differences at all**. That null is the prior every proposal here must beat.
+- **Matched time-on-task**, because segmenting alone costs `g = 0.92` in time and half of what
+  looks like a technique effect is a clock effect.
+- **Pre-registered, with the confidence/perceived-learning items included**, because Muller's
+  most important finding was that the felt axis moved in the *wrong direction* and any system
+  optimising on satisfaction will select the losing arm.
+- **Reported by prior-knowledge stratum**, because expertise reversal (novices **+0.505**,
+  experts **−0.428**) will otherwise average two opposite effects into a null.
+
+---
+
+### 3.1 The enforced prediction gate — port of T7, and the cheapest large win
+
+**The move.** The reveal does not render until the learner commits a prediction. Not "pause and
+ponder"; the next frame does not exist yet.
+
+**Why it is the top of the list.** Sanderson says the prediction is where the learning happens,
+says it in 34 videos, and concedes people are *"a little bit more passive in that moment."*
+The compliance is unobservable and unrequired. **A gate converts an unenforceable request into
+a precondition, and requires no new model capability whatsoever.**
+
+**What it requires.** A pause point in the artifact's dependency graph marked as load-bearing;
+a free-text or manipulable answer surface; a cheap grader that only has to classify the answer,
+not correct it.
+
+**What exists today.** All of it. This is buildable this week.
+
+**What is missing.** The *placement policy*. The prequestion effect is **specific, not general**
+(`g = 0.54` on gated content vs `g = 0.04` on everything else, k = 97/91) — so gating
+everywhere costs attention and returns nothing. Choosing which three steps in a forty-step
+derivation are load-bearing is a genuine open problem and it is the interesting part.
+
+**Design constraints from the evidence, all of which are violated by the obvious build:**
+- **Accept wrong answers eagerly.** Guessing `g = 0.65` vs not-guessing `g = 0.22`. "I don't
+  know" must not be a passable token.
+- **Do not gate children the same way.** Adults `g = 0.62` vs grade-school `g = 0.22`.
+- **A prediction that is confirmed buys nothing** (Theobald & Brod 2022: main effect
+  `b = −0.090, p = .330`; the entire effect is the expectancy-violation interaction,
+  `b = 0.195, p = .002`). **Therefore the gate is only worth placing where the modal answer is
+  wrong.** That is a joint requirement on the gate and on the misconception model, and it is
+  what §3.2 supplies.
+
+**Test.** Two arms, identical content and identical prediction prompts; arm A requires the
+commitment, arm B displays the same prompt and advances on a timer. Delayed transfer at two
+weeks. This is a clean, cheap, and as far as I can determine **unrun** experiment. `CRAFT`.
+
+---
+
+### 3.2 The animation whose parameters are the learner's wrong model, run until it breaks
+
+**The move.** The learner states or demonstrates their model. The system instantiates *that
+model* as the parameters of a simulation, runs it forward, and the learner watches their own
+prediction diverge from the world.
+
+**This is the single most distinctive capability in the document** and it has a measured
+mechanism behind it, which almost nothing else here does. Theobald & Brod (2022): prediction
+before a reveal has **no main effect**; the whole effect is carried by the **condition ×
+expectancy-violation interaction (b = 0.195, SE = .062, p = .002)**. `MEASURED-RCT`.
+**Surprise is the active ingredient.** A generic animation cannot guarantee surprise because it
+does not know what you expected. An animation parameterised by *your* stated expectation
+guarantees it by construction.
+
+**What it requires.**
+1. A **parameterised model** of the concept, not a rendering — the thing Manim throws away at
+   render time (T8) and the thing Primer's engine natively is (T17).
+2. An **elicitation surface** that captures the learner's model in a form the simulator can
+   accept: a slider position, a sketched trajectory, a chosen rule, a numeric prediction. Free
+   text is the worst option and is the one everyone reaches for first.
+3. A **mapping from wrong models to parameter settings** — for a given concept, the k common
+   misconceptions expressed as executable variants, not as prose descriptions.
+
+**What exists today.** Manim, Primer's Godot/C# pipeline, and Ciechanowski's hand-rolled
+Canvas/WebGL articles all prove the parameterised-model half. LLMs can generate simulation code
+for standard physics, geometry, probability, and algorithms. Misconception inventories exist
+for physics (FCI and its descendants), and misconception-diagnosis work is now current
+(*Misconception Diagnosis From Student-Tutor Dialogue*, L@S 2026, `10.1145/3774398.3811609`).
+
+**What is missing.** The **misconception-to-parameter map**, per concept, and it does not exist
+for anything. This is the single highest-value artifact a team could build, it is
+domain-by-domain manual work, and it is exactly what an atlas of graded explanations (`N4-D1`)
+would be positioned to bootstrap: elicit at scale, cluster the wrong answers, encode the top-k
+as parameter settings.
+
+**The hazard, stated because it is the one that will sink a naive build.** Barbieri et al.
+(2023): **correct examples alone beat incorrect and mixed examples**, `MEASURED-META`. Running
+a wrong model on screen is, mechanically, showing wrong work. The refutation literature says the
+opposite when the wrong model is *the learner's own currently-held belief*. **The distinction is
+ownership and it has never been tested directly.** Build the affect handling from §2.4 in from
+the start.
+
+**Test.** Three arms, matched content: (A) canonical animation; (B) canonical animation plus a
+generic "common misconception" animation; (C) animation parameterised by the learner's elicited
+model. Outcome at two weeks, stratified by whether the learner's initial model was in fact
+wrong. **The prediction that would falsify this whole idea:** if C ≈ B, the personalisation is
+decorative and the effect was always just naming a misconception.
+
+---
+
+### 3.3 The street interview where the stranger is you, thirty seconds ago
+
+**The move.** Elicit the learner's model, present it as *a* common model held by many people,
+refute it against something they can manipulate, and only then attribute it back:
+*"that was the model you gave me thirty seconds ago."*
+
+**Why the ordering matters.** §2.4 — the confession cost. Watching a stranger be wrong on
+camera costs the viewer nothing and tells them the error is common. Being told *you* are wrong
+costs something real. The ordering above preserves the activation (which is what Muller's
+`d = 0.79` measures) while deferring the attribution until after the refutation has landed,
+when being wrong is already past tense.
+
+**What it requires.** Elicitation; a misconception classifier that maps a free answer to a
+named misconception; a refutation asset per named misconception; and a **deferred-attribution
+policy** with a decision about whether to attribute at all.
+
+**What exists today.** Everything except the policy and the assets. Misconception-aware tutoring
+is an active research area (SIGCSE 2026, `10.1145/3770761.3777289`).
+
+**What is missing.** Any evidence about the affective ordering. **This is the cleanest untested
+question in the document** and it is a two-arm experiment: attribute-first versus
+attribute-after, same content verbatim, measuring transfer *and* self-efficacy and continuation.
+
+**Test.** Muller's design exactly: identical refutation script; arm A opens *"you said X, and
+X is wrong"*; arm B opens *"a lot of people think X"* and closes with the attribution. Delayed
+transfer plus a continuation measure (does the learner start the next module).
+
+---
+
+### 3.4 Build-from-nothing that stops at the step you actually do not understand
+
+**The move.** Ben Eater's technique (T21) with an executable prerequisite graph underneath.
+The system builds up from primitives, and **the build halts at the first node the learner cannot
+predict the behaviour of** — which is not the node the author would have guessed.
+
+**What it requires.** A **prerequisite DAG with executable nodes** — each node is a component
+whose behaviour the learner can be asked to predict and whose prediction can be checked by
+running it. A traversal policy: descend on failure, ascend on success, and **skip nodes with
+demonstrated mastery** rather than narrating them.
+
+**What exists today.** Prerequisite graphs exist in every mastery-learning system (Khan
+Academy's is the largest) and are almost universally at the wrong granularity — "solving linear
+equations" rather than "knowing that both sides remain equal." The executable half exists for
+code and circuits (Eater, Karpathy, `Digital-Logic-Sim`) and barely at all for mathematics.
+
+**What is missing.** Granularity, and a check that is cheap enough to run at every node without
+turning the lesson into an interrogation (§2.8: instrument the manipulation, not the learner).
+
+**Why it matters more than it sounds.** This directly attacks expertise reversal — novices
+`+0.505`, experts `−0.428` — which is not a moderator to be reported but **the reason a single
+artifact cannot work.** A build that skips what you know and halts where you stop is the only
+structure that serves both ends of the distribution with one asset.
+
+**Test.** Against a fixed-order build of identical content, matched on time. Report by prior
+knowledge stratum; the expected signature is that the adaptive arm wins **at both tails and
+ties in the middle**, which is a different prediction from "it wins on average" and a much
+stronger one.
+
+---
+
+### 3.5 The ladder of abstraction with the rung chosen by where you stopped predicting
+
+**The move.** Victor's ladder (T66), driven. The system moves up to the abstraction, or down to
+the concrete instance, **based on where the learner's predictions stop being correct** — rather
+than exposing a slider and hoping.
+
+Victor's own operations are the API: **Controlling Time**, **Controlling the Algorithm**,
+**Abstracting Over Time**, **Stepping Back Down**, **Abstracting the Data**. And his rule:
+*"stepping down is as important as stepping up… **Every point on a visual abstraction typically
+corresponds to a particular concrete state.**"* His thesis sentence is the design target:
+*"this dance is where the deepest insights are born — not at any one level of abstraction, but
+in the transitions between them."*
+
+**Why the system must drive rather than the learner.** §2.9. Learner-segmented `g = 0.20` vs
+system-segmented `g = 0.41`; learner-paced `0.27` vs system-paced `0.41`; and Case's public
+retraction of the discovery-learning premise as *"replicatably false."* **The learner does not
+know which rung they need. That is the definition of not understanding yet.**
+
+**What it requires.** A representation that exists at ≥3 levels with a *correspondence map*
+between them (a point on the abstract view resolves to a concrete state, per Victor's rule);
+a per-rung prediction probe; a policy.
+
+**What exists today.** The three-level representations exist in a handful of hand-built
+artifacts. The correspondence map is what makes them expensive and is what generation would
+have to produce.
+
+**What is missing.** Automatic generation of the correspondence map. This is a real research
+problem, not an engineering one.
+
+**Test.** Fixed-rung control vs learner-controlled slider vs system-driven rung. **Three arms,
+and the interesting comparison is the second against the third**, because the literature so far
+has only ever run the second.
+
+---
+
+### 3.6 The counterexample generated from your specific answer
+
+**The move.** Not a canned counterexample. The learner asserts something with a scope error —
+*"the derivative of a product is the product of the derivatives"* — and the system constructs
+**the minimal instance on which their specific claim fails**, and it is not the textbook one.
+
+**What it requires.** Enough formal grip to search for a falsifying instance. For algebra,
+calculus, logic, geometry, probability, and code this is a solved problem class (CAS, SMT
+solvers, property-based test generation, random search). For anything empirical it is not.
+
+**What exists today.** Hypothesis/QuickCheck-style shrinking already produces *minimal*
+counterexamples and is exactly the right primitive. `DEMO` for the pedagogical application; the
+tooling is mature.
+
+**What is missing.** Wiring learner assertions into a formal representation reliably, and — more
+importantly — **choosing the minimal counterexample that is also the most instructive**, which
+is not the same object. The smallest failing case is often a degenerate one that teaches
+nothing.
+
+**Test.** Canned counterexample vs generated-minimal vs generated-instructive, on transfer to
+novel scope errors in the same family. The transfer item is the point: does the learner
+generalise the *habit* of testing scope.
+
+---
+
+### 3.7 The productive-failure governor — a component whose job is to withhold
+
+**The move.** §2.5's requirement, built. A classifier distinguishing **productive struggle**
+from **floundering**, and a policy that stays silent through the first.
+
+**Why this is in Part 3 and not Part 2.** It is the clearest case of a capability that *only*
+a system which sees the learner can have — a video cannot help you, so it cannot fail to help
+you correctly. The linear medium gets productive failure for free by being unable to intervene.
+**A responsive system has to buy it back deliberately, and will not, unless someone specifies
+it as a component.**
+
+**What it requires.** Signals: response latency, edit/undo patterns, whether successive attempts
+are *different in kind* (productive) or *the same attempt repeated* (floundering), whether the
+learner is still manipulating the artifact at all. A policy with a long default latency. A
+learner-model gate, because the boundary conditions are known and severe:
+
+- Productive failure **reverses for grades 2–5** and for domain-general skills. `MEASURED-META`.
+- Adults `g = 0.62` vs grade-school children `g = 0.22` on the adjacent prequestion effect.
+- For low-prior-knowledge and SELPA learners the repo's standing position is **"explicit
+  instruction wins; struggle that is productive for a typical learner is often just failure
+  here"** (§H1).
+- **"Adding help to the struggle does not help"** (Sinha & Kapur 2021) — so a hint ladder is not
+  a softer version of this. It is the failure mode.
+- The **instruction phase is mandatory**: productive failure is problem-solving **followed by**
+  instruction, not instead of it.
+
+**What exists today.** Nothing named. Every deployed tutor is tuned in the opposite direction,
+because a silent tutor reads as a broken one and satisfaction metrics punish it.
+
+**What is missing.** The classifier, and the institutional willingness to ship a product that
+deliberately does not answer.
+
+**Test.** Identical system, two intervention latencies (immediate vs governed). Report transfer,
+completion, and satisfaction separately, and **expect satisfaction to favour the losing arm** —
+that is what Muller measured and it is the reason this needs pre-registration.
+
+---
+
+### 3.8 Ciechanowski density, generated — manipulate-before-explain at scale
+
+**The move.** T61a, produced automatically: for every claim in an explanation, a manipulable
+figure that instantiates *that claim*, presented **before** the prose that resolves it, with
+**degrees of freedom introduced one at a time** (T61).
+
+**Why this is the biggest engineering prize in the document.** *Gears*: 30 figures / 108
+paragraphs. *Moon*: 120 figures. Hand-built, no libraries, closed source, at **two or three
+articles a year, as a weekend hobby.** Distill stopped for the same reason and quantified it:
+*"more than 50 hours of help"* per early article, and burnout. And the tooling has capitulated —
+Idyll, the one framework built for this, **last pushed February 2023**, 2,036 ★ against Manim's
+88,991. **The best substrate for explanation has been identified, prototyped, and abandoned at
+the authoring layer. The authoring layer is what generation is for.**
+
+**What it requires.** Generation of small, correct, interactive figures with (a) a stated
+invariant the figure demonstrates, (b) a parameter schedule that introduces controls in
+dependency order, and (c) a check that the figure is actually correct.
+
+**What exists today.** Code generation for self-contained canvas/WebGL widgets is `DEMO`-level
+today and works. `ncase/nutshell`, `distillpub/template`, Observable Framework are live
+substrates.
+
+**What is missing.** Two things, and they are both hard. **Correctness** — a wrong interactive
+figure is worse than no figure, because the learner will trust the simulation over the prose.
+**The parameter schedule** — generated widgets expose everything at once, which is precisely
+T61's failure mode, and there is no automatic way yet to derive the dependency order of a
+model's degrees of freedom.
+
+**Test.** Matched prose, three arms: text only; text with static figures; text with
+manipulate-before-explain interactive figures at ≥1 per 4 paragraphs. Delayed transfer at two
+weeks, matched time-on-task. **The prior to beat is genuinely unfavourable** — Noetel's
+video-versus-more-interactive-control comparison came back `g = −0.07 [−0.38, 0.25]` — and
+that unfavourable prior is exactly why the experiment is worth running properly.
+
+---
+
+### 3.9 The dual-teacher architecture, ported
+
+**The move.** T82, with the local tutor replaced by a model. A **shared, canonical, authored
+explanation** — the eigenvector video, the *Gears* article, the marathon session — plus a
+per-learner agent that watches this learner, checks their work, detects confusion, re-explains
+locally, and **reports back to the atlas**.
+
+**Why this and not "generate everything."** Three converging reasons:
+1. **§2.6 (bucket D):** some explanations are authored objects that no learner model derives.
+2. **§2.10:** a fully personalised world destroys the shared artifact, and with it study
+   groups, assignment, and citation.
+3. **It is the only architecture in this document with a national-scale human precedent.**
+
+**What it requires.** A canonical artifact per concept with **timestamped or anchored
+semantics** — the model must know what claim is on screen right now. A per-learner observer. A
+repair channel that can interject without destroying the artifact. Telemetry back to the atlas.
+
+**What exists today.** All four, separately. Nobody has assembled them.
+
+**What is missing, and it is the thing the one available study points at.** Jiang, Yuan & He
+(2025), N = 968: the dual-teacher classroom's measured failure is **"the lack of emotional
+interaction between teachers and students"**, with **teacher support the key factor affecting
+involvement**. `MEASURED` (survey). **The layer AI would replace is the layer that was already
+the weak point.** Any port must treat the local agent's relational function as a first-class
+requirement rather than a nice-to-have, and this repo's own evidence says that is hard: social
+presence moved `d = .85–1.01` in three field experiments **while learning did not move at all**.
+Warmth is measurable, achievable, and not automatically worth anything.
+
+**Test.** Canonical artifact alone vs canonical artifact + observing agent, same artifact,
+matched time. This is the **most important experiment in the document** because it is the
+architecture, and it is Muller's ablation design applied at the system level.
+
+---
+
+### 3.10 Explanation that knows what you were told last week
+
+**The move.** Cross-session continuity of the *explanatory commitments already made to this
+learner*. Not "remembers your name" — remembers **which simplification you were given**, so the
+next explanation either honours it or explicitly retracts it.
+
+**Why no human explainer can do this.** T48 (CGP Grey's "this is a lie, but a useful one") is
+the closest anyone gets, and it is a *within-artifact* declaration. Across artifacts, every
+explainer starts from zero and re-simplifies from scratch, which is why a learner who has
+watched five explanations of the same concept holds five mutually incompatible simplifications
+and does not know it.
+
+**What it requires.** A per-learner ledger of **abstraction-level commitments**: what was said,
+at what rung, what it hid. Then a retraction primitive — *"remember when I said electrons orbit
+like planets? Here is what that was hiding, and why now is the time to drop it."*
+
+**What exists today.** Nothing. Memory in deployed tutors stores preferences and progress, not
+**epistemic debt**.
+
+**What is missing.** The representation. This is a small, well-defined, and completely unbuilt
+piece of infrastructure, and it is the direct implementation of Distill's *research debt* idea
+at the level of one learner.
+
+**Test.** Learners taught concept C at rung 2, then later taught rung 3, with and without
+explicit retraction of the rung-2 simplification. Measure: retention of the rung-3 model, and —
+the interesting item — **whether the learner can state what the earlier model got wrong.**
+
+---
+
+### 3.11 Continuous illusion-of-competence detection
+
+**The move.** T44 (SmarterEveryDay's backwards bicycle) as a continuously running instrument:
+**every time the learner reports understanding, cheaply test it**, and surface the gap.
+
+**Why it is only available to a responsive system.** The felt/real dissociation is this repo's
+central finding — Buljan et al. (2018): no knowledge difference, **preference d = 0.48**;
+Muller: perceived learning 5.7 vs 5.6 flat while actual learning differed by `d = 0.71`;
+Kizilcec et al. (2015, N = 12,468): cognitive load and social presence moved, **course grade
+d = 0.01 n.s.** A linear artifact can *demonstrate* the dissociation once, memorably, on the
+presenter's body. A responsive system can **measure it, per learner, per concept, continuously**,
+and act on it.
+
+**What it requires.** A confidence probe that is cheap and non-punitive; a matched performance
+probe; a policy for what to do with a large positive gap (high confidence, low performance) —
+which is the dangerous quadrant and the one that predicts stopping.
+
+**What exists today.** All the pieces. Calibration measurement is a mature literature.
+
+**What is missing.** Anyone shipping it, because the product consequence of telling a paying
+learner they know less than they think is obvious and bad.
+
+**Test.** Calibration feedback vs none, on delayed transfer and on **help-seeking behaviour**,
+which is the mediator that should move first.
+
+---
+
+### 3.12 The misconception market — Veritasium's street interview, industrialised
+
+**The move.** Run the elicitation across every learner who touches the system. Cluster the wrong
+answers. **Discover the misconception distribution empirically, per concept, per population**,
+instead of inheriting it from a 1990s inventory. Then author or generate refutations for the
+top-k, and re-measure.
+
+**Why nobody has done it.** Muller stopped strangers on a sidewalk, one at a time, and it was
+the best available instrument. A deployed system runs that same elicitation ten thousand times
+a day for free.
+
+**What it requires.** Consistent elicitation prompts per concept; clustering over free answers;
+a human adjudication loop, because an unsupervised cluster of wrong answers is not a
+misconception; and enough scale to have a distribution.
+
+**What exists today.** The scale exists at Khan Academy, PW, and every deployed tutor. The
+instrumentation does not, because nobody logs *wrong answers as beliefs* — they log them as
+incorrect responses to be corrected and discarded.
+
+**What is missing.** The framing. **The wrong answers are the most valuable data any tutoring
+system produces and every one of them currently throws them away.**
+
+**Test.** Not an RCT — this is instrumentation. The validation is predictive: do the
+empirically-discovered top-k misconceptions predict item failure better than the canonical
+inventory does? If yes, the market is real. This is also the natural bootstrap for the
+misconception-to-parameter map §3.2 needs.
+
+---
+
+### 3.13 Intent classification: are you learning or looking something up?
+
+**The move.** Decide whether this learner currently wants an **explanation** or a **reference
+lookup**, and serve a different artifact.
+
+**Why it belongs here.** T59 — The Organic Chemistry Tutor, 1.76 billion views, machinery-first,
+no chapters, ~52 s per problem, and the **lowest first-decile replay mass in `N4`'s 51-video
+sample (0.081 vs 0.291 mean)**. Nobody replays the opening because there is nothing there;
+they navigate to the problem they need. **It is the largest channel in the class and it is not
+an explanation, it is an index — and it is right to be.** A single artifact cannot be both. A
+system that can ask, or infer from the query, can serve either.
+
+**What it requires.** A classifier over the learner's entry state (query form, time pressure,
+prior exposure to the concept, whether an assignment is due). Two artifact classes maintained.
+
+**What exists today.** Trivially buildable.
+
+**What is missing.** The recognition that it is a distinct decision. Every deployed tutor
+answers a lookup with a lesson, which is the single most common complaint about them.
+
+**Test.** Route-by-intent vs always-explain, measured on task completion *and* on delayed
+retention, because the honest expectation is that they trade off.
+
+---
+
+### 3.14 Adjudicating between explanations — AlphaPhoenix as a system function
+
+**The move.** When two authored explanations of the same concept **disagree** — and across a
+corpus of thousands they will — the system can (a) detect the conflict, (b) surface it rather
+than silently pick, and (c) where the domain permits, **run the discriminating experiment as a
+simulation the learner controls**.
+
+**Why it is new.** T57 (AlphaPhoenix building a rig to settle a Veritasium claim) and T32
+(Mould designing the discriminating test) are the human versions, and they happen once every few
+years because they cost months. Detection over a corpus is cheap. And Victor's 2024 postscript
+is the theoretical warrant: *"The reader's role is not to believe, but to critically evaluate,
+rebut… **The reader rebuts by modifying the models.**"*
+
+**What it requires.** Claim extraction from explanations into a comparable form; conflict
+detection; and for (c), executable models of both accounts.
+
+**What exists today.** (a) and (b) are near-term with current models. (c) is domain-limited.
+
+**What is missing.** A corpus with claims extracted — which is precisely `N4-D1`, the atlas, and
+this is a second use for it that the original design did not anticipate.
+
+**Test.** On concepts with known live disagreements, compare: pick-one-silently vs
+surface-the-conflict vs surface-and-simulate. Outcome should include **epistemic items** — can
+the learner state what evidence would settle it — not only content items. That is the actual
+thing being taught and nothing else in this document teaches it.
+
+---
+
+### 3.15 What would show this whole section is wrong
+
+Stated plainly, because a specification without a falsifier is a wish:
+
+1. **If §3.9's core test comes back null** — canonical artifact + observing agent ≈ canonical
+   artifact alone, on delayed transfer at matched time — then the architecture is wrong and the
+   value was always in the artifact. This is the load-bearing experiment.
+2. **If §3.2's arm C ≈ arm B** — learner-parameterised animation ≈ generic misconception
+   animation — then personalisation of the *explanation* is decorative and only the naming ever
+   mattered, which would be consistent with Muller having found the whole effect in 2008.
+3. **If §3.8 replicates Noetel's `g = −0.07`** for interactive against video at matched time,
+   the interactive-substrate thesis loses its main empirical leg and the honest conclusion is
+   that Ciechanowski's articles are excellent for reasons other than their interactivity.
+4. **If the productive-failure governor (§3.7) reduces completion without raising transfer**,
+   it should be deleted rather than defended, because a tutor nobody finishes teaches nothing.
 
 ---

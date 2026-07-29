@@ -2,7 +2,7 @@
 title: "Simulation and Play — a specification for worlds that can be generated on demand, and the verifier that makes them honest"
 wave: V
 date_researched: 2026-07-29
-sources_count: 71
+sources_count: 118
 ---
 
 # V3 — Simulation and Play
@@ -1055,6 +1055,53 @@ The last row is the honesty property working. A learner who states the canonical
 unfamiliar algebra must not be refuted, and the system establishes this **by running the
 search and failing to find a divergence**, not by string-matching the expression.
 
+**The two functions that do the work**, so the measurement is checkable rather than asserted.
+This is the whole falsifier, minus the parser and the dimension algebra:
+
+```js
+// G6 — the null-slider gate. Milliseconds. Catches a physically correct,
+// pedagogically dishonest world that every existing check would pass.
+for (const c of spec.controls) {
+  const lo = run(spec, {[c.param]: c.min}).trace;
+  const hi = run(spec, {[c.param]: c.max}).trace;
+  const key = c.observes, n = Math.min(lo.length, hi.length);
+  let maxd = 0;
+  for (let i = 0; i < n; i++) maxd = Math.max(maxd, Math.abs(lo[i][key] - hi[i][key]));
+  const scale = Math.max(1e-12, Math.max(...lo.map(s => Math.abs(s[key]))));
+  if (maxd / scale <= (c.min_effect ?? 0.05))
+    fail('G6', `control ${c.param} is a NULL SLIDER on ${key}`);
+}
+
+// Stage 4 — discriminating-scenario search. Returns the setting that separates the
+// learner's law from canon FASTEST, or an honest refusal.
+function findDiscriminatingScenario(spec, learnerLaws, tau = 0.05, observe, budget = 200) {
+  const alt = structuredClone(spec);
+  for (const [k, v] of Object.entries(learnerLaws)) alt.laws[k] = v;   // ONE line differs
+  const key = observe, r = rng(spec.budget.seed);
+  let best = null;
+  for (let s = 0; s < budget; s++) {
+    const ov = {};
+    for (const c of spec.controls) ov[c.param] = c.min + r() * (c.max - c.min);
+    const A = run(spec, ov), B = run(alt, ov);          // same seed, dt, integrator, init
+    if (A.diverged !== null || B.diverged !== null) continue;          // G7
+    for (let i = 0; i < Math.min(A.trace.length, B.trace.length); i++) {
+      const a = A.trace[i][key], b = B.trace[i][key];
+      if (Math.abs(a - b) / Math.max(1e-9, Math.abs(a)) > tau) {
+        if (!best || i < best.step) best = {step: i, tstar: A.trace[i].t, controls: {...ov}};
+        break;
+      }
+    }
+  }
+  return best ?? {none: true,
+    note: "NO discriminating scenario exists in the declared control box. The learner's " +
+          "rule is empirically equivalent here. Say so; do not manufacture a refutation."};
+}
+```
+
+The `?? {none: true, ...}` branch is the entire ethical content of the mechanic. It is four
+lines, it is the easiest thing in the system to omit, and omitting it converts a falsifier
+into a rigged demo that will be right often enough that nobody notices.
+
 ### 5.5 The runner-up, specified more briefly: *Two-Sided*
 
 `SPEC`. The learner argues a position. The AI then takes **the position the learner argued
@@ -1264,6 +1311,36 @@ de Jong, Linn & Zacharia 2013 [10.1126/science.1230579]; Rutten, van Joolingen &
 Paul, Podolefsky & Perkins 2013 [10.1063/1.4789712]; Ben-Zion, Carroll, West, Wong &
 Finkelstein 2026 [10.1103/s8dy-kqy5]; Freeman et al. 2014 [10.1073/pnas.1319030111].
 
+**Measured, retrieved this pass via ERIC and Crossref (2026-07-29).** Chernikova, Heitzmann,
+Stadler, Holzberger, Seidel & Fischer 2020, *RER* 90(4), g = 0.85 [0.69, 1.02], k = 145;
+Hu, Jia, Mi & Bi 2026, *JOST*, g = 0.898 [0.719, 1.076], k = 47, n = 5,715; Lazonder &
+Harmsen 2016, *RER* 86(3), k = 72; Furtak, Seidel, Iverson & Briggs 2012, *RER* 82(3), mean
+ES 0.50, k = 37; Lazonder & Egberink 2014, *Instructional Science*; Clark, Tanner-Smith &
+Killingsworth 2016, *RER* 86(1); Wouters, van Nimwegen, van Oostendorp & van der Spek 2013,
+*JEP* 105(2); Wouters & van Oostendorp 2013, *C&E* 60(1); Sitzmann 2011, *Personnel
+Psychology* 64(2); Vogel et al. 2006, *JECR* 34(3) (directional only); Lei, Chiu, Wang, Wang
+& Xie 2022, *JECR* 60(6); Tsai & Tsai 2020, *JCAL* 36(3); Riopel et al. 2019, *SSE* 55(2)
+(no numbers); Schroeder & Kucera 2022, *Educ. Psych. Review*, g = 0.41, 44 comparisons,
+n = 3,869; Danielson, Jacobson, Patall, Sinatra, Adesope, Kennedy et al. 2025, *Educational
+Psychologist* (pre-registered; 294 ES, 26 moderators); Tippett 2010, *IJSME*; Guzzetti,
+Snyder, Glass & Gamas 1993, *RRQ* 28(2); Limón 2001, *L&I* 11(4–5); Chinn & Brewer 1993,
+*RER* 63(1) and 1998, *JRST* 35(6); Chinn & Malhotra 2002, *JEP* 94(2); Kang, Scharmann,
+Kang & Noh 2010, *IJESE*, N = 183; Kang, Scharmann, Noh & Koh 2005, *IJSE*, N = 159; Lee &
+Byun 2012, *RiSE*, N = 96; Dega, Kriek & Mogese 2013, *JRST* 50(6), n = 45, η²ₚ = 0.12;
+Dreyfus, Jungwirth & Eliovitch 1990, *Science Education*; Chi 2005, *JLS* 14(2); Adams,
+Reid, LeMaster, McKagan, Perkins, Dubson & Wieman 2008, *JILR* (275+ interviews); Wilensky &
+Reisman 2006, *Cognition and Instruction* 24(2) (case studies, no ES); Levy & Wilensky 2009,
+*JOST* 18(3); Samon & Levy 2017, *Science Education* 101(6), n = 47/45; Sengupta & Wilensky
+2009, *IJCML* 14(1); Blikstein & Wilensky 2009, *IJCML* 14(2); Sun, Ren, Liu, Xu, Gao & Li
+2026, *JRST*, g = 0.470, 62 ES / 25 studies; Rodrigues et al. 2022, *IJETHE*, N = 756,
+14 weeks; Tsay, Kofinas, Trivedi & Yang 2020, *JCAL*, N = 508, 3 years; Krendl & Broihier
+1991, ERIC ED332250, N = 339, 3 years; Koyunlu Ünlü 2024 (POE, g = 0.979 — low-visibility
+venue, treated as soft); Loibl, Roll & Rummel 2017, *Educ. Psych. Review* 29; Loibl & Rummel
+2014, *L&I* 34; Kapur 2012, *Instructional Science* 40(4); Kapur 2014, *Cognitive Science*
+38(5); Brand, Hartmann, Loibl & Rummel 2023, *Instructional Science* 51; Rutten et al. 2016,
+*Learning: Research and Practice* (null); Smetana & Bell 2012 and de Jong & van Joolingen
+1998 (narrative reviews, no pooled ES).
+
 **Measured, benchmark.** VideoPhy arXiv:2406.03520; VideoPhy-2 arXiv:2503.06800; PhyGenBench
 arXiv:2410.05363; Physics-IQ arXiv:2501.09038; Code World Models arXiv:2405.15383;
 GameCWM distillation arXiv:2605.24375; NL-PDDL-Bench arXiv:2606.29700; PDDL domain consistency
@@ -1312,3 +1389,25 @@ and should not be quoted as figures.
 
 **Two arXiv abstracts (2602.10140, 2603.01912) were retrieved in truncated form** before rate
 limiting; their existence and framing are cited, no numbers from them are.
+
+**A named list of things this pass could not verify, so they are not quoted as numbers.**
+D'Angelo, Rutstein & Harris (the 2014 SRI simulation meta-analysis) — no numeric effect size
+resolvable in ERIC, Crossref or Semantic Scholar. Guzzetti et al. 1993 — the "conceptual
+conflict is the common element" conclusion is verified; **per-strategy effect sizes are not**.
+Merchant et al. 2014 (VR meta-analysis, the one that separates games from simulations from
+virtual worlds) — abstract publisher-elided everywhere. Vogel et al. 2006 and Riopel et al.
+2019 — meta-analyses whose abstracts contain no effect sizes; directional claims only.
+Wieman, Adams & Perkins 2008 (*Science*) is a Forum piece with no data and is **not cited for
+a number**. Finkelstein et al. 2005 — direction verified, magnitude not. Clark et al. 2016
+per-moderator coefficients and Wouters et al. 2013 per-level moderator *d*s — directions
+verified, magnitudes not. Levy & Wilensky 2009 and Samon & Levy 2017 report "strong" and
+"medium" effect sizes **verbally only**. Vosniadou's mental-models work and Wilensky &
+Papert's "restructurations" returned **nothing retrievable** and are not cited. Semantic
+Scholar and OpenAlex returned HTTP 429 on nearly every request from this address; ERIC and
+Crossref carried the retrieval, which biases coverage toward journals those two index well.
+
+**One structural bias in this document's own evidence.** The strongest empirical material
+here — cognitive conflict, refutation text, productive failure — is about *conceptual change
+in science*, because that is where the measurement is. The five machines are proposed as
+general, and four of the five have no domain-general evidence at all. That is a real limit on
+how far the taxonomy should be pushed outside STEM before someone measures it.
