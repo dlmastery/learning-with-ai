@@ -272,7 +272,80 @@ text over expository text before publication-bias correction (g = 0.36, §1.2), 
 equal to it after (g = 0.28). **Video is not a strong intervention. A good explanation
 delivered any way is a moderate one.**
 
-<!--AGENT2-->
+### 2.2 Khan Academy's own evaluation says, in its own words, that it is not an evaluation
+
+This is the most-cited evidence about the most-used educational video corpus in the world,
+and it is routinely misread.
+
+**Murphy, Gallagher, Krumm, Mislevy & Hafter (2014), "Research on the Use of Khan Academy
+in Schools," SRI Education**, funded by the Bill & Melinda Gates Foundation. Nine California
+pilot sites, two years, public/charter/independent, elementary through high school.
+`OBSERVED` — retrieved and read in full, 2026-07-29.
+
+The report's own framing, verbatim:
+
+> *"Because of the early-stage, emergent nature of both Khan Academy as a school resource
+> and the schools' personalized learning implementation practices, **SRI conducted an
+> implementation study rather than an evaluation of Khan Academy's impact.** An experimental
+> test of an intervention's impact (a randomized control trial) would have required a
+> clearly specified treatment, including a protocol for its enactment. Because neither the
+> Khan Academy resources and tools nor the way in which they were used in classrooms was
+> stable across the various study sites and across the 24 months of this work, it was too
+> soon to attempt a rigorous evaluation."*
+
+And: *"**Providing definitive evidence of the effectiveness of Khan Academy use in classrooms
+is not yet possible.**"* And on the correlational analyses that do appear:
+*"these analyses are exploratory and warrant further investigation, and **cannot be used to
+establish a causal connection** between Khan Academy use and improved test scores."*
+
+**The effect sizes that circulate from this report are confounded and the report says so in
+the same sentence.** The widely-quoted **+0.61 SD** (ninth-grade Algebra 1, SY 2011-12) and
+**+1.03 SD** (same cohort, tenth grade) are described by SRI as the gain *"as a result of
+attending the school after the school introduced **Khan Academy and other instructional
+reforms**."* One site, no randomisation, a bundle of simultaneous changes. Anyone quoting
++0.61 as Khan Academy's effect size is quoting a school-reform effect and attributing it to
+a video library.
+
+**What the report does measure cleanly is belief.** *"Roughly 85% of teachers reported that
+they believed Khan Academy had made a positive impact (somewhat or strong) on students'
+learning and understanding of the material overall,"* and 87% believed it improved
+independent working. `OBSERVED`. **This is the felt axis, measured on teachers instead of
+students, and it is the only well-powered outcome in the study.** The pattern §01 describes
+reproduces itself perfectly: the attitudinal variable is measured precisely and at scale;
+the learning variable is declared not yet measurable.
+
+### 2.3 The one controlled Khan Academy study, and the trap inside its second finding
+
+**Kelly & Rutherford (2017), "Khan Academy as Supplemental Instruction: A Controlled Study
+of a Computer-Based Mathematics Intervention," *International Review of Research in Open and
+Distributed Learning*.** Seventh-grade students, four weeks, Khan Academy as intervention
+versus control, plus a comparison of students with and without supplemental maths
+instruction. `MEASURED-RCT`.
+
+> *"In both cases, we found **no statistically significant differences in student test
+> scores.**"*
+
+And then, in the very next sentence of the abstract:
+
+> *"Khan Academy has several internal metrics used to track student performance and use.
+> **We found significant relationships between these metrics and student test scores** in
+> this study."*
+
+**Read those two findings together, because together they are this section's thesis in
+miniature.** The platform's own engagement metrics correlate with test scores. The platform
+itself, randomised, moves test scores by nothing. Cross-sectional correlation between
+engagement and achievement is exactly what you would expect if stronger students engage
+more — it is a selection signature, not a causal one. **A metric can correlate with learning
+and still be worthless as a target**, and this is a measured instance rather than a
+theoretical worry.
+
+`OPEN` — **there is no adequately-powered randomised trial of Khan Academy's video corpus
+as such.** *Why nobody asked:* SRI states the reason precisely — an RCT *"would have
+required a clearly specified treatment,"* and a library that teachers use however they like
+is not a treatment. The corpus's greatest strength as a product, its flexibility, is exactly
+what makes it unevaluable by the standard design. **An explanation atlas does not inherit
+this problem**, because its unit of analysis is a *single explanation of a single concept*,
+which is a specifiable treatment. That is an underrated argument for building it.
 
 ---
 
@@ -581,7 +654,216 @@ constant it is**; it cannot check that the answer is right without a domain orac
 
 ## §5 — What the elite explainers actually do
 
-<!--AGENT4-->
+The brief asked to test the candidate mechanisms rather than assume them, and to separate
+what is **measurable** from what is **stylistic**. The separation turns out to be sharp, and
+one of the four canonical explainers is a clean counterexample that keeps the rest honest.
+
+### 5.1 A provenance note, because it changes what is quotable
+
+3Blue1Brown publishes his own transcripts at `github.com/3b1b/captions`, cross-checkable
+against YouTube's **manually uploaded** caption track (`vssId: ".en"`, not ASR). Those are
+safe to quote. His podcast and TEDx appearances are ASR-only and are **not** quoted verbatim
+here. Two corrections worth recording so they do not propagate: the phrase **"curse of
+knowledge" appears nowhere in his 241-video caption corpus** (he expresses the idea and
+never uses the label), and there is **no talk titled "What makes people engage with math"** —
+the real one is TEDx Berkeley 2020 (`s_L-fp8gDzY`, 19:01, 1,613,639 views), ASR-only.
+
+### 5.2 The five candidate mechanisms, tested
+
+**(1) Obstacle stated before machinery — MEASURABLE, and it is the strongest result here.**
+
+Sanderson states the principle explicitly, and states it as a first-draft failure mode he has
+to correct against — which is more informative than stating it as a virtue:
+
+> *"Try very hard to structure your explanation to go from the concrete to the abstract.
+> **I think almost always when you understand something the natural inclination is to go the
+> other way around. I find myself doing this in pretty much any first draft of a script that
+> I have.** … Otherwise it's a little bit like trying to build a building from the top floor
+> down."* (SoME1 announcement, `ojjzXyQCzso`, 9:58)
+
+> *"It makes it so that once the equation comes on the screen, or the algorithm is described,
+> it doesn't feel like an expression handed down with nothing to hold onto. Instead, **it
+> arrives only once it's articulating something that already exists at least loosely in the
+> viewer's mind**."* ("What makes a great math explanation?", `cDofhN-RJqg`, 8:10)
+
+> *"Another good template… is to **start with a naive but flawed solution, and then
+> progressively refine it**."* (ibid., 9:52)
+
+That is §29 §3.1 — *lead with the constraint that forces the design* — arrived at
+independently and stated in almost the same words.
+
+**And it is measurable from artifacts alone, without watching anything.** The position of
+the first piece of named machinery, as a fraction of runtime, is readable off published
+chapter timestamps. `OBSERVED`:
+
+| Video | First named machinery | % of runtime |
+|---|---|---|
+| 3b1b, *Eigenvectors and eigenvalues* | first symbolic definition 5:27; determinant machinery 7:29 | **31.6% / 43%** |
+| 3b1b, *Convolutions* | the formula | **37.7%** |
+| 3b1b, *Central Limit Theorem* | the formula | **50.9%** |
+| 3b1b, *Reinventing Entropy* (`l6DKRf-fAAM`) | entropy defined | **75%** |
+| 3b1b, *Holograms* (`EmKQsSDlaa4`) | "The formal explanation" chapter | **82.9%** |
+| Veritasium, modern chaptered videos | named machinery | **~43%** |
+| **The Organic Chemistry Tutor** | machinery first, then exercises | **~0%** |
+
+The eigenvector video is worth reading in full because the whole pattern is in one artifact.
+It opens by naming the obstacle rather than the topic:
+
+> *"Eigenvectors and eigenvalues is one of those topics that a lot of students find
+> particularly unintuitive. Questions like, why are we doing this and what does this actually
+> mean, are too often left just floating away in an unanswered sea of computations."*
+> (0:19–1:20)
+
+Then **one sustained 2×2 transformation for four minutes with no symbols** (1:20–5:27),
+first symbolic definition at 5:27, determinant machinery at 7:29, and the payoff line at
+9:16: *"an expression like this would feel completely out of the blue."* He is naming §29's
+failure mode, in the video, as the thing his structure exists to avoid.
+
+**(2) One sustained example rather than many shallow ones — MEASURABLE.**
+
+Sanderson, from reviewing thousands of SoME entries — note that this is his *observation
+across a corpus*, not a self-report about his own practice, which makes it better evidence:
+
+> *"In general, entries that struck me as especially clear would often **keep one or two
+> examples front and center**, and they'd often give a feeling of playing with those
+> examples… giving the viewer a chance to build their own intuitions before general rules
+> are presented."* (`cDofhN-RJqg`, 11:14)
+
+The measurable form is **example density**, and the spread across the class is enormous.
+3Blue1Brown gives one example four minutes of runtime. The Organic Chemistry Tutor's
+*General Chemistry 1 Review* (`5yw1YH7YA7c`, 8,348 s) states in its own description that it
+contains *"about 160 multiple choice questions"* — **roughly 52 seconds per worked
+problem.** `OBSERVED`. Two formats at opposite ends of a single measurable axis.
+
+**(3) Prediction requested before the reveal — MEASURABLE in principle, weakly executed in
+the medium.**
+
+Sanderson grounds this in the productive-failure literature (Kapur), which this survey
+independently rates at **g = 0.36, rising to 0.58 at high fidelity** (§01):
+
+> *"**If you seriously engage with a problem before you're told the answer, that actually
+> makes you engage more meaningfully with the answer once it's told to you**… So the third
+> thing that I put on this checklist is does the lesson start with some kind of motivating
+> question?"* (JMM 2023, *"Math's pedagogical curse"*, `UOuxo6SA8Uc`)
+
+And he concedes the medium's limit in the same talk: *"you have to invite the audience to
+pause and think about it… realistically, a lot of people are a little bit more passive in
+that moment."* The marker is countable — **"pause and ponder" appears in 34 of his
+videos** — but the *compliance* is not observable from the artifact at all, and it is the
+compliance that carries the effect. This is the mechanism where video is structurally
+weakest, and it is exactly what §8.3's bolt-ons exist to supply.
+
+**(4) Explicit naming of the misconception being displaced — MEASURABLE, and it is the only
+one with a randomised trial attached.**
+
+This is Muller's manipulation, and §1.1's numbers are the evidence: **Refutation d = 0.79,
+Dialogue d = 0.83, against Exposition, N = 364.** The feature is countable in a transcript —
+does the explanation state a wrong belief and mark it as wrong before correcting it —
+and it is the highest-value entry in the atlas's feature set because it is the one whose
+effect size is already known.
+
+**(5) Long single-take duration as a signal of coherence — NOT VERIFIABLE, and the claim
+should be dropped in its current form.**
+
+Duration is trivially measurable. **Single-take is not verifiable from any artifact.**
+Metadata cannot demonstrate the absence of cuts, and the widely-repeated claim about Khan
+Academy turns out to be a journalist's paraphrase rather than Khan's words: *"He never
+writes a script… Khan also never edits. Either he nails the lecture in a single take or he
+redoes the entire thing"* is Clive Thompson in *WIRED* (2011-07-15), not a quotation from
+Khan. `UNVERIFIED`. The same applies to the Organic Chemistry Tutor and to Kozyrkov: the
+single-take property is inferred from the look of the artifact, not established.
+
+What Khan *does* say, verbatim, is about a different variable entirely — the absence of an
+observer:
+
+> *"That way, it doesn't seem like I'm up on a stage lecturing down at you. It's intimate,
+> like we're both sitting at a table and we're working through something together."*
+> *"The worst time to learn something is when someone is standing over your shoulder going,
+> 'Do you get it?'"* (*WIRED*, 2011)
+
+> *"Probably the least-appreciated aspect of this is the notion that the very first time
+> that you're trying to get your brain around a new concept, the very last thing you need is
+> another human being saying, 'Do you understand this?'"* (TED 2011)
+
+And **another widely-repeated rationale turns out to be wrong.** The famous ten-minute video
+length was not chosen for attention span. Khan Academy's own FAQ, in the first person
+(Wayback, 2010-09-25):
+
+> *"The content is made in digestible 10-20 minute chunks **especially purposed for viewing
+> on the computer** as opposed to being a longer video of a conventional 'physical'
+> lecture."*
+> *"Because of the **granular nature** of the 10 minute videos, the content can be mapped to
+> almost any state's or nation's standards."*
+
+Computer-viewing fit and standards-mapping granularity. `HISTORICAL`. A format constraint
+that has been rationalised for fifteen years as a cognitive finding was a distribution
+decision. Canonical early Khan videos in fact run **5:50–11:32**, clustering at 6–8 minutes —
+shorter than the shorthand.
+
+### 5.3 The counterexample, and it is the biggest channel of the four
+
+**The Organic Chemistry Tutor**: 10.8M subscribers, 3,106 videos, **1,762,799,135 total
+views**, channel opened 2015-02-28. `OBSERVED`.
+
+He does **none** of it. Across 23 videos fetched, **zero descriptions contain chapter
+timestamps** and `DESCRIPTION_CHAPTERS` is 0 on every one — where markers exist at all they
+are auto-generated. Descriptions open flatly (*"This algebra video tutorial explains how to
+find the domain of a function…"*) with no problematising move. The structure is machinery
+first, then a long queue of exercises: *"It contains mole to mole conversions, grams to grams
+and mole to gram dimensional analysis problems"*; *"This video contains a ton of examples and
+practice problems."* Instead of chapters he ships a numbered topic manifest with **no
+times** — 42 items on one video, 40 on another. He runs very long (Algebra 2, 3h59m,
+4,697,813 views; Introduction to Chemistry, 3h01m, 5,539,405 views).
+
+**And this survey's own replay data shows the format signature.** His *Introduction to
+Limits* (`YNstP0ESndU`, 20m19s, 6,715,294 views) has **the lowest first-decile replay mass in
+the entire 51-video sample: 0.081**, against a sample mean of 0.291, with the peak at 71%
+through. `OBSERVED (own harvest)`. Nobody replays the opening because there is nothing there
+to replay; they navigate to the problem they need. That is a different artifact serving a
+different job — **a reference work, not an explanation** — and it is the most-watched of the
+four.
+
+**Muller's own trial already ran this comparison and it is the cleanest result available:
+Worked Examples grouped with the Exposition condition, not with the misconception
+treatments.** The worked-problem format is on the *low*-gain side of a d = 0.79 gap. So the
+largest channel in the class is, by the one relevant randomised trial, using the format that
+loses — which is the whole point about popularity and learning being separable, demonstrated
+inside a single study rather than argued by analogy.
+
+### 5.4 The circularity, stated because it would otherwise look like convergence
+
+There is a striking agreement between what the elite explainers say and what the trials
+report: obstacle first, one sustained example, name the misconception, request a prediction.
+Muller's refutation result (d = 0.79) and Sanderson's independently-stated rule land in the
+same place.
+
+**But Muller is Veritasium.** The strongest trial in this literature was run by one of the
+four explainers being analysed, on the format he then went on to build a channel around. The
+convergence between "what the best explainers do" and "what the evidence says" is *partly*
+one person appearing on both sides of the ledger. `INFERENCE`.
+
+That is not a reason to discount Muller — a practitioner who ran a randomised trial before
+adopting a format is the best case in the sample, not the worst. It is a reason to **stop
+counting creator agreement as independent corroboration.** Sanderson's SoME observation is
+better evidence than his self-report precisely because it is about a corpus he did not make.
+
+### 5.5 The measurable/stylistic split
+
+| Feature | Measurable from artifact? | Trial evidence? |
+|---|---|---|
+| Position of first named machinery (% runtime) | **Yes** — chapter timestamps | Indirect (§29 §3.1; refutation d = 0.79) |
+| Example density (seconds per example) | **Yes** — description + timestamps | Indirect (Muller: worked examples grouped with Exposition) |
+| Misconception named explicitly | **Yes** — transcript predicate | **Direct: d = 0.79 / 0.83, N = 364** |
+| Prediction requested before reveal | Partly — marker countable, compliance not | Productive failure g = 0.36–0.58 (§01) |
+| Presence of authored chapter structure | **Yes** — `DESCRIPTION_CHAPTERS` | None |
+| Duration | Yes | Swap g = 0.28 (§2.1); nothing on length |
+| **Single-take / unedited** | **No** — not verifiable | None |
+| Voice, animation quality, humour, "intimacy" | No | None |
+| Being off-camera | Yes (trivially) | None |
+
+The first three rows are what the atlas grades. The last four are style, and this section
+takes no position on them beyond noting that they are where almost all of the public
+discussion lives.
 
 ---
 

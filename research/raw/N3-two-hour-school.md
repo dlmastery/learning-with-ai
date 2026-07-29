@@ -89,7 +89,7 @@ of the claim*, never the number.
 | # | Finding | Label |
 |---|---|---|
 | 1 | **"Two hours" means two hours of *academics*, not a two-hour school day.** The day runs 8:15 am–4:00 pm. The remaining ~4 hours are "life skills workshops". The operator states this plainly in its own FAQ; the ambiguity is created by third-party retelling, not by the school. | `VENDOR` (verbatim) |
-| 2 | **Two hours of academic learning time is roughly parity with a conventional day, not a 3× compression.** BTES's cascade puts academic learning time at ~35% of allocated time in the median classroom; a 4–5 hour academic allocation therefore yields ~1.4–1.75 h. Alpha's two hours are engineered for high engagement and a 70–95% success band. The *clock* compresses ~3×; the *learning time* does not. | `INFERENCE` on `OBSERVED` (Fisher et al. 1980) |
+| 2 | **Two hours of academic learning time is roughly parity with a conventional day, not a 3× compression.** BTES's cascade puts academic learning time at ~35% of allocated time in the median classroom; a 3.5–5 hour academic allocation therefore yields ~1.2–1.75 h. Alpha's two hours are engineered for high engagement and a 70–95% success band. The *clock* compresses ~3×; the *learning time* does not. | `INFERENCE` on `OBSERVED` (Fisher et al. 1980) |
 | 3 | **The "2x" multiplier's denominator is the adjacent-grade RIT gap at fixed percentile, not observed growth.** Verified against the white paper's own two worked examples, both of which reproduce exactly from NWEA's Spring achievement tables. | `RECOMPUTED` |
 | 4 | **Under that denominator, a nationally average student scores 1.2×–2.4× in mathematics and 1.0×–1.7× in reading, and is undefined at grade 8.** Table in §2.3. | `RECOMPUTED` |
 | 5 | **The white paper's stated national norm (4 RIT/year, grade-5 math, p50) is wrong under every definition NWEA publishes** (9.61 fall→spring; 8.32 spring→spring; 5.47 fall→fall). | `RECOMPUTED` |
@@ -496,6 +496,15 @@ retrieval pass; the items below are what was retrieved directly.)*
   investigation, primary documents claimed but not visible to this retrieval. The remainder
   of the article is behind a paywall and **was not read**; nothing beyond the lede is
   asserted here.
+- **Broadcast coverage exists and is descriptive.** Alpha's own "In the News" list names FOX 7
+  Austin (*"Education Sec. McMahon visits Austin school…"*), KXAN, **CBS News** (*"Inside the
+  $40,000 a year school where AI shapes every lesson, without teachers"*), ABC News and
+  NewsNation. `OBSERVED`. **No retrieved item in this class contains an independent
+  verification of a test result**; the pattern is site visit, interview, restatement of the
+  operator's figures. That is not a criticism of the journalists — verifying a MAP percentile
+  requires student-level data no news organisation can obtain — but it means the volume of
+  coverage carries no evidentiary weight at all.
+
 ### 3.5 The natural experiment that is about to happen — and it is the whole ballgame
 
 **Unbound Academy** (`unbound.school`, HTTP 200, accessed 2026-07-29) is, in its own words:
@@ -537,6 +546,41 @@ Note also the schedule arithmetic: 8:00–8:30 launch, **8:30–11:00 core acade
 2.5-hour block described as "2 Focused Hours" with breaks inside it), 11:00–12:00 break,
 12:00–2:00 workshops. `OBSERVED`. The two-hour figure is again a description of *content
 time inside a longer block*, not of the block.
+
+**And the school says the verification is coming, in writing** (`unbound.school/program`,
+HTTP 200):
+
+> "Unbound Academy students take **Arizona's state assessments (AASA and AzSCI) like every
+> public school.** Progress is also measured through frequent internal benchmarks in 2 Hour
+> Learning and the national NWEA MAP exam …" · "**Arizona state assessment results will be
+> published as they become available.**" `VENDOR`
+
+Its footer carries the statutory links — *ASBCS Performance Dashboards*, *ADE School Report
+Cards*, *Title IX*, *AZ Parent Rights Handbook*, *Governing Board* — and the mandatory
+salary disclosure: *"Average salary of teachers in budget year 2025-26 is $60,000 … Previous
+Year: N/A"*, confirming a first year of operation. Registered address: Goodyear, Arizona.
+`OBSERVED`.
+
+**Three differences between the regulated and unregulated versions of the same programme,
+all read directly off the operators' own pages:**
+
+| | Alpha School (private) | Unbound Academy (public charter) |
+|---|---|---|
+| Adults | *"There are no academic teachers"*; "Guides"; reported $100k–$150k | *"Certified teachers are live on screen all morning. Students go to them first"*; statutory average teacher salary **$60,000** |
+| Students with disabilities | Oklahoma Watch reports the schools do not serve students requiring intensive support or IEPs | *"We accept students of all abilities. 1:1 academic coaching is available for students who need extra support."* (a public charter is legally obliged to) |
+| External measurement | none | **AASA + AzSCI, published** |
+
+`OBSERVED`. This table is the section's most compact statement of the problem. **The claims
+that are hardest to check are attached to the entity that no one can check, and the entity
+that must report has quietly acquired certified teachers, an obligation to enrol everyone,
+and a lower salary line.** Whether the results follow the model or the regulation is,
+finally, an empirical question with a date on it.
+
+The headline attached to the public entity is nonetheless the same metric §2 takes apart:
+*"**2.8×** faster learning vs. national average (NWEA MAP Growth) … Measured by NWEA MAP
+Growth assessments across the 2-Hour Learning model."* `VENDOR`. Read against §2.3, a
+grade 4–8 cohort growing at exactly the national average would be scored between **1.37×
+and ∞** by this method.
 
 - **Oklahoma Watch / KGOU**, **20 July 2026** (retrieved via GDELT, HTTP 200): Alpha opening
   Edmond and Tulsa campuses 12 Aug 2026 with **26 and 32 students** respectively; Oklahoma
@@ -669,10 +713,10 @@ Apply that honestly to both sides:
 
 | | Conventional elementary day | 2 Hour Learning day |
 |---|---|---|
-| Allocated to core academics | ~4–5 h | **2.0 h** |
+| Allocated to core academics | ~3.5–5 h (a ~6.5 h day less lunch, recess, transitions and specials) | **2.0 h** |
 | Engagement | BTES class averages ~50–90% | engineered: WASTE meter, currency, daily rings |
 | High-success fraction | ~50% of engaged time at high success | engineered: explicit 70–95% accuracy band |
-| **Implied academic learning time** | **≈1.4–1.75 h** (at the 35% median cascade) | **≈1.5–1.9 h** (if the engineering works as described) |
+| **Implied academic learning time** | **≈1.2–1.75 h** (at the 35% median cascade) | **≈1.5–1.9 h** (if the engineering works as described) |
 
 `INFERENCE`, and the arithmetic is stated so it can be attacked. The conclusion:
 
@@ -762,6 +806,13 @@ lower variance.
   Learning Programs: A Meta-Analysis", *Review of Educational Research* 60(2), 265–299,
   `doi:10.3102/00346543060002265`.** `MEASURED-META`. 108 controlled evaluations; positive
   effects on examination performance in colleges, high schools and upper-elementary grades.
+- **Guskey, T. R., & Gates, S. (1985), *A Synthesis of Research on Group-Based Mastery
+  Learning Programs*, ERIC ED262088.** `MEASURED-META`. 38 studies. ERIC abstract, verbatim:
+  *"Results show that such applications yield consistently positive effects on both cognitive
+  and affective student learning outcomes … However, **variation in the size of the effect
+  across studies is quite large.**"* The heterogeneity is the point: mastery learning is a
+  family of implementations, not a treatment, and its effect is dominated by which one you
+  built.
 - **Slavin, R. E. (1987), "Mastery Learning Reconsidered", *Review of Educational Research*
   57(2), 175–213, `doi:10.3102/00346543057002175`.** `MEASURED-META` — **NEGATIVE.** The
   ERIC abstract, verbatim: *"The review found **no evidence to support the claim that mastery
@@ -1100,6 +1151,7 @@ records, or internal documents.
 7. Bloom, B. S. (1984). *The 2 Sigma Problem.* **Educational Researcher** 13(6):4–16. `doi:10.3102/0013189X013006004`.
 8. Kulik, J. A., Kulik, C.-L. C., & Cohen, P. A. (1979). *A meta-analysis of outcome studies of Keller's personalized system of instruction.* **American Psychologist** 34(4):307–318. `doi:10.1037/0003-066X.34.4.307`. `MEASURED-META`.
 9. **Slavin, R. E. (1987).** *Mastery Learning Reconsidered.* **Review of Educational Research** 57(2):175–213. `doi:10.3102/00346543057002175`. **NEGATIVE.** `MEASURED-META`. **[AB — ERIC EJ record, verbatim]**
+9b. Guskey, T. R., & Gates, S. (1985). *A Synthesis of Research on Group-Based Mastery Learning Programs.* ERIC **ED262088**. 38 studies; consistently positive but highly heterogeneous effects. `MEASURED-META`. **[AB — ERIC record, verbatim]**
 10. Kulik, C.-L. C., Kulik, J. A., & Bangert-Drowns, R. L. (1990). *Effectiveness of Mastery Learning Programs: A Meta-Analysis.* **Review of Educational Research** 60(2):265–299. `doi:10.3102/00346543060002265`. 108 controlled evaluations. `MEASURED-META`. **[AB]**
 11. **Nickow, A., Oreopoulos, P., & Quan, V. (2020).** *The Impressive Effects of Tutoring on PreK-12 Learning.* NBER WP 27476. `doi:10.3386/w27476`. Pooled **0.37 SD**. `MEASURED-META`. **[FT]**
 12. **Pane, J. F., Steiner, E. D., Baird, M. D., Hamilton, L. S., & Pane, J. D. (2017).** *Informing Progress: Insights on Personalized Learning Implementation and Effects.* RAND RR-2042. `doi:10.7249/RR2042`. **0.09 / 0.07 SD on MAP ≈ 3 percentile points.** `MEASURED-BENCH`. **[FT]**
