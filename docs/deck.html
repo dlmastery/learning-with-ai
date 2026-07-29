@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Deck — every book comes with a live mentor</title>
+<meta name="description" content="Fourteen slides. The problem, the insight, the wedge, the moat, and the three questions that disqualify every competitor including us." />
+<style>
+:root{
+  --bg:#faf9f5;--surface:#fcfcfb;--sunken:#f6f4ee;--ink:#171614;--ink-2:#413f3a;--ink-3:#7b7870;
+  --line:#e5e2d8;--line-2:#cfcbbe;--felt:#C4623D;--real:#1D6FA5;
+  --good:#2f6d4f;--warn:#8a6d1f;--bad:#9d3f33;
+  --serif:ui-serif,Georgia,"Iowan Old Style",serif;
+  --sans:ui-sans-serif,-apple-system,"Segoe UI",Inter,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root{--bg:#1a1917;--surface:#211f1d;--sunken:#161513;
+  --ink:#f6f4ef;--ink-2:#c6c2b8;--ink-3:#8e8a80;--line:#35322c;--line-2:#474339;
+  --felt:#D4784C;--real:#3D93CC;--good:#5fa583;--warn:#c9a94e;--bad:#d08a7e;}}
+:root[data-theme=dark]{--bg:#1a1917;--surface:#211f1d;--sunken:#161513;--ink:#f6f4ef;
+  --ink-2:#c6c2b8;--ink-3:#8e8a80;--line:#35322c;--line-2:#474339;--felt:#D4784C;--real:#3D93CC;
+  --good:#5fa583;--warn:#c9a94e;--bad:#d08a7e;}
+:root[data-theme=light]{--bg:#faf9f5;--surface:#fcfcfb;--sunken:#f6f4ee;--ink:#171614;
+  --ink-2:#413f3a;--ink-3:#7b7870;--line:#e5e2d8;--line-2:#cfcbbe;--felt:#C4623D;--real:#1D6FA5;
+  --good:#2f6d4f;--warn:#8a6d1f;--bad:#9d3f33;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+.slide{min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  padding:8vh 7vw;max-width:1180px;margin:0 auto;border-bottom:1px solid var(--line);
+  scroll-snap-align:start}
+html{scroll-snap-type:y proximity;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.n{font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--felt);margin-bottom:26px}
+h1{font:400 clamp(30px,4.6vw,58px)/1.08 var(--serif);letter-spacing:-.023em;margin-bottom:26px;max-width:20ch}
+h2{font:400 clamp(24px,3.2vw,38px)/1.16 var(--serif);letter-spacing:-.02em;margin-bottom:22px;max-width:24ch}
+p{font-size:clamp(16px,1.5vw,20px);line-height:1.6;color:var(--ink-2);max-width:62ch;margin-bottom:16px}
+p.big{font:400 clamp(19px,2vw,26px)/1.45 var(--serif);color:var(--ink);max-width:34ch}
+strong{color:var(--ink);font-weight:650}
+em{color:var(--ink-2)}
+.hit{font:400 clamp(40px,8vw,96px)/1 var(--serif);letter-spacing:-.03em;color:var(--felt);margin:8px 0 18px}
+.hit.b{color:var(--real)}
+.sub{font-size:14.5px;color:var(--ink-3);max-width:60ch}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,44px);margin:18px 0}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+.box.bad{border-left:2px solid var(--bad)}
+.box.good{border-left:2px solid var(--good)}
+.box h3{font:650 13px/1.3 var(--sans);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:12px}
+.box p{font-size:15.5px;margin-bottom:10px}
+.box p:last-child{margin-bottom:0}
+table{border-collapse:collapse;width:100%;font-size:clamp(13px,1.3vw,16px);margin:14px 0}
+th{text-align:left;font:600 11px/1.3 var(--sans);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);padding:0 16px 10px 0;border-bottom:1px solid var(--line-2)}
+td{padding:12px 16px 12px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+td b{color:var(--ink)}
+.no{color:var(--bad);font-weight:650}.yes{color:var(--good);font-weight:650}.mid{color:var(--warn);font-weight:650}
+.num{font-family:var(--mono);white-space:nowrap}
+ol.q{counter-reset:q;list-style:none;margin:10px 0}
+ol.q li{counter-increment:q;position:relative;padding-left:44px;margin-bottom:20px;
+  font-size:clamp(15px,1.5vw,19px);color:var(--ink-2);max-width:60ch}
+ol.q li::before{content:counter(q);position:absolute;left:0;top:-2px;
+  font:400 26px/1 var(--serif);color:var(--felt)}
+ol.q li b{color:var(--ink);display:block;margin-bottom:5px}
+.rule{border-left:2px solid var(--felt);padding-left:24px;margin:20px 0}
+nav.hud{position:fixed;bottom:18px;right:18px;display:flex;gap:8px;align-items:center;z-index:60}
+nav.hud button{font:600 12px/1 var(--sans);padding:9px 12px;border-radius:8px;
+  border:1px solid var(--line-2);background:var(--surface);color:var(--ink);cursor:pointer}
+#pos{font:600 11px/1 var(--mono);color:var(--ink-3);padding:0 6px}
+.bar{position:fixed;top:0;left:0;height:2px;background:var(--felt);z-index:70;width:0}
+@media print{
+  html{scroll-snap-type:none}
+  .slide{min-height:auto;page-break-after:always;border:0;padding:14mm}
+  nav.hud,.bar{display:none}
+}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<nav class="hud">
+  <button id="prev" aria-label="Previous slide">←</button>
+  <span id="pos">1 / 14</span>
+  <button id="next" aria-label="Next slide">→</button>
+  <button id="tt" aria-label="Toggle theme">◐</button>
+</nav>
+
+<!-- 1 -->
+<section class="slide">
+  <div class="n">The company</div>
+  <h1>Every book comes with a live mentor.</h1>
+  <p class="big">The publisher keeps the book. We give the mentor away. We keep the learner model
+  and the thing nobody else is building — the examiner.</p>
+  <p class="sub">Every figure in this deck is traceable to a labelled source in an 82,000-word
+  survey with a published corrections ledger. Twenty of its forty-four corrections were found by
+  adversarial reviewers rather than by us.</p>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <div class="n">The problem</div>
+  <h2>A textbook is structurally incapable of what works.</h2>
+  <div class="two">
+    <div class="box bad"><h3>What is measured to work</h3>
+      <p>Retrieval practice — <b class="num">g = 0.50</b></p>
+      <p>Spacing — <b class="num">d = 0.54</b></p>
+      <p>Support matched to prior knowledge — <b class="num">+0.505 / −0.428</b></p>
+      <p>Explanation at three altitudes — <b class="num">p = .032</b></p>
+      <p>A decision rule when it isn't working</p></div>
+    <div class="box"><h3>What a book can do about it</h3>
+      <p>Its main affordance is <em>re-reading</em></p>
+      <p>It is linear. Chapter 3 never returns</p>
+      <p>One level, for a reader who does not exist</p>
+      <p>One rung</p>
+      <p>No measurement, so no rule</p></div>
+  </div>
+  <p>And the failure is <strong>silent</strong>. A learner who understood nothing produces the
+  same observable as one who mastered it.</p>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <div class="n">The problem, in one number</div>
+  <h2>Take the teacher out and the effect is not smaller. It is gone.</h2>
+  <div class="two">
+    <div><div class="hit b">1.426</div><p class="sub">effect size <strong>with</strong> teacher support</p></div>
+    <div><div class="hit">0.077</div><p class="sub">effect size <strong>without</strong></p></div>
+  </div>
+  <p>Nineteen studies, overall effect 0.683, decomposing almost entirely onto the human.</p>
+  <p class="big">The material is a delivery vehicle for a teacher's judgement — and there are
+  not enough teachers.</p>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <div class="n">Why nobody has fixed it</div>
+  <h2>Coding agents work because <code>pytest</code> exists.</h2>
+  <table>
+    <tr><th>Benchmark</th><th>Score</th><th>Is there a check?</th></tr>
+    <tr><td><b>SWE-bench Verified</b></td><td class="num yes">79.2%</td><td>Yes — tests</td></tr>
+    <tr><td><b>Terminal-Bench 2.1</b></td><td class="num yes">83.8%</td><td>Yes — it runs or it doesn't</td></tr>
+    <tr><td><b>PaperBench</b></td><td class="num no">21.0%</td><td>No</td></tr>
+    <tr><td><b>SciCode</b></td><td class="num no">4.6%</td><td>Weak — hand-written tests</td></tr>
+  </table>
+  <p>A twenty-fold spread, and the axis is not difficulty. It is <strong>how good the check
+  is</strong>.</p>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <div class="n">The insight</div>
+  <h2>Pedagogy has no <code>pytest</code>.</h2>
+  <div class="hit">chance</div>
+  <p class="big">Across <strong>223 real tutoring domains</strong>, no model beat chance at
+  labelling an incorrect student action.</p>
+  <p>The most basic thing a tutor does — look at what a learner did and say what is wrong with
+  it — is unverifiable by the systems being sold to do it.</p>
+  <div class="rule"><p style="margin:0"><strong>The value of an agentic loop is bounded by the
+  value of the external check it closes on.</strong> Every capability in this category is
+  downstream of one instrument nobody has built.</p></div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <div class="n">The product</div>
+  <h2>The Kindle move: the book is unchanged, the substrate is not.</h2>
+  <table>
+    <tr><th>Kindle</th><th>Us</th><th>Why it matters</th></tr>
+    <tr><td>The book, unchanged</td><td>The book, unchanged</td><td>An <b>addendum</b>. Nothing to migrate — which is what makes the deal signable</td></tr>
+    <tr><td>Whispersync</td><td><b>The learner model</b></td><td>The switching cost</td></tr>
+    <tr><td>Reading telemetry</td><td><b>The instrumented practice loop</b></td><td>Generated by ordinary use</td></tr>
+    <tr><td>Popular Highlights</td><td><b>Where readers of this chapter go wrong</b></td><td>This <em>is</em> the verifier's training set</td></tr>
+  </table>
+  <p>Amazon commoditised the device deliberately and kept the account. We give away the mentor
+  and keep the learner model.</p>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <div class="n">The wedge</div>
+  <h2>In exam prep, somebody else administers the truth.</h2>
+  <p class="big">SAT · PSAT · JEE · NEET · GATE · EAMCET. <strong>Proctored. Novel items each
+  cycle. Months after study. Scored and reported — because the candidate wants it reported.</strong></p>
+  <p>The delayed, unassisted, novel-item outcome is the thing that costs every competitor a
+  research programme. Here it is the customer's own goal, on a known date.</p>
+  <p>Three more things line up: the syllabus is closed so prior knowledge is measurable in
+  15–40 seconds; the counterfactual is bad, which is where returns are largest; and the exam
+  supplies the motivation, so we need no points economy — the mechanism that measurably
+  <em>undermines</em> intrinsic motivation.</p>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <div class="n">Why humans in the loop</div>
+  <h2>The tutor is not the cost line. The tutor is the labelling function.</h2>
+  <div class="two">
+    <div class="box good"><h3>What the trial measured</h3>
+      <p><b class="num">74.4%</b> of 3,617 AI drafts accepted unedited</p>
+      <p><b class="num">44.3%</b> of tutor edits were <em>slowing the model's questioning down</em></p></div>
+    <div class="box"><h3>What that describes</h3>
+      <p>The human was not writing the content.</p>
+      <p><strong>The human was acting as the verifier</strong> — in a domain where no automated
+      check exists.</p></div>
+  </div>
+  <p class="big">Every accept, edit and rejection is a labelled judgement about whether a
+  pedagogical action was correct. The corpus is a by-product of trading.</p>
+  <p class="sub">Stated precisely: the acceptance rate is measured; the authors say their design
+  "precludes a rigorous measurement of throughput or efficiency." We treat 74.4% as a signal
+  stream, never as a productivity claim.</p>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <div class="n">The moat</div>
+  <h2>One row survives a frontier release.</h2>
+  <table>
+    <tr><th>Candidate moat</th><th>Survives?</th><th>Why</th></tr>
+    <tr><td>Model quality</td><td class="no">No</td><td>Handed to every competitor the same day</td></tr>
+    <tr><td>Prompt / pedagogy design</td><td class="no">No</td><td>Two designed interventions <b>failed to beat plain ChatGPT</b></td></tr>
+    <tr><td>Content library</td><td class="no">No</td><td>Generation cost went to zero; calibration cost did not</td></tr>
+    <tr><td>Brand, procurement conformance</td><td class="mid">Partly</td><td>Real, slow, and not technology</td></tr>
+    <tr><td><b>Learner-error corpus + verifier</b></td><td class="yes">Yes</td><td>A better base model makes it <b>more</b> valuable, not less</td></tr>
+  </table>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <div class="n">Why the ecosystem, not one publisher</div>
+  <h2>A misconception belongs to the concept, not the container.</h2>
+  <p>The same error in integration by parts appears in a textbook, a video and a newsletter — and
+  it is the same error. <strong>No single publisher can see enough of the error space.</strong>
+  A neutral layer can.</p>
+  <table>
+    <tr><th>Partner</th><th>Time to live</th><th>What they bring</th></tr>
+    <tr><td><b>Authors and creators</b></td><td class="yes">Days</td><td>Velocity, no procurement</td></tr>
+    <tr><td><b>Online course sites</b></td><td class="mid">Weeks</td><td>Existing telemetry and accounts</td></tr>
+    <tr><td><b>Publishers</b></td><td class="mid">Quarters</td><td>Decades of item-level response data</td></tr>
+    <tr><td><b>Institutions</b></td><td class="no">Years</td><td>Contract size, and every procurement gate</td></tr>
+  </table>
+  <p>Sequence by friction, not by size. The corpus built with authors is <em>why</em> the
+  publishers eventually sign.</p>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <div class="n">The economics, corrected</div>
+  <h2>"Our costs fall as models get cheaper" is worth 0.43%.</h2>
+  <div class="hit b">0.43%</div>
+  <p class="big">Inference as a share of the delivered cost of a human-supervised session.
+  Two independent measurements converge.</p>
+  <p><strong>Falling token prices are economically irrelevant to this P&amp;L.</strong> The entire
+  margin question is the <strong>leverage ratio</strong> — learner-hours supervised per paid
+  tutor-hour — and that is the number we will report monthly from month one.</p>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+  <div class="n">What would disqualify us</div>
+  <h2>The three questions. Ask them of us, and of everyone else.</h2>
+  <ol class="q">
+    <li><b>Show me the delayed, unassisted, novel-item result — with n, and who held the item bank.</b>
+    Disqualifying: the only evidence is in-product mastery or engagement. One deployment moved the
+    exit ticket <span class="num">+4pp</span> and was <strong>null on the state test</strong>.</li>
+    <li><b>Have you ever run an arm against plain ChatGPT?</b>
+    Disqualifying: never tried, or tried and buried it. If the pedagogy has never beaten the free
+    substitute customers already have, the moat is a prompt.</li>
+    <li><b>Show me learner-hours delivered ÷ paid tutor-hours, monthly, for 24 months.</b>
+    Disqualifying: cannot produce it, or it is flat while headcount grows — which means the AI is
+    decorative and you are underwriting a staffing business at a software multiple.</li>
+  </ol>
+</section>
+
+<!-- 13 -->
+<section class="slide">
+  <div class="n">Risks we are not hiding</div>
+  <h2>Three things that could kill this.</h2>
+  <div class="box bad" style="margin-bottom:14px">
+    <h3>1 · A frontier release solves error diagnosis</h3>
+    <p>If a general model crosses from chance to competent at step-level diagnosis, the verifier
+    becomes an API call. Largest risk, and not remote.</p></div>
+  <div class="box bad" style="margin-bottom:14px">
+    <h3>2 · The only audited comparable went the wrong way</h3>
+    <p>A listed tutoring company rebuilt on "entirely new, AI-native codebases." Gross margin
+    <b class="num">67.5% → 58.0%</b>; expert costs <b class="num">up $5.2M</b> on revenue
+    <b class="num">down $11.2M</b>. Its 10-K: <em>"There can be no assurance that our investments
+    in AI will be beneficial to our business."</em></p></div>
+  <div class="box bad">
+    <h3>3 · One mentor across every book is a named, unstudied risk</h3>
+    <p>Thirty teachers make thirty different mistakes and the system averages them out. One
+    mentor's errors are systematic and identical for every reader at once. We named this
+    <em>correlated pedagogical error</em>; there is no monitoring for it and no name for it in the
+    literature. The mitigation is the same instrument as the moat.</p></div>
+</section>
+
+<!-- 14 -->
+<section class="slide">
+  <div class="n">The ask</div>
+  <h2>Everyone is building the tutor. We are building the examiner.</h2>
+  <p class="big">Because the examiner is what every other capability is waiting on — and a
+  human-in-the-loop operation is the only structure that produces one while it trades.</p>
+  <div class="two" style="margin-top:26px">
+    <div class="box good"><h3>What we will show you in 12 months</h3>
+      <p>The leverage ratio, monthly, from month one</p>
+      <p>A delayed unassisted transfer result against a plain-ChatGPT arm</p>
+      <p>Verifier accuracy on held-out student errors, against the chance baseline</p></div>
+    <div class="box"><h3>What we will not do</h3>
+      <p>Publish content — it stops the data</p>
+      <p>Ship a points economy</p>
+      <p>Report engagement as an outcome</p></div>
+  </div>
+  <p class="sub" style="margin-top:24px">Full evidence base:
+  <a href="paper.html" style="color:var(--felt)">the survey</a> ·
+  <a href="thesis.html" style="color:var(--felt)">the long-form thesis</a> ·
+  <a href="demos/" style="color:var(--felt)">fourteen working demos</a> ·
+  <a href="https://github.com/dlmastery/learning-with-ai/blob/main/CORRECTIONS.md" style="color:var(--felt)">the corrections ledger</a>.</p>
+</section>
+
+<script>
+const S=[...document.querySelectorAll('.slide')], pos=document.getElementById('pos'),
+      bar=document.getElementById('bar');
+function cur(){let i=0,best=1e9;S.forEach((s,k)=>{const d=Math.abs(s.getBoundingClientRect().top);
+  if(d<best){best=d;i=k}});return i}
+function upd(){const i=cur();pos.textContent=`${i+1} / ${S.length}`;
+  bar.style.width=((i)/(S.length-1)*100)+'%';}
+function go(d){const i=Math.min(S.length-1,Math.max(0,cur()+d));
+  S[i].scrollIntoView({behavior:'smooth',block:'start'});setTimeout(upd,320);}
+addEventListener('scroll',upd,{passive:true});
+document.getElementById('next').onclick=()=>go(1);
+document.getElementById('prev').onclick=()=>go(-1);
+addEventListener('keydown',e=>{
+  if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key)){e.preventDefault();go(1)}
+  if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(-1)}
+  if(e.key==='Home'){e.preventDefault();S[0].scrollIntoView()}
+  if(e.key==='End'){e.preventDefault();S[S.length-1].scrollIntoView()}});
+const R=document.documentElement;
+document.getElementById('tt').onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+ (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+ R.setAttribute('data-theme',d?'light':'dark');};
+upd();
+</script>
+</body>
+</html>
