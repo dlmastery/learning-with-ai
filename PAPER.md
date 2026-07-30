@@ -19,7 +19,7 @@ This survey is an attempt to write the missing specification. It rests on 50 res
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
 errors is published in an append-only ledger rather than quietly edited — **23 of
-the 63 corrections were found by an adversarial reviewer rather than by us.**
+the 64 corrections were found by an adversarial reviewer rather than by us.**
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on

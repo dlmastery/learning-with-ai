@@ -116,6 +116,7 @@ measured, or it is a pitch.
 | **C-54** | 30 Jul | *(omission)* Bastani's −17% cited throughout without noting its replication status | Fairly reported everywhere — but **109 citing works in fourteen months contain no replication with a withdrawal design**, and the corpus never says so. A load-bearing single result should carry its replication status wherever it is load-bearing | SELF-RESEARCH (Z1) |
 | **C-55** | 30 Jul | Roorda et al. 2011 described as *99 studies / 88,417 students* for the relationship–achievement effect | **Conflates the review's total study count with one subsample.** The achievement subsamples are k = 61 / N = 52,718 and k = 28 / N = 18,944. The larger pair describes engagement, not achievement | SELF-RESEARCH (R1) |
 | **C-56** | 30 Jul | Roorda 2011, its 2017 update and Cornelius-White 2007 named together as convergent anchor evidence for the relationship effect | **Nested, not independent.** All three are inputs to Emslander et al. 2025 (*Psychological Bulletin*, 26 meta-analyses, 2.64M students), which is the current authoritative synthesis; Hattie's *d* = 0.72 is a repackaging of Cornelius-White. This is our own no-manufactured-independence rule (C-19) broken against external sources, in a commissioning brief we wrote | SELF-RESEARCH (R1) |
+| **C-57** | 30 Jul | H1 cites Finell et al. 2022 as maths anxiety correlating **with performance at r = −0.168**, 57 studies / 150 effect sizes | **That is the anxiety-to-working-memory correlation**, verified against the paper: *"The mean correlation between MA and WM was −0.168"* [−0.203, −0.133]. The mediated path to performance is **r = −0.092 from 8 studies / 15 effect sizes / 1,824 participants**, which the authors themselves flag as thinly supported. H1's design conclusion is unaffected; its evidence was overstated by roughly half. Confined to the research report — no survey section or published page repeated it | SELF-RESEARCH (R3), verified against the primary source |
 
 ---
 
@@ -126,13 +127,13 @@ hand-maintained, which is the whole argument for generating it.*
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 33 |
+| Caught by our own research | 34 |
 | Caught by our own verification — including of our own warnings | 3 |
 | Caught by our own builders, working against their own briefs | 4 |
 | **Caught by an adversarial external reviewer** | **23** |
-| **Total** | **63** |
+| **Total** | **64** |
 
-23 of 63 were found by someone whose job was to fail us — including
+23 of 64 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the

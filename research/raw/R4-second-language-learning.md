@@ -26,17 +26,17 @@ status: raw-research
 >    the biggest and its full text is behind Sage; its abstract reports post-test means
 >    with no control-group change, no SD, no effect size.
 > 3. **The delay does most of the work.** In the pronunciation trial the between-group
->    gap is **d ≈ 1.57** at post-test and **d ≈ 0.65** two weeks later, because the
+>    gap is d ≈ 1.57 at post-test and d ≈ 0.65 two weeks later, because the
 >    control group kept improving after the treatment group plateaued. Nobody reports
 >    the second number.
 > 4. **Vocabulary carries a clean transfer test, and it is discouraging for anything
 >    deck-shaped.** Vocabulary instruction moves comprehension of passages containing the
->    taught words at **d = 0.50** and standardised reading comprehension at **d = 0.10**
->    (Elleman et al. 2009, k = 37). The target is **8,000–9,000 word families** for
+>    taught words at d = 0.50 and standardised reading comprehension at d = 0.10
+>    (Elleman et al. 2009, k = 37). The target is 8,000–9,000 word families for
 >    unassisted reading (Nation 2006), and the 98% coverage figure everyone quotes
 >    **failed a preregistered replication** in 2023.
 > 5. **A frontier audio model cannot yet hear a mispronunciation.** On L2-ARCTIC,
->    GPT-4o-Audio detects L2 mispronunciations at **F1 = 46.3** (precision 52.7, recall
+>    GPT-4o-Audio detects L2 mispronunciations at F1 = 46.3 (precision 52.7, recall
 >    41.3), and cascaded Whisper + LLM does worse *the better the ASR gets*, because a
 >    robust recogniser's job is to recover the word the learner meant.
 > 6. **Language is the subject where a frontier model's native capability most nearly is
@@ -47,8 +47,8 @@ status: raw-research
 ---
 
 **Retrieval note.** WebSearch budget was exhausted at 200 calls partway through §4.
-Retrieval thereafter ran on the **ERIC API** (`api.ies.ed.gov/eric`), **Crossref**,
-**OpenAlex**, **arXiv**, **SEC EDGAR**, and direct `curl` + `pdftotext` of open-access
+Retrieval thereafter ran on the ERIC API (`api.ies.ed.gov/eric`), Crossref,
+OpenAlex, arXiv, SEC EDGAR, and direct `curl` + `pdftotext` of open-access
 PDFs. Full texts read: Xodabande et al., Soori et al., Lee & Lee 2024 (including both
 forest plots), Kremmel et al. 2023, Liu et al. arXiv:2601.14744, Duolingo's Q1 2026 10-Q.
 Blocks are itemised in §9.3.
@@ -73,13 +73,13 @@ randomised:
 
 | ERIC ID | Year | Venue | Domain | n |
 |---|---|---|---|---|
-| EJ1409494 | 2023 | *Phys. Rev. PER* | Physics **task authoring by trainee teachers** | 26 |
-| EJ1415077 | 2024 | *IJETHE* | **Foundational chemistry**, Taiwan, blended | 61 |
-| EJ1481973 | 2025 | *Discover Education* | **EFL pronunciation**, Iran | 60 |
-| EJ1484052 | 2025 | *Educ. & Info. Tech.* | **Embedded-IoT tasks in VR**, undergraduates | 81 |
-| EJ1484562 | 2025 | *TLTL* | **EFL writing feedback**, Iran | 88 |
-| EJ1490746 | 2026 | *J. Educ. Computing Res.* | **EFL speaking**, NLP tools | 436 |
-| EJ1510259 | 2026 | *Educ. Psych. Rev.* | **SRL scaffolds**, Grades 7–9 physics/English | 371 |
+| EJ1409494 | 2023 | *Phys. Rev. PER* | Physics task authoring by trainee teachers | 26 |
+| EJ1415077 | 2024 | *IJETHE* | Foundational chemistry, Taiwan, blended | 61 |
+| EJ1481973 | 2025 | *Discover Education* | EFL pronunciation, Iran | 60 |
+| EJ1484052 | 2025 | *Educ. & Info. Tech.* | Embedded-IoT tasks in VR, undergraduates | 81 |
+| EJ1484562 | 2025 | *TLTL* | EFL writing feedback, Iran | 88 |
+| EJ1490746 | 2026 | *J. Educ. Computing Res.* | EFL speaking, NLP tools | 436 |
+| EJ1510259 | 2026 | *Educ. Psych. Rev.* | SRL scaffolds, Grades 7–9 physics/English | 371 |
 
 E3 counted four second-language trials. Reading the abstracts, **three** are: the
 pronunciation trial, the writing-feedback trial, and the speaking trial. EJ1415077, the
@@ -140,7 +140,7 @@ unfamiliar consonant cluster.
 **The retention claim inverts on inspection.** The authors' own post-hoc table shows the
 treatment group flat between post-test and delayed (+0.867, p = 1.000) and the control
 group **still improving** (+3.700, p = .008). Computed from the reported means and SDs,
-Hedges' g for the between-group difference is **1.57 at post-test** and **0.65 at the
+Hedges' g for the between-group difference is 1.57 at post-test and **0.65 at the
 two-week delay** — the gap closed by 58% in a fortnight, and the control's trajectory was
 still rising when measurement stopped. `INFERENCE` (arithmetic on the paper's Table 2).
 The paper reports this pattern as ChatGPT "retaining gains better." Read the other way,
@@ -194,11 +194,11 @@ one.** From the pairwise table:
 
 | Contrast | Mean difference (IELTS bands) | p |
 |---|---|---|
-| AI feedback vs teacher e-feedback, **overall writing** | 0.079 | **0.921** |
+| AI feedback vs teacher e-feedback, overall writing | 0.079 | 0.921 |
 | AI vs teacher, task achievement | 0.001 | 1.000 |
 | AI vs teacher, coherence & cohesion | 0.173 | 0.661 |
-| AI vs teacher, grammatical range & accuracy | **−0.223** | 0.463 |
-| AI vs teacher, lexical resource | 0.436 | **0.029** |
+| AI vs teacher, grammatical range & accuracy | −0.223 | 0.463 |
+| AI vs teacher, lexical resource | 0.436 | 0.029 |
 | Hybrid vs teacher, overall | 0.392 | <0.001 |
 | Hybrid vs AI, overall | 0.313 | <0.001 |
 
@@ -252,10 +252,10 @@ GenAI ones overlap heavily and one of them ingests a vendor study.
 
 | Synthesis | Scope | Comparison | Result |
 |---|---|---|---|
-| Wang, Cheung, Neitzel & Chai (2024), *Rev. Educ. Res.*, [10.3102/00346543241255621](https://doi.org/10.3102/00346543241255621) | 28 studies, 70 ES, robust variance estimation | vs **non-chatbot** conditions | **g = 0.484** (CI not retrieved) |
-| Li, Wang & Yang (2025), *J. Comp. Assist. Learn.* 41(4), [10.1111/jcal.70060](https://doi.org/10.1111/jcal.70060) | 41 experimental/quasi studies, 48 ES, N = 3,515 | mixed | **ES = 0.576, 95% CI [0.385, 0.768]** |
-| Zhang, Shan, Lee, Che & Kim (2023), *Educ. Inf. Technol.* | 18 studies, 61 samples | mixed | **g = 0.527** |
-| Lee & Lee (2024), *Lang. Learn. Technol.* 28(2):134–162 | 17 projects, N = 8,282 | **both** designs, separately | **d = 1.18** within-group; **d = 0.39** vs business-as-usual |
+| Wang, Cheung, Neitzel & Chai (2024), *Rev. Educ. Res.*, [10.3102/00346543241255621](https://doi.org/10.3102/00346543241255621) | 28 studies, 70 ES, robust variance estimation | vs non-chatbot conditions | g = 0.484 (CI not retrieved) |
+| Li, Wang & Yang (2025), *J. Comp. Assist. Learn.* 41(4), [10.1111/jcal.70060](https://doi.org/10.1111/jcal.70060) | 41 experimental/quasi studies, 48 ES, N = 3,515 | mixed | ES = 0.576, 95% CI [0.385, 0.768] |
+| Zhang, Shan, Lee, Che & Kim (2023), *Educ. Inf. Technol.* | 18 studies, 61 samples | mixed | g = 0.527 |
+| Lee & Lee (2024), *Lang. Learn. Technol.* 28(2):134–162 | 17 projects, N = 8,282 | both designs, separately | d = 1.18 within-group; d = 0.39 vs business-as-usual |
 
 `MEASURED-META` for all four. Lee & Lee is the one to read, because it is the only one
 that computes both estimates on overlapping samples and prints both forest plots. Seven
@@ -263,7 +263,7 @@ studies appear in both pools:
 
 | Study | Within-group d (pre→post) | Between-group d (vs BAU) |
 |---|---|---|
-| Chambers et al. (2008a), Alphie's Alley | **2.35** [2.10, 2.60] | **0.05** [−0.15, 0.25] |
+| Chambers et al. (2008a), Alphie's Alley | 2.35 [2.10, 2.60] | 0.05 [−0.15, 0.25] |
 | Wijekumar et al. (2012), ITSS | 1.55 [1.10, 2.00] | 0.31 [−0.08, 0.70] |
 | Al Otaiba et al. (2011), A2i | 1.09 [0.91, 1.27] | 0.26 [0.08, 0.44] |
 | Connor et al. (2007), A2i | 1.09 [0.91, 1.27] | 0.14 [−0.02, 0.30] |
@@ -271,15 +271,12 @@ studies appear in both pools:
 | Connor et al. (2011b), A2i | 0.45 [0.25, 0.64] | 0.09 [−0.09, 0.27] |
 | Jia et al. (2012), Moodle | 0.23 [−0.16, 0.62] | 0.16 [−0.23, 0.55] |
 
-Same intervention, same learners, two ways of taking the difference. The first column is
-what a pre-post design measures: learning, maturation, testing effects, regression to the
-mean, and the treatment, added together. The second is the treatment. In the Alphie's
-Alley trial the two differ by **2.30 standard deviations**. `MEASURED-META` (Lee & Lee's
-Figures 4 and 5, read directly).
-
-This is the number to carry into every claim in §2. All three of the ERIC trials report
-large within-group gains. Two of them also report a control contrast; one of those
-contrasts (§2.2) is a null. The third reports no control contrast at all.
+Same intervention, same learners, two ways of taking the difference. The first column
+measures learning, maturation, testing effects, regression to the mean and the treatment
+added together; the second measures the treatment. In the Alphie's Alley trial they differ
+by 2.30 standard deviations. `MEASURED-META` (Lee & Lee's Figures 4 and 5, read directly).
+Carry that into §2: all three ERIC trials report large within-group gains, two report a
+control contrast, one of those contrasts is a null, and the third reports none.
 
 Two cautions on the GenAI syntheses. Li et al. find their largest moderator effects for
 *"the first language (L1) represented by Indonesian"* and for *"intervention time of 1–7
@@ -292,7 +289,7 @@ signature of novelty and unblinded measurement.
 
 Lee & Lee's moderator table carries one more result, stated with its caveat. Coding by AI
 role, the adjusted between-group estimate for **"individual learning tool"** (the
-Duolingo/Babbel/Memrise/Busuu category) is **−0.02 (SE 0.50)** against 0.44 for
+Duolingo/Babbel/Memrise/Busuu category) is −0.02 (SE 0.50) against 0.44 for
 intelligent tutoring systems. That estimate comes from a meta-regression with nine
 predictors over 35 samples in which tool type, adult learners and foreign-language context
 are nearly collinear, and the standard error says so; the raw between-group estimates for
@@ -351,7 +348,7 @@ effects than second-language contexts.
 
 **Lyster, Roy & Saito, Kazuya (2010),** *Studies in Second Language Acquisition*
 32(2):265–302, [10.1017/S0272263109990520](https://doi.org/10.1017/S0272263109990520).
-`MEASURED-META`. 15 classroom-based studies, **N = 827**. Corrective feedback had
+`MEASURED-META`. 15 classroom-based studies, N = 827. Corrective feedback had
 significant and durable effects; **effects were larger for prompts than for recasts**;
 effects were **"most apparent in measures that elicit free constructed responses"**;
 younger learners benefited more than older ones.
@@ -409,7 +406,7 @@ text, 6,000–7,000 for spoken text.** `OBSERVED` (corpus study, not an experime
 Laufer & Ravenhorst-Kalovski (2010), *Reading in a Foreign Language* 22(1), measured
 vocabulary size, coverage and comprehension in the same learners and proposed two
 thresholds: an **optimal** one at 8,000 families / 98% coverage and a **minimal** one at
-**4,000–5,000 families / 95% coverage**. Their incidental observation is the useful one:
+4,000–5,000 families / 95% coverage. Their incidental observation is the useful one:
 *"small increments of vocabulary knowledge contribute to reading comprehension even though
 they hardly improve text coverage."* Schmitt, Jiang & Grabe (2011), *Modern Language
 Journal* 95(1), found the same directly with 661 participants from eight countries — a
@@ -436,14 +433,14 @@ buys a little more comprehension. That is a different design target from "unlock
 Webb, Uchihara & Yanagisawa (2023), *Language Teaching* 56(2), meta-analysed
 **incidental** vocabulary learning from meaning-focused input: 24 studies, 29 effect
 sizes, N = 2,771 (1,517 experimental, 1,254 control). Mean proportions of target words
-learned: **9–18% on immediate post-tests, 6–17% on delayed.** By mode: reading 17%/15%,
-listening 15%/13%, reading-while-listening 13%/17%, **viewing 7%/5%**. `MEASURED-META`.
+learned: 9–18% on immediate post-tests, 6–17% on delayed. By mode: reading 17%/15%,
+listening 15%/13%, reading-while-listening 13%/17%, viewing 7%/5%. `MEASURED-META`.
 
 Webb, Yanagisawa & Uchihara (2020), *Modern Language Journal* 104(4), meta-analysed
 **intentional** word-focused activities — flashcards, word lists, writing,
 fill-in-the-blanks: 100 effect sizes from 22 studies. Average percentage gains
-**60.1% (meaning recall) and 58.5% (form recall)** on immediate post-tests, falling to
-**39.4% and 25.1%** on delayed post-tests. Between activities the range was 18.4% to
+60.1% (meaning recall) and 58.5% (form recall) on immediate post-tests, falling to
+39.4% and 25.1% on delayed post-tests. Between activities the range was 18.4% to
 77.0% immediate and 23.9% to 73.4% delayed. The authors' own summary: *"learning through
 word-focused tasks is far from guaranteed."* `MEASURED-META`.
 
@@ -457,7 +454,7 @@ production poorly. That is the shape of the thing, measured.
 
 And Uchihara, Webb & Yanagisawa (2019), *Language Learning* 69(3):559–599, meta-analysed
 45 correlations from 26 studies (N = 1,918) between number of encounters and incidental
-learning: **r = .34**. Repetition matters and explains about a ninth of the variance.
+learning: r = .34. Repetition matters and explains about a ninth of the variance.
 Encounters are not the mechanism people assume.
 
 ### 4.3 The transfer question, in its cleanest available form
@@ -471,12 +468,12 @@ Elleman, Lindo, Morphy & Compton (2009), *Journal of Research on Educational
 Effectiveness* 2(1):1–44, meta-analysed 37 vocabulary interventions, pre-K to grade 12:
 
 - effect on **custom** comprehension measures (passages containing the taught words):
-  **d = 0.50**
-- effect on **standardised** comprehension measures: **d = 0.10**
+  d = 0.50
+- effect on **standardised** comprehension measures: d = 0.10
 - among custom measures, controlling for method variables: students with reading
-  difficulties **d = 1.23** versus **d = 0.39** for students without
+  difficulties d = 1.23 versus d = 0.39 for students without
 - correlation between a study's vocabulary effect and its comprehension effect, among
-  studies reporting both: **r = 0.43**
+  studies reporting both: r = 0.43
 
 `MEASURED-META`. This is first-language vocabulary instruction, so the boundary being
 crossed is not identical to the L2 case; it remains the clean version of the question, and
@@ -488,7 +485,7 @@ vocabulary learning is shallow, and the psycholinguistics says otherwise. Elgort
 *Language Learning* 61(2), taught 48 pseudowords by deliberate study and probed them with
 masked repetition priming, form priming and automatic semantic priming in lexical
 decision. All three effects appeared, and response-latency variability showed the items
-were processed with **higher automaticity than genuine low-frequency L2 words**.
+were processed with higher automaticity than genuine low-frequency L2 words.
 `MEASURED-RCT` (within-subject). Deliberate learning produces integrated, automatised
 lexical entries.
 
@@ -525,7 +522,7 @@ believed yet.
 
 Mahdi & Al Khateeb (2019), *Review of Education* 7(3), meta-analysed 20 studies,
 1,014 participants, computer-assisted pronunciation training versus traditional
-instruction: **d = 0.68**, equally effective for young and adult learners, larger for
+instruction: d = 0.68, equally effective for young and adult learners, larger for
 beginners and intermediates than for advanced learners. `MEASURED-META`. Their own
 closing caution is the part to carry forward:
 
@@ -541,7 +538,7 @@ its job, and the d = 0.68 should not be quoted without the sentence attached.
 Almusharraf, Mahdi, Al-Nofaie & Aljasser (2024), *J. Computer Assisted Learning* 40(6),
 updated the synthesis to 31 studies and 42 effect sizes from experimental-versus-control
 designs. Its abstract reports every result as a verbal magnitude, "medium" or "large,"
-with **no numeric effect size, confidence interval or heterogeneity statistic**, and the
+with no numeric effect size, confidence interval or heterogeneity statistic, and the
 full text was not retrievable here. It is recorded so that it is not silently treated as
 a second, converging estimate of Mahdi & Al Khateeb.
 
@@ -566,16 +563,16 @@ cascaded ASR-plus-LLM pipelines and end-to-end audio-language models on mispronu
 detection over L2-ARCTIC (read L2 English with phoneme-level annotation of actual learner
 errors), one-shot prompted. `MEASURED-BENCH`. Detection precision / recall / F1:
 
-| System | P | R | **F1** |
+| System | P | R | F1 |
 |---|---|---|---|
-| Whisper Large + Mistral-7B | 48.9 | 3.4 | **6.4** |
+| Whisper Large + Mistral-7B | 48.9 | 3.4 | 6.4 |
 | Whisper Medium + Mistral-7B | 48.2 | 4.0 | 7.4 |
 | Whisper Small + Mistral-7B | 53.6 | 4.9 | 9.0 |
 | Whisper Large + Llama-3.1-8B | 52.8 | 8.4 | 14.5 |
 | Whisper Small + Llama-3.1-8B | 53.3 | 12.1 | 19.7 |
 | Wav2vec2 Base + Llama-3.1-8B (best cascade) | 53.8 | 17.8 | 26.8 |
 | Qwen2-Audio (end-to-end) | 41.7 | 22.0 | 28.8 |
-| **GPT-4o-Audio (end-to-end)** | **52.7** | **41.3** | **46.3** |
+| GPT-4o-Audio (end-to-end) | 52.7 | 41.3 | 46.3 |
 | Their instruction-tuned Whisper-Large + Llama-3 | 48.9 | 87.7 | 62.8 |
 
 Three readings, in ascending order of consequence.
@@ -615,7 +612,7 @@ diagnostic accuracy.
 
 Anxiety in L2 learning is real and measured. Teimouri, Goetze & Plonsky (2019), *Studies in
 Second Language Acquisition* 41(2), meta-analysed 97 reports, 105 independent samples,
-**N = 19,933**, 23 countries, 216 correlations: mean **r = −0.36** between L2 anxiety and
+N = 19,933, 23 countries, 216 correlations: mean r = −0.36 between L2 anxiety and
 language achievement. `MEASURED-META`. It is the best estimate in the area and it is
 correlational, so it establishes no direction.
 
@@ -654,7 +651,7 @@ reanalysis that dissolves its headline.
 [10.1016/j.cognition.2018.04.007](https://doi.org/10.1016/j.cognition.2018.04.007).
 Two-thirds of a million English speakers took a viral online grammar quiz. Fitting an
 exponential-learning-with-sigmoidal-decay model, the authors concluded that the *rate* of
-grammar learning stays high until about **17.4 years of age** and then drops sharply. The
+grammar learning stays high until about 17.4 years of age and then drops sharply. The
 claim is about learning rate, not about ceiling: a learner who starts at 17 can still
 improve, but does so more slowly, and because near-native grammar takes roughly thirty
 years of exposure, starting much after about 10 makes native-like attainment unlikely on
@@ -666,7 +663,7 @@ concluded that *"their overall conclusion of one sharply defined critical age at
 all language learners is based on artificial results."* Fitted separately by learner type,
 a **continuous** decay model fits better for monolinguals, bilinguals and early-immersion
 learners; only non-immersion and later-immersion learners fit a discontinuous model, with
-break points at **18.6 and 19.0 years**. Their reading: those break points look like
+break points at 18.6 and 19.0 years. Their reading: those break points look like
 **schooling effects**, produced by changes in living circumstances and socialisation
 around the end of secondary education, not by a cognitive developmental window.
 `MEASURED-META` (reanalysis of the original dataset, so not independent evidence — the
@@ -700,9 +697,9 @@ number everyone quotes has a published reanalysis attributing it to leaving scho
 
 Duolingo appears 93 times in this corpus and never once as evidence about acquisition.
 That is defensible, and the reason is worth setting out, because the largest body of
-efficacy research in language learning is a vendor's, and this survey's rule is that a
-`VENDOR` claim is never restated as a finding. Applying the rule properly means reading
-the studies, describing their designs, and saying which claim rests on which.
+efficacy research in language learning is a vendor's. Applying the rule that a `VENDOR`
+claim is never restated as a finding means reading the studies anyway, describing their
+designs, and saying which claim rests on which.
 
 ### 7.1 The 34 hours
 
@@ -710,19 +707,19 @@ the studies, describing their designs, and saying which claim rests on which.
 (Duolingo-funded, external authors; self-published PDF, no DOI, never peer-reviewed).
 
 The design has no control group. It is a pre/post within-subject study, and the "one
-university semester" comparison is against the **WebCAPE placement cut-off of 270 points**,
+university semester" comparison is against the WebCAPE placement cut-off of 270 points,
 a scoring threshold, not against students. The 34 hours is arithmetic: 270 ÷ 8.1
 points-per-hour, extrapolated linearly from zero. The recruitment funnel, from the report's
 Figure A1: 727 viewed a banner ad shown to logged-in Duolingo Spanish learners → 556
 completed the entry survey → 386 eligible → 211 took a baseline WebCAPE → 196 sampled →
-**88 analysed**. Mean actual study time was 22 hours, the range 2 to 133, and **16%
+88 analysed. Mean actual study time was 22 hours, the range 2 to 133, and **16%
 (n = 14) scored the same or lower at post-test**. WebCAPE tests vocabulary, reading and
 grammar; the authors themselves recommend adding *"some test of spoken proficiency."*
 
 Krashen (2014), *International Journal of Foreign Language Teaching*, made the decisive
 statistical point: the **median** gain rate was 3.9 points per hour against a mean of 8.1,
 because the distribution is heavily right-skewed. The same arithmetic on the median gives
-**about 69 hours**.
+about 69 hours.
 
 The same two authors ran the same design for a series of vendors: Rosetta Stone (2009) 55
 hours; Duolingo (2012) 34; an **anonymised "Language App"** (2015) 25, published under a
@@ -742,11 +739,11 @@ other researchers' university cohorts (Tschirner 2016; Rubio & Hacking 2019). n 
 paid $100 each, over 80% holding at least a bachelor's degree. ACTFL Reading and Listening
 administered externally by Language Testing International; the paper states plainly that
 **"No other skills were assessed."** Outcome: Reading at Intermediate Low, Listening at
-Novice High, with Spanish listening scoring **significantly lower** than the university
+Novice High, with Spanish listening scoring significantly lower than the university
 comparison cohort.
 
 The number that matters is in the methods. Median time to finish the beginning content was
-**112 hours** (125 Spanish, 99 French); the 2012 study priced roughly the same milestone at
+112 hours (125 Spanish, 99 French); the 2012 study priced roughly the same milestone at
 34, and the follow-up through Unit 7 (DRR-21-03, n = 340) reports a median of **203
 hours**. Same company, same product, its own instrumentation, and the hours figure has
 grown six-fold while the marketing number stayed put.
@@ -754,7 +751,7 @@ grown six-fold while the marketing number stayed put.
 `OBSERVED`: **no Duolingo Research Report before DRR-25-06 (June 2025) used a control
 group.** Every reading, listening and speaking report is single-cohort and post-test-only,
 benchmarked against published university averages or against Duolingo's own CEFR
-expectations, with heavy selection (DRR-24-04: 3,153 invitations → **165 tested**, 5.2%).
+expectations, with heavy selection (DRR-24-04: 3,153 invitations → 165 tested, 5.2%).
 Where fairness is owed: the instruments are mostly external and reputable (ACTFL via LTI,
 Pearson Versant, Avant STAMP 4S), and DRR-25-06 appears to be a genuine randomised trial,
 n = 567 with Versant pre/post — which is not listed on the company's `/efficacy/studies`
@@ -764,11 +761,11 @@ page and whose live link returns 403.
 
 | Study | Independence | Design | Result |
 |---|---|---|---|
-| Rachels & Rockinson-Szapkiw (2018), *CALL* 31(1–2), [10.1080/09588221.2017.1382536](https://doi.org/10.1080/09588221.2017.1382536) | Independent | Quasi-exp., grades 3–4, 12 weeks, Duolingo vs regular Spanish class | **Null on achievement and on self-efficacy** (§8.2) |
+| Rachels & Rockinson-Szapkiw (2018), *CALL* 31(1–2), [10.1080/09588221.2017.1382536](https://doi.org/10.1080/09588221.2017.1382536) | Independent | Quasi-exp., grades 3–4, 12 weeks, Duolingo vs regular Spanish class | Null on achievement and on self-efficacy (§8.2) |
 | Loewen et al. (2019), *ReCALL* 31(3), [10.1017/S0958344019000065](https://doi.org/10.1017/S0958344019000065) | Independent | n = 9, Turkish, one semester, self-study | Gains; time-on-app correlated with gains; not an efficacy estimate |
-| Kim, Payant, Skalicky & Namkung (2026), *SSLA*, [10.1017/S0272263126101521](https://doi.org/10.1017/S0272263126101521) | Duolingo Efficacy Research Program funding | Classroom-only (58) vs Duolingo-only (65) vs both (60), 16 weeks, beginner French | **All three improved by similar magnitudes** on proficiency, grammar, vocabulary and communicative competence; the only difference was *tu/vous* pragmatics favouring Classroom+Duolingo |
-| Meltzer et al. (2023), *Aging Neuropsychol. Cogn.*, [10.1080/13825585.2021.1991262](https://doi.org/10.1080/13825585.2021.1991262), NCT03638882 | Independent | **True RCT**, n = 76, ages 65–75, Duolingo vs BrainHQ vs waitlist, 4 months | A **cognitive-ageing** trial. Duolingo matched BrainHQ on two measures; BrainHQ was superior on reaction time |
-| James & Mayer (2019), *Appl. Cogn. Psychol.* | Independent | RCT, n = 64, Duolingo vs matched-content slideshow | **Null on achievement**, large effects on affect (§8.1) |
+| Kim, Payant, Skalicky & Namkung (2026), *SSLA*, [10.1017/S0272263126101521](https://doi.org/10.1017/S0272263126101521) | Duolingo Efficacy Research Program funding | Classroom-only (58) vs Duolingo-only (65) vs both (60), 16 weeks, beginner French | All three improved by similar magnitudes on proficiency, grammar, vocabulary and communicative competence; the only difference was *tu/vous* pragmatics favouring Classroom+Duolingo |
+| Meltzer et al. (2023), *Aging Neuropsychol. Cogn.*, [10.1080/13825585.2021.1991262](https://doi.org/10.1080/13825585.2021.1991262), NCT03638882 | Independent | True RCT, n = 76, ages 65–75, Duolingo vs BrainHQ vs waitlist, 4 months | A cognitive-ageing trial. Duolingo matched BrainHQ on two measures; BrainHQ was superior on reaction time |
+| James & Mayer (2019), *Appl. Cogn. Psychol.* | Independent | RCT, n = 64, Duolingo vs matched-content slideshow | Null on achievement, large effects on affect (§8.1) |
 
 The Kim et al. result deserves its own sentence because it cuts both ways and gets
 reported one way. Sixteen weeks of Duolingo alone produced beginner French gains
@@ -788,17 +785,17 @@ The Duolingo English Test carries far more psychometric apparatus than the learn
 Its Technical Manual is self-published and not peer-reviewed, and carries a DOI under
 Duolingo's own self-assigned prefix `10.46999`, which makes it look peer-reviewed in a
 reference list. Concurrent validity, from the manual: DET Overall against official TOEFL
-iBT reports (n = 328) **r = .71** overall, **.82** center-based, **.61 for the Home
+iBT reports (n = 328) r = .71 overall, .82 center-based, **.61 for the Home
 Edition** — and the Home Edition is the product actually used in admissions. Against
-IELTS (n = 1,943), Overall **r = .73**, but subscores **Writing .54, Reading .53,
+IELTS (n = 1,943), Overall r = .73, but subscores **Writing .54, Reading .53,
 Listening .57**, and subscore concordance tables are published from those.
 
 **Isaacs, Hu, Trenkic & Varga (2023),** *Language Testing* 40(3):748–770,
 [10.1177/02655322231158550](https://doi.org/10.1177/02655322231158550), is
 **Duolingo-commissioned** by its own funding statement, which matters because its result is
 unfavourable: across 1,881 DET-admitted students at a large London university, DET
-correlated with first-year credit-weighted grades at **adj. r = 0.195** for postgraduates
-and **adj. r = −0.112** for undergraduates, and DET-admitted students had lower academic
+correlated with first-year credit-weighted grades at adj. r = 0.195 for postgraduates
+and adj. r = −0.112 for undergraduates, and DET-admitted students had lower academic
 success than IELTS and TOEFL entrants. That paper is **cited zero times in either the 2025
 or the 2026 Technical Manual**, whose predictive-validity section rests instead on a blog
 post with no paper and no methodology document. Wagner (2020), *Language Assessment
@@ -807,11 +804,11 @@ Quarterly* 17(3), independent: *"the use of DET scores cannot be recommended."*
 ### 7.5 What the audited filings say, and one sentence in them that is not supported
 
 `FILING` — Duolingo, Inc., CIK 0001562088. Q1 2026 Form 10-Q (filed 2026-05-05):
-**DAU 56.5 million** (up 21% year over year from 46.6 M), **MAU 137.8 million**, **paid
+DAU 56.5 million (up 21% year over year from 46.6 M), MAU 137.8 million, **paid
 subscribers 12.5 million**, subscription bookings $268.065 M for the quarter. FY2025
-10-K: DAU 52.7 M against MAU 133.1 M (**DAU/MAU ≈ 39.6%**), paid subscribers 12.2 M
+10-K: DAU 52.7 M against MAU 133.1 M (DAU/MAU ≈ 39.6%), paid subscribers 12.2 M
 (~9% of MAU), and roughly 43 M users with a seven-day streak against roughly 15 M with a
-365-day streak. The FY2022 10-K disclosed **over 800 million cumulative downloads**
+365-day streak. The FY2022 10-K disclosed over 800 million cumulative downloads
 against 60.7 M MAU; the FY2025 filing no longer reports cumulative downloads.
 
 **No filing discloses course completion.** Searches of the FY2025 10-K for "complete a
@@ -892,7 +889,7 @@ supportive.
 ### 8.3 The AI-versus-teacher null inside a positive paper
 
 Soori, Khojasteh & Javed (2025), §2.2 above: AI feedback versus experienced-teacher
-video feedback on overall IELTS writing, mean difference **0.079 bands, p = 0.921**, with
+video feedback on overall IELTS writing, mean difference 0.079 bands, p = 0.921, with
 task achievement at p = 1.000 and grammatical accuracy numerically favouring the teacher.
 The paper's abstract and title report the hybrid advantage and do not mention this
 contrast. `MEASURED-RCT` (cluster-assigned).
@@ -901,7 +898,7 @@ contrast. `MEASURED-RCT` (cluster-assigned).
 
 Fütterer et al. (2026), *Educational Psychology Review*, n = 371, Grades 7–9, six 45-minute
 sessions **in regular physics or English lessons**, two scaffolded GenAI conditions
-against a control condition using **standard ChatGPT**: *"no statistically significant
+against a control condition using standard ChatGPT: *"no statistically significant
 advantages of either intervention over the control condition… for effort,
 domain-specific knowledge, or elaboration-based strategy use."* `MEASURED-RCT`
 (doi:10.1007/s10648-026-10133-8; E3 §7.3, M1, survey §23).
@@ -937,7 +934,7 @@ Build the validator, not just the prompt.
 
 **Build the speaking loop; do not ship phoneme-level correction as though it worked.**
 The unique advantage is unlimited low-stakes practice with a partner who cannot be
-embarrassed. The diagnostic layer is not ready: GPT-4o-Audio at **F1 = 46.3** on read
+embarrassed. The diagnostic layer is not ready: GPT-4o-Audio at F1 = 46.3 on read
 speech. Ship practice volume and comprehensibility-level feedback, and hold segmental
 correction back.
 
@@ -963,28 +960,26 @@ transcription accuracy by naive listeners) as the co-primary. Secondary: minutes
 speech produced, turns initiated, and self-reported willingness to communicate, so the
 self-report and behavioural measures can be compared in the same sample.
 
-**Power.** The estimate to plan against is not the CAPT d = 0.68, which comes from
-trained-item outcomes, and not the d ≈ 1.6 of §2.1 for the same reason. The defensible
-prior is Lee & Lee's control-adjusted **d = 0.39** against business-as-usual and the
-AI-versus-human null of §2.2, so plan for **d = 0.35** on the A-versus-C contrast and be
-prepared for A ≈ B. At α = .05 two-sided and 80% power, a two-arm comparison at d = 0.35
-needs **129 per arm**; three arms with a hierarchical testing order (A vs C first, then
-A vs B) and 20% attrition gives **n ≈ 465**. If the trial can only afford two arms, drop
-C and run A against B, which is the question a builder actually faces; that is 310
-participants. For contrast, the pronunciation trial in §2.1 had 30 per arm, which detects
-only d ≥ 0.72, and the writing trial had about 29 per arm before any correction for its
-three clusters.
+**Power.** The prior to plan against is not the CAPT d = 0.68 or the d ≈ 1.6 of §2.1, both
+of which come from trained-item outcomes. It is Lee & Lee's control-adjusted d = 0.39
+against business-as-usual, together with the AI-versus-human null of §2.2. So plan for
+d = 0.35 on the A-versus-C contrast and be prepared for A ≈ B. At α = .05 two-sided
+and 80% power, a two-arm comparison at d = 0.35 needs 129 per arm; three arms with a
+hierarchical testing order (A vs C, then A vs B) and 20% attrition gives n ≈ 465. If
+only two arms are affordable, drop C and run A against B, the question a builder actually
+faces, at 310 participants. For contrast, §2.1's trial had 30 per arm, detecting only
+d ≥ 0.72, and §2.2's had about 29 per arm before any correction for its three clusters.
 
-**Why this one.** It is the only place where AI has a capability advantage that is not
-economic, it is the outcome the whole marketed value proposition rests on, and ERIC
-currently contains zero trials that measure it. A null here would be more informative than
-another significant result on trained items.
+**Why this one.** It is the only place where AI holds a capability advantage that is not
+economic, it is the outcome the marketed value proposition rests on, and ERIC contains
+zero trials measuring it. A null here would be worth more than another significant result
+on trained items.
 
-The cheaper second experiment, if the first is unaffordable: randomise learners to a
-spaced deck of 300 word families versus matched-time reading of text containing those
-families, and measure (i) recall of the 300, (ii) comprehension of **novel** text at
-controlled coverage, and (iii) lexical-decision priming, at eight weeks. That is Elleman's
-d = 0.50 versus d = 0.10 contrast run inside a single L2 sample, and no one has run it.
+A cheaper second experiment if the first is unaffordable: randomise learners to a spaced
+deck of 300 word families versus matched-time reading of text containing those families,
+and measure recall of the 300, comprehension of **novel** text at controlled coverage, and
+lexical-decision priming, at eight weeks. That is Elleman's d = 0.50 against d = 0.10 run
+inside a single L2 sample, and no one has run it.
 
 ### 9.3 What I could not find out
 
