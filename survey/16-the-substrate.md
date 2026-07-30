@@ -146,16 +146,12 @@ instructor:
 > presence can be shown**... but there are also no detrimental effects."
 
 **A face reliably makes learners feel better and does not reliably make them
-learn more.** The meta-analytic base agrees on
-magnitude — pedagogical agents at **g ≈ 0.19** across 43 studies and 3,088
-participants, **g ≈ 0.20** in an independent multimedia synthesis. (Both figures
-were recovered from citation contexts and not from the paywalled originals;
-re-verify before publication.) And in the same analysis, **agents communicating
-via on-screen text outperformed agents communicating by narration**, the
-opposite of the voice-first, face-first product thesis. The larger 2025
-GenAI-agent effects (g ≈ 0.36–0.40) compare an AI tutor to *no tutor* and never
-an agent with a face to the same agent without one: they measure the model, not
-the avatar.
+learn more.** On a frontier system even that much is unmeasured, and the reason
+is structural: the 2025 GenAI-agent effects (g ≈ 0.36–0.40) compare an AI tutor
+to *no tutor* and never an agent with a face to the same agent without one. They
+measure the model, not the avatar. Face-versus-no-face on a frontier tutor is a
+single additional arm on any deployment already running, and no one has run it —
+which makes it one of the cheapest open questions in this survey.
 
 Two things the evidence does support. Embodiment helps *relative to a static
 agent*. Gestures, gaze and expression beat their absence on a transfer test,
@@ -322,8 +318,8 @@ releases are irrelevant to this work.
   must equal what the learner heard.
 - **Render the face at 25 FPS locally if you want one. Claim affect; do not
   claim learning.** d ≈ 0.85–1.01 on social presence and well-being; no learning
-  effect in real courses; g ≈ 0.19–0.20 overall. Stylised beats
-  almost-photoreal.
+  effect in real courses; and no frontier trial has ever compared the same tutor
+  with a face and without one. Stylised beats almost-photoreal.
 - **Generative world, symbolic event stream.** 39.6% best-case and 22% on the
   hard subset are not numbers you teach conservation laws with. Let the model
   write the scene; let an engine own the dynamics.

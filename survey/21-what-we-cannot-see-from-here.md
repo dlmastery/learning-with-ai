@@ -270,18 +270,17 @@ claims in this field fail on the first three.
 ## 9. Turning question ten on ourselves
 
 The counter-case to this entire survey, at full strength: **0.2–0.4 SD may be a
-population parameter and not a technology limit.** The band pools three different
-machines: human tutors, rule-based ITS, and three field trials of frontier
-assistants running six to eight weeks (§09). Three things that different landing in
-one place is exactly what you would see if the constraint belonged to the learners
-and the setting and not to any of the machines.
+population parameter and not a technology limit.** The concession is only evaluable
+if we say what the band is, so: **it is three field trials** (§09). Sierra Leone,
+whose unadjusted estimate is not significant; Nigeria, which lost 43% of its sample;
+Rori, which has eleven clusters and was authored by the people who sell it. A
+rounding of those three, with no pooling and no confidence interval. A number that
+thin is a weak ceiling and an equally weak floor, and the project's falsifier is
+staked on it either way.
 
-The concession is only evaluable if we say what the band is, so: **its frontier side
-is three field trials.** Sierra Leone, whose unadjusted estimate is not significant;
-Nigeria, which lost 43% of its sample; Rori, which has eleven clusters and was
-authored by the people who sell it. It is a rounding of those three, with no pooling
-and no confidence interval. A number that thin is a weak ceiling and it is also a
-weak floor, and the project's falsifier is staked on it either way.
+The reading that would hurt is that all three trials measured the same learners in
+the same schools doing the same thing, and that what they found was the learners
+rather than the technology.
 
 The evidence for that reading is not weak. The best-powered studies on record are
 nulls — lesson study at **ES 0.02** across 181 schools and 12,747 pupils with very
@@ -322,10 +321,10 @@ what the special-education evidence argues for on its own terms.
   expansion.**
 - **State the scarcity condition** whenever quoting an effect size measured in a
   world where the control group had nothing.
-- **State the class of system and the year alongside it.** A 1984 measurement of
-  human tutors and a 2011 measurement of rule-based ITS are evidence about those
-  machines and about nothing else (§09), and a survey that lets them stand in for a
-  frontier system has miscounted its own evidence in the direction that feels safest.
+- **Never let a measurement of something else stand in for the measurement we have
+  not taken.** Where no frontier trial exists, name the trial and its cost (§09). A
+  survey that fills the gap with a number from a different machine has not been
+  cautious; it has published a ceiling nobody measured.
 - **Ask question ten first**, of everyone, including us.
 
 The list above is incomplete. That is not modesty; it is the definition of the

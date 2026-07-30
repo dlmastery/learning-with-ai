@@ -211,8 +211,15 @@ Same principle. Same literature. A factor of three between the flattering number
 and the corrected one.
 
 That is the ground this survey stands on, and this section is where a sceptical
-reader should come to check the rest of it. Nothing here is about AI. Everything
-here is the baseline any AI claim has to clear.
+reader should come to check the rest of it.
+
+Nothing here is a measurement of a tutor, human or machine. These are measurements of
+**what moves human memory and understanding** — retrieval, spacing, interleaving,
+worked examples, the reversal that comes with expertise. They constrain what any
+system should *do* and they set no ceiling on what one can *achieve*, because none of
+them measured a system at all. Where this section used to compare a frontier model
+against pre-LLM tutoring software, it no longer does: that evidence is in **§37** as
+history, and the measurements of frontier systems are in **§3**.
 
 ---
 
@@ -223,19 +230,22 @@ I² between 77% and 91%: 84% (Rowland), 88% (Yang et al.), 77% (Brunmair &
 Richter), ~90% (Tetzlaff et al.). A pooled g of 0.50 is not a prediction that you
 will get 0.50. It is a one-number summary of a very lumpy distribution.
 
-**Test alignment inflates effects by roughly 2–3×.** Documented three separate
-times: Bloom's 1984 human-tutoring studies gave **0.84 SD on the authors' own narrow tests
-versus 0.27 SD on broad standardised tests**; Kulik & Fletcher say the size of the
-ITS improvement "depended to a great extent" on whether the test was locally
-developed or standardised; Slavin's mastery-learning synthesis found positive
-effects on experimenter-made measures and "essentially no evidence" on
-standardised ones. **Any evaluation in which the system's designers also wrote the
-test should be discounted before you read the number.** Say where that discount comes
-from, though, because it gets applied to modern trials and its whole evidential base
-is pre-LLM: two early Chicago dissertations, an ITS meta-analysis and a
-mastery-learning synthesis. It is a claim about who writes the test and not about
-what kind of system sits behind it, which is why we think it ports. Nobody has
-checked that it does.
+**Test alignment shrinks effects, and the frontier trials show it directly.** Two
+measurements, both from §3's table. Nigeria's composite moved **+0.310 SD** on the
+intervention-aligned instrument and **+0.206 SD** on the school's own third-term
+exam — the same students, the same weeks, a third of the effect gone when the test
+stopped being the one the intervention was shaped around. Tutor CoPilot is the
+sharper version: **+4 percentage points on the in-platform exit ticket and no
+significant movement on the end-of-year state test.** **Any evaluation in which the
+system's designers also wrote the test should be discounted before you read the
+number** — and Kestin's d ≈ 0.63, on a researcher-built post-test that hit its
+ceiling, is the row in this survey that the rule bites hardest.
+
+**How large the discount should be is not established for frontier systems.** The
+two observations above are one shrinkage and one disappearance, which is a direction
+and not a coefficient. Sierra Leone shows what removes the doubt instead of
+estimating it: the test was written and blind-scored by Oxford MeasurEd, an
+organisation with no stake in the result.
 
 **Corrections shrink effects, and most effects have never been corrected.** The
 modality effect went 0.38 → 0.20 under publication-bias adjustment. Almost nothing
@@ -333,15 +343,14 @@ strongest evidence against the naive form of that argument. It does not overturn
 self-explanation as an activity; it means bolting a prompt onto a worked example is
 not the way to get it.
 
-**Rule-based intelligent tutoring in K–12 mathematics is near zero.**
-Steenbergen-Hu & Cooper (2013): ITS "had no negative and perhaps a small positive
-effect," with effects *larger* for the general population than for low achievers.
-K–12 mathematics is the population most often invoked in AI-tutoring pitches, and it
-is the population where the pre-LLM machine measured approximately nothing. Read it
-for what it measured: a null on rule-based software, in the hardest population, on
-the subject with the least give in it. It says nothing about what a frontier system
-will do there, and it is the reason a frontier system that ships into K–12
-mathematics owes a delayed unassisted test before it claims anything.
+**K–12 mathematics is where the frontier nulls are.** It is the population most often
+invoked in AI-tutoring pitches and the one where the measurements are worst. Tutor
+CoPilot, preregistered and independently funded, moved the exit ticket and did **not
+move the end-of-year state maths test**. Sierra Leone's headline sits entirely on
+Grade 8; its **Grade 7 main treatment coefficient is −0.078, p < 0.05** (§3). Both
+are frontier models, in school mathematics, in the last two years. Anything shipping
+into this subject owes a delayed unassisted test before it claims anything, and the
+two trials that looked hardest are the two with the least to show.
 
 The founding retrieval-practice result had a design confound. Soderstrom, Kerr
 & Bjork (2016) replicated Karpicke & Roediger (2008) between subjects, then
@@ -410,11 +419,10 @@ on it — so an educator who searches the literature is given a consistent and
 inaccurate endorsement. An AI that grills a learner for a sensory-modality label is
 automating a forty-year null at scale.
 
-Bloom's two sigma is retired in this survey; the argument and the replacement
-figures are in **§37** and **§9**, and are not repeated here. The part that matters
-for everything downstream is that it must not return as an implicit yardstick. It
-was a 1984 measurement of human tutors on tests aligned to their own instruction. It
-sets no target for a machine, high or low.
+The tutoring effect sizes this survey used to quote here have been removed from the
+argument entirely. They measured human tutors and rule-based courseware, they are
+history rather than evidence about a model, and they now live only where history is
+the subject (**§37**). Nothing downstream should be calibrated against them.
 
 ---
 
@@ -451,26 +459,25 @@ reviewers' words, "dominated by laboratory studies of university undergraduates.
 - **Every effect size in this survey carries its interval and, where reported, its
   I².** Retrieval practice is g = 0.499 **with I² = 88%**, and the second half of
   that sentence is not optional.
-- **Discount any evaluation whose designers wrote the test.** The documented
-  inflation is 2–3×.
+- **Discount any evaluation whose designers wrote the test.** Nigeria lost a third of
+  its effect on the school's own exam; Tutor CoPilot lost all of it on the state test.
+  The direction is established and the size is not.
 - **Per-material policies, never global ones.** Interleaving is g = 0.34 in
   mathematics and g = −0.39 in vocabulary. A single switch cannot serve both.
 - **Do not claim to measure germane load.** Use the design effects; drop the
   mediation story.
 - **No modality labels, ever.** Adapt on prior knowledge, task properties,
   self-regulation and motivation type, the four adaptation targets with evidence.
-- **Assume better controls shrink the number.** Rule-based ITS effects were
-  significantly larger in earlier studies than in later, better-controlled ones.
-  That is a regularity about evaluation quality, and it is a warning about our own
-  first result. It is a fact about a different class of machine, so it forecasts no
-  trajectory for a frontier one. Write every claim to survive the trial that has an
+- **Assume better controls shrink the number, starting with our own.** Peer review
+  moved Nie's headline toward smaller and the field's biggest meta-analytic estimate
+  was retracted outright (§3). Write every claim to survive the trial that has an
   active control, an independent test and a delay.
-- **Benchmark honestly.** An AI tutor showing **d ≈ 0.4 on a test it did not help
-  design, against an active control, at a delayed post-test** would sit at the top
-  of this entire literature. Above 0.8, the burden falls on the evaluation: show the
-  test was independent and the control was active, and the number stands. That
-  burden is about study design and carries no prior about what a frontier system can
-  reach, because nothing measured in this section was one.
+- **Benchmark against the measurement, never against a borrowed number.** The bar for
+  any claim we make is **a test we did not help design, an active control, and a
+  delayed post-test** — that combination has never been run on a frontier tutor, so
+  the honest statement of the target is that the experiment is open rather than that
+  some prior result caps it. Where a number looks large, interrogate the test and the
+  control, and publish both alongside it.
 
 The floor is not low. Retrieval practice and distributed practice are among the
 largest, most replicated effects anyone in education has ever measured, and they
@@ -635,14 +642,13 @@ post-tests on other topics. The instrument exists. The field does not use it.
 And the field's most-cited meta-analysis (Wang & Fan 2025, g = 0.867, >250
 citations) was **retracted in 2026**; the authors have not responded.
 
-What survives, each figure carrying the machine it measured: supervised LLM tutoring
-in six-to-eight-week classroom deployments lands at **0.2–0.4 SD**, which is a
-rounding of three field trials; pre-LLM rule-based ITS at 0.32–0.42, a range spliced
-from two 2014 meta-analyses; in-person human tutoring at **0.288** across 96 RCTs.
-Three machines, one band. That is a real, useful, affordable effect and not an
-order-of-magnitude jump. It is also not a ceiling — none of those trials went looking
-for the limit of a frontier system, and two of the three figures contain no frontier
-system at all (§3). GenAI without teacher support is null (g = 0.077).
+What survives: supervised LLM tutoring in six-to-eight-week classroom deployments
+lands at **0.2–0.4 SD**, a rounding of three field trials with no pooling and no
+confidence interval, **at an inference cost measured at 0.43% of a delivered
+session** (§39). That is a real and affordable effect, it is not an order-of-magnitude
+jump, and it is not a ceiling — no trial has yet been run on a constrained,
+remembering, grounded system, so nobody has measured where the limit is (§3). GenAI
+without teacher support is null (g = 0.077).
 
 
 ## 3. The Scoreboard — what AI tutoring has actually been measured to do
@@ -663,29 +669,16 @@ Here is what the record currently says, and what it does not.
 
 ---
 
-## 1. The band, and the three machines inside it
+## 1. What has been measured
 
-Start with what each number measured and when it ran, because the class of system
-that produced an effect size decides what that effect size can be evidence about.
+Every number in this section was measured on a frontier model. That is the whole
+inclusion rule, and the reason the table is shorter than it used to be: a
+measurement taken on a human tutor or on rule-based courseware is evidence about a
+human tutor or about rule-based courseware, and this section is about neither.
 
-Intensive, in-person, one-to-one and small-group human tutoring — the most
-expensive and best-evidenced intervention in education — pools at **0.288 SD (SE
-0.029)** across 96 randomised studies (Nickow, Oreopoulos & Quan, *AERJ* 2024,
-funded by J-PAL North America). Those are 96 randomised trials of human tutors and
-zero trials of anything else. So 0.288 is the benchmark a machine has to clear: what
-a hired, trained person alone with a child has been measured to deliver. It is not a
-bound on any machine, because no machine appears in it.
-
-One thing we cannot tell you about it, and should say so: **the corpus establishes
-the year of the synthesis and not the years of the trials inside it.** Nickow's pool
-appeared as an NBER working paper in 2020 and in *AERJ* in 2024; no source we hold
-gives the date range of the 96. The same is true of VanLehn's reviewed experiments
-and of both 2014 ITS meta-analyses. Where a vintage below is a publication year and
-not a fieldwork year, the column says so.
-
-Now the AI results, all immediate post-tests unless stated. Every row carries the
-class of system it measured and the year that system ran, because those two facts
-govern what the row can be quoted for:
+Here is the record, all immediate post-tests unless stated. Every row carries the
+model and the year it ran, because a 2024 result and a 2026 result are not
+interchangeable either:
 
 | Study | Class · ran | Effect | n | Duration | Delayed test? | Distal outcome? |
 |---|---|---|---|---|---|---|
@@ -695,44 +688,37 @@ govern what the row can be quoted for:
 | **Kestin et al.**, Harvard physics | FRONTIER · purpose-built tutor, *Sci Rep* 2025 | d ≈ 0.63 (to 1.3 ceiling-corrected) | 194 | **two ~1-hour lessons** | No | No |
 | **Tutor CoPilot** (RCT-P) | FRONTIER · ran from March 2024 | +4 p.p. exit ticket | 900 tutors, 1,800 students | 2 months | No | **Yes — and null** |
 | **Rori**, Ghana | FRONTIER-era chatbot · 2024 | 0.37 SD | ~1,000, **11 clusters** | 8 months | No | No |
-| **LearnLM + Eedi**, UK | FRONTIER · LearnLM, Dec 2025 | +5.5 p.p. on novel problems vs human tutors | **165** | not stated | No | No |
-| Pre-LLM ITS (VanLehn; Ma et al.; Steenbergen-Hu & Cooper) | ITS · rule-based; syntheses **2011** and **2014**; trial years unestablished | d = 0.76 (VanLehn); g = 0.32–0.37 college (Steenbergen-Hu & Cooper); g = 0.42 vs teacher-led, 0.57 vs other computer-based instruction (Ma et al.) | meta | — | — | — |
-| **Human tutoring** (Nickow, 96 RCTs) | HUMAN · synthesis **2024** (working paper 2020); trial years unestablished | **0.288 SD** | meta | — | — | — |
+| **LearnLM + Eedi**, UK | FRONTIER · LearnLM, Dec 2025 | **93.0%** correct on second attempt vs **91.2%** for the expert human tutors it was randomised against; transfer +5.5 p.p., **credible interval spans zero** | **165** | not stated | No | No |
 
-**The classroom deployment trials land in the same band as pre-LLM intelligent
-tutoring systems and as human tutors.** Sierra Leone 0.258, Nigeria 0.23–0.31,
-Rori 0.37, ITS 0.32–0.42, human tutoring 0.288. Three classes of machine, one band.
-There is no order-of-magnitude jump in those numbers, and there may be no difference
-between the three classes at all.
+Three of the classroom deployments cluster: Sierra Leone 0.258, Nigeria 0.23–0.31,
+Rori 0.37. That is **the measured 0.2–0.4 SD band**, and it is worth being exact
+about what it is, because this survey has previously leaned on it harder than it can
+bear. It is a rounding of those three trials. No meta-analysis, no pooling, no
+confidence interval, n = 3 — and one of the three is not significant unadjusted, one
+lost 43% of its sample, and one has eleven clusters and was authored by the people
+who sell the product.
 
-Two things have to be said about that comparison before anyone uses it again. **The
-frontier side of the band is three field trials**, Sierra Leone and Nigeria and
-Rori, and it is a rounding of those three and not a pooled estimate: no
-meta-analysis, no confidence interval, n = 3. And **the ITS figure 0.32–0.42 appears
-in no single source.** It splices Steenbergen-Hu & Cooper's college range
-(0.32–0.37) onto Ma et al.'s ITS-versus-teacher-led figure (0.42), which is why the
-table above prints 0.32–0.57 instead: that upper endpoint is Ma's comparison against
-other computer-based instruction, a third comparator again. The spliced range stays
-visible here because this survey published it. It does not get quoted again without
-both of its sources.
+**A band that thin is a starting position and not a ceiling.** The three trials share
+one design: a general-purpose assistant handed to a classroom, six to eight weeks,
+measured the week it stopped. What they measure is a deployment pattern, and what
+they establish is that the pattern works at all, in four countries and three
+languages, **at an inference cost measured at 0.43% of a delivered session** (§39).
+That last clause is the one this survey kept dropping, and it carries more
+consequence than the effect size does: the gain is modest, and the marginal cost of
+the next child receiving it is close to nothing. What that does *not* mean is that
+the delivered cost is near zero — the other 99.57% is human supervision, and §39 is
+where that argument is settled.
 
-Two readings of that coincidence are available and only one is licensed. **It does
-not license 0.2–0.4 as a ceiling on a frontier system.** No study in the ITS or
-human-tutoring meta-analyses had a frontier model in it, and the three field trials
-inside the band share one design: a general-purpose assistant distributed into a
-classroom, six to eight weeks, measured the week it stopped. That is a measurement
-of a deployment pattern.
-
-What it does license is the thing worth having. **The band is a floor**, and it
-reproduces across four countries, three languages and three classes of technology.
-A result that stable is something you can design against instead of hope for.
-
-The frontier-era number sitting outside the band is Kestin's **d ≈ 0.63**, which is
-also the row with the least independence and the shortest exposure: two hours, an
-immediate ceiling-limited post-test, and a first author who built the tutor, ran the
-analysis, and declared no funding (§9). It is evidence that an engineered frontier
-tutor cleared an active control in two hours. It is not evidence about a term, and
-this survey does not quote it as one.
+Two frontier results sit outside that pattern, and both come from constraining the
+tutor instead of distributing it. **Kestin's d ≈ 0.63** cleared an active control in
+a median 49 minutes, on a tutor built to refuse to advance until the student
+reasoned. It also carries the heaviest discount in the table: two hours of exposure,
+a researcher-built ceiling-limited post-test, and a first author who built the tutor,
+ran the analysis and declared no funding (§9). And **LearnLM under expert-tutor
+supervision matched the expert tutors it was randomised against** on immediate
+correction, 93.0% against 91.2%, with the transfer advantage's credible interval
+spanning zero and n = 165. Neither is a result about a term. Both are results about
+what happens when the system is designed instead of deployed.
 
 ---
 
@@ -882,10 +868,13 @@ in 2026** for "discrepancies in the meta-analysis"; the authors did not respond 
 correspondence. It had accumulated over 250 citations. Anything downstream of
 g = 0.867 is unsupported, and still circulating.
 
-A smaller correction worth internalising as a habit: Nickow et al.'s human-tutoring
-pooled estimate **fell from 0.37 SD in the 2020 working paper to 0.288 SD in the
-2024 peer-reviewed version.** Discount every working-paper effect size accordingly,
-including the ones in the table above.
+A smaller correction worth internalising as a habit, and this section already
+supplies the example. Nie et al.'s preprint was titled *"…Reduced Engagement but
+**Increased** Adopters Exam Performances."* The peer-reviewed version says
+***May* Increase**, because the adopter effect is selection. **Peer review moved the
+claim in the direction of smaller**, which is the direction it usually moves. Two
+rows of the table above are preprints — Rori and LearnLM + Eedi — and both should be
+read with that discount applied in advance, including by us.
 
 ---
 
@@ -942,35 +931,31 @@ ERIC records use it. It is four weeks of patience and a fresh item set — and i
 generation is now the cheapest thing in the system. The field is not failing to
 measure retention because retention is hard to measure.
 
-Second, **the pre-LLM literature did meet the standard, which makes it the place the
-design template lives.** Those trials are not the bar a frontier system has to come
-in under. They are the shape of a study that could tell you where it came in.
-Roschelle et al.'s ASSISTments trial moved an end-of-year state
-standardised test across 43 Maine schools, with the largest gains for low prior
-achievers. It is the strongest distal-outcome edtech RCT in the corpus, and it
-predates the LLMs entirely. Pane et al. ran Cognitive Tutor Algebra I across 147
-schools for two years and found a null in year one that became +0.21 SD in year two.
-Neither shape is visible in an eight-week trial, and every LLM RCT here except Rori is
-eight weeks or shorter.
+Second, **a frontier trial has already run the distal outcome, and it came back
+null.** Tutor CoPilot moved exit-ticket mastery by 4 points and did not move the
+end-of-year state test. That is the same technology, the same era, a preregistered
+design and an independent funder — so "the retention evidence will arrive" is not a
+promise anyone can make on the field's behalf. It arrived once and it was a null, and
+the authors attribute that to a two-month window and a low dose, which is plausible
+and untested. **Every frontier RCT in the table except Rori runs eight weeks or
+shorter**, and eight weeks is not long enough to see a dose accumulate or a novelty
+effect decay.
 
 ---
 
 ## 7. How we will report an effect size
 
-- **Quote every number with its class and its year.** The 0.2–0.4 band is what
-  six-to-eight-week classroom deployments of general-purpose assistants measured; it
-  happens to coincide with pre-LLM ITS and with human tutoring, and a reader is owed
-  which of the three is being invoked. Never cite g = 0.867; it is retracted. Never
-  cite Bastani's +127%; it is a practice-session number.
-- **Never bound one class of system with a measurement of another.** VanLehn 2011
-  measured rule-based ITS against human tutors. Nickow pools 96 randomised trials of
-  human tutors. Bloom 1984 measured human tutors on their own aligned tests, and is
-  retired here (§1). Each is the right benchmark for the machine it measured and
-  evidence about no other.
-- **Give a synthesis year when that is all we have.** The corpus establishes when
-  Bloom, VanLehn, Ma, Steenbergen-Hu and Nickow were *published* and never when their
-  constituent trials were *run*. Write "the 2011 review" and never "the 1980s
-  studies", which would be a span nobody has established.
+- **Only a frontier measurement bounds a frontier system.** A result taken on a human
+  tutor or on rule-based courseware is evidence about that thing and may not be
+  quoted as a ceiling, a comparator or a benchmark for a model. Where no frontier
+  measurement exists, say the trial has not been run and specify it. An unmeasured
+  question is an opportunity; a borrowed number is a false ceiling.
+- **Quote the band as what it is.** 0.2–0.4 SD is a rounding of three field trials
+  with no pooling and no confidence interval, and the cost term belongs beside it.
+  Never cite g = 0.867; it is retracted. Never cite Bastani's +127%; it is a
+  practice-session number.
+- **Discount preprints in advance**, including ours. Peer review moved Nie's headline
+  toward smaller, and two rows of §3.1's table have not been through it yet.
 - **Every claim we make gets a delayed, unassisted, novel-item test**, or it is
   reported as a performance result and labelled as one.
 - **Report the unadjusted estimate next to the adjusted one.** Sierra Leone's
@@ -2109,30 +2094,28 @@ So the target is not a chatbot that knows things. It is:
 
 ## 2. The constraint is no longer scarcity. It is capability.
 
-Most previous attempts at universal tutoring died on a scarcity argument. Bloom's
-1984 paper came with a built-in obituary: one tutor per child was *correct and
-unaffordable*, so the field spent forty years searching for "group-instruction
-methods as effective as one-to-one tutoring."
+Every previous attempt at universal tutoring died on a scarcity argument: one tutor
+per child was correct and unaffordable, so the field spent forty years looking for
+group methods that would work as well. The history is in **§37**. What matters here
+is that the argument was always about the price of attention, and that price is what
+has changed.
 
-Two sigma is not the number, and we should stop quoting it: it measured human tutors
-in 1984 on their own aligned tests, and this survey retired it (§1, §37). Retiring
-it does not promote whatever came next to a ceiling. VanLehn 2011 measured *human*
-tutoring at **d = 0.79** and *rule-based* intelligent tutoring systems at **0.76**;
-Nickow et al. pooled 96 randomised trials of *human* tutors at **0.288 SD** in peer
-review. Those are the correct benchmarks for a person and for a rule-based machine.
-Not one of them contains a frontier model, and no source we hold even dates the
-trials inside them — we know when the syntheses were published and not when the
-experiments were run (§3).
-
-The frontier-era measurement is Kestin's Harvard AI-tutor RCT: **d ≈ 0.63**
+So the question is what a frontier model has actually been measured to do, and the
+answer is short because the trials are few. **Kestin's Harvard RCT: d ≈ 0.63**
 (0.73–1.3 after the authors' own ceiling correction), in a median 49 minutes against
-an *assumed* 60. It carries a heavy discount and we apply it in full — the first
-author built the tutor, ran the analysis and declared no funding; the post-test was
-researcher-built and ceiling-limited; the exposure was two hours (§3). What it is
-not is a proxy for something else. It is the one number here taken on the class of
-system this project is actually building. Chasing 2σ inflates the target several-fold
-and guarantees everything real looks like a failure. Bounding the target with 1984
-and 2011 does the same damage from the other side.
+an *assumed* 60, on a tutor built to refuse to advance until the student reasoned. We
+apply its discount in full — the first author built the tutor, ran the analysis and
+declared no funding; the post-test was researcher-built and ceiling-limited; the
+exposure was two hours. **LearnLM under expert supervision matched the expert human
+tutors it was randomised against**, 93.0% against 91.2% on immediate correction, with
+its transfer advantage's credible interval spanning zero and n = 165. Three classroom
+deployments land at 0.2–0.4 SD at an inference cost of 0.43% of a delivered session
+(§3, §39).
+
+That is the whole frontier record for tutoring, and the honest description of it is
+*thin and encouraging*. Nobody has run a trial on a system that remembers, refuses,
+grounds and pivots, so nobody knows what that measures at. **The target is not a
+number somebody else established. It is the experiment nobody has run.**
 
 And scarcity was not always the killer. **Direct Instruction won Project Follow
 Through** — the largest educational experiment ever run — on basic skills,
@@ -2249,13 +2232,11 @@ never in the model's manners.
 ## 5. The bet
 
 The provenance of the band is the whole bet. **0.2–0.4 SD was measured on systems
-that do almost none of this.** Two of the three figures inside it, ITS and human
-tutoring, predate the technology entirely. The third is three field trials of a
-general-purpose assistant distributed into a classroom, and that assistant answers
-freely, has no memory, cannot see the work,
-cannot point, never pivots, and agrees with everything. The one frontier trial whose
-tutor was constrained — Kestin's, which refused to advance until the student produced
-reasoning — is also the one that came in above the band (§3).
+that do almost none of this.** It is three field trials of a general-purpose
+assistant distributed into a classroom, and that assistant answers freely, has no
+memory, cannot see the work, cannot point, never pivots, and agrees with everything.
+The two frontier results that came in above it, Kestin's and LearnLM's, are the two
+where the tutor was constrained or supervised instead of handed over (§3).
 
 We call that *the floor with the brakes on*. The status of that phrase is worth
 being exact about, because §47 is, and this section was not. **"Nobody has built
@@ -5727,22 +5708,26 @@ misidentified what it is.**
 
 ---
 
-## 1. Presence is worth about 0.2, and three literatures agree
+## 1. Presence is worth about 0.2, and two literatures agree
 
 The first question is narrower than "does the physical matter": does adding
 *presence* — a face, a body, a room — to otherwise identical content help?
 
-Three independent literatures converge on the same number:
+Two independent literatures converge on the same number:
 
 | Comparison | Effect |
 |---|---|
-| On-screen pedagogical agent vs none (43 studies) | **g ≈ 0.19** |
 | Physical robot vs the same content on a tablet (78 controlled studies) | **d = 0.20** |
 | Immersive VR vs desktop (35 RCTs) | **ES = 0.24** |
 
-A real premium, and a modest one. But the number that should govern any decision
-built on it is a different one: **the effect is dwarfed by the control condition you
-choose.** The robot meta-analysis spans **+0.75** (robot versus nothing) to
+A real premium, and a modest one. The narrower question — an on-screen face against
+the *same* tutor without one — has no frontier measurement at all: the 2025
+generative-agent trials compare a tutor to no tutor and never run the face arm
+(§35). It is a one-arm addition to any deployment already running, and nobody has
+run it.
+
+But the number that should govern any decision built on what is measured is a
+different one: **the effect is dwarfed by the control condition you choose.** The robot meta-analysis spans **+0.75** (robot versus nothing) to
 **−0.06** (robot *replacing* the teacher). And its Europe/non-Europe reporting gap
 is **0.36 SD — larger than the effect being estimated.**
 
@@ -6581,10 +6566,11 @@ of a person, with trust age-graded the wrong way for a children's product: 27% o
 13–14-year-olds against 20% of older teens. That is a `FILING`, and reads as caution as
 much as encouragement.
 
-What the disclosure finding earns is a metric, not a claim: §45's Cognitive Tutor logs
-show that after three consecutive errors on a step, the next action was a hint request
-only 34% of the time. A tutor with no capacity to be disappointed is a novel object for a
-child reacted to for eleven years, and the "I don't get it" rate would show it working.
+What the disclosure finding earns is a metric, not a claim: the help-request rate itself.
+§45 records the frontier version of the failure it would detect — a tutor whose mechanism
+worked and only ever fired when the student summoned it. A tutor with no capacity to be
+disappointed is a novel object for a child reacted to for eleven years, and the "I don't
+get it" rate would show it working.
 
 `OBSERVED — absence`: there is **no meta-analysis of the relationship–achievement
 association restricted to students with IEPs or identified disabilities.** Emslander et
@@ -9585,10 +9571,9 @@ The line a tutoring system can act on is in the same paper:
 `OBSERVED — absence`, declared by the authors in 2007 and, on the searches run for the
 source report, still true in 2026. Latency falling while accuracy falls on items whose
 difficulty is rising is computable directly from tutor telemetry, and it distinguishes
-avoidance from disengagement. §45 documents its sibling in Cognitive Tutor logs: after
-three consecutive errors a hint request followed only 34% of the time, and 68% of hint
-levels were viewed for under one second. Help-avoidance and speed-avoidance are the
-same child.
+avoidance from disengagement. §45 documents its sibling: help that works when it is
+summoned, and goes unsummoned by exactly the students who need it. Help-avoidance and
+speed-avoidance are the same child.
 
 The design that follows is **load-flat escalation**: on the avoidance signature, hold
 storage demand constant while conceptual demand rises, keeping the carry and
@@ -10351,16 +10336,12 @@ instructor:
 > presence can be shown**... but there are also no detrimental effects."
 
 **A face reliably makes learners feel better and does not reliably make them
-learn more.** The meta-analytic base agrees on
-magnitude — pedagogical agents at **g ≈ 0.19** across 43 studies and 3,088
-participants, **g ≈ 0.20** in an independent multimedia synthesis. (Both figures
-were recovered from citation contexts and not from the paywalled originals;
-re-verify before publication.) And in the same analysis, **agents communicating
-via on-screen text outperformed agents communicating by narration**, the
-opposite of the voice-first, face-first product thesis. The larger 2025
-GenAI-agent effects (g ≈ 0.36–0.40) compare an AI tutor to *no tutor* and never
-an agent with a face to the same agent without one: they measure the model, not
-the avatar.
+learn more.** On a frontier system even that much is unmeasured, and the reason
+is structural: the 2025 GenAI-agent effects (g ≈ 0.36–0.40) compare an AI tutor
+to *no tutor* and never an agent with a face to the same agent without one. They
+measure the model, not the avatar. Face-versus-no-face on a frontier tutor is a
+single additional arm on any deployment already running, and no one has run it —
+which makes it one of the cheapest open questions in this survey.
 
 Two things the evidence does support. Embodiment helps *relative to a static
 agent*. Gestures, gaze and expression beat their absence on a transfer test,
@@ -10527,8 +10508,8 @@ releases are irrelevant to this work.
   must equal what the learner heard.
 - **Render the face at 25 FPS locally if you want one. Claim affect; do not
   claim learning.** d ≈ 0.85–1.01 on social presence and well-being; no learning
-  effect in real courses; g ≈ 0.19–0.20 overall. Stylised beats
-  almost-photoreal.
+  effect in real courses; and no frontier trial has ever compared the same tutor
+  with a face and without one. Stylised beats almost-photoreal.
 - **Generative world, symbolic event stream.** 39.6% best-case and 22% on the
   hard subset are not numbers you teach conservation laws with. Let the model
   write the scene; let an engine own the dynamics.
@@ -13289,18 +13270,17 @@ claims in this field fail on the first three.
 ## 9. Turning question ten on ourselves
 
 The counter-case to this entire survey, at full strength: **0.2–0.4 SD may be a
-population parameter and not a technology limit.** The band pools three different
-machines: human tutors, rule-based ITS, and three field trials of frontier
-assistants running six to eight weeks (§3). Three things that different landing in
-one place is exactly what you would see if the constraint belonged to the learners
-and the setting and not to any of the machines.
+population parameter and not a technology limit.** The concession is only evaluable
+if we say what the band is, so: **it is three field trials** (§3). Sierra Leone,
+whose unadjusted estimate is not significant; Nigeria, which lost 43% of its sample;
+Rori, which has eleven clusters and was authored by the people who sell it. A
+rounding of those three, with no pooling and no confidence interval. A number that
+thin is a weak ceiling and an equally weak floor, and the project's falsifier is
+staked on it either way.
 
-The concession is only evaluable if we say what the band is, so: **its frontier side
-is three field trials.** Sierra Leone, whose unadjusted estimate is not significant;
-Nigeria, which lost 43% of its sample; Rori, which has eleven clusters and was
-authored by the people who sell it. It is a rounding of those three, with no pooling
-and no confidence interval. A number that thin is a weak ceiling and it is also a
-weak floor, and the project's falsifier is staked on it either way.
+The reading that would hurt is that all three trials measured the same learners in
+the same schools doing the same thing, and that what they found was the learners
+rather than the technology.
 
 The evidence for that reading is not weak. The best-powered studies on record are
 nulls — lesson study at **ES 0.02** across 181 schools and 12,747 pupils with very
@@ -13341,10 +13321,10 @@ what the special-education evidence argues for on its own terms.
   expansion.**
 - **State the scarcity condition** whenever quoting an effect size measured in a
   world where the control group had nothing.
-- **State the class of system and the year alongside it.** A 1984 measurement of
-  human tutors and a 2011 measurement of rule-based ITS are evidence about those
-  machines and about nothing else (§3), and a survey that lets them stand in for a
-  frontier system has miscounted its own evidence in the direction that feels safest.
+- **Never let a measurement of something else stand in for the measurement we have
+  not taken.** Where no frontier trial exists, name the trial and its cost (§3). A
+  survey that fills the gap with a number from a different machine has not been
+  cautious; it has published a ceiling nobody measured.
 - **Ask question ten first**, of everyone, including us.
 
 The list above is incomplete. That is not modesty; it is the definition of the
@@ -13466,18 +13446,19 @@ help, sustain across an interruption, resume after a break, and abandon a failin
 strategy. A learner whose binding constraint is executive function fails at the
 *first* of those and never reaches the pedagogy at all.
 
-And this was measured twenty-five years before anyone said "AI tutor." In
-Cognitive Tutor logs: after three consecutive errors, a hint request followed only
-34% of the time — and **68% of hint levels were viewed for under one second.** The
-help was there. It was not summoned, and when summoned it was not read.
-
-That is the Khanmigo diagnosis, a quarter of a century early: the mechanism worked and
-only fired when a student recognised they needed it.
+And the clearest evidence for it comes from a frontier system measuring itself. Khan
+Academy published a null against interest: the first Khanmigo *"did not change student
+learning as much as many of us hoped it would"* — while, for the students who engaged,
+it *"did what we designed it to do."* The help was there and it worked. It had to be
+summoned, and summoning it is exactly the act a learner short on executive function
+cannot perform. The redesign moves the tutor **inside** the practice problem to delete
+the summoning step. `OBSERVED` — a vendor statement with no effect size, no design and
+no comparison group; it must not be read as a trial.
 
 ### The null that has to be respected
 
-Carnegie Mellon then did the obvious thing. They built help-seeking support, and it
-worked — help-seeking improved, durably, months after the support was removed.
+Carnegie Mellon had already done the obvious thing. They built help-seeking support,
+and it worked — help-seeking improved, durably, months after the support was removed.
 
 Domain learning did not move.
 

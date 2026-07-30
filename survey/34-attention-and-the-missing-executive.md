@@ -117,18 +117,19 @@ help, sustain across an interruption, resume after a break, and abandon a failin
 strategy. A learner whose binding constraint is executive function fails at the
 *first* of those and never reaches the pedagogy at all.
 
-And this was measured twenty-five years before anyone said "AI tutor." In
-Cognitive Tutor logs: after three consecutive errors, a hint request followed only
-34% of the time — and **68% of hint levels were viewed for under one second.** The
-help was there. It was not summoned, and when summoned it was not read.
-
-That is the Khanmigo diagnosis, a quarter of a century early: the mechanism worked and
-only fired when a student recognised they needed it.
+And the clearest evidence for it comes from a frontier system measuring itself. Khan
+Academy published a null against interest: the first Khanmigo *"did not change student
+learning as much as many of us hoped it would"* — while, for the students who engaged,
+it *"did what we designed it to do."* The help was there and it worked. It had to be
+summoned, and summoning it is exactly the act a learner short on executive function
+cannot perform. The redesign moves the tutor **inside** the practice problem to delete
+the summoning step. `OBSERVED` — a vendor statement with no effect size, no design and
+no comparison group; it must not be read as a trial.
 
 ### The null that has to be respected
 
-Carnegie Mellon then did the obvious thing. They built help-seeking support, and it
-worked — help-seeking improved, durably, months after the support was removed.
+Carnegie Mellon had already done the obvious thing. They built help-seeking support,
+and it worked — help-seeking improved, durably, months after the support was removed.
 
 Domain learning did not move.
 

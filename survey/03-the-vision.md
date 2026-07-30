@@ -40,30 +40,28 @@ So the target is not a chatbot that knows things. It is:
 
 ## 2. The constraint is no longer scarcity. It is capability.
 
-Most previous attempts at universal tutoring died on a scarcity argument. Bloom's
-1984 paper came with a built-in obituary: one tutor per child was *correct and
-unaffordable*, so the field spent forty years searching for "group-instruction
-methods as effective as one-to-one tutoring."
+Every previous attempt at universal tutoring died on a scarcity argument: one tutor
+per child was correct and unaffordable, so the field spent forty years looking for
+group methods that would work as well. The history is in **§19**. What matters here
+is that the argument was always about the price of attention, and that price is what
+has changed.
 
-Two sigma is not the number, and we should stop quoting it: it measured human tutors
-in 1984 on their own aligned tests, and this survey retired it (§24, §19). Retiring
-it does not promote whatever came next to a ceiling. VanLehn 2011 measured *human*
-tutoring at **d = 0.79** and *rule-based* intelligent tutoring systems at **0.76**;
-Nickow et al. pooled 96 randomised trials of *human* tutors at **0.288 SD** in peer
-review. Those are the correct benchmarks for a person and for a rule-based machine.
-Not one of them contains a frontier model, and no source we hold even dates the
-trials inside them — we know when the syntheses were published and not when the
-experiments were run (§09).
-
-The frontier-era measurement is Kestin's Harvard AI-tutor RCT: **d ≈ 0.63**
+So the question is what a frontier model has actually been measured to do, and the
+answer is short because the trials are few. **Kestin's Harvard RCT: d ≈ 0.63**
 (0.73–1.3 after the authors' own ceiling correction), in a median 49 minutes against
-an *assumed* 60. It carries a heavy discount and we apply it in full — the first
-author built the tutor, ran the analysis and declared no funding; the post-test was
-researcher-built and ceiling-limited; the exposure was two hours (§09). What it is
-not is a proxy for something else. It is the one number here taken on the class of
-system this project is actually building. Chasing 2σ inflates the target several-fold
-and guarantees everything real looks like a failure. Bounding the target with 1984
-and 2011 does the same damage from the other side.
+an *assumed* 60, on a tutor built to refuse to advance until the student reasoned. We
+apply its discount in full — the first author built the tutor, ran the analysis and
+declared no funding; the post-test was researcher-built and ceiling-limited; the
+exposure was two hours. **LearnLM under expert supervision matched the expert human
+tutors it was randomised against**, 93.0% against 91.2% on immediate correction, with
+its transfer advantage's credible interval spanning zero and n = 165. And three field
+trials of classroom deployment land at 0.2–0.4 SD, at an inference cost of 0.43% of a
+delivered session (§09, §37).
+
+That is the whole frontier record for tutoring, and the honest description of it is
+*thin and encouraging*. Nobody has run a trial on a system that remembers, refuses,
+grounds and pivots, so nobody knows what that measures at. **The target is not a
+number somebody else established. It is the experiment nobody has run.**
 
 And scarcity was not always the killer. **Direct Instruction won Project Follow
 Through** — the largest educational experiment ever run — on basic skills,
@@ -180,13 +178,11 @@ never in the model's manners.
 ## 5. The bet
 
 The provenance of the band is the whole bet. **0.2–0.4 SD was measured on systems
-that do almost none of this.** Two of the three figures inside it, ITS and human
-tutoring, predate the technology entirely. The third is three field trials of a
-general-purpose assistant distributed into a classroom, and that assistant answers
-freely, has no memory, cannot see the work,
-cannot point, never pivots, and agrees with everything. The one frontier trial whose
-tutor was constrained — Kestin's, which refused to advance until the student produced
-reasoning — is also the one that came in above the band (§09).
+that do almost none of this.** It is three field trials of a general-purpose
+assistant distributed into a classroom, and that assistant answers freely, has no
+memory, cannot see the work, cannot point, never pivots, and agrees with everything.
+The two frontier results that came in above it, Kestin's and LearnLM's, are the two
+where the tutor was constrained or supervised instead of handed over (§09).
 
 We call that *the floor with the brakes on*. The status of that phrase is worth
 being exact about, because §20 is, and this section was not. **"Nobody has built

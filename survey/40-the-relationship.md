@@ -305,10 +305,11 @@ of a person, with trust age-graded the wrong way for a children's product: 27% o
 13–14-year-olds against 20% of older teens. That is a `FILING`, and reads as caution as
 much as encouragement.
 
-What the disclosure finding earns is a metric, not a claim: §34's Cognitive Tutor logs
-show that after three consecutive errors on a step, the next action was a hint request
-only 34% of the time. A tutor with no capacity to be disappointed is a novel object for a
-child reacted to for eleven years, and the "I don't get it" rate would show it working.
+What the disclosure finding earns is a metric, not a claim: the help-request rate itself.
+§34 records the frontier version of the failure it would detect — a tutor whose mechanism
+worked and only ever fired when the student summoned it. A tutor with no capacity to be
+disappointed is a novel object for a child reacted to for eleven years, and the "I don't
+get it" rate would show it working.
 
 `OBSERVED — absence`: there is **no meta-analysis of the relationship–achievement
 association restricted to students with IEPs or identified disabilities.** Emslander et

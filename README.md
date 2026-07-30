@@ -156,11 +156,12 @@ beginner.
 
 ## The central claim, and how to kill it
 
-The "measured 0.2–0.4 SD band" is a rounding of three frontier-era field trials, with no pooled
-estimate, no meta-analysis and no confidence interval behind it. Its *n* is three: Sierra Leone at
-+0.258, Nigeria at +0.23–0.31, Rori at +0.37. One of those headlines is not significant unadjusted.
-One loses a third of its effect on the school's own exam. One has eleven clusters and was written
-by the provider's own staff.
+Three frontier-era field trials have deployed an LLM tutor at scale and measured a learning
+outcome: Sierra Leone at +0.258 SD adjusted, Nigeria at +0.310 SD composite, Rori at +0.37 SD.
+Three trials, no pooled estimate, no meta-analysis and no confidence interval across them. One of
+those headlines is not significant unadjusted. One loses a third of its effect on the school's own
+exam. One has eleven clusters and was written by the provider's own staff. That is the whole
+measured record, and it is far too thin to be read as a level anything settles at.
 
 The clause the source report calls the genuinely important finding is the one that keeps getting
 dropped: those gains arrive **at much lower cost**. Tutor CoPilot ran at $20 per tutor per year.
@@ -169,7 +170,7 @@ of what a delivered session costs. Kestin's arm reached its post-test in a media
 against an assumed 60. Cost and time are where the frontier-era numbers are unambiguous, and they
 are the half of the finding this survey had been leaving out.
 
-Every trial in that band ran a chatbot with a prompt. It answers freely, forgets everything between
+Every one of those trials ran a chatbot with a prompt. It answers freely, forgets everything between
 sessions, cannot see the work, cannot point, never changes method, and agrees with the learner. The
 constrained, grounded, pivoting, remembering, teachable alternative that this survey specifies has
 not been assembled, and so has never been measured against anything.

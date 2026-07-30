@@ -164,9 +164,9 @@ because one adult cannot sit beside thirty children every hour for a decade.</p>
 </div>
 
 <h2>What a frontier model has been measured to do</h2>
-<p class="sub">Seven trials have put a post-2023 LLM in front of a learner and measured a learning
-outcome. This is all of them. Every other effect size on this page came from a human tutor, a
-rule-based system, or a classroom technique, and none of those can put a ceiling on this one.</p>
+<p class="sub">Seven of these exist. That is the entire published record of a post-2023 model put
+in front of a learner with a learning outcome measured at the end, and every row carries what it
+does not establish, because the caveat is the part that says what to build next.</p>
 
 <div class="scroll">
 <table>
@@ -246,7 +246,7 @@ effort has not landed, and each one is a constraint you can design against.</p>
 </div>
 
 <figure>
-  <div class="ftitle">The first finding, in five studies</div>
+  <div class="ftitle">The first finding, in four studies</div>
   <div class="fsub">Paired outcomes, not a slope chart: the two columns are different units
   (percentages, <em>d</em>, and qualitative change), so they share no scale and the connector
   encodes pairing only, never magnitude. Hover a row.</div>
@@ -256,10 +256,10 @@ effort has not landed, and each one is a constraint you can design against.</p>
   </div>
   <div id="slope"></div>
   <figcaption>The last row is the mirror image, and the tell: students in the condition that taught
-  them <em>more</em> reported learning <em>less</em> (Deslauriers, PNAS 2019). Only the top row was
-  measured on a frontier model; the other four are human instructors, static documents and scripted
-  agents, which is what makes the dissociation general. Felt learning is what every optimisation
-  loop can measure. Real learning is what almost none of them measure.</figcaption>
+  them <em>more</em> reported learning <em>less</em> (Deslauriers, PNAS 2019). The top row is the
+  one measured on a frontier model, and it is the sharpest: the same GPT-4 that raised practice
+  performance 48% left the unassisted exam 17% worse. Felt learning is what every optimisation loop
+  can measure. Real learning is what almost none of them measure.</figcaption>
 </figure>
 
 <h2>Which teaching moves are worth building</h2>
@@ -337,7 +337,7 @@ six-year-old and a PhD student? No, and the axis it varies along is not age.</p>
 </div>
 
 <h2>What to build, and what to stop building</h2>
-<p class="sub">Twelve results with a direct consequence for a product decision.</p>
+<p class="sub">Eleven results with a direct consequence for a product decision.</p>
 
 <div class="grid">
   <div class="card"><span class="tag">Kills a product</span><h4>The exit ticket is not the outcome</h4><p>Tutor CoPilot, 2024, a frontier LLM behind 900 human tutors, moved its in-product exit ticket <b>+4pp</b> and returned a null on the end-of-year test. That dissociation between the proxy a product can see and the outcome anyone cares about is the most reproducible finding in this literature, and it predates LLMs by a decade.</p></div>
@@ -345,11 +345,10 @@ six-year-old and a PhD student? No, and the axis it varies along is not age.</p>
   <div class="card"><span class="tag">Inverts the ask</span><h4>The audience is a net cost</h4><p>Teaching to a camera beat teaching to one student and to seven — on transfer, with lower pulse rate, lower anxiety, lower load and <em>more</em> idea units. Presenting to a room is a barrier that buys nothing.</p></div>
   <div class="card"><span class="tag">Must-fix bug</span><h4>Vision models erase the mistakes</h4><p>Asked to transcribe student work, VLMs silently <b>repair</b> the errors — the sign, the paren, the missing step. The mistakes are the entire reason for looking at the page.</p></div>
   <div class="card"><span class="tag">Boundary</span><h4>Scheduling fails on structure</h4><p>Adaptive scheduling: <b>11 of 14</b> trials significant on flashcard-type material, <b>0 of 8</b> on interdependent content. Duolingo's scheduler vs plain Leitner on ~1M students: −7.3% practice.</p></div>
-  <div class="card"><span class="tag">Ceiling</span><h4>Knowledge tracing is exhausted</h4><p>An <em>untrained</em> LSTM is within 0.03 AUC of the trained one. An oracle that knows the exact moment of learning beats simple logistic PFA by <b>0.002</b>. The headroom is not in the model.</p></div>
   <div class="card"><span class="tag">Backfire</span><h4>Announced devil's advocate</h4><p>Saying "let me play devil's advocate" produces cognitive <em>bolstering</em> of the learner's original view. The exit is unannounced, model-owned objection.</p></div>
   <div class="card"><span class="tag">Fairness</span><h4>Detectors are conventionality meters</h4><p><b>61.22%</b> false-positive on non-native writers versus 5.19% native. Students taught sentence frames <em>as an accommodation</em> are maximally exposed, because the accommodation lowers perplexity by design.</p></div>
   <div class="card"><span class="tag">Objective</span><h4>The Null-Learner Test</h4><p>Simulate an agent maximising your metric while teaching nothing. DAU, streaks, XP and time-on-app all pass, so all are disqualified as objectives.</p></div>
-  <div class="card"><span class="tag">Reach</span><h4>A phone call beats the avatar</h4><p>Human-delivered voice call + SMS: <b>+0.327 SD</b> across 5 countries, N = 8,902. SMS alone: +0.083, null in three. The mechanism is a person on the line at a scheduled time, which is the one thing a model can now supply at zero marginal cost. Bandwidth is doing none of the work.</p></div>
+  <div class="card"><span class="tag">Reach</span><h4>A scheduled call, on any phone</h4><p>Human-delivered voice call + SMS: <b>+0.327 SD</b> across 5 countries, N = 8,902. SMS alone: +0.083, null in three. What carries it is someone on the line at an appointed time, which is the one thing a model can now supply on every phone at no marginal cost. Bandwidth is doing none of the work.</p></div>
   <div class="card"><span class="tag">Frontier</span><h4>Real-time is solved</h4><p>640×368 at 25 FPS, <b>~200 ms model-side latency</b>: shorter than the pause between two people in conversation. The world persists, and events arrive on a stream of their own.</p></div>
   <div class="card"><span class="tag">Empty chair</span><h4>Zero RCTs on disabled learners</h4><p>ERIC + Europe PMC, censused twice: 30 GenAI-education RCTs mention students, <b>0</b> mention disability. Every effect size in this field was measured on somebody else's child.</p></div>
 </div>
@@ -472,13 +471,12 @@ field fail on the first three.</p>
   <em>none</em> of them are.</p></div>
 
   <div class="q"><h4>What would falsify your thesis — and has it already happened?</h4>
-  <p>The counter-case: 0.2–0.4 SD may be the modal result of educational intervention research
-  in general, in which case a frontier system landing there tells you nothing about the model.
-  That is why the falsifier we accept is an active control — a plain frontier chatbot, run
-  against the assembled system on a delayed unassisted test — and never a band pooled across
-  human tutors, 2011 courseware and seven LLM deployments. Fütterer 2026 has already run that
-  comparison against a lighter set of mechanisms and found no advantage on knowledge, effort or
-  strategy use. The best-powered studies on record are nulls. And our own evidence repeatedly
+  <p>The falsifier we accept is an active control: a plain frontier chatbot, run against the
+  assembled system on a delayed, unassisted, novel-item test. If the mechanisms do not beat that
+  arm, they are decorative and the model was doing the work. Fütterer 2026 has already run that
+  comparison against a lighter set of mechanisms, n = 371, and found no advantage on knowledge,
+  effort or strategy use. Gu &amp; Yan put LLM tutoring at <b>g = 0.077</b> without teacher
+  support. The best-powered frontier studies on record are nulls, and our own evidence repeatedly
   shows elaboration losing to simplicity: five explanation rungs did not beat three
   (<b>p = .738</b>), multiple representations harmed, mixed agent panels lost to one good agent.</p></div>
 </div>
@@ -494,7 +492,7 @@ run in the demos.</p>
     to withdraw the central claim. Persistent contents, an abstract, and every claim carrying an
     evidence label.</p>
     <div class="nm"><span data-gen="sections">47</span> SECTIONS ·
-      <span data-gen="words">118,428</span> WORDS</div>
+      <span data-gen="words">118,241</span> WORDS</div>
   </a>
   <a href="demos/">
     <div class="nt">The demos</div>
@@ -518,11 +516,11 @@ ledger itself, which we had been silently editing inside a table headed
 <div class="scroll">
 <table>
   <tr><th>We said</th><th>Actually</th></tr>
-  <tr><td><b>C-12</b> · Nickow pooled tutoring <b>0.37</b>, published in five places, including a
-    chart bar labelled "the honest field-wide number"</td>
-    <td><b>0.288.</b> The 0.37 is the superseded 2020 working-paper figure, and
-    <code>survey/09</code> states our own rule to discount working-paper effect sizes. We broke our
-    own rule on the front page</td></tr>
+  <tr><td><b>C-1</b> · Sierra Leone <b>+0.258 SD</b>, called "the strongest evidence in the history
+    of educational technology"</td>
+    <td>The unadjusted estimate is <b>+0.216, SE 0.137, not significant.</b> The effect loads
+    entirely on Grade 8, gaps widened at +0.195 SD per SD of baseline, attrition favoured
+    treatment, and the pre-registered subdomain analyses were abandoned</td></tr>
   <tr><td><b>C-13</b> · Kestin AI tutor, a range spliced from two different estimands and then
     plotted at its midpoint</td>
     <td>A range that exists in no source. 0.63 is the regression estimate; the upper figure
@@ -595,14 +593,12 @@ const LADDER = {
     {label:"Scaffolding (computer)", cls:"ITS · Belland 2017",       note:"144 pre-LLM studies, the only directly meta-validated computer-based form", v:0.46, ok:true},
     {label:"Interleaving",           cls:"TECHNIQUE · meta",           note:"varies sharply by domain",                            v:0.42,  ok:true},
     {label:"Mayer design principles",cls:"TECHNIQUE · multimedia meta",note:"contiguity alone reaches 0.74",                       v:0.38,  ok:true},
-    {label:"Tutoring, pooled RCTs",  cls:"HUMAN · Nickow 2024",      note:"96 randomised studies of human tutoring, nearly all pre-GPT-4. The field-wide figure for a person. Was 0.37 in the 2020 working paper", v:0.288, ok:true},
     {label:"Productive failure",     cls:"TECHNIQUE · meta",           note:"requires prior knowledge; fails without it",          v:0.36,  ok:true},
     {label:"Voice call + SMS",       cls:"HUMAN · 5-country RCTs",   note:"N = 8,902, and the mechanism is a person on the line at a scheduled time", v:0.327, ok:true},
     {label:"VR vs desktop",          cls:"TECHNIQUE · 35 RCTs",        note:"the presence premium, and it is modest",              v:0.24,  ok:false},
     {label:"Animation vs static",    cls:"TECHNIQUE · meta",           note:"affect moves; learning mostly does not",              v:0.23,  ok:false},
     {label:"Orton-Gillingham",       cls:"HUMAN · meta",             note:"p = .40, NOT significant against active comparison",  v:0.22,  ok:false},
     {label:"Robot vs same on tablet",cls:"ITS · 78 studies",         note:"−0.06 when the robot replaces a teacher",             v:0.20,  ok:false},
-    {label:"Pedagogical avatars",    cls:"ITS · 43 studies",         note:"pre-LLM avatars: affect d ≈ .85–1.01, learning ≈ 0",  v:0.19,  ok:false},
     {label:"Slides vs no slides",    cls:"HUMAN · meta",             note:"CI [−0.103, 0.236]. A deck buys nothing by itself",   v:0.067, ok:false},
     {label:"Expanding SRS intervals",cls:"ITS · k = 54",             note:"I² = 0%, a clean and well-powered nothing",           v:0.032, ok:false},
     {label:"Lesson study",           cls:"HUMAN · 181 schools",      note:"12,747 pupils · p = 0.65 · no dose-response",         v:0.02,  ok:false},
@@ -616,15 +612,14 @@ const SLOPE = {
   rows:[
     {label:"AI assistance",          a:"+48%",        b:"−17%",         bad:true,  cls:"FRONTIER · Bastani 2025, GPT-4", note:"Practice soared. Unassisted exam collapsed."},
     {label:"Preference vs knowledge",a:"d ≈ 0.48",    b:"0",            bad:false, cls:"TECHNIQUE · Buljan 2018, n = 334 adults", note:"Infographic vs plain-language summary, immediate quiz. Preference moves; knowledge does not. Survives an explicit debiasing video (Kaspar 2025)."},
-    {label:"Pedagogical avatars",    a:"d = .85–1.01",b:"no change",    bad:false, cls:"ITS · pre-LLM avatars", note:"Three 2024 field experiments on scripted agents. Affect moved a lot; learning did not move."},
     {label:"Animation vs static",    a:"interest ↑",  b:"no change",    bad:false, cls:"TECHNIQUE · multimedia meta", note:"Engagement is real. Transfer is not."},
     {label:"Active learning",        a:"felt worse",  b:"learned more", bad:false, invert:true, cls:"HUMAN · Deslauriers 2019", note:"Harvard physics, human instructors — the mirror image, and the tell."}
   ]
 };
 
-/* The heading claims these are ordered, so order them here rather than trusting
-   the literal to stay sorted through edits. C-12 dropped Nickow from 0.37 to
-   0.288 and left the row where it was; the chart then contradicted its own
+/* The heading claims these are ordered, so order them here instead of trusting the
+   literal to stay sorted through edits. A published correction once revised a value
+   downward and left the row in place, and the chart then contradicted its own
    caption. Both the chart and the generated table read this one array. */
 LADDER.rows.sort((a, b) => b.v - a.v);
 
@@ -660,9 +655,9 @@ function renderBars(host, spec){
   const W = 720, H = spec.rows.length * ROW + PAD * 2;
   const trackX = LW + 10, trackW = W - LW - RW - 22;
   const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, role:'img',
-    'aria-label':'Bar chart of effect sizes for learning techniques, ordered largest to smallest, '
-      + 'each labelled with the class of system that produced it: HUMAN, ITS, FRONTIER or '
-      + 'TECHNIQUE. A table view follows.'});
+    'aria-label':'Bar chart of effect sizes for instructional techniques, ordered largest to '
+      + 'smallest, each labelled with what it was measured on: TECHNIQUE, HUMAN or ITS. '
+      + 'No tutoring-system estimate appears. A table view follows.'});
   spec.rows.forEach((r, i) => {
     const y = PAD + i * ROW + ROW / 2;
     const g = mk('g', {});
@@ -687,8 +682,7 @@ function renderBars(host, spec){
     val.textContent = fmt(r.v);
     g.appendChild(val);
     const code = r.cls.split(' · ')[0];
-    const cl = mk('text', {x:W - 6, y:y+4, 'text-anchor':'end', class:'cx',
-      style: code === 'FRONTIER' ? 'fill:var(--real);opacity:1' : ''});
+    const cl = mk('text', {x:W - 6, y:y+4, 'text-anchor':'end', class:'cx'});
     cl.textContent = code;
     g.appendChild(cl);
     g.appendChild(mk('rect', {x:0, y:y-ROW/2, width:W, height:ROW, fill:'transparent'}));

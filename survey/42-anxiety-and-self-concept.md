@@ -167,10 +167,9 @@ The line a tutoring system can act on is in the same paper:
 `OBSERVED — absence`, declared by the authors in 2007 and, on the searches run for the
 source report, still true in 2026. Latency falling while accuracy falls on items whose
 difficulty is rising is computable directly from tutor telemetry, and it distinguishes
-avoidance from disengagement. §34 documents its sibling in Cognitive Tutor logs: after
-three consecutive errors a hint request followed only 34% of the time, and 68% of hint
-levels were viewed for under one second. Help-avoidance and speed-avoidance are the
-same child.
+avoidance from disengagement. §34 documents its sibling: help that works when it is
+summoned, and goes unsummoned by exactly the students who need it. Help-avoidance and
+speed-avoidance are the same child.
 
 The design that follows is **load-flat escalation**: on the avoidance signature, hold
 storage demand constant while conceptual demand rises, keeping the carry and

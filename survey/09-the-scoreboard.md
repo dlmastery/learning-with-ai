@@ -25,7 +25,7 @@ Here is what the record currently says, and what it does not.
 ## 1. What has been measured
 
 Every number in this section was measured on a frontier model. That is the whole
-inclusion rule, and it is the reason the table is shorter than it used to be: a
+inclusion rule, and the reason the table is shorter than it used to be: a
 measurement taken on a human tutor or on rule-based courseware is evidence about a
 human tutor or about rule-based courseware, and this section is about neither.
 
@@ -63,7 +63,7 @@ the delivered cost is near zero — the other 99.57% is human supervision, and �
 where that argument is settled.
 
 Two frontier results sit outside that pattern, and both come from constraining the
-tutor rather than distributing it. **Kestin's d ≈ 0.63** cleared an active control in
+tutor instead of distributing it. **Kestin's d ≈ 0.63** cleared an active control in
 a median 49 minutes, on a tutor built to refuse to advance until the student
 reasoned. It also carries the heaviest discount in the table: two hours of exposure,
 a researcher-built ceiling-limited post-test, and a first author who built the tutor,

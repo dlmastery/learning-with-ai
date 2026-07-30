@@ -22,22 +22,26 @@ misidentified what it is.**
 
 ---
 
-## 1. Presence is worth about 0.2, and three literatures agree
+## 1. Presence is worth about 0.2, and two literatures agree
 
 The first question is narrower than "does the physical matter": does adding
 *presence* — a face, a body, a room — to otherwise identical content help?
 
-Three independent literatures converge on the same number:
+Two independent literatures converge on the same number:
 
 | Comparison | Effect |
 |---|---|
-| On-screen pedagogical agent vs none (43 studies) | **g ≈ 0.19** |
 | Physical robot vs the same content on a tablet (78 controlled studies) | **d = 0.20** |
 | Immersive VR vs desktop (35 RCTs) | **ES = 0.24** |
 
-A real premium, and a modest one. But the number that should govern any decision
-built on it is a different one: **the effect is dwarfed by the control condition you
-choose.** The robot meta-analysis spans **+0.75** (robot versus nothing) to
+A real premium, and a modest one. The narrower question — an on-screen face against
+the *same* tutor without one — has no frontier measurement at all: the 2025
+generative-agent trials compare a tutor to no tutor and never run the face arm
+(§16). It is a one-arm addition to any deployment already running, and nobody has
+run it.
+
+But the number that should govern any decision built on what is measured is a
+different one: **the effect is dwarfed by the control condition you choose.** The robot meta-analysis spans **+0.75** (robot versus nothing) to
 **−0.06** (robot *replacing* the teacher). And its Europe/non-Europe reporting gap
 is **0.36 SD — larger than the effect being estimated.**
 

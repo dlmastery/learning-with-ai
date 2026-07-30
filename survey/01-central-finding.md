@@ -159,11 +159,10 @@ post-tests on other topics. The instrument exists. The field does not use it.
 And the field's most-cited meta-analysis (Wang & Fan 2025, g = 0.867, >250
 citations) was **retracted in 2026**; the authors have not responded.
 
-What survives, each figure carrying the machine it measured: supervised LLM tutoring
-in six-to-eight-week classroom deployments lands at **0.2–0.4 SD**, which is a
-rounding of three field trials; pre-LLM rule-based ITS at 0.32–0.42, a range spliced
-from two 2014 meta-analyses; in-person human tutoring at **0.288** across 96 RCTs.
-Three machines, one band. That is a real, useful, affordable effect and not an
-order-of-magnitude jump. It is also not a ceiling — none of those trials went looking
-for the limit of a frontier system, and two of the three figures contain no frontier
-system at all (§09). GenAI without teacher support is null (g = 0.077).
+What survives: supervised LLM tutoring in six-to-eight-week classroom deployments
+lands at **0.2–0.4 SD**, a rounding of three field trials with no pooling and no
+confidence interval, **at an inference cost measured at 0.43% of a delivered
+session** (§37). That is a real and affordable effect, it is not an order-of-magnitude
+jump, and it is not a ceiling — no trial has yet been run on a constrained,
+remembering, grounded system, so nobody has measured where the limit is (§09). GenAI
+without teacher support is null (g = 0.077).

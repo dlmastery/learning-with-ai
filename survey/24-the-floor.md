@@ -18,8 +18,15 @@ Same principle. Same literature. A factor of three between the flattering number
 and the corrected one.
 
 That is the ground this survey stands on, and this section is where a sceptical
-reader should come to check the rest of it. Nothing here is about AI. Everything
-here is the baseline any AI claim has to clear.
+reader should come to check the rest of it.
+
+Nothing here is a measurement of a tutor, human or machine. These are measurements of
+**what moves human memory and understanding** — retrieval, spacing, interleaving,
+worked examples, the reversal that comes with expertise. They constrain what any
+system should *do* and they set no ceiling on what one can *achieve*, because none of
+them measured a system at all. Where this section used to compare a frontier model
+against pre-LLM tutoring software, it no longer does: that evidence is in **§19** as
+history, and the measurements of frontier systems are in **§09**.
 
 ---
 
@@ -30,19 +37,22 @@ I² between 77% and 91%: 84% (Rowland), 88% (Yang et al.), 77% (Brunmair &
 Richter), ~90% (Tetzlaff et al.). A pooled g of 0.50 is not a prediction that you
 will get 0.50. It is a one-number summary of a very lumpy distribution.
 
-**Test alignment inflates effects by roughly 2–3×.** Documented three separate
-times: Bloom's 1984 human-tutoring studies gave **0.84 SD on the authors' own narrow tests
-versus 0.27 SD on broad standardised tests**; Kulik & Fletcher say the size of the
-ITS improvement "depended to a great extent" on whether the test was locally
-developed or standardised; Slavin's mastery-learning synthesis found positive
-effects on experimenter-made measures and "essentially no evidence" on
-standardised ones. **Any evaluation in which the system's designers also wrote the
-test should be discounted before you read the number.** Say where that discount comes
-from, though, because it gets applied to modern trials and its whole evidential base
-is pre-LLM: two early Chicago dissertations, an ITS meta-analysis and a
-mastery-learning synthesis. It is a claim about who writes the test and not about
-what kind of system sits behind it, which is why we think it ports. Nobody has
-checked that it does.
+**Test alignment shrinks effects, and the frontier trials show it directly.** Two
+measurements, both from §09's table. Nigeria's composite moved **+0.310 SD** on the
+intervention-aligned instrument and **+0.206 SD** on the school's own third-term
+exam — the same students, the same weeks, a third of the effect gone when the test
+stopped being the one the intervention was shaped around. Tutor CoPilot is the
+sharper version: **+4 percentage points on the in-platform exit ticket and no
+significant movement on the end-of-year state test.** **Any evaluation in which the
+system's designers also wrote the test should be discounted before you read the
+number** — and Kestin's d ≈ 0.63, on a researcher-built post-test that hit its
+ceiling, is the row in this survey that the rule bites hardest.
+
+**How large the discount should be is not established for frontier systems.** The
+two observations above are one shrinkage and one disappearance, which is a direction
+and not a coefficient. Sierra Leone shows what removes the doubt instead of
+estimating it: the test was written and blind-scored by Oxford MeasurEd, an
+organisation with no stake in the result.
 
 **Corrections shrink effects, and most effects have never been corrected.** The
 modality effect went 0.38 → 0.20 under publication-bias adjustment. Almost nothing
@@ -140,15 +150,14 @@ strongest evidence against the naive form of that argument. It does not overturn
 self-explanation as an activity; it means bolting a prompt onto a worked example is
 not the way to get it.
 
-**Rule-based intelligent tutoring in K–12 mathematics is near zero.**
-Steenbergen-Hu & Cooper (2013): ITS "had no negative and perhaps a small positive
-effect," with effects *larger* for the general population than for low achievers.
-K–12 mathematics is the population most often invoked in AI-tutoring pitches, and it
-is the population where the pre-LLM machine measured approximately nothing. Read it
-for what it measured: a null on rule-based software, in the hardest population, on
-the subject with the least give in it. It says nothing about what a frontier system
-will do there, and it is the reason a frontier system that ships into K–12
-mathematics owes a delayed unassisted test before it claims anything.
+**K–12 mathematics is where the frontier nulls are.** It is the population most often
+invoked in AI-tutoring pitches and the one where the measurements are worst. Tutor
+CoPilot, preregistered and independently funded, moved the exit ticket and did **not
+move the end-of-year state maths test**. Sierra Leone's headline sits entirely on
+Grade 8; its **Grade 7 main treatment coefficient is −0.078, p < 0.05** (§09). Both
+are frontier models, in school mathematics, in the last two years. Anything shipping
+into this subject owes a delayed unassisted test before it claims anything, and the
+two trials that looked hardest are the two with the least to show.
 
 The founding retrieval-practice result had a design confound. Soderstrom, Kerr
 & Bjork (2016) replicated Karpicke & Roediger (2008) between subjects, then
@@ -217,11 +226,10 @@ on it — so an educator who searches the literature is given a consistent and
 inaccurate endorsement. An AI that grills a learner for a sensory-modality label is
 automating a forty-year null at scale.
 
-Bloom's two sigma is retired in this survey; the argument and the replacement
-figures are in **§19** and **§03**, and are not repeated here. The part that matters
-for everything downstream is that it must not return as an implicit yardstick. It
-was a 1984 measurement of human tutors on tests aligned to their own instruction. It
-sets no target for a machine, high or low.
+The tutoring effect sizes this survey used to quote here have been removed from the
+argument entirely. They measured human tutors and rule-based courseware, they are
+history rather than evidence about a model, and they now live only where history is
+the subject (**§19**). Nothing downstream should be calibrated against them.
 
 ---
 
@@ -258,26 +266,25 @@ reviewers' words, "dominated by laboratory studies of university undergraduates.
 - **Every effect size in this survey carries its interval and, where reported, its
   I².** Retrieval practice is g = 0.499 **with I² = 88%**, and the second half of
   that sentence is not optional.
-- **Discount any evaluation whose designers wrote the test.** The documented
-  inflation is 2–3×.
+- **Discount any evaluation whose designers wrote the test.** Nigeria lost a third of
+  its effect on the school's own exam; Tutor CoPilot lost all of it on the state test.
+  The direction is established and the size is not.
 - **Per-material policies, never global ones.** Interleaving is g = 0.34 in
   mathematics and g = −0.39 in vocabulary. A single switch cannot serve both.
 - **Do not claim to measure germane load.** Use the design effects; drop the
   mediation story.
 - **No modality labels, ever.** Adapt on prior knowledge, task properties,
   self-regulation and motivation type, the four adaptation targets with evidence.
-- **Assume better controls shrink the number.** Rule-based ITS effects were
-  significantly larger in earlier studies than in later, better-controlled ones.
-  That is a regularity about evaluation quality, and it is a warning about our own
-  first result. It is a fact about a different class of machine, so it forecasts no
-  trajectory for a frontier one. Write every claim to survive the trial that has an
+- **Assume better controls shrink the number, starting with our own.** Peer review
+  moved Nie's headline toward smaller and the field's biggest meta-analytic estimate
+  was retracted outright (§09). Write every claim to survive the trial that has an
   active control, an independent test and a delay.
-- **Benchmark honestly.** An AI tutor showing **d ≈ 0.4 on a test it did not help
-  design, against an active control, at a delayed post-test** would sit at the top
-  of this entire literature. Above 0.8, the burden falls on the evaluation: show the
-  test was independent and the control was active, and the number stands. That
-  burden is about study design and carries no prior about what a frontier system can
-  reach, because nothing measured in this section was one.
+- **Benchmark against the measurement, never against a borrowed number.** The bar for
+  any claim we make is **a test we did not help design, an active control, and a
+  delayed post-test** — that combination has never been run on a frontier tutor, so
+  the honest statement of the target is that the experiment is open rather than that
+  some prior result caps it. Where a number looks large, interrogate the test and the
+  control, and publish both alongside it.
 
 The floor is not low. Retrieval practice and distributed practice are among the
 largest, most replicated effects anyone in education has ever measured, and they
