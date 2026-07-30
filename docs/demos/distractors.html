@@ -74,8 +74,8 @@ input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
 
 <section class="orient">
   <div class="o"><b>What this is</b><p>Two multiple-choice generators on the same stem, side by side. One asks for plausible wrong answers. The other models a named <em>misconception</em> first and derives the option from it.</p></div>
-  <div class="o"><b>Why it matters</b><p>LLMs produce distractors that are mathematically valid and pedagogically empty — they are &ldquo;less adept at anticipating common errors among real students&rdquo;, and that survived fine-tuning. Modelling the error as a first-class object lets a <b>7B model beat GPT-4o</b>.</p></div>
-  <div class="o"><b>How to use it</b><p>Generate from both and compare. Generator A's options are a function of the <em>key</em> — so a student choosing one tells you nothing. Generator B's map to specific errors, which makes a wrong answer diagnostic. Watch the collision counter reject options that two misconceptions would both produce.</p></div>
+  <div class="o"><b>Why it matters</b><p>LLMs produce distractors that are mathematically valid and pedagogically empty. They are &ldquo;less adept at anticipating common errors among real students&rdquo;, and that survived fine-tuning. Modelling the error as a first-class object lets a <b>7B model beat GPT-4o</b>.</p></div>
+  <div class="o"><b>How to use it</b><p>Generate from both and compare. Generator A's options are a function of the <em>key</em>, so a student choosing one tells you nothing. Generator B's map to specific errors, which makes a wrong answer diagnostic. Watch the collision counter reject options that two misconceptions would both produce.</p></div>
 </section>
 
 
@@ -87,10 +87,10 @@ slider.</p>
 <div class="note warn"><b>One honesty note before you start.</b> Generator A is <em>not</em> an
 LLM and this page does not claim to measure one. It is a deterministic stand-in: a generator that
 is conditioned on the <em>answer</em> and nothing else. The reason that stand-in is fair is
-structural rather than empirical, and it is stated precisely in §3 — any option set that is a
+structural rather than empirical, and it is stated precisely in §3. Any option set that is a
 function of the key alone <strong>cannot</strong> carry information about which error was made.
-The empirical claim that real LLMs behave this way is a citation, in §5, not a measurement made
-here.</div>
+The empirical claim that real LLMs behave this way rests on the citations in §5. This page
+measures nothing about any model.</div>
 
 <h2>1 · One stem, two generators</h2>
 
@@ -106,13 +106,13 @@ here.</div>
 
 <div class="gens">
   <div class="gen a">
-    <h4>Generator A — surface</h4>
+    <h4>Generator A · surface</h4>
     <div class="ask">prompt: "write three plausible wrong answers"</div>
     <div id="aopts"></div>
     <div id="astat"></div>
   </div>
   <div class="gen b">
-    <h4>Generator B — error-first</h4>
+    <h4>Generator B · error-first</h4>
     <div class="ask">prompt: "name the misconception, apply it, report what it yields"</div>
     <div id="bopts"></div>
     <div id="bstat"></div>
@@ -126,9 +126,8 @@ here.</div>
 
 <div class="panel">
   <div class="ptitle">Error bank → candidate → filters → option</div>
-  <div class="psub">Every row is recomputed from the current parameters. A rejected candidate is
-  not a failure of the generator — it is the generator refusing to ship an item that cannot
-  discriminate.</div>
+  <div class="psub">Every row is recomputed from the current parameters. A rejected candidate is the
+  generator refusing to ship an item that cannot discriminate.</div>
   <div class="scroll"><table id="pipeline"></table></div>
   <div id="pipeverdict"></div>
 </div>
@@ -138,7 +137,7 @@ here.</div>
   <div class="mono-block" id="pipesrc"></div>
 </div>
 
-<h2>3 · Why the comparison is structural, not rhetorical</h2>
+<h2>3 · Why the comparison is structural</h2>
 
 <div class="panel">
   <div class="ptitle">The one-line argument</div>
@@ -173,13 +172,13 @@ Generator B:  options = g(E_i, stem-parameters), one per named error
 <div class="panel">
   <div class="ptitle">Exhaustive grid over each stem's parameters</div>
   <div class="psub">For every parameter setting the template admits, both generators run and three
-  quantities are counted. This takes a moment and then it is exact — it is a full enumeration, not
-  a sample.</div>
+  quantities are counted. This takes a moment and then it is exact, because it enumerates every
+  setting the template admits instead of sampling.</div>
   <div class="row"><button class="pri" id="sweep">Run the sweep</button>
     <span style="font:12px var(--mono);color:var(--ink-3)" id="sweepstat"></span></div>
   <div class="legend" style="margin-top:16px">
-    <span><i style="background:var(--felt)"></i>Generator A — options that coincide with a named error, by accident</span>
-    <span><i style="background:var(--real)"></i>Generator B — items yielding 3 usable, mutually distinct diagnostic options</span>
+    <span><i style="background:var(--felt)"></i>Generator A · options that coincide with a named error, by accident</span>
+    <span><i style="background:var(--real)"></i>Generator B · items yielding 3 usable, mutually distinct diagnostic options</span>
   </div>
   <div id="sweepchart"></div>
   <div class="scroll"><table id="sweeptable"></table></div>
@@ -194,21 +193,21 @@ Generator B:  options = g(E_i, stem-parameters), one per named error
   <tr><td><b>Feng, Woodhead &amp; Lan 2024</b><br /><span style="font-size:12.5px;color:var(--ink-3)">Findings of NAACL</span></td>
     <td>A wide sweep of LLM approaches — in-context learning through fine-tuning — on a real-world
     math MCQ dataset. Verbatim: <em>"although LLMs can generate some mathematically valid
-    distractors, they are <strong>less adept at anticipating common errors or misconceptions
-    among real students</strong>."</em> The gap is not a prompting problem:
+    distractors, they are less adept at anticipating common errors or misconceptions
+    among real students."</em> The gap is not a prompting problem:
     <strong>it survived fine-tuning.</strong></td><td><code>MEASURED-BENCH</code></td></tr>
-  <tr><td><b>DiVERT</b> — Fernandez et al. 2024<br /><span style="font-size:12.5px;color:var(--ink-3)">EMNLP</span></td>
+  <tr><td><b>DiVERT</b> (Fernandez et al. 2024)<br /><span style="font-size:12.5px;color:var(--ink-3)">EMNLP</span></td>
     <td>Instead of generating distractors directly, learns an <strong>interpretable latent
     variable representing the error, as text</strong>, and generates from it. A
     <strong>7B open-source model beat GPT-4o-based state of the art</strong> on downstream
     distractor generation, and math educators judged its error labels of quality comparable to
-    human-authored ones. Modelling the error is not a stylistic preference — it changes which
+    human-authored ones. Modelling the error is not a stylistic preference; it changes which
     model wins.</td><td><code>MEASURED-BENCH</code></td></tr>
-  <tr><td><b>Dhanvijay et al. 2025</b><br /><span style="font-size:12.5px;color:var(--ink-3)">Adv Physiol Educ — the null</span></td>
+  <tr><td><b>Dhanvijay et al. 2025</b><br /><span style="font-size:12.5px;color:var(--ink-3)">Adv Physiol Educ, the null</span></td>
     <td>AI- and human-generated MCQs showed <strong>no significant difference in discrimination
     index (p = 0.17)</strong>, despite significant differences in difficulty and in the number of
-    non-functioning distractors. The "AI items are worse" claim is dimension-specific, not global
-    — which is a reason to name the dimension you care about rather than to argue about
+    non-functioning distractors. The "AI items are worse" claim is dimension-specific rather than
+    global, which is a reason to name the dimension you care about instead of arguing about
     quality.</td><td><code>MEASURED-BENCH</code></td></tr>
 </table>
 </div>
@@ -217,7 +216,7 @@ Generator B:  options = g(E_i, stem-parameters), one per named error
 prior over "wrong answer" is a prior over <em>plausible text</em>, learned from a corpus in which
 correct answers dominate and student errors are rare and unlabelled. The empirical distribution of
 student errors is a different distribution entirely, and it is not recoverable from text
-describing the domain. It is recoverable only from <strong>response data</strong> — which is
+describing the domain. It is recoverable only from response data — which is
 exactly what the error bank in this demo is a hand-built stand-in for, and exactly what a real
 system would have to mine.</div>
 
@@ -232,7 +231,7 @@ system would have to mine.</div>
     a slider.</li>
     <li>That the hard part is <strong>collision, not creativity</strong>. The sweep shows a real,
     non-trivial fraction of parameter settings where two distinct misconceptions land on the same
-    value, or where a misconception lands on the key — items that look fine and cannot
+    value, or where a misconception lands on the key. Those items look fine and cannot
     discriminate. A generator without this check ships them silently.</li>
     <li>That the advantage is <strong>structural</strong>. An option set that is a function of the
     key alone is provably uninformative about the error. No amount of plausibility tuning changes
@@ -243,7 +242,7 @@ system would have to mine.</div>
     <li><strong>Nothing about LLMs.</strong> No model runs here. Generator A is a stand-in chosen
     to have one property — conditioning on the answer only — and the claim that real LLM
     distractor generation shares that property is Feng et al.'s measurement, not this page's.</li>
-    <li><strong>That the error bank is right.</strong> The misconceptions here are hand-authored
+    <li>That the error bank is right. The misconceptions here are hand-authored
     from the well-known literature on fraction and equation errors. A real system's bank must be
     <em>mined from response data</em> and its frequencies estimated, because which errors are
     common is an empirical question and the whole diagnostic value depends on the answer.</li>
@@ -251,7 +250,8 @@ system would have to mine.</div>
     <em>design</em>; whether the resulting items have adequate discrimination, difficulty and
     dimensionality is a psychometric question that requires response data from real students.
     Nothing here is a substitute for field-testing.</li>
-    <li>That a misconception-derived distractor teaches better. It carries more diagnostic information — a property of the item, not a measured learning gain.</li>
+    <li>That a misconception-derived distractor teaches better. It carries more diagnostic
+    information. That is a property of the item; no learning gain was measured here.</li>
   </ul>
 </div>
 

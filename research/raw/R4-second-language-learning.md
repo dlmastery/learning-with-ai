@@ -751,6 +751,26 @@ mispronunciation-detection literature on the same benchmark reports F1 = 59.52%
 `MEASURED-BENCH`. Read speech is the easy case: known target text, no spontaneity, no
 disfluency.
 
+**Measured against marketed.** Pearson's copy for Versant says its scores are "virtually
+indistinguishable from expert human scoring" on the strength of a machine–human correlation
+of **r = 0.97**. That figure is from a vendor technical report, is the *whole-test Overall*
+score against a purpose-built human criterion on n = 143, and the pronunciation subscore is
+0.88 while the correlation with an ILR speaking interview is **0.75 on n = 51**. The
+peer-reviewed comparison is ETS's SpeechRater (Zechner, Higgins & Xi, SLaTE 2007,
+doi:10.21437/slate.2007-31): machine–human **r = 0.61** on a single item and **0.68** on a
+full six-item form, against human–human 0.77–0.94, with the authors' own verdict that "a
+large gap still remains." On the open speechocean762 benchmark the granularity gradient is
+explicit: utterance total score correlates with human raters at **r = 0.811**, phone accuracy
+at 0.693, and **word stress at 0.361**. And Wang & Min (2026), *Language Testing*
+43(2):165–196, meta-analysing 67 studies and 392 effect sizes, put the field-wide
+human–machine correlation at **r = .654**, pronunciation specifically at **.606**, with
+**system developer and rater expertise as significant moderators and ASR accuracy not
+one** — which is evidence these engines score by proxy features rather than by hearing what
+was said. `MEASURED-BENCH` / `VENDOR` as marked.
+
+These engines rank whole speakers well and localise individual errors poorly. The product
+being sold is the localisation; the validation number comes from the ranking.
+
 Against that, a useful equivalence result. Neri, Mich, Gerosa & Giuliani (2008),
 *Computer Assisted Language Learning* 21(5), gave eleven-year-olds either teacher-fronted
 pronunciation instruction or a CAPT system with a **simple** ASR component, and both
@@ -852,51 +872,105 @@ rated test, not spontaneous interaction, and it is one non-randomised study.
 ## 6. The critical-period question, stated accurately
 
 The folk version says adults cannot learn languages. The literature says something much
-narrower, and the most-cited recent attempt to say it quantitatively has a published
-reanalysis that dissolves its headline.
+narrower, the most-cited recent attempt to quantify it has a published reanalysis, and the
+reanalysis has a published rebuttal that is better than the reanalysis.
 
 **Hartshorne, Tenenbaum & Pinker (2018),** *Cognition* 177:263–277,
 [10.1016/j.cognition.2018.04.007](https://doi.org/10.1016/j.cognition.2018.04.007).
-Two-thirds of a million English speakers took a viral online grammar quiz. Fitting an
-exponential-learning-with-sigmoidal-decay model, the authors concluded that the *rate* of
-grammar learning stays high until about 17.4 years of age and then drops sharply. The
-claim is about learning rate, not about ceiling: a learner who starts at 17 can still
-improve, but does so more slowly, and because near-native grammar takes roughly thirty
-years of exposure, starting much after about 10 makes native-like attainment unlikely on
-a normal lifespan. `OBSERVED` — a cross-sectional web survey, not an experiment.
+`OBSERVED`. A viral Facebook quiz (`WhichEnglish`, shared over 300,000 times) whose hook was
+that an algorithm would guess your native language. **132 items, of which 95 were scored**,
+under ten minutes, written metalinguistic grammaticality judgements and sentence–picture
+matching. Analysed n = **669,498** after exclusions, of whom 244,840 monolingual, 44,412
+immersion, 257,998 non-immersion — and **122,068 dropped as "intermediate immersion" and
+never analysed**. Cronbach's α = .86. Fitting an exponential-learning-with-sigmoidal-decay
+model in log-odds gives cross-validated R² = 0.89 against 0.66 for a constant learning rate.
 
-**van der Slik, Schepens, Bongaerts & van Hout (2021),** *Language Learning* 71(1),
-[10.1111/lang.12470](https://doi.org/10.1111/lang.12470), reanalysed the same data and
-concluded that *"their overall conclusion of one sharply defined critical age at 17.4 for
-all language learners is based on artificial results."* Fitted separately by learner type,
-a **continuous** decay model fits better for monolinguals, bilinguals and early-immersion
-learners; only non-immersion and later-immersion learners fit a discontinuous model, with
-break points at 18.6 and 19.0 years. Their reading: those break points look like
-**schooling effects**, produced by changes in living circumstances and socialisation
-around the end of secondary education, not by a cognitive developmental window.
-`MEASURED-META` (reanalysis of the original dataset, so not independent evidence — the
-same data, better partitioned).
+**What 17.4 is.** It is *t_c*, the age at which the **learning rate** begins to decline; the
+follow-up glosses it as the rate dropping about 50%. It is not an age of ultimate
+attainment. HTP's own framing separates the two, and their own data show late-20s starters
+eventually surpassing the youngest natives in the sample. The 10–12 figure that gets
+attached to it comes from a different analysis (learners with ≥30 years of experience) and
+is a claim about native-*likeness*, which HTP themselves note is a self-defeating criterion,
+since even simultaneous bilinguals fall short of monolinguals (p < .01) on 63% of the input.
 
-**Vanhove (2013),** *PLOS ONE* 8(7):e69172,
-[10.1371/journal.pone.0069172](https://doi.org/10.1371/journal.pone.0069172), makes the
-prior methodological point: a critical period requires a **discontinuity**, and the
-analyses this literature usually runs cannot distinguish one from a smooth decline.
-Reanalysing two datasets with piecewise regression, he finds the predicted age patterns
-are not cross-linguistically robust.
+**The number has no published uncertainty, and it moved when the sample grew.** HTP report
+no confidence interval; Frank (2018), *TiCS* 22(8):669–671, makes this his first objection
+("it is hard to rule out other curves with similar shapes but different theoretical
+import"). Chen & Hartshorne (2021), *Cognition* 214:104706, re-ran it on **n = 1,131,401**
+with bootstrapped intervals and got a critical age of **17.87, 95% CI [17.01, 18.61]** under
+one ability model and **18.25 [17.50, 18.60]** under HTP's original. So the defensible
+statement is roughly **17 to 18.5 years, interval about [17, 19.4]** — and the point
+estimate rose by nearly a year when the sample nearly doubled.
 
-A further inferential problem sits in the sampling, where no reanalysis can reach it. The
-respondents chose to take a viral quiz billed as a grammar test, in English, on a social
-network. Age of acquisition, current age, immigration history, education and willingness
-to take an English grammar quiz for fun are all correlated in that population, with no
-sampling frame to reweight against.
+**The reanalysis.** van der Slik, Schepens, Bongaerts & van Hout (2022), *Language Learning*
+72(1):87–112, [10.1111/lang.12470](https://doi.org/10.1111/lang.12470), refit the same data
+separately by learner type and concluded the single critical age at 17.4 "is based on
+artificial results": a continuous decay model fits monolinguals, simultaneous bilinguals and
+early-immersion learners better, and only non-immersion (18.6) and late-immersion (19.0)
+learners favour a discontinuous one, which they read as **schooling effects** rather than a
+cognitive window. It is a reanalysis of the original dataset, so it is not independent
+evidence. Their own Dutch state-examination data are: Schepens, van Hout & van der Slik
+(2023), *SSLA* 45(1):167–188, **n = 56,024** adult immigrants, 50 native languages, where
+all four skills decline **monotonically** after an arrival age of about 25, with no
+discontinuity, framed as general cognitive ageing.
 
-**What survives.** Age effects are real, they are largest for phonology and smallest for
-vocabulary, and they are gradual. Adults are *faster* than children in the early stages of
-naturalistic acquisition, and children overtake later. For a product the operative fact is
-that nothing here identifies an age past which instruction stops working, and the one
-number everyone quotes has a published reanalysis attributing it to leaving school.
+**And the rebuttal, which is substantive.** Hartshorne (2024), *Language Development
+Research* 4(1):431–454, doi:10.34842/y8sz-4q83 (open access), points out that the
+"continuous" model is the same model with *t_c* pinned to 0, so it tests whether the decline
+is **asymmetric**, not whether it is sharp; that the AIC differences favouring the
+reanalysis are all around 1.9–2.0, i.e. odds of about 2.5:1; and that the reanalysis
+reported **non-cross-validated R² against HTP's cross-validated ones**. This dispute is
+live, not settled in either direction, and anyone citing the reanalysis without the rebuttal
+is citing half of it. Hartshorne's own concession is the more useful sentence: the quiz
+"probes meta-linguistic grammaticality judgments," a construct engaging machinery not needed
+for ordinary language use.
 
----
+**The sampling problem no reanalysis can reach.** Respondents chose to take a grammar quiz,
+in English, for fun, on a social network, and only ~80% of those who did the items completed
+the demographics that put them in the dataset. That filter runs along the axis the result
+rests on: a person who started English at 25 and gave up is not in the sample. No published
+paper presses this against HTP; the authors concede it themselves ("successful bilingualism
+is not randomly assigned, nor is age of first exposure"). The largest sample without the
+problem points the other way: Hakuta, Bialystok & Wiley (2003), *Psychological Science*
+14(1):31–38, **2.3 million** 1990 US Census respondents, found large linear effects of
+education and immigration age but "failed to produce the discontinuity that is an essential
+hallmark of a critical period" — on a self-rated four-point scale, which HTP fairly contest.
+
+**Vanhove (2013),** *PLOS ONE* 8(7):e69172, makes the methodological point underneath all of
+this: the only testable CPH prediction is a **change of slope**, correlation-based tests
+cannot address it, and the classic studies had power around 0.20. His free-breakpoint
+reanalyses land at age 16 for English but **age 6 for Hebrew**. HTP accept the power argument
+and turn it around, arguing the classic nulls were false negatives.
+
+**The three skills dissociate, and this is where the practical answer is.** Flege,
+Yeni-Komshian & Liu (1999), *JML* 41(1):78–104, tested 240 Korean speakers on accent and on
+a 144-item grammaticality judgement task: **18 fell within 2 SD of natives on pronunciation
+against 76 on morphosyntax**, and once learners were matched on years of US education,
+length of residence and language use, the early and late groups still differed on
+pronunciation and **no longer differed at all on morphosyntax**. Grammar attainment is
+largely an education-and-input effect wearing an age costume. Vocabulary is weaker still:
+Saito (2024), *SSLA* 46(1):3–27, finds age of arrival predicts lexical **appropriateness**
+(r ≈ −.4) but not lexical richness.
+
+Even for accent the ceiling is not a wall. Hopp & Schmid (2013), *Applied Psycholinguistics*
+34(2):361–394, had native judges rate 40 late L2 learners of German against 40 L1 attriters:
+**80% of the late learners scored within the native range**, and their conclusion is that
+acquiring a language from birth "is not sufficient to guarantee nativelike pronunciation,
+and late acquisition does not necessarily prevent it." Running the other way, Abrahamsson &
+Hyltenstam (2009), *Language Learning* 59(2):249–306, took the 41 of 195 bilinguals who had
+*passed* for native with listeners and put them through ten demanding tasks: none of the
+late learners performed in the native range, and **only a few of the early learners did
+either**. Nativelikeness survives casual listening far more often than it survives a
+battery, for everyone.
+
+**What this means for an adult.** Snow & Hoefnagel-Höhle (1978), *Child Development*
+49(4):1114–1128, followed English speakers acquiring Dutch naturalistically through their
+first year: the **12–15-year-olds and adults made the fastest early progress**, the 8–15
+group had the best control at twelve months, and the **3–5-year-olds scored lowest on every
+test**. Hartshorne (2024) concedes the point without reservation. Nothing in this literature
+identifies an age past which instruction stops working. The constraint is on the *ceiling
+for indistinguishability from a mature native under laboratory scrutiny*, which is not a
+goal any tutor should be optimising, and Levis's field has said so out loud (§5.1).
 
 ## 7. The commercial reality
 
@@ -986,25 +1060,25 @@ program efficacy."*
 
 ### 7.4 The English Test, where the vendor research is strongest and one result went missing
 
-The Duolingo English Test carries far more psychometric apparatus than the learning app.
-Its Technical Manual is self-published and not peer-reviewed, and carries a DOI under
-Duolingo's own self-assigned prefix `10.46999`, which makes it look peer-reviewed in a
-reference list. Concurrent validity, from the manual: DET Overall against official TOEFL
-iBT reports (n = 328) r = .71 overall, .82 center-based, **.61 for the Home
-Edition** — and the Home Edition is the product actually used in admissions. Against
-IELTS (n = 1,943), Overall r = .73, but subscores **Writing .54, Reading .53,
-Listening .57**, and subscore concordance tables are published from those.
+The Duolingo English Test carries far more psychometric apparatus than the learning app. Its
+Technical Manual is self-published and not peer-reviewed, and carries a DOI under Duolingo's
+own self-assigned prefix `10.46999`, which makes it look peer-reviewed in a reference list.
+Concurrent validity, from the manual: DET Overall against official TOEFL iBT reports
+(n = 328) r = .71 overall, .82 center-based, **.61 for the Home Edition** — and the Home
+Edition is the product used in admissions. Against IELTS (n = 1,943), Overall r = .73 but
+subscores Writing .54, Reading .53, Listening .57, with subscore concordance tables
+published from those.
 
 **Isaacs, Hu, Trenkic & Varga (2023),** *Language Testing* 40(3):748–770,
 [10.1177/02655322231158550](https://doi.org/10.1177/02655322231158550), is
 **Duolingo-commissioned** by its own funding statement, which matters because its result is
 unfavourable: across 1,881 DET-admitted students at a large London university, DET
-correlated with first-year credit-weighted grades at adj. r = 0.195 for postgraduates
-and adj. r = −0.112 for undergraduates, and DET-admitted students had lower academic
-success than IELTS and TOEFL entrants. That paper is **cited zero times in either the 2025
-or the 2026 Technical Manual**, whose predictive-validity section rests instead on a blog
-post with no paper and no methodology document. Wagner (2020), *Language Assessment
-Quarterly* 17(3), independent: *"the use of DET scores cannot be recommended."*
+correlated with first-year credit-weighted grades at adj. r = 0.195 for postgraduates and
+adj. r = −0.112 for undergraduates, and DET-admitted students had lower academic success
+than IELTS and TOEFL entrants. The paper is **cited zero times in either the 2025 or the
+2026 Technical Manual**, whose predictive-validity section rests instead on a blog post.
+Wagner (2020), *Language Assessment Quarterly* 17(3), independent: "the use of DET scores
+cannot be recommended."
 
 ### 7.5 What the audited filings say, and one sentence in them that is not supported
 
@@ -1184,8 +1258,10 @@ d ≥ 0.72, and §2.2's had about 29 per arm before any correction for its three
 
 **Why this one.** It is the only place where AI holds a capability advantage that is not
 economic, it is the outcome the marketed value proposition rests on, and ERIC contains
-zero trials measuring it. A null here would be worth more than another significant result
-on trained items.
+no trial measuring it. The nearest quantitative estimate runs against the hypothesis:
+Bibauw et al.'s cross-modality contrasts are 0.29 [−0.21, 0.79] and 0.19 [−0.31, 0.70]
+against same-modality 0.65–0.84 (§5.3). A null here would be worth more than another
+significant result on trained items.
 
 A cheaper second experiment if the first is unaffordable: randomise learners to a spaced
 deck of 300 word families versus matched-time reading of text containing those families,
@@ -1218,6 +1294,22 @@ inside a single L2 sample, and no one has run it.
   only; every point estimate and credible interval unretrieved.
 - **Egger's-test values in Lee & Lee (2024).** Reported as a figure only; the numbers are
   not in the text.
+- **Munro & Derwing (1995)'s individual correlations.** The founding accentedness /
+  comprehensibility / intelligibility dissociation is closed access with no repository copy
+  anywhere. The abstract is quoted verbatim in §5.1; **no r value is attributed to it here**,
+  and any survey that quotes one is quoting a secondary source.
+- **Teimouri, Goetze & Plonsky (2019)'s confidence interval** and all its moderator
+  estimates. Closed access. Only the point estimate r = −.36 is used, and Botes et al.
+  (2020), which is fully open, carries the intervals in §5.3 instead.
+- **Flege, Yeni-Komshian & Liu (1999) at source.** The 18-versus-76 dissociation and the
+  matched-subgroup analyses in §6 come from a detailed course handout summarising the paper,
+  not the *JML* PDF, which the publisher blocks. Marked here as second-hand.
+- **van der Slik et al. (2022) internal fit statistics.** Wiley and the Radboud repository
+  both 403. The abstract is verbatim; the AIC values quoted in §6 come from Hartshorne's
+  open-access rebuttal, i.e. from the opposing party.
+- **Two phantom citations, checked and not found.** There is no Mollica & Piantadosi
+  commentary on Hartshorne et al., and no "Zhang & Zou" pronunciation meta-analysis, in
+  OpenAlex or Crossref. Both circulate. Neither is cited here.
 - **Rachels & Rockinson-Szapkiw's F, p and effect sizes.** Paywalled, and no repository
   copy. The null is documented from the abstract; its precision is not.
 - **Duolingo course completion.** Not disclosed in any SEC filing, and the FY2025 10-K

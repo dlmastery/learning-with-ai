@@ -72,13 +72,12 @@ Evidence labels are the project standard. `MEASURED-RCT` · `MEASURED-META` · `
 
 Three reports build machinery that consumes an ordering, and none produces one.
 
-`J1` §4 specifies `P ← prerequisite closure of c, transitively closed` and then a rule —
-*"a rung is interpretable only if every prerequisite it invokes is [held]"* — plus a repair
-action, `M2_prerequisite_dropback`, whose evidence line in `J1`'s own menu reads *"no pooled ES;
-mechanism-level INFERENCE."* `F10` explicitly hands the ordering problem away in its first
-paragraph. `A1` generates modules → chapters → topics. `C2` and `F5` own the measurement
-machinery that could in principle recover an ordering from response data, and neither is pointed
-at the task.
+`J1` §4 specifies `P ← prerequisite closure of c, transitively closed`, a rule that *"a rung is
+interpretable only if every prerequisite it invokes is [held]"*, and a repair action,
+`M2_prerequisite_dropback`, whose evidence line in `J1`'s own menu reads *"no pooled ES;
+mechanism-level INFERENCE."* `F10` hands the ordering problem away in its first paragraph. `A1`
+generates modules → chapters → topics. `C2` and `F5` own measurement machinery that could in
+principle recover an ordering from response data and is not pointed at the task.
 
 The term census in `Z1` puts numbers on it: `curriculum sequencing` 2 hits across 45 reports and
 40 survey sections, `scope and sequence` 1, `backward design` 0, `knowledge space` 0. `ALEKS`
@@ -272,9 +271,9 @@ cites no efficacy study and reports no effect size. `VENDOR`
 
 - Fang, Ren, Hu & Graesser (2019), *Educational Psychology*, ERIC EJ1232632. 15 studies,
   24 independent samples, 2005–2015. Conclusion: ALEKS was **as good as, but not better than,
-  traditional classroom teaching**. Effect sizes did not differ by schooling level, by whether
-  ALEKS was principal or supplementary instruction, or by standardised versus instructor-designed
-  outcome. Effect sizes were *larger for shorter* implementations. `MEASURED-META`
+  traditional classroom teaching**. Effect sizes did not differ by schooling level, by
+  implementation type, or by standardised versus instructor-designed outcome, and were *larger
+  for shorter* implementations. `MEASURED-META`
 - Sun, Else-Quest, Hodges, French & Dowling (2021), *Investigations in Mathematics Learning*,
   ERIC EJ1314175. 33 studies, 56 independent effect sizes, **9,238 students**, 2000 to August
   2020. Pooled **Hedges' g = 0.05**, with ALEKS "especially effective when used to supplement
@@ -284,12 +283,11 @@ cites no efficacy study and reports no effect size. `VENDOR`
   returned `403`, so I could not check it against the article. **Cite the point estimates; do not
   cite that interval without checking the paper.** `OBSERVED — untraceable in this session`
 
-**These two are not independent.** Sun et al.'s window (2000–2020) subsumes Fang et al.'s
-(2005–2015) and the study pools certainly overlap; the convergence is partly the convergence of a
-literature with itself. What can be said is that no meta-analysis of the flagship prerequisite-
-structured system has found a general advantage over ordinary teaching, and that the one positive
-moderator is the least interesting one — that adding a supplementary practice system to teaching
-beats teaching alone, which is a dosage result and not a sequencing result. `INFERENCE`
+**These two are not independent.** Sun et al.'s window subsumes Fang et al.'s and the study
+pools certainly overlap. What survives is that no meta-analysis of the flagship prerequisite-
+structured system finds a general advantage over ordinary teaching, and that its one positive
+moderator is a dosage result: adding a supplementary practice system to teaching beats teaching
+alone. `INFERENCE`
 
 **Cross-reference, not duplication.** `F11` §(vii) already carries the strongest single datum on
 the inside of ALEKS: Matayoshi, Cosyn, Uzun & Kurd-Misto (2025), *JEDM* 17(1), 32.9 million
@@ -395,12 +393,11 @@ them the same way. `INFERENCE`
 Teachers College, ERIC ED618425.** "Final Impact Results from the i3 Implementation of *Teach to
 One: Math*."
 
-Teach to One is the purest deployed instantiation of the thesis this report is testing. Its
-premise is that a daily algorithmic scheduler, given each student's diagnosed skill state, should
-assign each student the mathematics content they are ready for that day, in whatever modality
-suits it, breaking the grade-level sequence entirely. New Classrooms received an Investing in
-Innovation grant to run it in five schools in Elizabeth, New Jersey, for three academic years
-from September 2015.
+Teach to One is the purest deployed instantiation of the thesis this report is testing: a daily
+algorithmic scheduler assigns each student the mathematics content their diagnosed skill state
+says they are ready for, in whatever modality suits it, breaking the grade-level sequence
+entirely. New Classrooms ran it under an Investing in Innovation grant in five schools in
+Elizabeth, New Jersey, for three academic years from September 2015.
 
 CPRE ran a comparative interrupted time series against 16 non-Teach-to-One schools in the same
 district. **36,158 student-level measurements** nested in 209 school-by-year cohorts. Outcome
@@ -416,10 +413,10 @@ All three are statistically non-significant; the unadjusted estimates trace the 
 report's own summary: "the results of the CITS models were statistically non-significant in each
 of the three implementation years." `MEASURED-BENCH` (quasi-experimental; CITS, not randomised)
 
-Two things make this the right null to give space to. It is not a laboratory manipulation but a
-three-year, funded, well-implemented deployment of exactly the architecture a "school in a box"
-would build. And the point estimates drift *downward* across the three years, which is the
-opposite of the implementation-maturity curve every adaptive-sequencing vendor forecasts.
+Two things make this the right null to give space to. It is a three-year funded deployment of
+the architecture a "school in a box" would build, not a laboratory manipulation. And the point
+estimates drift *downward* across the three years, the opposite of the implementation-maturity
+curve every adaptive-sequencing vendor forecasts.
 
 A second, smaller null for the same family: KinderTEK, an iPad mathematics program with
 individualised progression, cluster-randomised across 70 kindergarten classrooms, **1,368
@@ -543,10 +540,10 @@ comparable to 26 sessions spaced at 14 days** — half the training for the same
 Five-year recall reached 40% (13 sessions) and 54% (26 sessions) at a 28-day interval, against
 15% at eight years in the 1987 study with seven sessions.
 
-Two cautions the citation trail usually drops. **n = 4.** And the authors note frequent departures
-from the schedule, unscheduled extra sessions, one omitted terminal session, a three-year test
-administered at four years, and subjects who travelled in France or watched films in their target
-language. `MEASURED-RCT` — extraordinary in duration, tiny in sample, and imperfectly controlled.
+Two cautions the citation trail usually drops. **n = 4.** And the authors record frequent
+departures from schedule, unscheduled extra sessions, an omitted terminal session, a three-year
+test given at four years, and subjects who travelled in France or watched films in the target
+language. `MEASURED-RCT` — extraordinary in duration, tiny in sample, imperfectly controlled.
 
 The authors themselves reach for Schmidt & Bjork (1992) to explain the crossover, which is where
 this report's third commission begins.
@@ -665,18 +662,16 @@ Heterogeneity is high throughout (I² in the 62–83% range where reported).
 gyms, courts, clinics, anything that is not a laboratory task — the effect is not distinguishable
 from zero and flips sign under outlier removal. In learners under 18 it is 0.02.
 
-This is not an artefact of the meta-analysis. Wulf & Shea (2002), *Psychonomic Bulletin &
-Review* 9(2):185–211, `10.3758/BF03196276`, reviewed the primary studies twenty years earlier and
-found the same pattern in the underlying data: French, Rink & Werner found no differential
-effectiveness of blocked, random, or mixed schedules for ninth-graders learning volleyball skills;
-Farrow & Maschette found random practice better for 10–12 year-olds and **blocked practice better
-for 8–9 year-olds** on the tennis forehand; Pinto-Zipp & Gentile found blocked practice benefited
-5–6 year-olds and random practice benefited adults on frisbee throwing; Al-Mustafa found random
-practice helped older children and adults while **younger children benefited from blocked
-practice**. Albaret & Thon manipulated task complexity directly with drawing tasks of varying
-segment counts and found a clear random-practice advantage on the simplest version that was
-"systematically reduced as the number of segments was increased and was even reversed" for the
-hardest. `MEASURED-META`
+This is not an artefact of the meta-analysis. Wulf & Shea (2002), *Psychonomic Bulletin & Review*
+9(2):185–211, `10.3758/BF03196276`, found the same pattern in the primary studies twenty years
+earlier: French, Rink & Werner found no differential effect of blocked, random or mixed schedules
+for ninth-graders learning volleyball; Farrow & Maschette found random practice better for 10–12
+year-olds and **blocked practice better for 8–9 year-olds** on the tennis forehand; Pinto-Zipp &
+Gentile found blocked practice benefited 5–6 year-olds and random practice benefited adults on
+frisbee throwing; Al-Mustafa found the same age split on a throwing task. Albaret & Thon
+manipulated task complexity directly with drawing tasks of varying segment counts: a clear
+random-practice advantage on the simplest version, "systematically reduced as the number of
+segments was increased and even reversed" for the hardest. `MEASURED-META`
 
 Wulf & Shea's synthesis is the mechanism: high contextual interference helps when the learner has
 spare processing capacity and hurts when they do not. Their title is the warning label —
@@ -723,22 +718,19 @@ it lead to more accurate error estimation skills." `MEASURED-RCT`
 
 ### 8.4 Massed against distributed motor practice: located, not quoted
 
-The distribution-of-practice literature in motor learning is the third leg the commission asked
-for. The two canonical meta-analyses are Lee & Genovese (1988), *RQES* 59(4):277–287,
-`10.1080/02701367.1988.10609373`, with its follow-up Lee & Genovese (1989), *RQES*
-60(1):59–65, `10.1080/02701367.1989.10607414`, whose title states the central moderator —
-*Different Effects for Discrete and Continuous Tasks* — and Donovan & Radosevich (1999),
-*JAP* 84(5):795–805, `10.1037/0021-9010.84.5.795`, "A meta-analytic review of the distribution of
-practice effect: Now you see it, now you don't," whose title states its own.
+The canonical meta-analyses are Lee & Genovese (1988), *RQES* 59(4):277–287, and its follow-up
+Lee & Genovese (1989), *RQES* 60(1):59–65, whose title names the central moderator —
+*Different Effects for Discrete and Continuous Tasks* — and Donovan & Radosevich (1999), *JAP*
+84(5):795–805, "A meta-analytic review of the distribution of practice effect: Now you see it,
+now you don't," whose title names its own.
 
-**I could not obtain the pooled estimates from any of the three** within this session (Taylor &
-Francis and APA both `403`; OpenAlex exhausted). I am recording their existence, their DOIs and
-their titled findings, and I am not attaching numbers to them.
-`OBSERVED — untraceable in this session`
+**I could not obtain the pooled estimates from any of the three** (Taylor & Francis and APA both
+`403`; OpenAlex exhausted). Their DOIs and titled findings are in the source list; no numbers are
+attached to them here. `OBSERVED — untraceable in this session`
 
-What can be said without them, from Wulf & Shea's review: the distribution-of-practice variable
-is one of the ones they explicitly list as having been characterised almost entirely on simple
-laboratory tasks, and it belongs under the same complexity caveat as contextual interference.
+What can be said without them, from Wulf & Shea's review: distribution of practice is one of the
+variables they list as characterised almost entirely on simple laboratory tasks, so it falls under
+the same complexity caveat as contextual interference.
 
 ### 8.5 What the analogy licenses
 
@@ -781,13 +773,12 @@ therefore the *right* use of a graph — triggered by a diagnosed error, aimed a
 component — and "the learner may not proceed to c until the closure of c is verified" is the
 wrong one. The corpus can adopt the first and should drop the second until it is tested. `SPEC`
 
-**A durability instrument, because nobody has one.** Slavin's 1987 retention finding stands
-because nothing has tested it with adequate corrective dosage; Kang et al. show that a
-control-referenced retention measure answers the wrong question. A tutor can do what no trial
-could afford: schedule an unannounced delayed transfer probe at 30, 90 and 365 days on material
-the learner has stopped studying, on freshly generated items, and report *absolute* retention
-alongside any comparative claim. Bahrick & Phelps's 30-day optimum and the 1993 crossover give
-the probe schedule a defensible starting shape. `SPEC`
+**A durability instrument, because nobody has one.** Kang et al. show that a control-referenced
+retention measure answers the wrong question. A tutor can do what no trial could afford: schedule
+unannounced delayed transfer probes at 30, 90 and 365 days on material the learner has stopped
+studying, on freshly generated items, and report *absolute* retention alongside any comparative
+claim. Bahrick & Phelps's 30-day optimum and the 1993 crossover give the schedule a starting
+shape. `SPEC`
 
 **A capacity gate on every difficulty manipulation.** Contextual interference, feedback fading and
 practice distribution should all be treated as capacity-conditional and defaulted *off* for
@@ -822,12 +813,11 @@ If the between-condition correlation is higher (0.7), σ_d falls to ≈ 0.77 and
 Budget for 900 learners and 8 pairs each: about 7,200 topic sequences, which is roughly two
 school terms of a mid-sized deployment and four orders of magnitude smaller than the ALEKS study.
 
-*Why this experiment and not another.* It is the only design that can return a result the corpus
-cannot currently get from anywhere: if the graph is equivalent within 0.10 SD, `J1` should stop
-computing prerequisite closures and the generative-textbook problem in `A1` collapses from
-"construct a validated ordering" to "answer the question that was asked." If the graph wins by
-more than 0.10 SD, the corpus has its first direct warrant for an architecture that four reports
-already assume.
+*Why this one.* No other design returns a result the corpus cannot get anywhere else. If the
+graph is equivalent within 0.10 SD, `J1` should stop computing prerequisite closures and `A1`'s
+generative-textbook problem collapses from "construct a validated ordering" to "answer the
+question that was asked." If the graph wins by more than 0.10 SD, the corpus has its first direct
+warrant for an architecture four reports already assume.
 
 ### 9.3 What I could not find out
 

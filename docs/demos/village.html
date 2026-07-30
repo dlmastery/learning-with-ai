@@ -80,14 +80,15 @@
   for. Everything downstream is a function of those three.</p></div>
   <div class="o"><b>Why it matters</b><p>Three benchmarks say multi-agent debate does not reliably
   beat plain self-consistency, and the diagnosis is worth carrying: <b>two instances of the same
-  model are not independent minds</b> — they share a prior, a training set and a failure mode. A
+  model are not independent minds</b>. They share a prior, a training set and a failure mode. A
   crew earns its keep only when the members differ in grounding, evidence and authority. Otherwise
   it is one voice billed five times.</p></div>
-  <div class="o"><b>How to use it</b><p>The interesting move is destructive. Lift <b>T2</b> above
-  <b>T1</b> and read the diagnosis the village then publishes: three roles agree on the wrong answer
+  <div class="o"><b>How to use it</b><p>The interesting move is destructive. Lift T2 above
+  T1 and read the diagnosis the village then publishes: three roles agree on the wrong answer
   and one does not, so a judge selecting by weight of support picks the wrong one. It is the only
   line in the output that changes, which is how you know the ladder is doing work rather than
-  decorating it. The homogeneity switch in §2 does worse — it deletes the disagreement.</p></div>
+  decorating it. The homogeneity switch in §2 does worse still, deleting the disagreement
+  outright.</p></div>
 </section>
 
 <h2>1 · The turn</h2>
@@ -103,8 +104,8 @@
 
 <h2>2 · The active set</h2>
 <p>Three to five roles per learner-hour: the economics permit about forty, the orchestration evidence
-permits three to five. Each opinion below is a <em>typed claim</em> rather than a paragraph — a
-type, an assertion, and the grounding that produced it.</p>
+permits three to five. Each opinion below is a <em>typed claim</em> and not a paragraph. It carries
+a type, an assertion, and the grounding that produced it.</p>
 
 <div class="row">
   <label style="margin:0 8px 0 0">Crew</label>
@@ -135,9 +136,10 @@ anyone. The trace shows every tier tried and why it could or could not resolve.<
 
 <div class="note warn"><b>Watch the seam when you lift T2.</b> With the judge above scope
 precedence, the village publishes <em>“looks like a careless mistake”</em> in the same breath as
-<em>“this is the fourth time in sixteen days”</em> — a sentence pair no role would have written and
-that only an aggregator can produce. Three roles agreeing does not make them independent — they
-agreed because the wrong reading is the <em>easy</em> one, which is what a shared prior is. The
+<em>“this is the fourth time in sixteen days”</em>. That is a sentence pair no role would have
+written and that only an aggregator can produce. Three roles agreeing does not make them
+independent. They agreed because the wrong reading is the <em>easy</em> one, which is what a
+shared prior is. The
 correct answer is still in the dissent log, which is why the log exists.</div>
 
 <h2>5 · What the village says</h2>
@@ -152,7 +154,7 @@ correct answer is still in the dissent log, which is why the log exists.</div>
 <div class="panel sunken">
   <div class="ptitle">The dissent log</div>
   <div class="psub">Append-only, attributed, grounding attached. A correct minority answer that is
-  voted away is unrecoverable; appended to the record it is recoverable — by a later probe, a human
+  voted away is unrecoverable; appended to the record it is recoverable by a later probe, a human
   reviewer, or an offline audit.</div>
   <div class="readout" id="dlog" style="font:12.6px/1.7 var(--mono);color:var(--ink-2);white-space:pre-wrap"></div>
 </div>
@@ -162,15 +164,15 @@ correct answer is still in the dissent log, which is why the log exists.</div>
 <table>
   <thead><tr><th>Result</th><th>Finding</th></tr></thead>
   <tbody>
-    <tr><td><b>Smit et al.</b>, <em>Should we be going MAD?</em></td>
+    <tr><td>Smit et al., <em>Should we be going MAD?</em></td>
       <td>Multi-agent debating systems in their current form <b>do not reliably outperform</b>
       other prompting strategies, such as self-consistency and ensembling over multiple reasoning
       paths.</td></tr>
-    <tr><td><b>Wang et al.</b>, <em>Rethinking the Bounds of LLM Reasoning</em></td>
+    <tr><td>Wang et al., <em>Rethinking the Bounds of LLM Reasoning</em></td>
       <td>A <b>single agent with strong prompts</b> matches the best discussion approach across a
       wide range of reasoning tasks. Discussion won only where the prompt contained no
       demonstration.</td></tr>
-    <tr><td><b>Becker et al.</b>, <em>Stay Focused</em></td>
+    <tr><td>Becker et al., <em>Stay Focused</em></td>
       <td>Debate <b>drifts away from the initial problem</b> over turns, degrading performance on
       long reasoning chains.</td></tr>
     <tr><td class="mut">Du et al. (2023)</td>
@@ -179,23 +181,23 @@ correct answer is still in the dissent log, which is why the log exists.</div>
 </table>
 </div>
 <p class="sub">Model diversity is not a free fix either: Self-MoA found aggregating a
-<em>single</em> top model beats mixing models — +6.6% on AlpacaEval 2.0 — because mixing lowers
+<em>single</em> top model beats mixing models by +6.6% on AlpacaEval 2.0, because mixing lowers
 average quality. The reconcilable reading, published here as unresolved: heterogeneity helps when
-the mechanism is <strong>adversarial</strong> and hurts when it is <strong>aggregative</strong> —
-which is the rule the ladder encodes. It permits debate and forbids synthesis.</p>
+the mechanism is <em>adversarial</em> and hurts when it is <em>aggregative</em>. That is the rule
+the ladder encodes. It permits debate and forbids synthesis.</p>
 
 <h2>What this proves / what it does not</h2>
 
 <div class="callout">
   <div class="k">Demonstrated, in code, on this page</div>
   <p><strong>Arbitration is a decidable procedure, not a personality.</strong> Conflict detection is
-  set comparison over typed assertions. Tier availability is a predicate over role properties — T0
+  set comparison over typed assertions. Tier availability is a predicate over role properties. T0
   asks whether any claimant is executable, T2 whether a judge exists outside every proposer's model
   family, T3 whether the type is one a learner may adjudicate at all. Reorder the ladder and the
   published diagnosis changes, so the ladder is load-bearing rather than decorative.</p>
   <p><strong>And dissent survives.</strong> Every losing claim is in the log with its author and its
-  grounding. Nothing was averaged, and the minority answer — which on the diagnosis is the correct
-  one — stays recoverable no matter which tier won.</p>
+  grounding. Nothing was averaged. On the diagnosis it is the minority answer that is correct, and it
+  stays recoverable no matter which tier won.</p>
 </div>
 
 <div class="callout" style="border-left-color:var(--bad)">
@@ -453,5 +455,3 @@ draw();
 </script>
 </body>
 </html>
-</content>
-</invoke>

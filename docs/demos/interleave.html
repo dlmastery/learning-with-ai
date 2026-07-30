@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blocked Practice Feels Better and Teaches Less — the interleaving simulator</title>
-<meta name="description" content="Two schedules over one item pool, simulated learner by learner: blocked wins during practice and loses at delayed test — and the effect vanishes when you turn the confusability down." />
+<meta name="description" content="Two schedules over one item pool, simulated learner by learner: blocked wins during practice and loses at delayed test, and the effect vanishes when you turn the confusability down." />
 <link rel="stylesheet" href="../site.css" />
 <link rel="stylesheet" href="demo.css" />
 <script src="../theme.js"></script>
@@ -55,7 +55,7 @@ svg .now{stroke:var(--ink-3);stroke-width:1.5;stroke-dasharray:4 4}
   <h1>Blocked practice feels better and teaches less</h1>
   <p class="lede">Same items, same total practice, two orders. One of them produces visibly higher
   accuracy while the learner is working and lower accuracy a month later. Interleaving pools at
-  <strong>g = 0.42</strong> across 59 studies — and it is the one technique in the corpus whose
+  <strong>g = 0.42</strong> across 59 studies, and it is the one technique in the corpus whose
   <em>sign</em> depends on what you are practising, which this page lets you switch off with a
   slider.</p>
   <div class="chips">
@@ -67,7 +67,7 @@ svg .now{stroke:var(--ink-3);stroke-width:1.5;stroke-dasharray:4 4}
 
 <section class="orient">
   <div class="o"><b>What this is</b><p>A schedule simulator. One item pool, three problem types, two
-  orders — <code>AAA BBB CCC</code> against <code>ABC ACB CBA</code> — run trial by trial through a
+  orders (<code>AAA BBB CCC</code> against <code>ABC ACB CBA</code>) run trial by trial through a
   learner model with four exposed parameters, then tested after a delay. Every number below,
   including the effect size, is produced by that run.</p></div>
   <div class="o"><b>Why it matters</b><p>Blocked practice is what almost every worksheet, textbook
@@ -76,23 +76,23 @@ svg .now{stroke:var(--ink-3);stroke-width:1.5;stroke-dasharray:4 4}
   good: 54 seventh-grade classes, four months, an unannounced test a month later, <strong>61%
   versus 38%</strong>.</p></div>
   <div class="o"><b>How to use it</b><p>The default run already shows the signature; the readout
-  says so in words. What repays attention is one parameter — confusability. Set it to zero, meaning
+  says so in words. What repays attention is the confusability parameter. Set it to zero, meaning
   problem types nobody could mistake for each other, and the advantage does not shrink politely. It
   goes to nothing and then negative, which is what the vocabulary studies found.</p></div>
 </section>
 
 <h2>1 · The two schedules</h2>
 <div class="schr">
-  <div class="sbox b"><div class="t">Blocked — all of A, then all of B, then all of C</div>
+  <div class="sbox b"><div class="t">Blocked: all of A, then all of B, then all of C</div>
     <div class="seq" id="seqB"></div></div>
-  <div class="sbox i"><div class="t">Interleaved — one cycle at a time, order shuffled</div>
+  <div class="sbox i"><div class="t">Interleaved: one cycle at a time, order shuffled</div>
     <div class="seq" id="seqI"></div></div>
 </div>
 
 <h2>2 · The parameters</h2>
 <p>The model is small enough to state in full. A learner has a <em>strength</em> per problem type
-and a single <em>discrimination</em> term — the ability to recognise which type a problem is when
-nothing tells them. In blocked practice the previous item tells them, so discrimination is never
+and a single <em>discrimination</em> term, meaning the ability to recognise which type a problem
+is when nothing tells them. In blocked practice the previous item tells them, so discrimination is never
 exercised and never grows. Both arms are then tested identically: mixed order, no cue, ten items
 per type. That is the design the published studies use, and it is the reason blocked practice
 cannot carry its advantage into the test.</p>
@@ -109,21 +109,21 @@ cannot carry its advantage into the test.</p>
     <div>
       <label for="kap">Switch cost <span class="val" id="kapv">0.30</span></label>
       <input type="range" id="kap" min="0" max="60" step="1" value="30" />
-      <div class="hint">The acquisition penalty for changing task on consecutive trials —
-      contextual interference. This is what interleaving <em>pays</em>, and it is why the trade can
-      come out negative.</div>
+      <div class="hint">The acquisition penalty for changing task on consecutive trials, otherwise
+      known as contextual interference. This is what interleaving <em>pays</em>, and it is why the
+      trade can come out negative.</div>
     </div>
     <div>
       <label for="del">Retention interval <span class="val" id="delv">14</span></label>
       <input type="range" id="del" min="0" max="40" step="1" value="14" />
       <div class="hint">Time between the last practice trial and the test, in model days. At 0 the
-      forgetting channel switches off entirely and only discrimination is left — which is why the
+      forgetting channel switches off entirely and only discrimination is left, which is why the
       gap narrows but does not close.</div>
     </div>
     <div>
       <label for="npc">Items per type <span class="val" id="npcv">9</span></label>
       <input type="range" id="npc" min="3" max="14" step="1" value="9" />
-      <div class="hint">Total practice is identical in both conditions — 3 types × this many. Only
+      <div class="hint">Total practice is identical in both conditions, 3 types × this many. Only
       the order differs.</div>
     </div>
   </div>
@@ -149,7 +149,7 @@ cannot carry its advantage into the test.</p>
   <svg id="curve" viewBox="0 0 640 230" role="img"
        aria-label="Practice accuracy over trials for blocked and interleaved schedules."></svg>
   <div class="legend">
-    <span><i style="background:var(--felt)"></i>blocked — what the session feels like</span>
+    <span><i style="background:var(--felt)"></i>blocked, what the session feels like</span>
     <span><i style="background:var(--real)"></i>interleaved</span>
   </div>
   <div class="readout" id="out" style="margin-top:16px">Press run.</div>
@@ -157,7 +157,7 @@ cannot carry its advantage into the test.</p>
 
 <div class="note"><b>The divergence has a name here.</b> The left-hand curve is the only evidence
 the learner has while deciding whether the method is working, and it is the curve that ranks the
-schedules backwards. This page does not re-argue that point — <a href="felt-vs-real.html">demo
+schedules backwards. This page does not re-argue that point, because <a href="felt-vs-real.html">demo
 08</a> takes it apart properly. What is worth noting is the mechanism, which is unusually plain:
 blocked practice removes the retrieval step. When the last four problems were all type B, the
 learner is not deciding what to do. They are executing.</div>
@@ -185,16 +185,16 @@ and not by a little. The sweep below recovers that shape from the model's one mo
     <li><strong>The reversal is emergent, not written in.</strong> Nothing in the model says
     "interleaving is better". Three update rules say: discrimination grows only on trials where the
     learner had to discriminate, spacing raises stability, and switching costs acquisition. The
-    practice-versus-test reversal comes out of those rules — and it does <em>not</em> always come
+    practice-versus-test reversal comes out of those rules, and it does <em>not</em> always come
     out, which the readout tells you when it happens. A bar chart cannot fail like that; a
     generative model can, and that is the reason to write one.</li>
     <li><strong>One parameter controls the sign, and you can watch it do so.</strong> Drag
-    confusability to zero and the advantage does not merely shrink — it crosses into negative
+    confusability to zero and the advantage does not merely shrink. It crosses into negative
     territory under any non-zero switch cost, because there is nothing left to discriminate and the
     interference is still being paid for. Everything on the sweep between those two ends is a
     consequence of that single term.</li>
     <li><strong>The statistic is real arithmetic.</strong> Hedges' g here is computed from the two
-    simulated test samples with the small-sample correction, not looked up. Both arms are tested
+    simulated test samples with the small-sample correction; no value is looked up. Both arms are tested
     the same way — mixed, uncued — which is the design the published studies use and the reason
     blocked practice cannot carry its cue into the test.</li>
   </ul>
@@ -202,9 +202,9 @@ and not by a little. The sweep below recovers that shape from the model's one mo
   <ul style="margin:0 0 6px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
     <li><strong>This is a model, not a measurement, and the g it prints is not evidence.</strong>
     A generative model that reproduces a known pattern demonstrates that the pattern is
-    <em>mechanically coherent</em> — that you do not need anything exotic to get it. It is not
+    <em>mechanically coherent</em>, that you do not need anything exotic to get it. It is not
     independent support for the pattern's existence. The support is Brunmair &amp; Richter's 59
-    studies and Rohrer's cluster RCT; this page is an explanation of them, not a replication.</li>
+    studies and Rohrer's cluster RCT; this page explains them and does not replicate them.</li>
     <li><strong>The constants were calibrated, and you should know against what.</strong> The eight
     model constants were chosen so that the default run lands near the published pooled estimate
     and the zero-confusability run lands near the published vocabulary result. That is calibration,
@@ -214,13 +214,13 @@ and not by a little. The sweep below recovers that shape from the model's one mo
     and survive large changes to the constants. Read the ordering and the sign; do not quote the
     numbers.</li>
     <li><strong>Real pools are not three clean types.</strong> The confusability slider is one
-    number standing in for a similarity structure that is, in real material, a matrix — some pairs
-    confusable, others not — and the right schedule for that is neither of the two here.</li>
+    number standing in for a similarity structure that is, in real material, a matrix: some pairs
+    confusable and others not. The right schedule for that is neither of the two here.</li>
     <li><strong>"Interleave everything" is the failure mode this page exists to prevent.</strong> A
     system applying interleaving as a global policy will improve mathematics practice and damage
     vocabulary learning <em>in the same session</em>, and the learner will report the vocabulary
     session as the good one. The policy has to be per-material, and the moderator is stated well
-    enough to implement — which means there is no excuse for the global version.</li>
+    enough to implement, which leaves no excuse for the global version.</li>
   </ul>
 </div>
 

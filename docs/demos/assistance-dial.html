@@ -66,8 +66,8 @@ svg .you{stroke:var(--ink);stroke-width:2;fill:none}
   <h1>The support that helps you is harming them</h1>
   <p class="lede">Fifty years of aptitude–treatment research produced exactly one interaction that
   replicated. It is not a style, a modality or a personality type. It is <strong>how much help to
-  give, on this topic, right now</strong> — worth <strong>d = +0.505</strong> to a novice and
-  <strong>−0.428</strong> to an expert, which means the same support is a gift and a tax depending
+  give, on this topic, right now</strong> — worth d = +0.505 to a novice and
+  −0.428 to an expert, which means the same support is a gift and a tax depending
   on who receives it.</p>
   <div class="chips">
     <span class="chip m">Surface computed from the two marginals</span>
@@ -82,11 +82,12 @@ svg .you{stroke:var(--ink);stroke-width:2;fill:none}
   estimate of what you know <em>about one topic</em>. The surface is not drawn by hand: every cell
   is <code>assistance × d(knowledge)</code>, interpolated between the two published marginals.</p></div>
   <div class="o"><b>Why it matters</b><p>Almost every tutoring system stores support level as a
-  learner trait. The interaction is not a trait — it is per topic and it changes sign. A learner
+  learner trait. The interaction is not a trait. Support level belongs to the topic, and it
+  changes sign. A learner
   who is an expert in chapter 4 and a novice in chapter 5 needs opposite treatment within the same
   hour, and a system that got that backwards is not merely unhelpful. At −0.428 it is subtracting.</p></div>
   <div class="o"><b>How to use it</b><p>Three items, about twenty seconds, and you are placed on
-  the axis. Do the second topic as well — the same person usually lands somewhere else, which is
+  the axis. Do the second topic as well. The same person usually lands somewhere else, which is
   the entire per-topic argument in one screen. The preference slider further down is live, real,
   and connected to nothing. That gap is the demonstration.</p></div>
 </section>
@@ -131,7 +132,7 @@ Orange is harm.</p>
   <div class="legend">
     <span><i style="background:var(--real)"></i>assistance adds (up to +0.505 SD)</span>
     <span><i style="background:var(--felt)"></i>assistance subtracts (down to −0.428 SD)</span>
-    <span><i style="background:var(--ink-3)"></i>crossover — help is worth zero</span>
+    <span><i style="background:var(--ink-3)"></i>crossover, where help is worth zero</span>
   </div>
 </div>
 
@@ -147,7 +148,7 @@ Orange is harm.</p>
     <input type="range" id="e" min="0" max="100" step="1" value="50" />
     <div class="sub" style="margin:6px 0 0;font-size:12.5px">How many things must be held at once.
     Chen, Kalyuga &amp; Sweller reduce both faces of the interaction to this. <b>The coefficient
-    here is a modelling choice, not a measured one</b> — it shifts the crossover, it does not
+    here is a modelling choice and not a measurement.</b> It shifts the crossover; it does not
     create it.</div>
   </div>
 </div>
@@ -157,7 +158,8 @@ Orange is harm.</p>
 
 <div class="panel">
   <div class="ptitle">All four levels, at your current knowledge</div>
-  <div class="psub">Same learner, same material, four amounts of help. Read the sign, not the size.</div>
+  <div class="psub">Same learner, same material, four amounts of help. The sign matters more than
+  the size.</div>
   <div id="bars"></div>
   <div class="readout" id="out" style="margin-top:16px"></div>
 </div>
@@ -173,8 +175,8 @@ recorded, it is honest, and it has no path into the computation.</p>
 </div>
 
 <div class="note"><b>The asymmetry is the design rule.</b> Under-assisting a novice costs a gain
-you could have had. Over-assisting an expert costs them something they already had — it is an
-active harm, not a missed opportunity. When the estimate is uncertain, the cheap error and the
+you could have had. Over-assisting an expert costs them something they already had. That is an
+active harm and not a missed opportunity. When the estimate is uncertain, the cheap error and the
 expensive error are not the same error, and the default should sit on the cheap side of the
 crossover rather than in the middle of it.</div>
 
@@ -183,12 +185,12 @@ crossover rather than in the middle of it.</div>
 <div class="panel">
   <div class="ptitle">What this page shows working</div>
   <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
-    <li>That the crossover is <strong>forced by the two published numbers</strong>, not added by
-    us. Any monotone interpolation between +0.505 at the novice end and −0.428 at the expert end
+    <li>That the crossover is <strong>forced by the two published numbers</strong> and was not added
+    by us. Any monotone interpolation between +0.505 at the novice end and −0.428 at the expert end
     has to cross zero, and it crosses at <code>0.505 / 0.933 = 0.541</code>. The surface is that
     arithmetic and nothing else.</li>
     <li>That <strong>entry can be measured in under a minute</strong>. Three weighted items place a
-    reader on the axis well enough to pick between four assistance levels — and the page times your
+    reader on the axis well enough to pick between four assistance levels. The page times your
     run, so the claim is checkable on your own clock rather than asserted.</li>
     <li>That <strong>per-topic is not a slogan</strong>. Take both probes. If your two estimates
     land on opposite sides of the crossover line, a system storing one support level against your
@@ -199,15 +201,15 @@ crossover rather than in the middle of it.</div>
   <ul style="margin:0 0 6px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
     <li><strong>Three items is a placement, not a measurement.</strong> A six-item bank cannot
     separate 0.55 from 0.62, and near the crossover that difference decides the treatment. The
-    honest use is to pick a starting level and re-place after the first block, not to trust the
-    third decimal.</li>
+    honest use is to pick a starting level and re-place after the first block. Trusting the third
+    decimal is the mistake.</li>
     <li><strong>The surface is linear between two endpoints.</strong> The underlying meta reports
     only the two marginals; the shape in between is unmeasured. A sigmoid through the same
     endpoints would move the crossover somewhat and change none of the conclusions, which is
     exactly why the page plots sign rather than magnitude.</li>
     <li><strong>The heterogeneity is enormous.</strong> I² ≈ 88–91% across 60 studies, 176 effects,
     N = 5,924. This is a real law with noisy boundaries. Treat the crossover as a region you should
-    probe in, not a fence you can stand on.</li>
+    probe in. It is not a fence you can stand on.</li>
     <li><strong>It does not generalise to instructional design as a whole.</strong> Noetel's
     meta-meta-analysis found prior knowledge <em>did not</em> consistently moderate multimedia
     design effects, <strong>p = 0.14</strong>. So the survivor is narrower than "personalise
