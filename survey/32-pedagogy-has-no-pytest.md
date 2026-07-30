@@ -12,8 +12,7 @@ The complaint that prompts this section is a good one: given agentic AI, why is
 everything in this survey so modest? Agents write software, run experiments, and
 operate for hours unattended. Why does the tutoring chapter read like 2019?
 
-The answer turns out to be a single sentence, and once you have it the entire
-reliability landscape of agentic AI resolves into one line.
+The answer is a single sentence, and it orders every reliability result in agentic AI.
 
 ---
 
@@ -34,8 +33,9 @@ its own. Which yields the rule:
 > **The value of an agentic loop is bounded by the value of the external check it
 > closes on.**
 
-Sampling without a selector is noise. Execution without a test is output. Persistence
-without a schema is a transcript. Absence without a verifier is unsupervised drift.
+Sampling without a selector is noise. Execution without a test is a side effect.
+Persistence without a schema is a transcript. Absence without a verifier is
+unsupervised drift.
 
 ---
 

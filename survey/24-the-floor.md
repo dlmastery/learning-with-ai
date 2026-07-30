@@ -8,10 +8,10 @@ source_report: research/raw/B1-learning-science.md
 
 # The Floor
 
-The modality principle — present words as narration rather than on-screen text when
-there is also a picture — has been meta-analysed twice. Ginns (2005) reports
-**d = 0.72, 95% CI [0.52, 0.92]**, k = 39. Reinwein (2012) reports **g = 0.38
-[0.33, 0.43]** across k = 86, falling to **g = 0.20 [0.15, 0.25]** after
+The modality principle (present words as narration rather than on-screen text when
+there is also a picture) has been meta-analysed twice. Ginns (2005) reports
+d = 0.72, 95% CI [0.52, 0.92], k = 39. Reinwein (2012) reports **g = 0.38
+[0.33, 0.43]** across k = 86, falling to g = 0.20 [0.15, 0.25] after
 publication-bias adjustment.
 
 Same principle. Same literature. A factor of three between the flattering number
@@ -26,7 +26,7 @@ here is the baseline any AI claim has to clear.
 ## 1. Three facts that govern every number in this document
 
 **Heterogeneity is enormous.** The best meta-analyses in this literature report
-I² between **77% and 91%**: 84% (Rowland), 88% (Yang et al.), 77% (Brunmair &
+I² between 77% and 91%: 84% (Rowland), 88% (Yang et al.), 77% (Brunmair &
 Richter), ~90% (Tetzlaff et al.). A pooled g of 0.50 is not a prediction that you
 will get 0.50. It is a one-number summary of a very lumpy distribution.
 
@@ -45,7 +45,7 @@ else in the multimedia corpus has had the same treatment applied.
 
 ---
 
-## 2. Grade A — what replicates
+## 2. Grade A, what replicates
 
 | Finding | Effect | Corpus | Heterogeneity |
 |---|---|---|---|
@@ -60,13 +60,13 @@ else in the multimedia corpus has had the same treatment applied.
 Retrieval and spacing are carried in **§08**, and expertise reversal is the
 organising result of **§22**; they are restated here only so that their confidence
 intervals and their heterogeneity sit on the same page as everything else. The
-interval on spacing is the one to notice: **[0.31, 0.77]** is a range in which the
+interval on spacing is the one to notice: [0.31, 0.77] is a range in which the
 low end is a modest effect and the high end is among the largest in education. Both
 are consistent with the data.
 
 Two more numbers set the scale for the whole document. Kraft (2020) finds that
 **most education interventions produce 0.10 SD or less** on broad measures. And
-Pan & Rickard's transfer estimate is the honest ceiling for "does it generalise":
+Pan & Rickard's transfer estimate is the ceiling for "does it generalise":
 **0.40, weakest to rearranged stimulus–response items, to untested material seen
 during study, and to worked-example problems.** Retention transfers better than
 anyone deserves. Transfer transfers about half as well.
@@ -79,7 +79,7 @@ Interleaving is the most instructive result in the corpus because it is not a
 matter of magnitude. It is a matter of direction.
 
 Brunmair & Richter (2019), 59 studies, 238 effect sizes nested in 158 samples,
-overall **g = 0.42, I² = 77%**:
+overall g = 0.42, I² = 77%:
 
 | Material | Effect |
 |---|---|
@@ -91,11 +91,11 @@ overall **g = 0.42, I² = 77%**:
 
 The mechanism is discrimination, not spacing: interleaving helps when
 between-category similarity is high and within-category similarity is low. Where
-there are no categories to discriminate — paired-associate vocabulary —
-interleaving is a **harm**, and a substantial one.
+there are no categories to discriminate, as in paired-associate vocabulary,
+interleaving does harm, and a substantial amount of it.
 
 The classroom evidence is unusually good. Rohrer, Dedrick, Hartwig & Cheung (2020)
-ran a preregistered cluster RCT across **54 seventh-grade mathematics classes**,
+ran a preregistered cluster RCT across 54 seventh-grade mathematics classes,
 four months of interleaved versus blocked assignments, then an **unannounced test
 one month later**: **61% versus 38%, d = 0.83**. Teachers implemented it without
 training. That is one of the strongest classroom results in all of learning
@@ -120,8 +120,8 @@ experiments with delayed post-tests, corrective feedback, attention checks and f
 pay found no testing effect at all. The authors attribute it to insufficient
 sustained engagement in crowdsourced settings. This is the single most
 uncomfortable result in the section for anything built on self-directed AI study,
-because the condition it identifies — a learner nominally retrieving, without
-sustained effortful attention — is exactly the condition a chat interface makes
+because the condition it identifies, a learner nominally retrieving without
+sustained effortful attention, is exactly the condition a chat interface makes
 easy to enter. **The effect is contingent on effortful attentive retrieval, not on
 the surface form of being quizzed.**
 
@@ -144,12 +144,12 @@ nothing.
 
 The founding retrieval-practice result had a design confound. Soderstrom, Kerr
 & Bjork (2016) replicated Karpicke & Roediger (2008) between subjects, then
-controlled the spacing differences inherent to that design within subjects — and
-both repeated testing and repeated restudy improved learning. The testing
+controlled the spacing differences inherent to that design within subjects.
+Both repeated testing and repeated restudy improved learning. The testing
 effect survives. The strong claim that restudy does nothing does not.
 
 Prior knowledge did not moderate multimedia design effects in Noetel's
-meta-meta-analysis (**p = 0.14**), which sits in open tension with the
+meta-meta-analysis (p = 0.14), which sits in open tension with the
 expertise-reversal literature in the row above it. The honest reading: the reversal
 is well established for *assistance and guidance* manipulations and is not reliably
 detectable across the broad multimedia-design corpus. We report the tension rather
@@ -171,25 +171,25 @@ independent source, and consumers of the theory routinely cite the 2019 paper wh
 still using the old three-bucket model in their measurement.
 
 The empirical tell is clean. Noetel et al. found multimedia design interventions
-improved **learning at g = 0.38** and improved measured **cognitive-load management
-at only g = 0.22 [0.04, 0.40], k = 68.** The proposed mediator moves less than the
+improved learning at g = 0.38 and improved measured cognitive-load management
+at only g = 0.22 [0.04, 0.40], k = 68. The proposed mediator moves less than the
 outcome. **Cite cognitive load theory for its design predictions, which are
 excellent. Do not cite "reduces extraneous load" as though it were a measured
 quantity.**
 
 The redundancy principle is wrong in one direction. Adesope & Nesbit: adding
-text to audio, **g = 0.29 [0.20, 0.39]**; adding audio to text, **g = −0.04
+text to audio, g = 0.29 [0.20, 0.39]; adding audio to text, **g = −0.04
 [−0.14, 0.06], n.s.** "Never duplicate" is not what the data say.
 
-Decoration does nothing. Decorative animation **g = −0.05, n.s.**; meaningful
-representational animation **g = 0.40**. 3D pedagogical agents **g = 0.11, n.s.**;
+Decoration does nothing. Decorative animation g = −0.05, n.s.; meaningful
+representational animation g = 0.40. 3D pedagogical agents g = 0.11, n.s.;
 2D agents g = 0.38. Seductive details harm when persistent on screen (g = 0.43
 for removal) and not when transient (g = 0.12, n.s.).
 
 **Conversational style expires at 35 minutes.** The personalisation principle pools
 at g = 0.33 [0.23, 0.44] — but its own meta-analysis reports interest **d = 0.15,
 n.s., learning-assistance d = 0.16, n.s.**, and effects that are small and
-non-significant in studies longer than **35 minutes**. Almost every citation of
+non-significant in studies longer than 35 minutes. Almost every citation of
 this principle omits the boundary.
 
 Pre-training is under-evidenced, not evidenced. No independent systematic
@@ -199,9 +199,9 @@ about sixteen comparisons.
 **Learning styles: zero, with 89% belief.** Pashler et al. established that the
 meshing hypothesis requires a crossover interaction design; almost no study used
 one, and those that did contradicted it. Three subsequent direct tests: Rogowsky et
-al. (2015), no interaction; Husmann & O'Loughlin (2019), **N = 426**, VARK scores
+al. (2015), no interaction; Husmann & O'Loughlin (2019), N = 426, VARK scores
 uncorrelated with course performance and strategy–style alignment uncorrelated with
-outcome; Melzner & Kappes (2024), **N = 222**, adequately powered, no interaction
+outcome; Melzner & Kappes (2024), N = 222, adequately powered, no interaction
 and no prediction of judgments of learning. Against that: **89.1% of 15,405
 educators across 18 countries believe matching works, with no decline over
 time, and 91% of 112 recent health-professions education papers** are premised
@@ -221,8 +221,8 @@ figures are in **§19** and **§03**, and are not repeated here.
 Take it seriously, because it is half right. Heterogeneity that large means the
 pooled value is a poor predictor of any specific implementation. It does not
 mean the direction is unstable. Cepeda's 271 massed-versus-spaced comparisons
-produced **only 12** showing no effect or a negative effect. Latimier's expanding-
-versus-uniform comparison — the one that came out null — produced **I² = 0%** across
+produced only 12 showing no effect or a negative effect. Latimier's expanding-
+versus-uniform comparison, the one that came out null, produced I² = 0% across
 54 effects, which is what a genuinely clean nothing looks like. The literature can
 tell the difference between a lumpy real effect and an absence, and it does.
 
@@ -231,7 +231,7 @@ sign and rough order of magnitude, treat moderators as the actionable content, a
 never quote a single number as a promise.** Interleaving's g = 0.42 is nearly
 useless; its moderator table is a specification.
 
-Two further limits belong to this objection rather than to a footnote. Donoghue &
+Two further limits belong to this objection. Donoghue &
 Hattie's meta-analysis of ten techniques (**242 studies, 1,619 effects, 169,179
 participants, mean ES = 0.56) found effects much greater for lower-ability than
 higher-ability students and a corpus dominated by surface and factual
@@ -242,7 +242,7 @@ reviewers' words, "dominated by laboratory studies of university undergraduates.
 
 ---
 
-## 7. What this section commits us to
+## 7. Rules the floor imposes on every later claim
 
 - **Every effect size in this survey carries its interval and, where reported, its
   I².** Retrieval practice is g = 0.499 **with I² = 88%**, and the second half of
@@ -250,11 +250,11 @@ reviewers' words, "dominated by laboratory studies of university undergraduates.
 - **Discount any evaluation whose designers wrote the test.** The documented
   inflation is 2–3×.
 - **Per-material policies, never global ones.** Interleaving is g = 0.34 in
-  mathematics and **g = −0.39** in vocabulary. A single switch cannot serve both.
+  mathematics and g = −0.39 in vocabulary. A single switch cannot serve both.
 - **Do not claim to measure germane load.** Use the design effects; drop the
   mediation story.
 - **No modality labels, ever.** Adapt on prior knowledge, task properties,
-  self-regulation and motivation type — the four adaptation targets with evidence.
+  self-regulation and motivation type, the four adaptation targets with evidence.
 - **Assume decline.** ITS effects were significantly larger in earlier studies than
   in later, better-controlled ones. Expect the same trajectory for AI tutoring, and
   write the claims so they survive it.
@@ -265,7 +265,7 @@ reviewers' words, "dominated by laboratory studies of university undergraduates.
 
 The floor is not low. Retrieval practice and distributed practice are among the
 largest, most replicated effects anyone in education has ever measured, and they
-were established with paper and a clock. The interesting question for everything
-that follows is not whether a machine can beat them. It is whether a machine can
-finally get them *run* — with delay, with feedback, with genuine effortful
-retrieval — for learners who have never had anyone to run them.
+were established with paper and a clock. Whether a machine can beat them is the
+wrong question to carry into everything that follows. Ask instead whether a
+machine can finally get them *run*, with delay, with feedback, with genuine
+effortful retrieval, for learners who have never had anyone to run them.

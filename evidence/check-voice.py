@@ -26,6 +26,10 @@ import pathlib, re, sys, collections
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FILES = sorted(ROOT.glob("survey/*.md"))
 
+# The four surfaces a reader meets before the survey. They were reviewed
+# separately and have their own tics — see evidence/slop-front-matter.md.
+FRONT = ["README.md", "docs/index.html", "docs/deck.html", "docs/thesis.html"]
+
 # ── per-file rates, per 1,000 words ───────────────────────────────────────────
 RATE = {
     "em-dash":            (re.compile(r"—"),                                    6.0),
@@ -44,6 +48,27 @@ RATE = {
 
 FLOOR = 3   # minimum occurrences before a rate overrun is a habit
 
+# ── front-matter tics, per 1,000 words ────────────────────────────────────────
+# The negation beat — state a negation, supply the correction as a second clause —
+# runs 12 times across these four files and 60+ times in the paper. It earns its
+# keep when the reader genuinely holds the belief being negated, which is once or
+# twice per document, not once per screen.
+FRONT_RATE = {
+    "negation beat":      (re.compile(r"\bis not\b[^.\n]{0,70}\.\s+(?:It|They|That|This)\s+is\b"), 1.2),
+    "`Which …` fragment": (re.compile(r"(?m)^\s*(?:<[^>]+>\s*)*Which\b"),                             0.8),
+    "`the whole X`":      (re.compile(r"\bthe whole (?:problem|strategy|effect|landscape|frame|"
+                                     r"corpus|time|point|argument|thing)\b"),                          1.0),
+    "`nobody has X`":     (re.compile(r"\bnobody has\b"),                                             1.5),
+    "`worth X-ing`":      (re.compile(r"\bworth (?:stating|doing|having|running|taking|being)\b"),     0.8),
+    "`the honest X`":     (re.compile(r"\bthe honest \w+"),                                            0.5),
+    "em-dash":            (re.compile(r"—"),                                                           8.0),
+    "bold span":          (re.compile(r"\*\*[^*\n]+\*\*|<(?:b|strong)\b[^>]*>"),                     16.0),
+}
+
+# A run of identical words repeated inside one file, or across README and the
+# dashboard, is a paragraph that was pasted rather than written twice.
+DUP_RUN = 14
+
 # ── corpus-wide shapes: how many distinct files may share one ─────────────────
 SHAPE_CAP = 4
 
@@ -54,6 +79,32 @@ CLOSING_ANTITHESIS = re.compile(
 
 def words(t):
     return max(1, len(re.findall(r"\b[\w'-]+\b", t)))
+
+
+def prose(p):
+    """Front-matter surfaces: strip markup so the counts run over words only."""
+    t = p.read_text(encoding="utf-8")
+    if p.suffix == ".html":
+        t = re.sub(r"<(script|style)[\s\S]*?</\1>", " ", t)
+    return t
+
+
+def dupes(texts, n=DUP_RUN):
+    """Longest repeated word-runs of length >= n, reported once each."""
+    seen, hits = {}, []
+    for label, t in texts:
+        w = re.findall(r"[A-Za-z][\w'-]*", re.sub(r"<[^>]+>", " ", t))
+        for i in range(len(w) - n + 1):
+            key = " ".join(w[i:i + n]).lower()
+            if key in seen and seen[key] != (label, i - 1):
+                hits.append((seen[key][0], label, " ".join(w[i:i + n])))
+            seen.setdefault(key, (label, i))
+    out, used = [], set()
+    for a, b, s in hits:
+        head = " ".join(s.split()[:6]).lower()
+        if head not in used:
+            used.add(head); out.append((a, b, s))
+    return out
 
 
 def body(p):
@@ -89,12 +140,28 @@ def main():
         if CLOSING_ANTITHESIS.search(tail):
             closers.append(p.name)
 
+    front_texts = []
+    for rel in FRONT:
+        f = ROOT / rel
+        if not f.exists():
+            continue
+        t = prose(f)
+        w = words(re.sub(r"<[^>]+>", " ", t))
+        front_texts.append((rel, t))
+        for name, (pat, budget) in FRONT_RATE.items():
+            n = len(pat.findall(t))
+            if n * 1000 / w > budget and n >= FLOOR:
+                issues.append((rel, name, n, round(n * 1000 / w, 1), budget))
+
+    duplicated = dupes(front_texts)
+
     shapes = [(h, f) for h, f in headers.items() if len(f) > SHAPE_CAP]
     over_closers = len(closers) > SHAPE_CAP
 
-    if not issues and not shapes and not over_closers:
-        print(f"voice: OK — {len(FILES)} sections, {len(RATE)} tics within budget, "
-              f"no header shared by more than {SHAPE_CAP} files")
+    if not issues and not shapes and not over_closers and not duplicated:
+        print(f"voice: OK — {len(FILES)} sections + {len(front_texts)} front-matter "
+              f"surfaces, every tic within budget, no header shared by more than "
+              f"{SHAPE_CAP} files, no duplicated passages")
         return 0
 
     print(f"voice: {len(issues)} rate overrun(s), {len(shapes)} over-shared header(s)"
@@ -116,6 +183,11 @@ def main():
     for h, f in sorted(shapes, key=lambda s: -len(s[1])):
         print(f"  [SHARED HEADER ×{len(f)}] \"{h[:64]}\"")
         print(f"    {', '.join(sorted(f))}\n")
+
+    for a, b, s in duplicated:
+        where = f"twice in {a}" if a == b else f"{a} and {b}"
+        print(f"  [DUPLICATED ≥{DUP_RUN} WORDS] {where}")
+        print(f"    \"{s[:96]}…\"\n")
 
     if over_closers:
         print(f"  [CLOSING MOVE ×{len(closers)}] the `not X. It is Y.` antithesis ends "

@@ -16,7 +16,7 @@ That is a strong claim. It rests on 126 sources, 68 registered null results, and
 
 ---
 
-## 1. What is real, and it is very real
+## 1. The two effects that survive everything
 
 Start with what survives, because it is the foundation of everything else in this
 survey:
@@ -33,16 +33,16 @@ They are also **heterogeneous**, and honesty requires saying so in the same brea
 retrieval practice carries **I² = 88%**, moderated by the control condition, test-format
 consistency, feedback, and number of repetitions. Two boundary conditions matter for
 design. At an *immediate* test, restudy often wins — the retrieval advantage appears at
-delay. And **unsuccessful retrieval without corrective feedback yields little or
-nothing**, which makes feedback part of the intervention rather than an add-on. Spacing
+delay. And unsuccessful retrieval without corrective feedback yields little or
+nothing, which makes feedback part of the intervention itself. Spacing
 is not scale-free either: **d = 0.11–0.42** for motor tasks, much larger for simple
 verbal material.
 
 None of that weakens the recommendation. If a system does nothing else, it should do
-these two things, and do them relentlessly — with feedback attached and the test
+these two things, and do them relentlessly, with feedback attached and the test
 delayed.
 
-Nothing that follows weakens either finding. What follows is about a **third**
+Nothing that follows weakens either finding. What follows is about a *third*
 claim that has been quietly bundled with them — that the *scheduling algorithm*
 deciding when to show you a card is where the sophistication lives.
 
@@ -61,13 +61,13 @@ On that benchmark — **350 million reviews** — three results sit together:
    metrics.**
 3. The FSRS team themselves published **`RMSE-BINS-EXPLOIT`**, a deliberate
    demonstration that the headline metric can be won by a model with a log loss of
-   **4.6** — i.e. the reported scoreboard is gameable, and they said so.
+   **4.6**. The reported scoreboard is gameable, and they said so.
 
 Credit where it is due: publishing your own metric's exploit is better science
 than most of this field manages.
 
-But note what these benchmarks are. They are **backtests on logs of what learners
-already did.** Predicting whether a review will be recalled is not the same
+But note what these benchmarks are. They are backtests on logs of what learners
+already did. Predicting whether a review will be recalled is not the same
 quantity as causing more to be remembered. A backtest is not an intervention, and
 the scheduling literature has almost no interventional evidence at all.
 
@@ -76,7 +76,7 @@ the scheduling literature has almost no interventional evidence at all.
 ## 3. Expanding intervals: verified null, and the mechanism recovered
 
 The single most-repeated claim in spaced repetition is that intervals should
-*expand* — review at 1 day, then 3, then 7, then 21 — because retrieving at the
+*expand* (review at 1 day, then 3, then 7, then 21) because retrieving at the
 edge of forgetting is desirably difficult.
 
 **g = 0.032, 95% CI [−0.10, 0.17], k = 54, I² = 0%**, no publication-bias
@@ -102,8 +102,8 @@ And the theoretical premise fails in the data too: response latencies **fall**
 across expanding repetitions. The retrievals were not getting harder. The
 desirable-difficulty story for expanding intervals is not what the timings show.
 
-Dobson (2012, n = 250, 29 days) is the honest counterexample and is reported in
-full rather than omitted.
+Dobson (2012, n = 250, 29 days) is the counterexample. It is reported here in
+full.
 
 ---
 

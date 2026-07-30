@@ -8,8 +8,8 @@ date: 2026-07-25
 # The JARVIS Inversion
 
 The target is an ambient, always-present, sees-what-you-see, remembers-everything
-tutor. JARVIS is the right image and the wrong specification, and the difference
-is the most important design decision in this document.
+tutor. JARVIS is the right image and the wrong specification, and every design
+decision in this document follows from the difference.
 
 ## 1. The inversion
 
@@ -50,15 +50,14 @@ Seven capabilities, each independently assessable against 2026 reality.
 | J6 | **Has judgment, pushes back** | ⛔ Trained against | RLHF optimises agreeableness. "Sir, I would not advise that" is exactly what current models will not say. See §4. |
 | J7 | **Runs work in parallel** | ✅ Available | Agent village (G2): background probe generation, misconception analysis, next-session planning. |
 
-Two of seven are available today. One is degraded. Four are blocked — and the
-blockers are *architectural*, not capability. They will not be fixed by a better
-model.
+Two of seven are available today. One is degraded. Four are blocked, and those
+blockers are *architectural*. They will not be fixed by a better model.
 
 ## 3. Latency: the budget is spent before the model runs
 
 Human conversational turn gaps are modally **100–200 ms**; 51–55% land under
 200 ms (Levinson & Torreira 2015). Humans achieve this by *predicting* the end of
-your sentence — word encoding alone takes ~600 ms, so listening-then-responding
+your sentence. Word encoding alone takes ~600 ms, so listening-then-responding
 cannot produce it.
 
 Default server VAD is **500 ms silence + 300 ms padding = 800 ms before
@@ -68,7 +67,7 @@ demonstrates the alternative: 160 ms theoretical, ~200 ms practical, full duplex
 For an ADHD learner this is not a polish issue. An 800 ms dead gap after every
 utterance is an attention leak on every turn.
 
-## 4. The refusal engine — the component that does not exist
+## 4. The refusal engine is the pedagogy
 
 Everything above is infrastructure. This is the pedagogy, and no vendor ships it.
 
@@ -76,16 +75,16 @@ The tutor must continuously decide **answer / ask / wait / pivot / escalate**, a
 default to *not answering*. Inputs it must weigh:
 
 - Has the learner attempted? (no attempt ⇒ never answer)
-- Is this struggle productive or is it failure? (**mode-dependent — see H1.3: for
-  SELPA archetypes this inverts toward explicit instruction**)
+- Is this struggle productive or is it failure? (**mode-dependent**; see H1.3, where
+  the SELPA archetypes invert this toward explicit instruction)
 - Is this a retrieval opportunity? (recently taught ⇒ ask, don't tell)
 - Is frustration approaching the point of harm? (escalate, don't persist)
 - Is the current *method* failing, versus the learner failing? (⇒ pivot)
 
 The last one is the bidirectional loop (H1.2) and it is the difference between a
 tutor and a search engine. Most AI tutors re-explain the same way with more
-words. This one must change **approach**, not volume — and know the difference
-between "not yet" and "not this way."
+words. This one must change **approach** instead of volume, and know the
+difference between "not yet" and "not this way."
 
 Against this, RLHF-trained agreeableness is an active adversary. The refusal
 engine has to be built *over* the model's disposition, not delegated to it.
@@ -94,41 +93,40 @@ engine has to be built *over* the model's disposition, not delegated to it.
 
 Ranked by (impact for the target learner) ÷ (blocker difficulty):
 
-1. **State (J4).** Nothing else compounds without it. A single learner model
-   every agent reads and writes; inspectable and correctable by learner and
-   parent.
-2. **The refusal engine (§4).** Pure logic over an existing model. No new
-   capability required. Highest pedagogical yield per line of code.
-3. **Deixis (J3).** A shared canvas the tutor can point at and annotate via tool
-   calls. Removes working-memory load directly — the highest-value accommodation
-   in the archetype table.
-4. **Proactive probing (J5).** Out-of-band evaluation → the CBM probe loop.
+1. State (J4). Nothing else compounds without it. A single learner model every
+   agent reads and writes; inspectable and correctable by learner and parent.
+2. The refusal engine (§4). Pure logic over an existing model. No new capability
+   required. Highest pedagogical yield per line of code.
+3. Deixis (J3). A shared canvas the tutor can point at and annotate via tool
+   calls. It removes working-memory load directly, and it is the highest-value
+   accommodation in the archetype table.
+4. Proactive probing (J5). Out-of-band evaluation feeding the CBM probe loop.
    Available now, nobody uses it.
-5. **Session continuity (J1).** Compression + resumption to defeat the 2-minute
+5. Session continuity (J1). Compression + resumption to defeat the 2-minute
    video cap.
-6. **Process vision (J2).** Blocked at 1 FPS upstream; work around it with event
+6. Process vision (J2). Blocked at 1 FPS upstream; work around it with event
    capture (keystrokes, edits, canvas strokes) rather than video.
-7. **The face.** Last, and honestly labelled: pedagogical agents measure
-   **g ≈ 0.19–0.20**; three 2024 field experiments improved affect (d = .85–1.01)
-   while learning *did not move*. Build it for engagement — a real and necessary
-   win for an ADHD learner — but do not claim it teaches.
+7. The face. Last, and labelled as what it is: pedagogical agents measure
+   **g ≈ 0.19–0.20**, and three 2024 field experiments improved affect
+   (d = .85–1.01) while learning *did not move*. Build it for engagement — a real
+   and necessary win for an ADHD learner — but do not claim it teaches.
 
 ## 6. The one-line spec
 
 > An ambient tutor that sees the work, remembers everything, points at the thing,
 > notices you are stuck before you say so, changes its approach when its approach
-> is failing — and, most of the time, declines to give you the answer.
+> is failing, and most of the time declines to give you the answer.
 
 ---
 
-## 7. Addendum — Wan Streamer changes three of the seven blockers
+## 7. Addendum: Wan Streamer changes three of the seven blockers
 
 *Added 2026-07-25 after direct source review. Supersedes the latency and avatar
 analysis above where they conflict.*
 
 Sources. Wan-Streamer v0.2, arXiv:2607.04443 (Huang et al., 5 Jul 2026);
 Wan Streamer v0.3, https://wan-streamer.com/v0.3/ (16 Jul 2026). Local install
-present at `~/wan-streamer` — note this directory is actually **StreamDiffusionV2**
+present at `~/wan-streamer`, though that directory is actually **StreamDiffusionV2**
 (arXiv:2511.07399, MLSys 2026 Best Paper), a *different* real-time V2V system with
 Blackwell support added 2026-05-17. Both are relevant; they are not the same
 project.
@@ -148,9 +146,9 @@ Architecture: single-GPU *thinker* (perception) + multi-GPU *performer*
 
 ### The v0.3 contribution: world / event-stream decomposition
 
-v0.3 separates the world (scene, characters, appearance, sound — must stay
-coherent) from the event stream (speech, motion, camera movement,
-environmental change — varies moment to moment). *"Establish the world once,
+v0.3 separates the world, which must stay coherent (scene, characters,
+appearance, sound), from the event stream, which varies moment to moment
+(speech, motion, camera movement, environmental change). *"Establish the world once,
 follow the timeline, and learn what happens next."*
 
 This is the sharpest architectural fit for tutoring in the entire survey:
