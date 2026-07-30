@@ -64,8 +64,8 @@ people willing to exploit the gap barely moved; the population who *could* becam
 everyone.
 
 The design problem is not "invent tasks AI cannot do", a race whose finish line
-recedes annually. The problem is to **restore a margin**, and there are four ways: bind the
-response to real time (orals, live problem-solving); bind the claim to a verifiable
+recedes annually. The problem is to **restore a margin**, and there are four ways:
+bind the response to real time (orals, live problem-solving); bind the claim to a verifiable
 object (proof assistants, test suites, withheld data); bind the artifact to a process
 trace (version control, revision history); or abandon per-task security and secure
 the aggregate (programmatic assessment).

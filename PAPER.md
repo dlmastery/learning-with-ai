@@ -15,7 +15,7 @@ randomised controlled trials** — four of them second-language learning. It mea
 resemblance, preference and engagement. It very rarely measures whether anyone
 learned anything, and almost never measures it **after the tool is taken away**.
 
-This survey is an attempt to write the missing specification. It rests on 47 research
+This survey is an attempt to write the missing specification. It rests on 48 research
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
 errors is published in an append-only ledger rather than quietly edited — **23 of
@@ -7302,12 +7302,12 @@ the EUR-Lex primary text:
 Note what did **not** move. Article 113's first paragraph is unamended and Chapter IV
 is not carved out, so **Article 50 — transparency, chatbot disclosure, synthetic-content
 marking — still applies from 2 August 2026.** For a conversational tutor that is the
-live deadline, and it is days away, not eighteen months.
+live deadline, and it is days away instead of eighteen months.
 
 Two sources that a reasonable person would check both give the wrong answer today:
 `artificialintelligenceact.eu` is still stamped "last updated 1 August 2024," and the
 Commission's own Digital Omnibus page still describes only the proposal. This is
-exactly the case our editorial standard exists for — we published an unverified date,
+the case our editorial standard exists for — we published an unverified date,
 flagged it as unverified, and corrected it against the primary text within a day.
 
 The deferral changes the *deadline*, not the *design*. Read the Act and you will find
@@ -7365,8 +7365,8 @@ against EUR-Lex before making any compliance decision; a claim of this kind sour
 from a secondary tracker was wrong within eighteen months.
 
 The practical consequence for a builder is not defensive. The conformity
-artefacts — risk management, data governance, logging, human oversight, and a
-Fundamental Rights Impact Assessment under Article 27 for public deployers — are
+artefacts (risk management, data governance, logging, human oversight, and a
+Fundamental Rights Impact Assessment under Article 27 for public deployers) are
 procurement assets. A state school buying an adaptive tutor has a legal duty to
 produce a FRIA. Ship an honest pre-populated template, including a candid list of
 the groups your system underserves, and you have handed the customer the hardest
@@ -7377,8 +7377,8 @@ without your help.
 
 ## 2. The prohibition that clears the field
 
-Article 5(1)(f) prohibits — outright, not as high-risk, applicable since
-2 February 2025 — "AI systems to infer emotions of a natural person in the areas
+Article 5(1)(f) prohibits outright (not as high-risk, and applicable since
+2 February 2025) "AI systems to infer emotions of a natural person in the areas
 of workplace and education institutions." Read with Art. 3(39) (emotion
 inference *on the basis of biometric data*) and Art. 3(34) (biometric data
 includes behavioural characteristics, "such as facial images"), this means:
@@ -7428,8 +7428,8 @@ with a written retention policy required and published. And § 312.2 now express
 counts as children's personal information "voiceprints... facial templates... or
 faceprints," plus "a photograph, video, or audio file where such file contains a
 child's image or voice." **A multimodal tutor collects COPPA-regulated biometrics
-by default, on turn one** — not a corner case of the live-video architecture in
-the next section but its baseline condition.
+by default, on turn one**. That is not a corner case of the live-video architecture
+in the next section but its baseline condition.
 
 IDEA is stricter still. 34 CFR § 300.624: when personally identifiable
 information is no longer needed to provide educational services, the agency must
@@ -7477,16 +7477,16 @@ can we possibly countenance that?" The killing blow was a custody rule in the Ne
 York state budget forbidding the state to share identifiable student data with
 any shared-learning-infrastructure provider. Closure came a month later.
 
-**And here is the documented disconfirmation, which deserves its own space
-because it is the strongest counter-argument available.** inBloom's own product
+And here is the documented disconfirmation, which deserves its own space
+because it is the strongest counter-argument available. inBloom's own product
 lead, quoted in that same post-mortem: *"inBloom did not have a privacy problem,
 inBloom did not have a parent problem. InBloom had an advocacy and perception
 problem."* The Data & Society authors lean the same way, identifying the root
 cause as low public tolerance for risk plus a failure to communicate benefit.
 "Trust was one of the most frequently used words in our interviews."
 
-That is a real disconfirmation of the naive custody thesis and it should be held,
-not waved away. The rebuttal is narrow: what could not be communicated *was* the
+That is a real disconfirmation of the naive custody thesis and it should be held
+and not waved away. The rebuttal is narrow: what could not be communicated *was* the
 custody arrangement. The answer to "who holds my child's health and discipline
 record, and who can they give it to?" was "a third-party non-profit, in a
 commercial cloud, disclosing to for-profit app vendors under district
@@ -7574,7 +7574,7 @@ will take action."
 
 Each is a product requirement. ¶14 forbids a persona that says or implies *this
 is just between us*. ¶15 means a canned "I can't help with that, please talk to a
-trusted adult" deflection is a safeguarding failure, not a safe default. ¶59
+trusted adult" deflection is a safeguarding failure and never a safe default. ¶59
 forbids a weekly review queue. ¶60 forecloses "the school's own systems will
 catch it." The APA's June 2025 advisory, AI Act Art. 26(2) human oversight, and
 ICO AADC Standard 15 converge on the same missing piece: a named human on the
@@ -7602,7 +7602,7 @@ review of flagged real conversations "identified zero cases of suicide risk that
 failed to receive crisis resources."
 
 The wrong inference is that safeguards are unnecessary. The right one is that
-the safeguards worked — the zero-miss came from layered engineering, not from
+the safeguards worked — the zero-miss came from layered engineering and not from
 a good base model with a careful system prompt, and the same paper's 29–54%
 figure shows the alternative. Benchmarks are not deployment evidence in either
 direction; ecological audit is the method.
@@ -7617,7 +7617,7 @@ measured on adults. Design for the tail; do not claim the population.
 
 ---
 
-## 7. What this section commits us to
+## 7. The floor we will build on
 
 - **No emotion inference, ever.** Art. 5(1)(f) is a prohibition, not a risk
   tier. Build affect *response* from stated signals and behavioural facts.
@@ -7630,7 +7630,7 @@ measured on adults. Design for the tail; do not claim the population.
   derivation is pedagogy; persistence is a dossier.
 - **Custody first, data model second.** Five questions, one screen, no diagram.
 - **No AI writing detector, in any configuration.** 61.22% vs 5.19%; 100% → 13%
-  under one prompt. Abolition, not caution.
+  under one prompt.
 - **No product for children without a named human escalation recipient**, a
   published SLA, and omission rate as the primary safety KPI.
 

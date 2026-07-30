@@ -149,8 +149,8 @@ with a written retention policy required and published. And § 312.2 now express
 counts as children's personal information "voiceprints... facial templates... or
 faceprints," plus "a photograph, video, or audio file where such file contains a
 child's image or voice." **A multimodal tutor collects COPPA-regulated biometrics
-by default, on turn one** — not a corner case of the live-video architecture in
-the next section but its baseline condition.
+by default, on turn one**. That is not a corner case of the live-video architecture
+in the next section but its baseline condition.
 
 IDEA is stricter still. 34 CFR § 300.624: when personally identifiable
 information is no longer needed to provide educational services, the agency must
@@ -198,16 +198,16 @@ can we possibly countenance that?" The killing blow was a custody rule in the Ne
 York state budget forbidding the state to share identifiable student data with
 any shared-learning-infrastructure provider. Closure came a month later.
 
-**And here is the documented disconfirmation, which deserves its own space
-because it is the strongest counter-argument available.** inBloom's own product
+And here is the documented disconfirmation, which deserves its own space
+because it is the strongest counter-argument available. inBloom's own product
 lead, quoted in that same post-mortem: *"inBloom did not have a privacy problem,
 inBloom did not have a parent problem. InBloom had an advocacy and perception
 problem."* The Data & Society authors lean the same way, identifying the root
 cause as low public tolerance for risk plus a failure to communicate benefit.
 "Trust was one of the most frequently used words in our interviews."
 
-That is a real disconfirmation of the naive custody thesis and it should be held,
-not waved away. The rebuttal is narrow: what could not be communicated *was* the
+That is a real disconfirmation of the naive custody thesis and it should be held
+and not waved away. The rebuttal is narrow: what could not be communicated *was* the
 custody arrangement. The answer to "who holds my child's health and discipline
 record, and who can they give it to?" was "a third-party non-profit, in a
 commercial cloud, disclosing to for-profit app vendors under district
@@ -295,7 +295,7 @@ will take action."
 
 Each is a product requirement. ¶14 forbids a persona that says or implies *this
 is just between us*. ¶15 means a canned "I can't help with that, please talk to a
-trusted adult" deflection is a safeguarding failure, not a safe default. ¶59
+trusted adult" deflection is a safeguarding failure and never a safe default. ¶59
 forbids a weekly review queue. ¶60 forecloses "the school's own systems will
 catch it." The APA's June 2025 advisory, AI Act Art. 26(2) human oversight, and
 ICO AADC Standard 15 converge on the same missing piece: a named human on the
@@ -323,7 +323,7 @@ review of flagged real conversations "identified zero cases of suicide risk that
 failed to receive crisis resources."
 
 The wrong inference is that safeguards are unnecessary. The right one is that
-the safeguards worked — the zero-miss came from layered engineering, not from
+the safeguards worked — the zero-miss came from layered engineering and not from
 a good base model with a careful system prompt, and the same paper's 29–54%
 figure shows the alternative. Benchmarks are not deployment evidence in either
 direction; ecological audit is the method.
@@ -338,7 +338,7 @@ measured on adults. Design for the tail; do not claim the population.
 
 ---
 
-## 7. What this section commits us to
+## 7. The floor we will build on
 
 - **No emotion inference, ever.** Art. 5(1)(f) is a prohibition, not a risk
   tier. Build affect *response* from stated signals and behavioural facts.
@@ -351,7 +351,7 @@ measured on adults. Design for the tail; do not claim the population.
   derivation is pedagogy; persistence is a dossier.
 - **Custody first, data model second.** Five questions, one screen, no diagram.
 - **No AI writing detector, in any configuration.** 61.22% vs 5.19%; 100% → 13%
-  under one prompt. Abolition, not caution.
+  under one prompt.
 - **No product for children without a named human escalation recipient**, a
   published SLA, and omission rate as the primary safety KPI.
 
