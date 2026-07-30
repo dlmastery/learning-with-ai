@@ -73,7 +73,7 @@ off. <b>§2 is SCRIPTED.</b> The refusal sentences are written by hand, because 
 needs a model this page cannot ship; only the <em>referral target</em> inside them is computed.
 <b>§3 is COMPUTED.</b> A working policy checker you can throw sentences at.</div>
 
-<h2>1 · Brokering — computed</h2>
+<h2>1 · Brokering (computed)</h2>
 <p>The learner's side of the profile is yours to set. The eight people below are fixtures with
 declared availability in their own time zones. Everything else — the overlap windows, the
 reciprocity term, the ranking — is computed.</p>
@@ -89,15 +89,15 @@ reciprocity term, the ranking — is computed.</p>
       <input type="range" id="tz" min="-11" max="12" step="1" value="0" />
     </div>
     <div>
-      <label for="lvA">Your level — <span id="tn0">—</span> <span class="val" id="lvAv">2</span></label>
+      <label for="lvA">Your level in <span id="tn0">this topic</span> <span class="val" id="lvAv">2</span></label>
       <input type="range" id="lvA" min="1" max="5" step="1" value="2" />
     </div>
     <div>
-      <label for="lvB">Your level — <span id="tn1">—</span> <span class="val" id="lvBv">4</span></label>
+      <label for="lvB">Your level in <span id="tn1">this topic</span> <span class="val" id="lvBv">4</span></label>
       <input type="range" id="lvB" min="1" max="5" step="1" value="4" />
     </div>
     <div>
-      <label for="lvC">Your level — <span id="tn2">—</span> <span class="val" id="lvCv">3</span></label>
+      <label for="lvC">Your level in <span id="tn2">this topic</span> <span class="val" id="lvCv">3</span></label>
       <input type="range" id="lvC" min="1" max="5" step="1" value="3" />
     </div>
     <div>
@@ -106,7 +106,7 @@ reciprocity term, the ranking — is computed.</p>
     </div>
   </div>
   <div style="margin-top:18px">
-    <label>When you are free — your local time</label>
+    <label>When you are free, in your local time</label>
     <div class="chk" id="avail"></div>
   </div>
   <div class="row" style="margin:20px 0 0;padding-top:16px;border-top:1px solid var(--line)">
@@ -124,7 +124,7 @@ reciprocity term, the ranking — is computed.</p>
   <div class="psub" style="margin:14px 0 0">The <code>modality</code> coefficient is not a taste. It
   is 3 ÷ 5, taken directly from the Evidence for Learning / EEF toolkit: collaborative learning is
   <b>+5 months</b> in person and <b>+3 months</b> when technology-mediated. Turn the weighting off
-  above and watch the ranking rearrange — that is the finding changing a decision, which is the only
+  above and watch the ranking rearrange. That is the finding changing a decision, which is the only
   thing a finding is for.</div>
 </div>
 
@@ -132,7 +132,7 @@ reciprocity term, the ranking — is computed.</p>
 <div id="matches"></div>
 <div class="mini" id="rejnote"></div>
 
-<h2>3 · The refusal — scripted</h2>
+<h2>3 · The refusal (scripted)</h2>
 <p class="sub">These four openings are the ones an agent will actually meet. The replies are
 hand-written; the person named at the end of each is pulled from the ranking above.</p>
 
@@ -145,10 +145,10 @@ hand-written; the person named at the end of each is pulled from the ranking abo
 <div class="note"><b>What the refusal is not.</b> It is not a lecture about AI, and it is not a
 withdrawal. Every one of those replies ends by <em>handing the learner to a specific named human at
 a specific time</em>. A refusal that leaves someone with nothing is not a safeguard; it is an
-abandonment with a compliance justification attached. The measure of this component is not how
-firmly it says no — it is whether a human was actually reached.</div>
+abandonment with a compliance justification attached. Firmness is not the measure of this
+component. Judge it by whether a human was actually reached.</div>
 
-<h2>4 · The policy checker — computed</h2>
+<h2>4 · The policy checker (computed)</h2>
 <p>Anthropomorphic bids for continued interaction are the failure mode. Type a candidate utterance,
 or press one of the samples, and the checker runs a real pattern set against it.</p>
 
@@ -168,19 +168,19 @@ or press one of the samples, and the checker runs a real pattern set against it.
 <table>
   <thead><tr><th>Finding</th><th class="num">Effect</th><th>Security</th><th>What it decides</th></tr></thead>
   <tbody>
-    <tr><td><b>Collaborative learning, in person</b></td><td class="num up">+5 months</td>
+    <tr><td>Collaborative learning, in person</td><td class="num up">+5 months</td>
       <td>LOW · 212 studies · ~$20 per pupil per year</td>
       <td>The thing worth brokering.</td></tr>
-    <tr><td><b>Collaborative learning, technology-mediated</b></td><td class="num">+3 months</td>
-      <td>LOW</td><td>A <b>measured penalty for going digital at all.</b> The ratio 3:5 is the coefficient in §1.</td></tr>
+    <tr><td>Collaborative learning, technology-mediated</td><td class="num">+3 months</td>
+      <td>LOW</td><td>A measured penalty for going digital at all. The ratio 3:5 is the coefficient in §1.</td></tr>
     <tr><td>Peer tutoring</td><td class="num up">+5 months</td>
-      <td><b>HIGH</b> · very low cost</td><td>Why the score rewards reciprocity: the tutor gains too (g = 0.43).</td></tr>
+      <td>HIGH · very low cost</td><td>Why the score rewards reciprocity: the tutor gains too (g = 0.43).</td></tr>
     <tr><td>Process-only collaborative structures without content</td><td class="num down">ES 0.02 [−0.06, 0.09], p = .65</td>
       <td>VERY HIGH · 181 schools · 12,747 pupils</td>
       <td>EEF <em>Lesson Study</em>. Putting people in a room is not the intervention. <b>Null in every subgroup, no dose–response.</b></td></tr>
-    <tr><td><b>Adults and women anthropomorphise AI chatbots more than teens and men</b></td>
+    <tr><td>Adults and women anthropomorphise AI chatbots more than teens and men</td>
       <td class="num">—</td><td>arXiv:2606.30942, three companion subreddits</td>
-      <td>Cuts against “children are maximally susceptible”. Child protections must rest on <b>reduced capacity to exit</b> and developmental stakes — a different and better argument.</td></tr>
+      <td>Cuts against “children are maximally susceptible”. Child protections must rest on reduced capacity to exit and developmental stakes. That is a different and better argument.</td></tr>
   </tbody>
 </table>
 </div>
@@ -189,8 +189,8 @@ or press one of the samples, and the checker runs a real pattern set against it.
 months of progress on the one thing this agent is for. Row five says the adult building this
 product is, on the available evidence, <em>more</em> likely to anthropomorphise the thing than the
 teenager it is built for. Together they argue for an agent that is deliberately bad at being
-company and good at getting out of the way — and they argue against the intuition that the danger
-is confined to children.</div>
+company and good at getting out of the way. They argue as well against the intuition that the
+danger is confined to children.</div>
 
 <div class="note"><b>And row four is the one people skip.</b> EEF's <em>Lesson Study</em> trial —
 very high security, 6,437 pupils in the analysis — returned <b>0.02</b>. Collaboration structures
@@ -206,20 +206,20 @@ specific topic and a specific reciprocal exchange, not an invitation to “study
     coefficient with a switch next to it, and flipping the switch visibly changes who gets proposed.</li>
     <li>Brokering is a solvable scheduling problem: interval intersection across time zones,
     reciprocity as a scoring term, hard filters for safeguarding.</li>
-    <li>Refusal can be <strong>constructive</strong> — every scripted decline terminates in a named
+    <li>Refusal can be constructive. Every scripted decline terminates in a named
     human and a real time slot rather than in a policy statement.</li>
     <li>The anthropomorphic-bid prohibition is checkable by machine. The checker in §3 is crude, it
     is auditable, and it runs on every utterance rather than on a sample.</li>
   </ul>
   <div class="ptitle">What it does not prove</div>
   <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
-    <li><strong>That the refusal works.</strong> No learner is simulated here and none was tested.
+    <li>That the refusal works. No learner is simulated here and none was tested.
     Whether a person in genuine isolation accepts a redirection to a stranger instead of the
     always-available agent is precisely the unmeasured question, and it is not a small one.</li>
     <li>That the matching produces good pairs. It produces <em>schedulable</em> pairs with a
     plausible reciprocity story. Compatibility between humans is not an overlap calculation.</li>
     <li>That +5 versus +3 transfers. Both figures carry <b>LOW</b> evidence security in the toolkit
-    itself, and “months of progress” is a policy translation, not an effect size. The ratio is the
+    itself, and “months of progress” is a policy translation laid over an effect size. The ratio is the
     best available anchor and it is a weak one.</li>
     <li>That the pattern checker is adequate. It is a regex list. It will miss anything phrased
     obliquely, and a competent model asked to be warm will route around it in one attempt. It

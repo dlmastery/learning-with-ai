@@ -64,8 +64,8 @@ svg text{font:10.5px var(--sans);fill:var(--ink-3)}
   <div class="eyebrow">Demo 17 · The mechanism</div>
   <h1>The widget comes before the sentence</h1>
   <p class="lede">Read the raw HTML of Ciechanowski's <em>Gears</em> and an ordering falls out that
-  is invisible when you read the page normally: the manipulable figure is emitted <strong>before</strong>
-  the prose that resolves it, <strong>30 times</strong> in one article and <strong>120 times</strong>
+  is invisible when you read the page normally: the manipulable figure is emitted before
+  the prose that resolves it, 30 times in one article and 120 times
   in <em>Moon</em> — and the reader is never once asked to pause. Four figures below do the same
   thing to one concept.</p>
   <div class="chips">
@@ -86,14 +86,14 @@ svg text{font:10.5px var(--sans);fill:var(--ink-3)}
   paused</b> — an article has no clock, so the widget simply sits there, unresolved, and you move
   it because there is nothing else to do.</p></div>
   <div class="o"><b>How to use it</b><p>You will not be able to read the explanations until you
-  have moved the figures — that is the whole design, and it is enforced in code rather than asked
+  have moved the figures. That is the whole design, enforced in code rather than asked
   for in a sentence. When all four are open, the switch at the bottom re-orders the page so the
   prose comes first. The difference is the thing this page is about.</p></div>
 </section>
 
 <div class="note"><b>The parameter values are not neutral.</b> Prediction has <em>no main
-effect</em>. The entire measured effect is carried by the <b>expectancy-violation interaction,
-p = .002</b> — predicting and being right does approximately nothing. So every figure below is set
+effect</em>. The entire measured effect is carried by the expectancy-violation interaction,
+p = .002. Predicting and being right does approximately nothing. So every figure below is set
 at values where the common wrong intuition and the truth give visibly different answers. A
 prediction step that mostly confirms is a cost with no benefit.</div>
 
@@ -111,8 +111,8 @@ none of them explains anything until you have used it.</p>
 <div id="stack"></div>
 
 <h2>The A/B, felt rather than argued</h2>
-<p>Flip the ordering. The same four figures, the same four paragraphs, the same numbers — prose
-first, gates removed. Nothing is withheld and nothing is required.</p>
+<p>Flip the ordering. The same four figures, the same four paragraphs, the same numbers, with the
+prose first and the gates removed. Nothing is withheld and nothing is required.</p>
 
 <div class="panel">
   <div class="row swap" style="margin:0">
@@ -127,12 +127,12 @@ first, gates removed. Nothing is withheld and nothing is required.</p>
 <h2>The spec, in one sentence</h2>
 <div class="callout">
   <div class="k">What a generator would have to emit</div>
-  <p>For every load-bearing claim, emit a <strong>manipulable figure that instantiates it</strong>,
-  render it <strong>before</strong> the prose that resolves it, introduce <strong>one new degree of
-  freedom</strong> per figure, and <strong>do not advance</strong> until the learner has moved
+  <p>For every load-bearing claim, emit a manipulable figure that instantiates it,
+  render it before the prose that resolves it, introduce one new degree of
+  freedom per figure, and do not advance until the learner has moved
   something.</p>
   <p class="sub" style="margin:12px 0 0">Four constraints, each doing work. <em>Instantiates</em>
-  rather than illustrates — the figure has to be the claim, not a picture of it. The order is
+  rather than illustrates. The figure has to be the claim, not a picture of it. The order is
   non-negotiable: after the prose, it is a demonstration rather than a prediction. One degree of
   freedom keeps the search space small enough to reason about. And the gate makes the prediction
   compulsory without ever asking.</p>
@@ -140,14 +140,14 @@ first, gates removed. Nothing is withheld and nothing is required.</p>
 
 <h2>What this proves / what it does not</h2>
 
-<p><strong>It proves the ordering is mechanisable.</strong> Not a style note — a checkable
-property. Every figure above is emitted before its paragraph; every gate is a real predicate over
+<p>It proves the ordering is mechanisable. That is a checkable property rather than a style
+note. Every figure above is emitted before its paragraph; every gate is a real predicate over
 a real input event; every number in every reveal is computed from the control you moved, including
 the crossover in Figure 4, which is found by search rather than looked up. A generator could be
 required to satisfy these four constraints and be rejected when it does not, exactly as a
 simulation is rejected for a null slider.</p>
 
-<p><strong>It also shows the technique is cheap.</strong> Four figures, no library, no build step,
+<p>It also shows the technique is cheap. Four figures, no library, no build step,
 no model. The reason nobody has ported it is not cost.</p>
 
 <p>Three conditions of use, in the order they will bite you:</p>

@@ -3,7 +3,7 @@ title: "Second-language learning: the one subject where the randomised evidence 
 wave: R
 section: R4
 date_researched: 2026-07-30
-sources_count: 62
+sources_count: 88
 status: raw-research
 ---
 
@@ -407,6 +407,12 @@ distinguishable from neither. The design instruction survives in weaker form: a 
 withholds the form and pushes the learner to produce it, which is the generation effect,
 and it is the harder thing for a language model to do than smoothly reformulating.
 
+There is a second-order irony here. Brown (2016), *Language Teaching Research*
+20(4):436–458, `10.1177/1362168814563200`, meta-analysed **proportions** from observational
+classroom studies rather than effects, and found that **recasts make up 57% of all
+corrective feedback teachers actually give, prompts 30%**. The most-used type is the
+least-supported one. `MEASURED-META`.
+
 **Li's explicit/implicit and Lyster–Saito's prompts/recasts are the same studies in
 different bins.** Lyster and Saito state that Ellis's and Ellis et al.'s "explicit CF" was
 "operationalized as metalinguistic information in the form of a prompt. Therefore, we
@@ -653,14 +659,16 @@ with no numeric effect size, confidence interval or heterogeneity statistic, and
 full text was not retrievable here. It is recorded so that it is not silently treated as
 a second, converging estimate of Mahdi & Al Khateeb.
 
-The distinction the whole area rests on comes from Munro and Derwing: **accentedness**
-(how different a speaker sounds from a reference variety), **comprehensibility** (how
-much effort a listener spends), and **intelligibility** (how much the listener actually
-recovers) are separable, and they dissociate — heavily accented speech is routinely
-fully intelligible. Only the last two are legitimate instructional targets. Most CAPT
-tools score against a native reference, which is an accentedness measure. A product
-decision follows directly: an AI pronunciation tutor that optimises similarity to a
-reference speaker is optimising the one construct the field says is not the goal.
+The distinction the whole area rests on is Munro and Derwing's separation of
+**accentedness** (how different a speaker sounds from a reference variety),
+**comprehensibility** (how much effort a listener spends) and **intelligibility** (how much
+the listener actually recovers). The three dissociate: heavily accented speech is routinely
+fully intelligible, and only the last two are legitimate instructional targets. Their
+primary papers were **not retrieved in this session**, so the framework is described here
+and no effect size is attributed to it. The design consequence stands regardless: most CAPT
+tools score similarity to a native reference, which is an accentedness measure, and an AI
+pronunciation tutor built that way optimises the one construct the field says is not the
+goal.
 
 ### 5.2 The benchmark that bounds the product
 
@@ -1049,6 +1057,13 @@ a better proxy for a real listener's difficulty than a robust one. Run the learn
 speech through a small, accent-brittle recogniser and treat its failures as an
 intelligibility signal. `SPEC`, untested, and cheap to test.
 
+**Withhold the form.** A language model's reflex when a learner produces a wrong sentence
+is to restate it correctly, which is a recast, the least effective of the three feedback
+types in the only classroom meta-analysis that separates them (§3.1), and the one teachers
+already over-supply at 57% of all corrections. Prompting the learner to self-repair is
+harder to generate and better supported. This is the cheapest pedagogical edit available in
+the whole domain: it is a change to a system prompt.
+
 **Say the vendor sentence out loud.** No randomised trial has shown that any consumer
 language app teaches a language better than an alternative, in either direction. A product
 that wants to claim otherwise has to run the trial.
@@ -1099,6 +1114,16 @@ inside a single L2 sample, and no one has run it.
 - **Almusharraf et al. (2024)'s numbers.** A 2024 CAPT meta-analysis of 31 studies whose
   public abstract reports only "medium" and "large." Not usable, and not counted here as a
   second estimate.
+- **Li (2010) in full.** The most-cited corrective-feedback meta-analysis is closed access
+  with no repository copy anywhere. Its explicit/implicit contrast, its post-test-timing
+  pattern and every k it reports are unread. The pooled d values circulating for it are
+  second-hand and are not asserted in §3.
+- **Gregg (1984)**, the canonical falsifiability critique of Krashen: paywalled, no
+  published abstract, not read. Its argument is described, not quoted.
+- **Brown, Liu & Norouzian (2023)**, *Language Teaching Research*,
+  `10.1177/13621688221147374`, the state of the art on written corrective feedback and the
+  only meta-analysis modelling short-, medium- and long-term effects separately. Abstract
+  only; every point estimate and credible interval unretrieved.
 - **Egger's-test values in Lee & Lee (2024).** Reported as a figure only; the numbers are
   not in the text.
 - **Rachels & Rockinson-Szapkiw's F, p and effect sizes.** Paywalled, and no repository

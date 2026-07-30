@@ -59,7 +59,7 @@
 
 <section class="orient">
   <div class="o"><b>What this is</b><p>A short worked solution with two probe points, and a scorer
-  that checks your explanation against a <em>reference decomposition</em> — the four or five
+  that checks your explanation against a <em>reference decomposition</em>, the four or five
   propositions a complete answer has to contain. It reports which ones you hit, which you missed,
   and what the missing one costs.</p></div>
   <div class="o"><b>Why it matters</b><p>Explanation only teaches when the gap becomes visible.
@@ -68,8 +68,8 @@
   locates.</p></div>
   <div class="o"><b>How to use it</b><p>Write the explanation before opening anything. The
   reference stays hidden until you submit, because a decomposition you have already read is not a
-  test of anything. Afterwards there is a button that fools the matcher on purpose — worth pressing,
-  since it shows you precisely what the score is and is not.</p></div>
+  test of anything. Afterwards there is a button that fools the matcher on purpose. Press it,
+  because it shows you precisely what the score is and is not.</p></div>
 </section>
 
 <h2>1 · The worked solution</h2>
@@ -91,7 +91,7 @@ The reference is fixed, printed in full, and the same for everyone.</p>
 <div id="cards"></div>
 
 <h2>3 · What each miss costs</h2>
-<p>The consequence of a missing proposition is not rhetorical here — it is computed. The quadratic
+<p>Here a missing proposition has a computed consequence rather than a rhetorical one. The quadratic
 is solved in the page, both roots are substituted back into the original radical equation, and the
 answer you would have reported is derived from which propositions you were missing.</p>
 
@@ -105,7 +105,7 @@ answer you would have reported is derived from which propositions you were missi
 <p>An obvious design would hand the explanation to a language model and ask "is this a good
 explanation?" We do not, and the reason is measured. In this project's own selection benchmark,
 choosing between candidate outputs by <strong>public tests gained +8.14pp</strong>, by generated
-tests +2.70pp, and by <strong>LLM judge alone measured −3.20pp and −1.68pp</strong> — worse than
+tests +2.70pp, and by <strong>LLM judge alone measured −3.20pp and −1.68pp</strong>, worse than
 not selecting at all. A judge is an agreeable instrument. A checklist of propositions is a dumb
 one, and dumb is what you want in the scoring position.</p>
 
@@ -131,11 +131,12 @@ score, and watch the coverage bar rise on a string that means nothing.</div>
     no network, no key and no model.</li>
     <li><strong>A miss can be turned into a demonstration instead of a correction.</strong> If you
     did not produce "check both candidates in the original", the page does not tell you that you
-    are wrong — it computes the answer set you would have reported and substitutes it back until it
+    are wrong. It computes the answer set you would have reported and substitutes it back until it
     fails. The gap is shown, not asserted.</li>
-    <li><strong>Prompting at a step beats prompting at the end.</strong> The two probes sit at the
-    exact operations that are arithmetically followable and conceptually opaque — squaring, and
-    checking. A prompt after step 4 asking "did you understand?" would collect nothing.</li>
+    <li><strong>Prompting at a step beats prompting at the end.</strong> Squaring and checking are
+    the two operations here that a learner can follow arithmetically while understanding nothing,
+    and both probes sit on them. A prompt after step 4 asking "did you understand?" would collect
+    nothing.</li>
   </ul>
   <div class="ptitle">What it does not</div>
   <ul style="margin:0 0 6px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
@@ -143,7 +144,7 @@ score, and watch the coverage bar rise on a string that means nothing.</div>
     The decoy button loads a string with no propositional content that scores highly. The matcher
     detects whether the required ideas were <em>mentioned</em>, in any order, with no check on
     whether they were connected correctly. Anyone shipping this in earnest needs a second,
-    non-linguistic signal — the learner's performance on the next problem is the obvious one.</li>
+    non-linguistic signal. The learner's performance on the next problem is the obvious one.</li>
     <li><strong>The reference is one person's decomposition.</strong> A learner can give a correct
     explanation by a route the reference does not contain — via the domain restriction x ≥ 1 alone,
     for instance — and lose coverage for it. That is a false negative built into the method, not a
@@ -155,7 +156,7 @@ score, and watch the coverage bar rise on a string that means nothing.</div>
     does not answer and the meta-analysis did not test.</li>
     <li><strong>And the naive combination has a documented failure.</strong> Barbieri et al. found
     self-explanation prompts to be a significant <em>negative</em> moderator of the worked-example
-    effect — bolting a prompt onto an example is not the way to get this. That is why the probe
+    effect. Bolting a prompt onto an example is not the way to get this, which is why the probe
     here interrupts at a specific step with a specific question, rather than appending "explain
     your reasoning" to a solved problem.</li>
   </ul>

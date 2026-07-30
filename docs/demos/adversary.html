@@ -63,21 +63,21 @@ input[type=range]{width:100%;accent-color:var(--real);height:22px;padding:0;bord
 <section class="orient">
   <div class="o"><b>What this is</b><p>A problem generator whose search space is enumerated rather than claimed. It reports exactly how many distinct items it can address, and measures distinctness rather than asserting it.</p></div>
   <div class="o"><b>Why it matters</b><p>An adversary that can generate a fresh, unGoogleable problem at the edge of what you know — forever — is one of the things that was structurally impossible when attention was scarce. But difficulty has to be <em>semantic</em>: difficulty that is merely perceptual measures <b>d = −0.05</b>.</p></div>
-  <div class="o"><b>How to use it</b><p>Generate a few items and note the index — each is one of a stated finite number. Move the difficulty dial and watch the <em>derivation depth</em> change rather than the surface wording. Read §3 for why an <em>announced</em> devil's advocate backfires.</p></div>
+  <div class="o"><b>How to use it</b><p>Generate a few items and note the index. Each is one of a stated finite number. Move the difficulty dial and watch the <em>derivation depth</em> change rather than the surface wording. Read §3 for why an <em>announced</em> devil's advocate backfires.</p></div>
 </section>
 
 
 <div class="note"><b>COMPUTED.</b> The generator, the solver, the step count and the search-space
 arithmetic all run here. Every item is decoded from an integer index by a deterministic function,
-so you can type a number and get that exact item back — which is what makes the size claim
+so you can type a number and get that exact item back, which is what makes the size claim
 checkable rather than rhetorical. <b>The one scripted element is the wording of the objection</b>
 in §5: its <em>content</em> is selected from the item's own structure, but the sentences are
 templates, and no learner response is simulated anywhere on this page.</div>
 
 <h2>1 · The space</h2>
 <div class="panel">
-  <div class="ptitle" id="spaceT">—</div>
-  <div class="psub" id="spaceS">—</div>
+  <div class="ptitle" id="spaceT">…</div>
+  <div class="psub" id="spaceS">…</div>
   <div class="scroll">
   <table>
     <thead><tr><th>Parameter</th><th class="num">Options</th><th>Kind</th><th>What it changes</th></tr></thead>
@@ -85,7 +85,7 @@ templates, and no learner response is simulated anywhere on this page.</div>
   </table>
   </div>
 </div>
-<div class="note" id="coll">—</div>
+<div class="note" id="coll">…</div>
 
 <h2>2 · Generate</h2>
 <div class="panel">
@@ -109,20 +109,20 @@ templates, and no learner response is simulated anywhere on this page.</div>
   and watch the meter on the left refuse to move.</div>
 </div>
 
-<div class="idx" id="idx">—</div>
+<div class="idx" id="idx">…</div>
 <div class="flags" id="flags"></div>
-<div class="item" id="item">—</div>
+<div class="item" id="item">…</div>
 
 <div class="two">
   <div class="meter s">
     <div class="mn">Structural load · computed</div>
-    <div class="mv" id="ms">—</div>
+    <div class="mv" id="ms">…</div>
     <p id="msn">Derivation steps required, counted from the solution the page actually computes.
     This is the quantity with an evidence base.</p>
   </div>
   <div class="meter f">
     <div class="mn">Surface difficulty · computed</div>
-    <div class="mv" id="mf">—</div>
+    <div class="mv" id="mf">…</div>
     <p id="mfn">Words, clauses and reading friction. Raising this changes what the item
     <em>feels</em> like and provably not what it demands.</p>
   </div>
@@ -147,12 +147,12 @@ but it is <strong>null for nonwords (d = 0.05)</strong> and it <strong>reverses 
   <thead><tr><th>Condition</th><th class="num">d</th><th>What it tells a generator</th></tr></thead>
   <tbody>
     <tr><td>Generation over meaningful semantic structure</td><td class="num up">0.40</td>
-      <td>The effect is real when the learner has to <b>build meaning</b>.</td></tr>
+      <td>The effect is real when the learner has to build meaning.</td></tr>
     <tr><td>Cued recall (the strongest cell)</td><td class="num up">0.55</td>
       <td>Production beats recognition (0.46) beats free recall (0.32).</td></tr>
     <tr><td>Nonwords</td><td class="num">0.05</td>
       <td>Nothing to elaborate against. Effort without semantics buys nothing.</td></tr>
-    <tr><td><b>Anagrams</b> — difficulty that is purely perceptual</td><td class="num down"><b>−0.05</b></td>
+    <tr><td>Anagrams, where the difficulty is purely perceptual</td><td class="num down"><b>−0.05</b></td>
       <td><b>It goes backwards.</b> A scrambled cue is harder and worse.</td></tr>
     <tr><td>Generation sets larger than 50 items</td><td class="num">0.09</td>
       <td>Near-vanishing. Unbounded generation is not a licence for unbounded dosage.</td></tr>
@@ -163,13 +163,13 @@ but it is <strong>null for nonwords (d = 0.05)</strong> and it <strong>reverses 
 <div class="note warn"><b>The design rule this forces.</b> An item generator has one honest
 difficulty axis: how much has to be <em>derived</em>. Ugly numbers, longer sentences, unfamiliar
 nouns and scrambled clause order all raise perceived effort and none of them raise derivation
-depth. Bertsch's anagram cell is the measurement that says the difference is not a nicety — a
+depth. Bertsch's anagram cell is the measurement that says the difference is not a nicety. A
 cleverly obfuscated cue is closer to an anagram than to a memory palace, and anagrams score
-<b>d = −0.05</b>.</div>
+d = −0.05.</div>
 
 <h2>5 · The adversary, and why it must not announce itself</h2>
 <p>Pick the approach you would take. The objection that follows is selected from the structural
-traps this specific item contains — it is not generic.</p>
+traps this specific item contains. It is not generic.</p>
 
 <div class="panel">
   <div class="ptitle">Your approach</div>
@@ -179,22 +179,22 @@ traps this specific item contains — it is not generic.</p>
 
 <div class="two">
   <div class="meter">
-    <div class="mn" style="color:var(--felt)">Announced — the version that backfires</div>
+    <div class="mn" style="color:var(--felt)">Announced (the version that backfires)</div>
     <div class="chat" style="margin:0">
-      <div class="msg agent"><span class="who">Agent</span><span id="objA">—</span></div>
+      <div class="msg agent"><span class="who">Agent</span><span id="objA">…</span></div>
     </div>
   </div>
   <div class="meter">
-    <div class="mn" style="color:var(--real)">Unannounced — the version to ship</div>
+    <div class="mn" style="color:var(--real)">Unannounced (the version to ship)</div>
     <div class="chat" style="margin:0">
-      <div class="msg agent"><span class="who">Agent</span><span id="objB">—</span></div>
+      <div class="msg agent"><span class="who">Agent</span><span id="objB">…</span></div>
     </div>
   </div>
 </div>
 
 <div class="note warn"><b>Same objection. Same evidence. One framing sentence of difference.</b>
 A <em>role-played</em> devil's advocate produces, in the words of the finding, “thinking that was
-primarily aimed at <b>cognitive bolstering of the initial viewpoint</b> rather than stimulating
+primarily aimed at cognitive bolstering of the initial viewpoint rather than stimulating
 divergent thought.” Announcing the role tells the learner the objection is not sincerely held, and
 a challenge you know to be theatre is a challenge you defend against rather than think with. The
 practical consequence for an AI adversary is uncomfortable: <b>the safety-flavoured disclaimer
@@ -202,7 +202,7 @@ practical consequence for an AI adversary is uncomfortable: <b>the safety-flavou
 
 <div class="note"><b>What this page refuses to do.</b> It does not show you a simulated learner
 bolstering their position, because that would be a claim dressed as a demonstration. The bolstering
-result is a citation, not an output of this page. What is computed here is the <em>objection
+result is a citation. This page did not produce it. What is computed here is the <em>objection
 selection</em> — which structural trap in this item to press on — and that much you can verify by
 changing the difficulty dial and watching the objection follow the flags.</div>
 
@@ -210,11 +210,11 @@ changing the difficulty dial and watching the objection follow the flags.</div>
 <div class="panel">
   <div class="ptitle">What it proves</div>
   <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
-    <li>Item generation can be <strong>counted and addressed</strong>. A generator whose space you
+    <li>Item generation can be counted and addressed. A generator whose space you
     can state, index into, and sample for collisions is a different object from a model asked to
     “make me a hard problem”.</li>
-    <li>Difficulty can be defined <strong>structurally and computed</strong> — derivation steps
-    counted from a solution plan the generator holds — rather than asserted on a 1–5 scale.</li>
+    <li>Difficulty can be defined structurally and computed, by counting the derivation steps
+    in a solution plan the generator already holds, rather than asserted on a 1–5 scale.</li>
     <li>The surface/structure distinction is demonstrable in one screen: three buttons that change
     the text substantially and the step count not at all.</li>
     <li>Objection content can be derived from item structure rather than produced generically,
@@ -222,17 +222,17 @@ changing the difficulty dial and watching the objection follow the flags.</div>
   </ul>
   <div class="ptitle">What it does not prove</div>
   <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
-    <li><strong>That novel items teach better than reused ones.</strong> No trial here. Unbounded
+    <li>That novel items teach better than reused ones. No trial here. Unbounded
     generation solves a <em>leakage and reuse</em> problem, not a learning problem, and Bertsch's
     &gt;50-item cell (d = 0.09) is a warning against assuming more items is more learning.</li>
     <li>That derivation-step count is the right operationalisation of semantic difficulty. It is
     <em>a</em> structural measure and a defensible one. It is not validated against learning.</li>
     <li>That one template space generalises. This is rate-and-capacity word problems. The space is
-    large because the template is parameterised, not because the generator is creative — and a
+    large because the template is parameterised, not because the generator is creative. A
     domain without a closed-form solver does not get this treatment.</li>
     <li><strong>That generation is “unbounded”.</strong> It is not, and the page says the number out
-    loud for that reason: <span id="notunb">—</span> combinations from one template, of which
-    <span id="notunb2">—</span> were distinct in the sample measured at the top of this page.
+    loud for that reason: <span id="notunb">…</span> combinations from one template, of which
+    <span id="notunb2">…</span> were distinct in the sample measured at the top of this page.
     Unboundedness would require a generator that invents new
     <em>structure</em>, and this one only fills in slots.</li>
     <li>That an unannounced AI objection reproduces the human devil's-advocate finding. The

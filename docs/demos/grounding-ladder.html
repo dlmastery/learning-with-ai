@@ -72,11 +72,10 @@ measured on a different machine, in a different language, and are reported here 
 not as this page's output.</div>
 
 <h2>1 · The corpus</h2>
-<p>Textbook formulas with declared dimensions, plus five mutation classes applied to each:
-<strong>sign flip</strong>, <strong>coefficient change</strong>, <strong>swapped variable</strong>,
-<strong>dropped term</strong>, <strong>wrong exponent</strong>. Mutants are generated at load by a
-seeded generator, so the corpus is identical every time you reload — and every mutant is printed,
-so you can check the generator did what it says.</p>
+<p>Textbook formulas with declared dimensions, plus five mutation classes applied to each: sign
+flip, coefficient change, swapped variable, dropped term, wrong exponent. Mutants are generated at
+load by a seeded generator, so the corpus is identical every time you reload. Every mutant is
+printed, so you can check the generator did what it says.</p>
 
 <div class="panel">
   <div class="ptitle">Corpus built at load</div>
@@ -106,9 +105,9 @@ is an alarm.</div>
     <div>
       <label for="dom">Sampling domain</label>
       <select id="dom">
-        <option value="n">narrow positive — U(0.31, 0.87), the declared domain</option>
-        <option value="w">wide positive — U(0.05, 20)</option>
-        <option value="s">signed — ±U(0.05, 20), outside the declared domain</option>
+        <option value="n">U(0.31, 0.87) narrow positive, the declared domain</option>
+        <option value="w">U(0.05, 20) wide positive</option>
+        <option value="s">±U(0.05, 20) signed, outside the declared domain</option>
       </select>
     </div>
   </div>
@@ -121,13 +120,13 @@ is an alarm.</div>
 
 <h2>3 · What the three rungs cost and catch</h2>
 <div class="rungs" id="rungs">
-  <div class="rung"><div class="rn">L1 · Dimensional</div><div class="big">—</div><div class="lt">not run</div><p>Reference-free. Needs only declared units, no correct answer to compare against — the only rung that can check a formula nobody has seen before.</p></div>
+  <div class="rung"><div class="rn">L1 · Dimensional</div><div class="big">—</div><div class="lt">not run</div><p>Reference-free. Needs only declared units and no correct answer to compare against, so it is the only rung that can check a formula nobody has seen before.</p></div>
   <div class="rung"><div class="rn">L2 · Numeric</div><div class="big">—</div><div class="lt">not run</div><p>Substitute random values into both the reference and the candidate, compare. Needs a reference. Cannot handle universals.</p></div>
   <div class="rung"><div class="rn">L3 · Structural</div><div class="big">—</div><div class="lt">not run</div><p>Canonical-form comparison: flatten, fold, collect powers, sort, expand small integer powers, compare strings.</p></div>
 </div>
 <div class="mini">Times are per single check, obtained by running the whole corpus in a loop until at
-least 60&nbsp;ms of wall clock has elapsed and dividing — because <code>performance.now()</code> is
-deliberately coarsened by browsers and a single check is far below its resolution.
+least 60&nbsp;ms of wall clock has elapsed and then dividing. <code>performance.now()</code> is
+deliberately coarsened by browsers, and a single check falls far below its resolution.
 <b>Expect the L3/L2 ratio here to be much larger than the corpus’s ~3×.</b> That is not a
 contradiction: the corpus timed a Python harness where fixed per-call overhead dominated both rungs
 and compressed the ratio, while these two rungs are bare JavaScript and the difference between
@@ -157,7 +156,7 @@ in full. The ordering is the finding; the ratio is hardware.</div>
 <h2>5 · The null result: eight substitutions buy nothing over one</h2>
 <p>This is the finding worth more than the demo. <strong>Inside the declared sampling domain,</strong>
 raising k multiplies the cost of the numeric rung almost linearly and does <em>not</em> move recall.
-Run it, then change the domain and run it again — because the second run is where the finding gets
+Run it, then change the domain and run it again. The second run is where the finding gets
 interesting.</p>
 
 <div class="scroll">
@@ -167,8 +166,8 @@ interesting.</p>
 </table>
 </div>
 <div class="legend">
-  <span><i class="sw" style="background:var(--real)"></i><b>Recall</b> — mutants caught</span>
-  <span><i class="sw" style="background:var(--felt)"></i><b>Latency</b> — per-check cost</span>
+  <span><i class="sw" style="background:var(--real)"></i><b>Recall</b>, mutants caught</span>
+  <span><i class="sw" style="background:var(--felt)"></i><b>Latency</b>, per-check cost</span>
 </div>
 <div class="note" id="snote" style="display:none"></div>
 
@@ -184,12 +183,12 @@ and both are reported here rather than the more flattering one.</p>
   <tbody>
     <tr><td><b>L2b numeric</b></td>
       <td class="num">0.38 ms median at k = 1<br />0.49 ms at k = 8<br />p95 0.93 ms<br /><span class="mini">0.61 ms at k = 8 on the separate F3 harness</span></td>
-      <td class="num up">112/113 = <b>99.1%</b><br />identical k = 1 → k = 16</td>
+      <td class="num up">112/113 = 99.1%<br />identical k = 1 → k = 16</td>
       <td class="num up"><b>0 / 37</b> in the declared domain</td>
       <td>Cannot certify a universal. Cannot see outside the sampled domain. 1 in 113 slips through and always will.</td></tr>
     <tr><td><b>L3 symbolic</b></td>
       <td class="num">1.8 ms median<br />10.8 ms p95<br /><b>unbounded worst case</b></td>
-      <td class="num up">113/113 = <b>100%</b> in-domain</td>
+      <td class="num up">113/113 = 100% in-domain</td>
       <td class="num">—</td>
       <td><b>SymPy fails 152/397 = 38.3%</b> of the Wester suite: 150 <code>@XFAIL</code> + 3 <code>@SKIP</code>, three sections unimplemented, 57–70% failure in sums, definite integrals and transforms.</td></tr>
   </tbody>
@@ -197,9 +196,9 @@ and both are reported here rather than the more flattering one.</p>
 </div>
 
 <div class="note warn"><b>The hole is where the teaching is.</b> Symbolic checking is complete in
-theory and 38.3% incomplete in the implementation everyone actually uses — and the failures cluster
-in sums, definite integrals and transforms, which is precisely the material a physics or
-engineering learner is working through. Meanwhile the numeric rung is 3–5× cheaper, has no domain
+theory and 38.3% incomplete in the implementation everyone actually uses. The failures cluster in
+sums, definite integrals and transforms, which is precisely the material a physics or engineering
+learner is working through. Meanwhile the numeric rung is 3–5× cheaper, has no domain
 holes of that kind, and loses one item in 113. Buying the last 0.9% costs you a 38.3% blind spot
 you cannot see into. That trade is the whole design decision.</div>
 
@@ -213,8 +212,8 @@ compared against a known-correct reference. Remove the reference and that column
 <div class="panel">
   <div class="ptitle">What it proves</div>
   <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
-    <li>Formula verification is <strong>cheap</strong> — sub-millisecond, in a browser, in plain
-    JavaScript, with no dependency. There is no cost argument for shipping unchecked formulas.</li>
+    <li>Formula verification is cheap: sub-millisecond, in a browser, in plain JavaScript, with no
+    dependency. There is no cost argument for shipping unchecked formulas.</li>
     <li>The rungs are genuinely different instruments: L1 is reference-free but blind to
     coefficients and signs; L2 needs a reference and catches nearly everything; L3 is exact and
     brittle. Ordering them cheapest-first is a measurable saving, not an aesthetic.</li>
@@ -223,7 +222,7 @@ compared against a known-correct reference. Remove the reference and that column
     <li>And the sharper version, which this page measures rather than asserts: <strong>k only helps
     when the sampling domain is wrong.</strong> Switch to the wide or signed domain and recall at
     k = 1 drops, then climbs back as k rises. Extra samples are a subsidy for a badly-declared
-    domain — and declaring it correctly costs nothing.</li>
+    domain, and declaring it correctly costs nothing.</li>
     <li>Sampling outside the declared domain also produces false alarms, on expressions that are
     genuinely equal: √(a/b) and √a/√b separate the instant b goes negative. This reproduces the
     corpus’s ordering (0 narrow, 1 wide, 2 signed) from independent code.</li>
@@ -240,8 +239,8 @@ compared against a known-correct reference. Remove the reference and that column
     which a numeric check catches just as easily but a human reader does not.</li>
     <li>That L3 here is SymPy. It is a canonical-form comparator of about eighty lines. It handles
     commutativity, associativity, constant folding, power collection and small integer expansion.
-    It does not do trigonometric identities, logarithm laws or partial fractions — and it tells you
-    so, in the false-alarm table, by getting the log rule wrong in front of you.</li>
+    It does not do trigonometric identities, logarithm laws or partial fractions, and it tells you
+    so in the false-alarm table by getting the log rule wrong in front of you.</li>
   </ul>
 </div>
 

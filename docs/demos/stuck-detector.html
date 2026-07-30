@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Stuck Detector — help that arrives before you ask</title>
-<meta name="description" content="A stuck-ness estimate built only from legal, voluntary signals — no affect inference, no gaze. Move the threshold and watch interrupting productive struggle trade against leaving someone to wheel-spin." />
+<title>The Stuck Detector: help that arrives before you ask</title>
+<meta name="description" content="A stuck-ness estimate built only from legal, voluntary signals, with no affect inference and no gaze. Move the threshold and watch interrupting productive struggle trade against leaving someone to wheel-spin." />
 <link rel="stylesheet" href="../site.css" />
 <link rel="stylesheet" href="demo.css" />
 <script src="../theme.js"></script>
@@ -51,12 +51,12 @@ table.sig td:first-child{font-family:var(--mono);font-size:12.5px;white-space:no
   <div class="eyebrow">Demo 19 · The mechanism</div>
   <h1>Help that arrives before you ask</h1>
   <p class="lede">The measured failure point is not <em>reaching</em> the help. It is
-  <strong>recognising you need it</strong> — and the best-instrumented tutor in the world published
+  <strong>recognising you need it</strong>. The best-instrumented tutor in the world published
   a null traced to exactly that. This page builds the detector that removes the summoning step,
   using only signals a learner emits by acting, and then refuses to pretend the threshold is easy.</p>
   <div class="chips">
     <span class="chip m">Detector, sweep and optimum all computed</span>
-    <span class="chip m">Deterministic seed — the same session every time</span>
+    <span class="chip m">Deterministic seed, the same session every time</span>
     <span class="chip d">The learner is simulated</span>
     <span class="chip n">No affect inference, by law and by design</span>
   </div>
@@ -81,9 +81,9 @@ table.sig td:first-child{font-family:var(--mono);font-size:12.5px;white-space:no
 <div class="note warn"><b>The tension this page must not dodge.</b> Productive failure measures
 <strong>g = 0.36–0.58</strong>, and the finding is blunt: <em>adding help to the struggle does not
 help.</em> A system optimised to notice you are stuck and intervene is optimised to destroy the
-mechanism that produces that effect. The resolution proposed here — intervene on the
-<em>wrong kind</em> of stuck — is a design claim, not a measured one, and the cost of a false
-interrupt on this page is set accordingly high.</div>
+mechanism that produces that effect. The resolution proposed here is to intervene on the
+<em>wrong kind</em> of stuck. No trial has tested that resolution; it is a design claim, and the
+cost of a false interrupt on this page is set accordingly high.</div>
 
 <h2>1 · The session</h2>
 <p>One learner, one multi-step problem, 72 observation windows of about fifteen seconds each. The
@@ -127,20 +127,20 @@ cannot see.</p>
     </div>
   </div>
   <div class="psub" style="margin:16px 0 0">The cost ratio is a <em>value judgement, not a
-  measurement</em>. It sits above 1 because what a false interrupt destroys — productive failure —
-  has a measured effect size, and what a missed wheel-spin wastes is time.</div>
+  measurement</em>. It sits above 1 because what a false interrupt destroys is productive failure,
+  which has a measured effect size, and what a missed wheel-spin wastes is time.</div>
 </div>
 
 <div class="two">
   <div class="mode a">
     <div class="mh">Failure mode A · interrupting</div>
-    <div class="mv" id="fiN">—</div>
-    <p id="fiP">—</p>
+    <div class="mv" id="fiN">…</div>
+    <p id="fiP">…</p>
   </div>
   <div class="mode b">
     <div class="mh">Failure mode B · wheel-spinning unattended</div>
-    <div class="mv" id="mwN">—</div>
-    <p id="mwP">—</p>
+    <div class="mv" id="mwN">…</div>
+    <p id="mwP">…</p>
   </div>
 </div>
 
@@ -153,12 +153,12 @@ about how they feel, and nothing is observed that they did not choose to emit.</
   <thead><tr><th>Signal</th><th>Status</th><th>Weight</th><th>What it is</th></tr></thead>
   <tbody>
     <tr class="yes"><td>response_latency</td><td>used</td><td class="num">0.90</td>
-      <td>Seconds since the last action, standardised. Alone it means nothing — long pauses are
-      what productive struggle looks like too.</td></tr>
+      <td>Seconds since the last action, standardised. Alone it means nothing, because long pauses
+      are what productive struggle looks like too.</td></tr>
     <tr class="yes"><td>edit_backtrack</td><td>used</td><td class="num">0.35</td>
       <td>Deletions and reversals in the window. A learner rewriting is a learner still trying.</td></tr>
     <tr class="yes"><td>repeat_error_run</td><td>used</td><td class="num">0.62</td>
-      <td>Consecutive identical error signatures. <b>The load-bearing signal</b> — repetition
+      <td>Consecutive identical error signatures. <b>The load-bearing signal.</b> Repetition
       without variation is what wheel-spinning is.</td></tr>
     <tr class="yes"><td>no_state_change</td><td>used</td><td class="num">0.22</td>
       <td>Windows since the answer last changed, capped at ten. Separates thinking from
@@ -183,7 +183,7 @@ about how they feel, and nothing is observed that they did not choose to emit.</
   <div class="ptitle">The estimate, at the currently selected window</div>
   <div class="psub">The logistic sum, then exponential smoothing at α = 0.35. Drag the threshold or
   switch learners to recompute.</div>
-  <div class="readout" id="calc">—</div>
+  <div class="readout" id="calc">…</div>
 </div>
 
 <h2>3 · The trade-off, swept</h2>
@@ -203,18 +203,19 @@ and the curves cross where they cross.</p>
   <div class="ptitle">Where the cost function puts it</div>
   <div class="psub">Computed by sweeping every threshold at the current cost ratio, on this
   learner's session.</div>
-  <div class="readout" id="opt">—</div>
+  <div class="readout" id="opt">…</div>
 </div>
 
 <h2>4 · Against waiting to be asked</h2>
 <p>The comparison that justifies the whole apparatus. The alternative to a detector is not
-<em>nothing</em> — it is a help button, which is what every system already ships.</p>
+<em>nothing</em>; every system already ships a help button, and that is what the detector has to
+beat.</p>
 
 <div class="panel">
-  <div class="readout" id="vsask">—</div>
+  <div class="readout" id="vsask">…</div>
   <div class="note" style="margin:16px 0 0"><b>The 34% is measured; applying it here is
-  arithmetic.</b> It comes from Cognitive Tutor logs — after three consecutive errors a hint
-  followed 34% of the time. Applied to this session it says what a help button would catch
+  arithmetic.</b> It comes from Cognitive Tutor logs, where a hint followed three consecutive
+  errors 34% of the time. Applied to this session it says what a help button would catch
   <em>if these learners behaved like those learners</em>. An illustration of a measured rate, not
   a measurement of this page.</div>
 </div>
@@ -222,7 +223,7 @@ and the curves cross where they cross.</p>
 <h2>5 · Why the threshold cannot be one number</h2>
 <p>The same detector, the same threshold, two learners. Students in the bottom quintile of
 prerequisite knowledge <strong>wheel-spin 50% of the time</strong> against <strong>10%</strong> for
-the top quintile — half of a weak learner's session spent going nowhere, for a reason that was
+the top quintile. Half of a weak learner's session is spent going nowhere, for a reason that was
 fixed before the session started.</p>
 
 <div class="scroll">
@@ -245,7 +246,7 @@ fixed before the session started.</p>
     <tr><td><b>The detector</b></td>
       <td>Real. A logistic sum over five declared features, smoothed, run on every window; every
       coefficient is in §2.</td>
-      <td>Nobody yet — the weights are a design proposal no trial has fitted. In production a bad
+      <td>Nobody yet. The weights are a design proposal no trial has fitted. In production a bad
       weight on <code>repeat_error_run</code> is the difference between the two failure modes.</td></tr>
     <tr><td><b>The trade-off</b></td>
       <td>Real, and its shape is the finding: swept exhaustively, both curves counted at every
@@ -262,7 +263,7 @@ fixed before the session started.</p>
       struggle the <em>longer</em> pauses, which this page assumed rather than showed.</td>
       <td>Anyone reading it as evidence. It shows a single-signal detector <em>can</em> invert, not
       that it does.</td></tr>
-    <tr><td><b>The premise — that arriving unasked helps</b></td>
+    <tr><td><b>The premise that arriving unasked helps</b></td>
       <td class="mut">Not shown, and there is a null against the adjacent claim. Carnegie Mellon
       built help-seeking support; help-seeking improved durably. <b>Domain learning did not
       move.</b></td>
@@ -516,5 +517,3 @@ render();
 </script>
 </body>
 </html>
-</content>
-</invoke>
