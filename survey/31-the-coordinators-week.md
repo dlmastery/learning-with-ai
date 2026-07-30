@@ -1,5 +1,5 @@
 ---
-title: "The Coordinator's Week — what special education actually consists of"
+title: "The Coordinator's Week — five hours of statutory admin against four available"
 section: selpa-practice
 status: draft
 date: 2026-07-28

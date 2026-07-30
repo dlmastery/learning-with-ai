@@ -1,5 +1,5 @@
 ---
-title: "Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration"
+title: "Prior Art — thirty-five builds, 128 notebooks, zero exercises"
 section: portfolio
 status: draft
 date: 2026-07-28

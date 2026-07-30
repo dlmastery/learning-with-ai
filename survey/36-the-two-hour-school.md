@@ -1,5 +1,5 @@
 ---
-title: "The Two-Hour School — one claim that holds and one that does not"
+title: "The Two-Hour School — two hours buys the schedule, and does not buy the attainment"
 section: two-hour-school
 status: draft
 date: 2026-07-29

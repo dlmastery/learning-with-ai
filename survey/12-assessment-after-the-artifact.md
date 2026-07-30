@@ -115,8 +115,8 @@ coefficients**.
 The reading this survey adopts: **the equity case for AI-conducted orals rests on
 frequency and practice. The technology carries none of it.** Every documented
 fairness risk of orals (anxiety, unfamiliarity, differential coaching) is a
-*first-exposure* effect that decays with repetition. What made orals inequitable was that students met one,
-once, at maximum stakes. A modality students encounter forty times per degree is a
+*first-exposure* effect that decays with repetition. What made orals inequitable was
+that students met one, once, at maximum stakes. A modality students encounter forty times per degree is a
 modality they are fluent in.
 
 ---

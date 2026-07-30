@@ -66,10 +66,22 @@ def text_of(p):
     return re.sub(r"\s+", " ", t)
 
 def headings(p):
+    """Every string a reader meets as a title.
+
+    The YAML `title:` field is not decoration — build-paper.py renders it as the
+    section title in PAPER.md and on the paper page. Scanning only `#` lines let
+    two defensive titles ship: "…and what that is worth" and "…one claim that
+    holds and one that does not" both sat in front matter and never tripped this.
+    """
     raw = p.read_text(encoding="utf-8", errors="ignore")
     if p.suffix == ".html":
         return [re.sub(r"<[^>]+>", "", h) for h in re.findall(r"<h[12][^>]*>(.*?)</h[12]>", raw, re.S)]
-    return [l.lstrip("# ").strip() for l in raw.splitlines() if l.startswith("#")]
+    out = [l.lstrip("# ").strip() for l in raw.splitlines() if l.startswith("#")]
+    fm = re.match(r"\A---\n(.*?)\n---\n", raw, re.S)
+    if fm:
+        for m in re.finditer(r"(?m)^title:\s*[\"']?(.+?)[\"']?\s*$", fm.group(1)):
+            out.append(m.group(1))
+    return out
 
 def main():
     issues = []

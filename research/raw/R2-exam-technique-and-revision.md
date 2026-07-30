@@ -55,20 +55,17 @@ Cepeda 2008 and the *Economic Journal* coaching null; absent for most APA titles
 Scholar** (returned empty result sets for every query attempted this session), and direct
 `curl` + `pdftotext -layout` against open PDF hosts.
 
-- **ERIC full-text mirror** (`files.eric.ed.gov`) served the Powers & Rock ETS report (ED562638)
-  and Koretz's CSE Report 655 in full. Both are quoted verbatim below.
-- **`research.collegeboard.org`** serves the Official SAT Practice technical report PDF to `curl`
-  with a browser user-agent. Recovered in full, including Appendix F's propensity-score sensitivity
-  analysis, which is the part the press coverage never reaches.
-- **`nepc.colorado.edu`** served Briggs's CHANCE draft in full; the Berkeley dissertation PDF
-  downloaded but its tables did not survive extraction.
-- **`learninglab.psych.purdue.edu`** and **`psychnet.wustl.edu`** served Karpicke, Butler & Roediger
-  (2009) and Roediger & Karpicke (2006) as clean PDFs. **`whz.de`** served the full Dunlosky et al.
-  (2013) monograph including Table 4.
-- **`psicothema.com`** served the 2022 PISA parental-homework meta-analysis in full.
-- **ScienceDirect, SAGE, Wiley, APA PsycNet** all returned `403` to `WebFetch`. Rawson & Kintsch
-  (2005) full text was **UNREACHABLE-IN-SESSION**; its abstract is quoted from ERIC and no claim
-  here rests on a number I did not see.
+- **Full texts recovered and quoted verbatim below:** Powers & Rock's ETS report and Koretz's CSE
+  Report 655 from `files.eric.ed.gov`; the Official SAT Practice technical report from
+  `research.collegeboard.org` including Appendix F's propensity-score sensitivity analysis, which is
+  the part the press coverage never reaches; Briggs's CHANCE draft from `nepc.colorado.edu`;
+  Roediger & Karpicke (2006) and Karpicke, Butler & Roediger (2009) from Washington University and
+  Purdue; the full Dunlosky et al. (2013) monograph including Table 4 from `whz.de`; the 2022 PISA
+  parental-homework meta-analysis from `psicothema.com`; Cooper, Robinson & Patall (2006) from UC
+  Riverside.
+- **ScienceDirect, SAGE, Wiley, APA PsycNet** all returned `403`. Rawson & Kintsch (2005) full text
+  was **UNREACHABLE-IN-SESSION**; its abstract is quoted from ERIC and no claim here rests on a
+  number I did not see.
 - **Untraceable and reported as such:** any causal estimate of the effect of Kota / Allen / Aakash
   / Physics Wallah coaching on NEET or JEE outcomes. Searched: ERIC (`"entrance exam" AND coaching
   AND India`, 2 hits, both ethnographic; `"shadow education" AND India AND achievement`, 0 hits),
@@ -90,43 +87,29 @@ the learning-science floor. `C2` and `F1` own psychometrics and assessment recon
 | # | Quantity | Value | Source | Label |
 |---|---|---|---|---|
 | 1 | SAT coaching effect, seven estimators | verbal 6–12 pts, math 13–26 pts; medians 8 and 18 | Powers & Rock 1999 | `OBSERVED` |
-| 2 | …the same, in buyer's units | ~1 extra correct answer per 8 hours of effort | ibid., authors' own arithmetic | `OBSERVED` |
 | 3 | SAT coaching, meta-analysed | +0.09 SD verbal, +0.16 SD math (published comparison studies) | Becker 1990, 48 studies / 23 reports | `MEASURED-META` |
 | 4 | SAT coaching, independent national data | math +14 to +15, verbal +6 to +8, combined ~20 pts | Briggs 2001, NELS:88, n = 4,730 | `OBSERVED` |
-| 5 | ACT coaching, same analysis | math 0 to +0.4, English +0.3 to +0.6, reading −0.6 to −0.7 | ibid. | `OBSERVED` |
 | 6 | Advertised at the time | Kaplan 120 pts, Princeton Review 140 pts combined; PR guaranteed 100 | quoted in Powers & Rock 1999 | `VENDOR` |
-| 7 | Typical retest gain with no preparation at all | SAT-M +33, SAT-V +27 | Briggs 2001, NELS:88 | `OBSERVED` |
 | 8 | Khan Academy OSP, 6 hours, controlled | +21 SAT points, ES 0.11 | Weatherholtz et al. 2020, n ≈ 299,315 linkers | `OBSERVED` (working paper) |
 | 9 | …6 hours plus ≥1 best-practice behaviour | +39 points, ES 0.20; propensity-weighted ATT 35.7–38.6 | ibid., Appendix F | `OBSERVED` |
-| 10 | Share of OSP users who study under 3 hours | ~80%; median 1.8 h | ibid. | `OBSERVED` |
 | 11 | Private tutoring and the gaokao | average effect on NCEE total not significant | Zhang 2013, *Econ. Educ. Rev.* | `OBSERVED` (null) |
 | 12 | Any test in 15 weeks vs no tests | ~+0.5 SD on criterion exam | Bangert-Drowns, Kulik & Kulik 1991, 40 studies | `MEASURED-META` |
-| 13 | Frequently tested vs less frequently tested | ~+0.1 SD | ibid. | `MEASURED-META` |
 | 14 | Practice testing vs restudy | g = 0.51; vs no activity g = 0.93; overall g = 0.61 | Adesope et al. 2017 (carried from F11) | `MEASURED-META` |
 | 15 | Cramming's purchase: recall at 5 minutes | restudy 81% vs test 75%, d = 0.52 for restudy | Roediger & Karpicke 2006, Exp. 1, n = 120 | `MEASURED-RCT` |
-| 16 | …at 2 days | test 68% vs restudy 54%, d = 0.95 for testing | ibid. | `MEASURED-RCT` |
 | 17 | …at 1 week | test 56% vs restudy 42%, d = 0.83 | ibid. | `MEASURED-RCT` |
-| 18 | Massed rereading vs single reading at 2 days | no longer significantly different | Rawson & Kintsch 2005, n = 423 | `MEASURED-RCT` |
 | 19 | Optimal review gap as a fraction of test delay | 20–40% at a 1-week delay; 5–10% at a 1-year delay | Cepeda et al. 2008, n > 1,350 | `MEASURED-RCT` |
 | 20 | Confidence, by condition, in Roediger & Karpicke Exp. 2 | SSSS 4.8 > SSST 4.2 > STTT 4.0 on a 7-point scale | ibid., n = 180 | `MEASURED-RCT` |
-| 21 | …the ranking of those same conditions at 1 week | STTT 61% > SSST 56% > SSSS 40% | ibid. | `MEASURED-RCT` |
 | 22 | Students listing rereading as a study strategy | 83.6%; 54.8% rank it first | Karpicke, Butler & Roediger 2009, n = 177 | `OBSERVED` |
-| 23 | …listing practising recall | 10.7%; 1.1% (2 of 177) rank it first | ibid. | `OBSERVED` |
 | 24 | Dunlosky utility ratings, low | summarisation, highlighting, keyword mnemonic, imagery for text, rereading | Dunlosky et al. 2013, *PSPI* | `MEASURED-META` |
-| 25 | Highlighting's generalisability rating on criterion tasks | N — "largely ineffective for a given variable" | ibid., Table 4 | `MEASURED-META` |
 | 26 | Homework vs no homework, experiments | d = 0.60 [0.38, 0.82], k = 5; randomised subset d = 0.53 [0.29, 0.79], k = 3 | Cooper, Robinson & Patall 2006 | `MEASURED-META` |
 | 27 | Time-on-homework × achievement, Grades 7–12 | r = +0.25 fixed / +0.20 [0.17, 0.22] random, k = 23 | ibid. | `MEASURED-META` |
 | 28 | …Grades K–6 | r = −0.04 [−0.06, −0.02] fixed / +0.05 [−0.03, 0.13] random, k = 10 | ibid. | `MEASURED-META` |
-| 29 | …by who reported the time | students r = +0.25; parents r = −0.03; all parent reports were K–6 | ibid. | `MEASURED-META` |
 | 30 | …grade effect re-run with students only, random model | Q(1) = 0.57, ns — the moderation disappears | ibid. | `MEASURED-META` |
 | 31 | Parental help with homework, PISA 2009–2018 | more help → lower achievement, d = 0.23 [0.21, 0.25], 180 effects | Fernández-Alonso et al. 2022 | `MEASURED-META` |
-| 32 | …by region | Europe 0.30 [0.27, 0.33]; SE Asia 0.09 [0.07, 0.11] | ibid. | `MEASURED-META` |
 | 33 | Practice quizzes and test anxiety | g = −0.52, 25 effects / 3,374 participants, BF₁₀ > 25,000 | Yang et al. 2023, *EPR* | `MEASURED-META` |
 | 34 | Low-touch study-skills coaching, 5 years | study time up, academic outcomes unmoved, N ≈ 20,000 | Oreopoulos et al. 2023, *Economic Journal* | `MEASURED-RCT` (null) |
 | 35 | Rereading a real textbook chapter, 4 experiments | "with only several exceptions, rereading did not significantly increase performance" | Callender & McDaniel 2009 | `MEASURED-RCT` (null) |
-| 36 | Coaching for students who never sat the PSAT | not significant on any SAT or ACT section | Briggs 2001 | `OBSERVED` (null) |
 | 37 | High-stakes score gains vs low-stakes gains, same students | typically 3–5×; in numerous cases the low-stakes gain is zero | Koretz 2005, CSE Report 655 | `OBSERVED` |
-| 38 | The 1990 audit-test experiment | random classrooms re-given the retired test scored half an academic year lower | Koretz, Linn, Dunbar & Shepard 1991 | `MEASURED-RCT` |
 
 ---
 
@@ -146,10 +129,8 @@ seniors registering for the October, November or December 1995 administrations a
 juniors for May or June 1996. About 4,200 responded (63%), of whom nearly 12% had attended a
 coaching programme outside their school.
 
-Because the treatment is self-selected, the authors ran seven estimators against the same data:
-repeated measures, raw change, ANCOVA, an instrumental-variable selection model, a Heckman
-selection model, propensity matching, and the Belson control-group-regression approach. The point
-of running seven is that the true effect should lie inside their envelope.
+Because the treatment is self-selected, the authors ran seven estimators against the same data on
+the theory that the true effect should lie inside their envelope.
 
 | Model | n coached | SAT-V effect (SE) | SAT-M effect (SE) |
 |---|---|---|---|
@@ -188,12 +169,10 @@ The most useful sentence in the paper is the one that converts the finding into 
 > portion of the test), the benefit is approximately one additional question correct for every eight
 > or so hours of effort."*
 
-One further detail is worth carrying, because it is the only place in this literature where a
-programme-level difference appears. Table 6 splits by provider. One company's SAT-M effect ran 31–38
-points across estimators and was significant in six of seven; the other's ran 5–17 and was
-significant in none. Verbal ran the other way. The authors declined to name them. `OBSERVED`
-Coaching effects are not homogeneous across vendors, and the between-vendor spread is larger than
-the average effect.
+One further detail: Table 6 splits by provider. One company's SAT-M effect ran 31–38 points across
+estimators and was significant in six of seven; the other's ran 5–17 and was significant in none.
+Verbal ran the other way. The authors declined to name them. `OBSERVED` The between-vendor spread is
+larger than the average effect, and this is the only place in the literature where that appears.
 
 ### 1.2 Becker: the meta-analysis, and what moderates it
 
@@ -222,16 +201,13 @@ reported and designed."*
 ### 1.3 Briggs: the independent reanalysis, and the null inside it
 
 **Briggs, D. C. (2001), "The effect of admissions test preparation: Evidence from NELS:88,"
-*Chance* 14(1), 10–18** (draft recovered in full). Briggs's opening claim of independence is
-material: most researchers with access to SAT and ACT score data are affiliated with the testing
-organisations, which he identifies as one reason the public discounts small estimates.
-
-NELS:88 tracks a nationally representative panel from Grade 8. Of 14,617 students with 1990 and 1992
-questionnaires plus transcripts, 4,891 took the PSAT and then the SAT or ACT; 4,730 of those also
-answered the test-preparation item. `OBSERVED`
-
-Three specifications: X1 controls only prior PSAT on the matching section; X2 approximates Powers &
-Rock's covariate set; X3 adds seven motivation proxies and five other test-preparation activities.
+*Chance* 14(1), 10–18** (draft recovered in full). Briggs's claim of independence is material: most
+researchers with SAT and ACT score access are affiliated with the testing organisations, which he
+identifies as one reason the public discounts small estimates. NELS:88 tracks a nationally
+representative panel from Grade 8; 4,730 students took the PSAT, then the SAT or ACT, and answered
+the test-preparation item. `OBSERVED` X1 controls only prior PSAT on the matching section; X2
+approximates Powers & Rock's covariate set; X3 adds seven motivation proxies and five other
+test-preparation activities.
 
 | Specification | SAT-M | SAT-V | Combined |
 |---|---|---|---|
@@ -251,11 +227,10 @@ perform worse on ACT reading than uncoached students matched on prior PSAT verba
 preparation regime tuned to one test's item style can transfer negatively to another test of the
 same construct. That is Koretz's non-substantive coaching (§11) showing up as a sign flip.
 
-Two calibration facts from the same data. First, students retaking improved by about **33 points on
-math and 27 on verbal with no intervention at all**, so a 20-point coaching effect is roughly a
-third of what waiting a year already delivers. Second, coaching's benefit was largest for students
-with strong socioeconomic backgrounds and good high-school maths grades, and smallest for students
-who already scored high on PSAT maths. The intervention concentrates where the advantage already is.
+Two calibration facts from the same data. Students retaking improved by about **33 points on math
+and 27 on verbal with no intervention at all**, so a 20-point coaching effect is roughly a third of
+what waiting a year already delivers. And coaching's benefit was largest for high-SES students with
+good maths grades, smallest for those already scoring high on PSAT maths.
 
 ### 1.4 The Khan Academy study, correctly labelled
 
@@ -276,17 +251,12 @@ reviewers were Derek Briggs and Laura O'Dwyer. Under this project's standard it 
 relative to a peer-reviewed estimate, and there is no peer-reviewed estimate.
 
 What it reports, for the class of 2019, PSAT/NMSQT to **first** SAT, controlling for PSAT composite,
-gender, race/ethnicity, parental education, school-day versus weekend administration, and weeks
-between tests:
-
-- Six or more hours on the platform: **+21 points, effect size 0.11**.
-- Six or more hours plus at least one of three "best practice" behaviours (levelling up skills,
-  completing a full-length practice exam, following recommended tasks): **+39 points, effect size
-  0.20**.
-- Appendix F's propensity-score sensitivity check, comparing the six-hours-plus-one-best-practice
-  group against non-users: ATT estimates **35.7 to 38.6** across logistic and GBM weighting, CIs
-  spanning roughly 35.6–39.7.
-- Reaching an effect size of 0.20 required **12.3 hours** on the composite scale.
+gender, race/ethnicity, parental education, administration type and weeks between tests: six or more
+hours on the platform gives **+21 points, effect size 0.11**; six or more hours plus at least one of
+three "best practice" behaviours (levelling up skills, completing a full practice exam, following
+recommended tasks) gives **+39 points, effect size 0.20**; reaching 0.20 required 12.3 hours.
+Appendix F's propensity-score check on the six-hours-plus-one-best-practice group returns ATT
+estimates of **35.7 to 38.6** across logistic and GBM weighting.
 
 And the retrospective correction of its own 2017 predecessor, in the report's own words: *"the
 specific added growth from spending six to eight hours practicing on OSP was 30 additional points on
@@ -294,11 +264,9 @@ their last SAT compared to students who did not use OSP."* The 2017 study's cont
 points, not 115.
 
 The selection problem the authors state plainly: *"our analysis… cannot control for students'
-self-selection and possible systematic confounds between our observed groups."* They further note
-they could not observe motivation, and could not observe SAT preparation done anywhere else, so a
-student with low platform activity and a private tutor is scored as a low-dose control. Propensity
-weighting only balances observables, and the covariate-balance figure shows PSAT was the sole
-covariate with severe pre-weighting imbalance.
+self-selection and possible systematic confounds between our observed groups."* They could not
+observe motivation, nor SAT preparation done elsewhere, so a student with low platform activity and
+a private tutor is scored as a low-dose control.
 
 `INFERENCE` (ours): the OSP estimate is the most credible large-N figure in the modern
 test-preparation literature and it is bounded above by roughly 0.2 SD. It also sits inside the
@@ -502,7 +470,7 @@ of a test that capitalizes on a particular style or emphasis of test items,"* ra
 biasing performance on individual elements. Koretz's worked example is a teacher who noticed the
 state test always used regular polygons and advised colleagues to teach only those. Question
 spotting is that behaviour performed by the candidate rather than the teacher. Whether it raises a
-score is not in doubt; whether the raised score means anything is the question, answered there
+score is not in doubt; whether the raised score means anything is the question. Koretz answers it
 negatively.
 
 ### 6.2 Mark-scheme literacy

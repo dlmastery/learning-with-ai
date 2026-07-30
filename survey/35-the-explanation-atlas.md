@@ -1,5 +1,5 @@
 ---
-title: "The Explanation Atlas — mining the best explainers, and what that is worth"
+title: "The Explanation Atlas — the head-to-head literature exists, filed under refutation text"
 section: explanation-atlas
 status: draft
 date: 2026-07-29

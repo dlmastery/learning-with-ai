@@ -15,7 +15,7 @@ randomised controlled trials** — four of them second-language learning. It mea
 resemblance, preference and engagement. It very rarely measures whether anyone
 learned anything, and almost never measures it **after the tool is taken away**.
 
-This survey is an attempt to write the missing specification. It rests on 48 research
+This survey is an attempt to write the missing specification. It rests on 49 research
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
 errors is published in an append-only ledger rather than quietly edited — **23 of
@@ -109,7 +109,7 @@ One of them documents a mechanism this project proposed, benchmarked, and
 15. [The Ladder of Explanation — ELI10 to ELI25, and the rule that makes a simplification legal](#the-ladder-of-explanation-eli10-to-eli25-and-the-rule-that-makes-a-simplification-legal)
 16. [What the Explainers Invented — 104 techniques, and the one nobody has ported](#what-the-explainers-invented-104-techniques-and-the-one-nobody-has-ported)
 17. [Explaining Hard Things — the fidelity invariants, instantiated](#explaining-hard-things-the-fidelity-invariants-instantiated)
-18. [The Explanation Atlas — mining the best explainers, and what that is worth](#the-explanation-atlas-mining-the-best-explainers-and-what-that-is-worth)
+18. [The Explanation Atlas — the head-to-head literature exists, filed under refutation text](#the-explanation-atlas-the-head-to-head-literature-exists-filed-under-refutation-text)
 19. [Nobody Needs a Better Scheduler — the science of durable remembering](#nobody-needs-a-better-scheduler-the-science-of-durable-remembering)
 20. [Beyond the Tutor — the five roles nobody is building](#beyond-the-tutor-the-five-roles-nobody-is-building)
 21. [What the Object Must Refuse — embodiment, manipulatives, and executable material](#what-the-object-must-refuse-embodiment-manipulatives-and-executable-material)
@@ -123,7 +123,7 @@ One of them documents a mechanism this project proposed, benchmarked, and
 **Part V — Who it is for**
 
 25. [The Empty Chair — designing for the margin first](#the-empty-chair-designing-for-the-margin-first)
-26. [The Coordinator's Week — what special education actually consists of](#the-coordinator-s-week-what-special-education-actually-consists-of)
+26. [The Coordinator's Week — five hours of statutory admin against four available](#the-coordinator-s-week-five-hours-of-statutory-admin-against-four-available)
 27. [Who Is Not in the Room — reach, language, and the barriers attention does not remove](#who-is-not-in-the-room-reach-language-and-the-barriers-attention-does-not-remove)
 28. [What We Owe Children — the legal floor as a design specification](#what-we-owe-children-the-legal-floor-as-a-design-specification)
 
@@ -134,8 +134,8 @@ One of them documents a mechanism this project proposed, benchmarked, and
 31. [The Canon — what the history of pedagogy already settled](#the-canon-what-the-history-of-pedagogy-already-settled)
 32. [The Market — nine bets, one graveyard, and the number that shrinks as you look at it](#the-market-nine-bets-one-graveyard-and-the-number-that-shrinks-as-you-look-at-it)
 33. [Inference Is 0.43% of Delivery — and human judgement is the scarce input](#inference-is-0-43-of-delivery-and-human-judgement-is-the-scarce-input)
-34. [The Two-Hour School — one claim that holds and one that does not](#the-two-hour-school-one-claim-that-holds-and-one-that-does-not)
-35. [Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration](#prior-art-what-thirty-five-builds-reveal-read-as-evidence-and-not-as-inspiration)
+34. [The Two-Hour School — two hours buys the schedule, and does not buy the attainment](#the-two-hour-school-two-hours-buys-the-schedule-and-does-not-buy-the-attainment)
+35. [Prior Art — thirty-five builds, 128 notebooks, zero exercises](#prior-art-thirty-five-builds-128-notebooks-zero-exercises)
 36. [Motivation — wanting to continue](#motivation-wanting-to-continue)
 
 **Part VII — What we do not know**
@@ -844,10 +844,10 @@ Second, **the pre-LLM literature did meet the standard, and the comparisons that
 count live there.** Roschelle et al.'s ASSISTments trial moved an end-of-year state
 standardised test across 43 Maine schools, with the largest gains for low prior
 achievers. It is the strongest distal-outcome edtech RCT in the corpus, and it
-predates the LLMs entirely. Pane et al. ran Cognitive Tutor Algebra I across 147 schools for two years
-and found a null in year one that became +0.21 SD in year two. Neither shape is
-visible in an eight-week trial, and every LLM RCT here except Rori is eight weeks or
-shorter.
+predates the LLMs entirely. Pane et al. ran Cognitive Tutor Algebra I across 147
+schools for two years and found a null in year one that became +0.21 SD in year two.
+Neither shape is visible in an eight-week trial, and every LLM RCT here except Rori is
+eight weeks or shorter.
 
 ---
 
@@ -4392,7 +4392,7 @@ A simplification is legal when the reader can still tell what would break. Every
 above is that sentence made checkable, one domain at a time.
 
 
-## 18. The Explanation Atlas — mining the best explainers, and what that is worth
+## 18. The Explanation Atlas — the head-to-head literature exists, filed under refutation text
 
 <sub>Source report: `research/raw/N4-explanation-atlas.md`</sub>
 
@@ -5906,13 +5906,13 @@ invariant predicts.
 And a proposal from this project's own corpus was benchmarked and falsified. An
 earlier section proposed permutation-based fidelity checking, modelled on the Vedic
 *pāṭha* recitation protocols: instead of re-asking a model the same question k times,
-ask k structurally *different* questions about the same content: state it, invert it,
+ask k structurally *different* questions about the same content — state it, invert it,
 evaluate it at two points, ask the scaling factor, write it in zero form. The claim
 was that this is "strictly stronger than self-consistency sampling because the
 permutations are adversarial to semantic smoothing," and it was flagged for
-benchmarking. It was
-benchmarked: 768 generations, two models, matched budget of six calls each, every
-verdict decided by a deterministic comparator so no model judges anything.
+benchmarking. It has now been benchmarked: 768 generations, two models, matched
+budget of six calls each, every verdict decided by a deterministic comparator so no
+model judges anything.
 
 | Protocol | Model | Recall | False alarm | **Discrimination** |
 |---|---|---|---|---|
@@ -6212,8 +6212,8 @@ people willing to exploit the gap barely moved; the population who *could* becam
 everyone.
 
 The design problem is not "invent tasks AI cannot do", a race whose finish line
-recedes annually. The problem is to **restore a margin**, and there are four ways: bind the
-response to real time (orals, live problem-solving); bind the claim to a verifiable
+recedes annually. The problem is to **restore a margin**, and there are four ways:
+bind the response to real time (orals, live problem-solving); bind the claim to a verifiable
 object (proof assistants, test suites, withheld data); bind the artifact to a process
 trace (version control, revision history); or abandon per-task security and secure
 the aggregate (programmatic assessment).
@@ -6263,8 +6263,8 @@ coefficients**.
 The reading this survey adopts: **the equity case for AI-conducted orals rests on
 frequency and practice. The technology carries none of it.** Every documented
 fairness risk of orals (anxiety, unfamiliarity, differential coaching) is a
-*first-exposure* effect that decays with repetition. What made orals inequitable was that students met one,
-once, at maximum stakes. A modality students encounter forty times per degree is a
+*first-exposure* effect that decays with repetition. What made orals inequitable was
+that students met one, once, at maximum stakes. A modality students encounter forty times per degree is a
 modality they are fluent in.
 
 ---
@@ -6823,7 +6823,7 @@ whichever way it lands.
 The chair is empty because nobody sat down. Not because the seat was taken.
 
 
-## 26. The Coordinator's Week — what special education actually consists of
+## 26. The Coordinator's Week — five hours of statutory admin against four available
 
 <sub>Source report: `research/raw/H2-selpa-practitioner-reality.md`</sub>
 
@@ -9107,7 +9107,7 @@ currently has to verify it — a conclusion §36 reached from the technical side
 at independently from a profit-and-loss account.
 
 
-## 34. The Two-Hour School — one claim that holds and one that does not
+## 34. The Two-Hour School — two hours buys the schedule, and does not buy the attainment
 
 <sub>Source report: `research/raw/N3-two-hour-school.md`</sub>
 
@@ -9260,7 +9260,7 @@ evidence of extraordinary learning. Those are two different claims, and this sur
 own argument only supports the first one.
 
 
-## 35. Prior Art — what thirty-five builds reveal, read as evidence and not as inspiration
+## 35. Prior Art — thirty-five builds, 128 notebooks, zero exercises
 
 <sub>Source report: `research/raw/D2-portfolio-case-studies.md`</sub>
 

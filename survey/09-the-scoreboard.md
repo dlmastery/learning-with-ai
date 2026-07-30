@@ -266,9 +266,9 @@ count live there.** Roschelle et al.'s ASSISTments trial moved an end-of-year st
 standardised test across 43 Maine schools, with the largest gains for low prior
 achievers. It is the strongest distal-outcome edtech RCT in the corpus, and it
 predates the LLMs entirely. Pane et al. ran Cognitive Tutor Algebra I across 147
-schools for two years and found a null in year one that became +0.21 SD in year two. Neither shape is
-visible in an eight-week trial, and every LLM RCT here except Rori is eight weeks or
-shorter.
+schools for two years and found a null in year one that became +0.21 SD in year two.
+Neither shape is visible in an eight-week trial, and every LLM RCT here except Rori is
+eight weeks or shorter.
 
 ---
 

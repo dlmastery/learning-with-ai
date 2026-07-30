@@ -196,13 +196,13 @@ invariant predicts.
 And a proposal from this project's own corpus was benchmarked and falsified. An
 earlier section proposed permutation-based fidelity checking, modelled on the Vedic
 *pāṭha* recitation protocols: instead of re-asking a model the same question k times,
-ask k structurally *different* questions about the same content: state it, invert it,
+ask k structurally *different* questions about the same content — state it, invert it,
 evaluate it at two points, ask the scaling factor, write it in zero form. The claim
 was that this is "strictly stronger than self-consistency sampling because the
 permutations are adversarial to semantic smoothing," and it was flagged for
-benchmarking. It was
-benchmarked: 768 generations, two models, matched budget of six calls each, every
-verdict decided by a deterministic comparator so no model judges anything.
+benchmarking. It has now been benchmarked: 768 generations, two models, matched
+budget of six calls each, every verdict decided by a deterministic comparator so no
+model judges anything.
 
 | Protocol | Model | Recall | False alarm | **Discrimination** |
 |---|---|---|---|---|
