@@ -79,7 +79,8 @@ Three properties of this interaction decide the entire architecture:
   nothing like a dial.
 
 Everything else on the personalisation menu is either debunked or unevidenced:
-learning styles, modality preference, personality type, demographic tailoring. The honest table is very short:
+learning styles, modality preference, personality type, demographic tailoring. The
+table of what is left is very short:
 
 | Dimension | Status |
 |---|---|

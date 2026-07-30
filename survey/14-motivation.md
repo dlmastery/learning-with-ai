@@ -171,7 +171,7 @@ moderators were game fiction and social interaction, with "combining competition
 with collaboration" particularly effective. Nothing supports the PBL triad as the active
 ingredient.
 
-Novelty decay is measured, not folklore. Perceived benefits decline with how long
+Novelty decay has been measured; it is not folklore. Perceived benefits decline with how long
 users have been using the service. And the best longitudinal test deliberately built
 *need-supporting*, SDT-designed elements and measured motivation four times over 15
 weeks: autonomous motivation was curvilinear — an initial downward trend that only
@@ -187,11 +187,11 @@ forty-year meta-analysis: incentives predict the quantity of performance; intrin
 motivation predicts the quality.
 
 > Gamification's genuine cognitive effect most likely arrives via the mundane mechanisms
-> it smuggles in — increased practice frequency, immediate feedback, clearer goals. Its
+> it smuggles in: increased practice frequency, immediate feedback, clearer goals. Its
 > *motivational* claim is the weakest cell in the evidence, decays with exposure, and the
 > reward class deployed most heavily is precisely the class identified as corrosive.
-> **Points, badges and leaderboards buy short-run behaviour by spending long-run
-> interest.**
+> Points, badges and leaderboards buy short-run behaviour by spending long-run
+> interest.
 
 ---
 
@@ -206,10 +206,10 @@ custom bandit algorithm explicitly designed to handle novelty effects. The repor
 result: **"a 0.5% increase in total daily active users and a 2% increase in new user
 retention over a strong baseline."**
 
-Read the objective function. The target is DAU and new-user retention. Not
-vocabulary retained, not level attained, not time-to-proficiency. It is a competent,
+Read the objective function. The target is DAU and new-user retention: no
+vocabulary retained, no level attained, no time-to-proficiency. It is a competent,
 well-executed piece of engineering whose loss function contains **no learning term at
-all** — published honestly, and it is the industry-standard objective.
+all**, published openly, and standard for the industry.
 
 The streak claims are vendor claims, labelled as such and never restated as findings.
 "Learners who reach a streak of just 7 days are 3.6 times more likely to complete their
@@ -229,14 +229,14 @@ And streaks get metagamed, documented. Adolescents maintaining structurally iden
 Snapchat streaks develop strategies to uphold the counter while hollowing out the
 underlying activity: content becomes minimal, meaningless, purely instrumental to the
 number. **A streak counter measures counter-preservation, and any user under time
-pressure will find the cheapest lesson that preserves it** — the precise inverse of
+pressure will find the cheapest lesson that preserves it**, the precise inverse of
 desirable difficulty. Run the Null-Learner Test on it: it maxes it.
 
 On outcomes, the independent evidence is thin: a semester-long study with nine
 participants; company-affiliated studies of learners who *completed* beginner courses
 reaching roughly **CEFR A2**; and a flagship favourable efficacy study that is
 **vendor-commissioned and could not be retrieved through any bibliographic API used in
-this project** — reported as unverifiable rather than omitted. A systematic review of 35
+this project**. It is reported as unverifiable instead of omitted. A systematic review of 35
 Duolingo studies concluded the field's *"focus on app design marks an emphasis on the
 creation of tools rather than the process and outcomes of language learning."*
 
@@ -246,7 +246,7 @@ creation of tools rather than the process and outcomes of language learning."*
 
 ---
 
-## 6. Relatedness, and why the AI must broker rather than substitute
+## 6. Relatedness: broker it, never simulate it
 
 The human baseline is strong: 99 studies, ~88,000 students, affective teacher–student
 relationships significantly associated with engagement and achievement — with effects on
@@ -259,17 +259,17 @@ mediated by whether the chatbot makes users feel heard. A survey of 1,006 studen
 Replika users found them lonelier than typical student populations yet perceiving high
 social support, with **3% reporting the agent halted their suicidal ideation** — *work
 contested in the same journal* on the grounds that important context was omitted, and
-reported here as contested. And an OpenAI × MIT Media Lab study — 3M+ conversations,
-4,000+ surveyed, plus an IRB-approved RCT with ~1,000 participants over 28 days — found
+reported here as contested. And an OpenAI × MIT Media Lab study (3M+ conversations,
+4,000+ surveyed, plus an IRB-approved RCT with ~1,000 participants over 28 days) found
 that *"very high usage correlates with increased self-reported indicators of dependence."*
 
 The argument that resolves this for learning specifically:
 
 > Relatedness in SDT is not the *feeling* of being cared about. It is the state of
-> **mattering to an agent whose regard was contingent and could have been withheld.** An
+> mattering to an agent whose regard was contingent and could have been withheld. An
 > LLM's positive regard is unconditional by construction and costless by construction. It
-> can produce the affective signature of relatedness — "feel heard" is exactly that
-> signature — without the property that makes relatedness motivating for effortful,
+> can produce the affective signature of relatedness ("feel heard" is exactly that
+> signature) without the property that makes relatedness motivating for effortful,
 > unpleasant, long-horizon work: **that someone would notice and mind if you stopped.**
 
 Loneliness relief is a state. Academic persistence is a commitment. **A companion that
@@ -282,7 +282,7 @@ week, make the learner's progress legible to someone who cares.
 One more negative result belongs here, and it indicts the single most-deployed social
 mechanic. Exposure to exemplary peer performance undermined motivation and success,
 causing people to perceive high performance as unattainable and to **de-identify with the
-domain** — demonstrated in a MOOC context. *Contested, with a clear moderator:* a separate
+domain**, demonstrated in a MOOC context. *Contested, with a clear moderator:* a separate
 trial found social-comparison framing can raise completion when the comparison target is
 attainable. Reading both together gives the design rule: **social comparison helps against
 a near peer and harms against a distant exemplar** — and a global leaderboard is, for
@@ -307,8 +307,8 @@ transfer.
 > **Learner-reported satisfaction, perceived learning, enjoyment and session pleasantness
 > are, under experimental control, negatively correlated with actual learning.**
 
-Any system that optimises for what learners report liking — or for behavioural proxies of
-liking, such as session length, return rate, or rating — will be systematically pushed
+Any system that optimises for what learners report liking, or for behavioural proxies of
+liking such as session length, return rate, or rating, will be systematically pushed
 away from the methods that work. This is not a risk. It is a demonstrated experimental
 result, and it applies with full force to any model tuned on learner preference.
 
@@ -318,7 +318,7 @@ pedagogy.**
 A footnote on flow, the most-cited motivational idea in edtech and the least useful as
 stated: its meta-analytic association with performance is correlational, and flow may be a
 consequence of competence rather than a cause of learning. Exactly two of its conditions
-are engineerable — challenge calibrated to current skill, and immediate feedback — and both
+are engineerable (challenge calibrated to current skill, and immediate feedback) and both
 are already justified by competence support. Implement those and stop talking about flow.
 
 ---
@@ -333,10 +333,10 @@ The critical structural fact: gamification, notifications and streaks operate **
 phases 1–2** and are constitutionally incapable of producing phases 3–4, because phases 3–4
 are *defined* by voluntary re-engagement in the absence of external triggers.
 
-> **A system whose retention comes from notifications has, by construction, not moved a
+> A system whose retention comes from notifications has by construction not moved a
 > single learner past phase 2. An AI that maximises engagement is trying to make phase-2
-> interest do phase-3 work — and the attempt consumes the intrinsic motivation phase 3
-> requires.**
+> interest do phase-3 work, and the attempt consumes the intrinsic motivation phase 3
+> requires.
 
 Two interventions have real causal evidence for the 2→3 transition, and both are
 AI-native.

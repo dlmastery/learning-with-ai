@@ -10,7 +10,7 @@ source_report: research/raw/V1-explainer-techniques.md
 
 Over roughly fifteen years, a few dozen people built a craft of explanation that
 has no textbook and almost no research literature. This section is the first
-inventory of it — **104 named techniques** from 3Blue1Brown, Veritasium, Primer,
+inventory of it: **104 named techniques** from 3Blue1Brown, Veritasium, Primer,
 Ben Eater, Sebastian Lague, Mark Rober, Steve Mould, Numberphile, Kurzgesagt,
 Vsauce, Applied Science, CGP Grey, Welch Labs, Karpathy, Ciechanowski, Nicky Case,
 Bret Victor, Distill, Khan, Physics Wallah, Unacademy, and the Chinese dual-teacher
@@ -23,9 +23,9 @@ was wrong is the most useful thing here.
 
 ## 1. The hypothesis, and its refutation
 
-**The claim under test:** every technique these people invented is *craft
+The claim under test: every technique these people invented is *craft
 compensating for the absence of a listener.* They cannot see you, cannot ask, cannot
-re-render when you frown — so the anticipated objection, the "you might be thinking…",
+re-render when you frown, so the anticipated objection, the "you might be thinking…",
 the deliberate false start, the misconception voiced on the viewer's behalf, all of it
 is scar tissue from one-way transmission. Strip the constraint and most of the craft
 dissolves.
@@ -40,8 +40,8 @@ Classified across all 104:
 | **D — Authored invariant** | 5 | Cannot be derived from a learner model at all |
 
 **Sixteen of 104.** The hypothesis is not merely wrong; it is wrong by a factor of
-four in the other direction. **Most of what these people invented is not scar
-tissue — it is discovery**, and almost none of it has been built into a responsive
+four in the other direction. **Most of what these people invented is discovery and
+not scar tissue**, and almost none of it has been built into a responsive
 system.
 
 That matters commercially and strategically. A system that assumes responsiveness
@@ -53,10 +53,10 @@ supersedes craft will rebuild the 16 and discard the 63.
 
 The fourth category came back unrequested and it constrains the whole architecture.
 
-Sanderson holding **one 2×2 transformation on screen for four minutes** is not
+Sanderson holding one 2×2 transformation on screen for four minutes is not
 derivable from any learner model. There is no signal that says *this particular
 matrix, this long*. It is an authored decision by someone who understood the concept
-deeply enough to know which single object carries it — and no amount of diagnosis
+deeply enough to know which single object carries it, and no amount of diagnosis
 produces it.
 
 > **Curate a library. Do not only generate.**
@@ -77,7 +77,7 @@ when you read the page normally:
 > **the widget** → and only in the paragraph *after* does the concept arrive.
 
 That is **prediction before reveal**, executed **30 times in a single article and
-120 times in *Moon*** — and executed without ever asking the reader to pause.
+120 times in *Moon***, and executed without ever asking the reader to pause.
 
 Compare the video version of the same idea. Sanderson says the prediction is where
 the learning happens, says it across 34 videos, and concedes that people are
@@ -90,12 +90,12 @@ manipulates it because there is nothing else to do.
 
 ### The spec, in one sentence
 
-> For every load-bearing claim, emit a **manipulable figure that instantiates it**,
-> render it **before** the prose that resolves it, introduce **one new degree of
-> freedom** per figure, and **do not advance** until the learner has moved something.
+> For every load-bearing claim, emit a manipulable figure that instantiates it,
+> render it **before** the prose that resolves it, introduce one new degree of
+> freedom per figure, and do not advance until the learner has moved something.
 
-Four constraints, each doing work. The figure must instantiate the claim rather than
-illustrate it. The order is non-negotiable — after the prose, it is a demonstration
+Four constraints, each doing work. The figure must instantiate the claim instead of
+illustrating it. The order is non-negotiable: after the prose it is a demonstration
 rather than a prediction. One degree of freedom keeps the search space small enough
 to reason about. And the gate makes the prediction compulsory without ever asking.
 
@@ -107,7 +107,7 @@ Prediction-before-reveal is widely believed to work. The measurement says someth
 more precise and more useful:
 
 **Prediction has no main effect.** The entire effect is carried by the
-expectancy-violation interaction — *p* = .002. Predicting and being right does
+expectancy-violation interaction, *p* = .002. Predicting and being right does
 approximately nothing. Predicting and being wrong is where the whole result lives.
 
 Which is the measured warrant for the strongest move in this survey: taking a
@@ -116,30 +116,30 @@ they predicted. It is that the prediction failed, visibly, on something they
 committed to.
 
 It also disciplines the design. A prediction step that mostly confirms is a cost with
-no benefit, so the figure must be chosen to discriminate — set at the parameter
+no benefit, so the figure must be chosen to discriminate, and set at the parameter
 values where a common wrong model and the correct one disagree.
 
 ---
 
 ## 5. Three places the report disagrees with this survey
 
-Recorded because they are unresolved, not because they are settled.
+Recorded because they are unresolved and not because they are settled.
 
 Responsiveness is a hazard for productive failure. Productive failure measures
-**g = 0.36–0.58**, and the finding is blunt: *adding help to the struggle does not
+g = 0.36–0.58, and the finding is blunt: *adding help to the struggle does not
 help.* A system optimised to notice you are stuck and intervene is optimised to
 destroy the mechanism. This survey has argued hard for unprompted intervention;
-those two commitments are in tension and the resolution — intervening on the
-*wrong kind* of stuck — is asserted here rather than measured.
+those two commitments are in tension, and the resolution (intervening on the
+*wrong kind* of stuck) is asserted here rather than measured.
 
 The street interview does not port. Veritasium's misconception reveal works
 because a stranger commits publicly and is then shown to be wrong. The cost is
-affective, not technical — the confession is what makes the correction land. A
+affective, not technical: the confession is what makes the correction land. A
 private system can elicit the same commitment and cannot reproduce the stake.
 
 **Personalisation destroys the shared artifact, and nothing in this survey has
-costed that.** A 3Blue1Brown video is a thing millions of people have *in common* —
-it can be discussed, referenced, argued over, taught from. A perfectly personalised
+costed that.** A 3Blue1Brown video is a thing millions of people have *in common*.
+It can be discussed, referenced, argued over, taught from. A perfectly personalised
 explanation is seen by one person and can be discussed with nobody. This survey has
 treated personalisation as strictly good. It has a price and we have never named it.
 
