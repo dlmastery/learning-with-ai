@@ -1,476 +1,312 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Everyone becomes a polymath</title>
-<meta name="description" content="A university in your pocket. Anything you want to understand, understood, at whatever depth you choose, starting this afternoon." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Make polymathy ordinary — Learning with AI</title>
+<meta name="description" content="A product thesis for persistent, multimodal, evidence-led personal instruction.">
 <style>
 :root{
-  --bg:#faf9f5;--surface:#fcfcfb;--sunken:#f6f4ee;--ink:#171614;--ink-2:#413f3a;--ink-3:#7b7870;
-  --line:#e5e2d8;--line-2:#cfcbbe;--felt:#C4623D;--real:#1D6FA5;
-  --good:#2f6d4f;--warn:#8a6d1f;--bad:#9d3f33;
+  --paper:#f5f1e8;--card:#fffdf8;--ink:#161817;--muted:#5f625e;--line:#d9d3c6;
+  --coral:#d15f3e;--blue:#236f91;--green:#2e7255;--yellow:#e1b94c;
   --serif:ui-serif,Georgia,"Iowan Old Style",serif;
-  --sans:ui-sans-serif,-apple-system,"Segoe UI",Inter,sans-serif;
+  --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
 }
-@media (prefers-color-scheme:dark){:root{--bg:#1a1917;--surface:#211f1d;--sunken:#161513;
-  --ink:#f6f4ef;--ink-2:#c6c2b8;--ink-3:#8e8a80;--line:#35322c;--line-2:#474339;
-  --felt:#D4784C;--real:#3D93CC;--good:#5fa583;--warn:#c9a94e;--bad:#d08a7e;}}
-:root[data-theme=dark]{--bg:#1a1917;--surface:#211f1d;--sunken:#161513;--ink:#f6f4ef;
-  --ink-2:#c6c2b8;--ink-3:#8e8a80;--line:#35322c;--line-2:#474339;--felt:#D4784C;--real:#3D93CC;
-  --good:#5fa583;--warn:#c9a94e;--bad:#d08a7e;}
-:root[data-theme=light]{--bg:#faf9f5;--surface:#fcfcfb;--sunken:#f6f4ee;--ink:#171614;
-  --ink-2:#413f3a;--ink-3:#7b7870;--line:#e5e2d8;--line-2:#cfcbbe;--felt:#C4623D;--real:#1D6FA5;
-  --good:#2f6d4f;--warn:#8a6d1f;--bad:#9d3f33;}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
-.slide{min-height:100vh;display:flex;flex-direction:column;justify-content:center;
-  padding:8vh 7vw;max-width:1180px;margin:0 auto;border-bottom:1px solid var(--line);
-  scroll-snap-align:start}
+:root[data-theme=dark]{
+  --paper:#171918;--card:#202321;--ink:#f3f0e9;--muted:#b7b8b2;--line:#3a3d39;
+  --coral:#ed7756;--blue:#5aa4c7;--green:#69ad8c;--yellow:#e2bc59;
+}
+*{box-sizing:border-box}
 html{scroll-snap-type:y proximity;scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-.n{font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;
-  color:var(--felt);margin-bottom:26px}
-h1{font:400 clamp(30px,4.6vw,58px)/1.08 var(--serif);letter-spacing:-.023em;margin-bottom:26px;max-width:20ch}
-h2{font:400 clamp(24px,3.2vw,38px)/1.16 var(--serif);letter-spacing:-.02em;margin-bottom:22px;max-width:24ch}
-p{font-size:clamp(16px,1.5vw,20px);line-height:1.6;color:var(--ink-2);max-width:62ch;margin-bottom:16px}
-p.big{font:400 clamp(19px,2vw,26px)/1.45 var(--serif);color:var(--ink);max-width:34ch}
-strong{color:var(--ink);font-weight:650}
-em{color:var(--ink-2)}
-.hit{font:400 clamp(40px,8vw,96px)/1 var(--serif);letter-spacing:-.03em;color:var(--felt);margin:8px 0 18px}
-.hit.b{color:var(--real)}
-.sub{font-size:14.5px;color:var(--ink-3);max-width:60ch}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,44px);margin:18px 0}
-.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);margin:18px 0}
-@media(max-width:760px){.two,.three{grid-template-columns:1fr}}
-.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
-.box.bad{border-left:2px solid var(--bad)}
-.box.good{border-left:2px solid var(--good)}
-.box h3{font:650 13px/1.3 var(--sans);letter-spacing:.09em;text-transform:uppercase;
-  color:var(--ink-3);margin-bottom:12px}
-.box p{font-size:15.5px;margin-bottom:10px}
-.box p:last-child{margin-bottom:0}
-table{border-collapse:collapse;width:100%;font-size:clamp(13px,1.3vw,16px);margin:14px 0}
-th{text-align:left;font:600 11px/1.3 var(--sans);letter-spacing:.09em;text-transform:uppercase;
-  color:var(--ink-3);padding:0 16px 10px 0;border-bottom:1px solid var(--line-2)}
-td{padding:12px 16px 12px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
-td b{color:var(--ink)}
-.wrap{width:100%;overflow-x:auto}
-.no{color:var(--bad);font-weight:650}.yes{color:var(--good);font-weight:650}.mid{color:var(--warn);font-weight:650}
-.num{font-family:var(--mono);white-space:nowrap}
-ol.q{counter-reset:q;list-style:none;margin:10px 0}
-ol.q li{counter-increment:q;position:relative;padding-left:44px;margin-bottom:20px;
-  font-size:clamp(15px,1.5vw,19px);color:var(--ink-2);max-width:60ch}
-ol.q li::before{content:counter(q);position:absolute;left:0;top:-2px;
-  font:400 26px/1 var(--serif);color:var(--felt)}
-ol.q li b{color:var(--ink);display:block;margin-bottom:5px}
-.rule{border-left:2px solid var(--felt);padding-left:24px;margin:20px 0}
-.slide.dense{padding-top:2.5vh;padding-bottom:2.5vh}
-.slide.dense h2{margin-bottom:16px}
-.fill{display:inline-block;font:650 13px/1.5 var(--mono);letter-spacing:.04em;color:var(--warn);
-  border:1px dashed var(--warn);border-radius:6px;padding:1px 9px;background:var(--sunken);
-  white-space:nowrap}
-.tag{font:650 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
-  border:1px solid var(--line-2);border-radius:5px;padding:3px 6px;white-space:nowrap}
-nav.hud{position:fixed;bottom:18px;right:18px;display:flex;gap:8px;align-items:center;z-index:60}
-nav.hud button{font:600 12px/1 var(--sans);padding:9px 12px;border-radius:8px;
-  border:1px solid var(--line-2);background:var(--surface);color:var(--ink);cursor:pointer}
-#pos{font:600 11px/1 var(--mono);color:var(--ink-3);padding:0 6px}
-.bar{position:fixed;top:0;left:0;height:2px;background:var(--felt);z-index:70;width:0}
-@media print{
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--sans)}
+a{color:inherit}
+.slide{
+  width:min(1240px,100%);min-height:100vh;margin:auto;padding:clamp(34px,6vh,72px) clamp(24px,6vw,84px);
+  display:flex;flex-direction:column;justify-content:center;scroll-snap-align:start;
+  border-bottom:1px solid var(--line);position:relative;overflow:hidden
+}
+.slide:after{content:attr(data-page);position:absolute;right:clamp(24px,4vw,50px);bottom:24px;
+  color:var(--muted);font:11px/1 var(--mono)}
+.eyebrow{color:var(--coral);font:700 11px/1.2 var(--sans);letter-spacing:.16em;
+  text-transform:uppercase;margin:0 0 22px}
+h1,h2,h3,p{margin-top:0}
+h1{font:500 clamp(46px,8vw,102px)/.94 var(--serif);letter-spacing:-.045em;max-width:11ch;margin-bottom:28px}
+h2{font:500 clamp(33px,5vw,66px)/1.02 var(--serif);letter-spacing:-.035em;max-width:16ch;margin-bottom:26px}
+h3{font:700 12px/1.3 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+p{font-size:clamp(16px,1.55vw,21px);color:var(--muted);max-width:66ch;margin-bottom:15px}
+.lead{font:500 clamp(21px,2.5vw,32px)/1.35 var(--serif);color:var(--ink);max-width:38ch}
+.small{font-size:13px;line-height:1.45;color:var(--muted)}
+.source{font:11px/1.45 var(--mono);color:var(--muted);margin-top:18px}
+.source a{text-decoration-color:var(--line)}
+.accent{color:var(--coral)}.blue{color:var(--blue)}.green{color:var(--green)}
+.grid2,.grid3,.grid4{display:grid;gap:16px;margin:18px 0}
+.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card p{font-size:15px;margin-bottom:8px}.card p:last-child{margin-bottom:0}
+.card.key{border-top:4px solid var(--coral)}.card.system{border-top:4px solid var(--blue)}
+.card.access{border-top:4px solid var(--green)}.card.proof{border-top:4px solid var(--yellow)}
+.big-number{font:500 clamp(38px,6vw,72px)/1 var(--serif);color:var(--coral);letter-spacing:-.04em}
+.rule{border-left:3px solid var(--coral);padding:5px 0 5px 22px;margin:20px 0}
+.rule p{color:var(--ink);font:500 clamp(20px,2.4vw,30px)/1.35 var(--serif);margin:0}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);align-items:stretch;margin:26px 0;gap:7px}
+.node{background:var(--card);border:1px solid var(--line);padding:18px 15px;border-radius:12px;position:relative}
+.node:not(:last-child):after{content:"→";position:absolute;right:-12px;top:42%;z-index:2;color:var(--coral);font-weight:800}
+.node b{display:block;font-size:14px;margin-bottom:7px}.node span{font-size:12px;color:var(--muted)}
+.strip{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:22px 0}
+.strip>div{background:var(--card);padding:22px}
+.strip b{font-size:14px;display:block;margin-bottom:7px}.strip span{font-size:13px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}
+th{text-align:left;color:var(--muted);font:700 10px/1.2 var(--sans);letter-spacing:.1em;
+  text-transform:uppercase;border-bottom:1px solid var(--line);padding:10px}
+td{border-bottom:1px solid var(--line);padding:12px 10px;vertical-align:top}
+.check{color:var(--green);font-weight:800}.no{color:var(--coral);font-weight:800}
+.pill{display:inline-block;padding:5px 9px;border:1px solid var(--line);border-radius:99px;
+  font:700 10px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;margin:2px}
+.decision{border:1px dashed var(--coral);background:color-mix(in srgb,var(--coral) 7%,var(--card));
+  border-radius:12px;padding:16px 18px;color:var(--ink);font-size:14px}
+.hud{position:fixed;z-index:10;right:15px;top:15px;display:flex;gap:6px}
+.hud button{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px;
+  padding:8px 10px;cursor:pointer}
+.progress{position:fixed;z-index:11;left:0;top:0;height:3px;background:var(--coral);width:0}
+.orbit{position:absolute;border:1px solid var(--line);border-radius:50%;pointer-events:none}
+.o1{width:48vw;height:48vw;right:-18vw;top:-19vw}.o2{width:32vw;height:32vw;right:-10vw;top:-10vw}
+@media(max-width:800px){
+  .grid2,.grid3,.grid4,.flow,.strip{grid-template-columns:1fr}
+  .node:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-17px}
+  .slide{min-height:auto;padding-top:72px;padding-bottom:72px}
   html{scroll-snap-type:none}
-  .slide{min-height:auto;page-break-after:always;border:0;padding:14mm}
-  nav.hud,.bar{display:none}
+}
+@media print{
+  .slide{height:100vh;page-break-after:always;border:0}.hud,.progress{display:none}
 }
 </style>
 </head>
 <body>
-<div class="bar" id="bar"></div>
-<nav class="hud">
+<div class="progress" id="progress"></div>
+<nav class="hud" aria-label="Slide controls">
   <button id="prev" aria-label="Previous slide">←</button>
-  <span id="pos">1 / 16</span>
   <button id="next" aria-label="Next slide">→</button>
-  <button id="tt" aria-label="Toggle theme">◐</button>
+  <button id="theme" aria-label="Toggle theme">◐</button>
 </nav>
 
-<!-- 1 mission -->
-<section class="slide">
-  <div class="n">The mission</div>
-  <h1>Everyone becomes a polymath.</h1>
-  <p class="big">A university in your pocket. Anything you want to understand,
-  understood, at whatever depth you choose, starting this afternoon.</p>
-  <p>A tutor of the kind that costs $500 an hour, running for the price of the tokens
-  it takes. For a nine-year-old, a surgeon, and a forty-year-old who always wondered
-  how bridges stay up. The end of having to pick which curiosities you can afford.</p>
+<section class="slide" data-page="01 / 15">
+  <div class="orbit o1"></div><div class="orbit o2"></div>
+  <p class="eyebrow">Learning with AI · product thesis</p>
+  <h1>Make polymathy <span class="accent">ordinary.</span></h1>
+  <p class="lead">A persistent personal faculty that can see the work, change the representation, remember what happened, and prove the learner can now act alone.</p>
 </section>
 
-<!-- 2 the problem -->
-<section class="slide">
-  <div class="n">The problem, in one person</div>
-  <h2>An eleven-year-old can explain photosynthesis and cannot pass a worksheet about it.</h2>
-  <p class="big">She is served under a SELPA plan. She reads, and decoding costs her so
-  much that by the end of a sentence the beginning is gone.</p>
-  <p>She is running a working memory that spends everything on the part everyone else
-  automated years ago. About <strong>15% of American school-age children</strong> are
-  served under an individualised programme like hers. A census of ERIC and Europe PMC
-  found <strong>30 randomised trials of generative-AI tutoring involving students, and
-  none that mention a disability, an IEP or special education.</strong> Every published
-  effect in this field was measured on some other child.</p>
-  <div class="rule"><p style="margin:0">Build it so it works for her and it works for
-  everyone. Build it for everyone and it will fail her. She is the specification.</p></div>
-</section>
-
-<!-- 3 the insight -->
-<section class="slide">
-  <div class="n">Why that is reachable</div>
-  <h2>Polymathy was never a question of intelligence. It was a question of who could afford to be a beginner.</h2>
-  <div class="two">
-    <div><div class="hit b">1.14×</div><p class="sub">how much people differ in learning
-    <em>rate</em>, 25th to 75th percentile</p></div>
-    <div><div class="hit">3.6×</div><p class="sub">how much they differ in where they
-    <em>start</em>, measured within students who had already passed the prerequisites</p></div>
+<section class="slide" data-page="02 / 15">
+  <p class="eyebrow">The structural failure</p>
+  <h2>Education standardizes the three things that should be personal.</h2>
+  <div class="grid3">
+    <article class="card key"><h3>Where to begin</h3><p>Prior knowledge varies far more than learning rate. A fixed syllabus begins too early for some learners and too late for others.</p></article>
+    <article class="card system"><h3>How to represent it</h3><p>Text, speech, diagrams, manipulatives and worked examples are treated as content formats. They should be live instructional decisions.</p></article>
+    <article class="card access"><h3>What happens next</h3><p>Teachers, tutors and apps lose the learner between sessions. Each new encounter pays the orientation cost again.</p></article>
   </div>
-  <p>Koedinger et al., PNAS 2023, 1.3 million observations across 27 datasets. People
-  barely differ in how fast they learn. They differ enormously in where they begin, and
-  a time-based model of learning fits the data poorly.</p>
-  <p>Scientists work in three or four fields in a career. The fifth was not too hard.
-  Entering it cost months of search, orientation, and not knowing which result mattered,
-  with nobody to ask. <strong>That cost is attention, and attention just stopped being
-  scarce.</strong></p>
+  <div class="rule"><p>A learner can understand the idea and still fail the worksheet because decoding consumed the working memory the worksheet was meant to test. This is a core product requirement.</p></div>
+  <p class="source">Prior-knowledge and learning-rate result: Koedinger et al., PNAS 2023. The learner story is an anonymized design vignette without a clinical claim.</p>
 </section>
 
-<!-- 4 why now -->
-<section class="slide">
-  <div class="n">Why now</div>
-  <h2>The interfaces of a private tutor became software primitives.</h2>
-  <div class="three">
-    <div class="box good"><h3>See, hear, point and interrupt</h3>
-      <p>Frontier live APIs now accept continuous speech, images and video, return native
-      speech, call tools, support barge-in and span sessions.</p>
-      <p class="sub">Capability, documented in current APIs. The learning effect depends
-      on what the system does with the shared work.</p></div>
-    <div class="box good"><h3>Compile an experience in the turn</h3>
-      <p>Models generate working mini-apps, notebooks, animations, slides, audio, video
-      and navigable worlds. The latency from confusion to manipulable object collapsed.</p>
-      <p class="sub">Capability. Every renderer still needs semantic, accessibility and
-      outcome checks.</p></div>
-    <div class="box good"><h3>Remember and act between sessions</h3>
-      <p>Agent runtimes persist state, execute tools, schedule jobs and hand work between
-      specialists. One action can serve the learner UI, agents and human coordinators.</p>
-      <p class="sub">Architecture. The compounding asset is the learner-state-to-next-action
-      map, not the replaceable base model.</p></div>
+<section class="slide" data-page="03 / 15">
+  <p class="eyebrow">Why now</p>
+  <h2>The interfaces of excellent instruction became programmable.</h2>
+  <div class="grid3">
+    <article class="card system"><h3>Attend live</h3><p>Continuous speech, image and video input; native voice; interruption; pointing; tool use.</p><p class="small">Gemini Live · OpenAI Realtime · multimodal model APIs</p></article>
+    <article class="card proof"><h3>Build the object</h3><p>Generate a diagram, notebook, simulation, animation, mini-app or short video in the turn where confusion appears.</p><p class="small">Claude Artifacts · Manim · Remotion · marimo · Veo/Wan</p></article>
+    <article class="card access"><h3>Act over time</h3><p>Persist learner state, schedule retrieval, call specialists and maintain an open loop between sessions.</p><p class="small">Agent runtimes · shared memory · background jobs</p></article>
   </div>
+  <p class="lead">These are components. Nobody wins by arranging them into a chat window.</p>
 </section>
 
-<!-- 5 the product -->
-<section class="slide">
-  <div class="n">What we are building</div>
-  <h2>A university that fits in a pocket and knows only you.</h2>
-  <div class="two">
-    <div class="box good"><h3>One learner-hour</h3>
-      <p><b>0–4</b> · resume the open loop; make beginning effortless</p>
-      <p><b>4–12</b> · predict, point, draw or explain to expose the belief</p>
-      <p><b>12–30</b> · make the obstacle manipulable in the smallest useful medium</p>
-      <p><b>30–42</b> · fade every aid and solve a new case</p>
-      <p><b>42–52</b> · teach a stubborn agent and answer its objection</p>
-      <p><b>52–60</b> · record evidence and schedule the idea's return</p></div>
-    <div class="box good"><h3>The faculty behind it</h3>
-      <p>Diagnostician · domain mentor · representation director · access and
-      executive-function coach · verifier.</p>
-      <p>Three to five are active. Each predicts a learner action; a probe settles
-      disagreement. The learner never coordinates the faculty.</p>
-      <p>Every book, creator and course can supply concept packages. The learner model
-      remains portable and belongs to the learner.</p>
-      <p class="sub" style="margin-top:14px">The complete six-stage session is now
-      runnable in the demo gallery.</p></div>
+<section class="slide" data-page="04 / 15">
+  <p class="eyebrow">The product</p>
+  <h2>One closed loop from curiosity to retained capability.</h2>
+  <div class="flow" aria-label="Learning loop">
+    <div class="node"><b>Resume</b><span>Recall the open goal, constraints and last unresolved belief.</span></div>
+    <div class="node"><b>Expose</b><span>Ask for a prediction, drawing, choice or explanation.</span></div>
+    <div class="node"><b>Transform</b><span>Select or generate the smallest useful representation.</span></div>
+    <div class="node"><b>Fade</b><span>Remove aid and test a new case without the system.</span></div>
+    <div class="node"><b>Return</b><span>Schedule retrieval and update portable learner state.</span></div>
+  </div>
+  <p class="lead">The interface can be voice, a shared canvas, a camera, a simulator or a page. The product is the control loop deciding what to do next—and what evidence would change that decision.</p>
+</section>
+
+<section class="slide" data-page="05 / 15">
+  <p class="eyebrow">One learner · one concept · one hour</p>
+  <h2>The experience changes shape when the evidence changes.</h2>
+  <div class="strip">
+    <div><b>“I know fractions. I just freeze.”</b><span>The system asks the learner to predict which is larger: 5/8 or 7/12. No explanation yet.</span></div>
+    <div><b>The error identifies a candidate belief.</b><span>A generated strip diagram makes the denominator misconception manipulable; speech and labels are optional.</span></div>
+    <div><b>The help disappears.</b><span>The learner solves a novel ratio problem, teaches a stubborn agent, then meets the idea again days later.</span></div>
+  </div>
+  <table>
+    <thead><tr><th>What is recorded</th><th>Excluded inferences</th><th>Graduate evidence</th></tr></thead>
+    <tbody><tr><td>Observed action, representation, assistance level, confidence, latency</td><td>Disability, emotion or intent from a thin behavioral signal</td><td>Delayed · unassisted · novel task · explicit transfer criterion</td></tr></tbody>
+  </table>
+</section>
+
+<section class="slide" data-page="06 / 15">
+  <p class="eyebrow">The personal faculty</p>
+  <h2>Specialists propose. Evidence decides.</h2>
+  <div class="grid4">
+    <article class="card"><h3>Diagnostician</h3><p>Maintains competing explanations for the learner’s action and selects the next discriminating probe.</p></article>
+    <article class="card"><h3>Domain mentor</h3><p>Protects disciplinary correctness, prerequisite structure and authentic practice.</p></article>
+    <article class="card"><h3>Representation director</h3><p>Chooses text, speech, diagram, motion, code, model or simulation—and checks the result.</p></article>
+    <article class="card"><h3>Access coach</h3><p>Manages cognitive load, executive-function supports, communication modes and learner control.</p></article>
+  </div>
+  <div class="rule"><p>The learner never manages an agent swarm. One accountable orchestrator exposes one next move, its reason and the evidence that would overturn it.</p></div>
+  <p class="small"><strong>Certification requirement:</strong> each specialist needs scoped competence tests, abstention behavior, tool permissions and outcome monitoring. The “agent” label confers no qualification.</p>
+</section>
+
+<section class="slide" data-page="07 / 15">
+  <p class="eyebrow">The core platform</p>
+  <h2>A compiler for learning experiences.</h2>
+  <div class="flow">
+    <div class="node"><b>Source graph</b><span>Books, lectures, creator techniques, assessments, simulations.</span></div>
+    <div class="node"><b>Learner state</b><span>Goals, evidence, access preferences, history, consent.</span></div>
+    <div class="node"><b>Experience graph</b><span>Concepts, candidate beliefs, probes, representations, fades.</span></div>
+    <div class="node"><b>Renderers</b><span>Voice, canvas, notebook, animation, app, world.</span></div>
+    <div class="node"><b>Checks</b><span>Semantic, accessibility, safety, latency, transfer.</span></div>
+  </div>
+  <div class="grid3">
+    <article class="card key"><h3>Creator ingestion</h3><p>Capture why a technique works, when it fails and what learner evidence should invoke it, along with the media asset.</p></article>
+    <article class="card system"><h3>Publisher interchange</h3><p>Authors retain provenance; concept packages can travel across books, courses and learner interfaces.</p></article>
+    <article class="card access"><h3>Learner ownership</h3><p>State is inspectable, editable, exportable and revocable. A person can leave without losing their learning history.</p></article>
   </div>
 </section>
 
-<!-- 6 what an hour buys -->
-<section class="slide">
-  <div class="n">What an hour buys</div>
-  <h2>Almost none of a week is spent learning. That is the headroom.</h2>
-  <p>A calendar week of a university course is <strong>9 nominal student hours inside 112
-  waking ones</strong>. Go inside the 9 and the Beginning Teacher Evaluation Study traces
-  allocated time to engaged time to time at a workable success rate: the same nominal day
-  yields <strong>about 4 minutes of productive learning, or about 52</strong>. A 13× spread
-  inside identical calendars.</p>
-  <div class="two">
-    <div class="box"><h3>Our estimate of the compression <span class="tag">inference</span></h3>
-      <p><b>10–40× on elapsed calendar. 3–5× on engaged effort.</b></p>
-      <p class="sub">Composed from measured parameters, and no trial of anyone becoming a
-      polymath has been run. It is eminently runnable, and we intend to run it.</p></div>
-    <div class="box"><h3>Three conditions, all load-bearing</h3>
-      <p>The starting point is diagnosed, so the 3.6× lever pays</p>
-      <p>The learner actually attempts. Unguarded assistance leaves people <b>17% worse</b>
-      on later unassisted work</p>
-      <p>Durability does not compress. Memory needs elapsed time, and that stays at 1×</p></div>
+<section class="slide" data-page="08 / 15">
+  <p class="eyebrow">The compounding loop</p>
+  <h2>Outcome evidence improves the next decision.</h2>
+  <div class="grid2">
+    <article class="card key">
+      <h3>What compounds</h3>
+      <p><strong>Belief libraries:</strong> which misconception predicted which action.</p>
+      <p><strong>Representation policies:</strong> which medium helped which learner state.</p>
+      <p><strong>Technique provenance:</strong> which creator move survived transfer.</p>
+      <p><strong>Calibration:</strong> which tasks actually distinguish capability.</p>
+    </article>
+    <article class="card system">
+      <h3>Noncompounding activity</h3>
+      <p>Conversation volume, prompt collections and undifferentiated generated content.</p>
+      <p>A stronger frontier model should increase the value of the evidence layer.</p>
+      <p>The defensible asset is the map from learner evidence to a tested next action.</p>
+    </article>
   </div>
 </section>
 
-<!-- 7 the mechanism -->
-<section class="slide dense">
-  <div class="n">The idea that makes it work</div>
-  <h2>Stop asking a machine to judge. Ask which belief predicted the answer.</h2>
-  <p>Across 223 tutoring domains, the four models tested in an initial evaluation did not
-  beat chance at labelling an incorrect student action. Scope that correctly, because it
-  sharpens the claim: <strong>step-checking a model's own reasoning trace is well above
-  chance</strong>, and ProcessBench reports open models competitive with GPT-4o at finding the
-  earliest erroneous step. Reading a <em>person</em> is the open part.</p>
-  <p class="big">We enumerate what a learner might believe. The live question becomes
-  which of those predicted what we just saw, and that is an argmax over precomputed
-  distributions.</p>
-  <div class="two">
-    <div class="box good"><h3>What it buys</h3>
-      <p>An open judgement at chance becomes a bounded lookup</p>
-      <p>A posterior over <b>≤40 enumerated beliefs is closed-form Bayes</b>, so no
-      language model sits on the live path and the 200 ms budget is real</p>
-      <p>A wrong rule can be executed until the world contradicts it, so reality does the
-      correcting</p></div>
-    <div class="box"><h3>Why it compounds</h3>
-      <p>Every learner who is wrong in a new way makes the belief library better.</p>
-      <p>A stronger base model raises what the library is worth. It is the one row on our moat
-      table that a frontier release makes more valuable.</p></div>
+<section class="slide" data-page="09 / 15">
+  <p class="eyebrow">SELPA-first product requirements</p>
+  <h2>Access is part of the control loop.</h2>
+  <div class="grid3">
+    <article class="card access"><h3>Multiple ways in</h3><p>Speak, type, point, draw, select, photograph or manipulate. Keep reading ability from silently becoming the measure of every subject.</p></article>
+    <article class="card access"><h3>Multiple ways through</h3><p>Control pace, voice, density, captions, contrast, motion and chunking. Preserve the concept while changing the interface.</p></article>
+    <article class="card access"><h3>Multiple ways out</h3><p>Let learners demonstrate understanding in more than one mode, then verify the target skill directly when modality matters.</p></article>
   </div>
-</section>
-
-<!-- 8 the trap -->
-<section class="slide dense">
-  <div class="n">Why a decade of money produced so little</div>
-  <h2>The thing a learner can feel runs opposite to the thing that happened.</h2>
-  <p class="big">Bastani et al., PNAS 2025, gave about a thousand Turkish high-school
-  students GPT-4 for maths practice. Practice scores rose <strong>48%</strong>. On the
-  unassisted exam afterwards the unguarded arm came out <strong>17% worse</strong> than
-  students who never had it.</p>
-  <p>The guarded arm landed at −0.004 and was unharmed, which is the finding that matters:
-  guardrails have been measured to remove that harm and never to add benefit. It is one trial,
-  and none of its 109 citing works has yet replicated it with a withdrawal design. Two smaller
-  results agree: Buljan's three randomised comparisons of explanation formats (n = 334,
-  immediate quiz) moved preference d ≈ 0.48 while knowledge moved zero, and Deslauriers found
-  students taught more by active learning reporting they had learned less.</p>
-  <p>So satisfaction, engagement, streaks and time-on-app all proxy <em>felt</em> learning,
-  and chasing them feels like winning throughout. <strong>An agent that teaches nothing can
-  max out every one of them.</strong></p>
-</section>
-
-<!-- 9 competition -->
-<section class="slide dense">
-  <div class="n">Competition</div>
-  <h2>The incumbent sells a number it has never measured.</h2>
-  <p>Powers and Rock ran seven estimators against about 6,700 SAT registrants: roughly
-  <strong>one additional question correct per eight hours of coaching</strong>, or 6–8 scale
-  points on verbal and 13–18 on mathematics. The two largest coaching firms advertised
-  <strong>120 and 140 combined points</strong>, documented by surveying previous customers. In
-  India there is no causal estimate at all of what coaching does to a NEET or JEE rank.</p>
-  <p>A feature grid separates nobody. These three questions do, and we ask them of ourselves
-  first:</p>
-  <ol class="q">
-    <li><b>Learner-hours delivered ÷ paid tutor-hours, monthly, for 24 months.</b>
-    Flat while headcount grows means the buyer is underwriting a staffing business at a
-    software multiple.</li>
-    <li><b>Your delayed, unassisted, novel-item result, with n, and who held the item bank.</b>
-    One deployment moved its exit ticket +4 pp and came back null on the state test.</li>
-    <li><b>Have you ever run an arm against plain ChatGPT?</b> A trial at n = 371 found
-    scaffolded generative AI no better than it. If the pedagogy has never beaten the free
-    substitute, the moat is a prompt.</li>
-  </ol>
-</section>
-
-<!-- 10 beachhead -->
-<section class="slide dense">
-  <div class="n">Where it starts</div>
-  <h2>Where the world already grades the answer.</h2>
-  <p class="big">SAT · PSAT · NEET · JEE · GATE · EAMCET. Proctored, months later, on items
-  nobody has practised, and the score comes back <strong>because the candidate wants it more
-  than we do.</strong></p>
-  <p>Everyone else funds a research programme to discover whether their product works. Here the
-  truth signal is the customer's own objective: closed syllabus, published answer keys, decades
-  of item-level response data, and hundreds of millions of candidates whose alternative is a room
-  with four hundred other people in it.</p>
-  <div class="two">
-    <div class="box"><h3>Two things we will not claim</h3>
-      <p><b>The gaokao is a policy risk before it is a market.</b> The 2021 double-reduction
-      order stopped new approvals for core-subject tutoring; one listed operator's revenue fell
-      62% in a year.</p>
-      <p><b>No top-down market size.</b> Six of six analyst houses failed traceability when we
-      checked, so we size this per candidate, bottom-up.</p></div>
-    <div class="box good"><h3>Go to market, ordered by friction</h3>
-      <p>Authors and creators: live in days. Highest content velocity, no procurement.</p>
-      <p>Online course sites: weeks to months. Telemetry and a practice loop already running;
-      they measure completion and nobody measures diagnosis.</p>
-      <p>Publishers: quarters. The corpus built with authors is why they sign.</p>
-      <p>Institutions: years. Contract size, against SOC 2, FERPA, COPPA and the EU AI Act.</p></div>
-  </div>
-</section>
-
-<!-- 11 business model -->
-<section class="slide dense">
-  <div class="n">Business model</div>
-  <h2>Inference is 0.43% of what it costs to deliver a supervised hour.</h2>
-  <p>Two measurements arrive at that figure independently. One published cost model prices the
-  tokens inside a supervised session at £0.0037 against £0.861 delivered. Separately, a deployed
-  programme's own API bill came to $1,419.66 across 429 tutors in two months, or $19.86 a year
-  each, beside 200 hours of tutor time at a $23.10 mean wage.</p>
-  <p>So the margin question lands somewhere else entirely: <strong>the leverage ratio</strong>,
-  learner-hours supervised per paid tutor-hour. We publish it monthly from month one. The one
-  audited comparable that rebuilt on AI-native codebases went from 67.5% to 58.0% gross margin,
-  so this gets demonstrated and never assumed.</p>
-  <div class="box"><h3>What we sell, and what we buy</h3>
-    <p>Direct to candidates working toward a dated exam, where the outcome arrives free.</p>
-    <p>To publishers, authors and course owners: the same book, with the practice loop
-    instrumented and the diagnosis attached, as an addendum and never a migration.</p>
-    <p>The asset there is calibration. Generation drove item-production cost to zero and left
-    calibration untouched, and automatic item generation breaks even at 173–247 items per
-    fine-grained content area. Decades of response data is the calibration corpus a verifier
-    needs, and no single publisher sees enough of a concept to build the layer alone.</p></div>
-</section>
-
-<!-- 12 traction -->
-<section class="slide">
-  <div class="n">What exists today</div>
-  <h2>Pre-revenue, and there is already something you can run.</h2>
-  <div class="two">
-    <div class="box good"><h3>Built and inspectable</h3>
-      <p><b><span data-gen="demos">27</span> demos</b> that run in a browser with no key and
-      no sign-in. Each performs its mechanism live and states on its own face what it does not
-      prove.</p>
-      <p>Six machine checks guard the repository. One ships with a self-test, because a
-      reviewer defeated the first version by planting retired numbers back into the tree.</p></div>
-    <div class="box good"><h3>Original measurements, including the ones that hurt</h3>
-      <p>Our own permutation-based verification protocol, benchmarked over 768 generations on
-      two models against a deterministic comparator: <b>87.5% recall and 87.5% false alarm,
-      exactly at chance.</b> Plain self-consistency beat it by 18.8 and 43.8 points. Published.</p>
-      <p>An abstention fix that took silent passes on wrong claims from <b>1 to 0</b> at no cost,
-      and a sampling-budget null where recall stayed flat at 99.1% while p95 latency rose 6.8×.</p></div>
-  </div>
-  <p class="sub">Everything above is public: the demos, the harnesses, the raw result files,
-  and the ledger of what we got wrong.</p>
-</section>
-
-<!-- 13 team -->
-<section class="slide">
-  <div class="n">Why you can believe us</div>
-  <h2>We spent months trying to break our own thesis and published every time we managed it.</h2>
-  <div class="two">
-    <div class="box"><h3>Things we killed</h3>
-      <p>Our own verification protocol, benchmarked at chance and published anyway</p>
-      <p>A pooled tutoring effect size we had put in five places: 0.37 was the superseded
-      working-paper figure, and peer review says <b>0.288</b></p>
-      <p>A tutoring effect range of ours that exists in no source, spliced from two different
-      estimands. The defensible figure is <b>d ≈ 0.63</b></p></div>
-    <div class="box good"><h3>What we built instead of promises</h3>
-      <p>An append-only ledger, <b><span data-gen="corrections">75</span> corrections</b>, each
-      with a column naming who caught it. <b><span data-gen="external">23</span> were found by an
-      adversarial reviewer</b> we paid to fail us</p>
-      <p>Five full hostile reviews. The first four returned <b>not publishable</b></p>
-      <p>A build that refuses to ship when a retired number reappears anywhere</p></div>
-  </div>
-  <p>The real question about any founder in this category is whether they will notice when
-  they are wrong. Ours is on the record, with dates and provenance.</p>
-  <p class="sub"><span class="fill">FILL: FOUNDERS</span> &nbsp;names, what each has shipped
-  before, and the one line on why this team gets to build this.</p>
-</section>
-
-<!-- 14 risks -->
-<section class="slide">
-  <div class="n">What it costs to be wrong</div>
-  <h2>What kills this, in the order we worry about it.</h2>
-  <div class="two">
-    <div class="box bad"><h3>1 · The models get good at diagnosis</h3>
-      <p>Our structure collapses into an API call. The largest risk, and not remote. The hedge
-      is that the belief library is data we own and a stronger model reads it better.</p></div>
-    <div class="box bad"><h3>2 · One mind, ten million children</h3>
-      <p>Thirty teachers make thirty different mistakes and they cancel. One system's mistakes
-      are identical for everyone at once. The mitigation is the same instrument as the moat.</p></div>
-  </div>
-  <div class="box bad"><h3>3 · It works, and it widens the gap</h3>
-    <p>Untargeted delivery reliably helps the already-strong more: the best-designed frontier
-    trial to date loaded at +0.195 SD per SD of baseline attainment. Across eight
-    <em>targeted</em> interventions, none widened gaps and several narrowed them sharply, so
-    this is a design failure and never a tax. We report gap change as a primary outcome.
-    <b>If it widens gaps it has failed, whatever the average says.</b></p></div>
-</section>
-
-<!-- 15 the ask -->
-<section class="slide dense">
-  <div class="n">The ask</div>
-  <h2>What the money buys, and the result it has to produce.</h2>
-  <p class="big">We are raising <span class="fill">FILL: $ AMOUNT</span> on
-  <span class="fill">FILL: TERMS</span> for <span class="fill">FILL: N</span> months of runway.</p>
-  <div class="wrap"><table>
-    <thead><tr><th>Use of funds</th><th>What it buys</th><th>Share</th></tr></thead>
+  <table>
+    <thead><tr><th>Floor</th><th>System behavior</th><th>Failure to avoid</th></tr></thead>
     <tbody>
-    <tr><td>Belief-library engineering</td>
-      <td>The enumerated belief set for one exam syllabus, with the discriminating-item
-      generator and run-it-forward simulator behind it</td>
-      <td class="num"><span class="fill">FILL: %</span></td></tr>
-    <tr><td>The real-time substrate</td>
-      <td>A self-hosted audio-visual stack held to the 200 ms budget, with no language model
-      on the live path</td>
-      <td class="num"><span class="fill">FILL: %</span></td></tr>
-    <tr><td>Measurement</td>
-      <td>A pre-registered delayed, unassisted, novel-item trial against plain ChatGPT, with a
-      third-party item bank, blind scoring and gap change pre-specified</td>
-      <td class="num"><span class="fill">FILL: %</span></td></tr>
-    <tr><td>Calibration partnerships</td>
-      <td>Response-data agreements with the first authors and course owners, and one
-      publisher pilot</td>
-      <td class="num"><span class="fill">FILL: %</span></td></tr>
+      <tr><td>Consent</td><td>Explain and obtain permission before sensing or sharing</td><td>Inferring affect, disability or diagnosis by default</td></tr>
+      <tr><td>Human coordination</td><td>Share compact, attributable evidence with authorized adults</td><td>Replacing educators, clinicians or support teams</td></tr>
+      <tr><td>Equity outcome</td><td>Report gap change beside average effect</td><td>Calling an intervention successful while it widens gaps</td></tr>
     </tbody>
-  </table></div>
-  <div class="two" style="margin-top:8px">
-    <div class="box good"><h3>The milestone this money reaches</h3>
-      <p>A delayed, unassisted result on a proctored exam, against plain ChatGPT, with n
-      published and the item bank held by someone else. Of the 273 ERIC studies using a delayed
-      post-test, two involve ChatGPT.</p>
-      <p>Reported beside it: gap change as a primary outcome, and the leverage ratio monthly.</p></div>
-    <div class="box"><h3>What we will not report as progress</h3>
-      <p>Engagement. Streaks. Time on app. Satisfaction.</p>
-      <p>Any number a system that teaches nothing could also produce.</p></div>
-  </div>
+  </table>
 </section>
 
-<!-- 16 vision -->
-<section class="slide">
-  <div class="n">The vision</div>
-  <h2>Nobody's thumb, ever again.</h2>
-  <p class="big">Ekalavya was refused a teacher, taught himself, became the better archer, and
-  they took his thumb for it.</p>
-  <p>That is the history of education in one story: never a shortage of talent, always a
-  shortage of access, and then a system defending itself when someone routed around it. The
-  tutor was always the intervention that worked. It was never the one that could be given to
-  everyone.</p>
-  <p><strong>That constraint is gone, and nothing has been rebuilt around its absence.</strong>
-  In five years a child anywhere holds the faculty of a university that knows only her, and the
-  word polymath stops describing a rare person and starts describing an ordinary one.</p>
-  <p class="sub" style="margin-top:20px"><a href="paper.html" style="color:var(--felt)">The evidence</a> ·
-  <a href="demos/" style="color:var(--felt)">the working demos</a> ·
-  <a href="https://github.com/dlmastery/learning-with-ai/blob/main/CORRECTIONS.md" style="color:var(--felt)">everything we got wrong</a></p>
+<section class="slide" data-page="10 / 15">
+  <p class="eyebrow">What the evidence permits us to claim</p>
+  <h2>Strong primitives. An unproven integrated system.</h2>
+  <table>
+    <thead><tr><th>Claim</th><th>Status</th><th>Implication</th></tr></thead>
+    <tbody>
+      <tr><td>Purpose-built or supervised generative tutoring can improve immediate performance</td><td><span class="check">Measured</span></td><td>Worth integrating and testing</td></tr>
+      <tr><td>Unguarded assistance can improve practice while harming later unaided performance</td><td><span class="check">Measured</span></td><td>Withdrawal tests are mandatory</td></tr>
+      <tr><td>Preference, ease and engagement reliably indicate learning</td><td><span class="no">False</span></td><td>Reject the convenient proxy as the objective</td></tr>
+      <tr><td>A persistent multimodal faculty produces durable, independent transfer at scale</td><td><span class="accent"><strong>Unmeasured</strong></span></td><td>This is the company’s experiment</td></tr>
+    </tbody>
+  </table>
+  <p class="source">Evidence basis and limitations are documented in the paper and living evidence atlas. No repository activity count is presented as traction.</p>
+</section>
+
+<section class="slide" data-page="11 / 15">
+  <p class="eyebrow">The first proof</p>
+  <h2>Start where the outcome arrives from outside the product.</h2>
+  <div class="grid2">
+    <article class="card key"><h3>Recommended wedge</h3><p class="lead">US SAT Math for learners with a dated test.</p><p>Bounded concepts, external scoring, a legible buyer, rapid creator distribution and repeated opportunities to test transfer.</p></article>
+    <article class="card proof"><h3>The trial</h3><p>Compare against the strongest widely available general model. Pre-register delayed, unassisted, novel items. Hold the final item bank outside the product team. Report subgroup gap change.</p></article>
+  </div>
+  <div class="decision"><strong>Founder decision required:</strong> confirm or replace this wedge before external circulation. TASK.md and the research corpus leave the first learner, buyer, geography and outcome unspecified. The recommendation is an editorial inference.</div>
+</section>
+
+<section class="slide" data-page="12 / 15">
+  <p class="eyebrow">Business model</p>
+  <h2>Begin with the learner. Expand through the content ecosystem.</h2>
+  <div class="grid3">
+    <article class="card key"><h3>1 · Direct</h3><p>Outcome-bound membership for learners preparing for a dated external assessment. Price against coaching, with access accommodations included.</p></article>
+    <article class="card system"><h3>2 · Creator channel</h3><p>Revenue share for authors and educators whose techniques become attributable, measured concept packages.</p></article>
+    <article class="card access"><h3>3 · Platform</h3><p>Publisher and course-provider licensing for the compiler, learner-state interchange and outcome instrumentation.</p></article>
+  </div>
+  <p class="lead">The expansion path is learner → creator → publisher, with evidence at each transition.</p>
+  <p class="small">Pricing, margin and acquisition assumptions require a founder-owned operating model before this slide becomes an investment claim.</p>
+</section>
+
+<section class="slide" data-page="13 / 15">
+  <p class="eyebrow">Ecosystem strategy</p>
+  <h2>Turn the best teaching moves into reusable, attributable infrastructure.</h2>
+  <div class="grid2">
+    <article class="card system"><h3>Authors and creators get</h3><p>Provenance, distribution, outcome evidence, revenue participation, and a way to make techniques interactive without rebuilding them in every medium.</p></article>
+    <article class="card access"><h3>Learners get</h3><p>A coherent experience across sources, portable history, access preferences that persist, and the ability to inspect why a source or technique was selected.</p></article>
+  </div>
+  <div class="rule"><p>The system should expand the market for human expertise and preserve its attribution, agency and value.</p></div>
+</section>
+
+<section class="slide" data-page="14 / 15">
+  <p class="eyebrow">Competitive position</p>
+  <h2>Most products own a surface. This thesis owns the loop.</h2>
+  <table>
+    <thead><tr><th>Category</th><th>Adapts in the turn</th><th>Persists evidence</th><th>Changes medium</th><th>Measures unaided transfer</th></tr></thead>
+    <tbody>
+      <tr><td>General chat / live assistant</td><td class="check">Yes</td><td>Limited</td><td class="check">Growing</td><td class="no">No</td></tr>
+      <tr><td>Course / textbook assistant</td><td>Some</td><td>Course-local</td><td>Mostly fixed</td><td>Rare</td></tr>
+      <tr><td>Adaptive practice system</td><td class="check">Yes</td><td class="check">Yes</td><td>Mostly fixed</td><td>Sometimes</td></tr>
+      <tr><td><strong>Persistent personal faculty</strong></td><td class="check">Required</td><td class="check">Portable</td><td class="check">Generated + checked</td><td class="check">Primary outcome</td></tr>
+    </tbody>
+  </table>
+  <p class="small">This is a requirements comparison. The final row remains a design target. Current systems and capability references are mapped in the dashboard.</p>
+</section>
+
+<section class="slide" data-page="15 / 15">
+  <p class="eyebrow">The commitment</p>
+  <h2>Make excellent personal instruction abundant—without making dependence abundant too.</h2>
+  <p class="lead">The milestone is a learner completing a delayed, unassisted, novel task that was previously beyond reach, with the gap narrowing rather than widening.</p>
+  <div class="grid2">
+    <article class="card key"><h3>18-month proof program</h3><p>Ship one closed concept loop; validate the external assessment wedge; run a pre-registered comparison against a general model; establish the first creator and publisher interchange.</p></article>
+    <article class="card proof"><h3>Owner inputs before fundraising</h3><p>Named founders and relevant evidence · raise amount and terms · operating budget · confirmed first learner/buyer/outcome.</p></article>
+  </div>
+  <p class="source"><a href="index.html">Research dashboard</a> · <a href="paper.html">paper</a> · <a href="atlas.html">living evidence atlas</a> · <a href="demos/">mechanism demos</a></p>
 </section>
 
 <script>
-const S=[...document.querySelectorAll('.slide')], pos=document.getElementById('pos'),
-      bar=document.getElementById('bar');
-function cur(){let i=0,best=1e9;S.forEach((s,k)=>{const d=Math.abs(s.getBoundingClientRect().top);
-  if(d<best){best=d;i=k}});return i}
-function upd(){const i=cur();pos.textContent=`${i+1} / ${S.length}`;
-  bar.style.width=((i)/(S.length-1)*100)+'%';}
-function go(d){const i=Math.min(S.length-1,Math.max(0,cur()+d));
-  S[i].scrollIntoView({behavior:'smooth',block:'start'});setTimeout(upd,320);}
-addEventListener('scroll',upd,{passive:true});
-document.getElementById('next').onclick=()=>go(1);
+const slides=[...document.querySelectorAll('.slide')],progress=document.getElementById('progress');
+function current(){let best=0,dist=Infinity;slides.forEach((s,i)=>{const d=Math.abs(s.getBoundingClientRect().top);if(d<dist){dist=d;best=i}});return best}
+function go(delta){slides[Math.max(0,Math.min(slides.length-1,current()+delta))].scrollIntoView({behavior:'smooth'})}
+function update(){progress.style.width=((current()+1)/slides.length*100)+'%'}
 document.getElementById('prev').onclick=()=>go(-1);
+document.getElementById('next').onclick=()=>go(1);
+document.getElementById('theme').onclick=()=>{
+  const r=document.documentElement,d=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  r.setAttribute('data-theme',d?'light':'dark')
+};
 addEventListener('keydown',e=>{
-  if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key)){e.preventDefault();go(1)}
+  if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();go(1)}
   if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(-1)}
-  if(e.key==='Home'){e.preventDefault();S[0].scrollIntoView()}
-  if(e.key==='End'){e.preventDefault();S[S.length-1].scrollIntoView()}});
-const R=document.documentElement;
-document.getElementById('tt').onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
- (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
- R.setAttribute('data-theme',d?'light':'dark');};
-upd();
+});
+addEventListener('scroll',update,{passive:true});update();
 </script>
 </body>
 </html>

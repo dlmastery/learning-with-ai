@@ -28,7 +28,7 @@ FILES = sorted(ROOT.glob("survey/*.md"))
 
 # The four surfaces a reader meets before the survey. They were reviewed
 # separately and have their own tics — see evidence/slop-front-matter.md.
-FRONT = ["README.md", "docs/index.html", "docs/deck.html", "docs/thesis.html"]
+FRONT = ["README.md", "docs/index.html", "docs/deck.html", "docs/paper.html"]
 
 # The demo pages carry ~34,000 words of prose and were never counted. They ran the
 # same habits as the survey: 16.3 em-dashes and 3.7 `X, not Y` per 1,000 words.

@@ -1,126 +1,132 @@
 # Learning with AI
 
-This project asks a practical question:
+Excellent personal instruction is scarce. The models, media systems and agent
+runtimes needed to change that are arriving quickly. The missing piece is a learning
+system.
 
-**What would it take to give any learner sustained access to excellent, personal
-instruction across subjects, ages and abilities?**
+This project develops the evidence and product architecture for one: a persistent
+personal faculty that can observe the work, choose a useful next move, change the
+representation, remember what happened, withdraw help, and verify that the learner
+can act independently.
 
-The intended reach is broad: a child learning to read, a student struggling with
-algebra, an adult changing careers, or a graduate student trying to understand a
-difficult proof. The system should be especially useful when ordinary instruction
-creates unnecessary barriers—for example, when a learner understands a concept but
-cannot show it through a worksheet, long passage or timed response.
+It is meant to work across ages and fields—from early reading to graduate
+mathematics—and to treat accessibility as part of instruction. The founding design
+case is an eleven-year-old served under a SELPA plan who may understand a concept
+while a reading-heavy worksheet measures something else.
 
-This is personal. The work began with an eleven-year-old served under a SELPA plan.
-Accessibility is therefore a design requirement from the beginning.
+## The thesis
 
-## The opportunity
+A frontier model is a component, not a learning system.
 
-Current AI systems can converse in real time, inspect images and documents, execute
-code, generate interactive software, create diagrams and video, maintain state across
-sessions, and coordinate specialized agents.
+Current systems can converse through voice and vision, generate diagrams and
+software, execute tools, and maintain state across sessions. Those capabilities
+become instruction only when a control loop connects them to learner evidence:
 
-Education products use only a small part of this capability. Most remain chat
-interfaces attached to course material.
+1. resume the learner's goal and unresolved question;
+2. elicit a prediction, explanation, drawing or action;
+3. maintain competing explanations for what the action means;
+4. select or generate the smallest useful representation;
+5. fade assistance and test a new case;
+6. revisit the idea after a delay;
+7. update an inspectable, portable learner record.
 
-The larger opportunity is a learning environment that can:
+The primary outcome is delayed, unassisted performance on novel work. Engagement,
+assisted completion and conversation quality are useful observations; they are not
+substitutes for learning.
 
-- establish what the learner knows before choosing where to begin;
-- notice the reasoning behind an answer, including partial understanding;
-- explain the same idea through language, diagrams, examples, simulation and
-  formal notation;
-- watch the learner work and respond to the step where understanding breaks;
-- change approach when the current one fails;
-- let the learner demonstrate knowledge through an appropriate response mode;
-- remember earlier work and revisit it when useful;
-- help with initiation, planning, attention and recovery from interruptions;
-- require independent performance before recording mastery;
-- connect books, courses, teachers, authors and other trusted sources;
-- remain affordable and usable on ordinary devices.
+## Public artifacts
 
-No published system in this research collection combines all of those properties.
-Building and evaluating that system is the project.
+| Artifact | What it is |
+|---|---|
+| [Research dashboard](https://dlmastery.github.io/learning-with-ai/) | Product thesis, frontier capability map, access requirements and research program |
+| [Pitch deck](https://dlmastery.github.io/learning-with-ai/deck.html) | A 15-slide venture narrative, including the decisions that still belong to the founder |
+| [Paper](PAPER.md) | A concise evidence synthesis and reference architecture |
+| [Web paper](https://dlmastery.github.io/learning-with-ai/paper.html) | Reading edition of the paper |
+| [Living Evidence Atlas](ATLAS.md) | The long research record and extended argument; intentionally separate from the paper |
+| [Mechanism gallery](https://dlmastery.github.io/learning-with-ai/demos/) | Browser implementations of individual ideas, each scoped to what it demonstrates |
+| [Corrections](CORRECTIONS.md) | Append-only record of factual and editorial corrections |
 
-## What the research says
+The demos are research instruments and mechanism prototypes. They are not presented
+as an end-to-end product. A previous scripted “University in a Box” walkthrough was
+removed because it simulated the interface without implementing the learning system.
 
-The early evidence for generative-AI tutoring is promising and incomplete.
+## What the evidence currently supports
 
-- Purpose-built AI tutoring has improved immediate learning in controlled studies.
-- Supervised deployments show that AI can help human tutors provide more consistent
-  support at low inference cost.
-- Unrestricted answer-giving can improve assisted work while weakening later
-  independent performance.
-- Delayed, unassisted transfer is rarely measured.
-- Learners with disabilities are almost absent from the randomized evidence.
+- Purpose-built and human-supervised generative systems can improve proximal
+  instructional outcomes.
+- Unguarded assistance can improve practice performance while harming later
+  unassisted performance.
+- Ease, preference and engagement can move independently of learning.
+- Prior knowledge varies enough that a fixed starting point is a major design error.
+- Progress measurement needs an explicit rule for changing instruction.
+- Retrieval, spacing, active attempts and faded support remain load-bearing.
+- Evidence about durable transfer, integrated multimodal systems, and learners with
+  disabilities remains inadequate.
 
-These findings do not establish a ceiling for AI tutoring. They identify the next
-systems and experiments worth building.
+The project therefore tests whether persistent, multimodal orchestration grounded in
+learner evidence produces stronger independent capability than conversational use of
+a general model.
 
-The research also supports several durable design choices:
+## System requirements
 
-- diagnose prior knowledge rather than infer ability from age or course placement;
-- use active attempts and produced work as evidence;
-- separate practice completed with help from independent mastery;
-- match the representation to the concept and the learner's obstacle;
-- use retrieval and spacing for durable memory;
-- give progress data a specific instructional response;
-- evaluate effects by subgroup as well as by average;
-- preserve source provenance and expose uncertainty.
+The proposed architecture includes:
 
-The detailed evidence, qualifications and primary sources are in
-[`research/raw/`](research/raw/).
+- a portable learner state that separates declared, observed and inferred data;
+- bounded diagnostic hypotheses and discriminating probes;
+- checked renderers for speech, diagrams, notebooks, animation, applications and
+  simulations;
+- specialist functions for diagnosis, domain knowledge, representation, access and
+  evaluation, coordinated by one accountable orchestrator;
+- support fading, delayed retrieval and independent graduation tasks;
+- multiple input and response modes, learner control and data minimization;
+- an interchange for authors and educators to contribute attributable instructional
+  techniques;
+- outcome evaluation against a strong general-model baseline, including subgroup
+  gap change.
 
-## Repository
+## Repository map
 
 | Path | Purpose |
 |---|---|
-| [`research/raw/`](research/raw/) | Research reports based primarily on papers, technical documentation and product inspection |
-| [`survey/`](survey/) | Thematic drafts assembled from the research |
-| [`PAPER.md`](PAPER.md) | Current long-form manuscript |
-| [`docs/demos/`](docs/demos/) | Browser prototypes of individual mechanisms |
-| [`CORRECTIONS.md`](CORRECTIONS.md) | Public record of factual and editorial corrections |
-| [`evidence/`](evidence/) | Reviews, validation scripts and reproducible experiments |
-| [`process/`](process/) | Scope, assumptions and editorial process |
-| [`TASK.md`](TASK.md) | The owner's requests and unresolved decisions |
+| [`research/raw/`](research/raw/) | Research reports covering evidence, systems, media, access, agents and markets |
+| [`survey/`](survey/) | Thematic source chapters used by the evidence-atlas build |
+| [`PAPER.md`](PAPER.md) | Edited manuscript |
+| [`ATLAS.md`](ATLAS.md) | Generated living evidence atlas |
+| [`docs/`](docs/) | Public dashboard, deck, paper, atlas and demos |
+| [`evidence/`](evidence/) | Builds, validation, reviews and reproducible experiments |
+| [`process/TASK-TRACEABILITY.md`](process/TASK-TRACEABILITY.md) | Vision-to-artifact gap audit |
+| [`TASK.md`](TASK.md) | Owner requests, status and unresolved owner decisions |
 
-## Current status
+## Build and validation
 
-The research collection and mechanism prototypes are substantial. The public
-presentation is being rebuilt.
+Render the edited paper:
 
-- The pitch deck is undergoing a complete rewrite.
-- The paper is being reduced and reorganized into a publishable argument.
-- The dashboard is being redesigned around the product thesis and research program.
-- The previous “University in a Box” walkthrough was a scripted interface prototype,
-  not a credible product demonstration. It has been removed.
+```bash
+python3 evidence/build-manuscript.py
+```
 
-The existing paper, deck and dashboard should be treated as working drafts until that
-editorial rebuild is complete.
-
-## Research standards
-
-Published claims should be traceable to primary sources where available. Product
-claims are identified as such. Demonstrations show implementation behavior; they do
-not count as learning evidence.
-
-Corrections are recorded in [`CORRECTIONS.md`](CORRECTIONS.md). The repository includes
-checks for internal links, repeated prose, superseded values and demo rendering.
-
-To rebuild the manuscript and web edition:
+Rebuild the long evidence atlas:
 
 ```bash
 python3 evidence/build-paper.py --html
 ```
 
-## Contributing
+Run the public-artifact checks:
 
-Useful contributions include:
+```bash
+python3 evidence/check-voice.py --strict
+python3 evidence/check-stance.py --strict
+node evidence/check-links.mjs
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/snap/bin/chromium node evidence/test-pages.mjs
+```
 
-- a primary source that changes a published claim;
-- a missing capability, population or field of learning;
-- a reproducible failure in a demonstration;
-- an experimental design that distinguishes the proposed system from a strong
-  frontier-model baseline;
-- a concrete accessibility requirement the current design misses.
+## Current boundary
 
-Please open an issue with enough detail to reproduce the claim or problem.
+The research, architecture and public narrative now describe the same product. The
+integrated learning system has not been built or validated. Before fundraising or a
+trial, the owner must confirm the first learner, buyer, domain, geography and external
+outcome; name the founding team; and supply the operating plan and raise.
+
+Contributions are most useful when they add a primary source, expose a reproducible
+failure, improve an access requirement, or propose an experiment that distinguishes
+the architecture from an excellent general-model baseline.

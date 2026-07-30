@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-Assemble survey/*.md into an actual paper.
+Assemble survey/*.md into the Living Evidence Atlas.
 
-A folder of markdown files is not a paper. This produces PAPER.md and
-docs/paper.html: abstract, part structure, table of contents, continuous
-numbering, and a findings table — one document you can read start to finish.
+The survey corpus is useful but it is not a journal paper. This produces
+ATLAS.md and docs/atlas.html: abstract, part structure, table of contents,
+continuous numbering, and a findings table. PAPER.md is the separately edited
+manuscript and is rendered by evidence/build-manuscript.py.
 
 Re-runnable. Section order and part grouping are declared here, not inferred
 from filenames, because the reading order is an editorial decision.
@@ -178,7 +179,7 @@ def read(slug):
     return meta, t.strip()
 
 def build():
-    """Assemble PAPER.md and return (markdown, stats, structure).
+    """Assemble ATLAS.md and return (markdown, stats, structure).
 
     `structure` is the declarative outline — parts, sections, anchors, word
     counts — that the HTML renderer builds its contents rail from. Both the
@@ -343,8 +344,8 @@ One of them documents a mechanism this project proposed, benchmarked, and
 ---
 """
     doc = head + "\n".join(parts_out)
-    (ROOT / "PAPER.md").write_text(doc, encoding="utf-8")
-    print(f"PAPER.md — {stats['sections']} sections, "
+    (ROOT / "ATLAS.md").write_text(doc, encoding="utf-8")
+    print(f"ATLAS.md — {stats['sections']} sections, "
           f"{stats['words']:,} words, {len(PARTS)} parts")
     if missing: print(f"  declared but missing: {', '.join(missing)}")
     if orphans: print(f"  NOT IN THE PAPER: {', '.join(orphans)}")
@@ -673,8 +674,8 @@ def build_html():
             .replace("@@PARTS@@", str(len(structure)))
             .replace("@@WORDS@@", f"{stats['words']:,}")
             .replace("@@MINUTES@@", str(minutes)))
-    (ROOT / "docs" / "paper.html").write_text(page, encoding="utf-8")
-    print(f"docs/paper.html — {len(page)//1024} KB, {total_sections} sections, "
+    (ROOT / "docs" / "atlas.html").write_text(page, encoding="utf-8")
+    print(f"docs/atlas.html — {len(page)//1024} KB, {total_sections} sections, "
           f"{len(structure)} parts, contents rail generated from the outline")
     sync_dashboard(stats)
 
@@ -740,7 +741,7 @@ proposed, benchmarked, and **falsified**.
 PAGE_TEMPLATE = r"""<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Learning in the New Frontier AI World — the survey</title>
+<title>Learning in the New Frontier AI World — Living Evidence Atlas</title>
 <meta name="description" content="A @@WORDS@@-word survey of what AI-native learning has actually been measured to do. Evidence-labelled throughout, nulls first-class, corrections published.">
 <link rel="stylesheet" href="site.css">
 <style>
@@ -770,7 +771,7 @@ PAGE_TEMPLATE = r"""<!doctype html>
   <main class="doc">
     <div class="col">
       <div class="front">
-        <h1>Learning in the New Frontier AI World</h1>
+        <h1>Living Evidence Atlas</h1>
         <p class="standfirst">What AI-native learning has actually been measured to do,
         and a specification for what it should be.</p>
         <dl class="facts">

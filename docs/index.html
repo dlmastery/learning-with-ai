@@ -1,878 +1,280 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Learning in the New Frontier AI World</title>
-<meta name="description" content="A survey of what AI-native learning has actually been measured to do, and a specification for what it should be. Evidence-graded, nulls first-class, corrections published." />
-<link rel="stylesheet" href="site.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learning with AI — research and product direction</title>
+<meta name="description" content="A map of the frontier capabilities, learning design, evidence and experiments behind a personalized AI learning system.">
+<link rel="stylesheet" href="site.css">
 <script src="theme.js"></script>
 <style>
-/* ── page-specific: the dashboard's own components.
-   Tokens, type, spacing, tables, callouts and the theme toggle live in
-   site.css and are shared with the paper and all thirteen demos. */
-
-.hero{padding:76px 0 var(--s7);border-bottom:1px solid var(--line)}
-.hero h1{margin-bottom:var(--s5)}
-.hero .lede{font-size:20px;max-width:34ch;color:var(--ink-2)}
-.actions{display:flex;gap:var(--s3);flex-wrap:wrap;margin:var(--s6) 0 var(--s7)}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,auto));
-  gap:20px 44px;justify-content:start;border-top:1px solid var(--line);padding-top:var(--s5)}
-.facts dt{font:600 10.5px/1.35 var(--sans);letter-spacing:.12em;text-transform:uppercase;
-  color:var(--ink-3);margin-bottom:8px}
-.facts dd{font:400 21px/1 var(--serif);color:var(--ink);letter-spacing:-.01em}
-.facts dd span.sep{color:var(--ink-3)}
-
-/* ── the three findings ─────────────────────────────────── */
-.findings{counter-reset:f;display:grid;gap:1px;background:var(--line);
-  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:var(--s6) 0}
-@media (min-width:820px){.findings{grid-template-columns:repeat(3,1fr)}}
-.finding{background:var(--surface);padding:26px 24px}
-.finding .fn{counter-increment:f;font:400 30px/1 var(--serif);color:var(--felt);
-  display:block;margin-bottom:16px}
-.finding .fn::before{content:counter(f)}
-.finding h3{font:650 16px/1.35 var(--sans);margin:0 0 10px}
-.finding p{font-size:14.2px;line-height:1.56;margin:0;max-width:none}
-
-/* ── figures ────────────────────────────────────────────── */
-figure{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
-  padding:26px 24px 20px;margin:var(--s6) 0}
-figcaption{font-size:13px;color:var(--ink-3);margin-top:var(--s4);line-height:1.55;max-width:70ch}
-.ftitle{font:650 14.5px/1.35 var(--sans);color:var(--ink);margin-bottom:var(--s1)}
-.fsub{font-size:12.5px;color:var(--ink-3);margin-bottom:var(--s5);line-height:1.5}
-.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:var(--s4);font-size:12.5px;color:var(--ink-2)}
-.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
-.gl{stroke:var(--line);stroke-width:1}
-.ax{font:600 10px var(--sans);letter-spacing:.11em;fill:var(--ink-3)}
-.sl{fill:var(--ink-2)}
-.vl{font:600 12px var(--mono);fill:var(--ink-2)}
-.dot{stroke:var(--surface);stroke-width:2}
-
-/* ── card grids ─────────────────────────────────────────── */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:14px;margin:var(--s5) 0}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
-.card h4{font:650 15px/1.35 var(--sans);margin:10px 0 8px;color:var(--ink)}
-.card p{font-size:13.4px;line-height:1.52;margin:0;color:var(--ink-2);max-width:none}
-.tag{font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:5px 8px;
-  border-radius:var(--r-xs);border:1px solid var(--line-2);color:var(--ink-3);display:inline-block}
-
-/* ── numbered question lists ────────────────────────────── */
-.qlist{counter-reset:q;margin:var(--s5) 0}
-.q{background:var(--surface);border:1px solid var(--line);border-radius:11px;
-  padding:18px 20px 18px 56px;margin-bottom:11px;position:relative}
-.q::before{counter-increment:q;content:counter(q);position:absolute;left:20px;top:17px;
-  font:400 19px/1 var(--serif);color:var(--felt)}
-/* the run-in title of a numbered item is a heading, not emphasis — it is set as
-   one, so the only bold left inside .q is a number the reader should carry away */
-.q > h4{display:block;font:650 14.5px/1.4 var(--sans);color:var(--ink);margin:0 0 6px}
-.q p{font-size:13.5px;margin:0;color:var(--ink-2);max-width:none}
-.q p b{color:var(--ink);font-weight:650}
-
-/* ── where to go next ───────────────────────────────────── */
-.onward{display:grid;gap:14px;margin:var(--s6) 0}
-@media (min-width:760px){.onward{grid-template-columns:1fr 1fr}}
-.onward a{display:block;background:var(--surface);border:1px solid var(--line);
-  border-radius:var(--r);padding:26px 24px;color:inherit;transition:border-color .14s}
-.onward a:hover{border-color:var(--felt)}
-.onward .nt{font:400 23px/1.2 var(--serif);color:var(--ink);margin-bottom:9px;letter-spacing:-.014em}
-.onward .nt::after{content:" →";color:var(--felt);font-size:16px}
-.onward p{font-size:13.8px;line-height:1.55;margin:0 0 14px;max-width:none}
-.onward .nm{font:600 11px/1 var(--mono);color:var(--ink-3);letter-spacing:.05em}
-
-#tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .1s;z-index:99;left:0;top:0;
-  background:var(--ink);color:var(--bg);font:12.5px/1.5 var(--sans);padding:8px 11px;
-  border-radius:7px;max-width:264px;box-shadow:0 4px 16px rgba(0,0,0,.18)}
-#tip b{color:var(--bg);display:block;font-weight:650;margin-bottom:2px}
-/* the evidence base, set as a label so it reads before the caveat */
-#tip i{display:block;font:600 9.5px/1.5 var(--mono);font-style:normal;letter-spacing:.09em;
-  text-transform:uppercase;opacity:.6;margin-bottom:5px}
+.wrap{max-width:1120px}
+.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line);gap:20px}
+.brand{font:650 14px/1 var(--sans);color:var(--ink);letter-spacing:-.01em}
+.top nav{display:flex;gap:18px;flex-wrap:wrap}.top nav a{font-size:12px;color:var(--ink-3)}
+.hero{padding:88px 0 70px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(42px,7vw,76px);max-width:900px;line-height:1.02}
+.hero .lede{font-size:21px;max-width:770px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.statement{font:400 clamp(27px,4vw,43px)/1.2 var(--serif);letter-spacing:-.02em;max-width:900px;margin:0}
+.section{padding:74px 0;border-bottom:1px solid var(--line)}
+.section-head{display:grid;gap:18px;margin-bottom:34px}
+@media(min-width:820px){.section-head{grid-template-columns:260px 1fr;align-items:start}}
+.section-head h2{margin:0;font-size:29px}.section-head p{margin:0;max-width:720px}
+.grid{display:grid;gap:14px}.grid.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(245px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+.card .k{font:600 10px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--felt);margin-bottom:13px}
+.card h3{margin:0 0 9px;font-size:16px}.card p{font-size:13.5px;line-height:1.55;margin:0;max-width:none}
+.card ul{margin:12px 0 0;padding-left:18px;color:var(--ink-2);font-size:13px}
+.card li{margin:6px 0}
+.capabilities{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.cap{display:grid;grid-template-columns:150px 1fr;gap:18px;background:var(--surface);padding:18px 20px}
+@media(min-width:860px){.cap{grid-template-columns:190px 1.2fr 1fr 115px}}
+.cap h3{margin:0;font-size:14px}.cap p{font-size:13px;margin:0;max-width:none}.cap .source{color:var(--ink-3)}
+.status{font:600 10px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--real)}
+.status.gap{color:var(--felt)}
+.journey{display:grid;gap:0;border-left:1px solid var(--line);margin-left:14px}
+.moment{position:relative;padding:0 0 28px 34px}.moment:last-child{padding-bottom:0}
+.moment::before{content:"";position:absolute;left:-6px;top:3px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--real)}
+.moment .time{font:600 10px/1 var(--mono);color:var(--real);margin-bottom:7px}.moment h3{margin:0 0 5px}.moment p{font-size:13.5px;margin:0}
+.role{display:grid;grid-template-columns:145px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.role:last-child{border:0}.role b{font-size:13px}.role span{font-size:13px;color:var(--ink-2)}
+.principles{counter-reset:p;display:grid;gap:14px}
+@media(min-width:760px){.principles{grid-template-columns:1fr 1fr}}
+.principle{counter-increment:p;border-top:1px solid var(--line);padding:18px 0 8px}
+.principle::before{content:"0" counter(p);font:600 10px var(--mono);color:var(--felt)}
+.principle h3{margin:8px 0 7px}.principle p{font-size:13.5px;margin:0}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.filters button{font:600 11px var(--sans);color:var(--ink-3);background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:8px 10px;cursor:pointer}
+.filters button.on{color:var(--ink);border-color:var(--real)}
+.experiment{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.experiment .rank{font:400 26px/1 var(--serif);color:var(--felt)}
+.experiment h3{margin:0 0 5px}.experiment p{font-size:13.5px;margin:0}
+.evidence-table td:first-child{font-weight:650;color:var(--ink)}
+.evidence-table td{font-size:13px}
+.call{background:var(--ink);color:var(--bg);padding:38px;border-radius:15px;margin-top:34px}
+.call h2{color:var(--bg);margin:0 0 12px}.call p{color:color-mix(in srgb,var(--bg) 72%,transparent);margin:0}
+.call a{color:var(--bg);border-bottom-color:color-mix(in srgb,var(--bg) 45%,transparent)}
+.artifact{display:block;color:inherit;border:1px solid var(--line);border-radius:11px;padding:20px;background:var(--surface)}
+.artifact:hover{border-color:var(--felt)}.artifact h3{margin:0 0 6px}.artifact p{font-size:13px;margin:0}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:28px 0;font-size:12px;color:var(--ink-3)}
+@media(max-width:620px){body{padding-left:18px;padding-right:18px}.hero{padding:58px 0 48px}.section{padding:52px 0}.cap{grid-template-columns:1fr}.top nav{display:none}.actions{flex-direction:column}.actions .go{width:100%}}
 </style>
 </head>
 <body>
 <button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
-<div id="tip" role="status" aria-live="polite"></div>
 <div class="wrap">
 
+<div class="top">
+  <a class="brand" href="./">Learning with AI</a>
+  <nav aria-label="Page">
+    <a href="#opportunity">Opportunity</a>
+    <a href="#experience">Learner experience</a>
+    <a href="#frontier">Frontier</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#artifacts">Artifacts</a>
+  </nav>
+</div>
+
 <header class="hero">
-  <div class="eyebrow">The end of rationed attention</div>
-  <h1>Everyone becomes a polymath.</h1>
-  <p class="lede">Not better tutoring. Not better content. The end of having to choose what
-  you will never get to understand — and the evidence for why that is now buildable.</p>
-
+  <div class="eyebrow">Research and product direction</div>
+  <h1>Personal instruction should not be scarce.</h1>
+  <p class="lede">Frontier AI can already speak, see work, generate software and media,
+  execute tools, remember across sessions and coordinate specialists. This project
+  investigates how to turn those capabilities into durable learning for any student.</p>
   <div class="actions">
-    <a class="go" href="deck.html">The vision, in 16 slides</a>
-    <a class="go" href="demos/">Run the demos</a>
-    <a class="go" href="paper.html">The evidence</a>
+    <a class="go" href="demos/">Explore mechanism demos</a>
+    <a class="go" href="paper.html">Read the paper</a>
+    <a class="go q" href="https://github.com/dlmastery/learning-with-ai/blob/main/process/TASK-TRACEABILITY.md">View the gap audit</a>
   </div>
-
-  <dl class="facts">
-    <div><dt>Compression</dt><dd>10–40× calendar</dd></div>
-    <div><dt>What limits polymathy</dt><dd>orientation</dd></div>
-    <div><dt>Running demos</dt><dd><span data-gen="demos">27</span></dd></div>
-    <div><dt>Every claim</dt><dd>labelled &amp; sourced</dd></div>
-  </dl>
 </header>
 
-<h2>What becomes possible</h2>
-<p class="sub">Capabilities that were structurally impossible — not expensive, impossible —
-because one adult cannot sit beside thirty children every hour for a decade.</p>
-
-<div class="grid">
-  <div class="card"><span class="tag">Now buildable</span><h4>A tutor that watches the process</h4>
-  <p>Not the submitted answer. The attempt, the hesitation, the step where it went wrong, for
-  every learner, every hour.</p></div>
-  <div class="card"><span class="tag">Now buildable</span><h4>A memory that spans years</h4>
-  <p>It can tell you in March which misconception from October is still live. No human tutor
-  has ever had this, at any price.</p></div>
-  <div class="card"><span class="tag">Now buildable</span><h4>An adversary that never repeats</h4>
-  <p>A fresh, unGoogleable problem at the exact edge of what you know, on demand, forever.</p></div>
-  <div class="card"><span class="tag">Now buildable</span><h4>A student you teach</h4>
-  <p>An agent that adopts your explanation <em>including its errors</em>, applies them visibly,
-  and does not quietly self-correct. Learning by teaching measures <b>g = 0.48</b> with a human
-  tutee when the expectancy is set first; the agent version has never been built or measured, so
-  that number is the reason to try it and not a result it can claim.</p></div>
-  <div class="card"><span class="tag">Now buildable</span><h4>Your wrong rule, executed</h4>
-  <p>State a belief; it compiles to a law and runs beside the correct one until they visibly
-  diverge. Reality corrects you, not our authority. <a href="demos/twin-run.html">Run it →</a></p></div>
-  <div class="card"><span class="tag">Now buildable</span><h4>A whole faculty at once</h4>
-  <p>Mentor, diagnostician, simulator, adversary, archivist. Three to five active in any hour.
-  Every one of them is a person a rich family hires.</p></div>
-  <div class="card"><span class="tag">Now buildable</span><h4>Credit that cannot be free-ridden</h4>
-  <p>Cooperative learning's measured achievement effect turns out to be an incentive rule. Where
-  the group reward is computed from every member's separately measured learning, the median is
-  <b>+0.32</b> across 64 studies, 50 of them significantly positive and none negative; where it
-  rests on one shared product, <b>+0.07</b>. Rated observation across 49 classrooms found that
-  condition present in <b>17%</b> of lessons, because a teacher has to work it out by hand. A
-  system already measuring every learner computes it every time.</p></div>
-  <div class="card"><span class="tag">Now buildable</span><h4>The marks you are about to lose</h4>
-  <p>A published mark scheme is per-item ground truth across millions of released questions. Run
-  it backwards: before the learner sits a past paper, predict which marks go and why — knowledge
-  gap, misread question, procedural slip, unfollowed convention, time — then mark the paper
-  against the scheme. The prediction scores itself with no human in the loop, and a system that
-  learned item-style tricks instead of a knowledge state should get <em>worse</em> at it.</p></div>
-</div>
-
-<h2>The size of it</h2>
-<p class="sub">Learning is counted in opportunities. Almost none of a week supplies one.</p>
-
-<div class="findings">
-  <div class="finding"><span class="fn"></span>
-    <h3>Polymathy was never about intelligence</h3>
-    <p>Across 1.3 million observations, learning <em>rate</em> varies by <b>1.14×</b> between
-    the 25th and 75th percentile. <em>Prior knowledge</em> varies by <b>3.6×</b>. What limits
-    how many fields you can enter is the cost of being a beginner: search, access and
-    orientation. All attention. None of it talent.</p></div>
-  <div class="finding"><span class="fn"></span>
-    <h3>Four minutes, or fifty-two</h3>
-    <p>The same nominal school day yields either, depending on the cascade from allocated time
-    to engaged time to time at the right difficulty. A thirteen-fold spread inside identical
-    calendars. The explaining was never the scarce part.</p></div>
-  <div class="finding"><span class="fn"></span>
-    <h3>A week's understanding in an hour</h3>
-    <p><b>10–40× on the calendar, 3–5× on engaged effort</b>, one documented case near 300×.
-    Durability does not compress; a year-durable memory needs 18–36 day gaps. It is nearly
-    free anyway: the same items, merely split.</p></div>
-</div>
-
-<h2>What a frontier model has been measured to do</h2>
-<p class="sub">Seven of these exist. That is the entire published record of a post-2023 model put
-in front of a learner with a learning outcome measured at the end, and every row carries what it
-does not establish, because the caveat is the part that says what to build next.</p>
-
-<div class="scroll">
-<table>
-  <tr><th>Trial</th><th>Year</th><th>What moved</th><th>What it does not establish</th></tr>
-  <tr><td><b>Kestin</b> · Harvard physics</td><td class="num">2025</td><td class="num">d ≈ 0.63</td>
-    <td>One lesson, researcher-written test near ceiling. The tutor's builder also ran the
-    analysis, and the paper carries no funding statement.</td></tr>
-  <tr><td><b>Rori</b> · Ghana, WhatsApp</td><td class="num">2024</td><td class="num">+0.37 SD</td>
-    <td>Eight months, but only 11 clusters, and the provider's own staff authored it.</td></tr>
-  <tr><td><b>World Bank</b> · Nigeria</td><td class="num">2025</td><td class="num">+0.310 SD</td>
-    <td>Reached the school's own third-term exam at +0.206 SD, the sole distal outcome here that
-    moved. Roughly 43% attrition.</td></tr>
-  <tr><td><b>Gemini Guided Learning</b> · Sierra Leone</td><td class="num">2026</td><td class="num">+0.258 SD</td>
-    <td>Unadjusted, <b>+0.216 SD and not significant</b>. Endline only. The gain loads on Grade 8
-    and grows with prior attainment.</td></tr>
-  <tr><td><b>LearnLM + Eedi</b> · UK secondary</td><td class="num">2025</td><td class="num">+5.5 p.p.</td>
-    <td>Against human tutors, on the next unit's first problem. 165 students, and a 95% credible
-    interval of [−1.4, +12.4].</td></tr>
-  <tr><td><b>Tutor CoPilot</b> · Stanford</td><td class="num">2024</td><td class="num">+4 p.p.</td>
-    <td>Exit ticket only. Null on the end-of-year test, reported by the authors in their own
-    limitations.</td></tr>
-  <tr><td><b>Bastani</b> · Turkey</td><td class="num">2025</td><td class="num">+127%</td>
-    <td>Assisted practice. With the tool removed, the unconstrained arm was 17% worse and the
-    guarded arm sat at −0.004, n.s.</td></tr>
-</table>
-</div>
-
-<p>Those rows run from an unassisted-work penalty up to <b>d ≈ 0.63</b>, and the spread tracks
-what each system was permitted to do far more closely than which model sat inside it. Bastani ran
-the same GPT-4 in both arms: unconstrained, learners came back worse without it; constrained, the
-penalty disappeared. Gu &amp; Yan's 2025 meta-analysis says the same thing from above, <b>g =
-1.426</b> for LLM tutoring with teacher support against <b>g = 0.077</b> without it. Most of the
-measured effect lives in the design that wraps the model, which is the part a builder controls.</p>
-
-<div class="callout">
-  <div class="k">The measurement nobody has run</div>
-  <p>No trial above carries a delayed, unassisted, novel-item outcome. Sierra Leone tested at
-  endline with the tool still in the room. Kestin tested at the end of the hour. Tutor CoPilot did
-  reach a distal outcome and came back null there. The frontier era has not met a ceiling; it has
-  not yet run the study that could locate one. That is a hole in the record, and a very
-  specific one, which is why the open problems are written as experiments anyone can run.</p>
-</div>
-
-<h2>The same trial, two ways of taking the difference</h2>
-<p class="sub">Before any number on this page can be read, it has to say which difference it is.
-A pre-to-post gain carries learning, maturation, the testing effect and regression to the mean
-all summed together; the contrast with a control carries the treatment. One meta-analysis
-computed both on the same seven trials and printed both forest plots.</p>
-
-<figure>
-  <div class="ftitle">Seven trials, reported both ways</div>
-  <div class="fsub">Lee &amp; Lee 2024, 17 projects and N = 8,282: overall <em>d</em> = 1.18
-  within-group against <em>d</em> = 0.39 versus business as usual, seven studies appearing in
-  both pools. The connector encodes pairing only — these are two estimands computed on the same
-  learners, so the distance between them is the whole quantity of interest. Hover a row.</div>
-  <div class="legend">
-    <span><i style="background:var(--felt)"></i>Within-group, pre to post</span>
-    <span><i style="background:var(--real)"></i>Against a control</span>
+<section class="section" id="opportunity">
+  <div class="section-head">
+    <h2>The opportunity</h2>
+    <p class="statement">Give each learner the attention, range of explanations and
+    continuity normally available only through a team of excellent tutors.</p>
   </div>
-  <div id="est"></div>
-  <figcaption>The top row is the size of the problem: one trial, one set of learners, 2.35 and
-  0.05, <b>2.30 standard deviations apart</b>. No column here is a verdict on any of these
-  programmes and none of them is a frontier system — what the chart shows is arithmetic, and it
-  applies to every effect size on this page. The three randomised trials of a frontier model in
-  language learning line up on it exactly: every one of them posts a large within-group gain, only one
-  isolates the model against a human teacher, and there the difference is <b>0.079 IELTS
-  bands, p = 0.921</b>. The largest, N = 436 across four arms over twelve weeks, published its
-  treatment arm's own pre-post change and no control value at all.</figcaption>
-</figure>
-
-<p>The seam opens again wherever anyone measures the item that was not taught. Automated writing
-evaluation — three studies from one group across six years, including a randomised one —
-improves the draft in front of the learner and leaves the next cold composition where it was.
-A week after an L2 study underlined every error in half the drafts, the group that had revised
-better wrote a fresh narrative and came back at <b>g = −0.068</b>. Dialogue-system practice
-transfers inside a modality and stops at its edge: speaking to speaking 0.84, written
-practice to speaking 0.29 [−0.21, 0.79]. Vocabulary instruction scores <b>0.50</b> on
-comprehension measures built from passages containing the taught words and <b>0.10</b> on a
-standardised test. Four literatures with no contact between them, one result: what a system
-taught and what a learner has are different quantities, and only one of the two is easy to
-instrument.</p>
-
-<h2>What separates a system that works from one that feels like it</h2>
-<p class="sub">Three results with a build consequence. They are why most of the field's
-effort has not landed, and each one is a constraint you can design against.</p>
-
-<div class="findings">
-  <div class="finding">
-    <span class="fn"></span>
-    <h3>Felt learning and real learning move in opposite directions</h3>
-    <p>Buljan 2018: three RCTs, 334 adults, an infographic against a plain-language summary.
-    Preference moved <b>d ≈ 0.48</b> and knowledge moved zero. Kaspar 2025 played a debiasing
-    video first and the easiness effect survived it. No model was involved in either, which is
-    why it carries: this is how people misjudge their own learning, so any system that optimises
-    on ratings inherits it on day one.</p>
+  <div class="grid three">
+    <article class="card"><div class="k">Start correctly</div><h3>Find the actual starting point</h3>
+      <p>Use short predictions, explanations, drawings and worked steps to locate prior
+      knowledge and misconceptions before selecting material.</p></article>
+    <article class="card"><div class="k">Explain precisely</div><h3>Choose the right representation</h3>
+      <p>Move among conversation, notation, diagrams, executable notebooks, animation,
+      simulation and generated software while preserving the concept.</p></article>
+    <article class="card"><div class="k">Stay responsive</div><h3>Watch the work, then change course</h3>
+      <p>Respond to the step where reasoning breaks. Persist when productive; pivot when
+      evidence shows that the current method is failing.</p></article>
+    <article class="card"><div class="k">Build independence</div><h3>Separate help from mastery</h3>
+      <p>Record what the learner can do after hints, tools and generated answers are
+      removed. Schedule later retrieval instead of treating completion as learning.</p></article>
+    <article class="card"><div class="k">Reduce friction</div><h3>Supply executive function</h3>
+      <p>Make starting obvious, break work into visible units, protect attention, recover
+      after interruption and bring in a person when coordination is the real need.</p></article>
+    <article class="card"><div class="k">Remain open</div><h3>Connect the learning ecosystem</h3>
+      <p>Use material from publishers, authors, teachers, courses and open resources while
+      preserving rights, provenance and the learner's control over personal state.</p></article>
   </div>
-  <div class="finding">
-    <span class="fn"></span>
-    <h3>A dashboard has to name the next move</h3>
-    <p>Fuchs 1991: 33 teachers, three arms. One saw progress data. One saw the same data beside
-    an expert system that named the next move. One saw neither. Both measuring arms changed their
-    teaching more often; only the second lifted achievement. Human teachers, 1991 courseware, and
-    still binding on a 2026 dashboard, because what was missing there was never compute. Streaks,
-    mastery bars and adaptive difficulty all sit in that middle arm.</p>
+</section>
+
+<section class="section" id="experience">
+  <div class="section-head">
+    <h2>A learner session</h2>
+    <p>This is a product requirement, not a scripted demo. Each transition requires a
+    real model capability, an inspectable state change and a measurable outcome.</p>
   </div>
-  <div class="finding">
-    <span class="fn"></span>
-    <h3>Unguarded assistance is an active harm</h3>
-    <p>Bastani 2025, ~1,000 Turkish students on GPT-4, is the frontier-era result that matters
-    most here. Later unassisted work came back <b>17% worse</b>. Add guardrails and the
-    unassisted coefficient is <b>−0.004, not significant</b>: harm gone, teaching not
-    demonstrated. 109 citing works in fourteen months, and no replication with a withdrawal
-    design. Anyone selling restraint as a learning gain is ahead of the evidence —
-    <em>including this page, in an earlier draft.</em></p>
+  <div class="grid two">
+    <div class="journey">
+      <div class="moment"><div class="time">ARRIVE</div><h3>Resume without reconstruction</h3>
+        <p>Restore the goal, previous work, unresolved question and next useful action.</p></div>
+      <div class="moment"><div class="time">DIAGNOSE</div><h3>Ask for evidence of thinking</h3>
+        <p>Use a task that distinguishes competing explanations of what the learner believes.</p></div>
+      <div class="moment"><div class="time">TEACH</div><h3>Make the obstacle inspectable</h3>
+        <p>Select an explanation or interactive medium tied to the obstacle, subject and access needs.</p></div>
+      <div class="moment"><div class="time">PRACTISE</div><h3>Fade support</h3>
+        <p>Move from guided attempts to an unfamiliar case completed without the earlier aid.</p></div>
+      <div class="moment"><div class="time">EXPLAIN</div><h3>Require the learner to teach</h3>
+        <p>Ask for a reason, counterexample or presentation that exposes remaining gaps.</p></div>
+      <div class="moment"><div class="time">RETURN</div><h3>Revisit after time has passed</h3>
+        <p>Use later, unassisted retrieval to decide what was learned and what needs another approach.</p></div>
+    </div>
+    <div class="card">
+      <div class="k">Specialists behind the session</div>
+      <div class="role"><b>Domain mentor</b><span>Owns the subject model, scope and source boundaries.</span></div>
+      <div class="role"><b>Diagnostician</b><span>Maintains competing hypotheses about the learner's reasoning.</span></div>
+      <div class="role"><b>Media director</b><span>Selects text, voice, diagram, code, animation, simulation or world.</span></div>
+      <div class="role"><b>Access coach</b><span>Reduces decoding, working-memory, attention and response barriers.</span></div>
+      <div class="role"><b>Memory coach</b><span>Plans retrieval, spacing and interleaving across sessions.</span></div>
+      <div class="role"><b>Verifier</b><span>Checks sources, computations, generated artifacts and mastery evidence.</span></div>
+      <div class="role"><b>Coordinator</b><span>Routes decisions to teachers, parents or specialists when needed.</span></div>
+      <p class="sub" style="margin-top:18px">“Expert” means passing a role-specific
+      evaluation. A persona prompt is not certification.</p>
+    </div>
   </div>
-</div>
+</section>
 
-<figure>
-  <div class="ftitle">The first finding, in the studies that measured both halves</div>
-  <div class="fsub">Paired outcomes, not a slope chart: the two columns are different units
-  (percentages, <em>d</em>, and qualitative change), so they share no scale and the connector
-  encodes pairing only, never magnitude. Hover a row.</div>
-  <div class="legend">
-    <span><i style="background:var(--felt)"></i>What the learner felt</span>
-    <span><i style="background:var(--real)"></i>What was actually learned</span>
+<section class="section" id="frontier">
+  <div class="section-head">
+    <h2>The frontier map</h2>
+    <p>The raw research covers the technologies named in the original brief. The
+    relevant distinction is between an available capability and a learning result.</p>
   </div>
-  <div id="slope"></div>
-  <figcaption>The last row is the mirror image, and the tell: students in the condition that taught
-  them <em>more</em> reported learning <em>less</em> (Deslauriers, PNAS 2019). The top row is the
-  one measured on a frontier model, and it is the sharpest: the same GPT-4 that raised practice
-  performance 48% left the unassisted exam 17% worse. The writing row is the same shape arriving
-  from another subject and a tool generation earlier, which is the reason it belongs here: the
-  learner's confidence and the draft in hand both rise, and the next blank page does not move.
-  Felt learning is what every optimisation loop can measure. Real learning is what almost none of
-  them measure.</figcaption>
-</figure>
-
-<h2>Which teaching moves are worth building</h2>
-<p class="sub">Instructional moves, ordered by measured effect. Every row is a design choice a
-system makes, and no delivery system appears on this axis — no human tutor, no pre-LLM
-courseware and no AI tutor — because a sorted axis turns every neighbour into a verdict and
-none of those studies ever ran the comparison that verdict implies. Blue is supported by
-replication; rust is overstated, contested, or null.</p>
-
-<figure>
-  <div class="ftitle">What a teaching move is worth</div>
-  <div class="fsub">Generated from a declarative spec by a deterministic renderer. No coordinate on
-  this page is hand-positioned, because our own research rates hand-written SVG Tier D. Hover any
-  row for the evidence base behind the number and the caveat that comes with it.</div>
-  <div class="legend">
-    <span><i style="background:var(--real)"></i>Supported</span>
-    <span><i style="background:var(--felt)"></i>Overstated, contested, or null</span>
+  <div class="filters" aria-label="Filter capabilities">
+    <button class="on" data-filter="all">All</button>
+    <button data-filter="interaction">Interaction</button>
+    <button data-filter="generation">Generation</button>
+    <button data-filter="agents">Agents</button>
+    <button data-filter="learning">Learning systems</button>
   </div>
-  <div id="bars"></div>
-  <figcaption>Read this as a menu, not a league table. The top rows are what a system should be
-  built to do — make the learner explain, space the practice, test instead of re-read, fade the
-  worked example — and the bottom rows are what looks like teaching and measures nothing. Every
-  one of these is a move a frontier model can execute on demand and at no marginal cost, which is
-  the only reason the list is actionable rather than merely true. What none of them tells you is
-  how much a frontier tutor that runs all of them together is worth, because that system has not
-  been assembled and so has never been measured.</figcaption>
-</figure>
+  <div class="capabilities" id="capabilities">
+    <article class="cap" data-kind="interaction"><h3>Live voice and vision</h3><p>Interruptible speech, image/video input, tool calls, multilingual output and session continuity.</p><p class="source">Gemini Live · OpenAI Realtime · Vizz-AI</p><span class="status">Available substrate</span></article>
+    <article class="cap" data-kind="generation"><h3>Interactive software</h3><p>Generate and revise concept-specific applications, visualizations and full-stack experiences from a prompt.</p><p class="source">Kimi K3 · Claude Artifacts · agent coding systems</p><span class="status gap">Needs education benchmark</span></article>
+    <article class="cap" data-kind="generation"><h3>Diagrams and animation</h3><p>Programmatic mathematical animation, web motion, generated illustration and deterministic simulation.</p><p class="source">Manim · Remotion · SVG/canvas · simulation toolchains</p><span class="status gap">Verification required</span></article>
+    <article class="cap" data-kind="generation"><h3>Reactive notebooks</h3><p>Executable explanations where code, controls, outputs and narrative remain synchronized.</p><p class="source">marimo · Jupyter/Colab · sandboxed code execution</p><span class="status">Available substrate</span></article>
+    <article class="cap" data-kind="generation"><h3>Generated audio and video</h3><p>Source-grounded audio, narrated slides, cinematic video and avatar-based presentation.</p><p class="source">NotebookLM · Veo · Wan2.2 · live-avatar services</p><span class="status gap">Format comparisons missing</span></article>
+    <article class="cap" data-kind="generation"><h3>World models</h3><p>Prompted, navigable environments and generated events for spatial, historical and causal exploration.</p><p class="source">Genie 3 · emerging real-time world models</p><span class="status gap">Access and fidelity limits</span></article>
+    <article class="cap" data-kind="agents"><h3>Persistent agent work</h3><p>Memory, tools, scheduled jobs, handoffs, observation and work completed between learner sessions.</p><p class="source">Agent runtimes · K2 agentic research</p><span class="status">Available substrate</span></article>
+    <article class="cap" data-kind="agents"><h3>Agent-native actions</h3><p>One typed action available through the learner UI, agents, APIs, MCP, A2A and human coordination tools.</p><p class="source">Builder.io Agent-Native pattern · Z2 gap audit</p><span class="status gap">Education contract missing</span></article>
+    <article class="cap" data-kind="learning"><h3>Adaptive course generation</h3><p>Transform source material into sequenced explanations, quizzes, mind maps, audio and interactive guides.</p><p class="source">Learn Your Way · Paradigm · AI-native textbook systems</p><span class="status">Early measured precedent</span></article>
+    <article class="cap" data-kind="learning"><h3>Authored interactivity</h3><p>Constrained, carefully designed problem sequences provide the quality bar for generated experiences.</p><p class="source">Brilliant · PhET · authored courseware</p><span class="status">Active control</span></article>
+    <article class="cap" data-kind="learning"><h3>Memory and review</h3><p>Retrieval, spacing, interleaving and learner-owned scheduling across subjects and years.</p><p class="source">FSRS/Zemomemo analysis · learning-science corpus</p><span class="status">Mechanisms established</span></article>
+    <article class="cap" data-kind="learning"><h3>Creator technique library</h3><p>Techniques used by strong teachers and explainers, classified by obstacle and representation.</p><p class="source">104-technique inventory · Explanation Atlas</p><span class="status gap">Ingestion loop missing</span></article>
+  </div>
+</section>
 
-<details>
-  <summary>Table view of the same spec, with the evidence base behind every number</summary>
-  <div class="scroll"><table id="bartable"></table></div>
-</details>
+<section class="section" id="access">
+  <div class="section-head">
+    <h2>SELPA-first requirements</h2>
+    <p>The system is designed around a learner who may understand the subject while
+    decoding, working memory, attention or response format obscures that understanding.</p>
+  </div>
+  <div class="principles">
+    <div class="principle"><h3>Preserve the intellectual target</h3><p>Change access, pacing and response mode without quietly reducing the concept.</p></div>
+    <div class="principle"><h3>Offer multiple ways to respond</h3><p>Speech, drawing, pointing, manipulation, typing and formal notation should be available where valid.</p></div>
+    <div class="principle"><h3>Make time and state visible</h3><p>Show what is happening now, what remains, what can be paused and how to restart.</p></div>
+    <div class="principle"><h3>Keep labels out of the inference loop</h3><p>A diagnosis informs accommodations; it does not define a ceiling or replace observed work.</p></div>
+    <div class="principle"><h3>Measure subgroup effects</h3><p>Average gains can conceal widening gaps. Access profiles belong in evaluation plans.</p></div>
+    <div class="principle"><h3>Escalate consequential decisions</h3><p>IEPs, diagnoses and placement remain human team decisions with documented authority.</p></div>
+  </div>
+</section>
 
-<div class="callout">
-  <div class="k">The specification this survey has been running on credit</div>
-  <p>One move that a system makes constantly is missing from that chart, because sorted by
-  <em>what was being sequenced</em>, every instructional-sequencing experiment since the 1960s
-  splits three ways. Scheduling inside a set of paired associates wins <b>11 of 14</b>. Choosing
-  which activity comes next for content already chosen wins <b>8 of 10</b>. Ordering
-  interdependent content over a prerequisite graph wins <b>0 of 8</b>: six clean nulls and two
-  mixed, three of the nulls on primary-school children doing arithmetic and fractions. That
-  review closes in 2019, so every comparison inside it ran on a rule-based or
-  reinforcement-learned sequencer. On a frontier one the experiment has never been run.</p>
-  <p>Our own ladder of explanation computes a mastery vector over a concept's transitive
-  prerequisite closure and enters at the weakest link. That is the between-topic decision, the
-  half with no positive result anywhere behind it, and the survey now says so in the paragraph
-  that specifies it. The graph keeps its diagnostic job and loses its gate. The trial that would
-  settle it randomises <em>the graph</em> instead of the traversal policy every previous study
-  randomised: an equivalence design at a pre-registered margin of <b>δ = 0.10 SD</b>, roughly
-  <b>857 learners</b> across eight topic pairs, two terms of one mid-sized deployment. For the
-  eleven-year-old this survey is written around, the answer decides between a tutor that teaches
-  her photosynthesis and one that sends her back to fractions first.</p>
+<section class="section" id="evidence">
+  <div class="section-head">
+    <h2>What has been measured</h2>
+    <p>Frontier tutoring has produced positive results in several settings. The studies
+    differ in duration, outcome and human involvement, so they should not be pooled into
+    a single expected effect.</p>
+  </div>
+  <div class="scroll">
+    <table class="evidence-table">
+      <thead><tr><th>Study</th><th>Setting</th><th>Result</th><th>What it establishes</th></tr></thead>
+      <tbody>
+        <tr><td>Kestin et al. (2025)</td><td>Harvard physics</td><td><span class="num">d ≈ 0.63</span></td><td>Purpose-built tutor improved an immediate post-test after a short intervention.</td></tr>
+        <tr><td>Rori (2024)</td><td>Ghana, WhatsApp</td><td><span class="num">+0.37 SD</span></td><td>Longer field deployment produced a positive outcome; cluster count and provider authorship limit inference.</td></tr>
+        <tr><td>World Bank (2025)</td><td>Nigeria</td><td><span class="num">+0.206 SD</span> school exam</td><td>A distal school outcome moved in a teacher-supported program.</td></tr>
+        <tr><td>Sierra Leone (2026)</td><td>Teacher-led classroom</td><td><span class="num">+0.258 SD</span> adjusted</td><td>Eight-week guided deployment improved the adjusted endline; unadjusted estimate was not significant.</td></tr>
+        <tr><td>Learn Your Way (2025)</td><td>AI-transformed textbook</td><td><span class="num">+11 pp</span> delayed recall</td><td>Small developer study provides an early measured precedent for multi-format adaptive material.</td></tr>
+        <tr><td>Bastani et al. (2025)</td><td>High-school maths</td><td><span class="num">−17%</span> unassisted in unrestricted arm</td><td>Assisted performance can rise while later independent performance falls.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="sub">Sources, estimands, confidence intervals and corrections are documented
+  in the paper and raw reports. No study above evaluates the complete proposed system.</p>
+</section>
+
+<section class="section" id="roadmap">
+  <div class="section-head">
+    <h2>Build and research roadmap</h2>
+    <p>The next work should retire uncertainty. Product milestones are paired with
+    experiments that can show the proposed mechanism is unnecessary or wrong.</p>
+  </div>
+  <div class="experiment"><div class="rank">1</div><div><h3>Delayed, unassisted transfer</h3><p>Build the common outcome instrument first. Every later product comparison depends on it.</p></div></div>
+  <div class="experiment"><div class="rank">2</div><div><h3>Persistent learner state</h3><p>Compare memory-enabled and stateless tutors at matched model, time and compute.</p></div></div>
+  <div class="experiment"><div class="rank">3</div><div><h3>Generated experience compiler</h3><p>Render one concept as prose, diagram, notebook, app and simulation from the same verified concept specification.</p></div></div>
+  <div class="experiment"><div class="rank">4</div><div><h3>Agent-role evaluations</h3><p>Define tests for diagnosis, explanation, verification, access and routing before calling agents experts.</p></div></div>
+  <div class="experiment"><div class="rank">5</div><div><h3>SELPA-first trial</h3><p>Pre-register subgroup outcomes and compare response modes without lowering the target skill.</p></div></div>
+  <div class="experiment"><div class="rank">6</div><div><h3>Creator and publisher protocol</h3><p>Test concept packages carrying rights, provenance, author intent, calibrated items and attribution across partners.</p></div></div>
+  <div class="call">
+    <h2>The venture thesis</h2>
+    <p>Frontier models will keep improving and remain broadly available. The durable
+    asset is evidence about which action, representation and sequence helped a specific
+    learner overcome a specific obstacle. The company earns that asset by measuring
+    independent learning and by working across the content ecosystem.</p>
+  </div>
+</section>
+
+<section class="section" id="artifacts">
+  <div class="section-head">
+    <h2>Project artifacts</h2>
+    <p>The public artifacts now share one product thesis. The research reports and
+    corrections remain the source record.</p>
+  </div>
+  <div class="grid three">
+    <a class="artifact" href="paper.html"><h3>Paper</h3><p>Edited evidence synthesis, reference architecture and evaluation program.</p></a>
+    <a class="artifact" href="atlas.html"><h3>Living Evidence Atlas</h3><p>The long research record, preserved separately from the paper.</p></a>
+    <a class="artifact" href="deck.html"><h3>Pitch deck</h3><p>Product and venture narrative with founder-owned decisions exposed.</p></a>
+    <a class="artifact" href="demos/"><h3>Mechanism demos</h3><p>Browser implementations, each scoped to what it can demonstrate.</p></a>
+    <a class="artifact" href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw"><h3>Raw research</h3><p>Source reports across frontier capability, learning science, inclusion and business.</p></a>
+    <a class="artifact" href="https://github.com/dlmastery/learning-with-ai/blob/main/CORRECTIONS.md"><h3>Corrections</h3><p>Append-only record of factual and process corrections.</p></a>
+    <a class="artifact" href="https://github.com/dlmastery/learning-with-ai/blob/main/process/TASK-TRACEABILITY.md"><h3>Task traceability</h3><p>Requirement-by-requirement coverage and remaining work.</p></a>
+  </div>
+</section>
+
+<div class="foot">
+  <span>Learning with AI · working research project</span>
+  <span>Last editorial rebuild: 30 July 2026</span>
 </div>
-
-<h2>Kindergarten to doctorate</h2>
-<p class="sub">The question this survey gets asked most: does any of this work the same way for a
-six-year-old and a PhD student? No, and the axis it varies along is not age.</p>
-
-<div class="callout">
-  <div class="k">The organising principle</div>
-  <p>Expertise reversal. The same instructional support measures
-  <b>d = +0.505</b> for novices and <b>d = −0.428</b> for experts. Not "less useful" — actively
-  harmful. Worked examples, explicit guidance and scaffolding are the strongest tools we have for
-  beginners, and become <em>obstacles</em> for people who already know the domain.</p>
-  <p>So the K-12 → postgraduate span is a reversal, and not a difficulty gradient. It runs per
-  topic: the same learner is a novice in one chapter and an expert in the next. A system that
-  scales instruction <em>up</em> as the learner advances has it exactly backwards.</p>
 </div>
-
-<div class="scroll">
-<table>
-  <tr><th>Technique</th><th>K–5</th><th>6–8</th><th>9–12</th><th>Undergrad</th><th>Grad / research</th><th>Basis</th></tr>
-  <tr><td><b>Retrieval practice</b></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td class="num">g 0.50</td></tr>
-  <tr><td><b>Spacing</b></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td><span class="pill y">core</span></td><td class="num">d 0.54</td></tr>
-  <tr><td><b>Explicit / direct instruction</b></td><td><span class="pill y">strongest</span></td><td><span class="pill y">strong</span></td><td><span class="pill c">taper</span></td><td><span class="pill c">taper</span></td><td><span class="pill n">reverses</span></td><td class="num">328 studies</td></tr>
-  <tr><td><b>Worked examples</b></td><td><span class="pill y">strongest</span></td><td><span class="pill y">strong</span></td><td><span class="pill y">yes</span></td><td><span class="pill c">fade</span></td><td><span class="pill n">reverses</span></td><td class="num">g 0.48</td></tr>
-  <tr><td><b>Manipulatives &amp; gesture</b></td><td><span class="pill y">yes</span></td><td><span class="pill y">yes</span></td><td><span class="pill c">domain</span></td><td><span class="pill c">domain</span></td><td><span class="pill c">domain</span></td><td class="num">gesture &gt; action</td></tr>
-  <tr><td><b>Productive failure</b></td><td><span class="pill n">needs base</span></td><td><span class="pill c">emerging</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">central</span></td><td class="num">g 0.36</td></tr>
-  <tr><td><b>Learning by teaching</b></td><td><span class="pill y">yes</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">central</span></td><td class="num">g 0.48*</td></tr>
-  <tr><td><b>Withholding / Socratic</b></td><td><span class="pill n">harmful</span></td><td><span class="pill c">careful</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">central</span></td><td class="num">inverts for SELPA</td></tr>
-  <tr><td><b>Card-based scheduling</b></td><td><span class="pill y">facts</span></td><td><span class="pill y">facts</span></td><td><span class="pill c">facts only</span></td><td><span class="pill n">0 of 8</span></td><td><span class="pill n">0 of 8</span></td><td class="num">11/14 vs 0/8</td></tr>
-  <tr><td><b>Executable grounding</b></td><td><span class="pill c">implicit</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">essential</span></td><td><span class="pill y">essential</span></td><td><span class="pill y">essential</span></td><td class="num">99.1% @ 0.38–0.61 ms</td></tr>
-  <tr><td><b>Genuine adversary</b></td><td><span class="pill n">no</span></td><td><span class="pill c">light</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">central</span></td><td><span class="pill y">the whole job</span></td><td class="num">unannounced only</td></tr>
-  <tr><td><b>Open-ended research</b></td><td><span class="pill n">no</span></td><td><span class="pill n">no</span></td><td><span class="pill c">scaffolded</span></td><td><span class="pill y">yes</span></td><td><span class="pill y">the whole job</span></td><td class="num">—</td></tr>
-</table>
-</div>
-<p class="sub">* <b>g = 0.48</b> when the expectancy to teach is set <em>before</em> study;
-<b>g = −0.02</b> without it. The ordering of one sentence is the whole effect.</p>
-
-<h3>What the tutor's job actually is, from before school to mid-career</h3>
-<div class="grid">
-  <div class="card"><span class="tag">Under 5</span><h4>Ship nothing, then ship one shape</h4><p>Across 122 independent effect sizes covering ages 0–6, a screen costs about half a standard deviation against the same content from a person, with no difference between live and prerecorded video. Responsiveness does not rescue it: in a four-condition trial of 132 toddlers, neither the responsive nor the unresponsive video condition taught anything. What moves is the adult, at <b>d = 1.01</b> on caregiver book-sharing competence across 19 RCTs. From three to five the supported surface is a dialogic reading partner with the caregiver in the room, and the equivalence claim under it is one underpowered interaction at n = 117.</p></div>
-  <div class="card"><span class="tag">K–5</span><h4>Be the thing that cannot be argued with</h4><p>Explicit, systematic, high-dosage, and above all <em>consistent</em>. The object refuses illegal states; the child is wrong in private, repeatedly, without anyone's face changing. Withholding does damage here; this is where the Socratic instinct is wrong.</p></div>
-  <div class="card"><span class="tag">6–12</span><h4>Fade the scaffold when the evidence says to</h4><p>The band where the reversal actually happens, so it is the band where measuring prior knowledge <em>per topic</em> becomes load-bearing. Fading too early and fading too late are both failures, and they look the same from the outside.</p></div>
-  <div class="card"><span class="tag">Undergraduate</span><h4>Stop explaining. Start interrogating.</h4><p>Guidance now costs more than it gives. The high-value moves become productive failure, unannounced objection, and problems that have never existed before. Explanation becomes something the <em>learner</em> produces.</p></div>
-  <div class="card"><span class="tag">Postgraduate</span><h4>The learner knows more than the tutor</h4><p>Inside their niche the model is not the expert, and pretending otherwise is the failure mode. Its job inverts completely: adversary, verifier, literature memory, connector to humans. It must be <em>useful without being right</em>.</p></div>
-  <div class="card"><span class="tag">Adults</span><h4>The one outcome somebody else records</h4><p>Adults hold the only unambiguous transfer criterion anywhere in this survey: a job, recorded by somebody else in state wage records. The training industry measures learning <b>234 times</b> and results <b>26</b>, on 1,748 people in total, which is the whole evidence base for whether any of it changes something a payer wanted. Dosage comes before efficacy here — the one randomised attempt to pay adult literacy learners for turning up <em>reduced</em> attendance by about 1.5 sessions.</p></div>
-</div>
-
-<h2>What to build, and what to stop building</h2>
-<p class="sub">Every result here carries a direct consequence for a product decision, and about a
-third of them arrived from the subject literatures the survey opened last: the relationship, the
-examination, anxiety, writing, second language.</p>
-
-<div class="grid">
-  <div class="card"><span class="tag">Kills a product</span><h4>The exit ticket is not the outcome</h4><p>Tutor CoPilot, 2024, a frontier LLM behind 900 human tutors, moved its in-product exit ticket <b>+4pp</b> and returned a null on the end-of-year test. That dissociation between the proxy a product can see and the outcome anyone cares about is the most reproducible finding in this literature, and it predates LLMs by a decade.</p></div>
-  <div class="card"><span class="tag">Free fix</span><h4>Say it before they study</h4><p>Teaching with a prior expectancy: <b>g = 0.48</b>, k = 39, human tutees. Without: <b>g = −0.02</b>. "Now explain it back to me," asked at the end, is the null condition, and is how nearly every product ships it. Ordering one sentence is free, and no LLM study has tested it.</p></div>
-  <div class="card"><span class="tag">Inverts the ask</span><h4>The audience is a net cost</h4><p>Teaching to a camera beat teaching to one student and to seven — on transfer, with lower pulse rate, lower anxiety, lower load and <em>more</em> idea units. Presenting to a room is a barrier that buys nothing.</p></div>
-  <div class="card"><span class="tag">Must-fix bug</span><h4>Vision models erase the mistakes</h4><p>Asked to transcribe student work, VLMs silently <b>repair</b> the errors — the sign, the paren, the missing step. The mistakes are the entire reason for looking at the page.</p></div>
-  <div class="card"><span class="tag">Boundary</span><h4>A scheduler is not a curriculum</h4><p>The sequencing split above is half of this. The other half is that sophistication inside the schedule has not paid either: Duolingo's own scheduler against plain Leitner, on roughly a million students, returned <b>−7.3%</b> practice.</p></div>
-  <div class="card"><span class="tag">Backfire</span><h4>Announced devil's advocate</h4><p>Saying "let me play devil's advocate" produces cognitive <em>bolstering</em> of the learner's original view. The exit is unannounced, model-owned objection.</p></div>
-  <div class="card"><span class="tag">Fairness</span><h4>Detectors are conventionality meters</h4><p><b>61.22%</b> false-positive on non-native writers versus 5.19% native. Students taught sentence frames <em>as an accommodation</em> are maximally exposed, because the accommodation lowers perplexity by design.</p></div>
-  <div class="card"><span class="tag">Objective</span><h4>The Null-Learner Test</h4><p>Simulate an agent maximising your metric while teaching nothing. DAU, streaks, XP and time-on-app all pass, so all are disqualified as objectives.</p></div>
-  <div class="card"><span class="tag">Reach</span><h4>A scheduled call, on any phone</h4><p>Human-delivered voice call + SMS: <b>+0.327 SD</b> across 5 countries, N = 8,902. SMS alone: +0.083, null in three. What carries it is someone on the line at an appointed time, which is the one thing a model can now supply on every phone at no marginal cost. Bandwidth is doing none of the work.</p></div>
-  <div class="card"><span class="tag">Frontier</span><h4>Real-time is solved</h4><p>640×368 at 25 FPS, <b>~200 ms model-side latency</b>: shorter than the pause between two people in conversation. The world persists, and events arrive on a stream of their own.</p></div>
-  <div class="card"><span class="tag">Empty chair</span><h4>Zero RCTs on disabled learners</h4><p>ERIC + Europe PMC, censused twice: 30 GenAI-education RCTs mention students, <b>0</b> mention disability. Every effect size in this field was measured on somebody else's child.</p></div>
-  <div class="card"><span class="tag">Backfire</span><h4>A warmth setting raises the error rate</h4><p>Five models fine-tuned on 1,617 conversations to answer more warmly, factual content held constant: error rates rose on every evaluation, mean <b>+7.43 pp</b>, and agreement with a user's incorrect belief rose <b>+11 pp</b>. Worst where a struggling learner actually lives — where the user's message expressed sadness the gap widened to <b>+11.9 pp</b> against a 6.8 pp baseline. MMLU and GSM8K barely moved, so the benchmarks a tutoring team runs do not see any of it.</p></div>
-  <div class="card"><span class="tag">Two channels</span><h4>Anxiety is not a knowledge gap</h4><p>Of 1,757 children screened, <b>77%</b> of those with high maths anxiety had typical or high mathematics performance. In samples selected for low maths ability the anxiety–achievement correlation falls to <b>r = −.09</b> against −.28 elsewhere. Read distress as a knowledge gap and you over-remediate three quarters of the anxious children you meet; read a right answer as comfort and you miss the child who is fluent and frightened.</p></div>
-  <div class="card"><span class="tag">Must-fix bug</span><h4>Better speech recognition erases the error</h4><p>On phoneme-level mispronunciation detection, Whisper Small beats Medium beats Large with the same model behind it, and the authors say why: a stronger recogniser <em>repairs</em> the learner's pronunciation while transcribing it, since recovering the intended word is its entire objective. The best end-to-end frontier audio model recovers <b>41.3%</b> of annotated errors and is right about 52.7% of the ones it flags. The upgrade path runs backwards.</p></div>
-  <div class="card"><span class="tag">Free fix</span><h4>Withhold the form</h4><p>Shown a wrong sentence, a model's reflex is to say it back correctly. That is a recast, which is <b>57%</b> of the corrective feedback teachers already supply against 30% for prompts, and the least supported of the three types: recasts 0.53, prompts 0.83, explicit correction 0.84 across 15 classroom studies. Prompting self-repair recruits the generation effect and costs one line of a system prompt.</p></div>
-  <div class="card"><span class="tag">Market</span><h4>Advertised at three to seven times measured</h4><p>Seven estimators run against a stratified sample of about 6,700 SAT registrants put commercial coaching at <b>6–8 scale points</b> on verbal and <b>13–18</b> on mathematics, or roughly one further question correct per eight hours of effort. The two largest firms advertised <b>120 and 140</b> combined. The free alternative's famous 115-point figure traces to a press release; its own technical report, controlling for prior score, puts six hours of use at +21 points.</p></div>
-  <div class="card"><span class="tag">Objective</span><h4>Delete the pond, then leave it deleted</h4><p>School-average achievement depresses a student's academic self-concept at <b>β = −0.28</b> across 1.28 million students, and a separate cross-national test found it negative in all 26 countries. A one-to-one tutor removes the comparison class by construction and puts it straight back the moment it ships percentiles, leaderboards or "students like you". Nobody has yet measured academic self-concept in a learner using an AI tutor.</p></div>
-</div>
-
-<div class="callout">
-  <div class="k">Time-sensitive · verified 28 Jul 2026</div>
-  <p>The EU AI Act's Annex III education obligations were deferred to
-  2 December 2027 by Regulation (EU) 2026/1744 (Digital Omnibus on AI, in force
-  27 July 2026), verified against the EUR-Lex primary text. But <strong>Article 50
-  (chatbot disclosure and synthetic-content marking) still applies from 2 August
-  2026.</strong> For a conversational tutor that is the live deadline. Two sources a
-  reasonable person would check still give the wrong answer: <code>artificialintelligenceact.eu</code>
-  is stamped "last updated 1 August 2024," and the Commission's own Digital Omnibus page
-  still describes only the proposal.</p>
-</div>
-
-<h2>Where we are still in the dark</h2>
-<p class="sub">Not open problems: those are catalogued and specified with experiments. These are the
-places where the whole frame may be wrong, and where nobody is currently looking.</p>
-
-<div class="qlist">
-  <div class="q"><h4>Correlated pedagogical error at population scale</h4>
-  <p>A human teacher's blind spots are idiosyncratic — thirty teachers make thirty different
-  mistakes and the system averages them out. A model's blind spots are <em>systematic and identical
-  for every learner simultaneously</em>. Nobody has studied what happens when ten million children
-  are taught the same subtle misconception on the same afternoon. There is no monitoring for it and
-  no name for it.</p></div>
-
-  <div class="q"><h4>Every effect we have is measured in weeks</h4>
-  <p>The longest outcome in this corpus is months; most are a single session. A technique that
-  measures +0.5 SD at six weeks and quietly corrodes a learner's willingness to struggle over three
-  years would look <em>identical</em> in every study we cite. We are optimising on a horizon far
-  shorter than the thing we claim to affect.</p></div>
-
-  <div class="q"><h4>What the model teaches implicitly, every single turn</h4>
-  <p>Every interaction teaches epistemics: what counts as an answer, how much confidence is
-  appropriate, whether to defer, when a question is finished. That curriculum runs constantly, is
-  measured nowhere, and is plausibly larger than the subject-matter effect.</p></div>
-
-  <div class="q"><h4>The learner model may be a category error</h4>
-  <p>We assume a stable person to be modelled. In childhood the subject changes faster than the
-  model converges, and a good fit to who a child was in October may be an active constraint on who
-  they are becoming by March. Nobody has asked whether personalisation is developmentally
-  <em>anti</em>-adaptive.</p></div>
-
-  <div class="q"><h4>Perfect personalisation may delete the only measured route to working with a person</h4>
-  <p>Two meta-analyses of scripted collaboration split the same way. On domain knowledge they
-  return about a fifth of a standard deviation, d = 0.20 and g = 0.24. On
-  collaboration skill they return <b>d = 0.95</b> and <b>g = 0.72</b>, and nothing else in this
-  survey moves that second outcome at all. The part of a group a tutor cannot supply — two people
-  who have each committed to a position and neither of whom knows the answer — is worth perhaps
-  0.1 to 0.2 SD on achievement and is the only part that cannot be faked. This document has
-  treated personalisation as an unmixed good and never once costed that.</p></div>
-
-  <div class="q"><h4>Every study is one classroom in a world where nobody else has it</h4>
-  <p>Education is heavily positional: credentials, ranking, admission. Every effect size quoted
-  here was measured where the treatment group had something the others did not. What the same
-  technique does when <em>everyone</em> has it is a different question, not a smaller version
-  of that result, and it has never been asked.</p></div>
-
-  <div class="q"><h4>We cannot tell competence from performance any more</h4>
-  <p>Every assessment instrument in existence assumes the artifact reflects the person who submitted
-  it. That assumption broke. The field's response has been detection, which runs
-  61.22% false-positive on non-native writers. Treating a measurement crisis as a cheating
-  problem may be the wrong frame entirely.</p></div>
-
-  <div class="q"><h4>Nobody has checked whether a wrong-on-purpose agent is safe</h4>
-  <p>The teachable agent is this survey's most promising untested mechanism, and it requires an agent
-  that <em>holds an error</em> without self-correcting. No one has measured whether learners repair
-  the error or internalise it. The failure mode is obvious in hindsight and entirely unstudied.</p></div>
-
-  <div class="q"><h4>375 million children are unmeasured — and that number is itself an artifact</h4>
-  <p>We can state that 21.7% of the world's children have no benchmark coverage in any of their
-  languages. What we cannot state is what happens to a language when its children are taught through
-  a model that speaks it badly: whether that accelerates a shift already underway, and on what
-  timescale.</p></div>
-</div>
-
-<h2>How to tell a real claim from a good demo</h2>
-<p class="sub">Aimed at any vendor, any paper, any demo — and at this document. Most claims in this
-field fail on the first three.</p>
-
-<div class="qlist">
-  <div class="q"><h4>Show me the delayed, unassisted, novel-item test.</h4>
-  <p>Not the practice score. Not the same items. Weeks later, device closed, problems never seen
-  before. ERIC returns <b>0 records</b> for "retention test" AND "ChatGPT", and <b>0</b> for
-  "transfer test". Without a delayed unassisted outcome, nothing was measured about learning.</p></div>
-
-  <div class="q"><h4>Within-group, or against a control?</h4>
-  <p>A pre-to-post gain carries maturation, practice, the testing effect and regression to the
-  mean along with the treatment. In one trial reported both ways the two estimates sit
-  <b>2.30 SD</b> apart: <em>d</em> = 2.35 within-group, <em>d</em> = 0.05 against the control,
-  same learners. An unlabelled effect size in a product claim is almost always the first
-  one.</p></div>
-
-  <div class="q"><h4>What happened to the gap, not the mean?</h4>
-  <p>Report the interaction with prior attainment. An intervention with a healthy mean that loads on
-  already-strong learners has made things worse. Untargeted delivery reliably does this: Sierra
-  Leone loaded at <b>+0.195 SD per SD</b> of baseline. Prior attainment is not the only axis that
-  sorts them, either. An adaptive trainer for 67 children with dyscalculia worked, and the gain
-  concentrated in the children with <b>low</b> maths anxiety and no additional reading or
-  spelling disorder. A subgroup split at that sample size is a warning and never a result, and it is the
-  warning aimed straight at this project's premise.</p></div>
-
-  <div class="q"><h4>Does your metric survive the Null-Learner Test?</h4>
-  <p>Simulate an agent that maximises it while teaching nothing. If the metric cannot tell the
-  difference, it is not an objective. Engagement, time-on-task, streaks, satisfaction and session
-  count all fail.</p></div>
-
-  <div class="q"><h4>Which arm isolates the AI from the humans around it?</h4>
-  <p>Both real outcome trials of the best-resourced AI tutor wrapped it in human structure doing
-  visible work. In one, 44.3% of tutor edits were slowing the AI's questioning down. No
-  published trial isolates prompt-alone pedagogy from tablets, pair-work and teacher lesson
-  design.</p></div>
-
-  <div class="q"><h4>Is that a backtest or an intervention?</h4>
-  <p>Log-loss on review histories is not a learning outcome. On a 350-million-review benchmark a
-  zero-parameter moving average beats every FSRS version. Predicting what a learner already
-  did is a different quantity from causing them to remember.</p></div>
-
-  <div class="q"><h4>What is your inter-rater reliability on the thing you claim to measure?</h4>
-  <p>Published once for the field's leading pedagogy rubric and never again: Krippendorff's α of
-  <b>0.066</b> for "inspires interest" and <b>0.023</b> for "monitors motivation". Two of five
-  principles rest on constructs experts cannot reliably identify. Human graders of code reach
-  α ≈ 0.20.</p></div>
-
-  <div class="q"><h4>Active control, or nothing?</h4>
-  <p>Against "no intervention", almost everything works. Orton-Gillingham looks excellent until it is
-  compared with other explicit instruction, where it is <b>g = 0.22, p = .40</b>. The robot
-  meta-analysis spans +0.75 versus nothing to <b>−0.06</b> versus a teacher.</p></div>
-
-  <div class="q"><h4>What did you pre-register, and what did you report?</h4>
-  <p>The largest AI-tutoring trial in this corpus abandoned its pre-registered subdomain analyses,
-  had differential attrition favouring treatment, and swapped models mid-trial. All three are visible
-  only in the appendix.</p></div>
-
-  <div class="q"><h4>Who consented out?</h4>
-  <p>Every result is conditioned on a connected, consenting, mostly curious population. The learners
-  this field most claims to serve are the ones least likely to be in the sample — and in one census,
-  <em>none</em> of them are.</p></div>
-
-  <div class="q"><h4>What would falsify your thesis — and has it already happened?</h4>
-  <p>The falsifier we accept is an active control: a plain frontier chatbot, run against the
-  assembled system on a delayed, unassisted, novel-item test. If the mechanisms do not beat that
-  arm, they are decorative and the model was doing the work. Fütterer 2026 has already run that
-  comparison against a lighter set of mechanisms, n = 371, and found no advantage on knowledge,
-  effort or strategy use. Gu &amp; Yan put LLM tutoring at <b>g = 0.077</b> without teacher
-  support. The best-powered frontier studies on record are nulls, and our own evidence repeatedly
-  shows elaboration losing to simplicity: five explanation rungs did not beat three
-  (<b>p = .738</b>), multiple representations harmed, mixed agent panels lost to one good agent.</p></div>
-</div>
-
-<h2>Where to go next</h2>
-<p class="sub">The dashboard is a summary. The argument is in the survey, and the mechanisms
-run in the demos.</p>
-
-<div class="onward">
-  <a href="paper.html">
-    <div class="nt">The survey</div>
-    <p>Seven parts, from what the evidence establishes to the conditions under which we would have
-    to withdraw the central claim. Persistent contents, an abstract, and every claim carrying an
-    evidence label.</p>
-    <div class="nm"><span data-gen="sections">47</span> SECTIONS ·
-      <span data-gen="words">121,624</span> WORDS</div>
-  </a>
-  <a href="demos/">
-    <div class="nt">The demos</div>
-    <p>Because a survey that only describes techniques is a reading list. Each runs in the browser
-    with no server and no key, and states what it proves and what it merely illustrates, including
-    the one this project proposed, benchmarked and falsified.</p>
-    <div class="nm"><span data-gen="demos">27</span> TECHNIQUES · NO SIGN-IN</div>
-  </a>
-</div>
-
-<h2>Why you can check us</h2>
-<p class="sub">No survey gets everything right. This one did not, and the record is the
-point.</p>
-
-<p><span data-gen="corrections">75</span> corrections are published in an append-only ledger
-with a provenance column naming who caught each one. <span data-gen="external">23</span> were found
-by an adversarial reviewer rather than by us — including the two most damaging, and one about the
-ledger itself, which we had been silently editing inside a table headed
-<em>"published rather than silently edited."</em></p>
-
-<div class="scroll">
-<table>
-  <tr><th>We said</th><th>Actually</th></tr>
-  <tr><td><b>C-1</b> · Sierra Leone <b>+0.258 SD</b>, called "the strongest evidence in the history
-    of educational technology"</td>
-    <td>The unadjusted estimate is <b>+0.216, SE 0.137, not significant.</b> The effect loads
-    entirely on Grade 8, gaps widened at +0.195 SD per SD of baseline, attrition favoured
-    treatment, and the pre-registered subdomain analyses were abandoned</td></tr>
-  <tr><td><b>C-13</b> · Kestin AI tutor, a range spliced from two different estimands and then
-    plotted at its midpoint</td>
-    <td>A range that exists in no source. 0.63 is the regression estimate; the upper figure
-    is <em>ceiling-corrected</em>. Correct: <b>d ≈ 0.63</b>, from a study that is developer-built
-    and developer-evaluated with no funding statement</td></tr>
-  <tr><td><b>C-23</b> · <em>(process)</em> Corrections were applied by rewriting the ledger rows
-    in place, inside a table headed "each published rather than silently edited"</td>
-    <td>Rows are now append-only and carry provenance, and the counts on this page are generated
-    from the filesystem at build time</td></tr>
-</table>
-</div>
-
-<p>Two machine checks guard the ledger, and both are runnable. A reviewer defeated the first one
-we wrote: every original error planted back into a copy of the repository, zero violations
-reported. It now carries a self-test that plants each violation itself and fails the build if a
-rule stays silent.</p>
-
-<details>
-  <summary>The full record: ledger, reviews, checkers, reports, audit</summary>
-  <div class="scroll"><table>
-    <tr><th>What</th><th>Where</th></tr>
-    <tr><td>The append-only corrections ledger, with provenance</td><td><a href="https://github.com/dlmastery/learning-with-ai/blob/main/CORRECTIONS.md"><code>CORRECTIONS.md</code></a></td></tr>
-    <tr><td>The adversarial reviews. The first four returned <em>not publishable</em></td><td><a href="https://github.com/dlmastery/learning-with-ai/tree/main/evidence"><code>evidence/</code></a></td></tr>
-    <tr><td>Propagation check, so no superseded value survives anywhere</td><td class="num">python3 evidence/check-corrections.py --self-test --strict</td></tr>
-    <tr><td>Render-and-run check on every demo page</td><td class="num">node evidence/test-demos.mjs</td></tr>
-    <tr><td>The research reports, the input, never rewritten</td><td><a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw"><code>research/raw/</code></a></td></tr>
-    <tr><td>Requirements audit against the original brief</td><td><a href="https://github.com/dlmastery/learning-with-ai/blob/main/AUDIT.md"><code>AUDIT.md</code></a></td></tr>
-  </table></div>
-</details>
-
-<footer>
-  <a href="paper.html">The survey</a> ·
-  <a href="demos/">Demos</a> ·
-  <a href="https://github.com/dlmastery/learning-with-ai">Repository</a>
-  <br /><br />Every claim carries an evidence label. Every section carries a documented null.
-  Unverifiable claims are reported as unverifiable — never laundered, never omitted.
-</footer>
-
-</div>
-
 <script>
-/* ── Chart IR ──────────────────────────────────────────────────────────────
-   Charts are DATA; a deterministic renderer turns them into SVG. No coordinate
-   on this page is hand-positioned — per C1's finding that hand-written SVG is
-   Tier D and that a declarative spec plus a deterministic renderer is the
-   correct target. The accessible table view is generated from the same spec,
-   so it can never drift from the chart.                                      */
-
-/* `cls` names the evidence base a row rests on. Every row here is an instructional
-   MOVE — a thing a system chooses to do — and nothing here is a delivery system.
-
-   NO DELIVERY-SYSTEM ESTIMATE MAY BE ADDED TO THIS ARRAY: not a human tutor, not
-   pre-LLM courseware, not a frontier model. Those rows were deleted rather than
-   labelled. A sorted axis is a verdict, and a review of one machine plotted above
-   a trial of another asserts a bound that neither study ever tested; a class label
-   in a tooltip does not undo an ordering the eye has already read. The frontier
-   evidence has its own section, where the only comparison on offer is with other
-   frontier systems. See evidence/check-vintage.py.                             */
-const LADDER = {
-  max: 0.60,
-  rows: [
-    {label:"Self-explanation",       cls:"pooled · Bisra et al.",    note:"pooled estimate across prompted self-explanation studies", v:0.55, ok:true},
-    {label:"Spacing",                cls:"2025 classroom meta",      note:"31 effects · N > 3,000",                              v:0.54,  ok:true},
-    {label:"Retrieval practice",     cls:"meta · 222 studies",       note:"222 classroom studies · 48,478 students · I² = 88%",  v:0.50,  ok:true},
-    {label:"Worked examples",        cls:"meta",                     note:"reverses for experts, d = −0.428",                    v:0.48,  ok:true},
-    {label:"Interleaving",           cls:"meta",                     note:"varies sharply by domain",                            v:0.42,  ok:true},
-    {label:"Mayer design principles",cls:"multimedia meta",          note:"contiguity alone reaches 0.74",                       v:0.38,  ok:true},
-    {label:"Productive failure",     cls:"meta",                     note:"requires prior knowledge; fails without it",          v:0.36,  ok:true},
-    {label:"VR vs desktop",          cls:"35 RCTs",                  note:"the presence premium, and it is modest",              v:0.24,  ok:false},
-    {label:"Animation vs static",    cls:"meta",                     note:"affect moves; learning mostly does not",              v:0.23,  ok:false},
-    {label:"Alternative seating",    cls:"reviews",                  note:"moderate-strength evidence of NO effect on attention",v:0.0,   ok:false},
-    {label:"Learning styles",        cls:"four decades of tests",    note:"no credible support, and 89.1% of educators believe it", v:0.0, ok:false}
-  ]
-};
-
-const SLOPE = {
-  rows:[
-    {label:"AI assistance",          a:"+48%",        b:"−17%",         bad:true,  cls:"FRONTIER · Bastani 2025, GPT-4", note:"Practice soared. Unassisted exam collapsed."},
-    {label:"Preference vs knowledge",a:"d ≈ 0.48",    b:"0",            bad:false, cls:"TECHNIQUE · Buljan 2018, n = 334 adults", note:"Infographic vs plain-language summary, immediate quiz. Preference moves; knowledge does not. Survives an explicit debiasing video (Kaspar 2025)."},
-    {label:"Animation vs static",    a:"interest ↑",  b:"no change",    bad:false, cls:"TECHNIQUE · multimedia meta", note:"Engagement is real. Transfer is not."},
-    {label:"Writing evaluation",     a:"efficacy ↑",  b:"no transfer",  bad:true,  cls:"TECHNIQUE · Wilson 2014, Wilson 2017, Wilson & Roscoe 2020", note:"Automated writing evaluation, three studies including one RCT. Revision quality and writing self-efficacy rise; the next cold composition does not move. The RCT also found a state ELA gain, partly mediated by efficacy."},
-    {label:"Active learning",        a:"felt worse",  b:"learned more", bad:false, invert:true, cls:"HUMAN · Deslauriers 2019", note:"Harvard physics, human instructors — the mirror image, and the tell."}
-  ],
-  left:"FELT", right:"LEARNED",
-  aria:"Paired-outcome chart: each row shows what learners felt beside what they actually "
-     + "learned. The two columns use different units and share no scale."
-};
-
-/* The same renderer, a different pair of estimands. Lee & Lee 2024 computed both on
-   overlapping samples and printed both forest plots; the rows are read off Figures 4
-   and 5. Nothing here measures a frontier system — the chart is about the arithmetic
-   of taking a difference, which is why it sits above every effect size on the page. */
-const EST = {
-  rows:[
-    {label:"Alphie's Alley",  a:"2.35", b:"0.05", cls:"Chambers et al. 2008a", note:"Within-group 2.35 [2.10, 2.60]; against a control 0.05 [−0.15, 0.25]. The two estimates are 2.30 SD apart, from the same learners."},
-    {label:"ITSS",            a:"1.55", b:"0.31", cls:"Wijekumar et al. 2012", note:"Within-group 1.55 [1.10, 2.00]; against a control 0.31 [−0.08, 0.70], interval crossing zero."},
-    {label:"A2i · Al Otaiba", a:"1.09", b:"0.26", cls:"Al Otaiba et al. 2011", note:"Within-group 1.09 [0.91, 1.27]; against a control 0.26 [0.08, 0.44] — the one row here whose control contrast excludes zero."},
-    {label:"A2i · Connor 07", a:"1.09", b:"0.14", cls:"Connor et al. 2007",    note:"Within-group 1.09 [0.91, 1.27]; against a control 0.14 [−0.02, 0.30]."},
-    {label:"A2i · Connor 11a",a:"1.03", b:"0.11", cls:"Connor et al. 2011a",   note:"Within-group 1.03 [0.81, 1.25]; against a control 0.11 [−0.09, 0.31]."},
-    {label:"A2i · Connor 11b",a:"0.45", b:"0.09", cls:"Connor et al. 2011b",   note:"Within-group 0.45 [0.25, 0.64]; against a control 0.09 [−0.09, 0.27]."},
-    {label:"Moodle",          a:"0.23", b:"0.16", cls:"Jia et al. 2012",       note:"Within-group 0.23 [−0.16, 0.62]; against a control 0.16 [−0.23, 0.55]. The smallest within-group number has the smallest gap, which is the pattern."}
-  ],
-  left:"WITHIN-GROUP", right:"VS CONTROL",
-  aria:"Paired-outcome chart: seven trials, each showing the within-group pre-to-post effect "
-     + "beside the effect against a control computed on the same learners."
-};
-
-/* The heading claims these are ordered, so order them here instead of trusting the
-   literal to stay sorted through edits. A published correction once revised a value
-   downward and left the row in place, and the chart then contradicted its own
-   caption. Both the chart and the generated table read this one array. */
-LADDER.rows.sort((a, b) => b.v - a.v);
-
-const tip = document.getElementById('tip');
-const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const NS  = 'http://www.w3.org/2000/svg';
-const mk  = (n,a) => { const e = document.createElementNS(NS,n);
-                       for (const k in a) e.setAttribute(k, a[k]); return e; };
-
-function bind(el, html){
-  el.addEventListener('pointerenter', () => { tip.innerHTML = html; tip.style.opacity = '1'; });
-  el.addEventListener('pointermove', e => {
-    const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 10);
-    const y = Math.min(e.clientY + 16, innerHeight - tip.offsetHeight - 10);
-    tip.style.transform = `translate(${x}px, ${y}px)`;
-  });
-  el.addEventListener('pointerleave', () => { tip.style.opacity = '0'; });
-}
-
-function fmt(v){
-  if (v === 0) return '—';
-  const dec = Math.abs(v) < 0.1 ? 3 : 2;
-  return (v < 0 ? '−' : '') + Math.abs(v).toFixed(dec);
-}
-
-function renderBars(host, spec){
-  const narrow = innerWidth < 640;
-  // There is no class column any more, because there is no longer more than one
-  // class on the axis. Every row is an instructional move; the delivery-system
-  // rows were deleted, not labelled, so RW reserves the value column alone.
-  const LW = narrow ? 134 : 212, RW = narrow ? 52 : 62, ROW = narrow ? 29 : 26, PAD = 8;
-  const W = 720, H = spec.rows.length * ROW + PAD * 2;
-  const trackX = LW + 10, trackW = W - LW - RW - 22;
-  const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, role:'img',
-    'aria-label':'Bar chart of effect sizes for instructional techniques, ordered largest to '
-      + 'smallest. Every row is a teaching move; no delivery system appears — no human '
-      + 'tutor, no pre-LLM courseware and no AI tutor. A table view follows.'});
-  spec.rows.forEach((r, i) => {
-    const y = PAD + i * ROW + ROW / 2;
-    const g = mk('g', {});
-    const lab = mk('text', {x:LW, y:y+4, 'text-anchor':'end', class:'sl',
-                            style:`font-size:${narrow ? 11 : 13}px`});
-    lab.textContent = r.label;
-    g.appendChild(lab);
-    g.appendChild(mk('rect', {x:trackX, y:y-5, width:trackW, height:10, rx:5, fill:'var(--raise)'}));
-    const w = Math.max(2, Math.abs(r.v) / spec.max * trackW);
-    if (r.v < 0){
-      // A negative effect must never read as a short positive bar. Draw it to the
-      // LEFT of the zero baseline, outlined rather than filled.
-      g.appendChild(mk('rect', {x:trackX - w - 2, y:y-5, width:w, height:10, rx:5,
-        fill:'none', stroke:'var(--bad)', 'stroke-width':1.5}));
-      g.appendChild(mk('line', {x1:trackX, y1:y-7, x2:trackX, y2:y+7,
-        stroke:'var(--bad)', 'stroke-width':1.5}));
-    } else if (r.v > 0){
-      g.appendChild(mk('rect', {x:trackX, y:y-5, width:w, height:10, rx:5,
-        fill: r.ok ? 'var(--real)' : 'var(--felt)', opacity: r.ok ? 1 : 0.74}));
-    }
-    const val = mk('text', {x:trackX + trackW + 8, y:y+4, class:'vl'});
-    val.textContent = fmt(r.v);
-    g.appendChild(val);
-    g.appendChild(mk('rect', {x:0, y:y-ROW/2, width:W, height:ROW, fill:'transparent'}));
-    // The evidence base comes before the caveat, so the reader knows how much
-    // weight the number can carry before they read what it says.
-    bind(g, `<b>${esc(r.label)}</b><i>${esc(r.cls)}</i>${esc(r.note)}`);
-    svg.appendChild(g);
-  });
-  host.replaceChildren(svg);
-}
-
-function renderSlope(host, spec){
-  const narrow = innerWidth < 640;
-  // At 390px the left gutter cannot hold a row label and a value at once — the
-  // labels were running through the numbers — so at that width the values move
-  // INSIDE the track, where 400 units sit empty, and the label gets the gutter.
-  const LW = narrow ? 118 : 184, ROW = 50, PAD = 28;
-  const W = 700, H = spec.rows.length * ROW + PAD * 2;
-  const x1 = LW + (narrow ? 18 : 62), x2 = W - (narrow ? 60 : 118);
-  // Column labels and the accessible description come from the spec: the same
-  // renderer draws two different pairs of quantities, and a hand-written count of
-  // rows in an aria-label goes stale the first time a row is added.
-  const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, role:'img', 'aria-label':spec.aria});
-  svg.appendChild(mk('line', {x1, y1:14, x2:x1, y2:H-24, class:'gl'}));
-  svg.appendChild(mk('line', {x1:x2, y1:14, x2:x2, y2:H-24, class:'gl'}));
-  const t1 = mk('text', {x:x1, y:H-6, 'text-anchor':'middle', class:'ax'}); t1.textContent = spec.left;
-  const t2 = mk('text', {x:x2, y:H-6, 'text-anchor':'middle', class:'ax'}); t2.textContent = spec.right;
-  svg.appendChild(t1); svg.appendChild(t2);
-  spec.rows.forEach((r, i) => {
-    const y = PAD + i * ROW;
-    const g = mk('g', {});
-    const lab = mk('text', {x:LW, y:y+4, 'text-anchor':'end', class:'sl',
-                            style:`font-size:${narrow ? 11 : 13}px`});
-    lab.textContent = r.label;
-    g.appendChild(lab);
-    // connector encodes PAIRING only — never magnitude. Dotted so it cannot be
-    // misread as a slope; the columns share no scale.
-    g.appendChild(mk('line', {x1, y1:y, x2, y2:y, stroke:'var(--line-2)',
-      'stroke-width':1, 'stroke-dasharray':'2 4'}));
-    g.appendChild(mk('circle', {cx:x1, cy:y, r:6, fill:'var(--felt)', class:'dot'}));
-    g.appendChild(mk('circle', {cx:x2, cy:y, r:6, fill:'var(--real)', class:'dot'}));
-    const a = mk('text', {x:narrow ? x1+13 : x1-13, y:y+4,
-      'text-anchor':narrow ? 'start' : 'end', class:'vl',
-      style:`fill:${r.invert ? 'var(--bad)' : 'var(--felt)'}`});
-    a.textContent = r.a; g.appendChild(a);
-    const b = mk('text', {x:narrow ? x2-13 : x2+13, y:y+4,
-      'text-anchor':narrow ? 'end' : 'start', class:'vl',
-      style: r.invert ? 'fill:var(--good)' : (r.bad ? 'fill:var(--bad)' : '')});
-    b.textContent = r.b; g.appendChild(b);
-    g.appendChild(mk('rect', {x:0, y:y-ROW/2, width:W, height:ROW, fill:'transparent'}));
-    bind(g, `<b>${esc(r.label)}</b><i>${esc(r.cls)}</i>${esc(r.note)}`);
-    svg.appendChild(g);
-  });
-  host.replaceChildren(svg);
-}
-
-/* generated from the same spec, so it can never drift from the chart */
-function renderTable(host, spec){
-  host.innerHTML = ['<tr><th>Teaching move</th><th>Effect</th><th>Evidence base</th><th>Note</th></tr>']
-    .concat(spec.rows.map(r =>
-      `<tr><td><b>${esc(r.label)}</b></td><td class="num">${fmt(r.v)}</td>` +
-      `<td class="num">${esc(r.cls)}</td><td>${esc(r.note)}</td></tr>`))
-    .join('');
-}
-
-function draw(){
-  renderBars(document.getElementById('bars'), LADDER);
-  renderSlope(document.getElementById('slope'), SLOPE);
-  renderSlope(document.getElementById('est'), EST);
-}
-draw();
-renderTable(document.getElementById('bartable'), LADDER);
-let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(draw, 150); });
-
-const R = document.documentElement;
-document.getElementById('tt').onclick = () => {
-  const dark = R.getAttribute('data-theme') === 'dark' ||
-    (!R.getAttribute('data-theme') && matchMedia('(prefers-color-scheme:dark)').matches);
-  R.setAttribute('data-theme', dark ? 'light' : 'dark');
-};
+const buttons=[...document.querySelectorAll('[data-filter]')];
+const caps=[...document.querySelectorAll('.cap')];
+buttons.forEach(button=>button.addEventListener('click',()=>{
+  buttons.forEach(b=>b.classList.toggle('on',b===button));
+  const kind=button.dataset.filter;
+  caps.forEach(cap=>cap.hidden=kind!=='all'&&cap.dataset.kind!==kind);
+}));
 </script>
 </body>
 </html>

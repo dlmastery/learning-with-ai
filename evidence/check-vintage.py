@@ -58,11 +58,10 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 # point in time and is deliberately NOT rewritten (see CORRECTIONS.md), so it is out of
 # scope here exactly as it is in check-corrections.py.
 #
-# docs/thesis.html and docs/deck.html ARE in scope. They are absent from
-# check-corrections.py's SURFACES, which is how the C-51 violation on thesis.html
-# survived — see VINTAGE.md worklist V15.
+# The deck and paper reading edition are in scope; both are investor- or
+# reader-facing surfaces.
 SURFACES = ["README.md", "PAPER.md", "process/CLAUDE.md", "process/AUDIT.md",
-            "docs/index.html", "docs/paper.html", "docs/thesis.html", "docs/deck.html",
+            "docs/index.html", "docs/paper.html", "docs/deck.html",
             "survey/*.md", "docs/demos/*.html"]
 # CORRECTIONS.md and evidence/VINTAGE.md are excluded: they are the ledger and the audit,
 # and their job is to quote the wrong forms.
@@ -70,10 +69,9 @@ SURFACES = ["README.md", "PAPER.md", "process/CLAUDE.md", "process/AUDIT.md",
 MIN_SURFACES = 20
 WINDOW = 400   # chars either side that may carry the class attribution
 
-# PAPER.md and docs/paper.html are ASSEMBLED from survey/*.md by build-paper.py. They are
-# scanned (omitting them is the C-36 hole) but reported separately, because fixing the
-# survey source and rebuilding clears them. Fixing them directly does not.
-GENERATED = {"PAPER.md", "docs/paper.html"}
+# docs/paper.html is rendered from PAPER.md. Fix the source and rebuild rather
+# than editing the generated page.
+GENERATED = {"docs/paper.html"}
 
 # Proximity must not cross a section boundary. Two numbers in adjacent sections are not
 # "near" each other in any sense a reader would recognise, and treating them as adjacent

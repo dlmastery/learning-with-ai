@@ -3,8 +3,8 @@
 **Purpose:** this file exists so the project survives a crash, a context reset, or a
 new session. Read this first. It is the authoritative record of what was asked.
 
-**Project:** *Learning in the New Frontier AI World* — a ~100-page standard-setting
-survey plus a reference implementation.
+**Project:** *Learning with AI* — an edited paper, a living evidence atlas and a
+reference architecture for a persistent personal learning system.
 **Repo:** `dlmastery/learning-with-ai` (**public**) · **Owner:** eranti@gmail.com / `dlmastery`
 **Started:** 2026-07-25
 
@@ -18,12 +18,12 @@ Numbered so nothing is silently dropped. `✅` planned/underway · `⏳` queued 
 | # | Requirement | Status |
 |---|---|---|
 | 1 | Create GitHub repo `learning-with-ai`, push to it | ✅ done |
-| 2 | A **huge survey paper**: "Learning in the New Frontier AI World" | ✅ underway |
-| 3 | Target ~**100 pages** | ✅ 27+ sections planned |
+| 2 | A **huge survey paper**: "Learning in the New Frontier AI World" | ✅ preserved as the Living Evidence Atlas; concise paper edited separately |
+| 3 | Target ~**100 pages** | ✅ evidence atlas exceeds this; it is no longer presented as a journal paper |
 | 4 | Build it **INCREMENTALLY — not one-go generation** | ✅ enforced: section per agent, commit per section |
-| 5 | **Then** dynamic mini-apps per chapter/section, full multimodal | ⏳ Phase 3 |
+| 5 | **Then** dynamic mini-apps per chapter/section, full multimodal | ⏳ architecture specified; generation system unbuilt |
 | 6 | Voice: elite teacher + elite deep researcher, Karpathy-tier | ✅ editorial standard |
-| 7 | Leave no stone unturned | ✅ 27 sections |
+| 7 | Leave no stone unturned | ✅ 54 raw reports audited; open implementation gaps are explicit |
 | 8 | Appropriate examples + citations throughout | ✅ mandatory evidence labels |
 | 9 | Generic across **all fields** | ✅ |
 | 10 | Grounded in **learning science + edtech science** | ✅ B1 is the floor |
@@ -67,7 +67,7 @@ Numbered so nothing is silently dropped. `✅` planned/underway · `⏳` queued 
 ### Architecture vision (added late, governs G2)
 | # | Requirement | Section |
 |---|---|---|
-| 39 | **University-in-a-box / school-in-a-box**, personalized per student | G2 |
+| 39 | **Persistent personal learning system**, personalized per learner | G2 |
 | 40 | **Agent village** — instead of humans, agents | G2 |
 | 41 | Each agent **expert, certified, amazing** | G2 ⚠️ "certified" must mean *passed a stated eval*, never *prompted to be an expert* |
 | 42 | Works for **SELPA students AND regular students** | H1 |
@@ -91,7 +91,8 @@ Evidence labels on every claim: `MEASURED-RCT` · `MEASURED-META` · `MEASURED-B
 `OBSERVED` · `VENDOR` · `DEMO` · `INFERENCE`.
 
 1. A `VENDOR` claim may **never** be restated as a finding.
-2. Every section must contain ≥1 documented **negative or null** result.
+2. Material negative and null results receive equal prominence. There is no
+   per-section quota; forced nulls turn evidence discipline into a prose template.
 3. Unverifiable claims are reported as unverifiable, never laundered or omitted.
 4. Effect sizes over adjectives.
 
@@ -128,13 +129,14 @@ eval suite, a grounding tier, and a scope boundary.
 ## 4. Repo layout
 
 ```
-PRD.md          research plan, editorial standard, 27-section outline
-CLAUDE.md       this file — requirements ledger + resume instructions
-survey/         the paper, one file per section (written as evidence lands)
-evidence/       bibliography.json, claim ledger
+PAPER.md        edited manuscript
+ATLAS.md        generated Living Evidence Atlas
+TASK.md         owner requests and truthful status
+process/        requirements, assumptions, traceability and historical audits
+survey/         thematic source chapters for the atlas build
+evidence/       build, validation, reviews and experiments
 research/raw/   verbatim agent reports, one per section — THE SOURCE OF TRUTH
-apps/           dynamic per-concept mini-apps (Phase 3)
-examples/       worked zero-to-hero artifacts
+docs/           dashboard, deck, paper, atlas and mechanism gallery
 ```
 
 Agents write to `research/raw/<SECTION-ID>-<slug>.md` with YAML frontmatter
@@ -145,25 +147,22 @@ Agents write to `research/raw/<SECTION-ID>-<slug>.md` with YAML frontmatter
 
 ## 5. Environment constraints
 
-- **WebSearch budget EXHAUSTED (200/200)** for this session. Agents must use
-  `curl` against arXiv / Semantic Scholar / OpenAlex / Crossref / ERIC / PubMed
-  APIs, plus `WebFetch` on known URLs and `gh api` (authenticated, 5000/hr).
-  Calling WebSearch fails. Unreachable sources are flagged, never guessed.
-- **Concurrent subagent cap: 20.** Raise with
-  `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS=40` to run remaining waves at full width.
-- `gh` authenticated as `dlmastery`; git credential helper configured.
+Do not encode session-specific quotas, credentials or concurrency limits here.
+Unreachable sources are flagged, never guessed. Raw reports remain immutable
+research records; corrections propagate through the ledger and reader-facing
+artifacts.
 
 ---
 
 ## 6. Resume instructions after a crash
 
-1. Read `PRD.md` §6 for the section plan.
-2. `ls research/raw/` — every file there is a **completed** section's research.
-3. Any section in the PRD without a matching `research/raw/` file needs its agent
-   re-launched. Agent prompts follow the pattern in §7 below.
-4. Draft `survey/<section>.md` from each completed raw report; commit per section.
-5. Never regenerate a raw report that already exists — append or supersede with a
-   dated new file instead.
+1. Read `TASK.md` and `process/TASK-TRACEABILITY.md`.
+2. Treat `PAPER.md` as the edited manuscript and `ATLAS.md` as generated output.
+3. Never regenerate a raw report that already exists; append or supersede with a
+   dated new file.
+4. Render the paper with `evidence/build-manuscript.py`.
+5. Rebuild the atlas with `evidence/build-paper.py --html`.
+6. Run the validation commands listed in `README.md`.
 
 ## 7. Agent prompt template
 
@@ -175,31 +174,18 @@ request for a 400–500 word executive summary as the final message.
 
 ---
 
-## 8. Status — 2026-07-27
+## 8. Status — 2026-07-30
 
-**Read `AUDIT.md` first.** It is the requirements audit and it supersedes the
-priority list that used to live here.
+The authoritative current status is
+[`TASK-TRACEABILITY.md`](TASK-TRACEABILITY.md). In summary:
 
-### The rule this project now runs on
-> **Progress is reported in survey words, never in report count.** Research is the
-> input; prose is the deliverable. At least one survey section per session, before
-> any other work.
-
-### Current state
-- **`survey/` — 9 sections, ~15,000 words** (target ~45,000). This is the deliverable.
-- **`research/raw/` — 31 reports, ~280k words.** Input, complete for every planned
-  section except the demo-driven ones.
-- `docs/` — dashboard (stale; needs 31-report refresh + demo links + charts moved
-  off hand-written SVG, which C1 rates Tier D) and `docs/demos/` (gallery shell +
-  shared `demo.css`; 13 demo pages unbuilt).
-
-### Sections still to write from reports already in hand
-A1 textbooks · A2 animation · A4 live-multimodal · A5 world-models · B1 learning
-science · B2 efficacy scoreboard · C1 illustration · C2 psychometrics · D1 frontier
-quarter · D2 portfolio · D3 LearnLM · E1/E2 edtech landscape · F1 assessment ·
-F2 beyond-the-tutor · F5 learner model · F6 motivation · F8 safety · F9 open
-problems · G1 grounding · G2 agent village · G3 comparable artifacts · I1
-pedagogical systems · I2 global traditions
+- 54 raw research reports and 47 atlas chapters are preserved.
+- `PAPER.md` is a separately edited design-oriented evidence synthesis.
+- The dashboard and pitch deck were rebuilt from the complete product thesis.
+- The scripted end-to-end walkthrough and stale thesis page were removed.
+- Mechanism demos remain scoped prototypes.
+- The persistent multimodal personal faculty is specified and unbuilt.
+- Founder identity, authorship, first wedge and financing remain owner decisions.
 
 ### Corrections on the record (never silently re-edit; add to this list)
 Sierra Leone unadjusted +0.216 n.s. · "restraint removes harm, does not add
@@ -364,6 +350,7 @@ Either the generator is the source of truth and nobody edits its output, or the
 output is the source of truth and the generator is retired. Holding both is the
 failure. This one is retired behind a guard that refuses to run and says why.
 
-The same test applies to `.gen-gallery.py` and `evidence/build-paper.py`: both are
-live generators, and their outputs — the gallery cards, `PAPER.md`, `docs/paper.html`
-— must never be hand-edited. Edit the data list or the section file instead.
+The same test applies to `.gen-gallery.py`, `evidence/build-manuscript.py` and
+`evidence/build-paper.py`. Their generated outputs are the gallery cards,
+`docs/paper.html`, `ATLAS.md` and `docs/atlas.html`. Edit `PAPER.md`, the data list
+or the relevant survey chapter instead of editing generated output.

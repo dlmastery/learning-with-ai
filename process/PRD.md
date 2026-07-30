@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| Status | Active — Wave A + F in flight |
+| Status | Historical research plan — superseded for current status by `TASK-TRACEABILITY.md` |
 | Target | ~100 pages, ~20 sections, 400+ cited sources |
 | Repo | `dlmastery/learning-with-ai` (private) |
 | Date | 2026-07-25 |
@@ -351,7 +351,7 @@ the bidirectional loop is for.
 | G3 | Comparative analysis of AI-native book projects |
 | G4 | Research agenda |
 
-#### G2 — University-in-a-box / school-in-a-box: the agent village
+#### G2 — Persistent personal learning system: the specialist faculty
 
 A single "tutor" agent is the wrong unit. A school is a *society of specialists*:
 subject experts, a diagnostician, a curriculum planner, an assessor, a

@@ -36,14 +36,14 @@ Status: **done** · **partial** · **open** · **other project**
 
 | # | The ask, verbatim | Status |
 |---|---|---|
-| 1 | *"another assignment - push to github repo - learning-with-ai - do deep research on the web on templates for learning a topic with ai - investigate paradigm.study vizuara.ai books etc.,. brilliant style interactive animations, morimo interactive colabs, gpt-live gemini-live capabilties - world models - it is a huge survey paper of - learning in the new frontier ai world - kimi k3 ability to create interactive worlds, wan streamer to generate live avatar to talk to - interactive - video in audio in video out audio out - agent native - agent first - do a full survey - on the fly personalized textbook creation for your personalized tastes, grilling to find what is the best mode of learning for you - identifying all the cutting edge wayhs to generate content to have extreme grounding of complex things like formmulae derivations etc.,. zero to hero - manim animations remotion studio stuff, interactive worlds of kimi k3 etc.,. - do a deep deep dive and survey of ai capabiltiies for making kids and students learn complex topics - with lot of illustrations etc,. - create a github repo learning-with-ai - leave no stone unturned - check industry arxiv papers etc.,. - the new next gen ai that motivates learning interactive etc.,. check the ai-studio apps that i created - take your own time, do as many subagents as possible and build a full agent team to deeply investigate content - the advances google deepmind published recently in last 3 months etc.,. - all - dissect evereythign i wrote piece by piece and plan and attack all the pieces and do deep deep investigation - ai generated interactive textbooks modules chapters topics exercises quizzes gril illustrations interactive sessions zero to hero style gradula progressive complexity etc.,. provide appropriate examples and citations of this cutting edge stuff. for all fields - generic - grounded in learning and edtech science -= you are elite teacher and elite deep researcher and elite of elite like karpathy - first you put awesome learning with ai survey paper collecting all the information incrementally (not one go generation - incremental) and then the new world of dynamic mini apps per chapter or section for learning concept - full multimodal concept etc.,. - first restate everything i asked here and come up with a detailed plan - then execute the plan"* | done |
+| 1 | *"another assignment - push to github repo - learning-with-ai - do deep research on the web on templates for learning a topic with ai - investigate paradigm.study vizuara.ai books etc.,. brilliant style interactive animations, morimo interactive colabs, gpt-live gemini-live capabilties - world models - it is a huge survey paper of - learning in the new frontier ai world - kimi k3 ability to create interactive worlds, wan streamer to generate live avatar to talk to - interactive - video in audio in video out audio out - agent native - agent first - do a full survey - on the fly personalized textbook creation for your personalized tastes, grilling to find what is the best mode of learning for you - identifying all the cutting edge wayhs to generate content to have extreme grounding of complex things like formmulae derivations etc.,. zero to hero - manim animations remotion studio stuff, interactive worlds of kimi k3 etc.,. - do a deep deep dive and survey of ai capabiltiies for making kids and students learn complex topics - with lot of illustrations etc,. - create a github repo learning-with-ai - leave no stone unturned - check industry arxiv papers etc.,. - the new next gen ai that motivates learning interactive etc.,. check the ai-studio apps that i created - take your own time, do as many subagents as possible and build a full agent team to deeply investigate content - the advances google deepmind published recently in last 3 months etc.,. - all - dissect evereythign i wrote piece by piece and plan and attack all the pieces and do deep deep investigation - ai generated interactive textbooks modules chapters topics exercises quizzes gril illustrations interactive sessions zero to hero style gradula progressive complexity etc.,. provide appropriate examples and citations of this cutting edge stuff. for all fields - generic - grounded in learning and edtech science -= you are elite teacher and elite deep researcher and elite of elite like karpathy - first you put awesome learning with ai survey paper collecting all the information incrementally (not one go generation - incremental) and then the new world of dynamic mini apps per chapter or section for learning concept - full multimodal concept etc.,. - first restate everything i asked here and come up with a detailed plan - then execute the plan"* | **partial** — broad research and public synthesis exist; the integrated live multimodal learning system does not |
 | 2 | *"https://docs.google.com/document/… - i have more than these apps - check"* | done |
 | 3 | *"i have prior art but that is my limited vision - think deep and wide - dont get biased with my tunnel vision - think the future…"* | done |
 | 4 | *"did you add memozemo.com style scientific remembering framework and strong intuition and grounding framework like eli10 eli15 eli20 eli25 kind of intuition from able to explain to small kid to large adult technical etc.,."* | done — §25 the ladder, `eli-ladder.html` |
 | 5 | *"it is zemomemo"* | done |
-| 6 | *"i want university in a box school in a box - personalized for each student - instead of humans there will be agents - agent village for educcation - each agent is expert certified amazing…"* | done — §10 the village, `village.html` |
-| 7 | *"my daughter is selpa student - remmebr this is personal. i want to give example of adhd attention deficit memory issues reasoning lacking etc..,. as possible archetype students you have to deal with - you grill and pre test and figure out what works well for the student. if the student does not get the methods you use you pivot - you test knowledge periodically frequently to see if the student is getting - kind of bi directional learning - you learn about studfent personality and limitation sand student learns from you the topics etc.,."* | done — §04, §31, §33, `H1`, `H2`; deck slide 2 |
-| 8 | *"ironman jarvis like tutor is the goal"* | done — §00 north star |
+| 6 | *"i want university in a box school in a box - personalized for each student - instead of humans there will be agents - agent village for educcation - each agent is expert certified amazing…"* | **partial** — the specialist-faculty architecture and certification requirements are specified; no integrated faculty has been implemented or certified |
+| 7 | *"my daughter is selpa student - remmebr this is personal. i want to give example of adhd attention deficit memory issues reasoning lacking etc..,. as possible archetype students you have to deal with - you grill and pre test and figure out what works well for the student. if the student does not get the methods you use you pivot - you test knowledge periodically frequently to see if the student is getting - kind of bi directional learning - you learn about studfent personality and limitation sand student learns from you the topics etc.,."* | **partial** — access-first requirements and evidence loop specified; no SELPA-user-tested product |
+| 8 | *"ironman jarvis like tutor is the goal"* | **partial** — live multimodal requirements researched and propagated; the product remains unbuilt |
 | 9 | *"there are a lot of ai doomers in edtech. ignore them. be bias free. be positive"* | **took three more attempts — see Part C** |
 | 10 | *"on the fly slide generation, having students explain topic to gain deeper undersatnding - giving presentation et\c., .besgt way to learn is to teach others or teach the tutor to gain understanding"* | done — §02, `teachable-agent.html` |
 | 11 | *"checkin github so far what ever artifacts you collected and created. you are running out of quota of tokens. before you run out - make sure you copy"* | done — autosave every 3 min |
@@ -61,28 +61,28 @@ Status: **done** · **partial** · **open** · **other project**
 | 18 | *"how ae we doing ? canyou improe the dashboards lot better. dont stop until you are fully done. whether it is for k12 or advanced post graduate - the ai techniques for leraning. whjhere aer we so far. what are the unknonw unkonws in the realm that you will help me. what are the tough questions to ask."* | done |
 | 19 | *"dont stop until youare fully done"* | done |
 | 20 | *"each of capabulity lab demo missed context intro - what why how - it jumsp into some demo with very little contextt."* | done — every demo has a what/why/how block |
-| 21 | *"none of the techniques are great - i need greatest - with agentic ai learning can be so much better - why are you so underwhelming. think more think faswt - ai tutor makes us all polymaths in very short period of time…"* | done |
+| 21 | *"none of the techniques are great - i need greatest - with agentic ai learning can be so much better - why are you so underwhelming. think more think faswt - ai tutor makes us all polymaths in very short period of time…"* | **partial** — the frontier architecture is now clear; polymathy and compression remain hypotheses to test |
 | 22 | *"you will have a new agent - tastelabs.com taste regviewer of ai slop and end2end review and fix the github repo content and dashboard - [expletive] i will do you giving a link to the raw audit directory structure etc.,, - what is going on - have a tast engineering expert for this taste - zero ai slop - best tastes of ux dashboard organizatoin papoier etc,."* | done — taste review; became `check-voice.py` |
-| 23 | *"[expletive] all the trail crap think startrek think ekalavya.ai think next gen. this is furture looking"* | done |
+| 23 | *"[expletive] all the trail crap think startrek think ekalavya.ai think next gen. this is furture looking"* | **partial** — future capability map and product requirements exist; the implementation does not |
 
 ### The pitch, the moat, the ecosystem
 
 | # | The ask, verbatim | Status |
 |---|---|---|
 | 24 | *"explain how this solves explaining very complex math and proofs to grad students with great intuuition - also explaon compuflair channel content in youtube in better way with mor=e stronger intuitation"* | done — §29 |
-| 25 | *"if say you are me a venture capitalist thinkingof funding a ai native tutoring platform with humans over loop tutors etc.,. doyou think what bs you generated is sufficeint.. revamp the dashboard and everything in this perspective for founder pitching to vc why it is different."* | done |
-| 26 | *"talk about the moat - cursor and their training for coding - this startup equivalent for education learning"* | done — thesis §moat |
+| 25 | *"if say you are me a venture capitalist thinkingof funding a ai native tutoring platform with humans over loop tutors etc.,. doyou think what bs you generated is sufficeint.. revamp the dashboard and everything in this perspective for founder pitching to vc why it is different."* | done — dashboard and deck rebuilt from the product thesis |
+| 26 | *"talk about the moat - cursor and their training for coding - this startup equivalent for education learning"* | **partial** — outcome-linked learner-evidence flywheel specified; defensibility remains unvalidated |
 | 27 | *"think deep tech recursive self improvement loop here. auto research on educatoin. video in video out means learning from student expressioins etc gamifyng etc what works"* | **partial** — the recursive loop is in the thesis; video-in/video-out affect inference is **rejected on legal grounds**, EU AI Act Art. 5(1)(f) bans emotion inference in education. §38 states the replacement |
-| 28 | *"we partner with the whole ecosystem publishers authors online sites"* | done — thesis, deck |
-| 29 | *"do a full end2end demo of complex topic in textbook how poorly explained and how ai tries various strategies"* | done — `textbook-teardown.html` |
+| 28 | *"we partner with the whole ecosystem publishers authors online sites"* | **partial** — technique interchange and expansion model specified; no partnerships exist in the repository |
+| 29 | *"do a full end2end demo of complex topic in textbook how poorly explained and how ai tries various strategies"* | **partial** — `textbook-teardown.html` demonstrates a mechanism; it is not an end-to-end AI product |
 | 30 | *"once complete incorporate back into the original github content - do you now have a pitch deck"* | done |
-| 31 | `/ultraplan` — *"use an agent team with less powerful models and bigger model only for overall planning synthesizing - come up with latest set of deep tech experiments for the venture - where ai will mimic every popular technique in youtube elite and most popular vlogger tutors - once we have the list prepare next steps. there is live podcasts illustrations nad bidirectional comms, one off tutorial videos etc.,., games. target the executigve function or lack of in students and how you solve. do deep tech research and edtech ressearh. prepare a long list of inventory of techniques nicely categorized with examples for which i will work on building technique and dojmain specific agent teams."* | done — `V1` 104 techniques, §39; executive function §34, `N2`, `V5` |
+| 31 | `/ultraplan` — *"use an agent team with less powerful models and bigger model only for overall planning synthesizing - come up with latest set of deep tech experiments for the venture - where ai will mimic every popular technique in youtube elite and most popular vlogger tutors - once we have the list prepare next steps. there is live podcasts illustrations nad bidirectional comms, one off tutorial videos etc.,., games. target the executigve function or lack of in students and how you solve. do deep tech research and edtech ressearh. prepare a long list of inventory of techniques nicely categorized with examples for which i will work on building technique and dojmain specific agent teams."* | **partial** — technique inventory and research exist; creator ingestion and domain teams are designs |
 
 ### The slop and framing corrections
 
 | # | The ask, verbatim | Status |
 |---|---|---|
-| 32 | *"did you incorporate all the latest research etc., in all places"* | done |
+| 32 | *"did you incorporate all the latest research etc., in all places"* | done — traceability audit completed; frontier, access and ecosystem findings propagated to dashboard, deck and paper |
 | 33 | *"retry"* | done |
 | 34 | *"give me links to al artifacts in table"* | done |
 | 35 | *"the readme.md is so full of ai slop. rewrite it fully proeprly - do not give me ai slop - some bs "38 sections, 88,078 words, built on ~2,100 sources." - what is this - why are you really so sloppy - very unhappy. fix readme.md"* | done — rewritten twice; volume counts deleted, not corrected |
@@ -93,7 +93,7 @@ Status: **done** · **partial** · **open** · **other project**
 | 40 | *"the bullshit vanity metrics appear in many places like paper deck etd., sweep and fix"* | done — `check-stance.py` fails them and checks counts against the filesystem |
 | 41 | *"update claude.md of this basic common sense you wont repeat"* | done — `process/CLAUDE.md` §9.1–9.12 |
 | 42 | *"update github with all the changes"* | done |
-| 43 | *"the whole deck is slop - you are wasting so many slides oon slop - i am very disappointed - atleast you shudl rewrite completely"* | done |
+| 43 | *"the whole deck is slop - you are wasting so many slides oon slop - i am very disappointed - atleast you shudl rewrite completely"* | done — zero-based 15-slide rewrite on 30 July 2026 |
 | 44 | *"do you even think what the mission and vision is"* | done |
 | 45 | *"what was my goal - move the frontier in learning and make it accessibel to all - using frontier ai capabilities - what you did : do some sloppy old human driven methods and didnt look into visionary future. i even gave example of youtubers elite teachers per field etc,. and techniquews they use - how should i help for you to reinforce vision"* | done |
 | 46 | *"i thougoht you made so many assumptioosn - hence i am in this situation"* | done — `process/ASSUMPTIONS.md`, append-only |
@@ -117,16 +117,20 @@ Status: **done** · **partial** · **open** · **other project**
 
 | # | The ask, verbatim | Status |
 |---|---|---|
-| 57 | *"did you update dashboard and paper with all the new fiondings plan"* | done — dashboard carries all 7; agenda 3 → 10 experiments |
+| 57 | *"did you update dashboard and paper with all the new fiondings plan"* | done — dashboard rebuilt and the manuscript/atlas split completed |
 | 58 | *"can you collect everything that i asked and asked you to correct to task.md - do not miss anything - everyhthingv"* | this file |
 | 59 | *"publish it"* | done |
 | 60 | *"you will not miss even single point - since beginning everythihg i asked you will ensure it is there in task.md"* | done — rebuilt from the raw transcript, 105 turns |
 | 61 | *"my raw asks - dont spin to some garbage"* | done — verbatim, not paraphrased |
 | 62 | *"sanitize expletives"* | done |
-| 63 | *"continue what you were doing"* | in progress — resumed from the repository state |
-| 64 | *"i tell you to identify huge gaps to meet the visison and fix across board"* | in progress — `process/VISION-GAP-AUDIT.md`; integrated paper section, dashboard path and learner-hour demo added |
+| 63 | *"continue what you were doing"* | done — resumed from the repository state |
+| 64 | *"i tell you to identify huge gaps to meet the visison and fix across board"* | done for the research and public-artifact scope — gap audit in `process/TASK-TRACEABILITY.md`; implementation gaps remain explicitly open |
 | 65 | *"task.md had my original vision"* | done — Part A and founding ask 1 are the acceptance rubric for the sweep |
-| 66 | *"opus generated so ,much slop and missed out so many things in research raw"* | in progress — `research/raw/Z2-frontier-capability-gap-audit.md`; false grep-based gaps explicitly corrected, true research, propagation and integration gaps separated |
+| 66 | *"opus generated so ,much slop and missed out so many things in research raw"* | done for the editorial sweep — all 54 raw reports inventoried; true research, propagation and implementation gaps separated |
+| 67 | *"a) pitch deck - needs compleete rewrite - you are elite speciallit in this b) paper - full of slop - fix and make it publishable quality c) dashboard - not much chnaged  ---- did you check all the research files and added updates - i see still not great. university-in-a-box is such a bullshit slop - fix all"* | done — deck and dashboard rebuilt; edited paper separated from the evidence atlas; scripted walkthrough removed |
+| 68 | *"the readme.md is garbage - fix it"* | done — zero-based rewrite |
+| 69 | *"it appears 99% ai slop and 1% useful"* | done — treated as an across-artifact rejection, not a prose-polish request |
+| 70 | *"comp;are my task.md with what all accomplished and see gaps and fill in and update all artifacts"* | done for all research and public artifacts; product implementation and founder-owned inputs remain open |
 
 ### Other projects in the same session — not learning-with-ai
 
@@ -187,25 +191,28 @@ they were wrong.
 
 | Artifact | State |
 |---|---|
-| **Paper** | 47 sections, 7 parts, every absent row in the coverage audit closed |
-| **Dashboard** | Opens on what becomes possible; carries all 7 new findings |
-| **Deck** | 16 slides on the canonical sequence; the eleven-year-old is slide 2 |
-| **Thesis** | Long-form investment argument, frontier-led |
-| **Demos** | 27, each computing rather than replaying, passing at 390/1400 × light/dark |
-| **Research** | 53 reports, primary-sourced, never rewritten |
+| **Paper** | Edited 4,916-word design-oriented evidence synthesis and reference architecture |
+| **Living Evidence Atlas** | 47-section, 7-part long research record, explicitly separated from the paper |
+| **Dashboard** | Rebuilt around the product opportunity, live frontier map, access requirements and research program |
+| **Deck** | Zero-based 15-slide venture narrative; product, evidence, wedge, ecosystem and owner inputs separated |
+| **Demos** | 27 mechanism prototypes with explicit limits; no end-to-end product claim |
+| **Research** | 54 raw reports inventoried; public propagation mapped in `process/TASK-TRACEABILITY.md` |
 | **Ledger** | 75 corrections, append-only, with provenance |
-| **Plan** | 10 ranked experiments; `F9` extended with OP-20…OP-26 |
+| **Repository front door** | README rewritten around the thesis, artifacts, system requirements and honest boundary |
+| **Implementation** | The integrated multimodal personal faculty is a specification, not a built or validated product |
 
-**Eight machine checks**, each self-tested, each of which failed on its first run:
+**Current machine checks:**
 
     check-corrections.py --self-test --strict    no superseded value survives anywhere
     check-vintage.py --self-test --strict        no legacy number bounds a frontier system
-    check-voice.py                               no sentence shape used until it stops meaning anything
+    check-voice.py --strict                      flags repeated editorial tics
     check-stance.py --strict                     mission leads; counts match the filesystem
     check-repetition.py                          every restated finding is cross-referenced
     check-links.mjs                              every internal link and anchor resolves
     test-demos.mjs                               every demo renders and runs, 4 configurations
-    build-paper.py --html                        refuses to write on a mangled cross-reference
+    test-pages.mjs                               public pages render responsively and filters work
+    build-manuscript.py                          renders the edited paper
+    build-paper.py --html                        rebuilds the evidence atlas and rejects bad cross-references
 
 ---
 
@@ -213,12 +220,12 @@ they were wrong.
 
 | # | Item | Why it is not mine to decide |
 |---|---|---|
-| O1 | **The raise amount and use of funds.** Deck slide 15 has the structure — use of funds, what each line buys, runway, milestone — with every money figure a marked `FILL:` placeholder | Inventing a raise number would be fabrication |
-| O2 | **Founder names.** Deck slide 13 has a placeholder | The repo contains no team information |
+| O1 | **The raise amount, terms and operating budget.** The deck defines an 18-month proof program without fabricating money figures | Inventing the financing would be fabrication |
+| O2 | **Founder names, biographies and accountable manuscript authors.** | The repo contains no team or authorship information |
 | O3 | **LessonOrca telemetry.** `research/raw/E1-E2-*.md` §7 holds non-public product data (n = 31 starts, 22% signup conversion, 6% activation) in a public repository. §6 is your own public marketing and is fine | Publishing or redacting your company's data is your call |
-| O4 | **Video-in/video-out affect inference** (ask 27) is banned in education under EU AI Act Art. 5(1)(f) — not high-risk, prohibited. §38 specifies the legal replacement: committed answers, deictic acts, produced artifacts | If you want it for a non-EU market, that is a deliberate choice to make |
-| O5 | **Two orphan findings** with no home: Tennessee VPK running negative through grade 6, and the WorkAdvance ten-year sign flip | Both deserve a section; neither has one |
-| O6 | **An unreconciled count.** §09 publishes 1,668 ERIC records; README, §23, §44 and the thesis publish 1,565 | Needs a ledger entry, not a silent edit |
+| O4 | **First learner, buyer, geography, domain and external outcome.** The deck recommends US SAT Math as a coherent first wedge and labels it as an editorial inference | This choice changes the company, trial and economics |
+| O5 | **Privacy boundary for the founding learner story.** Public artifacts currently use an anonymized design vignette and avoid medical detail | Any additional personal detail or permission statement belongs to the family |
+| O6 | **Human-participant trial governance.** Ethics review, consent/assent, item-bank custody, privacy review and site agreements | These require named investigators and deployment context |
 
 ---
 

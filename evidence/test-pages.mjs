@@ -1,6 +1,15 @@
 import { chromium } from 'playwright';
-const root='file:///home/eranti/learning-with-ai/docs/';
-const pages=[['dashboard','index.html'],['gallery','demos/index.html']];
+import { fileURLToPath, pathToFileURL } from 'url';
+import { dirname, join } from 'path';
+const here=dirname(fileURLToPath(import.meta.url));
+const root=pathToFileURL(join(here,'..','docs')+'/').href;
+const pages=[
+  ['dashboard','index.html'],
+  ['deck','deck.html'],
+  ['paper','paper.html'],
+  ['atlas','atlas.html'],
+  ['gallery','demos/index.html']
+];
 const sizes=[['mobile',390,844],['tablet',820,1180],['desktop',1440,900]];
 const b=await chromium.launch();
 let fail=0;
@@ -16,18 +25,22 @@ for(const [name,path] of pages){
     // horizontal overflow check
     const ov=await p.evaluate(()=>({
       docW:document.documentElement.scrollWidth, winW:window.innerWidth,
-      bars:document.querySelectorAll('#bars svg g').length,
-      slope:document.querySelectorAll('#slope svg g').length,
-      tblRows:document.querySelectorAll('#bartable tr').length,
+      capabilities:document.querySelectorAll('.cap').length,
+      moments:document.querySelectorAll('.moment').length,
+      experiments:document.querySelectorAll('.experiment').length,
+      slides:document.querySelectorAll('.slide').length,
+      headings:document.querySelectorAll('h1').length,
       title:document.title
     }));
     const scrolls = ov.docW > ov.winW+1;
     const bad = errs.length||cons.length||scrolls;
     if(bad)fail++;
-    console.log(`${bad?'FAIL':'ok  '} ${name}/${sn} ${w}x${h} status=${resp.status()} docW=${ov.docW} winW=${ov.winW}${scrolls?' <-- H-SCROLL':''} bars=${ov.bars} slope=${ov.slope} tableRows=${ov.tblRows}`);
+    const structural=(name==='deck'&&ov.slides!==15)||(name==='paper'&&ov.headings!==1);
+    if(structural&&!bad)fail++;
+    console.log(`${bad||structural?'FAIL':'ok  '} ${name}/${sn} ${w}x${h} status=${resp.status()} docW=${ov.docW} winW=${ov.winW}${scrolls?' <-- H-SCROLL':''} capabilities=${ov.capabilities} moments=${ov.moments} experiments=${ov.experiments} slides=${ov.slides} h1=${ov.headings}`);
     if(errs.length)console.log('   pageerror:',errs.join(' | '));
     if(cons.length)console.log('   console:',cons.join(' | '));
-    if(sn==='desktop'||sn==='mobile')
+    if(name!=='atlas'&&(sn==='desktop'||sn==='mobile'))
       await p.screenshot({path:`${name}-${sn}.png`,fullPage:sn==='desktop'});
     await ctx.close();
   }
@@ -36,9 +49,13 @@ for(const [name,path] of pages){
 const ctx=await b.newContext({viewport:{width:1440,height:900},colorScheme:'dark',deviceScaleFactor:2});
 const p=await ctx.newPage(); await p.goto(root+'index.html',{waitUntil:'networkidle'});
 await p.waitForTimeout(300); await p.screenshot({path:'dashboard-dark.png',fullPage:false});
-// tooltip interaction
-await p.hover('#bars svg g:nth-child(3)'); await p.waitForTimeout(200);
-const tipOpacity=await p.evaluate(()=>getComputedStyle(document.getElementById('tip')).opacity);
-console.log(tipOpacity>'0'?'ok   tooltip fires on hover':'FAIL tooltip did not fire');
+// capability filter interaction
+await p.click('[data-filter="generation"]'); await p.waitForTimeout(100);
+const filtered=await p.evaluate(()=>({
+  visible:[...document.querySelectorAll('.cap')].filter(x=>!x.hidden).length,
+  wrong:[...document.querySelectorAll('.cap')].filter(x=>!x.hidden&&x.dataset.kind!=='generation').length
+}));
+if(filtered.visible===5&&filtered.wrong===0) console.log('ok   capability filter shows the five generation rows');
+else { console.log(`FAIL capability filter visible=${filtered.visible} wrong=${filtered.wrong}`); fail++; }
 await b.close();
 console.log(fail?`\n${fail} FAILING CONFIGURATIONS`:'\nALL CONFIGURATIONS PASS');

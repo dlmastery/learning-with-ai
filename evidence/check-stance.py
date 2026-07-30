@@ -27,7 +27,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 # Reader-facing surfaces. research/raw/ is deliberately exempt: those are audits by
 # design and are not what a reader meets first.
-FRONT = ["README.md", "docs/index.html", "docs/deck.html", "docs/thesis.html"]
+FRONT = ["README.md", "docs/index.html", "docs/deck.html", "docs/paper.html"]
 PROSE = ["survey/*.md"]
 
 # Heading shapes that announce an audit. Each was found in this repo.
