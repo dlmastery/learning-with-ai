@@ -230,7 +230,7 @@ fixed before the session started.</p>
 <div class="scroll">
 <table>
   <thead><tr><th>Learner</th><th class="num">Wheel-spin, actual</th>
-    <th class="num">Interrupted at your θ</th><th class="num">Missed at your θ</th>
+    <th class="num">Productive struggle interrupted</th><th class="num">Wheel-spin left running</th>
     <th class="num">Cost-optimal θ</th></tr></thead>
   <tbody id="qt"></tbody>
 </table>
@@ -245,34 +245,32 @@ fixed before the session started.</p>
   <thead><tr><th>Component</th><th>Status on this page</th><th>Who pays if it is wrong</th></tr></thead>
   <tbody>
     <tr><td><b>The detector</b></td>
-      <td>Real. A logistic sum over five declared features with published weights, smoothed, run on
-      every window. You can read every coefficient in §2.</td>
-      <td>Nobody yet — the weights are a design proposal and no trial has fitted them. In
-      production, a badly fitted weight on <code>repeat_error_run</code> is the difference between
-      the two failure modes.</td></tr>
+      <td>Real. A logistic sum over five declared features, smoothed, run on every window; every
+      coefficient is in §2.</td>
+      <td>Nobody yet — the weights are a design proposal no trial has fitted. In production a bad
+      weight on <code>repeat_error_run</code> is the difference between the two failure modes.</td></tr>
     <tr><td><b>The trade-off</b></td>
-      <td>Real, and the shape is the finding: swept exhaustively, both curves counted at every
-      threshold. There is no setting where both are zero.</td>
-      <td>The learner, either way. This is the honest structure of the problem and it does not go
-      away with a better model.</td></tr>
+      <td>Real, and its shape is the finding: swept exhaustively, both curves counted at every
+      threshold. No setting sends both to zero.</td>
+      <td>The learner, either way. This is the structure of the problem and a better model does not
+      remove it.</td></tr>
     <tr><td><b>The learner</b></td>
-      <td class="mut">Simulated, from a seeded generator. The 50% / 10% wheel-spin rates are
-      measured; everything about how those states <em>look</em> in the signal stream is assumed.</td>
-      <td>This page. If real productive struggle and real wheel-spinning are less separable than
-      the generator makes them, every number in §3 is optimistic.</td></tr>
+      <td class="mut">Simulated from a seeded generator. The 50% / 10% rates are measured;
+      how those states <em>look</em> in the signal stream is assumed.</td>
+      <td>This page. If the two states are less separable in reality, every number in §3 is
+      optimistic.</td></tr>
     <tr><td><b>The latency-only comparison</b></td>
-      <td class="mut">Honest but circular. It fails here because the generator gives productive
-      struggle the <em>longer</em> latencies — which is what the observational literature reports,
-      and which this page assumed rather than showed.</td>
-      <td>Anyone who reads it as evidence. It is a demonstration that a single-signal detector
-      <em>can</em> invert, not proof that it does.</td></tr>
+      <td class="mut">Honest but circular — it fails here because the generator gives productive
+      struggle the <em>longer</em> pauses, which this page assumed rather than showed.</td>
+      <td>Anyone reading it as evidence. It shows a single-signal detector <em>can</em> invert, not
+      that it does.</td></tr>
     <tr><td><b>The premise — that arriving unasked helps</b></td>
       <td class="mut">Not shown, and there is a null against the adjacent claim. Carnegie Mellon
-      built help-seeking support; help-seeking improved durably, months after the support was
-      removed. <b>Domain learning did not move.</b></td>
-      <td>Everyone, including this design. The honest reading is that help-seeking was a
-      <em>necessary</em> condition that turned out not to be <em>sufficient</em>. Supplying it
-      removes a blocker; it does not teach.</td></tr>
+      built help-seeking support; help-seeking improved durably. <b>Domain learning did not
+      move.</b></td>
+      <td>Everyone, including this design. Help-seeking was a <em>necessary</em> condition that
+      turned out not to be <em>sufficient</em>: supplying it removes a blocker, it does not
+      teach.</td></tr>
   </tbody>
 </table>
 </div>
@@ -309,20 +307,26 @@ const N=72, ALPHA=0.35;
 function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);
   t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
 
+/* Exact budgets: the wheel-spin fraction is the published one, not a draw from it.
+   Episodes keep the run structure; only the totals are pinned. */
 function session(wheelRate,seed){
   const r=rng(seed), out=[];
-  const pP=0.30, pW=wheelRate, pF=Math.max(0.05,1-pP-pW);
+  const rem={W:Math.round(N*wheelRate), P:Math.round(N*0.30)};
+  rem.F=N-rem.W-rem.P;
   while(out.length<N){
-    const u=r()*(pF+pP+pW);
-    const st= u<pF?'F' : u<pF+pP?'P' : 'W';
-    const len=3+Math.floor(r()*6);
-    for(let k=0;k<len&&out.length<N;k++){
+    const live=['W','P','F'].filter(s=>rem[s]>0);
+    let u=r()*live.reduce((a,s)=>a+rem[s],0), st=live[0];
+    for(const s of live){ if(u<rem[s]){st=s;break;} u-=rem[s]; }
+    const len=Math.min(rem[st], 3+Math.floor(r()*6)); rem[st]-=len;
+    for(let k=0;k<len;k++){
       let s;
-      if(st==='F') s={lat:8+r()*14, ed:r()<0.25?1:0, rep:0, nos:0, avo:0};
-      else if(st==='P') s={lat:22+r()*55, ed:1+Math.floor(r()*4), rep:k<2?0:1,
-                           nos:Math.min(k,4), avo:r()<0.15?1:0};
-      else s={lat:18+r()*45, ed:Math.floor(r()*2), rep:Math.min(2+k,8),
-              nos:Math.min(10,5+k*2), avo:r()<0.55?1:0};
+      if(st==='F') s={lat:8+r()*16, ed:r()<0.30?1:0, rep:0, nos:0, avo:0};
+      else if(st==='P') s={lat:24+r()*58, ed:1+Math.floor(r()*4),
+                           rep:r()<0.40?Math.min(k,2):0,
+                           nos:Math.min(5,Math.floor(k*1.3)), avo:r()<0.22?1:0};
+      else s={lat:16+r()*46, ed:Math.floor(r()*2),
+              rep:r()<0.78?Math.min(2+k,8):Math.floor(r()*2),
+              nos:Math.min(10,4+k*2), avo:r()<0.55?1:0};
       s.truth=st; s.k=k; out.push(s);
     }
   }
@@ -483,25 +487,29 @@ function render(){
    `people fail at — noticing they are stuck and deciding to act on it.`;
 
   /* the two quintiles at one threshold */
-  $('qt').innerHTML=['lo','hi'].map(k=>{
-    const S=SES[k], E=estimate(S,mode), C=counts(S,E,th), SW=sweep(S,E,ratio);
-    const w=S.filter(x=>x.truth==='W').length;
+  const Q={};
+  for(const k of ['lo','hi']){
+    const S=SES[k], E=estimate(S,mode);
+    Q[k]={S,E,C:counts(S,E,th),SW:sweep(S,E,ratio),w:S.filter(x=>x.truth==='W').length};
+  }
+  $('qt').innerHTML=['lo','hi'].map(k=>{const q=Q[k];
     return `<tr><td><b>${k==='lo'?'Bottom quintile':'Top quintile'}</b>${k===who?' <span class="mut">— shown above</span>':''}</td>
-      <td class="num">${(w/N*100).toFixed(0)}% (${w} windows)</td>
-      <td class="num">${C.fi}</td><td class="num">${C.mw}</td>
-      <td class="num"><b>${SW.best.th.toFixed(2)}</b></td></tr>`;}).join('');
-  const oLo=sweep(SES.lo,estimate(SES.lo,mode),ratio).best.th;
-  const oHi=sweep(SES.hi,estimate(SES.hi,mode),ratio).best.th;
-  $('qnote').innerHTML=`<b>The optimal thresholds differ by ${Math.abs(oLo-oHi).toFixed(2)}.</b> `+
-   (oLo<oHi
-    ? `The weaker learner's optimum is <em>lower</em> — more of their session is wheel-spinning, so
-       the same threshold leaves more of it unattended. A global constant, tuned on the average
-       learner, is tuned against the learner who needs it.`
-    : `On this seed the two optima land close together, which is itself worth reading: the
-       difference between these learners is not mainly in the shape of the signal, it is in how
-       much of the session is spent in the bad state.`)+
-   ` And the underlying asymmetry was fixed before the session started — prior knowledge varies
-     <b>3.6×</b> between quartiles while learning rate varies <b>1.14×</b>.`;
+      <td class="num">${(q.w/N*100).toFixed(0)}% — ${q.w} windows</td>
+      <td class="num">${q.C.fi}</td>
+      <td class="num">${q.C.mw} — <b>${(q.C.mw/q.w*100).toFixed(0)}%</b> of them</td>
+      <td class="num"><b>${q.SW.best.th.toFixed(2)}</b></td></tr>`;}).join('');
+  const gap=Math.abs(Q.lo.SW.best.th-Q.hi.SW.best.th);
+  $('qnote').innerHTML=`<b>Same detector, same threshold, different bill.</b> At θ = ${th.toFixed(2)}
+   the weaker learner wheel-spins ${(Q.lo.w/Math.max(1,Q.hi.w)).toFixed(1)}× more often in absolute
+   terms — ${Q.lo.w} windows against ${Q.hi.w} — but it is the <em>stronger</em> learner who has the
+   higher proportion left running: ${(Q.hi.C.mw/Q.hi.w*100).toFixed(0)}% against
+   ${(Q.lo.C.mw/Q.lo.w*100).toFixed(0)}%. The reason is structural: the opening windows of every
+   episode sit below threshold while the smoothed estimate climbs, and a learner with few short
+   episodes has proportionally more of their wheel-spin inside those opening windows.
+   The cost-optimal thresholds land <b>${gap.toFixed(2)}</b> apart, which is the point —
+   ${gap<0.03?'and even that small a gap has no principled global compromise':'there is no global constant that is right for both'}.
+   The asymmetry was fixed before the session began: prior knowledge varies <b>3.6×</b> between
+   quartiles while learning <em>rate</em> varies <b>1.14×</b>.`;
 }
 $('thr').oninput=e=>{th=+e.target.value/100;render();};
 $('cost').oninput=e=>{ratio=+e.target.value/10;render();};
