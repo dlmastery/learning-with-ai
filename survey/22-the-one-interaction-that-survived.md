@@ -90,7 +90,19 @@ table of what is left is very short:
 | Interest and context of examples | **PLAUSIBLE** — small, real, easily oversold |
 | Learning styles / modality matching | **DEBUNKED** |
 | Personality or demographic tailoring | **DEBUNKED or unevidenced** |
-| Stated preference for difficulty | **ANTI-SIGNAL** — preference moves d ≈ 0.48 while knowledge moves 0 (§01)|
+| Stated preference for difficulty | **ANTI-SIGNAL** — what a learner prefers and what a learner knows move independently (§01) |
+
+The last row is the one that gets over-read, so it is worth stating at full size.
+Buljan et al. 2018 ran **three randomised comparisons — n = 334 adults, an infographic
+against a plain-language Cochrane summary of the same review, scored on an immediate
+quiz.** Preference moved d ≈ 0.48; knowledge moved zero. That is one format contrast
+in one adult population on one immediate test, not a law about how learners feel.
+It belongs in the table because the dissociation it shows is corroborated by work that
+shares none of its design: Deslauriers et al. 2019, where randomised active-learning
+students learned more and reported learning less; the Wilson writing results in §43,
+where revision quality and self-efficacy rise while performance on a blank page does
+not; and Tutor CoPilot's proximal/distal split in §09, where exit-ticket mastery moved
+4 points and the end-of-year test did not move at all.
 
 ---
 
@@ -268,8 +280,12 @@ the saved complexity on getting the universal things right."
 
 - **Lead with Cronbach.** Anyone proposing a personalisation dimension states which
   of the seven rows in §2 it belongs to, and defends it there.
-- **Measure, never ask.** Preference moves d ≈ 0.48 while knowledge moves zero.
-  Stated preference is an anti-signal and is not an input.
+- **Measure, never ask.** In Buljan's three randomised comparisons — n = 334 adults,
+  an infographic against a plain-language Cochrane summary, immediate quiz —
+  preference moved d ≈ 0.48 and knowledge moved zero. One format contrast is not a
+  general law, but nothing in the corpus shows stated preference tracking knowledge,
+  and the same felt/real split appears in trials of a different shape (§09, §43).
+  Preference is not an input to the controller.
 - **Per-topic, never per-person.** No trait-level storage. The expertise estimate
   is attached to a concept and decays.
 - **The fast loop may not change the method.** Assistance level, rung, granularity —

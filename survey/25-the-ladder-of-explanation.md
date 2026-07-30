@@ -309,9 +309,14 @@ week six.
 
 - **Four rungs exist as a library; a learner traverses two or three.** Three-step
   beat two-step at p = 0.032; five-step did not beat three-step at p = 0.738.
-- **Entry is measured, never chosen.** Preference moves d ≈ 0.48 while knowledge
-  moves zero, and the easiness effect survives explicit debiasing (§01). The dropdown may
-  exist as an override; it may never be the default input.
+- **Entry is measured, never chosen.** In Buljan's three randomised comparisons —
+  n = 334 adults, an infographic against a plain-language Cochrane summary, immediate
+  quiz — preference moved d ≈ 0.48 while knowledge moved zero, and the easiness effect
+  survives explicit debiasing (§01). One format contrast in three adult samples does
+  not license a general law about preference; what licenses the rule here is that the
+  drift has a known direction and that no measurement anywhere in this corpus shows
+  a learner's stated level tracking their actual one. The dropdown may exist as an
+  override; it may never be the default input.
 - **Per prerequisite, take the weakest link.** No single global level per learner.
 - **Generate top-down.** A refinement chain cannot be checked against an account
   that does not exist yet.

@@ -1,5 +1,5 @@
 ---
-title: "The Market — nine bets, one graveyard, and the number that shrinks as you look at it"
+title: "The Market — nine bets, one graveyard, and a translation layer nobody has to lie in"
 section: market
 status: draft
 date: 2026-07-28
@@ -8,31 +8,18 @@ source_report: research/raw/E1-E2-edtech-landscape-lessonorca.md, research/raw/E
 
 # The Market
 
-ASSISTments publishes its own evidence page. Read the studies in order of sample
-size:
+This market's public evidence is, on the whole, not false. It is unusable. A product
+page hands you a percentage; the percentage is arithmetically true of some study;
+and the page does not name that study's sample, its comparison group, or who ran it.
+A modest effect size, re-rendered as a percentage of a school year's growth, sounds
+like a different order of claim than the one the underlying trial supports, and
+nobody had to lie to get there. **The translation layer between effect sizes and marketing copy
+is where most of this market's dishonesty lives, and it does not require anyone to
+lie.**
 
-| Study | Design | n | Effect |
-|---|---|---|---|
-| Mendicino, Razzaq & Heffernan (2009) | small RCT | 28 students | **0.61** |
-| Kehrer, Kelly & Heffernan (2013) | small RCT | 65 students | 0.37 |
-| Maine (2012–2015) | RCT | 46 schools, 2,769 students | **0.22** |
-| North Carolina (2018–2021), WestEd | RCT, delayed outcome | 63 schools, 5,991 students | **0.10** one year later |
-| Gates Foundation / SRI | independent evaluation | not stated | **0.03** |
-
-**0.61 → 0.22 → 0.10 → 0.03**, as the sample grows and the evaluator stops being
-the vendor.
-
-That gradient is the single most instructive object in the edtech market. The
-company publishes it itself, on its own site, without spin. It is to their
-enormous credit. It is also the number you should hold in your head every time a
-product quotes you an effect size.
-
-Note the last translation. ASSISTments' public headline is "60% more growth in math
-scores", which is the **0.22** study rendered in percentage-of-a-year terms. A
-0.22 SD effect is a genuinely good result in education. "60% more growth" sounds
-like something else entirely. **The translation layer between effect sizes and
-marketing copy is where most of this market's dishonesty lives, and it does not
-require anyone to lie.**
+Which makes the useful questions structural rather than numerical, and they run
+through every part of this section: who evaluated it, against what comparison, at
+what sample, and what the vendor would accept as disconfirmation.
 
 ---
 
@@ -57,21 +44,15 @@ Each primitive is a falsifiable hypothesis about how learning happens.
 
 Two clusters deserve their evidence stated in full.
 
-**The numbers this market advertises are pre-LLM.** Kulik & Fletcher (2016), 50
-controlled evaluations of rule-based intelligent tutoring at **median 0.66 SD**, is
-the most-cited figure in the market and comes
-with its own debunking attached: the improvement "depended to a great extent on
-whether improvement was measured on locally developed or standardized tests," and
-§24 puts test alignment at a factor of 2–3. Pane et al.'s Cognitive Tutor Algebra I
-trial, matched-pair randomisation across seven states, is the best large-scale
-evidence any *pre-LLM* system has: **no effect in year one**, positive in year two,
-significant for high schools and **not** for middle schools, at roughly eight
-percentile points. The LLM generation inherited that marketing claim without the
-measurement under it. Randomised trials of frontier tutors do exist — §09 holds
-seven, from Sierra Leone to Tutor CoPilot — and not one of them is the number a
-product page in this market quotes at you. A 2016 meta-analysis of rule-based
-software is being used to sell a 2026 model, which is the same category error the
-buyer's side of this market keeps falling for.
+**The numbers this market advertises are pre-LLM.** The most-cited efficacy figures
+on product pages here come from syntheses of rule-based courseware compiled before
+any language model shipped, and the LLM generation inherited the marketing claim
+without the measurement under it. Randomised trials of frontier tutors do exist —
+§09 holds seven, from Sierra Leone to Tutor CoPilot — and not one of them is the
+number a product page in this market quotes at you. **A decade-old meta-analysis of
+rule-based software is being used to sell a 2026 model**, which is the same category
+error the buyer's side of this market keeps falling for. The honest version of a
+product page in 2026 would name a frontier trial or admit there is not one.
 
 **Early literacy is the most defensible bet in the market**, in mechanism terms
 rather than enthusiasm terms. The AI does something a human demonstrably cannot
@@ -87,12 +68,11 @@ a selection effect unless dosage was randomised.
 
 ## 2. What the market measures instead of learning
 
-Finding one: the evidence gradient runs opposite to the funding gradient. The
-two products in this section with genuine independent randomised evidence
-(ASSISTments, a nonprofit that is free to teachers, and Cognitive Tutor, a
-forty-year-old curriculum publisher — both pre-LLM systems) report **0.03 to
-0.22 SD**. The products with
-the largest claims report no retrievable design, sample or comparison group. And the
+Finding one: the evidence gradient runs opposite to the funding gradient. The only
+products in this section carrying genuine independent randomised evidence are
+pre-LLM courseware from a nonprofit and from a legacy curriculum publisher, neither
+of them venture-funded and neither of them a language model. The products with the
+largest claims report no retrievable design, sample or comparison group. And the
 best-funded entity in the sector, at a $4.8bn buyout, makes no learning claim at all.
 
 **Finding two: "time saved" has quietly replaced "learning gained" as the industry's
@@ -294,9 +274,10 @@ the three convergent norms above are worth more than a longer policy.
 
 ## 6. How to read a claim from this market
 
-- **Quote the gradient, not the number.** 0.61 → 0.22 → 0.10 → 0.03 as n rises and
-  the evaluator becomes independent. Any effect size from a vendor sits somewhere on
-  that curve, and usually at the left end.
+- **Ask who evaluated it, and at what sample.** A vendor-run pilot on tens of
+  students and an independent randomised evaluation across dozens of schools are both
+  called "evidence" on a product page. The number you are shown is the most flattering
+  point on a curve you have not been shown.
 - **Distinguish teacher time from learner time.** One is a benefit. The other is the
   documented signature of the harm condition.
 - **Prefer mechanism claims and audit them.** A mechanism claim that survives

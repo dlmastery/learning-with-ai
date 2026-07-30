@@ -185,10 +185,11 @@ decorative and the model was doing all the work. The comparator is a frontier mo
 is the only thing whose defeat would mean anything. Beating a classroom, or a system from another
 decade, would leave the question exactly where it is now.
 
-That falsifier has teeth. Fütterer et al. 2026 controlled a K-12 intervention against plain
-ChatGPT and found no significant advantage on knowledge, effort or strategy use. Gu & Yan (2025)
-report *g* = 1.426 for LLM tutoring with teacher support and *g* = 0.077 without it, which puts
-most of the measured effect outside the model. Tutor CoPilot, 900 tutors and 1,800 students,
+That falsifier has teeth. Fütterer et al. 2026, *n* = 371 across Grades 7–9, ran two designed
+GenAI scaffolds against a control arm using plain ChatGPT and found no significant advantage on
+domain knowledge, effort or elaboration-based strategy use. Gu & Yan (2025), 19 LLM-tutoring
+studies, report *g* = 1.426 with teacher support and *g* = 0.077 without it, which puts most of
+the measured effect outside the model. Tutor CoPilot, 900 tutors and 1,800 students,
 moved its exit ticket and returned a null on the end-of-year test.
 
 If you run one of the open problems, the result is wanted whichever way it lands. Especially the
