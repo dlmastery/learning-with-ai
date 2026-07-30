@@ -50,7 +50,7 @@ ceiling, is the row in this survey that the rule bites hardest.
 
 **How large the discount should be is not established for frontier systems.** The
 two observations above are one shrinkage and one disappearance, which is a direction
-and not a coefficient. Sierra Leone shows what removes the doubt instead of
+and not a coefficient. Sierra Leone (§09) shows what removes the doubt instead of
 estimating it: the test was written and blind-scored by Oxford MeasurEd, an
 organisation with no stake in the result.
 
@@ -227,8 +227,8 @@ inaccurate endorsement. An AI that grills a learner for a sensory-modality label
 automating a forty-year null at scale.
 
 The tutoring effect sizes this survey used to quote here have been removed from the
-argument entirely. They measured human tutors and rule-based courseware, they are
-history rather than evidence about a model, and they now live only where history is
+argument entirely. They measured human tutors and rule-based courseware, which makes
+them history and not evidence about a model, and they now live only where history is
 the subject (**§19**). Nothing downstream should be calibrated against them.
 
 ---
@@ -282,9 +282,9 @@ reviewers' words, "dominated by laboratory studies of university undergraduates.
 - **Benchmark against the measurement, never against a borrowed number.** The bar for
   any claim we make is **a test we did not help design, an active control, and a
   delayed post-test** — that combination has never been run on a frontier tutor, so
-  the honest statement of the target is that the experiment is open rather than that
-  some prior result caps it. Where a number looks large, interrogate the test and the
-  control, and publish both alongside it.
+  the target is an open experiment and not a cap inherited from some prior result.
+  Where a number looks large, interrogate the test and the control, and publish both
+  alongside it.
 
 The floor is not low. Retrieval practice and distributed practice are among the
 largest, most replicated effects anyone in education has ever measured, and they

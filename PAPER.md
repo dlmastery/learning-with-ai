@@ -243,7 +243,7 @@ ceiling, is the row in this survey that the rule bites hardest.
 
 **How large the discount should be is not established for frontier systems.** The
 two observations above are one shrinkage and one disappearance, which is a direction
-and not a coefficient. Sierra Leone shows what removes the doubt instead of
+and not a coefficient. Sierra Leone (§3) shows what removes the doubt instead of
 estimating it: the test was written and blind-scored by Oxford MeasurEd, an
 organisation with no stake in the result.
 
@@ -420,8 +420,8 @@ inaccurate endorsement. An AI that grills a learner for a sensory-modality label
 automating a forty-year null at scale.
 
 The tutoring effect sizes this survey used to quote here have been removed from the
-argument entirely. They measured human tutors and rule-based courseware, they are
-history rather than evidence about a model, and they now live only where history is
+argument entirely. They measured human tutors and rule-based courseware, which makes
+them history and not evidence about a model, and they now live only where history is
 the subject (**§37**). Nothing downstream should be calibrated against them.
 
 ---
@@ -475,9 +475,9 @@ reviewers' words, "dominated by laboratory studies of university undergraduates.
 - **Benchmark against the measurement, never against a borrowed number.** The bar for
   any claim we make is **a test we did not help design, an active control, and a
   delayed post-test** — that combination has never been run on a frontier tutor, so
-  the honest statement of the target is that the experiment is open rather than that
-  some prior result caps it. Where a number looks large, interrogate the test and the
-  control, and publish both alongside it.
+  the target is an open experiment and not a cap inherited from some prior result.
+  Where a number looks large, interrogate the test and the control, and publish both
+  alongside it.
 
 The floor is not low. Retrieval practice and distributed practice are among the
 largest, most replicated effects anyone in education has ever measured, and they
@@ -2108,9 +2108,9 @@ apply its discount in full — the first author built the tutor, ran the analysi
 declared no funding; the post-test was researcher-built and ceiling-limited; the
 exposure was two hours. **LearnLM under expert supervision matched the expert human
 tutors it was randomised against**, 93.0% against 91.2% on immediate correction, with
-its transfer advantage's credible interval spanning zero and n = 165. Three classroom
-deployments land at 0.2–0.4 SD at an inference cost of 0.43% of a delivered session
-(§3, §39).
+its transfer advantage's credible interval spanning zero and n = 165. And
+three field trials of classroom deployment land at 0.2–0.4 SD, at an inference cost
+of 0.43% of a delivered session (§3, §39).
 
 That is the whole frontier record for tutoring, and the honest description of it is
 *thin and encouraging*. Nobody has run a trial on a system that remembers, refuses,
@@ -13279,8 +13279,8 @@ thin is a weak ceiling and an equally weak floor, and the project's falsifier is
 staked on it either way.
 
 The reading that would hurt is that all three trials measured the same learners in
-the same schools doing the same thing, and that what they found was the learners
-rather than the technology.
+the same schools doing the same thing, and that what they found was the learners and
+not the technology.
 
 The evidence for that reading is not weak. The best-powered studies on record are
 nulls — lesson study at **ES 0.02** across 181 schools and 12,747 pupils with very
@@ -13450,7 +13450,7 @@ And the clearest evidence for it comes from a frontier system measuring itself. 
 Academy published a null against interest: the first Khanmigo *"did not change student
 learning as much as many of us hoped it would"* — while, for the students who engaged,
 it *"did what we designed it to do."* The help was there and it worked. It had to be
-summoned, and summoning it is exactly the act a learner short on executive function
+summoned, and summoning it is the one act a learner short on executive function
 cannot perform. The redesign moves the tutor **inside** the practice problem to delete
 the summoning step. `OBSERVED` — a vendor statement with no effect size, no design and
 no comparison group; it must not be read as a trial.

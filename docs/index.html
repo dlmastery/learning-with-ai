@@ -492,7 +492,7 @@ run in the demos.</p>
     to withdraw the central claim. Persistent contents, an abstract, and every claim carrying an
     evidence label.</p>
     <div class="nm"><span data-gen="sections">47</span> SECTIONS ·
-      <span data-gen="words">118,241</span> WORDS</div>
+      <span data-gen="words">118,242</span> WORDS</div>
   </a>
   <a href="demos/">
     <div class="nt">The demos</div>
@@ -569,42 +569,30 @@ rule stays silent.</p>
    correct target. The accessible table view is generated from the same spec,
    so it can never drift from the chart.                                      */
 
-/* `cls` says what the number was measured on. It is not decoration.
-      TECHNIQUE  an instructional move, no delivery system attached
-      HUMAN      a person delivering it
-      ITS        rule-based, pre-LLM courseware
+/* `cls` names the evidence base a row rests on. Every row here is an instructional
+   MOVE — a thing a system chooses to do — and nothing here is a delivery system.
 
-   NO TUTORING-SYSTEM ESTIMATE MAY BE ADDED TO THIS ARRAY. Rows for VanLehn's
-   0.79/0.76, Nickow's 0.288 and the 2013 pedagogical-agent meta were removed, and
-   with them the frontier row they were implicitly ranking. A sorted axis is a
-   verdict: a 2011 review plotted three rows above a 2025 LLM trial asserts a
-   bound that neither study ever tested, and no label or tooltip undoes an
-   ordering the eye has already read. The frontier evidence has its own section,
-   where the comparison it invites is with other frontier systems.             */
+   NO DELIVERY-SYSTEM ESTIMATE MAY BE ADDED TO THIS ARRAY: not a human tutor, not
+   pre-LLM courseware, not a frontier model. Those rows were deleted rather than
+   labelled. A sorted axis is a verdict, and a review of one machine plotted above
+   a trial of another asserts a bound that neither study ever tested; a class label
+   in a tooltip does not undo an ordering the eye has already read. The frontier
+   evidence has its own section, where the only comparison on offer is with other
+   frontier systems. See evidence/check-vintage.py.                             */
 const LADDER = {
   max: 0.60,
   rows: [
-    {label:"Learning by teaching",   cls:"HUMAN · Kobayashi 2019",   note:"human tutee, expectancy set first. The teachable-AGENT version has never been measured", v:0.56, ok:true},
-    {label:"Self-explanation",       cls:"TECHNIQUE · Bisra et al.",   note:"pooled estimate across prompted self-explanation studies", v:0.55, ok:true},
-    {label:"Spacing",                cls:"TECHNIQUE · 2025 meta",      note:"classroom meta-analysis · 31 effects · N > 3,000",    v:0.54,  ok:true},
-    {label:"Retrieval practice",     cls:"TECHNIQUE · meta",           note:"222 classroom studies · 48,478 students · I² = 88%",  v:0.50,  ok:true},
-    {label:"Worked examples",        cls:"TECHNIQUE · meta",           note:"reverses for experts, d = −0.428",                    v:0.48,  ok:true},
-    {label:"Teaching w/ expectancy", cls:"HUMAN · Kobayashi 2024",   note:"k=39, human tutees. Without the expectancy: g = −0.02", v:0.48, ok:true},
-    {label:"Scaffolding (computer)", cls:"ITS · Belland 2017",       note:"144 pre-LLM studies, the only directly meta-validated computer-based form", v:0.46, ok:true},
-    {label:"Interleaving",           cls:"TECHNIQUE · meta",           note:"varies sharply by domain",                            v:0.42,  ok:true},
-    {label:"Mayer design principles",cls:"TECHNIQUE · multimedia meta",note:"contiguity alone reaches 0.74",                       v:0.38,  ok:true},
-    {label:"Productive failure",     cls:"TECHNIQUE · meta",           note:"requires prior knowledge; fails without it",          v:0.36,  ok:true},
-    {label:"Voice call + SMS",       cls:"HUMAN · 5-country RCTs",   note:"N = 8,902, and the mechanism is a person on the line at a scheduled time", v:0.327, ok:true},
-    {label:"VR vs desktop",          cls:"TECHNIQUE · 35 RCTs",        note:"the presence premium, and it is modest",              v:0.24,  ok:false},
-    {label:"Animation vs static",    cls:"TECHNIQUE · meta",           note:"affect moves; learning mostly does not",              v:0.23,  ok:false},
-    {label:"Orton-Gillingham",       cls:"HUMAN · meta",             note:"p = .40, NOT significant against active comparison",  v:0.22,  ok:false},
-    {label:"Robot vs same on tablet",cls:"ITS · 78 studies",         note:"−0.06 when the robot replaces a teacher",             v:0.20,  ok:false},
-    {label:"Slides vs no slides",    cls:"HUMAN · meta",             note:"CI [−0.103, 0.236]. A deck buys nothing by itself",   v:0.067, ok:false},
-    {label:"Expanding SRS intervals",cls:"ITS · k = 54",             note:"I² = 0%, a clean and well-powered nothing",           v:0.032, ok:false},
-    {label:"Lesson study",           cls:"HUMAN · 181 schools",      note:"12,747 pupils · p = 0.65 · no dose-response",         v:0.02,  ok:false},
-    {label:"Teaching w/o expectancy",cls:"HUMAN · Kobayashi 2024",   note:"'now explain it back to me', asked at the end. The null condition", v:-0.02, ok:false},
-    {label:"Alternative seating",    cls:"TECHNIQUE · reviews",        note:"moderate-strength evidence of NO effect on attention",v:0.0,   ok:false},
-    {label:"Learning styles",        cls:"TECHNIQUE · four decades",   note:"no credible support, and 89.1% of educators believe it", v:0.0, ok:false}
+    {label:"Self-explanation",       cls:"pooled · Bisra et al.",    note:"pooled estimate across prompted self-explanation studies", v:0.55, ok:true},
+    {label:"Spacing",                cls:"2025 classroom meta",      note:"31 effects · N > 3,000",                              v:0.54,  ok:true},
+    {label:"Retrieval practice",     cls:"meta · 222 studies",       note:"222 classroom studies · 48,478 students · I² = 88%",  v:0.50,  ok:true},
+    {label:"Worked examples",        cls:"meta",                     note:"reverses for experts, d = −0.428",                    v:0.48,  ok:true},
+    {label:"Interleaving",           cls:"meta",                     note:"varies sharply by domain",                            v:0.42,  ok:true},
+    {label:"Mayer design principles",cls:"multimedia meta",          note:"contiguity alone reaches 0.74",                       v:0.38,  ok:true},
+    {label:"Productive failure",     cls:"meta",                     note:"requires prior knowledge; fails without it",          v:0.36,  ok:true},
+    {label:"VR vs desktop",          cls:"35 RCTs",                  note:"the presence premium, and it is modest",              v:0.24,  ok:false},
+    {label:"Animation vs static",    cls:"meta",                     note:"affect moves; learning mostly does not",              v:0.23,  ok:false},
+    {label:"Alternative seating",    cls:"reviews",                  note:"moderate-strength evidence of NO effect on attention",v:0.0,   ok:false},
+    {label:"Learning styles",        cls:"four decades of tests",    note:"no credible support, and 89.1% of educators believe it", v:0.0, ok:false}
   ]
 };
 
@@ -647,17 +635,16 @@ function fmt(v){
 
 function renderBars(host, spec){
   const narrow = innerWidth < 640;
-  // RW reserves the value column AND the class column. The class has to be legible
-  // without hovering: sorting rows from four different classes on one axis is what
-  // made a 2011 ITS number read as a bound on a 2026 model, and a tooltip cannot
-  // undo an ordering the eye has already read.
-  const LW = narrow ? 134 : 212, RW = narrow ? 104 : 120, ROW = narrow ? 29 : 26, PAD = 8;
+  // There is no class column any more, because there is no longer more than one
+  // class on the axis. Every row is an instructional move; the delivery-system
+  // rows were deleted, not labelled, so RW reserves the value column alone.
+  const LW = narrow ? 134 : 212, RW = narrow ? 52 : 62, ROW = narrow ? 29 : 26, PAD = 8;
   const W = 720, H = spec.rows.length * ROW + PAD * 2;
   const trackX = LW + 10, trackW = W - LW - RW - 22;
   const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, role:'img',
     'aria-label':'Bar chart of effect sizes for instructional techniques, ordered largest to '
-      + 'smallest, each labelled with what it was measured on: TECHNIQUE, HUMAN or ITS. '
-      + 'No tutoring-system estimate appears. A table view follows.'});
+      + 'smallest. Every row is a teaching move; no delivery system appears — no human '
+      + 'tutor, no pre-LLM courseware and no AI tutor. A table view follows.'});
   spec.rows.forEach((r, i) => {
     const y = PAD + i * ROW + ROW / 2;
     const g = mk('g', {});

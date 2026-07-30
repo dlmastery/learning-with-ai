@@ -279,8 +279,8 @@ thin is a weak ceiling and an equally weak floor, and the project's falsifier is
 staked on it either way.
 
 The reading that would hurt is that all three trials measured the same learners in
-the same schools doing the same thing, and that what they found was the learners
-rather than the technology.
+the same schools doing the same thing, and that what they found was the learners and
+not the technology.
 
 The evidence for that reading is not weak. The best-powered studies on record are
 nulls — lesson study at **ES 0.02** across 181 schools and 12,747 pupils with very

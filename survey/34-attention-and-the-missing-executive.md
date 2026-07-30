@@ -121,7 +121,7 @@ And the clearest evidence for it comes from a frontier system measuring itself. 
 Academy published a null against interest: the first Khanmigo *"did not change student
 learning as much as many of us hoped it would"* — while, for the students who engaged,
 it *"did what we designed it to do."* The help was there and it worked. It had to be
-summoned, and summoning it is exactly the act a learner short on executive function
+summoned, and summoning it is the one act a learner short on executive function
 cannot perform. The redesign moves the tutor **inside** the practice problem to delete
 the summoning step. `OBSERVED` — a vendor statement with no effect size, no design and
 no comparison group; it must not be read as a trial.

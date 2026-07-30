@@ -54,9 +54,9 @@ apply its discount in full — the first author built the tutor, ran the analysi
 declared no funding; the post-test was researcher-built and ceiling-limited; the
 exposure was two hours. **LearnLM under expert supervision matched the expert human
 tutors it was randomised against**, 93.0% against 91.2% on immediate correction, with
-its transfer advantage's credible interval spanning zero and n = 165. And three field
-trials of classroom deployment land at 0.2–0.4 SD, at an inference cost of 0.43% of a
-delivered session (§09, §37).
+its transfer advantage's credible interval spanning zero and n = 165. And
+three field trials of classroom deployment land at 0.2–0.4 SD, at an inference cost
+of 0.43% of a delivered session (§09, §37).
 
 That is the whole frontier record for tutoring, and the honest description of it is
 *thin and encouraging*. Nobody has run a trial on a system that remembers, refuses,
