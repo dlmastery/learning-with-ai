@@ -114,9 +114,9 @@ other side: students do not respond consistently to similar problems set in diff
 contexts. `MEASURED-BENCH`
 
 A tutor that places a learner at "level 3 of the fractions progression" and routes the
-next hour from that placement is doing large-scale testing whatever it looks like
-from the outside: a single-shot inference from a handful of items, on a construct the
-measurement literature says is not stable enough across contexts to carry it.
+next hour from that placement is doing large-scale testing whatever it looks like from
+the outside: a single-shot inference from a handful of items, on a construct that is
+not stable enough across contexts to carry it.
 
 The formal object such a system needs is a Q-matrix, items on the rows and latent
 skills on the columns. These can be validated against response data instead of
@@ -344,13 +344,12 @@ default **off** and are earned by measurement.
 The source report marks several things untraceable, and they stay untraceable here.
 
 - **"Only 10% of training transfers to the job."** Two decades of edtech decks rest on
-  it. It traces to Georgenson (1982), where it was, in the words of the paper that
-  chased it down, a **"conversational gambit"** and never an estimate (Farrington 2011,
-  *PIQ*, ERIC EJ921207). No study stands behind it.
+  it. It traces to Georgenson (1982), where it was a **"conversational gambit"** and
+  never an estimate (Farrington 2011, *PIQ*, ERIC EJ921207). No study stands behind it.
 - **Rupp & Templin's (2007) misspecification numbers**, the quantitative form of the
   risk in letting a model emit a graph.
-- **Pooled estimates from Lee & Genovese (1988, 1989) and Donovan & Radosevich
-  (1999)** on massed against distributed motor practice.
+- **Pooled estimates from Lee & Genovese (1988, 1989) and Donovan & Radosevich (1999)**
+  on massed against distributed practice.
 - **The pooled interval in Sun et al. (2021).** The point estimate is safe.
 - **Which Building Blocks persistence figure is right.** The 2013 *AERJ* third-year
   effects (0.51 / 0.28) do not reconcile with the same team's long-term analysis, so

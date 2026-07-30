@@ -94,10 +94,10 @@ blinded raters, α = 0.91.
 Both groups practised those 30 words for three weeks, and those 30 words are the
 test — different carrier sentences, same items, no untrained-item probe. The list
 runs *colonel, aisle, debris, rendezvous, quay, choir, entrepreneur, bouquet* and
-more of the same: English orthographic irregularities and French loanwords.
-Knowing that *colonel* is /ˈkɜːnəl/ is a word-specific fact of the same order as
-knowing what *colonel* means. Nothing here separates "pronounces English better"
-from "memorised thirty pronunciations."
+more of the same: orthographic irregularities and French loanwords. Knowing that
+*colonel* is /ˈkɜːnəl/ is a word-specific fact of the same order as knowing what
+*colonel* means. Nothing here separates "pronounces English better" from
+"memorised thirty pronunciations."
 
 The retention claim inverts on arithmetic. The paper's own post-hoc table has the
 treatment group flat from post-test to delayed test (+0.867, p = 1.000) and the
@@ -291,9 +291,9 @@ worth acting on: across observational classroom studies, **recasts are 57% of al
 corrective feedback teachers actually give and prompts 30%**. `MEASURED-META`.
 The most-supplied type is the least-supported one, and a language model's reflex
 when a learner produces a wrong sentence is to restate it correctly, which is a
-recast. Prompting the learner to self-repair withholds the form and recruits the
-generation effect — a change to a system prompt, and the cheapest pedagogical
-edit available in this domain.
+recast. Prompting self-repair withholds the form and recruits the generation
+effect — a change to a system prompt, and the cheapest pedagogical edit in this
+domain.
 
 ---
 
@@ -301,8 +301,7 @@ edit available in this domain.
 
 Duolingo runs all the way through this corpus and appears nowhere in it as
 evidence about language acquisition. The rule that a `VENDOR` claim is never
-restated as a finding is doing that, and here the rule is the point and not a
-cost.
+restated as a finding is doing that, and here the rule is the point.
 
 The 34-hour claim — Duolingo teaching in 34 hours what a university semester
 teaches — comes from Vesselinov & Grego (2012), a self-published, never
@@ -441,5 +440,5 @@ about photosynthesis and cannot pass the worksheet about it. She is not a
 second-language learner, and the language literature still describes her
 situation better than any other here: every trial in it scores the taught item,
 which is the worksheet, and none scores the conversation. The field measured what
-was easy to instrument and reported it as proficiency. The instrument for the
-other thing is buildable now, and nobody has built it.
+was easy to instrument and called it proficiency. The instrument for the other
+thing is buildable now, and nobody has built it.
