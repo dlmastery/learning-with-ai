@@ -13706,16 +13706,16 @@ measured what happens six weeks later (§2).
 Ten experiments follow, ranked, each with a runnable design and a pre-registered
 falsifier, and then the case that this survey is wrong, stated at full strength.
 
-Three of the ten were ranked in July 2026 against nineteen open problems. The
+Three of the ten were ranked on 2026-07-27 against nineteen open problems. The
 other seven landed on 2026-07-30 with the domain reports behind §24, §40, §33,
 §25, §26, §13 and §34, each closing with a specified trial and a power
 calculation. **Two of the seven put a specification this survey publishes on
 trial**, which is a category the original nineteen did not contain, and one of
 those two enters at second and moves the standing order.
 
-| # | Experiment | The quantity that decides it | Learners | |
+| # | Experiment | The quantity that decides it | Learners | Standing |
 |---|---|---|---|---|
-| 1 | The delayed, unassisted, novel-item outcome | Immediate-to-delayed rank correlation across arms | 900 | standing |
+| 1 | The delayed, unassisted, novel-item outcome | Immediate-to-delayed rank correlation across arms | 900 | held at 1 |
 | 2 | Randomise the graph, not the policy (§13) | Equivalence within δ = 0.10 SD | 857 × 8 topic pairs | **new — enters at 2** |
 | 3 | Persistent learner state against a stateless baseline | C − A on prerequisite-dependent transfer | 600 | was 2 |
 | 4 | Does the guardrail that removes harm ever add benefit? | A − C on 6-week unassisted transfer | 900 | was 3 |
