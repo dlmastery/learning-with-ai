@@ -590,36 +590,86 @@ Literature."** ERIC ED380566, verbatim:
 > *"Eighteen studies that attempted to do so included 15 dissertations and 3 journal articles… Of
 > the 16 studies that examined achievement in terms of either cognitive gain or skill performance,
 > 10 found no significant differences between control and experimental groups; 2 found the control
-> or 'traditional' group performed better. On the important variable of satisfaction with the
-> learning experience, one study found significant differences favoring the andragogical group;
-> three found no significant differences… Two other variables showed statistically significant
-> differences favoring andragogy: application of the learned material and attendance."*
+> or 'traditional' group performed better… Two other variables showed statistically significant
+> differences favoring andragogy: application of the learned material and attendance. Despite some
+> issues of design and questions of andragogical 'purity,' the trend of the available empirical
+> literature runs counter to many of the anecdotal claims for andragogy superiority."*
 
 `MEASURED-META` — a vote-count review, no pooling, no effect sizes. Fifteen of eighteen studies are
-unpublished dissertations, which cuts both ways: weaker quality control, and less publication
-filtering.
+unpublished dissertations, which cuts both ways: weaker quality control, less publication filtering.
+
+The most recent randomised test I could locate points the same way. Bradley (2010), ERIC ED517783,
+randomly assigned 52 non-profit staff to andragogical or pedagogical online grant-writing modules,
+analysing 33: *"one-way ANOVAs revealed there were no statistically significant differences as a
+function of learning group between each of three dependant variables: reaction to learning…,
+achievement growth…, and grant writing performance scores,"* and completion rates likewise did not
+differ. `MEASURED-RCT`, small, null on every outcome.
 
 Rachal (2002), *Adult Education Quarterly* (ERIC EJ644442): *"Evidence of the efficacy of andragogy
-is inconclusive and affected by definitional confusion."* His remedy is seven operational criteria,
-beginning with voluntary participation. Davenport (1987), ERIC ED283989, had reached the same place:
-*"Emerging research results do not appear to support Knowles' conceptualization of andragogy as a
-theory or proven method."*
+is inconclusive and affected by definitional confusion."* Davenport (1987), ERIC ED283989, reached
+the same place. And the theory's own proponents concede the underlying problem — Holton, Wilson &
+Bates (2009), *HRDQ* (ERIC EJ848487): *"A major and glaring gap in andragogy research is the lack of
+a measurement instrument that adequately measures both andragogical principles and process design
+elements. As a result, no definitive empirical test of the theory has been possible."* That is
+forty years after publication.
+
+`[X]` `OBSERVED — absence`: **no meta-analysis or systematic quantitative synthesis of andragogy
+exists.** ERIC returns `numFound: 0` for `"andragog*" AND "meta-analysis"`, and the one item calling
+itself a meta-analysis (Taylor & Kroth 2009, ERIC EJ891073) is a narrative review with no `k`, no
+pooled estimate and no effect sizes. It should not be cited as quantitative evidence.
+
+The best quantitative evidence bearing on andragogy's central assumption comes from outside the
+tradition. Sitzmann & Ely (2011), *Psychological Bulletin* `10.1037/a0022777`, meta-analysed
+self-regulated learning in work-related training and educational attainment, **k = 430,
+N = 90,380**: *"Goal level, persistence, effort, and self-efficacy were the self-regulation
+constructs with the strongest effects on learning… However, 4 self-regulatory processes — planning,
+monitoring, help seeking, and emotion control — did not exhibit significant relationships with
+learning."* `MEASURED-META`. Self-direction, decomposed, is partly real and partly not.
 
 `INFERENCE`: what survives is not a learning mechanism. It is two behavioural facts — adults who
 chose to be there apply the material and attend — and one design constraint, that participation is
 voluntary and therefore attrition is the binding risk. `F6` is already built for that constraint.
-The rest of andragogy should not be carried into a specification.
+The rest of andragogy should not enter a specification.
 
 ## 3.2 The two-sided age effect
 
-The corpus owns half of this already. `J1`'s expertise-reversal law predicts that the adult
-learner's prior-knowledge advantage makes guidance less useful, and that the asymmetry grows with
-domain experience. That is a strong prediction for this population, stated in the corpus without
-ever being aimed at adults.
+The corpus owns half of this. `J1`'s expertise-reversal law predicts that the adult learner's
+prior-knowledge advantage makes guidance less useful, and that the asymmetry grows with domain
+experience — a strong prediction for this population, stated in the corpus without ever being aimed
+at adults.
 
-The other half — processing-speed decline, and whether it eats the prior-knowledge advantage — I
-did not establish to this corpus's standard within this session, and assert nothing about it. See
-§6.3.
+**The cost side is well measured and it is not small.** Salthouse (2009), *Neurobiology of Aging*
+`10.1016/j.neurobiolaging.2008.09.023`, PMC2683339, `N = 2,350` aged 18–60: *"The performance
+difference from age 18 to age 60 was about 1 SD for the speed and spatial visualization variables,
+and was between .6 and .7 SD for the reasoning and memory variables,"* with slopes of *"-.02 to -.03
+SD units per year"* under 60. `OBSERVED` (cross-sectional; Schaie's published reply in the same
+issue, PMID 19231029, disputes the design). Verhaeghen & Salthouse (1997), *Psychological Bulletin*,
+`k = 91`, found speed and working memory mediate age effects on reasoning and episodic memory.
+`MEASURED-META`. And directly on the outcome that matters here, Kubeck, Delp, Haslett & McDaniel
+(1996), *Psychology and Aging*, PMID 8726375, **83 effect sizes from 6,610 individuals**:
+*"older adults, relative to younger adults, showed less mastery of training material (r = −.26),
+completed the final training task more slowly (r = .28), and took longer to complete the training
+program (r = .42). Field samples generally showed smaller age effects than laboratory samples."*
+`MEASURED-META`.
+
+**The benefit side is measured too.** Verhaeghen (2003), *Psychology and Aging*, PMID 12825780,
+pooled 324 independent young–old comparisons across 210 articles: *"The average effect size,
+favoring the old, was 0.80 SD"* on vocabulary. `MEASURED-META`.
+
+**And the one study that puts them in the same regression is optimistic.** Beier & Ackerman (2005),
+*Psychology and Aging*, PMID 16029097, `n = 199` aged 19–68, predicting acquisition of new
+cardiovascular-disease and xerography knowledge from prior knowledge, fluid ability and crystallised
+ability: *"Gc was directly related to learning from the video for both domains. Because the
+trajectory of Gc stays relatively stable throughout the life span, these findings provide a more
+optimistic perspective on the relationship between aging and learning than that offered by theories
+that focus on the role of fluid abilities in learning."* `OBSERVED`, correlational with ability
+controls.
+
+`INFERENCE`: an adult learns new material more slowly (`r ≈ .28–.42` on time) and masters less of it
+per unit of instruction (`r ≈ −.26`), and arrives with an 0.80 SD verbal-knowledge advantage that
+predicts acquisition in domains adjacent to what they already know. The design consequence is that
+adult tutoring should be routed through the learner's existing knowledge as a matter of arithmetic,
+not sentiment, and should never be paced by a clock calibrated on undergraduates.
 
 ## 3.3 The industry that does not measure the thing it sells
 
@@ -633,52 +683,84 @@ PMID 12731707, verbatim via PubMed:
 `MEASURED-META`. Every effect size sits between 0.60 and 0.63, which looks suspicious until you read
 the `k`s, and the `k`s are the finding. Learning is measured 234 times. Results are measured 26
 times, on 1,748 people in total — the whole industry's evidence for whether training changes
-anything an employer would pay for, and one small trial's worth of participants spread across two
-decades of studies.
+anything an employer would pay for, spread across two decades of studies.
 
-Blume, Ford, Baldwin & Huang (2010), *Journal of Management* `10.1177/0149206309352880`, 89 studies
-of transfer predictors, gives the reason to distrust even the 122: *"situations in which transfer
-outcomes were obtained by the same source in the same measurement context — which consistently
-inflated transfer relationships."* Most behaviour-change measurement is the trainee reporting their
-own behaviour change to the trainer.
+The practice survey behind that asymmetry is traceable. Twitchell (1997), LSU dissertation
+`10.31390/gradschool_disstheses.6552`, published as Twitchell, Holton & Trott (2000), *Performance
+Improvement Quarterly* `10.1111/j.1937-8327.2000.tb00177.x`, `n = 146` returned surveys, 42%
+response: *"technical training managers reported using each of Kirkpatrick's four Levels of
+evaluation in the following percentage of their courses: Level 1—72.74%, Level 2—47.05%,
+Level 3—33.73%, and Level 4—20.82%."* `OBSERVED`. The more widely circulated ATD/ASTD percentages
+could not be verified: `td.org` returned HTTP 429 on repeated attempts, the Wayback Machine has no
+snapshot of the relevant pages, and ERIC indexes no ASTD report containing level-by-level figures.
+Use the number that has a DOI.
 
-Taylor, Russ-Eft & Chan (2005), *JAP* `10.1037/0021-9010.90.4.692`, PMID 16060787, is the
-best-behaved result in the area. 117 studies of behaviour-modelling training: *"BMT effects were
-largest for learning outcomes, smaller for job behavior, and smaller still for results outcomes.
-Although BMT effects on declarative knowledge decayed over time, training effects on skills and job
-behavior remained stable or even increased… Transfer was greatest when mixed (negative and positive)
-models were presented, when practice included trainee-generated scenarios, when trainees were
-instructed to set goals, when trainees' superiors were also trained, and when rewards and sanctions
-were instituted in trainees' work environments."* `MEASURED-META`.
+Blume, Ford, Baldwin & Huang (2010), *Journal of Management* `10.1177/0149206309352880`, 89 studies,
+gives the reason to distrust even the 122: *"situations in which transfer outcomes were obtained by
+the same source in the same measurement context — which consistently inflated transfer
+relationships."* Most behaviour-change measurement is the trainee reporting their own behaviour
+change to the trainer.
 
-Read that moderator list. Four of the five conditions under which training transfers are conditions
-outside the training: goals, the manager, the incentive structure, and the scenario coming from the
-trainee's own work. That is the adult analogue of Slavin's individual accountability — the effect
-lives in the surrounding structure.
+Taylor, Russ-Eft & Chan (2005), *JAP* `10.1037/0021-9010.90.4.692`, PMID 16060787, 117 studies of
+behaviour-modelling training, is the best-behaved result in the area: *"BMT effects were largest for
+learning outcomes, smaller for job behavior, and smaller still for results outcomes. Although BMT
+effects on declarative knowledge decayed over time, training effects on skills and job behavior
+remained stable or even increased… Transfer was greatest when mixed (negative and positive) models
+were presented, when practice included trainee-generated scenarios, when trainees were instructed to
+set goals, when trainees' superiors were also trained, and when rewards and sanctions were
+instituted in trainees' work environments."* `MEASURED-META`. Note the decay pattern runs opposite
+to the folk claim: knowledge decays, skills and job behaviour do not.
 
-**The 10% claim is untraceable.** The assertion that only about 10% of training transfers to the job
-is attributed universally to Georgenson (1982) in *Training and Development Journal*. `[X]`
-Searched: ERIC by author (`Georgenson` returns one 1984 needs-analysis article, not this one), ERIC
-full-text on the phrase, Crossref bibliographic search on the title *"The problem of transfer calls
-for partnership"*, and Crossref plus ERIC for Fitzpatrick's often-cited debunking. None resolved.
-The number is reported as untraceable and is not cited as evidence of anything.
+Four of those five transfer conditions sit outside the training — goals, the manager, the incentive
+structure, and the scenario coming from the trainee's own work. That is the adult analogue of
+Slavin's individual accountability: the effect lives in the surrounding structure. Lacerenza, Reyes,
+Marlow, Joseph & Salas (2017), *JAP* `10.1037/apl0000241`, `k = 335`, points the same way and adds
+one finding a software vendor should read twice: leadership training produced *"reactions (δ = .63),
+learning (δ = .73), transfer (δ = .82), and results (δ = .72),"* with moderator support for
+*"spaced training sessions, a location that is on-site, and face-to-face delivery that is not
+self-administered."* `MEASURED-META`.
+
+**The 10% claim is untraceable, and the debunking is real.** The assertion that only about 10% of
+training transfers to the job is universally attributed to Georgenson (1982), *Training and
+Development Journal* 36(10), 75–78. `[X]` It is absent from Crossref, absent from OpenAlex, and
+absent from ERIC — which indexes a *different* Georgenson article from the same journal and era
+(EJ306199, 1984), so the gap is not a coverage artefact. The venue is a trade magazine and the piece
+is three to four pages. There is no sample and no method behind the number. Fitzpatrick's debunking
+does exist — *"The strange case of the transfer of training estimate,"* *TIP* 39(2), 2001,
+`10.1037/e576912011-002` (APA PsycEXTRA), confirmed in both Crossref and OpenAlex — though its full
+text was not retrieved and no verbatim quote from it is available. The 10% figure is folklore with a
+citation attached and is not cited here as evidence.
 
 ## 3.4 Adult literacy and numeracy
 
-**Scale.** NCES 2019-179, *Adult Literacy in the United States*, from PIAAC (PDF extracted this
-session): *"one in five U.S. adults (21 percent) has difficulty completing these tasks… This
-translates into 43.0 million U.S. adults who possess low literacy skills: 26.5 million at level 1
-and 8.4 million below level 1, while 8.2 million could not participate."* `FILING`.
+**Scale, and it is getting worse.** PIAAC Cycle 1 (NCES 2019-179, PDF extracted this session):
+*"one in five U.S. adults (21 percent) has difficulty completing these tasks… This translates into
+43.0 million U.S. adults who possess low literacy skills."* Cycle 2 (NCES, *Highlights of the 2023
+U.S. PIAAC Results*): *"Between 2017 and 2023, there were increases in the percentages of adults
+performing at the lowest proficiency level (Level 1 or below) in both literacy and numeracy: in
+literacy this percentage increased from 19 to 28 percent and in numeracy from 29 to 34 percent,"*
+with the report's own caveat that *"Response rates for this data collection were relatively low."*
+Internationally, OECD (2024), *Survey of Adult Skills 2023* `10.1787/b263dc5d-en`, assessed
+*"about 160 000 adults aged 16-65 from 31 countries and economies"* and found *"26% in literacy, 25%
+in numeracy"* at Level 1 or below, with *"average literacy proficiency… stable or declined in most
+participating countries"* over the decade. `FILING`.
 
-**Evidence.** Torgerson, Porthouse & Brooks (2005), *Journal of Research in Reading*, ERIC EJ718454,
-verbatim: *"We included 27 controlled trials (CTs)… 18 CTs with no effect sizes (incomplete data)
-and 9 CTs with full data… Three of the nine trials showed a positive effect for the interventions,
-five trials showed no difference and one trial showed a positive effect for the control treatment…
-in terms of policy and practice it is difficult to make any recommendations as to the type of adult
-education that should be supported."* `MEASURED-META`. Twenty-two years of literature, nine usable
-trials, a third of them positive.
+**Evidence.** Torgerson, Porthouse & Brooks ran two syntheses. The 2003 one
+(`10.1111/1467-9817.00200`) restricted to RCTs and found **nine, worldwide, 1980–2002**, with
+*"evidence of publication bias"* and the conclusion that *"There is a dearth of rigorous RCTs in the
+field of adult literacy and numeracy."* The 2005 one (ERIC EJ718454) widened to controlled trials:
+*"We included 27 controlled trials (CTs)… 18 CTs with no effect sizes (incomplete data) and 9 CTs
+with full data… Three of the nine trials showed a positive effect for the interventions, five trials
+showed no difference and one trial showed a positive effect for the control treatment… it is
+difficult to make any recommendations as to the type of adult education that should be supported."*
+`MEASURED-META`.
 
-## 3.5 The documented adult null, and a second one
+For scale against outcome: the US National Reporting System recorded **1,120,769** Title II adult
+education participants in PY2022–23, of whom **43% made a measurable skill gain** and **15,320
+attained a postsecondary credential** while enrolled or within a year of exit — 1.4%. `FILING`,
+administrative, no control group.
+
+## 3.5 The documented adult nulls
 
 **Brooks, Burton, Cole, Miles, Torgerson & Torgerson (2008). "Randomised Controlled Trial of
 Incentives to Improve Attendance at Adult Literacy Classes."** *Oxford Review of Education*, ERIC
@@ -708,34 +790,129 @@ obligated population did not spend fifteen minutes with free software aimed at a
 assessed on. An adult-tutoring specification whose efficacy argument does not open with an
 engagement number is not making an argument.
 
+A third, at national scale. Ricciuti, St.Pierre, Lee, Parsad & Rimdzius (2004), *Third National Even
+Start Evaluation* (ERIC ED484058; IES), randomly assigned **463 families** across 18 grantees in 14
+states — 309 to Even Start, 154 to control — and measured adult literacy directly with the
+Woodcock-Johnson: *"Even Start children and parents made gains on a variety of literacy assessments
+and other measures at follow-up, but they did not gain more than children and parents in the control
+group… The underlying premise of Even Start as described by the statute and implemented in the field
+was not supported by this study."* `MEASURED-RCT`. The report notes this was the third consecutive
+null for the programme: *"A previous randomized controlled trial in the early 1990s did not show
+this program to have positive impacts."*
+
 ## 3.6 Reskilling: the only unambiguous transfer criterion in this corpus
 
-Card, Kluve & Weber (2018), *JEEA* `10.1093/jeea/jvx028` (NBER w21431), summarising *"over 200
-recent studies"* of active labour market programmes: average impacts small in the short run and
-larger two to three years after completion, with *"larger average gains for programs that emphasize
-human capital accumulation."* `MEASURED-META`. The estimate counts and significance distribution
-are not in the retrievable abstract and the IZA PDF did not extract cleanly; reported at the level
-the abstract supports.
+Card, Kluve & Weber (2018), *JEEA* `10.1093/jeea/jvx028` (IZA DP 9236, PDF extracted this session)
+assemble *"a sample of 207 studies that provide 857 separate estimates."* Their conclusions:
+*"(1) average impacts are close to zero in the short run, but become more positive 2-3 years after
+completion of the program; (2) the time profile of impacts varies by type of program, with larger
+gains for programs that emphasize human capital accumulation."* And the training-specific pattern:
+*"Work first programs tend to have larger short term effects, whereas human capital programs have
+small (or in some cases even negative) short term impacts, coupled with larger impacts in the medium
+or longer run… the pattern of rising impacts is driven almost entirely by training-based programs."*
+One caveat from the same paper matters for how much of this corpus can lean on it: *"the fractions
+of training programs evaluated by RCT's is relatively low."* `MEASURED-META`, predominantly
+non-experimental.
 
-The RCT is the WIA Gold Standard Evaluation (Fortson, Rotz, Burkander, Mastri, Schochet, Rosenberg
-& McConnell, 2017; Mathematica for the U.S. Department of Labor), random assignment across 28
-randomly selected local workforce investment areas. At thirty months, intensive staff-assisted
-services raised earnings by *"$3,300 to $7,100 (7 to 20 percent) per customer depending on the data
-source"*; and *"the evidence suggests that training funded by the Adult and Dislocated Worker
-programs does not have positive impacts in the 30 months after study enrollment,"* with the report's
-own caveat that the finding *"is not conclusive"* because training uptake was limited.
-`MEASURED-RCT`.
+**The RCT.** The WIA Gold Standard Evaluation (Fortson, Rotz, Burkander, Mastri, Schochet, Rosenberg
+& McConnell, 2017; Mathematica for the U.S. Department of Labor) randomly assigned over 34,000
+customers across 28 randomly selected local workforce investment areas to three research groups. At
+thirty months, intensive staff-assisted services raised earnings by *"$3,300 to $7,100 (7 to 20
+percent) per customer depending on the data source."* But: *"Though not conclusive, the evidence
+suggests that training funded by the Adult and Dislocated Worker programs does not have positive
+impacts in the 30 months after study enrollment… the evidence suggests that it is not likely that
+the impacts will increase because the difference across groups in enrollment in training disappeared
+by the beginning of the second year after random assignment."* `MEASURED-RCT`.
 
-Together these are the shape of the adult market: help from a person who knows the system pays, and
-training as delivered did not — with dosage offered again as the reason. Reich &
-Ruipérez-Valiente (2019), *Science* `10.1126/science.aav7958`, tells the same story online, and
-`F6` already carries MOOC attrition.
+`OBSERVED`, and worth a sentence on its own: **the arm that worked was published in a journal and
+the arm that produced the null was not.** The counselling result appears as McConnell, Schochet,
+Rotz, Fortson, Burkander & Mastri (2021), *JPAM* `10.1002/pam.22305`. The training null appears only
+in the grey-literature report. That is the corpus's own publication-bias concern operating inside a
+single federal evaluation.
+
+**The rest of the record.** Trade Adjustment Assistance (Schochet, D'Amico, Berk, Dolfin & Wozny,
+2012) is the most negative large-scale US retraining result: *"even four years after job loss, they
+had not yet closed the gap,"* and *"Over the entire 16-quarter follow-up period, the average
+participant earned about $37,100 less than the average comparison."* `OBSERVED` — a matched
+comparison design, not an RCT, as the report states. Job Corps (Schochet, Burghardt & McConnell,
+2008, *AER* `10.1257/aer.98.5.1864`, `n = 15,400` randomised) is an RCT and reports its own fade:
+*"Based on tax data, however, the earnings gains were not sustained except for the oldest
+participants."* `MEASURED-RCT`.
+
+Two positives, with their caveats attached. Year Up (Fein & Hamadyk, 2018, OPRE 2018-65,
+`n = 2,544` randomised) *"increased average quarterly earnings by $1,895 (53 percent)"* — *"the
+largest reported to date for workforce programs tested using a randomized controlled trial"* —
+against a per-participant cost of $28,290, more than half funded by employers, and a control group
+of whom *"57 percent… pursued training"* anyway. `MEASURED-RCT`. And WorkAdvance (MDRC,
+`n = 2,564`) is the reason to distrust any single-timepoint claim: at two years Per Scholas had
+*"large and consistent impacts"* while St. Nicks Alliance *"did not produce positive impacts"*; at
+seven years Per Scholas raised earnings 14% and no other site moved; at ten years *"the WorkAdvance
+program at St. Nicks Alliance increased average earnings by 32 percent"* and *"the other three
+WorkAdvance programs did not have an impact."* `MEASURED-RCT`. The sign flipped between sites over
+a decade.
+
+## 3.7 Adult online learning, and why the headline numbers mislead
+
+Two meta-analyses settle the shape of this and both are routinely misquoted.
+
+Means, Toyama, Murphy, Bakia & Jones (2009), the US Department of Education review (ERIC ED505824),
+is cited everywhere for *"an average effect size of +0.20 favoring online conditions."* Its own text
+supplies the correction: *"The mean effect size in studies comparing blended with face-to-face
+instruction was +0.35, p < .001… larger than that for studies comparing purely online and purely
+face-to-face conditions, which had an average effect size of +0.05, p = .46. In fact, the learning
+outcomes for students in purely online conditions and those for students in purely face-to-face
+conditions were statistically equivalent."* And on the population: *"The meta-analysis of 50 study
+effects, 43 of which were drawn from research with older learners,"* with the authors warning
+against generalising to K-12. `MEASURED-META`. This is an adult-learning meta-analysis that the
+field cites as a schools one.
+
+Cook, Levinson, Garside, Dupras, Erwin & Montori (2008), *JAMA* `10.1001/jama.300.10.1181`,
+`k = 201` studies of internet-based learning in the health professions, makes the same point in one
+comparison: against no intervention, knowledge **1.00, 95% CI [0.90, 1.10]**; against non-internet
+formats, knowledge **0.12, 95% CI [0.003, 0.24]**, satisfaction **0.10, n.s.**, skills **0.09,
+n.s.** *"Internet-based learning is associated with large positive effects compared with no
+intervention. In contrast, effects compared with non-Internet instructional methods are
+heterogeneous and generally small."* `MEASURED-META`.
+
+The best-powered field estimate runs mildly negative. Xu & Jaggars (2013), CCRC WP 54 /
+*Journal of Higher Education* `10.1080/00221546.2014.11777343`, used individual fixed effects across
+*"nearly 500,000 courses taken by over 40,000 community and technical college students"*: online
+course grade **−0.215 (OLS)** to **−0.282 (with working hours)**, persistence **−0.031** to
+**−0.046**, all `p < .001`, and *"males, younger students, Black students, and students with lower
+grade point averages"* suffered most. `OBSERVED`, quasi-experimental. The randomised versions agree:
+Figlio, Rush & Yin (2013), *JOLE* `10.1086/669930`, found *"modest evidence that live-only
+instruction dominates internet instruction… particularly strong for Hispanic students, male
+students, and lower-achieving students"* (Hispanic `11.276***`); Joyce et al. (2015), `n = 725`,
+found traditional format ahead by 2.3 points and noted *"the non-experimental [estimates] were 2.5
+times larger, suggesting that the large effects of attending lectures found in the previous
+literature are likely due to selection bias."* Bowen, Chingos, Lack & Nygren (2014), *JPAM*
+`10.1002/pam.21728`, `n = 605` across six campuses, found hybrid and face-to-face statistically
+equivalent.
+
+MOOC completion supplies the dosage number. Reich & Ruipérez-Valiente (2019), *Science*
+`10.1126/science.aav7958`, over *"12.67 million course registrations from 5.63 million learners"*:
+*"Of those who register for a course, 52% never enter the courseware,"* certification 4.96% in
+2013–14 falling to **3.13%** in 2017–18, 46.02% among paying verified learners, and *"Six years of
+investment in course development and learning research has not produced meaningful improvements in
+these figures."* `OBSERVED`.
+
+**A vendor claim, traced.** Grow with Google's certificates page states *"70%+ of certificate
+graduates report a positive career outcome… within six months"* and, on the same page, *"75 percent
+of program graduates report an improvement in their career."* The entire source footnote reads:
+*"Based on program graduate survey, United States 2025."* `VENDOR`. No control group, so it is not
+an impact estimate; no sample size or response rate; graduates only, excluding every dropout;
+self-reported rather than administrative earnings; and two different headline percentages sharing
+one footnote. `[X]` No independent or peer-reviewed evaluation of Google Career Certificates was
+located in Crossref, ERIC or NBER; since WebSearch was unavailable, that is *not located*, not
+*does not exist*.
 
 `INFERENCE`: this is the segment where an outcome could genuinely be measured, and the reason is
 structural. The transfer criterion is administrative — employment, wages, a credential an employer
 accepts — and somebody else records it, in state unemployment-insurance wage records, which is how
-the WIA evaluation measured it. Every other population in this corpus requires the evaluator to
-build the outcome measure. This one does not.
+the WIA evaluation and the Job Corps tax-data follow-up measured it. Every other population in this
+corpus requires the evaluator to build the outcome measure. This one does not, and the WorkAdvance
+sequence shows that whoever does build it must plan to read it at seven and ten years, because the
+two-year answer was wrong at three of four sites.
 
 ---
 
@@ -757,9 +934,15 @@ build the outcome measure. This one does not.
 | N12 | Shared reading on alphabet knowledge: **−0.06 [−0.47, 0.35]** | NELP (2008), k = 2 | `MEASURED-META` |
 | N13 | Tennessee pre-K randomised sample scored lower through sixth grade | Durkin et al. (2022), `n = 2,990` | `MEASURED-RCT` |
 | N14 | Andragogical vs pedagogical: 10 of 16 no difference, 2 favouring traditional | Rachal (1994), ERIC ED380566 | `MEASURED-META` |
-| N15 | **£5 per class attended reduced attendance** by ~1.5 sessions, p = .019 | Brooks et al. (2008), 28 clusters | `MEASURED-RCT` |
-| N16 | Numeracy software: small negative ITT effect; 12–24% used it for >15 minutes | Ainsworth et al. (2012), two RCTs | `MEASURED-RCT` |
-| N17 | WIA-funded training: no positive earnings impact at 30 months | WIA Gold Standard Evaluation (2017) | `MEASURED-RCT` |
+| N15 | Andragogical vs pedagogical online modules: null on reaction, achievement, performance and completion | Bradley (2010), ERIC ED517783, `n = 52` randomised | `MEASURED-RCT` |
+| N16 | Planning, monitoring, help seeking and emotion control showed **no significant relationship with learning** | Sitzmann & Ely (2011), `k = 430`, `N = 90,380` | `MEASURED-META` |
+| N17 | **£5 per class attended reduced attendance** by ~1.5 sessions, p = .019 | Brooks et al. (2008), 28 clusters | `MEASURED-RCT` |
+| N18 | Numeracy software: small negative ITT effect; 12–24% used it for >15 minutes | Ainsworth et al. (2012), two RCTs | `MEASURED-RCT` |
+| N19 | Even Start: parents gained, but no more than controls — the programme's third consecutive null | Ricciuti et al. (2004), 463 families randomised | `MEASURED-RCT` |
+| N20 | WIA-funded training: no positive earnings impact at 30 months | WIA Gold Standard Evaluation (2017), `n > 34,000` | `MEASURED-RCT` |
+| N21 | Purely online vs purely face-to-face: **+0.05, p = .46** — statistically equivalent | Means et al. (2009), `k = 50` | `MEASURED-META` |
+| N22 | Internet-based learning vs **non-internet formats**: knowledge **0.12**, skills 0.09 n.s., satisfaction 0.10 n.s. | Cook et al. (2008), *JAMA*, `k = 201` | `MEASURED-META` |
+| N23 | Online community-college courses: grade **−0.28**, persistence **−0.046**, `p < .001` | Xu & Jaggars (2013), ~500,000 courses | `OBSERVED` |
 
 ---
 
@@ -910,15 +1093,24 @@ It is measuring whether an AI-mediated group teaches a learner to work with a pe
 5. **The AAP 2016 recommendation text**, including the video-chat carve-out, confirmed only
    second-hand through a peer-reviewed review. Every AAP host returned 403.
 6. **Marion & Thorley's pooled magnitude**, and **Colliver's internal argument against Springer et
-   al.** Both closed, no OA copies.
-7. **The processing-speed side of §3.2.** The specific missing object is a study measuring whether
-   older adults acquire new domain material more slowly than younger adults once prior knowledge is
-   held constant — the only version of the question that matters for a tutoring specification, and
-   the version the ageing literature least often runs.
-8. **Whether anyone has measured socially shared regulation at scale.** `OBSERVED — absence`: one
+   al.** Both closed, no OA copies. The same applies to the numeric values inside Blume et al.
+   (2010) and Taylor et al. (2005), and to Sitzmann, Kraiger, Stewart & Wisher (2006) on web-based
+   instruction, whose abstract the publisher has elided everywhere and which has no OA location.
+7. **The ATD/ASTD level-3 and level-4 measurement percentages** that circulate in every corporate
+   L&D deck. `td.org` returned HTTP 429 repeatedly, Wayback has no snapshot of the relevant pages,
+   and ERIC indexes no ASTD report with level-by-level figures. Twitchell (1997/2000) is used
+   instead because it has a DOI and a stated method.
+8. **Age moderation of the testing and spacing effects.** Neither Rowland (2014) nor Cepeda et al.
+   (2006) reports it. `OBSERVED — absence`. Since this corpus's `F11` architecture is built on
+   spacing and retrieval and §3.2 shows adults differ measurably on speed and prior knowledge, the
+   moderator that would tell us whether `F11`'s schedules transfer to a forty-year-old has not been
+   estimated.
+9. **Whether anyone has measured socially shared regulation at scale.** `OBSERVED — absence`: one
    narrative review of 13 mostly-qualitative papers, and controlled studies at `n = 66` and `n = 94`.
    No meta-analysis. The group analogue of `V5`'s entire premise has an evidence base smaller than
    one adequately powered trial.
+10. **Any RCT of a coding bootcamp, or of online vocational training in a low-income country.**
+    Not located; with WebSearch unavailable this is *not found*, not *does not exist*.
 
 ---
 
@@ -1022,20 +1214,51 @@ It is measuring whether an AI-mediated group teaches a learner to work with a pe
 **Adults**
 
 75. † Rachal, J. R. (1994). Andragogical and pedagogical methods compared. ERIC ED380566. 18 studies. `MEASURED-META` (null)
-76. Rachal, J. R. (2002). Andragogy's detectives. *Adult Education Quarterly*. ERIC EJ644442. `MEASURED-META` (review)
-77. Davenport, J., III (1987). A way out of the andragogy morass. ERIC ED283989. `INFERENCE` (critique)
-78. † Arthur, W., Jr., Bennett, W., Jr., Edens, P. S., & Bell, S. T. (2003). *JAP*, 88(2). `10.1037/0021-9010.88.2.234`, PMID 12731707. `MEASURED-META`
-79. † Taylor, P. J., Russ-Eft, D. F., & Chan, D. W. (2005). *JAP*, 90(4). `10.1037/0021-9010.90.4.692`, PMID 16060787. 117 studies. `MEASURED-META`
-80. Blume, B. D., Ford, J. K., Baldwin, T. T., & Huang, J. L. (2010). *Journal of Management*, 36(4). `10.1177/0149206309352880`. 89 studies. `MEASURED-META`
-81. Georgenson, D. (1982). The problem of transfer calls for partnership. *Training and Development Journal*, 36(10). **Untraceable in ERIC and Crossref; the "10% transfers" figure is not cited.**
-82. † Torgerson, C., Porthouse, J., & Brooks, G. (2005). *Journal of Research in Reading*. ERIC EJ718454. 27 CTs, 9 usable. `MEASURED-META`
-83. † Brooks, G., Burton, M., Cole, P., Miles, J., Torgerson, C., & Torgerson, D. (2008). *Oxford Review of Education*. ERIC EJ810523. 28 clusters. `MEASURED-RCT` (null / backfire)
-84. † Ainsworth, H., et al. (2012). *Educational Studies*. ERIC EJ959747. Two RCTs. `MEASURED-RCT` (null / negative)
-85. Card, D., Kluve, J., & Weber, A. (2018). *JEEA*, 16(3). `10.1093/jeea/jvx028`; NBER w21431. 200+ studies. `MEASURED-META`
-86. † Fortson, K., Rotz, D., Burkander, P., Mastri, A., Schochet, P., Rosenberg, L., & McConnell, S. (2017). *Providing Public Workforce Services to Job Seekers: 30-Month Impact Findings on the WIA Adult and Dislocated Worker Programs.* Mathematica for U.S. DOL. 28 local areas. `MEASURED-RCT` (null on training)
-87. NCES (2019). *Adult Literacy in the United States.* Data Point NCES 2019-179. ERIC ED596118. PIAAC. `FILING`
-88. Reich, J., & Ruipérez-Valiente, J. A. (2019). The MOOC pivot. *Science*, 363(6423). `10.1126/science.aav7958`. `OBSERVED`
-89. Kyndt, E., & Beinicke, A. (2020). Evidence-based actions for maximising training effectiveness in corporate e-learning and classroom training. *Studies in Continuing Education*. ERIC EJ1262820. `OBSERVED` (survey)
+76. Rachal, J. R. (2002). Andragogy's detectives. *Adult Education Quarterly*, 52(3). `10.1177/0741713602052003004`. ERIC EJ644442. `MEASURED-META` (review)
+77. † Bradley, J. B., Jr. (2010). Andragogical vs pedagogical online modules for non-profit professionals. ERIC ED517783. `n = 52` randomised, 33 analysed. `MEASURED-RCT` (null)
+78. Holton, E. F., III, Wilson, L. S., & Bates, R. A. (2009). Toward development of a generalized instrument to measure andragogy. *HRDQ*, 20(2). ERIC EJ848487. `OBSERVED`
+79. Taylor, B., & Kroth, M. (2009). *Journal of Adult Education*, 38(1). ERIC EJ891073. **Titled a meta-analysis; is a narrative review. Not quantitative evidence.**
+80. Davenport, J., III (1987). A way out of the andragogy morass. ERIC ED283989. `INFERENCE` (critique)
+81. † Sitzmann, T., & Ely, K. (2011). A meta-analysis of self-regulated learning in work-related training and educational attainment. *Psychological Bulletin*, 137(3). `10.1037/a0022777`, PMID 21401218. `k = 430`, `N = 90,380`. `MEASURED-META`
+82. † Salthouse, T. A. (2009). When does age-related cognitive decline begin? *Neurobiology of Aging*, 30(4). `10.1016/j.neurobiolaging.2008.09.023`, PMC2683339. `N = 2,350`. `OBSERVED` — with Schaie's published reply, PMID 19231029
+83. Verhaeghen, P., & Salthouse, T. A. (1997). *Psychological Bulletin*, 122(3). PMID 9354147. `k = 91`. `MEASURED-META`
+84. † Verhaeghen, P. (2003). Aging and vocabulary scores: A meta-analysis. *Psychology and Aging*, 18(2). PMID 12825780. 324 comparisons across 210 articles; **+0.80 SD favouring older adults**. `MEASURED-META`
+85. † Kubeck, J. E., Delp, N. D., Haslett, T. K., & McDaniel, M. A. (1996). Does job-related training performance decline with age? *Psychology and Aging*, 11(1). PMID 8726375. `k = 83`, `N = 6,610`. `MEASURED-META`
+86. † Beier, M. E., & Ackerman, P. L. (2005). Age, ability, and the role of prior knowledge on the acquisition of new domain knowledge. *Psychology and Aging*, 20(2). PMID 16029097. `n = 199`, ages 19–68. `OBSERVED`
+87. Hartshorne, J. K., & Germine, L. T. (2015). *Psychological Science*, 26(4). `10.1177/0956797614567339`. `n = 48,537`. `OBSERVED`
+88. † Arthur, W., Jr., Bennett, W., Jr., Edens, P. S., & Bell, S. T. (2003). *JAP*, 88(2). `10.1037/0021-9010.88.2.234`, PMID 12731707. `MEASURED-META`
+89. † Taylor, P. J., Russ-Eft, D. F., & Chan, D. W. (2005). *JAP*, 90(4). `10.1037/0021-9010.90.4.692`, PMID 16060787. 117 studies. `MEASURED-META`; numeric `d` values not retrievable
+90. Blume, B. D., Ford, J. K., Baldwin, T. T., & Huang, J. L. (2010). *Journal of Management*, 36(4). `10.1177/0149206309352880`. 89 studies. `MEASURED-META`; correlations not retrievable
+91. Lacerenza, C. N., Reyes, D. L., Marlow, S. L., Joseph, D. L., & Salas, E. (2017). Leadership training design, delivery, and implementation. *JAP*, 102(12). `10.1037/apl0000241`, PMID 28749153. `k = 335`. `MEASURED-META`
+92. † Twitchell, S. (1997). *Technical Training Program Evaluation: Present Practices in United States' Business and Industry.* LSU dissertation, `10.31390/gradschool_disstheses.6552`; published as Twitchell, Holton & Trott (2000), *PIQ*, 13(3), `10.1111/j.1937-8327.2000.tb00177.x`. `n = 146`. `OBSERVED`
+93. Georgenson, D. (1982). The problem of transfer calls for partnership. *Training and Development Journal*, 36(10). **Absent from Crossref, OpenAlex and ERIC; the "10% transfers" figure is not cited.**
+94. Fitzpatrick, R. (2001). The strange case of the transfer of training estimate. *TIP*, 39(2). `10.1037/e576912011-002`. **Existence verified in Crossref and OpenAlex; full text not retrieved.**
+95. † Torgerson, C. J., Porthouse, J., & Brooks, G. (2003). *Journal of Research in Reading*, 26(3). `10.1111/1467-9817.00200`. Nine RCTs worldwide, 1980–2002; publication bias present. `MEASURED-META`
+96. † Torgerson, C., Porthouse, J., & Brooks, G. (2005). *Journal of Research in Reading*, 28(2). `10.1111/j.1467-9817.2005.00256.x`. ERIC EJ718454. 27 CTs, 9 usable. `MEASURED-META`
+97. † Brooks, G., Burton, M., Cole, P., Miles, J., Torgerson, C., & Torgerson, D. (2008). *Oxford Review of Education*, 34(4). `10.1080/03054980701768741`. ERIC EJ810523. 28 clusters. `MEASURED-RCT` (null / backfire)
+98. † Ainsworth, H., et al. (2012). *Educational Studies*. ERIC EJ959747. Two RCTs. `MEASURED-RCT` (null / negative)
+99. † Ricciuti, A. E., St.Pierre, R. G., Lee, W., Parsad, A., & Rimdzius, T. (2004). *Third National Even Start Evaluation.* NCEE/IES. ERIC ED484058. 463 families randomised. `MEASURED-RCT` (null)
+100. What Works Clearinghouse (2020). *Integrated Basic Education and Skills Training (I-BEST).* WWC 2020-012. 12 studies, 3 meeting standards. `MEASURED-META`
+101. NCES (2019). *Adult Literacy in the United States.* NCES 2019-179. ERIC ED596118. PIAAC Cycle 1. `FILING`
+102. † NCES (2024). *Highlights of the 2023 U.S. PIAAC Results.* Cycle 2. Level 1 or below rose 19→28% literacy, 29→34% numeracy, 2017–2023. `FILING`
+103. † OECD (2024). *Do Adults Have the Skills They Need to Thrive in a Changing World? Survey of Adult Skills 2023.* `10.1787/b263dc5d-en`. ~160,000 adults, 31 countries. `FILING`
+104. OCTAE, *National Reporting System for Adult Education*, PY2022–23 Data Highlights. 1,120,769 participants; 43% measurable skill gain; 15,320 postsecondary credentials. `FILING`
+105. † Card, D., Kluve, J., & Weber, A. (2018). *JEEA*, 16(3). `10.1093/jeea/jvx028`; IZA DP 9236. **207 studies, 857 estimates.** `MEASURED-META`
+106. † Fortson, K., Rotz, D., Burkander, P., Mastri, A., Schochet, P., Rosenberg, L., & McConnell, S. (2017). *Providing Public Workforce Services to Job Seekers: 30-Month Impact Findings on the WIA Adult and Dislocated Worker Programs.* Mathematica for U.S. DOL. 28 local areas, `n > 34,000`. `MEASURED-RCT` (null on training)
+107. McConnell, S., Schochet, P. Z., Rotz, D., Fortson, K., Burkander, P., & Mastri, A. (2021). *JPAM*, 40(4). `10.1002/pam.22305`. The counselling arm of the same trial, published. `MEASURED-RCT`
+108. † Schochet, P. Z., D'Amico, R., Berk, J., Dolfin, S., & Wozny, N. (2012). *Estimated Impacts for Participants in the Trade Adjustment Assistance Program.* SPR & Mathematica for U.S. DOL. `OBSERVED` — matched comparison, not an RCT
+109. Schochet, P. Z., Burghardt, J., & McConnell, S. (2008). Does Job Corps work? *AER*, 98(5). `10.1257/aer.98.5.1864`. `n = 15,400`. `MEASURED-RCT`
+110. † Fein, D., & Hamadyk, J. (2018). *Bridging the Opportunity Divide for Low-Income Youth: Year Up.* OPRE 2018-65. ERIC ED615553. `n = 2,544`. `MEASURED-RCT`
+111. † MDRC WorkAdvance sequence: Hendra et al. (2016), two years; Kanengiser & Schaberg (2022), seven years; Yusim, Schaberg, Tessler & Ubalijoro (2025), ten years. `n = 2,564`. `MEASURED-RCT`
+112. † Means, B., Toyama, Y., Murphy, R., Bakia, M., & Jones, K. (2009). *Evaluation of Evidence-Based Practices in Online Learning.* U.S. Dept of Education. ERIC ED505824. `k = 50`, 43 with older learners. `MEASURED-META`
+113. † Cook, D. A., Levinson, A. J., Garside, S., Dupras, D. M., Erwin, P. J., & Montori, V. M. (2008). Internet-based learning in the health professions. *JAMA*, 300(10). PMID 18780847. `k = 201`. `MEASURED-META`
+114. † Xu, D., & Jaggars, S. S. (2013/2014). Adaptability to online learning. CCRC WP 54 / *Journal of Higher Education*, 85(5). `10.1080/00221546.2014.11777343`. ~500,000 courses, ~40,000 students. `OBSERVED`
+115. Figlio, D. N., Rush, M., & Yin, L. (2013). *Journal of Labor Economics*, 31(4). `10.1086/669930`. `MEASURED-RCT`
+116. Joyce, T. J., Crockett, S., Jaeger, D. A., Altindag, O., & O'Connell, S. D. (2015). Does classroom time matter? *Economics of Education Review*, 46. `n = 725`. `MEASURED-RCT`
+117. Bowen, W. G., Chingos, M. M., Lack, K. A., & Nygren, T. I. (2014). *JPAM*, 33(1). `10.1002/pam.21728`. `n = 605`, six campuses. `MEASURED-RCT`
+118. † Reich, J., & Ruipérez-Valiente, J. A. (2019). The MOOC pivot. *Science*, 363(6423). `10.1126/science.aav7958`. `OBSERVED`
+119. Grow with Google, certificates page (retrieved 30 July 2026). *"Based on program graduate survey, United States 2025."* `VENDOR` — never restated as a finding.
+120. Kyndt, E., & Beinicke, A. (2020). Evidence-based actions for maximising training effectiveness in corporate e-learning and classroom training. *Studies in Continuing Education*. ERIC EJ1262820. `OBSERVED` (survey)
 
 **Carried from the corpus, not re-derived:** `I1`'s mechanism-survival test and its scoring of
 "genuine peers with real stakes"; `I2` §2.6 on chavruta's symmetry under substitution and §9.4 on

@@ -221,9 +221,9 @@ AI-in-education venue, by authors whose other work is broadly favourable to AWE.
 Kabra et al. (2023) corroborate it from the NLP side: deep AES models with
 contextual embeddings *"behave like bag-of-words models."* `MEASURED-BENCH`.
 
-The psychometric half of this argument belongs to §12 and is not repeated. What
-the construct result adds is instructional: a learner who optimises against a
-development score that is a word count learns to produce words.
+§12 owns the question of what an essay score licenses as a claim about a person.
+What the construct result adds here is instructional: a learner who optimises
+against a development score that is a word count learns to produce words.
 
 ---
 
@@ -332,8 +332,8 @@ discontinuity: significant increases in instructional time on the five essential
 components, in professional development, in reading coaches, and in first-grade
 decoding — and **no statistically significant impact on reading comprehension in
 grades one, two or three.** `MEASURED-RCT` (RD). A framework can be delivered
-with fidelity and dosage and still not move the outcome, which is §04's Fuchs
-result at national scale.
+with fidelity and dosage and still not move the outcome, which is §04's
+measurement-without-a-decision-rule result at national scale.
 
 ---
 

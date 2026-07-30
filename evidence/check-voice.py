@@ -65,6 +65,9 @@ FRONT_RATE = {
     "`nobody has X`":     (re.compile(r"\bnobody has\b"),                                             1.5),
     "`worth X-ing`":      (re.compile(r"\bworth (?:stating|doing|having|running|taking|being)\b"),     0.8),
     "`the honest X`":     (re.compile(r"\bthe honest \w+"),                                            0.5),
+    "`X, not Y`":         (re.compile(r",\s+not\s+\w"),                                                1.6),
+    "`rather than`":      (re.compile(r"\brather than\b"),                                             1.0),
+    "`exactly`":          (re.compile(r"\bexactly\b"),                                                 0.6),
     "em-dash":            (re.compile(r"—"),                                                           8.0),
     "bold span":          (re.compile(r"\*\*[^*\n]+\*\*|<(?:b|strong)\b[^>]*>"),                     16.0),
 }

@@ -69,7 +69,7 @@ Each multiplies something else and none produces value alone, which gives a rule
 
 Where a strong check exists, agents reach **79.2%** (SWE-bench Verified) and **83.8%**
 (Terminal-Bench). Where it is weak or missing, **21.0%** (PaperBench) and **4.6%** (SciCode,
-which does have hand-written tests, and is why the rule is a bound rather than an equality). A
+which does have hand-written tests, and is why the rule is a bound and not an equality). A
 twenty-fold spread that tracks the quality of the check, not the difficulty of the task.
 
 **Coding agents work because `pytest` exists. Pedagogy has no `pytest`**, and every agentic
@@ -139,7 +139,7 @@ nulls.
 This survey got things wrong. The record of that is the reason to trust the rest of it.
 
 [`CORRECTIONS.md`](CORRECTIONS.md) is an append-only ledger with a provenance column. A
-substantial minority of its entries were found by **adversarial reviewers rather than by us**,
+substantial minority of its entries were found by **adversarial reviewers, not by us**,
 including the two most damaging numbers, and one about the ledger itself, which was being
 silently edited inside a table headed *"published rather than silently edited."*
 
@@ -163,7 +163,7 @@ each violation and fails if the rule does not fire.
 **The editorial standard.** Every claim carries one of `MEASURED-RCT`, `MEASURED-META`,
 `MEASURED-BENCH`, `OBSERVED`, `VENDOR`, `DEMO`, `INFERENCE`, `CRAFT`, `SPEC`, `STATUTE` or
 `FILING`. A `VENDOR` claim is never restated as a finding. Claims that could not be verified are
-reported as unverifiable rather than dropped.
+reported as unverifiable instead of dropped.
 
 ---
 
@@ -189,5 +189,5 @@ Corrections are the currency here. If you find an error, **open an issue with th
 source.** Every correction gets published in the ledger with attribution, including the ones that
 make this project look bad. Those are the ones worth having.
 
-If you cite this work, cite the report in [`research/raw/`](research/raw/) rather than the survey
+If you cite this work, cite the report in [`research/raw/`](research/raw/), not the survey
 summary. The report carries the sources and the evidence labels.

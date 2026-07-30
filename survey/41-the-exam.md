@@ -11,8 +11,8 @@ source_report: research/raw/R2-exam-technique-and-revision.md
 The markets this survey keeps naming — SAT, PSAT, NEET, JEE, GATE, EAMCET, the
 gaokao — are the ones where the customer's stated goal is a number. Hundreds of
 millions of learners, and the largest sums in tutoring anywhere. Until this section
-the survey specified a tutor and had never asked what happens when somebody prepares
-for the examination that decides their life.
+the survey specified a tutor and had never asked how anyone prepares for the
+examination that decides their life.
 
 Here is the answer, in the unit a buyer uses. Powers and Rock, having run seven
 estimators against a stratified random sample of about 6,700 SAT registrants,
@@ -34,18 +34,17 @@ November or December 1995 SAT I administrations and one in 200 juniors for May o
 June 1996; about 4,200 responded (63%), of whom nearly 12% had attended a coaching
 programme outside school. The design is observational and the authors open their
 discussion by saying so: *"There was no random assignment to treatments."* `OBSERVED`
-
-Because coaching is self-selected, they ran seven estimators on the same data and
-took the envelope as the answer. Their summary, discounting two outliers, is
-**6–8 scale points on SAT verbal and 13–18 on SAT mathematics** — *"by commonly used
-standards (Cohen, 1988), these effects can be regarded as small."*
+Because coaching is self-selected, they ran seven estimators and took the envelope as
+the answer. Their summary, discounting two outliers, is **6–8 scale points on SAT
+verbal and 13–18 on SAT mathematics** — *"by commonly used standards (Cohen, 1988),
+these effects can be regarded as small."*
 
 The estimand is the difference in scale points between coached and matched uncoached
-candidates on an operational retest. It is not a pre-post gain, and the gap between
-those two quantities is the entire commercial argument. Raw pre-post gains in the
-same dataset were 29 verbal and 40 mathematics for the coached, against 21 and 22 for
-the uncoached. A vendor that reports the coached column alone reports 29 and 40 as
-its effect, and most of both is regression, practice and ordinary growth.
+candidates on an operational retest, and the gap between that and a pre-post gain is
+the entire commercial argument. Raw pre-post gains in the same dataset were 29 verbal
+and 40 mathematics for the coached, against 21 and 22 for the uncoached. A vendor
+reporting the coached column alone reports 29 and 40 as its effect, and most of both
+is regression, practice and ordinary growth.
 
 Against 6–8 and 13–18, the claims Powers and Rock quote from the two firms' own
 websites in November 1997 are **120 combined points (Kaplan) and 140 (Princeton
@@ -57,19 +56,18 @@ Two further readings, and they are the same literature read twice, so no indepen
 is claimed between them. Becker (1990), *Review of Educational Research* 60(3),
 synthesising 48 studies in 23 reports: coached groups exceeded controls by **0.09 SD
 on SAT-V and 0.16 SD on SAT-M**. `MEASURED-META` Briggs (2001), *Chance* 14(1), on
-NELS:88 with n = 4,730 who took the PSAT and then the SAT or ACT: under controls for
-demographics, ability, motivation proxies and other preparation activities,
-**mathematics +15, verbal +6, about 20 points combined**. `OBSERVED` Students in that
-same panel who simply retook the test improved 33 points on mathematics and 27 on
-verbal with no intervention at all.
+NELS:88, n = 4,730: under controls for demographics, ability, motivation proxies and
+other preparation activities, **mathematics +15, verbal +6, about 20 points
+combined**. `OBSERVED` Students in that same panel who simply retook the test
+improved 33 points on mathematics and 27 on verbal with no intervention at all.
 
 Becker's moderator list is where exam technique enters the meta-analytic record for
 the only time: effect magnitude was related to *"whether instruction included test
 practice and attention to test-taking skills, and whether homework was assigned."*
-Everything published since is scale construction and think-aloud protocol. No trial
-of teaching time allocation, question interpretation or mark-scheme reading against
-an equal-time control was located. The product a very large industry sells is close
-to unmeasured.
+Everything published since is scale construction and think-aloud protocol, with no
+located trial of teaching time allocation, question interpretation or mark-scheme
+reading against an equal-time control. The product a very large industry sells is
+close to unmeasured.
 
 Briggs also carries the result nobody quotes. Under full controls, coaching's effect
 on ACT mathematics is not significant and on **reading it is negative, about −0.6 to
@@ -89,16 +87,15 @@ Typical growth between those two sittings is roughly 60 combined points on Brigg
 NELS figure. `VENDOR`
 
 The primary source is Weatherholtz et al. (2020), a Khan Academy technical report
-whose subtitle is *An Observational Study* and which states that *"these working
-papers have not undergone blind peer review."* This survey discounts working papers
-against peer-reviewed estimates as a rule, and here there is no peer-reviewed
-estimate to discount it against. What it reports, for the class of 2019, controlling
-for PSAT composite, demographics, administration type and weeks between tests:
-**six or more hours on the platform gives +21 points, effect size 0.11**; six or more
-hours plus one of three best-practice behaviours gives +39 points, effect size 0.20,
-and reaching that required 12.3 hours. Appendix F's propensity-score check returns
-ATT estimates of **35.7 to 38.6** across logistic and gradient-boosted weighting.
-`OBSERVED` (working paper)
+subtitled *An Observational Study*, which states that *"these working papers have not
+undergone blind peer review."* This survey discounts working papers against
+peer-reviewed estimates as a rule, and there is no peer-reviewed estimate to discount
+it against. For the class of 2019, controlling for PSAT composite, demographics,
+administration type and weeks between tests: **six or more hours on the platform
+gives +21 points, effect size 0.11**; six hours plus one of three best-practice
+behaviours gives +39 points, effect size 0.20, which took 12.3 hours to reach.
+Appendix F's propensity-score check returns ATT estimates of **35.7 to 38.6** across
+logistic and gradient-boosted weighting. `OBSERVED` (working paper)
 
 The report also corrects its own predecessor: the controlled 2017 figure was *"30
 additional points on their last SAT compared to students who did not use OSP."*
@@ -116,15 +113,15 @@ hours, not efficacy.
 
 One moderator recurs in all four sources and it cuts against the equity claim. Powers
 and Rock found coaching effects correlated positively with English grades (r = .14),
-mathematics grades (r = .12) and parental education (r = .12). Briggs found coaching
+mathematics grades (r = .12) and parental education (r = .12); Briggs found coaching
 most effective for high-SES students with good mathematics grades. The Khan Academy
 report found best-practice behaviours least common where they would help most: in the
 bottom PSAT quartile 5% levelled up 15 or more skills against 24% in the top
 quartile, and 8% completed a practice examination against 19%. `OBSERVED`
 
-Free access did not flatten the gradient, because the gradient lives in usage. §04
-argues that designing for the margin is what makes a system work for everyone; this
-is the measurement that says access alone will not do it.
+Free access did not flatten the gradient, because the gradient lives in usage rather
+than in access. §04 argues that designing for the margin is what makes a system work
+for everyone; this is the measurement that says access alone will not do it.
 
 ---
 
@@ -141,9 +138,7 @@ The scale against which that absence should be read: India's NSS 75th round
 (July 2017–June 2018) records private coaching at **11.8% of average household
 education expenditure**, peaking around 29–31% of students at secondary level, and
 the 2025 Comprehensive Modular Survey on Education reports roughly 27% of students
-taking private coaching. `FILING` Physics Wallah's pre-IPO disclosures report 4.46
-million paid users, a figure reaching this survey through business press citing the
-DRHP and not verified against the filing itself.
+taking private coaching. `FILING`
 
 There is no causal estimate of what attending Kota, Allen, Aakash or Physics Wallah
 does to a NEET or JEE rank. No trial, no regression discontinuity, no published
@@ -153,24 +148,24 @@ top ranks, a survivorship statistic on a population selected on ability at intak
 
 China is one degree better and the answer is null. Zhang (2013), *Economics of
 Education Review* 32, on Jinan: *"The average effect of private tutoring is not
-significant,"* with mixed heterogeneous effects by subject and a possible positive
-effect for urban lower-achieving students. `OBSERVED` (null) One city, one 2010
-dataset, observational, and it is the only estimate located of tutoring's effect on
-the gaokao itself.
+significant,"* with heterogeneous effects by subject and a possible positive effect
+for urban lower-achieving students. `OBSERVED` (null) One city, one 2010 dataset,
+observational, and the only located estimate of tutoring's effect on the gaokao
+itself.
 
 The identification strategy is sitting in plain view and nobody has used it: coaching
 institutes admit on their own entrance tests with published score cutoffs, and a
 **regression discontinuity at the cutoff** would identify the effect for marginal
-admits. That design is cheap relative to the size of the market it would inform.
+admits, cheaply, for the largest examination market on earth.
 
 ---
 
 ## 5. Learners revise with the technique the evidence rates lowest
 
 §01 establishes that active learning raises real learning while lowering felt
-learning. Revision arrives at the same dissociation from the other side: the
-technique that maximises the feeling of knowing is the one that minimises knowing,
-and learners choose it overwhelmingly.
+learning. Revision reaches the same dissociation from the other side: the technique
+that maximises the feeling of knowing minimises knowing, and learners choose it
+overwhelmingly.
 
 Karpicke, Butler & Roediger (2009), free-report survey of 177 undergraduates at a
 highly selective university: **83.6% list rereading and 54.8% rank it first; 10.7%
@@ -196,16 +191,15 @@ Dunlosky et al. (2013), *Psychological Science in the Public Interest*, rates te
 techniques. The two rated **high utility** are practice testing and distributed
 practice. The five rated **low** are summarisation, highlighting, the keyword
 mnemonic, imagery for text, and rereading. `MEASURED-META` Highlighting is the only
-technique carrying an *N* — largely ineffective — and it carries two, on criterion
+technique carrying an *N* for largely ineffective, and it carries two, on criterion
 tasks and in educational contexts. The two high-utility techniques are what a
-competent revision system runs. The five low ones are what a learner does unaided.
+competent revision system runs; the five low ones are what a learner does unaided.
 That gap is the product.
 
 The corrective is narrower than "never ask the learner". Koriat & Bjork (2005) locate
-the illusion in information present at study and absent at test; their 2006 companion
-shows it is **remediable** by manipulations that raise sensitivity to retrieval
-conditions. The design rule is therefore to ask under retrieval conditions: elicit
-confidence **only after a closed-book attempt, never before**.
+the illusion in information present at study and absent at test, and their 2006
+companion shows it is **remediable** by manipulations that raise sensitivity to
+retrieval conditions. So: elicit confidence **only after a closed-book attempt**.
 
 ---
 
@@ -222,28 +216,27 @@ Roediger & Karpicke's Experiment 1, n = 120, gives the trade-off a shape and a h
 
 Massing wins for a few hours and the crossover is complete by two days. A student
 cramming on Thursday night for a Friday-morning paper is already outside the window
-where the evidence has massing ahead.
+where massing is ahead.
 
 What runs further is Cepeda et al. (2008), n > 1,350, gaps to 3.5 months and test
 delays to a year: *"the optimal gap declined from about 20 to 40% of a 1-week test
-delay to about 5 to 10% of a 1-year test delay."* `MEASURED-RCT` Read as a revision
-rule, an examination one week away wants a gap of one and a half to three days
-between study episodes; three months away wants a week to ten days. There is no test
-delay in the measured range at which zero gap is optimal. §08 owns the scheduling
-machinery this sits on.
+delay to about 5 to 10% of a 1-year test delay."* `MEASURED-RCT` As a revision rule,
+an examination one week away wants a gap of one and a half to three days between
+study episodes; three months away wants a week to ten days. No test delay in the
+measured range makes a zero gap optimal. §08 owns the scheduling machinery.
 
 The defensible case for cramming is about coverage and not about memory. A candidate
 with four days and forty topics is choosing between shallow coverage of forty and
-spaced coverage of twelve, which is an expected-marks maximisation under a
-topic-sampling distribution that past papers estimate directly. Neither the spacing
-literature nor the coaching industry poses it that way.
+spaced coverage of twelve, an expected-marks maximisation under a topic-sampling
+distribution that past papers estimate directly. Neither the spacing literature nor
+the coaching industry poses it that way.
 
 Past papers themselves have a sharply diminishing return. Bangert-Drowns, Kulik &
 Kulik (1991), 40 studies: at least one test over 15 weeks is worth about **half a
-standard deviation** on the criterion examination against no tests, while more
-frequent testing against less frequent is worth about **one tenth**. `MEASURED-META`
-An unlimited supply of generated papers is worth little on its own. The value has to
-come from what is extracted per paper.
+standard deviation** on the criterion examination against no tests, while frequent
+testing against less frequent testing is worth about **one tenth**. `MEASURED-META`
+An unlimited supply of generated papers is therefore worth little in itself; the
+value comes from what is extracted per paper.
 
 ---
 
@@ -251,9 +244,9 @@ come from what is extracted per paper.
 
 Cooper, Robinson & Patall (2006), *Review of Educational Research* 76(1).
 `MEASURED-META` The causal arm is five studies, three with successful random
-assignment, pooling to **d = 0.60 [0.38, 0.82]** and **d = 0.53 [0.29, 0.79]**
-respectively, with the authors' own robustness check noting the mean d would not have
-been significant under an assumed intraclass correlation of .4.
+assignment, pooling to **d = 0.60 [0.38, 0.82]** and **d = 0.53 [0.29, 0.79]**, with
+the authors' own robustness check noting the mean d would not have been significant
+under an assumed intraclass correlation of .4.
 
 The correlational arm is where the quotable claim lives, and the standard paraphrase
 — homework does not work in primary school — survives none of three corrections.
@@ -279,12 +272,12 @@ Where the sign is genuinely negative is parental help. Fernández-Alonso et al.
 2018: *"Students who had more help with homework had lower academic achievement, with
 an overall effect (d) = 0.23, 95% CI [0.21, 0.25]."* `MEASURED-META` Stable across
 subject and cycle; moderated by region (Europe 0.30, Southeast Asia 0.09). It is
-cross-sectional and reverse causation is the obvious mechanism, which the authors
-name themselves before landing on the design claim: *"it is more important how that
-help is given than how much."*
+cross-sectional, and reverse causation is the obvious mechanism, which the authors
+name before landing on the design claim: *"it is more important how that help is
+given than how much."*
 
 For a system with a parent in the loop, that is the cleanest actionable result in the
-literature. The supported role is structure-setting and monitoring. An assistant that
+literature. The supported role is structure-setting and monitoring; an assistant that
 supplies the answer is performing the thing measured at d = 0.23 in the wrong
 direction. The parent-facing surface should be a structure and the child-facing
 surface a tutor, and they should not be the same object.
@@ -305,11 +298,11 @@ Oreopoulos et al. (2023), *The Economic Journal*, `doi:10.1093/ej/uead064`.
 > grades and develop stronger preferences for high grades, but these effects are too
 > small to translate into academic benefits."*
 
-Randomised, published in a top-five economics journal, powered for small effects, and
-with the mediator measured. It moved the variable everyone assumes is the bottleneck
-and did not move the outcome. Any product whose mechanism reduces to encouragement,
-nudging or time-management advice should be assumed ineffective until a trial says
-otherwise, and that description covers a large fraction of what currently ships.
+Randomised, in a top-five economics journal, powered for small effects, mediator
+measured. It moved the variable everyone assumes is the bottleneck and did not move
+the outcome. Any product whose mechanism reduces to encouragement, nudging or
+time-management advice should be assumed ineffective until a trial says otherwise,
+and that covers a large fraction of what currently ships.
 
 ---
 
@@ -325,12 +318,12 @@ and commissioned the research to test it. It failed, and the refutation is logge
 
 It was put against four objections. The decisive one is the first: **a mark scheme
 checks the learner's answer, not the tutor's diagnosis**. `pytest` verifies the
-agent's own output; in tutoring the agent's output is an explanation or a diagnosis,
-and a rubric grades the artefact while staying silent about the belief behind it. Two
-of the others are real without being fatal — extended-response marking carries
-inter-rater variance, which makes the rubric a flaky test, and public examinations
-cover a subset of subjects for about a dozen years of a life, with no comparable
-artefact in early literacy, vocational skill, or the population §04 centres.
+agent's own output; in tutoring that output is an explanation or a diagnosis, and a
+rubric grades the artefact while staying silent about the belief behind it. Two more
+are real without being fatal — extended-response marking carries inter-rater
+variance, making the rubric a flaky test, and public examinations cover a subset of
+subjects for a dozen years of a life, with no comparable artefact in early literacy,
+vocational skill, or the population §04 centres.
 
 Second, the oracle is gameable and the gaming is measured. Koretz (2005), CSE Report
 655, reports the first empirical study of score inflation, and its 1990 component is a
@@ -348,30 +341,29 @@ coefficient is that prediction in the wild.
 
 What survives is narrower and more useful. A mark scheme supplies a per-item
 ground-truth signal at a granularity of one or two marks, for millions of released
-items across decades, in the format the learner will actually face. That is a
-**falsifiable prediction target for the tutor's model of the learner**. Invert the
-loop: instead of asking a model to judge whether its own explanation was good, ask it
-to predict, before the learner attempts a past paper, **which marks the learner will
-lose and why**. Then mark the paper against the published scheme. The prediction
-scores automatically, with per-item resolution and no human in the loop.
+items across decades, in the format the learner will face. That is a **falsifiable
+prediction target for the tutor's model of the learner**. Invert the loop: instead of
+asking a model to judge whether its own explanation was good, ask it to predict,
+before the learner attempts a past paper, **which marks the learner will lose and
+why**. Then mark the paper against the published scheme. The prediction scores
+automatically, with per-item resolution and no human in the loop.
 
 That move converts an unverifiable output into a verifiable one, which is what made
-`pytest` useful in the first place. It also answers Koretz, because the fitness
-function becomes prediction accuracy on unseen papers instead of score on seen ones.
-A system that inflates a score by teaching item-style tricks does not thereby improve
-its predictions on a paper from a different year with a different emphasis; it should
+`pytest` useful in the first place. It also answers Koretz: the fitness function
+becomes prediction accuracy on unseen papers instead of score on seen ones. A system
+that inflates a score by teaching item-style tricks does not thereby improve its
+predictions on a paper from a different year with a different emphasis; it should
 degrade them, having absorbed a stylistic regularity in place of a knowledge state.
 Score inflation and prediction accuracy come apart, and the second is the safer
 target. `INFERENCE`, ours, and offered for demolition.
 
 The eleven-year-old this survey is organised around can hold a conversation about
-photosynthesis and cannot pass a worksheet about it. Every existing product would
-score that worksheet and hand back a number. The question that matters to her is
-which of five things cost each mark: a knowledge gap, a misread question, a
-procedural slip, an unfollowed marking convention, or running out of time. Those have
-five different remedies and the industry's feedback loop distinguishes none of them.
-§12 owns what a score can and cannot say about a person; this is the per-item version
-of the same problem.
+photosynthesis and cannot pass a worksheet about it. Every existing product scores
+that worksheet and hands back a number. What matters to her is which of five things
+cost each mark: a knowledge gap, a misread question, a procedural slip, an unfollowed
+marking convention, or running out of time. Those have five different remedies and
+the industry's feedback loop distinguishes none of them. §12 owns what a score can
+say about a person; this is the per-item version of the same problem.
 
 ---
 
@@ -379,10 +371,10 @@ of the same problem.
 
 - **Promise a number inside the measured band.** Commercial coaching moves an
   admissions test by 0.09–0.16 SD; the best free digital alternative by 0.11–0.20 SD.
-  A product entering this market should quote that range and say where it comes from,
-  because the competition's advertised figures run three to seven times their
-  measured ones and that gap is now documented well enough to use. §27 and §37 own
-  the commercial argument this feeds.
+  A product entering this market should quote that range and its provenance, because
+  the competition's advertised figures run three to seven times their measured ones
+  and that gap is now documented well enough to use. §27 and §37 own the commercial
+  argument this feeds.
 - **Ship the boring floor before anything else.** Closed-book retrieval instead of
   rereading; a first practice paper early, because the first is worth 0.5 SD and the
   tenth 0.1; review gaps at 20–40% of the time remaining; confidence elicited only
@@ -403,11 +395,10 @@ of the same problem.
 - **Carry an audit instrument.** A held-out paper from a different board covering the
   same specification, never trained or allocated against. If the gain appears on the
   primary examination and not on the audit paper, the system produced inflation and
-  the trial says so. No test-preparation study in this literature has ever included
-  one, and every one of them should have.
+  the trial says so. No test-preparation study in this literature has included one,
+  and every one of them should have.
 
-The market this section describes runs on a metacognitive error that has been
-measured for forty years and on advertised numbers that have been refuted for
-twenty-five. What a machine can do that a coaching centre cannot is tell a candidate
-which marks they are about to lose, on which topics, for which of five reasons, and
-then be scored on whether it was right.
+This market runs on a metacognitive error measured for forty years and on advertised
+numbers refuted for twenty-five. What a machine can do that a coaching centre cannot
+is tell a candidate which marks they are about to lose, on which topics, for which of
+five reasons, and then be scored on whether it was right.
