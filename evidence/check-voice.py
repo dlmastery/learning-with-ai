@@ -52,6 +52,17 @@ RATE = {
 
 FLOOR = 3   # minimum occurrences before a rate overrun is a habit
 
+# Gated on the four front-matter surfaces only. On a demo page `X, not Y` is
+# usually the honesty claim rather than a mannerism — "this is a model, not a
+# measurement", "that is calibration, not prediction" — and those admissions are
+# the gallery's contract. Penalising them would push against what the pages exist
+# to do.
+PROSE_ONLY = {
+    "`X, not Y`":    (re.compile(r",\s+not\s+\w"),        1.6),
+    "`rather than`": (re.compile(r"\brather than\b"),      1.0),
+    "`exactly`":     (re.compile(r"\bexactly\b"),          0.6),
+}
+
 # ── front-matter tics, per 1,000 words ────────────────────────────────────────
 # The negation beat — state a negation, supply the correction as a second clause —
 # runs 12 times across these four files and 60+ times in the paper. It earns its
@@ -65,9 +76,6 @@ FRONT_RATE = {
     "`nobody has X`":     (re.compile(r"\bnobody has\b"),                                             1.5),
     "`worth X-ing`":      (re.compile(r"\bworth (?:stating|doing|having|running|taking|being)\b"),     0.8),
     "`the honest X`":     (re.compile(r"\bthe honest \w+"),                                            0.5),
-    "`X, not Y`":         (re.compile(r",\s+not\s+\w"),                                                1.6),
-    "`rather than`":      (re.compile(r"\brather than\b"),                                             1.0),
-    "`exactly`":          (re.compile(r"\bexactly\b"),                                                 0.6),
     "em-dash":            (re.compile(r"—"),                                                           8.0),
     "bold span":          (re.compile(r"\*\*[^*\n]+\*\*|<(?:b|strong)\b[^>]*>"),                     16.0),
 }
@@ -189,7 +197,8 @@ def main():
         # demos legitimately restate the survey line they demonstrate.
         if rel in FRONT:
             front_texts.append((rel, t))
-        for name, (pat, budget) in FRONT_RATE.items():
+        budgets = dict(FRONT_RATE, **(PROSE_ONLY if rel in FRONT else {}))
+        for name, (pat, budget) in budgets.items():
             n = len(pat.findall(t))
             if n * 1000 / w > budget and n >= FLOOR:
                 issues.append((rel, name, n, round(n * 1000 / w, 1), budget))

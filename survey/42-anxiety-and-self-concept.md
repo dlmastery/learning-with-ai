@@ -81,7 +81,7 @@ mathematics performance**; the authors conclude that cognitive and emotional
 mathematics problems largely dissociate. `OBSERVED`
 
 A system that reads anxiety as evidence of a knowledge gap will over-remediate roughly
-three quarters of the anxious children it meets. A system that reads a correct answer
+three quarters of the anxious children it meets; a system that reads a correct answer
 as evidence of comfort will miss the child who is fluent and frightened. Affect and
 knowledge state are two channels, and neither may be inferred from the other: the
 learner model of §11 can carry an affect flag with a stated provenance (a screening
@@ -114,17 +114,16 @@ causal ordering and no manipulation; experiments have the manipulation, induce a
 instead of a trait, and measure performance minutes later. Both are small: Ma & Xu
 (2004) report correlations of −0.11 to −0.2 between achievement in one year and maths
 anxiety in the next, and Sorvo et al. (2022), cross-lagging 848 Finnish students from
-grade 6 to grade 7, found the opposite arm, high anxiety in sixth grade predicting low
-performance in seventh, alongside a 149-student substudy in which arousing anxiety
-depressed performance below the participants' own skill level.
+grade 6 to grade 7, found the opposite arm, with high anxiety in sixth grade predicting
+low performance in seventh.
 
 The reciprocal answer is the correct one and it is unhelpful to a builder. What follows
-is not "treat the feeling" or "treat the gap" but a statement about instrumentation:
-**no study in this literature can hold anxiety constant while moving skill, or the
-reverse, because every classroom intervention moves both at once.** Lower the anxiety
-and you change exposure to the material; raise the skill and you change the felt
-threat. A tutor with item-level control is the first apparatus that can dismantle the
-two, which is what makes the trial in §9 worth running and not merely worth proposing.
+is a statement about instrumentation: **no study in this literature can hold anxiety
+constant while moving skill, or the reverse, because every classroom intervention moves
+both at once.** Lower the anxiety and you change exposure to the material; raise the
+skill and you change the felt threat. A tutor with item-level control is the first
+apparatus that can dismantle the two, which is what makes the trial in §9 worth running
+and not merely worth proposing.
 
 ---
 
@@ -191,14 +190,14 @@ design bought a feeling and lost the skill.
 g = −0.22 [−0.34, −0.10], with a 95% credibility interval of [−0.85, 0.41]. Trim-and-
 fill imputed 11 missing effect sizes and reduced it to **g = −0.07 [−0.21, 0.06],
 p = .27**; studies with N < 60 gave g = −0.34 and those with N ≥ 60 gave g = −0.13,
-p = .10. Shewach et al. (2019) then asked what magnitude survives conditions a real
-test has: overall d = −.31 (k = 181, N = 10,436), falling to **d = −.14** under
-operationally plausible conditions (k = 45, N = 3,532), to **−.09** after trim-and-fill
-on that focal sample, and to **d = −.01** in the four samples actually run in
-operational contexts (k = 4, N = 1,670), against a laboratory d = −.36. Under monetary
-incentive, **d = .00** (k = 9, N = 526). The large registered replication that Flore &
-Wicherts themselves called for, run by them at N = 2,064 in Dutch high schools, found
-neither an overall effect nor any moderated one. `MEASURED-RCT` (null)
+p = .10. Shewach et al. (2019) asked what survives conditions a real test has: overall
+d = −.31 (k = 181, N = 10,436), falling to **d = −.14** under operationally plausible
+conditions (k = 45, N = 3,532), to **−.09** after trim-and-fill on that focal sample,
+and to **d = −.01** in the four samples actually run in operational contexts (k = 4,
+N = 1,670), against a laboratory d = −.36. Under monetary incentive, **d = .00** (k = 9,
+N = 526). The registered replication Flore & Wicherts called for, run by them at
+N = 2,064 in Dutch high schools, found neither an overall effect nor a moderated one.
+`MEASURED-RCT` (null)
 
 What that licenses: build no stereotype-threat countermeasure. The design moves it
 would motivate (no demographic questions before assessment, no diagnostic framing) are
@@ -269,15 +268,13 @@ names a harm that is absent by construction.
 The wider privacy premise, that a learner can be wrong in front of a machine at no
 social cost, has evidence on both sides. Lucas et al. (2014) manipulated only the
 *belief* that an interviewer was automated and found lower resistance to
-self-disclosure and lower impression management. Against it, Alsaad et al. (2026),
-n = 373, found no increased disinhibition toward a chatbot and participants
-**significantly less** willing to disclose sensitive health information to one than to
-a human; and Qi & Zhao (2026), across 30,000 matched dialogue turns, found learners
-adopting an authoritative "Director" stance instead of the humble "Petitioner" the
-confession story predicts. Removing the audience removes impression management without
-producing disclosure of confusion. The child who will not raise her hand may also not
-type *I don't understand*, which makes elicitation the design problem and §05's
-machine-audience hypothesis the frame this evidence both supports and complicates.
+self-disclosure. Against it, Alsaad et al. (2026), n = 373, found participants
+**significantly less** willing to disclose sensitive information to a chatbot than to a
+human, and Qi & Zhao (2026) found learners across 30,000 matched dialogue turns taking
+an authoritative "Director" stance instead of the humble "Petitioner" the confession
+story predicts. Removing the audience removes impression management without producing
+disclosure of confusion: the child who will not raise her hand may also not type *I
+don't understand*, which makes elicitation the design problem (§05).
 
 Now the trap. Across every literature surveyed here the self-report outcome outruns the
 achievement outcome **inside the same trials**. Huntley et al. (2019), 44 RCTs of
@@ -360,11 +357,9 @@ unassisted performance on transfer items at six weeks, administered without the 
 and blind-scored. Deficit Theory predicts A ≈ C > B; the Debilitating Anxiety Model
 predicts B's advantage appearing only at follow-up; the Reciprocal Theory predicts a
 super-additive C. At a smallest worthwhile difference of d = 0.25, three pairwise
-contrasts at Bonferroni-corrected α = .0167 and 80% power, that is 335 per arm and
-1,005 total, falling to 215 per arm and 645 total with a baseline unassisted pre-test
-correlating r = 0.6 with the outcome. Two school terms, one district partnership, and
-it would be the first experiment in the field able to separate the two causal arms
-(§20).
+contrasts at Bonferroni-corrected α = .0167 and 80% power, that is 335 per arm, falling
+to 215 per arm with a baseline unassisted pre-test correlating r = 0.6 with the
+outcome: 645 learners, two school terms, one district partnership (§20).
 
 The pre-registration has to state the null it is willing to publish: that arm B moves
 the anxiety instrument and leaves the six-week unassisted outcome where it was. That

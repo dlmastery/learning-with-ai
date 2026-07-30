@@ -9,10 +9,10 @@ source_report: research/raw/R2-exam-technique-and-revision.md
 # One Question Correct Per Eight Hours
 
 The markets this survey keeps naming — SAT, PSAT, NEET, JEE, GATE, EAMCET, the
-gaokao — are the ones where the customer's stated goal is a number. Hundreds of
-millions of learners, and the largest sums in tutoring anywhere. Until this section
-the survey specified a tutor and had never asked how anyone prepares for the
-examination that decides their life.
+gaokao — are the ones where the customer's stated goal is a number: hundreds of
+millions of learners, and the largest sums in tutoring anywhere. Until now the survey
+specified a tutor without asking how anyone prepares for the examination that decides
+their life.
 
 Here is the answer, in the unit a buyer uses. Powers and Rock, having run seven
 estimators against a stratified random sample of about 6,700 SAT registrants,
@@ -99,10 +99,10 @@ The report also corrects its own predecessor: the controlled 2017 figure was *"3
 additional points on their last SAT compared to students who did not use OSP."*
 Thirty, against the 115 that travelled.
 
-A free platform and a $1,500 course therefore produce effects of the same order,
-which is the number to price against. And the distribution of use matters more than
-the effect per hour: about **80% of users spend under three hours, median 1.8**. The
-binding constraint in the field is hours, not efficacy.
+A free platform and a $1,500 course therefore produce effects of the same order. And
+the distribution of use matters more than the effect per hour: about **80% of users
+spend under three hours, median 1.8**. The binding constraint in the field is hours,
+not efficacy.
 
 ---
 
@@ -145,9 +145,8 @@ top ranks, a survivorship statistic on a population selected on ability at intak
 China is one degree better and the answer is null. Zhang (2013), *Economics of
 Education Review* 32, on Jinan: *"The average effect of private tutoring is not
 significant,"* with heterogeneous effects by subject and a possible positive effect
-for urban lower-achieving students. `OBSERVED` (null) One city, one 2010 dataset,
-observational, and the only located estimate of tutoring's effect on the gaokao
-itself.
+for urban lower-achieving students. `OBSERVED` (null) One city, one 2010 dataset, and
+the only located estimate of tutoring's effect on the gaokao itself.
 
 The identification strategy is sitting in plain view and nobody has used it: coaching
 institutes admit on their own entrance tests with published score cutoffs, and a
@@ -211,8 +210,8 @@ Roediger & Karpicke's Experiment 1, n = 120, gives the trade-off a shape and a h
 | 1 week | 42% | 56% | d = 0.83 favouring testing |
 
 Massing wins for a few hours and the crossover is complete by two days. A student
-cramming on Thursday night for a Friday-morning paper is already outside the window
-where massing is ahead.
+cramming on Thursday night for a Friday paper is already outside the window where
+massing is ahead.
 
 What runs further is Cepeda et al. (2008), n > 1,350, gaps to 3.5 months and test
 delays to a year: *"the optimal gap declined from about 20 to 40% of a 1-week test

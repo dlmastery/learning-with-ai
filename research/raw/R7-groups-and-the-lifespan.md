@@ -3,7 +3,7 @@ title: "Groups and the Lifespan — what a group does that a tutor cannot, and t
 wave: R
 section: R7
 date_researched: 2026-07-30
-sources_count: 83
+sources_count: 120
 status: raw-research
 ---
 
@@ -878,14 +878,13 @@ The best-powered field estimate runs mildly negative. Xu & Jaggars (2013), CCRC 
 *"nearly 500,000 courses taken by over 40,000 community and technical college students"*: online
 course grade **−0.215 (OLS)** to **−0.282 (with working hours)**, persistence **−0.031** to
 **−0.046**, all `p < .001`, and *"males, younger students, Black students, and students with lower
-grade point averages"* suffered most. `OBSERVED`, quasi-experimental. The randomised versions agree:
-Figlio, Rush & Yin (2013), *JOLE* `10.1086/669930`, found *"modest evidence that live-only
-instruction dominates internet instruction… particularly strong for Hispanic students, male
-students, and lower-achieving students"* (Hispanic `11.276***`); Joyce et al. (2015), `n = 725`,
-found traditional format ahead by 2.3 points and noted *"the non-experimental [estimates] were 2.5
-times larger, suggesting that the large effects of attending lectures found in the previous
-literature are likely due to selection bias."* Bowen, Chingos, Lack & Nygren (2014), *JPAM*
-`10.1002/pam.21728`, `n = 605` across six campuses, found hybrid and face-to-face statistically
+grade point averages"* suffered most. `OBSERVED`, quasi-experimental. Three RCTs agree in direction:
+Figlio, Rush & Yin (2013) found *"modest evidence that live-only instruction dominates internet
+instruction… particularly strong for Hispanic students, male students, and lower-achieving
+students"*; Joyce et al. (2015), `n = 725`, found the traditional format ahead by 2.3 points and
+noted that *"the non-experimental [estimates] were 2.5 times larger, suggesting that the large
+effects of attending lectures found in the previous literature are likely due to selection bias"*;
+and Bowen et al. (2014), `n = 605` across six campuses, found hybrid and face-to-face statistically
 equivalent.
 
 MOOC completion supplies the dosage number. Reich & Ruipérez-Valiente (2019), *Science*
