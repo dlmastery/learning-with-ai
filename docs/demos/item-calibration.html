@@ -425,7 +425,7 @@ function recalc(){
    `<div><div class="k">Items in bank</div><div class="n">${BANK.length}</div><div class="s">cost of the last 50: about a cent</div></div>
     <div><div class="k">Responses per item</div><div class="n ${rpi<40?'bad':'real'}">${rpi.toFixed(0)}</div><div class="s">${N} × ${probe} ÷ ${BANK.length}</div></div>
     <div><div class="k">Median SE of difficulty</div><div class="n ${medSE>0.30?'bad':'real'}">${medSE.toFixed(2)}</div><div class="s">logits — 0.30 is the usable threshold</div></div>
-    <div><div class="k">Items calibrated to ±0.30</div><div class="n ${usable<BANK.length*0.8?'felt':'real'}">${usable} / ${BANK.length}</div><div class="s">the rest have text and nothing else</div></div>
+    <div><div class="k">Items calibrated to ±0.30</div><div class="n ${usable<BANK.length*0.8?'bad':'real'}">${usable} / ${BANK.length}</div><div class="s">the rest have text and nothing else</div></div>
     <div><div class="k">Recovery r</div><div class="n real">${rho.toFixed(3)}</div><div class="s">RMSE ${rmse.toFixed(2)} logits against planted truth</div></div>`;
   drawRecovery(); drawDistractors(); drawTiers(); drawCov(); drawG();
 }
@@ -473,11 +473,11 @@ const FIXED=Math.round(210*(MANUAL-TMPL_MARGINAL));                 // crosses m
             {series:'ink', kind:'line',pts:pts(n=>LLM_MARGINAL*n+REVIEW*n)}]});
   const dev=LLM_MARGINAL*400, rev=REVIEW*400;
   el('costsplit').innerHTML=
-   `<div><div class="k">LLM development · 400 items</div><div class="n real">$${dev.toFixed(2)}</div>
+   `<div><div class="k">LLM development · 400 items</div><div class="n">$${dev.toFixed(2)}</div>
       <div class="s">the term that collapsed</div></div>
-    <div><div class="k">Review + calibration · same 400</div><div class="n felt">$${rev.toLocaleString()}</div>
+    <div><div class="k">Review + calibration · same 400</div><div class="n">$${rev.toLocaleString()}</div>
       <div class="s">${REVIEW_MIN} min expert review at $${REVIEW_RATE}/h, plus ${RESP_PER_ITEM} responses at $${RESP_COST.toFixed(2)}</div></div>
-    <div><div class="k">Share of the pipeline</div><div class="n felt">${(rev/(rev+dev)*100).toFixed(2)}%</div>
+    <div><div class="k">Share of the pipeline</div><div class="n">${(rev/(rev+dev)*100).toFixed(2)}%</div>
       <div class="s">is the term generation did not touch</div></div>
     <div><div class="k">Template break-even</div><div class="n real">${Math.round(FIXED/(MANUAL-TMPL_MARGINAL))}</div>
       <div class="s">items — inside the published 173–247</div></div>`;
@@ -546,7 +546,7 @@ function drawG(){
       <div class="s">Spearman–Brown on ρ_π, not on α</div></div>
     <div><div class="k">Probes for Φ = 0.90</div><div class="n">${need(0.90)}</div>
       <div class="s">the price of a consequential decision</div></div>
-    <div><div class="k">Growth claims</div><div class="n felt">≈14</div>
+    <div><div class="k">Growth claims</div><div class="n">≈14</div>
       <div class="s">controlled probes over 8–15 weeks — fewer is a trend line through noise</div></div>`;
 }
 

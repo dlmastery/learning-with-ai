@@ -311,7 +311,7 @@ el('arms').innerHTML=ARMS.map(a=>
 function showCoef(){
   el('coef').innerHTML='<div class="stat" style="margin:6px 0 4px">'+KEYS.map((k,i)=>
    `<div><div class="k">${LABEL[k]}</div>
-      <div class="n ${COEF[i]<0?'felt':'real'}">${COEF[i]>=0?'+':'−'}${Math.abs(COEF[i]).toFixed(3)}</div>
+      <div class="n">${COEF[i]>=0?'+':'−'}${Math.abs(COEF[i]).toFixed(3)}</div>
       <div class="s">SD per unit</div></div>`).join('')+'</div>';
   const resid=ARMS.map(a=>Math.abs(a.c*COEF[0]+a.h*COEF[1]+a.t*COEF[2]+a.r*COEF[3]-a.y));
   const rIVR=ARMS[1].r, rSMS=ARMS[0].r;
