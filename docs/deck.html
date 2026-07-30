@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Everyone becomes a polymath</title>
-<meta name="description" content="Attention was the only thing school ever rationed. Every feature of it is a scar from that scarcity. The scarcity ended." />
+<meta name="description" content="A university in your pocket. Anything you want to understand, understood, at whatever depth you choose, starting this afternoon." />
 <style>
 :root{
   --bg:#faf9f5;--surface:#fcfcfb;--sunken:#f6f4ee;--ink:#171614;--ink-2:#413f3a;--ink-3:#7b7870;
@@ -42,7 +42,8 @@ em{color:var(--ink-2)}
 .hit.b{color:var(--real)}
 .sub{font-size:14.5px;color:var(--ink-3);max-width:60ch}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,44px);margin:18px 0}
-@media(max-width:760px){.two{grid-template-columns:1fr}}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);margin:18px 0}
+@media(max-width:760px){.two,.three{grid-template-columns:1fr}}
 .box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
 .box.bad{border-left:2px solid var(--bad)}
 .box.good{border-left:2px solid var(--good)}
@@ -55,6 +56,7 @@ th{text-align:left;font:600 11px/1.3 var(--sans);letter-spacing:.09em;text-trans
   color:var(--ink-3);padding:0 16px 10px 0;border-bottom:1px solid var(--line-2)}
 td{padding:12px 16px 12px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
 td b{color:var(--ink)}
+.wrap{width:100%;overflow-x:auto}
 .no{color:var(--bad);font-weight:650}.yes{color:var(--good);font-weight:650}.mid{color:var(--warn);font-weight:650}
 .num{font-family:var(--mono);white-space:nowrap}
 ol.q{counter-reset:q;list-style:none;margin:10px 0}
@@ -64,6 +66,11 @@ ol.q li::before{content:counter(q);position:absolute;left:0;top:-2px;
   font:400 26px/1 var(--serif);color:var(--felt)}
 ol.q li b{color:var(--ink);display:block;margin-bottom:5px}
 .rule{border-left:2px solid var(--felt);padding-left:24px;margin:20px 0}
+.fill{display:inline-block;font:650 13px/1.5 var(--mono);letter-spacing:.04em;color:var(--warn);
+  border:1px dashed var(--warn);border-radius:6px;padding:1px 9px;background:var(--sunken);
+  white-space:nowrap}
+.tag{font:650 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  border:1px solid var(--line-2);border-radius:5px;padding:3px 6px;white-space:nowrap}
 nav.hud{position:fixed;bottom:18px;right:18px;display:flex;gap:8px;align-items:center;z-index:60}
 nav.hud button{font:600 12px/1 var(--sans);padding:9px 12px;border-radius:8px;
   border:1px solid var(--line-2);background:var(--surface);color:var(--ink);cursor:pointer}
@@ -80,208 +87,366 @@ nav.hud button{font:600 12px/1 var(--sans);padding:9px 12px;border-radius:8px;
 <div class="bar" id="bar"></div>
 <nav class="hud">
   <button id="prev" aria-label="Previous slide">←</button>
-  <span id="pos">1 / 12</span>
+  <span id="pos">1 / 16</span>
   <button id="next" aria-label="Next slide">→</button>
   <button id="tt" aria-label="Toggle theme">◐</button>
 </nav>
 
-<!-- 1 -->
+<!-- 1 mission -->
 <section class="slide">
   <div class="n">The mission</div>
   <h1>Everyone becomes a polymath.</h1>
-  <p class="big">Anything you want to understand, understood: at whatever depth you
-  choose, starting this afternoon.</p>
-  <p>For a nine-year-old, a surgeon, and a forty-year-old who always wondered how
-  bridges stay up. The end of having to pick which curiosities you can afford.</p>
+  <p class="big">A university in your pocket. Anything you want to understand,
+  understood, at whatever depth you choose, starting this afternoon.</p>
+  <p>A tutor of the kind that costs $500 an hour, running for the price of the tokens
+  it takes. For a nine-year-old, a surgeon, and a forty-year-old who always wondered
+  how bridges stay up. The end of having to pick which curiosities you can afford.</p>
 </section>
 
-<!-- 2 -->
+<!-- 2 the problem -->
 <section class="slide">
-  <div class="n">Why that is not a fantasy</div>
-  <h2>Polymathy was never about intelligence. It was about who could afford to be a beginner.</h2>
-  <div class="two">
-    <div><div class="hit b">1.14×</div><p class="sub">how much people differ in learning rate, 25th to 75th percentile, across 1.3 million observations</p></div>
-    <div><div class="hit">3.6×</div><p class="sub">how much they differ in where they start</p></div>
-  </div>
-  <p class="big">Scientists work in three or four fields in an entire career. Not because
-  the fifth was too hard, but because the orientation cost of entering it was
-  months of being lost, alone, with nobody to ask.</p>
-  <p>That cost is the entire barrier. It is made of search, of not knowing the real
-  question, of not knowing which results matter. <strong>All of it is attention. None of
-  it is talent.</strong></p>
+  <div class="n">The problem, in one person</div>
+  <h2>An eleven-year-old can explain photosynthesis and cannot pass a worksheet about it.</h2>
+  <p class="big">She is served under a SELPA plan. She reads, and decoding costs her so
+  much that by the end of a sentence the beginning is gone.</p>
+  <p>She is running a working memory that spends everything on the part everyone else
+  automated years ago. About <strong>15% of American school-age children</strong> are
+  served under an individualised programme like hers. A census of ERIC and Europe PMC
+  found <strong>30 randomised trials of generative-AI tutoring involving students, and
+  none that mention a disability, an IEP or special education.</strong> Every published
+  effect in this field was measured on some other child.</p>
+  <div class="rule"><p style="margin:0">Build it so it works for her and it works for
+  everyone. Build it for everyone and it will fail her. She is the specification.</p></div>
 </section>
 
-<!-- 3 -->
+<!-- 3 the insight -->
+<section class="slide">
+  <div class="n">Why that is reachable</div>
+  <h2>Polymathy was never a question of intelligence. It was a question of who could afford to be a beginner.</h2>
+  <div class="two">
+    <div><div class="hit b">1.14×</div><p class="sub">how much people differ in learning
+    <em>rate</em>, 25th to 75th percentile</p></div>
+    <div><div class="hit">3.6×</div><p class="sub">how much they differ in where they
+    <em>start</em>, measured within students who had already passed the prerequisites</p></div>
+  </div>
+  <p>Koedinger et al., PNAS 2023, 1.3 million observations across 27 datasets. People
+  barely differ in how fast they learn. They differ enormously in where they begin, and
+  a time-based model of learning fits the data poorly.</p>
+  <p>Scientists work in three or four fields in a career. The fifth was not too hard.
+  Entering it cost months of search, orientation, and not knowing which result mattered,
+  with nobody to ask. <strong>That cost is attention, and attention just stopped being
+  scarce.</strong></p>
+</section>
+
+<!-- 4 why now -->
+<section class="slide">
+  <div class="n">Why now</div>
+  <h2>Three things became true in the last two years, and all three are measured.</h2>
+  <div class="three">
+    <div class="box good"><h3>A frontier tutor moved a real course</h3>
+      <p>Kestin et al., Harvard physics, randomised, <b>n = 194</b>: <b>d ≈ 0.63</b> across
+      two roughly one-hour lessons, in a median 49 minutes against 60.</p>
+      <p class="sub">Read with its caveat: developer-built and developer-evaluated, no
+      funding statement, immediate post-test.</p></div>
+    <div class="box good"><h3>Presence became real-time</h3>
+      <p>A generated world runs 640×368 at <b>25 FPS</b> with <b>~200 ms</b> model-side
+      latency. Human conversational turn-gaps are modally 100–200 ms.</p>
+      <p class="sub">Author-reported benchmark, 2026. It puts a tutor inside the pause
+      between two people speaking.</p></div>
+    <div class="box good"><h3>Diagnosis got cheap</h3>
+      <p>Rapid dynamic assessment recovers an actionable estimate of what someone knows
+      from <b>1–3 items in 15–40 seconds</b>, at <b>r = 0.66–0.92</b> against full
+      diagnostics.</p>
+      <p class="sub">Four validation studies. A closed syllabus turns per-topic
+      prior knowledge into a measurement instead of a modelling problem.</p></div>
+  </div>
+</section>
+
+<!-- 5 the product -->
 <section class="slide">
   <div class="n">What we are building</div>
-  <h2>Not a tutor. A university that fits in a pocket and knows only you.</h2>
+  <h2>A university that fits in a pocket and knows only you.</h2>
   <div class="two">
     <div class="box good"><h3>The faculty</h3>
       <p><b>A mentor</b> who withholds, asks, and waits</p>
       <p><b>A diagnostician</b> watching for the belief behind the wrong answer</p>
-      <p><b>A simulator</b> that builds the world the idea lives in, and runs your wrong rule until it breaks</p>
+      <p><b>A simulator</b> that builds the world an idea lives in, and runs your wrong
+      rule until it breaks</p>
       <p><b>An adversary</b> that objects, genuinely and unannounced</p>
-      <p><b>A student you teach</b>, who stays wrong until you actually fix it</p>
+      <p><b>A student you teach</b>, who stays wrong until you fix it</p>
       <p><b>An archivist</b> that remembers everything, for years, and belongs to you</p></div>
-    <div class="box good"><h3>What that has never existed as</h3>
+    <div class="box good"><h3>What that has never been</h3>
       <p>Every one of these is a person a rich family hires.</p>
-      <p>None of them has ever been available to one child at once, for a decade, in every subject, at three in the morning.</p>
-      <p class="sub" style="margin-top:14px">Three to five of them are active in any hour. The others are waiting.</p></div>
+      <p>None has ever been available to one child at once, for a decade, in every
+      subject, at three in the morning.</p>
+      <p>Three to five are active in any hour. The others wait.</p>
+      <p class="sub" style="margin-top:14px">The shipped shape of it: every book comes
+      with a live mentor. The publisher keeps the book. We keep the learner model.</p></div>
   </div>
 </section>
 
-<!-- 4 -->
+<!-- 6 what an hour buys -->
 <section class="slide">
-  <div class="n">Who it is for</div>
-  <h2>An eleven-year-old who can explain photosynthesis and cannot pass a worksheet about it.</h2>
-  <p class="big">She reads. But decoding costs her so much that by the end of a sentence
-  the beginning is gone. She is not slow. She is running a working memory that spends
-  everything on the part everyone else automated years ago.</p>
-  <p>She is one child in seven, and she is the reason the system has to be built
-  properly rather than impressively. A tutor that requires you to notice you are
-  lost, ask a good question, and stay with it — that tutor works for the children who
-  were already fine.</p>
-  <div class="rule"><p style="margin:0">Build it so it works for her and it works for
-  everyone. Build it for everyone and it will not work for her. She is the
-  specification, not a segment.</p></div>
-</section>
-
-<!-- 5 -->
-<section class="slide">
-  <div class="n">What a day looks like</div>
-  <h2>You spend an hour. It is an hour of learning, not an hour of school.</h2>
-  <p>Nine nominal hours a week sit inside 112 waking ones, and inside those nine, the
-  same nominal day yields <strong>four minutes of real learning, or fifty-two</strong>,
-  depending on things nobody can see.</p>
+  <div class="n">What an hour buys</div>
+  <h2>Almost none of a week is spent learning. That is the headroom.</h2>
+  <p>A calendar week of a university course is <strong>9 nominal student hours inside 112
+  waking ones</strong>. Go inside the 9 and the Beginning Teacher Evaluation Study traces
+  allocated time to engaged time to time at a workable success rate: the same nominal day
+  yields <strong>about 4 minutes of productive learning, or about 52</strong>. A 13× spread
+  inside identical calendars.</p>
   <div class="two">
-    <div class="box"><h3>What disappears</h3>
-      <p>Waiting for the class to reach you</p>
-      <p>Re-reading, which is what most study is and is close to useless</p>
-      <p>Being stuck on a prerequisite nobody diagnosed</p>
-      <p>Finding the right explanation. Finding <em>anything</em></p></div>
-    <div class="box good"><h3>What is left</h3>
-      <p><b>10–40× on the calendar. 3–5× on effort.</b></p>
-      <p>A week's understanding in an hour.</p>
-      <p>A year of retention out of six hours, spread across two months. Memory needs elapsed time and nothing shortens it, but the elapsed time costs almost nothing.</p></div>
+    <div class="box"><h3>Our estimate of the compression <span class="tag">inference</span></h3>
+      <p><b>10–40× on elapsed calendar. 3–5× on engaged effort.</b></p>
+      <p class="sub">Composed from measured parameters, and no trial of anyone becoming a
+      polymath has been run. It is eminently runnable, and we intend to run it.</p></div>
+    <div class="box"><h3>Three conditions, all load-bearing</h3>
+      <p>The starting point is diagnosed, so the 3.6× lever pays</p>
+      <p>The learner actually attempts. Unguarded assistance leaves people <b>17% worse</b>
+      on later unassisted work</p>
+      <p>Durability does not compress. Memory needs elapsed time, and that stays at 1×</p></div>
   </div>
 </section>
 
-<!-- 6 -->
-<section class="slide">
-  <div class="n">Why now</div>
-  <h2>Presence and diagnosis got cheap. Reading a learner did not.</h2>
-  <div class="two">
-    <div class="box good"><h3>True now</h3>
-      <p><b>Presence is real-time.</b> 25 frames a second at ~200 ms — inside the gap between two people speaking.</p>
-      <p><b>Knowing what someone knows got cheap.</b> 15–40 seconds for an estimate that used to take a test.</p></div>
-    <div class="box bad"><h3>Still not true</h3>
-      <p><b>Nothing can read a learner.</b> Across 223 tutoring domains, the models tested did not beat chance at saying what is wrong with a student's answer. Step-checking a model's own reasoning is <em>not</em> at chance — reading a person is.</p>
-      <p>Everyone is waiting for that to be fixed. We do not have to.</p></div>
-  </div>
-</section>
-
-<!-- 7 -->
+<!-- 7 the mechanism -->
 <section class="slide">
   <div class="n">The idea that makes it work</div>
   <h2>Stop asking a machine to judge. Ask which belief predicted the answer.</h2>
-  <p>Everyone asks a model <em>"is this wrong, and why?"</em>: an open question over an
-  unbounded space, which is what measures at chance.</p>
-  <p class="big">We enumerate what a learner might believe. Then the question is
-  <strong>which of these predicted what I just saw</strong>, and that is a lookup.
-  Judgement is the thing that measures at chance.</p>
+  <p>Across 223 tutoring domains, the four models tested in an initial evaluation
+  (claude-3-5-sonnet, claude-3-5-haiku, gpt-4o-2024-08-06, deepseek-v2.5) did not beat
+  chance at labelling an incorrect student action. Scope that correctly, because it
+  sharpens the claim: <strong>step-checking a model's own reasoning trace is well above
+  chance</strong> — ProcessBench reports open models competitive with that same GPT-4o
+  vintage at finding the earliest erroneous step. Reading a <em>person</em> is the open part.</p>
+  <p class="big">We enumerate what a learner might believe. The live question becomes
+  which of those predicted what we just saw, and that is an argmax over precomputed
+  distributions.</p>
   <div class="two">
     <div class="box good"><h3>What it buys</h3>
-      <p>Chance-level judgement becomes a table lookup</p>
-      <p><b>No language model on the live path</b> — so 200 ms is real rather than aspirational</p>
-      <p>Your wrong rule can be executed until the world contradicts it. Reality does the correcting. No authority is claimed</p></div>
+      <p>An open judgement at chance becomes a bounded lookup</p>
+      <p>A posterior over <b>≤40 enumerated beliefs is closed-form Bayes</b>, so no
+      language model sits on the live path and the 200 ms budget is real</p>
+      <p>A wrong rule can be executed until the world contradicts it. Reality does the
+      correcting and we claim no authority</p></div>
     <div class="box"><h3>Why it compounds</h3>
-      <p>Every learner who is wrong in a new way makes the library better.</p>
-      <p>A better base model raises what this is worth. That is the only kind of advantage worth having right now.</p></div>
+      <p>Every learner who is wrong in a new way makes the belief library better.</p>
+      <p>A stronger base model raises what the library is worth. Of everything on our
+      moat table, this is the one row a frontier release makes more valuable.</p></div>
   </div>
 </section>
 
-<!-- 8 -->
+<!-- 8 the trap -->
 <section class="slide">
   <div class="n">Why a decade of money produced so little</div>
-  <h2>Because the thing a learner can feel runs opposite to the thing that happened.</h2>
-  <p class="big">Preference moves at <strong>d ≈ 0.48</strong> while knowledge does not move
-  at all. Students in the condition that taught them <em>more</em> reported learning
-  <em>less</em>.</p>
-  <p>So every metric a product can cheaply optimise — satisfaction, engagement, streaks,
-  time-on-app — is the wrong one, and chasing it feels like winning the entire time.
-  That is the trap, it is well measured, and almost every company in this
-  category is inside it.</p>
-  <p>And the deepest version: <strong>help only arrives when a learner recognises they
-  need it.</strong> The best-instrumented tutor ever built published its own null and found
-  exactly this. A tutor you must summon reaches the students who need it least.</p>
+  <h2>The thing a learner can feel runs opposite to the thing that happened.</h2>
+  <p class="big">Bastani et al., PNAS 2025, gave about a thousand Turkish high-school
+  students GPT-4 for maths practice. Practice scores rose <strong>48%</strong>. On the
+  unassisted exam afterwards the unguarded arm came out <strong>17% worse</strong> than
+  students who never had it.</p>
+  <p>The guarded arm landed at −0.004 and was unharmed, which is the finding that matters:
+  guardrails have been measured to remove that harm and never to add benefit. Alongside it,
+  Buljan's three parallel randomised trials of explanation formats moved preference by
+  d ≈ 0.48 while knowledge moved zero, and Deslauriers showed students taught more by active
+  learning reporting that they had learned less.</p>
+  <p>So satisfaction, engagement, streaks and time-on-app all proxy <em>felt</em> learning,
+  and chasing them feels like winning throughout. <strong>An agent that teaches nothing can
+  max out every one of them.</strong></p>
 </section>
 
-<!-- 9 -->
+<!-- 9 competition -->
+<section class="slide">
+  <div class="n">Competition</div>
+  <h2>The incumbent sells a number it has never measured.</h2>
+  <p>Powers and Rock ran seven estimators against a stratified sample of about 6,700 SAT
+  registrants and converted their largest effect into hours: roughly <strong>one additional
+  question correct per eight hours of coaching</strong>. Their envelope is 6–8 scale points on
+  verbal and 13–18 on mathematics. The two largest coaching firms advertised
+  <strong>120 and 140 combined points</strong>, documented by surveying previous customers.
+  In India there is no causal estimate at all of what the coaching industry does to a NEET
+  or JEE rank.</p>
+  <p>A feature grid would not separate us from anyone. These three questions do, and we ask
+  them of ourselves first:</p>
+  <ol class="q">
+    <li><b>Learner-hours delivered ÷ paid tutor-hours, monthly, for 24 months.</b>
+    Flat while headcount grows means the AI is decorative and the buyer is underwriting a
+    staffing business at a software multiple.</li>
+    <li><b>Your delayed, unassisted, novel-item result, with n, and who held the item bank.</b>
+    One deployment moved its exit ticket +4 pp and was null on the state test. That
+    dissociation is the most reproducible finding in this literature.</li>
+    <li><b>Have you ever run an arm against plain ChatGPT?</b> A controlled trial at
+    n = 371 found scaffolded generative AI no better than plain ChatGPT on domain knowledge.
+    If the pedagogy has never beaten the free substitute, the moat is a prompt.</li>
+  </ol>
+</section>
+
+<!-- 10 beachhead -->
+<section class="slide">
+  <div class="n">Where it starts</div>
+  <h2>Where the world already grades the answer.</h2>
+  <p class="big">SAT · PSAT · NEET · JEE · GATE · EAMCET. Proctored, months later, on items
+  nobody has practised, and the score comes back <strong>because the candidate wants it more
+  than we do.</strong></p>
+  <p>Everyone else has to fund a research programme to discover whether their product works.
+  In this segment the truth signal is the customer's own objective. Closed syllabus, published
+  answer keys, decades of item-level response data, and hundreds of millions of candidates
+  whose alternative is a room with four hundred other people in it.</p>
+  <div class="two">
+    <div class="box"><h3>Two things we will not claim</h3>
+      <p><b>The gaokao is a policy risk before it is a market.</b> The 2021 double-reduction
+      order stopped new approvals for core-subject tutoring institutions; one listed
+      operator's revenue fell 62% in a year.</p>
+      <p><b>No top-down market size.</b> Six of six analyst houses failed traceability when we
+      checked: two dead links, one report we could not show exists, one figure internally
+      inconsistent by three orders of magnitude. We size this per candidate, bottom-up.</p></div>
+    <div class="box good"><h3>Go to market, ordered by friction</h3>
+      <p><b>Authors and creators</b> — live in days. Highest content velocity, no procurement.</p>
+      <p><b>Online course sites</b> — weeks to months. Telemetry and a practice loop already
+      running; they measure completion and nobody measures diagnosis.</p>
+      <p><b>Publishers</b> — quarters. The corpus built with authors is why they eventually sign.</p>
+      <p><b>Institutions</b> — years. Contract size, and SOC 2, FERPA, COPPA and the EU AI Act.</p></div>
+  </div>
+</section>
+
+<!-- 11 business model -->
+<section class="slide">
+  <div class="n">Business model</div>
+  <h2>Inference is 0.43% of what it costs to deliver a supervised hour.</h2>
+  <p>Two measurements arrive at that figure independently. One published cost model prices the
+  tokens inside a supervised session at £0.0037 against £0.861 delivered. Separately, a deployed
+  tutoring programme's own API bill came to $1,419.66 across 429 tutors in two months, which is
+  $19.86 a year each, set beside 200 hours of tutor time at a $23.10 mean wage.</p>
+  <p>So the margin question lands somewhere else entirely: <strong>the leverage ratio</strong>,
+  learner-hours supervised per paid tutor-hour. We publish it monthly from month one, because
+  it is the only number that separates a software business from a staffing business here. The
+  one audited comparable that rebuilt on AI-native codebases went from 67.5% to 58.0% gross
+  margin, so this has to be demonstrated and never assumed.</p>
+  <div class="box"><h3>What we sell, and what we buy</h3>
+    <p><b>Direct</b> to candidates working toward a dated exam, where the outcome arrives free.</p>
+    <p><b>To publishers, authors and course owners:</b> the same book, with the practice loop
+    instrumented and the diagnosis attached. An addendum, never a migration.</p>
+    <p>The asset there is calibration. Generation drove item-production cost to zero and left
+    calibration untouched; automatic item generation breaks even at <b>173–247 items per
+    fine-grained content area</b>, per area. Decades of item-level response data is the
+    calibration corpus a verifier needs, and no single publisher can see enough of a concept
+    to build the layer alone.</p></div>
+</section>
+
+<!-- 12 traction -->
+<section class="slide">
+  <div class="n">What exists today</div>
+  <h2>Pre-revenue, and there is already something you can run.</h2>
+  <div class="two">
+    <div class="box good"><h3>Built and inspectable</h3>
+      <p><b>27 demos</b> that run in a browser with no key and no sign-in. Each performs its
+      mechanism live and states on its own face what it does not prove.</p>
+      <p><b>Six machine checks</b> guard the repository. One ships with a self-test, because a
+      reviewer defeated the first version by planting retired numbers back into the tree.</p></div>
+    <div class="box good"><h3>Original measurements, including the ones that hurt</h3>
+      <p>Our own permutation-based verification protocol, benchmarked over 768 generations on
+      two models against a deterministic comparator: <b>87.5% recall and 87.5% false alarm,
+      exactly at chance.</b> Plain self-consistency beat it by 18.8 and 43.8 points. Published.</p>
+      <p>An abstention fix that took silent passes on wrong claims from <b>1 to 0</b> at no cost,
+      and a sampling-budget null where recall stayed flat at 99.1% while p95 latency rose 6.8×.</p></div>
+  </div>
+  <p class="sub">Everything above is public: the demos, the harnesses, the raw result files,
+  and the ledger of what we got wrong.</p>
+</section>
+
+<!-- 13 team -->
 <section class="slide">
   <div class="n">Why you can believe us</div>
   <h2>We spent months trying to break our own thesis and published every time we managed it.</h2>
   <div class="two">
     <div class="box"><h3>Things we killed</h3>
-      <p>Our own verification protocol: benchmarked, <b>exactly at chance</b>, published anyway</p>
-      <p>An effect size we had quoted five times</p>
-      <p>Four earlier attempts at the same problem, all measured, <b>all zero</b></p></div>
+      <p>Our own verification protocol, benchmarked at chance and published anyway</p>
+      <p>A pooled tutoring effect size we had put in five places: 0.37 was the superseded
+      working-paper figure, and peer review says <b>0.288</b></p>
+      <p>A tutoring effect range of ours that exists in no source, spliced from two different
+      estimands. The defensible figure is <b>d ≈ 0.63</b></p></div>
     <div class="box good"><h3>What we built instead of promises</h3>
-      <p>An append-only ledger of everything we got wrong, with who caught it</p>
-      <p>Five hostile reviews. The first four said <b>not publishable</b></p>
-      <p>Machine checks that fail the build if a retired number reappears anywhere</p></div>
+      <p>An append-only ledger, <b>68 corrections</b>, each with a column naming who caught it.
+      <b>23 were found by an adversarial reviewer</b> we paid to fail us</p>
+      <p>Five full hostile reviews. The first four returned <b>not publishable</b></p>
+      <p>A build that refuses to ship when a retired number reappears anywhere</p></div>
   </div>
-  <p>A large share of that ledger was found by people we paid to attack us.
-  The real question about any founder here is whether they will notice when they are
-  wrong. Ours is on the record.</p>
+  <p>The real question about any founder in this category is whether they will notice when
+  they are wrong. Ours is on the record, with dates and provenance.</p>
+  <p class="sub"><span class="fill">FILL: FOUNDERS</span> &nbsp;names, what each has shipped
+  before, and the one line on why this team gets to build this.</p>
 </section>
 
-<!-- 10 -->
-<section class="slide">
-  <div class="n">Where it starts</div>
-  <h2>Where the world already grades the answer.</h2>
-  <p class="big">SAT · JEE · NEET · GATE. Proctored, months later, on problems nobody has
-  seen, and the result comes back <strong>because the student wants it to.</strong></p>
-  <p>Every competitor has to fund a research programme to find out whether their product
-  works. Here, the honest measurement <em>is the customer's own goal</em>. Closed syllabus,
-  high stakes, and hundreds of millions of learners whose alternative is a room with four
-  hundred other people in it.</p>
-  <p>It is where a system like this gets good. It is not where it stops.</p>
-</section>
-
-<!-- 11 -->
+<!-- 14 risks -->
 <section class="slide">
   <div class="n">What it costs to be wrong</div>
   <h2>What kills this, in the order we worry about it.</h2>
   <div class="two">
     <div class="box bad"><h3>1 · The models get good at diagnosis</h3>
-      <p>Our structure becomes an API call. The largest risk, and not remote.</p></div>
+      <p>Our structure collapses into an API call. The largest risk, and not remote. The hedge
+      is that the belief library is data we own and a stronger model reads it better.</p></div>
     <div class="box bad"><h3>2 · One mind, ten million children</h3>
-      <p>Thirty teachers make thirty different mistakes and they cancel out. One system's mistakes are identical for everyone at once. There is no name for this in the literature. We gave it one, and the mitigation is the same instrument as the moat.</p></div>
+      <p>Thirty teachers make thirty different mistakes and they cancel. One system's mistakes
+      are identical for everyone at once. The mitigation is the same instrument as the moat.</p></div>
   </div>
   <div class="box bad"><h3>3 · It works, and it widens the gap</h3>
-    <p>Untargeted delivery reliably helps the already-strong more. Across eight <em>targeted</em> interventions, none widened gaps — so this is avoidable. We report gap change as a primary outcome. <b>If it widens gaps it has failed, whatever the average says.</b></p></div>
+    <p>Untargeted delivery reliably helps the already-strong more: the best-designed frontier
+    trial to date loaded at +0.195 SD per SD of baseline attainment. Across eight
+    <em>targeted</em> interventions, none widened gaps and several narrowed them sharply, so
+    this is a design failure and never a tax. We report gap change as a primary outcome.
+    <b>If it widens gaps it has failed, whatever the average says.</b></p></div>
 </section>
 
-<!-- 12 -->
+<!-- 15 the ask -->
 <section class="slide">
   <div class="n">The ask</div>
-  <h2>Nobody's thumb, ever again.</h2>
-  <p class="big">Ekalavya was refused a teacher, taught himself, became the better archer —
-  and they took his thumb for it. That is the whole history of education in one story:
-  not a shortage of talent, a shortage of access, and then a system defending
-  itself when someone routed around it.</p>
-  <p>The tutor was always the intervention that worked. It was never the one that could be
-  given to everyone. <strong>That constraint is gone and nothing has been rebuilt around
-  its absence.</strong></p>
-  <div class="two" style="margin-top:18px">
-    <div class="box good"><h3>What we will show you in twelve months</h3>
-      <p>Whether help reached the learners who never ask</p>
-      <p>A delayed, unassisted result against plain ChatGPT</p>
-      <p>Gap change, reported first</p></div>
-    <div class="box"><h3>What we will never call progress</h3>
+  <h2>What the money buys, and the result it has to produce.</h2>
+  <p class="big">We are raising <span class="fill">FILL: $ AMOUNT</span> on
+  <span class="fill">FILL: TERMS</span> for <span class="fill">FILL: N</span> months of runway.</p>
+  <div class="wrap"><table>
+    <thead><tr><th>Use of funds</th><th>What it buys</th><th>Share</th></tr></thead>
+    <tbody>
+    <tr><td><b>Belief-library engineering</b></td>
+      <td>The enumerated belief set for one exam syllabus, with the discriminating-item
+      generator and the run-it-forward simulator behind it</td>
+      <td class="num"><span class="fill">FILL: %</span></td></tr>
+    <tr><td><b>The real-time substrate</b></td>
+      <td>A self-hosted audio-visual stack held to the 200 ms budget, with no language model
+      on the live path</td>
+      <td class="num"><span class="fill">FILL: %</span></td></tr>
+    <tr><td><b>Measurement</b></td>
+      <td>A pre-registered delayed, unassisted, novel-item trial with an arm against plain
+      ChatGPT, third-party item bank, blind scoring, gap change pre-specified</td>
+      <td class="num"><span class="fill">FILL: %</span></td></tr>
+    <tr><td><b>Calibration partnerships</b></td>
+      <td>Response-data agreements with the first authors and course owners, and one
+      publisher pilot</td>
+      <td class="num"><span class="fill">FILL: %</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="two" style="margin-top:8px">
+    <div class="box good"><h3>The milestone this money reaches</h3>
+      <p>A delayed, unassisted result on a proctored exam, against plain ChatGPT, with n
+      published and the item bank held by someone else. Of the 273 studies in ERIC that use a
+      delayed post-test, two involve ChatGPT. The team that runs one properly owns the field.</p>
+      <p>Reported alongside it: gap change as a primary outcome, and the leverage ratio every
+      month from the first.</p></div>
+    <div class="box"><h3>What we will not report as progress</h3>
       <p>Engagement. Streaks. Time on app. Satisfaction.</p>
       <p>Any number a system that teaches nothing could also produce.</p></div>
   </div>
+</section>
+
+<!-- 16 vision -->
+<section class="slide">
+  <div class="n">The vision</div>
+  <h2>Nobody's thumb, ever again.</h2>
+  <p class="big">Ekalavya was refused a teacher, taught himself, became the better archer, and
+  they took his thumb for it.</p>
+  <p>That is the history of education in one story: never a shortage of talent, always a
+  shortage of access, and then a system defending itself when someone routed around it. The
+  tutor was always the intervention that worked. It was never the one that could be given to
+  everyone.</p>
+  <p><strong>That constraint is gone, and nothing has been rebuilt around its absence.</strong>
+  In five years a child anywhere holds the faculty of a university that knows only her, and the
+  word polymath stops describing a rare person and starts describing an ordinary one.</p>
   <p class="sub" style="margin-top:20px"><a href="paper.html" style="color:var(--felt)">The evidence</a> ·
   <a href="demos/" style="color:var(--felt)">the working demos</a> ·
   <a href="https://github.com/dlmastery/learning-with-ai/blob/main/CORRECTIONS.md" style="color:var(--felt)">everything we got wrong</a></p>

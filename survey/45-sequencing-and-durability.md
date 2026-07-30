@@ -10,7 +10,8 @@ source_report: research/raw/R6-sequencing-and-durability.md
 
 Doroudi, Aleven & Brunskill (2019), *IJAIED* 29:568–620, collected every empirical
 study since the 1960s that pitted a machine-induced instructional sequencing policy
-against a baseline. Their headline is positive, and this survey has already published
+against a baseline. The review closes in 2019, so every comparison in it ran on a
+rule-based or reinforcement-learned system and none ran on a language model. Their headline is positive, and this survey has already published
 a correction for quoting it selectively: **over half** the comparisons, 21 of 41,
 found an induced policy significantly better than every baseline, often at Cohen's
 *d* of 0.8 or more. The finding is in their Table 2, where the comparisons are grouped
@@ -54,7 +55,8 @@ mechanism-level `INFERENCE`."
 Read against Table 2, the two halves of that rule have opposite standing. Picking the
 technique for a chosen target has meta-analytic support. Traversing a prerequisite
 closure to decide what the target should be has no positive result anywhere in sixty
-years of experiments. It is `SPEC` with no measured warrant, load-bearing in at least
+years of experiments on pre-LLM sequencers, and no experiment at all on a frontier
+one. It is `SPEC` with no measured warrant, load-bearing in at least
 three places in this document. The word `prerequisite` appears 196 times across this
 project's research corpus; `curriculum sequencing` twice and `knowledge space` never.
 `OBSERVED — absence`
@@ -132,7 +134,8 @@ every classification the system then makes. `INFERENCE`
 ## 4. The deployed system built entirely on prerequisite structure sits at g ≈ 0.05
 
 ALEKS is the commercial instantiation of knowledge space theory (Doignon &
-Falmagne). Its own research page describes the mechanism, a knowledge state assessed
+Falmagne): a rule-based system, and the syntheses below cover deployments from 2005
+to 2020. Its own research page describes the mechanism, a knowledge state assessed
 "after the student has answered only 20–25 questions," and cites no efficacy study.
 `VENDOR` Two meta-analyses reach the same place. Fang, Ren, Hu & Graesser (2019),
 *Educational Psychology*, 15 studies and 24 independent samples: ALEKS was as good
@@ -153,7 +156,9 @@ moderator is a dosage result.
 randomised topic sequences in production, raising the mastery threshold cost +29% time
 for a retention difference under 0.02. Inside a fixed topic, how hard you push mastery
 barely moves anything; across topics, which order you use has never been shown to move
-anything either.
+anything either. Both statements are about rule-based sequencers, which are the only
+kind that has been tested at this question — which is why this section closes by
+randomising the graph inside a frontier system instead of inheriting the verdict.
 
 ---
 

@@ -58,7 +58,9 @@ for a decade.
 
 Knowledge tracing, the field that predicts whether a learner will get the next
 item right, lives in a band of **AUC ≈ 0.67–0.83 and has essentially not moved
-since 2015.** The definitive study (Gervet, Koedinger, Schneider & Mitchell, JEDM
+since 2015.** Every number in this section comes from that task, on the pre-LLM
+benchmark datasets — ASSISTments, KDD Cup 2010, EdNet, Duolingo — where the label
+is one bit per item. The definitive study (Gervet, Koedinger, Schneider & Mitchell, JEDM
 2020) ran nine datasets across three model families and found that **logistic
 regression with good features leads on four of nine datasets and deep knowledge
 tracing on five**, with margins where DKT wins of +0.007, +0.010, +0.020, +0.029.
@@ -68,12 +70,20 @@ reviews from ~10,000 users, a **zero-parameter moving average beats every releas
 FSRS version on log loss.** An earlier section of this survey established that in
 detail and this one takes it as given.
 
-Read together, the finding is: **learner modelling has a low ceiling, that ceiling
-was reached by simple models, and much of the reported progress past it was
-measurement error.**
+Read together, the finding is: **next-item prediction has a low ceiling, that
+ceiling was reached by simple models, and much of the reported progress past it
+was measurement error.**
 
-The reason that is good news arrives in §4. First, the errors, because they are
-instructive.
+Say what that ceiling is and is not, because this section has been read as
+setting a bound on learner modelling at large and it does not. It is a ceiling on
+one task, established on pre-LLM systems and pre-LLM datasets, and the quantity it
+caps is the probability of the next answer. It is silent on what a frontier model
+can read off a transcript — which misconception is live, which explanation landed,
+what the learner said they were confused by. Nobody has benchmarked that, which is
+a gap and not a ceiling; §8 returns to it.
+
+The reason the prediction ceiling is good news arrives in §4. First, the errors,
+because they are instructive.
 
 ---
 
@@ -173,8 +183,10 @@ accuracy frontier for this task. Capacity is demonstrably not the bottleneck —
 503-parameter GRU ties an 8,869-parameter LSTM. The residual appears to be
 aleatoric: individual review outcomes are close to irreducibly stochastic.
 
-Which means the entire learner model runs on the learner's device. Privacy here
-costs approximately zero accuracy.
+Which means the predictive layer of the learner model runs on the learner's
+device. Privacy costs approximately zero accuracy on the layer anyone has
+measured, and the layers nobody has measured are not an argument for moving the
+data off it.
 
 That inverts the usual trade. Normally, keeping data local means accepting a weaker
 model. Here, the strong model *is* small. The custodial architecture this section
@@ -364,8 +376,9 @@ experiment, and no one has run it.
 - **Every knowledge claim carries a decay model.** A mastery estimate without one is
   a lie about the present.
 - **The model runs on the learner's device**, because a 21-parameter memory model and
-  a 34-feature logistic regression are the frontier. Privacy costs approximately zero
-  accuracy here.
+  a 34-feature logistic regression sit at the accuracy frontier *for next-item
+  prediction*, which is the only part of a learner model anyone has benchmarked.
+  Privacy costs approximately zero accuracy on that part.
 - **Custody sits with the learner.** Scoped, expiring, revocable, default-deny onward
   transfer, with a learner-readable access log and erasure receipts. inBloom failed on
   custody, not schema.

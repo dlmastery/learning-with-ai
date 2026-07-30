@@ -50,11 +50,40 @@ the organising constraint here, and never a charitable sidebar.
 
 ## What it found
 
+### What a 2026 model has been measured to do
+
+The figures this field quotes most were produced by other machines. Bloom's 2σ is human tutors in
+1984. VanLehn's 0.76 is a rule-based tutoring system in 2011. Nickow's 0.288 pools 96
+human-tutoring RCTs, nearly all of them run before GPT-4 existed. None of the three is a bound on
+a frontier model, and using them as one is how a field argues itself out of its own best result.
+
+These are the trials that put a post-2023 LLM in front of a learner and measured what changed.
+
+| Trial | Result | What the outcome was |
+|---|---|---|
+| Kestin, Harvard physics, 2025 | *d* ≈ 0.63 | Immediate post-test, in 49 minutes against an assumed 60. Developer-built and developer-evaluated, no funding statement |
+| Rori, Ghana, 2024 | +0.37 SD | Eight months, but 11 clusters, and the provider's own staff are the authors |
+| Nigeria, World Bank, 2025 | +0.310 SD composite; +0.206 SD on the school's own exam | The one distal outcome here that moved. 43% attrition |
+| Sierra Leone, 2026 | +0.258 SD adjusted; +0.216 SD unadjusted and not significant | Endline only. Gains load on Grade 8 and grow with prior attainment |
+| LearnLM + Eedi, 2025 | +5.5 p.p. on the next unit's first problem, against human tutors | 165 students, and a 95% credible interval of [−1.4, +12.4] |
+| Tutor CoPilot, 2024 | +4 p.p. on the exit ticket | Null on the end-of-year test |
+| Bastani, Turkey, 2025 | +127% on assisted practice | −0.004 on unassisted work, not significant |
+
+Two things are true of that table at once. It holds the strongest tutoring result anyone has
+measured on a frontier model, and it holds a trial where assistance left learners worse off once
+the tool was taken away. What separates those two rows is what the system was permitted to do,
+and not which model sat inside it. That is the encouraging reading: the variance is in the
+design, which is the part you get to choose.
+
+**Not one row measured a delayed, unassisted test on items the learner had never seen.** The
+frontier era has not run into a ceiling. It has not yet run the experiment that could find one.
+
 ### The finding the survey turns on
 
-Across **223 tutoring domains, the models tested did not beat chance at labelling an incorrect
-student action.** Reading a learner's belief from what they did is the most basic thing a tutor
-does, and no instrument for it has been built.
+Across **223 tutoring domains, the four models TutorGym evaluated did not beat chance at
+labelling an incorrect student action** — GPT-4o and Claude 3.5 among them, in what its authors
+call an initial evaluation. Reading a learner's belief from what they did is the most basic thing
+a tutor does, and no instrument for it has been built.
 
 Scope it correctly, because that sharpens the claim. Step-checking a model's *own* reasoning
 trace is not at chance: ProcessBench reports open models competitive with GPT-4o at finding the
@@ -67,7 +96,7 @@ Each multiplies something else and none produces value alone, which gives a rule
 
 > **The value of an agentic loop is bounded by the value of the external check it closes on.**
 
-Where a strong check exists, agents reach **79.2%** (SWE-bench Verified) and **83.8%**
+Where a strong check exists, frontier agents reach **79.2%** (SWE-bench Verified) and **83.8%**
 (Terminal-Bench). Where it is weak or missing, **21.0%** (PaperBench) and **4.6%** (SciCode,
 which does have hand-written tests, and is why the rule is a bound and not an equality). A
 twenty-fold spread, and what varies across it is the quality of the check. Task difficulty
@@ -78,18 +107,27 @@ capability in education is waiting on that one missing instrument.
 
 ### Three results that disqualify most of what is being built
 
-**Felt learning and real learning move in opposite directions.** Preference shifts at *d* ≈ 0.48
-while knowledge stays flat, and debiasing the learners does not remove it. In one controlled
-comparison the students who learned *more* reported learning *less*.
+**Felt learning and real learning move in opposite directions.** Buljan et al. 2018 ran three
+RCTs, n = 334 adults, comparing an infographic with a plain-language summary: preference moved
+*d* ≈ 0.48 and knowledge moved zero. Kaspar 2025, N = 179, played a debiasing video first and the
+easiness effect survived it. Neither study involved a tutor or a model, which is the point:
+the dissociation is a property of how people judge their own learning, so a frontier system
+inherits it the moment it starts optimising on ratings. In Deslauriers 2019 the students who
+learned *more* reported learning *less*.
 
-**Measurement without a decision rule is inert.** A randomised trial gave one arm data and the
-other arm data plus instructions on what to do about it. Both revised their teaching more often.
-Only the second arm's students scored higher. Dashboards, streaks, mastery bars and adaptive
-difficulty all sit on the first arm's side of that line.
+**Measurement without a decision rule is inert.** Fuchs, Hamlett & Stecker 1991 randomised 33
+teachers to progress data, progress data plus a rule for acting on it, or neither. Both measured
+arms revised instruction more often. Only the arm with the rule moved achievement. That is a
+1991 result about human teachers and an expert system, and it constrains a 2026 dashboard for a
+structural reason and not a technological one: dashboards, streaks, mastery bars and adaptive
+difficulty are all the arm without the rule.
 
-**Unguarded assistance is an active harm**, leaving learners **17% worse** on later unassisted
-work. Adding guardrails takes the damage away without putting a benefit in its place: the
-guardrailed arm's unassisted coefficient is **−0.004, not significant.**
+**Unguarded assistance is an active harm.** Bastani et al. 2025 is a frontier-model RCT, ~1,000
+Turkish high-school students with GPT-4, and the arm given an unconstrained assistant came back
+**17% worse** on unassisted work. Adding guardrails takes the damage away without putting a
+benefit in its place: the guardrailed arm's unassisted coefficient is **−0.004, not significant.**
+This is the strongest evidence in the corpus that constraint design is the live variable, and
+it is also the reason no constrained system can yet claim a gain.
 
 ### On speed
 
@@ -119,16 +157,32 @@ beginner.
 
 ## The central claim, and how to kill it
 
-The measured 0.2–0.4 SD band describes systems that answer freely, forget everything between
-sessions, cannot see the work, cannot point, never change method, and agree with the learner.
-Nobody has built and measured the constrained, grounded, pivoting, remembering, teachable
-alternative.
+The 0.2–0.4 SD band this field quotes at itself is an average taken across three different
+machines: human tutors at 0.288, pre-LLM intelligent tutoring systems at 0.32–0.42 g, and a
+handful of LLM deployments. Pooling them was a reasonable way to ask whether the LLM trials had
+produced an order-of-magnitude jump. It is not a ceiling on a frontier model, because a 2011
+rule-based tutor cannot bound a 2026 one, and because the LLM trials that did not fit the band
+were left out of it at both ends: Kestin at 0.63 above, Bastani at −0.054 below.
 
-**That nobody has measured it is proven. That it would do better is a hypothesis.**
+Every one of those LLM deployments was a chatbot with a prompt. It answers freely, forgets
+everything between sessions, cannot see the work, cannot point, never changes method, and agrees
+with the learner. The constrained, grounded, pivoting, remembering, teachable alternative that
+this survey specifies has not been assembled, and so has never been measured against anything.
 
-The concession conditions are stated in advance. A well-powered trial of the assembled system,
-with a delayed, unassisted, novel-item primary outcome, landing *inside* the 0.2–0.4 band rather
-than above it, would mean the mechanisms are decorative and the band is the ceiling.
+**That nobody has measured the assembled system is proven. That it would do better is a
+hypothesis.**
+
+The concession conditions are stated in advance, and the comparator has to be the vintage-correct
+one. A well-powered trial of the assembled system, with a delayed, unassisted, novel-item primary
+outcome, run against a plain frontier-model chatbot as the active control: if it fails to beat
+that arm, the mechanisms are decorative and the model was doing all the work. A pre-LLM baseline
+or a business-as-usual classroom would not settle the question either way.
+
+That falsifier has teeth. Fütterer et al. 2026 controlled a K-12 intervention against plain
+ChatGPT and found no significant advantage on knowledge, effort or strategy use. Gu & Yan (2025)
+report *g* = 1.426 for LLM tutoring with teacher support and *g* = 0.077 without it, which puts
+most of the measured effect outside the model. Tutor CoPilot, 900 tutors and 1,800 students,
+moved its exit ticket and returned a null on the end-of-year test.
 
 If you run one of the open problems, the result is wanted whichever way it lands. Especially the
 nulls.
@@ -139,10 +193,10 @@ nulls.
 
 This survey got things wrong. The record of that is the reason to trust the rest of it.
 
-[`CORRECTIONS.md`](CORRECTIONS.md) is an append-only ledger with a provenance column. A
-**adversarial reviewers found a substantial minority of its entries**,
-including the two most damaging numbers, and one about the ledger itself, which was being
-silently edited inside a table headed *"published rather than silently edited."*
+[`CORRECTIONS.md`](CORRECTIONS.md) is an append-only ledger with a provenance column.
+**Adversarial reviewers found a substantial minority of its entries**, including the two most
+damaging numbers, and one about the ledger itself, which was being silently edited inside a table
+headed *"published rather than silently edited."*
 
 The reviews are in [`evidence/`](evidence/). The first four returned **not publishable**.
 

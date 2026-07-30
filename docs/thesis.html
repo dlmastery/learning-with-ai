@@ -189,12 +189,19 @@ check caps you low, and a strong one only stops you being capped.</p>
 <p>Now place tutoring on that scale. It sits in the bottom half, and there is a measurement
 that says why:</p>
 
-<div class="claim">Across 223 real tutoring domains, no model beat chance at labelling an
-incorrect student action.</div>
+<div class="claim">Across 223 real tutoring domains, the four models tested did not beat
+chance at labelling an incorrect student action.</div>
 
-<p>Not "performed poorly." <strong>Chance.</strong> The most basic operation a tutor
-performs — look at what a learner did and say what is wrong with it — is currently
-unverifiable by the systems being sold to do it.</p>
+<p>Scope that carefully, because an earlier version of this page did not. TutorGym evaluated
+a 2024 model set — two Claude 3.5 releases, <code>gpt-4o-2024-08-06</code> and DeepSeek
+v2.5 — in what its authors call an initial evaluation. And the adjacent literature runs the
+other way: on ProcessBench, open models identify the earliest erroneous step in a reasoning
+trace competitively with that same GPT-4o vintage.</p>
+
+<p>So the gap is specific and it is the one worth naming. <strong>Checking a model's own
+reasoning is already good enough to build on. Reading a learner's belief from what they
+did is the operation nobody has an instrument for</strong>, and it is the operation a tutor
+performs constantly.</p>
 
 <h2>4. What that means commercially</h2>
 
@@ -217,17 +224,18 @@ worse than not selecting at all.</p></div></div>
 it.</strong> A census across 20 education-AI subfields found 2,907 arXiv papers, at most 1.79%
 carrying any learning-outcome marker, and eight subfields at zero. Search ERIC and you get 1,565
 records on ChatGPT in education against seven randomised trials, three of them second-language
-learning. The first company that can demonstrate a delayed unassisted outcome is not competing
-on features.</p></div></div>
+learning. That is a gap in the literature and not in the machine — §1's numbers exist; what
+does not exist is any vendor's proof that <em>their</em> system produced them. The first
+company that can demonstrate a delayed unassisted outcome is not competing on features.</p></div></div>
 
 <h2>5. Why humans-in-the-loop is the wedge</h2>
 
 <p>The usual framing treats human tutors as the expensive part to be automated away. The
-evidence says the opposite, and it comes from the only trial that measured a
-human-supervised AI tutor at scale.</p>
+evidence says the opposite, and it comes from the trial in §1's first row — the one place a
+frontier tutor and the expert supervising it were measured side by side.</p>
 
-<p>Tutors accepted <strong>74.4% of 3,617 AI-generated drafts unedited</strong>, a figure that
-verifies exactly (2,691/3,617, zero harmful messages, five factual errors). It is usually quoted
+<p>The acceptance rate verifies exactly: <strong>2,691 of 3,617 drafts</strong> went out
+without modification. It is usually quoted
 as an efficiency win, and that reading is not supported: the authors state their design
 <em>"precludes a rigorous measurement of throughput or efficiency."</em> The published throughput
 gain comes from a six-tutor role-play simulation, and the labour rate underpinning its saving is
@@ -281,8 +289,8 @@ job.</p>
 
 <p>The narrow task is equally clear. Lesson planning, curriculum and the chat are all the wrong
 unit. The unit is <strong>step-level error diagnosis and next-move selection</strong> — high
-frequency, low latency, narrow, and nowhere near solved by the labs, which sit at chance across
-223 domains.</p>
+frequency, low latency, narrow, and unsolved by the labs: the 2024 model set in §3 did not
+beat chance on it, and this survey found no published evaluation of a later one.</p>
 
 <h3>The part that does not transfer, and it decides everything</h3>
 
@@ -457,10 +465,13 @@ That is worth a great deal and is not the same as a self-improving tutor.</p>
   grey zone. That is the highest-value unresolved legal question in the field.</p>
 </div>
 
-<p>And it would be the wrong thing to build anyway. Pedagogical avatars measure g ≈ 0.19, and
-three 2024 field experiments improved affect at <strong>d = .85–1.01 while learning did not move
-at all.</strong> Emotion-responsive tutoring optimises the felt axis, the one this survey shows
-runs <em>opposite</em> to the real one.</p>
+<p>And it would be the wrong thing to build anyway. Pre-LLM multimedia pedagogical avatars
+measure g ≈ 0.19 across 43 studies, and the larger 2025 GenAI-agent effects (g ≈ 0.36–0.40)
+compare an AI tutor with <em>no tutor</em> and never a face with the same agent without one,
+so they measure the model and not the avatar. Meanwhile three 2024 field experiments improved
+affect at <strong>d = .85–1.01 while learning did not move at all.</strong>
+Emotion-responsive tutoring optimises the felt axis, the one this survey shows runs
+<em>opposite</em> to the real one.</p>
 
 <h3>What video-in is genuinely for</h3>
 
@@ -543,8 +554,8 @@ A closed syllabus and a definitive answer key is the nearest thing education has
 <code>pytest</code>.</p></div></div>
 
 <div class="step"><div class="n">2</div><div><p><strong>The counterfactual is bad, which is where returns are largest.</strong> This survey's
-reading of three trials together: <em>the measured return on pedagogical design scales with how
-bad the counterfactual was</em>. Against a competent chatbot in a well-resourced classroom,
+reading of three frontier-era trials together: <em>the measured return on pedagogical design
+scales with how bad the counterfactual was</em>. Against a competent chatbot in a well-resourced classroom,
 designed pedagogy has not yet demonstrated an advantage. Against an overcrowded coaching batch,
 or nothing, it does.</p></div></div>
 
@@ -765,9 +776,10 @@ worse.</p></div></div>
 <div class="kill">
   <div class="k">Stated in advance, so it can be checked</div>
   <p><strong>A frontier release that labels student errors reliably.</strong> If a general
-  model crosses from chance to competent at step-level error diagnosis, the verifier stops
+  model crosses from chance to competent at diagnosing a learner's belief, the verifier stops
   being a proprietary asset and becomes an API call. This is the single largest risk and it
-  is not remote.</p>
+  is not remote: the tested set is already two model generations old, and on the adjacent
+  task of checking its own reasoning a model of that same vintage is competent.</p>
   <p><strong>The counterfactual result generalising.</strong> In a controlled trial, two
   designed pedagogical interventions produced <em>no significant advantage</em> over plain
   ChatGPT. One reading of the corpus as a whole is that returns on pedagogical design scale with

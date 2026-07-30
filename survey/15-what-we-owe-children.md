@@ -307,9 +307,11 @@ across 64 models, **F1 = 0.880 for suicidal-ideation detection and 0.907 for ris
 assessment** — comparable to trained human operators on plan identification.
 Good enough to route, nowhere near good enough to decide. And the dominant
 failure is not what people expect: against 2,075 structured mental-health
-prompts, hallucinations occurred in 6.5% of responses but **omissions in 13.2%,
-concentrated in crisis and suicidal-ideation prompts.** The model rarely says
-something harmful in a crisis; it fails to say the necessary thing. **A safety
+prompts put to a single model, Llama 3.3, hallucinations occurred in 6.5% of
+responses but **omissions in 13.2%, concentrated in crisis and suicidal-ideation
+prompts.** That model rarely says something harmful in a crisis; it fails to say
+the necessary thing. One model is a signal and not a property of the class, and
+the KPI below is what a deployment should measure for itself. **A safety
 eval that measures only harmful output will pass a system that silently drops the
 escalation.** Omission rate, disaggregated by language and dialect, is the
 primary safety KPI.

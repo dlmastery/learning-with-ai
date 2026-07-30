@@ -270,7 +270,11 @@ claims in this field fail on the first three.
 ## 9. Turning question ten on ourselves
 
 The counter-case to this entire survey, at full strength: **0.2–0.4 SD may be a
-population parameter and not a technology limit.**
+population parameter and not a technology limit.** The band pools three different
+machines — human tutors, rule-based ITS, and six-to-eight-week deployments of
+frontier assistants (§09). Three things that different landing in one place is
+exactly what you would see if the constraint belonged to the learners and the
+setting and not to any of the machines.
 
 The evidence for that reading is not weak. The best-powered studies on record are
 nulls — lesson study at **ES 0.02** across 181 schools and 12,747 pupils with very
@@ -286,7 +290,9 @@ propose is another elaboration about to lose to simplicity.
 What would force us to concede: a well-powered trial of the assembled system,
 constrained and grounded and pivoting and remembering and teachable, with a delayed unassisted
 novel-item outcome, landing inside the 0.2–0.4 band. Not below it. *Inside* it.
-That would mean the mechanisms are decorative and the band is the ceiling.
+That would mean the mechanisms are decorative and the band is the ceiling — and it
+would be the first time the band had been measured on this class of system, which is
+the only reason the trial settles anything.
 
 If that happens, the rewrite we would owe the reader is already drafted: *AI's
 contribution is scalable, high-fidelity, high-dosage delivery of what already
@@ -308,6 +314,10 @@ what the special-education evidence argues for on its own terms.
   expansion.**
 - **State the scarcity condition** whenever quoting an effect size measured in a
   world where the control group had nothing.
+- **State the class of system and the year alongside it.** A 1984 measurement of
+  human tutors and a 2011 measurement of rule-based ITS are evidence about those
+  machines and about nothing else (§09), and a survey that lets them stand in for a
+  frontier system has miscounted its own evidence in the direction that feels safest.
 - **Ask question ten first**, of everyone, including us.
 
 The list above is incomplete. That is not modesty; it is the definition of the

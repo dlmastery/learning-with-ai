@@ -45,15 +45,23 @@ Most previous attempts at universal tutoring died on a scarcity argument. Bloom'
 unaffordable*, so the field spent forty years searching for "group-instruction
 methods as effective as one-to-one tutoring."
 
-Two sigma is not the number, and we should stop quoting it. VanLehn measured
-human tutoring at **d = 0.79** and intelligent tutoring systems at **0.76**;
-Nickow et al. pooled 96 randomised tutoring studies at **0.288 SD** in peer review. Kestin's Harvard AI-tutor RCT
-landed at **d ≈ 0.63** (0.73–1.3 after the authors' own ceiling correction), in a
-median 49 minutes against an *assumed* 60, and the first author built the tutor,
-ran the analysis, and declared no funding. That is *inside the human tutoring
-range*, which is the honest claim and still a remarkable one. Chasing 2σ
-inflates the target several-fold and guarantees that everything real looks like a
-failure.
+Two sigma is not the number, and we should stop quoting it: it measured human tutors
+in 1984 on their own aligned tests, and this survey retired it (§24, §19). Retiring
+it does not promote whatever came next to a ceiling. VanLehn 2011 measured *human*
+tutoring at **d = 0.79** and *rule-based* intelligent tutoring systems at **0.76**;
+Nickow et al. pooled 96 randomised trials of *human* tutors at **0.288 SD** in peer
+review, almost all of them run before 2020. Those are the correct benchmarks for a
+person and for a rule-based machine. Not one of them contains a frontier model.
+
+The frontier-era measurement is Kestin's Harvard AI-tutor RCT: **d ≈ 0.63**
+(0.73–1.3 after the authors' own ceiling correction), in a median 49 minutes against
+an *assumed* 60. It carries a heavy discount and we apply it in full — the first
+author built the tutor, ran the analysis and declared no funding; the post-test was
+researcher-built and ceiling-limited; the exposure was two hours (§09). What it is
+not is a proxy for something else. It is the one number here taken on the class of
+system this project is actually building. Chasing 2σ inflates the target several-fold
+and guarantees everything real looks like a failure. Bounding the target with 1984
+and 2011 does the same damage from the other side.
 
 And scarcity was not always the killer. **Direct Instruction won Project Follow
 Through** — the largest educational experiment ever run — on basic skills,
@@ -167,9 +175,13 @@ never in the model's manners.
 
 ## 5. The bet
 
-Every effect size in the literature is a measurement of **systems that don't do
-any of this.** The tutor measured at 0.2–0.4 SD answers freely, has no memory,
-cannot see the work, cannot point, never pivots, and agrees with everything.
+The provenance of the band is the whole bet. **0.2–0.4 SD was measured on systems
+that do almost none of this.** Two of the three figures inside it, ITS and human
+tutoring, predate the technology entirely. The third is a general-purpose assistant
+distributed into a classroom: it answers freely, has no memory, cannot see the work,
+cannot point, never pivots, and agrees with everything. The one frontier trial whose
+tutor was constrained — Kestin's, which refused to advance until the student produced
+reasoning — is also the one that came in above the band (§09).
 
 We call that *the floor with the brakes on*. The status of that phrase is worth
 being exact about, because §20 is, and this section was not. **"Nobody has built

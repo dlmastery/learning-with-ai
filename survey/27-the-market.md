@@ -46,7 +46,7 @@ Each primitive is a falsifiable hypothesis about how learning happens.
 | Primitive | The bet | State of the evidence |
 |---|---|---|
 | **Content generation** | The bottleneck is materials | Every retrievable metric is a **teacher-time** metric |
-| **Tutoring** | The bottleneck is one-to-one attention | Splits into answer-giving and withholding; only the pre-LLM generation has trials |
+| **Tutoring** | The bottleneck is one-to-one attention | Splits into answer-giving and withholding; the effect sizes this market advertises are all pre-LLM, and the frontier-era trials that do exist (§09) are cited by nobody selling |
 | **Assessment** | The bottleneck is grading cost | Works where the mechanism is clustering; fails where it is judgement |
 | **Teacher tooling** | The highest leverage is not on the student at all | Best evidence-to-deployment ratio; least glamorous |
 | **Language** | The bottleneck is practice hours with a patient interlocutor | The one cluster where "practice, not answers" is commercially natural |
@@ -57,15 +57,21 @@ Each primitive is a falsifiable hypothesis about how learning happens.
 
 Two clusters deserve their evidence stated in full.
 
-**Tutoring's real numbers are pre-LLM.** Kulik & Fletcher (2016), 50 controlled
-evaluations at **median 0.66 SD**, is the most-cited figure in the market and comes
+**The numbers this market advertises are pre-LLM.** Kulik & Fletcher (2016), 50
+controlled evaluations of rule-based intelligent tutoring at **median 0.66 SD**, is
+the most-cited figure in the market and comes
 with its own debunking attached: the improvement "depended to a great extent on
 whether improvement was measured on locally developed or standardized tests," and
 §24 puts test alignment at a factor of 2–3. Pane et al.'s Cognitive Tutor Algebra I
 trial, matched-pair randomisation across seven states, is the best large-scale
-evidence anyone has: **no effect in year one**, positive in year two, significant
-for high schools and **not** for middle schools, at roughly eight percentile points.
-The LLM generation inherited the marketing claim and none of the measurement.
+evidence any *pre-LLM* system has: **no effect in year one**, positive in year two,
+significant for high schools and **not** for middle schools, at roughly eight
+percentile points. The LLM generation inherited that marketing claim without the
+measurement under it. Randomised trials of frontier tutors do exist — §09 holds
+seven, from Sierra Leone to Tutor CoPilot — and not one of them is the number a
+product page in this market quotes at you. A 2016 meta-analysis of rule-based
+software is being used to sell a 2026 model, which is the same category error the
+buyer's side of this market keeps falling for.
 
 **Early literacy is the most defensible bet in the market**, in mechanism terms
 rather than enthusiasm terms. The AI does something a human demonstrably cannot
@@ -84,7 +90,8 @@ a selection effect unless dosage was randomised.
 Finding one: the evidence gradient runs opposite to the funding gradient. The
 two products in this section with genuine independent randomised evidence
 (ASSISTments, a nonprofit that is free to teachers, and Cognitive Tutor, a
-forty-year-old curriculum publisher) report **0.03 to 0.22 SD**. The products with
+forty-year-old curriculum publisher — both pre-LLM systems) report **0.03 to
+0.22 SD**. The products with
 the largest claims report no retrievable design, sample or comparison group. And the
 best-funded entity in the sector, at a $4.8bn buyout, makes no learning claim at all.
 

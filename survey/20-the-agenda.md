@@ -170,37 +170,55 @@ experiment is worth running.
 
 ## What would falsify this survey
 
-This survey argues that the measured **0.2–0.4 SD** band for LLM tutoring is the
-floor with the brakes on; that constrained, grounded, pivoting, remembering
-systems would do better; and that nobody has built the good version and measured
-it. Here is the strongest case against that, stated properly and not as a
-strawman. Anyone who cannot state it in this form has not earned the right to the
+This survey argues that the **0.2–0.4 SD** band is a floor with the brakes on;
+that constrained, grounded, pivoting, remembering systems would do better; and
+that nobody has built the good version and measured it.
+
+Say first what the band is made of, because the argument turns on it. It is drawn
+from frontier-model deployment trials of six to eight weeks — Sierra Leone 0.258,
+Nigeria 0.206–0.310, Rori 0.37 (§09) — and it already omits both ends of that
+record: Kestin's developer-built, developer-evaluated d ≈ 0.63 above it and
+Bastani's unassisted −17% below it (§01). The pre-LLM ITS syntheses and the
+human-tutoring pool land in the same range, and that is a comparison rather than a
+constraint. Those studies measured other machines, and older ones; they cannot
+bound this one.
+
+Here is the strongest case against the survey's reading, stated properly and not
+as a strawman. Anyone who cannot state it in this form has not earned the right to the
 survey's conclusion.
 
 **Premise 1. 0.2–0.4 SD is not a floor. It is the modal result of educational
 intervention research, full stop.** It is where tutoring lands, where formative
 assessment lands, where feedback lands, and where most well-implemented
 instructional technology lands once the trial is adequately powered and
-independently run. The regularity is not a fact about AI. It is a fact about how
-much of the variance in learning outcomes is available to be moved by *any*
-instructional manipulation given fixed time, prior knowledge and motivation.
-**On this reading, the survey has mistaken a population parameter for a
-technology limitation.**
+independently run. Every one of those literatures predates the LLMs, and on this
+premise that is the point: the regularity was established before the technology
+arrived and has survived its arrival. The regularity is not a fact about AI. It
+is a fact about how much of the variance in learning outcomes is available to be
+moved by *any* instructional manipulation given fixed time, prior knowledge and
+motivation. **On this reading, the survey has mistaken a population parameter for
+a technology limitation.**
 
 **Premise 2. The nulls already on record are the honest prior, and they are the
 most rigorous studies in their respective literatures.**
 
-| Result | Effect |
-|---|---|
-| Orton-Gillingham vs comparison instruction | **g = 0.22, p = .40**; g = 0.14, p = .59 |
-| Expanding retrieval intervals | **g = 0.034, n.s.** |
-| Lesson Study (EEF) | **ES 0.02 [−0.06, 0.09], p = .65**; n = 6,437; 181 schools; **very high** security; null in every subject and subgroup; no dose–response; good fidelity |
-| Multimedia pedagogical agents | **g = 0.20** |
-| Ruffle&Riley (LLM learning-by-teaching) | **null twice**, N = 100 and N = 200, with high subjective ratings and users needing *more* time |
-| Lehmann et al. | **no main effect**, two preregistered experiments — plus gap-widening |
-| RTI at federal scale | **negative** Grade-1 impacts, regression discontinuity |
-| Working-memory training | **no transfer** |
-| UDL | outcomes **not demonstrated** |
+| Result | Effect | What it measured |
+|---|---|---|
+| Orton-Gillingham vs comparison instruction | **g = 0.22, p = .40**; g = 0.14, p = .59 | HUMAN — teacher-delivered reading instruction (Stevens et al. 2021) |
+| Expanding retrieval intervals | **g = 0.034, n.s.** | HUMAN — schedule manipulation, lab and classroom (Latimier 2020) |
+| Lesson Study (EEF) | **ES 0.02 [−0.06, 0.09], p = .65**; n = 6,437; 181 schools; **very high** security; null in every subject and subgroup; no dose–response; good fidelity | HUMAN — teacher professional development |
+| Multimedia pedagogical agents | **g = 0.20** | ITS — pre-LLM animated agents (Castro-Alonso et al. 2021) |
+| Ruffle&Riley (LLM learning-by-teaching) | **null twice**, N = 100 and N = 200, with high subjective ratings and users needing *more* time | **FRONTIER** — LLM, 2023–2024 |
+| Lehmann et al. | **no main effect**, two preregistered experiments — plus gap-widening | **FRONTIER** — LLM, 2024 |
+| RTI at federal scale | **negative** Grade-1 impacts, regression discontinuity | HUMAN — a schooling framework (Balu et al. 2015) |
+| Working-memory training | **no transfer** | HUMAN — cognitive training (Melby-Lervåg et al. 2016) |
+| UDL | outcomes **not demonstrated** | HUMAN — a curriculum-design framework |
+
+Two of the nine measured a language model. The premise does not need the other
+seven to be about AI, because its claim is about the base rate for instructional
+manipulation in general. But a reader is entitled to see which rows are evidence
+about this technology and which are evidence about instruction, and the survey
+has not always drawn that line where it belongs.
 
 **Premise 3. Added mechanism adds load, and the load is real while the benefit
 is speculative. This is the sharpest version, and this survey's own evidence

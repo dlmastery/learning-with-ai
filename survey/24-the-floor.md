@@ -31,7 +31,7 @@ Richter), ~90% (Tetzlaff et al.). A pooled g of 0.50 is not a prediction that yo
 will get 0.50. It is a one-number summary of a very lumpy distribution.
 
 **Test alignment inflates effects by roughly 2–3×.** Documented three separate
-times: Bloom's tutoring studies gave **0.84 SD on the authors' own narrow tests
+times: Bloom's 1984 human-tutoring studies gave **0.84 SD on the authors' own narrow tests
 versus 0.27 SD on broad standardised tests**; Kulik & Fletcher say the size of the
 ITS improvement "depended to a great extent" on whether the test was locally
 developed or standardised; Slavin's mastery-learning synthesis found positive
@@ -135,12 +135,15 @@ strongest evidence against the naive form of that argument. It does not overturn
 self-explanation as an activity; it means bolting a prompt onto a worked example is
 not the way to get it.
 
-**Intelligent tutoring in K–12 mathematics is near zero.** Steenbergen-Hu &
-Cooper (2013): ITS "had no negative and perhaps a small positive effect," with
-effects *larger* for the general population than for low achievers. K–12
-mathematics is the population most often invoked in AI-tutoring pitches, and it is
-the population where the closest technological precedent measured approximately
-nothing.
+**Rule-based intelligent tutoring in K–12 mathematics is near zero.**
+Steenbergen-Hu & Cooper (2013): ITS "had no negative and perhaps a small positive
+effect," with effects *larger* for the general population than for low achievers.
+K–12 mathematics is the population most often invoked in AI-tutoring pitches, and it
+is the population where the pre-LLM machine measured approximately nothing. Read it
+for what it measured: a null on rule-based software, in the hardest population, on
+the subject with the least give in it. It says nothing about what a frontier system
+will do there, and it is the reason a frontier system that ships into K–12
+mathematics owes a delayed unassisted test before it claims anything.
 
 The founding retrieval-practice result had a design confound. Soderstrom, Kerr
 & Bjork (2016) replicated Karpicke & Roediger (2008) between subjects, then
@@ -210,7 +213,10 @@ inaccurate endorsement. An AI that grills a learner for a sensory-modality label
 automating a forty-year null at scale.
 
 Bloom's two sigma is retired in this survey; the argument and the replacement
-figures are in **§19** and **§03**, and are not repeated here.
+figures are in **§19** and **§03**, and are not repeated here. The part that matters
+for everything downstream is that it must not return as an implicit yardstick. It
+was a 1984 measurement of human tutors on tests aligned to their own instruction. It
+sets no target for a machine, high or low.
 
 ---
 
@@ -255,13 +261,18 @@ reviewers' words, "dominated by laboratory studies of university undergraduates.
   mediation story.
 - **No modality labels, ever.** Adapt on prior knowledge, task properties,
   self-regulation and motivation type, the four adaptation targets with evidence.
-- **Assume decline.** ITS effects were significantly larger in earlier studies than
-  in later, better-controlled ones. Expect the same trajectory for AI tutoring, and
-  write the claims so they survive it.
+- **Assume better controls shrink the number.** Rule-based ITS effects were
+  significantly larger in earlier studies than in later, better-controlled ones.
+  That is a regularity about evaluation quality, and it is a warning about our own
+  first result. It is a fact about a different class of machine, so it forecasts no
+  trajectory for a frontier one. Write every claim to survive the trial that has an
+  active control, an independent test and a delay.
 - **Benchmark honestly.** An AI tutor showing **d ≈ 0.4 on a test it did not help
   design, against an active control, at a delayed post-test** would sit at the top
-  of this entire literature. Anything above 0.8 should be presumed to reflect
-  aligned tests or weak controls until shown otherwise.
+  of this entire literature. Above 0.8, the burden falls on the evaluation: show the
+  test was independent and the control was active, and the number stands. That
+  burden is about study design and carries no prior about what a frontier system can
+  reach, because nothing measured in this section was one.
 
 The floor is not low. Retrieval practice and distributed practice are among the
 largest, most replicated effects anyone in education has ever measured, and they

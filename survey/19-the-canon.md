@@ -73,10 +73,13 @@ mechanism requires a human, because the proctor's function is certification and
 immediacy rather than relationship. **PSI is the clean case, and it is the one
 that should be built first.**
 
-With one measured caveat carried in the same breath. Self-pacing is a documented
-failure mode of PSI *and* of AI tutors, and the policy toolkits state that
-mastery learning is "much less effective when students work at their own pace."
-Rebuild the spine; add external pacing pressure.
+With one caveat carried in the same breath. Procrastination and withdrawal under
+self-pacing are a documented failure mode of PSI itself, and the policy toolkits
+state that classroom mastery learning is "much less effective when students work
+at their own pace." Both findings were produced by human-run courses, and neither
+measured an AI tutor. They are the reason to rebuild the spine with external
+pacing pressure — and the reason that pacing pressure needs a trial of its own
+before anyone claims it works here.
 
 ---
 
@@ -204,13 +207,21 @@ And **technology-mediated collaboration at +3 versus +5** is a measured price fo
 digitising a social mechanism — not a hypothesis, a number.
 
 The correction already on this project's record belongs here too, because it is
-the same species of error: Bloom's two-sigma claim did not replicate. Human
-tutoring is **d = 0.79** in VanLehn's synthesis, and intelligent tutoring systems
-were already at **0.76** before LLMs existed. An earlier version of this paragraph
-omitted the figure that should be quoted alongside those, the pooled
-randomised estimate: **0.288 SD across 96 RCTs**. Expert one-to-one is worth roughly
-eight tenths of a standard deviation under favourable synthesis and **under three
-tenths** when you pool the trials. Not two.
+the same species of error: Bloom's two-sigma claim did not replicate. VanLehn's
+2011 synthesis puts human tutoring at **d = 0.79** and the rule-based intelligent
+tutoring systems of that era at **0.76**. An earlier version of this paragraph
+omitted the figure that should be quoted alongside those, Nickow, Oreopoulos and
+Quan's pooled estimate over 96 randomised trials of human tutoring, most of them
+run before 2020: **0.288 SD**. Expert one-to-one is worth roughly eight tenths of
+a standard deviation under favourable synthesis and **under three tenths** when
+you pool the trials. Not two.
+
+State what those three numbers are, because the survey has misused them
+elsewhere. Bloom measured human tutors in 1984, VanLehn measured human tutors and
+rule-based software in 2011, and Nickow measured human tutors again in 2024. They
+retire a target and they bound nothing: a canon-era measurement of one class of
+machine is not a ceiling on a different class. What a frontier model does under
+randomisation is a separate question with its own trials, and §09 keeps them.
 
 And a correction this survey must publish about its own work. The research
 behind this section proposed a *pāṭha* protocol, permutation-based fidelity
