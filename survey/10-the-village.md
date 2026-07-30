@@ -45,14 +45,14 @@ the planner has cleared the prerequisite. The difference is measurable:
 > influential layer. Simulation: 120 sessions, 18,000 interactions.
 
 **Pedagogical safety enforced by construction beats pedagogical safety filtered
-after the fact.** That is the entire argument for the village, and it is an
-argument about *interfaces*, not about intelligence. Every constraint this survey
-has landed on — the refusal engine, the IEP prohibition, the ban on emotion
-inference, "produces evidence, never grades" — becomes a property of a tool schema
+after the fact.** That is the entire argument for the village. It is an argument
+about *interfaces*; intelligence has nothing to do with it. Every constraint this
+survey has landed on (the refusal engine, the IEP prohibition, the ban on emotion
+inference, "produces evidence, never grades") becomes a property of a tool schema
 rather than a sentence in a prompt that a sufficiently persuasive fourteen-year-old
 can talk around.
 
-The honest scope of the claim: this section does **not** assert that a village
+The scope of the claim, stated narrowly: this section does **not** assert that a village
 teaches better than a single tutor. Nobody has run that trial. It asserts that
 given a system with multiple capabilities, the village decomposition is more
 auditable and more falsifiable than a monolith, and is the only shape in which the
@@ -64,13 +64,14 @@ accessibility and safeguarding constraints can be enforced rather than requested
 
 If persona prompting is null, "certified expert agent" needs a definition that
 survives. It is this: **certified means it passed a stated, published, held-out
-eval — with the eval's own validity honestly labelled.**
+eval, with the eval's own validity labelled.**
 
 The complication is that in education, nearly every eval is a proxy. Nine 2026
 pedagogy benchmarks fall into three families: LLM-judge rubrics (circular),
 human-expert dialogue-quality ratings (which rate the plausibility of pedagogical
-*form*, not effect), and risk rubrics (which measure the absence of bad, not the
-presence of good). Benchmark pedagogy scores and problem-solving scores correlate
+*form* while saying nothing about effect), and risk rubrics (which measure the
+absence of bad and never the presence of good). Benchmark pedagogy scores and
+problem-solving scores correlate
 at **r = 0.421**.
 
 So certification is a ladder, and only the top rung is certification in any strong
@@ -86,10 +87,10 @@ sense.
 The rule: an agent may be **deployed** at C0 + C1. It may be **described as
 certified** only at C3. Everything between is labelled as what it is.
 
-C1 is the honest workhorse because it is the only tier where the system generates
-its own ground truth. Two C1 suites already exist and should be adopted rather than
-reinvented. The first is answer-leakage robustness under adversarial students — six
-attack families, evaluated across model families and a multi-agent design. Its
+C1 does the work, because it is the only tier where the system generates
+its own ground truth. Two C1 suites already exist; adopt them instead of
+reinventing them. The first is answer-leakage robustness under adversarial students:
+six attack families, evaluated across model families and a multi-agent design. Its
 methodological sting is the useful part: *in-context* adversarial student agents
 "often fail to carry out effective attacks," so the authors had to **fine-tune** a
 jailbreaking student. **A tutor that passes a prompted red team has not been
@@ -101,17 +102,17 @@ The unit of certification is a role card: a YAML object declaring what the role
 may assert, what it may *not* assert, which layers of the learner model it reads
 and writes, its grounding tier, and its scores at each certification tier. Three
 properties of that card matter more than its contents. `may_not_assert` is enforced
-at the tool surface — the diagnostician's schema physically contains no
-`write_diagnosis` action. The grounding tier is a permission, not an aspiration, so
-an L2 agent asserting an L3 claim is a defect catchable in CI. And **C3 is allowed
-to say `NOT_ESTABLISHED`**, which is the honest state of almost every role today. A
+at the tool surface: the diagnostician's schema physically contains no
+`write_diagnosis` action. The grounding tier is a permission and never an aspiration,
+so an L2 agent asserting an L3 claim is a defect catchable in CI. And **C3 is allowed
+to say `NOT_ESTABLISHED`**, which is the state of almost every role today. A
 card that claims C3 without a panel is falsifiable, and therefore checkable.
 
 ---
 
 ## 3. The heterogeneity constraint
 
-Here is the finding that most constrains the design, and it is a negative one.
+The finding that most constrains the design is a negative one.
 
 The intuitive village is a room of agents arguing until the truth emerges. Three
 benchmarks say that is not what happens.
@@ -122,19 +123,19 @@ benchmarks say that is not what happens.
 | Wang et al., *Rethinking the Bounds of LLM Reasoning* | "a **single-agent LLM with strong prompts** can achieve almost the same performance as the best existing discussion approach on a wide range of reasoning tasks and backbone LLMs" — discussion won only when the prompt contained no demonstration |
 | Becker et al., *Stay Focused: Problem Drift in Multi-Agent Debate* | Debate **drifts away from the initial problem** over turns, degrading performance on long reasoning chains |
 
-Du et al. (2023) is the positive result, and it is the one usually cited. It is one
+Du et al. (2023) is the positive result, and the one usually cited. It is one
 result against three.
 
 The field's own diagnosis of why is the part worth carrying: subsequent work
-attacks the problem by *breaking homogeneity* — sparse communication topologies
+attacks the problem by *breaking homogeneity*. Sparse communication topologies
 help, and one 2026 system is named for the goal explicitly. **Two instances of the
 same model are not independent minds. They share a prior, a training set, and a
 failure mode.** Debate between them is closer to self-consistency sampling than to
-argument, which is exactly what the benchmarks report.
+argument, which is what the benchmarks report.
 
 And model diversity is not a free fix either. Self-MoA found that aggregating
-outputs from a *single top-performing* model beats mixing different models — +6.6%
-on AlpacaEval 2.0, +3.8% average across MMLU/CRUX/MATH — because "the MoA
+outputs from a *single top-performing* model beats mixing different models (+6.6%
+on AlpacaEval 2.0, +3.8% average across MMLU/CRUX/MATH) because "the MoA
 performance is rather sensitive to the quality, and mixing different LLMs often
 lowers the average quality of the models."
 
@@ -150,8 +151,7 @@ opposite in the aggregation setting. The reconcilable reading is that heterogene
 helps when the mechanism is *adversarial* (debate reopens the search) and hurts when
 the mechanism is *aggregative* (a weak proposer dilutes a strong one). That reading
 is consistent with the arbitration rule below, which permits debate and forbids
-synthesis. It is a reading, not a demonstrated result, and this survey publishes
-it as unresolved.
+synthesis. Nothing demonstrates it, and this survey publishes it as unresolved.
 
 ---
 
@@ -169,7 +169,7 @@ never consulted.
 | **T3** | **Learner as judge** | Both sides surfaced, learner adjudicates. Only over T0-verified answer sets. Never over facts |
 | **T4** | **Escalate to a human** | After two unresolved rounds, or on any conflict touching a hard boundary |
 
-**T0 is the tier that carries the load**, and it is the least glamorous. Most
+**T0 carries the load.** It is also the least glamorous tier in the ladder. Most
 disagreements in a learning system are about facts, derivations and code, and are
 therefore decidable. A computer algebra system settles whether the integral is
 right. A unit test settles whether the program works. The grounding ladder from the
@@ -178,14 +178,14 @@ next section does double duty here as an arbitration mechanism.
 **T1's dissent record is the direct architectural answer to the voting problem.** A
 correct minority answer that is voted away is unrecoverable. A correct minority
 answer appended to the evidence log with `confidence: inferred` and full attribution
-is recoverable — by a later probe, by a human reviewer, by an offline audit.
+is recoverable: by a later probe, by a human reviewer, by an offline audit.
 Dissent is cheap to store and catastrophic to discard.
 
-**T3 is where the architecture earns its keep pedagogically**, and it is the one
-result in the multi-agent literature that is about the *learner* rather than the
-machines. Khan, Hughes, Valentine et al. (2024): two expert models argue opposing
+**T3 is where the architecture earns its keep pedagogically.** It rests on the one
+result in the multi-agent literature whose subject is the *learner*.
+Khan, Hughes, Valentine et al. (2024): two expert models argue opposing
 answers, and a non-expert judges. Non-expert models went from 48% to **76%**. Human
-judges went from 60% to **88%** — a 28-point gain. Optimising the debaters for
+judges went from 60% to **88%**, a 28-point gain. Optimising the debaters for
 persuasiveness *improved* non-expert truth-identification.
 
 The reading this survey adopts: the learner-as-judge of two arguing agents is a
@@ -193,17 +193,17 @@ better epistemic position than the learner-as-recipient of one confident agent, 
 28 points in humans.
 
 Three bounds on it, because it is easy to get wrong. It runs only over answer sets
-already verified at T0 — staging a debate where one side is factually wrong is
+already verified at T0, because staging a debate where one side is factually wrong is
 teaching a misconception with production values. It never runs on safety,
 safeguarding, or accessibility; those escalate. And **it inverts for the learners
 this project designs for first**: for a working-memory-limited learner, holding two
 competing arguments in mind *is* the load, and discovery-shaped instruction is among
 the clearest documented harms for that population. T3 is gated on the learner
-model's guidance policy, not offered by default.
+model's guidance policy and never offered by default.
 
-And the honest caveat, which is not small: Khan et al. measured **in-the-moment
-adjudication accuracy, not learning.** Nobody has shown that judging debates
-transfers to independent reasoning. It is a design bet with a strong prior.
+And the caveat, which is not small: what Khan et al. measured was **in-the-moment
+adjudication accuracy**. Nobody has shown that judging debates transfers to
+independent reasoning. It is a design bet with a strong prior.
 
 ---
 
@@ -213,9 +213,9 @@ Two absolute prohibitions, and the evidence behind each.
 
 No majority voting anywhere, on anything. Not as a tie-break, not as a
 confidence estimate, not as a sanity check. This project's earlier research found
-that majority voting discards a correct minority answer roughly one time in four —
-and that figure is project-internal and not externally verified, so it is
-reported here as such rather than laundered into a citation. The mechanism is not in
+that majority voting discards a correct minority answer roughly one time in four.
+That figure is project-internal and not externally verified, so it is
+reported here as such and never laundered into a citation. The mechanism is not in
 dispute: voting is a popularity estimator, and correctness and popularity come apart
 precisely on the hard items, which are the items that matter. In a learning system,
 the discarded correct answer is often the one that would have diagnosed the
@@ -223,7 +223,7 @@ misconception.
 
 No synthesis of conflicting substantive claims. Prose may be merged. *Claims*
 may not. This project measured judge-based selection at 0.810 against synthesis at
-0.179 — again **project-internal**, again flagged. The externally verified
+0.179, again **project-internal**, again flagged. The externally verified
 corroboration is Self-MoA: aggregation is sensitive to proposer quality, and mixing
 degrades it. Synthesis of a right answer and a wrong answer is a wrong answer with
 better prose, and fluent-and-wrong is the single most damaging output a tutor can
@@ -236,12 +236,12 @@ reveals a linear correlation between self-recognition capability and the strengt
 self-preference bias. And it must **publish a selection accuracy on a held-out
 disagreement set**, refreshed per model version — an uncalibrated judge is an
 unlabelled coin. It is never invoked on novelty, creativity, insight, or "which
-explanation is better," which are exactly the dimensions where judge reliability is
+explanation is better," which are the dimensions where judge reliability is
 worst.
 
 One vendor datapoint, labelled and not restated as a finding: Anthropic's own
 current model guidance says not to use subagents for review, verification, or
-double-checking — "verification belongs in your main agent loop" — and that
+double-checking ("verification belongs in your main agent loop"), and that
 instructions telling the model to verify now cause *over*-verification. `VENDOR`.
 The direction of travel is what is notable: the field's own tooling guidance is
 moving away from verifier-as-agent and toward verification-as-mechanism, which is
@@ -249,9 +249,9 @@ where T0 already sits.
 
 ---
 
-## 6. The nulls, given their own space
+## 6. What the multi-agent literature has not measured
 
-Coordination failure is the dominant failure mode, and it is catalogued. MAST
+Coordination failure is the dominant failure mode, and it has been catalogued. MAST
 (Cemri et al., 2025) derives **14 unique failure modes** from 150 traces, validated
 on **1,600+ annotated traces** across 7 popular multi-agent frameworks, with
 inter-annotator κ = 0.88. Three categories: system design, inter-agent misalignment,
@@ -259,11 +259,11 @@ task verification. The paper's framing sentence is the one to keep: *"Despite
 enthusiasm for Multi-Agent LLM Systems, their performance gains on popular
 benchmarks are often minimal."* Two of the three categories are arbitration
 problems, which is the strongest available argument that arbitration should be a
-named, designed, tested component rather than an emergent property.
+named, designed, tested component; emergence will not supply it.
 
 Some of the multi-agent gain may be nothing but more compute. On BrowseComp,
 "token usage by itself explains 80% of the variance" in performance (`VENDOR`,
-Anthropic engineering, not restated as a finding). If that generalises even
+Anthropic engineering; not restated as a finding). If that generalises even
 partially, the specialisation thesis is in question. **Any claim that role
 specialisation helps must be tested against a token-matched single-agent baseline,
 and no published education multi-agent system has done this.** It should be the

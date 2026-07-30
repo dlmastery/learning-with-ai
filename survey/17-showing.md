@@ -69,7 +69,7 @@ text-to-image. VectorEdits, on 270k+ edit pairs: "current methods struggle to
 produce accurate and valid edits."
 
 The distinction that resolves the paradox: **SVG is an excellent output format
-and a bad generation target.** You want SVG on the page — it is text, it scales,
+and a bad generation target.** You want SVG on the page. It is text, it scales,
 and it carries a DOM a screen reader can walk. You do not want a language model
 computing its path coordinates. Emit Tier A or B; let a renderer produce the SVG.
 
@@ -93,7 +93,7 @@ The single cleanest measurement in this literature comes from ALGOGEN, on a
 emits a JSON trace, a deterministic compiler draws it to Manim, TikZ, or
 Three.js — **99.8%**.
 
-The mechanism is stated causally, not as a vibe. End-to-end generation "requires
+The authors state the mechanism causally. End-to-end generation "requires
 the system to simultaneously simulate algorithm flow and satisfy video rendering
 constraints, such as element layout and color schemes. **This complex task
 induces LLM hallucinations.**" The failure is **capacity contention**: the model
@@ -105,8 +105,8 @@ technical illustration, geometry and diagram evaluation, converged on the same
 shape — Raiven (a DSL compiling to D3, 100% compilation, up to 6× cheaper), Flint
 (a data-semantic model compiling to Vega-Lite, ECharts or Chart.js), GeoSVG-RL (a
 layout plan as "geometric contract"), DiagramIR (parse the TikZ back into an IR
-and compare IRs, not images), SciFlow-Bench, Socratic Chart, GeoBuildBench, Chart
-Specification.
+and compare the IRs instead of the images), SciFlow-Bench, Socratic Chart,
+GeoBuildBench, Chart Specification.
 
 > **A generated educational figure must be produced by rendering a declarative
 > specification that the model emitted and a machine validated. The model must
@@ -123,8 +123,8 @@ do it.
 
 Now the pedagogy, and it does not flatter the medium.
 
-Berney & Bétrancourt's meta-analysis — **61 studies, N = 7,036, 140 pairwise
-comparisons** of animated versus static graphics — reports **Hedges's
+Berney & Bétrancourt's meta-analysis of **61 studies, N = 7,036, 140 pairwise
+comparisons** of animated versus static graphics reports **Hedges's
 g = 0.226, 95% CI [0.12, 0.33]**. Small. The authors of one of the three
 meta-analyses in this area summarise the field in their own words:
 
@@ -132,10 +132,10 @@ meta-analyses in this area summarise the field in their own words:
 > from animations, when compared to learning from static pictures, is **rather
 > limited**."
 
-That sentence is written by researchers sympathetic to animation, which makes it
-more credible, not less. The subgroup moderators are larger — system-paced
-animation g = 0.309, animation with auditory commentary g = 0.336, instruction
-without accompanying text g = 0.883 — and the last one is exactly the kind of
+That sentence is written by researchers sympathetic to animation, which is what
+makes it credible. The subgroup moderators are larger: system-paced animation
+g = 0.309, animation with auditory commentary g = 0.336, instruction without
+accompanying text g = 0.883. That last one is exactly the kind of
 subgroup-of-a-subgroup result a replication-minded reader should discount.
 Report the 0.226; treat the moderators as hypotheses.
 
@@ -191,28 +191,28 @@ compilation.
 **Every one is a measure of artifact existence or resemblance to a reference
 artifact. None is a measure of effect on a mind.** The 93.8%-success /
 most-videos-have-layout-defects pair is the field's own admission that its
-success metric is measuring compilation, not legibility.
+success metric measures compilation and calls it legibility.
 
 The two metrics that reach further are still proxies. DiagramIR compares
 intermediate representations and reports higher agreement with human raters than
-LLM-as-a-judge — better, and still a judgement about the figure. TeachQuiz, the
+LLM-as-a-judge. Better, and still a judgement about the figure. TeachQuiz, the
 most inventive metric in the area, measures how well a **vision-language model,
 after unlearning, can recover knowledge by watching the generated video**. A
 machine analogue of a learning-gain measure, and not evidence about humans.
 
-> **No study in the LLM-generated-explanatory-video literature measures whether a
-> human learns anything from the generated video.** The identical gap holds for
-> static figure generation: every benchmark measures existence, structural
-> fidelity, or VLM answerability.
+**No study in the LLM-generated-explanatory-video literature measures whether a
+human learns anything from the generated video.** The identical gap holds for
+static figure generation: every benchmark measures existence, structural
+fidelity, or VLM answerability.
 
-Two consequences follow, and they are the reason this is a section rather than a
-footnote. First, the highest-value missing experiment here is cheap: expose
-learners to a legible-but-wrong generated figure and measure misconception
-formation and durability. We know roughly 6% of post-repair charts are
-hallucinated; we know from the conceptual-change literature that misconceptions
-are sticky. Nobody has multiplied those two facts together. Second, the
-informational-equivalence control — generated figure versus generated prose of
-equal information content, on transfer — has never been run in the AI era.
+That absence is what makes this a section and not a footnote, because it leaves
+two cheap experiments unrun. The first is to expose learners to a
+legible-but-wrong generated figure and measure misconception formation and
+durability. We know roughly 6% of post-repair charts are hallucinated; we know
+from the conceptual-change literature that misconceptions are sticky. Nobody has
+multiplied those two facts together. The second is the informational-equivalence
+control, which would put a generated figure against generated prose of equal
+information content and score transfer. Nobody has run it in the AI era.
 
 ---
 
@@ -229,25 +229,25 @@ Re-read the multimedia meta-analyses as a *specification* rather than as advice.
 
 A note on the first two rows, because an earlier draft implied one was a subset of
 the other and the arithmetic was impossible: **these are two independent
-meta-analyses, twelve years apart, over overlapping but distinct literatures** —
-Schroeder & Cenkci (2018) on spatial contiguity and split attention, and Ginns
-(2006) on contiguity broadly. k = 58 is not nested inside k = 46. They agree on
+meta-analyses, twelve years apart, over overlapping but distinct literatures**.
+Schroeder & Cenkci (2018) covers spatial contiguity and split attention; Ginns
+(2006) covers contiguity broadly. k = 58 is not nested inside k = 46. They agree on
 direction and differ on scope, which is why both are shown.
 
 The strongest multimedia principle is also the most mechanically checkable one.
-Contiguity — **g = 0.63 to 0.74** across those two estimates, the largest effect in
-the table on either measure — reduces to a distance predicate on two bounding boxes.
+Contiguity reduces to a distance predicate on two bounding boxes, and at
+**g = 0.63 to 0.74** across those two estimates it is the largest effect in the
+table on either measure.
 Coherence, at g = 0.33, is the smallest and requires judgement. Spend the automated
 gate's budget on contiguity and reserve humans for coherence.
-Evidence and engineering rarely agree this cleanly.
 
 The persistence moderator carries a specific indictment of static figures.
 Seductive details harm at g = 0.43 when persistent and g = 0.12, not significant,
 when transient. A static diagram is maximally persistent — the decoration sits on
 the page for the whole study episode. **A decorative element that would be
 harmless in a two-second animation is harmful in a printed figure**, and
-generation systems tuned for appeal are optimising against coherence precisely
-where it bites hardest.
+generation systems tuned for appeal are optimising against coherence in the one
+format where it bites hardest.
 
 ---
 
@@ -258,8 +258,8 @@ vision-language model, ask if it is right. The evidence against relying on that
 is specific and it is the second major null in this section.
 
 - **Socratic Chart:** remove textual labels from charts and apply perturbations,
-  and frontier models drop **up to 30%**. The checker is reading text, not
-  geometry — blind exactly where geometric error lives.
+  and frontier models drop **up to 30%**. The checker is reading the text and
+  not the geometry, which is where the error lives.
 - **The "Mirage" ablation:** in circuit-diagram→Verilog generation, replacing the
   diagram with a blank image leaves Pass@k unchanged or even higher, because
   models read identifier names in the module header instead of the picture.
@@ -278,10 +278,10 @@ is specific and it is the second major null in this section.
 But there is an asymmetry worth exploiting: models are **more effective at
 correcting violations than at detecting them reliably.**
 
-> **Rule: symbolic checks detect; the model repairs; the model never gates
-> alone.** And run the blank-image ablation on your own checker. If the score
-> does not drop, the checker is not looking. One line of code, highest-value
-> diagnostic in the stack.
+So the rule is that **symbolic checks detect, the model repairs, and the model
+never gates alone.** And run the blank-image ablation on your own checker. If the
+score does not drop, the checker is not looking. One line of code, and it tells
+you whether the whole verification layer is real.
 
 Round-tripping — generate, describe back, compare — works when it is made
 concrete: ask a **fixed set of atomic questions whose answers were specified in
@@ -294,7 +294,7 @@ quantities "encourages hallucination and over-specified code generation."
 
 ---
 
-## 7. Accessibility is a correctness gate, not a feature
+## 7. Accessibility is a correctness gate
 
 Only **33.3%** and **7.2%** of generated charts satisfied basic colourblindness
 guidance after the execution problem was solved. A 7.2% pass rate is not a long
@@ -314,18 +314,18 @@ communicate to some learner. They belong in the same gate.
 And one design rule with a measurement behind it: **generate alt text from the
 specification, in the same pass, never from the pixels afterwards.** Alt-text
 accuracy improved when the model was prompted with heuristic alt text or data
-tables parsed from the figure source rather than shown the image. A 2026 PRISMA
-survey of 20 studies on STEM image description reports persistent "factual
+tables parsed from the figure source instead of being shown the image. A 2026
+PRISMA survey of 20 studies on STEM image description reports persistent "factual
 inaccuracies and hallucinations" plus "heavy reliance on automatic text-overlap
 metrics that poorly capture perceived usefulness and trust." Interviews with
-blind and low-vision scientists record the cost in behaviour rather than score:
+blind and low-vision scientists record a cost no score captures:
 they abandoned AI workflows after vague or incorrect descriptions. Until an
 accuracy figure licenses otherwise, alt text delivered to a BLV learner is
 human-reviewed.
 
 ---
 
-## 8. What this section commits us to
+## 8. Rules for every figure we ship
 
 - **Emit a spec, not a picture.** No model-computed layout coordinates in any
   figure a learner sees. 82.5% → 99.8% is the ablation; nine groups is the
@@ -348,8 +348,9 @@ human-reviewed.
 - **Alt text from the spec, at generation time.** Accessibility failures are
   correctness failures.
 
-The through-line is the same one the rest of this survey keeps arriving at from
-other directions. The generation literature has become very good at producing
-something that *resembles* a good figure, and has not yet measured whether a
-person understood anything. Resemblance to an artifact is not effect on a mind,
-and only one of those is the job.
+What this section shares with the rest of the survey is a missing denominator.
+Every number in the generation literature scores the artifact, and none of them
+scores the reader. The field has become very good at producing something that
+*resembles* a good figure and has not yet asked whether a person understood
+anything. A 99.8% success rate is a claim about compilers; the claim a learner
+needs is about minds, and nobody has made it yet.

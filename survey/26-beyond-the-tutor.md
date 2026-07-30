@@ -77,8 +77,8 @@ immediately, because it also means the objection cannot be performed.
   Nemeth's condition. It produces cognitive bolstering — **the learner ends more
   confident in the view they started with.** Worse than doing nothing.
 - If the AI dissents without announcing, it is authentically dissenting from the
-  learner's standpoint and produces divergence — but it may assert things it does
-  not hold, and it is in some sense misrepresenting its own epistemic state.
+  learner's standpoint and produces divergence. It may also assert things it does
+  not hold, misrepresenting its own epistemic state.
 
 The resolution this project proposes is a design hypothesis and is labelled as one.
 **Do not have the model perform opposition. Have it stop suppressing the objections
@@ -87,10 +87,10 @@ that convincing, and here is specifically why" — where the *why* is the model'
 
 That reframes anti-sycophancy work usefully. We do not need models that pretend to
 disagree. We need models that stop suppressing disagreements they have already
-generated. That is a far more tractable engineering target, and it is directly
+generated. That is a far more tractable engineering target, and directly
 testable: divergent-thinking and learning outcomes under (a) announced devil's
 advocate, (b) unannounced authentic objection, (c) agreeable baseline. The template
-exists — Marvel & Ju (2026) ran a pre-registered **N = 1,492** study crossing a
+exists. Marvel & Ju (2026) ran a pre-registered **N = 1,492** study crossing a
 sycophantic against a challenger model with disclosure conditions. The educational
 version has not been run.
 
@@ -135,14 +135,15 @@ reconciliation of conflicting commitments. **Two wrong students arguing produce
 understanding neither had.** Smith et al. (2011) added the sequencing: peer
 discussion followed by instructor explanation beat either alone, substantially.
 
-So can an AI hold the peer position? Three obstacles, not equally tractable.
+So can an AI hold the peer position? Three obstacles stand in the way, and they are
+not equally tractable.
 Known asymmetry: the learner knows the model has read everything, so a model
 asserting a wrong answer is either deferred to or dismissed as roleplaying, and
 neither is peer engagement. No stakes symmetry: a human peer is embarrassed to
 be wrong, and that embarrassment is what makes the commitment real. Capitulation:
 a peer who abandons their position the moment you push back supplies nothing to
 reconcile, and measured capitulation rates sit around **58%** with **78.5%
-[77.2, 79.8]** persistence once it happens — figures §02 works through.
+[77.2, 79.8]** persistence once it happens, figures §02 works through.
 
 And one collaborative structure is flatly unavailable. Jigsaw works by **positive
 interdependence under genuine information asymmetry**: each learner holds a unique,
@@ -154,7 +155,7 @@ AI is defined by its abundance.**
 The honest verdict: the peer role is the weakest of the six for AI, and "AI
 study buddy" is the least defensible product framing in the category. The salvage
 is not to fake symmetry. It is to be a committed adversary, or one voice among
-several — both of which preserve the conflicting-committed-positions mechanism
+several. Both preserve the conflicting-committed-positions mechanism
 without requiring a symmetry that does not exist.
 
 ---
@@ -187,15 +188,14 @@ The environment holds no epistemic stance toward the learner. It holds
 consequences: a simulation that diverges, a failing test suite, a patient that
 deteriorates, a quiz the agent you taught then fails.
 
-This is the only role where disconfirmation is structural rather than social,
+This is the only role where disconfirmation is structural instead of social,
 and that property does more work than any amount of model tuning. A unit test cannot
 be sycophantic. A simulation cannot be talked round. The error surfaces as a
-consequence rather than a correction from an authority, which also preserves the
+consequence, and not as a correction from an authority, which also preserves the
 ego-protection that makes teaching-an-agent work for low-confidence learners.
 
-> **If agreeableness is the master obstacle, the environment is the master
-> mitigation — and it is a systems-architecture choice, not a model-alignment
-> problem.**
+If agreeableness is the master obstacle, the environment is the master mitigation.
+It is also a systems-architecture choice, not a model-alignment problem.
 
 §02 describes the architecture in its teachable-agent form. The generalisation is
 broader: for any role, prefer a design where being wrong has a visible non-social
@@ -205,8 +205,8 @@ consequence over a design where being wrong requires the model to say so.
 
 ## 5. The coach
 
-The instrument role — AI extending a human's capability on a task that human still
-owns — has the best evidence-to-deployment ratio of the six and receives the least
+The instrument role, AI extending a human's capability on a task that human still
+owns, has the best evidence-to-deployment ratio of the six and receives the least
 attention, because "AI helps a teacher be better" is a worse pitch than "AI replaces
 the teacher."
 
@@ -216,17 +216,18 @@ part: the largest gains went to the least experienced tutors — the inverse of
 the pattern where unstructured AI access widens the gap between low- and
 high-prior-knowledge students.
 
-The result is also honestly limited, and §09 carries the numbers: a proximal exit-
+The result is also sharply limited, and §09 carries the numbers: a proximal exit-
 ticket gain alongside a distal null. Treat it as the cleanest demonstration that the
-instrument role is real and that its distal effects are unproven, not as a headline.
+instrument role is real and that its distal effects are unproven. Do not treat it as
+a headline.
 
 ---
 
 ## 6. The nulls this section has to carry
 
 Announced adversarialism backfires. Nemeth, Brown & Rogers (2001). The obvious
-implementation of "AI adversary" — tell the learner you are about to argue the other
-side — is the one that produces bolstering rather than divergence. This is the most
+implementation of "AI adversary", telling the learner you are about to argue the
+other side, is the one that produces bolstering instead of divergence. This is the most
 consequential negative result in the section and it is why §2.2 exists.
 
 Fluency raises confidence and ratings with no effect on learning. Carpenter and
@@ -245,19 +246,19 @@ an AI that is gratuitously hard to read. Build one that makes you generate.**
 
 LLMs had no main effect on overall learning. Lehmann, Cornelius & Sting
 (2024/2025), pre-registered lab experiments plus a field study. The effects were
-entirely in the *usage pattern*: substitution use — generate the solution — broadened
-coverage while reducing depth; complementation use — ask for an explanation —
+entirely in the *usage pattern*. Substitution use, generating the solution, broadened
+coverage while reducing depth; complementation use, asking for an explanation,
 deepened understanding without broadening. And LLM access widened the gap between
 low- and high-prior-knowledge students, a property §07 establishes belongs to
-untargeted delivery rather than to the technology.
+untargeted delivery and not to the technology.
 
 The socially engaging agent is not a universal win. Tärning, Haake & Gulz (2011)
 added a social chat module to a teachable-agent maths game. High- and mid-achievers
 improved. Low-achievers disliked it, chatted more, and went off-task more — the
 learners who most need the ego-protection property were the ones the social framing
-cost. An aptitude–treatment interaction, not a feature.
+cost. An aptitude–treatment interaction masquerading as a feature.
 
-And one paper must be flagged rather than cited. A 2025 quasi-experimental study
+And one paper must be flagged, never cited. A 2025 quasi-experimental study
 titled "AI as a Socratic Dialogue Partner," with a critical-thinking instrument as
 its outcome, describes its own findings as hypothetical. It is unverifiable as
 evidence and it will be cited by others as though it were not. We name it here so
@@ -275,8 +276,7 @@ constrained** rather than a helpful assistant. The comparison was
 AI-with-pedagogy against classroom-with-pedagogy.
 
 So the claim is not that the tutor role is worthless. It is that the tutor role is
-over-used relative to its evidence, and — more precisely — that it is being deployed
-*out of order*.
+over-used relative to its evidence, and that it is being deployed *out of order*.
 
 The same ordering appears in three independent literatures:
 
@@ -303,7 +303,7 @@ untested intervention in this report, and it should be run before it is sold.
 
 ---
 
-## 8. What this section commits us to
+## 8. How to choose and sequence a role
 
 - **Never announce the adversary.** Performed opposition produces bolstering. The
   objection must be the model's own, and unannounced.
@@ -326,6 +326,6 @@ untested intervention in this report, and it should be run before it is sold.
   consolidation step is the only one anyone has built, and it is the one that
   requires the other four to precede it.
 
-Six roles, one deployed. The interesting thing is not that the tutor is bad. It is
-that the field does not appear to know there was a choice — and therefore has never
-sequenced them.
+Six roles, one deployed. The field does not appear to have known there was a choice,
+which is why nothing has ever been sequenced. Fix the sequence and the tutor stops
+being the whole design and becomes step three of five.

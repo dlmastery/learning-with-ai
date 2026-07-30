@@ -162,4 +162,4 @@ citations) was **retracted in 2026**; the authors have not responded.
 What survives: supervised LLM tutoring lands at **0.2–0.4 SD** — the same band
 as pre-LLM ITS (0.32–0.42) and in-person human tutoring (**0.288**, 96 RCTs). That
 is a real, useful, affordable effect. It is not an order-of-magnitude jump, and
-**GenAI without teacher support is null (g = 0.077)**.
+GenAI without teacher support is null (g = 0.077).

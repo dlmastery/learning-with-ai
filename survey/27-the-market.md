@@ -22,13 +22,13 @@ size:
 **0.61 → 0.22 → 0.10 → 0.03**, as the sample grows and the evaluator stops being
 the vendor.
 
-That gradient is the single most instructive object in the edtech market, and it is
-published by the company itself, on its own site, without spin. It is to their
+That gradient is the single most instructive object in the edtech market. The
+company publishes it itself, on its own site, without spin. It is to their
 enormous credit. It is also the number you should hold in your head every time a
 product quotes you an effect size.
 
 Note the last translation. ASSISTments' public headline is "60% more growth in math
-scores" — which is the **0.22** study rendered in percentage-of-a-year terms. A
+scores", which is the **0.22** study rendered in percentage-of-a-year terms. A
 0.22 SD effect is a genuinely good result in education. "60% more growth" sounds
 like something else entirely. **The translation layer between effect sizes and
 marketing copy is where most of this market's dishonesty lives, and it does not
@@ -40,7 +40,7 @@ require anyone to lie.**
 
 A directory of companies is worthless six months after it is written. What survives
 is the structure of the bets. Every product in this market has picked one primitive
-to be its load-bearing wall — the thing that, if true, makes everything else follow.
+to be its load-bearing wall: the thing that, if true, makes everything else follow.
 Each primitive is a falsifiable hypothesis about how learning happens.
 
 | Primitive | The bet | State of the evidence |
@@ -55,10 +55,10 @@ Each primitive is a falsifiable hypothesis about how learning happens.
 | **Credentialing** | The bottleneck is the signal, not the learning | Succeeds only when it displaces one specific gatekept test |
 | **Infrastructure** | Whoever owns rostering and the LTI socket owns the market | Where the money is, and where the risk is |
 
-Two clusters deserve their evidence stated rather than summarised.
+Two clusters deserve their evidence stated in full.
 
-**Tutoring's real numbers are pre-LLM.** Kulik & Fletcher (2016) — 50 controlled
-evaluations, **median 0.66 SD** — is the most-cited figure in the market and comes
+**Tutoring's real numbers are pre-LLM.** Kulik & Fletcher (2016), 50 controlled
+evaluations at **median 0.66 SD**, is the most-cited figure in the market and comes
 with its own debunking attached: the improvement "depended to a great extent on
 whether improvement was measured on locally developed or standardized tests," and
 §24 puts test alignment at a factor of 2–3. Pane et al.'s Cognitive Tutor Algebra I
@@ -69,8 +69,8 @@ The LLM generation inherited the marketing claim and none of the measurement.
 
 **Early literacy is the most defensible bet in the market**, in mechanism terms
 rather than enthusiasm terms. The AI does something a human demonstrably cannot
-scale — listening to twenty-five children read aloud at once. The output is a
-measured behaviour, oral reading fluency, not a self-report. And the pedagogy
+scale. It listens to twenty-five children read aloud at once. The output is oral
+reading fluency, a measured behaviour and not a self-report. And the pedagogy
 underneath, decoding practice with immediate corrective feedback, is among the
 best-replicated results in education. If AI-in-education works anywhere, it works
 here first. The headline claims still need their qualifiers read: one vendor's "68%
@@ -82,15 +82,15 @@ a selection effect unless dosage was randomised.
 ## 2. What the market measures instead of learning
 
 Finding one: the evidence gradient runs opposite to the funding gradient. The
-two products in this section with genuine independent randomised evidence —
-ASSISTments, a nonprofit that is free to teachers, and Cognitive Tutor, a
-forty-year-old curriculum publisher — report **0.03 to 0.22 SD**. The products with
+two products in this section with genuine independent randomised evidence
+(ASSISTments, a nonprofit that is free to teachers, and Cognitive Tutor, a
+forty-year-old curriculum publisher) report **0.03 to 0.22 SD**. The products with
 the largest claims report no retrievable design, sample or comparison group. And the
 best-funded entity in the sector, at a $4.8bn buyout, makes no learning claim at all.
 
 **Finding two: "time saved" has quietly replaced "learning gained" as the industry's
 success criterion.** Across the content-generation and teacher-tooling clusters it is
-the only quantity anyone measures. That is not a criticism in itself — teacher time
+the only quantity anyone measures. That is not a criticism in itself; teacher time
 is real and scarce. But it needs one distinction that no vendor in this survey makes:
 **teacher time saved is a legitimate benefit; learner time saved is the documented
 signature of harm.** The unguarded arm of the Bastani trial also saved the student
@@ -105,19 +105,20 @@ mechanism claim bought nothing because the mechanism only fired when a student f
 recognised they needed help.
 
 Finding four: a resolving DOI is not a result. Several products' "studies"
-resolve only to AEA RCT registry identifiers with the prefix `10.1257/rct.` — for
+resolve only to AEA RCT registry identifiers with the prefix `10.1257/rct.`, for
 example `10.1257/rct.13519`. Those are pre-registrations. They contain no results.
-A DOI here means someone intends to run a trial. Treat the prefix as a red flag, not
-a citation.
+A DOI here means someone intends to run a trial. Treat the prefix as a red flag and
+never as a citation.
 
 And the case that shows the gradient inside a single company: Curipod holds the most
 real evidence of any product in its batch and markets on the weakest number it owns.
-Its homepage leads with district testimonials — pre/post state-test comparisons with
-no control group, no sample size and no statistical test, one of them spanning **two
+Its homepage leads with district testimonials, which are pre/post state-test
+comparisons with no control group, no sample size and no statistical test, one of
+them spanning **two
 teachers. Its genuine study is a randomised trial with n = 142** at
 **d = 0.301–0.800** — in *university nursing students*, against a control of
 "conventional lectures supplemented with PowerPoint presentations and textbooks," on
-survey constructs rather than achievement tests. It cannot support the K-12 state-test
+survey constructs instead of achievement tests. It cannot support the K-12 state-test
 claim on the homepage, and it is a category error to let it. **A company can hold
 genuine evidence and still market on testimonials, because the genuine evidence is
 narrower and less flattering.**
@@ -141,22 +142,23 @@ inBloom was a $100 million student-data warehouse. Every district and state
 withdrew after parent protests and it closed in April 2014. The technology worked;
 every customer left. §11 and §15 carry the custody lesson.
 
-Knewton raised roughly **$157M disclosed** across seven rounds against a claim —
-"sophisticated, real-time analysis of reams of student performance data" — that was
-never stated in a form that could fail. Its assets sold to Wiley for **under $17
+Knewton raised roughly **$157M disclosed** across seven rounds against a claim that
+was never stated in a form that could fail: "sophisticated, real-time analysis of
+reams of student performance data." Its assets sold to Wiley for **under $17
 million** in 2019. Roughly 90% capital destruction. §11 establishes the deeper
 problem independently: knowledge-tracing accuracy had already plateaued. Knewton was
 selling precision from a region of the design space where precision had run out.
 
 AltSchool raised $133M and built a network of schools in order to build software.
 The schools were the R&D cost centre for a product that did not exist yet; when the
-software pivot came, the schools — the thing families had actually bought — closed.
-The surviving artefact, a parent progress portal, is now a table-stakes feature.
+software pivot came, the schools closed. The schools were the thing families had
+actually bought. The surviving artefact, a parent progress portal, is now a
+table-stakes feature.
 Right about the feature, wrong about the business.
 
 **2U** bought edX from the Harvard/MIT nonprofit for **$800M**, never made an annual
-profit, and filed Chapter 11 on 25 July 2024. Its revenue-share structure made
-student *volume*, not student *outcome*, the only lever it had.
+profit, and filed Chapter 11 on 25 July 2024. Its revenue-share structure gave it one
+lever, student *volume*, and no lever at all on student *outcome*.
 
 Byju's reached a **$22bn valuation** and 150 million claimed registered users. Its
 founder said publicly in October 2024 that "the company is worth zero." Its reported
@@ -205,21 +207,21 @@ security breach on record: **3.65 terabytes, approximately 275 million records,
 been filed, one naming the private-equity owner as co-defendant.
 
 Three consequences the rest of this survey has to carry. The same logic that made
-Canvas a good $4.8bn asset — one integrated platform, near-universal adoption — made
-8,809 institutions a single point of failure. **Every "we don't train on student
+Canvas a good $4.8bn asset, one integrated platform with near-universal adoption,
+made 8,809 institutions a single point of failure. **Every "we don't train on student
 data" promise in this market is a promise about *use*, not about *custody*.** A
 vendor can honour it perfectly and still lose the data. And therefore data
-minimisation is a security control, not a compliance chore: the most effective
-mitigation available to any product here is to not hold the record at all — which is
-exactly the pressure the inBloom failure applied twelve years earlier, and which the
-market un-learned.
+minimisation is a security control and not a compliance chore: the most effective
+mitigation available to any product here is to not hold the record at all. That is
+exactly the pressure the inBloom failure applied twelve years earlier, and the
+market un-learned it.
 
 ---
 
 ## 5. One deployed case, and what it got right by accident
 
 LessonOrca is this project owner's own product. It is admitted here as **one
-deployed, instrumented case study among several**, not as evidence that anything
+deployed, instrumented case study among several** and not as evidence that anything
 works. Its scale is three tutoring centres, 25 tutors, 100 students. Its marketing
 copy is `VENDOR` and is not restated as a finding. Its operating economics are not
 discussed.

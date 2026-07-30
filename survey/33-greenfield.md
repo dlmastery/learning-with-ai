@@ -11,22 +11,23 @@ source_report: research/raw/N1-greenfield.md
 An audit of this survey on 2026-07-29 counted **756 critique markers against 24
 construction markers**, with **19 of its 33 sections at zero**. A 31:1 ratio.
 
-The cause was structural and it was ours. The evidence-label set —
-`MEASURED-RCT`, `MEASURED-META`, `MEASURED-BENCH`, `OBSERVED`, `VENDOR`, `DEMO`,
-`INFERENCE` — contains no label for *something that does not exist yet*. So the
-standard rewarded what could be cited and punished what could only be argued, and
-every round of adversarial review deepened it: a reviewer can falsify a claim about
-the past and cannot falsify one about the future.
+The cause was structural and it was ours. The evidence-label set (`MEASURED-RCT`,
+`MEASURED-META`, `MEASURED-BENCH`, `OBSERVED`, `VENDOR`, `DEMO`, `INFERENCE`)
+contains no label for *something that does not exist yet*. So the standard rewarded
+what could be cited and punished what could only be argued, and every round of
+adversarial review deepened it: a reviewer can falsify a claim about the past and
+cannot falsify one about the future.
 
-Two labels now exist. **`DESIGN`** — a specified artifact that does not exist, which
-must name what would show it was the wrong design. **`OPEN`** — a question nobody has
-asked, which must say why not. A `DESIGN` may never be restated as a finding.
+Two labels now exist. **`DESIGN`** marks a specified artifact that does not exist, and
+it must name what would show it was the wrong design. **`OPEN`** marks a question
+nobody has asked, and it must say why not. A `DESIGN` may never be restated as a
+finding.
 
 This section is the missing twenty-four. The question is not *what is wrong with
 textbooks*. It is:
 
 > **If you had no school, no textbook, no curriculum, no grade levels, no timetable,
-> no exam and no teacher — and attention were free and a verifier existed — what
+> no exam and no teacher, and if attention were free and a verifier existed, what
 > would you build?**
 
 One test separates greenfield from brownfield throughout: **does the proposal have a
@@ -39,7 +40,7 @@ belongs in an earlier section.
 
 Before designing replacements for the containers, it is worth checking why they
 exist. This project had invoked "the calendar", "seat time" and the Prussian origin
-of age-graded schooling repeatedly as the constraint that killed mastery learning —
+of age-graded schooling repeatedly as the constraint that killed mastery learning,
 always as unsourced inference. A search across all thirty-six research reports for
 `prussia|lancaster|monitorial|committee of ten|carnegie unit` returned **zero
 hits**. Nobody had checked.
@@ -78,9 +79,9 @@ The course, the chapter, the fifty-minute period, the grade level, the transcrip
 None is a fact about how humans learn. Each is a solution to a scheduling problem
 under scarce expert attention.
 
-The honest test for each: **what constraint produced it, and does that constraint
-still bind?** Where the answer is no, the artifact is not tradition — it is
-overhead that nobody has removed because removing it was never possible.
+The test for each: **what constraint produced it, and does that constraint still
+bind?** Where the answer is no, what looks like tradition is overhead that nobody has
+removed, because removing it was never possible.
 
 But greenfield is also the freedom to *keep* things, and a design that ignores why
 school is also a building will fail on contact with parents. Safeguarding,
@@ -100,14 +101,14 @@ ordering below is the section's real recommendation.
 The population-transfer check. `DESIGN`
 
 Five of the eight designs assume that **how people get a concept wrong transfers
-across populations** — that a misconception observed in one cohort predicts the
+across populations**: that a misconception observed in one cohort predicts the
 misconceptions of another. If it does not, the shared error corpus is not an asset
 and most of what follows collapses.
 
 That assumption is testable now, at no cost: two existing distractor-labelled
 corpora, one rank correlation. No new data, no learners, no consent.
 
-> **What would show it wrong:** a low or unstable rank correlation of misconception
+> *What would show it wrong:* a low or unstable rank correlation of misconception
 > frequency between independent populations on matched items.
 
 Build this first — not because it is cheap, though it is, but because it gates the
@@ -122,7 +123,7 @@ A transcript is a record of events that happened. It says a person passed calcul
 knows that.
 
 Replace it with a portfolio of live capabilities that decay and can be
-re-verified on demand. Not a grade — a claim with a freshness date, and a procedure
+re-verified on demand. Not a grade, but a claim with a freshness date and a procedure
 for renewing it.
 
 The anchor is measured: skill decay over a year of nonuse runs from **d = −0.01 to
@@ -130,7 +131,7 @@ The anchor is measured: skill decay over a year of nonuse runs from **d = −0.0
 transcript's implicit claim of permanence is false by an effect size that can reach
 1.4 standard deviations.
 
-> **What would show it wrong:** if decay rates prove so idiosyncratic per person and
+> *What would show it wrong:* if decay rates prove so idiosyncratic per person and
 > per skill that no defensible re-verification interval can be set, the portfolio
 > becomes either theatre or harassment.
 
@@ -151,10 +152,10 @@ the graph without the atlas is a prerequisite diagram with no evidence behind it
 edges; the atlas without the graph is a list with nowhere to attach.
 
 Together they would be **the first curriculum in history with a deletion
-procedure** — an edge that stops predicting gets removed, on evidence, rather than
+procedure**. An edge that stops predicting gets removed on evidence, instead of
 surviving because a committee approved it in 1994.
 
-> **What would show it wrong:** §3.1. If misconceptions do not transfer across
+> *What would show it wrong:* §3.1. If misconceptions do not transfer across
 > populations, the atlas is a local artifact and the graph is unmaintainable.
 
 ---
@@ -162,10 +163,9 @@ surviving because a committee approved it in 1994.
 ## 4. Seven designs were rejected, and why
 
 A section of only good ideas is a pitch. The source report records seven rejected
-designs with reasons; the pattern in the rejections is more useful than any single
-one.
+designs with reasons, and they fail in two recurring ways.
 
-Most failed the pre-AI analogue test — they turned out to be an existing thing
+Most failed the pre-AI analogue test: they turned out to be an existing thing
 with a model bolted on. Several failed on the exclusion ledger from this survey's
 history section: nearly every high-fidelity learning tradition bought its quality
 partly by rationing access, and a design that reproduces the rationing has
@@ -175,8 +175,8 @@ reproduced the tradition's actual mechanism rather than its stated one.
 
 ## 5. The risk that scales with the idea
 
-The population-scale versions of these designs — one error atlas, one graph, one
-mentor — concentrate exactly the risk §21 named as *correlated pedagogical error*.
+The population-scale versions of these designs (one error atlas, one graph, one
+mentor) concentrate exactly the risk §21 named as *correlated pedagogical error*.
 
 An earlier draft of that section claimed it had no name in the literature. **That was
 wrong, and the correction makes the risk sharper.** Kleinberg and Raghavan's
@@ -185,24 +185,23 @@ can **reduce collective decision quality even when that algorithm is more accura
 for each agent in isolation**, with no exogenous shock required. The harm follows
 from correlation itself, not from the model being bad.
 
-And there is now a measured hint of the mechanism: **71% of one model's
-misconception-detection failures concentrate in two question types** — found
-incidentally by researchers studying something else. Model blind spots are not
-diffuse. They are structurally concentrated, which is the condition under which
-monoculture bites hardest.
+And there is now a measured hint of the mechanism, reported incidentally by
+researchers studying something else: **71% of one model's misconception-detection
+failures concentrate in two question types.** Blind spots that concentrate like that
+are the condition under which monoculture bites hardest.
 
 So the atlas is both the asset and the hazard. The mitigation is the same instrument
-either way: **independent verifiers, with disagreement in the *explanation* — not the
-answer — treated as the alarm.**
+either way: independent verifiers, with disagreement in the *explanation*, not in the
+answer, treated as the alarm.
 
 ---
 
-## 6. What this section commits us to
+## 6. The discipline this puts on construction
 
 - **Check the history before borrowing its framing.** Two of three origin stories we
   examined had published corrections attached, and one of them we had been repeating.
 - **Say the monitorial null out loud.** Every prior attempt to make attention cheap
-  made it cheap by making it worse. A model is not a monitor — but that is a claim we
+  made it cheap by making it worse. A model is not a monitor, but that is a claim we
   have to earn.
 - **Build the falsifier first.** Five designs rest on one untested assumption that
   costs nothing to check.
@@ -212,6 +211,6 @@ answer — treated as the alarm.**
   wrong is a wish, and this document has spent 82,000 words earning the right not to
   publish wishes.
 
-The 31:1 ratio was not rigour. It was a label set with a hole in it, and a review
-process that could only see one direction. Both are fixed. What remains is the harder
-discipline: construction, anchored, with its own falsifier attached.
+What produced the 31:1 ratio was a label set with a hole in it and a review process
+that could only see one direction. Neither was rigour. Both are fixed. What remains is
+the harder discipline: construction, anchored, with its own falsifier attached.

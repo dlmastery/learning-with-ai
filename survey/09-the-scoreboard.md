@@ -272,7 +272,7 @@ shorter.
 
 ---
 
-## 7. What this section commits us to
+## 7. How we will report an effect size
 
 - **Quote the band, not the ceiling.** 0.2–0.4 SD, the same band as ITS and human
   tutoring. Never cite g = 0.867; it is retracted. Never cite Bastani's +127%; it is
@@ -284,8 +284,8 @@ shorter.
 - **Treat gap-widening as the default expectation *for untargeted delivery*.**
   Three studies, three countries, three age groups, three tools, same direction:
   +0.195 SD per baseline SD, +0.151, and Lehmann's low-prior-knowledge harm. But it
-  is not a law of the technology — across **eight targeted interventions examined in
-  §07, not one widened gaps and several sharply narrowed them.** Gap-widening is a
+  is not a law of the technology: across **eight targeted interventions examined in
+  §07, none widened gaps and several sharply narrowed them.** Gap-widening is a
   property of *distribution without targeting*, which makes it a design failure we
   know how to avoid rather than a tax we must accept. Any trial we run stratifies on
   baseline attainment and powers the bottom stratum as a primary outcome.
@@ -297,7 +297,7 @@ shorter.
   number about conversations until someone regresses it on a test score.
 
 The field's headline number was retracted, its best trial cannot isolate its own
-intervention, and its most rigorous result is a harm. That is not a reason to stop
-building. It is the clearest specification anyone has ever been handed for what to
-measure — and **the cheapest unclaimed result in learning science right now is a
-one-month delayed test on students who have already been randomised.**
+intervention, and its most rigorous result is a harm. Read as a specification for
+what to measure, that record is unusually clear, and it points at one cheap
+unclaimed result: **a one-month delayed test on students who have already been
+randomised.**
