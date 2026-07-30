@@ -29,7 +29,7 @@ survey:
 These are among the largest, most replicated effects in all of learning science.
 Testing yourself beats re-reading. Spreading practice out beats massing it.
 
-They are also **heterogeneous**, and honesty requires saying so in the same breath:
+They are also *heterogeneous*, and that belongs in the same breath:
 retrieval practice carries **I² = 88%**, moderated by the control condition, test-format
 consistency, feedback, and number of repetitions. Two boundary conditions matter for
 design. At an *immediate* test, restudy often wins — the retrieval advantage appears at
@@ -109,34 +109,33 @@ full.
 
 ## 4. The boundary of the entire paradigm
 
-This is the most important table in the section, and it should govern what anyone
-builds:
+This table should govern what anyone builds:
 
 | What was scheduled | Trials significant |
 |---|---|
 | Paired associates / flashcard-type material | **11 of 14** |
 | **Interdependent content** — where one idea depends on another | **0 of 8** |
 
-**And the headline this table omitted, which an earlier draft should not have.** Across
+An earlier draft printed that table without the headline it came from. Across
 the review's full set of **41 studies from 34 papers**, the authors write: *"We find
 that over half of the studies found that RL-induced policies significantly outperform
 baselines."* **21 of 41 (51%) significantly beat all baselines**; 10 found no
 significant difference; 1 where the baseline won. Publishing the 0-of-8 sub-cut
-without the 21-of-41 headline is selective reporting, and it is the exact failure this
+without the 21-of-41 headline is selective reporting, the exact failure this
 survey exists to name. The domain split above is real and it sits inside a review whose
 overall verdict is positive.
 
 The authors' own qualifier is the load-bearing part: RL *"has been most successful in
 cases where it has been **constrained with ideas and theories from cognitive
 psychology and the learning sciences**."* Which is an argument for the architecture in
-this document rather than against it.
+this document, and not against it.
 
 Adaptive scheduling works on material with no internal structure and has never
 worked on material with structure. Every trial that tried failed.
 
 Supporting evidence points the same way. Duolingo's half-life regression, tested
 against plain Leitner boxes on roughly one million students, produced **+0.3%
-engagement (not significant) and −7.3% practice (significant)** — the adaptive
+engagement (not significant) and −7.3% practice (significant)**. The adaptive
 scheduler made people practise *less*. The famous "+12%" figure comes from a
 different experiment and does not describe this comparison. Kerfoot's adaptive
 trial: p = 0.37. Cen 2007: p = 0.772 on posttest, p = 0.602 on retention, with 12%
@@ -159,22 +158,22 @@ nearly exhausted. The remaining headroom is not in the model.
 
 This section was commissioned partly to evaluate zemomemo.com. It is a free
 SvelteKit flashcard application built on FSRS-6, with five study modes, LLM deck
-generation, and Quizlet and Anki import. It is competent, and it is free, and
+generation, and Quizlet and Anki import. It is competent, it is free, and
 people plainly find it useful.
 
 It cites no study, trial, or efficacy datum; its only external reference is the
 FSRS community wiki. Four observations place it precisely:
 
 - Its **"stickiness — the number of days a flashcard will stay in your brain"** is
-  FSRS's *stability* parameter — the interval at which recall probability falls to
-  90% — rendered to the user as a deterministic expiry date. A probabilistic
+  FSRS's *stability* parameter (the interval at which recall probability falls to
+  90%), rendered to the user as a deterministic expiry date. A probabilistic
   quantity presented as a certainty.
-- **"Achieve mastery same day"** together with **"remember forever"** straddles a
+- "Achieve mastery same day" together with "remember forever" straddles a
   combination that Cepeda's 271 massed-versus-spaced comparisons do not support
   (12 exceptions).
-- The **same-day regime it markets hardest is the regime FSRS's own benchmark
-  excludes** from its headline table — and where FSRS-6 performs worst.
-- **FSRS-6 is a version behind FSRS-7.**
+- The same-day regime it markets hardest is the regime FSRS's own benchmark
+  excludes from its headline table — and where FSRS-6 performs worst.
+- FSRS-6 is a version behind FSRS-7.
 
 None of this makes it a bad product. It makes it a product, and the distinction
 this survey exists to hold is between a competent tool and a scientific claim.
@@ -184,8 +183,8 @@ this survey exists to hold is between a competent tool and a scientific claim.
 ## 6. What actually becomes buildable
 
 Here is where this gets interesting, because the null results above clear space
-rather than closing it. Every capability below is currently at `DEMO` or
-confounded-`OBSERVED` — nobody has run the trial — and each is now cheap.
+instead of closing it. Every capability below is currently at `DEMO` or
+confounded-`OBSERVED` (nobody has run the trial), and each is now cheap.
 
 Generate the cue instead of storing it. A flashcard is a frozen question,
 which is why the paradigm only works on unstructured material: the card *is* the
@@ -220,8 +219,8 @@ Concretely, and falsifiably:
 - **Gaps derived from a stated retention horizon**, not from an interval ladder.
   "Still solid in June" is the requirement; the schedule is the consequence.
 - **Three generator gates enforcing that difficulty be *semantic*.** This one has
-  a number behind it: Bertsch's anagram condition — difficulty that is merely
-  perceptual rather than conceptual — is **d = −0.05**. Making the *reading* harder
+  a number behind it: Bertsch's anagram condition, difficulty that is merely
+  perceptual rather than conceptual, is **d = −0.05**. Making the *reading* harder
   is not a desirable difficulty. Making the *retrieval* harder is.
 
 And the cheapest experiment in the document, which follows directly from §3:
@@ -232,7 +231,7 @@ And the cheapest experiment in the document, which follows directly from §3:
 
 ---
 
-## 8. What this section commits us to
+## 8. The practices we ship, and the knob we leave alone
 
 - **Do the practices; stop tuning the scheduler.** Retrieval (g ≈ 0.50) and
   spacing (d ≈ 0.54) are the product. The interval predictor is a rounding error
@@ -246,9 +245,8 @@ And the cheapest experiment in the document, which follows directly from §3:
   model.
 - **Difficulty must be semantic.** d = −0.05 for the alternative.
 
-The pattern here is the one this survey keeps finding from different directions.
-The sophisticated-looking component — the scheduler, the deck, the avatar, the
-debate among agents — turns out to carry almost none of the effect. What carries
+The sophisticated-looking component (the scheduler, the deck, the avatar, the
+debate among agents) turns out to carry almost none of the effect. What carries
 it is something simpler and harder: **that the learner actually retrieved, actually
 struggled, actually explained, and actually got told when they were wrong.**
 

@@ -51,10 +51,10 @@ Look at where agents work and where they do not, and it is not about difficulty:
 | SciCode | **4.6%** | Weakly — hand-written tests |
 
 A twenty-fold spread, and the axis is not how hard the task is. It is **how good the
-check is**. Note that SciCode is not check-free — it has hand-written tests — and
-still lands at 4.6%, which is why the rule is stated as a *bound* rather than an
-equality. A weak check bounds you low. A strong one does not guarantee you reach the
-bound; it only stops you being capped below it.
+check is**. SciCode is not check-free; it has hand-written tests, and still lands at
+4.6%. That is why the rule is stated as a *bound* and not an equality. A weak check
+caps you low. A strong one does not guarantee you reach the bound; it only stops you
+being capped below it.
 
 **Coding agents work because `pytest` exists.**
 
@@ -65,26 +65,26 @@ is measured rather than asserted:
 > student action.**
 
 **Scoped correctly, because an earlier draft was not.** TutorGym evaluated four
-models — `claude-3-5-sonnet-20241022`, `claude-3-5-haiku-20241022`,
-`gpt-4o-2024-08-06`, `deepseek-v2.5` — in what its authors call an *initial
+models (`claude-3-5-sonnet-20241022`, `claude-3-5-haiku-20241022`,
+`gpt-4o-2024-08-06`, `deepseek-v2.5`) in what its authors call an *initial
 evaluation*. That model set never appeared in this survey, and the result was
 restated here as *"currently unverifiable"* and *"every architecture"*, which is
 more than it supports.
 
-**And the adjacent positive literature was never searched.** ProcessBench
+The adjacent positive literature was never searched, either. ProcessBench
 (arXiv:2412.06559) asks models to *"identify the earliest step that contains an
 error"* in mathematical reasoning, and reports open models with critique capability
-**competitive with that same GPT-4o vintage**. A shared task on mistake
-identification reports macro-F1 in the low seventies across 50+ teams.
+competitive with that same GPT-4o vintage. A shared task on mistake identification
+reports macro-F1 in the low seventies across 50+ teams.
 
-So the honest claim is narrower and more useful. **Step-error identification in a
-model's own reasoning trace is not at chance. Diagnosing what a *learner* believes
-from what they did is** — and the distance between those two is exactly the gap this
-section is about. Not a wall; a specific unbuilt instrument.
+So the claim is narrower than the one we made, and more useful. **Step-error
+identification in a model's own reasoning trace is not at chance. Diagnosing what a
+*learner* believes from what they did is.** The distance between those two is the gap
+this section is about: not a wall, but a specific unbuilt instrument.
 
-Not "performed poorly." **Chance** — on that model set, on that benchmark. The
-operation a tutor performs constantly — look at what a learner did and say what is wrong with it — is currently
-unverifiable by the systems being sold to do it.
+Not "performed poorly." **Chance**, on that model set, on that benchmark. The
+operation a tutor performs constantly (look at what a learner did and say what is
+wrong with it) is currently unverifiable by the systems being sold to do it.
 
 That is why this survey reads modest. It is not a failure of ambition. **Pedagogy has
 no `pytest`, and every agentic capability is waiting on one.**
@@ -93,17 +93,17 @@ no `pytest`, and every agentic capability is waiting on one.**
 
 ## 3. The field is optimising against two instruments that do not work
 
-This is the section's most damaging finding and it is structural.
+This one is structural, which is why it has persisted.
 
-The leading agentic-education systems — DeepTutor, CogEvo-Edu, AgentSchool — are
-**optimised against LLM-simulated students** and **scored by LLM-as-judge**.
+The leading agentic-education systems (DeepTutor, CogEvo-Edu, AgentSchool) are
+**optimised against LLM-simulated students and scored by LLM-as-judge**.
 
 Both instruments are measured, and both fail:
 
 - Across seven models, simulated students show **near-zero misconception
   faithfulness**. They do not hold the belief they are role-playing.
-- Selection by LLM judge measures **−3.20pp**. Selection by test measures **+8.14pp**.
-  An eleven-point spread, in the wrong direction for the judge.
+- Selection by LLM judge measures −3.20pp. Selection by test measures +8.14pp. An
+  eleven-point spread, in the wrong direction for the judge.
 
 > **The field is tuning tutors against a student model that holds no beliefs, using a
 > judge that is worse than not selecting at all.**
@@ -118,23 +118,23 @@ The pessimism above is about one missing component, not about capability. Where 
 check exists, the numbers are startling.
 
 Sampling is a real multiplier. Coverage scales log-linearly across **four orders
-of magnitude** of samples — and a *weak* model at 250 samples beat a *strong* model at
-1: **56% against 43%.** Compute spent on breadth substitutes for model quality,
+of magnitude** of samples, and a *weak* model at 250 samples beat a *strong* model at
+1: 56% against 43%. Compute spent on breadth substitutes for model quality,
 provided you can select.
 
 Structured disagreement makes non-experts better judges. Debate raised non-expert
-human accuracy from **60% to 88%.** Note what this is not: it is not agents agreeing
+human accuracy from 60% to 88%. Note what this is not: it is not agents agreeing
 with each other more efficiently. It is a human adjudicating a genuine disagreement
 and getting the right answer.
 
 Literature synthesis is solved well enough to rely on. PaperQA2 matches or exceeds
-subject-matter experts, with **70% of flagged contradictions validated.** The "find me
+subject-matter experts, with 70% of flagged contradictions validated. The "find me
 the three papers that resolve my confusion" capability is real today.
 
 **Explanatory animation renders at 93.8%.** The visual half of §17's argument has a
 working pipeline.
 
-**And the horizon is doubling every ~129 days** — the length of task an agent can
+**The horizon is doubling every ~129 days.** That is the length of task an agent can
 complete unattended. Whatever the reliable autonomous unit is when you read this, it
 is roughly twice that four months later.
 
@@ -142,7 +142,7 @@ is roughly twice that four months later.
 
 ## 5. Two priors this survey had wrong
 
-**Doroudi et al. (2019) is not a negative review.** An earlier draft cited its
+Doroudi et al. (2019) is not a negative review. An earlier draft cited its
 0-of-8 sub-cut on interdependent content and omitted the headline: **21 of 41 studies
 (51%) significantly beat all baselines.** The authors' verbatim conclusion is *"over
 half of the studies found that RL-induced policies significantly outperform
@@ -161,33 +161,33 @@ not standing.
 
 Two literatures exist. They have never met.
 
-Self-improvement optimisers — GEPA, DGM, AlphaEvolve — have spent three years
-getting very good at optimising a system against a fitness signal. Their fitness
-signal has been benchmark accuracy, every time.
+GEPA, DGM and AlphaEvolve are self-improvement optimisers, and they have spent three
+years getting very good at optimising a system against a fitness signal. That signal
+has been benchmark accuracy, every time.
 
 Instructional-policy research closed the loop on real human retention with 2014
-machinery, and got **+16.5% semester retention** in a middle-school course.
+machinery, and got +16.5% semester retention in a middle-school course.
 
 Six arXiv queries and ten ERIC queries confirm it: **zero optimiser-in-the-loop trials
 on human learners.** Nobody has ever pointed a modern optimiser at a fitness function
 made of delayed unassisted human retention.
 
-That is not a hard research problem. It is two fields that do not read each other, and
-it is the largest unclaimed prize in this document.
+That is not a hard research problem. It is two fields that do not read each other. No
+other gap in this document is this large and this unclaimed.
 
 ---
 
 ## 7. The five things worth building, in order
 
 **1 · A tutee that will not fold.** A misconception-faithful student model, certified
-by a Selective-Flip-Score eval — does it hold the wrong belief under pressure and
+by a Selective-Flip-Score eval. Does it hold the wrong belief under pressure and
 abandon it only on genuine disconfirmation? This unlocks learning-by-teaching, and its
 *downstream accuracy* is the grounded selector everything else is missing. It is both
 the highest-evidence technique and the missing instrument, which is why it is first.
 
 **2 · Generate-and-select on the learner's own test, never on a judge.** The
-eleven-point spread is already measured. The scaled version — an optimiser whose
-fitness is human retention at delay — is §6's unclaimed prize.
+eleven-point spread is already measured. The scaled version, an optimiser whose
+fitness is human retention at delay, is §6's unclaimed prize.
 
 **3 · A step-level verifier for student work.** Pedagogy's missing `pytest`. Currently
 at chance, with a public testbed and decades of labelled intelligent-tutoring logs
@@ -198,17 +198,17 @@ expectancy-before-study, feedback attached to failed retrieval, delayed unassist
 testing. It composes the six largest effects in this survey, requires **no new
 capability at all**, and is by some distance the most likely of the five to work.
 
-**5 · Four different arbiters, not four personas.** Heterogeneity of *evidence* — a
-symbolic checker, a numeric checker, a corpus, a human — rather than heterogeneity of
-prompt. And the disagreement between them surfaced to the learner *as the lesson*,
-which is the one use of multi-agent structure the evidence supports.
+**5 · Four different arbiters, and not four personas.** What varies is the *evidence*
+and not the prompt: a symbolic checker, a numeric checker, a corpus, a human. The
+disagreement between them, surfaced to the learner *as the lesson*, is the one use of
+multi-agent structure the evidence supports.
 
-Note the ordering. **The least sophisticated item on that list is the one most likely
-to work**, and the most sophisticated is the one that unblocks the rest.
+The ordering matters. **The least sophisticated item on that list is the one most
+likely to work**, and the most sophisticated is the one that unblocks the rest.
 
 ---
 
-## 8. What this section commits us to
+## 8. Rules for anyone building the loop
 
 - **Never ship an agentic loop without naming its external check.** If you cannot say
   what plays the role of `pytest`, you have built a chatbot with extra steps.
@@ -222,9 +222,7 @@ to work**, and the most sophisticated is the one that unblocks the rest.
 - **Ship the boring floor while you wait.** It needs no capability that does not exist
   and it composes the largest effects in this survey.
 
-The honest summary of agentic AI in education, as of now: **the sampling is
+Everything in agentic AI works except the part this section is about. The sampling is
 extraordinary, the execution is extraordinary, the persistence is a solved engineering
-problem, and the thing that decides whether any of it teaches anybody anything has not
-been built.**
-
-It is one component. It is buildable. Nobody has built it.
+problem. The thing that decides whether any of it teaches anybody anything has not
+been built. It is one component, it is buildable, and nobody has built it.

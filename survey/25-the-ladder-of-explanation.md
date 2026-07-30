@@ -11,11 +11,11 @@ source_report: research/raw/F10-explanation-laddering.md
 "Electrons orbit the nucleus like planets orbit the sun."
 
 That sentence is the most successful explanation in the history of chemistry
-teaching, and it is a false one. Cunha, Dias & Streit (2023, *Journal of Chemical
+teaching. It is also false. Cunha, Dias & Streit (2023, *Journal of Chemical
 Education*) put structured questionnaires to Brazilian university chemistry students
 across three majors at the start and the end of a semester. The number of students
 able to hold a quantum mental model of the atom went up. And **the number holding
-the Bohr hybrid — classical orbits with quantum ideas grafted on — stayed the
+the Bohr hybrid, classical orbits with quantum ideas grafted on, stayed the
 same.**
 
 An entire semester of instruction aimed at that misconception did not shrink the
@@ -29,7 +29,7 @@ separates a productive simplification from a planted misconception.
 
 ---
 
-## 1. Three rungs, not five
+## 1. Where the return on rungs stops
 
 The most useful single result for this design is a mostly-null replication.
 
@@ -48,11 +48,10 @@ Three of four hypotheses null. But H3 and H4 together are a quantitative constra
 on the brief: **three rungs beat two, and five rungs bought nothing over three.**
 The return diminishes, and it diminishes early.
 
-That does not kill ELI10/15/20/25. It changes what the four levels are *for*.
-
-> **The ladder is a library the learner enters, not a staircase they climb.** Five
-> rungs exist so that different learners start at different points. Any given
-> learner traverses two or three of them.
+That does not kill ELI10/15/20/25. It changes what the four levels are *for*. Five
+rungs exist so that different learners start at different points, and any given
+learner traverses two or three of them. The ladder is a library to be entered at
+the right shelf, not a staircase to be climbed from the bottom.
 
 The distinction is the whole design. A system that walks every learner from ELI10
 to ELI25 is running the arm that measured p = 0.738. A system that measures where
@@ -66,14 +65,14 @@ that measured p = 0.032.
 Here is the mechanism everybody gets wrong, and it has its own clean evidence.
 
 Buljan et al. (2018, *Journal of Clinical Epidemiology*) ran **three parallel
-randomised trials** — students n = 171, consumers n = 99, doctors n = 64 —
-comparing an infographic, a plain-language summary and a scientific abstract of the
-same Cochrane review.
+randomised trials** (students n = 171, consumers n = 99, doctors n = 64) comparing
+an infographic, a plain-language summary and a scientific abstract of the same
+Cochrane review.
 
 > "We found **no difference in knowledge** between the infographic and the
 > text-based PLS in any of the trials or in the whole participant sample. **All
-> three participant groups preferred the infographic**" — reading experience
-> **d = 0.48**, user-friendliness **d = 0.46**.
+> three participant groups preferred the infographic**." Reading experience
+> d = 0.48, user-friendliness d = 0.46.
 
 **Preference moved by about half a standard deviation while knowledge moved by
 zero.** This is the same anti-signal that §22 establishes as the governing rule for
@@ -82,29 +81,27 @@ personalisation; what the laddering literature adds is the direction of the drif
 Scharrer, Rupieper, Stadtler & Bromme (2017) found that after reading popularised
 articles, laypeople **agreed more** with the knowledge claims and were **more
 confident** in their own judgements than after reading the expert-addressed
-versions — the *easiness effect of science popularisation*. Salzmann, Walther &
+versions. This is the *easiness effect of science popularisation*. Salzmann, Walther &
 Kaspar (2025, N = 179) tested the obvious fix: a debiasing video before the plain-
 language summary. **The easiness effect persisted anyway.** Warning people does not
 remove it.
 
-Put those together and you get a structural failure, not a preference:
-
-> **A learner who has just read an ELI10 is more confident, and therefore less
-> likely to ask for the ELI15. Preference-driven laddering has a built-in downward
-> ratchet.**
+Put those together and what you have is a structural failure. A learner who has
+just read an ELI10 is more confident, and therefore less likely to ask for the
+ELI15. Preference-driven laddering has a built-in downward ratchet.
 
 Expert intuition is inadmissible for the same reason from the other side. Hansen &
 Richland (2020, *CBE—Life Sciences Education*) found that people's beliefs about
 how to sequence representations *for others* were systematically different from
-their beliefs about how they themselves learn — and the students' results favoured
+their beliefs about how they themselves learn. The students' results favoured
 simultaneous presentation **only when paired with self-explanation prompts**,
 matching neither belief cleanly.
 
 So the entry rung comes from a probe, not a dropdown. The validated instrument is
 Kalyuga & Sweller's rapid dynamic assessment, which §22 works through in detail. Two
-details belong here rather than there. **The type of prior-knowledge assessment is
+details belong here. **The type of prior-knowledge assessment is
 itself a significant moderator** of the expertise-reversal effect (Tetzlaff et al.
-2025) — the probe is the largest tunable parameter in the system, not an incidental.
+2025). That makes the probe the largest tunable parameter in the system.
 And the selection is per prerequisite: compute the mastery vector over the concept's
 transitive prerequisite closure and enter at the weakest link, laddering that
 prerequisite separately rather than dragging the whole explanation down.
@@ -121,14 +118,15 @@ exist.
 > stated domain restriction. Climbing may add detail and may narrow scope. Climbing
 > may never require negating something already asserted.
 
-The ladder is a refinement chain, not five independent texts. Level *n* is level
+The ladder is a refinement chain. Five independent texts would not be a
+ladder at all. Level *n* is level
 *n+1* minus declared drops. One engineering consequence follows immediately and is
 not negotiable: ladders must be generated top-down. You cannot check a
 non-falsification constraint against an account you have not written yet. Writing
 the ELI10 first and "adding detail" is structurally incapable of passing the test.
 
 What a rung may drop: numeric precision; higher-order corrections; formal
-machinery — derivation, notation, proof; mechanism depth, by black-boxing a
+machinery (derivation, notation, proof); mechanism depth, by black-boxing a
 subcomponent *provided the box is named as a box*; edge cases outside a declared
 scope; historical provenance; one of several equivalent formulations, provided it is
 not asserted as *the* formulation.
@@ -149,17 +147,17 @@ Now re-read the opening. "Electrons orbit the nucleus like planets orbit the sun
 places a quantum stationary state in the ontological category *object following a
 trajectory*. It is a category error, and Chi's account predicts exactly what the
 *Journal of Chemical Education* measured: instruction produces a **synthetic
-hybrid** rather than a replacement, and the hybrid is stable.
+hybrid** instead of a replacement, and the hybrid is stable.
 
 The legal ELI10 for the same subject is a sentence away: *"An electron in an atom
-can only have certain specific amounts of energy — not anything in between. Light
+can only have certain specific amounts of energy and nothing in between. Light
 is given off when it drops from a higher one to a lower one."* Every proposition
 there survives verbatim into the full quantum account. It drops the wavefunction,
 the orbital, the selection rules and the entire mechanism. It falsifies nothing.
 
-Two more tests complete the rule. Every drop leaves a named, retrievable marker —
-not "it's more complicated than that" but a token the learner can carry upward:
-*"this assumes no friction; the friction case is rung 3."* And every analogy ships a
+Two more tests complete the rule. Every drop leaves a named, retrievable marker.
+"It's more complicated than that" is not a marker. A token the learner can carry
+upward is: *"this assumes no friction; the friction case is rung 3."* And every analogy ships a
 declared alignment set (which relations map) and limit set (which do not);
 for concepts with high reductive-bias risk, Spiro's prescription is two mutually
 *dis*analogous sources rather than one good one.
@@ -172,8 +170,8 @@ explanation; keep the name.**
 
 ## 4. Chi's test replaces threshold concepts
 
-The natural framework for "which ideas cannot be simplified" is threshold concepts
-— transformative, irreversible, integrative, bounded, troublesome. It is heavily
+The natural framework for "which ideas cannot be simplified" is threshold concepts:
+transformative, irreversible, integrative, bounded, troublesome. It is heavily
 cited and it does not survive as a classifier.
 
 Salwén (2019) argues the framework is "beset with severe definitional and empirical
@@ -185,7 +183,7 @@ without a methodology for identifying threshold concepts."
 And the one study that tried to measure a crossing found the measurement itself
 unreliable. Walck-Shannon, Batzli, Pultorak & Boehmer (2019, *CBE—Life Sciences
 Education*) interviewed 29 students about biological variation in a cross-sectional
-design — Pre, Current, Post, and a postbaccalaureate outgroup — coding on four
+design (Pre, Current, Post, and a postbaccalaureate outgroup), coding on four
 dimensions. **Liminality appeared in Pre, Post and Outgroup explanations alike,
 "with discomfort and uncertainty regardless of accuracy."** Even the advanced group
 felt unsure. Feeling uncertain does not identify not having crossed.
@@ -213,7 +211,7 @@ and they need naming.
 
 Concreteness fading has no pooled effect size. Fyfe, McNeil, Son & Goldstone
 (2014) is the empirical backbone of this whole area and it is a **systematic
-review, not a meta-analysis**. No pooled estimate for concreteness fading exists
+review** and not a meta-analysis. No pooled estimate for concreteness fading exists
 anywhere in the retrievable record. Anyone quoting "the effect size of concreteness
 fading" is quoting something that does not exist.
 
@@ -227,8 +225,8 @@ Ordering is not the mechanism.
 
 Variety of surface actively harms. Bennett, Inglis & Gilmore (2019, *JEP*),
 three experiments: children who learned novel numerical symbols paired with a
-single abstract representation outperformed those given multiple concrete ones —
-and the harm was attributable to the multiplicity itself, not to concreteness.
+single abstract representation outperformed those given multiple concrete ones,
+and what did the harm was the multiplicity itself; concreteness was innocent.
 Day, Motz & Goldstone (2015) found the same shape in two classroom experiments:
 greater contextualisation, poorer transfer, in undergraduates and
 middle-schoolers alike. An ELI10 rendered as "here are four fun everyday analogies"
@@ -297,7 +295,7 @@ week six.
 
 ---
 
-## 7. What this section commits us to
+## 7. What the ladder must obey
 
 - **Four rungs exist as a library; a learner traverses two or three.** Three-step
   beat two-step at p = 0.032; five-step did not beat three-step at p = 0.738.
@@ -321,6 +319,6 @@ The highest-value use of a ladder may not be serving one at all. If explaining
 simply is itself a learning act — and at g ≈ 0.55 it is — then the strongest move
 available is to ask the learner to write the ELI10 and **diff it against the
 system's**. The diff localises the defect by class: a missing relation, an
-over-extended analogy, or a wrong ontological category. That is `INFERENCE`, not a
-measured design. It costs one prompt change against a meta-analytic prior, and it is the one
+over-extended analogy, or a wrong ontological category. That is `INFERENCE` and not
+a measured design. It costs one prompt change against a meta-analytic prior, and it is the one
 that would turn the ladder from an output into an instrument.

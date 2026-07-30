@@ -61,8 +61,8 @@ languages and two technology generations is an effect you can design against.
 The Sierra Leone trial is the best-designed study in the corpus and deserves to be
 read at full resolution rather than through its headline. Two-arm cluster RCT,
 classroom-level randomisation blocked by school × grade, 12 government junior
-secondary schools, preregistered at AEA (AEARCTR-0016651), and — the design choice
-that matters most — **both arms' teachers received the identical 5–6 hour training
+secondary schools, preregistered at AEA (AEARCTR-0016651). The design choice that
+matters most: **both arms' teachers received the identical 5–6 hour training
 before randomisation**, which removes the training confound that ruins most edtech
 trials. Assessment was written and IRT-scored by Oxford MeasurEd, blind to arm.
 Data collection, implementation and measurement sat in three separate
@@ -93,7 +93,7 @@ essentially a Grade-8 effect**, with Grade 7's coefficient negative and signific
 — a result that appears in no blog post about this trial. And the model changed
 mid-trial, Gemini 2.5 Pro to 3.0 Pro at week six.
 
-Credit where due, and it is substantial: DeepMind volunteered every one of those
+The credit here is substantial. DeepMind volunteered every one of those
 numbers. The non-significant unadjusted estimate, the gap-widening interaction, the
 mid-trial swap, the attrition flow, the preregistration deviation they did not
 execute. That is more transparent than the norm. **The problem is not the report.
@@ -106,8 +106,8 @@ teacher-written starter prompts, chalkboard scaffolds, teacher professional
 development, novelty, *and* Guided Learning's pedagogy. Their own playbook says
 plainly that isolating arms would have required a sample they could not afford. And
 because tablets were shared, **the 113,344 coded messages could not be linked to
-any individual's test score**. The process metric — 91.4% skill-seeking, 76.4%
-scaffolding questions, 2.1% direct solutions — sits next to the outcome metric and
+any individual's test score**. The process metric (91.4% skill-seeking, 76.4%
+scaffolding questions, 2.1% direct solutions) sits next to the outcome metric and
 has never been shown to predict it.
 
 ---
@@ -126,7 +126,7 @@ Here is the ERIC census, run 2026-07-27 against `api.ies.ed.gov/eric/`:
 | `"ChatGPT" AND "preregistered"` | **0** |
 | *(control)* `"delayed post-test"`, any topic | **273** |
 
-ERIC indexes abstracts, not full text, and lags preprints, so these are lower
+ERIC indexes abstracts only and lags preprints, so these are lower
 bounds; the ratio is the quantity that matters, and the ratio is roughly 2% of
 ChatGPT-plus-outcomes studies and 0.1% of all ChatGPT studies.
 
@@ -165,13 +165,13 @@ to the result. The −17% stands (§01).
 
 ---
 
-## 4. The nulls, given their own space
+## 4. Four results that never made a headline
 
-Four, none of which is in the headline of the paper that contains it.
+Four nulls, none of which is in the headline of the paper that contains it.
 
 Tutor CoPilot is the cleanest proximal/distal dissociation in the field. A
-preregistered, independently funded RCT — 900 tutors, 1,800 Title I students, 4,136
-sessions — moved exit-ticket mastery by 4 percentage points (p < 0.01), 9 points
+preregistered, independently funded RCT of 900 tutors, 1,800 Title I students and
+4,136 sessions moved exit-ticket mastery by 4 percentage points (p < 0.01), 9 points
 for students of the lowest-rated tutors. Verbatim from its limitations section:
 "**we did not find statistically significant improvements in end-of-year math test
 scores.**" The in-platform metric moved. The state test did not.
@@ -193,14 +193,14 @@ in the corpus isolates the AI's contribution.**
 And offering AI access reduced engagement. Nie et al. randomised GPT-4 access
 across 5,831 students in 146 countries: "the advertisement of GPT-4 led to a
 significant average decrease in exam participation." The positive effect for
-adopters is selection, not a randomised contrast — and peer review made the authors
-retitle the paper to say so.
+adopters comes from selection and not from a randomised contrast, and peer review
+made the authors retitle the paper to say so.
 
 To that add the field's largest single correction. **The most-cited meta-analytic
 estimate of ChatGPT's effect on learning, g = 0.867 across 51 studies, was retracted
 in 2026** for "discrepancies in the meta-analysis"; the authors did not respond to
 correspondence. It had accumulated over 250 citations. Anything downstream of
-g = 0.867 is unsupported, and it is still circulating.
+g = 0.867 is unsupported, and still circulating.
 
 A smaller correction worth internalising as a habit: Nickow et al.'s human-tutoring
 pooled estimate **fell from 0.37 SD in the 2020 working paper to 0.288 SD in the
@@ -215,8 +215,8 @@ LearnLM deserves separate treatment because it is the most serious attempt anyon
 has made to render pedagogy measurable, and because its famous numbers measure
 something other than learning.
 
-The programme's flagship evaluations — the "+31% over GPT-4o", the "73.2% overall
-win rate" — are pedagogical plausibility, not outcomes. The dependent variable
+The programme's flagship evaluations (the "+31% over GPT-4o", the "73.2% overall
+win rate") score pedagogical plausibility. The dependent variable
 is a third-party expert's agreement with a statement about a transcript. Google
 says so themselves, in R2's conclusion: "it is unclear how well the results
 translate to improvements in learning outcomes." R3 asks the question outright: "do
@@ -226,9 +226,9 @@ students?"
 Two findings inside that programme are more useful than the win rates.
 
 The rubric's reliability was reported once. R1 published Krippendorff's α per
-dimension: overall **0.359**, and on three of nine tutoring moves —
-*inspires interest* **0.066**, *monitors motivation* **0.023**, *identifies goal*
-**0.031** — credentialed pedagogy experts agreed with each other at approximately
+dimension: overall **0.359**, and on three of nine tutoring moves
+(*inspires interest* **0.066**, *monitors motivation* **0.023**, *identifies goal*
+**0.031**), credentialed pedagogy experts agreed with each other at approximately
 chance. Two of LearnLM's five principles rest substantially on constructs raters
 cannot reliably identify in a transcript. R2 and R3 report no inter-rater statistic
 at all. Publishing that α was the right thing to do; stopping was not.
@@ -246,14 +246,14 @@ been validated against an outcome.
 
 ---
 
-## 6. The strongest counter-argument
+## 6. Three years against fifty
 
 *You are holding a three-year-old technology to a standard the tutoring literature
 took fifty years to meet. Effects in the 0.2–0.4 band, replicated across four
 countries, on a technology that did not exist in 2022, is a remarkable starting
 position — and the retention evidence will arrive.*
 
-Most of that is correct, and it is why this section leads with the band rather than
+Most of that is correct, which is why this section leads with the band and not with
 the gaps. But two things break the defence.
 
 First, the instrument is not expensive or novel. Two hundred and seventy-three
@@ -261,11 +261,11 @@ ERIC records use it. It is four weeks of patience and a fresh item set — and i
 generation is now the cheapest thing in the system. The field is not failing to
 measure retention because retention is hard to measure.
 
-Second, **the pre-LLM literature did meet the standard, and it is where the honest
-comparisons live.** Roschelle et al.'s ASSISTments trial moved an end-of-year state
+Second, **the pre-LLM literature did meet the standard, and the comparisons that
+count live there.** Roschelle et al.'s ASSISTments trial moved an end-of-year state
 standardised test across 43 Maine schools, with the largest gains for low prior
-achievers — the strongest distal-outcome edtech RCT in the corpus, and it is
-pre-LLM. Pane et al. ran Cognitive Tutor Algebra I across 147 schools for two years
+achievers. It is the strongest distal-outcome edtech RCT in the corpus, and it
+predates the LLMs entirely. Pane et al. ran Cognitive Tutor Algebra I across 147 schools for two years
 and found a null in year one that became +0.21 SD in year two. Neither shape is
 visible in an eight-week trial, and every LLM RCT here except Rori is eight weeks or
 shorter.

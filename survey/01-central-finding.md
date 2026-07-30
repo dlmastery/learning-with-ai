@@ -7,7 +7,7 @@ date: 2026-07-25
 
 # What Works
 
-**The wins available today are large, real, and measured.**
+The wins available today are large, real, and measured.
 
 | Result | Effect | Evidence |
 |---|---|---|
@@ -18,16 +18,16 @@ date: 2026-07-25
 | Productive failure | **g = 0.36**, rising to **0.58** at high fidelity | Meta-analysis |
 | Spaced practice | classroom **d = 0.54** | 12 of 271 comparisons failed |
 
-These are not incremental — but the Sierra Leone headline does not survive the
-appendix, and this document said otherwise in an earlier draft. **Corrected in
+These are not incremental results. But the Sierra Leone headline does not survive
+the appendix, and this document said otherwise in an earlier draft. **Corrected in
 place:** the ITT estimate is +0.258 SD (p = 0.029); the *unadjusted* estimate is
-**+0.216 SD, SE 0.137 — not significant.** The effect loads entirely on Grade 8
+**+0.216 SD, SE 0.137 (not significant).** The effect loads entirely on Grade 8
 (Grade 7 main effect −0.078), gaps widened at +0.195 SD per SD of baseline, and
 attrition differed by arm. It is a promising result from a hard setting. It is not
 the strongest evidence in the history of educational technology, and calling it
 that was our error.
 
-**The mechanism is suggested, not established.** In the Sierra Leone deployment
+The mechanism is suggested, not established. In the Sierra Leone deployment
 113,344 *messages* were coded: **91.4% concept-building, scaffolding in 76.4% of
 responses, direct solutions in 2.1%.** But the paper states plainly that the team
 **could not link transcripts to individual students' assessment outcomes.** The
@@ -45,7 +45,7 @@ on a single property:
 | Withholds, hints, requires reasoning | **+127%** | **−0.004, n.s.** |
 
 Read the second row precisely, because the obvious reading is wrong. The
-guardrailed arm's unassisted coefficient is **−0.004 and not significant** — that
+guardrailed arm's unassisted coefficient is **−0.004 and not significant**. That
 is *harm removed*, not *benefit added*. **Restraint is what removes the harm;
 it has not been shown to teach.** Every harm in this survey comes from an
 unconstrained system. That is a weaker claim than "restraint is the active
@@ -57,13 +57,13 @@ no new capability, and no additional cost. It needs a loop that decides when
 
 ## Why the field mostly builds the other one
 
-Not pessimism — a measurement problem with a fixable cause.
+The cause is a measurement problem, and measurement problems are fixable.
 
 Three research streams in this survey converged independently on one result. It
 is the paper's central finding and it indicts most of what the field is building.
 
 Felt learning is what every optimisation loop can measure. Real learning is what
-none of them measure. So systems drift toward the former — and the two dissociate:
+none of them measure. So systems drift toward the former, and the two dissociate:
 
 | Capability | Felt / affect | Actual learning |
 |---|---|---|
@@ -72,7 +72,7 @@ none of them measure. So systems drift toward the former — and the two dissoci
 | Animation vs static graphics | comprehensibility, interest, enjoyment, motivation all rise (Kim, Yoon, Whang & Tversky 2007) | *"but not comprehension test score"* |
 
 Supporting evidence points the same way. Berney & Bétrancourt's meta-analysis
-(61 studies, N = 7,036) puts animation's advantage at **g = 0.226**. Tversky,
+(61 studies, N = 7,036) puts animation's advantage at g = 0.226. Tversky,
 Morrison & Bétrancourt (2002) found **no case** where animation beat an
 *informationally equivalent* static graphic — the apparent wins were confounds.
 Mayer's own experiments found annotated static illustrations equalled or beat
@@ -83,17 +83,16 @@ And the mirror image completes it: Deslauriers et al. (2019, PNAS) showed active
 learning raises real learning while lowering felt learning. Students in the
 condition that taught them more reported learning less.
 
-## Why this is a systems problem, not a research curiosity
+## Why this is a systems problem
 
-Felt learning is what every optimisation loop can measure. Real learning is what
-none of them measure.
+Every instrument a product team already owns points at the wrong quantity.
 
-- Engagement metrics, session length, retention, NPS, thumbs-up — all proxy felt
+- Engagement metrics, session length, retention, NPS and thumbs-up all proxy felt
   learning.
 - RLHF optimises for preferred responses. Preferred means fluent, complete,
   immediate — the exact profile that produces fluency illusion.
 - **Every LLM→explanatory-video pipeline surveyed optimises on VLM or human
-  preference judgments** — i.e. directly on the axis that dissociates from
+  preference judgments**, i.e. directly on the axis that dissociates from
   comprehension.
 - No paper found in the LLM-explanatory-video literature measures human learning
   gain. The most ambitious metric (TeachQuiz) measures whether *a VLM* recovers
@@ -104,18 +103,18 @@ is happening.
 
 ## Consequences for this survey's design claims
 
-1. **The refusal engine is not a preference.** It is the only mechanism that
-   trades felt learning for real learning deliberately. Bastani gives the price
-   of not having one: −17%.
-2. **Build the face and the animation for engagement, and say so.** Both are real
-   wins for an ADHD learner — attention is a prerequisite, not a nicety. Neither
-   is a comprehension intervention. Claiming otherwise is the error.
-3. **Animate only when the change itself is the learning target.** This is the
-   single moderator that survives meta-analysis. Motion depicting motion, not
-   motion decorating a static idea.
-4. **Never ship an objective function that rewards satisfaction.** See F6 for the
+1. The refusal engine is not a preference. It is the only mechanism that trades
+   felt learning for real learning deliberately. Bastani gives the price of not
+   having one: −17%.
+2. Build the face and the animation for engagement, and say so. Both are real
+   wins for an ADHD learner, because attention is a prerequisite. Neither is a
+   comprehension intervention. Claiming otherwise is the error.
+3. Animate only when the change itself is the learning target. This is the single
+   moderator that survives meta-analysis. Motion should depict motion; it should
+   never decorate a static idea.
+4. Never ship an objective function that rewards satisfaction. See F6 for the
    replacement.
-5. **Assessment must measure unassisted, delayed performance.** A post-test taken
+5. Assessment must measure unassisted, delayed performance. A post-test taken
    with the tutor present measures the tutor.
 
 ## The uncomfortable corollary
@@ -137,24 +136,24 @@ available instrument that measures the thing that matters.
 The efficacy scoreboard revised three claims in this section. Recorded rather than
 quietly edited, per the editorial standard.
 
-1. **The Sierra Leone headline is fragile.** +0.258 SD holds only under ANCOVA;
-   Table C.4's unadjusted estimate is **+0.216 SD, SE 0.137 — not significant** (§09).
-   1,423 of 1,763 analysed. The report itself is unusually honest; the distortion
+1. The Sierra Leone headline is fragile. +0.258 SD holds only under ANCOVA;
+   Table C.4's unadjusted estimate is **+0.216 SD, SE 0.137 (not significant)** (§09).
+   1,423 of 1,763 analysed. The report itself is unusually candid; the distortion
    happened downstream, including here.
-2. **Restraint removes harm; it does not add measured benefit.** Bastani's
+2. Restraint removes harm; it does not add measured benefit. Bastani's
    guardrailed arm scores **−0.004 (ns)** on the unassisted exam. The +127% is a
    *practice* gain. The correct claim is: unguarded AI is an active harm (−17%),
    and guardrails buy that back. That is still the most important design result in
-   the survey — it is just a smaller claim than "restraint teaches."
-3. **Gap-widening is the default expectation, not a risk.** Sierra Leone
-   +0.195 SD per baseline SD (p=0.002 — an order of magnitude more robust than the
+   the survey, though it is a smaller claim than "restraint teaches."
+3. Gap-widening is the default expectation, not a risk. Sierra Leone
+   +0.195 SD per baseline SD (p=0.002, an order of magnitude more robust than the
    main effect); Nigeria +0.151; Lehmann concurs. **A student 1 SD below the mean
    gains ≈0.055 SD.** Three countries, three tools, three age groups, same sign.
 
 The load-bearing gap: no study in the corpus administered a delayed retention
 test. ERIC counts (2026-07-27): ChatGPT + "learning outcomes" = 95;
-+ "delayed post-test" = **2**; + "retention test" = **0**; + "transfer test" =
-**0**; + "preregistered" = **0** — against 273 ERIC records using delayed
++ "delayed post-test" = 2; + "retention test" = **0**; + "transfer test" =
+**0**; + "preregistered" = **0**, against 273 ERIC records using delayed
 post-tests on other topics. The instrument exists. The field does not use it.
 
 And the field's most-cited meta-analysis (Wang & Fan 2025, g = 0.867, >250

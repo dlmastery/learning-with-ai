@@ -168,25 +168,25 @@ One of v0.3's own demo categories is "instructional activity."
 Physical correctness is unchanged. VideoPhy (39.6% best case) and VideoPhy-2
 (22% on the hard subset) measure generated-video physics adherence, and nothing
 in v0.2/v0.3 claims to improve it. **A generated world may be real-time,
-persistent, legible, and still wrong about physics** — and photorealism makes
-the error more persuasive, not less.
+persistent, legible, and still wrong about physics.** Photorealism makes such an
+error more persuasive.
 
 Therefore the A5 conclusion is narrowed rather than withdrawn:
 
 > Generated pixel worlds remain unsuitable as the *authority* for physical law.
-> They are now suitable as the *stage* — a persistent, legible, real-time
+> They are now suitable as the *stage*, a persistent, legible, real-time
 > environment in which a tutor grounded by verifiable code (G1 ladder) teaches.
 > Keep the world generative; keep the physics symbolic.
 
 ### Revised build order (supersedes §5)
 
 Deixis (J3) rises to first. In a persistent world at 25 FPS, "point at *this*"
-becomes tractable in a way it never was over a 1 FPS still-frame channel — and it
+becomes tractable in a way it never was over a 1 FPS still-frame channel, and it
 is the highest-value accommodation in the H1 archetype table.
 
-1. **Deixis in a persistent world** — the tutor indicates, annotates, manipulates.
-2. **State (J4)** — one learner model beneath it.
-3. **The refusal engine (§4)** — unchanged; still the pedagogy.
-4. **Proactive probing (J5)** — out-of-band evaluation → CBM loop.
-5. **The face** — now cheap to render, still `g ≈ 0.19–0.20`. Build for
-   engagement; do not claim it teaches.
+1. Deixis in a persistent world. The tutor indicates, annotates, manipulates.
+2. State (J4). One learner model beneath it.
+3. The refusal engine (§4), unchanged. Still the pedagogy.
+4. Proactive probing (J5). Out-of-band evaluation feeding the CBM loop.
+5. The face. Now cheap to render, still `g ≈ 0.19–0.20`. Build for engagement;
+   do not claim it teaches.

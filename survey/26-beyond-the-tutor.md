@@ -32,7 +32,7 @@ of which are essentially unbuilt.
 shape an instruction-tuned assistant already has: knowledgeable, helpful, agreeable,
 responsive. **That shape is a training artifact, not a pedagogical finding.**
 
-Distinguish the roles by three questions — who holds the knowledge, who holds the
+Three questions distinguish the roles: who holds the knowledge, who holds the
 goal, and who bears the cognitive load. The last one decides everything, because
 transfer follows load.
 
@@ -48,9 +48,10 @@ transfer follows load.
 The tutor role is the only one requiring the AI to be knowledgeable and agreeable.
 It is also the only one with documented harm at scale: **§01 and §09 carry the −17%
 unassisted-exam result and the guardrail correction, and this section does not
-re-argue them.** The student role already has a section too — **§02** on the protégé
-effect, knowledge-telling, capability leakage and the Betty's Brain architecture,
-and **§05** on the learner as explainer. Everything below is what is left.
+re-argue them.** The student role already has a section too. **§02** covers the
+protégé effect, knowledge-telling, capability leakage and the Betty's Brain
+architecture, and **§05** covers the learner as explainer. Everything below is what
+is left.
 
 ---
 
@@ -67,8 +68,8 @@ The dissenter's value does not depend on the dissenter being right. It depends
 on the dissent being real.
 
 That is a remarkable licence for an AI adversary, because it means the objection
-does not have to be correct to be useful — and it is immediately revoked by the
-2001 result above, because it also means the objection cannot be performed.
+does not have to be correct to be useful. The 2001 result above revokes the licence
+immediately, because it also means the objection cannot be performed.
 
 ### 2.2 The dilemma, stated fully
 
