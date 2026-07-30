@@ -1,8 +1,8 @@
 ---
-title: "The Agenda — three experiments, and what would falsify this survey"
+title: "The Agenda — ten experiments, and what would falsify this survey"
 section: agenda
 status: draft
-date: 2026-07-28
+date: 2026-07-30
 source_report: research/raw/F9-open-problems.md
 ---
 
@@ -34,9 +34,36 @@ That is the whole problem in one study. **A variable that moves an outcome from
 −17% to zero is not near a ceiling; it is near a decision.** And nobody has
 measured what happens six weeks later (§01).
 
-This section lists the three experiments worth running first, each with its
-design and its pre-registered falsifier, and then states at full strength the
-case that this survey is wrong.
+Ten experiments follow, ranked, each with a runnable design and a pre-registered
+falsifier, and then the case that this survey is wrong, stated at full strength.
+
+Three of the ten were ranked in July 2026 against nineteen open problems. The
+other seven landed on 2026-07-30 with the domain reports behind §40, §41, §42,
+§43, §44, §45 and §46, each closing with a specified trial and a power
+calculation. **Two of the seven put a specification this survey publishes on
+trial**, which is a category the original nineteen did not contain, and one of
+those two enters at second and moves the standing order.
+
+| # | Experiment | The quantity that decides it | Learners | |
+|---|---|---|---|---|
+| 1 | The delayed, unassisted, novel-item outcome | Immediate-to-delayed rank correlation across arms | 900 | standing |
+| 2 | Randomise the graph, not the policy (§45) | Equivalence within δ = 0.10 SD | 857 × 8 topic pairs | **new — enters at 2** |
+| 3 | Persistent learner state against a stateless baseline | C − A on prerequisite-dependent transfer | 600 | was 2 |
+| 4 | Does the guardrail that removes harm ever add benefit? | A − C on 6-week unassisted transfer | 900 | was 3 |
+| 5 | The guardrail where the machine can write the essay (§43) | B − C on a delayed cold-prompt composition | 636 | **new** |
+| 6 | Relational standing × correction stance, dosage fixed (§40) | Correction acceptance, then 14-day transfer | 1,000 | **new** |
+| 7 | Randomise revision allocation, with an off-board audit paper (§41) | Whether the marks gain reproduces on the audit paper | ~630 | **new** |
+| 8 | Skill only, affect only, both (§42) | Arm B on the 6-week unassisted outcome | 645 | **new** |
+| 9 | Does speaking to a machine transfer to speaking to a person? (§44) | Comprehensibility with an unmet human at 4 weeks | 465 | **new** |
+| 10 | The peer mechanism, and the cheap question inside it (§46) | C − B at d = 0.15; collaboration skill at g ≈ 0.7 | 4,600 / 99 | **new** |
+
+The ordering is expected information gain against feasibility, with one tie-break
+that has changed. Where two experiments score alike, the one that can retire a
+specification this survey already publishes goes first, and the one that can only
+retire a mechanism this survey proposed goes second. On that rule the graph trial
+displaces the memory ablation from second to third and the guardrail trial from
+third to fourth. Nothing else is reordered; experiments 5 to 10 are additions
+below the standing three.
 
 ---
 
@@ -44,9 +71,10 @@ case that this survey is wrong.
 
 **Why first.** It is the measurement precondition for everything else.
 Seventeen of the nineteen open problems in the underlying research name a
-delayed unassisted transfer test as their primary outcome. If that instrument is
-not built, validated, and shown to be administrable at scale, none of the rest
-can be run credibly. It is also cheap: no novel system to build.
+delayed unassisted transfer test as their primary outcome, and six of the seven
+new trials name one too. If that instrument is not built, validated, and shown
+to be administrable at scale, none of the rest can be run credibly. It is also
+cheap: no novel system to build.
 
 | | |
 |---|---|
@@ -81,15 +109,55 @@ party positioned to fund it has an interest in the immediate number.
 
 ---
 
-## Experiment 2. Persistent learner state against a stateless baseline
+## Experiment 2. Randomise the graph, not the policy
 
-**Why second.** Memory is the headline feature of the current product
+**Why second, and why it displaces the memory ablation.** §25 tells a builder to
+compute the mastery vector over a concept's transitive prerequisite closure and
+enter at the weakest link. §18 takes a prerequisite graph as an input to a
+textbook that writes itself. Four reports assume the architecture. But the one
+tally that separates between-topic sequencing from within-topic sequencing puts
+the between-topic cluster at **zero of eight** against its baselines, while both
+clusters that did work are decisions inside a topic (§45). This survey publishes
+a rule whose warrant comes from a different question's evidence, and the rule is
+live in code. Every study in that literature randomises which traversal policy
+walks a fixed graph. Nobody has randomised the graph.
+
+| | |
+|---|---|
+| **Population** | 900 learners in a mid-sized deployment, each contributing at least eight eligible topics over roughly two terms — about 7,200 topic sequences |
+| **Randomisation** | **Within learner, at topic level.** Each eligible topic is assigned to **graph-respecting entry** (verify the prerequisite closure, remediate any gap, then teach the target) or **demand-driven entry** (teach the requested target immediately, repair prerequisites reactively when an error names a missing component). Total instructional time is capped identically in both arms, so neither condition can win by being given more teaching |
+| **Power** | An **equivalence trial**, not a superiority trial. Two one-sided tests at **δ = 0.10 SD**, α = .05, 90% power, paired within learner at a between-condition correlation of 0.5 gives σ_d ≈ 1.0 SD and **n ≈ 857 learners**. At a correlation of 0.7, σ_d falls to ≈ 0.77 and n to ≈ 510 |
+| **Primary outcome** | **Delayed transfer at 28 days** on freshly generated items for the target topic, scored blind |
+| **Secondary** | Time to criterion; a 90-day retention probe; and **the proportion of graph-respecting sessions in which the verified prerequisite gap turned out to be real** — a diagnostic number nobody has ever published |
+
+The margin is the design. What is at stake is not whether an ordering makes any
+difference but whether the difference is large enough to pay for building the
+graph and keeping it correct, so 0.10 SD is registered in advance as the point
+below which the answer is no. Within-learner randomisation is what makes the
+sample affordable: one learner supplies eight paired observations, and the paired
+correlation does the rest.
+
+> Falsifier. Equivalence within 0.10 SD withdraws the weakest-link entry rule
+> from §25, collapses §18's problem from *construct a validated ordering* to
+> *answer the question that was asked*, and takes the traversal layer out of the
+> learner model. A win above 0.10 SD gives this project its first direct warrant
+> for an architecture four of its own reports already assume, and pays for a gate
+> it has been using on credit. Both answers change a build, which is why it goes
+> second.
+
+---
+
+## Experiment 3. Persistent learner state against a stateless baseline
+
+**Why third.** Memory is the headline feature of the current product
 generation and the organising premise of every lifelong-learner-model
 architecture, **including this survey's own**. It is being built at real schema
 cost, real privacy exposure, and the entire regulatory surface described earlier
 in this survey — on zero evidence that it changes a learning outcome. No
 trial has compared a tutor that remembers a learner across sessions against the
-identical tutor that does not.
+identical tutor that does not. It moved down one place for a single reason: it
+tests a mechanism this survey proposes, and the trial above tests a rule this
+survey already publishes and instructs builders to implement.
 
 The census is stark. arXiv `"open learner model"` → 0. `"long-term learner
 model"` → 0. `abs:"long-term memory" AND abs:"tutor"` → 0. Six results for
@@ -132,9 +200,9 @@ either.
 
 ---
 
-## Experiment 3. Does the guardrail that removes harm ever add benefit?
+## Experiment 4. Does the guardrail that removes harm ever add benefit?
 
-Why third, and why it is this survey's own thesis on trial. The central
+Why fourth, and why it is this survey's own thesis on trial. The central
 design claim running through these sections is that **restraint is the active
 ingredient**. The evidence for that claim is currently *entirely* about harm
 removal. The guardrail took the unassisted effect from −17% to exactly zero (§01). **No
