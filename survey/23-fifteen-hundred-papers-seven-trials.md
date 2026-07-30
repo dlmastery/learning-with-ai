@@ -35,10 +35,16 @@ better at building and worse at checking, in the same decade.
 
 The peer-reviewed education literature gives the same shape from the other
 direction. ERIC holds **1,565 records** on ChatGPT in education. **Seven are
-randomised controlled trials.** Four of those seven are second-language learning.
+randomised controlled trials.** Three of those seven are second-language learning.
 
-So: fifteen hundred papers, seven trials, and three of them outside language
+So: fifteen hundred papers, seven trials, and four of them outside language
 teaching.
+
+> **Corrected 30 Jul 2026 (C-58).** This section said *four* were second-language
+> learning. Read record by record, EJ1415077 is a randomised trial in a
+> foundational chemistry course in a blended setting, and EJ1484052 is VR with
+> embedded IoT tasks. The census was reproducible and the classification was not
+> checked.
 
 That is not a scandal and we are not going to write it as one. It is a phase. An
 enormous generative capability arrived, and the field is still enumerating

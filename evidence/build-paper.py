@@ -70,7 +70,7 @@ N_EXT = len([1 for _l in (ROOT / "CORRECTIONS.md").read_text().splitlines()
 ABSTRACT = f"""\
 Generative AI arrived in education as a capability without a specification. Three
 years on, the field has produced roughly 2,900 papers and, by our census, **seven
-randomised controlled trials** — four of them second-language learning. It measures
+randomised controlled trials** — three of them second-language learning. It measures
 resemblance, preference and engagement. It very rarely measures whether anyone
 learned anything, and almost never measures it **after the tool is taken away**.
 

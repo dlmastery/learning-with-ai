@@ -11,33 +11,31 @@ status: raw-research
 
 > **The gap this report was commissioned to close.** `J1`'s personalisation engine computes a
 > *"prerequisite closure of c, transitively closed"* and drops the learner back to the weakest
-> link inside it. `F10` disclaims topic ordering by design: *"rendering one concept at five
-> sophistication levels is not the same problem as sequencing a curriculum."* `A1` generates
-> textbooks whose chapters must come in some order. Forty-five reports presuppose a prerequisite
-> graph and not one of them says where it comes from, whether it is real, or what happens if you
-> violate it.
+> link inside it. `F10` disclaims topic ordering by design. `A1` generates textbooks whose
+> chapters must come in some order. Forty-five reports presuppose a prerequisite graph and not
+> one of them says where it comes from, whether it is real, or what happens if you violate it.
 >
 > **Three findings, stated first.**
 >
-> 1. **The graph is real in one place and unproven almost everywhere else.** The single research
->    programme that built an empirical ordering and then tried to break it — the early-mathematics
->    learning trajectories — found that teaching one level above a child beat skipping to the
->    target level, at **d = 1.20** in a randomised trial of 291 kindergartners. Every one of those
->    trials comes from one laboratory. Against that, the largest tally of automated sequencing
->    experiments found **zero of eight** studies that sequenced interdependent content beat a
->    hand-built baseline, and two independent meta-analyses of the one deployed system built
->    entirely on prerequisite structure put it at **g ≈ 0.05** against ordinary teaching.
-> 2. **Nobody has ever shown that a sequencing or mastery intervention's advantage survives.**
->    Slavin's 1987 synthesis found mastery learning's *retention* effects were "essentially zero"
->    and that finding has not been overturned in thirty-nine years. The best-documented early
->    intervention in the corpus decayed from about 0.8 SD to statistical zero by third grade. And
->    the mechanism study on that same trial found that forgetting explained only about a quarter
->    of the decay: most of the fade was the control group catching up.
+> 1. **The graph is real in one place and unproven almost everywhere else.** The one programme
+>    that built an empirical ordering and then tried to break it — the early-mathematics learning
+>    trajectories — found that teaching one level above a child beat skipping to the target level,
+>    at **d = 1.20** in a trial of 291 kindergartners. All of those trials come from one
+>    laboratory. Against that, the largest tally of automated sequencing experiments found **zero
+>    of eight** studies sequencing interdependent content beat a hand-built baseline, and two
+>    meta-analyses of the one deployed system built entirely on prerequisite structure put it at
+>    **g ≈ 0.05** against ordinary teaching.
+> 2. **Nobody has shown that a sequencing or mastery intervention's advantage survives.** Slavin's
+>    1987 synthesis found mastery learning's *retention* effects "essentially zero," and that has
+>    not been overturned in thirty-nine years. The best-documented early intervention here decayed
+>    from about 0.8 SD to statistical zero by third grade, and the mechanism study on that trial
+>    found forgetting explained only a quarter of the decay: most of the fade was the control
+>    group catching up.
 > 3. **Motor learning reached the performance–learning dissociation independently, and only half
 >    of it replicated.** Contextual interference survives meta-analysis at **SMD = 0.63** overall
->    but collapses to **0.23** in applied settings and to **0.02** in learners under 18. The
->    feedback-scheduling half of the same doctrine does not survive at all: 75 comparisons,
->    2,228 participants, no effect at any timepoint and no reversal.
+>    but collapses to **0.23** in applied settings and **0.02** in learners under 18. The
+>    feedback-scheduling half of the doctrine does not survive at all: 75 comparisons, 2,228
+>    participants, no effect at any timepoint and no reversal.
 >
 > The eleven-year-old this project is organised around is inside two of those boundary conditions
 > at once. He is under eighteen and he is not in a laboratory.
@@ -61,7 +59,7 @@ literature), Crossref REST, Europe PMC, and `curl` against open-access PDFs.
   the session: Slavin (1987) in full, both Clements grantee submissions, the TRIAD long-term
   conference paper, the Teach to One impact report, and two Annenberg working papers.
 - `gwern.net/doc/psychology/spaced-repetition/` serves Bahrick & Phelps (1987) and Bahrick et al.
-  (1993) as PDFs; the 1984 and 1991 papers are not mirrored there.
+  (1993); the 1984 and 1991 papers are not mirrored there.
 
 Evidence labels are the project standard. `MEASURED-RCT` · `MEASURED-META` · `OBSERVED` ·
 `VENDOR` · `INFERENCE` · `SPEC`.
@@ -79,21 +77,19 @@ mechanism-level INFERENCE."* `F10` hands the ordering problem away in its first 
 generates modules → chapters → topics. `C2` and `F5` own measurement machinery that could in
 principle recover an ordering from response data and is not pointed at the task.
 
-The term census in `Z1` puts numbers on it: `curriculum sequencing` 2 hits across 45 reports and
-40 survey sections, `scope and sequence` 1, `backward design` 0, `knowledge space` 0. `ALEKS`
-appears twice, once as an aside about time-on-platform and once as the venue for a mastery
-threshold experiment. `prerequisite` appears 196 times, which is the shape of the problem: the
-concept is everywhere and its warrant is nowhere. `OBSERVED — absence`
+`Z1`'s census puts numbers on it: across 45 reports and 40 survey sections, `curriculum
+sequencing` 2 hits, `scope and sequence` 1, `backward design` 0, `knowledge space` 0, `ALEKS` 2.
+`prerequisite` appears 196 times. That is the shape of the problem: the concept is everywhere and
+its warrant is nowhere. `OBSERVED — absence`
 
 ---
 
 ## 2. Learning trajectories: the one programme that built an ordering and then tried to break it
 
-Learning trajectories, in the sense Clements and Sarama use the term, are not a curriculum
-document. They are a triple: a goal, a hypothesised developmental progression of levels of
-thinking, and a set of instructional tasks matched to each level. The claim under test is
-narrow and falsifiable: **instruction is most effective when it targets the level one step above
-the child's current level of thinking.**
+A learning trajectory in Clements and Sarama's sense is a triple: a goal, a hypothesised
+developmental progression of levels of thinking, and instructional tasks matched to each level.
+The claim under test is narrow and falsifiable: **instruction is most effective when it targets
+the level one step above the child's current level of thinking.**
 
 ### 2.1 The efficacy trials
 
@@ -184,12 +180,11 @@ contexts**, and misinterpretation of item language produces inaccurate level dia
 subset of students. Their own conclusion is that this matters less for classroom use than for
 large-scale testing. `MEASURED-BENCH`
 
-For a tutor, this is the load-bearing warning. A generative tutor that places a learner at
-"level 3 of the fractions progression" and then routes the next hour of instruction from that
-placement is doing large-scale testing, not classroom teaching, whatever it looks like from the
-outside. The placement is a single-shot inference from a handful of items, and the measurement
-literature says the underlying construct is not stable enough across contexts to carry it.
-`INFERENCE`
+For a tutor this is the load-bearing warning. A system that places a learner at "level 3 of the
+fractions progression" and routes the next hour of instruction from that placement is doing
+large-scale testing whatever it looks like from the outside: a single-shot inference from a
+handful of items, on a construct the measurement literature says is not stable enough across
+contexts to carry it. `INFERENCE`
 
 ### 3.2 Q-matrices: the machinery exists and it is fragile
 
@@ -198,10 +193,10 @@ columns, a 1 where the item requires the skill. Cognitive diagnostic models such
 each learner's skill profile from responses given a Q-matrix. Two facts about them govern any
 design that leans on this machinery.
 
-First, Q-matrices can be validated and refined against data rather than only asserted by experts.
-de la Torre & Chiu (2016), *Psychometrika* 81(2):253–273, `10.1007/s11336-015-9467-8`, give a
-general empirical validation method; Ma & de la Torre (2019), *BJMSP* 73(1):142–163, extend it
-to sequential G-DINA. `MEASURED-BENCH`
+First, Q-matrices can be validated against data and not only asserted by experts: de la Torre &
+Chiu (2016), *Psychometrika* 81(2):253–273, `10.1007/s11336-015-9467-8`, give a general empirical
+validation method, extended to sequential G-DINA by Ma & de la Torre (2019), *BJMSP*
+73(1):142–163. `MEASURED-BENCH`
 
 Second, misspecification is costly. Rupp & Templin (2007), *EPM* 68(1):78–96,
 `10.1177/0013164407301545`, is the standard citation for what deleting or adding entries does to
@@ -258,7 +253,7 @@ in is the part with no positive evidence anywhere. `INFERENCE`
 Knowledge space theory, due to Doignon & Falmagne (collected in *Knowledge Spaces*,
 Springer 1999, `10.1007/978-3-642-58625-5`), models a domain as a family of *knowledge states* —
 the sets of problems a learner could plausibly be able to solve — closed under union. The
-"outer fringe" of a state is precisely the set of items the learner is ready to learn next. ALEKS
+"outer fringe" of a state is the set of items the learner is ready to learn next. ALEKS
 is the commercial instantiation.
 
 **The vendor's own claims are about mechanism, not outcome.** `aleks.com/about_aleks/research_behind`
@@ -300,12 +295,11 @@ either.
 
 ### 3.5 What would decide it
 
-No study located in this session took an assumed prerequisite ordering in a real domain,
-randomised learners to respect it or violate it, and measured delayed transfer. The
-Clements skip-level trials are the closest existing design and they operate at the scale of a
-single trajectory in a single domain with one-to-one instruction. The Doroudi cluster
-randomises the *policy* that traverses the graph, not the *graph*. This is the shape of the
-missing trial and §9 specifies it. `OBSERVED — absence`
+No study located here took an assumed prerequisite ordering in a real domain, randomised
+learners to respect or violate it, and measured delayed transfer. The Clements skip-level trials
+come closest and operate at the scale of one trajectory in one domain under one-to-one
+instruction; the Doroudi cluster randomises the *policy* traversing the graph, not the graph.
+§9.2 specifies the missing trial. `OBSERVED — absence`
 
 ---
 
@@ -336,12 +330,11 @@ effective means of holding teachers and students to a specified set of instructi
 and does not support the *strong* claim that it beats traditional instruction "given equal time
 and fair achievement measures."
 
-He also notes the reason the corrective loop may under-deliver, which reads as a direct
-specification for what an AI tutor could change: in none of the sixteen studies he examined did
-corrective instruction occupy more than **one period per week, or 20% of instructional time**,
-and it was delivered in groups or by peer tutors. The mastery-learning literature has never
-tested mastery learning with unlimited individual corrective instruction, because until now
-nobody could afford to. `INFERENCE`
+He also notes why the corrective loop may under-deliver, which reads as a specification for what
+an AI tutor could change: in none of the sixteen studies did corrective instruction occupy more
+than **one period per week, or 20% of instructional time**, and it was delivered in groups or by
+peer tutors. Mastery learning has never been tested with unlimited individual corrective
+instruction, because until now nobody could afford to. `INFERENCE`
 
 ### 4.2 The provenance detail that matters most
 
@@ -371,19 +364,17 @@ locate no synthesis that overturns it. `OBSERVED — absence`
 
 ### 4.4 Spiral against mastery
 
-`F10` §2 covers the spiral's evidence base and I will not repeat it. Two additions:
+`F10` §2 covers the spiral's evidence base and I will not repeat it. Two additions. The *direct*
+comparison literature is thin and partisan: Snider (2004), *Journal of Direct Instruction*, ERIC
+EJ755132, argues for "strand" against spiral organisation and is an argument, not an evaluation.
+`OBSERVED`
 
-The *direct* comparison literature is thin and partisan. Snider (2004), *Journal of Direct
-Instruction*, ERIC EJ755132, argues the case against spiral organisation and for "strand" design
-and is an argument, not an evaluation. `OBSERVED`
-
-The empirically strong descendant of the spiral is interleaving, which the corpus covers at
-depth (46 occurrences across `F11`, `N2`, `B1`), including Brunmair & Richter's (2019) moderator
-meta-analysis and Nemeth et al.'s (2019) null in elementary mathematics. The useful reframing
-is that interleaving is a *within-topic* scheduling decision of the kind §3.3 shows actually
-pays, whereas "spiral curriculum" is a *between-topic* ordering decision of the kind that has
-never been shown to. Bruner and Battig are not making the same claim, and the evidence separates
-them the same way. `INFERENCE`
+And the empirically strong descendant of the spiral is interleaving, which the corpus already
+covers at depth (46 occurrences across `F11`, `N2`, `B1`, including Brunmair & Richter's 2019
+moderator meta-analysis and Nemeth et al.'s 2019 null in elementary mathematics). Interleaving is
+a *within-topic* scheduling decision of the kind §3.3 shows pays; "spiral curriculum" is a
+*between-topic* ordering decision of the kind that has never been shown to. Bruner and Battig are
+not making the same claim and the evidence separates them the same way. `INFERENCE`
 
 ---
 
@@ -418,11 +409,10 @@ the architecture a "school in a box" would build, not a laboratory manipulation.
 estimates drift *downward* across the three years, the opposite of the implementation-maturity
 curve every adaptive-sequencing vendor forecasts.
 
-A second, smaller null for the same family: KinderTEK, an iPad mathematics program with
-individualised progression, cluster-randomised across 70 kindergarten classrooms, **1,368
-students** (690 treatment, 678 business-as-usual). No statistically significant differences on
-early number fluency, broad mathematics achievement, or proximal math content. ERIC ED679597,
-grantee submission, forthcoming in *IJTE*. `MEASURED-RCT`
+A second null in the same family: KinderTEK, an iPad mathematics program with individualised
+progression, cluster-randomised across 70 kindergarten classrooms, **1,368 students**. No
+significant differences on early number fluency, broad mathematics achievement, or proximal math
+content. ERIC ED679597, grantee submission, forthcoming in *IJTE*. `MEASURED-RCT`
 
 ---
 
@@ -449,18 +439,16 @@ The TRIAD trial (§2.1) was followed to fifth grade. **Clements, Sarama, Layzer,
 grade." **The numeric trajectory above is from the conference paper and should be labelled as
 such; the published paper is the citation of record for the pattern.**)
 
-The re-emergence is the interesting part and the authors' interpretation is worth taking
-seriously: effects reappear "at two critical points in elementary education — the transitions to
-the increasing demands of the curricula of first and fifth grades," suggesting that early
-foundations show up when the curriculum finally asks for them. That is a *latent foundation*
-hypothesis, and it makes a falsifiable prediction: fade-out measured on a test that does not
-demand the foundation is not evidence that the foundation is gone.
+The re-emergence is the interesting part. The authors read it as effects reappearing "at two
+critical points in elementary education — the transitions to the increasing demands of the
+curricula of first and fifth grades," so that early foundations show up when the curriculum
+finally asks for them. That *latent foundation* reading makes a falsifiable prediction: fade-out
+measured on a test that does not demand the foundation is not evidence the foundation is gone.
 
-Note also the subgroup pattern, which cuts against the usual story: effects for higher-SES
-students in the no-follow-through condition were significant at every timepoint and reached
-0.6–0.7 SD in fourth and fifth grade, while lower-SES students' effects were significant only in
-pre-K and kindergarten. The intervention's durability was greatest where the sustaining
-environment was strongest. `OBSERVED`
+The subgroup pattern cuts against the usual story. Effects for higher-SES students in the
+no-follow-through condition were significant at every timepoint and reached 0.6–0.7 SD in fourth
+and fifth grade; lower-SES students' effects were significant only in pre-K and kindergarten.
+Durability was greatest where the sustaining environment was strongest. `OBSERVED`
 
 ### 6.2 The mechanism study, on the same trial
 
@@ -471,11 +459,11 @@ transfer effect was small and statistically non-significant, worth roughly one t
 end-of-program treatment effect. The authors' conclusion: **most of the fade-out was the control
 group catching up.** `MEASURED-RCT`
 
-This changes what fade-out means for a product. If most of the decay is convergence rather than
-loss, then an early tutoring advantage is largely an *acceleration*, and the durable question is
-whether acceleration is worth anything on its own. It also means measuring "did the learner
-retain it" against a control group answers a different question from "does the learner still
-have it," and the corpus has been conflating them.
+This changes what fade-out means for a product. If most of the decay is convergence and not
+loss, an early tutoring advantage is largely an *acceleration*, and the durable question becomes
+whether acceleration is worth anything on its own. Measuring "did the learner retain it" against
+a control group also answers a different question from "does the learner still have it," and the
+corpus has been conflating them.
 
 ### 6.3 How general is fade-out?
 
@@ -494,20 +482,19 @@ persist. Across the same meta-analytic database, they **found no evidence** that
 skills persisted better; in some specifications the sign ran the other way. `MEASURED-META`
 — **working paper.**
 
-The peer-reviewed anchor for the theoretical debate is Bailey, Duncan, Odgers & Yu (2017),
-*JREE*, ERIC EJ1125358, which sets out the three competing mechanisms — skill-building,
-foot-in-the-door, and sustaining environments — and shows they generate competing predictions
-about *when* and *whom* to target. The debate is genuinely unresolved and both sides have
-numbers: Pages, Protzko & Bailey (2022), *JREE*, ERIC EJ1349873, found that Abecedarian's
-impacts on IQ subtests from age 5 to 21 (n = 107) were consistent with a persistent effect on
-general ability, with the subtest-specific variance fading. Persistence and fade-out are both
-real; which one you observe depends on how broad the measured construct is. `MEASURED-RCT`
+The peer-reviewed anchor is Bailey, Duncan, Odgers & Yu (2017), *JREE*, ERIC EJ1125358, which
+sets out three competing mechanisms — skill-building, foot-in-the-door, sustaining environments —
+that generate competing predictions about *when* and *whom* to target. Both sides have numbers:
+Pages, Protzko & Bailey (2022), *JREE*, ERIC EJ1349873, found Abecedarian's impacts on IQ
+subtests from age 5 to 21 (n = 107) consistent with a persistent effect on general ability, with
+subtest-specific variance fading. Which one you observe depends on how broad the measured
+construct is. `MEASURED-RCT`
 
 ### 6.4 What actually survives: the permastore work
 
 The fade-out literature measures a *relative advantage against a control group*. The Bahrick
-programme measures something different and more directly relevant to a tutor's promise:
-**absolute retention of formally taught material across decades**.
+programme measures what is more directly relevant to a tutor's promise: **absolute retention of
+formally taught material across decades**.
 
 Bahrick (1984), *JEP: General* 113(1):1–29, `10.1037/0096-3445.113.1.1`, is the cross-
 sectional study of Spanish learned in school and tested up to fifty years later. The publisher
@@ -552,18 +539,17 @@ this report's third commission begins.
 
 ## 7. Transfer to work
 
-`transfer to work` is 0 hits in the corpus. It is close to 0 hits in the literature too, in the
-sense that matters.
+`transfer to work` is 0 hits in the corpus, and close to 0 in the literature in the sense that
+matters.
 
-**The best evidence is medical and it is honest about its limits.** Vermylen, Cohen, Cook,
-McGaghie, Issenberg, Kessler et al. (2025), *Simulation in Healthcare*,
-`10.1097/sih.0000000000000895`, PMID 41217357, is a systematic review and meta-analysis of
-competency-based (mastery) simulation education for medical procedural skills across a wide range
-of domains and professions. The finding, in the authors' own summary statement: competency-based
-simulation beats non-competency-based simulation for skill outcomes (large effect), while
-"outcomes are favorable, but small, for behaviors in practice and patient effects." They also
-report that **no instructional design feature** they examined had a significant impact on skill
-acquisition, and they name the gap directly: "a limited number of studies assessing the impact on
+**The best evidence is medical and it states its own limits.** Vermylen, Cohen, Cook, McGaghie,
+Issenberg, Kessler et al. (2025), *Simulation in Healthcare*, `10.1097/sih.0000000000000895`,
+PMID 41217357, is a systematic review and meta-analysis of competency-based (mastery) simulation
+education for medical procedural skills across many domains and professions. In the authors'
+summary statement, competency-based simulation beats non-competency-based simulation for skill
+outcomes (large effect), while "outcomes are favorable, but small, for behaviors in practice and
+patient effects." **No instructional design feature** they examined significantly affected skill
+acquisition, and they name the gap: "a limited number of studies assessing the impact on
 behaviors in practice and patient effects." `MEASURED-META`
 
 That is the whole transfer-to-work story in one sentence: mastery sequencing reliably produces
@@ -607,9 +593,9 @@ session`
 ## 8. The skills that live in the hands
 
 `Z1` row 15 is right that the corpus covers manipulatives and simulation and not motor learning.
-The reason to close that gap is not completeness. It is that this corpus's central empirical
-theme — that felt learning and real learning dissociate — appears to have been discovered twice.
-The question is how much of that convergence survives inspection.
+The reason to close that gap is not completeness: this corpus's central empirical theme, that
+felt learning and real learning dissociate, appears to have been discovered twice. The question
+is how much of that convergence survives inspection.
 
 ### 8.1 The convergence, stated carefully
 
@@ -626,13 +612,12 @@ by the person whose framework one of them is, cannot be counted as the two liter
 `INFERENCE`
 
 What *is* independent is the empirical work. Shea & Morgan (1979), *JEP: Human Learning and
-Memory* 5(2):179–187, `10.1037/0278-7393.5.2.179`, was conducted in a motor-behaviour laboratory,
-on a barrier-knockdown task, in a tradition descending from Battig's 1966 work on contextual
-interference, with no methodological contact with the verbal spacing literature. Blocked practice
-won during acquisition; random practice won at 10-minute and 10-day retention, and won regardless
-of whether the retention test was itself blocked or random. That is a genuine independent arrival
-at the same dissociation, from a different discipline, on a different response system.
-`MEASURED-RCT`
+Memory* 5(2):179–187, `10.1037/0278-7393.5.2.179`, ran in a motor-behaviour laboratory on a
+barrier-knockdown task, in a tradition descending from Battig (1966), with no methodological
+contact with the verbal spacing literature. Blocked practice won during acquisition; random
+practice won at 10-minute and 10-day retention, and won whether the retention test was itself
+blocked or random. That is an independent arrival at the same dissociation, from a different
+discipline, on a different response system. `MEASURED-RCT`
 
 The right claim is therefore narrower than "two literatures converged" and stronger than nothing:
 **one specific manipulation, contextual interference, reproduces the acquisition–retention
@@ -701,20 +686,15 @@ Their own highlight list ends: "The guidance hypothesis is not supported by the 
 `MEASURED-META`
 
 **The same group's other two results complete the picture.** McKay, Yantha, Hussien, Carter &
-Ste-Marie (2022), *Meta-Psychology* 6, `10.15626/mp.2021.2803`, on self-controlled practice — the
-claim that letting learners choose their own feedback schedule improves retention. A naive random-
-effects model on 52 comparisons (N = 2,061) gives **g = 0.44** (95% CI 0.31, 0.56). Published and
-unpublished findings differed significantly, with only the published ones showing a benefit. A
-weight-function model correcting for selection put the true average at **g = 0.107**
+Ste-Marie (2022), *Meta-Psychology* 6, `10.15626/mp.2021.2803`, on self-controlled practice: a
+naive random-effects model over 52 comparisons (N = 2,061) gives **g = 0.44** (95% CI 0.31, 0.56),
+but published and unpublished findings differ significantly with only the published ones showing
+a benefit, a selection-corrected weight-function model puts the true average at **g = 0.107**
 (95% CI 0.047, 0.18), and p-curve analysis "suggested a lack of evidential value."
-`MEASURED-META`
-
-And the preregistered test: **St. Germain, McKay, Poskus, Williams, Leshchyshen, Feldman,
-Cashaback & Carter (2023)**, *Psychonomic Bulletin & Review* 30:621–633,
-`10.3758/s13423-022-02170-5`. Two experiments, **N = 228**. "Across both experiments, we did not
-find any evidence to support a self-controlled learning advantage. Exercising choice during
-practice did not increase perceptions of autonomy, competence, or intrinsic motivation, nor did
-it lead to more accurate error estimation skills." `MEASURED-RCT`
+`MEASURED-META` The preregistered test agrees: St. Germain, McKay, Poskus, Williams, Leshchyshen,
+Feldman, Cashaback & Carter (2023), *Psychonomic Bulletin & Review* 30:621–633,
+`10.3758/s13423-022-02170-5`, **N = 228** across two experiments, "did not find any evidence to
+support a self-controlled learning advantage." `MEASURED-RCT`
 
 ### 8.4 Massed against distributed motor practice: located, not quoted
 
@@ -760,11 +740,11 @@ confirms our theory."
 
 ### 9.1 Buildable now
 
-**A prerequisite graph with a stated epistemic status on every edge.** The evidence says edges
-come in at least three kinds and a system that treats them alike will be wrong in a specific way.
-*Constitutive* edges are entailed by the mathematics or logic of the domain (you cannot compose
-shapes you cannot recognise). *Empirical* edges are ones a Clements-style skip-level trial has
-tested. *Conventional* edges are everything else, which is most of them. `SPEC`
+**A prerequisite graph with a stated epistemic status on every edge.** Edges come in three kinds
+and a system that treats them alike will be wrong in a specific way. *Constitutive* edges are
+entailed by the domain's own logic (you cannot compose shapes you cannot recognise). *Empirical*
+edges are ones a Clements-style skip-level trial has tested. *Conventional* edges are everything
+else, which is most of them. `SPEC`
 
 **A graph that is used for diagnosis and not for gating.** §3.3's tally is the design rule: the
 sequencing decisions with positive evidence are within-topic (when to revisit, what activity type
@@ -802,16 +782,16 @@ almost no mastery-learning study met.
 scored blind. *Secondary.* Time to criterion; a 90-day retention probe; and the proportion of
 graph-respecting sessions in which the verified prerequisite gap turned out to be real.
 
-*Framing and power.* The question is not "is there a difference" — the ALEKS threshold experiment
-found a real but negligible one across 32.9 million sequences. It is whether any difference is
-large enough to pay for the graph. So this is an **equivalence trial** with a pre-registered
-margin of **δ = 0.10 SD**, roughly Kraft's benchmark for a small effect and well below the
+*Framing and power.* The question is not whether there is a difference — the ALEKS threshold
+experiment found a real but negligible one across 32.9 million sequences — but whether any
+difference is large enough to pay for the graph. So this is an **equivalence trial** with a
+pre-registered margin of **δ = 0.10 SD**, roughly Kraft's small-effect benchmark and below the
 smallest difference that would change the design. Two one-sided tests, α = .05, power 90%, paired
 within learner with a between-condition correlation of 0.5 gives σ_d ≈ 1.0 SD and
 n ≈ (1.645 + 1.282)² / 0.10² ≈ **857 learners**, each contributing at least eight topic pairs.
-If the between-condition correlation is higher (0.7), σ_d falls to ≈ 0.77 and n drops to ≈ 510.
-Budget for 900 learners and 8 pairs each: about 7,200 topic sequences, which is roughly two
-school terms of a mid-sized deployment and four orders of magnitude smaller than the ALEKS study.
+At a correlation of 0.7, σ_d falls to ≈ 0.77 and n to ≈ 510. Budget 900 learners × 8 pairs:
+about 7,200 topic sequences, roughly two terms of a mid-sized deployment and four orders of
+magnitude smaller than the ALEKS study.
 
 *Why this one.* No other design returns a result the corpus cannot get anywhere else. If the
 graph is equivalent within 0.10 SD, `J1` should stop computing prerequisite closures and `A1`'s
@@ -822,27 +802,25 @@ warrant for an architecture four reports already assume.
 ### 9.3 What I could not find out
 
 - **Whether prerequisite orderings are real outside early mathematics.** The only skip-level
-  trials in existence are in early number and early shape, from one laboratory. Nobody has run the
-  design in secondary algebra, chemistry, programming, or a second language.
+  trials in existence are in early number and early shape, from one laboratory. Nobody has run
+  the design in secondary algebra, chemistry, programming, or a second language.
 - **The pooled estimates from Lee & Genovese (1988, 1989) and Donovan & Radosevich (1999)**, and
-  therefore the actual size and moderators of the massed-versus-distributed effect in motor
-  learning. Publisher `403`s; recorded as untraceable in this session rather than guessed.
+  with them the size and moderators of the massed-versus-distributed effect in motor learning.
+  Publisher `403`s; recorded as untraceable rather than guessed.
 - **Rupp & Templin's (2007) numbers** on how badly a misspecified Q-matrix degrades attribute
-  classification, which is the quantitative form of the risk in letting a language model emit a
-  prerequisite graph.
-- **Arthur et al.'s (2003) effect sizes by Kirkpatrick criterion**, and with them any defensible
-  general number for how much organisational training reaches job behaviour. The widely quoted
-  10% figure is a 1982 conversational aside and should never be cited.
+  classification — the quantitative form of the risk in letting a language model emit a graph.
+- **Arthur et al.'s (2003) effect sizes by Kirkpatrick criterion**, and any defensible general
+  number for how much organisational training reaches job behaviour. The quoted 10% figure is a
+  1982 conversational aside and should never be cited.
 - **Whether the ALEKS pooled interval in Sun et al. (2021) is as printed in ERIC.** The point
   estimate (g = 0.05) is safe; the interval is not.
-- **Whether Building Blocks' third-year effects are 0.51/0.28 or the ~0.26 implied by the
-  long-term analysis.** Two papers from the same team on the same trial, and I could not
-  reconcile them from the abstracts and the conference paper alone.
-- **Anything at all about transfer from instruction to job performance outside health
-  professions education.** This is the single largest measured-absence in the report. The trial
-  that would settle it — randomise instructional sequence, follow to employment, measure
-  supervisor-rated performance at 12 and 36 months — has, so far as this session's retrieval can
-  establish, never been run.
+- **Whether Building Blocks' third-year effects are 0.51/0.28 or the ≈0.26 implied by the
+  long-term analysis.** Two papers, same team, same trial, and the abstracts and conference paper
+  did not reconcile them.
+- **Anything about transfer from instruction to job performance outside health professions
+  education.** The largest measured absence in this report. The trial that would settle it —
+  randomise instructional sequence, follow to employment, measure supervisor-rated performance at
+  12 and 36 months — has, so far as this session's retrieval establishes, never been run.
 
 ---
 

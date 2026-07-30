@@ -3,7 +3,7 @@ title: "Second-language learning: the one subject where the randomised evidence 
 wave: R
 section: R4
 date_researched: 2026-07-30
-sources_count: 88
+sources_count: 121
 status: raw-research
 ---
 
@@ -639,18 +639,18 @@ positive number does not survive being asked what it is a number *about*.
 
 Saito & Plonsky (2019), *Language Learning* 69(3):652–708,
 [10.1111/lang.12345](https://doi.org/10.1111/lang.12345), meta-analysed 77 studies of
-pronunciation instruction: between-group **d = 0.68 [0.49, 0.86]**, within-group
-**0.73 [0.69, 0.78]**, and a control-group test-retest band of **0.31 [0.24, 0.38]** that
+pronunciation instruction: between-group d = 0.68 [0.49, 0.86], within-group
+0.73 [0.69, 0.78], and a control-group test-retest band of 0.31 [0.24, 0.38] that
 sets the floor. Their Table 7 then splits the estimate by construct and by task:
 
 | Construct | Task | k | d | 95% CI |
 |---|---|---|---|---|
-| Global (comprehensibility, intelligibility, fluency, accentedness) | controlled | 6 | 0.33 | **[−0.18, 0.85]** |
-| Global | spontaneous | 4 | 0.73 | **[−0.03, 1.50]** |
+| Global (comprehensibility, intelligibility, fluency, accentedness) | controlled | 6 | 0.33 | [−0.18, 0.85] |
+| Global | spontaneous | 4 | 0.73 | [−0.03, 1.50] |
 | Specific segmentals/suprasegmentals, expert-rated | controlled | 19 | 0.75 | [0.42, 1.07] |
-| Specific, expert-rated | spontaneous | 3 | 0.40 | **[−0.44, 1.26]** |
+| Specific, expert-rated | spontaneous | 3 | 0.40 | [−0.44, 1.26] |
 | Specific, acoustic | controlled | 17 | 0.84 | [0.45, 1.24] |
-| Specific, acoustic | spontaneous | 6 | 0.24 | **[−0.22, 0.71]** |
+| Specific, acoustic | spontaneous | 6 | 0.24 | [−0.22, 0.71] |
 
 `MEASURED-META`. Every interval covering **global** pronunciation crosses zero, and so does
 **every interval involving spontaneous speech**. In the authors' words, effectiveness "could
@@ -660,7 +660,7 @@ at zero," making even 0.73 a slightly inflated estimate.
 
 Now the technology layer, which does not beat the instruction layer. Mahdi & Al Khateeb
 (2019), *Review of Education* 7(3):733–753, put CAPT against traditional teaching at
-**d = 0.68** over 20 studies and 1,014 participants, with a self-critique worth quoting in
+d = 0.68 over 20 studies and 1,014 participants, with a self-critique worth quoting in
 full:
 
 > *"The small number of studies, all of very low quality (most with fewer than 100
@@ -671,17 +671,17 @@ full:
 Ngo, Chen & Lai (2024), *ReCALL* 36(1):4–21,
 [10.1017/S0958344023000113](https://doi.org/10.1017/S0958344023000113), isolates ASR
 specifically: 15 studies, 38 effect sizes, three-level random effects,
-**g = 0.69, 95% CI [0.31, 1.08]**, I²(L3) = 56.6%. The interval runs from small to very
+g = 0.69, 95% CI [0.31, 1.08], I²(L3) = 56.6%. The interval runs from small to very
 large, so the point estimate carries little. The moderators carry more:
 
 | Moderator | g | k |
 |---|---|---|
 | Segmental target | 0.82 | 15 |
 | Suprasegmental target | 0.37 | 5 |
-| **Practising alone** | **0.44** | 11 |
+| Practising alone | 0.44 | 11 |
 | With peers | 0.89 | 5 |
 | With teacher | 1.24 | 2 |
-| Short intervention (1–4 wk) | **0.07** | 3 |
+| Short intervention (1–4 wk) | 0.07 | 3 |
 
 Solo ASR practice, which is how every consumer product is used, is g = 0.44. The large
 effects live in conditions containing a human. And Amrate & Tsai's (2024) systematic review
@@ -753,19 +753,19 @@ disfluency.
 
 **Measured against marketed.** Pearson's copy for Versant says its scores are "virtually
 indistinguishable from expert human scoring" on the strength of a machine–human correlation
-of **r = 0.97**. That figure is from a vendor technical report, is the *whole-test Overall*
+of r = 0.97. That figure is from a vendor technical report, is the *whole-test Overall*
 score against a purpose-built human criterion on n = 143, and the pronunciation subscore is
 0.88 while the correlation with an ILR speaking interview is **0.75 on n = 51**. The
 peer-reviewed comparison is ETS's SpeechRater (Zechner, Higgins & Xi, SLaTE 2007,
-doi:10.21437/slate.2007-31): machine–human **r = 0.61** on a single item and **0.68** on a
+doi:10.21437/slate.2007-31): machine–human r = 0.61 on a single item and 0.68 on a
 full six-item form, against human–human 0.77–0.94, with the authors' own verdict that "a
 large gap still remains." On the open speechocean762 benchmark the granularity gradient is
-explicit: utterance total score correlates with human raters at **r = 0.811**, phone accuracy
-at 0.693, and **word stress at 0.361**. And Wang & Min (2026), *Language Testing*
+explicit: utterance total score correlates with human raters at r = 0.811, phone accuracy
+at 0.693, and word stress at 0.361. And Wang & Min (2026), *Language Testing*
 43(2):165–196, meta-analysing 67 studies and 392 effect sizes, put the field-wide
-human–machine correlation at **r = .654**, pronunciation specifically at **.606**, with
-**system developer and rater expertise as significant moderators and ASR accuracy not
-one** — which is evidence these engines score by proxy features rather than by hearing what
+human–machine correlation at r = .654, pronunciation specifically at .606, with
+system developer and rater expertise as significant moderators and ASR accuracy not
+one — which is evidence these engines score by proxy features rather than by hearing what
 was said. `MEASURED-BENCH` / `VENDOR` as marked.
 
 These engines rank whole speakers well and localise individual errors poorly. The product
@@ -792,21 +792,21 @@ version-comparison designs. Against them:
 
 | Study | Design | Result |
 |---|---|---|
-| Çakmak (2022), *Novitas-ROYAL* 16(2) | N = 89, single-group pre/post, Replika | Speaking anxiety **rose**: 2.95 → 3.27, t(88) = 10.64, p < .001 |
+| Çakmak (2022), *Novitas-ROYAL* 16(2) | N = 89, single-group pre/post, Replika | Speaking anxiety rose: 2.95 → 3.27, t(88) = 10.64, p < .001 |
 | El Shazly (2021), *Expert Systems* 38(3), [10.1111/exsy.12667](https://doi.org/10.1111/exsy.12667) | N = 48, quasi-exp., 8 weeks | Anxiety "slightly intensified"; "learners' speech-related anxieties were not reduced" |
-| Ballıdağ & Aydın (2025), *Future in Educ. Res.* 3(2) | N = 44, chatbot vs peer tasks | Chatbot ns; **peer interaction significantly reduced anxiety** |
-| Ayedoun et al. (2019), *IJAIED* 29(1) | N = 40, one lab session | Self-reported confidence d = 1.42, anxiety only p < .1, and actual **time spent talking F(2,37) = 0.28, p = .75** |
-| Susoy (2026), *Front. Psychol.* 16:1745942 | N = 48, within-subjects, counterbalanced, AI vs human examiner | Anxiety lower before the AI exam by **d = 0.39**; measured speaking achievement **did not differ**; anxiety across conditions correlated **r = .918** |
+| Ballıdağ & Aydın (2025), *Future in Educ. Res.* 3(2) | N = 44, chatbot vs peer tasks | Chatbot ns; peer interaction significantly reduced anxiety |
+| Ayedoun et al. (2019), *IJAIED* 29(1) | N = 40, one lab session | Self-reported confidence d = 1.42, anxiety only p < .1, and actual time spent talking F(2,37) = 0.28, p = .75 |
+| Susoy (2026), *Front. Psychol.* 16:1745942 | N = 48, within-subjects, counterbalanced, AI vs human examiner | Anxiety lower before the AI exam by d = 0.39; measured speaking achievement did not differ; anxiety across conditions correlated r = .918 |
 
 `MEASURED-RCT` / `OBSERVED` as marked. Susoy's r = .918 is the most useful number here: the
 AI shifts the group mean a little and leaves the rank ordering of anxious learners
 essentially untouched.
 
 **Link two is close to untested, and the base rate is discouraging.** MacIntyre, Dörnyei,
-Clément & Noels (1998), *MLJ* 82(4), is explicitly a heuristic pyramid with **no data
-collected** — "a work-in-progress, more of a starting point than a finished product." Where
+Clément & Noels (1998), *MLJ* 82(4), is explicitly a heuristic pyramid with no data
+collected — "a work-in-progress, more of a starting point than a finished product." Where
 actual talk has been counted rather than self-reported, self-reported WTC explains between
-**0% and 21%** of the variance: R² = .209 for hand-raises in teacher-led Q&A but **R² = .006
+0% and 21% of the variance: R² = .209 for hand-raises in teacher-led Q&A but **R² = .006
 in a peer-led activity** in the same 48 learners (Shaffer 2021, ERIC EJ1293960); R² = .21 on
 recorded discussion word count in the strongest study, n = 439 (Leeming et al. 2024,
 *Language Learning* 74(4)); and outright nulls on output, turn-taking and public-speaking
@@ -814,10 +814,10 @@ performance elsewhere.
 
 And the anxiety construct behaves oddly in exactly the skill this section is about. Botes,
 Dewaele & Greiff (2020), *JPLL* 2(1), meta-analysed 99 FLCAS effect sizes, N = 14,128:
-general achievement **r = −.39 [−.45, −.33]**, writing −.47, listening −.53 — and
+general achievement r = −.39 [−.45, −.33], writing −.47, listening −.53 — and
 **speaking the weakest at −.26 [−.40, −.12], falling to −.19 after trim-and-fill**, with
-**four of the sixteen speaking studies reporting a positive correlation**. Teimouri, Goetze
-& Plonsky (2019), *SSLA* 41(2), give the larger pooled figure of **r = −.36** across 105
+four of the sixteen speaking studies reporting a positive correlation. Teimouri, Goetze
+& Plonsky (2019), *SSLA* 41(2), give the larger pooled figure of r = −.36 across 105
 samples and N = 19,933; that paper is closed access and its confidence interval is not
 quoted here. `MEASURED-META`. All of it is correlational, and Botes et al. state the
 directionality caveat themselves.
@@ -825,7 +825,7 @@ directionality caveat themselves.
 **Link three has one quantitative estimate and it is not encouraging.** Bibauw, Van den
 Noortgate, François & Desmet (2022), *LL&T* 26(1), meta-analysed dialogue systems for
 language learning — 17 publications, 100 effect sizes, 803 participants, overall
-**d = 0.58 [0.35, 0.82]** on measured language outcomes, with motivation studies
+d = 0.58 [0.35, 0.82] on measured language outcomes, with motivation studies
 deliberately excluded. Their cross-modality breakdown is the closest thing the field has to
 a transfer test:
 
@@ -833,16 +833,16 @@ a transfer test:
 |---|---|---|
 | Speaking → speaking | 0.84 | [0.42, 1.26] |
 | Writing → writing | 0.65 | [0.27, 1.04] |
-| **Written practice → speaking** | **0.29** | **[−0.21, 0.79]** |
-| **Oral practice → writing** | **0.19** | **[−0.31, 0.70]** |
+| Written practice → speaking | 0.29 | [−0.21, 0.79] |
+| Oral practice → writing | 0.19 | [−0.31, 0.70] |
 
 Both cross-modality intervals cross zero, and the authors call the transfer "quite
-limited." Effects also decline with proficiency, from d = 0.68 at A1 to **d = −0.33 at B2**.
+limited." Effects also decline with proficiency, from d = 0.68 at A1 to d = −0.33 at B2.
 The whole search cut off in January 2018, so none of it is about generative models.
 `MEASURED-META`.
 
 Hou & Min (2025), *ReCALL* 37(3), update the speaking-specific estimate to
-**g = 0.61 [0.34, 0.89]** over 16 studies, with a limitation they state themselves:
+g = 0.61 [0.34, 0.89] over 16 studies, with a limitation they state themselves:
 **"nearly all the studies (k = 15, 94%) involved fewer than 60 learners,"** the largest
 being 73, and "instead of drawing definitive conclusions, we hope the following findings
 stimulate greater research attention."
@@ -878,9 +878,9 @@ reanalysis has a published rebuttal that is better than the reanalysis.
 **Hartshorne, Tenenbaum & Pinker (2018),** *Cognition* 177:263–277,
 [10.1016/j.cognition.2018.04.007](https://doi.org/10.1016/j.cognition.2018.04.007).
 `OBSERVED`. A viral Facebook quiz (`WhichEnglish`, shared over 300,000 times) whose hook was
-that an algorithm would guess your native language. **132 items, of which 95 were scored**,
+that an algorithm would guess your native language. 132 items, of which 95 were scored,
 under ten minutes, written metalinguistic grammaticality judgements and sentence–picture
-matching. Analysed n = **669,498** after exclusions, of whom 244,840 monolingual, 44,412
+matching. Analysed n = 669,498 after exclusions, of whom 244,840 monolingual, 44,412
 immersion, 257,998 non-immersion — and **122,068 dropped as "intermediate immersion" and
 never analysed**. Cronbach's α = .86. Fitting an exponential-learning-with-sigmoidal-decay
 model in log-odds gives cross-validated R² = 0.89 against 0.66 for a constant learning rate.
@@ -896,10 +896,10 @@ since even simultaneous bilinguals fall short of monolinguals (p < .01) on 63% o
 **The number has no published uncertainty, and it moved when the sample grew.** HTP report
 no confidence interval; Frank (2018), *TiCS* 22(8):669–671, makes this his first objection
 ("it is hard to rule out other curves with similar shapes but different theoretical
-import"). Chen & Hartshorne (2021), *Cognition* 214:104706, re-ran it on **n = 1,131,401**
-with bootstrapped intervals and got a critical age of **17.87, 95% CI [17.01, 18.61]** under
-one ability model and **18.25 [17.50, 18.60]** under HTP's original. So the defensible
-statement is roughly **17 to 18.5 years, interval about [17, 19.4]** — and the point
+import"). Chen & Hartshorne (2021), *Cognition* 214:104706, re-ran it on n = 1,131,401
+with bootstrapped intervals and got a critical age of 17.87, 95% CI [17.01, 18.61] under
+one ability model and 18.25 [17.50, 18.60] under HTP's original. So the defensible
+statement is roughly 17 to 18.5 years, interval about [17, 19.4] — and the point
 estimate rose by nearly a year when the sample nearly doubled.
 
 **The reanalysis.** van der Slik, Schepens, Bongaerts & van Hout (2022), *Language Learning*
@@ -910,7 +910,7 @@ early-immersion learners better, and only non-immersion (18.6) and late-immersio
 learners favour a discontinuous one, which they read as **schooling effects** rather than a
 cognitive window. It is a reanalysis of the original dataset, so it is not independent
 evidence. Their own Dutch state-examination data are: Schepens, van Hout & van der Slik
-(2023), *SSLA* 45(1):167–188, **n = 56,024** adult immigrants, 50 native languages, where
+(2023), *SSLA* 45(1):167–188, n = 56,024 adult immigrants, 50 native languages, where
 all four skills decline **monotonically** after an arrival age of about 25, with no
 discontinuity, framed as general cognitive ageing.
 
@@ -932,7 +932,7 @@ rests on: a person who started English at 25 and gave up is not in the sample. N
 paper presses this against HTP; the authors concede it themselves ("successful bilingualism
 is not randomly assigned, nor is age of first exposure"). The largest sample without the
 problem points the other way: Hakuta, Bialystok & Wiley (2003), *Psychological Science*
-14(1):31–38, **2.3 million** 1990 US Census respondents, found large linear effects of
+14(1):31–38, 2.3 million 1990 US Census respondents, found large linear effects of
 education and immigration age but "failed to produce the discontinuity that is an essential
 hallmark of a critical period" — on a self-rated four-point scale, which HTP fairly contest.
 
@@ -944,8 +944,8 @@ and turn it around, arguing the classic nulls were false negatives.
 
 **The three skills dissociate, and this is where the practical answer is.** Flege,
 Yeni-Komshian & Liu (1999), *JML* 41(1):78–104, tested 240 Korean speakers on accent and on
-a 144-item grammaticality judgement task: **18 fell within 2 SD of natives on pronunciation
-against 76 on morphosyntax**, and once learners were matched on years of US education,
+a 144-item grammaticality judgement task: 18 fell within 2 SD of natives on pronunciation
+against 76 on morphosyntax, and once learners were matched on years of US education,
 length of residence and language use, the early and late groups still differed on
 pronunciation and **no longer differed at all on morphosyntax**. Grammar attainment is
 largely an education-and-input effect wearing an age costume. Vocabulary is weaker still:
@@ -954,20 +954,20 @@ Saito (2024), *SSLA* 46(1):3–27, finds age of arrival predicts lexical **appro
 
 Even for accent the ceiling is not a wall. Hopp & Schmid (2013), *Applied Psycholinguistics*
 34(2):361–394, had native judges rate 40 late L2 learners of German against 40 L1 attriters:
-**80% of the late learners scored within the native range**, and their conclusion is that
+80% of the late learners scored within the native range, and their conclusion is that
 acquiring a language from birth "is not sufficient to guarantee nativelike pronunciation,
 and late acquisition does not necessarily prevent it." Running the other way, Abrahamsson &
 Hyltenstam (2009), *Language Learning* 59(2):249–306, took the 41 of 195 bilinguals who had
 *passed* for native with listeners and put them through ten demanding tasks: none of the
-late learners performed in the native range, and **only a few of the early learners did
-either**. Nativelikeness survives casual listening far more often than it survives a
+late learners performed in the native range, and only a few of the early learners did
+either. Nativelikeness survives casual listening far more often than it survives a
 battery, for everyone.
 
 **What this means for an adult.** Snow & Hoefnagel-Höhle (1978), *Child Development*
 49(4):1114–1128, followed English speakers acquiring Dutch naturalistically through their
-first year: the **12–15-year-olds and adults made the fastest early progress**, the 8–15
-group had the best control at twelve months, and the **3–5-year-olds scored lowest on every
-test**. Hartshorne (2024) concedes the point without reservation. Nothing in this literature
+first year: the 12–15-year-olds and adults made the fastest early progress, the 8–15
+group had the best control at twelve months, and the 3–5-year-olds scored lowest on every
+test. Hartshorne (2024) concedes the point without reservation. Nothing in this literature
 identifies an age past which instruction stops working. The constraint is on the *ceiling
 for indistinguishability from a mature native under laboratory scrutiny*, which is not a
 goal any tutor should be optimising, and Levis's field has said so out loud (§5.1).

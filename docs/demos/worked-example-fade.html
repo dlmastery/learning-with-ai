@@ -61,7 +61,7 @@ svg .fx{stroke:var(--felt);stroke-width:2.5;fill:none;stroke-dasharray:5 4}
   <h1>Watch the scaffold come off</h1>
   <p class="lede">Worked examples measure <strong>g = 0.48</strong> across 181 effect sizes, and
   then reverse on the learner who no longer needs them. So the interesting object is not the
-  example. It is the <em>removal schedule</em> — and here it is, running on a real four-step
+  example. It is the <em>removal schedule</em>, and here it is, running on a real four-step
   calculation, with the rule that decides each removal printed on the page and evaluated in front
   of you.</p>
   <div class="chips">
@@ -75,15 +75,15 @@ svg .fx{stroke:var(--felt);stroke-width:2.5;fill:none;stroke-dasharray:5 4}
   <div class="o"><b>What this is</b><p>A completion-problem sequence over combustion stoichiometry.
   Stage 0 hands you the whole solution; stage 4 hands you nothing but the question. In between,
   blanks appear from the bottom up. Every number is generated from atomic masses and a balanced
-  equation computed at load — nothing is stored.</p></div>
+  equation computed at load. Nothing is stored.</p></div>
   <div class="o"><b>Why it matters</b><p>A worked example is a gift to someone who cannot yet do
   the steps and an obstacle to someone who can. The scaffold therefore has to come off, and the
-  only defensible trigger is <em>evidence of unaided competence</em> — which means the system needs
+  only defensible trigger is <em>evidence of unaided competence</em>, which means the system needs
   something to measure before it is allowed to withdraw anything.</p></div>
   <div class="o"><b>How to use it</b><p>Work a problem badly on purpose and the ladder moves
   backwards; work one cleanly and it moves forward. Either way the rule trace underneath prints
   the exact inputs it branched on. The fade threshold is a slider, so the rule is not just visible
-  — it is arguable.</p></div>
+  but arguable.</p></div>
 </section>
 
 <h2>1 · Where you are on the ladder</h2>
@@ -91,7 +91,7 @@ svg .fx{stroke:var(--felt);stroke-width:2.5;fill:none;stroke-dasharray:5 4}
 
 <div class="panel">
   <div class="ptitle" id="ptitle">Problem</div>
-  <div class="psub" id="psub">—</div>
+  <div class="psub" id="psub">…</div>
   <div id="stem" style="font-size:15px;line-height:1.6;color:var(--ink);margin-bottom:14px"></div>
   <div id="steps"></div>
   <div class="row" style="margin:18px 0 0">
@@ -113,12 +113,12 @@ branch it took is highlighted.</p>
 </div>
 
 <div style="max-width:420px">
-  <label for="thr">Fade threshold — score needed to remove a scaffold
+  <label for="thr">Fade threshold, the score needed to remove a scaffold
     <span class="val" id="thrv">1.00</span></label>
   <input type="range" id="thr" min="50" max="100" step="5" value="100" />
   <div class="sub" style="margin:6px 0 0;font-size:12.5px">At 1.00 the scaffold comes off only on a
-  flawless unaided solve. Lower it and the system starts fading on partial evidence — which is how
-  most adaptive systems are actually tuned, and is the assumption the evidence does not
+  flawless unaided solve. Lower it and the system starts fading on partial evidence, which is how
+  most adaptive systems are actually tuned and is the assumption the evidence does not
   underwrite.</div>
 </div>
 
@@ -133,8 +133,8 @@ branch it took is highlighted.</p>
 
 <h2>4 · The same learner under three schedules</h2>
 <p>Your attempts replayed against the two schedules that are not evidence-gated: a
-<strong>fixed</strong> fade that removes one scaffold per problem regardless, and
-<strong>no fading</strong>, which parks the learner at one level forever.</p>
+<em>fixed</em> fade that removes one scaffold per problem regardless, and
+<em>no fading</em>, which parks the learner at one level forever.</p>
 
 <div class="panel">
   <div class="ptitle">Stage trajectory</div>
@@ -150,7 +150,7 @@ branch it took is highlighted.</p>
 
 <div class="note warn"><b>What this replay cannot tell you.</b> It compares <em>schedules</em>, not
 outcomes. Your accuracy at a stage you never attempted is unobserved, and no amount of arithmetic
-recovers it. That is not a shortcoming of this page — it is the reason the fading literature is
+recovers it. That is not a shortcoming of this page but the reason the fading literature is
 thin: measuring a fade schedule properly requires randomising learners to schedules and testing
 them later, and almost nobody has.</div>
 
@@ -167,19 +167,19 @@ them later, and almost nobody has.</div>
     inputs are printed, its branch is highlighted, and its threshold is a control you can move.
     Compare that to a system that says only "we adapt to you".</li>
     <li><strong>Withdrawal needs unaided evidence, and stage 0 has none.</strong> The study stage
-    carries a comprehension check, and the rule explicitly refuses to count it as competence — it
-    only prevents click-through. When there is no unaided evidence, any advancement is an
+    carries a comprehension check, and the rule explicitly refuses to count it as competence; the
+    check only prevents click-through. When there is no unaided evidence, any advancement is an
     assumption, and the page marks it as one.</li>
   </ul>
   <div class="ptitle">Which parts are evidenced, and which are design</div>
   <ul style="margin:0 0 6px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
     <li><strong>Evidenced:</strong> that worked examples beat unguided problem solving for
-    learners without the schema — <strong>g = 0.48</strong>, 181 effect sizes — and that the
+    learners without the schema — g = 0.48, 181 effect sizes — and that the
     advantage reverses with expertise. That much licenses stage 0 for a novice and stage 4 for
     someone fluent.</li>
-    <li><strong>Not evidenced — and this is the load-bearing caveat:</strong> that the path between
-    them matters. Belland, Walker, Kim &amp; Lefler's meta-analysis of <strong>144 experimental
-    studies and 333 outcomes</strong> found <em>no moderation</em> by "presence or absence of
+    <li><strong>Not evidenced, and this is the load-bearing caveat:</strong> that the path between
+    them matters. Belland, Walker, Kim &amp; Lefler's meta-analysis of 144 experimental
+    studies and 333 outcomes found <em>no moderation</em> by "presence or absence of
     scaffolding change, and the logic by which scaffolding change is implemented". The earlier
     pilot found something worse for the tidy story: <strong>no fading outperformed fixed
     fading</strong>, with fading or its absence accounting for 30% of variability. Adaptive fading

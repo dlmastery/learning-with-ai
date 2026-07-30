@@ -44,9 +44,9 @@
 <header>
   <div class="eyebrow">Demo 05 · The Village</div>
   <h1>The Archivist</h1>
-  <p class="lede">A learner model that is <strong>actually persistent</strong>, entirely visible as
-  JSON, and <strong>genuinely destroyable</strong> — with the read-back that proves the destruction
-  happened. Everything a tutor believes about you should be a thing you can read and contradict.</p>
+  <p class="lede">A learner model that is actually persistent, entirely visible as JSON, and
+  <strong>genuinely destroyable</strong>, with the read-back that proves the destruction happened.
+  Everything a tutor believes about you should be a thing you can read and contradict.</p>
   <div class="chips">
     <span class="chip m">Computed live</span>
     <span class="chip m">Writes to your browser</span>
@@ -56,14 +56,14 @@
 
 <section class="orient">
   <div class="o"><b>What this is</b><p>A persistent learner model living in your browser's own storage, shown as raw JSON. Teach it something, watch its per-concept estimates move, then correct it or destroy it.</p></div>
-  <div class="o"><b>Why it matters</b><p>Persistent state is the single largest unmeasured engineering commitment in this field — <b>no study compares a stateful tutor against a stateless one</b>. The most-adopted AI tutor ever built (29,606 stars) opens its README with <code>DISCONTINUED</code> after failing twice to persist a learner model.</p></div>
-  <div class="o"><b>How to use it</b><p>Answer a few items and watch the estimates update. Then <em>correct</em> an entry the model got wrong — a learner and a parent must be able to. Finally press delete and re-read the record: under IDEA §300.624 that deletion has to be real, not a flag.</p></div>
+  <div class="o"><b>Why it matters</b><p>Persistent state is the single largest unmeasured engineering commitment in this field: <b>no study compares a stateful tutor against a stateless one</b>. The most-adopted AI tutor ever built (29,606 stars) opens its README with <code>DISCONTINUED</code> after failing twice to persist a learner model.</p></div>
+  <div class="o"><b>How to use it</b><p>Answer a few items and watch the estimates update. Then <em>correct</em> an entry the model got wrong, as a learner and a parent must be able to. Finally press delete and re-read the record: under IDEA §300.624 that deletion has to be real, not a flag.</p></div>
 </section>
 
 
 <div class="note"><b>COMPUTED.</b> This page writes a real record to
 <code>localStorage</code> on your device, under the key <code id="key1">—</code>. Nothing is sent
-anywhere — there is no server on the other end of this page. The knowledge estimate is Bayesian
+anywhere, because there is no server on the other end of this page. The knowledge estimate is Bayesian
 Knowledge Tracing (Corbett &amp; Anderson 1995), computed here, with its four parameters exposed
 and editable. The delete button really deletes, and the receipt is a genuine read-back, not a
 message.</div>
@@ -92,7 +92,7 @@ misconception, so a mistake writes a <em>diagnosis</em> to the record rather tha
 <div class="two">
   <div class="panel" style="margin:0">
     <div class="ptitle">Per-topic knowledge estimate</div>
-    <div class="psub">p(L) — the posterior probability the skill is learned, updated by BKT after
+    <div class="psub">p(L), the posterior probability the skill is learned, updated by BKT after
     every response.</div>
     <div id="pls"></div>
     <div class="row" style="margin:16px 0 0"><button id="resetp">Reset all estimates</button></div>
@@ -106,7 +106,7 @@ misconception, so a mistake writes a <em>diagnosis</em> to the record rather tha
 </div>
 
 <div class="panel">
-  <div class="ptitle">BKT parameters — inspectable, and wrong by default</div>
+  <div class="ptitle">BKT parameters: inspectable, and wrong by default</div>
   <div class="psub">These four numbers govern every estimate above. In most tutoring systems they
   are invisible, uncalibrated, and never shown to the person being modelled.</div>
   <div class="scroll">

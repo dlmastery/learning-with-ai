@@ -11,15 +11,15 @@ Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/
 
 Generative AI arrived in education as a capability without a specification. Three
 years on, the field has produced roughly 2,900 papers and, by our census, **seven
-randomised controlled trials** — four of them second-language learning. It measures
+randomised controlled trials** — three of them second-language learning. It measures
 resemblance, preference and engagement. It very rarely measures whether anyone
 learned anything, and almost never measures it **after the tool is taken away**.
 
-This survey is an attempt to write the missing specification. It rests on 50 research
+This survey is an attempt to write the missing specification. It rests on 53 research
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
 errors is published in an append-only ledger rather than quietly edited — **23 of
-the 64 corrections were found by an adversarial reviewer rather than by us.**
+the 65 corrections were found by an adversarial reviewer rather than by us.**
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
@@ -913,10 +913,16 @@ better at building and worse at checking, in the same decade.
 
 The peer-reviewed education literature gives the same shape from the other
 direction. ERIC holds **1,565 records** on ChatGPT in education. **Seven are
-randomised controlled trials.** Four of those seven are second-language learning.
+randomised controlled trials.** Three of those seven are second-language learning.
 
-So: fifteen hundred papers, seven trials, and three of them outside language
+So: fifteen hundred papers, seven trials, and four of them outside language
 teaching.
+
+> **Corrected 30 Jul 2026 (C-58).** This section said *four* were second-language
+> learning. Read record by record, EJ1415077 is a randomised trial in a
+> foundational chemistry course in a blended setting, and EJ1484052 is VR with
+> embedded IoT tasks. The census was reproducible and the classification was not
+> checked.
 
 That is not a scandal and we are not going to write it as one. It is a phase. An
 enormous generative capability arrived, and the field is still enumerating

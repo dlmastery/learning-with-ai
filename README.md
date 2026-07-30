@@ -33,7 +33,7 @@ The field has produced an enormous amount of work and almost no evidence.
 
 Across twenty education-AI subfields there are **2,907 arXiv papers, at most 1.79% carrying any
 learning-outcome marker, and eight subfields at exactly zero.** ERIC holds 1,565 records on
-ChatGPT in education and **seven randomised trials**, four of them second-language learning. The
+ChatGPT in education and **seven randomised trials**, three of them second-language learning. The
 literature measures resemblance, preference and engagement. It rarely measures whether anyone
 learned anything, and almost never measures it *after the tool is taken away*.
 

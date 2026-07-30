@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Pāṭha Protocol, and Why It Failed — Demo 12</title>
-<meta name="description" content="A 3,000-year-old permutation scheme that disables semantic autocorrect on purpose, implemented and run — and the benchmark, in this project, that falsified it as a fidelity check on model output." />
+<meta name="description" content="A 3,000-year-old permutation scheme that disables semantic autocorrect on purpose, implemented and run, with the benchmark, in this project, that falsified it as a fidelity check on model output." />
 <link rel="stylesheet" href="../site.css" />
 <link rel="stylesheet" href="demo.css" />
 <script src="../theme.js"></script>
@@ -68,9 +68,9 @@
 </header>
 
 <section class="orient">
-  <div class="o"><b>What this is</b><p>A three-thousand-year-old error-detection scheme, implemented — and then the benchmark that killed the idea this project built on it.</p></div>
-  <div class="o"><b>Why it matters</b><p>The Vedic <em>pāṭha</em> recitations permute word order deliberately, which <b>disables semantic autocorrect</b> — the exact failure mode of LLM paraphrase drift. We proposed adapting it as a fidelity check on model output. It was worth trying and it does not work.</p></div>
-  <div class="o"><b>How to use it</b><p>Corrupt a token and watch <em>krama</em> catch a transposition that plain recitation misses — that part is real and computed. Then read §4, which reports our own benchmark: <b>87.5%/87.5%</b> and <b>100%/100%</b>, exactly at chance, losing to plain self-consistency by 18.8 and 43.8 points. This is what publishing a falsification looks like.</p></div>
+  <div class="o"><b>What this is</b><p>A three-thousand-year-old error-detection scheme, implemented, and then the benchmark that killed the idea this project built on it.</p></div>
+  <div class="o"><b>Why it matters</b><p>The Vedic <em>pāṭha</em> recitations permute word order deliberately, which disables semantic autocorrect, the exact failure mode of LLM paraphrase drift. We proposed adapting it as a fidelity check on model output. It was worth trying and it does not work.</p></div>
+  <div class="o"><b>How to use it</b><p>Corrupt a token and watch <em>krama</em> catch a transposition that plain recitation misses. That part is real and computed. Then read §4, which reports our own benchmark: 87.5%/87.5% and 100%/100%, exactly at chance, losing to plain self-consistency by 18.8 and 43.8 points. This is what publishing a falsification looks like.</p></div>
 </section>
 
 
@@ -78,7 +78,7 @@
 <strong>computed</strong>: the permutation schemes are generated from your text by the actual
 recursions, the corruption is really injected, and the detection and localisation results are
 really derived by multiset comparison in your browser. Section 4 is a <strong>reported
-measurement</strong> — 768 model generations run offline against a deterministic comparator, by a
+measurement</strong>: 768 model generations run offline against a deterministic comparator, by a
 harness in this repository. Those numbers are cited data, exactly like the effect sizes on every
 other page. No model runs on this page and none is claimed to.</div>
 
@@ -87,7 +87,7 @@ other page. No model runs on this page and none is claimed to.</div>
 that carry the mechanism.</p>
 
 <div class="panel">
-  <div class="ptitle">Type a sequence — it will be permuted by the real recursions</div>
+  <div class="ptitle">Type a sequence, and the real recursions will permute it</div>
   <div class="psub">The default is the opening line of the Rig Veda in transliteration. Any
   sequence of tokens works; short ones are easiest to read.</div>
   <input type="text" id="txt" value="agním īḷe puróhitaṃ yajñásya devám ṛtvíjam"
@@ -110,10 +110,10 @@ that carry the mechanism.</p>
 </div>
 
 <div class="note"><b>What it is, in coding terms, stated without romance.</b> This is
-<strong>not</strong> a Hamming code and it is <strong>not</strong> error-correcting in Shannon's
+not a Hamming code and it is not error-correcting in Shannon's
 sense — there is no algebraic structure that lets one reciter reconstruct a corrupted symbol. It
-is (a) a high-rate redundancy scheme with (b) <strong>order-dependent consistency checks that
-give error detection with locality</strong>, plus (c) a <strong>social decoder</strong>:
+is (a) a high-rate redundancy scheme with (b) order-dependent consistency checks that
+give error detection with locality, plus (c) a <strong>social decoder</strong>:
 correction happens by quorum among independently trained reciters, and the <em>pāṭha</em> forms
 tell them <em>where</em> to look. Describing it accurately makes it more impressive, not less. It
 is a detection-plus-quorum-repair protocol with an explicit anti-semantic-smoothing
@@ -125,7 +125,7 @@ countermeasure, engineered a millennium and a half before information theory.</d
 <div class="panel">
   <div class="ptitle">Inject a corruption</div>
   <div class="psub">Select a token above, then choose what happens to it. The comparison below is
-  a multiset comparison over <em>utterances</em>, not a position-by-position diff — that is the
+  a multiset comparison over <em>utterances</em>, not a position-by-position diff. That is the
   point, and section 2.1 explains why.</div>
   <div class="row" id="corrpick"></div>
   <div id="corrstate"></div>
@@ -180,30 +180,30 @@ countermeasure, engineered a millennium and a half before information theory.</d
   <div class="ptitle">Design</div>
   <div class="scroll" style="margin-top:12px"><table>
     <tr><th>Element</th><th>Specification</th></tr>
-    <tr><td><b>Claims</b></td><td>16 canonical formula relations — pendulum period, kinetic energy,
+    <tr><td><b>Claims</b></td><td>16 canonical formula relations: pendulum period, kinetic energy,
       escape velocity, circle area, sphere volume, geometric series, compound interest, ideal gas,
       parallel resistance, thin lens, Lorentz factor, spring energy, capacitor energy, de Broglie
       wavelength, Coulomb's law, binomial variance.</td></tr>
-    <tr><td><b>Conditions</b></td><td>Each claim run twice: once with the <b>true</b> relation
-      asserted in the model's context, once with a <b>plausibly corrupted</b> one
+    <tr><td><b>Conditions</b></td><td>Each claim run twice: once with the true relation
+      asserted in the model's context, once with a plausibly corrupted one
       (<code>T = 2π√(g/L)</code>, <code>E = ½mv</code>, <code>V = np(1+p)</code>). This is the
       realistic tutor setting — the wrong claim is already in the context window, and the question
       is whether the system can catch its own earlier assertion.</td></tr>
-    <tr><td><b>Matched budget</b></td><td>Both protocols spend <b>exactly k = 6 generation
-      calls</b> and both flag on the <b>same rule</b>: any probe answer disagrees with the
+    <tr><td><b>Matched budget</b></td><td>Both protocols spend exactly k = 6 generation
+      calls and both flag on the same rule: any probe answer disagrees with the
       asserted claim.</td></tr>
     <tr><td><b>Self-consistency (S)</b></td><td>Six i.i.d. resamples of the <em>same</em> question
       at temperature 0.8.</td></tr>
     <tr><td><b>Pāṭha (P)</b></td><td>Six <em>structurally different</em> probes at temperature
-      0.2 — <code>forward</code> (restate), <code>inverse</code> (rearrange for another variable),
+      0.2: <code>forward</code> (restate), <code>inverse</code> (rearrange for another variable),
       <code>numA</code>/<code>numB</code> (evaluate at two numeric points), <code>scaling</code>
       (factor when one variable doubles), <code>zeroform</code> (write F such that F = 0 is
       equivalent). Krama, jaṭā and ghana applied to a formula instead of to a verse.</td></tr>
-    <tr><td><b>Adjudication</b></td><td>Every verdict decided by a <b>deterministic SymPy
-      comparator</b>. No LLM judges anything. Unparseable or undecidable probe answers count as
+    <tr><td><b>Adjudication</b></td><td>Every verdict decided by a deterministic SymPy
+      comparator. No LLM judges anything. Unparseable or undecidable probe answers count as
       <code>ABSTAIN</code>, never as agreement.</td></tr>
-    <tr><td><b>Volume</b></td><td>768 generations. gemma3:4b — 384 calls, 4.4 min, median 0.68 s.
-      hermes3:8b — 384 calls, 3.4 min, median 0.51 s.</td></tr>
+    <tr><td><b>Volume</b></td><td>768 generations. gemma3:4b ran 384 calls in 4.4 min, median
+      0.68 s. hermes3:8b ran 384 calls in 3.4 min, median 0.51 s.</td></tr>
   </table></div>
 </div>
 
@@ -212,8 +212,8 @@ countermeasure, engineered a millennium and a half before information theory.</d
   <div class="psub">Discrimination = recall (corrupted claims flagged) minus false-alarm rate
   (true claims flagged). Hover any row.</div>
   <div class="legend">
-    <span><i style="background:var(--felt)"></i>Pāṭha — the protocol this project proposed</span>
-    <span><i style="background:var(--real)"></i>Self-consistency — the baseline it was supposed to beat</span>
+    <span><i style="background:var(--felt)"></i>Pāṭha (the protocol this project proposed)</span>
+    <span><i style="background:var(--real)"></i>Self-consistency (the baseline it was supposed to beat)</span>
   </div>
   <div id="mainbars"></div>
   <div class="scroll"><table id="maintable"></table></div>
@@ -236,7 +236,7 @@ whose false-alarm rate rises exactly as fast as its recall does not get better w
 It gets <em>louder</em>.</div>
 
 <figure class="panel">
-  <div class="ptitle">Where it failed — per-probe discrimination</div>
+  <div class="ptitle">Where it failed, probe by probe</div>
   <div class="psub">Recall minus false alarm, for each of the six probes, on each model. Bars to
   the left of the zero line are probes that fire <em>more</em> often on correct claims than on
   corrupted ones.</div>
@@ -255,7 +255,7 @@ It gets <em>louder</em>.</div>
   <em>negative</em> discrimination. The protocol's signal is swamped by probe difficulty, and the
   "any disagreement flags" rule aggregates six noisy detectors into one that sits exactly at
   chance.</p>
-  <p style="margin:14px 0 0">And the per-probe rankings <strong>do not transfer</strong>.
+  <p style="margin:14px 0 0">And the per-probe rankings do not transfer.
   <code>inverse</code> is the best probe on gemma3 (+25.0) and nearly the worst on hermes3 (+6.2);
   <code>numA</code> is the worst on gemma3 (−6.2) and among the best on hermes3 (+31.2). Only
   <code>forward</code> — the un-permuted probe — is stable, and it is stable precisely because it
@@ -274,7 +274,7 @@ It gets <em>louder</em>.</div>
   <div class="note warn" style="margin-bottom:0"><b>Stated because it is the difference between a
   finding and an artefact:</b> the subsets were selected <em>post hoc on the same 16 claims</em>.
   <strong>These are oracle upper bounds, not estimates.</strong> And read the hermes3 row
-  carefully — even with oracle probe selection, permutation checking beats self-consistency by
+  carefully. Even with oracle probe selection, permutation checking beats self-consistency by
   6.2 points on that model, having been selected on the test set to do so. There is no honest
   reading in which the protocol as specified works.</div>
 </div>
@@ -295,12 +295,12 @@ this page exists.</p>
       responsible for testing it</em></td></tr>
   <tr><td>Moves on</td><td>Built a matched-budget harness with a deterministic comparator so no
       model could grade itself</td></tr>
-  <tr><td>—</td><td>Ran 768 generations on two models of different scale</td></tr>
-  <tr><td>—</td><td>Found it at chance, twice, and <b>published the number rather than the
-      idea</b></td></tr>
-  <tr><td>—</td><td>Swept the subsets, found an oracle rescue, and <b>labelled the rescue as an
-      oracle</b> rather than reporting the best number found</td></tr>
-  <tr><td>—</td><td>Kept the diagnosis, which is more useful than the technique would have
+  <tr><td></td><td>Ran 768 generations on two models of different scale</td></tr>
+  <tr><td></td><td>Found it at chance, twice, and published the number rather than the
+      idea</td></tr>
+  <tr><td></td><td>Swept the subsets, found an oracle rescue, and labelled the rescue as an
+      oracle rather than reporting the best number found</td></tr>
+  <tr><td></td><td>Kept the diagnosis, which is more useful than the technique would have
       been: <em>redundancy that is structurally different is also independently
       harder</em></td></tr>
 </table>
@@ -315,26 +315,26 @@ matched-budget baseline. Self-consistency is a dull, obvious, badly-performing b
 <div class="panel">
   <div class="ptitle">What this page proves</div>
   <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
-    <li>That the <em>pāṭha</em> permutations are <strong>exactly specifiable and trivially
-    implementable</strong> — the recursions above are the traditional ones, and they run on any
+    <li>That the <em>pāṭha</em> permutations are exactly specifiable and trivially
+    implementable. The recursions above are the traditional ones, and they run on any
     token sequence you type.</li>
-    <li>That <strong>detection with locality is real and computable</strong>. Compare utterance
+    <li>That detection with locality is real and computable. Compare utterance
     multisets rather than positions and a single corruption implicates a bounded span, while the
     same corruption in a flat sequence implicates everything downstream. You can watch the span
     numbers change as you move the corruption site.</li>
-    <li>That <strong>order-bearing redundancy catches what order-free redundancy misses</strong>:
+    <li>That order-bearing redundancy catches what order-free redundancy misses:
     <em>pada-pāṭha</em> cannot see a transposition; <em>krama</em> sees it immediately. That is a
     computed result on your text, not an assertion.</li>
-    <li>That the protocol, as specified, <strong>does not work as a fidelity check on model
-    output</strong> — 768 generations, two models, exactly at chance both times.</li>
+    <li>That the protocol, as specified, does not work as a fidelity check on model
+    output. 768 generations, two models, exactly at chance both times.</li>
   </ul>
   <div class="ptitle">What this page does not prove</div>
   <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
-    <li><strong>That the historical claim is measured.</strong> That the Vedic tradition achieved
+    <li>That the historical claim is measured. That the Vedic tradition achieved
     exceptionally high fidelity over millennia is a historical and philological claim, not an
     experimental one. Nobody ran the control. The pattern definitions here are standard but the
     consolidated table is tertiary-sourced, and a Sanskritist should confirm the less common forms.</li>
-    <li><strong>That permutation checking is dead.</strong> Two open models at 4B and 8B, sixteen
+    <li>That permutation checking is dead. Two open models at 4B and 8B, sixteen
     physics formulas, one flagging rule. A frontier model, a different domain, or a probe-weighted
     aggregator instead of "any disagreement flags" might behave differently. What is refuted is
     the protocol <em>as specified</em>, which is what was specified.</li>
