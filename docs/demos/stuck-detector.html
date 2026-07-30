@@ -127,9 +127,8 @@ cannot see.</p>
     </div>
   </div>
   <div class="psub" style="margin:16px 0 0">The cost ratio is a <em>value judgement, not a
-  measurement</em>. It is set above 1 here because the thing a false interrupt destroys —
-  productive failure — has a measured effect size, and the thing a missed wheel-spin wastes is
-  time. Move it and the optimum moves with it.</div>
+  measurement</em>. It sits above 1 because what a false interrupt destroys — productive failure —
+  has a measured effect size, and what a missed wheel-spin wastes is time.</div>
 </div>
 
 <div class="two">
@@ -154,29 +153,28 @@ about how they feel, and nothing is observed that they did not choose to emit.</
   <thead><tr><th>Signal</th><th>Status</th><th>Weight</th><th>What it is</th></tr></thead>
   <tbody>
     <tr class="yes"><td>response_latency</td><td>used</td><td class="num">0.90</td>
-      <td>Seconds since the last action, standardised. Long latency alone means nothing — it is
+      <td>Seconds since the last action, standardised. Alone it means nothing — long pauses are
       what productive struggle looks like too.</td></tr>
     <tr class="yes"><td>edit_backtrack</td><td>used</td><td class="num">0.35</td>
       <td>Deletions and reversals in the window. A learner rewriting is a learner still trying.</td></tr>
     <tr class="yes"><td>repeat_error_run</td><td>used</td><td class="num">0.62</td>
-      <td>Consecutive identical error signatures. <b>The load-bearing signal.</b> Repetition
-      without variation is the definition of wheel-spinning.</td></tr>
+      <td>Consecutive identical error signatures. <b>The load-bearing signal</b> — repetition
+      without variation is what wheel-spinning is.</td></tr>
     <tr class="yes"><td>no_state_change</td><td>used</td><td class="num">0.22</td>
-      <td>Windows since the answer last changed at all, capped at ten. Distinguishes thinking from
+      <td>Windows since the answer last changed, capped at ten. Separates thinking from
       stalling.</td></tr>
     <tr class="yes"><td>help_avoidance</td><td>used</td><td class="num">0.80</td>
-      <td>Help offered and declined, or a hint opened and closed inside a second — the behaviour
-      that produced the 68% figure.</td></tr>
+      <td>Help declined, or a hint opened and closed inside a second — the behaviour behind the
+      68% figure.</td></tr>
     <tr class="no"><td>affect / frustration</td><td>refused</td><td class="num">—</td>
       <td>Emotion inference in education is <b>prohibited outright</b> under EU AI Act
-      Art. 5(1)(f) — a prohibition, not a risk tier. Not a compliance cost: nothing on this page
-      needs it.</td></tr>
+      Art. 5(1)(f) — a prohibition, not a risk tier. And nothing here needs it.</td></tr>
     <tr class="no"><td>gaze / webcam</td><td>refused</td><td class="num">—</td>
       <td>Continuous biometric capture of a child, for a signal the behavioural set already
       carries.</td></tr>
     <tr class="no"><td>keystroke dynamics as mood proxy</td><td>refused</td><td class="num">—</td>
-      <td>Emotion inference wearing a behavioural costume. The prohibition is on the inference, not
-      the sensor.</td></tr>
+      <td>Emotion inference in a behavioural costume. The prohibition is on the inference, not the
+      sensor.</td></tr>
   </tbody>
 </table>
 </div>
@@ -189,8 +187,8 @@ about how they feel, and nothing is observed that they did not choose to emit.</
 </div>
 
 <h2>3 · The trade-off, swept</h2>
-<p>The threshold is swept across its whole range and both failure modes are counted at every
-setting. There is no value at which both go to zero, and the curves cross where they cross.</p>
+<p>Every threshold setting, both failure modes counted. There is no value at which both go to zero,
+and the curves cross where they cross.</p>
 
 <div class="stage">
   <svg id="tr" viewBox="0 0 660 235" role="img"
@@ -214,11 +212,11 @@ setting. There is no value at which both go to zero, and the curves cross where 
 
 <div class="panel">
   <div class="readout" id="vsask">—</div>
-  <div class="note" style="margin:16px 0 0"><b>The 34% is measured; its application here is
-  arithmetic.</b> The rate comes from Cognitive Tutor logs — after three consecutive errors a hint
-  followed 34% of the time. Applying it to this simulated session tells you what a help button
-  would have caught <em>if these learners behaved like those learners</em>. It is an illustration
-  of a measured rate, not a measurement of this page.</div>
+  <div class="note" style="margin:16px 0 0"><b>The 34% is measured; applying it here is
+  arithmetic.</b> It comes from Cognitive Tutor logs — after three consecutive errors a hint
+  followed 34% of the time. Applied to this session it says what a help button would catch
+  <em>if these learners behaved like those learners</em>. An illustration of a measured rate, not
+  a measurement of this page.</div>
 </div>
 
 <h2>5 · Why the threshold cannot be one number</h2>
@@ -276,11 +274,10 @@ fixed before the session started.</p>
 </div>
 
 <div class="note"><b>What survives that null.</b> Invocation is part of the intervention — a tutor
-that must be summoned reaches the students who need it least, and that much is measured twice, in
-two decades, by two organisations. What is <em>not</em> established is that removing the summoning
-step produces learning rather than merely producing more help. Any design that supplies executive
-function externally has to explain why it would not land in the same place, and this one does not
-yet have that explanation.</div>
+that must be summoned reaches the students who need it least, measured twice, two decades apart, by
+two organisations. What is <em>not</em> established is that removing the summoning step produces
+learning rather than merely producing more help. This design does not yet have that
+explanation.</div>
 
 <footer>
   <a href="index.html">Demo gallery</a> · <a href="../deck.html">The deck</a> ·
@@ -441,26 +438,24 @@ function render(){
   est.forEach((v,i)=>{if(v>=th&&!prev&&found<0)found=i;prev=v>=th;});
   idx=found>=0?found:est.indexOf(Math.max(...est));
   const s=ses[idx], zl=Math.max(-1.2,Math.min(2.2,(s.lat-25)/25));
-  $('calc').innerHTML= mode==='full'
-   ? `window ${idx} of ${N}   ·   ground truth (hidden from the detector): ${
-      {F:'flow',P:'productive struggle',W:'wheel-spinning'}[s.truth]}\n\n`+
-     `  response_latency   ${s.lat.toFixed(1)} s  → z ${zl.toFixed(2)}   × ${W.lat.toFixed(2)}  = ${(W.lat*zl).toFixed(3)}\n`+
-     `  edit_backtrack     ${s.ed}              × ${W.ed.toFixed(2)}  = ${(W.ed*s.ed).toFixed(3)}\n`+
-     `  repeat_error_run   ${s.rep}              × ${W.rep.toFixed(2)}  = ${(W.rep*s.rep).toFixed(3)}\n`+
-     `  no_state_change    ${s.nos}              × ${W.nos.toFixed(2)}  = ${(W.nos*s.nos).toFixed(3)}\n`+
-     `  help_avoidance     ${s.avo}              × ${W.avo.toFixed(2)}  = ${(W.avo*s.avo).toFixed(3)}\n`+
-     `  intercept                             ${W.b.toFixed(2)}\n\n`+
-     `  logistic  → ${score(s,mode).toFixed(4)}      smoothed (α ${ALPHA}) → <b>${est[idx].toFixed(4)}</b>\n`+
-     `  threshold   ${th.toFixed(2)}            ${est[idx]>=th?'<b>fires</b>':'silent'}\n\n`+
-     `  affect inferred: none.  gaze: none.  biometrics: none.`
-   : `window ${idx} of ${N}   ·   ground truth (hidden from the detector): ${
-      {F:'flow',P:'productive struggle',W:'wheel-spinning'}[s.truth]}\n\n`+
-     `  response_latency   ${s.lat.toFixed(1)} s  → z ${zl.toFixed(2)}   × 1.80  = ${(1.8*zl).toFixed(3)}\n`+
-     `  intercept                             -1.60\n\n`+
-     `  logistic  → ${score(s,mode).toFixed(4)}      smoothed (α ${ALPHA}) → <b>${est[idx].toFixed(4)}</b>\n\n`+
-     `  Latency alone cannot tell the two states apart here: productive struggle carries the\n`+
-     `  longer pauses, so a latency-only detector fires preferentially on the learner who was\n`+
-     `  getting there. Compare the two failure-mode counters above with the full set.`;
+  const row=(n,v,wt)=>`  ${n.padEnd(19)}${String(v).padEnd(9)} × ${wt.toFixed(2)}  = ${(wt*(+v)).toFixed(3)}\n`;
+  const full=mode==='full';
+  $('calc').innerHTML=
+   `window ${idx} of ${N}   ·   ground truth (hidden from the detector): ${
+     {F:'flow',P:'productive struggle',W:'wheel-spinning'}[s.truth]}\n\n`+
+   `  response_latency   ${s.lat.toFixed(0)} s → z ${zl.toFixed(2)}  × ${(full?W.lat:1.8).toFixed(2)}  = ${((full?W.lat:1.8)*zl).toFixed(3)}\n`+
+   (full
+     ? row('edit_backtrack',s.ed,W.ed)+row('repeat_error_run',s.rep,W.rep)
+       +row('no_state_change',s.nos,W.nos)+row('help_avoidance',s.avo,W.avo)
+       +`  intercept                     ${W.b.toFixed(2)}\n`
+     : `  intercept                     -1.60\n`)+
+   `\n  logistic  → ${score(s,mode).toFixed(4)}   smoothed (α ${ALPHA}) → <b>${est[idx].toFixed(4)}</b>`+
+   `   threshold ${th.toFixed(2)} → ${est[idx]>=th?'<b>fires</b>':'silent'}\n\n`+
+   (full
+    ? `  affect inferred: none.  gaze: none.  biometrics: none.`
+    : `  Latency alone cannot separate the two states here: productive struggle carries the longer\n`+
+      `  pauses, so a latency-only detector fires on the learner who was getting there. Compare the\n`+
+      `  two failure-mode counters above against the full set.`);
 
   $('opt').innerHTML=
    `cost ratio        : one false interrupt = ${ratio.toFixed(1)} missed wheel-spin windows\n`+

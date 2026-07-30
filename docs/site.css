@@ -2,9 +2,9 @@
    Learning in the New Frontier AI World — the design system.
 
    One file. Every page on this site links it: the dashboard,
-   the paper, the demo gallery and all thirteen demos. If a
-   token or a component is used on more than one page it lives
-   here, so the three surfaces cannot drift apart again.
+   the paper, the demo gallery and every demo. If a token or a
+   component is used on more than one page it lives here, so
+   the surfaces cannot drift apart again.
 
    Palette is CVD-validated (protan ΔE 16.7 light / 18.3 dark).
    --felt and --real are the only categorical hues. --good,
@@ -105,12 +105,11 @@ footer a:hover{color:var(--felt)}
 .chips{display:flex;gap:var(--s2);flex-wrap:wrap;margin-top:var(--s5)}
 .chip{font:600 10.5px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;
   padding:6px 9px;border-radius:6px;border:1px solid var(--line-2);
-  color:var(--ink-3);max-width:100%}
-/* A bare .chip carries a sentence of provenance and must wrap; the labelled
-   variants carry single tokens (MEASURED-RCT) that must not break. Three demo
-   pages overflowed at 390px because nowrap was the default for both. */
-.chip{white-space:normal}
-.chip.m,.chip.d,.chip.n{white-space:nowrap}
+  color:var(--ink-3);max-width:100%;white-space:normal}
+/* Chips wrap. They were specified for single tokens (MEASURED-RCT), for which
+   nowrap was safe, but demo pages put a sentence of provenance in one and three
+   of them overflowed at 390px. A token is far narrower than its container and
+   will not break; a sentence must. */
 .chip.m{color:var(--real);border-color:color-mix(in oklab,var(--real) 42%,transparent)}
 .chip.d{color:var(--felt);border-color:color-mix(in oklab,var(--felt) 42%,transparent)}
 .chip.n{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 42%,transparent)}

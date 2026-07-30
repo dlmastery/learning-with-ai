@@ -16,7 +16,7 @@
 .role .rem{font-size:12.8px;line-height:1.5;color:var(--ink-3);margin-bottom:10px}
 .meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:11px}
 .meta span{font:600 10px/1 var(--mono);padding:4px 6px;border-radius:5px;
-  border:1px solid var(--line-2);color:var(--ink-3);white-space:nowrap}
+  border:1px solid var(--line-2);color:var(--ink-3);max-width:100%}
 .meta span.g{color:var(--real);border-color:color-mix(in oklab,var(--real) 40%,transparent)}
 .meta span.au{color:var(--felt);border-color:color-mix(in oklab,var(--felt) 40%,transparent)}
 .cl{border-top:1px solid var(--line);padding:8px 0 0;margin-top:8px;font-size:13.4px;
@@ -30,7 +30,6 @@
 .tier .tr{font-size:12.8px;line-height:1.5;color:var(--ink-3);margin-top:3px}
 .tier .mv{display:flex;gap:5px}
 .tier .mv button{padding:5px 9px;font-size:12px;line-height:1}
-.tier.dead{opacity:.55}
 .conf{border:1px solid var(--line);border-radius:11px;background:var(--surface);
   padding:16px 18px;margin:12px 0}
 .conf .ct{font:650 14.5px/1.35 var(--sans);color:var(--ink);margin-bottom:3px}
@@ -97,16 +96,15 @@
     <div class="msg learner"><span class="who">Learner · 14:06</span>1/2 + 1/3 = 2/5. I got this
     wrong last week too. Can you just give me the rule? I have a test on Friday.</div>
   </div>
-  <div class="psub" style="margin:0">One turn. Five claim types are latent in it — a
-  <em>fact</em>, a <em>diagnosis</em>, a <em>history</em>, a <em>help policy</em> and a
-  <em>next action</em> — and no single role has authority over more than one of them.</div>
+  <div class="psub" style="margin:0">Five claim types are latent in it — a <em>fact</em>, a
+  <em>diagnosis</em>, a <em>history</em>, a <em>help policy</em>, a <em>next action</em> — and no
+  role has authority over more than one.</div>
 </div>
 
 <h2>2 · The active set</h2>
-<p>Three to five roles per learner-hour. The economics permit about forty; the orchestration
-evidence permits three to five, and this turn activates five. Each opinion below is a
-<em>typed claim</em>, not a paragraph: a claim type, an assertion, and the grounding that produced
-it.</p>
+<p>Three to five roles per learner-hour: the economics permit about forty, the orchestration evidence
+permits three to five. Each opinion below is a <em>typed claim</em> rather than a paragraph — a
+type, an assertion, and the grounding that produced it.</p>
 
 <div class="row">
   <label style="margin:0 8px 0 0">Crew</label>
@@ -122,30 +120,30 @@ it.</p>
 <div class="note" id="crewNote"></div>
 
 <h2>3 · The ladder</h2>
-<p>Tried in order. The first tier that <em>can</em> resolve a conflict does, and the tiers below it
-are never consulted. Move a tier and everything below recomputes.</p>
+<p>Tried in order. The first tier that <em>can</em> resolve a conflict does; the tiers below it are
+never consulted. Move one and everything recomputes.</p>
 
 <div class="ladder" id="ladder"></div>
 <div class="row"><button id="rst">Restore the published order</button>
   <span class="sub" style="margin:0 0 0 6px" id="lnote"></span></div>
 
 <h2>4 · Arbitration</h2>
-<p class="sub">One block per claim type. Conflicts are detected by comparing assertions, not by
-asking anyone. The trace shows every tier that was tried and why it could or could not resolve.</p>
+<p class="sub">One block per claim type. Conflicts are detected by comparing assertions, not by asking
+anyone. The trace shows every tier tried and why it could or could not resolve.</p>
 
 <div id="arb"></div>
 
 <div class="note warn"><b>Watch the seam when you lift T2.</b> With the judge above scope
 precedence, the village publishes <em>“looks like a careless mistake”</em> in the same breath as
 <em>“this is the fourth time in sixteen days”</em> — a sentence pair no role would have written and
-that only an aggregator can produce. Three roles agreeing does not make them independent; they
-agreed because the wrong reading is the <em>easy</em> reading, which is what a shared prior is.
-The correct answer is still in the dissent log, which is the whole reason the log exists.</div>
+that only an aggregator can produce. Three roles agreeing does not make them independent — they
+agreed because the wrong reading is the <em>easy</em> one, which is what a shared prior is. The
+correct answer is still in the dissent log, which is why the log exists.</div>
 
 <h2>5 · What the village says</h2>
 <div class="panel">
   <div class="ptitle">The turn it emits</div>
-  <div class="psub">Assembled from the winning claim of each type. Sentences are templated and
+  <div class="psub">Assembled from the winning claim of each type. The sentences are templated and
   labelled scripted; <em>which</em> sentence appears is entirely computed.</div>
   <div class="chat" id="say"></div>
   <div class="readout" id="cost" style="font:12.6px/1.7 var(--mono);color:var(--ink-3);white-space:pre-wrap"></div>
@@ -153,9 +151,9 @@ The correct answer is still in the dissent log, which is the whole reason the lo
 
 <div class="panel sunken">
   <div class="ptitle">The dissent log</div>
-  <div class="psub">Append-only, attributed, with grounding attached. A correct minority answer that
-  is voted away is unrecoverable; the same answer appended to the record is recoverable — by a
-  later probe, a human reviewer, or an offline audit.</div>
+  <div class="psub">Append-only, attributed, grounding attached. A correct minority answer that is
+  voted away is unrecoverable; appended to the record it is recoverable — by a later probe, a human
+  reviewer, or an offline audit.</div>
   <div class="readout" id="dlog" style="font:12.6px/1.7 var(--mono);color:var(--ink-2);white-space:pre-wrap"></div>
 </div>
 
@@ -180,42 +178,39 @@ The correct answer is still in the dissent log, which is the whole reason the lo
   </tbody>
 </table>
 </div>
-<p class="sub">And model diversity is not a free fix either: Self-MoA found that aggregating a
-<em>single</em> top model beats mixing different models — +6.6% on AlpacaEval 2.0 — because mixing
-lowers average quality. The reconcilable reading, published here as unresolved: heterogeneity helps
-when the mechanism is <strong>adversarial</strong> and hurts when it is <strong>aggregative</strong>.
-Which is exactly the rule the ladder encodes — it permits debate and forbids synthesis.</p>
+<p class="sub">Model diversity is not a free fix either: Self-MoA found aggregating a
+<em>single</em> top model beats mixing models — +6.6% on AlpacaEval 2.0 — because mixing lowers
+average quality. The reconcilable reading, published here as unresolved: heterogeneity helps when
+the mechanism is <strong>adversarial</strong> and hurts when it is <strong>aggregative</strong> —
+which is the rule the ladder encodes. It permits debate and forbids synthesis.</p>
 
 <h2>What this proves / what it does not</h2>
 
 <div class="callout">
   <div class="k">Demonstrated, in code, on this page</div>
-  <p><strong>Arbitration is a decidable procedure, not a personality.</strong> Conflict detection
-  is set comparison over typed assertions. Tier availability is a predicate over role properties —
-  T0 asks whether any claimant is executable, T2 asks whether a judge exists outside every
-  proposer's model family, T3 asks whether the type is one a learner may adjudicate at all. Reorder
-  the ladder and the published diagnosis changes, which means the ladder is load-bearing rather than
-  decorative.</p>
+  <p><strong>Arbitration is a decidable procedure, not a personality.</strong> Conflict detection is
+  set comparison over typed assertions. Tier availability is a predicate over role properties — T0
+  asks whether any claimant is executable, T2 whether a judge exists outside every proposer's model
+  family, T3 whether the type is one a learner may adjudicate at all. Reorder the ladder and the
+  published diagnosis changes, so the ladder is load-bearing rather than decorative.</p>
   <p><strong>And dissent survives.</strong> Every losing claim is in the log with its author and its
   grounding. Nothing was averaged, and the minority answer — which on the diagnosis is the correct
-  one — remains recoverable no matter which tier won.</p>
+  one — stays recoverable no matter which tier won.</p>
 </div>
 
 <div class="callout" style="border-left-color:var(--bad)">
   <div class="k" style="color:var(--bad)">Conditions of use</div>
   <p><strong>The opinions are scripted, and that is where the real risk lives.</strong> Whether five
-  live agents would produce claims this cleanly typed — one type each, one assertion each, no
-  hedging, no drift — is untested and Becker et al. suggests they would not. The arbitration logic
-  is sound; the inputs it arbitrates over are the hard part, and this page hands them to it.</p>
-  <p><strong>Heterogeneity is asserted here, not achieved.</strong> The page labels the roles with
-  different families and different groundings, and only two of those labels are real: the
-  Simulator's grounding is an executable check that actually runs, and the Archivist's is a stored
-  record. The other three are prompts wearing different names, which is precisely the failure mode
-  the benchmarks measured.</p>
-  <p><strong>Nobody has measured whether this beats one good agent.</strong> Not once. The village
-  is a design response to three negative results, not a result of its own, and the honest position
-  is that a single well-prompted agent with a calculator attached is the control condition nobody
-  has run.</p>
+  live agents would emit claims this cleanly typed — one type each, one assertion each, no hedging,
+  no drift — is untested, and Becker et al. suggests they would not. The arbitration logic is sound;
+  the inputs are the hard part, and this page hands them to it.</p>
+  <p><strong>Heterogeneity is asserted here, not achieved.</strong> Only two of the grounding labels
+  are real: the Simulator's executable check actually runs, and the Archivist's is a stored record.
+  The other three are prompts wearing different names — precisely the failure mode the benchmarks
+  measured.</p>
+  <p><strong>Nobody has measured whether this beats one good agent.</strong> Not once. The village is
+  a design response to three negative results, not a result of its own, and a single well-prompted
+  agent with a calculator attached is the control condition nobody has run.</p>
 </div>
 
 <footer>

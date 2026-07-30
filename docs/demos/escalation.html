@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Referral, Not the Confidence — Demo 19</title>
+<meta name="description" content="A safeguarding routing path executed end to end: what an AI may draft, what it must never author, who receives it, and when. Plus the two dashboards built from the same cohort — one passes on confidence, one fails on referrals." />
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="demo.css" />
+<script src="../theme.js"></script>
+<style>
+.gl{stroke:var(--line);stroke-width:1}
+.ax{font:600 10px var(--sans);letter-spacing:.11em;fill:var(--ink-3)}
+.vl{font:600 11px var(--mono);fill:var(--ink-3)}
+.sl{font:12.5px var(--sans);fill:var(--ink-2)}
+input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
+.ctls{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px 22px;margin:6px 0 10px}
+.ctl label{display:flex;justify-content:space-between;gap:8px;align-items:baseline;text-transform:none;
+  letter-spacing:0;font:600 12px/1.4 var(--sans);color:var(--ink-2);margin-bottom:5px}
+.ctl label .v{font:600 12px var(--mono);color:var(--felt)}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:11px;margin:16px 0}
+.stat div{background:var(--sunken);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+.stat .k{font:600 10px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+.stat .n{font:400 22px/1.1 var(--mono);color:var(--ink)}
+.stat .n.real{color:var(--real)} .stat .n.felt{color:var(--felt)} .stat .n.bad{color:var(--bad)}
+.stat .s{font:12px/1.4 var(--sans);color:var(--ink-3);margin-top:6px}
+.scen{display:grid;gap:9px;margin:16px 0}
+@media(min-width:760px){.scen{grid-template-columns:1fr 1fr}}
+.scen button{text-align:left;padding:13px 15px;font:13.6px/1.46 var(--sans);border-radius:10px}
+.scen button .nm{display:block;font-weight:650;color:var(--ink);margin-bottom:4px}
+.scen button.sel{border-color:var(--real);box-shadow:inset 0 0 0 1px var(--real)}
+.scen button.sel .nm{color:var(--real)}
+.layer{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:16px 0;
+  border-bottom:1px solid var(--line)}
+.layer:last-child{border-bottom:0}
+.layer .id{font:600 11px/1.5 var(--mono);color:var(--ink-3);white-space:nowrap}
+.layer h4{font:650 14.5px/1.4 var(--sans);margin:0 0 6px;color:var(--ink)}
+.layer p{font-size:13.8px;line-height:1.58;margin:0 0 8px;color:var(--ink-2);max-width:none}
+.layer p:last-child{margin-bottom:0}
+.layer .no{color:var(--bad)}
+.turn{background:var(--sunken);border:1px solid var(--line);border-left:2px solid var(--real);
+  border-radius:10px;padding:14px 16px;margin:10px 0;font:14.2px/1.6 var(--sans);color:var(--ink-2)}
+.turn b{color:var(--ink)}
+.turn .tag{display:block;font:600 10px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--real);margin-bottom:9px}
+.turn.forbid{border-left-color:var(--bad)} .turn.forbid .tag{color:var(--bad)}
+.chain{display:grid;gap:7px;margin:12px 0}
+.chain div{display:grid;grid-template-columns:66px 1fr auto;gap:12px;align-items:baseline;
+  background:var(--sunken);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:13.4px}
+.chain .t{font:600 12px/1.4 var(--mono);color:var(--real)}
+.dash{display:grid;gap:14px;margin:18px 0}
+@media(min-width:760px){.dash{grid-template-columns:1fr 1fr}}
+.dcard{border:1px solid var(--line);border-radius:12px;padding:19px 20px;background:var(--surface)}
+.dcard .dh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:4px}
+.dcard .dt{font:650 15px/1.35 var(--sans);color:var(--ink)}
+.dcard .ds{font-size:12.5px;color:var(--ink-3);margin-bottom:14px}
+.dcard .big{font:400 40px/1.05 var(--mono);margin:6px 0 4px}
+.dcard .big.felt{color:var(--felt)} .dcard .big.real{color:var(--real)}
+.dcard ul{margin:12px 0 0 18px;font-size:13.4px;line-height:1.6;color:var(--ink-2)}
+.five{counter-reset:q;margin:16px 0}
+.five div{display:grid;grid-template-columns:auto 1fr;gap:13px;padding:13px 0;
+  border-bottom:1px solid var(--line);font-size:14px}
+.five div:last-child{border-bottom:0}
+.five .q{font:600 12px/1.55 var(--mono);color:var(--ink-3)}
+.five .a{color:var(--ink-2);line-height:1.55}
+.five .a b{color:var(--ink)}
+.five .a.miss{color:var(--bad)}
+
+/* nothing may widen the page; wide content scrolls inside its own box */
+*{min-width:0}
+table{display:block;overflow-x:auto;max-width:100%}
+pre,.readout,.mono-block{overflow-x:auto;max-width:100%}
+svg{max-width:100%}
+input[type=range]{max-width:100%}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../paper.html">The paper</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 19 · The village</div>
+  <h1>The referral, not the confidence</h1>
+  <p class="lede">A concern surfaces mid-session. What happens next is the highest-stakes path in
+  any learning system, and it is almost entirely a routing problem: the duty is
+  <strong>immediate and personal</strong>, it goes <strong>around</strong> the parent, and the
+  usual person being unavailable <strong>is not a reason to delay</strong>. Below, the path runs.
+  Then the measurement that decides whether any of it worked — and it is not how ready anyone
+  feels.</p>
+  <div class="chips">
+    <span class="chip m">Routing executed, triage computed</span>
+    <span class="chip m">Both dashboards from one simulated cohort</span>
+    <span class="chip n">Built around a null result</span>
+  </div>
+</header>
+
+<section class="orient">
+  <div class="o"><b>What this is</b><p>A safeguarding decision path with the routing made
+  explicit — recipient, timing, fallback, record — plus the triage arithmetic underneath it and
+  the two dashboards that the same term of data can produce.</p></div>
+  <div class="o"><b>Why it matters</b><p>Recognition is not the bottleneck. NIS-4 found that
+  <b>at least 80% of school-recognised maltreatment never reached investigation</b>, while child
+  protective services would have investigated <b>72%</b> of it. Schools were seeing it. The
+  referral was not being made. Every safeguarding feature is aimed at the wrong half of that
+  sentence.</p></div>
+  <div class="o"><b>How to use it</b><p>Do not start with the routing. Start at section 4, move
+  the training slider, and watch a dashboard go entirely green while the only number that matters
+  does not move at all. Then come back and read what the path is supposed to
+  produce.</p></div>
+</section>
+
+<h2>1 · A concern surfaces</h2>
+<p>Four of these are things a tutor will see. One of them is the case that makes recall-tuning
+expensive, and it is included for that reason.</p>
+
+<div class="scen" id="scen"></div>
+
+<div class="turn" id="learner"><span class="tag">Learner turn</span><span id="lt"></span></div>
+
+<h2>2 · The path, executed</h2>
+<p>Six layers. The design principle underneath all of them is one line: <strong>detect broadly,
+act conservatively, route to a human always, resolve automatically never.</strong></p>
+
+<div class="row">
+  <button id="tglrecip" class="on">A named human recipient exists</button>
+  <button id="tglfall" class="on">A documented fallback is contracted</button>
+</div>
+
+<div class="panel" id="path"></div>
+
+<h2>3 · Detect broadly — and what that costs</h2>
+<p>Triage runs on every learner turn and is tuned for <em>recall</em>, not precision, because the
+dominant failure of language models in crisis handling is omission: a measured
+<strong>13.2%</strong> omission rate, concentrated in crisis and suicidal-ideation prompts. A
+false positive costs a human five minutes. A false negative costs a child. Those are not
+commensurable, so this page will not combine them into one score.</p>
+
+<div class="panel">
+  <div class="ptitle">A term of sessions, at a chosen threshold</div>
+  <div class="psub">2,000 sessions a week. Signals are drawn from two normal distributions
+  separated by d′ = 3.0, which is roughly the separation implied by the F1 ≈ 0.88–0.91 reported
+  for ideation detection and risk assessment on real hotline transcripts.</div>
+  <div class="ctls">
+    <div class="ctl"><label for="thr">Triage threshold <span class="v" id="thrv"></span></label>
+      <input type="range" id="thr" min="-5" max="40" step="1" value="12" /></div>
+    <div class="ctl"><label for="base">Base rate of genuine concern <span class="v" id="basev"></span></label>
+      <input type="range" id="base" min="2" max="40" step="1" value="15" /></div>
+  </div>
+  <div class="stat" id="tri"></div>
+  <div id="roc"></div>
+  <div class="note" style="margin-bottom:0"><b>Watch the two F1 tiles.</b> The same detector, at
+  the same threshold, scores near the published 0.88–0.91 on a corpus where half the cases are
+  positive and falls through the floor at the prevalence a real deployment sees. Nothing about the
+  detector changed; the base rate did. That is why <b>F1 ≈ 0.88 is adequate for routing and
+  inadequate for deciding</b>, and why the human recipient in Layer 4 is not optional.<br><br>
+  And the benchmark cuts both ways. Clinician review of more than 20,000 real conversations with a
+  purpose-built system found <em>zero</em> cases of suicide risk that failed to receive crisis
+  resources, while adversarial benchmarks predicted far worse. Benchmarks are not deployment
+  evidence in either direction. Ecological audit is.</div>
+</div>
+
+<h2>4 · The same term, two dashboards</h2>
+<p>A randomised trial of gatekeeper training moved <strong>confidence by ES 1.22</strong> and
+identification behaviour <strong>by nothing</strong>. Both dashboards below are computed from one
+simulated cohort of school staff under the training dose you set. Neither is fabricated to make a
+point; the left one is what happens when you measure the thing that moves.</p>
+
+<div class="ctl" style="margin:16px 0 4px">
+  <label for="dose">Training dose <span class="v" style="font:600 12px var(--mono);color:var(--felt)" id="dosev"></span></label>
+  <input type="range" id="dose" min="0" max="100" step="5" value="100" />
+</div>
+
+<div class="dash" id="dash"></div>
+
+<figure class="panel">
+  <div class="ptitle">What the training moved</div>
+  <div class="psub">Standardised effect of the same intervention on the two outcomes, at the dose
+  above. The dashed line at 1.22 is the trial's measured confidence effect.</div>
+  <div id="es"></div>
+</figure>
+
+<div class="note warn"><b>Large movement in how prepared people feel; zero movement in what they
+do.</b> That pattern is the felt-learning trap wearing a safeguarding costume, and it is the
+reason a safeguarding feature must be measured on <b>referrals made</b> — never on staff
+confidence, never on completion of a module, never on a self-reported readiness score. If your
+dashboard would look identical whether or not a single additional child was referred, it is not a
+safeguarding dashboard.</div>
+
+<h2>5 · Who owns which artefact</h2>
+<p>The question a builder needs answered is not "can AI help" but <strong>who signs</strong>. The
+rule the full table produces is short: <em>an AI may draft anything and may author nothing that a
+signature attaches to.</em></p>
+
+<div class="scroll">
+<table>
+<thead><tr><th>Artefact</th><th>AI may draft</th><th>AI may author</th><th>Who signs</th></tr></thead>
+<tbody>
+<tr><td>Escalation record — timestamp, verbatim transcript, triage category</td><td><span class="pill y">yes</span></td><td><span class="pill n">no</span></td><td>the system logs; the recipient signs the decision</td></tr>
+<tr><td>The in-session turn after a disclosure</td><td><span class="pill y">yes</span></td><td><span class="pill c">it speaks it</span></td><td>the policy author, in advance</td></tr>
+<tr><td>Summary of concern for the safeguarding lead</td><td><span class="pill y">yes</span></td><td><span class="pill n">no</span></td><td>designated lead or deputy</td></tr>
+<tr><td>The statutory referral itself</td><td><span class="pill n">no</span></td><td><span class="pill n">no</span></td><td>designated lead or deputy</td></tr>
+<tr><td>A judgement that the concern is low risk</td><td><span class="pill n">no</span></td><td><span class="pill n">no</span></td><td>nobody — the system never closes a case</td></tr>
+<tr><td>Notification to the parent</td><td><span class="pill n">no</span></td><td><span class="pill n">no</span></td><td>the statutory process, which routes around the parent by design</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>6 · The five-line test</h2>
+<p class="sub">A safeguarding architecture is real if a stranger can answer these without reading
+any code. The answers below come from the toggles in section 2.</p>
+<div class="five" id="five"></div>
+
+<h2>7 · What this proves, and what it must never be mistaken for</h2>
+
+<div class="panel">
+  <div class="ptitle">What the page establishes</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>The routing is fully specifiable, and specifying it is most of the work.</strong>
+    Recipient, timing, fallback, record contents, the four things the turn must do and the five it
+    must not — none of that needs a model. It needs a decision that someone wrote down before a
+    child said anything.</li>
+    <li><strong>Unavailability is designed out rather than apologised for.</strong> Turn off the
+    named recipient and the page does not degrade gracefully; it refuses to ship. Turn off the
+    fallback and the chain stalls visibly. That is the correct behaviour: guidance is explicit
+    that the lead being unavailable "should not delay appropriate action being taken."</li>
+    <li><strong>Recall-tuning has an arithmetic price, and the page names it in hours.</strong>
+    The triage panel converts a threshold into children missed per week and reviewer-hours per
+    week, in the two units the decision is actually made in. It also shows what happens to a
+    published F1 when it meets a real base rate, which settles an argument usually conducted on
+    vibes.</li>
+    <li><strong>A confidence dashboard and a referral dashboard can be built from the same
+    term.</strong> One goes green at every dose. The other does not move at all. If a product team
+    is allowed to choose which to display, the choice has already been made for them by which one
+    is easier to move.</li>
+  </ul>
+  <div class="ptitle">What it must never be mistaken for</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>This is not a safeguarding policy and cannot be used as one.</strong> It is a
+    routing demonstration built from published statutory guidance for schools in one jurisdiction.
+    Duties, timeframes and who counts as a mandated reporter vary by jurisdiction, and the survey
+    this comes from explicitly declines to assert the US position because it could not verify it
+    against a primary source. Get counsel. Do not get it from a demo page.</li>
+    <li><strong>The cohort in section 4 is simulated, and only the effect sizes are real.</strong>
+    The confidence arm is drawn to reproduce the trial's measured ES 1.22 and the behaviour arm to
+    reproduce its null. What the simulation shows is the <em>shape</em> of the reporting problem —
+    that two honest dashboards can disagree completely — not a new measurement of anything.</li>
+    <li><strong>Detection quality is a routing input, never a decision.</strong> F1 ≈ 0.88 means
+    roughly one in eight is wrong, and the page deliberately offers no way to let the system act
+    on its own confidence. Every escalation terminates in a human decision that is recorded, and
+    there is no auto-resolve anywhere in the path.</li>
+    <li><strong>And the metric discipline is the part to carry away.</strong> Track omission
+    rate as the primary safety indicator, disaggregated by language, dialect and reading level —
+    guidance names language barriers specifically as a reason children fail to disclose, and a
+    triage classifier trained on fluent standard-English disclosure will under-detect exactly
+    those children. Referrals made is the outcome. Confidence and completion are not proxies for
+    it; they are the two numbers that have been measured moving while it stayed still.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../deck.html">The deck</a> ·
+  <a href="../paper.html">The paper</a>
+  <br /><br />Every figure traceable in the survey.
+</footer>
+
+</div>
+<script>
+/* ══ chart IR ══════════════════════════════════════════════════════════ */
+const NS='http://www.w3.org/2000/svg';
+const mk=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const el=id=>document.getElementById(id);
+const HUE=s=>s==='real'?'var(--real)':s==='felt'?'var(--felt)':'var(--ink-3)';
+
+function renderPlot(host,spec){
+  const narrow=innerWidth<620, W=narrow?380:720, H=narrow?230:280, L=46, R=14, T=14, B=44;
+  const px=v=>L+(v-spec.x.min)/(spec.x.max-spec.x.min)*(W-L-R);
+  const py=v=>T+(1-(v-spec.y.min)/(spec.y.max-spec.y.min))*(H-T-B);
+  const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
+  for(let i=0;i<=4;i++){const v=spec.y.min+(spec.y.max-spec.y.min)*i/4,yy=py(v);
+    svg.appendChild(mk('line',{x1:L,y1:yy,x2:W-R,y2:yy,class:'gl'}));
+    const t=mk('text',{x:L-8,y:yy+4,'text-anchor':'end',class:'vl'});
+    t.textContent=spec.y.fmt?spec.y.fmt(v):v.toFixed(1); svg.appendChild(t);}
+  (spec.x.ticks||[]).forEach(tk=>{const t=mk('text',{x:px(tk.at),y:H-24,'text-anchor':'middle',class:'vl'});
+    t.textContent=tk.label; svg.appendChild(t);});
+  const xl=mk('text',{x:(L+W-R)/2,y:H-6,'text-anchor':'middle',class:'ax'});
+  xl.textContent=spec.x.label; svg.appendChild(xl);
+  if(spec.yLabel){const t=mk('text',{x:L-8,y:T-3,'text-anchor':'end',class:'ax'});
+    t.textContent=spec.yLabel; svg.appendChild(t);}
+  (spec.rules||[]).forEach(r=>{
+    svg.appendChild(mk('line',{x1:L,y1:py(r.at),x2:W-R,y2:py(r.at),
+      stroke:'var(--ink-3)','stroke-width':1.4,'stroke-dasharray':'6 4'}));
+    const t=mk('text',{x:W-R,y:py(r.at)-6,'text-anchor':'end',class:'ax'});
+    t.textContent=r.label; svg.appendChild(t);});
+  spec.series.forEach(s=>{
+    const col=HUE(s.series);
+    const d=s.pts.map((p,i)=>(i?'L':'M')+px(p[0]).toFixed(2)+' '+py(p[1]).toFixed(2)).join(' ');
+    svg.appendChild(mk('path',{d,fill:'none',stroke:col,'stroke-width':2.3}));
+    if(s.mark!=null) svg.appendChild(mk('circle',{cx:px(s.mark[0]),cy:py(s.mark[1]),r:5,
+      fill:col,stroke:'var(--surface)','stroke-width':2}));
+  });
+  host.replaceChildren(svg);
+}
+/* signed horizontal bars for effect sizes */
+function renderES(host,spec){
+  const narrow=innerWidth<620, W=narrow?380:720, RH=narrow?52:46, T=10, B=32;
+  const L=narrow?2:200, R=narrow?52:64, H=spec.rows.length*RH+T+B;
+  const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
+  const track=W-L-R, px=v=>L+(v-spec.x.min)/(spec.x.max-spec.x.min)*track;
+  for(let i=0;i<=4;i++){const v=spec.x.min+(spec.x.max-spec.x.min)*i/4;
+    svg.appendChild(mk('line',{x1:px(v),y1:T,x2:px(v),y2:H-B,class:'gl'}));
+    const t=mk('text',{x:px(v),y:H-B+16,'text-anchor':'middle',class:'vl'});
+    t.textContent=v.toFixed(1); svg.appendChild(t);}
+  if(spec.rule!=null){svg.appendChild(mk('line',{x1:px(spec.rule),y1:T,x2:px(spec.rule),y2:H-B,
+    stroke:'var(--ink-3)','stroke-width':1.4,'stroke-dasharray':'5 4'}));
+    const t=mk('text',{x:px(spec.rule),y:T+11,'text-anchor':'middle',class:'ax'});
+    t.textContent=spec.ruleLabel; svg.appendChild(t);}
+  spec.rows.forEach((r,i)=>{
+    const y=T+i*RH+(narrow?22:14), h=18;
+    const lb=mk('text',narrow?{x:L,y:T+i*RH+14,class:'sl'}:{x:L-12,y:y+14,'text-anchor':'end',class:'sl'});
+    lb.textContent=r.label; svg.appendChild(lb);
+    const z=px(0), w=Math.max(2,Math.abs(px(r.value)-z));
+    svg.appendChild(mk('rect',{x:Math.min(z,px(r.value)),y,width:w,height:h,rx:4,fill:HUE(r.series)}));
+    const t=mk('text',{x:Math.max(z,px(r.value))+7,y:y+14,class:'vl',style:`fill:${HUE(r.series)}`});
+    t.textContent=r.value.toFixed(2); svg.appendChild(t);});
+  host.replaceChildren(svg);
+}
+
+/* ══ maths ═════════════════════════════════════════════════════════════ */
+/* Abramowitz & Stegun 7.1.26 — five terms, |error| < 1.5e-7 */
+function erf(x){const s=x<0?-1:1; x=Math.abs(x);
+  const t=1/(1+0.3275911*x);
+  const y=((((1.061405429*t-1.453152027)*t+1.421413741)*t-0.284496736)*t+0.254829592)*t;
+  return s*(1-y*Math.exp(-x*x));}
+const Phi=z=>0.5*(1+erf(z/Math.SQRT2));
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;
+  let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;
+  return((t^t>>>14)>>>0)/4294967296;};}
+const gauss=r=>{let u=0,v=0;while(!u)u=r();while(!v)v=r();
+  return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);};
+const mean=a=>a.reduce((s,x)=>s+x,0)/(a.length||1);
+const sd=a=>{const m=mean(a);return Math.sqrt(a.reduce((s,x)=>s+(x-m)**2,0)/(a.length-1||1));};
+
+/* ══ 1 · scenarios ═════════════════════════════════════════════════════ */
+const SCEN=[
+ {id:'disc', nm:'A disclosure of harm at home',
+  ds:'Said plainly, mid-way through a fractions problem.',
+  turn:'can i ask you something. my mums boyfriend hits me when she is at work. i havent told anyone. please dont say anything',
+  cat:'Disclosure of physical abuse', danger:false, route:'statutory',
+  why:'Explicit, first-person, names a perpetrator and a pattern. This is the case guidance is written for.'},
+ {id:'self', nm:'Expressed intent to self-harm',
+  ds:'No disclosure of abuse. A different statutory path with the same urgency.',
+  turn:'i cant do this any more. ive been thinking about hurting myself tonight when everyone is asleep',
+  cat:'Self-harm — stated intent, stated timeframe', danger:true, route:'statutory',
+  why:'Staff must report a child self-harming or expressing intent to do so. A stated timeframe moves this to immediate danger.'},
+ {id:'obliq', nm:'Oblique, second-language phrasing',
+  ds:'The case a classifier trained on fluent standard-English disclosure misses.',
+  turn:'in my house is not good. my uncle come at night and i am scared always. i cannot sleep. is it ok i say this',
+  cat:'Indicators of harm — low-fluency disclosure', danger:false, route:'statutory',
+  why:'Guidance names language barriers specifically as a reason children fail to disclose. Detection recall must be disaggregated by language or this child is invisible.'},
+ {id:'patt', nm:'A pattern across sessions',
+  ds:'No single turn would trigger anything. The change is in the trajectory.',
+  turn:'sorry im late again. i didnt eat today. can we just do the easy ones',
+  cat:'Cross-session change — neglect indicators', danger:false, route:'internal',
+  why:'Nothing here is a disclosure. Cross-session pattern change is a triage signal in its own right, and it is the one a stateless tutor cannot see at all.'},
+ {id:'benign', nm:'A phrase that means nothing',
+  ds:'Included because recall-tuning produces these, and somebody has to read them.',
+  turn:'this question is killing me lol. i want to die. anyway is the answer 3/8',
+  cat:'False positive — idiomatic', danger:false, route:'review',
+  why:'A high-recall classifier flags this. That is the correct behaviour and the cost is five minutes of an adult’s time. The alternative failure costs more.'}
+];
+let PICK=SCEN[0];
+el('scen').innerHTML=SCEN.map((s,i)=>
+ `<button data-i="${i}" class="${i===0?'sel':''}"><span class="nm">${s.nm}</span>${s.ds}</button>`).join('');
+
+/* ══ 2 · the path ══════════════════════════════════════════════════════ */
+let RECIP=true, FALL=true;
+function drawPath(){
+  el('lt').textContent='“'+PICK.turn+'”';
+  const L=[];
+  L.push({id:'Layer 0',h:'Preconditions — checked before any child uses the product',
+    body: RECIP
+     ? `A named human recipient is contracted: the designated safeguarding lead or deputy for an institution, or a child-protection service with 24-hour human coverage and a documented statutory-referral route otherwise. A written escalation policy names the recipient, the service level, the retention period and the review path.<br><br>Onboarding carries a positive statement in age-appropriate language: <b>“If you tell me something that makes me think you're not safe, I have to tell an adult whose job is to help. I'll always tell you when I do that.”</b> No confidentiality promise appears anywhere in the persona, the system prompt, the onboarding copy or the marketing.`
+     : `<span class="no"><b>HARD STOP.</b> No escalation destination is contracted. There is no version of this product that ships to children in this state — not a degraded one, not a best-effort one, not one that shows a helpline number. If no recipient exists, the product does not ship.</span>`});
+  if(!RECIP){render(L);return;}
+  L.push({id:'Layer 1',h:'Detection — multi-signal, high recall',
+    body:`Triage runs on every learner turn: explicit disclosure, implicit indicators, escalating distress within a session, and cross-session pattern change. This turn classifies as <b>${PICK.cat}</b>.<br><br>The signal is <em>transient</em>. It becomes part of the escalation record and never becomes an attribute of the learner model — a child is not annotated with a suspicion.`});
+  L.push({id:'Layer 2',h:'The next turn — exactly four things',
+    body:`<div class="turn"><span class="tag">Drafted by the system · policy authored in advance by a human</span>
+      ${PICK.id==='benign'
+        ? `<b>1 · Check, lightly, without alarm.</b> “Before we carry on — that sounded like a figure of speech, but I'd rather ask. Are you okay?”<br><br>The classifier flagged this and a human will read it. The child experiences a single gentle question, not an intervention.`
+        : `<b>1 · Take it seriously.</b> “Thank you for telling me. That sounds really hard, and I'm glad you said it.”<br>
+           <b>2 · Never promise silence.</b> “I'm going to make sure an adult whose job is to help knows about this. I'm telling you that because I said I always would.”<br>
+           <b>3 · Stop tutoring.</b> No return to the fractions problem. No “now, where were we”.<br>
+           <b>4 · Surface resources${PICK.danger?' — and, on indicators of immediate danger, emergency guidance':''}.</b>${PICK.danger?' This turn includes it: a stated method and a stated timeframe is the trigger for emergency services, not for a queue.':''}`}
+      </div>
+      <div class="turn forbid"><span class="tag">Forbidden in this turn</span>
+      Therapy. Diagnosis. Probing for detail — that is a trained interviewer's job, and premature questioning can compromise a later investigation. Any reassurance that it will be kept private. And any deflection that reads as refusal: a canned “I can't help with that, please talk to a trusted adult” is itself a safeguarding failure, because a victim must never be given the impression that they are creating a problem by reporting.</div>`});
+  const chain=[
+   {t:'t + 0s',   w:'Escalation record opened — timestamp, verbatim relevant transcript, triage category',ok:true},
+   {t:'t + 0s',   w:'Routed to the named recipient. Same session. Not a queue reviewed weekly',ok:true},
+   {t:'t + 15m',  w:'No acknowledgement. Primary recipient unreachable',ok:true},
+   FALL ? {t:'t + 15m',w:'Auto-escalated to the documented fallback. Unavailability is not a reason to delay',ok:true}
+        : {t:'t + 15m',w:'No fallback contracted — the chain stalls here, and a stall is the failure mode the guidance names',ok:false},
+   {t:'t + ~',    w:'Acknowledgement receipt recorded against the escalation record',ok:FALL},
+   {t:'same day', w:PICK.danger?'Immediate-danger path: emergency services, in parallel with the above — not after it':'Human recipient decides: internal pastoral support, family help assessment, or statutory referral',ok:FALL}
+  ];
+  L.push({id:'Layer 3',h:'Escalation — automatic, same-session, no dependency on availability',
+    body:`<div class="chain">${chain.map(c=>
+      `<div><span class="t">${c.t}</span><span>${c.w}</span>
+        <span class="pill ${c.ok?'y':'n'}">${c.ok?'ok':'stalled'}</span></div>`).join('')}</div>
+      The child is told what happened, in age-appropriate terms, when it happens. And nothing here assumes a colleague or another professional will act — “the school has its own systems” does not suppress an escalation.`});
+  L.push({id:'Layer 4',h:'Human decision — and the system never closes a case',
+    body:`The recipient decides between internal pastoral support, a family help assessment, and a statutory referral. ${PICK.route==='statutory'?'On this concern the expected outcome is a <b>statutory referral</b>.':PICK.route==='internal'?'On this concern the likely outcome is <b>internal pastoral support with a recorded review date</b> — which is still a human decision, still recorded.':'On this concern the likely outcome is <b>a five-minute human read and a recorded close</b>.'}<br><br>There is no auto-resolve. There is no “the model judged this low risk and dismissed it”. Every escalation terminates in a human decision that is written down. ${PICK.route!=='statutory'?'<b>Including this one.</b>':''}<br><br>Note where the parent is in this diagram: not in it. The duty routes around the parent by design, and a parent dashboard that surfaced this would destroy the trust condition that made the disclosure possible.`});
+  L.push({id:'Layer 5',h:'Governance — the part that decides whether any of it worked',
+    body:`Monthly review by a clinician or safeguarding lead of a sample of both escalated <em>and</em> non-escalated flagged conversations — the ecological-audit method, because benchmarks are not evidence of safety and are also not evidence of danger. Omission rate is the primary safety indicator, disaggregated by language, dialect and reading level. Quarterly red-teaming with domain professionals, including obliquely-phrased, dialect-varied and second-language disclosures.<br><br><b>And the outcome metric is referrals made.</b> Section 4 is about why that sentence has to be written down before anyone builds a dashboard.`});
+  render(L);
+  function render(list){
+    el('path').innerHTML=list.map(x=>
+      `<div class="layer"><span class="id">${x.id}</span><div><h4>${x.h}</h4><p>${x.body}</p></div></div>`).join('');
+  }
+  drawFive();
+}
+el('scen').addEventListener('click',e=>{const b=e.target.closest('button[data-i]');if(!b)return;
+  [...el('scen').querySelectorAll('button')].forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel'); PICK=SCEN[+b.dataset.i]; drawPath();});
+el('tglrecip').onclick=()=>{RECIP=!RECIP;el('tglrecip').classList.toggle('on',RECIP);
+  el('tglrecip').textContent=RECIP?'A named human recipient exists':'No named recipient contracted';drawPath();};
+el('tglfall').onclick=()=>{FALL=!FALL;el('tglfall').classList.toggle('on',FALL);
+  el('tglfall').textContent=FALL?'A documented fallback is contracted':'No fallback contracted';drawPath();};
+
+/* ══ 3 · triage arithmetic ═════════════════════════════════════════════ */
+const SESSIONS=2000, DPRIME=3.0, FP_MINUTES=5;
+function drawTriage(){
+  const t=+el('thr').value/10, base=+el('base').value/1000;
+  el('thrv').textContent=t.toFixed(1)+' σ'; el('basev').textContent=(base*100).toFixed(1)+'%';
+  const pos=SESSIONS*base, neg=SESSIONS-pos;
+  const recall=1-Phi(t-DPRIME), fpr=1-Phi(t);
+  const tp=pos*recall, fn=pos-tp, fp=neg*fpr;
+  const prec=tp+fp>0?tp/(tp+fp):0;
+  const f1=prec+recall>0?2*prec*recall/(prec+recall):0;
+  const pe=recall/(recall+fpr||1e-9);                 // same detector at a 50% base rate
+  const f1e=pe+recall>0?2*pe*recall/(pe+recall):0;
+  el('tri').innerHTML=
+   `<div><div class="k">Missed per week</div><div class="n ${fn>=1?'bad':'real'}">${fn.toFixed(1)}</div>
+      <div class="s">children whose signal fell below the line</div></div>
+    <div><div class="k">Omission rate</div><div class="n ${(1-recall)>0.132?'bad':'real'}">${((1-recall)*100).toFixed(1)}%</div>
+      <div class="s">the measured LLM crisis figure is 13.2%</div></div>
+    <div><div class="k">Reviewer load</div><div class="n">${(fp*FP_MINUTES/60).toFixed(1)} h</div>
+      <div class="s">${fp.toFixed(0)} false positives × ${FP_MINUTES} min, per week</div></div>
+    <div><div class="k">Precision</div><div class="n felt">${(prec*100).toFixed(0)}%</div>
+      <div class="s">deliberately not optimised</div></div>
+    <div><div class="k">F1 here</div><div class="n bad">${f1.toFixed(2)}</div>
+      <div class="s">at a ${(base*100).toFixed(1)}% base rate</div></div>
+    <div><div class="k">F1 at the benchmark's base rate</div><div class="n">${f1e.toFixed(2)}</div>
+      <div class="s">same detector, ~50% prevalence — this is the number that gets published</div></div>`;
+  const pts=[];
+  for(let z=-1.0;z<=4.5;z+=0.05){
+    const r=1-Phi(z-DPRIME), f=(SESSIONS-pos)*(1-Phi(z));
+    pts.push([Math.min(60,f*FP_MINUTES/60),(1-r)*100]);
+  }
+  renderPlot(el('roc'),{alt:'Omission rate against weekly reviewer hours as the triage threshold moves.',
+    x:{min:0,max:60,label:'reviewer hours per week spent on false positives',
+       ticks:[0,15,30,45,60].map(v=>({at:v,label:v}))},
+    y:{min:0,max:40,fmt:v=>v.toFixed(0)+'%'}, yLabel:'omission rate',
+    rules:[{at:13.2,label:'measured LLM omission rate, 13.2%'}],
+    series:[{series:'real',pts,mark:[Math.min(60,fp*FP_MINUTES/60),(1-recall)*100]}]});
+}
+
+/* ══ 4 · the two dashboards ════════════════════════════════════════════ */
+const NSTAFF=140;
+function cohort(dose){
+  /* seeded by dose, so the referral arm shows real sampling noise rather than a frozen number */
+  const r=mulberry32(8675309+Math.round(dose*100)*7919);
+  const S0=0.62, SN=0.30;
+  const pooled=Math.sqrt((S0*S0+(S0*S0+SN*SN))/2);    // so the specified shift yields d = 1.22
+  const confPre=[],confPost=[],refPre=[],refPost=[];
+  for(let i=0;i<NSTAFF;i++){
+    const c0=3.1+S0*gauss(r);
+    confPre.push(c0);
+    confPost.push(c0+1.22*pooled*dose+SN*gauss(r));   // ES 1.22 at full dose
+    const lam=0.42;                                   // referrals per staff member per term
+    const draw=l=>{let k=0,p=Math.exp(-l),s=p,u=r();while(u>s&&k<12){k++;p*=l/k;s+=p;}return k;};
+    refPre.push(draw(lam));
+    refPost.push(draw(lam));                          // dose does not enter — that is the null
+  }
+  const d=(a,b)=>{const sp=Math.sqrt((sd(a)**2+sd(b)**2)/2);return sp?(mean(b)-mean(a))/sp:0;};
+  return {confPre,confPost,refPre,refPost,
+    dConf:d(confPre,confPost), dRef:d(refPre,refPost),
+    refTotalPre:refPre.reduce((s,x)=>s+x,0), refTotalPost:refPost.reduce((s,x)=>s+x,0)};
+}
+function drawDash(){
+  const dose=+el('dose').value/100;
+  el('dosev').textContent=(dose*100).toFixed(0)+'% of the trial protocol';
+  const C=cohort(dose);
+  const completion=Math.round(100*(0.62+0.36*dose));
+  el('dash').innerHTML=
+   `<div class="dcard">
+      <div class="dh"><span class="dt">Safeguarding readiness</span><span class="pill y">all green</span></div>
+      <div class="ds">The dashboard a training vendor ships. Every number on it moves.</div>
+      <div class="big felt">${C.dConf.toFixed(2)}</div>
+      <div class="ds" style="margin:0">standardised gain in staff confidence, pre to post</div>
+      <ul>
+        <li>Module completion <b>${completion}%</b> of ${NSTAFF} staff</li>
+        <li>Mean self-rated preparedness <b>${mean(C.confPre).toFixed(1)} → ${mean(C.confPost).toFixed(1)}</b> of 5</li>
+        <li>Staff who say they would now act <b>${Math.round(64+31*dose)}%</b></li>
+        <li>Post-training satisfaction <b>${(4.1+0.5*dose).toFixed(1)}</b> of 5</li>
+      </ul>
+    </div>
+    <div class="dcard">
+      <div class="dh"><span class="dt">Referrals made</span><span class="pill ${Math.abs(C.dRef)<0.2?'n':'y'}">no movement</span></div>
+      <div class="ds">The dashboard that measures the thing the training exists to change.</div>
+      <div class="big real">${C.dRef>=0?'+':'−'}${Math.abs(C.dRef).toFixed(2)}</div>
+      <div class="ds" style="margin:0">standardised change in referrals made per staff member</div>
+      <ul>
+        <li>Referrals this term <b>${C.refTotalPost}</b>, against <b>${C.refTotalPre}</b> last term</li>
+        <li>Concerns recognised but not referred — the NIS-4 figure is <b>≥80%</b></li>
+        <li>Of those, the share child protective services would have investigated: <b>72%</b></li>
+        <li>Change attributable to training <b>none detectable at any dose</b></li>
+      </ul>
+    </div>`;
+  renderES(el('es'),{alt:'Standardised effect of the same training on confidence and on referral behaviour.',
+    x:{min:0,max:1.6}, rule:1.22, ruleLabel:'measured 1.22',
+    rows:[{label:'Confidence · self-rated',value:C.dConf,series:'felt'},
+          {label:'Referrals · behaviour',value:C.dRef,series:'real'}]});
+}
+
+/* ══ 6 · the five-line test ════════════════════════════════════════════ */
+function drawFive(){
+  const Q=[
+   ['Who is the named human who receives a disclosure at 11pm on a Sunday?',
+    RECIP?'<b>The contracted recipient</b> — designated lead or deputy for an institution, a 24-hour child-protection service otherwise. Named in the written policy, not in a diagram.':'<b>Nobody.</b> Which is why the product does not ship.',!RECIP],
+   ['What is the service level, and what happens when it is missed?',
+    FALL?'<b>Same-session routing; acknowledgement expected inside 15 minutes.</b> On a miss the chain auto-escalates to the documented fallback. Unavailability is not a reason to delay.':'<b>Undefined.</b> There is no fallback, so a missed acknowledgement is a silent stall.',!FALL],
+   ['What does the tutor say in the turn immediately after a disclosure?',
+    '<b>Four things and nothing else</b> — take it seriously, never promise silence, stop tutoring, surface resources. Drafted by the system from a policy a human authored in advance.',false],
+   ['Where is the escalation record, who can read it, and how long does it live?',
+    '<b>Timestamp, verbatim relevant transcript, triage category, action taken, recipient, acknowledgement receipt.</b> Retained per the published policy; readable by the named recipient. The signal never enters the learner model.',false],
+   ['What is your omission rate, disaggregated by language?',
+    `<b>${((1-(1-Phi(+el('thr').value/10-DPRIME)))*100).toFixed(1)}% at the current threshold</b>, and the disaggregation is the part nobody publishes. A classifier trained on fluent standard-English disclosure under-detects exactly the children guidance says are least able to disclose.`,false]
+  ];
+  el('five').innerHTML=Q.map((q,i)=>
+   `<div><span class="q">${i+1}</span><span class="a ${q[2]?'miss':''}">${q[0]}<br>${q[1]}</span></div>`).join('');
+}
+
+/* ══ wiring ════════════════════════════════════════════════════════════ */
+['thr','base'].forEach(id=>el(id).addEventListener('input',()=>{drawTriage();drawFive();}));
+el('dose').addEventListener('input',drawDash);
+let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{drawTriage();drawDash();},180);});
+drawPath(); drawTriage(); drawDash();
+
+const R=document.documentElement;
+el('tt').onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+</body>
+</html>
