@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Assistance Dial — the support that helps you is harming them</title>
+<meta name="description" content="Expertise reversal, running: a knowledge probe places you per topic, and the assistance surface is computed from the two measured marginals so the crossover is visible rather than asserted." />
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="demo.css" />
+<script src="../theme.js"></script>
+<style>
+.readout{font:13px/1.7 var(--mono);white-space:pre-wrap;color:var(--ink-2)}
+.ctls{display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:var(--s4)}
+@media(min-width:680px){.ctls{grid-template-columns:1fr 1fr}}
+input[type=range]{width:100%;accent-color:var(--real);height:22px;padding:0;border:0;background:none}
+input[type=range].pref{accent-color:var(--felt)}
+.val{font:13px/1 var(--mono);color:var(--ink);float:right;text-transform:none;letter-spacing:0}
+.stops{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 var(--s4)}
+@media(min-width:680px){.stops{grid-template-columns:repeat(4,1fr)}}
+.stop{text-align:left;padding:11px 12px;font:600 12.5px/1.35 var(--sans)}
+.stop .sd{display:block;font:12px/1.4 var(--mono);color:var(--ink-3);margin-top:5px;font-weight:400}
+.stop.sel{border-color:var(--real);box-shadow:inset 0 0 0 1px var(--real)}
+.dbar{display:grid;grid-template-columns:104px 1fr 62px;gap:9px;align-items:center;margin:9px 0;
+  font-size:13px;color:var(--ink-2)}
+@media(min-width:560px){.dbar{grid-template-columns:150px 1fr 62px}}
+.track{position:relative;height:20px;background:var(--raise);border-radius:5px;overflow:hidden}
+.track .z{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line-2)}
+.track i{position:absolute;top:3px;bottom:3px;border-radius:3px}
+.track i.p{background:var(--real)} .track i.n{background:var(--felt)}
+.dbar .v{font:13px/1 var(--mono);text-align:right;color:var(--ink)}
+.dbar.cur{color:var(--ink);font-weight:650}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3);margin-top:12px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+.q{border-top:1px solid var(--line);padding:16px 0 4px}
+.q:first-child{border-top:0;padding-top:2px}
+.q p{font-size:14.5px;margin:0 0 10px;color:var(--ink)}
+.q .w{font:600 10.5px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  margin-bottom:8px;display:block}
+.opts{display:grid;gap:7px}
+.opt{text-align:left;font:14px/1.4 var(--sans);padding:10px 12px;font-weight:400}
+.opt.sel{border-color:var(--real);box-shadow:inset 0 0 0 1px var(--real)}
+.opt.ok{border-color:var(--good);color:var(--good)}
+.opt.no{border-color:var(--bad);color:var(--bad)}
+.topics{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:var(--s4)}
+.topics button{font:600 12.5px/1 var(--sans)}
+.place{display:grid;grid-template-columns:1fr;gap:12px;margin:var(--s4) 0 0}
+@media(min-width:620px){.place{grid-template-columns:1fr 1fr}}
+.pcard{border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;background:var(--sunken)}
+.pcard .t{font:650 13.5px/1.3 var(--sans);color:var(--ink);margin-bottom:6px}
+.pcard .k{font:400 27px/1 var(--serif);color:var(--real);margin:8px 0 4px}
+.pcard .s{font-size:12.5px;color:var(--ink-3);line-height:1.5}
+svg text{font:11px var(--sans);fill:var(--ink-3)}
+svg .cross{stroke:var(--ink-3);stroke-width:1.5;stroke-dasharray:4 4}
+svg .you{stroke:var(--ink);stroke-width:2;fill:none}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../deck.html">The deck</a>
+· <a href="../paper.html">The paper</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 16 · Mechanisms</div>
+  <h1>The support that helps you is harming them</h1>
+  <p class="lede">Fifty years of aptitude–treatment research produced exactly one interaction that
+  replicated. It is not a style, a modality or a personality type. It is <strong>how much help to
+  give, on this topic, right now</strong> — worth <strong>d = +0.505</strong> to a novice and
+  <strong>−0.428</strong> to an expert, which means the same support is a gift and a tax depending
+  on who receives it.</p>
+  <div class="chips">
+    <span class="chip m">Surface computed from the two marginals</span>
+    <span class="chip d">Six probe items, authored</span>
+    <span class="chip n">Does not extend to multimedia design (p = 0.14)</span>
+  </div>
+</header>
+
+<section class="orient">
+  <div class="o"><b>What this is</b><p>A working assistance dial. Four levels of support — fully
+  worked, two-step completion, one-step completion, independent — plotted against a measured
+  estimate of what you know <em>about one topic</em>. The surface is not drawn by hand: every cell
+  is <code>assistance × d(knowledge)</code>, interpolated between the two published marginals.</p></div>
+  <div class="o"><b>Why it matters</b><p>Almost every tutoring system stores support level as a
+  learner trait. The interaction is not a trait — it is per topic and it changes sign. A learner
+  who is an expert in chapter 4 and a novice in chapter 5 needs opposite treatment within the same
+  hour, and a system that got that backwards is not merely unhelpful. At −0.428 it is subtracting.</p></div>
+  <div class="o"><b>How to use it</b><p>Three items, about twenty seconds, and you are placed on
+  the axis — then do it again on the second topic and see the same person land somewhere else.
+  Beside the dial sits a preference slider. It is live, it is real, and it moves the recommendation
+  by exactly nothing. That gap is the demonstration.</p></div>
+</section>
+
+<h2>1 · Entry has to be measured, not asked</h2>
+<p>Stated preference is not a bad proxy for prior knowledge. It is an <em>unrelated</em> quantity:
+learners' preference for the fluent condition moves at <strong>d ≈ 0.48</strong> while their
+knowledge moves zero. So the dial cannot be set by asking. Three items, weighted by difficulty,
+scored here in the page.</p>
+
+<div class="panel">
+  <div class="ptitle">Topic probe</div>
+  <div class="psub">Pick a topic. The estimate is <code>Σ(wᵢ·correctᵢ) / Σwᵢ</code> mapped onto
+  [0.05, 0.95], where <code>w</code> is the item's difficulty weight. The rule is printed so you
+  can disagree with it.</div>
+  <div class="topics" id="topics"></div>
+  <div id="probe"></div>
+  <div class="row" style="margin:18px 0 0">
+    <button class="pri" id="score">Score this probe</button>
+    <button id="reset">Clear</button>
+    <span class="sub" id="ptime" style="margin-left:4px;margin-bottom:0"></span>
+  </div>
+</div>
+
+<div class="place" id="place"></div>
+
+<div class="note" id="pernote" style="display:none"><b>That is the whole argument for per-topic.</b>
+<span id="pernotetxt"></span></div>
+
+<h2>2 · The surface</h2>
+<p>Every cell below is <code>a · d(r)</code>, where <code>a</code> is the assistance fraction
+(1.00 fully worked → 0.00 independent) and <code>d(r) = 0.505 − 0.933·r</code> is the linear
+interpolation between the two measured marginals. The value is a predicted difference from
+<em>independent practice at the same knowledge level</em>, in standard deviations. Blue is help.
+Orange is harm.</p>
+
+<div class="panel">
+  <div class="ptitle">Predicted effect of assistance, by prior knowledge on this topic</div>
+  <div class="psub" id="surfsub">—</div>
+  <svg id="surf" viewBox="0 0 640 250" role="img"
+       aria-label="Heat map of predicted assistance effect. Rows are assistance level from fully worked to independent; the horizontal axis is prior knowledge from novice to expert. The sign flips at the crossover line."></svg>
+  <div class="legend">
+    <span><i style="background:var(--real)"></i>assistance adds (up to +0.505 SD)</span>
+    <span><i style="background:var(--felt)"></i>assistance subtracts (down to −0.428 SD)</span>
+    <span><i style="background:var(--ink-3)"></i>crossover — help is worth zero</span>
+  </div>
+</div>
+
+<div class="ctls">
+  <div>
+    <label for="k">Prior knowledge on this topic <span class="val" id="kv">0.30</span></label>
+    <input type="range" id="k" min="0" max="100" step="1" value="30" />
+    <div class="sub" style="margin:6px 0 0;font-size:12.5px">Set by the probe above, or drag it
+    yourself to explore. 0 = has not met the idea. 1 = fluent and automatic.</div>
+  </div>
+  <div>
+    <label for="e">Element interactivity of the material <span class="val" id="ev">0.50</span></label>
+    <input type="range" id="e" min="0" max="100" step="1" value="50" />
+    <div class="sub" style="margin:6px 0 0;font-size:12.5px">How many things must be held at once.
+    Chen, Kalyuga &amp; Sweller reduce both faces of the interaction to this. <b>The coefficient
+    here is a modelling choice, not a measured one</b> — it shifts the crossover, it does not
+    create it.</div>
+  </div>
+</div>
+
+<label style="margin-top:6px">Assistance level</label>
+<div class="stops" id="stops"></div>
+
+<div class="panel">
+  <div class="ptitle">All four levels, at your current knowledge</div>
+  <div class="psub">Same learner, same material, four amounts of help. Read the sign, not the size.</div>
+  <div id="bars"></div>
+  <div class="readout" id="out" style="margin-top:16px"></div>
+</div>
+
+<h2>3 · The slider that changes nothing</h2>
+<p>This one is wired to the recommendation the way stated preference is wired to learning: it is
+recorded, it is honest, and it has no path into the computation.</p>
+
+<div class="panel sunken">
+  <label for="pref">How much help do you <em>want</em>? <span class="val" id="prefv">medium</span></label>
+  <input type="range" class="pref" id="pref" min="0" max="100" step="1" value="50" />
+  <div class="readout" id="prefout" style="margin-top:14px"></div>
+</div>
+
+<div class="note"><b>The asymmetry is the design rule.</b> Under-assisting a novice costs a gain
+you could have had. Over-assisting an expert costs them something they already had — it is an
+active harm, not a missed opportunity. When the estimate is uncertain, the cheap error and the
+expensive error are not the same error, and the default should sit on the cheap side of the
+crossover rather than in the middle of it.</div>
+
+<h2>4 · What this proves / what it does not</h2>
+
+<div class="panel">
+  <div class="ptitle">What this page shows working</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li>That the crossover is <strong>forced by the two published numbers</strong>, not added by
+    us. Any monotone interpolation between +0.505 at the novice end and −0.428 at the expert end
+    has to cross zero, and it crosses at <code>0.505 / 0.933 = 0.541</code>. The surface is that
+    arithmetic and nothing else.</li>
+    <li>That <strong>entry can be measured in under a minute</strong>. Three weighted items place a
+    reader on the axis well enough to pick between four assistance levels — and the page times your
+    run, so the claim is checkable on your own clock rather than asserted.</li>
+    <li>That <strong>per-topic is not a slogan</strong>. Take both probes. If your two estimates
+    land on opposite sides of the crossover line, a system storing one support level against your
+    name is guaranteed to be wrong for half your session, and the page will say so with your own
+    numbers in it.</li>
+  </ul>
+  <div class="ptitle">What it does not</div>
+  <ul style="margin:0 0 6px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>Three items is a placement, not a measurement.</strong> A six-item bank cannot
+    separate 0.55 from 0.62, and near the crossover that difference decides the treatment. The
+    honest use is to pick a starting level and re-place after the first block, not to trust the
+    third decimal.</li>
+    <li><strong>The surface is linear between two endpoints.</strong> The underlying meta reports
+    only the two marginals; the shape in between is unmeasured. A sigmoid through the same
+    endpoints would move the crossover somewhat and change none of the conclusions, which is
+    exactly why the page plots sign rather than magnitude.</li>
+    <li><strong>The heterogeneity is enormous.</strong> I² ≈ 88–91% across 60 studies, 176 effects,
+    N = 5,924. This is a real law with noisy boundaries. Treat the crossover as a region you should
+    probe in, not a fence you can stand on.</li>
+    <li><strong>It does not generalise to instructional design as a whole.</strong> Noetel's
+    meta-meta-analysis found prior knowledge <em>did not</em> consistently moderate multimedia
+    design effects, <strong>p = 0.14</strong>. So the survivor is narrower than "personalise
+    instruction to prior knowledge". It is <em>prior knowledge moderates how much help to give</em>
+    — assistance, guidance, worked examples, scaffolding. Signalling, segmenting and the rest of
+    the multimedia menu are not licensed by this page and should not be dialled from it.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../deck.html">The deck</a> ·
+  <a href="../paper.html">The paper</a>
+  <br /><br />Marginals: Tetzlaff et al. 2025, 60 studies, 176 effects. Narrowing: Noetel et al.
+</footer>
+
+</div>
+<script>
+const tt=document.getElementById('tt'),R=document.documentElement;
+tt.onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+<script>
+/* ── the two measured marginals; everything else is interpolation ───────── */
+const D_NOV=0.505, D_EXP=-0.428, SLOPE=D_NOV-D_EXP;      /* 0.933 */
+const CROSS=D_NOV/SLOPE;                                  /* 0.5413… */
+const $=id=>document.getElementById(id);
+
+const STOPS=[
+ {a:1.00,nm:"Fully worked",   sd:"every step shown"},
+ {a:0.67,nm:"Completion ×2",  sd:"last two steps blank"},
+ {a:0.33,nm:"Completion ×1",  sd:"last step blank"},
+ {a:0.00,nm:"Independent",    sd:"problem only"}
+];
+let ai=0, K=0.30, E=0.50;
+
+/* relative expertise: high element interactivity keeps a learner effectively
+   novice for longer. Stated as a modelling choice on the page. */
+const rel=(k,e)=>Math.max(0,Math.min(1, k-0.35*(e-0.5)));
+const dOf=r=>D_NOV-SLOPE*r;
+const gain=(a,k,e)=>a*dOf(rel(k,e));
+const crossK=e=>CROSS+0.35*(e-0.5);
+
+/* ── probe ──────────────────────────────────────────────────────────────── */
+const TOPICS=[
+ {id:"lin", nm:"Solving linear equations", items:[
+  {w:0.20, q:"Solve 3x + 6 = 21.", o:["x = 5","x = 9","x = 45","x = 3"], c:0},
+  {w:0.50, q:"For which value of a does ax + 4 = 2x + 4 have infinitely many solutions?",
+   o:["a = 0","a = 2","a = 4","no value of a"], c:1},
+  {w:0.85, q:"In solving x(x−3) = 2(x−3), why is “divide both sides by (x−3)” not a legal step?",
+   o:["It changes the degree of the equation",
+      "It is legal; the answer is just x = 2",
+      "It divides by zero when x = 3, deleting a solution",
+      "Division is never allowed in equations"], c:2}]},
+ {id:"buf", nm:"Buffer chemistry", items:[
+  {w:0.20, q:"A buffer solution resists change in —", o:["temperature","pH","volume","density"], c:1},
+  {w:0.50, q:"Henderson–Hasselbalch: pH = pKa + log([A⁻]/[HA]). If [A⁻] = [HA], the pH is —",
+   o:["7.00","pKa","pKa + 1","0"], c:1},
+  {w:0.85, q:"A little strong base is added to a buffer sitting exactly at pH = pKa. What happens?",
+   o:["HA is converted to A⁻; the ratio rises and pH rises slightly",
+      "A⁻ is converted to HA; pH falls sharply",
+      "Nothing — a buffer is chemically inert to base",
+      "pH jumps to the pKa of water"], c:0}]}
+];
+let topic=0, answers={}, t0=null, placed={};
+
+function drawProbe(){
+  const T=TOPICS[topic];
+  $('topics').innerHTML=TOPICS.map((t,i)=>
+    `<button class="${i===topic?'on':''}" data-t="${i}">${t.nm}</button>`).join('');
+  $('probe').innerHTML=T.items.map((it,i)=>{
+    const sel=answers[T.id]?answers[T.id][i]:undefined;
+    return `<div class="q"><span class="w">Item ${i+1} · difficulty weight ${it.w.toFixed(2)}</span>
+      <p>${it.q}</p><div class="opts">`+
+      it.o.map((o,j)=>`<button class="opt${sel===j?' sel':''}" data-i="${i}" data-j="${j}">${o}</button>`).join('')+
+      `</div></div>`;
+  }).join('');
+}
+$('topics').addEventListener('click',e=>{const b=e.target.closest('button[data-t]');if(!b)return;
+  topic=+b.dataset.t; drawProbe(); $('ptime').textContent='';});
+$('probe').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-j]'); if(!b) return;
+  const T=TOPICS[topic]; if(t0===null) t0=performance.now();
+  answers[T.id]=answers[T.id]||{}; answers[T.id][+b.dataset.i]=+b.dataset.j;
+  drawProbe();
+});
+$('reset').onclick=()=>{answers={};placed={};t0=null;drawProbe();$('ptime').textContent='';
+  $('place').innerHTML='';$('pernote').style.display='none';};
+
+$('score').onclick=()=>{
+  const T=TOPICS[topic], A=answers[T.id]||{};
+  if(Object.keys(A).length<3){ $('ptime').textContent='Answer all three items first.'; return; }
+  const secs=t0?((performance.now()-t0)/1000):0;
+  let num=0,den=0;
+  T.items.forEach((it,i)=>{ den+=it.w; if(A[i]===it.c) num+=it.w; });
+  const raw=num/den, k=0.05+0.90*raw;
+  placed[T.id]={k, raw, secs, right:T.items.filter((it,i)=>A[i]===it.c).length};
+  $('ptime').textContent=`scored in ${secs.toFixed(1)} s`;
+  K=k; $('k').value=Math.round(k*100); render();
+  /* mark the items */
+  [...$('probe').querySelectorAll('.opt')].forEach(b=>{
+    const i=+b.dataset.i, j=+b.dataset.j;
+    if(j===T.items[i].c) b.classList.add('ok');
+    else if(A[i]===j) b.classList.add('no');
+  });
+  drawPlace();
+};
+
+function drawPlace(){
+  const cards=TOPICS.filter(t=>placed[t.id]).map(t=>{
+    const p=placed[t.id], side=p.k<crossK(E)?'novice side — assistance adds':'expert side — assistance subtracts';
+    return `<div class="pcard"><div class="t">${t.nm}</div>
+      <div class="k">k̂ = ${p.k.toFixed(2)}</div>
+      <div class="s">${p.right}/3 correct · weighted ${p.raw.toFixed(2)} · ${p.secs.toFixed(1)} s<br>
+      ${side}</div></div>`;
+  });
+  $('place').innerHTML=cards.join('');
+  const ids=TOPICS.map(t=>t.id).filter(id=>placed[id]);
+  if(ids.length===2){
+    const a=placed[ids[0]].k, b=placed[ids[1]].k, c=crossK(E);
+    const split=(a<c)!==(b<c);
+    $('pernote').style.display='';
+    $('pernotetxt').innerHTML = split
+      ? `Your two estimates are <b>${a.toFixed(2)}</b> and <b>${b.toFixed(2)}</b>, and the crossover
+         for this material sits at <b>${c.toFixed(2)}</b> — they are on <b>opposite sides</b>. One
+         support level stored against your name is the wrong level for one of these topics, and the
+         sign of the error is not small: it is the difference between +${gain(1,Math.min(a,b),E).toFixed(2)}
+         and ${gain(1,Math.max(a,b),E).toFixed(2)} SD for the same fully-worked example.`
+      : `Your two estimates are <b>${a.toFixed(2)}</b> and <b>${b.toFixed(2)}</b>, both on the same
+         side of the crossover at <b>${c.toFixed(2)}</b> — so today a single stored level would have
+         survived. It survived by luck of topic choice, not by design: the gap between them is
+         ${Math.abs(a-b).toFixed(2)} on an axis whose whole range is 1.00, and a third topic would
+         not be under any obligation to agree.`;
+  }
+}
+
+/* ── surface ────────────────────────────────────────────────────────────── */
+const NS="http://www.w3.org/2000/svg";
+const mk=(n,at)=>{const el=document.createElementNS(NS,n);for(const k in at)el.setAttribute(k,at[k]);return el;};
+function surface(){
+  const svg=$('surf'); svg.replaceChildren();
+  const W=640,H=250,PL=104,PT=14,PB=42,COLS=40;
+  const gw=(W-PL-16)/COLS, rh=(H-PT-PB)/STOPS.length;
+  for(let r=0;r<STOPS.length;r++){
+    for(let c=0;c<COLS;c++){
+      const k=(c+0.5)/COLS, v=gain(STOPS[r].a,k,E);
+      const op=Math.min(0.95,Math.abs(v)/D_NOV*0.92+0.05);
+      svg.appendChild(mk('rect',{x:PL+c*gw,y:PT+r*rh,width:gw+0.6,height:rh-1.5,
+        fill:v>=0?'var(--real)':'var(--felt)','fill-opacity':v===0?0.05:op}));
+    }
+    const t=mk('text',{x:PL-9,y:PT+r*rh+rh/2+4,'text-anchor':'end',style:'fill:var(--ink-2)'});
+    t.textContent=STOPS[r].nm; svg.appendChild(t);
+  }
+  const ck=crossK(E), X=k=>PL+k*(W-PL-16);
+  if(ck>0&&ck<1){
+    svg.appendChild(mk('line',{x1:X(ck),y1:PT-2,x2:X(ck),y2:PT+STOPS.length*rh,class:'cross'}));
+    const lb=mk('text',{x:Math.min(X(ck)+7,W-96),y:PT+9,style:'fill:var(--ink-2);font-weight:650'});
+    lb.textContent='crossover '+ck.toFixed(2); svg.appendChild(lb);
+  }
+  /* your position */
+  const yr=PT+ai*rh;
+  svg.appendChild(mk('rect',{x:X(Math.max(0,Math.min(0.985,K)))-9,y:yr,width:18,height:rh-1.5,class:'you',rx:3}));
+  svg.appendChild(mk('line',{x1:PL,y1:PT+STOPS.length*rh+1,x2:W-16,y2:PT+STOPS.length*rh+1,
+    stroke:'var(--line-2)','stroke-width':1}));
+  const a1=mk('text',{x:PL,y:H-22}); a1.textContent='novice  (k = 0)'; svg.appendChild(a1);
+  const a2=mk('text',{x:W-16,y:H-22,'text-anchor':'end'}); a2.textContent='expert  (k = 1)'; svg.appendChild(a2);
+  const a3=mk('text',{x:(PL+W-16)/2,y:H-6,'text-anchor':'middle'});
+  a3.textContent='prior knowledge on this topic'; svg.appendChild(a3);
+  $('surfsub').innerHTML=`d(r) = 0.505 − 0.933·r · crossover at k = <b>${ck.toFixed(3)}</b> for
+    element interactivity ${E.toFixed(2)} · the outlined cell is your current setting.`;
+}
+
+/* ── bars & readout ─────────────────────────────────────────────────────── */
+function bars(){
+  const MAX=0.55;
+  $('bars').innerHTML=STOPS.map((s,i)=>{
+    const v=gain(s.a,K,E), w=Math.min(50,Math.abs(v)/MAX*50);
+    const seg=v>=0?`<i class="p" style="left:50%;width:${w}%"></i>`
+                  :`<i class="n" style="right:50%;width:${w}%"></i>`;
+    return `<div class="dbar${i===ai?' cur':''}"><span>${s.nm}</span>
+      <span class="track"><span class="z"></span>${seg}</span>
+      <span class="v">${v>=0?'+':''}${v.toFixed(3)}</span></div>`;
+  }).join('');
+}
+function readout(){
+  const s=STOPS[ai], r=rel(K,E), v=gain(s.a,K,E), ck=crossK(E);
+  const best=STOPS.reduce((m,x)=>gain(x.a,K,E)>gain(m.a,K,E)?x:m,STOPS[0]);
+  $('out').innerHTML =
+   `knowledge k    : ${K.toFixed(2)}\n`+
+   `element inter. : ${E.toFixed(2)}   →  relative expertise r = ${r.toFixed(3)}\n`+
+   `d(r)           : ${dOf(r)>=0?'+':''}${dOf(r).toFixed(3)}  (per unit of assistance)\n`+
+   `selected level : ${s.nm}  —  a = ${s.a.toFixed(2)}\n\n`+
+   `predicted Δ vs independent practice : <b style="color:${v>=0?'var(--real)':'var(--felt)'}">`+
+   `${v>=0?'+':''}${v.toFixed(3)} SD</b>\n\n`+
+   (K<ck
+     ? `verdict        : below the crossover (${ck.toFixed(2)}). More support is worth more here;\n`+
+       `                 the best of the four levels is "${best.nm}".`
+     : `verdict        : above the crossover (${ck.toFixed(2)}). Support is now a cost, not a gift;\n`+
+       `                 the best of the four levels is "${best.nm}" and every step of\n`+
+       `                 added scaffolding buys negative learning.`);
+}
+function prefOut(){
+  const p=+$('pref').value/100;
+  const words=p<0.2?'none — leave me alone':p<0.45?'a little':p<0.7?'medium':p<0.9?'a lot':'show me everything';
+  $('prefv').textContent=words;
+  const best=STOPS.reduce((m,x)=>gain(x.a,K,E)>gain(m.a,K,E)?x:m,STOPS[0]);
+  const want=STOPS.reduce((m,x)=>Math.abs(x.a-p)<Math.abs(m.a-p)?x:m,STOPS[0]);
+  $('prefout').innerHTML =
+   `stated preference : ${(p).toFixed(2)}  →  "${want.nm}"\n`+
+   `measured k        : ${K.toFixed(2)}  →  "${best.nm}"   (unchanged by the slider above)\n\n`+
+   (want.nm===best.nm
+    ? `agreement here, this time. Preference is not <em>always</em> wrong — it is\nuncorrelated, which is worse, because it agrees often enough to be trusted.`
+    : `<b>disagreement.</b> Following the preference would move you from ${gain(best.a,K,E).toFixed(3)} SD to `+
+      `${gain(want.a,K,E).toFixed(3)} SD,\na swing of ${Math.abs(gain(best.a,K,E)-gain(want.a,K,E)).toFixed(3)} — `+
+      `and the learner reporting the preference\ncannot feel the difference, because satisfaction and learning are\nmeasured on different axes.`);
+}
+
+function render(){ K=+$('k').value/100; E=+$('e').value/100;
+  $('kv').textContent=K.toFixed(2); $('ev').textContent=E.toFixed(2);
+  $('stops').innerHTML=STOPS.map((s,i)=>
+    `<button class="stop${i===ai?' sel':''}" data-a="${i}">${s.nm}<span class="sd">a = ${s.a.toFixed(2)} · ${s.sd}</span></button>`).join('');
+  surface(); bars(); readout(); prefOut(); if(Object.keys(placed).length) drawPlace();
+}
+$('stops').addEventListener('click',e=>{const b=e.target.closest('button[data-a]');if(!b)return;
+  ai=+b.dataset.a; render();});
+$('k').addEventListener('input',render);
+$('e').addEventListener('input',render);
+$('pref').addEventListener('input',prefOut);
+drawProbe(); render();
+</script>
+</body>
+</html>
