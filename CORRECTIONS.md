@@ -120,6 +120,7 @@ measured, or it is a pitch.
 | **C-58** | 30 Jul | *"Seven randomised trials of ChatGPT in education, **four** of them second-language learning"* — published in §23, the README and the thesis | **Three, not four.** The ERIC query reproduces, but the classification was never checked record by record. EJ1415077 is an RCT in *"a foundational chemistry course within a blended learning setting"*, verified against the ERIC record; EJ1484052 is VR with embedded IoT tasks. Corrected on all three surfaces | SELF-RESEARCH (R4), verified against the primary record |
 | **C-59** | 30 Jul | Cross-references in the assembled paper: **44 pointed at real but wrong sections** | The builder's two rewrite passes each consumed the other's output. A cross-section ref `§09` resolved to `§3`, which the intra-section pass then re-qualified into `§1.3`. Reversing the order broke it the other way: the intra pass writes a two-digit paper number and the source pass reads `§17.3.3` as a reference to source file 17. The passes now emit a sentinel that neither pattern can match. **This is the third time cross-references have failed silently** (C-31, C-38), so the builder now refuses to write the paper when a qualified `§N.M` has an N other than its own section | SELF-RESEARCH, found while writing §42 |
 | **C-60** | 30 Jul | Every qualified intra-section reference pointed **one section early** | `renumber(text, papernum=n)` ran before `n += 1`, while the section itself was rendered as `## {n}.` after it. 31 references, each resolving to real but wrong content. Found in the same three lines as C-59 | SELF-RESEARCH, found while writing §42 |
+| **C-61** | 30 Jul | *(unresolved)* Doroudi et al. 2019's positive headline is published here as **21 of 41**, and the R6 report states **21 of 36** | The two are probably a study count against a comparison count: the report's own reproduction of Table 2 sums to **41 comparisons with 21 significant**, which is arithmetically consistent with the ledger. Two attempts to retrieve the source failed (Springer paywall, wrong arXiv identifier), so which denominator the authors' *"over half"* sentence refers to is **not established**. §13 uses *over half the comparisons, 21 of 41*, the enforced form. Recorded rather than silently reconciled | SELF-RESEARCH (R6 vs C-29) |
 
 ---
 
@@ -130,13 +131,13 @@ hand-maintained, which is the whole argument for generating it.*
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 37 |
+| Caught by our own research | 38 |
 | Caught by our own verification — including of our own warnings | 3 |
 | Caught by our own builders, working against their own briefs | 4 |
 | **Caught by an adversarial external reviewer** | **23** |
-| **Total** | **67** |
+| **Total** | **68** |
 
-23 of 67 were found by someone whose job was to fail us — including
+23 of 68 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the
