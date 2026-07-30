@@ -1,3 +1,8 @@
 .autosave.sh
 .gen-gallery.py
 node_modules
+# screenshots and scratch harnesses from verification runs
+*.png
+!docs/**/*.png
+.shot.mjs
+.test-dash.mjs
