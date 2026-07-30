@@ -96,7 +96,7 @@ The last row is the one that gets over-read, so it is worth stating at full size
 Buljan et al. 2018 ran **three randomised comparisons — n = 334 adults, an infographic
 against a plain-language Cochrane summary of the same review, scored on an immediate
 quiz.** Preference moved d ≈ 0.48; knowledge moved zero. That is one format contrast
-in one adult population on one immediate test, not a law about how learners feel.
+in one adult population on one immediate test. It is not a law about how learners feel.
 It belongs in the table because the dissociation it shows is corroborated by work that
 shares none of its design: Deslauriers et al. 2019, where randomised active-learning
 students learned more and reported learning less; the Wilson writing results in §43,

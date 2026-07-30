@@ -67,7 +67,7 @@ input[type=range]{width:100%;accent-color:var(--felt);margin:0;padding:0;height:
 
 <section class="orient">
   <div class="o"><b>What this is</b><p>A study you can run. Set how <em>fluent</em> and how <em>effortful</em> a condition feels, and the page computes both satisfaction and delayed retention — with Welch's <em>t</em> and a real <em>p</em>-value, not a cartoon.</p></div>
-  <div class="o"><b>Why it matters</b><p>This is the central finding of the whole survey. Preference moves at <b>d ≈ 0.48</b> while knowledge moves <b>zero</b>, and it survives explicit debiasing. Students in the condition that taught them <em>more</em> reported learning <em>less</em>. Every optimisation loop can measure the first axis; almost none measure the second.</p></div>
+  <div class="o"><b>Why it matters</b><p>This is the central finding of the whole survey, and it is assembled from separate trials rather than one law. In Buljan et al. 2018 — three randomised comparisons, n = 334 adults, an infographic against a plain-language Cochrane summary, immediate quiz — preference moved at <b>d ≈ 0.48</b> while knowledge moved <b>zero</b>, and the effect survives explicit debiasing. In Deslauriers 2019, students in the condition that taught them <em>more</em> reported learning <em>less</em>. Every optimisation loop can measure the first axis; almost none measure the second.</p></div>
   <div class="o"><b>How to use it</b><p>Make a condition feel maximally fluent and watch satisfaction rise as retention does not. Then run the <b>Null-Learner Test</b>: pick a metric and see whether an agent that teaches nothing can max it out. Engagement, streaks and time-on-task all fail.</p></div>
 </section>
 
@@ -164,17 +164,21 @@ real anchors, the ones that are measurements, sit in the second panel, separatel
 <figure class="panel">
   <div class="ptitle">Three places where felt and learned came apart</div>
   <div class="psub">Left dot: what moved in the learner's experience. Right dot: what moved in
-  their knowledge. Hover a row for the source.</div>
+  their knowledge. Three separate trials, each with its own population and its own task —
+  the first is Buljan et al. 2018, n = 334 adults reading an infographic against a
+  plain-language Cochrane summary. Hover a row for the source.</div>
   <div id="slope"></div>
 </figure>
 
 <div class="scroll">
 <table>
   <tr><th>Finding</th><th>Felt</th><th>Learned</th><th>Why it matters here</th></tr>
-  <tr><td><b>Preference vs knowledge</b></td><td class="num">d ≈ 0.48</td><td class="num">0</td>
-    <td>Three randomised comparisons. Learners reliably <em>prefer</em> one presentation over
-    another; the knowledge difference is nil. Critically, <strong>it survives explicit
-    debiasing</strong>. Telling learners about the effect does not repair the judgement.</td></tr>
+  <tr><td><b>Preference vs knowledge</b><br /><span class="sub">Buljan et al. 2018</span></td><td class="num">d ≈ 0.48</td><td class="num">0</td>
+    <td>Three randomised comparisons, <b>n = 334 adults</b>, an infographic against a
+    plain-language Cochrane summary of the same review, scored on an immediate quiz. These
+    adults preferred one presentation; the knowledge difference was nil. Critically,
+    <strong>it survives explicit debiasing</strong>. Telling learners about the effect does not
+    repair the judgement. One format contrast, not a general law about preference.</td></tr>
   <tr><td><b>Deslauriers et al., <i>PNAS</i> 2019</b></td><td class="num">felt worse</td><td class="num">learned more</td>
     <td>Randomised, identical materials, passive lecture vs active learning. Students in the
     active classroom <strong>learned more and reported learning less</strong>, mediated by
@@ -243,9 +247,10 @@ expensive one to collect and the one no consumer product runs.</div>
     you drag prior knowledge down while pushing effort up, retention collapses in both arms.
     That is the expertise-reversal boundary, and it is why "add desirable difficulty" is not a
     universal instruction.</li>
-    <li>That the three measured anchors generalise beyond their settings. <i>d</i> ≈ 0.48 for
-    preference is a pooled figure across a small number of comparisons; the −17% is a single
-    field experiment in one course.</li>
+    <li>That the three measured anchors generalise beyond their settings. <i>d</i> ≈ 0.48 is the
+    reading-experience effect in three randomised comparisons of two renderings of one Cochrane
+    review, n = 334 adults, on an immediate quiz — not a general rate at which learner
+    preference moves; the −17% is a single field experiment in one course.</li>
     <li>That the divergence you just simulated has the magnitude shown. The arithmetic is real, the participants are synthetic, and the measured anchors are cited beside them.</li>
   </ul>
 </div>
@@ -379,7 +384,7 @@ const ANCHORS={
   alt:'Slope chart: three findings where what learners felt diverged from what they learned.',
   rows:[
     {label:'Preference vs knowledge',a:'d ≈ 0.48',b:'0',bad:false,
-     note:'Three randomised comparisons. Preference moves; knowledge does not. Survives explicit debiasing — telling learners about the effect does not repair the judgement.'},
+     note:'Buljan et al. 2018: three randomised comparisons, n = 334 adults, an infographic against a plain-language Cochrane summary, immediate quiz. Preference moved; knowledge did not. Survives explicit debiasing — telling learners about the effect does not repair the judgement.'},
     {label:'Deslauriers PNAS 2019',a:'felt worse',b:'learned more',invert:true,
      note:'Passive lecture vs active learning, identical materials, randomised. Students who learned MORE reported learning LESS, mediated by cognitive effort.'},
     {label:'Unguarded AI assist',a:'+48% practice',b:'−17% unassisted',bad:true,

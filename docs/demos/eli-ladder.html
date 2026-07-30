@@ -82,7 +82,7 @@ input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
 
 <section class="orient">
   <div class="o"><b>What this is</b><p>One genuinely hard concept written at three distinct altitudes, presented as a <em>library you enter</em> rather than a staircase you climb, with the fidelity rule enforced in code.</p></div>
-  <div class="o"><b>Why it matters</b><p>Three rungs beat two (<b>p = 0.032</b>); five did <em>not</em> beat three (<b>p = 0.738</b>). So ELI10/15/20/25 is one level too many, and entry must be <em>measured</em>, because preference moves d ≈ 0.48 while knowledge moves zero. A simplification may drop precision. It may never falsify ontology.</p></div>
+  <div class="o"><b>Why it matters</b><p>Three rungs beat two (<b>p = 0.032</b>); five did <em>not</em> beat three (<b>p = 0.738</b>). So ELI10/15/20/25 is one level too many, and entry must be <em>measured</em>, because where the two have been put side by side they come apart: in Buljan's three randomised comparisons (n = 334 adults, an infographic against a plain-language Cochrane summary, immediate quiz), preference moved d ≈ 0.48 while knowledge moved zero. A simplification may drop precision. It may never falsify ontology.</p></div>
   <div class="o"><b>How to use it</b><p>Take the short probe and let it choose your door rather than picking one. Then open the <em>violation</em> toggle: a plausible-sounding simplification that breaks ontology, and the reason a full semester of instruction does not shift that particular error.</p></div>
 </section>
 
@@ -135,9 +135,11 @@ they diminish early. Charts at the bottom.</div>
   <div id="verdict"></div>
 </div>
 
-<div class="note warn"><b>Why preference is inadmissible as an input.</b> Across three randomised
-comparisons, learners' preference between two versions moved d ≈ 0.48 while their
-knowledge moved zero, and the bias <strong>survives explicit debiasing</strong>.
+<div class="note warn"><b>Why preference is inadmissible as an input.</b> Buljan et al. 2018 ran
+three randomised comparisons: n = 334 adults, an infographic against a plain-language Cochrane
+summary of the same review, scored on an immediate quiz. Preference between the two versions
+moved d ≈ 0.48 while knowledge moved zero, and the bias <strong>survives explicit
+debiasing</strong>. One format contrast in one adult population is not a law about learners.
 Worse, the direction is not random: a simplified account <em>raises</em> confidence and perceived
 credibility independently of competence, so a learner who has just read the easy rung is
 <em>more</em> confident and therefore <em>less</em> likely to ask for the harder one.
@@ -365,7 +367,7 @@ const PREF={
   alt:'Slope chart: preference for a version moved by d = 0.48 while knowledge moved zero.',
   rows:[
     {label:'Preference between versions',a:'d ≈ 0.48',b:'0',
-     note:'Buljan et al. 2018 and two further randomised comparisons. Learners reliably prefer one rendering; the knowledge difference is nil.'},
+     note:'Buljan et al. 2018: three randomised comparisons, n = 334 adults, an infographic against a plain-language Cochrane summary, immediate quiz. These adults preferred one rendering; the knowledge difference was nil.'},
     {label:'Simplified account read',a:'confidence ↑',b:'no change',bad:true,
      note:'Scharrer et al. 2017; Salzmann et al. 2025. Simplification raises confidence and perceived credibility independently of competence — and the bias survives explicit debiasing.'}
   ]

@@ -113,17 +113,17 @@ Two design details carry most of the value. The control must be
 summary-carryover and not a true amnesiac, or the comparison measures
 politeness instead of memory. And the typed/untyped sub-ablation converts a null
 into a diagnosis — because the deep obstacle is knowledge-component
-alignment, and the numbers there are not encouraging: expert KC models add
-**≤ 0.01 AUC on 7 of 9 datasets**, and on 4 of 9 the KC model is so poor that a
-skill-only model loses to an item-difficulty-only model. **A memory whose
-contents are badly typed may be worth exactly nothing.**
+alignment, and nobody has yet demonstrated a domain map that survives transfer
+between two systems (§11). **A memory whose contents are badly typed may be worth
+exactly nothing**, and no experiment has yet separated that case from the case
+where typing is what makes memory pay.
 
-The case for memory also cannot be "better next-item prediction," because that
-ceiling is reached: a zero-parameter moving average beats every released FSRS
-version on log loss over 350 million reviews, and SAKT fails independent
-replication on all nine datasets tested (0.85 reported → 0.73 observed). The case
-has to be continuity, diagnosis and pivoting — none of which AUC measures and
-none of which anyone has measured either.
+The case for memory also cannot be "better next-item prediction." A zero-parameter
+moving average beats every released FSRS version on log loss over 350 million
+reviews, so the quantity that layer optimises is not where a memory system would
+earn its cost. The case has to be continuity, diagnosis and pivoting — none of
+which any released benchmark measures, and none of which anyone has measured
+either.
 
 > Falsifier. C = B = A on prerequisite-dependent transfer, with no advantage
 > even on redundant-re-explanation counts, would mean persistent state is an
@@ -170,34 +170,44 @@ experiment is worth running.
 
 ## What would falsify this survey
 
-This survey argues that the **0.2–0.4 SD** band is a floor with the brakes on;
-that constrained, grounded, pivoting, remembering systems would do better; and
-that nobody has built the good version and measured it.
+This survey argues that the frontier deployment results on record are a floor with
+the brakes on; that constrained, grounded, pivoting, remembering systems would do
+better; and that nobody has built the good version and measured it.
 
-Say first what the band is made of, because the argument turns on it. It is drawn
-from frontier-model deployment trials of six to eight weeks — Sierra Leone 0.258,
-Nigeria 0.23–0.31, Rori 0.37 (§09) — and it already omits both ends of that
-record: Kestin's developer-built, developer-evaluated d ≈ 0.63 above it and
-Bastani's unassisted −17% below it (§01). The pre-LLM ITS syntheses and the
-human-tutoring pool land in the same range, and that coincidence is a comparison
-and never a constraint. Those studies measured other machines, and older ones;
-they cannot bound this one.
+Say first what that record actually is, because the argument turns on it and on
+nothing else. **Sierra Leone** +0.258 SD adjusted, and +0.216 SD (SE 0.137) unadjusted
+and not significant, across 48 classrooms in eight weeks. **Nigeria** +0.23 to +0.31.
+**Rori** 0.37, across eleven clusters, developer-authored. **Kestin** d ≈ 0.63,
+developer-built and developer-evaluated, in a median 49 minutes. **Tutor CoPilot**
++4 percentage points on exit tickets and +9 for students of the lowest-rated tutors,
+with **no significant movement on the end-of-year state test**. **Bastani** +127% on
+assisted practice, −17% unassisted for the unguarded arm and −0.004 (n.s.) for the
+guardrailed one (§09, §01). That is the whole frontier record, and it is measured
+almost entirely on immediate or assisted outcomes over eight weeks or less.
+
+One clause belongs with every one of those numbers and this survey previously
+dropped it: those gains arrive **at much lower cost**. Tutor CoPilot ran at about
+$20 per tutor per year. A result of that size delivered at that price is a different
+proposition from the same result delivered by hiring people, and the source that
+produced the summary called the cost the genuinely important finding.
 
 Here is the strongest case against the survey's reading, stated properly and not
 as a strawman. Anyone who cannot state it in this form has not earned the right to the
 survey's conclusion.
 
-**Premise 1. 0.2–0.4 SD is not a floor. It is the modal result of educational
-intervention research, full stop.** It is where tutoring lands, where formative
-assessment lands, where feedback lands, and where most well-implemented
-instructional technology lands once the trial is adequately powered and
-independently run. Every one of those literatures predates the LLMs, and on this
-premise that is the point: the regularity was established before the technology
-arrived and has survived its arrival. The regularity is not a fact about AI. It
-is a fact about how much of the variance in learning outcomes is available to be
-moved by *any* instructional manipulation given fixed time, prior knowledge and
-motivation. **On this reading, the survey has mistaken a population parameter for
-a technology limitation.**
+**Premise 1. The frontier record is the only reference class, and it is not a floor.
+It is the measurement.** Every trial listed above ran a real frontier model, in a
+real classroom, with real teachers, and none of them was a deliberately degraded
+version of what a good system would be. Sierra Leone had tablets, a 2:1 device
+ratio and supervision; Tutor CoPilot had trained human tutors in the loop; Kestin's
+tutor was purpose-built by a physics-education group and still needed a developer to
+evaluate it. On this premise the survey's move — *these results are what bad systems
+do* — is unfalsifiable special pleading: any result below expectation gets attributed
+to a mechanism nobody has built, and any result above it gets attributed to the
+mechanisms the survey favours. **A thesis that can absorb every outcome has not
+predicted any of them.** The premise's demand is concrete and fair: name in advance
+the property that separates the good version from the systems already trialled, and
+name the trial that would show it missing.
 
 **Premise 2. The nulls already on record are the honest prior, and they are the
 most rigorous studies in their respective literatures.**
@@ -207,18 +217,17 @@ most rigorous studies in their respective literatures.**
 | Orton-Gillingham vs comparison instruction | **g = 0.22, p = .40**; g = 0.14, p = .59 | HUMAN — teacher-delivered reading instruction (Stevens et al. 2021) |
 | Expanding retrieval intervals | **g = 0.034, n.s.** | HUMAN — schedule manipulation, lab and classroom (Latimier 2020) |
 | Lesson Study (EEF) | **ES 0.02 [−0.06, 0.09], p = .65**; n = 6,437; 181 schools; **very high** security; null in every subject and subgroup; no dose–response; good fidelity | HUMAN — teacher professional development |
-| Multimedia pedagogical agents | **g = 0.20** | ITS — pre-LLM animated agents (Castro-Alonso et al. 2021) |
 | Ruffle&Riley (LLM learning-by-teaching) | **null twice**, N = 100 and N = 200, with high subjective ratings and users needing *more* time | **FRONTIER** — LLM, 2023–2024 |
 | Lehmann et al. | **no main effect**, two preregistered experiments — plus gap-widening | **FRONTIER** — LLM, 2024 |
 | RTI at federal scale | **negative** Grade-1 impacts, regression discontinuity | HUMAN — a schooling framework (Balu et al. 2015) |
 | Working-memory training | **no transfer** | HUMAN — cognitive training (Melby-Lervåg et al. 2016) |
 | UDL | outcomes **not demonstrated** | HUMAN — a curriculum-design framework |
 
-Two of the nine measured a language model. The premise does not need the other
-seven to be about AI, because its claim is about the base rate for instructional
-manipulation in general. But a reader is entitled to see which rows are evidence
-about this technology and which are evidence about instruction, and the survey
-has not always drawn that line where it belongs.
+Two of the eight rows measured a language model, and those two carry the premise:
+both are preregistered, both are frontier, and both are null. The other six are
+evidence about *instruction* — they are the reason to expect rigour to shrink an
+effect, and they are not evidence about what an AI tutor can do. The survey has not
+always drawn that line where it belongs, and the line is drawn here.
 
 **Premise 3. Added mechanism adds load, and the load is real while the benefit
 is speculative. This is the sharpest version, and this survey's own evidence
@@ -270,8 +279,9 @@ hardest, which is where the mechanism-level case is strongest.
 
 ## The concession conditions, stated in advance
 
-We would concede that 0.2–0.4 SD is a real ceiling and not a floor, and that
-added mechanism does not pay, if:
+We would concede that the frontier results already on record are what this
+technology does, rather than a floor set by unfinished systems, and that added
+mechanism does not pay, if:
 
 1. **Experiment 3 returns A ≈ C** at n = 300/arm. The single most decisive test:
    the flagship design against the best cheap known-good alternative on our own
@@ -288,9 +298,11 @@ added mechanism does not pay, if:
    three "add a mechanism" bets; two of three null puts the elaboration thesis in
    serious trouble regardless of the others.
 6. **A well-powered, independent, preregistered trial of a system implementing
-   several of these mechanisms together lands inside 0.2–0.4 SD** on a delayed
-   unassisted outcome. This is the cleanest trigger and the one we should most
-   want run, because it tests the conjunction instead of the parts.
+   several of these mechanisms together shows no advantage over a matched-time
+   no-AI control** on a delayed unassisted outcome, against a pre-registered
+   smallest effect of interest of d = 0.20. This is the cleanest trigger and the
+   one we should most want run, because it tests the conjunction instead of the
+   parts.
 
 **If (1) and (6) both land, the correct revision is not a hedge.** It is to
 rewrite the thesis as: *AI's contribution to learning is the scalable,

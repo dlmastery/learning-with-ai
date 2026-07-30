@@ -173,7 +173,7 @@ One of them documents a mechanism this project proposed, benchmarked, and
 35. [The Substrate — what the frontier actually supplies](#the-substrate-what-the-frontier-actually-supplies)
 36. [The Textbook That Writes Itself — and who it remembers](#the-textbook-that-writes-itself-and-who-it-remembers)
 37. [The Canon — what the history of pedagogy already settled](#the-canon-what-the-history-of-pedagogy-already-settled)
-38. [The Market — nine bets, one graveyard, and the number that shrinks as you look at it](#the-market-nine-bets-one-graveyard-and-the-number-that-shrinks-as-you-look-at-it)
+38. [The Market — nine bets, one graveyard, and a translation layer nobody has to lie in](#the-market-nine-bets-one-graveyard-and-a-translation-layer-nobody-has-to-lie-in)
 39. [Inference Is 0.43% of Delivery — and human judgement is the scarce input](#inference-is-0-43-of-delivery-and-human-judgement-is-the-scarce-input)
 40. [One Question Correct Per Eight Hours — what test preparation moves, and the mark scheme as a held-out test set](#one-question-correct-per-eight-hours-what-test-preparation-moves-and-the-mark-scheme-as-a-held-out-test-set)
 41. [The Two-Hour School — two hours buys the schedule, and does not buy the attainment](#the-two-hour-school-two-hours-buys-the-schedule-and-does-not-buy-the-attainment)
@@ -2762,7 +2762,19 @@ table of what is left is very short:
 | Interest and context of examples | **PLAUSIBLE** — small, real, easily oversold |
 | Learning styles / modality matching | **DEBUNKED** |
 | Personality or demographic tailoring | **DEBUNKED or unevidenced** |
-| Stated preference for difficulty | **ANTI-SIGNAL** — preference moves d ≈ 0.48 while knowledge moves 0 (§2)|
+| Stated preference for difficulty | **ANTI-SIGNAL** — what a learner prefers and what a learner knows move independently (§2) |
+
+The last row is the one that gets over-read, so it is worth stating at full size.
+Buljan et al. 2018 ran **three randomised comparisons — n = 334 adults, an infographic
+against a plain-language Cochrane summary of the same review, scored on an immediate
+quiz.** Preference moved d ≈ 0.48; knowledge moved zero. That is one format contrast
+in one adult population on one immediate test, not a law about how learners feel.
+It belongs in the table because the dissociation it shows is corroborated by work that
+shares none of its design: Deslauriers et al. 2019, where randomised active-learning
+students learned more and reported learning less; the Wilson writing results in §25,
+where revision quality and self-efficacy rise while performance on a blank page does
+not; and Tutor CoPilot's proximal/distal split in §3, where exit-ticket mastery moved
+4 points and the end-of-year test did not move at all.
 
 ---
 
@@ -2940,8 +2952,12 @@ the saved complexity on getting the universal things right."
 
 - **Lead with Cronbach.** Anyone proposing a personalisation dimension states which
   of the seven rows in §11.2 it belongs to, and defends it there.
-- **Measure, never ask.** Preference moves d ≈ 0.48 while knowledge moves zero.
-  Stated preference is an anti-signal and is not an input.
+- **Measure, never ask.** In Buljan's three randomised comparisons — n = 334 adults,
+  an infographic against a plain-language Cochrane summary, immediate quiz —
+  preference moved d ≈ 0.48 and knowledge moved zero. One format contrast is not a
+  general law, but nothing in the corpus shows stated preference tracking knowledge,
+  and the same felt/real split appears in trials of a different shape (§3, §25).
+  Preference is not an input to the controller.
 - **Per-topic, never per-person.** No trait-level storage. The expertise estimate
   is attached to a concept and decays.
 - **The fast loop may not change the method.** Assistance level, rung, granularity —
@@ -3284,10 +3300,10 @@ receipt.
 
 But the counter-argument lands hard on one point, and this section concedes it: the
 value of persistence is currently a design hypothesis, not a finding. It should
-be labelled that way everywhere, including by us. And it is testable, cheaply: the
-cold-start result gives a ready-made design — measure whether a warm prior from
-another subject reduces burn-in the way a within-subject history does. That is one
-experiment, and no one has run it.
+be labelled that way everywhere, including by us. And it is testable, cheaply:
+measure whether a warm prior carried from another subject shortens the number of
+interactions a tutor needs before its diagnosis stabilises, against the same tutor
+starting cold. That is one experiment, and no one has run it.
 
 ---
 
@@ -3301,9 +3317,10 @@ experiment, and no one has run it.
 - **Every knowledge claim carries a decay model.** A mastery estimate without one is
   a lie about the present.
 - **The model runs on the learner's device**, because a 21-parameter memory model and
-  a 34-feature logistic regression sit at the accuracy frontier *for next-item
-  prediction*, which is the only part of a learner model anyone has benchmarked.
-  Privacy costs approximately zero accuracy on that part.
+  a 34-feature logistic regression sit at the accuracy frontier of the memory layer,
+  which is the only part of a learner model anyone has benchmarked. Privacy costs
+  approximately zero accuracy on that part, and nothing measured argues for moving
+  the record off the device.
 - **Custody sits with the learner.** Scoped, expiring, revocable, default-deny onward
   transfer, with a learner-readable access log and erasure receipts. inBloom failed on
   custody, not schema.
@@ -4367,9 +4384,14 @@ week six.
 
 - **Four rungs exist as a library; a learner traverses two or three.** Three-step
   beat two-step at p = 0.032; five-step did not beat three-step at p = 0.738.
-- **Entry is measured, never chosen.** Preference moves d ≈ 0.48 while knowledge
-  moves zero, and the easiness effect survives explicit debiasing (§2). The dropdown may
-  exist as an override; it may never be the default input.
+- **Entry is measured, never chosen.** In Buljan's three randomised comparisons —
+  n = 334 adults, an infographic against a plain-language Cochrane summary, immediate
+  quiz — preference moved d ≈ 0.48 while knowledge moved zero, and the easiness effect
+  survives explicit debiasing (§2). One format contrast in three adult samples does
+  not license a general law about preference; what licenses the rule here is that the
+  drift has a known direction and that no measurement anywhere in this corpus shows
+  a learner's stated level tracking their actual one. The dropdown may exist as an
+  override; it may never be the default input.
 - **Per prerequisite, take the weakest link.** No single global level per learner.
 - **Generate top-down.** A refinement chain cannot be checked against an account
   that does not exist yet.
@@ -4808,10 +4830,15 @@ probability, which would falsify ontology.
 
 ## 5. What the probe should ask
 
-§11 established that entry must be measured, never preferred: preference moves
-d ≈ 0.48 while knowledge moves zero, and rapid dynamic assessment recovers an
-actionable estimate from 1–3 items in 15–40 seconds at r = 0.66–0.92 against full
-diagnostics.
+§11 established that entry must be measured, never preferred. The sharpest single
+measurement behind that rule is narrow — Buljan et al. 2018, three randomised
+comparisons, n = 334 adults, an infographic against a plain-language Cochrane
+summary, scored on an immediate quiz: preference moved d ≈ 0.48 and knowledge moved
+zero. Read it as one format contrast rather than a law about learners, and the rule
+still holds, because the felt/real split recurs in trials built quite differently
+(§3, §25) and because rapid dynamic assessment recovers an actionable estimate from
+1–3 items in 15–40 seconds at r = 0.66–0.92 against full diagnostics — a real
+measurement is available, so there is no reason to ask.
 
 This section adds *what the probe should ask*. **Probe on the obstacle, not the
 definition.**
@@ -11112,35 +11139,22 @@ ever gated by the price of attention. Those are the ones to build. The rest are
 worth knowing so that we do not mistake a tradition for a finding.
 
 
-## 38. The Market — nine bets, one graveyard, and the number that shrinks as you look at it
+## 38. The Market — nine bets, one graveyard, and a translation layer nobody has to lie in
 
 <sub>Source report: `research/raw/E1-E2-edtech-landscape-lessonorca.md, research/raw/E3-latest-sweep.md`</sub>
 
-ASSISTments publishes its own evidence page. Read the studies in order of sample
-size:
+This market's public evidence is, on the whole, not false. It is unusable. A product
+page hands you a percentage; the percentage is arithmetically true of some study;
+and the page does not name that study's sample, its comparison group, or who ran it.
+A modest effect size, re-rendered as a percentage of a school year's growth, sounds
+like a different order of claim than the one the underlying trial supports, and
+nobody had to lie to get there. **The translation layer between effect sizes and marketing copy
+is where most of this market's dishonesty lives, and it does not require anyone to
+lie.**
 
-| Study | Design | n | Effect |
-|---|---|---|---|
-| Mendicino, Razzaq & Heffernan (2009) | small RCT | 28 students | **0.61** |
-| Kehrer, Kelly & Heffernan (2013) | small RCT | 65 students | 0.37 |
-| Maine (2012–2015) | RCT | 46 schools, 2,769 students | **0.22** |
-| North Carolina (2018–2021), WestEd | RCT, delayed outcome | 63 schools, 5,991 students | **0.10** one year later |
-| Gates Foundation / SRI | independent evaluation | not stated | **0.03** |
-
-**0.61 → 0.22 → 0.10 → 0.03**, as the sample grows and the evaluator stops being
-the vendor.
-
-That gradient is the single most instructive object in the edtech market. The
-company publishes it itself, on its own site, without spin. It is to their
-enormous credit. It is also the number you should hold in your head every time a
-product quotes you an effect size.
-
-Note the last translation. ASSISTments' public headline is "60% more growth in math
-scores", which is the **0.22** study rendered in percentage-of-a-year terms. A
-0.22 SD effect is a genuinely good result in education. "60% more growth" sounds
-like something else entirely. **The translation layer between effect sizes and
-marketing copy is where most of this market's dishonesty lives, and it does not
-require anyone to lie.**
+Which makes the useful questions structural rather than numerical, and they run
+through every part of this section: who evaluated it, against what comparison, at
+what sample, and what the vendor would accept as disconfirmation.
 
 ---
 
@@ -11165,21 +11179,15 @@ Each primitive is a falsifiable hypothesis about how learning happens.
 
 Two clusters deserve their evidence stated in full.
 
-**The numbers this market advertises are pre-LLM.** Kulik & Fletcher (2016), 50
-controlled evaluations of rule-based intelligent tutoring at **median 0.66 SD**, is
-the most-cited figure in the market and comes
-with its own debunking attached: the improvement "depended to a great extent on
-whether improvement was measured on locally developed or standardized tests," and
-§1 puts test alignment at a factor of 2–3. Pane et al.'s Cognitive Tutor Algebra I
-trial, matched-pair randomisation across seven states, is the best large-scale
-evidence any *pre-LLM* system has: **no effect in year one**, positive in year two,
-significant for high schools and **not** for middle schools, at roughly eight
-percentile points. The LLM generation inherited that marketing claim without the
-measurement under it. Randomised trials of frontier tutors do exist — §3 holds
-seven, from Sierra Leone to Tutor CoPilot — and not one of them is the number a
-product page in this market quotes at you. A 2016 meta-analysis of rule-based
-software is being used to sell a 2026 model, which is the same category error the
-buyer's side of this market keeps falling for.
+**The numbers this market advertises are pre-LLM.** The most-cited efficacy figures
+on product pages here come from syntheses of rule-based courseware compiled before
+any language model shipped, and the LLM generation inherited the marketing claim
+without the measurement under it. Randomised trials of frontier tutors do exist —
+§3 holds seven, from Sierra Leone to Tutor CoPilot — and not one of them is the
+number a product page in this market quotes at you. **A decade-old meta-analysis of
+rule-based software is being used to sell a 2026 model**, which is the same category
+error the buyer's side of this market keeps falling for. The honest version of a
+product page in 2026 would name a frontier trial or admit there is not one.
 
 **Early literacy is the most defensible bet in the market**, in mechanism terms
 rather than enthusiasm terms. The AI does something a human demonstrably cannot
@@ -11195,12 +11203,11 @@ a selection effect unless dosage was randomised.
 
 ## 2. What the market measures instead of learning
 
-Finding one: the evidence gradient runs opposite to the funding gradient. The
-two products in this section with genuine independent randomised evidence
-(ASSISTments, a nonprofit that is free to teachers, and Cognitive Tutor, a
-forty-year-old curriculum publisher — both pre-LLM systems) report **0.03 to
-0.22 SD**. The products with
-the largest claims report no retrievable design, sample or comparison group. And the
+Finding one: the evidence gradient runs opposite to the funding gradient. The only
+products in this section carrying genuine independent randomised evidence are
+pre-LLM courseware from a nonprofit and from a legacy curriculum publisher, neither
+of them venture-funded and neither of them a language model. The products with the
+largest claims report no retrievable design, sample or comparison group. And the
 best-funded entity in the sector, at a $4.8bn buyout, makes no learning claim at all.
 
 **Finding two: "time saved" has quietly replaced "learning gained" as the industry's
@@ -11402,9 +11409,10 @@ the three convergent norms above are worth more than a longer policy.
 
 ## 6. How to read a claim from this market
 
-- **Quote the gradient, not the number.** 0.61 → 0.22 → 0.10 → 0.03 as n rises and
-  the evaluator becomes independent. Any effect size from a vendor sits somewhere on
-  that curve, and usually at the left end.
+- **Ask who evaluated it, and at what sample.** A vendor-run pilot on tens of
+  students and an independent randomised evaluation across dozens of schools are both
+  called "evidence" on a product page. The number you are shown is the most flattering
+  point on a curve you have not been shown.
 - **Distinguish teacher time from learner time.** One is a benefit. The other is the
   documented signature of the harm condition.
 - **Prefer mechanism claims and audit them.** A mechanism claim that survives
@@ -13775,17 +13783,17 @@ Two design details carry most of the value. The control must be
 summary-carryover and not a true amnesiac, or the comparison measures
 politeness instead of memory. And the typed/untyped sub-ablation converts a null
 into a diagnosis — because the deep obstacle is knowledge-component
-alignment, and the numbers there are not encouraging: expert KC models add
-**≤ 0.01 AUC on 7 of 9 datasets**, and on 4 of 9 the KC model is so poor that a
-skill-only model loses to an item-difficulty-only model. **A memory whose
-contents are badly typed may be worth exactly nothing.**
+alignment, and nobody has yet demonstrated a domain map that survives transfer
+between two systems (§12). **A memory whose contents are badly typed may be worth
+exactly nothing**, and no experiment has yet separated that case from the case
+where typing is what makes memory pay.
 
-The case for memory also cannot be "better next-item prediction," because that
-ceiling is reached: a zero-parameter moving average beats every released FSRS
-version on log loss over 350 million reviews, and SAKT fails independent
-replication on all nine datasets tested (0.85 reported → 0.73 observed). The case
-has to be continuity, diagnosis and pivoting — none of which AUC measures and
-none of which anyone has measured either.
+The case for memory also cannot be "better next-item prediction." A zero-parameter
+moving average beats every released FSRS version on log loss over 350 million
+reviews, so the quantity that layer optimises is not where a memory system would
+earn its cost. The case has to be continuity, diagnosis and pivoting — none of
+which any released benchmark measures, and none of which anyone has measured
+either.
 
 > Falsifier. C = B = A on prerequisite-dependent transfer, with no advantage
 > even on redundant-re-explanation counts, would mean persistent state is an
@@ -13832,34 +13840,44 @@ experiment is worth running.
 
 ## What would falsify this survey
 
-This survey argues that the **0.2–0.4 SD** band is a floor with the brakes on;
-that constrained, grounded, pivoting, remembering systems would do better; and
-that nobody has built the good version and measured it.
+This survey argues that the frontier deployment results on record are a floor with
+the brakes on; that constrained, grounded, pivoting, remembering systems would do
+better; and that nobody has built the good version and measured it.
 
-Say first what the band is made of, because the argument turns on it. It is drawn
-from frontier-model deployment trials of six to eight weeks — Sierra Leone 0.258,
-Nigeria 0.23–0.31, Rori 0.37 (§3) — and it already omits both ends of that
-record: Kestin's developer-built, developer-evaluated d ≈ 0.63 above it and
-Bastani's unassisted −17% below it (§2). The pre-LLM ITS syntheses and the
-human-tutoring pool land in the same range, and that coincidence is a comparison
-and never a constraint. Those studies measured other machines, and older ones;
-they cannot bound this one.
+Say first what that record actually is, because the argument turns on it and on
+nothing else. **Sierra Leone** +0.258 SD adjusted, and +0.216 SD (SE 0.137) unadjusted
+and not significant, across 48 classrooms in eight weeks. **Nigeria** +0.23 to +0.31.
+**Rori** 0.37, across eleven clusters, developer-authored. **Kestin** d ≈ 0.63,
+developer-built and developer-evaluated, in a median 49 minutes. **Tutor CoPilot**
++4 percentage points on exit tickets and +9 for students of the lowest-rated tutors,
+with **no significant movement on the end-of-year state test**. **Bastani** +127% on
+assisted practice, −17% unassisted for the unguarded arm and −0.004 (n.s.) for the
+guardrailed one (§3, §2). That is the whole frontier record, and it is measured
+almost entirely on immediate or assisted outcomes over eight weeks or less.
+
+One clause belongs with every one of those numbers and this survey previously
+dropped it: those gains arrive **at much lower cost**. Tutor CoPilot ran at about
+$20 per tutor per year. A result of that size delivered at that price is a different
+proposition from the same result delivered by hiring people, and the source that
+produced the summary called the cost the genuinely important finding.
 
 Here is the strongest case against the survey's reading, stated properly and not
 as a strawman. Anyone who cannot state it in this form has not earned the right to the
 survey's conclusion.
 
-**Premise 1. 0.2–0.4 SD is not a floor. It is the modal result of educational
-intervention research, full stop.** It is where tutoring lands, where formative
-assessment lands, where feedback lands, and where most well-implemented
-instructional technology lands once the trial is adequately powered and
-independently run. Every one of those literatures predates the LLMs, and on this
-premise that is the point: the regularity was established before the technology
-arrived and has survived its arrival. The regularity is not a fact about AI. It
-is a fact about how much of the variance in learning outcomes is available to be
-moved by *any* instructional manipulation given fixed time, prior knowledge and
-motivation. **On this reading, the survey has mistaken a population parameter for
-a technology limitation.**
+**Premise 1. The frontier record is the only reference class, and it is not a floor.
+It is the measurement.** Every trial listed above ran a real frontier model, in a
+real classroom, with real teachers, and none of them was a deliberately degraded
+version of what a good system would be. Sierra Leone had tablets, a 2:1 device
+ratio and supervision; Tutor CoPilot had trained human tutors in the loop; Kestin's
+tutor was purpose-built by a physics-education group and still needed a developer to
+evaluate it. On this premise the survey's move — *these results are what bad systems
+do* — is unfalsifiable special pleading: any result below expectation gets attributed
+to a mechanism nobody has built, and any result above it gets attributed to the
+mechanisms the survey favours. **A thesis that can absorb every outcome has not
+predicted any of them.** The premise's demand is concrete and fair: name in advance
+the property that separates the good version from the systems already trialled, and
+name the trial that would show it missing.
 
 **Premise 2. The nulls already on record are the honest prior, and they are the
 most rigorous studies in their respective literatures.**
@@ -13869,18 +13887,17 @@ most rigorous studies in their respective literatures.**
 | Orton-Gillingham vs comparison instruction | **g = 0.22, p = .40**; g = 0.14, p = .59 | HUMAN — teacher-delivered reading instruction (Stevens et al. 2021) |
 | Expanding retrieval intervals | **g = 0.034, n.s.** | HUMAN — schedule manipulation, lab and classroom (Latimier 2020) |
 | Lesson Study (EEF) | **ES 0.02 [−0.06, 0.09], p = .65**; n = 6,437; 181 schools; **very high** security; null in every subject and subgroup; no dose–response; good fidelity | HUMAN — teacher professional development |
-| Multimedia pedagogical agents | **g = 0.20** | ITS — pre-LLM animated agents (Castro-Alonso et al. 2021) |
 | Ruffle&Riley (LLM learning-by-teaching) | **null twice**, N = 100 and N = 200, with high subjective ratings and users needing *more* time | **FRONTIER** — LLM, 2023–2024 |
 | Lehmann et al. | **no main effect**, two preregistered experiments — plus gap-widening | **FRONTIER** — LLM, 2024 |
 | RTI at federal scale | **negative** Grade-1 impacts, regression discontinuity | HUMAN — a schooling framework (Balu et al. 2015) |
 | Working-memory training | **no transfer** | HUMAN — cognitive training (Melby-Lervåg et al. 2016) |
 | UDL | outcomes **not demonstrated** | HUMAN — a curriculum-design framework |
 
-Two of the nine measured a language model. The premise does not need the other
-seven to be about AI, because its claim is about the base rate for instructional
-manipulation in general. But a reader is entitled to see which rows are evidence
-about this technology and which are evidence about instruction, and the survey
-has not always drawn that line where it belongs.
+Two of the eight rows measured a language model, and those two carry the premise:
+both are preregistered, both are frontier, and both are null. The other six are
+evidence about *instruction* — they are the reason to expect rigour to shrink an
+effect, and they are not evidence about what an AI tutor can do. The survey has not
+always drawn that line where it belongs, and the line is drawn here.
 
 **Premise 3. Added mechanism adds load, and the load is real while the benefit
 is speculative. This is the sharpest version, and this survey's own evidence
@@ -13932,8 +13949,9 @@ hardest, which is where the mechanism-level case is strongest.
 
 ## The concession conditions, stated in advance
 
-We would concede that 0.2–0.4 SD is a real ceiling and not a floor, and that
-added mechanism does not pay, if:
+We would concede that the frontier results already on record are what this
+technology does, rather than a floor set by unfinished systems, and that added
+mechanism does not pay, if:
 
 1. **Experiment 3 returns A ≈ C** at n = 300/arm. The single most decisive test:
    the flagship design against the best cheap known-good alternative on our own
@@ -13950,9 +13968,11 @@ added mechanism does not pay, if:
    three "add a mechanism" bets; two of three null puts the elaboration thesis in
    serious trouble regardless of the others.
 6. **A well-powered, independent, preregistered trial of a system implementing
-   several of these mechanisms together lands inside 0.2–0.4 SD** on a delayed
-   unassisted outcome. This is the cleanest trigger and the one we should most
-   want run, because it tests the conjunction instead of the parts.
+   several of these mechanisms together shows no advantage over a matched-time
+   no-AI control** on a delayed unassisted outcome, against a pre-registered
+   smallest effect of interest of d = 0.20. This is the cleanest trigger and the
+   one we should most want run, because it tests the conjunction instead of the
+   parts.
 
 **If (1) and (6) both land, the correct revision is not a hedge.** It is to
 rewrite the thesis as: *AI's contribution to learning is the scalable,
