@@ -153,8 +153,13 @@ RULES = [
     # ── V-BAND ────────────────────────────────────────────────────────────────
     Rule("V-BAND",
          r"0\.2\s*[–—-]\s*0\.4(?:\s*SD)?",
+         # Any phrasing that establishes the band's frontier provenance clears it.
+         # The first four were the cure list; the rest are the phrasings the
+         # rewrite actually reached for.
          FRONTIER_ERA + r"|answer freely|three trials|Sierra Leone|LLM tutoring|"
-         r"immediate post-test|teacher-supervised",
+         r"immediate post-test|teacher-supervised|three field (?:trials|studies)|"
+         r"rounding of|no pooling|no pooled estimate|did not exist in 20|"
+         r"four countries|deployment trials cluster",
          "The 0.2-0.4 SD band is FRONTIER by construction: a rounding of three LLM-era field "
          "trials (Sierra Leone +0.258 adjusted / +0.216 n.s. unadjusted; Nigeria +0.23-0.31 with "
          "~43% attrition; Rori 0.37 across 11 clusters, developer-authored). It is not a pooled "
