@@ -453,7 +453,140 @@ not a matter of a few more months of streak.
 
 ## 5. Speaking and pronunciation: what a machine can actually hear
 
-<!--SEC5-->
+This is the one skill where an AI tutor has an advantage that is not merely economic.
+A learner will say a sentence badly to a machine that they would not say at all to a
+person, and will say it eighty times. No human tutor supplies that, at any price. The
+question is whether the machine on the other end can tell the difference between the
+eighty attempts.
+
+### 5.1 What is measured on automated pronunciation feedback
+
+The CALL literature's answer is positive and its own authors say it should not be
+believed yet.
+
+Mahdi & Al Khateeb (2019), *Review of Education* 7(3), meta-analysed 20 studies,
+1,014 participants, computer-assisted pronunciation training versus traditional
+instruction: **d = 0.68**, equally effective for young and adult learners, larger for
+beginners and intermediates than for advanced learners. `MEASURED-META`. Their own
+closing caution is the part to carry forward:
+
+> *"The small number of studies, all of very low quality (most with fewer than 100
+> participants, conducted within the same institution using intervention-related
+> assessments) means that the evidence of effectiveness can only be indicative and not
+> conclusive."*
+
+"Intervention-related assessments" is the same defect as §2.1: the test is made of the
+material that was trained. A meta-analysis that warns its own readers this way is doing
+its job, and the d = 0.68 should not be quoted without the sentence attached.
+
+Almusharraf, Mahdi, Al-Nofaie & Aljasser (2024), *J. Computer Assisted Learning* 40(6),
+updated the synthesis to 31 studies and 42 effect sizes from experimental-versus-control
+designs. Its abstract reports every result as a verbal magnitude — "medium," "large" —
+and **no numeric effect size, confidence interval or heterogeneity statistic appears in
+it**. The full text was not retrievable in this session. A 2024 meta-analysis whose
+public abstract contains no numbers is not usable as evidence, and it is recorded here
+so that it is not silently treated as a second, converging estimate of Mahdi &
+Al Khateeb.
+
+The distinction the whole area rests on comes from Munro and Derwing: **accentedness**
+(how different a speaker sounds from a reference variety), **comprehensibility** (how
+much effort a listener spends), and **intelligibility** (how much the listener actually
+recovers) are separable, and they dissociate — heavily accented speech is routinely
+fully intelligible. Only the last two are legitimate instructional targets. Most CAPT
+tools score against a native reference, which is an accentedness measure. A product
+decision follows directly: an AI pronunciation tutor that optimises similarity to a
+reference speaker is optimising the one construct the field says is not the goal.
+
+### 5.2 The benchmark that bounds the product
+
+The relevant question for a build is not whether pronunciation training works. It is
+whether the machine can detect the error. That is a benchmark question, and it has an
+answer.
+
+Liu, Cui, Gu & Wang (2026), *Unlocking Large Audio-Language Models for Interactive
+Language Learning*, [arXiv:2601.14744](https://arxiv.org/abs/2601.14744), evaluated
+cascaded ASR-plus-LLM pipelines and end-to-end audio-language models on mispronunciation
+detection over L2-ARCTIC (read L2 English with phoneme-level annotation of actual learner
+errors), one-shot prompted. `MEASURED-BENCH`. Detection precision / recall / F1:
+
+| System | P | R | **F1** |
+|---|---|---|---|
+| Whisper Large + Mistral-7B | 48.9 | 3.4 | **6.4** |
+| Whisper Medium + Mistral-7B | 48.2 | 4.0 | 7.4 |
+| Whisper Small + Mistral-7B | 53.6 | 4.9 | 9.0 |
+| Whisper Large + Llama-3.1-8B | 52.8 | 8.4 | 14.5 |
+| Whisper Small + Llama-3.1-8B | 53.3 | 12.1 | 19.7 |
+| Wav2vec2 Base + Llama-3.1-8B (best cascade) | 53.8 | 17.8 | 26.8 |
+| Qwen2-Audio (end-to-end) | 41.7 | 22.0 | 28.8 |
+| **GPT-4o-Audio (end-to-end)** | **52.7** | **41.3** | **46.3** |
+| Their instruction-tuned Whisper-Large + Llama-3 | 48.9 | 87.7 | 62.8 |
+
+Three readings, in ascending order of consequence.
+
+**A frontier audio model misses most mispronunciations.** GPT-4o-Audio, the strongest
+off-the-shelf system tested, recovers 41.3% of annotated errors and is right about
+52.7% of the errors it claims. On a GPT-4o-judged 1–5 rating of the *feedback text*, it
+scored 2.145; the best cascade scored 1.426; the authors' tuned model 2.328. Nothing in
+the table is near usable-without-review.
+
+**Better ASR makes it worse.** Whisper Small beats Whisper Medium beats Whisper Large,
+with the same LLM; Wav2vec2 Base beats Wav2vec2 Large. The authors' explanation:
+*"stronger ASR models tend to correct pronunciation errors during transcription due to
+their robustness to accent variations, preventing them from accurately reflecting
+learners' speech errors."* A speech recogniser's entire objective is to recover the word
+the speaker intended. Every improvement in that objective destroys the signal a
+pronunciation tutor needs. This is the measured form of the ambiguity in §2.1: if the
+Tehran learners were talking to a speech-to-text pipeline, the model was reading a
+transcript that had already fixed their errors.
+
+**The best purpose-built systems are at F1 ≈ 0.60–0.72 on read speech.** Independent of
+the above, the 2026 mispronunciation-detection literature on the same benchmark reports
+F1 = 59.52% (arXiv:2606.05569) and 71.77% (arXiv:2604.22133) for dedicated architectures.
+`MEASURED-BENCH`. Read speech is the easy case: known target text, no spontaneity, no
+disfluency. Nothing here supports a claim that unscripted conversational pronunciation
+feedback is a solved capability.
+
+Against that, a useful equivalence result: Neri, Mich, Gerosa & Giuliani (2008),
+*Computer Assisted Language Learning* 21(5), gave eleven-year-olds either teacher-fronted
+pronunciation instruction or a CAPT system with a **simple** ASR component, and found
+both groups improved significantly on word-level pronunciation quality, including on
+words judged particularly difficult, with the two modes comparable. `MEASURED-RCT`
+(small, word-level, short-term). A crude recogniser producing an approximate signal, used
+to structure repeated practice, matched a teacher. That is a real result and it also
+suggests the mechanism doing the work is the structured repetition, not the diagnostic
+accuracy.
+
+### 5.3 Willingness to communicate, and the transfer nobody has measured
+
+Anxiety in L2 learning is real and it is measured. Teimouri, Goetze & Plonsky (2019),
+*Studies in Second Language Acquisition* 41(2), meta-analysed 97 reports, 105 independent
+samples, **N = 19,933**, 23 countries, 216 correlations: mean **r = −0.36** between L2
+anxiety and language achievement, moderated by achievement-measure type, educational
+level, target language and anxiety type. `MEASURED-META`. That is the largest and best
+estimate in the area and it is correlational, so it does not establish direction.
+
+The chatbot-and-WTC literature is where marketing and measurement diverge. Waluyo &
+Pratiwi (2025), *JALT CALL Journal* 21(2), synthesised the Asian EFL evidence across
+Iran, South Korea, Taiwan, China, Saudi Arabia, Egypt, Thailand and Vietnam and reported
+that chatbot interaction enhances willingness to communicate, communicative confidence
+and motivation by reducing speaking anxiety. It also reported, in the same abstract:
+
+> *"[E]vidence on long-term transfer to real-world communication remains scarce."*
+
+`MEASURED-META` (narrative meta-synthesis, so no pooled estimate). The pattern is
+consistent and it is entirely made of self-report. Willingness to communicate is a
+questionnaire. Communicative confidence is a questionnaire. Speaking anxiety is the
+FLCAS, a questionnaire. Every one of those can move without a single additional word
+being spoken to a human being.
+
+**What is absent, stated as specifically as I can make it.** No study located in this
+session measured whether practice with an AI conversational partner changes behaviour
+with a human interlocutor: minutes of unscripted L2 speech produced with a person,
+turns initiated, conversations not avoided, or a blind rating of comprehensibility in a
+human-to-human exchange. The trial would need an AI-practice arm and a human-practice arm
+matched on speaking minutes, with the primary outcome collected in a **human** interaction
+by a rater blind to condition, at least four weeks after the last AI session. Currently
+that trial does not exist in ERIC.
 
 ---
 
@@ -471,7 +604,74 @@ not a matter of a few more months of streak.
 
 ## 8. Nulls, given their own space
 
-<!--SEC8-->
+The brief asks for one. There are four worth the space, and they line up.
+
+### 8.1 The primary null: same content, gamified wrapper, no achievement difference
+
+**James, Kelsey K. & Mayer, Richard E. (2019), "Learning a second language by playing a
+game," *Applied Cognitive Psychology* 33(4).** `MEASURED-RCT`.
+
+Sixty-four college students learned Italian at home over seven sessions, either by
+playing Duolingo or by working through **an online slideshow covering the same material**.
+Matched content, matched sessions, randomised assignment. Result:
+
+> *"Although the groups did not differ significantly on achievement posttests, the
+> Duolingo group rated their learning experience as significantly more enjoyable
+> (d = 0.77), more appealing (d = 1.17), and less difficult (d = 0.51), and was
+> significantly more willing to continue with similar learning experiences (d = 1.39)."*
+
+This is the cleanest experiment in the consumer-language-app literature and it is a null
+on the outcome and a set of large effects on affect. The affective effects are not
+nothing — d = 1.39 on willingness to continue is exactly the variable F6 argues is the
+binding constraint, and a learner who continues learns more than one who quits. But the
+result forecloses the claim that gamification *teaches*. Over seven sessions of identical
+content it did not.
+
+### 8.2 A null reported as a success, in the same sentence
+
+**Rachels, Jason R. & Rockinson-Szapkiw, Amanda J. (2018), "The effects of a mobile
+gamification app on elementary students' Spanish achievement and self-efficacy,"
+*Computer Assisted Language Learning* 31(1–2):72–89.** `OBSERVED`
+(quasi-experimental, non-equivalent control group).
+
+Third and fourth graders, twelve weeks. The treatment group's Spanish instruction *was*
+Duolingo; the control group had its regular Spanish class. A 50-item vocabulary and
+grammar test both directions, plus the PALS academic-efficacy subscale, as pre- and
+post-tests, analysed by ANCOVA. From the abstract:
+
+> *"An analysis of covariance showed no significant difference in students' Spanish
+> achievement or in academic self-efficacy between students who used Duolingo® and
+> students who were taught with traditional face-to-face instruction. **This demonstrates
+> that Duolingo® is a useful tool for teaching Spanish to elementary students.**"*
+
+The final sentence follows the previous one in the published abstract. A non-significant
+difference in an underpowered quasi-experiment is being reported as a demonstration of
+usefulness. Nothing here is fraudulent; equivalence is a defensible thing to want to
+claim. But the study was not designed or powered as an equivalence trial, no equivalence
+margin is specified, and the inference from "we did not detect a difference" to "it
+works" is the single most common error in this literature. It is recorded here because a
+survey that only counts effect sizes will read this paper as supportive.
+
+### 8.3 The AI-versus-teacher null inside a positive paper
+
+Soori, Khojasteh & Javed (2025), §2.2 above: AI feedback versus experienced-teacher
+video feedback on overall IELTS writing, mean difference **0.079 bands, p = 0.921**, with
+task achievement at p = 1.000 and grammatical accuracy numerically favouring the teacher.
+The paper's abstract and title report the hybrid advantage and do not mention this
+contrast. `MEASURED-RCT` (cluster-assigned).
+
+### 8.4 The K-12 null that includes language lessons, already in this corpus
+
+Fütterer et al. (2026), *Educational Psychology Review*, n = 371, Grades 7–9, six 45-minute
+sessions **in regular physics or English lessons**, two scaffolded GenAI conditions
+against a control condition using **standard ChatGPT**: *"no statistically significant
+advantages of either intervention over the control condition… for effort,
+domain-specific knowledge, or elaboration-based strategy use."* `MEASURED-RCT`
+(doi:10.1007/s10648-026-10133-8; E3 §7.3, M1, survey §23).
+
+E3 treated this as the K-12 core-subject result. Half its sessions ran in English
+lessons, which makes it also the only randomised test in the ERIC set of whether
+designed pedagogy beats plain ChatGPT in a language classroom. It did not.
 
 ---
 

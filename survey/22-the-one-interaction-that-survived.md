@@ -25,8 +25,8 @@ and almost nobody says it.
 
 Cronbach and Snow spent two decades hunting **aptitude–treatment interactions**,
 the idea that different learners need different instruction, and that you can
-predict which from measurable traits. Here is Cronbach's own 1975 summary, in his
-own words:
+predict which from measurable traits. Here is Cronbach's 1975 summary, in his own
+words:
 
 > *"The interactions did not turn out as we had anticipated."*
 
@@ -48,7 +48,7 @@ personalisation engine should have to write out by hand first:
 Fifty years of looking. **Exactly one interaction survived**, in two forms that
 turn out to be the same law.
 
-§24 forces a boundary here that we would rather not draw.
+There is a boundary here that §24 forces us to draw, and we would rather not.
 Noetel's meta-meta-analysis found that **prior knowledge did not consistently
 moderate multimedia design effects (p = 0.14)**. That is in open tension with
 everything below. The honest reading, adopted here rather than argued away: the

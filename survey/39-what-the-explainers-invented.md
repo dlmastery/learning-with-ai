@@ -147,10 +147,10 @@ treated personalisation as strictly good. It has a price and we have never named
 
 ## 6. And one finding from the largest-scale case
 
-The Chinese dual-teacher classroom — a remote expert paired with a local facilitator,
-at enormous scale — returns exactly one record in ERIC.
+The Chinese dual-teacher classroom, a remote expert paired with a local facilitator at
+enormous scale, returns exactly one record in ERIC.
 
-What that record says is the useful part: the failure mode is **emotional, not
+That one record says the failure mode was **emotional and not
 informational.** The remote expert delivered the content adequately; what broke was
 the relationship in the room.
 
@@ -159,9 +159,9 @@ already the weak one.** The instruction was never the scarce good.
 
 ---
 
-## 7. What this section commits us to
+## 7. What the inventory obliges us to build
 
-- **Build the 63 before rebuilding the 16.** Most of this craft is invention, not
+- **Build the 63 before rebuilding the 16.** Most of this craft is invention and not
   compensation, and a responsive system does not supersede it.
 - **Curate as well as generate.** Bucket D cannot be derived from a learner model,
   and a system that only generates will be responsive and shallow.
@@ -175,7 +175,7 @@ already the weak one.** The instruction was never the scarce good.
 - **Name the price of personalisation.** An explanation nobody else has seen cannot
   be discussed with anybody.
 
-The general form: **a decade of craft was developed by people who could not see their
-learners, and most of it turns out not to depend on that.** They were not working
-around the constraint. They were discovering how explanation works, and the
-constraint was incidental.
+A decade of craft was developed by people who could not see their learners, and most
+of it turns out not to depend on that. The constraint was incidental. What these
+people were doing was discovering how explanation works, and the one-way medium
+merely happened to be where they did it.

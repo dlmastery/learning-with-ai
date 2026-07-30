@@ -115,9 +115,8 @@ subject matter is encountered in units of a topic, and epistemics is encountered
 units of a *turn*. A child might meet photosynthesis five times and meet "how a
 confident answer sounds" ten thousand times.
 
-We do not know its magnitude or its sign. The
-uncomfortable part is that nobody is looking, and that a field measuring
-post-test scores would not notice either way.
+We do not know its magnitude or its sign. The uncomfortable part is that nobody is
+looking, and that a field measuring post-test scores would not notice either way.
 
 ---
 

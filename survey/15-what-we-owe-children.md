@@ -23,12 +23,12 @@ the EUR-Lex primary text:
 Note what did **not** move. Article 113's first paragraph is unamended and Chapter IV
 is not carved out, so **Article 50 — transparency, chatbot disclosure, synthetic-content
 marking — still applies from 2 August 2026.** For a conversational tutor that is the
-live deadline, and it is days away, not eighteen months.
+live deadline, and it is days away instead of eighteen months.
 
 Two sources that a reasonable person would check both give the wrong answer today:
 `artificialintelligenceact.eu` is still stamped "last updated 1 August 2024," and the
 Commission's own Digital Omnibus page still describes only the proposal. This is
-exactly the case our editorial standard exists for — we published an unverified date,
+the case our editorial standard exists for — we published an unverified date,
 flagged it as unverified, and corrected it against the primary text within a day.
 
 The deferral changes the *deadline*, not the *design*. Read the Act and you will find
@@ -86,8 +86,8 @@ against EUR-Lex before making any compliance decision; a claim of this kind sour
 from a secondary tracker was wrong within eighteen months.
 
 The practical consequence for a builder is not defensive. The conformity
-artefacts — risk management, data governance, logging, human oversight, and a
-Fundamental Rights Impact Assessment under Article 27 for public deployers — are
+artefacts (risk management, data governance, logging, human oversight, and a
+Fundamental Rights Impact Assessment under Article 27 for public deployers) are
 procurement assets. A state school buying an adaptive tutor has a legal duty to
 produce a FRIA. Ship an honest pre-populated template, including a candid list of
 the groups your system underserves, and you have handed the customer the hardest
@@ -98,8 +98,8 @@ without your help.
 
 ## 2. The prohibition that clears the field
 
-Article 5(1)(f) prohibits — outright, not as high-risk, applicable since
-2 February 2025 — "AI systems to infer emotions of a natural person in the areas
+Article 5(1)(f) prohibits outright (not as high-risk, and applicable since
+2 February 2025) "AI systems to infer emotions of a natural person in the areas
 of workplace and education institutions." Read with Art. 3(39) (emotion
 inference *on the basis of biometric data*) and Art. 3(34) (biometric data
 includes behavioural characteristics, "such as facial images"), this means:

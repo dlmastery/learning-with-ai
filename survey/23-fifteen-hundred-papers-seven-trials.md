@@ -129,9 +129,9 @@ reporting**. Modest growth, shrinking balance sheet, and going dark.
 And one number that dissolved on contact. MagicSchool's widely repeated **"28%
 literacy improvement" is unattributable**: five candidate URLs return 404, and
 the full 153-URL sitemap contains no research page at all. This is not weak
-evidence; it is *no locatable source*. It should not be cited by anyone, and the fact that it
-circulates is a small case study in how a `VENDOR` claim becomes a "finding"
-through repetition.
+evidence; it is *no locatable source*. It should not be cited by anyone, and the
+fact that it circulates is a small case study in how a `VENDOR` claim becomes a
+"finding" through repetition.
 
 ---
 

@@ -105,8 +105,8 @@ disengaging, sampling) made this tractable by treating the clusters as different
 products being consumed instead of degrees of failure. *And the replication note that
 belongs with it:* an attempt to reproduce that structure on a different,
 social-constructivist platform failed to fully replicate, with only samplers and
-completers stable across platforms. Engagement patterns are shaped by pedagogy, not
-intrinsic to learners.
+completers stable across platforms. Engagement patterns are shaped by pedagogy and are
+not intrinsic to learners.
 
 Where the rebuttal fails. It rescues MOOCs from the charge of failure but not from
 irrelevance to the persistence problem. Reframing sampling as success does not produce
@@ -220,8 +220,8 @@ streak-holders and non-holders.** Every number is in engagement units.
 
 The mechanism is well-understood and not learning-specific. A streak counter is a pure
 endowed-progress device, and endowed progress is measured to drive retention in
-reward programmes; past a certain length the streak is maintained to avoid losing it, not
-to gain anything. Habit automaticity in the real world took a **median 66 days, range
+reward programmes; past a certain length the streak is maintained to avoid losing it
+and never to gain anything. Habit automaticity in the real world took a **median 66 days, range
 18–254** — a genuine reason to want daily return in the first two months and no reason at
 all to want it in year three.
 
@@ -346,7 +346,7 @@ of the material to their own lives showed increased interest and grades, **conce
 students with low initial success expectations; a college biology replication closed
 achievement gaps** for first-generation and underrepresented-minority students. *Caveat
 required by §3:* the 247-course scale-up found value-relevance effects only in courses that
-*had* a global achievement gap — real and conditional, not universal. It is also a
+*had* a global achievement gap — real and conditional, never universal. It is also a
 generative task, which is exactly what an LLM can elicit, read and respond to at scale
 and a multiple-choice platform cannot.
 
@@ -366,7 +366,7 @@ is a feature. It is how you tell the two kinds of system apart.
 
 > **RTC/h = D(t+30d) · T / H**
 >
-> **Retained Transferable Capability per Learner-Hour.**
+> Retained Transferable Capability per Learner-Hour.
 
 **D(t+30d)** is the score on a delayed (≥30 days), unannounced, novel-item
 assessment — items never seen, generated post hoc, not drawn from practised sets. Delay and
@@ -400,10 +400,10 @@ Four governance rules. Run the Null-Learner Test on any metric before it enters 
 objective; failure excludes it. Unprompted Return Rate is the tie-breaker when RTC/h and
 an engagement measure conflict, because a system that only works while pushing has not
 taught anyone to want anything. Preference data is quarantined to tone and safety.
-Graduation is a success event, not churn — a learner leaving because they got what they
+Graduation is a success event and never churn: a learner leaving because they got what they
 came for is the product working, and any metric that penalises this is disqualified.
 
-*Honest limitations, stated rather than hidden.* RTC/h is expensive in learner goodwill:
+*Limitations, stated and not hidden.* RTC/h is expensive in learner goodwill:
 delayed unannounced assessment is a burden no consumer product can bear at full population
 scale. It is realistically measurable on a sampled, compensated panel with cheap online
 proxies calibrated against it — which is how ad-supported media measures reach, so the
@@ -412,7 +412,7 @@ experience of people already inside the funnel.
 
 ---
 
-## 10. The strongest counter-argument
+## 10. A learner who quits learns nothing
 
 *A learner who quits learns nothing. Engagement is not the enemy of learning; it is the
 precondition for it. You have forbidden every tool anyone has for keeping people around, on
@@ -426,10 +426,10 @@ courses, order-of-magnitude effect decay. 20,000 students over five years, null 
 outcomes. Alert tools and distraction blockers, null. That is not a philosophical objection
 to reminders; it is the measured record of reminders.
 
-**And phase 3 is operationalisable.** Unprompted Return Rate — sessions started with no
-notification in the previous 24 hours — is computable today from data every system already
+**And phase 3 is operationalisable.** Unprompted Return Rate, sessions started with no
+notification in the previous 24 hours, is computable today from data every system already
 has. It is the free-choice-persistence paradigm, operationalised at scale. A system that
-raises DAU while flattening URR has learned to push rather than to teach.
+raises DAU while flattening URR has learned to push, and not to teach.
 
 What survives the objection is a genuine constraint on ambition: **a bounded habit scaffold
 is defensible.** Habit automaticity takes a median 66 days. An eight-to-ten-week scaffold
@@ -439,7 +439,7 @@ both "streaks" is how the first becomes the second.
 
 ---
 
-## 11. What this section commits us to
+## 11. What we will optimise, and what we will only watch
 
 - **Run the Null-Learner Test on every metric before it enters any objective.** DAU,
   streak, XP, time-on-app and satisfaction all fail it.
@@ -448,8 +448,8 @@ both "streaks" is how the first becomes the second.
 - **Preference data is quarantined to tone and safety.** Under experimental control,
   liking is negatively correlated with learning.
 - **Transfer volition to the learner; never exercise it over them.** Commitment devices
-  (+40% completion, +0.29 SD), utility-value writing, predict-before-reveal. Not reminders,
-  not rewards, not rankings.
+  (+40% completion, +0.29 SD), utility-value writing, predict-before-reveal. No reminders,
+  no rewards, no rankings.
 - **Broker human relatedness; never simulate it.** No friend role, no "I missed you," no
   anthropomorphic bid for continued interaction. Human-Connection Rate is a release gate.
 - **Never show the top of a distribution.** Near peer or nobody.
@@ -458,10 +458,10 @@ both "streaks" is how the first becomes the second.
 - **Graduation is a success event.** Positive churn target, and any metric that penalises a
   learner leaving satisfied is disqualified.
 
-The through-line: every intervention that works hands the learner power over their own
+Every intervention that works hands the learner power over their own
 future self — commit yourself, find your own reason, predict before you are told, be
 accountable to a person you chose. Every intervention that fails or backfires exercises
 power over the learner — remind them, reward them, rank them, retain them.
 
-**The question a learning system must answer is not whether the learner came back. It is
-whether they came back with nobody asking.**
+**The question a learning system must answer is whether the learner came back with
+nobody asking.**
