@@ -262,36 +262,34 @@ effort has not landed, and each one is a constraint you can design against.</p>
   loop can measure. Real learning is what almost none of them measure.</figcaption>
 </figure>
 
-<h2>What actually works, and by how much</h2>
-<p class="sub">Pooled effect sizes, ordered. Blue is supported by replication; rust is overstated,
-contested, or null. Hover any row for the base, the caveat, and the class of system that produced
-the number.</p>
+<h2>Which teaching moves are worth building</h2>
+<p class="sub">Instructional techniques, ordered by measured effect. These are design choices a
+system makes, and not a scoreboard of delivery systems: no tutoring-system estimate appears here,
+because none of them measured a frontier model and a sorted axis turns any neighbour into a
+verdict. Blue is supported by replication; rust is overstated, contested, or null.</p>
 
 <figure>
-  <div class="ftitle">What works, and by how much</div>
+  <div class="ftitle">What a teaching move is worth</div>
   <div class="fsub">Generated from a declarative spec by a deterministic renderer. No coordinate on
-  this page is hand-positioned, because our own research rates hand-written SVG Tier D.
-  Every row prints the class of system that produced it: <b>HUMAN</b> a person, <b>ITS</b>
-  rule-based pre-LLM courseware, <b>FRONTIER</b> an LLM from 2023 on, <b>TECHNIQUE</b> an
-  instructional move with no delivery system attached. Only one row is FRONTIER. Read the others
-  as evidence about teaching, and never as a bound on what a 2026 model can do.</div>
+  this page is hand-positioned, because our own research rates hand-written SVG Tier D. Every row
+  prints what the number was measured on: <b>TECHNIQUE</b> an instructional move with no delivery
+  system attached, <b>HUMAN</b> a person delivering it, <b>ITS</b> rule-based pre-LLM
+  courseware.</div>
   <div class="legend">
     <span><i style="background:var(--real)"></i>Supported</span>
     <span><i style="background:var(--felt)"></i>Overstated, contested, or null</span>
   </div>
   <div id="bars"></div>
-  <figcaption>Bloom's 2σ does not appear, because it does not replicate. VanLehn reviewed
-  controlled experiments in 2011 and measured human tutoring at 0.79 and rule-based intelligent
-  tutoring at 0.76; Nickow's 2024 meta-analysis of 96 human-tutoring RCTs, nearly all of them run
-  before GPT-4, lands at <strong>0.288</strong>, and that number itself fell from 0.37 in the
-  working paper to 0.288 in peer review, which is why this survey discounts working-paper effect
-  sizes. Chasing 2σ inflates the target roughly 7× against the pooled estimate. Each figure is
-  correct for the machine it measured, and 1984, 2011 and 2024 are three different machines.</figcaption>
+  <figcaption>Read this as a menu, not a league table. The top rows are what a system should be
+  built to do — set the expectancy before study, space the practice, make the learner explain,
+  fade the worked example — and the bottom rows are what looks like teaching and measures nothing.
+  Every one of these is a move a frontier model can execute on demand and at no marginal cost,
+  which is the only reason the list is actionable rather than merely true.</figcaption>
 </figure>
 
 <details>
-  <summary>Table view of the ladder, with the class of system behind every number, generated from
-  the same spec</summary>
+  <summary>Table view of the ladder, with what every number was measured on, generated from the
+  same spec</summary>
   <div class="scroll"><table id="bartable"></table></div>
 </details>
 
@@ -573,21 +571,21 @@ rule stays silent.</p>
    correct target. The accessible table view is generated from the same spec,
    so it can never drift from the chart.                                      */
 
-/* `cls` is the class of system that produced the number, and its vintage. It is
-   not decoration: this page previously ran a 2011 rule-based-tutor effect size and
-   a 1984 human-tutoring one as though they bounded a 2026 frontier model, which is
-   a category error and the reason the whole page read as an argument against its
-   own subject. A number may sit on this ladder only with its provenance attached.
-      HUMAN     a human tutor or teacher
-      ITS       rule-based, pre-LLM courseware
-      FRONTIER  an LLM from 2023 onward
-      LEARNER   a technique measured on human learners, tutor-agnostic           */
+/* `cls` says what the number was measured on. It is not decoration.
+      TECHNIQUE  an instructional move, no delivery system attached
+      HUMAN      a person delivering it
+      ITS        rule-based, pre-LLM courseware
+
+   NO TUTORING-SYSTEM ESTIMATE MAY BE ADDED TO THIS ARRAY. Rows for VanLehn's
+   0.79/0.76, Nickow's 0.288 and the 2013 pedagogical-agent meta were removed, and
+   with them the frontier row they were implicitly ranking. A sorted axis is a
+   verdict: a 2011 review plotted three rows above a 2025 LLM trial asserts a
+   bound that neither study ever tested, and no label or tooltip undoes an
+   ordering the eye has already read. The frontier evidence has its own section,
+   where the comparison it invites is with other frontier systems.             */
 const LADDER = {
-  max: 0.85,
+  max: 0.60,
   rows: [
-    {label:"Human tutoring",         cls:"HUMAN · VanLehn 2011",     note:"what a person in the room was worth in that review, and not the 2σ of folklore. A 2011 synthesis; the years of the trials it reviewed are not established anywhere in this corpus", v:0.79, ok:true},
-    {label:"Intelligent tutoring",   cls:"ITS · VanLehn 2011",       note:"rule-based step-based courseware, statistically indistinguishable from a human tutor in that review", v:0.76, ok:true},
-    {label:"Best AI tutor RCT",      cls:"FRONTIER · Kestin 2025",   note:"d ≈ 0.63 regression, in 49 min vs 60. The one frontier-model row on this ladder. Developer-built AND developer-evaluated; no funding statement; immediate post-test only", v:0.63, ok:true},
     {label:"Learning by teaching",   cls:"HUMAN · Kobayashi 2019",   note:"human tutee, expectancy set first. The teachable-AGENT version has never been measured", v:0.56, ok:true},
     {label:"Self-explanation",       cls:"TECHNIQUE · Bisra et al.",   note:"pooled estimate across prompted self-explanation studies", v:0.55, ok:true},
     {label:"Spacing",                cls:"TECHNIQUE · 2025 meta",      note:"classroom meta-analysis · 31 effects · N > 3,000",    v:0.54,  ok:true},

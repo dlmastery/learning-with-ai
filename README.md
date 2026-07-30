@@ -52,12 +52,8 @@ the organising constraint here, and never a charitable sidebar.
 
 ### What a 2026 model has been measured to do
 
-The figures this field quotes most were produced by other machines. Bloom's 2σ is human tutors in
-1984. VanLehn's 0.76 is a rule-based tutoring system in 2011. Nickow's 0.288 pools 96
-human-tutoring RCTs, nearly all of them run before GPT-4 existed. None of the three is a bound on
-a frontier model, and using them as one is how a field argues itself out of its own best result.
-
-These are the trials that put a post-2023 LLM in front of a learner and measured what changed.
+Seven trials have put a post-2023 LLM in front of a learner and measured a learning outcome. This
+is all of them, each in the form its published correction requires.
 
 | Trial | Result | What the outcome was |
 |---|---|---|
@@ -166,12 +162,12 @@ estimate, no meta-analysis and no confidence interval behind it. Its *n* is thre
 One loses a third of its effect on the school's own exam. One has eleven clusters and was written
 by the provider's own staff.
 
-What turned a three-trial rounding into a law was the clause attached to it, *the same band as
-pre-LLM intelligent tutoring systems and in-person human tutoring*. Those comparators are two 2014
-meta-analyses of rule-based courseware and a 2024 meta-analysis of 96 human-tutoring trials, all
-of which ran before 2020. Landing near them is a fact about three field trials and never a ceiling
-on the technology, because a 2014 rule-based system and a human tutor measure something else.
-Kestin at 0.63 and Bastani at −0.054 are both frontier-era, and both already sit outside the band.
+The clause the source report calls the genuinely important finding is the one that keeps getting
+dropped: those gains arrive **at much lower cost**. Tutor CoPilot ran at $20 per tutor per year.
+Measured API spend in a supervised deployment is $19.86 per tutor per year, and inference is 0.43%
+of what a delivered session costs. Kestin's arm reached its post-test in a median 49 minutes
+against an assumed 60. Cost and time are where the frontier-era numbers are unambiguous, and they
+are the half of the finding this survey had been leaving out.
 
 Every trial in that band ran a chatbot with a prompt. It answers freely, forgets everything between
 sessions, cannot see the work, cannot point, never changes method, and agrees with the learner. The
@@ -181,11 +177,12 @@ not been assembled, and so has never been measured against anything.
 **That nobody has measured the assembled system is proven. That it would do better is a
 hypothesis.**
 
-The concession conditions are stated in advance, and the comparator has to be the vintage-correct
-one. A well-powered trial of the assembled system, with a delayed, unassisted, novel-item primary
-outcome, run against a plain frontier-model chatbot as the active control: if it fails to beat
-that arm, the mechanisms are decorative and the model was doing all the work. A pre-LLM baseline
-or a business-as-usual classroom would not settle the question either way.
+The concession conditions are stated in advance. A well-powered trial of the assembled system,
+with a delayed, unassisted, novel-item primary outcome, run against a plain frontier-model chatbot
+as the active control: if the assembled system does not beat that arm, the mechanisms are
+decorative and the model was doing all the work. The comparator is a frontier model because that
+is the only thing whose defeat would mean anything. Beating a classroom, or a system from another
+decade, would leave the question exactly where it is now.
 
 That falsifier has teeth. Fütterer et al. 2026 controlled a K-12 intervention against plain
 ChatGPT and found no significant advantage on knowledge, effort or strategy use. Gu & Yan (2025)

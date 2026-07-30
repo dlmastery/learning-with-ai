@@ -22,29 +22,16 @@ Here is what the record currently says, and what it does not.
 
 ---
 
-## 1. The band, and the three machines inside it
+## 1. What has been measured
 
-Start with what each number measured and when it ran, because the class of system
-that produced an effect size decides what that effect size can be evidence about.
+Every number in this section was measured on a frontier model. That is the whole
+inclusion rule, and it is the reason the table is shorter than it used to be: a
+measurement taken on a human tutor or on rule-based courseware is evidence about a
+human tutor or about rule-based courseware, and this section is about neither.
 
-Intensive, in-person, one-to-one and small-group human tutoring — the most
-expensive and best-evidenced intervention in education — pools at **0.288 SD (SE
-0.029)** across 96 randomised studies (Nickow, Oreopoulos & Quan, *AERJ* 2024,
-funded by J-PAL North America). Those are 96 randomised trials of human tutors and
-zero trials of anything else. So 0.288 is the benchmark a machine has to clear: what
-a hired, trained person alone with a child has been measured to deliver. It is not a
-bound on any machine, because no machine appears in it.
-
-One thing we cannot tell you about it, and should say so: **the corpus establishes
-the year of the synthesis and not the years of the trials inside it.** Nickow's pool
-appeared as an NBER working paper in 2020 and in *AERJ* in 2024; no source we hold
-gives the date range of the 96. The same is true of VanLehn's reviewed experiments
-and of both 2014 ITS meta-analyses. Where a vintage below is a publication year and
-not a fieldwork year, the column says so.
-
-Now the AI results, all immediate post-tests unless stated. Every row carries the
-class of system it measured and the year that system ran, because those two facts
-govern what the row can be quoted for:
+Here is the record, all immediate post-tests unless stated. Every row carries the
+model and the year it ran, because a 2024 result and a 2026 result are not
+interchangeable either:
 
 | Study | Class · ran | Effect | n | Duration | Delayed test? | Distal outcome? |
 |---|---|---|---|---|---|---|
@@ -54,44 +41,37 @@ govern what the row can be quoted for:
 | **Kestin et al.**, Harvard physics | FRONTIER · purpose-built tutor, *Sci Rep* 2025 | d ≈ 0.63 (to 1.3 ceiling-corrected) | 194 | **two ~1-hour lessons** | No | No |
 | **Tutor CoPilot** (RCT-P) | FRONTIER · ran from March 2024 | +4 p.p. exit ticket | 900 tutors, 1,800 students | 2 months | No | **Yes — and null** |
 | **Rori**, Ghana | FRONTIER-era chatbot · 2024 | 0.37 SD | ~1,000, **11 clusters** | 8 months | No | No |
-| **LearnLM + Eedi**, UK | FRONTIER · LearnLM, Dec 2025 | +5.5 p.p. on novel problems vs human tutors | **165** | not stated | No | No |
-| Pre-LLM ITS (VanLehn; Ma et al.; Steenbergen-Hu & Cooper) | ITS · rule-based; syntheses **2011** and **2014**; trial years unestablished | d = 0.76 (VanLehn); g = 0.32–0.37 college (Steenbergen-Hu & Cooper); g = 0.42 vs teacher-led, 0.57 vs other computer-based instruction (Ma et al.) | meta | — | — | — |
-| **Human tutoring** (Nickow, 96 RCTs) | HUMAN · synthesis **2024** (working paper 2020); trial years unestablished | **0.288 SD** | meta | — | — | — |
+| **LearnLM + Eedi**, UK | FRONTIER · LearnLM, Dec 2025 | **93.0%** correct on second attempt vs **91.2%** for the expert human tutors it was randomised against; transfer +5.5 p.p., **credible interval spans zero** | **165** | not stated | No | No |
 
-**The classroom deployment trials land in the same band as pre-LLM intelligent
-tutoring systems and as human tutors.** Sierra Leone 0.258, Nigeria 0.23–0.31,
-Rori 0.37, ITS 0.32–0.42, human tutoring 0.288. Three classes of machine, one band.
-There is no order-of-magnitude jump in those numbers, and there may be no difference
-between the three classes at all.
+Three of the classroom deployments cluster: Sierra Leone 0.258, Nigeria 0.23–0.31,
+Rori 0.37. That is **the measured 0.2–0.4 SD band**, and it is worth being exact
+about what it is, because this survey has previously leaned on it harder than it can
+bear. It is a rounding of those three trials. No meta-analysis, no pooling, no
+confidence interval, n = 3 — and one of the three is not significant unadjusted, one
+lost 43% of its sample, and one has eleven clusters and was authored by the people
+who sell the product.
 
-Two things have to be said about that comparison before anyone uses it again. **The
-frontier side of the band is three field trials**, Sierra Leone and Nigeria and
-Rori, and it is a rounding of those three and not a pooled estimate: no
-meta-analysis, no confidence interval, n = 3. And **the ITS figure 0.32–0.42 appears
-in no single source.** It splices Steenbergen-Hu & Cooper's college range
-(0.32–0.37) onto Ma et al.'s ITS-versus-teacher-led figure (0.42), which is why the
-table above prints 0.32–0.57 instead: that upper endpoint is Ma's comparison against
-other computer-based instruction, a third comparator again. The spliced range stays
-visible here because this survey published it. It does not get quoted again without
-both of its sources.
+**A band that thin is a starting position and not a ceiling.** The three trials share
+one design: a general-purpose assistant handed to a classroom, six to eight weeks,
+measured the week it stopped. What they measure is a deployment pattern, and what
+they establish is that the pattern works at all, in four countries and three
+languages, **at an inference cost measured at 0.43% of a delivered session** (§37).
+That last clause is the one this survey kept dropping, and it carries more
+consequence than the effect size does: the gain is modest, and the marginal cost of
+the next child receiving it is close to nothing. What that does *not* mean is that
+the delivered cost is near zero — the other 99.57% is human supervision, and §37 is
+where that argument is settled.
 
-Two readings of that coincidence are available and only one is licensed. **It does
-not license 0.2–0.4 as a ceiling on a frontier system.** No study in the ITS or
-human-tutoring meta-analyses had a frontier model in it, and the three field trials
-inside the band share one design: a general-purpose assistant distributed into a
-classroom, six to eight weeks, measured the week it stopped. That is a measurement
-of a deployment pattern.
-
-What it does license is the thing worth having. **The band is a floor**, and it
-reproduces across four countries, three languages and three classes of technology.
-A result that stable is something you can design against instead of hope for.
-
-The frontier-era number sitting outside the band is Kestin's **d ≈ 0.63**, which is
-also the row with the least independence and the shortest exposure: two hours, an
-immediate ceiling-limited post-test, and a first author who built the tutor, ran the
-analysis, and declared no funding (§03). It is evidence that an engineered frontier
-tutor cleared an active control in two hours. It is not evidence about a term, and
-this survey does not quote it as one.
+Two frontier results sit outside that pattern, and both come from constraining the
+tutor rather than distributing it. **Kestin's d ≈ 0.63** cleared an active control in
+a median 49 minutes, on a tutor built to refuse to advance until the student
+reasoned. It also carries the heaviest discount in the table: two hours of exposure,
+a researcher-built ceiling-limited post-test, and a first author who built the tutor,
+ran the analysis and declared no funding (§03). And **LearnLM under expert-tutor
+supervision matched the expert tutors it was randomised against** on immediate
+correction, 93.0% against 91.2%, with the transfer advantage's credible interval
+spanning zero and n = 165. Neither is a result about a term. Both are results about
+what happens when the system is designed instead of deployed.
 
 ---
 
@@ -241,10 +221,13 @@ in 2026** for "discrepancies in the meta-analysis"; the authors did not respond 
 correspondence. It had accumulated over 250 citations. Anything downstream of
 g = 0.867 is unsupported, and still circulating.
 
-A smaller correction worth internalising as a habit: Nickow et al.'s human-tutoring
-pooled estimate **fell from 0.37 SD in the 2020 working paper to 0.288 SD in the
-2024 peer-reviewed version.** Discount every working-paper effect size accordingly,
-including the ones in the table above.
+A smaller correction worth internalising as a habit, and this section already
+supplies the example. Nie et al.'s preprint was titled *"…Reduced Engagement but
+**Increased** Adopters Exam Performances."* The peer-reviewed version says
+***May* Increase**, because the adopter effect is selection. **Peer review moved the
+claim in the direction of smaller**, which is the direction it usually moves. Two
+rows of the table above are preprints — Rori and LearnLM + Eedi — and both should be
+read with that discount applied in advance, including by us.
 
 ---
 
@@ -301,35 +284,31 @@ ERIC records use it. It is four weeks of patience and a fresh item set — and i
 generation is now the cheapest thing in the system. The field is not failing to
 measure retention because retention is hard to measure.
 
-Second, **the pre-LLM literature did meet the standard, which makes it the place the
-design template lives.** Those trials are not the bar a frontier system has to come
-in under. They are the shape of a study that could tell you where it came in.
-Roschelle et al.'s ASSISTments trial moved an end-of-year state
-standardised test across 43 Maine schools, with the largest gains for low prior
-achievers. It is the strongest distal-outcome edtech RCT in the corpus, and it
-predates the LLMs entirely. Pane et al. ran Cognitive Tutor Algebra I across 147
-schools for two years and found a null in year one that became +0.21 SD in year two.
-Neither shape is visible in an eight-week trial, and every LLM RCT here except Rori is
-eight weeks or shorter.
+Second, **a frontier trial has already run the distal outcome, and it came back
+null.** Tutor CoPilot moved exit-ticket mastery by 4 points and did not move the
+end-of-year state test. That is the same technology, the same era, a preregistered
+design and an independent funder — so "the retention evidence will arrive" is not a
+promise anyone can make on the field's behalf. It arrived once and it was a null, and
+the authors attribute that to a two-month window and a low dose, which is plausible
+and untested. **Every frontier RCT in the table except Rori runs eight weeks or
+shorter**, and eight weeks is not long enough to see a dose accumulate or a novelty
+effect decay.
 
 ---
 
 ## 7. How we will report an effect size
 
-- **Quote every number with its class and its year.** The 0.2–0.4 band is what
-  six-to-eight-week classroom deployments of general-purpose assistants measured; it
-  happens to coincide with pre-LLM ITS and with human tutoring, and a reader is owed
-  which of the three is being invoked. Never cite g = 0.867; it is retracted. Never
-  cite Bastani's +127%; it is a practice-session number.
-- **Never bound one class of system with a measurement of another.** VanLehn 2011
-  measured rule-based ITS against human tutors. Nickow pools 96 randomised trials of
-  human tutors. Bloom 1984 measured human tutors on their own aligned tests, and is
-  retired here (§24). Each is the right benchmark for the machine it measured and
-  evidence about no other.
-- **Give a synthesis year when that is all we have.** The corpus establishes when
-  Bloom, VanLehn, Ma, Steenbergen-Hu and Nickow were *published* and never when their
-  constituent trials were *run*. Write "the 2011 review" and never "the 1980s
-  studies", which would be a span nobody has established.
+- **Only a frontier measurement bounds a frontier system.** A result taken on a human
+  tutor or on rule-based courseware is evidence about that thing and may not be
+  quoted as a ceiling, a comparator or a benchmark for a model. Where no frontier
+  measurement exists, say the trial has not been run and specify it. An unmeasured
+  question is an opportunity; a borrowed number is a false ceiling.
+- **Quote the band as what it is.** 0.2–0.4 SD is a rounding of three field trials
+  with no pooling and no confidence interval, and the cost term belongs beside it.
+  Never cite g = 0.867; it is retracted. Never cite Bastani's +127%; it is a
+  practice-session number.
+- **Discount preprints in advance**, including ours. Peer review moved Nie's headline
+  toward smaller, and two rows of §1's table have not been through it yet.
 - **Every claim we make gets a delayed, unassisted, novel-item test**, or it is
   reported as a performance result and labelled as one.
 - **Report the unadjusted estimate next to the adjusted one.** Sierra Leone's

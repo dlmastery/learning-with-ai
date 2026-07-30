@@ -66,7 +66,7 @@ ol.q li::before{content:counter(q);position:absolute;left:0;top:-2px;
   font:400 26px/1 var(--serif);color:var(--felt)}
 ol.q li b{color:var(--ink);display:block;margin-bottom:5px}
 .rule{border-left:2px solid var(--felt);padding-left:24px;margin:20px 0}
-.slide.dense{padding-top:5vh;padding-bottom:5vh}
+.slide.dense{padding-top:2.5vh;padding-bottom:2.5vh}
 .slide.dense h2{margin-bottom:16px}
 .fill{display:inline-block;font:650 13px/1.5 var(--mono);letter-spacing:.04em;color:var(--warn);
   border:1px dashed var(--warn);border-radius:6px;padding:1px 9px;background:var(--sunken);
@@ -210,15 +210,14 @@ nav.hud button{font:600 12px/1 var(--sans);padding:9px 12px;border-radius:8px;
 </section>
 
 <!-- 7 the mechanism -->
-<section class="slide">
+<section class="slide dense">
   <div class="n">The idea that makes it work</div>
   <h2>Stop asking a machine to judge. Ask which belief predicted the answer.</h2>
-  <p>Across 223 tutoring domains, the four models tested in an initial evaluation
-  (claude-3-5-sonnet, claude-3-5-haiku, gpt-4o-2024-08-06, deepseek-v2.5) did not beat
-  chance at labelling an incorrect student action. Scope that correctly, because it
+  <p>Across 223 tutoring domains, the four models tested in an initial evaluation did not
+  beat chance at labelling an incorrect student action. Scope that correctly, because it
   sharpens the claim: <strong>step-checking a model's own reasoning trace is well above
-  chance</strong> — ProcessBench reports open models competitive with that same GPT-4o
-  vintage at finding the earliest erroneous step. Reading a <em>person</em> is the open part.</p>
+  chance</strong>, and ProcessBench reports open models competitive with GPT-4o at finding the
+  earliest erroneous step. Reading a <em>person</em> is the open part.</p>
   <p class="big">We enumerate what a learner might believe. The live question becomes
   which of those predicted what we just saw, and that is an argmax over precomputed
   distributions.</p>
@@ -227,12 +226,12 @@ nav.hud button{font:600 12px/1 var(--sans);padding:9px 12px;border-radius:8px;
       <p>An open judgement at chance becomes a bounded lookup</p>
       <p>A posterior over <b>≤40 enumerated beliefs is closed-form Bayes</b>, so no
       language model sits on the live path and the 200 ms budget is real</p>
-      <p>A wrong rule can be executed until the world contradicts it. Reality does the
-      correcting and we claim no authority</p></div>
+      <p>A wrong rule can be executed until the world contradicts it, so reality does the
+      correcting</p></div>
     <div class="box"><h3>Why it compounds</h3>
       <p>Every learner who is wrong in a new way makes the belief library better.</p>
-      <p>A stronger base model raises what the library is worth. Of everything on our
-      moat table, this is the one row a frontier release makes more valuable.</p></div>
+      <p>A stronger base model raises what the library is worth. It is the one row on our moat
+      table that a frontier release makes more valuable.</p></div>
   </div>
 </section>
 
@@ -256,79 +255,75 @@ nav.hud button{font:600 12px/1 var(--sans);padding:9px 12px;border-radius:8px;
 </section>
 
 <!-- 9 competition -->
-<section class="slide">
+<section class="slide dense">
   <div class="n">Competition</div>
   <h2>The incumbent sells a number it has never measured.</h2>
-  <p>Powers and Rock ran seven estimators against about 6,700 SAT registrants and converted
-  their largest effect into hours: roughly <strong>one additional question correct per eight
-  hours of coaching</strong>, or 6–8 scale points on verbal and 13–18 on mathematics. The two
-  largest coaching firms advertised <strong>120 and 140 combined points</strong>, documented by
-  surveying previous customers. In India there is no causal estimate at all of what coaching
-  does to a NEET or JEE rank.</p>
+  <p>Powers and Rock ran seven estimators against about 6,700 SAT registrants: roughly
+  <strong>one additional question correct per eight hours of coaching</strong>, or 6–8 scale
+  points on verbal and 13–18 on mathematics. The two largest coaching firms advertised
+  <strong>120 and 140 combined points</strong>, documented by surveying previous customers. In
+  India there is no causal estimate at all of what coaching does to a NEET or JEE rank.</p>
   <p>A feature grid separates nobody. These three questions do, and we ask them of ourselves
   first:</p>
   <ol class="q">
     <li><b>Learner-hours delivered ÷ paid tutor-hours, monthly, for 24 months.</b>
-    Flat while headcount grows means the AI is decorative and the buyer is underwriting
-    a staffing business at a software multiple.</li>
+    Flat while headcount grows means the buyer is underwriting a staffing business at a
+    software multiple.</li>
     <li><b>Your delayed, unassisted, novel-item result, with n, and who held the item bank.</b>
     One deployment moved its exit ticket +4 pp and came back null on the state test.</li>
-    <li><b>Have you ever run an arm against plain ChatGPT?</b> A controlled trial at n = 371
-    found scaffolded generative AI no better than it on domain knowledge. If the pedagogy has
-    never beaten the free substitute, the moat is a prompt.</li>
+    <li><b>Have you ever run an arm against plain ChatGPT?</b> A trial at n = 371 found
+    scaffolded generative AI no better than it. If the pedagogy has never beaten the free
+    substitute, the moat is a prompt.</li>
   </ol>
 </section>
 
 <!-- 10 beachhead -->
-<section class="slide">
+<section class="slide dense">
   <div class="n">Where it starts</div>
   <h2>Where the world already grades the answer.</h2>
   <p class="big">SAT · PSAT · NEET · JEE · GATE · EAMCET. Proctored, months later, on items
   nobody has practised, and the score comes back <strong>because the candidate wants it more
   than we do.</strong></p>
-  <p>Everyone else has to fund a research programme to discover whether their product works.
-  In this segment the truth signal is the customer's own objective. Closed syllabus, published
-  answer keys, decades of item-level response data, and hundreds of millions of candidates
-  whose alternative is a room with four hundred other people in it.</p>
+  <p>Everyone else funds a research programme to discover whether their product works. Here the
+  truth signal is the customer's own objective: closed syllabus, published answer keys, decades
+  of item-level response data, and hundreds of millions of candidates whose alternative is a room
+  with four hundred other people in it.</p>
   <div class="two">
     <div class="box"><h3>Two things we will not claim</h3>
       <p><b>The gaokao is a policy risk before it is a market.</b> The 2021 double-reduction
-      order stopped new approvals for core-subject tutoring institutions; one listed
-      operator's revenue fell 62% in a year.</p>
+      order stopped new approvals for core-subject tutoring; one listed operator's revenue fell
+      62% in a year.</p>
       <p><b>No top-down market size.</b> Six of six analyst houses failed traceability when we
-      checked: two dead links, one report we could not show exists, one figure internally
-      inconsistent by three orders of magnitude. We size this per candidate, bottom-up.</p></div>
+      checked, so we size this per candidate, bottom-up.</p></div>
     <div class="box good"><h3>Go to market, ordered by friction</h3>
       <p>Authors and creators: live in days. Highest content velocity, no procurement.</p>
-      <p>Online course sites: weeks to months. Telemetry and a practice loop already
-      running; they measure completion and nobody measures diagnosis.</p>
-      <p>Publishers: quarters. The corpus built with authors is why they eventually sign.</p>
-      <p>Institutions: years. Contract size, and SOC 2, FERPA, COPPA and the EU AI Act.</p></div>
+      <p>Online course sites: weeks to months. Telemetry and a practice loop already running;
+      they measure completion and nobody measures diagnosis.</p>
+      <p>Publishers: quarters. The corpus built with authors is why they sign.</p>
+      <p>Institutions: years. Contract size, against SOC 2, FERPA, COPPA and the EU AI Act.</p></div>
   </div>
 </section>
 
 <!-- 11 business model -->
-<section class="slide">
+<section class="slide dense">
   <div class="n">Business model</div>
   <h2>Inference is 0.43% of what it costs to deliver a supervised hour.</h2>
   <p>Two measurements arrive at that figure independently. One published cost model prices the
   tokens inside a supervised session at £0.0037 against £0.861 delivered. Separately, a deployed
-  tutoring programme's own API bill came to $1,419.66 across 429 tutors in two months, which is
-  $19.86 a year each, set beside 200 hours of tutor time at a $23.10 mean wage.</p>
+  programme's own API bill came to $1,419.66 across 429 tutors in two months, or $19.86 a year
+  each, beside 200 hours of tutor time at a $23.10 mean wage.</p>
   <p>So the margin question lands somewhere else entirely: <strong>the leverage ratio</strong>,
-  learner-hours supervised per paid tutor-hour. We publish it monthly from month one, because
-  it is the only number that separates a software business from a staffing business here. The
-  one audited comparable that rebuilt on AI-native codebases went from 67.5% to 58.0% gross
-  margin, so this has to be demonstrated and never assumed.</p>
+  learner-hours supervised per paid tutor-hour. We publish it monthly from month one. The one
+  audited comparable that rebuilt on AI-native codebases went from 67.5% to 58.0% gross margin,
+  so this gets demonstrated and never assumed.</p>
   <div class="box"><h3>What we sell, and what we buy</h3>
     <p>Direct to candidates working toward a dated exam, where the outcome arrives free.</p>
     <p>To publishers, authors and course owners: the same book, with the practice loop
-    instrumented and the diagnosis attached. An addendum, never a migration.</p>
+    instrumented and the diagnosis attached, as an addendum and never a migration.</p>
     <p>The asset there is calibration. Generation drove item-production cost to zero and left
-    calibration untouched; automatic item generation breaks even at 173–247 items per
-    fine-grained content area, per area. Decades of item-level response data is the
-    calibration corpus a verifier needs, and no single publisher can see enough of a concept
-    to build the layer alone.</p></div>
+    calibration untouched, and automatic item generation breaks even at 173–247 items per
+    fine-grained content area. Decades of response data is the calibration corpus a verifier
+    needs, and no single publisher sees enough of a concept to build the layer alone.</p></div>
 </section>
 
 <!-- 12 traction -->
