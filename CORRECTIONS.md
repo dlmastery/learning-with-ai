@@ -118,6 +118,8 @@ measured, or it is a pitch.
 | **C-56** | 30 Jul | Roorda 2011, its 2017 update and Cornelius-White 2007 named together as convergent anchor evidence for the relationship effect | **Nested, not independent.** All three are inputs to Emslander et al. 2025 (*Psychological Bulletin*, 26 meta-analyses, 2.64M students), which is the current authoritative synthesis; Hattie's *d* = 0.72 is a repackaging of Cornelius-White. This is our own no-manufactured-independence rule (C-19) broken against external sources, in a commissioning brief we wrote | SELF-RESEARCH (R1) |
 | **C-57** | 30 Jul | H1 cites Finell et al. 2022 as maths anxiety correlating **with performance at r = −0.168**, 57 studies / 150 effect sizes | **That is the anxiety-to-working-memory correlation**, verified against the paper: *"The mean correlation between MA and WM was −0.168"* [−0.203, −0.133]. The mediated path to performance is **r = −0.092 from 8 studies / 15 effect sizes / 1,824 participants**, which the authors themselves flag as thinly supported. H1's design conclusion is unaffected; its evidence was overstated by roughly half. Confined to the research report — no survey section or published page repeated it | SELF-RESEARCH (R3), verified against the primary source |
 | **C-58** | 30 Jul | *"Seven randomised trials of ChatGPT in education, **four** of them second-language learning"* — published in §23, the README and the thesis | **Three, not four.** The ERIC query reproduces, but the classification was never checked record by record. EJ1415077 is an RCT in *"a foundational chemistry course within a blended learning setting"*, verified against the ERIC record; EJ1484052 is VR with embedded IoT tasks. Corrected on all three surfaces | SELF-RESEARCH (R4), verified against the primary record |
+| **C-59** | 30 Jul | Cross-references in the assembled paper: **44 pointed at real but wrong sections** | The builder's two rewrite passes each consumed the other's output. A cross-section ref `§09` resolved to `§3`, which the intra-section pass then re-qualified into `§1.3`. Reversing the order broke it the other way: the intra pass writes a two-digit paper number and the source pass reads `§17.3.3` as a reference to source file 17. The passes now emit a sentinel that neither pattern can match. **This is the third time cross-references have failed silently** (C-31, C-38), so the builder now refuses to write the paper when a qualified `§N.M` has an N other than its own section | SELF-RESEARCH, found while writing §42 |
+| **C-60** | 30 Jul | Every qualified intra-section reference pointed **one section early** | `renumber(text, papernum=n)` ran before `n += 1`, while the section itself was rendered as `## {n}.` after it. 31 references, each resolving to real but wrong content. Found in the same three lines as C-59 | SELF-RESEARCH, found while writing §42 |
 
 ---
 
@@ -128,13 +130,13 @@ hand-maintained, which is the whole argument for generating it.*
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 35 |
+| Caught by our own research | 37 |
 | Caught by our own verification — including of our own warnings | 3 |
 | Caught by our own builders, working against their own briefs | 4 |
 | **Caught by an adversarial external reviewer** | **23** |
-| **Total** | **65** |
+| **Total** | **67** |
 
-23 of 65 were found by someone whose job was to fail us — including
+23 of 67 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the

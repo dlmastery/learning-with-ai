@@ -144,11 +144,10 @@ misspecification propagates into every classification the system then makes.
 ## 4. The deployed system built entirely on prerequisite structure sits at g ≈ 0.05
 
 ALEKS is the commercial instantiation of knowledge space theory (Doignon &
-Falmagne). Its own research page describes the mechanism — a knowledge state assessed
-"after the student has answered only 20–25 questions" — and cites no efficacy study
-and no effect size. `VENDOR`
-
-Two meta-analyses reach the same place. Fang, Ren, Hu & Graesser (2019),
+Falmagne). Its own research page describes the mechanism, a knowledge state assessed
+"after the student has answered only 20–25 questions," and cites no efficacy study and
+no effect size. `VENDOR` Two meta-analyses reach the same place. Fang, Ren, Hu &
+Graesser (2019),
 *Educational Psychology*, 15 studies and 24 independent samples: ALEKS was as good as,
 but not better than, traditional classroom teaching, with effects *larger* for shorter
 implementations. Sun, Else-Quest, Hodges, French & Dowling (2021), *Investigations in
@@ -176,10 +175,9 @@ across topics, which order you use has never been shown to move anything either.
 ## 5. Mastery learning was given 20–33% more time, and Bloom's study ran three weeks
 
 Slavin's 1987 synthesis (*RER* 57(2):175–213) is where the two-sigma provenance
-lives. It sets out the claims it was testing in the claimants' own figures: Kulik et
-al. at 0.52 pre-college and 0.54 college; Guskey & Gates at 0.94/0.72/0.65 by level;
-Walberg at 0.81 for science; Bloom himself at 1.00 "when mastery learning procedures
-are done systematically and well," with two sigma as the prediction.
+lives. The claims it was testing, in the claimants' own figures, ran from Kulik et
+al.'s 0.52 and 0.54 through Walberg's 0.81 to Bloom's own 1.00 "when mastery learning
+procedures are done systematically and well," with two sigma as the prediction.
 
 Slavin then restricted to practical applications in real schools running at least four
 weeks, with equal time for treatment and control, on standardised measures. Seven
@@ -193,25 +191,24 @@ weeks.** And all the Chicago dissertations "provided the mastery learning classe
 similar amounts of additional instruction," amounting to **20–33% more instructional
 time** than control classes received. Bloom's own characterisation was that the time
 costs "have usually been very small." `OBSERVED` §24 and §19 retire the two-sigma
-claim on replication grounds; this is the mechanism underneath that verdict, and it is
-a stronger reason than the one those sections had.
+claim on replication grounds; this is the mechanism underneath that verdict, and a
+stronger reason than the one those sections had.
 
 Then the part nobody quotes. Slavin also examined maintenance: six comparisons in
 five studies assessing retention 4–12 weeks out, all on experimenter-made measures.
 **The median retention effect is essentially zero**, and the largest one (+0.49) came
 from the single study that had found no differences on standardised measures.
 `MEASURED-META` The strongest claim mastery-based sequencing makes is that refusing
-to advance builds something durable. In group-based form that claim has been tested
-and it did not hold, and thirty-nine years later no synthesis overturns it.
+to advance builds something durable. In group-based form that claim has been tested,
+it did not hold, and thirty-nine years later no synthesis overturns it.
 `OBSERVED — absence`
 
-Slavin also names the reason the corrective loop may under-deliver, and it reads as a
+Slavin also names why the corrective loop may under-deliver, and it reads as a
 specification. In none of the sixteen studies did corrective instruction occupy more
 than **one period per week, or 20% of instructional time**, and it was delivered in
 groups or by peer tutors. Mastery learning has never been tested with unlimited
 individual corrective instruction, because until now nobody could afford to run it.
-That is the version this project can build, and it has never been measured.
-`INFERENCE`
+That is the version this project can build. `INFERENCE`
 
 ---
 
@@ -278,22 +275,20 @@ question becomes whether acceleration is worth anything by itself. It also means
 "did the learner retain it," measured against a control group, answers a different
 question from "does the learner still have it." §09 documents that almost nobody in
 AI tutoring measures retention at all; this is the reason that measuring it against a
-control would still not settle the promise.
+control would still not settle the promise. The subgroup pattern compounds it:
+higher-SES students in the no-follow-through arm were significant at every timepoint
+and reached 0.6–0.7 SD in fourth and fifth grade, while lower-SES students' effects
+were significant only in pre-K and kindergarten. Durability was greatest where the
+sustaining environment was strongest. `OBSERVED`
 
-The subgroup pattern cuts against the usual story. Effects for higher-SES students in
-the no-follow-through arm were significant at every timepoint and reached 0.6–0.7 SD
-in fourth and fifth grade; lower-SES students' effects were significant only in pre-K
-and kindergarten. Durability was greatest where the sustaining environment was
-strongest. `OBSERVED`
-
-The other side of durability is absolute instead of comparative, and Bahrick's
-permastore programme is where it lives. His summary of the fifty-year Spanish study,
-restated in Bahrick & Phelps (1987): part of what is acquired is lost within five
-years, and "virtually no knowledge is lost during the interval between 5 and 25 years"
-after acquisition. `OBSERVED` Bahrick & Phelps itself, 35 individuals tested on 50
-English–Spanish pairs at 8 years, found that spacing between relearning sessions and
-presentations-to-encode together spanned a range from 0% to 23% recall, with optimum
-recall at **30-day** access intervals. `MEASURED-RCT`
+Absolute retention is the other question, and Bahrick's permastore programme is where
+it lives. His summary of the fifty-year Spanish study, restated in Bahrick & Phelps
+(1987): part of what is acquired is lost within five years, and "virtually no
+knowledge is lost during the interval between 5 and 25 years" after acquisition.
+`OBSERVED` Bahrick & Phelps itself, 35 individuals tested on 50 English–Spanish pairs
+at 8 years, found spacing between relearning sessions and presentations-to-encode
+spanning a range from 0% to 23% recall, with optimum recall at **30-day** access
+intervals. `MEASURED-RCT`
 
 The nine-year longitudinal follow-up (Bahrick, Bahrick, Bahrick & Bahrick 1993,
 *Psychological Science* 4(5):316–321) found retention functions that crossed over
@@ -316,17 +311,17 @@ convergence and is only partly that.
 The bridge citation the corpus reaches for is Schmidt & Bjork (1992), *Psychological
 Science* 3(4):207–218. Robert Bjork co-authored it and originated the
 desirable-difficulties framework on the verbal side, so a paper arguing that two
-literatures agree cannot itself be counted as those two literatures agreeing. This
-project forbids claiming independence between two of its own workstreams; the same
-rule applies to a citation we imported. `INFERENCE`
+literatures agree cannot be counted as those two literatures agreeing. This project
+forbids claiming independence between two of its own workstreams; the same rule
+applies to a citation we imported. `INFERENCE`
 
 The genuinely independent arrival is Shea & Morgan (1979), *JEP:HLM* 5(2):179–187: a
 barrier-knockdown task in a motor-behaviour laboratory descending from Battig (1966),
 with no methodological contact with verbal spacing research. Blocked practice won
 during acquisition; random practice won at 10-minute and 10-day retention, and won
-whether the retention test was blocked or random. `MEASURED-RCT` One specific
-manipulation, contextual interference, reproduces the acquisition–retention reversal
-in a discipline that did not borrow it.
+whether the retention test was blocked or random. `MEASURED-RCT` One manipulation,
+contextual interference, reproduces the acquisition–retention reversal in a discipline
+that did not borrow it.
 
 Whether the rest of the doctrine reproduces is a separate question. Czyż, Wójcik,
 Solarská & Kiper (2024), *Scientific Reports* 14, screened 1,255 records and
@@ -347,12 +342,11 @@ meta-analysed **54 studies** on delayed retention (>24 h):
 once.** She is under eighteen and she is not in a laboratory. Wulf & Shea (2002) found
 the same split in the primary studies twenty years earlier: Farrow & Maschette found
 random practice better for 10–12 year-olds and **blocked practice better for 8–9
-year-olds** on the tennis forehand; Pinto-Zipp & Gentile found blocked practice
-benefited 5–6 year-olds and random benefited adults; Albaret & Thon found a random
-advantage on a simple drawing task that "systematically reduced as the number of
-segments was increased and even reversed" for the hardest version. Their title is the
-warning label: *principles derived from the study of simple skills do not generalize
-to complex skill learning.*
+year-olds** on the tennis forehand, and Albaret & Thon found a random advantage on a
+simple drawing task that "systematically reduced as the number of segments was
+increased and even reversed" for the hardest version. Their title is the warning
+label: *principles derived from the study of simple skills do not generalize to
+complex skill learning.*
 
 The feedback half of the doctrine fails outright. The guidance hypothesis (Salmoni,
 Schmidt & Walter 1984) holds that feedback after every trial props up acquisition
@@ -366,13 +360,11 @@ suggested the included studies were severely underpowered. Their own highlight l
 ends: "The guidance hypothesis is not supported by the extant research."
 `MEASURED-META`
 
-The same group's self-controlled practice meta-analysis completes the picture: a naive
-random-effects model over 52 comparisons (N = 2,061) gives g = 0.44 [0.31, 0.56], but
-published and unpublished findings differ significantly, a selection-corrected
-weight-function model puts the true average at **g = 0.107 [0.047, 0.18]**, and
-p-curve suggested a lack of evidential value. A preregistered test (St. Germain et al.
-2023, N = 228) found no self-controlled learning advantage. `MEASURED-META`,
-`MEASURED-RCT`
+The same group's self-controlled practice meta-analysis lands in the same place: a
+naive g = 0.44 over 52 comparisons (N = 2,061) falls to **g = 0.107 [0.047, 0.18]**
+under a selection-corrected weight-function model, and a preregistered test
+(St. Germain et al. 2023, N = 228) found no self-controlled learning advantage.
+`MEASURED-META`, `MEASURED-RCT`
 
 What transfers is the mechanism and not the doctrine. Difficulty is desirable to the
 degree the learner has spare capacity to meet it, which is §22's expertise-reversal
@@ -388,22 +380,21 @@ default **off** and are earned by measurement.
 The source report marks several things untraceable in its retrieval session, and they
 stay untraceable here.
 
-- **"Only 10% of training transfers to the job."** Ubiquitous in corporate learning
-  and in edtech decks for two decades. It traces to Georgenson (1982), where it was, in
-  the words of the paper that chased it down, a **"conversational gambit"** and not an
-  estimate (Farrington 2011, *PIQ*, ERIC EJ921207). It has no study behind it and
-  should never be cited.
+- **"Only 10% of training transfers to the job."** Two decades of edtech decks rest on
+  it. It traces to Georgenson (1982), where it was, in the words of the paper that
+  chased it down, a **"conversational gambit"** and never an estimate (Farrington 2011,
+  *PIQ*, ERIC EJ921207). No study stands behind it and it should not be cited.
 - **Rupp & Templin's (2007) misspecification numbers**, the quantitative form of the
   risk in letting a model emit a graph.
 - **Pooled estimates from Lee & Genovese (1988, 1989) and Donovan & Radosevich
   (1999)** on massed against distributed motor practice.
 - **The pooled interval in Sun et al. (2021).** The point estimate is safe.
 - **Which Building Blocks persistence figure is right.** The 2013 *AERJ* third-year
-  effects (0.51 / 0.28) do not reconcile with the trajectory in the same team's
-  long-term analysis. Anyone citing "the Building Blocks persistence effect" must say
-  which paper and which model.
+  effects (0.51 / 0.28) do not reconcile with the same team's long-term analysis.
+  Anyone citing "the Building Blocks persistence effect" must say which paper and
+  which model.
 - **Transfer from instruction to job performance outside health professions
-  education.** The best evidence available is Vermylen et al. (2025), where
+  education.** The best available evidence is Vermylen et al. (2025), where
   competency-based simulation beats non-competency-based simulation on skill outcomes
   at a large effect while "outcomes are favorable, but small, for behaviors in practice
   and patient effects." The further you get from the measurement, the smaller the
@@ -442,19 +433,17 @@ whether the graph earns its cost. Within-learner, topic-level randomisation, mir
 the ALEKS production design: each eligible topic is randomly assigned to
 graph-respecting entry (verify the prerequisite closure, remediate any gap, then teach
 the target) or demand-driven entry (teach the requested target immediately, repair
-prerequisites reactively when an error names a specific missing component). Total
-instructional time is capped identically in both arms, which is the condition Slavin
-showed almost no mastery-learning study met. Primary outcome: delayed transfer at 28
-days on freshly generated items, scored blind. Secondary: time to criterion, a 90-day
-probe, and the proportion of graph-respecting sessions where the verified gap turned
-out to be real.
+prerequisites reactively when an error names a missing component). Instructional time
+is capped identically in both arms, the condition Slavin showed almost no
+mastery-learning study met. Primary outcome: delayed transfer at 28 days on freshly
+generated items, scored blind. Secondary: time to criterion, a 90-day probe, and the
+proportion of graph-respecting sessions where the verified gap turned out to be real.
 
-The question is not whether a difference exists but whether any difference is large
-enough to pay for the graph, so this is an **equivalence trial** with a pre-registered
-margin of **δ = 0.10 SD**. Two one-sided tests, α = .05, 90% power, paired within
-learner at a between-condition correlation of 0.5 gives σ_d ≈ 1.0 SD and
-**n ≈ 857 learners**, each contributing at least eight topic pairs. At r = 0.7,
-n falls to about 510. Budget 900 learners × 8 pairs: roughly 7,200 topic sequences,
+The question is whether any difference is large enough to pay for the graph, so this
+is an **equivalence trial** with a pre-registered margin of **δ = 0.10 SD**. Two
+one-sided tests, α = .05, 90% power, paired within learner at a between-condition
+correlation of 0.5 gives σ_d ≈ 1.0 SD and **n ≈ 857 learners**, each contributing at
+least eight topic pairs. Budget 900 learners × 8 pairs: about 7,200 topic sequences,
 two terms of a mid-sized deployment, four orders of magnitude smaller than the ALEKS
 study.
 

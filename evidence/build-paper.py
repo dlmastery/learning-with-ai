@@ -161,30 +161,36 @@ def build():
 
     def renumber(text, papernum=None):
         """§04 (source file) -> §5 (paper section). Unknown refs are left alone
-        and reported, never silently rewritten."""
+        and reported, never silently rewritten.
+
+        Two rewrites have to happen and NEITHER may see the other's output:
+
+          A. cross-section: a two-digit "§09" is a source filename, and maps
+             through SRC2NUM to a paper section number.
+          B. intra-section: a single-digit "§3" is a subsection of the current
+             section, and must be qualified to "§<papernum>.3" — once assembled,
+             a bare "§3" would read as paper section 3. This is C-38.
+
+        Running A then B mangles every cross-ref that lands on a single-digit
+        paper section: "§09" becomes "§3", which B then qualifies to "§1.3".
+        44 references were wrong this way.
+
+        Running B then A mangles the other direction: B writes a two-digit paper
+        number, and A reads "§17.3.3" as a reference to source file 17.
+
+        So A emits a sentinel that A's and B's patterns cannot match, and the
+        sentinel is resolved last.
+        """
+        SENT = "\x00%s\x00"
+
         def sub(m):
             src = m.group(1)
             if src in SRC2NUM:
-                return f"§{SRC2NUM[src]}"
+                return SENT % SRC2NUM[src]
             unresolved.add(src)
             return m.group(0)
-        # ORDER MATTERS, and getting it wrong reintroduces C-38.
-        #
-        # Single-digit refs are always INTRA-section, because every source file is
-        # numbered with two digits. Once assembled, a bare "§3" would read as paper
-        # section 3, so it has to be qualified to "§<papernum>.3".
-        #
-        # That qualification must happen FIRST, on the raw text. Running it after
-        # the two-digit pass means a cross-section ref like "§09" has already
-        # become "§3" — a single digit — and gets qualified as though it were
-        # intra-section, producing "§1.3". Every cross-reference resolving to a
-        # single-digit paper section was silently mangled this way. Two-digit refs
-        # are safe here: the (?!\d) lookahead will not match "§09".
-        if papernum is not None:
-            text = re.sub(r"§\s?(\d)(?!\d)((?:\.\d+)*)",
-                          lambda m: f"§{papernum}.{m.group(1)}{m.group(2)}", text)
         text = re.sub(r"§\s?(\d{2})\b", sub, text)
-        # prose form: "Section 25 established…" uses the same source numbering
+
         def sub2(m):
             src = m.group(2)
             if src in SRC2NUM:
@@ -192,7 +198,12 @@ def build():
             unresolved.add(src)
             return m.group(0)
         text = re.sub(r"\b(Section|section)\s+(\d{2})\b", sub2, text)
-        return text
+
+        if papernum is not None:
+            text = re.sub(r"§\s?(\d)(?!\d)((?:\.\d+)*)",
+                          lambda m: f"§{papernum}.{m.group(1)}{m.group(2)}", text)
+
+        return re.sub(r"\x00(\d+)\x00", r"§\1", text)
 
     unresolved = set()
     structure = []
@@ -233,9 +244,13 @@ def build():
     # producing "§1.3" — a reference that resolves to real but wrong content, which
     # nothing flags. 44 references were wrong this way. Fail the build instead.
     mangled = []
+    total = sum(len(prec["sections"]) for prec in structure)
     for prec in structure:
         for s in prec["sections"]:
             for m in re.finditer(r"§(\d+)\.\d+", s["text"]):
+                # §300.320 is an IDEA regulation, not a section of this paper.
+                if int(m.group(1)) > total:
+                    continue
                 if int(m.group(1)) != s["n"]:
                     ctx = s["text"][max(0, m.start()-60):m.end()+30].replace("\n", " ")
                     mangled.append(f"{s['slug']} (paper §{s['n']}) contains {m.group(0)}  …{ctx}…")

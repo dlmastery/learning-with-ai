@@ -45,56 +45,51 @@ ran survey, structured interviews and rated observation across 49 German classro
 `OBSERVED`, ERIC EJ1439225. One country, one sample, no representativeness claim,
 and the only classroom-scale fidelity measurement the source report could locate.
 
-The consequence runs through everything this survey says about classrooms. The modal
-classroom is not delivering the +0.32 arm. It is delivering the +0.07 arm, because
-computing a reward from every member's separately measured learning is
-administratively expensive and a single poster is not. Whenever this survey compares
-a one-to-one tutor against "what a classroom does," the number on the other side of
-the comparison is the small one.
+The modal classroom therefore delivers the +0.07 arm, because computing a reward from
+every member's separately measured learning costs teacher time and a single poster
+does not. Whenever this survey compares a one-to-one tutor against "what a classroom
+does," the number on the other side is the small one.
 
 For the eleven-year-old this survey is written around, the point is concrete. In a
 group graded on one artifact, her contribution is either carried by somebody else or
-invisible, and both outcomes are recorded identically. The condition that makes the
-cooperative-learning effect appear is the same condition that makes her work
-visible at all.
+invisible, and both are recorded identically. The condition that makes the
+cooperative-learning effect appear is the condition that makes her work visible.
 
 ---
 
 ## 2. The field's most-quoted table never went through peer review
 
-Three checks on that literature, all of which this survey is obliged to report as it
-found them.
+The base literature descends from two American programmes that both sell training in
+the method they meta-analyse, and the checks on them are thinner than the field's
+confidence.
 
 **Johnson, Johnson & Stanne (2000)**, *Cooperative Learning Methods: A
-Meta-Analysis*, is the usual source for per-method effect sizes and appears in
-almost every practitioner summary of the field. An ERIC title search returns zero
-records. It circulates as a University of Minnesota Cooperative Learning Center
-document; the authors run the Cooperative Learning Institute and publish through
-Interaction Book Company. `OBSERVED — absence`. This is not an accusation of
-anything. It is a statement that the per-method table the field quotes was never
-peer reviewed and could not be retrieved.
+Meta-Analysis*, is the usual source for per-method effect sizes. An ERIC title search
+returns zero records. It circulates as a University of Minnesota Cooperative Learning
+Center document; the authors run the Cooperative Learning Institute and publish
+through Interaction Book Company. `OBSERVED — absence`. That is not an accusation. It
+is a statement that the per-method table the field quotes was never peer reviewed and
+could not be retrieved.
 
 **Kyndt, Raes, Lismont, Timmers, Cascallar & Dochy (2013)**, *Educational Research
 Review*, is the one deliberately independent replication attempt, with the strictest
 inclusion rule in the field: 65 articles, 1995 onwards, primary through tertiary,
 conducted in real classrooms. It reports positive effects on achievement and
 attitudes, with study domain, age level and culture as significant moderators. Its
-pooled magnitudes could not be retrieved — closed access, `is_oa: false` with zero
+pooled magnitudes could not be retrieved: closed access, `is_oa: false` with zero
 open-access locations, ScienceDirect 403, the repository copy intranet-only.
 `MEASURED-META`, magnitude untraceable.
 
 **Colliver, Feltovich & Verhulst (2003)**, *Teaching and Learning in Medicine*,
 re-examined the primary studies under Springer, Stanne & Donovan's (1999)
 meta-analysis and concluded that *"the meta-analysis' call for more widespread
-implementation of small group learning is not supported"* (ERIC EJ664775). The paper
-itself is closed with no open-access copy, so its internal argument could not be read
-either.
+implementation of small group learning is not supported"* (ERIC EJ664775). That paper
+is closed too, so its internal argument could not be read.
 
-The editorial rule this survey runs on is that an unverifiable claim is a finding
-rather than something to drop (§24 sets the same rule for effect sizes generally).
-Applied here, it yields a specific instruction: **treat a per-method cooperative-learning
+This survey reports an unverifiable claim as a finding instead of dropping it (§24).
+Applied here that yields one instruction: **treat a per-method cooperative-learning
 effect size with no retrievable source as absent.** The condition-level result in §1
-is retrievable, open access, and quoted verbatim. Build on that one.
+is open access and quoted verbatim. Build on that one.
 
 ---
 
@@ -130,7 +125,7 @@ records `g = 0.56` for human learning-by-teaching and `g = 0.43` for peer tutori
 tutor gain (§02). Marion & Thorley (2016), *Psychological Bulletin*, 75 effect sizes
 from 64 studies, supply the mechanism for one part: collaborative inhibition is
 robust, so a group recalls less than the pooled non-redundant recall of the same
-number of individuals working alone, while a separate 27-effect analysis found that
+number of individuals alone, while a separate 27-effect analysis found that
 *"collaborative remembering tends to benefit later individual retrieval"* with
 re-exposure to the study material partly responsible. Hearing the material again in
 someone else's order does not require the other person to be a person.
@@ -173,14 +168,13 @@ over-scripting worry failing to replicate in the form that was measured. Both
 Read the two columns against each other. If the goal is that a child understands
 photosynthesis, this literature offers a fifth of a standard deviation. If the goal
 is that a child can work with another person, it offers close to a full one, and
-nothing else in this survey produces that outcome at all.
-
-So the real price of perfect personalisation is not subject matter. It is that the
-learner never practises working with a person. This survey has treated
-personalisation as an unmixed good for forty-five sections and has never costed
-that, and for the learner it was written around the cost lands hardest: "works
-with others" is written into her plan as a goal, and a tutor that removes every
-other person from the room removes the only instrument anyone has shown to move it.
+nothing else in this survey produces that outcome at all. So the real price of
+perfect personalisation is not subject matter; it is that the learner never practises
+working with a person. This survey has treated personalisation as an unmixed good and
+has never costed that. For the learner it was written around, the cost lands hardest:
+"works with others" is written into her plan as a goal, and a tutor that removes
+every other person from the room removes the only instrument anyone has shown to
+move it.
 
 ---
 
@@ -202,14 +196,13 @@ distributes the work. Magnitude is not in the abstract and the article is closed
 
 This is a good null because it is not a failure to detect an effect. It found an
 effect with the wrong sign, in the condition Slavin predicted would produce it, in
-the setting where group projects are most heavily used. Alongside it, Murphy,
-Wilkinson, Soter, Hennessey & Alexander (2009), *Journal of Educational Psychology*,
-meta-analysed classroom discussion approaches and found that they reliably increased
-student talk, reduced teacher talk and improved text comprehension, while *"few
-approaches to discussion were effective at increasing students' literal or
-inferential comprehension and critical thinking and reasoning."* `MEASURED-META`.
-Discussion changes who is talking. Whether it changes what anyone understands
-depends on the approach, and for most approaches it did not.
+the setting where group projects are most heavily used. Alongside it, Murphy et al.
+(2009), *Journal of Educational Psychology*, meta-analysed classroom discussion
+approaches: they reliably increased student talk, reduced teacher talk and improved
+text comprehension, while *"few approaches to discussion were effective at increasing
+students' literal or inferential comprehension and critical thinking and
+reasoning."* `MEASURED-META`. Discussion changes who is talking; whether it changes
+what anyone understands depends on the approach, and for most approaches it did not.
 
 ---
 
@@ -229,8 +222,8 @@ Everything larger points the other way.
 
 - **Troseth, Strouse, Verdine & Saylor (2018)**, *Frontiers in Psychology*, `n = 132`
   toddlers at 24 and 30 months in four conditions crossing responsiveness with
-  medium: children learned the word in the responsive live condition at both ages and
-  in the unresponsive live condition at 30 months, and *"neither group learned in the
+  medium: children learned in the responsive live condition at both ages and in the
+  unresponsive live condition at 30 months, and *"neither group learned in the
   responsive or unresponsive video conditions."* `MEASURED-RCT`. This is Troseth's own
   lab, which produced the 2006 contingent-video result the exception rests on.
 - **Strouse, Troseth, O'Doherty & Saylor (2018)**, `n = 88` 30-month-olds: on-screen
@@ -238,13 +231,12 @@ Everything larger points the other way.
   modeling increased children's subsequent word learning."* `MEASURED-RCT`.
 - **Tsuji, Fiévét & Cristia (2021)**, 16-month-olds across in-person, video chat and
   a virtual agent: above-chance word learning in the in-person group only, and the
-  authors' verbatim conclusion that *"contingency is not sufficient either."*
-  `MEASURED-RCT`.
+  verbatim conclusion that *"contingency is not sufficient either."* `MEASURED-RCT`.
 - **Strouse & Samson (2021)**, *Child Development*, 122 independent effect sizes from
   59 reports across ages 0–6: an average deficit of about half a standard deviation,
   decreasing with age, and *"no difference between studies using live versus
-  prerecorded video."* The authors flag quality and publication-bias problems that may
-  have overestimated the deficit. `MEASURED-META`.
+  prerecorded video,"* with the authors flagging quality and publication-bias problems
+  that may have overestimated it. `MEASURED-META`.
 
 What survives moderation is the adult in the room. Mallawaarachchi et al. (2024),
 *JAMA Pediatrics*, pooled 100 studies and 176,742 participants: among all screen-use
@@ -255,18 +247,16 @@ and background television at `r = −0.10`. `MEASURED-META`, observational.
 ### The product decision
 
 **Under three, ship nothing child-facing.** WHO (2019) recommends no screen time for
-infants under 1 and for 1-year-olds, and no more than one hour for ages 2 and 3–4,
-*"less is better."* DeLoache et al. (2010) randomised a month of at-home baby-media
-DVD viewing in 12–18-month-olds: *"children who viewed the DVD did not learn any more
-words,"* and the highest learning occurred in a no-video condition where parents
-taught the same target words during everyday activities. And the one intervention
-family that works moves the adult, not the child: Dowdall et al. (2020), 19 RCTs,
-`N = 2,594`, caregiver book-sharing competence **`d = 1.01`**, child expressive
-language `d = 0.41`; against active controls, Noble et al. (2019) put shared reading
-at **`ḡ = 0.021, p = .783`**, confirmed by their own `n = 150` RCT in which the
-interventions changed caregiver reading behaviour and did not raise children's
-language over an active reading control. There is no gap in that picture for a
-child-facing tutor to fill.
+infants under 1 and for 1-year-olds, and no more than one hour for ages 2 and 3–4.
+DeLoache et al. (2010) randomised a month of at-home baby-media DVD viewing in
+12–18-month-olds: *"children who viewed the DVD did not learn any more words,"* with
+the highest learning in a no-video condition where parents taught the same words
+during everyday activities. And the intervention family that works moves the adult:
+Dowdall et al. (2020), 19 RCTs, `N = 2,594`, caregiver book-sharing competence
+**`d = 1.01`** against child expressive language `d = 0.41`, while Noble et al. (2019)
+put shared reading at **`ḡ = 0.021, p = .783`** against active controls, confirmed by
+their own `n = 150` RCT. There is no gap in that picture for a child-facing tutor to
+fill.
 
 **Three to five, ship one shape.** Xu, Aubele, Vigil, Bustamante, Kim & Warschauer
 (2022), *Child Development*: **117 children aged 3–6**, randomly assigned in a 2×2
@@ -280,74 +270,67 @@ caution the authors state themselves: a non-significant interaction at `n = 117`
 an underpowered equivalence claim and not demonstrated equivalence, and the sample
 had *"homogeneous high language proficiency."*
 
-Written as a product decision, which is what it is: for ages three to five the
-system's user is the caregiver and the child is the beneficiary. The surface is a
-dialogic reading partner that talks, that the child answers aloud, on content an
-adult chose, with the adult present and reading along. The primary reported outcome
-is caregiver book-sharing competence, where effect sizes are large and reliable, and
-child language is accepted as the small downstream consequence it is. §15 sets the
-floor on what is owed to children; this is the first place in the survey where
-meeting it means shipping nothing.
+Written as the product decision it is: for ages three to five the system's user is
+the caregiver and the child is the beneficiary; the surface is a dialogic reading
+partner that talks, that the child answers aloud, on content an adult chose, with the
+adult present and reading along; the primary reported outcome is caregiver
+book-sharing competence, and child language is accepted as the small downstream
+consequence it is. §15 sets the floor on what is owed to children, and this is the
+first place in the survey where meeting it means shipping nothing.
 
 ---
 
 ## 6. Andragogy is a null, and the training industry does not measure what it sells
 
-Knowles's andragogy organises the entire adult-education field, and it was put to
-experimental test. Rachal (1994), ERIC ED380566, reviewed 18 experimental
-comparisons of andragogical against pedagogical method, 15 of them dissertations. Of
-the **16 that examined achievement, 10 found no significant difference and 2 found
-the traditional group performed better.** Two variables did favour andragogy:
-application of the learned material, and attendance. `MEASURED-META`, a vote-count
-review with no pooling. The most recent randomised test points the same way: Bradley
-(2010) randomised 52 non-profit staff to andragogical or pedagogical online
-grant-writing modules and analysed 33, finding no significant differences in
-reaction, achievement growth, grant-writing performance or completion.
-`MEASURED-RCT`, small, null on every outcome.
+Knowles's andragogy organises the adult-education field, and it was put to
+experimental test. Rachal (1994), ERIC ED380566, reviewed 18 experimental comparisons
+of andragogical against pedagogical method, 15 of them dissertations. Of the **16 that
+examined achievement, 10 found no significant difference and 2 found the traditional
+group performed better.** Two variables did favour andragogy: application of the
+learned material, and attendance. `MEASURED-META`, a vote-count review with no
+pooling. The most recent randomised test agrees: Bradley (2010) randomised 52
+non-profit staff to andragogical or pedagogical online grant-writing modules and
+analysed 33, finding no significant differences in reaction, achievement growth,
+grant-writing performance or completion. `MEASURED-RCT`, null on every outcome. And
+`OBSERVED — absence`: **no meta-analysis of andragogy exists**, ERIC returning zero
+records for `"andragog*" AND "meta-analysis"`, with the one item calling itself a
+meta-analysis being a narrative review carrying no `k` and no pooled estimate.
 
-`OBSERVED — absence`: **no meta-analysis of andragogy exists.** ERIC returns zero
-records for `"andragog*" AND "meta-analysis"`, and the one item calling itself a
-meta-analysis is a narrative review with no `k`, no pooled estimate and no effect
-sizes. Forty years in, the theory's own proponents concede that no instrument
-adequately measures its principles, so no definitive empirical test has been
-possible.
-
-What survives is not a learning mechanism. It is two behavioural facts — adults who
-chose to be there apply the material and attend — and one design constraint, that
+What survives is not a learning mechanism. It is two behavioural facts, that adults
+who chose to be there apply the material and attend, plus one design constraint, that
 participation is voluntary and attrition is therefore the binding risk, which §14
 already builds for.
 
-The industry that sells to these learners measures the wrong thing, and the evidence
-is in the sample sizes rather than the effects. Arthur, Bennett, Edens & Bell (2003),
-*Journal of Applied Psychology*, report training-effectiveness sample-weighted mean
-`d`s of **0.60 (`k = 15, N = 936`) for reaction, 0.63 (`k = 234, N = 15,014`) for
-learning, 0.62 (`k = 122, N = 15,627`) for behaviour, and 0.62 (`k = 26, N = 1,748`)
-for results.** `MEASURED-META`. Every effect sits between 0.60 and 0.63, which looks
-suspicious until you read the `k`s, and the `k`s are the finding. Learning is measured
-234 times. Results are measured 26 times, on 1,748 people in total, and that is the
-whole industry's evidence for whether training changes anything an employer would pay
-for. Blume, Ford, Baldwin & Huang (2010), 89 studies, gives the reason to distrust
-even the 122: transfer outcomes obtained by the same source in the same measurement
-context *"consistently inflated transfer relationships."*
+The industry that sells to these learners gives itself away in its sample sizes.
+Arthur, Bennett, Edens & Bell (2003), *Journal of Applied Psychology*, report
+training-effectiveness sample-weighted mean `d`s of **0.60 (`k = 15, N = 936`) for
+reaction, 0.63 (`k = 234, N = 15,014`) for learning, 0.62 (`k = 122, N = 15,627`) for
+behaviour, and 0.62 (`k = 26, N = 1,748`) for results.** `MEASURED-META`. Every effect
+sits between 0.60 and 0.63, which looks suspicious until you read the `k`s, and the
+`k`s are the finding. Learning is measured 234 times. Results are measured 26 times,
+on 1,748 people in total, and that is the whole industry's evidence for whether
+training changes anything an employer would pay for. Blume, Ford, Baldwin & Huang
+(2010), 89 studies, supplies the reason to distrust even the 122: transfer outcomes
+obtained by the same source in the same measurement context *"consistently inflated
+transfer relationships."*
 
-For the practice figures, use the survey that has a DOI. Twitchell (1997), LSU
+For practice figures, use the survey that has a DOI. Twitchell (1997), LSU
 dissertation, published as Twitchell, Holton & Trott (2000), `n = 146` returned
 surveys at a 42% response rate, found technical training managers reporting each of
 Kirkpatrick's four levels in this percentage of their courses: **Level 1 — 72.74%,
 Level 2 — 47.05%, Level 3 — 33.73%, Level 4 — 20.82%.** `OBSERVED`. The far more
 widely circulated claim that only about 10% of training transfers to the job is
-folklore with a citation attached: it is universally attributed to Georgenson (1982)
+folklore with a citation attached. It is universally attributed to Georgenson (1982)
 in a trade magazine, and that paper is absent from Crossref, absent from OpenAlex and
-absent from ERIC, which indexes a *different* Georgenson article from the same
-journal and era, so the gap is not a coverage artefact. No sample, no method, not
-cited here.
+absent from ERIC, which indexes a *different* Georgenson article from the same journal
+and era, so the gap is not a coverage artefact. No sample, no method, not cited here.
 
-Adults are the population with the most money, the least time, and the only
-unambiguous transfer criterion in this survey: an actual job, recorded by somebody
-else in state unemployment-insurance wage records. Every other population requires
-the evaluator to build the outcome measure first. This one does not, which makes it
-the single segment where an outcome could genuinely be measured — and the segment
-that measures results 26 times.
+Adults have the most money, the least time, and the only unambiguous transfer
+criterion in this survey: a job, recorded by somebody else in state
+unemployment-insurance wage records. Every other population requires the evaluator to
+build the outcome measure first. This one does not, which makes it the one segment
+where an outcome could genuinely be measured, and it is the segment that measures
+results 26 times.
 
 ---
 
@@ -372,8 +355,8 @@ and 12% of students allocated to the intervention groups spending more than 15
 minutes using the programme."* `MEASURED-RCT`. Between 76% and 88% of a motivated,
 professionally obligated population did not spend a quarter of an hour with free
 software aimed at a skill they were being assessed on. For adults, dosage is the
-whole trial, and an adult-tutoring specification whose efficacy argument does not
-open with an engagement number is not making an argument.
+trial, and an adult-tutoring specification whose efficacy argument does not open with
+an engagement number is not making an argument.
 
 ---
 
@@ -393,9 +376,8 @@ appears only in the grey-literature report to the Department of Labor.
 
 Same trial, same randomisation, same investigators, two arms, one journal
 publication. That is the file-drawer problem visible inside a single federal
-evaluation, and it bears directly on how this survey reads every literature it
-cites, because the shelf we read from is the published one. It is also the cleanest
-available answer to a reader who thinks publication bias is a statistical abstraction.
+evaluation, and it bears on how this survey reads every literature it cites, because
+the shelf we read from is the published one.
 
 ---
 

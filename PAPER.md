@@ -19,7 +19,7 @@ This survey is an attempt to write the missing specification. It rests on 53 res
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
 errors is published in an append-only ledger rather than quietly edited — **23 of
-the 65 corrections were found by an adversarial reviewer rather than by us.**
+the 67 corrections were found by an adversarial reviewer rather than by us.**
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
@@ -764,7 +764,7 @@ abstract: LLMs "harm the learning of students with less prior knowledge."
 
 **Without a teacher in the loop, the meta-analytic effect is 0.077.** Gu & Yan
 (2025, *JECR*, 19 studies) report g = 0.683 overall, decomposing to **g = 1.426
-with teacher support and g = 0.077 without**. Every positive result in §2.1 that
+with teacher support and g = 0.077 without**. Every positive result in §3.1 that
 survives scrutiny is a teacher-designed, teacher-supervised activity with an LLM as
 one component. The measured entity is *teacher-plus-AI activity design*. **No study
 in the corpus isolates the AI's contribution.**
@@ -1158,7 +1158,7 @@ Seven capabilities, each independently assessable against 2026 reality.
 | J3 | **Points, draws, annotates** | ⛔ Absent | Neither Gemini Live nor OpenAI Realtime can point. Deixis must be rebuilt: function calling → your own canvas. **Largest unexploited design space in the stack.** |
 | J4 | **Remembers everything** | ⛔ The core gap | Portfolio audit finding: *"The bottleneck is not generation — generation is solved to a startling degree. It is state."* |
 | J5 | **Proactive, interrupts, volunteers** | ✅ Available | OpenAI Realtime **out-of-band responses** (`conversation: "none"`) is a silent side-channel — the model can evaluate "is this learner stuck?" without speaking. This is the proactivity primitive and it is under-used. |
-| J6 | **Has judgment, pushes back** | ⛔ Trained against | RLHF optimises agreeableness. "Sir, I would not advise that" is exactly what current models will not say. See §4.4. |
+| J6 | **Has judgment, pushes back** | ⛔ Trained against | RLHF optimises agreeableness. "Sir, I would not advise that" is exactly what current models will not say. See §5.4. |
 | J7 | **Runs work in parallel** | ✅ Available | Agent village (G2): background probe generation, misconception analysis, next-session planning. |
 
 Two of seven are available today. One is degraded. Four are blocked, and those
@@ -1206,7 +1206,7 @@ Ranked by (impact for the target learner) ÷ (blocker difficulty):
 
 1. State (J4). Nothing else compounds without it. A single learner model every
    agent reads and writes; inspectable and correctable by learner and parent.
-2. The refusal engine (§4.4). Pure logic over an existing model. No new capability
+2. The refusal engine (§5.4). Pure logic over an existing model. No new capability
    required. Highest pedagogical yield per line of code.
 3. Deixis (J3). A shared canvas the tutor can point at and annotate via tool
    calls. It removes working-memory load directly, and it is the highest-value
@@ -1247,7 +1247,7 @@ signal-to-signal latency**, ~550 ms total remote including 350 ms network.
 Architecture: single-GPU *thinker* (perception) + multi-GPU *performer*
 (Ulysses-style context parallelism). `MEASURED-BENCH`, author-reported.
 
-### Revisions to §4.2 and §4.3
+### Revisions to §5.2 and §5.3
 
 | | Previous finding | Revised |
 |---|---|---|
@@ -1289,7 +1289,7 @@ Therefore the A5 conclusion is narrowed rather than withdrawn:
 > environment in which a tutor grounded by verifiable code (G1 ladder) teaches.
 > Keep the world generative; keep the physics symbolic.
 
-### Revised build order (supersedes §4.5)
+### Revised build order (supersedes §5.5)
 
 Deixis (J3) rises to first. In a persistent world at 25 FPS, "point at *this*"
 becomes tractable in a way it never was over a 1 FPS still-frame channel, and it
@@ -1297,7 +1297,7 @@ is the highest-value accommodation in the H1 archetype table.
 
 1. Deixis in a persistent world. The tutor indicates, annotates, manipulates.
 2. State (J4). One learner model beneath it.
-3. The refusal engine (§4.4), unchanged. Still the pedagogy.
+3. The refusal engine (§5.4), unchanged. Still the pedagogy.
 4. Proactive probing (J5). Out-of-band evaluation feeding the CBM loop.
 5. The face. Now cheap to render, still `g ≈ 0.19–0.20`. Build for engagement;
    do not claim it teaches.
@@ -1713,7 +1713,7 @@ the highest-evidence technique and the missing instrument, which is why it is fi
 
 **2 · Generate-and-select on the learner's own test, never on a judge.** The
 eleven-point spread is already measured. The scaled version, an optimiser whose
-fitness is human retention at delay, is §6.6's unclaimed prize.
+fitness is human retention at delay, is §7.6's unclaimed prize.
 
 **3 · A step-level verifier for student work.** Pedagogy's missing `pytest`. Currently
 at chance, with a public testbed and decades of labelled intelligent-tutoring logs
@@ -2826,7 +2826,7 @@ the saved complexity on getting the universal things right."
 ## 8. The controller we will actually build
 
 - **Lead with Cronbach.** Anyone proposing a personalisation dimension states which
-  of the seven rows in §10.2 it belongs to, and defends it there.
+  of the seven rows in §11.2 it belongs to, and defends it there.
 - **Measure, never ask.** Preference moves d ≈ 0.48 while knowledge moves zero.
   Stated preference is an anti-signal and is not an input.
 - **Per-topic, never per-person.** No trait-level storage. The expertise estimate
@@ -3515,7 +3515,7 @@ So "give a presentation to the class" is not the high-value version of this
 technique. It is the version with an anxiety tax attached, and the tax buys
 nothing.
 
-For the learners in §23.4, those with attention differences, anxiety, or speech and
+For the learners in §14.4, those with attention differences, anxiety, or speech and
 language needs, this is decisive:
 
 > **"Give a presentation" is a barrier that buys nothing. Letting the learner
@@ -3850,7 +3850,7 @@ And the composite has never been tested. No study in the retrieved literature
 tests laddering as such — the same concept authored at N levels under a fidelity
 constraint, entry chosen by measurement. Every component is evidenced. The assembly
 is not. That is simultaneously the contribution and the risk, and it is the
-honest label for everything in §36.3.
+honest label for everything in §15.3.
 
 ---
 
@@ -4192,7 +4192,7 @@ Exposition.
 So in the one experiment that isolates it, the load-bearing variable is **naming the
 wrong idea**, not the order in which the machinery arrives. Ordering may still help;
 it has not been shown to be what does the work, and this section originally implied
-it was. See §29.3.3.
+it was. See §17.3.3.
 
 The original argument was mechanistic. Machinery before obstacle leaves the reader
 with no slot to put it in. They remember it as a list of tricks, cannot
@@ -4281,7 +4281,7 @@ dimensions that integral is not hard; it is hopeless.
 Introduce *Z* as the antagonist first and every later step is *forced* rather than
 clever. Introduce the landscape first and the reader meets Langevin dynamics,
 contrastive divergence and replay buffers as three unrelated tricks. Same content,
-different retention — §29.3.1.
+different retention — §17.3.1.
 
 ### 4.2 The one line the method turns on
 
@@ -4302,7 +4302,7 @@ Gradient descent finds a mode. You do not want the most likely image; you want a
 
 The √ε is not a hyperparameter. It is the unique scale at which the stationary
 distribution equals *p*. Present it as tunable and you have falsified uniqueness of
-mechanism — §29.3.2, exactly.
+mechanism — §17.3.2, exactly.
 
 And the persistent replay buffer stops being a hack once the tug-of-war is visible:
 training pushes energy *down* on real data and *up* on model samples, and the "up"
@@ -4348,7 +4348,7 @@ definition.**
 The second sorts by whether the reader holds the *constraint that generates the
 field*. Someone who can answer it belongs at rung 2 whatever their credentials;
 someone who cannot will not understand rung 2 however much they have read.
-`INFERENCE`. This follows from §29.3.1 and not from a trial, and testing it is cheap.
+`INFERENCE`. This follows from §17.3.1 and not from a trial, and testing it is cheap.
 
 ---
 
@@ -4784,7 +4784,7 @@ Concretely, and falsifiably:
   perceptual rather than conceptual, is **d = −0.05**. Making the *reading* harder
   is not a desirable difficulty. Making the *retrieval* harder is.
 
-And the cheapest experiment in the document, which follows directly from §30.3:
+And the cheapest experiment in the document, which follows directly from §19.3:
 
 > **Push the first retrieval later.** One parameter, a meta-analytic prior, and a
 > mechanism dissociated in an existing experiment. If the effect is where
@@ -5038,7 +5038,7 @@ a headline.
 Announced adversarialism backfires. Nemeth, Brown & Rogers (2001). The obvious
 implementation of "AI adversary", telling the learner you are about to argue the
 other side, is the one that produces bolstering instead of divergence. This is the most
-consequential negative result in the section and it is why §31.2.2 exists.
+consequential negative result in the section and it is why §20.2.2 exists.
 
 Fluency raises confidence and ratings with no effect on learning. Carpenter and
 colleagues, across **five studies from 2013 to 2020**, found that a fluent
@@ -6122,7 +6122,7 @@ That is right. As verification cost approaches zero, **100% of the remaining pro
 the part verification does not address**, and the unverifiable layer (intuition,
 appropriateness, sequencing, why this matters) is where the teaching is.
 
-But §11.1 is not a safety argument at all. The checker is what lets a tutor wait, let a wrong
+But §23.1 is not a safety argument at all. The checker is what lets a tutor wait, let a wrong
 model run, hand the instrument to the learner, and settle a disagreement by experiment
 rather than by status. **The apparatus is not there to make the tutor correct. It is there
 to make the tutor able to stop performing.**
@@ -7055,7 +7055,7 @@ that a decision rule has fired. It may not author the IEP, determine eligibility
 decide placement, select a disability category, or arrive at a meeting with a
 recommendation.
 
-And one more, from §15.3: it may prepare options with their evidence. Never a
+And one more, from §26.3: it may prepare options with their evidence. Never a
 recommendation.
 
 ---
@@ -7258,7 +7258,7 @@ worked in trials — TaRL's own scaling nulls prove it against a friendly exampl
 And the least-connected are the least reachable, which no amount of capability
 fixes.
 
-What we do not concede is the inference. Every null in §20.1 shares a structure:
+What we do not concede is the inference. Every null in §27.1 shares a structure:
 something was distributed, and nothing was targeted. The interventions that
 worked all targeted. Abundant attention is an input to targeting. It is what makes
 meeting each learner where they are affordable at population scale for the first
@@ -7392,7 +7392,7 @@ includes behavioural characteristics, "such as facial images"), this means:
 | Technique | Status |
 |---|---|
 | Webcam frustration / boredom / engagement detection | **Prohibited** |
-| Voice-affect scoring in a spoken session | **Prohibited** (voice is biometric; COPPA agrees, §32.3) |
+| Voice-affect scoring in a spoken session | **Prohibited** (voice is biometric; COPPA agrees, §28.3) |
 | "Sensor-free" affect detection from clickstream and latency | **Grey zone** — turns on whether interaction traces are "behavioural characteristics" under 3(34) |
 
 That third row is the sharpest open legal question in the field — it determines
@@ -8896,7 +8896,7 @@ answer, a profile update, or a parent opening a transcript. **The product in thi
 survey most explicitly designed around a falsifiable pedagogical claim has not
 instrumented the claim.** It measures acquisition precisely and pedagogy not at all.
 
-That is the §26.3 pathology — measuring what the organisation controls — appearing in
+That is the §32.3 pathology — measuring what the organisation controls — appearing in
 the survey author's own work. It is reported and not omitted because the survey's
 credibility depends on applying its own test to itself first.
 
@@ -9928,7 +9928,7 @@ Utility-value writing. High-school science students asked to write about the rel
 of the material to their own lives showed increased interest and grades, **concentrated in
 students with low initial success expectations; a college biology replication closed
 achievement gaps** for first-generation and underrepresented-minority students. *Caveat
-required by §18.3:* the 247-course scale-up found value-relevance effects only in courses that
+required by §36.3:* the 247-course scale-up found value-relevance effects only in courses that
 *had* a global achievement gap — real and conditional, never universal. It is also a
 generative task, which is exactly what an LLM can elicit, read and respond to at scale
 and a multiple-choice platform cannot.
@@ -10715,7 +10715,7 @@ Together they would be **the first curriculum in history with a deletion
 procedure**. An edge that stops predicting gets removed on evidence, instead of
 surviving because a committee approved it in 1994.
 
-> *What would show it wrong:* §8.3.1. If misconceptions do not transfer across
+> *What would show it wrong:* §39.3.1. If misconceptions do not transfer across
 > populations, the atlas is a local artifact and the graph is unmaintainable.
 
 ---
