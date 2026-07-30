@@ -13,10 +13,8 @@ study since the 1960s that pitted a machine-induced instructional sequencing pol
 against a baseline. Their headline is positive, and this survey has already published
 a correction for quoting it selectively: **over half** the comparisons, 21 of 41,
 found an induced policy significantly better than every baseline, often at Cohen's
-*d* of 0.8 or more.
-
-The finding is in their Table 2, where the comparisons are grouped by *what was being
-sequenced*.
+*d* of 0.8 or more. The finding is in their Table 2, where the comparisons are grouped
+by *what was being sequenced*.
 
 | Cluster | Sig | ATI | Mixed | Not sig | Sig worse |
 |---|---|---|---|---|---|
@@ -29,14 +27,13 @@ sequenced*.
 `MEASURED-META`
 
 The third row is curriculum sequencing: the cluster the authors describe as "closest
-to traditional curriculum sequencing, or ordering various content areas for a given
-topic," where "a network specifying the relationship between different content areas
-or KCs (such as a prerequisite graph) must either be prespecified or automatically
-inferred from data." **Zero of eight beat their baselines.** The six clean nulls
-include Clement et al. (2015) with 133 seven- and eight-year-olds on arithmetic,
-Doroudi et al. (2017) with 69 fourth and fifth graders on fractions, and the authors'
-own Appendix B study with 100 more children — none of which shows in a headline where
-over half the comparisons favoured the induced policy.
+to traditional curriculum sequencing," where "a network specifying the relationship
+between different content areas or KCs (such as a prerequisite graph) must either be
+prespecified or automatically inferred from data." **Zero of eight beat their
+baselines.** The six clean nulls include Clement et al. (2015) with 133 seven- and
+eight-year-olds on arithmetic, Doroudi et al. (2017) with 69 fourth and fifth graders
+on fractions, and the authors' own Appendix B study with 100 more children — none of
+which shows in a headline where over half the comparisons favoured the induced policy.
 
 The two clusters that did win are decisions about *when to bring an item back*
 (paired-associate scheduling, the spacing literature §08 owns) and *what kind of
@@ -55,21 +52,19 @@ prerequisite-dropback repair whose own evidence line reads "no pooled ES;
 mechanism-level `INFERENCE`."
 
 Read against Table 2, the two halves of that sentence have opposite standing. Picking
-the technique for a chosen target is the part with meta-analytic support. Traversing
-a prerequisite closure to decide what the target should be is the part with no
-positive result anywhere in sixty years of experiments. `SPEC` with no measured
-warrant, and it is load-bearing in at least three places in this document.
-
-The word `prerequisite` appears 196 times across this project's research corpus;
-`curriculum sequencing` appears twice and `knowledge space` never. The concept is
-everywhere and its warrant is nowhere. `OBSERVED — absence`
+the technique for a chosen target has meta-analytic support. Traversing a prerequisite
+closure to decide what the target should be has no positive result anywhere in sixty
+years of experiments. It is `SPEC` with no measured warrant, load-bearing in at least
+three places in this document. The word `prerequisite` appears 196 times across this
+project's research corpus; `curriculum sequencing` appears twice and `knowledge space`
+never. `OBSERVED — absence`
 
 For the eleven-year-old this survey is organised around, the gap has a face. She can
 hold a conversation about photosynthesis and cannot pass a worksheet about it. A
 system that verifies the transitive closure before teaching the target will find gaps
-in that closure — her mathematics is behind, her writing fluency is behind — and will
-route her away from the one topic she was ready to think about. The gate is the
-expensive part of the architecture and it is the part with no evidence behind it.
+in it — her mathematics is behind, her writing fluency is behind — and route her away
+from the one topic she was ready to think about. The gate is the expensive part of the
+architecture and the part with no evidence behind it.
 
 ---
 
@@ -143,13 +138,12 @@ ALEKS is the commercial instantiation of knowledge space theory (Doignon &
 Falmagne). Its own research page describes the mechanism, a knowledge state assessed
 "after the student has answered only 20–25 questions," and cites no efficacy study and
 no effect size. `VENDOR` Two meta-analyses reach the same place. Fang, Ren, Hu &
-Graesser (2019),
-*Educational Psychology*, 15 studies and 24 independent samples: ALEKS was as good as,
-but not better than, traditional classroom teaching, with effects *larger* for shorter
-implementations. Sun, Else-Quest, Hodges, French & Dowling (2021), *Investigations in
-Mathematics Learning*, 33 studies, 56 independent effect sizes, **9,238 students**:
-pooled **Hedges' g = 0.05** against ordinary instruction, with a supplemental-use
-moderator at **g = 0.43**. `MEASURED-META`
+Graesser (2019), *Educational Psychology*, 15 studies and 24 independent samples:
+ALEKS was as good as, but not better than, traditional classroom teaching, with effects
+*larger* for shorter implementations. Sun, Else-Quest, Hodges, French & Dowling (2021),
+33 studies, 56 independent effect sizes, **9,238 students**: pooled **Hedges' g = 0.05**
+against ordinary instruction, with a supplemental-use moderator at **g = 0.43**.
+`MEASURED-META`
 
 Two flags travel with those numbers. The ERIC record prints a pooled interval that is
 not symmetric about the point estimate and could not be checked against the article,
@@ -171,15 +165,15 @@ never been shown to move anything either.
 ## 5. Mastery learning was given 20–33% more time, and Bloom's study ran three weeks
 
 Slavin's 1987 synthesis (*RER* 57(2):175–213) is where the two-sigma provenance
-lives. The claims it was testing, in the claimants' own figures, ran from Kulik et
-al.'s 0.52 and 0.54 through Walberg's 0.81 to Bloom's own 1.00 "when mastery learning
-procedures are done systematically and well," with two sigma as the prediction.
+lives. The claims it was testing ran from Kulik et al.'s 0.52 and 0.54 through
+Walberg's 0.81 to Bloom's own 1.00 "when mastery learning procedures are done
+systematically and well," with two sigma as the prediction.
 
 Slavin then restricted to practical applications in real schools running at least four
 weeks, with equal time for treatment and control, on standardised measures. Seven
 studies qualified. **Median effect size +0.04.** The single non-trivial result (+0.25)
-came from a study where teachers self-selected into conditions or were assigned by
-their principals, and was not significant at the class level. `MEASURED-META`
+came from a study where teachers self-selected into conditions, and was not significant
+at the class level. `MEASURED-META`
 
 Two design facts from his methods section rarely survive the citation trail.
 **Anania's study — one of the Chicago dissertations Bloom's essay rests on — ran three
@@ -276,16 +270,15 @@ Absolute retention is the other question, and Bahrick's permastore programme is 
 it lives. His summary of the fifty-year Spanish study, restated in Bahrick & Phelps
 (1987): part of what is acquired is lost within five years, and "virtually no
 knowledge is lost during the interval between 5 and 25 years" after acquisition.
-`OBSERVED` Bahrick & Phelps itself, 35 individuals tested on 50 English–Spanish pairs
-at 8 years, found optimum recall at **30-day** access intervals across a range running
-from 0% to 23%. `MEASURED-RCT`
+`OBSERVED` That study of 35 learners, tested at 8 years, put optimum recall at
+**30-day** access intervals across a range running from 0% to 23%. `MEASURED-RCT`
 
-The nine-year longitudinal follow-up (Bahrick, Bahrick, Bahrick & Bahrick 1993,
-*Psychological Science* 4(5):316–321) found retention functions that crossed over
-during the first year and stayed crossed for five, so that **13 relearning sessions
-spaced at 56 days matched 26 sessions spaced at 14 days** — half the training for the
-same durable outcome. Two cautions the citation trail drops: **n = 4**, and the
-authors record schedule departures, an omitted terminal session, a three-year test
+The nine-year longitudinal follow-up (Bahrick, Bahrick, Bahrick & Bahrick
+1993, *Psychological Science* 4(5):316–321) found retention functions that crossed
+over during the first year and stayed crossed for five, so that **13 relearning
+sessions spaced at 56 days matched 26 sessions spaced at 14 days** — half the training
+for the same durable outcome. Two cautions the citation trail drops: **n = 4**, and
+the authors record schedule departures, an omitted terminal session, a three-year test
 given at four years, and subjects who travelled in France. `MEASURED-RCT` —
 extraordinary in duration, tiny in sample, imperfectly controlled.
 
@@ -308,14 +301,14 @@ applies to a citation we imported. `INFERENCE`
 The genuinely independent arrival is Shea & Morgan (1979), *JEP:HLM* 5(2):179–187: a
 barrier-knockdown task in a motor-behaviour laboratory descending from Battig (1966),
 with no methodological contact with verbal spacing research. Blocked practice won
-during acquisition; random practice won at 10-minute and 10-day retention, and won
-whether the retention test was blocked or random. `MEASURED-RCT` One manipulation,
+during acquisition; random practice won at 10-minute and 10-day retention, whether the
+retention test was itself blocked or random. `MEASURED-RCT` One manipulation,
 contextual interference, reproduces the acquisition–retention reversal in a discipline
 that did not borrow it.
 
-Whether the rest of the doctrine reproduces is a separate question. Czyż, Wójcik,
-Solarská & Kiper (2024), *Scientific Reports* 14, screened 1,255 records and
-meta-analysed **54 studies** on delayed retention (>24 h):
+Whether the rest reproduces is a separate question. Czyż, Wójcik, Solarská & Kiper
+(2024), *Scientific Reports* 14, meta-analysed **54 studies** on delayed retention
+(>24 h):
 
 | Subgroup | Three-level SMD | 95% CI |
 |---|---|---|
@@ -330,13 +323,10 @@ meta-analysed **54 studies** on delayed retention (>24 h):
 
 **The eleven-year-old this project is for sits inside both boundary conditions at
 once.** She is under eighteen and she is not in a laboratory. Wulf & Shea (2002) found
-the same split in the primary studies twenty years earlier: Farrow & Maschette found
+the same split in the primary studies twenty years earlier — Farrow & Maschette found
 random practice better for 10–12 year-olds and **blocked practice better for 8–9
-year-olds** on the tennis forehand, and Albaret & Thon found a random advantage on a
-simple drawing task that "systematically reduced as the number of segments was
-increased and even reversed" for the hardest version. Their title is the warning
-label: *principles derived from the study of simple skills do not generalize to
-complex skill learning.*
+year-olds** on the tennis forehand — and their title is the warning label: *principles
+derived from the study of simple skills do not generalize to complex skill learning.*
 
 The feedback half of the doctrine fails outright. The guidance hypothesis (Salmoni,
 Schmidt & Walter 1984) holds that feedback after every trial props up acquisition
@@ -345,16 +335,16 @@ during practice and win at retention. McKay, Hussien, Vinh, Mir-Orefice, Brooks 
 Ste-Marie (2022), *Psychology of Sport and Exercise* 61:102165, screened 1,662 records
 to **61 papers, k = 75, N = 2,228**, and found "no significant effect of reduced
 feedback frequency at any time point" and "no evidence of a significant change in
-effect from acquisition or immediate retention to delayed retention." Their own
-highlight list ends: "The guidance hypothesis is not supported by the extant
-research." `MEASURED-META` The same group's self-controlled practice meta-analysis
-lands in the same place: a naive g = 0.44 over 52 comparisons (N = 2,061) falls to
-**g = 0.107 [0.047, 0.18]** once selection bias is modelled.
+effect from acquisition or immediate retention to delayed retention." Their highlight
+list ends: "The guidance hypothesis is not supported by the extant research."
+`MEASURED-META` The same group's self-controlled practice meta-analysis lands in the
+same place: a naive g = 0.44 over 52 comparisons (N = 2,061) falls to **g = 0.107
+[0.047, 0.18]** once selection bias is modelled.
 
 What transfers is the mechanism and not the doctrine. Difficulty is desirable to the
 degree the learner has spare capacity to meet it, which is §22's expertise-reversal
-law and §34's executive-function argument arriving from a third direction. So
-contextual interference, feedback fading and practice distribution are all
+law and §34's executive-function argument arriving from a third direction. Contextual
+interference, feedback fading and practice distribution are therefore all
 capacity-conditional, and for a novice, on a complex task, under eighteen, they
 default **off** and are earned by measurement.
 

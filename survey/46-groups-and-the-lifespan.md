@@ -26,9 +26,9 @@ group product, *"there is little incentive for group members to explain concepts
 one another, and one or two group members may do all the work."* The free-rider
 problem and the achievement effect are one variable seen from two sides.
 
-That reframes the finding. +0.32 against +0.07 is not a fact about groups. It is a
-fact about incentive design, measured on groups, which makes it far more portable,
-because incentive design is something software does and seating is not.
+So +0.32 against +0.07 is a fact about incentive design measured on groups, which
+makes it far more portable than a fact about groups would be, because incentive
+design is something software does and seating is not.
 
 ---
 
@@ -75,10 +75,9 @@ could not be retrieved.
 Review*, is the one deliberately independent replication attempt, with the strictest
 inclusion rule in the field: 65 articles, 1995 onwards, primary through tertiary,
 conducted in real classrooms. It reports positive effects on achievement and
-attitudes, with study domain, age level and culture as significant moderators. Its
-pooled magnitudes could not be retrieved: closed access, `is_oa: false` with zero
-open-access locations, ScienceDirect 403, the repository copy intranet-only.
-`MEASURED-META`, magnitude untraceable.
+attitudes. Its pooled magnitudes could not be retrieved: closed access, `is_oa:
+false` with zero open-access locations, ScienceDirect 403, the repository copy
+intranet-only. `MEASURED-META`, magnitude untraceable.
 
 **Colliver, Feltovich & Verhulst (2003)**, *Teaching and Learning in Medicine*,
 re-examined the primary studies under Springer, Stanne & Donovan's (1999)
@@ -86,10 +85,10 @@ meta-analysis and concluded that *"the meta-analysis' call for more widespread
 implementation of small group learning is not supported"* (ERIC EJ664775). That paper
 is closed too, so its internal argument could not be read.
 
-This survey reports an unverifiable claim as a finding instead of dropping it (§24).
-Applied here that yields one instruction: **treat a per-method cooperative-learning
-effect size with no retrievable source as absent.** The condition-level result in §1
-is open access and quoted verbatim. Build on that one.
+This survey reports an unverifiable claim as a finding instead of dropping it (§24),
+which yields one instruction here: **treat a per-method cooperative-learning effect
+size with no retrievable source as absent.** The condition-level result in §1 is open
+access and quoted verbatim. Build on that one.
 
 ---
 
@@ -99,16 +98,15 @@ This survey has been ducking a question: is the group a delivery constraint AI
 removes, or a mechanism AI destroys? The question contains a false disjunction, and
 the measured literature separates the halves cleanly enough to price both.
 
-**Most of a classroom is a rationing artifact, and the numbers say so.** Traditional
-lecture exists because talking to thirty people at once is the only way to talk to
-thirty people at once; Freeman et al. (2014), *PNAS*, across 225 studies, put
-examination and concept-inventory performance **+0.47 SD** under active learning
-(`n = 158` studies) with an **odds ratio of 1.95** for failing under traditional
-lecturing (`n = 67` studies), `MEASURED-META`. Ability-heterogeneous grouping,
-imposed because a classroom cannot sort continuously, loses **0.12** against
-homogeneous grouping across Lou et al.'s (1996) 20 direct comparisons. The single
-group product is the +0.07 condition. AI removes all of this, and this survey has
-been right about it.
+**Most of a classroom is a rationing artifact, and the numbers say so.** Lecture
+exists because talking to thirty people at once is the only way to talk to thirty
+people at once; Freeman et al. (2014), *PNAS*, across 225 studies, put examination and
+concept-inventory performance **+0.47 SD** under active learning (`n = 158` studies)
+with an **odds ratio of 1.95** for failing under traditional lecturing (`n = 67`
+studies), `MEASURED-META`. Ability-heterogeneous grouping, imposed because a classroom
+cannot sort continuously, loses **0.12** against homogeneous grouping across Lou et
+al.'s (1996) 20 direct comparisons. The single group product is the +0.07 condition.
+AI removes all of this, and this survey has been right about it.
 
 Three things are mechanisms, and they behave differently under substitution.
 
@@ -139,13 +137,12 @@ uncertainty is not in that state. §19 reaches the same conclusion from the trad
 side, where chavruta's symmetry does not survive substitution.
 
 **What is (c) worth?** The upper bound is Slavin's +0.32, of which (a) is by
-construction the largest part, since removing it takes the effect to +0.07. The
-better estimate of the residual is Lou, Abrami & d'Apollonia (2001) — 486 findings
-from 122 studies, 11,317 learners, small group against individual with the
-technology held constant — at **+0.15 on individual achievement, significantly
-heterogeneous**. Call the irreducible peer mechanism 0.1 to 0.2 SD. It is real, it
-is the only part of the group that cannot be faked, and it is smaller than this
-survey's anxiety about it.
+construction the largest part, since removing it takes the effect to +0.07. The better
+estimate of the residual is Lou, Abrami & d'Apollonia (2001), 486 findings from 122
+studies and 11,317 learners, small group against individual with the technology held
+constant: **+0.15 on individual achievement, significantly heterogeneous**. Call the
+irreducible peer mechanism 0.1 to 0.2 SD. It is real, it is the only part of the
+group that cannot be faked, and it is smaller than this survey's anxiety about it.
 
 ### The cost that has never been priced
 
@@ -161,16 +158,15 @@ Radkowitsch et al. also report motivation at `g = 0.13, n.s.`, which is the
 over-scripting worry failing to replicate in the form that was measured. Both
 `MEASURED-META`.
 
-Read the two columns against each other. If the goal is that a child understands
-photosynthesis, this literature offers a fifth of a standard deviation. If the goal
-is that a child can work with another person, it offers close to a full one, and
-nothing else in this survey produces that outcome at all. So the real price of
-perfect personalisation is not subject matter; it is that the learner never practises
-working with a person. This survey has treated personalisation as an unmixed good and
-has never costed that. For the learner it was written around, the cost lands hardest:
-"works with others" is written into her plan as a goal, and a tutor that removes
-every other person from the room removes the only instrument anyone has shown to
-move it.
+If the goal is that a child understands photosynthesis, this literature offers a
+fifth of a standard deviation. If the goal is that a child can work with another
+person, it offers close to a full one, and nothing else in this survey produces that
+outcome at all. So the real price of perfect personalisation is not subject matter;
+it is that the learner never practises working with a person, and this survey has
+treated personalisation as an unmixed good without ever costing that. For the learner
+it was written around the cost lands hardest: "works with others" is written into her
+plan as a goal, and a tutor that removes every other person from the room removes the
+only instrument anyone has shown to move it.
 
 ---
 
@@ -193,10 +189,9 @@ distributes the work. Magnitude is not in the abstract and the article is closed
 This is a good null because it is not a failure to detect an effect. It found an
 effect with the wrong sign, in the condition Slavin predicted would produce it, in
 the setting where group projects are most heavily used. Murphy et al. (2009),
-*Journal of Educational Psychology*, point the same way from a much larger base:
-classroom discussion approaches reliably increased student talk and improved text
-comprehension, while *"few approaches to discussion were effective at increasing
-students' literal or inferential comprehension and critical thinking and
+*Journal of Educational Psychology*, point the same way across a meta-analysis of
+classroom discussion approaches: *"few approaches to discussion were effective at
+increasing students' literal or inferential comprehension and critical thinking and
 reasoning."* `MEASURED-META`.
 
 ---
@@ -209,11 +204,9 @@ properly, the exception does not hold.
 
 The founding positive is Roseberry, Hirsh-Pasek & Golinkoff (2014), *Child
 Development*: toddlers 24–30 months, **`N = 36`** across live interaction, socially
-contingent video chat and yoked non-contingent video, so twelve children per cell.
+contingent video chat and yoked non-contingent video, twelve children per cell.
 *"Results suggest that children only learned novel verbs in socially contingent
-interactions."* `MEASURED-RCT`.
-
-Everything larger points the other way.
+interactions."* `MEASURED-RCT`. Everything larger points the other way.
 
 - **Troseth, Strouse, Verdine & Saylor (2018)**, *Frontiers in Psychology*, `n = 132`
   toddlers at 24 and 30 months in four conditions crossing responsiveness with
@@ -320,9 +313,8 @@ cited here.
 Adults have the most money, the least time, and the only unambiguous transfer
 criterion in this survey: a job, recorded by somebody else in state
 unemployment-insurance wage records. Every other population requires the evaluator to
-build the outcome measure first. This one does not, which makes it the one segment
-where an outcome could genuinely be measured, and it is the segment that measures
-results 26 times.
+build the outcome measure first. This is the one segment where an outcome could
+genuinely be measured, and it is the segment that measures results 26 times.
 
 ---
 
@@ -339,30 +331,28 @@ higher, not statistically significant (95% CI −7.40 to 2.57, p = 0.33).
 `MEASURED-RCT`, the only UK RCT of financial incentives in adult literacy, and the
 intervention ran backwards on its own primary outcome.
 
-The companion result is about software. Ainsworth et al. (2012) ran two RCTs of an
-online medication-dosage simulation for student nurses' numeracy, found a small
-negative intention-to-treat effect significant in one trial, and reported that *"only
-24 and 12% of students allocated to the intervention groups"* spent more than fifteen
-minutes with the programme. `MEASURED-RCT`. A motivated, professionally obligated
-population would not give free software a quarter of an hour. For adults, dosage is
-the trial, and an adult-tutoring specification whose efficacy argument does not open
-with an engagement number is not making an argument.
+Ainsworth et al. (2012) is the companion result about software: two RCTs of an online
+medication-dosage simulation for student nurses' numeracy, a small negative
+intention-to-treat effect significant in one trial, and *"only 24 and 12% of students
+allocated to the intervention groups"* spending more than fifteen minutes with the
+programme. `MEASURED-RCT`. For adults, dosage is the trial, and an adult-tutoring
+specification whose efficacy argument does not open with an engagement number is not
+making an argument.
 
 ---
 
 ## 8. One trial, two arms, one journal
 
 The WIA Gold Standard Evaluation randomly assigned over 34,000 customers across 28
-randomly selected local workforce investment areas to three research groups. At
-thirty months, intensive staff-assisted services raised earnings by *"$3,300 to
-$7,100 (7 to 20 percent) per customer depending on the data source."* The training
-arm produced nothing: *"the evidence suggests that training funded by the Adult and
-Dislocated Worker programs does not have positive impacts in the 30 months after
-study enrollment."* `MEASURED-RCT`.
+randomly selected local workforce investment areas to three research groups. At thirty
+months, intensive staff-assisted services raised earnings by *"$3,300 to $7,100 (7 to
+20 percent) per customer."* The training arm produced nothing: *"the evidence suggests
+that training funded by the Adult and Dislocated Worker programs does not have
+positive impacts in the 30 months after study enrollment."* `MEASURED-RCT`.
 
-The counselling result appears as McConnell, Schochet, Rotz, Fortson, Burkander &
-Mastri (2021) in the *Journal of Policy Analysis and Management*. The training null
-appears only in the grey-literature report to the Department of Labor.
+The counselling result appears as McConnell et al. (2021) in the *Journal of Policy
+Analysis and Management*. The training null appears only in the grey-literature
+report to the Department of Labor.
 
 Same trial, same randomisation, same investigators, two arms, one journal
 publication. That is the file-drawer problem visible inside a single federal
@@ -421,8 +411,7 @@ an AI-mediated group teaches a learner to work with a person.
 
 The classroom's best-evidenced mechanism turned out to be an incentive rule that
 classrooms can afford one lesson in six. A system that already measures every learner
-continuously can afford it every time, which makes it the cheapest large win
-available here and the one thing on this list that needs no new research at all. The
-expensive item is the trial above, and the reason to state its arithmetic in public
-is that we would otherwise be free to call the peer question settled on evidence that
-never had the power to settle it.
+continuously can afford it every time, which makes it the cheapest large win here and
+the one item on this list needing no new research. The expensive item is the trial,
+and the reason to state its arithmetic in public is that we would otherwise be free
+to call the peer question settled on evidence that never had the power to settle it.

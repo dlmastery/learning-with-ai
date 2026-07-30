@@ -15,8 +15,8 @@ are language trials: pronunciation, writing feedback, speaking. No other subject
 has more than one, and the modal randomised trial of generative AI in education
 is an Iranian or Chinese EFL study with fewer than a hundred participants.
 
-This survey said four. The corrected count is three, it is published as **C-58**,
-and how the error happened matters more than the arithmetic.
+This survey said four. The corrected count is three, published as **C-58**, and
+how the error happened matters more than the arithmetic.
 
 ---
 
@@ -27,20 +27,18 @@ The ERIC API call ran on 2026-07-28 and returned seven records; re-run on
 API, which is the property the census was trusted for.
 
 Reading the records one at a time gives a different answer from reading the
-count. **EJ1415077**, the record this survey's summary table filed under
-"Blended Learning," describes itself as a randomised trial in *"a foundational
-chemistry course in a blended learning setting"* with 61 Taiwanese
-undergraduates, verified against the ERIC record. **EJ1484052** is virtual
-reality with *"embedded IoT tasks."* Neither is language learning. `OBSERVED` —
-own coding of the result set.
+count. **EJ1415077**, filed in this survey's summary table under "Blended
+Learning," describes itself as a randomised trial in *"a foundational chemistry
+course in a blended learning setting"* with 61 Taiwanese undergraduates, verified
+against the ERIC record. **EJ1484052** is virtual reality with *"embedded IoT
+tasks."* Neither is language learning. `OBSERVED` — own coding of the result set.
 
 A reproducible retrieval step wrapped around an unchecked labelling step produces
 confident wrong counts, in whichever direction the labeller was already leaning.
-That is a different failure from a mistyped number: re-running the query would
-never have caught it, and the reproducibility was the reason nobody looked. §23
-carries the census and now carries the corrected figure — which does not weaken
-the point the census was recruited for. Three of seven still means language is
-where this evidence lives.
+Re-running the query would never have caught it, and the reproducibility was the
+reason nobody looked. §23 carries the census and now carries the corrected
+figure, which does not weaken the point the census was recruited for: three of
+seven still means language is where this evidence lives.
 
 ---
 
@@ -54,8 +52,7 @@ writing courses, three feedback conditions over a semester: teacher screencast
 video feedback, AI feedback (ChatGPT-4 plus Grammarly Premium against five
 scripted prompts mapped to the IELTS criteria), and hybrid. Pre- and post-test
 Task 2 essays, anonymised, order-scrambled, double-marked blind to condition and
-time point, weighted κ = 0.85 — a better measurement apparatus than most of this
-literature's.
+time point, weighted κ = 0.85 — better measurement than most of this literature.
 
 No arm goes without feedback, so the study cannot estimate whether any of the
 three beats writing the same essays unaided. Three intact classes were randomly
@@ -91,23 +88,23 @@ points at the claim worth establishing properly.
 
 Xodabande, Shiri & Zohrabi (2025), *Discover Education* 4:307. `MEASURED-RCT`.
 Sixty intermediate Iranian EFL learners, randomised 30/30, three weeks, ten
-target words a week. The treatment group used ChatGPT-4's voice feature; the
-control used electronic dictionaries. Outcome: read 30 sentences aloud, one
-target word each, scored binary by three blinded raters, α = 0.91.
+target words a week, ChatGPT-4's voice feature against electronic dictionaries.
+Outcome: read 30 sentences aloud, one target word each, scored binary by three
+blinded raters, α = 0.91.
 
 Both groups practised those 30 words for three weeks, and those 30 words are the
-test. Different carrier sentences, same items, no untrained-item probe. The list
+test — different carrier sentences, same items, no untrained-item probe. The list
 runs *colonel, aisle, debris, rendezvous, quay, choir, entrepreneur, bouquet* and
 more of the same: English orthographic irregularities and French loanwords.
 Knowing that *colonel* is /ˈkɜːnəl/ is a word-specific fact of the same order as
-knowing what *colonel* means. Nothing in the trial separates "pronounces English
-better" from "memorised thirty pronunciations."
+knowing what *colonel* means. Nothing here separates "pronounces English better"
+from "memorised thirty pronunciations."
 
 The retention claim inverts on arithmetic. The paper's own post-hoc table has the
 treatment group flat from post-test to delayed test (+0.867, p = 1.000) and the
-control group still climbing (+3.700, p = .008). Computed from the reported means
-and SDs, between-group Hedges' g is **1.57 at post-test and 0.65 two weeks
-later** — 58% of the gap gone in a fortnight, with the control still rising when
+control still climbing (+3.700, p = .008). Computed from the reported means and
+SDs, between-group Hedges' g is **1.57 at post-test and 0.65 two weeks later** —
+58% of the gap gone in a fortnight, with the control still rising when
 measurement stopped. `INFERENCE` (arithmetic on the paper's Table 2). The paper
 describes this as ChatGPT retaining gains better.
 
@@ -136,11 +133,10 @@ carries a within-group one.
 This is the finding in the section that travels furthest outside it.
 
 Lee & Lee (2024), *Language Learning & Technology* 28(2):134–162, meta-analysed
-17 projects, N = 8,282, and did something the other syntheses in this area do
-not: computed both estimates on overlapping samples and printed both forest
-plots. Overall, **d = 1.18 within-group and d = 0.39 against business as
-usual**. Seven studies sit in both pools. `MEASURED-META` (Figures 4 and 5, read
-directly).
+17 projects, N = 8,282, and did what the other syntheses here do not: computed
+both estimates on overlapping samples and printed both forest plots. Overall,
+**d = 1.18 within-group and d = 0.39 against business as usual**. Seven studies
+sit in both pools. `MEASURED-META` (Figures 4 and 5, read directly).
 
 | Study | Within-group d (pre→post) | Between-group d (vs BAU) |
 |---|---|---|
@@ -160,11 +156,11 @@ repeats down the table.
 
 Every effect size in this survey now has a question to answer before it is read:
 *which difference is this?* An unlabelled `d = 1.2` in a product claim is almost
-always the first column, where a well-run control group would have absorbed most
-of it. That is why §24's benchmark for a credible AI tutoring result specifies an
-active control and a delayed post-test, and why the three trials above line up as
-they do: all three report large within-group gains, two report a control
-contrast, one of those two is a null, and the third reports none.
+always the first column. That is why §24's benchmark for a credible AI tutoring
+result specifies an active control and a delayed post-test, and why the three
+trials above line up as they do: all three report large within-group gains, two
+report a control contrast, one of those two is a null, and the third reports
+none.
 
 ---
 
@@ -173,8 +169,8 @@ contrast, one of those two is a null, and the third reports none.
 Bibauw, Van den Noortgate, François & Desmet (2022), *LL&T* 26(1), meta-analysed
 dialogue systems for language learning: 17 publications, 100 effect sizes, 803
 participants, overall **d = 0.58 [0.35, 0.82]** on measured language outcomes,
-with motivation studies deliberately excluded. Their cross-modality breakdown is
-the only quantitative transfer test the field has:
+motivation studies excluded. Their cross-modality breakdown is the only
+quantitative transfer test the field has:
 
 | Practice → outcome | d | 95% CI |
 |---|---|---|
@@ -190,31 +186,26 @@ not about generative models; it is the best available prior for them.
 
 Vocabulary carries the cleanest version, because the field routinely measures the
 taught words and a standardised test in the same study. Elleman, Lindo, Morphy &
-Compton (2009), 37 interventions pre-K to grade 12: effect on custom comprehension
-measures built from passages containing the taught words **d = 0.50**; effect on
-standardised comprehension **d = 0.10**; among the custom measures, d = 1.23 for
-students with reading difficulties against 0.39 for students without.
-`MEASURED-META`. That is first-language vocabulary instruction, so the boundary
+Compton (2009), 37 interventions pre-K to grade 12: effect on custom
+comprehension measures built from passages containing the taught words
+**d = 0.50**; on standardised comprehension **d = 0.10**; among the custom
+measures, 1.23 for students with reading difficulties against 0.39 for students
+without. `MEASURED-META`. That is first-language instruction, so the boundary
 crossed is not identical to the L2 case, and the attenuation is five-fold from
 "comprehends text built around the taught words" to "comprehends text."
 
-The target these decks are aimed at also has no edge to it. Nation (2006) puts
-98% lexical coverage at 8,000–9,000 word families for written text and
-6,000–7,000 for spoken. Kremmel, Indrarathne, Kormos & Suzuki (2023), *Language
-Learning* 73(4), preregistered with open data and materials, replicated the
-source study with 104 Sri Lankan adult learners across five coverage densities
-and *"failed to replicate an inferred 98% coverage threshold as sufficient for
-adequate comprehension,"* while confirming the underlying linear relationship.
-`MEASURED-RCT`. There is no cliff to get a learner over; there is a slope running
-from roughly 4,000 to 9,000 families, every thousand of which buys a little more
-comprehension.
-
-Deck study still builds real lexical entries: Elgort (2011) taught 48 pseudowords
-by deliberate study and found masked repetition, form and automatic semantic
-priming all present in lexical decision. `MEASURED-RCT` (within-subject). Lexical
-entries are not comprehension, and the distance between them is where reading,
-listening and speaking practice has to go. §08 owns scheduling; a tutor that
-ships a scheduler and calls vocabulary solved has built the d = 0.10 half.
+The target these decks aim at has no edge to it either. Nation (2006) puts 98%
+lexical coverage at 8,000–9,000 word families for written text and 6,000–7,000
+for spoken; Kremmel, Indrarathne, Kormos & Suzuki (2023), *Language Learning*
+73(4), preregistered with open data and materials, replicated the source study
+with 104 Sri Lankan adult learners across five coverage densities and *"failed to
+replicate an inferred 98% coverage threshold as sufficient for adequate
+comprehension,"* confirming the underlying linear relationship. `MEASURED-RCT`.
+No cliff to get a learner over; a slope from roughly 4,000 to 9,000 families,
+every thousand of which buys a little more comprehension. Deliberate study does
+build real lexical entries (Elgort 2011, `MEASURED-RCT`, within-subject), and
+lexical entries are not comprehension. §08 owns scheduling; a tutor that ships a
+scheduler and calls vocabulary solved has built the d = 0.10 half.
 
 ---
 
@@ -231,29 +222,26 @@ The peer-reviewed comparison is ETS's SpeechRater (Zechner, Higgins & Xi, SLaTE
 form, against human–human agreement of 0.77–0.94, with the authors' verdict that
 *"a large gap still remains."* On the open speechocean762 benchmark the
 granularity gradient is explicit: utterance total 0.811, phone accuracy 0.693,
-**word stress 0.361**. And Wang & Min (2026), *Language Testing* 43(2), across 67
+**word stress 0.361**. Wang & Min (2026), *Language Testing* 43(2), across 67
 studies and 392 effect sizes, put the field-wide human–machine correlation at
 r = .654 and pronunciation at .606, with ASR accuracy *not* a significant
 moderator. `MEASURED-BENCH`. These engines rank whole speakers well and localise
 individual errors poorly. Localisation is the product; the ranking is where the
 validation number comes from.
 
-The instructional literature agrees about which construct is worth scoring. Saito
-& Plonsky (2019), 77 studies of pronunciation instruction, report between-group
-d = 0.68 [0.49, 0.86] against a control test–retest floor of 0.31 [0.24, 0.38],
-and in their Table 7 every interval covering *global* pronunciation crosses zero,
-as does every interval involving *spontaneous* speech. `MEASURED-META`. Most
-computer-assisted scoring is similarity to a native reference, an accentedness
-measure, which Levis (2020) calls *"largely irrelevant"* under the
-intelligibility principle. The standard build optimises the construct the field
-has said out loud is not the goal.
+Saito & Plonsky (2019), 77 studies of pronunciation instruction, report
+between-group d = 0.68 [0.49, 0.86] overall and, in their Table 7, intervals that
+cross zero for every *global* construct and every *spontaneous* task.
+`MEASURED-META`. Most computer-assisted scoring is similarity to a native
+reference, an accentedness measure, which Levis (2020) calls *"largely
+irrelevant"* under the intelligibility principle.
 
-### 5.1 The mechanism worth stealing: robust ASR repairs the error first
+### 5.1 Robust ASR repairs the error before the model sees it
 
 Liu, Cui, Gu & Wang (2026), arXiv:2601.14744, evaluated cascaded ASR-plus-LLM
 pipelines and end-to-end audio models on mispronunciation detection over
-L2-ARCTIC, read L2 English with phoneme-level annotation of actual learner
-errors, one-shot prompted. `MEASURED-BENCH`.
+L2-ARCTIC, read L2 English with phoneme-level annotation of real learner errors,
+one-shot prompted. `MEASURED-BENCH`.
 
 | System | P | R | F1 |
 |---|---|---|---|
@@ -291,31 +279,28 @@ similarity-to-native score. `SPEC`, untested, and cheap to test.
 
 Plonsky & Brown (2015), *Second Language Research* 31(2), counted **18 unique
 meta-analyses of corrective feedback with overall effects from d = −0.155 to
-d = 1.16**. Their diagnosis is that a 1.3-SD spread is driven by inclusion
-decisions and not by sampling error, and that L2 meta-analysts use *"a stable but
-very limited set of search strategies, none of which is likely to yield
-unpublished studies."* `MEASURED-META`. So "does correcting a learner help, and
-by how much" has a family of answers that track their authors' criteria.
+d = 1.16**, and diagnosed the 1.3-SD spread as driven by inclusion decisions and
+not by sampling error. `MEASURED-META`. "Does correcting a learner help, and by
+how much" has a family of answers that track their authors' criteria.
 
 Inside that spread, the estimate with the best claim on a classroom builder is
 Lyster & Saito (2010), 15 classroom studies, N = 827, laboratory studies
-deliberately excluded: CF versus control **d = 0.74 [0.58, 0.86]**, with recasts
-at 0.53 [0.32, 0.74], prompts at 0.83 [0.56, 1.10] and explicit correction at
-0.84 [0.57, 1.11]. `MEASURED-META`. The famous result that prompts beat recasts
-is significant only within groups; between groups the intervals overlap, and
-explicit correction is numerically largest and distinguishable from neither.
-Against Plonsky & Oswald's field-derived benchmarks (0.40 small, 0.70 medium,
-1.00 large for between-group d), 0.74 is medium, and every headline here drops a
-category when read against its own field instead of Cohen's.
+deliberately excluded: CF versus control **d = 0.74 [0.58, 0.86]**, recasts 0.53
+[0.32, 0.74], prompts 0.83 [0.56, 1.10], explicit correction 0.84 [0.57, 1.11].
+`MEASURED-META`. The famous result that prompts beat recasts is significant only
+within groups; between groups the intervals overlap, and explicit correction is
+numerically largest and distinguishable from neither. Against Plonsky & Oswald's
+field-derived benchmarks (0.40 small, 0.70 medium, 1.00 large for between-group
+d), 0.74 is medium.
 
 The design instruction survives in weaker form, and Brown (2016) is why it is
-worth acting on anyway: across observational classroom studies, **recasts are 57%
-of all corrective feedback teachers actually give and prompts 30%**.
-`MEASURED-META`. The most-supplied type is the least-supported one, and a
-language model's reflex when a learner produces a wrong sentence is to restate it
-correctly, which is a recast. Prompting the learner to self-repair withholds the
-form and recruits the generation effect. It is also a change to a system prompt,
-which makes it the cheapest pedagogical edit available in this domain.
+worth acting on: across observational classroom studies, **recasts are 57% of all
+corrective feedback teachers actually give and prompts 30%**. `MEASURED-META`.
+The most-supplied type is the least-supported one, and a language model's reflex
+when a learner produces a wrong sentence is to restate it correctly, which is a
+recast. Prompting the learner to self-repair withholds the form and recruits the
+generation effect. It is also a change to a system prompt, which makes it the
+cheapest pedagogical edit available in this domain.
 
 ---
 
@@ -334,7 +319,7 @@ points, a scoring threshold and not a cohort of students, and 34 is arithmetic:
 270 ÷ 8.1 points-per-hour, extrapolated linearly from zero. Of 196 participants
 sampled, **88 were analysed**, mean actual study time 22 hours, 16% (n = 14)
 scoring the same or lower at post-test. Krashen (2014) added the decisive point:
-the median gain rate was 3.9 points per hour against a mean of 8.1, and the same
+the median gain rate was 3.9 points per hour against a mean of 8.1, so the same
 arithmetic on the median gives about 69 hours.
 
 The company's own later measurement disagrees with its famous one. Jiang,
@@ -345,7 +330,7 @@ report through Unit 7 at **203 hours**. `VENDOR`. Same company, same product, it
 own instrumentation, and the hours figure has grown six-fold while the marketing
 number has not moved.
 
-And the FY2025 Form 10-K says learners completing five sections *"achieved
+The FY2025 Form 10-K says learners completing five sections *"achieved
 proficiency comparable to five university semesters of language education"* and
 that *"**Independent studies corroborate this finding**."* `FILING`. The company
 labels its own study internal, correctly. The work fitting the description of the
@@ -380,12 +365,12 @@ organisation for FL writers, and a study measuring only accuracy cannot see the
 trade it just made.
 
 Two more, because a survey counting effect sizes will misread both. James & Mayer
-(2019) randomised 64 students to learn Italian over seven sessions by playing
-Duolingo or by working a slideshow covering **the same material**: no significant
-difference on achievement, alongside enjoyment d = 0.77, appeal d = 1.17 and
-willingness to continue d = 1.39. `MEASURED-RCT`. Continuing is the binding
-constraint §14 argues for, so the affect effects are not nothing; the achievement
-result forecloses the claim that the gamified wrapper *teaches*.
+(2019) randomised 64 students to learn Italian by playing Duolingo or by working
+a slideshow covering **the same material**: no significant difference on
+achievement, alongside enjoyment d = 0.77 and willingness to continue d = 1.39.
+`MEASURED-RCT`. Continuing is the binding constraint §14 argues for, so the
+affect effects are not nothing; the achievement result forecloses the claim that
+the gamified wrapper *teaches*.
 
 And Rachels & Rockinson-Szapkiw (2018), *CALL* 31(1–2), third and fourth graders,
 twelve weeks, Duolingo as the Spanish instruction against the regular Spanish
@@ -399,11 +384,10 @@ Those two sentences are adjacent. A non-significant difference in an underpowere
 quasi-experiment is reported as a demonstration of usefulness, with no
 equivalence margin stated and no design able to support one.
 
-A provenance note belongs beside the nulls. Two citations circulate in this
-area that do not exist: there is no Mollica & Piantadosi commentary on Hartshorne
-et al., and no "Zhang & Zou" pronunciation meta-analysis, in either OpenAlex or
-Crossref. Neither is cited here, and anyone who finds one in a reference list
-has found a reference list nobody checked.
+Two citations circulate in this area that do not exist: there is no Mollica &
+Piantadosi commentary on Hartshorne et al., and no "Zhang & Zou" pronunciation
+meta-analysis, in either OpenAlex or Crossref. Neither is cited here, and anyone
+who finds one in a reference list has found a reference list nobody checked.
 
 ---
 
@@ -452,11 +436,11 @@ pedagogical architecture is not the binding constraint on anything.
 - **Ship speaking volume; hold segmental correction back.** Unlimited low-stakes
   practice with a partner who cannot be embarrassed is an advantage no human
   tutor supplies at any price. Phoneme-level correction at F1 = 46.3 on read
-  speech is not ready to be shown to a learner as though it were right.
+  speech is not ready to show a learner as though it were right.
 - **Generate input to a measured lexical coverage, and validate the profile.**
-  Unconstrained prompting gives *"weak control"* over CEFR level; prompting with
-  explicit lexical constraints reaches 0.91 cosine similarity to reference
-  profiles (arXiv:2606.21981). `MEASURED-BENCH`. Build the validator too.
+  Unconstrained prompting gives *"weak control"* over CEFR level; explicit
+  lexical constraints reach 0.91 cosine similarity to reference profiles
+  (arXiv:2606.21981). `MEASURED-BENCH`.
 - **Run the transfer trial.** Three arms, individually randomised; primary
   outcome four weeks after the last session, in an unscripted conversation with a
   human the participant has not met, scored for comprehensibility by two raters
