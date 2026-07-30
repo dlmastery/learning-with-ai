@@ -40,7 +40,7 @@ the capability, and this survey is an attempt to write what the literature has n
 It rests on 53 research reports. Every claim carries an evidence label, every section
 carries at least one documented null, and every one of the authors' errors is
 published in an append-only ledger rather than quietly edited — **23 of
-the 68 corrections were found by an adversarial reviewer rather than by us.**
+the 71 corrections were found by an adversarial reviewer rather than by us.**
 That discipline is the warrant for the opening paragraph, and not a substitute for
 making its claim.
 
@@ -666,10 +666,17 @@ that produced an effect size decides what that effect size can be evidence about
 Intensive, in-person, one-to-one and small-group human tutoring — the most
 expensive and best-evidenced intervention in education — pools at **0.288 SD (SE
 0.029)** across 96 randomised studies (Nickow, Oreopoulos & Quan, *AERJ* 2024,
-funded by J-PAL North America). Those are randomised trials of human tutors, run
-mostly before 2020. So 0.288 is the benchmark a machine has to clear: what a hired,
-trained person alone with a child has been measured to deliver. It is not a bound on
-any machine, because no machine appears in it.
+funded by J-PAL North America). Those are 96 randomised trials of human tutors and
+zero trials of anything else. So 0.288 is the benchmark a machine has to clear: what
+a hired, trained person alone with a child has been measured to deliver. It is not a
+bound on any machine, because no machine appears in it.
+
+One thing we cannot tell you about it, and should say so: **the corpus establishes
+the year of the synthesis and not the years of the trials inside it.** Nickow's pool
+appeared as an NBER working paper in 2020 and in *AERJ* in 2024; no source we hold
+gives the date range of the 96. The same is true of VanLehn's reviewed experiments
+and of both 2014 ITS meta-analyses. Where a vintage below is a publication year
+rather than a fieldwork year, the column says so.
 
 Now the AI results, all immediate post-tests unless stated. Every row carries the
 class of system it measured and the year that system ran, because those two facts
@@ -684,8 +691,8 @@ govern what the row can be quoted for:
 | **Tutor CoPilot** (RCT-P) | FRONTIER · ran from March 2024 | +4 p.p. exit ticket | 900 tutors, 1,800 students | 2 months | No | **Yes — and null** |
 | **Rori**, Ghana | FRONTIER-era chatbot · 2024 | 0.37 SD | ~1,000, **11 clusters** | 8 months | No | No |
 | **LearnLM + Eedi**, UK | FRONTIER · LearnLM, Dec 2025 | +5.5 p.p. on novel problems vs human tutors | **165** | not stated | No | No |
-| Pre-LLM ITS (VanLehn; Ma et al.; Steenbergen-Hu) | ITS · rule-based; metas 2011–2014 | d = 0.76; g = 0.32–0.57 | meta | — | — | — |
-| **Human tutoring** (Nickow, 96 RCTs) | HUMAN · trials pooled mostly pre-2020 | **0.288 SD** | meta | — | — | — |
+| Pre-LLM ITS (VanLehn; Ma et al.; Steenbergen-Hu & Cooper) | ITS · rule-based; syntheses **2011** and **2014**; trial years unestablished | d = 0.76 (VanLehn); g = 0.32–0.37 college (Steenbergen-Hu & Cooper); g = 0.42 vs teacher-led, 0.57 vs other computer-based instruction (Ma et al.) | meta | — | — | — |
+| **Human tutoring** (Nickow, 96 RCTs) | HUMAN · synthesis **2024** (working paper 2020); trial years unestablished | **0.288 SD** | meta | — | — | — |
 
 **The classroom deployment trials land in the same band as pre-LLM intelligent
 tutoring systems and as human tutors.** Sierra Leone 0.258, Nigeria 0.23–0.31,

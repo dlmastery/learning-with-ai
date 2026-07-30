@@ -160,10 +160,10 @@ And the field's most-cited meta-analysis (Wang & Fan 2025, g = 0.867, >250
 citations) was **retracted in 2026**; the authors have not responded.
 
 What survives, each figure carrying the machine it measured: supervised LLM tutoring
-in six-to-eight-week classroom deployments lands at **0.2–0.4 SD**; pre-LLM
-rule-based ITS pooled at 0.32–0.42; in-person human tutoring pools at **0.288**
-across 96 RCTs run mostly before 2020. Three machines, one band. That is a real,
-useful, affordable effect and not an order-of-magnitude jump. It is also not a
-ceiling — none of those trials went looking for the limit of a frontier system, and
-two of the three figures contain no frontier system at all (§09). GenAI without
-teacher support is null (g = 0.077).
+in six-to-eight-week classroom deployments lands at **0.2–0.4 SD**, which is a
+rounding of three field trials; pre-LLM rule-based ITS at 0.32–0.42, a range spliced
+from two 2014 meta-analyses; in-person human tutoring at **0.288** across 96 RCTs.
+Three machines, one band. That is a real, useful, affordable effect and not an
+order-of-magnitude jump. It is also not a ceiling — none of those trials went looking
+for the limit of a frontier system, and two of the three figures contain no frontier
+system at all (§09). GenAI without teacher support is null (g = 0.077).

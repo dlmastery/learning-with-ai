@@ -91,6 +91,18 @@ class correctly is `README:122` and `survey/03:171`, which say the band describe
 "answer freely, forget everything between sessions" — an accurate description of an LLM chatbot,
 but neither says the band is three trials.
 
+**What the band is NOT — three misreadings to avoid when rewriting.**
+
+1. **It is not an average across three machines.** No averaging was performed anywhere. `B2`'s
+   sentence attributes the band to the LLM interventions and names ITS and human tutoring as
+   *coinciding with* it — *"the same band as"*. Writing that the band "is an average taken across
+   human tutors, ITS and LLM deployments" invents a computation that no source performed, and it
+   makes the frontier trials disappear into a pooled quantity that does not exist.
+2. **It is not a pooled estimate and has no confidence interval.** It is a rounding, by one
+   research agent, of three trial point-estimates. It has no k, no SE, no I², no CI.
+3. **It is not a population parameter.** `survey/20`'s Premise 1 argues it might be one. That is
+   a stated counter-case, correctly labelled as such, and it is not a finding.
+
 **Mentions.** 14 across the five surfaces; 36 across the published corpus including `PAPER.md`.
 
 ### 1.3 Nickow, Oreopoulos & Quan
@@ -103,7 +115,7 @@ but neither says the band is three trials.
 | **Source** | *AERJ*, `doi:10.3102/00028312231208687`. Online-first 2023, issue 2024 — the corpus cites both years (`B1:369` says 2023, `B2:99` says 2024). Funded by J-PAL North America, independent. |
 | **Superseded value** | NBER working paper **w27476 (2020): 0.37 SD**, same team. The estimate fell 0.37 → 0.288 between working paper and peer review. |
 | **Sub-estimate** | ≈**0.25 SD** for studies with n > 400 — effects plateau with sample size, they do not vanish. |
-| **Year of the underlying studies** | **Unestablished.** The corpus records only that the pool is 96 preK-12 randomised field experiments. No date range for the constituent trials appears in `B1`, `B2`, `I1` or anywhere else in `research/raw/`. **Do not state a decade for this number.** |
+| **Year of the underlying studies** | **Upper bound established; span unestablished.** `research/raw/B2-ai-tutoring-efficacy.md:100` records that the 2020 NBER working paper pooled **the same 96 studies**. Every constituent trial therefore predates 2020, and *a fortiori* predates GPT-4 (March 2023). That upper bound is safe to publish. **The lower bound and the span are unestablished** — no date range for the 96 trials appears in `B1`, `B2`, `I1` or anywhere in `research/raw/`. Safe: *"96 randomised trials, all of them run before 2020."* Not safe: any decade, median year, or span. |
 | **Correction status** | **C-6** (Bloom's 2σ does not replicate; the replacement figures are VanLehn 0.79 / ITS 0.76 / Nickow 0.288). **C-12** (0.37 was published in five places including a chart bar labelled "the honest field-wide number"; caught by external review). The 0.37 may never appear without 0.288 nearby — `evidence/check-corrections.py` rule `C-6/C-12` enforces this. |
 | **Mentions** | 8 across the five surfaces; 16 across the published corpus. |
 | **Used as a bound on frontier systems?** | **Yes.** `docs/index.html:519` places it in the ladder as *"the honest field-wide number"* with no indication that the field in question is human tutoring. `survey/03:50` uses it, with VanLehn, as the frame inside which Kestin's frontier RCT is judged. `survey/09:277` makes it half of the standing reporting rule for AI claims. |

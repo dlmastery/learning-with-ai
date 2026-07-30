@@ -194,9 +194,9 @@ RULES = [
          # The cure is that THE CEILING is attributed, not that a class word floats nearby.
          # A chart row reading `label:"Human tutoring", note:"the real ceiling"` contains the
          # words "human tutoring" and still asserts an unqualified ceiling.
-         r"ceiling for (?:a )?(?:human|pre-?LLM|rule-based|ITS)|(?:human|pre-?LLM|ITS)[- ]"
-         r"tutoring ceiling|ceiling (?:of|on) (?:a )?human|not (?:a|the) ceiling for (?:AI|LLM)|"
-         r"ceiling for what (?:a )?human",
+         r"ceiling for (?:a |an |the )?(?:human|person|pre-?LLM|rule-based|ITS|adult)|"
+         r"(?:human|pre-?LLM|ITS)[- ]tutoring ceiling|ceiling (?:of|on) (?:a )?human|"
+         r"not (?:a|the) ceiling for (?:a )?(?:AI|LLM|frontier)|ceiling for what (?:a )?human",
          "Calling a HUMAN or ITS measurement 'the ceiling' on a surface about AI tutoring asserts "
          "that a 2011/2024 measurement of another class of system bounds a frontier one. If it is "
          "a ceiling, say a ceiling for what.",
@@ -205,8 +205,10 @@ RULES = [
     # ── V-TUTORGYM ────────────────────────────────────────────────────────────
     Rule("V-TUTORGYM",
          r"223[\s\S]{0,160}?(?:chance|tutoring domains)",
-         r"four models|the models tested|initial evaluation|claude-3-5|gpt-4o-2024|"
-         r"deepseek-v2\.5|2024|snapshot",
+         # "the models tested" scopes the claim but does not date it, and the error here is
+         # temporal: a 2024 snapshot bounding a 2026 system. The cure must carry the vintage.
+         r"four models|initial evaluation|claude-3-5|gpt-4o-2024|deepseek-v2\.5|snapshot|"
+         r"(?:August|Aug|October|Oct)[^.]{0,24}2024|2024 (?:vintage|model|snapshot)",
          "TutorGym's 223-domain result is four model snapshots from August-October 2024 "
          "(claude-3-5-sonnet-20241022, claude-3-5-haiku-20241022, gpt-4o-2024-08-06, "
          "deepseek-v2.5), zero-shot, no tool use, in what the authors call an initial evaluation. "

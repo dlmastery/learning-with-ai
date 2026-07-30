@@ -50,8 +50,10 @@ in 1984 on their own aligned tests, and this survey retired it (§24, §19). Ret
 it does not promote whatever came next to a ceiling. VanLehn 2011 measured *human*
 tutoring at **d = 0.79** and *rule-based* intelligent tutoring systems at **0.76**;
 Nickow et al. pooled 96 randomised trials of *human* tutors at **0.288 SD** in peer
-review, almost all of them run before 2020. Those are the correct benchmarks for a
-person and for a rule-based machine. Not one of them contains a frontier model.
+review. Those are the correct benchmarks for a person and for a rule-based machine.
+Not one of them contains a frontier model, and no source we hold even dates the
+trials inside them — we know when the syntheses were published and not when the
+experiments were run (§09).
 
 The frontier-era measurement is Kestin's Harvard AI-tutor RCT: **d ≈ 0.63**
 (0.73–1.3 after the authors' own ceiling correction), in a median 49 minutes against

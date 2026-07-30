@@ -30,10 +30,17 @@ that produced an effect size decides what that effect size can be evidence about
 Intensive, in-person, one-to-one and small-group human tutoring — the most
 expensive and best-evidenced intervention in education — pools at **0.288 SD (SE
 0.029)** across 96 randomised studies (Nickow, Oreopoulos & Quan, *AERJ* 2024,
-funded by J-PAL North America). Those are randomised trials of human tutors, run
-mostly before 2020. So 0.288 is the benchmark a machine has to clear: what a hired,
-trained person alone with a child has been measured to deliver. It is not a bound on
-any machine, because no machine appears in it.
+funded by J-PAL North America). Those are 96 randomised trials of human tutors and
+zero trials of anything else. So 0.288 is the benchmark a machine has to clear: what
+a hired, trained person alone with a child has been measured to deliver. It is not a
+bound on any machine, because no machine appears in it.
+
+One thing we cannot tell you about it, and should say so: **the corpus establishes
+the year of the synthesis and not the years of the trials inside it.** Nickow's pool
+appeared as an NBER working paper in 2020 and in *AERJ* in 2024; no source we hold
+gives the date range of the 96. The same is true of VanLehn's reviewed experiments
+and of both 2014 ITS meta-analyses. Where a vintage below is a publication year
+rather than a fieldwork year, the column says so.
 
 Now the AI results, all immediate post-tests unless stated. Every row carries the
 class of system it measured and the year that system ran, because those two facts
@@ -48,14 +55,25 @@ govern what the row can be quoted for:
 | **Tutor CoPilot** (RCT-P) | FRONTIER · ran from March 2024 | +4 p.p. exit ticket | 900 tutors, 1,800 students | 2 months | No | **Yes — and null** |
 | **Rori**, Ghana | FRONTIER-era chatbot · 2024 | 0.37 SD | ~1,000, **11 clusters** | 8 months | No | No |
 | **LearnLM + Eedi**, UK | FRONTIER · LearnLM, Dec 2025 | +5.5 p.p. on novel problems vs human tutors | **165** | not stated | No | No |
-| Pre-LLM ITS (VanLehn; Ma et al.; Steenbergen-Hu) | ITS · rule-based; metas 2011–2014 | d = 0.76; g = 0.32–0.57 | meta | — | — | — |
-| **Human tutoring** (Nickow, 96 RCTs) | HUMAN · trials pooled mostly pre-2020 | **0.288 SD** | meta | — | — | — |
+| Pre-LLM ITS (VanLehn; Ma et al.; Steenbergen-Hu & Cooper) | ITS · rule-based; syntheses **2011** and **2014**; trial years unestablished | d = 0.76 (VanLehn); g = 0.32–0.37 college (Steenbergen-Hu & Cooper); g = 0.42 vs teacher-led, 0.57 vs other computer-based instruction (Ma et al.) | meta | — | — | — |
+| **Human tutoring** (Nickow, 96 RCTs) | HUMAN · synthesis **2024** (working paper 2020); trial years unestablished | **0.288 SD** | meta | — | — | — |
 
 **The classroom deployment trials land in the same band as pre-LLM intelligent
 tutoring systems and as human tutors.** Sierra Leone 0.258, Nigeria 0.23–0.31,
 Rori 0.37, ITS 0.32–0.42, human tutoring 0.288. Three classes of machine, one band.
 There is no order-of-magnitude jump in those numbers, and there may be no difference
 between the three classes at all.
+
+Two things have to be said about that comparison before anyone uses it again. **The
+frontier side of the band is three field trials**, Sierra Leone and Nigeria and
+Rori, and it is a rounding of those three and not a pooled estimate: no
+meta-analysis, no confidence interval, n = 3. And **the ITS figure 0.32–0.42 appears
+in no single source.** It splices Steenbergen-Hu & Cooper's college range
+(0.32–0.37) onto Ma et al.'s ITS-versus-teacher-led figure (0.42), which is why the
+table above prints 0.32–0.57 instead: that upper endpoint is Ma's comparison against
+other computer-based instruction, a third comparator again. The spliced range stays
+visible here because this survey published it. It does not get quoted again without
+both of its sources.
 
 Two readings of that coincidence are available and only one is licensed. **It does
 not license 0.2–0.4 as a ceiling on a frontier system.** No study in the ITS or
@@ -303,10 +321,14 @@ eight weeks or shorter.
   which of the three is being invoked. Never cite g = 0.867; it is retracted. Never
   cite Bastani's +127%; it is a practice-session number.
 - **Never bound one class of system with a measurement of another.** VanLehn 2011
-  measured rule-based ITS against human tutors. Nickow pools randomised trials of
-  human tutors, run mostly before 2020. Bloom 1984 measured human tutors on their
-  own aligned tests, and is retired here (§24). Each is the right benchmark for the
-  machine it measured and evidence about no other.
+  measured rule-based ITS against human tutors. Nickow pools 96 randomised trials of
+  human tutors. Bloom 1984 measured human tutors on their own aligned tests, and is
+  retired here (§24). Each is the right benchmark for the machine it measured and
+  evidence about no other.
+- **Give a synthesis year when that is all we have.** The corpus establishes when
+  Bloom, VanLehn, Ma, Steenbergen-Hu and Nickow were *published* and never when their
+  constituent trials were *run*. Write "the 2011 review" and never "the 1980s
+  studies", which would be a span nobody has established.
 - **Every claim we make gets a delayed, unassisted, novel-item test**, or it is
   reported as a performance result and labelled as one.
 - **Report the unadjusted estimate next to the adjusted one.** Sierra Leone's

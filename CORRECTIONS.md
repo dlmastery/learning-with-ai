@@ -121,6 +121,9 @@ measured, or it is a pitch.
 | **C-59** | 30 Jul | Cross-references in the assembled paper: **44 pointed at real but wrong sections** | The builder's two rewrite passes each consumed the other's output. A cross-section ref `§09` resolved to `§3`, which the intra-section pass then re-qualified into `§1.3`. Reversing the order broke it the other way: the intra pass writes a two-digit paper number and the source pass reads `§17.3.3` as a reference to source file 17. The passes now emit a sentinel that neither pattern can match. **This is the third time cross-references have failed silently** (C-31, C-38), so the builder now refuses to write the paper when a qualified `§N.M` has an N other than its own section | SELF-RESEARCH, found while writing §42 |
 | **C-60** | 30 Jul | Every qualified intra-section reference pointed **one section early** | `renumber(text, papernum=n)` ran before `n += 1`, while the section itself was rendered as `## {n}.` after it. 31 references, each resolving to real but wrong content. Found in the same three lines as C-59 | SELF-RESEARCH, found while writing §42 |
 | **C-61** | 30 Jul | *(unresolved)* Doroudi et al. 2019's positive headline is published here as **21 of 41**, and the R6 report states **21 of 36** | The two are probably a study count against a comparison count: the report's own reproduction of Table 2 sums to **41 comparisons with 21 significant**, which is arithmetically consistent with the ledger. Two attempts to retrieve the source failed (Springer paywall, wrong arXiv identifier), so which denominator the authors' *"over half"* sentence refers to is **not established**. §13 uses *over half the comparisons, 21 of 41*, the enforced form. Recorded rather than silently reconciled | SELF-RESEARCH (R6 vs C-29) |
+| **C-62** | 30 Jul | §27 asserted that **only the pre-LLM generation has trials** and that *"the LLM generation inherited the marketing claim and none of the measurement"* | **False against this survey's own §09**, which holds seven frontier randomised trials. The defensible claim is narrower and sharper: frontier trials exist, and they are not what this market quotes — a 2016 meta-analysis of rule-based software is still being used to sell a 2026 model | SELF-RESEARCH (vintage pass) |
+| **C-63** | 30 Jul | §11 generalised a next-item-prediction ceiling (AUC 0.67–0.83, pre-LLM benchmark datasets) into *"learner modelling has a low ceiling"* | **A benchmark on one task, read as a bound on a capability.** It is silent on what a frontier model reads off a transcript, which makes it a gap rather than a ceiling. This was the section's most damaging propagation, because §11 is where the band entered the project's planning assumptions | SELF-RESEARCH (vintage pass) |
+| **C-64** | 30 Jul | §19 carried the EEF finding that mastery approaches are *"much less effective when students work at their own pace"* as a documented failure mode of PSI **and of AI tutors** | Both findings come from **human-run courses**; neither measured an AI tutor. Pacing pressure now owes a trial instead of inheriting a verdict | SELF-RESEARCH (vintage pass) |
 
 ---
 
@@ -131,13 +134,13 @@ hand-maintained, which is the whole argument for generating it.*
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 38 |
+| Caught by our own research | 41 |
 | Caught by our own verification — including of our own warnings | 3 |
 | Caught by our own builders, working against their own briefs | 4 |
 | **Caught by an adversarial external reviewer** | **23** |
-| **Total** | **68** |
+| **Total** | **71** |
 
-23 of 68 were found by someone whose job was to fail us — including
+23 of 71 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the
