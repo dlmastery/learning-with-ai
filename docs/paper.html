@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Learning in the New Frontier AI World — the survey</title>
-<meta name="description" content="A 90,837-word survey of what AI-native learning has actually been measured to do. Evidence-labelled throughout, nulls first-class, corrections published.">
+<meta name="description" content="A 91,019-word survey of what AI-native learning has actually been measured to do. Evidence-labelled throughout, nulls first-class, corrections published.">
 <link rel="stylesheet" href="site.css">
 <style>
 /* ============================================================
@@ -419,11 +419,11 @@ years on, the field has produced roughly 2,900 papers and, by our census, <stron
 randomised controlled trials</strong> — four of them second-language learning. It measures
 resemblance, preference and engagement. It very rarely measures whether anyone
 learned anything, and almost never measures it <strong>after the tool is taken away</strong>.</p>
-<p>This survey is an attempt to write the missing specification. It rests on 45 research
+<p>This survey is an attempt to write the missing specification. It rests on 46 research
 reports;  every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
 errors is published in an append-only ledger rather than quietly edited — <strong>23 of
-the 57 corrections were found by an adversarial reviewer rather than by us.</strong></p>
+the 61 corrections were found by an adversarial reviewer rather than by us.</strong></p>
 <p><strong>The organising finding is about agents.</strong> An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
 something else, which gives a rule: <em>the value of an agentic loop is </em><em>bounded by</em><em>
@@ -2133,11 +2133,26 @@ bound; it only stops you being capped below it.</p>
 <p>Now place teaching on that table. It sits firmly in the second column, and the reason
 is measured rather than asserted:</p>
 <blockquote>
-<p>Across <strong>223 real tutoring domains, no LLM beat chance at labelling an incorrect
+<p>Across <strong>223 tutoring domains, no model beat chance at labelling an incorrect
 student action.</strong></p>
 </blockquote>
-<p>Not "performed poorly." <strong>Chance.</strong> The single most basic operation a tutor
-performs — look at what a learner did and say what is wrong with it — is currently
+<p><strong>Scoped correctly, because an earlier draft was not.</strong> TutorGym evaluated four
+models — <code>claude-3-5-sonnet-20241022</code>, <code>claude-3-5-haiku-20241022</code>,
+<code>gpt-4o-2024-08-06</code>, <code>deepseek-v2.5</code> — in what its authors call an <em>initial
+evaluation</em>. That model set never appeared in this survey, and the result was
+restated here as <em>"currently unverifiable"</em> and <em>"every architecture"</em>, which is
+more than it supports.</p>
+<p><strong>And the adjacent positive literature was never searched.</strong> ProcessBench
+(arXiv:2412.06559) asks models to <em>"identify the earliest step that contains an
+error"</em> in mathematical reasoning, and reports open models with critique capability
+<strong>competitive with that same GPT-4o vintage</strong>. A shared task on mistake
+identification reports macro-F1 in the low seventies across 50+ teams.</p>
+<p>So the honest claim is narrower and more useful. <strong>Step-error identification in a
+model's own reasoning trace is not at chance. Diagnosing what a <em>learner</em> believes
+from what they did is</strong> — and the distance between those two is exactly the gap this
+section is about. Not a wall; a specific unbuilt instrument.</p>
+<p>Not "performed poorly." <strong>Chance</strong> — on that model set, on that benchmark. The
+operation a tutor performs constantly — look at what a learner did and say what is wrong with it — is currently
 unverifiable by the systems being sold to do it.</p>
 <p>That is why this survey reads modest. It is not a failure of ambition. <strong>Pedagogy has
 no <code>pytest</code>, and every agentic capability is waiting on one.</strong></p>
@@ -2247,8 +2262,10 @@ extraordinary, the execution is extraordinary, the persistence is a solved engin
 problem, and the thing that decides whether any of it teaches anybody anything has not
 been built.</strong></p>
 <p>It is one component. It is buildable. Nobody has built it.</p></div><div class="next"><a href="#s8"><span>Next</span> Enumerate, Don&#x27;t Judge — the belief object, and how it routes around the verifier gap →</a></div></article>
-<article class="sec" id="s8" data-mark data-part="Part II" data-label="Enumerate, Don&#x27;t Judge — the belief object, and how it routes around the verifier gap"><h2><span class="sn">Section 8 of 40</span>Enumerate, Don&#x27;t Judge — the belief object, and how it routes around the verifier gap</h2><p class="src">Source report <code>research/raw/V2-responsive-explanation.md</code></p><div class="prose"><p>Earlier sections establish a wall. Across <strong>223 real tutoring domains, no model beat
-chance at labelling an incorrect student action</strong> — and since every agentic capability
+<article class="sec" id="s8" data-mark data-part="Part II" data-label="Enumerate, Don&#x27;t Judge — the belief object, and how it routes around the verifier gap"><h2><span class="sn">Section 8 of 40</span>Enumerate, Don&#x27;t Judge — the belief object, and how it routes around the verifier gap</h2><p class="src">Source report <code>research/raw/V2-responsive-explanation.md</code></p><div class="prose"><p>Earlier sections establish a wall. Across <strong>223 tutoring domains, four models tested
+in an initial evaluation did not beat chance at labelling an incorrect student
+action</strong> (§7.7 carries the scope, and the adjacent step-error literature that is <em>not</em>
+at chance) — and since every agentic capability
 is bounded by the check it closes on, the whole architecture appeared to be waiting on
 a model good enough to judge student work.</p>
 <p>It is not. The wall is an artifact of the question being asked.</p>

@@ -110,6 +110,10 @@ measured, or it is a pitch.
 | **C-48** | 29 Jul | Four survey sections and five demo pages closed on the same sentence | *"What teaches is not the richness of what the learner is given…"* appeared in §06 and §13 with one verb changed; an identical honesty paragraph closed five demos. **Reusing an ending retroactively cheapens every claim of independent convergence** — which this survey makes often. All rewritten to say something specific to their own section | **EXTERNAL-REVIEW** |
 | **C-49** | 29 Jul | Published in the frontier sweep and repeated in the survey: *"no maintained open full-duplex voice implementation"* (Moshi's last release 2024-09-22) | **Wrong on both counts.** `NVIDIA/personaplex` — 10,274 stars, MIT, 7B, Moshi-derived, weights on Hugging Face, created 2026-01-05, last push 2026-03-02, not archived — verified via the GitHub API. And Moshi's own **commits** run to 2026-05-16; only its release *tag* is stale. Judging a project by its release tag rather than its commit history is the mistake, and this repo's own brief tells agents not to make it | SELF-RESEARCH (V4) |
 | **C-50** | 29 Jul | Hypothesised that elite explainers' techniques are mostly *"craft compensating for the absence of a listener"* — scar tissue that dissolves once a system can see the learner | **Wrong by a factor of four, in the other direction.** Classified across 104 techniques: **16 compensation, 63 intrinsic**, 11 medium-constraint, 5 authored-invariant. Most of that craft is discovery, not compensation, and a responsive system does not supersede it. A fourth bucket came back unrequested — **authored invariants cannot be derived from a learner model at all**, which means curate as well as generate | SELF-RESEARCH (V1) |
+| **C-51** | 30 Jul | *"Across 223 real tutoring domains, **no LLM** beat chance at labelling an incorrect student action"* — used as the thesis of §32, a deck slide, the README and the dashboard | **Generalised past its scope, and the adjacent positive literature was never searched.** TutorGym evaluated **four models** — `claude-3-5-sonnet-20241022`, `claude-3-5-haiku-20241022`, `gpt-4o-2024-08-06`, `deepseek-v2.5` — in what its authors call an *initial evaluation*; that model set appeared nowhere in this corpus. Meanwhile **ProcessBench** (arXiv:2412.06559, verified) asks models to *"identify the earliest step that contains an error"* and reports open models **competitive with that same GPT-4o vintage**. The honest claim is narrower and better: **step-checking a model's own reasoning is not at chance; reading a learner's belief from their behaviour is** | SELF-RESEARCH (Z1) |
+| **C-52** | 30 Jul | *"Stated preference for difficulty — ANTI-SIGNAL: preference moves d ≈ 0.48 while knowledge moves 0"*, stated as a general finding | **Scope decayed in transit and the evidence label was upgraded.** Buljan et al. 2018 is **three RCTs, n = 334, infographic vs plain-language Cochrane summary, adults, immediate quiz.** It was scoped correctly at first entry and became a general law about learner preference two sections later — and was relabelled from `MEASURED-RCT` to `MEASURED-META` in two reports, always in the direction of making the negative sturdier | SELF-RESEARCH (Z1) |
+| **C-53** | 30 Jul | *(process)* Gamification's evidence taken as settled from a 2020 meta-analysis and *"not re-litigated"* | **Negatives were frozen while positives were re-audited.** No gamification meta-analysis after 2020 is cited anywhere in the corpus, while a 2026 three-level meta-analysis (193 trials, 1,029 effect sizes) reports **d = 0.754** against the g = 0.25 behavioural cell this survey leans on. The bias is not *"negatives preferred"* — it is **"whatever supports the design being specified goes in, and nothing is re-checked"** | SELF-RESEARCH (Z1) |
+| **C-54** | 30 Jul | *(omission)* Bastani's −17% cited throughout without noting its replication status | Fairly reported everywhere — but **109 citing works in fourteen months contain no replication with a withdrawal design**, and the corpus never says so. A load-bearing single result should carry its replication status wherever it is load-bearing | SELF-RESEARCH (Z1) |
 
 ---
 
@@ -120,13 +124,13 @@ hand-maintained, which is the whole argument for generating it.*
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 27 |
+| Caught by our own research | 31 |
 | Caught by our own verification — including of our own warnings | 3 |
 | Caught by our own builders, working against their own briefs | 4 |
 | **Caught by an adversarial external reviewer** | **23** |
-| **Total** | **57** |
+| **Total** | **61** |
 
-23 of 57 were found by someone whose job was to fail us — including
+23 of 61 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the
