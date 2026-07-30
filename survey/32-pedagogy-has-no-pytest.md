@@ -61,8 +61,8 @@ being capped below it.
 Now place teaching on that table. It sits firmly in the second column, and the reason
 is measured rather than asserted:
 
-> Across **223 tutoring domains, no model beat chance at labelling an incorrect
-> student action.**
+> Across **223 tutoring domains, the four models tested did not beat chance at
+> labelling an incorrect student action.**
 
 **Scoped correctly, because an earlier draft was not.** TutorGym evaluated four
 models (`claude-3-5-sonnet-20241022`, `claude-3-5-haiku-20241022`,

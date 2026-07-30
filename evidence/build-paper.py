@@ -80,7 +80,7 @@ resemblance, preference and engagement. It very rarely measures whether anyone
 learned anything, and almost never measures it **after the tool is taken away**.
 
 This survey is an attempt to write the missing specification. It rests on {N_REPORTS} research
-reports;  every claim carries an evidence label,
+reports. Every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
 errors is published in an append-only ledger rather than quietly edited — **{N_EXT} of\nthe {N_CORR} corrections were found by an adversarial reviewer rather than by us.**
 
@@ -91,8 +91,9 @@ the value of the external check it closes on.* That rule explains the whole reli
 Where a check exists, agents reach **79.2%** (SWE-bench Verified) and **83.8%**
 (Terminal-Bench). Where the check is weak or absent, **21.0%** (PaperBench) and **4.6%**
 (SciCode, which has hand-written tests — hence a bound rather than an equality).
-Teaching is in the second column, and the reason is now measured: across **223 real
-tutoring domains, no model beat chance at labelling an incorrect student action.**
+Teaching is in the second column, and the reason is now measured: across **223
+tutoring domains, the models tested did not beat chance at labelling an incorrect
+student action.**
 Coding agents work because `pytest` exists. **Pedagogy has no `pytest`, and every
 agentic capability in education is waiting on one.**
 

@@ -16,7 +16,7 @@ resemblance, preference and engagement. It very rarely measures whether anyone
 learned anything, and almost never measures it **after the tool is taken away**.
 
 This survey is an attempt to write the missing specification. It rests on 53 research
-reports;  every claim carries an evidence label,
+reports. Every claim carries an evidence label,
 every section carries at least one documented null, and every one of the authors'
 errors is published in an append-only ledger rather than quietly edited — **23 of
 the 67 corrections were found by an adversarial reviewer rather than by us.**
@@ -28,8 +28,9 @@ the value of the external check it closes on.* That rule explains the whole reli
 Where a check exists, agents reach **79.2%** (SWE-bench Verified) and **83.8%**
 (Terminal-Bench). Where the check is weak or absent, **21.0%** (PaperBench) and **4.6%**
 (SciCode, which has hand-written tests — hence a bound rather than an equality).
-Teaching is in the second column, and the reason is now measured: across **223 real
-tutoring domains, no model beat chance at labelling an incorrect student action.**
+Teaching is in the second column, and the reason is now measured: across **223
+tutoring domains, the models tested did not beat chance at labelling an incorrect
+student action.**
 Coding agents work because `pytest` exists. **Pedagogy has no `pytest`, and every
 agentic capability in education is waiting on one.**
 
@@ -1594,8 +1595,8 @@ being capped below it.
 Now place teaching on that table. It sits firmly in the second column, and the reason
 is measured rather than asserted:
 
-> Across **223 tutoring domains, no model beat chance at labelling an incorrect
-> student action.**
+> Across **223 tutoring domains, the four models tested did not beat chance at
+> labelling an incorrect student action.**
 
 **Scoped correctly, because an earlier draft was not.** TutorGym evaluated four
 models (`claude-3-5-sonnet-20241022`, `claude-3-5-haiku-20241022`,
@@ -3241,10 +3242,8 @@ study since the 1960s that pitted a machine-induced instructional sequencing pol
 against a baseline. Their headline is positive, and this survey has already published
 a correction for quoting it selectively: **over half** the comparisons, 21 of 41,
 found an induced policy significantly better than every baseline, often at Cohen's
-*d* of 0.8 or more.
-
-The finding is in their Table 2, where the comparisons are grouped by *what was being
-sequenced*.
+*d* of 0.8 or more. The finding is in their Table 2, where the comparisons are grouped
+by *what was being sequenced*.
 
 | Cluster | Sig | ATI | Mixed | Not sig | Sig worse |
 |---|---|---|---|---|---|
@@ -3257,14 +3256,13 @@ sequenced*.
 `MEASURED-META`
 
 The third row is curriculum sequencing: the cluster the authors describe as "closest
-to traditional curriculum sequencing, or ordering various content areas for a given
-topic," where "a network specifying the relationship between different content areas
-or KCs (such as a prerequisite graph) must either be prespecified or automatically
-inferred from data." **Zero of eight beat their baselines.** The six clean nulls
-include Clement et al. (2015) with 133 seven- and eight-year-olds on arithmetic,
-Doroudi et al. (2017) with 69 fourth and fifth graders on fractions, and the authors'
-own Appendix B study with 100 more children — none of which shows in a headline where
-over half the comparisons favoured the induced policy.
+to traditional curriculum sequencing," where "a network specifying the relationship
+between different content areas or KCs (such as a prerequisite graph) must either be
+prespecified or automatically inferred from data." **Zero of eight beat their
+baselines.** The six clean nulls include Clement et al. (2015) with 133 seven- and
+eight-year-olds on arithmetic, Doroudi et al. (2017) with 69 fourth and fifth graders
+on fractions, and the authors' own Appendix B study with 100 more children — none of
+which shows in a headline where over half the comparisons favoured the induced policy.
 
 The two clusters that did win are decisions about *when to bring an item back*
 (paired-associate scheduling, the spacing literature §20 owns) and *what kind of
@@ -3282,22 +3280,20 @@ that prerequisite separately.* The learner-model machinery behind it carries a
 prerequisite-dropback repair whose own evidence line reads "no pooled ES;
 mechanism-level `INFERENCE`."
 
-Read against Table 2, the two halves of that sentence have opposite standing. Picking
-the technique for a chosen target is the part with meta-analytic support. Traversing
-a prerequisite closure to decide what the target should be is the part with no
-positive result anywhere in sixty years of experiments. `SPEC` with no measured
-warrant, and it is load-bearing in at least three places in this document.
-
-The word `prerequisite` appears 196 times across this project's research corpus;
-`curriculum sequencing` appears twice and `knowledge space` never. The concept is
-everywhere and its warrant is nowhere. `OBSERVED — absence`
+Read against Table 2, the two halves of that rule have opposite standing. Picking the
+technique for a chosen target has meta-analytic support. Traversing a prerequisite
+closure to decide what the target should be has no positive result anywhere in sixty
+years of experiments. It is `SPEC` with no measured warrant, load-bearing in at least
+three places in this document. The word `prerequisite` appears 196 times across this
+project's research corpus; `curriculum sequencing` twice and `knowledge space` never.
+`OBSERVED — absence`
 
 For the eleven-year-old this survey is organised around, the gap has a face. She can
 hold a conversation about photosynthesis and cannot pass a worksheet about it. A
 system that verifies the transitive closure before teaching the target will find gaps
-in that closure — her mathematics is behind, her writing fluency is behind — and will
-route her away from the one topic she was ready to think about. The gate is the
-expensive part of the architecture and it is the part with no evidence behind it.
+in it — her mathematics is behind, her writing fluency is behind — and route her away
+from the one topic she was ready to think about. The gate is the expensive part of the
+architecture and the part with no evidence behind it.
 
 ---
 
@@ -3306,19 +3302,18 @@ expensive part of the architecture and it is the part with no evidence behind it
 Clements and Sarama's learning trajectories are a goal, a hypothesised developmental
 progression of levels of thinking, and tasks matched to each level. The claim is
 narrow and falsifiable: instruction works best when it targets the level one step
-above the child's current level. The decisive studies do not compare a trajectory
-against nothing. They compare it against *equal-dose instruction aimed straight at
-the target*, skipping the intervening levels.
+above the child's current level. The decisive studies compare that against *equal-dose
+instruction aimed straight at the target*, skipping the intervening levels.
 
 Clements, Sarama, Baroody, Kutaka & Chernyavskiy (2021), *JEP* 113(7):1323–1337, is
 the one with power. **291 kindergartners** from four schools, randomly assigned to
 one-on-one instruction one level above their present level, or to one-on-one
-instruction on story problems three levels above their initial level. Baseline
-equivalence was established (d = .05 counting, .07 arithmetic). Dosage was equalised
-and non-significant between arms: 196 minutes over 13.4 sessions against 212 minutes
-over 14.3. The one-level-up condition scored higher at posttest, **d = 1.20** for the
-main effect of condition in the baseline model, **and the advantage was largest for
-children with low entry knowledge of arithmetic.** `MEASURED-RCT`
+instruction on story problems three levels above it. Baseline equivalence was
+established (d = .05 counting, .07 arithmetic), and dosage was equalised and
+non-significant between arms: 196 minutes over 13.4 sessions against 212 minutes over
+14.3. The one-level-up condition scored higher at posttest, **d = 1.20** for the main
+effect of condition in the baseline model, **and the advantage was largest for children
+with low entry knowledge of arithmetic.** `MEASURED-RCT`
 
 The boundary conditions deserve the same prominence as the number. All three
 skip-level studies come from one laboratory, sharing instruments, trajectory
@@ -3332,15 +3327,15 @@ it should never appear without that number. `INFERENCE`
 
 Nothing here establishes that a prerequisite graph over secondary chemistry, or
 programming, or a second language, has the same standing. Nobody has run the
-skip-level design in any of them.
+skip-level design outside early mathematics.
 
 ---
 
 ## 3. Levels are not stable enough to route from
 
 If an ordering is real, a learner should sit *at* a level and reason from it
-consistently. Steedle & Shavelson (2009), *JRST*, tested that directly with latent
-class analysis on diagnostic items about forces on an object moving at constant speed.
+consistently. Steedle & Shavelson (2009), *JRST*, tested that with latent class
+analysis on diagnostic items about forces on an object moving at constant speed.
 Students with a scientifically accurate understanding did reason systematically.
 **Many other students did not**, and the authors conclude that interpretations of
 learning-progression level diagnoses "would often be invalid" on the progression they
@@ -3355,13 +3350,12 @@ measurement literature says is not stable enough across contexts to carry it.
 
 The formal object such a system needs is a Q-matrix, items on the rows and latent
 skills on the columns. These can be validated against response data instead of
-asserted (de la Torre & Chiu 2016; Ma & de la Torre 2019), and the standard citation
-for what misspecification costs is Rupp & Templin (2007), cited here for scope because
-the source report could not get past the publisher block. The design consequence
-survives the missing numbers: a language model asked to emit a prerequisite graph is
-producing an expert-judgement Q-matrix with no validation step, in a formalism whose
-known failure mode is that misspecification propagates into every classification the
-system then makes. `INFERENCE`
+asserted (de la Torre & Chiu 2016), and the standard citation for what misspecification
+costs is Rupp & Templin (2007), cited for scope because its numbers sat behind a
+publisher block. The design consequence survives the missing numbers: a model asked to
+emit a prerequisite graph is producing an expert-judgement Q-matrix with no validation
+step, in a formalism whose known failure mode is that misspecification propagates into
+every classification the system then makes. `INFERENCE`
 
 ---
 
@@ -3371,13 +3365,11 @@ ALEKS is the commercial instantiation of knowledge space theory (Doignon &
 Falmagne). Its own research page describes the mechanism, a knowledge state assessed
 "after the student has answered only 20–25 questions," and cites no efficacy study and
 no effect size. `VENDOR` Two meta-analyses reach the same place. Fang, Ren, Hu &
-Graesser (2019),
-*Educational Psychology*, 15 studies and 24 independent samples: ALEKS was as good as,
-but not better than, traditional classroom teaching, with effects *larger* for shorter
-implementations. Sun, Else-Quest, Hodges, French & Dowling (2021), *Investigations in
-Mathematics Learning*, 33 studies, 56 independent effect sizes, **9,238 students**:
-pooled **Hedges' g = 0.05** against ordinary instruction, with a supplemental-use
-moderator at **g = 0.43**. `MEASURED-META`
+Graesser (2019), *Educational Psychology*, 15 studies and 24 independent samples:
+ALEKS was as good as, but not better than, traditional classroom teaching. Sun,
+Else-Quest, Hodges, French & Dowling (2021), 33 studies, 56 independent effect sizes,
+**9,238 students**: pooled **Hedges' g = 0.05** against ordinary instruction, with a
+supplemental-use moderator at **g = 0.43**. `MEASURED-META`
 
 Two flags travel with those numbers. The ERIC record prints a pooled interval that is
 not symmetric about the point estimate and could not be checked against the article,
@@ -3388,26 +3380,26 @@ prerequisite-structured system finds a general advantage, and that its one posit
 moderator is a dosage result — adding a supplementary practice system to teaching
 beats teaching alone.
 
-§20 carries the strongest datum from inside the same system: 32.9 million randomised
-topic sequences in production, where raising the mastery threshold cost +29% time for
-a retention difference under 0.02 on a base rate near 0.60. Inside a fixed topic, how
-hard you push mastery barely moves anything; across topics, which order you use has
-never been shown to move anything either.
+§20 carries the strongest datum from inside the same system: across 32.9 million
+randomised topic sequences in production, raising the mastery threshold cost +29% time
+for a retention difference under 0.02. Inside a fixed topic, how hard you push mastery
+barely moves anything; across topics, which order you use has never been shown to move
+anything either.
 
 ---
 
 ## 5. Mastery learning was given 20–33% more time, and Bloom's study ran three weeks
 
 Slavin's 1987 synthesis (*RER* 57(2):175–213) is where the two-sigma provenance
-lives. The claims it was testing, in the claimants' own figures, ran from Kulik et
-al.'s 0.52 and 0.54 through Walberg's 0.81 to Bloom's own 1.00 "when mastery learning
-procedures are done systematically and well," with two sigma as the prediction.
+lives. The claims it was testing ran from Kulik et al.'s 0.52 and 0.54 through
+Walberg's 0.81 to Bloom's own 1.00 "when mastery learning procedures are done
+systematically and well," with two sigma as the prediction.
 
 Slavin then restricted to practical applications in real schools running at least four
 weeks, with equal time for treatment and control, on standardised measures. Seven
 studies qualified. **Median effect size +0.04.** The single non-trivial result (+0.25)
-came from a study where teachers self-selected into conditions or were assigned by
-their principals, and was not significant at the class level. `MEASURED-META`
+came from a study where teachers self-selected into conditions, and was not significant
+at the class level. `MEASURED-META`
 
 Two design facts from his methods section rarely survive the citation trail.
 **Anania's study — one of the Chicago dissertations Bloom's essay rests on — ran three
@@ -3415,8 +3407,7 @@ weeks.** And all the Chicago dissertations "provided the mastery learning classe
 similar amounts of additional instruction," amounting to **20–33% more instructional
 time** than control classes received. Bloom's own characterisation was that the time
 costs "have usually been very small." `OBSERVED` §1 and §37 retire the two-sigma
-claim on replication grounds; this is the mechanism underneath that verdict, and a
-stronger reason than the one those sections had.
+claim on replication grounds; this is the mechanism underneath that verdict.
 
 Then the part nobody quotes. Slavin also examined maintenance: six comparisons in
 five studies assessing retention 4–12 weeks out, all on experimenter-made measures.
@@ -3431,8 +3422,8 @@ Slavin also names why the corrective loop may under-deliver, and it reads as a
 specification. In none of the sixteen studies did corrective instruction occupy more
 than **one period per week, or 20% of instructional time**, and it was delivered in
 groups or by peer tutors. Mastery learning has never been tested with unlimited
-individual corrective instruction, because until now nobody could afford to run it.
-That is the version this project can build. `INFERENCE`
+individual corrective instruction, because until now nobody could afford it. That is
+the version this project can build. `INFERENCE`
 
 ---
 
@@ -3443,11 +3434,11 @@ ERIC ED618425, evaluated the purest deployed instantiation of the thesis this se
 is testing. Teach to One: Math runs a daily algorithmic scheduler that assigns each
 student the mathematics content their diagnosed skill state says they are ready for,
 in whatever modality suits it, breaking the grade-level sequence entirely. New
-Classrooms ran it under an Investing in Innovation grant in five schools in Elizabeth,
-New Jersey, for three academic years from September 2015. CPRE ran a comparative
-interrupted time series against 16 non-Teach-to-One schools in the same district:
-**36,158 student-level measurements** nested in 209 school-by-year cohorts, outcomes
-z-scored within grade and year.
+Classrooms ran it under an Investing in Innovation grant in five New Jersey schools
+for three academic years from September 2015. CPRE ran a comparative interrupted time
+series against 16 comparison schools in the same district: **36,158 student-level
+measurements** nested in 209 school-by-year cohorts, outcomes z-scored within grade
+and year.
 
 | Implementation year | Adjusted estimate (SD) | SE |
 |---|---|---|
@@ -3478,9 +3469,9 @@ paper ERIC ED567218, gives the trajectory in standard deviations: **0.86** (with
 follow-through) and **0.75** (without) at the end of pre-K, falling through
 kindergarten and grade 1, **not distinguishable from zero at grades 3 and 4**, then
 **0.26 and 0.21, both significant, at the end of grade 5.** The citation of record for
-the pattern is the published Clements, Sarama, Layzer & Unlu (2023), *JRME*, whose
-abstract states that early effects "decreased through fourth grade but reemerged at
-fifth grade"; the numbers above belong to the conference paper. `MEASURED-RCT`
+the pattern is the published Clements, Sarama, Layzer & Unlu (2023), *JRME*: early
+effects "decreased through fourth grade but reemerged at fifth grade." The numbers
+above belong to the conference paper. `MEASURED-RCT`
 
 Kang, Duncan, Clements, Sarama & Bailey (2019), *JEP*, decomposed that decay on the
 same trial. Treated children did forget more in the following year than controls —
@@ -3495,27 +3486,26 @@ question becomes whether acceleration is worth anything by itself. It also means
 "did the learner retain it," measured against a control group, answers a different
 question from "does the learner still have it." §3 documents that almost nobody in
 AI tutoring measures retention at all; this is why measuring it against a control
-would still not settle the promise. The subgroup pattern compounds it: higher-SES
-students in the no-follow-through arm reached 0.6–0.7 SD in fourth and fifth grade,
-while lower-SES students' effects were significant only in pre-K and kindergarten.
-Durability was greatest where the sustaining environment was strongest. `OBSERVED`
+would still not settle the promise. The subgroup pattern compounds it: durability was
+greatest where the sustaining environment was strongest, with higher-SES children in
+the no-follow-through arm reaching 0.6–0.7 SD by fifth grade while lower-SES effects
+held only through kindergarten. `OBSERVED`
 
 Absolute retention is the other question, and Bahrick's permastore programme is where
 it lives. His summary of the fifty-year Spanish study, restated in Bahrick & Phelps
 (1987): part of what is acquired is lost within five years, and "virtually no
 knowledge is lost during the interval between 5 and 25 years" after acquisition.
-`OBSERVED` Bahrick & Phelps itself, 35 individuals tested on 50 English–Spanish pairs
-at 8 years, found optimum recall at **30-day** access intervals across a range running
-from 0% to 23%. `MEASURED-RCT`
+`OBSERVED` That study of 35 learners, tested at 8 years, put optimum recall at
+**30-day** access intervals across a range running from 0% to 23%. `MEASURED-RCT`
 
-The nine-year longitudinal follow-up (Bahrick, Bahrick, Bahrick & Bahrick 1993,
-*Psychological Science* 4(5):316–321) found retention functions that crossed over
-during the first year and stayed crossed for five, so that **13 relearning sessions
-spaced at 56 days matched 26 sessions spaced at 14 days** — half the training for the
-same durable outcome. Two cautions the citation trail drops: **n = 4**, and the
-authors record schedule departures, an omitted terminal session, a three-year test
-given at four years, and subjects who travelled in France. `MEASURED-RCT` —
-extraordinary in duration, tiny in sample, imperfectly controlled.
+The nine-year follow-up (Bahrick, Bahrick, Bahrick & Bahrick 1993, *Psychological
+Science* 4(5):316–321) found retention functions that crossed over during the first
+year and stayed crossed for five, so that **13 relearning sessions spaced at 56 days
+matched 26 sessions spaced at 14 days** — half the training for the same durable
+outcome. Two cautions the citation trail drops: **n = 4**, and the authors record
+schedule departures, an omitted terminal session, a three-year test given at four
+years, and subjects who travelled in France. `MEASURED-RCT` — extraordinary in
+duration, tiny in sample, imperfectly controlled.
 
 ---
 
@@ -3523,27 +3513,27 @@ extraordinary in duration, tiny in sample, imperfectly controlled.
 
 This survey's central empirical theme is that conditions producing the best
 performance during practice produce the worst retention. Motor learning reached the
-same dissociation from a different discipline, which looks like independent
-convergence and is only partly that.
+same dissociation independently, which looks like corroboration and is only partly
+that.
 
 The bridge citation the corpus reaches for is Schmidt & Bjork (1992), *Psychological
 Science* 3(4):207–218. Robert Bjork co-authored it and originated the
 desirable-difficulties framework on the verbal side, so a paper arguing that two
 literatures agree cannot be counted as those two literatures agreeing. This project
-forbids claiming independence between two of its own workstreams; the same rule
-applies to a citation we imported. `INFERENCE`
+forbids claiming independence between two of its own workstreams; the rule applies to
+a citation we imported. `INFERENCE`
 
 The genuinely independent arrival is Shea & Morgan (1979), *JEP:HLM* 5(2):179–187: a
 barrier-knockdown task in a motor-behaviour laboratory descending from Battig (1966),
 with no methodological contact with verbal spacing research. Blocked practice won
-during acquisition; random practice won at 10-minute and 10-day retention, and won
-whether the retention test was blocked or random. `MEASURED-RCT` One manipulation,
+during acquisition; random practice won at 10-minute and 10-day retention, whether the
+retention test was itself blocked or random. `MEASURED-RCT` One manipulation,
 contextual interference, reproduces the acquisition–retention reversal in a discipline
 that did not borrow it.
 
-Whether the rest of the doctrine reproduces is a separate question. Czyż, Wójcik,
-Solarská & Kiper (2024), *Scientific Reports* 14, screened 1,255 records and
-meta-analysed **54 studies** on delayed retention (>24 h):
+Whether the rest reproduces is a separate question. Czyż, Wójcik, Solarská & Kiper
+(2024), *Scientific Reports* 14, meta-analysed **54 studies** on delayed retention
+(>24 h):
 
 | Subgroup | Three-level SMD | 95% CI |
 |---|---|---|
@@ -3558,13 +3548,10 @@ meta-analysed **54 studies** on delayed retention (>24 h):
 
 **The eleven-year-old this project is for sits inside both boundary conditions at
 once.** She is under eighteen and she is not in a laboratory. Wulf & Shea (2002) found
-the same split in the primary studies twenty years earlier: Farrow & Maschette found
+the same split in the primary studies twenty years earlier — Farrow & Maschette found
 random practice better for 10–12 year-olds and **blocked practice better for 8–9
-year-olds** on the tennis forehand, and Albaret & Thon found a random advantage on a
-simple drawing task that "systematically reduced as the number of segments was
-increased and even reversed" for the hardest version. Their title is the warning
-label: *principles derived from the study of simple skills do not generalize to
-complex skill learning.*
+year-olds** on the tennis forehand — and their title is the warning label: *principles
+derived from the study of simple skills do not generalize to complex skill learning.*
 
 The feedback half of the doctrine fails outright. The guidance hypothesis (Salmoni,
 Schmidt & Walter 1984) holds that feedback after every trial props up acquisition
@@ -3573,16 +3560,16 @@ during practice and win at retention. McKay, Hussien, Vinh, Mir-Orefice, Brooks 
 Ste-Marie (2022), *Psychology of Sport and Exercise* 61:102165, screened 1,662 records
 to **61 papers, k = 75, N = 2,228**, and found "no significant effect of reduced
 feedback frequency at any time point" and "no evidence of a significant change in
-effect from acquisition or immediate retention to delayed retention." Their own
-highlight list ends: "The guidance hypothesis is not supported by the extant
-research." `MEASURED-META` The same group's self-controlled practice meta-analysis
-lands in the same place: a naive g = 0.44 over 52 comparisons (N = 2,061) falls to
-**g = 0.107 [0.047, 0.18]** once selection bias is modelled.
+effect from acquisition or immediate retention to delayed retention." Their highlight
+list ends: "The guidance hypothesis is not supported by the extant research."
+`MEASURED-META` The same group's self-controlled practice meta-analysis lands in the
+same place: a naive g = 0.44 over 52 comparisons (N = 2,061) falls to **g = 0.107
+[0.047, 0.18]** once selection bias is modelled.
 
 What transfers is the mechanism and not the doctrine. Difficulty is desirable to the
 degree the learner has spare capacity to meet it, which is §11's expertise-reversal
-law and §45's executive-function argument arriving from a third direction. So
-contextual interference, feedback fading and practice distribution are all
+law and §45's executive-function argument arriving from a third direction. Contextual
+interference, feedback fading and practice distribution are therefore
 capacity-conditional, and for a novice, on a complex task, under eighteen, they
 default **off** and are earned by measurement.
 
@@ -3605,10 +3592,9 @@ The source report marks several things untraceable, and they stay untraceable he
   effects (0.51 / 0.28) do not reconcile with the same team's long-term analysis, so
   anyone citing that persistence effect must say which paper and which model.
 - **Transfer from instruction to job performance outside health professions
-  education.** The best available evidence is Vermylen et al. (2025): competency-based
-  simulation beats non-competency-based simulation on skill outcomes at a large effect,
-  while "outcomes are favorable, but small, for behaviors in practice and patient
-  effects."
+  education.** In the one place it is measured (Vermylen et al. 2025), mastery
+  sequencing reliably produces the measured skill, while "outcomes are favorable, but
+  small, for behaviors in practice and patient effects."
 
 ---
 
@@ -3618,23 +3604,22 @@ The graph does not go away. It changes job.
 
 **Every edge gets a stated epistemic status.** *Constitutive* edges are entailed by the
 domain's own logic — you cannot compose shapes you cannot recognise. *Empirical* edges
-are ones a skip-level trial has tested, which today means early number and early
-shape. *Conventional* edges are everything else, which is most of them. A system that
-treats the three alike will be wrong in a specific and predictable way. `SPEC`
+are ones a skip-level trial has tested, which today means early number and shape.
+*Conventional* edges are everything else, which is most of them. A system that treats
+the three alike will be wrong in a predictable way. `SPEC`
 
-**The graph is used for diagnosis and never for gating.** Table 2 is the design rule.
-A dropback triggered by a diagnosed error, aimed at a named missing component, is the
-supported use. "The learner may not proceed to *c* until the closure of *c* is
-verified" is the unsupported one, and §16 should drop it until it is tested. For the
-learner in §29 this is the difference between a tutor that teaches photosynthesis and
-one that sends her back to fractions first.
+**The graph is used for diagnosis and never for gating.** A dropback triggered by a
+diagnosed error, aimed at a named missing component, is the supported use. "The
+learner may not proceed to *c* until the closure of *c* is verified" is the
+unsupported one, and §16 should drop it until it is tested. For the learner in §29
+this is the difference between a tutor that teaches photosynthesis and one that sends
+her back to fractions first.
 
-**A durability instrument, because nobody has one.** Kang et al. show that a
-control-referenced retention measure answers a different question from the one a
-promise makes. A tutor can afford what no trial could: unannounced delayed transfer
-probes at 30, 90 and 365 days, on freshly generated items the learner has stopped
-studying, reporting *absolute* retention alongside any comparative claim. Bahrick's
-30-day optimum and the 56-day crossover give the schedule a starting shape. `SPEC`
+**A durability instrument, because nobody has one.** A tutor can afford what no trial
+could: unannounced delayed transfer probes at 30, 90 and 365 days, on freshly
+generated items the learner has stopped studying, reporting *absolute* retention
+alongside any comparative claim. Bahrick's 30-day optimum and the 56-day crossover
+give the schedule a starting shape. `SPEC`
 
 **And the experiment: randomise the graph, not the policy.** Every existing study
 randomises which traversal policy walks a fixed graph. The untested question is
@@ -3645,8 +3630,8 @@ or demand-driven entry (teach the requested target immediately, repair prerequis
 reactively when an error names a missing component). Instructional time is capped
 identically in both arms, the condition Slavin showed almost no mastery-learning study
 met. Primary outcome: delayed transfer at 28 days on freshly generated items, scored
-blind. Secondary: time to criterion, a 90-day probe, and the proportion of
-graph-respecting sessions where the verified gap turned out to be real.
+blind. Secondary: time to criterion, a 90-day probe, and how often a verified
+prerequisite gap turned out to be real.
 
 The question is whether any difference is large enough to pay for the graph, so this
 is an **equivalence trial** at a pre-registered margin of **δ = 0.10 SD**. Two
@@ -3659,7 +3644,7 @@ Either answer is worth having. If the graph is equivalent within 0.10 SD, §16 s
 computing prerequisite closures and §36's generative-textbook problem collapses from
 "construct a validated ordering" to "answer the question that was asked" — the cheaper
 system, and the one that meets a curious child where she is. If the graph wins by more
-than 0.10 SD, this project has the first direct warrant for an architecture four of its
+than 0.10 SD, this project has its first direct warrant for an architecture four of its
 own reports already assume, and will have earned the gate it has been using on credit.
 
 
@@ -6932,12 +6917,12 @@ marginal cost, the evidence that two mature literatures declined to collect.
 Second-language learning holds the largest concentration of randomised
 generative-AI evidence in any school subject. Of the seven randomised controlled
 trials ERIC returns against roughly 1,565 ChatGPT-and-education records, three
-are language trials: pronunciation, writing feedback, speaking. No other subject
-has more than one, and the modal randomised trial of generative AI in education
-is an Iranian or Chinese EFL study with fewer than a hundred participants.
+are language trials: pronunciation, writing feedback, speaking. The modal
+randomised trial of generative AI in education is an EFL study with fewer than a
+hundred participants.
 
-This survey said four. The corrected count is three, it is published as **C-58**,
-and how the error happened matters more than the arithmetic.
+This survey said four. The corrected count is three, published as **C-58**, and
+how the error happened matters more than the arithmetic.
 
 ---
 
@@ -6948,20 +6933,17 @@ The ERIC API call ran on 2026-07-28 and returned seven records; re-run on
 API, which is the property the census was trusted for.
 
 Reading the records one at a time gives a different answer from reading the
-count. **EJ1415077**, the record this survey's summary table filed under
-"Blended Learning," describes itself as a randomised trial in *"a foundational
-chemistry course in a blended learning setting"* with 61 Taiwanese
-undergraduates, verified against the ERIC record. **EJ1484052** is virtual
-reality with *"embedded IoT tasks."* Neither is language learning. `OBSERVED` —
-own coding of the result set.
+count. **EJ1415077**, filed in this survey's summary table under "Blended
+Learning," describes itself as a randomised trial in *"a foundational chemistry
+course in a blended learning setting"* with 61 Taiwanese undergraduates, verified
+against the ERIC record. **EJ1484052** is virtual reality with *"embedded IoT
+tasks."* Neither is language learning. `OBSERVED` — own coding of the result set.
 
 A reproducible retrieval step wrapped around an unchecked labelling step produces
 confident wrong counts, in whichever direction the labeller was already leaning.
-That is a different failure from a mistyped number: re-running the query would
-never have caught it, and the reproducibility was the reason nobody looked. §4
-carries the census and now carries the corrected figure — which does not weaken
-the point the census was recruited for. Three of seven still means language is
-where this evidence lives.
+Re-running the query would never have caught it, and the reproducibility was the
+reason nobody looked. §4 now carries the corrected figure, which does not weaken
+the point the census was recruited for.
 
 ---
 
@@ -6975,15 +6957,14 @@ writing courses, three feedback conditions over a semester: teacher screencast
 video feedback, AI feedback (ChatGPT-4 plus Grammarly Premium against five
 scripted prompts mapped to the IELTS criteria), and hybrid. Pre- and post-test
 Task 2 essays, anonymised, order-scrambled, double-marked blind to condition and
-time point, weighted κ = 0.85 — a better measurement apparatus than most of this
-literature's.
+time point, weighted κ = 0.85 — better measurement than most of this literature.
 
 No arm goes without feedback, so the study cannot estimate whether any of the
 three beats writing the same essays unaided. Three intact classes were randomly
 assigned to the three conditions, one class each, then analysed by ANCOVA at
-df = 84: condition is fully confounded with class, and the standard errors are
-those of 88 independent units when the between-condition contrast has three. The
-winning arm is the one that received the other arm's feedback on top of its own.
+df = 84: condition is confounded with class, and the standard errors are those of
+88 independent units when the contrast has three. The winning arm is the one that
+received the other arm's feedback on top of its own.
 
 The one contrast that isolates AI against a human is a null:
 
@@ -7005,30 +6986,30 @@ indistinguishable from an experienced instructor's personalised annotated video
 feedback on every IELTS criterion except vocabulary, where the machine won by
 0.436 of a band. Individual feedback on every draft is the scarcest thing in
 instruction and the first thing rationed away from the learners with the least.
-An underpowered null on three clusters is weak evidence for equivalence; it
-points at the claim worth establishing properly.
+An underpowered null on three clusters is weak evidence for equivalence; it names
+the claim worth establishing properly.
 
 ### 2.2 Pronunciation: the outcome is the training set
 
 Xodabande, Shiri & Zohrabi (2025), *Discover Education* 4:307. `MEASURED-RCT`.
 Sixty intermediate Iranian EFL learners, randomised 30/30, three weeks, ten
-target words a week. The treatment group used ChatGPT-4's voice feature; the
-control used electronic dictionaries. Outcome: read 30 sentences aloud, one
-target word each, scored binary by three blinded raters, α = 0.91.
+target words a week, ChatGPT-4's voice feature against electronic dictionaries.
+Outcome: read 30 sentences aloud, one target word each, scored binary by three
+blinded raters, α = 0.91.
 
 Both groups practised those 30 words for three weeks, and those 30 words are the
-test. Different carrier sentences, same items, no untrained-item probe. The list
+test — different carrier sentences, same items, no untrained-item probe. The list
 runs *colonel, aisle, debris, rendezvous, quay, choir, entrepreneur, bouquet* and
 more of the same: English orthographic irregularities and French loanwords.
 Knowing that *colonel* is /ˈkɜːnəl/ is a word-specific fact of the same order as
-knowing what *colonel* means. Nothing in the trial separates "pronounces English
-better" from "memorised thirty pronunciations."
+knowing what *colonel* means. Nothing here separates "pronounces English better"
+from "memorised thirty pronunciations."
 
 The retention claim inverts on arithmetic. The paper's own post-hoc table has the
 treatment group flat from post-test to delayed test (+0.867, p = 1.000) and the
-control group still climbing (+3.700, p = .008). Computed from the reported means
-and SDs, between-group Hedges' g is **1.57 at post-test and 0.65 two weeks
-later** — 58% of the gap gone in a fortnight, with the control still rising when
+control still climbing (+3.700, p = .008). Computed from the reported means and
+SDs, between-group Hedges' g is **1.57 at post-test and 0.65 two weeks later** —
+58% of the gap gone in a fortnight, with the control still rising when
 measurement stopped. `INFERENCE` (arithmetic on the paper's Table 2). The paper
 describes this as ChatGPT retaining gains better.
 
@@ -7046,9 +7027,8 @@ translation, automatic summarisation and traditional instruction. Behind Sage,
 reports *"adaptability (M = 85.50, Δ + 40.25), accuracy (M = 84.24, Δ + 43.93),
 and fluency (M = 85.04, Δ + 42.54; all p < 0.001)"* — the treatment arm's
 post-test means and its own pre-post change, with no control-group value, no SD,
-no standardised effect size, no interval and no delayed post-test. A four-arm
-design was built to produce a between-group comparison and the public record
-carries a within-group one.
+no effect size and no delayed post-test. A four-arm design built to produce a
+between-group comparison, and the public record carries a within-group one.
 
 ---
 
@@ -7057,11 +7037,10 @@ carries a within-group one.
 This is the finding in the section that travels furthest outside it.
 
 Lee & Lee (2024), *Language Learning & Technology* 28(2):134–162, meta-analysed
-17 projects, N = 8,282, and did something the other syntheses in this area do
-not: computed both estimates on overlapping samples and printed both forest
-plots. Overall, **d = 1.18 within-group and d = 0.39 against business as
-usual**. Seven studies sit in both pools. `MEASURED-META` (Figures 4 and 5, read
-directly).
+17 projects, N = 8,282, and did what the other syntheses here do not: computed
+both estimates on overlapping samples and printed both forest plots. Overall,
+**d = 1.18 within-group and d = 0.39 against business as usual**. Seven studies
+sit in both pools. `MEASURED-META` (Figures 4 and 5, read directly).
 
 | Study | Within-group d (pre→post) | Between-group d (vs BAU) |
 |---|---|---|
@@ -7081,11 +7060,10 @@ repeats down the table.
 
 Every effect size in this survey now has a question to answer before it is read:
 *which difference is this?* An unlabelled `d = 1.2` in a product claim is almost
-always the first column, where a well-run control group would have absorbed most
-of it. That is why §1's benchmark for a credible AI tutoring result specifies an
-active control and a delayed post-test, and why the three trials above line up as
-they do: all three report large within-group gains, two report a control
-contrast, one of those two is a null, and the third reports none.
+always the first column, which is why §1's benchmark specifies an active control
+and a delayed post-test. It also explains how the three trials above line up: all
+three report large within-group gains, two report a control contrast, one of
+those two is a null, and the third reports none.
 
 ---
 
@@ -7094,8 +7072,8 @@ contrast, one of those two is a null, and the third reports none.
 Bibauw, Van den Noortgate, François & Desmet (2022), *LL&T* 26(1), meta-analysed
 dialogue systems for language learning: 17 publications, 100 effect sizes, 803
 participants, overall **d = 0.58 [0.35, 0.82]** on measured language outcomes,
-with motivation studies deliberately excluded. Their cross-modality breakdown is
-the only quantitative transfer test the field has:
+motivation studies excluded. Their cross-modality breakdown is the only
+quantitative transfer test the field has:
 
 | Practice → outcome | d | 95% CI |
 |---|---|---|
@@ -7111,31 +7089,25 @@ not about generative models; it is the best available prior for them.
 
 Vocabulary carries the cleanest version, because the field routinely measures the
 taught words and a standardised test in the same study. Elleman, Lindo, Morphy &
-Compton (2009), 37 interventions pre-K to grade 12: effect on custom comprehension
-measures built from passages containing the taught words **d = 0.50**; effect on
-standardised comprehension **d = 0.10**; among the custom measures, d = 1.23 for
-students with reading difficulties against 0.39 for students without.
-`MEASURED-META`. That is first-language vocabulary instruction, so the boundary
+Compton (2009), 37 interventions pre-K to grade 12: effect on custom
+comprehension measures built from passages containing the taught words
+**d = 0.50**; on standardised comprehension **d = 0.10**; among the custom
+measures, 1.23 for students with reading difficulties against 0.39 for students
+without. `MEASURED-META`. That is first-language instruction, so the boundary
 crossed is not identical to the L2 case, and the attenuation is five-fold from
 "comprehends text built around the taught words" to "comprehends text."
 
-The target these decks are aimed at also has no edge to it. Nation (2006) puts
-98% lexical coverage at 8,000–9,000 word families for written text and
-6,000–7,000 for spoken. Kremmel, Indrarathne, Kormos & Suzuki (2023), *Language
-Learning* 73(4), preregistered with open data and materials, replicated the
-source study with 104 Sri Lankan adult learners across five coverage densities
-and *"failed to replicate an inferred 98% coverage threshold as sufficient for
-adequate comprehension,"* while confirming the underlying linear relationship.
-`MEASURED-RCT`. There is no cliff to get a learner over; there is a slope running
-from roughly 4,000 to 9,000 families, every thousand of which buys a little more
-comprehension.
-
-Deck study still builds real lexical entries: Elgort (2011) taught 48 pseudowords
-by deliberate study and found masked repetition, form and automatic semantic
-priming all present in lexical decision. `MEASURED-RCT` (within-subject). Lexical
-entries are not comprehension, and the distance between them is where reading,
-listening and speaking practice has to go. §20 owns scheduling; a tutor that
-ships a scheduler and calls vocabulary solved has built the d = 0.10 half.
+The target these decks aim at has no edge to it either. Nation (2006) puts 98%
+lexical coverage at 8,000–9,000 word families for written text and 6,000–7,000
+for spoken; Kremmel, Indrarathne, Kormos & Suzuki (2023), *Language Learning*
+73(4), preregistered with open data and materials, replicated the source study
+with 104 Sri Lankan adult learners and *"failed to replicate an inferred 98%
+coverage threshold as sufficient for adequate comprehension,"* confirming the
+underlying linear relationship. `MEASURED-RCT`. No cliff to get a learner over; a
+slope from roughly 4,000 to 9,000 families, every thousand of which buys a little
+more comprehension. Deliberate study does build real lexical entries (Elgort
+2011), and lexical entries are not comprehension. §20 owns scheduling; a tutor
+that ships a scheduler and calls vocabulary solved has built the d = 0.10 half.
 
 ---
 
@@ -7152,29 +7124,25 @@ The peer-reviewed comparison is ETS's SpeechRater (Zechner, Higgins & Xi, SLaTE
 form, against human–human agreement of 0.77–0.94, with the authors' verdict that
 *"a large gap still remains."* On the open speechocean762 benchmark the
 granularity gradient is explicit: utterance total 0.811, phone accuracy 0.693,
-**word stress 0.361**. And Wang & Min (2026), *Language Testing* 43(2), across 67
+**word stress 0.361**. Wang & Min (2026), *Language Testing* 43(2), across 67
 studies and 392 effect sizes, put the field-wide human–machine correlation at
 r = .654 and pronunciation at .606, with ASR accuracy *not* a significant
 moderator. `MEASURED-BENCH`. These engines rank whole speakers well and localise
 individual errors poorly. Localisation is the product; the ranking is where the
 validation number comes from.
 
-The instructional literature agrees about which construct is worth scoring. Saito
-& Plonsky (2019), 77 studies of pronunciation instruction, report between-group
-d = 0.68 [0.49, 0.86] against a control test–retest floor of 0.31 [0.24, 0.38],
-and in their Table 7 every interval covering *global* pronunciation crosses zero,
-as does every interval involving *spontaneous* speech. `MEASURED-META`. Most
-computer-assisted scoring is similarity to a native reference, an accentedness
-measure, which Levis (2020) calls *"largely irrelevant"* under the
-intelligibility principle. The standard build optimises the construct the field
-has said out loud is not the goal.
+They also score the wrong construct. Similarity to a native reference is an
+accentedness measure, which Levis (2020) calls *"largely irrelevant"* under the
+intelligibility principle, and in Saito & Plonsky's 77-study synthesis of
+pronunciation instruction every interval covering a *global* construct or a
+*spontaneous* task crosses zero. `MEASURED-META`.
 
-### 5.1 The mechanism worth stealing: robust ASR repairs the error first
+### 5.1 Robust ASR repairs the error before the model sees it
 
 Liu, Cui, Gu & Wang (2026), arXiv:2601.14744, evaluated cascaded ASR-plus-LLM
 pipelines and end-to-end audio models on mispronunciation detection over
-L2-ARCTIC, read L2 English with phoneme-level annotation of actual learner
-errors, one-shot prompted. `MEASURED-BENCH`.
+L2-ARCTIC, read L2 English with phoneme-level annotation of real learner errors,
+one-shot prompted. `MEASURED-BENCH`.
 
 | System | P | R | F1 |
 |---|---|---|---|
@@ -7194,12 +7162,12 @@ Large. The authors' explanation: *"stronger ASR models tend to correct
 pronunciation errors during transcription due to their robustness to accent
 variations, preventing them from accurately reflecting learners' speech
 errors."* A recogniser's whole objective is to recover the word the speaker
-intended, and every improvement against that objective destroys the signal a
-pronunciation tutor needs. Any diagnostic layered on a perception model inherits
-that model's objective, and where the two point in opposite directions the
-upgrade path runs backwards. This is the measured form of the ambiguity in §26.2.2:
-a learner talking to a speech-to-text pipeline is assessed on a transcript that
-already fixed the thing being assessed.
+intended, and every improvement against it destroys the signal a pronunciation
+tutor needs. Any diagnostic layered on a perception model inherits that model's
+objective, and where the two point in opposite directions the upgrade path runs
+backwards. This is the measured form of the ambiguity in §26.2.2: a learner talking
+to a speech-to-text pipeline is assessed on a transcript that already fixed the
+thing being assessed.
 
 The inversion is free to try. Run the learner's speech through a small,
 deliberately accent-brittle recogniser and treat its failures as an
@@ -7212,31 +7180,26 @@ similarity-to-native score. `SPEC`, untested, and cheap to test.
 
 Plonsky & Brown (2015), *Second Language Research* 31(2), counted **18 unique
 meta-analyses of corrective feedback with overall effects from d = −0.155 to
-d = 1.16**. Their diagnosis is that a 1.3-SD spread is driven by inclusion
-decisions and not by sampling error, and that L2 meta-analysts use *"a stable but
-very limited set of search strategies, none of which is likely to yield
-unpublished studies."* `MEASURED-META`. So "does correcting a learner help, and
-by how much" has a family of answers that track their authors' criteria.
+d = 1.16**, and diagnosed the 1.3-SD spread as driven by inclusion decisions and
+not by sampling error. `MEASURED-META`. So the question has a family of answers
+that track their authors' criteria.
 
 Inside that spread, the estimate with the best claim on a classroom builder is
 Lyster & Saito (2010), 15 classroom studies, N = 827, laboratory studies
-deliberately excluded: CF versus control **d = 0.74 [0.58, 0.86]**, with recasts
-at 0.53 [0.32, 0.74], prompts at 0.83 [0.56, 1.10] and explicit correction at
-0.84 [0.57, 1.11]. `MEASURED-META`. The famous result that prompts beat recasts
-is significant only within groups; between groups the intervals overlap, and
-explicit correction is numerically largest and distinguishable from neither.
-Against Plonsky & Oswald's field-derived benchmarks (0.40 small, 0.70 medium,
-1.00 large for between-group d), 0.74 is medium, and every headline here drops a
-category when read against its own field instead of Cohen's.
+deliberately excluded: CF versus control **d = 0.74 [0.58, 0.86]**, recasts 0.53
+[0.32, 0.74], prompts 0.83 [0.56, 1.10], explicit correction 0.84 [0.57, 1.11].
+`MEASURED-META`. The famous result that prompts beat recasts is significant only
+within groups; between groups the intervals overlap, and explicit correction is
+numerically largest and distinguishable from neither.
 
 The design instruction survives in weaker form, and Brown (2016) is why it is
-worth acting on anyway: across observational classroom studies, **recasts are 57%
-of all corrective feedback teachers actually give and prompts 30%**.
-`MEASURED-META`. The most-supplied type is the least-supported one, and a
-language model's reflex when a learner produces a wrong sentence is to restate it
-correctly, which is a recast. Prompting the learner to self-repair withholds the
-form and recruits the generation effect. It is also a change to a system prompt,
-which makes it the cheapest pedagogical edit available in this domain.
+worth acting on: across observational classroom studies, **recasts are 57% of all
+corrective feedback teachers actually give and prompts 30%**. `MEASURED-META`.
+The most-supplied type is the least-supported one, and a language model's reflex
+when a learner produces a wrong sentence is to restate it correctly, which is a
+recast. Prompting the learner to self-repair withholds the form and recruits the
+generation effect — a change to a system prompt, and the cheapest pedagogical
+edit available in this domain.
 
 ---
 
@@ -7254,9 +7217,9 @@ university semester" comparison is against the WebCAPE placement cut-off of 270
 points, a scoring threshold and not a cohort of students, and 34 is arithmetic:
 270 ÷ 8.1 points-per-hour, extrapolated linearly from zero. Of 196 participants
 sampled, **88 were analysed**, mean actual study time 22 hours, 16% (n = 14)
-scoring the same or lower at post-test. Krashen (2014) added the decisive point:
-the median gain rate was 3.9 points per hour against a mean of 8.1, and the same
-arithmetic on the median gives about 69 hours.
+scoring the same or lower at post-test. Krashen (2014) added that the median gain
+rate was 3.9 points per hour against that mean of 8.1, so the same arithmetic on
+the median gives about 69 hours.
 
 The company's own later measurement disagrees with its famous one. Jiang,
 Rollinson, Plonsky, Gustafson & Pajak (2021), *Foreign Language Annals* 54(4),
@@ -7266,19 +7229,22 @@ report through Unit 7 at **203 hours**. `VENDOR`. Same company, same product, it
 own instrumentation, and the hours figure has grown six-fold while the marketing
 number has not moved.
 
-And the FY2025 Form 10-K says learners completing five sections *"achieved
-proficiency comparable to five university semesters of language education"* and
-that *"**Independent studies corroborate this finding**."* `FILING`. The company
-labels its own study internal, correctly. The work fitting the description of the
-corroboration is Duolingo-funded: Smith, Jiang & Peters (2024) states *"This
+The FY2025 Form 10-K says learners completing five sections *"achieved
+proficiency comparable to five university semesters"* and that
+*"**Independent studies corroborate this finding**."* `FILING`. The company
+labels its own study internal, correctly; the work fitting the description of the
+corroboration is Duolingo-funded, Smith, Jiang & Peters (2024) stating *"This
 study was supported financially by Duolingo."* The word *independent* is carrying
-weight in an audited document that the underlying papers do not support, and
-FY2022 said four university semesters where FY2025 says five.
+weight in an audited document that the underlying papers do not support.
 
 What is true, audited and remarkable is that this is the most successful
 habit-formation product education has produced, which §43 owns. What does not
-follow is that it teaches a language better than the alternative. No randomised
-trial has established that for any consumer language app, in either direction.
+follow is that it teaches a language better than the alternative. The one
+randomised comparison holding content constant — James & Mayer (2019), 64
+students learning Italian from Duolingo or from a slideshow of the same material
+— was a null on achievement with willingness to continue at d = 1.39.
+`MEASURED-RCT`. Nothing establishes an app's teaching advantage in either
+direction.
 
 ---
 
@@ -7300,15 +7266,8 @@ g = −0.23**. `MEASURED-META`. Grammar feedback measurably degrades content and
 organisation for FL writers, and a study measuring only accuracy cannot see the
 trade it just made.
 
-Two more, because a survey counting effect sizes will misread both. James & Mayer
-(2019) randomised 64 students to learn Italian over seven sessions by playing
-Duolingo or by working a slideshow covering **the same material**: no significant
-difference on achievement, alongside enjoyment d = 0.77, appeal d = 1.17 and
-willingness to continue d = 1.39. `MEASURED-RCT`. Continuing is the binding
-constraint §43 argues for, so the affect effects are not nothing; the achievement
-result forecloses the claim that the gamified wrapper *teaches*.
-
-And Rachels & Rockinson-Szapkiw (2018), *CALL* 31(1–2), third and fourth graders,
+And one a survey counting effect sizes will read as supportive. Rachels &
+Rockinson-Szapkiw (2018), *CALL* 31(1–2), third and fourth graders,
 twelve weeks, Duolingo as the Spanish instruction against the regular Spanish
 class. `OBSERVED` (non-equivalent control group). From the published abstract:
 
@@ -7320,11 +7279,10 @@ Those two sentences are adjacent. A non-significant difference in an underpowere
 quasi-experiment is reported as a demonstration of usefulness, with no
 equivalence margin stated and no design able to support one.
 
-A provenance note belongs beside the nulls. Two citations circulate in this
-area that do not exist: there is no Mollica & Piantadosi commentary on Hartshorne
-et al., and no "Zhang & Zou" pronunciation meta-analysis, in either OpenAlex or
-Crossref. Neither is cited here, and anyone who finds one in a reference list
-has found a reference list nobody checked.
+Two citations circulate here that do not exist in OpenAlex or Crossref: a Mollica
+& Piantadosi commentary on Hartshorne et al., and a "Zhang & Zou" pronunciation
+meta-analysis. A reference list carrying either is a reference list nobody
+checked.
 
 ---
 
@@ -7351,10 +7309,10 @@ taught. And any pronunciation feedback it gives sits on a recogniser optimised t
 erase the error. Each is a cheap correction to default behaviour, and none needs
 a better model.
 
-A boundary on the boundary: every trial discussed here is English as a foreign
-language, save one in French and one in Italian. Frontier models score at or near
-chance on around thirty of 122 language variants, and for those languages the
-pedagogical architecture is not the binding constraint on anything.
+All of which holds for English as a foreign language, which is what every trial
+here measures. Frontier models score at or near chance on around thirty of 122
+language variants, and for those languages the pedagogical architecture is not
+the binding constraint on anything.
 
 ---
 
@@ -7362,8 +7320,8 @@ pedagogical architecture is not the binding constraint on anything.
 
 - **Report trained-item and untrained-item performance separately, always.** For
   any target set a model can generate a matched held-out probe controlled for
-  frequency band, phonological structure and part of speech, so this costs
-  nothing. `SPEC`. Nothing in this literature would have survived the convention
+  frequency band, phonological structure and part of speech, so this is free.
+  `SPEC`. Nothing in this literature would have survived the convention
   unchanged, which is the argument for adopting it.
 - **Name which difference an effect size is.** Within-group and between-group
   differed by 2.30 SD in the same trial. A product number with no comparison
@@ -7373,25 +7331,25 @@ pedagogical architecture is not the binding constraint on anything.
 - **Ship speaking volume; hold segmental correction back.** Unlimited low-stakes
   practice with a partner who cannot be embarrassed is an advantage no human
   tutor supplies at any price. Phoneme-level correction at F1 = 46.3 on read
-  speech is not ready to be shown to a learner as though it were right.
-- **Generate input to a measured lexical coverage, and validate the profile.**
-  Unconstrained prompting gives *"weak control"* over CEFR level; prompting with
-  explicit lexical constraints reaches 0.91 cosine similarity to reference
-  profiles (arXiv:2606.21981). `MEASURED-BENCH`. Build the validator too.
+  speech is not ready to show a learner as though it were right.
+- **Generate input to a measured lexical coverage, and validate the profile**
+  rather than trusting the prompt: unconstrained prompting gives *"weak control"*
+  over CEFR level, explicit lexical constraints 0.91 cosine similarity to
+  reference profiles (arXiv:2606.21981). `MEASURED-BENCH`.
 - **Run the transfer trial.** Three arms, individually randomised; primary
   outcome four weeks after the last session, in an unscripted conversation with a
   human the participant has not met, scored for comprehensibility by two raters
-  blind to condition, with intelligibility as co-primary. Plan against Lee &
-  Lee's control-adjusted 0.39 and §26.2.1's null, so d = 0.35: 129 per arm, n ≈ 465
-  with attrition, or 310 for the two-arm version a builder actually faces.
+  blind to condition. Plan against Lee & Lee's control-adjusted 0.39 and §26.2.1's
+  null, so d = 0.35: 129 per arm, n ≈ 465 with attrition, or 310 for the two-arm
+  version a builder actually faces.
 
 The organising constraint of this project is a child who can hold a conversation
 about photosynthesis and cannot pass the worksheet about it. She is not a
 second-language learner, and the language literature still describes her
 situation better than any other here: every trial in it scores the taught item,
-which is the worksheet, and none of them scores the conversation. The field
-measured what was easy to instrument and reported it as proficiency. The
-instrument for the other thing is buildable now, and nobody has built it.
+which is the worksheet, and none scores the conversation. The field measured what
+was easy to instrument and reported it as proficiency. The instrument for the
+other thing is buildable now, and nobody has built it.
 
 
 
@@ -9707,19 +9665,19 @@ elementary and secondary schools, each running at least four weeks, each compari
 achievement gains against a control class taught the same content conventionally. Of
 the 64 whose group reward was computed from the sum of members' individual learning,
 **50 (78%) found significantly positive effects on achievement and none found
-negative effects, median effect size +0.32.** Studies whose group goal rested on a
-single group product, or which gave no group reward at all, found few positive
-effects: **median +0.07.** `MEASURED-META`, and a vote-count review with median
-effect sizes, so no confidence interval exists or can.
+negative effects, median effect size +0.32.** Those resting on a single group
+product, or giving no group reward at all, found few positive effects: **median
++0.07.** `MEASURED-META`, a vote-count review with median effect sizes, so no
+confidence interval exists or can.
 
 Slavin states the mechanism in the same paper: if the reward comes from a single
 group product, *"there is little incentive for group members to explain concepts to
 one another, and one or two group members may do all the work."* The free-rider
 problem and the achievement effect are one variable seen from two sides.
 
-That reframes the finding. +0.32 against +0.07 is not a fact about groups. It is a
-fact about incentive design, measured on groups, which makes it far more portable,
-because incentive design is something software does and seating is not.
+So +0.32 against +0.07 is a fact about incentive design measured on groups, which
+makes it far more portable than a fact about groups would be, because incentive
+design is something software does and seating is not.
 
 ---
 
@@ -9756,8 +9714,8 @@ confidence.
 
 **Johnson, Johnson & Stanne (2000)**, *Cooperative Learning Methods: A
 Meta-Analysis*, is the usual source for per-method effect sizes. An ERIC title search
-returns zero records. It circulates as a University of Minnesota Cooperative Learning
-Center document; the authors run the Cooperative Learning Institute and publish
+returns zero records; it circulates as a University of Minnesota Cooperative Learning
+Center document, and the authors run the Cooperative Learning Institute and publish
 through Interaction Book Company. `OBSERVED — absence`. That is not an accusation. It
 is a statement that the per-method table the field quotes was never peer reviewed and
 could not be retrieved.
@@ -9766,10 +9724,9 @@ could not be retrieved.
 Review*, is the one deliberately independent replication attempt, with the strictest
 inclusion rule in the field: 65 articles, 1995 onwards, primary through tertiary,
 conducted in real classrooms. It reports positive effects on achievement and
-attitudes, with study domain, age level and culture as significant moderators. Its
-pooled magnitudes could not be retrieved: closed access, `is_oa: false` with zero
-open-access locations, ScienceDirect 403, the repository copy intranet-only.
-`MEASURED-META`, magnitude untraceable.
+attitudes. Its pooled magnitudes could not be retrieved: closed access, `is_oa:
+false` with zero open-access locations, ScienceDirect 403, the repository copy
+intranet-only. `MEASURED-META`, magnitude untraceable.
 
 **Colliver, Feltovich & Verhulst (2003)**, *Teaching and Learning in Medicine*,
 re-examined the primary studies under Springer, Stanne & Donovan's (1999)
@@ -9777,10 +9734,10 @@ meta-analysis and concluded that *"the meta-analysis' call for more widespread
 implementation of small group learning is not supported"* (ERIC EJ664775). That paper
 is closed too, so its internal argument could not be read.
 
-This survey reports an unverifiable claim as a finding instead of dropping it (§1).
-Applied here that yields one instruction: **treat a per-method cooperative-learning
-effect size with no retrievable source as absent.** The condition-level result in §34.1
-is open access and quoted verbatim. Build on that one.
+This survey reports an unverifiable claim as a finding instead of dropping it (§1),
+which yields one instruction here: **treat a per-method cooperative-learning effect
+size with no retrievable source as absent.** The condition-level result in §34.1 is open
+access and quoted verbatim. Build on that one.
 
 ---
 
@@ -9790,16 +9747,15 @@ This survey has been ducking a question: is the group a delivery constraint AI
 removes, or a mechanism AI destroys? The question contains a false disjunction, and
 the measured literature separates the halves cleanly enough to price both.
 
-**Most of a classroom is a rationing artifact, and the numbers say so.** Traditional
-lecture exists because talking to thirty people at once is the only way to talk to
-thirty people at once; Freeman et al. (2014), *PNAS*, across 225 studies, put
-examination and concept-inventory performance **+0.47 SD** under active learning
-(`n = 158` studies) with an **odds ratio of 1.95** for failing under traditional
-lecturing (`n = 67` studies), `MEASURED-META`. Ability-heterogeneous grouping,
-imposed because a classroom cannot sort continuously, loses **0.12** against
-homogeneous grouping across Lou et al.'s (1996) 20 direct comparisons. The single
-group product is the +0.07 condition. AI removes all of this, and this survey has
-been right about it.
+**Most of a classroom is a rationing artifact, and the numbers say so.** Lecture
+exists because talking to thirty people at once is the only way to talk to thirty
+people at once; Freeman et al. (2014), *PNAS*, across 225 studies, put examination and
+concept-inventory performance **+0.47 SD** under active learning (`n = 158` studies)
+with an **odds ratio of 1.95** for failing under traditional lecturing (`n = 67`
+studies), `MEASURED-META`. Ability-heterogeneous grouping, imposed because a classroom
+cannot sort continuously, loses **0.12** against homogeneous grouping across Lou et
+al.'s (1996) 20 direct comparisons. The single group product is the +0.07 condition.
+AI removes all of this, and this survey has been right about it.
 
 Three things are mechanisms, and they behave differently under substitution.
 
@@ -9830,13 +9786,12 @@ uncertainty is not in that state. §37 reaches the same conclusion from the trad
 side, where chavruta's symmetry does not survive substitution.
 
 **What is (c) worth?** The upper bound is Slavin's +0.32, of which (a) is by
-construction the largest part, since removing it takes the effect to +0.07. The
-better estimate of the residual is Lou, Abrami & d'Apollonia (2001) — 486 findings
-from 122 studies, 11,317 learners, small group against individual with the
-technology held constant — at **+0.15 on individual achievement, significantly
-heterogeneous**. Call the irreducible peer mechanism 0.1 to 0.2 SD. It is real, it
-is the only part of the group that cannot be faked, and it is smaller than this
-survey's anxiety about it.
+construction the largest part, since removing it takes the effect to +0.07. The better
+estimate of the residual is Lou, Abrami & d'Apollonia (2001), 486 findings from 122
+studies and 11,317 learners, small group against individual with the technology held
+constant: **+0.15 on individual achievement, significantly heterogeneous**. Call the
+irreducible peer mechanism 0.1 to 0.2 SD. It is real, it is the only part of the
+group that cannot be faked, and it is smaller than this survey's anxiety about it.
 
 ### The cost that has never been priced
 
@@ -9852,16 +9807,15 @@ Radkowitsch et al. also report motivation at `g = 0.13, n.s.`, which is the
 over-scripting worry failing to replicate in the form that was measured. Both
 `MEASURED-META`.
 
-Read the two columns against each other. If the goal is that a child understands
-photosynthesis, this literature offers a fifth of a standard deviation. If the goal
-is that a child can work with another person, it offers close to a full one, and
-nothing else in this survey produces that outcome at all. So the real price of
-perfect personalisation is not subject matter; it is that the learner never practises
-working with a person. This survey has treated personalisation as an unmixed good and
-has never costed that. For the learner it was written around, the cost lands hardest:
-"works with others" is written into her plan as a goal, and a tutor that removes
-every other person from the room removes the only instrument anyone has shown to
-move it.
+If the goal is that a child understands photosynthesis, this literature offers a
+fifth of a standard deviation. If the goal is that a child can work with another
+person, it offers close to a full one, and nothing else in this survey produces that
+outcome at all. So the real price of perfect personalisation is not subject matter;
+it is that the learner never practises working with a person, and this survey has
+treated personalisation as an unmixed good without ever costing that. For the learner
+it was written around the cost lands hardest: "works with others" is written into her
+plan as a goal, and a tutor that removes every other person from the room removes the
+only instrument anyone has shown to move it.
 
 ---
 
@@ -9883,13 +9837,11 @@ distributes the work. Magnitude is not in the abstract and the article is closed
 
 This is a good null because it is not a failure to detect an effect. It found an
 effect with the wrong sign, in the condition Slavin predicted would produce it, in
-the setting where group projects are most heavily used. Alongside it, Murphy et al.
-(2009), *Journal of Educational Psychology*, meta-analysed classroom discussion
-approaches: they reliably increased student talk, reduced teacher talk and improved
-text comprehension, while *"few approaches to discussion were effective at increasing
-students' literal or inferential comprehension and critical thinking and
-reasoning."* `MEASURED-META`. Discussion changes who is talking; whether it changes
-what anyone understands depends on the approach, and for most approaches it did not.
+the setting where group projects are most heavily used. Murphy et al. (2009),
+*Journal of Educational Psychology*, point the same way across a meta-analysis of
+classroom discussion approaches: *"few approaches to discussion were effective at
+increasing students' literal or inferential comprehension and critical thinking and
+reasoning."* `MEASURED-META`.
 
 ---
 
@@ -9901,11 +9853,9 @@ properly, the exception does not hold.
 
 The founding positive is Roseberry, Hirsh-Pasek & Golinkoff (2014), *Child
 Development*: toddlers 24–30 months, **`N = 36`** across live interaction, socially
-contingent video chat and yoked non-contingent video, so twelve children per cell.
+contingent video chat and yoked non-contingent video, twelve children per cell.
 *"Results suggest that children only learned novel verbs in socially contingent
-interactions."* `MEASURED-RCT`.
-
-Everything larger points the other way.
+interactions."* `MEASURED-RCT`. Everything larger points the other way.
 
 - **Troseth, Strouse, Verdine & Saylor (2018)**, *Frontiers in Psychology*, `n = 132`
   toddlers at 24 and 30 months in four conditions crossing responsiveness with
@@ -9934,16 +9884,13 @@ and background television at `r = −0.10`. `MEASURED-META`, observational.
 ### The product decision
 
 **Under three, ship nothing child-facing.** WHO (2019) recommends no screen time for
-infants under 1 and for 1-year-olds, and no more than one hour for ages 2 and 3–4.
+infants under 1 and for 1-year-olds, and no more than one hour at ages 2 and 3–4.
 DeLoache et al. (2010) randomised a month of at-home baby-media DVD viewing in
-12–18-month-olds: *"children who viewed the DVD did not learn any more words,"* with
-the highest learning in a no-video condition where parents taught the same words
-during everyday activities. And the intervention family that works moves the adult:
-Dowdall et al. (2020), 19 RCTs, `N = 2,594`, caregiver book-sharing competence
-**`d = 1.01`** against child expressive language `d = 0.41`, while Noble et al. (2019)
-put shared reading at **`ḡ = 0.021, p = .783`** against active controls, confirmed by
-their own `n = 150` RCT. There is no gap in that picture for a child-facing tutor to
-fill.
+12–18-month-olds: *"children who viewed the DVD did not learn any more words."* And
+the intervention family that does work moves the adult: Dowdall et al. (2020), 19
+RCTs, `N = 2,594`, caregiver book-sharing competence **`d = 1.01`** against child
+expressive language `d = 0.41`. There is no gap in that picture for a child-facing
+tutor to fill.
 
 **Three to five, ship one shape.** Xu, Aubele, Vigil, Bustamante, Kim & Warschauer
 (2022), *Child Development*: **117 children aged 3–6**, randomly assigned in a 2×2
@@ -10015,9 +9962,8 @@ cited here.
 Adults have the most money, the least time, and the only unambiguous transfer
 criterion in this survey: a job, recorded by somebody else in state
 unemployment-insurance wage records. Every other population requires the evaluator to
-build the outcome measure first. This one does not, which makes it the one segment
-where an outcome could genuinely be measured, and it is the segment that measures
-results 26 times.
+build the outcome measure first. This is the one segment where an outcome could
+genuinely be measured. It is also the segment that measures results 26 times.
 
 ---
 
@@ -10034,30 +9980,28 @@ higher, not statistically significant (95% CI −7.40 to 2.57, p = 0.33).
 `MEASURED-RCT`, the only UK RCT of financial incentives in adult literacy, and the
 intervention ran backwards on its own primary outcome.
 
-The companion result is about software. Ainsworth et al. (2012) ran two RCTs of an
-online medication-dosage simulation for student nurses' numeracy, found a small
-negative intention-to-treat effect significant in one trial, and reported that *"only
-24 and 12% of students allocated to the intervention groups"* spent more than fifteen
-minutes with the programme. `MEASURED-RCT`. A motivated, professionally obligated
-population would not give free software a quarter of an hour. For adults, dosage is
-the trial, and an adult-tutoring specification whose efficacy argument does not open
-with an engagement number is not making an argument.
+Ainsworth et al. (2012) is the companion result about software: two RCTs of an online
+medication-dosage simulation for student nurses' numeracy, a small negative
+intention-to-treat effect significant in one trial, and *"only 24 and 12% of students
+allocated to the intervention groups"* spending more than fifteen minutes with the
+programme. `MEASURED-RCT`. For adults, dosage is the trial, and an adult-tutoring
+specification whose efficacy argument does not open with an engagement number is not
+making an argument.
 
 ---
 
 ## 8. One trial, two arms, one journal
 
 The WIA Gold Standard Evaluation randomly assigned over 34,000 customers across 28
-randomly selected local workforce investment areas to three research groups. At
-thirty months, intensive staff-assisted services raised earnings by *"$3,300 to
-$7,100 (7 to 20 percent) per customer depending on the data source."* The training
-arm produced nothing: *"the evidence suggests that training funded by the Adult and
-Dislocated Worker programs does not have positive impacts in the 30 months after
-study enrollment."* `MEASURED-RCT`.
+randomly selected local workforce investment areas to three research groups. At thirty
+months, intensive staff-assisted services raised earnings by *"$3,300 to $7,100 (7 to
+20 percent) per customer."* The training arm produced nothing: *"the evidence suggests
+that training funded by the Adult and Dislocated Worker programs does not have
+positive impacts in the 30 months after study enrollment."* `MEASURED-RCT`.
 
-The counselling result appears as McConnell, Schochet, Rotz, Fortson, Burkander &
-Mastri (2021) in the *Journal of Policy Analysis and Management*. The training null
-appears only in the grey-literature report to the Department of Labor.
+The counselling result appears as McConnell et al. (2021) in the *Journal of Policy
+Analysis and Management*. The training null appears only in the grey-literature
+report to the Department of Labor.
 
 Same trial, same randomisation, same investigators, two arms, one journal
 publication. That is the file-drawer problem visible inside a single federal
@@ -10116,11 +10060,10 @@ an AI-mediated group teaches a learner to work with a person.
 
 The classroom's best-evidenced mechanism turned out to be an incentive rule that
 classrooms can afford one lesson in six. A system that already measures every learner
-continuously can afford it every time, which makes it the cheapest large win
-available here and the one thing on this list that needs no new research at all. The
-expensive item is the trial above, and the reason to state its arithmetic in public
-is that we would otherwise be free to call the peer question settled on evidence that
-never had the power to settle it.
+continuously can afford it every time, which makes it the cheapest large win here and
+the one item on this list needing no new research. The expensive item is the trial,
+and the reason to state its arithmetic in public is that we would otherwise be free
+to call the peer question settled on evidence that never had the power to settle it.
 
 
 

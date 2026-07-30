@@ -11,9 +11,9 @@ source_report: research/raw/R4-second-language-learning.md
 Second-language learning holds the largest concentration of randomised
 generative-AI evidence in any school subject. Of the seven randomised controlled
 trials ERIC returns against roughly 1,565 ChatGPT-and-education records, three
-are language trials: pronunciation, writing feedback, speaking. No other subject
-has more than one, and the modal randomised trial of generative AI in education
-is an Iranian or Chinese EFL study with fewer than a hundred participants.
+are language trials: pronunciation, writing feedback, speaking. The modal
+randomised trial of generative AI in education is an EFL study with fewer than a
+hundred participants.
 
 This survey said four. The corrected count is three, published as **C-58**, and
 how the error happened matters more than the arithmetic.
@@ -36,9 +36,8 @@ tasks."* Neither is language learning. `OBSERVED` — own coding of the result s
 A reproducible retrieval step wrapped around an unchecked labelling step produces
 confident wrong counts, in whichever direction the labeller was already leaning.
 Re-running the query would never have caught it, and the reproducibility was the
-reason nobody looked. §23 carries the census and now carries the corrected
-figure, which does not weaken the point the census was recruited for: three of
-seven still means language is where this evidence lives.
+reason nobody looked. §23 now carries the corrected figure, which does not weaken
+the point the census was recruited for.
 
 ---
 
@@ -57,9 +56,9 @@ time point, weighted κ = 0.85 — better measurement than most of this literatu
 No arm goes without feedback, so the study cannot estimate whether any of the
 three beats writing the same essays unaided. Three intact classes were randomly
 assigned to the three conditions, one class each, then analysed by ANCOVA at
-df = 84: condition is fully confounded with class, and the standard errors are
-those of 88 independent units when the between-condition contrast has three. The
-winning arm is the one that received the other arm's feedback on top of its own.
+df = 84: condition is confounded with class, and the standard errors are those of
+88 independent units when the contrast has three. The winning arm is the one that
+received the other arm's feedback on top of its own.
 
 The one contrast that isolates AI against a human is a null:
 
@@ -81,8 +80,8 @@ indistinguishable from an experienced instructor's personalised annotated video
 feedback on every IELTS criterion except vocabulary, where the machine won by
 0.436 of a band. Individual feedback on every draft is the scarcest thing in
 instruction and the first thing rationed away from the learners with the least.
-An underpowered null on three clusters is weak evidence for equivalence; it
-points at the claim worth establishing properly.
+An underpowered null on three clusters is weak evidence for equivalence; it names
+the claim worth establishing properly.
 
 ### 2.2 Pronunciation: the outcome is the training set
 
@@ -122,9 +121,8 @@ translation, automatic summarisation and traditional instruction. Behind Sage,
 reports *"adaptability (M = 85.50, Δ + 40.25), accuracy (M = 84.24, Δ + 43.93),
 and fluency (M = 85.04, Δ + 42.54; all p < 0.001)"* — the treatment arm's
 post-test means and its own pre-post change, with no control-group value, no SD,
-no standardised effect size, no interval and no delayed post-test. A four-arm
-design was built to produce a between-group comparison and the public record
-carries a within-group one.
+no effect size and no delayed post-test. A four-arm design built to produce a
+between-group comparison, and the public record carries a within-group one.
 
 ---
 
@@ -197,14 +195,13 @@ The target these decks aim at has no edge to it either. Nation (2006) puts 98%
 lexical coverage at 8,000–9,000 word families for written text and 6,000–7,000
 for spoken; Kremmel, Indrarathne, Kormos & Suzuki (2023), *Language Learning*
 73(4), preregistered with open data and materials, replicated the source study
-with 104 Sri Lankan adult learners across five coverage densities and *"failed to
-replicate an inferred 98% coverage threshold as sufficient for adequate
-comprehension,"* confirming the underlying linear relationship. `MEASURED-RCT`.
-No cliff to get a learner over; a slope from roughly 4,000 to 9,000 families,
-every thousand of which buys a little more comprehension. Deliberate study does
-build real lexical entries (Elgort 2011, `MEASURED-RCT`, within-subject), and
-lexical entries are not comprehension. §08 owns scheduling; a tutor that ships a
-scheduler and calls vocabulary solved has built the d = 0.10 half.
+with 104 Sri Lankan adult learners and *"failed to replicate an inferred 98%
+coverage threshold as sufficient for adequate comprehension,"* confirming the
+underlying linear relationship. `MEASURED-RCT`. No cliff to get a learner over; a
+slope from roughly 4,000 to 9,000 families, every thousand of which buys a little
+more comprehension. Deliberate study does build real lexical entries (Elgort
+2011), and lexical entries are not comprehension. §08 owns scheduling; a tutor
+that ships a scheduler and calls vocabulary solved has built the d = 0.10 half.
 
 ---
 
@@ -228,12 +225,11 @@ moderator. `MEASURED-BENCH`. These engines rank whole speakers well and localise
 individual errors poorly. Localisation is the product; the ranking is where the
 validation number comes from.
 
-Saito & Plonsky (2019), 77 studies of pronunciation instruction, report
-between-group d = 0.68 [0.49, 0.86] overall and, in their Table 7, intervals that
-cross zero for every *global* construct and every *spontaneous* task.
-`MEASURED-META`. Most computer-assisted scoring is similarity to a native
-reference, an accentedness measure, which Levis (2020) calls *"largely
-irrelevant"* under the intelligibility principle.
+They also score the wrong construct. Similarity to a native reference is an
+accentedness measure, which Levis (2020) calls *"largely irrelevant"* under the
+intelligibility principle, and in Saito & Plonsky's 77-study synthesis of
+pronunciation instruction every interval covering a *global* construct or a
+*spontaneous* task crosses zero. `MEASURED-META`.
 
 ### 5.1 Robust ASR repairs the error before the model sees it
 
@@ -279,8 +275,8 @@ similarity-to-native score. `SPEC`, untested, and cheap to test.
 Plonsky & Brown (2015), *Second Language Research* 31(2), counted **18 unique
 meta-analyses of corrective feedback with overall effects from d = −0.155 to
 d = 1.16**, and diagnosed the 1.3-SD spread as driven by inclusion decisions and
-not by sampling error. `MEASURED-META`. "Does correcting a learner help, and by
-how much" has a family of answers that track their authors' criteria.
+not by sampling error. `MEASURED-META`. So the question has a family of answers
+that track their authors' criteria.
 
 Inside that spread, the estimate with the best claim on a classroom builder is
 Lyster & Saito (2010), 15 classroom studies, N = 827, laboratory studies
@@ -288,9 +284,7 @@ deliberately excluded: CF versus control **d = 0.74 [0.58, 0.86]**, recasts 0.53
 [0.32, 0.74], prompts 0.83 [0.56, 1.10], explicit correction 0.84 [0.57, 1.11].
 `MEASURED-META`. The famous result that prompts beat recasts is significant only
 within groups; between groups the intervals overlap, and explicit correction is
-numerically largest and distinguishable from neither. Against Plonsky & Oswald's
-field-derived benchmarks (0.40 small, 0.70 medium, 1.00 large for between-group
-d), 0.74 is medium.
+numerically largest and distinguishable from neither.
 
 The design instruction survives in weaker form, and Brown (2016) is why it is
 worth acting on: across observational classroom studies, **recasts are 57% of all
@@ -317,9 +311,9 @@ university semester" comparison is against the WebCAPE placement cut-off of 270
 points, a scoring threshold and not a cohort of students, and 34 is arithmetic:
 270 ÷ 8.1 points-per-hour, extrapolated linearly from zero. Of 196 participants
 sampled, **88 were analysed**, mean actual study time 22 hours, 16% (n = 14)
-scoring the same or lower at post-test. Krashen (2014) added the decisive point:
-the median gain rate was 3.9 points per hour against a mean of 8.1, so the same
-arithmetic on the median gives about 69 hours.
+scoring the same or lower at post-test. Krashen (2014) added that the median gain
+rate was 3.9 points per hour against that mean of 8.1, so the same arithmetic on
+the median gives about 69 hours.
 
 The company's own later measurement disagrees with its famous one. Jiang,
 Rollinson, Plonsky, Gustafson & Pajak (2021), *Foreign Language Annals* 54(4),
@@ -330,18 +324,21 @@ own instrumentation, and the hours figure has grown six-fold while the marketing
 number has not moved.
 
 The FY2025 Form 10-K says learners completing five sections *"achieved
-proficiency comparable to five university semesters of language education"* and
-that *"**Independent studies corroborate this finding**."* `FILING`. The company
-labels its own study internal, correctly. The work fitting the description of the
-corroboration is Duolingo-funded: Smith, Jiang & Peters (2024) states *"This
+proficiency comparable to five university semesters"* and that
+*"**Independent studies corroborate this finding**."* `FILING`. The company
+labels its own study internal, correctly; the work fitting the description of the
+corroboration is Duolingo-funded, Smith, Jiang & Peters (2024) stating *"This
 study was supported financially by Duolingo."* The word *independent* is carrying
-weight in an audited document that the underlying papers do not support, and
-FY2022 said four university semesters where FY2025 says five.
+weight in an audited document that the underlying papers do not support.
 
 What is true, audited and remarkable is that this is the most successful
 habit-formation product education has produced, which §14 owns. What does not
-follow is that it teaches a language better than the alternative. No randomised
-trial has established that for any consumer language app, in either direction.
+follow is that it teaches a language better than the alternative. The one
+randomised comparison holding content constant — James & Mayer (2019), 64
+students learning Italian from Duolingo or from a slideshow of the same material
+— was a null on achievement with willingness to continue at d = 1.39.
+`MEASURED-RCT`. Nothing establishes an app's teaching advantage in either
+direction.
 
 ---
 
@@ -363,15 +360,8 @@ g = −0.23**. `MEASURED-META`. Grammar feedback measurably degrades content and
 organisation for FL writers, and a study measuring only accuracy cannot see the
 trade it just made.
 
-Two more, because a survey counting effect sizes will misread both. James & Mayer
-(2019) randomised 64 students to learn Italian by playing Duolingo or by working
-a slideshow covering **the same material**: no significant difference on
-achievement, alongside enjoyment d = 0.77 and willingness to continue d = 1.39.
-`MEASURED-RCT`. Continuing is the binding constraint §14 argues for, so the
-affect effects are not nothing; the achievement result forecloses the claim that
-the gamified wrapper *teaches*.
-
-And Rachels & Rockinson-Szapkiw (2018), *CALL* 31(1–2), third and fourth graders,
+And one a survey counting effect sizes will read as supportive. Rachels &
+Rockinson-Szapkiw (2018), *CALL* 31(1–2), third and fourth graders,
 twelve weeks, Duolingo as the Spanish instruction against the regular Spanish
 class. `OBSERVED` (non-equivalent control group). From the published abstract:
 
@@ -383,10 +373,10 @@ Those two sentences are adjacent. A non-significant difference in an underpowere
 quasi-experiment is reported as a demonstration of usefulness, with no
 equivalence margin stated and no design able to support one.
 
-Two citations circulate in this area that do not exist: there is no Mollica &
-Piantadosi commentary on Hartshorne et al., and no "Zhang & Zou" pronunciation
-meta-analysis, in either OpenAlex or Crossref. Neither is cited here, and anyone
-who finds one in a reference list has found a reference list nobody checked.
+Two citations circulate here that do not exist in OpenAlex or Crossref: a Mollica
+& Piantadosi commentary on Hartshorne et al., and a "Zhang & Zou" pronunciation
+meta-analysis. A reference list carrying either is a reference list nobody
+checked.
 
 ---
 
@@ -413,10 +403,10 @@ taught. And any pronunciation feedback it gives sits on a recogniser optimised t
 erase the error. Each is a cheap correction to default behaviour, and none needs
 a better model.
 
-A boundary on the boundary: every trial discussed here is English as a foreign
-language, save one in French and one in Italian. Frontier models score at or near
-chance on around thirty of 122 language variants, and for those languages the
-pedagogical architecture is not the binding constraint on anything.
+All of which holds for English as a foreign language, which is what every trial
+here measures. Frontier models score at or near chance on around thirty of 122
+language variants, and for those languages the pedagogical architecture is not
+the binding constraint on anything.
 
 ---
 
@@ -426,7 +416,7 @@ pedagogical architecture is not the binding constraint on anything.
   any target set a model can generate a matched held-out probe controlled for
   frequency band, phonological structure and part of speech, so this is free.
   `SPEC`. Nothing in this literature would have survived the convention
-  unchanged, which is the argument for adopting it.
+  unchanged, which is the argument for it.
 - **Name which difference an effect size is.** Within-group and between-group
   differed by 2.30 SD in the same trial. A product number with no comparison
   attached is the first column.
@@ -436,10 +426,10 @@ pedagogical architecture is not the binding constraint on anything.
   practice with a partner who cannot be embarrassed is an advantage no human
   tutor supplies at any price. Phoneme-level correction at F1 = 46.3 on read
   speech is not ready to show a learner as though it were right.
-- **Generate input to a measured lexical coverage, and validate the profile.**
-  Unconstrained prompting gives *"weak control"* over CEFR level; explicit
-  lexical constraints reach 0.91 cosine similarity to reference profiles
-  (arXiv:2606.21981). `MEASURED-BENCH`.
+- **Generate input to a measured lexical coverage, and validate the profile**
+  rather than trusting the prompt: unconstrained prompting gives *"weak control"*
+  over CEFR level, explicit lexical constraints 0.91 cosine similarity to
+  reference profiles (arXiv:2606.21981). `MEASURED-BENCH`.
 - **Run the transfer trial.** Three arms, individually randomised; primary
   outcome four weeks after the last session, in an unscripted conversation with a
   human the participant has not met, scored for comprehensibility by two raters

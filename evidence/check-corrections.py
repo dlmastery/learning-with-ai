@@ -80,6 +80,13 @@ RULES = [
          "Three of the seven ChatGPT RCTs are second-language learning, not four; "
          "EJ1415077 is a foundational chemistry course",
          "seven randomised trials, four of them second-language learning"),
+    Rule("C-51",
+         r"223[\s\S]{0,90}?(?:no model|models? (?:cannot|could not|do not|does not) beat)"
+         r"|(?:no model|every model)[\s\S]{0,90}?223",
+         r"the models tested|four models|initial evaluation",
+         "The 223-domain result covers the four models the authors tested in an "
+         "initial evaluation; it is not a claim about every model",
+         "across 223 real tutoring domains, no model beat chance"),
     Rule("C-6/C-12",
          r"Nickow[\s\S]{0,120}?\b0\.37\b|\b0\.37\b[\s\S]{0,120}?Nickow|v:\s*0\.37\b",
          r"\b0\.288\b",

@@ -51,13 +51,13 @@ that prerequisite separately.* The learner-model machinery behind it carries a
 prerequisite-dropback repair whose own evidence line reads "no pooled ES;
 mechanism-level `INFERENCE`."
 
-Read against Table 2, the two halves of that sentence have opposite standing. Picking
-the technique for a chosen target has meta-analytic support. Traversing a prerequisite
+Read against Table 2, the two halves of that rule have opposite standing. Picking the
+technique for a chosen target has meta-analytic support. Traversing a prerequisite
 closure to decide what the target should be has no positive result anywhere in sixty
 years of experiments. It is `SPEC` with no measured warrant, load-bearing in at least
 three places in this document. The word `prerequisite` appears 196 times across this
-project's research corpus; `curriculum sequencing` appears twice and `knowledge space`
-never. `OBSERVED — absence`
+project's research corpus; `curriculum sequencing` twice and `knowledge space` never.
+`OBSERVED — absence`
 
 For the eleven-year-old this survey is organised around, the gap has a face. She can
 hold a conversation about photosynthesis and cannot pass a worksheet about it. A
@@ -98,15 +98,15 @@ it should never appear without that number. `INFERENCE`
 
 Nothing here establishes that a prerequisite graph over secondary chemistry, or
 programming, or a second language, has the same standing. Nobody has run the
-skip-level design in any of them.
+skip-level design outside early mathematics.
 
 ---
 
 ## 3. Levels are not stable enough to route from
 
 If an ordering is real, a learner should sit *at* a level and reason from it
-consistently. Steedle & Shavelson (2009), *JRST*, tested that directly with latent
-class analysis on diagnostic items about forces on an object moving at constant speed.
+consistently. Steedle & Shavelson (2009), *JRST*, tested that with latent class
+analysis on diagnostic items about forces on an object moving at constant speed.
 Students with a scientifically accurate understanding did reason systematically.
 **Many other students did not**, and the authors conclude that interpretations of
 learning-progression level diagnoses "would often be invalid" on the progression they
@@ -121,13 +121,12 @@ measurement literature says is not stable enough across contexts to carry it.
 
 The formal object such a system needs is a Q-matrix, items on the rows and latent
 skills on the columns. These can be validated against response data instead of
-asserted (de la Torre & Chiu 2016; Ma & de la Torre 2019), and the standard citation
-for what misspecification costs is Rupp & Templin (2007), cited here for scope because
-the source report could not get past the publisher block. The design consequence
-survives the missing numbers: a language model asked to emit a prerequisite graph is
-producing an expert-judgement Q-matrix with no validation step, in a formalism whose
-known failure mode is that misspecification propagates into every classification the
-system then makes. `INFERENCE`
+asserted (de la Torre & Chiu 2016), and the standard citation for what misspecification
+costs is Rupp & Templin (2007), cited for scope because its numbers sat behind a
+publisher block. The design consequence survives the missing numbers: a model asked to
+emit a prerequisite graph is producing an expert-judgement Q-matrix with no validation
+step, in a formalism whose known failure mode is that misspecification propagates into
+every classification the system then makes. `INFERENCE`
 
 ---
 
@@ -138,11 +137,10 @@ Falmagne). Its own research page describes the mechanism, a knowledge state asse
 "after the student has answered only 20–25 questions," and cites no efficacy study and
 no effect size. `VENDOR` Two meta-analyses reach the same place. Fang, Ren, Hu &
 Graesser (2019), *Educational Psychology*, 15 studies and 24 independent samples:
-ALEKS was as good as, but not better than, traditional classroom teaching, with effects
-*larger* for shorter implementations. Sun, Else-Quest, Hodges, French & Dowling (2021),
-33 studies, 56 independent effect sizes, **9,238 students**: pooled **Hedges' g = 0.05**
-against ordinary instruction, with a supplemental-use moderator at **g = 0.43**.
-`MEASURED-META`
+ALEKS was as good as, but not better than, traditional classroom teaching. Sun,
+Else-Quest, Hodges, French & Dowling (2021), 33 studies, 56 independent effect sizes,
+**9,238 students**: pooled **Hedges' g = 0.05** against ordinary instruction, with a
+supplemental-use moderator at **g = 0.43**. `MEASURED-META`
 
 Two flags travel with those numbers. The ERIC record prints a pooled interval that is
 not symmetric about the point estimate and could not be checked against the article,
@@ -153,11 +151,11 @@ prerequisite-structured system finds a general advantage, and that its one posit
 moderator is a dosage result — adding a supplementary practice system to teaching
 beats teaching alone.
 
-§08 carries the strongest datum from inside the same system: 32.9 million randomised
-topic sequences in production, where raising the mastery threshold cost +29% time for
-a retention difference under 0.02 on a base rate near 0.60. Inside a fixed topic, how
-hard you push mastery barely moves anything; across topics, which order you use has
-never been shown to move anything either.
+§08 carries the strongest datum from inside the same system: across 32.9 million
+randomised topic sequences in production, raising the mastery threshold cost +29% time
+for a retention difference under 0.02. Inside a fixed topic, how hard you push mastery
+barely moves anything; across topics, which order you use has never been shown to move
+anything either.
 
 ---
 
@@ -180,8 +178,7 @@ weeks.** And all the Chicago dissertations "provided the mastery learning classe
 similar amounts of additional instruction," amounting to **20–33% more instructional
 time** than control classes received. Bloom's own characterisation was that the time
 costs "have usually been very small." `OBSERVED` §24 and §19 retire the two-sigma
-claim on replication grounds; this is the mechanism underneath that verdict, and a
-stronger reason than the one those sections had.
+claim on replication grounds; this is the mechanism underneath that verdict.
 
 Then the part nobody quotes. Slavin also examined maintenance: six comparisons in
 five studies assessing retention 4–12 weeks out, all on experimenter-made measures.
@@ -196,8 +193,8 @@ Slavin also names why the corrective loop may under-deliver, and it reads as a
 specification. In none of the sixteen studies did corrective instruction occupy more
 than **one period per week, or 20% of instructional time**, and it was delivered in
 groups or by peer tutors. Mastery learning has never been tested with unlimited
-individual corrective instruction, because until now nobody could afford to run it.
-That is the version this project can build. `INFERENCE`
+individual correction, because until now nobody could afford it. That is the version
+this project can build. `INFERENCE`
 
 ---
 
@@ -208,11 +205,11 @@ ERIC ED618425, evaluated the purest deployed instantiation of the thesis this se
 is testing. Teach to One: Math runs a daily algorithmic scheduler that assigns each
 student the mathematics content their diagnosed skill state says they are ready for,
 in whatever modality suits it, breaking the grade-level sequence entirely. New
-Classrooms ran it under an Investing in Innovation grant in five schools in Elizabeth,
-New Jersey, for three academic years from September 2015. CPRE ran a comparative
-interrupted time series against 16 non-Teach-to-One schools in the same district:
-**36,158 student-level measurements** nested in 209 school-by-year cohorts, outcomes
-z-scored within grade and year.
+Classrooms ran it under an Investing in Innovation grant in five New Jersey schools
+for three academic years from September 2015. CPRE ran a comparative interrupted time
+series against 16 comparison schools in the same district: **36,158 student-level
+measurements** nested in 209 school-by-year cohorts, outcomes z-scored within grade
+and year.
 
 | Implementation year | Adjusted estimate (SD) | SE |
 |---|---|---|
@@ -243,9 +240,9 @@ paper ERIC ED567218, gives the trajectory in standard deviations: **0.86** (with
 follow-through) and **0.75** (without) at the end of pre-K, falling through
 kindergarten and grade 1, **not distinguishable from zero at grades 3 and 4**, then
 **0.26 and 0.21, both significant, at the end of grade 5.** The citation of record for
-the pattern is the published Clements, Sarama, Layzer & Unlu (2023), *JRME*, whose
-abstract states that early effects "decreased through fourth grade but reemerged at
-fifth grade"; the numbers above belong to the conference paper. `MEASURED-RCT`
+the pattern is the published Clements, Sarama, Layzer & Unlu (2023), *JRME*: early
+effects "decreased through fourth grade but reemerged at fifth grade." The numbers
+above belong to the conference paper. `MEASURED-RCT`
 
 Kang, Duncan, Clements, Sarama & Bailey (2019), *JEP*, decomposed that decay on the
 same trial. Treated children did forget more in the following year than controls —
@@ -261,9 +258,9 @@ question becomes whether acceleration is worth anything by itself. It also means
 question from "does the learner still have it." §09 documents that almost nobody in
 AI tutoring measures retention at all; this is why measuring it against a control
 would still not settle the promise. The subgroup pattern compounds it: durability was
-greatest where the sustaining environment was strongest, with higher-SES students in
-the no-follow-through arm reaching 0.6–0.7 SD in fourth and fifth grade while
-lower-SES effects held only through kindergarten. `OBSERVED`
+greatest where the sustaining environment was strongest, with higher-SES children in
+the no-follow-through arm reaching 0.6–0.7 SD by fifth grade while lower-SES effects
+held only through kindergarten. `OBSERVED`
 
 Absolute retention is the other question, and Bahrick's permastore programme is where
 it lives. His summary of the fifty-year Spanish study, restated in Bahrick & Phelps
@@ -272,14 +269,14 @@ knowledge is lost during the interval between 5 and 25 years" after acquisition.
 `OBSERVED` That study of 35 learners, tested at 8 years, put optimum recall at
 **30-day** access intervals across a range running from 0% to 23%. `MEASURED-RCT`
 
-The nine-year longitudinal follow-up (Bahrick, Bahrick, Bahrick & Bahrick
-1993, *Psychological Science* 4(5):316–321) found retention functions that crossed
-over during the first year and stayed crossed for five, so that **13 relearning
-sessions spaced at 56 days matched 26 sessions spaced at 14 days** — half the training
-for the same durable outcome. Two cautions the citation trail drops: **n = 4**, and
-the authors record schedule departures, an omitted terminal session, a three-year test
-given at four years, and subjects who travelled in France. `MEASURED-RCT` —
-extraordinary in duration, tiny in sample, imperfectly controlled.
+The nine-year follow-up (Bahrick, Bahrick, Bahrick & Bahrick 1993, *Psychological
+Science* 4(5):316–321) found retention functions that crossed over during the first
+year and stayed crossed for five, so that **13 relearning sessions spaced at 56 days
+matched 26 sessions spaced at 14 days** — half the training for the same durable
+outcome. Two cautions the citation trail drops: **n = 4**, and the authors record
+schedule departures, an omitted terminal session, a three-year test given at four
+years, and subjects who travelled in France. `MEASURED-RCT` — extraordinary in
+duration, tiny in sample, imperfectly controlled.
 
 ---
 
@@ -287,8 +284,8 @@ extraordinary in duration, tiny in sample, imperfectly controlled.
 
 This survey's central empirical theme is that conditions producing the best
 performance during practice produce the worst retention. Motor learning reached the
-same dissociation from a different discipline, which looks like independent
-convergence and is only partly that.
+same dissociation independently, which looks like corroboration and is only partly
+that.
 
 The bridge citation the corpus reaches for is Schmidt & Bjork (1992), *Psychological
 Science* 3(4):207–218. Robert Bjork co-authored it and originated the
@@ -343,7 +340,7 @@ same place: a naive g = 0.44 over 52 comparisons (N = 2,061) falls to **g = 0.10
 What transfers is the mechanism and not the doctrine. Difficulty is desirable to the
 degree the learner has spare capacity to meet it, which is §22's expertise-reversal
 law and §34's executive-function argument arriving from a third direction. Contextual
-interference, feedback fading and practice distribution are therefore all
+interference, feedback fading and practice distribution are therefore
 capacity-conditional, and for a novice, on a complex task, under eighteen, they
 default **off** and are earned by measurement.
 
@@ -366,10 +363,9 @@ The source report marks several things untraceable, and they stay untraceable he
   effects (0.51 / 0.28) do not reconcile with the same team's long-term analysis, so
   anyone citing that persistence effect must say which paper and which model.
 - **Transfer from instruction to job performance outside health professions
-  education.** The best available evidence is Vermylen et al. (2025): competency-based
-  simulation beats non-competency-based simulation on skill outcomes at a large effect,
-  while "outcomes are favorable, but small, for behaviors in practice and patient
-  effects."
+  education.** In the one place it is measured (Vermylen et al. 2025), mastery
+  sequencing reliably produces the measured skill, while "outcomes are favorable, but
+  small, for behaviors in practice and patient effects."
 
 ---
 
@@ -379,9 +375,9 @@ The graph does not go away. It changes job.
 
 **Every edge gets a stated epistemic status.** *Constitutive* edges are entailed by the
 domain's own logic — you cannot compose shapes you cannot recognise. *Empirical* edges
-are ones a skip-level trial has tested, which today means early number and early
-shape. *Conventional* edges are everything else, which is most of them. A system that
-treats the three alike will be wrong in a predictable way. `SPEC`
+are ones a skip-level trial has tested, which today means early number and shape.
+*Conventional* edges are everything else, which is most of them. A system that treats
+the three alike will be wrong in a predictable way. `SPEC`
 
 **The graph is used for diagnosis and never for gating.** A dropback triggered by a
 diagnosed error, aimed at a named missing component, is the supported use. "The
@@ -405,8 +401,8 @@ or demand-driven entry (teach the requested target immediately, repair prerequis
 reactively when an error names a missing component). Instructional time is capped
 identically in both arms, the condition Slavin showed almost no mastery-learning study
 met. Primary outcome: delayed transfer at 28 days on freshly generated items, scored
-blind. Secondary: time to criterion, a 90-day probe, and the proportion of
-graph-respecting sessions where the verified gap turned out to be real.
+blind. Secondary: time to criterion, a 90-day probe, and how often a verified
+prerequisite gap turned out to be real.
 
 The question is whether any difference is large enough to pay for the graph, so this
 is an **equivalence trial** at a pre-registered margin of **δ = 0.10 SD**. Two
@@ -419,5 +415,5 @@ Either answer is worth having. If the graph is equivalent within 0.10 SD, §25 s
 computing prerequisite closures and §18's generative-textbook problem collapses from
 "construct a validated ordering" to "answer the question that was asked" — the cheaper
 system, and the one that meets a curious child where she is. If the graph wins by more
-than 0.10 SD, this project has the first direct warrant for an architecture four of its
+than 0.10 SD, this project has its first direct warrant for an architecture four of its
 own reports already assume, and will have earned the gate it has been using on credit.
