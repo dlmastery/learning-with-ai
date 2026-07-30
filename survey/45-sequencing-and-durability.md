@@ -92,17 +92,15 @@ over 14.3. The one-level-up condition scored higher at posttest, **d = 1.20** fo
 main effect of condition in the baseline model, **and the advantage was largest for
 children with low entry knowledge of arithmetic.** `MEASURED-RCT`
 
-That is the strongest sequencing result in this section, and its boundary conditions
-deserve the same prominence as the number.
-
-All three skip-level studies come from one laboratory, sharing instruments,
-trajectory definitions and analytic conventions; two share four of five authors. The
-domains are early number and early shape, where developmental order is unusually
-constrained by what the arithmetic itself permits. The instruction is one-to-one. And
-the 2019 *AERJ* companion on shape composition, which found the trajectory group
-learned significantly more, found it **mainly on near-transfer items**. A fourth study
-in the same series (Clements et al. 2020, *ZDM*) is cited constantly and has
-**n = 25** across both arms; it should never appear without that number. `INFERENCE`
+The boundary conditions deserve the same prominence as the number. All three
+skip-level studies come from one laboratory, sharing instruments, trajectory
+definitions and analytic conventions; two share four of five authors. The domains are
+early number and early shape, where developmental order is unusually constrained by
+what the arithmetic itself permits. The instruction is one-to-one. And the 2019 *AERJ*
+companion on shape composition, which found the trajectory group learned significantly
+more, found it **mainly on near-transfer items**. A fourth study in the same series
+(Clements et al. 2020, *ZDM*) is cited constantly and has **n = 25** across both arms;
+it should never appear without that number. `INFERENCE`
 
 Nothing here establishes that a prerequisite graph over secondary chemistry, or
 programming, or a second language, has the same standing. Nobody has run the
@@ -120,8 +118,7 @@ Students with a scientifically accurate understanding did reason systematically.
 learning-progression level diagnoses "would often be invalid" on the progression they
 examined. `MEASURED-BENCH` Alonzo & Steedle (2009) reached the same place from the
 other side: students do not respond consistently to similar problems set in different
-contexts, and misreading item language produces inaccurate level diagnoses for a
-subset of students. `MEASURED-BENCH`
+contexts. `MEASURED-BENCH`
 
 A tutor that places a learner at "level 3 of the fractions progression" and routes the
 next hour from that placement is doing large-scale testing whatever it looks like
@@ -130,14 +127,13 @@ measurement literature says is not stable enough across contexts to carry it.
 
 The formal object such a system needs is a Q-matrix, items on the rows and latent
 skills on the columns. These can be validated against response data instead of
-asserted (de la Torre & Chiu 2016, *Psychometrika* 81(2):253–273; Ma & de la Torre
-2019), and the standard citation for what misspecification costs is Rupp & Templin
-(2007), cited here for scope because the source report could not get past the
-publisher block. The design consequence survives the missing numbers: a language
-model asked to emit a prerequisite graph is producing an expert-judgement Q-matrix
-with no validation step, in a formalism whose known failure mode is that
-misspecification propagates into every classification the system then makes.
-`INFERENCE`
+asserted (de la Torre & Chiu 2016; Ma & de la Torre 2019), and the standard citation
+for what misspecification costs is Rupp & Templin (2007), cited here for scope because
+the source report could not get past the publisher block. The design consequence
+survives the missing numbers: a language model asked to emit a prerequisite graph is
+producing an expert-judgement Q-matrix with no validation step, in a formalism whose
+known failure mode is that misspecification propagates into every classification the
+system then makes. `INFERENCE`
 
 ---
 
@@ -164,11 +160,11 @@ prerequisite-structured system finds a general advantage, and that its one posit
 moderator is a dosage result — adding a supplementary practice system to teaching
 beats teaching alone.
 
-§08 already carries the strongest datum from inside the same system: 32.9 million
-randomised topic sequences in production, where raising the mastery threshold cost
-+29% time for a retention difference under 0.02 on a base rate near 0.60. Put the two
-together. Inside a fixed topic, how hard you push mastery barely moves anything;
-across topics, which order you use has never been shown to move anything either.
+§08 carries the strongest datum from inside the same system: 32.9 million randomised
+topic sequences in production, where raising the mastery threshold cost +29% time for
+a retention difference under 0.02 on a base rate near 0.60. Inside a fixed topic, how
+hard you push mastery barely moves anything; across topics, which order you use has
+never been shown to move anything either.
 
 ---
 
@@ -274,30 +270,28 @@ is convergence, an early tutoring advantage is largely an *acceleration*, and th
 question becomes whether acceleration is worth anything by itself. It also means that
 "did the learner retain it," measured against a control group, answers a different
 question from "does the learner still have it." §09 documents that almost nobody in
-AI tutoring measures retention at all; this is the reason that measuring it against a
-control would still not settle the promise. The subgroup pattern compounds it:
-higher-SES students in the no-follow-through arm were significant at every timepoint
-and reached 0.6–0.7 SD in fourth and fifth grade, while lower-SES students' effects
-were significant only in pre-K and kindergarten. Durability was greatest where the
-sustaining environment was strongest. `OBSERVED`
+AI tutoring measures retention at all; this is why measuring it against a control
+would still not settle the promise. The subgroup pattern compounds it: higher-SES
+students in the no-follow-through arm reached 0.6–0.7 SD in fourth and fifth grade,
+while lower-SES students' effects were significant only in pre-K and kindergarten.
+Durability was greatest where the sustaining environment was strongest. `OBSERVED`
 
 Absolute retention is the other question, and Bahrick's permastore programme is where
 it lives. His summary of the fifty-year Spanish study, restated in Bahrick & Phelps
 (1987): part of what is acquired is lost within five years, and "virtually no
 knowledge is lost during the interval between 5 and 25 years" after acquisition.
 `OBSERVED` Bahrick & Phelps itself, 35 individuals tested on 50 English–Spanish pairs
-at 8 years, found spacing between relearning sessions and presentations-to-encode
-spanning a range from 0% to 23% recall, with optimum recall at **30-day** access
-intervals. `MEASURED-RCT`
+at 8 years, found optimum recall at **30-day** access intervals across a range running
+from 0% to 23%. `MEASURED-RCT`
 
 The nine-year longitudinal follow-up (Bahrick, Bahrick, Bahrick & Bahrick 1993,
 *Psychological Science* 4(5):316–321) found retention functions that crossed over
 during the first year and stayed crossed for five, so that **13 relearning sessions
 spaced at 56 days matched 26 sessions spaced at 14 days** — half the training for the
 same durable outcome. Two cautions the citation trail drops: **n = 4**, and the
-authors record schedule departures, unscheduled sessions, an omitted terminal session,
-a three-year test given at four years, and subjects who travelled in France.
-`MEASURED-RCT` — extraordinary in duration, tiny in sample, imperfectly controlled.
+authors record schedule departures, an omitted terminal session, a three-year test
+given at four years, and subjects who travelled in France. `MEASURED-RCT` —
+extraordinary in duration, tiny in sample, imperfectly controlled.
 
 ---
 
@@ -355,16 +349,11 @@ during practice and win at retention. McKay, Hussien, Vinh, Mir-Orefice, Brooks 
 Ste-Marie (2022), *Psychology of Sport and Exercise* 61:102165, screened 1,662 records
 to **61 papers, k = 75, N = 2,228**, and found "no significant effect of reduced
 feedback frequency at any time point" and "no evidence of a significant change in
-effect from acquisition or immediate retention to delayed retention." Z-curve analysis
-suggested the included studies were severely underpowered. Their own highlight list
-ends: "The guidance hypothesis is not supported by the extant research."
-`MEASURED-META`
-
-The same group's self-controlled practice meta-analysis lands in the same place: a
-naive g = 0.44 over 52 comparisons (N = 2,061) falls to **g = 0.107 [0.047, 0.18]**
-under a selection-corrected weight-function model, and a preregistered test
-(St. Germain et al. 2023, N = 228) found no self-controlled learning advantage.
-`MEASURED-META`, `MEASURED-RCT`
+effect from acquisition or immediate retention to delayed retention." Their own
+highlight list ends: "The guidance hypothesis is not supported by the extant
+research." `MEASURED-META` The same group's self-controlled practice meta-analysis
+lands in the same place: a naive g = 0.44 over 52 comparisons (N = 2,061) falls to
+**g = 0.107 [0.047, 0.18]** once selection bias is modelled.
 
 What transfers is the mechanism and not the doctrine. Difficulty is desirable to the
 degree the learner has spare capacity to meet it, which is §22's expertise-reversal
@@ -422,35 +411,32 @@ one that sends her back to fractions first.
 **A durability instrument, because nobody has one.** Kang et al. show that a
 control-referenced retention measure answers a different question from the one a
 promise makes. A tutor can afford what no trial could: unannounced delayed transfer
-probes at 30, 90 and 365 days, on freshly generated items, on material the learner has
-stopped studying, reporting *absolute* retention alongside any comparative claim.
-Bahrick's 30-day optimum and the 56-day crossover give the schedule a starting shape.
-`SPEC`
+probes at 30, 90 and 365 days, on freshly generated items the learner has stopped
+studying, reporting *absolute* retention alongside any comparative claim. Bahrick's
+30-day optimum and the 56-day crossover give the schedule a starting shape. `SPEC`
 
 **And the experiment: randomise the graph, not the policy.** Every existing study
 randomises which traversal policy walks a fixed graph. The untested question is
 whether the graph earns its cost. Within-learner, topic-level randomisation, mirroring
 the ALEKS production design: each eligible topic is randomly assigned to
-graph-respecting entry (verify the prerequisite closure, remediate any gap, then teach
-the target) or demand-driven entry (teach the requested target immediately, repair
-prerequisites reactively when an error names a missing component). Instructional time
-is capped identically in both arms, the condition Slavin showed almost no
-mastery-learning study met. Primary outcome: delayed transfer at 28 days on freshly
-generated items, scored blind. Secondary: time to criterion, a 90-day probe, and the
-proportion of graph-respecting sessions where the verified gap turned out to be real.
+graph-respecting entry (verify the closure, remediate any gap, then teach the target)
+or demand-driven entry (teach the requested target immediately, repair prerequisites
+reactively when an error names a missing component). Instructional time is capped
+identically in both arms, the condition Slavin showed almost no mastery-learning study
+met. Primary outcome: delayed transfer at 28 days on freshly generated items, scored
+blind. Secondary: time to criterion, a 90-day probe, and the proportion of
+graph-respecting sessions where the verified gap turned out to be real.
 
 The question is whether any difference is large enough to pay for the graph, so this
-is an **equivalence trial** with a pre-registered margin of **δ = 0.10 SD**. Two
+is an **equivalence trial** at a pre-registered margin of **δ = 0.10 SD**. Two
 one-sided tests, α = .05, 90% power, paired within learner at a between-condition
-correlation of 0.5 gives σ_d ≈ 1.0 SD and **n ≈ 857 learners**, each contributing at
-least eight topic pairs. Budget 900 learners × 8 pairs: about 7,200 topic sequences,
-two terms of a mid-sized deployment, four orders of magnitude smaller than the ALEKS
-study.
+correlation of 0.5 gives **n ≈ 857 learners** × 8 topic pairs: about 7,200 topic
+sequences, two terms of a mid-sized deployment, four orders of magnitude smaller than
+the ALEKS study.
 
 Either answer is worth having. If the graph is equivalent within 0.10 SD, §25 stops
 computing prerequisite closures and §18's generative-textbook problem collapses from
-"construct a validated ordering" to "answer the question that was asked" — which is
-also the cheaper system and the one that meets a curious child where she is. If the
-graph wins by more than 0.10 SD, this project has the first direct warrant for an
-architecture that four of its own reports already assume, and it will have earned the
-gate it has been using on credit.
+"construct a validated ordering" to "answer the question that was asked" — the cheaper
+system, and the one that meets a curious child where she is. If the graph wins by more
+than 0.10 SD, this project has the first direct warrant for an architecture four of its
+own reports already assume, and will have earned the gate it has been using on credit.

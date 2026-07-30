@@ -47,7 +47,9 @@ RATE = {
     "honesty talk":       (re.compile(r"\bhonest(?:y|ly)?\b"),                  0.5),
     "self-ranking":       (re.compile(r"the (?:most|single most|least|cheapest|strongest|clearest)"
                                       r"\s+[\w\- ]{0,30}\s+in this (?:survey|document|section)"), 0.3),
-    "pull-quote aphorism":(re.compile(r"(?m)^>\s*\*\*"),                        0.5),
+    # A published correction block opens the same way and is a required structural
+    # element, not a pull-quote. Exempt the specific shape, not blockquotes at large.
+    "pull-quote aphorism":(re.compile(r"(?m)^>\s*\*\*(?!Corrected\b)"),          0.5),
 }
 
 FLOOR = 3   # minimum occurrences before a rate overrun is a habit

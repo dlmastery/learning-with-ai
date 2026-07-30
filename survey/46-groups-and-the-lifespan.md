@@ -116,7 +116,7 @@ Three things are mechanisms, and they behave differently under substitution.
 The entire measured achievement effect of cooperative learning is the margin by
 which a reward computed from every member's individual learning suppresses the free
 rider. A classroom reaches that condition one lesson in six because computing it
-costs teacher time. A system that already measures every learner continuously
+costs teacher time; a system that already measures every learner continuously
 computes it for nothing. This is the one place where a group mechanism is
 *strengthened* by removing the group.
 
@@ -131,15 +131,14 @@ re-exposure to the study material partly responsible. Hearing the material again
 someone else's order does not require the other person to be a person.
 
 **(c) Being disagreed with by someone genuinely uncertain, which AI cannot supply.**
-Smith, Wood, Adams, Wieman, Knight, Guild & Su (2009), *Science*, in undergraduate
-genetics, followed peer discussion with a second isomorphic question answered
-individually to separate understanding from social transmission. Their result:
-*"peer discussion enhances understanding, even when none of the students in a
-discussion group originally knows the correct answer."* Whatever produces that gain
-requires two agents who have committed to positions, neither of whom knows, and
-whose commitment is real. A model that knows the answer and performs uncertainty is
-not in that state. §19 reaches the same conclusion from the traditions side, where
-chavruta's symmetry does not survive substitution.
+Smith et al. (2009), *Science*, in undergraduate genetics, followed peer discussion
+with a second isomorphic question answered individually, which separates
+understanding from social transmission: *"peer discussion enhances understanding,
+even when none of the students in a discussion group originally knows the correct
+answer."* That gain requires two agents who have committed to positions, neither of
+whom knows, and whose commitment is real. A model that knows the answer and performs
+uncertainty is not in that state. §19 reaches the same conclusion from the traditions
+side, where chavruta's symmetry does not survive substitution.
 
 **What is (c) worth?** The upper bound is Slavin's +0.32, of which (a) is by
 construction the largest part, since removing it takes the effect to +0.07. The
@@ -152,9 +151,8 @@ survey's anxiety about it.
 
 ### The cost that has never been priced
 
-The loss is not zero, and it sits somewhere specific. Two CSCL meta-analyses measure
-scripted collaboration against unstructured or unguided collaboration, and both
-split the same way:
+The loss is not zero, and it sits somewhere specific. Two CSCL meta-analyses split
+the same way:
 
 | Meta-analysis | Base | Domain knowledge | Collaboration skills |
 |---|---|---|---|
@@ -314,16 +312,16 @@ training changes anything an employer would pay for. Blume, Ford, Baldwin & Huan
 obtained by the same source in the same measurement context *"consistently inflated
 transfer relationships."*
 
-Twitchell (1997), LSU
-dissertation, published as Twitchell, Holton & Trott (2000), `n = 146` returned
-surveys at a 42% response rate, found technical training managers reporting each of
-Kirkpatrick's four levels in this percentage of their courses: **Level 1 — 72.74%,
-Level 2 — 47.05%, Level 3 — 33.73%, Level 4 — 20.82%.** `OBSERVED`. The far more
-widely circulated claim that only about 10% of training transfers to the job is
-folklore with a citation attached. It is universally attributed to Georgenson (1982)
-in a trade magazine, and that paper is absent from Crossref, absent from OpenAlex and
-absent from ERIC, which indexes a *different* Georgenson article from the same journal
-and era, so the gap is not a coverage artefact. No sample, no method, not cited here.
+For practice figures, use the survey with a DOI. Twitchell (1997), published as
+Twitchell, Holton & Trott (2000), `n = 146` returned surveys at a 42% response rate,
+found technical training managers reporting each of Kirkpatrick's four levels in this
+percentage of their courses: **Level 1 — 72.74%, Level 2 — 47.05%, Level 3 — 33.73%,
+Level 4 — 20.82%.** `OBSERVED`. The far more widely circulated claim that only about
+10% of training transfers to the job is folklore with a citation attached: attributed
+to Georgenson (1982) in a trade magazine, absent from Crossref, absent from OpenAlex
+and absent from ERIC, which indexes a *different* Georgenson article from the same
+journal and era, so the gap is not a coverage artefact. No sample, no method, not
+cited here.
 
 Adults have the most money, the least time, and the only unambiguous transfer
 criterion in this survey: a job, recorded by somebody else in state
@@ -348,15 +346,13 @@ higher, not statistically significant (95% CI −7.40 to 2.57, p = 0.33).
 intervention ran backwards on its own primary outcome.
 
 The companion result is about software. Ainsworth et al. (2012) ran two RCTs of an
-online medication-dosage simulation for student nurses' general numeracy and found a
-small negative intention-to-treat effect, statistically significant in one trial,
-*"however, compliance with the intervention was very low in both trials, with only 24
-and 12% of students allocated to the intervention groups spending more than 15
-minutes using the programme."* `MEASURED-RCT`. Between 76% and 88% of a motivated,
-professionally obligated population did not spend a quarter of an hour with free
-software aimed at a skill they were being assessed on. For adults, dosage is the
-trial, and an adult-tutoring specification whose efficacy argument does not open with
-an engagement number is not making an argument.
+online medication-dosage simulation for student nurses' numeracy, found a small
+negative intention-to-treat effect significant in one trial, and reported that *"only
+24 and 12% of students allocated to the intervention groups"* spent more than fifteen
+minutes with the programme. `MEASURED-RCT`. A motivated, professionally obligated
+population would not give free software a quarter of an hour. For adults, dosage is
+the trial, and an adult-tutoring specification whose efficacy argument does not open
+with an engagement number is not making an argument.
 
 ---
 
@@ -383,16 +379,15 @@ the shelf we read from is the published one.
 
 ## 9. What the arithmetic of the missing trial requires
 
-The question this section could not answer from the literature is whether the
-irreducible peer mechanism — commitment plus genuine mutual uncertainty — carries
-measured achievement over an AI tutor supplying everything else. The trial has three
-arms, randomised at learner level within classrooms, one term, one subject with a
-validated concept inventory such as introductory mechanics: **A**, AI tutor alone
-with individual-accountability scoring and no peers; **B**, AI tutor plus an AI peer
-that commits to a possibly-wrong position and defends it, which is §26's
-specification put to test; **C**, AI tutor plus brokered human pairing on
-disagreement items. Primary outcome is a delayed concept-inventory score at eight
-weeks, scored blind; secondary is a collaboration-skill measure.
+The question the literature could not answer is whether the irreducible peer
+mechanism, commitment plus genuine mutual uncertainty, carries measured achievement
+over an AI tutor supplying everything else. Three arms, randomised at learner level
+within classrooms, one term, one subject with a validated concept inventory such as
+introductory mechanics: **A**, AI tutor alone with individual-accountability scoring
+and no peers; **B**, plus an AI peer that commits to a possibly-wrong position and
+defends it, which is §26's specification put to test; **C**, plus brokered human
+pairing on disagreement items. Primary outcome a delayed concept-inventory score at
+eight weeks, scored blind; secondary a collaboration-skill measure.
 
 The contrast that matters is C − B. §3 puts the residual at 0.1–0.2 SD, so the trial
 must be powered for the low end. Detecting `d = 0.15` at 80% power, α = 0.05
@@ -403,33 +398,28 @@ raising the requirement to roughly **4,600**. At a more optimistic `d = 0.25` it
 `n ≈ 252` per arm before the design effect and about 1,700 after.
 
 That arithmetic explains the state of the field. A 60-learner pilot has 80% power
-only for `d ≈ 0.51`, which is larger than the entire cooperative-learning effect. So
-**any study reporting a null on peers with fewer than 500 learners per arm has not
-tested the hypothesis**, and this survey will read every such result that way.
+only for `d ≈ 0.51`, larger than the entire cooperative-learning effect, so **any
+study reporting a null on peers with fewer than 500 learners per arm has not tested
+the hypothesis**, and this survey will read every such result that way.
 
 The cheap experiment is a different one. The collaboration-skill secondary outcome is
 where the CSCL meta-analyses predict `g ≈ 0.7`, and at that magnitude `n ≈ 33` per
-arm suffices before the design effect. The first experiment worth running is not the
-achievement question at all: it is whether an AI-mediated group teaches a learner to
-work with a person.
+arm suffices before the design effect. The first experiment worth running is whether
+an AI-mediated group teaches a learner to work with a person.
 
 ### Obligations
 
 - **Compute every multi-learner score from members' separately measured individual
-  performance**, never from a shared artifact. The falsifier is already in the
-  literature, since a system rewarding a single group product has a predicted effect
-  of +0.07.
+  performance**, never from a shared artifact; a system rewarding a single group
+  product has a predicted effect of +0.07.
 - **Keep the system outside the dyad when the goal is disagreement.** Match two
-  learners whose current model states disagree on the same item, require each to
-  commit before seeing the other, then let them talk. The matching criterion is
-  disagreement, not complementary expertise, because Smith et al. show the gain
-  survives when neither knows.
+  learners whose model states disagree on an item, require each to commit before
+  seeing the other, then let them talk. The matching criterion is disagreement, since
+  Smith et al. show the gain survives when neither knows.
 - **Publish a collaboration-skill measure alongside every achievement claim**, or
-  concede that the survey has stopped measuring the one outcome the group was best at
-  producing.
+  concede that the survey has stopped measuring the outcome the group was best at.
 - **Nothing child-facing under three.** From three to five, a caregiver-facing
-  dialogic reading partner whose primary reported outcome is caregiver book-sharing
-  competence.
+  dialogic reading partner reporting caregiver book-sharing competence.
 - **For adults, publish minutes-on-task before any efficacy claim**, and where
   administrative wage records exist, plan to read the outcome at seven and ten years.
 - **Treat a per-method effect size with no retrievable source as absent**, including

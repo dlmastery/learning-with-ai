@@ -106,15 +106,15 @@ better" from "memorised thirty pronunciations."
 The retention claim inverts on arithmetic. The paper's own post-hoc table has the
 treatment group flat from post-test to delayed test (+0.867, p = 1.000) and the
 control group still climbing (+3.700, p = .008). Computed from the reported means
-and SDs, the between-group Hedges' g is **1.57 at post-test and 0.65 two weeks
-later** — 58% of the gap gone in a fortnight, with the control's trajectory still
-rising when measurement stopped. `INFERENCE` (arithmetic on the paper's Table 2).
-The paper describes this pattern as ChatGPT retaining gains better.
+and SDs, between-group Hedges' g is **1.57 at post-test and 0.65 two weeks
+later** — 58% of the gap gone in a fortnight, with the control still rising when
+measurement stopped. `INFERENCE` (arithmetic on the paper's Table 2). The paper
+describes this as ChatGPT retaining gains better.
 
 One ambiguity outweighs all of that. The paper says learners used *"the voice
-feature"* and does not say which. If it was the speech-to-text pipeline, the model
+feature"* without saying which. If it was the speech-to-text pipeline, the model
 received a transcript and never the audio, and could not have perceived a
-mispronunciation at all. §5 below shows why that is not a quibble.
+mispronunciation at all. §5 shows why that is not a quibble.
 
 ### 2.3 Speaking: the largest trial, unreadable
 
@@ -222,20 +222,18 @@ ships a scheduler and calls vocabulary solved has built the d = 0.10 half.
 
 Pearson's copy for Versant says its scores are *"virtually indistinguishable from
 expert human scoring,"* on a machine–human correlation of **r = 0.97**. That
-figure is `VENDOR`: a vendor technical report, the whole-test Overall score
-against a purpose-built human criterion, n = 143. The pronunciation subscore in
-the same report is 0.88, and the correlation with an ILR speaking interview is
-0.75 on n = 51.
+figure is `VENDOR`: a vendor technical report, whole-test Overall against a
+purpose-built human criterion, n = 143, where the pronunciation subscore is 0.88
+and the correlation with an ILR speaking interview 0.75 on n = 51.
 
 The peer-reviewed comparison is ETS's SpeechRater (Zechner, Higgins & Xi, SLaTE
-2007): machine–human **r = 0.61** on a single item and **0.68** on a full
-six-item form, against human–human agreement of 0.77–0.94, with the authors'
-own verdict that *"a large gap still remains."* On the open speechocean762
-benchmark the granularity gradient is explicit: utterance total score correlates
-with human raters at 0.811, phone accuracy at 0.693, and **word stress at
-0.361**. Wang & Min (2026), *Language Testing* 43(2), across 67 studies and 392
-effect sizes, put the field-wide human–machine correlation at r = .654 and
-pronunciation specifically at .606, with ASR accuracy *not* a significant
+2007): machine–human **r = 0.61** on a single item and **0.68** on a six-item
+form, against human–human agreement of 0.77–0.94, with the authors' verdict that
+*"a large gap still remains."* On the open speechocean762 benchmark the
+granularity gradient is explicit: utterance total 0.811, phone accuracy 0.693,
+**word stress 0.361**. And Wang & Min (2026), *Language Testing* 43(2), across 67
+studies and 392 effect sizes, put the field-wide human–machine correlation at
+r = .654 and pronunciation at .606, with ASR accuracy *not* a significant
 moderator. `MEASURED-BENCH`. These engines rank whole speakers well and localise
 individual errors poorly. Localisation is the product; the ranking is where the
 validation number comes from.
@@ -274,13 +272,13 @@ beats Whisper Large with the same LLM attached, and Wav2vec2 Base beats Wav2vec2
 Large. The authors' explanation: *"stronger ASR models tend to correct
 pronunciation errors during transcription due to their robustness to accent
 variations, preventing them from accurately reflecting learners' speech
-errors."* A recogniser's entire objective is to recover the word the speaker
+errors."* A recogniser's whole objective is to recover the word the speaker
 intended, and every improvement against that objective destroys the signal a
-pronunciation tutor needs. Any diagnostic layered on top of a perception model
-inherits that model's objective, and where the two objectives point in opposite
-directions the upgrade path runs backwards. This is the measured form of the
-ambiguity in §2.2: a learner talking to a speech-to-text pipeline was being
-assessed on a transcript that had already fixed the thing being assessed.
+pronunciation tutor needs. Any diagnostic layered on a perception model inherits
+that model's objective, and where the two point in opposite directions the
+upgrade path runs backwards. This is the measured form of the ambiguity in §2.2:
+a learner talking to a speech-to-text pipeline is assessed on a transcript that
+already fixed the thing being assessed.
 
 The inversion is free to try. Run the learner's speech through a small,
 deliberately accent-brittle recogniser and treat its failures as an
@@ -304,22 +302,20 @@ Lyster & Saito (2010), 15 classroom studies, N = 827, laboratory studies
 deliberately excluded: CF versus control **d = 0.74 [0.58, 0.86]**, with recasts
 at 0.53 [0.32, 0.74], prompts at 0.83 [0.56, 1.10] and explicit correction at
 0.84 [0.57, 1.11]. `MEASURED-META`. The famous result that prompts beat recasts
-is significant only in the within-group contrasts; between groups, the intervals
-overlap and explicit correction is numerically largest and distinguishable from
-neither. Read against Plonsky & Oswald's field-derived benchmarks (0.40 small,
-0.70 medium, 1.00 large for between-group d), 0.74 is medium, and every headline
-in this area drops a category when read against its own field instead of
-Cohen's.
+is significant only within groups; between groups the intervals overlap, and
+explicit correction is numerically largest and distinguishable from neither.
+Against Plonsky & Oswald's field-derived benchmarks (0.40 small, 0.70 medium,
+1.00 large for between-group d), 0.74 is medium, and every headline here drops a
+category when read against its own field instead of Cohen's.
 
-The design instruction survives in weaker form, and Brown (2016) explains why it
-is worth acting on anyway: across observational classroom studies, **recasts are
-57% of all corrective feedback teachers actually give and prompts 30%**.
+The design instruction survives in weaker form, and Brown (2016) is why it is
+worth acting on anyway: across observational classroom studies, **recasts are 57%
+of all corrective feedback teachers actually give and prompts 30%**.
 `MEASURED-META`. The most-supplied type is the least-supported one, and a
 language model's reflex when a learner produces a wrong sentence is to restate it
 correctly, which is a recast. Prompting the learner to self-repair withholds the
-form, recruits the generation effect, and is harder for a model to do than
-smooth reformulation. It is also a change to a system prompt, which makes it the
-cheapest pedagogical edit available anywhere in this domain.
+form and recruits the generation effect. It is also a change to a system prompt,
+which makes it the cheapest pedagogical edit available in this domain.
 
 ---
 
@@ -372,27 +368,25 @@ Truscott & Hsu (2008), *JSLW* 17(4):292–305, underlined the errors in half a
 group's drafts and had both halves revise. The underlined group revised
 significantly better. A week later everyone wrote a **new** narrative and the two
 groups were *"virtually identical"* — **g = −0.068**. `MEASURED-RCT`. A tutor
-that measures whether the learner fixed the flagged error is measuring the one
-thing this literature shows does not carry to the next task, and that measurement
-is the easiest one in the whole domain to instrument, which is why it will be the
-one that gets built.
+measuring whether the learner fixed the flagged error is measuring the one thing
+that does not carry to the next task, and it is the easiest measurement in the
+domain to instrument, which is why it is the one that gets built.
 
 Correction can also cost something an accuracy measure cannot see. Scherer,
 Graham & Busse (2024), *Learning and Instruction* 93:101961, across 200
 comparisons, report surface-level feedback improving surface outcomes at
 g = 0.58 while moving **foreign-language learners' deep-level outcomes to
 g = −0.23**. `MEASURED-META`. Grammar feedback measurably degrades content and
-organisation for FL writers, and a study that measures only accuracy is blind to
-the trade it just made.
+organisation for FL writers, and a study measuring only accuracy cannot see the
+trade it just made.
 
-Two more, because they are the ones a survey counting effect sizes will misread.
-James & Mayer (2019) randomised 64 college students to learn Italian over seven
-sessions by playing Duolingo or by working an online slideshow covering **the
-same material**: no significant difference on achievement post-tests, alongside
-enjoyment d = 0.77, appeal d = 1.17 and willingness to continue d = 1.39.
-`MEASURED-RCT`. Continuing is the binding constraint §14 argues for, so the affect
-effects are not nothing; the achievement result forecloses the claim that the
-gamified wrapper *teaches*.
+Two more, because a survey counting effect sizes will misread both. James & Mayer
+(2019) randomised 64 students to learn Italian over seven sessions by playing
+Duolingo or by working a slideshow covering **the same material**: no significant
+difference on achievement, alongside enjoyment d = 0.77, appeal d = 1.17 and
+willingness to continue d = 1.39. `MEASURED-RCT`. Continuing is the binding
+constraint §14 argues for, so the affect effects are not nothing; the achievement
+result forecloses the claim that the gamified wrapper *teaches*.
 
 And Rachels & Rockinson-Szapkiw (2018), *CALL* 31(1–2), third and fourth graders,
 twelve weeks, Duolingo as the Spanish instruction against the regular Spanish
@@ -447,39 +441,35 @@ pedagogical architecture is not the binding constraint on anything.
 
 ## 10. The two numbers a language tutor has to publish
 
-- **Report trained-item and untrained-item performance separately, always.** In
-  language this costs nothing: for any target set, a model can generate a matched
-  held-out probe controlled for frequency band, phonological structure and part
-  of speech. `SPEC`. Nothing in this literature would have survived that
-  convention unchanged, which is the argument for adopting it.
+- **Report trained-item and untrained-item performance separately, always.** For
+  any target set a model can generate a matched held-out probe controlled for
+  frequency band, phonological structure and part of speech, so this costs
+  nothing. `SPEC`. Nothing in this literature would have survived the convention
+  unchanged, which is the argument for adopting it.
 - **Name which difference an effect size is.** Within-group and between-group
   differed by 2.30 SD in the same trial. A product number with no comparison
   attached is the first column.
-- **Withhold the form.** The model's reflex is the recast, at 57% of what
-  teachers already over-supply and the least-supported of the three types. This
-  is a system-prompt change, not a research programme.
+- **Withhold the form.** The recast is the model's reflex, 57% of what teachers
+  already over-supply, and the least-supported of the three types.
 - **Ship speaking volume; hold segmental correction back.** Unlimited low-stakes
-  practice with a partner who cannot be embarrassed is a real advantage no human
+  practice with a partner who cannot be embarrassed is an advantage no human
   tutor supplies at any price. Phoneme-level correction at F1 = 46.3 on read
   speech is not ready to be shown to a learner as though it were right.
-- **Generate input to a measured lexical coverage and validate the profile.**
-  Unconstrained prompting gives *"weak control"* over CEFR level; prompting plus
+- **Generate input to a measured lexical coverage, and validate the profile.**
+  Unconstrained prompting gives *"weak control"* over CEFR level; prompting with
   explicit lexical constraints reaches 0.91 cosine similarity to reference
-  profiles (arXiv:2606.21981). `MEASURED-BENCH`. Build the validator, not just
-  the prompt.
-- **Run the transfer trial.** Does AI speaking practice change speaking with a
-  person? Three arms, individually randomised; primary outcome four weeks after
-  the last session, in an unscripted conversation with a human the participant
-  has not met, scored for comprehensibility by two raters blind to condition,
-  with intelligibility as co-primary. Plan against Lee & Lee's control-adjusted
-  0.39 and §2.1's null, so d = 0.35: 129 per arm, n ≈ 465 with attrition, or 310
-  for the two-arm version a builder actually faces.
+  profiles (arXiv:2606.21981). `MEASURED-BENCH`. Build the validator too.
+- **Run the transfer trial.** Three arms, individually randomised; primary
+  outcome four weeks after the last session, in an unscripted conversation with a
+  human the participant has not met, scored for comprehensibility by two raters
+  blind to condition, with intelligibility as co-primary. Plan against Lee &
+  Lee's control-adjusted 0.39 and §2.1's null, so d = 0.35: 129 per arm, n ≈ 465
+  with attrition, or 310 for the two-arm version a builder actually faces.
 
 The organising constraint of this project is a child who can hold a conversation
 about photosynthesis and cannot pass the worksheet about it. She is not a
 second-language learner, and the language literature still describes her
-situation better than any other in this survey — because every trial in it scores
-the taught item, which is the worksheet, and not one of them scores the
-conversation. The field measured the thing that was easy to instrument and
-reported it as proficiency. The instrument for the other one is now buildable,
-and building it is the part of this that nobody has done.
+situation better than any other here: every trial in it scores the taught item,
+which is the worksheet, and none of them scores the conversation. The field
+measured what was easy to instrument and reported it as proficiency. The
+instrument for the other thing is buildable now, and nobody has built it.
