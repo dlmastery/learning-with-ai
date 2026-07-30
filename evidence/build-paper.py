@@ -205,8 +205,12 @@ def build():
             meta, text = read(slug)
             if text is None:
                 missing.append(slug); continue
-            text = renumber(text, papernum=n)
+            # Increment BEFORE renumbering. The section is rendered as "## {n}."
+            # after the increment, so passing the pre-increment n qualified every
+            # intra-section reference against the *previous* section — 31 of them,
+            # each resolving to real but wrong content.
             n += 1
+            text = renumber(text, papernum=n)
             title = meta.get("title", slug)
             anchor = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
             toc.append(f"{n}. [{title}](#{anchor})")
@@ -217,10 +221,30 @@ def build():
             stats["sections"] += 1
             stats["words"] += words
             prec["words"] += words
-            prec["sections"].append({"n": n, "title": title, "anchor": f"s{n}",
+            prec["sections"].append({"n": n, "title": title, "anchor": f"s{n}", "slug": slug,
                                      "source": src, "words": words, "text": text})
         structure.append(prec)
         parts_out.append("\n".join(body))
+
+    # Regression guard for C-38 and C-59. A qualified reference "§N.M" is an
+    # INTRA-section pointer, so N must equal the number of the section it sits in.
+    # When the renumber passes ran in the wrong order, a cross-section ref like
+    # §09 resolved to "§3" and was then re-qualified against its host section,
+    # producing "§1.3" — a reference that resolves to real but wrong content, which
+    # nothing flags. 44 references were wrong this way. Fail the build instead.
+    mangled = []
+    for prec in structure:
+        for s in prec["sections"]:
+            for m in re.finditer(r"§(\d+)\.\d+", s["text"]):
+                if int(m.group(1)) != s["n"]:
+                    ctx = s["text"][max(0, m.start()-60):m.end()+30].replace("\n", " ")
+                    mangled.append(f"{s['slug']} (paper §{s['n']}) contains {m.group(0)}  …{ctx}…")
+    if mangled:
+        print(f"  MANGLED CROSS-REFS — {len(mangled)}; a qualified §N.M must have N = "
+              f"its own section:")
+        for x in mangled[:8]:
+            print(f"    {x}")
+        raise SystemExit(1)
 
     if unresolved:
         print(f"  UNRESOLVED cross-refs (left as written): {', '.join(sorted(unresolved))}")
