@@ -247,8 +247,8 @@ one-shot prompted. `MEASURED-BENCH`.
 | Their instruction-tuned Whisper-Large + Llama-3 | 48.9 | 87.7 | 62.8 |
 
 A frontier audio model recovers 41.3% of annotated errors and is right about
-52.7% of the errors it claims. Dedicated architectures on the same benchmark
-reach F1 ≈ 60–72, on read speech, which is the easy case.
+52.7% of those it claims; dedicated architectures on the same benchmark report
+F1 = 59.52% and 71.77%, on read speech, the easy case.
 
 The row ordering carries the general insight. Whisper Small beats Whisper Medium
 beats Whisper Large with the same LLM attached, and Wav2vec2 Base beats Wav2vec2
@@ -422,8 +422,8 @@ the binding constraint on anything.
   already over-supply, and the least-supported of the three types.
 - **Ship speaking volume; hold segmental correction back.** Unlimited low-stakes
   practice with a partner who cannot be embarrassed is an advantage no human
-  tutor supplies at any price. Phoneme-level correction at F1 = 46.3 on read
-  speech is not ready to show a learner as though it were right.
+  tutor supplies at any price. Phoneme-level correction at F1 = 46.3 is not ready
+  to show a learner as though it were right.
 - **Generate input to a measured lexical coverage, and validate the profile**
   rather than trusting the prompt: unconstrained prompting gives *"weak control"*
   over CEFR level, explicit lexical constraints 0.91 cosine similarity to

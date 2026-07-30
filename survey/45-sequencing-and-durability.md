@@ -134,9 +134,9 @@ every classification the system then makes. `INFERENCE`
 ALEKS is the commercial instantiation of knowledge space theory (Doignon &
 Falmagne). Its own research page describes the mechanism, a knowledge state assessed
 "after the student has answered only 20–25 questions," and cites no efficacy study.
-`VENDOR` Two meta-analyses reach the same place. Fang, Ren, Hu &
-Graesser (2019), *Educational Psychology*, 15 studies and 24 independent samples:
-ALEKS was as good as, but not better than, traditional classroom teaching. Sun,
+`VENDOR` Two meta-analyses reach the same place. Fang, Ren, Hu & Graesser (2019),
+*Educational Psychology*, 15 studies and 24 independent samples: ALEKS was as good
+as, but not better than, traditional classroom teaching. Sun,
 Else-Quest, Hodges, French & Dowling (2021), 33 studies, 56 independent effect sizes,
 **9,238 students**: pooled **Hedges' g = 0.05** against ordinary instruction, with a
 supplemental-use moderator at **g = 0.43**. `MEASURED-META`
@@ -230,9 +230,9 @@ individualised progression, cluster-randomised across 70 kindergarten classrooms
 ## 7. Most of fade-out was the control group catching up
 
 The TRIAD trial is this corpus's best-documented early-mathematics effect and its
-best-documented decay. Clements, Sarama, Layzer, Unlu & Wolfe (2016), SREE conference
-paper ERIC ED567218, gives the trajectory in standard deviations: **0.86** (with
-follow-through) and **0.75** (without) at the end of pre-K, falling through
+best-documented decay. Clements, Sarama, Layzer, Unlu & Wolfe (2016), ERIC ED567218,
+gives the trajectory in standard deviations: **0.86** (with follow-through) and
+**0.75** (without) at the end of pre-K, falling through
 kindergarten and grade 1, **not distinguishable from zero at grades 3 and 4**, then
 **0.26 and 0.21, both significant, at the end of grade 5.** The citation of record for
 the pattern is the published Clements, Sarama, Layzer & Unlu (2023), *JRME*: early
@@ -257,9 +257,9 @@ environment was strongest: higher-SES children in the no-follow-through arm reac
 `OBSERVED`
 
 Absolute retention is the other question, and Bahrick's permastore programme is where
-it lives. His summary of the fifty-year Spanish study, restated in Bahrick & Phelps
-(1987): part of what is acquired is lost within five years, and "virtually no
-knowledge is lost during the interval between 5 and 25 years" after acquisition.
+it lives. His summary of the fifty-year Spanish study, in Bahrick & Phelps (1987):
+part of what is acquired is lost within five years, and "virtually no knowledge is
+lost during the interval between 5 and 25 years" after acquisition.
 `OBSERVED` That study of 35 learners, tested at 8 years, put optimum recall at
 **30-day** access intervals across a range running from 0% to 23%. `MEASURED-RCT`
 
