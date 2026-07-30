@@ -304,3 +304,46 @@ builder reports orphans.
 `d ≈ 0.48` (preference) and `g = 0.48` (teaching expectancy) appeared on one page,
 undisambiguated. Two unrelated results, one number. Always name what the effect is
 *of*.
+
+### 9.9 If nothing counts a mannerism, it is invisible
+
+Every rule from 9.1 to 9.4 was written after a reviewer counted something: 578
+em-dashes, 147 `X, not Y` antitheses, 1,013 bold spans (one every 48 words), 35
+sections closing on one header, 14 ending on one rhetorical move. **None of it was
+visible while writing.** Prose habits are not caught by reading, because reading is
+what installed them.
+
+`evidence/check-voice.py` counts them now: a per-file rate per 1,000 words against a
+budget, plus corpus shapes (one header, or one closing move, across more than four
+files), plus maximal verbatim runs of 14+ words repeated between reader-facing
+surfaces. Budgets sit at half the measured rate with a floor of three occurrences, so
+a deliberate use passes and a habit fails.
+
+The general form: **any editorial rule that is not executable will be violated, and
+the violation will be invisible to the person who wrote the rule.**
+
+### 9.10 A check advertised as runnable must be run
+
+`README.md` listed `node evidence/test-demos.mjs` as one of three checks that "guard
+the repository." It could not run at all — it imported playwright with no fallback,
+hard-coded an absolute path from one machine, tested a single colour scheme, and
+**exited zero on failure**, so nothing downstream would have noticed either.
+
+Meanwhile three published demo pages scrolled horizontally on a phone and one emitted
+`<rect x="NaN">`. The check that would have caught all four was in the repository, in
+the README, and broken.
+
+Before citing a check as evidence of rigour, run it, break it on purpose, and confirm
+it fails. A check that cannot fail is decoration, and it is worse than no check
+because it is load-bearing in the argument.
+
+### 9.11 A shared component encodes an assumption about its content
+
+`.chip` was specified for single tokens (`MEASURED-RCT`) and carried `white-space:
+nowrap`, which was right for those. Later pages put a sentence of provenance in one,
+and three of them overflowed the viewport at 390px. `table` carried `min-width:520px`
+for tables inside a scroll box, and a table outside one widened the whole page.
+
+Both were correct rules whose precondition stopped holding when new content arrived.
+**When a component is reused by generated pages, the constraint has to live with the
+box that owns the overflow**, not with the assumption that the content stays small.
