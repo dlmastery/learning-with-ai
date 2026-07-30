@@ -107,16 +107,16 @@ Prediction-before-reveal is widely believed to work. The measurement says someth
 more precise and more useful:
 
 **Prediction has no main effect.** The entire effect is carried by the
-**expectancy-violation interaction** — *p* = .002. Predicting and being right does
-approximately nothing. Predicting and being **wrong** is where the whole result lives.
+expectancy-violation interaction — *p* = .002. Predicting and being right does
+approximately nothing. Predicting and being wrong is where the whole result lives.
 
 Which is the measured warrant for the strongest move in this survey: taking a
-learner's stated rule and **running it until it breaks**. The mechanism is not that
+learner's stated rule and running it until it breaks. The mechanism is not that
 they predicted. It is that the prediction failed, visibly, on something they
 committed to.
 
 It also disciplines the design. A prediction step that mostly confirms is a cost with
-no benefit, so the figure must be chosen to **discriminate** — set at the parameter
+no benefit, so the figure must be chosen to discriminate — set at the parameter
 values where a common wrong model and the correct one disagree.
 
 ---
@@ -125,16 +125,16 @@ values where a common wrong model and the correct one disagree.
 
 Recorded because they are unresolved, not because they are settled.
 
-**Responsiveness is a hazard for productive failure.** Productive failure measures
+Responsiveness is a hazard for productive failure. Productive failure measures
 **g = 0.36–0.58**, and the finding is blunt: *adding help to the struggle does not
 help.* A system optimised to notice you are stuck and intervene is optimised to
 destroy the mechanism. This survey has argued hard for unprompted intervention;
 those two commitments are in tension and the resolution — intervening on the
 *wrong kind* of stuck — is asserted here rather than measured.
 
-**The street interview does not port.** Veritasium's misconception reveal works
+The street interview does not port. Veritasium's misconception reveal works
 because a stranger commits publicly and is then shown to be wrong. The cost is
-**affective, not technical** — the confession is what makes the correction land. A
+affective, not technical — the confession is what makes the correction land. A
 private system can elicit the same commitment and cannot reproduce the stake.
 
 **Personalisation destroys the shared artifact, and nothing in this survey has
@@ -148,7 +148,7 @@ treated personalisation as strictly good. It has a price and we have never named
 ## 6. And one finding from the largest-scale case
 
 The Chinese dual-teacher classroom — a remote expert paired with a local facilitator,
-at enormous scale — returns **exactly one record in ERIC.**
+at enormous scale — returns exactly one record in ERIC.
 
 What that record says is the useful part: the failure mode is **emotional, not
 informational.** The remote expert delivered the content adequately; what broke was

@@ -83,7 +83,7 @@ What that machine demonstrably does, in production, today:
   stated goal.
 
 The technical substrate §16 describes as newly available is not a research problem
-for this practitioner. **It is shipped, six times over.** That is the first thing
+for this practitioner. It is shipped, six times over. That is the first thing
 the portfolio reveals that the literature does not: the field's discourse treats
 multimodal tutoring as a frontier, and at the level of plumbing it is a solved
 weekend.
@@ -91,18 +91,18 @@ weekend.
 Three design patterns recur and are worth naming because they were arrived at
 independently.
 
-**Make generation legible.** Every app narrates the model's work during a 10–40
+Make generation legible. Every app narrates the model's work during a 10–40
 second wait — "Architecting Learning Path…", "Clustering 50 Mastery Paths…",
 "Validating Narrative Integrity…" — rather than hiding it behind a spinner. It is
 genuinely good interface design for a latency that is not going away.
 
-**The schema is the pedagogical commitment.** The flagship app's curriculum
+The schema is the pedagogical commitment. The flagship app's curriculum
 generator enforces a JSON schema with `globalGifts[]`, provocation questions, a
 peer collaborative challenge, showcase-based assessment, and a journaling prompt —
 recognisably Froebel plus Reggio Emilia plus Socratic method, encoded as a type
-rather than as an aspiration. **A schema is a pedagogy you cannot quietly drop.**
+rather than as an aspiration. A schema is a pedagogy you cannot quietly drop.
 
-**Personas are swapped at the system-instruction layer and nowhere else.** The same
+Personas are swapped at the system-instruction layer and nowhere else. The same
 codebase ships as a Spanish course, a Telugu course, a Bhagavad Gita app, a Sanatana
 Dharma app and an Ayurveda app, differing in one string.
 
@@ -113,13 +113,13 @@ Dharma app and an Ayurveda app, differing in one string.
 ### 3.1 The mode switch with no policy
 
 The flagship app ships three distinct live-session personas as separate system
-instructions: **Lecturer** ("start with a 2–3 minute comprehensive discourse…"),
-**Socratic** ("answer questions by asking leading questions"), and **Examiner**
+instructions: Lecturer ("start with a 2–3 minute comprehensive discourse…"),
+Socratic ("answer questions by asking leading questions"), and Examiner
 ("conduct an interactive oral quiz… evaluate the student's response and provide
 feedback").
 
 Mode-switching between lecture, dialogue and assessment is already implemented.
-**What is missing is any policy for when to switch.** The learner picks. No mastery
+What is missing is any policy for when to switch. The learner picks. No mastery
 estimate drives the choice.
 
 That is §22's central argument, rediscovered from the other end by someone building
@@ -165,7 +165,7 @@ gauntlet with 29 trap markers and 31 follow-ups, structured *question → intuit
 rigorous answer → code check → follow-ups* — is **one notebook out of 128**. The
 exam-prep notebook contains 36 problems in a strict four-beat format, mapped to
 textbook exercises and cross-checked against the official solutions manual, and
-**the solution sits immediately below every problem.** No hidden answer, no attempt
+the solution sits immediately below every problem. No hidden answer, no attempt
 gate, no self-grading.
 
 Meanwhile a companion repository carries graded rubrics and reflection prompts for
@@ -179,20 +179,20 @@ never wired to an artefact.**
 This is the most transferable result in the portfolio, and it comes from comparing
 two bodies of work by the same author under the same standards.
 
-The teaching corpus **states** its quality rules. Sixteen non-negotiables, including
+The teaching corpus states its quality rules. Sixteen non-negotiables, including
 some that this survey would endorse verbatim: *"no jargon before it's grounded"*,
 with a term-grounding verifier that flags every term whose first use precedes its
 plain-language explanation; *"no formula verbatim — a formula stated with no
 build-up is a defect"*; *"prove it AND verify it"*, every derivation shown in LaTeX
-**and** confirmed numerically.
+and confirmed numerically.
 
-The research corpus **compiles** its rules — into regexes, word floors, SHA-256
+The research corpus compiles its rules — into regexes, word floors, SHA-256
 fingerprints, and independent audit agents that exit non-zero with no bypass flag.
 
 Then look at what happened to each.
 
 Where the rule is a norm, it drifted. Hiding code cells is declared "non-negotiable"
-by the governing method and is set on **no code cell in any notebook sampled**,
+by the governing method and is set on no code cell in any notebook sampled,
 including the ones the rule specifically governs. Two deployed apps ship the wrong
 page title — a Spanish course and a Bhagavad Gita app both serve
 `<title>Sanatana Dharma AI Portal</title>`. Five apps share a byte-identical
@@ -218,7 +218,7 @@ experiment rather than argued from principle.
 
 ## 5. The nulls
 
-**The specified constraint set was abandoned wholesale.** The flagship app's own
+The specified constraint set was abandoned wholesale. The flagship app's own
 product requirements document targets rural learners on low-end Android devices,
 on-device inference offline the great majority of the time, a small initial download,
 solar-friendly operation, and a hundred low-resource languages. What shipped is an
@@ -240,13 +240,13 @@ That is a model of calibrated claiming, and the verdict follows from it:
 asynchronous generated lesson media, streamed progressively, is available now; a
 live generated avatar is not.
 
-**Nothing was evaluated.** No A/B test, no learning-outcome measurement, no user
+Nothing was evaluated. No A/B test, no learning-outcome measurement, no user
 study, no telemetry beyond a token counter, across nine deployed apps and 128
 notebooks. An analytics project exists in the same environment and is unused for
 this purpose. §27 records the same pathology in the same owner's commercial product,
 independently.
 
-**Grounding is applied uniformly where it should be applied selectively.** Web-search
+Grounding is applied uniformly where it should be applied selectively. Web-search
 grounding is switched on identically for logistic regression and for Ayurvedic health
 guidance delivered in the voice of a deity. No source allowlist, no provenance
 display, no medical disclaimer in the extracted strings. One app in the set asserts
@@ -265,7 +265,7 @@ did reading it add?*
 
 Three things the literature does not supply.
 
-**A measured asymmetry in agentic content production.** Independent artefacts
+A measured asymmetry in agentic content production. Independent artefacts
 parallelise freely — "the 5 above were built by 5 concurrent agents." Enhancement
 passes on a *single* artefact are constrained to at most two agents on
 non-overlapping regions, with the orchestrator performing the inserts sequentially,
@@ -273,7 +273,7 @@ because two agents editing one notebook corrupts it. That is an operational find
 you only get by doing it, and it governs how any of this survey's proposals would
 actually be produced.
 
-**A working closed loop over curriculum coverage.** A programmatic keyword audit of
+A working closed loop over curriculum coverage. A programmatic keyword audit of
 every notebook against every subsection of the reference textbook produced a
 pass/warn/fail verdict per chapter, found a real gap — a named list of clustering
 algorithms entirely missing — generated an action item, and the gap-fill notebook was
@@ -281,12 +281,12 @@ then built. **Audit → gap → targeted build → re-audit is the one place in 
 portfolio where an automated signal changed the curriculum**, and it is a template
 anyone can copy.
 
-**A typed contract for what an AI tutor should expose.** One repository enumerates
+A typed contract for what an AI tutor should expose. One repository enumerates
 32 features as a typed interface — onboarding, streaming chat, levelled hints, mode
 switching, image generation, speech in and out, multi-agent classroom and debate,
 whiteboard construction, learner-model read and write, progress and achievements,
 group mode — with a mock implementation proving the shape is coherent. The deployed
-app implements roughly **eight of the thirty-two**. A specification written before
+app implements roughly eight of the thirty-two. A specification written before
 the implementation, with the implementation gap visible in the same repository, is a
 more useful artefact than either half alone.
 
@@ -320,7 +320,7 @@ was shipped — for meditation. The assessment rubrics exist — in another repo
 Every component of the system this survey describes is present somewhere in these
 thirty-five repositories, and none of them are wired together.
 
-**That is the finding.** Not that builders do not know what to build, but that under
+That is the finding. Not that builders do not know what to build, but that under
 no external gate, the parts that get finished are the parts that demo — and the parts
 that measure whether anyone learned are the parts that are always about to be built
 next.

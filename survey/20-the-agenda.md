@@ -87,7 +87,7 @@ party positioned to fund it has an interest in the immediate number.
 generation and the organising premise of every lifelong-learner-model
 architecture, **including this survey's own**. It is being built at real schema
 cost, real privacy exposure, and the entire regulatory surface described earlier
-in this survey — on **zero** evidence that it changes a learning outcome. No
+in this survey — on zero evidence that it changes a learning outcome. No
 trial has compared a tutor that remembers a learner across sessions against the
 identical tutor that does not.
 
@@ -105,14 +105,14 @@ memory-ablation arm.** GitHub `learner model knowledge tracing memory LLM tutor`
 | **Primary outcome** | **4-week unassisted transfer on items requiring a prerequisite established in an early session and applied in a late one** — the only place a memory effect can mechanistically appear |
 | **Secondary** | Redundant re-explanations of mastered material; time-to-first-correct on prerequisite-dependent items; **learner corrections of the visible state**; and a pre-registered ablation of arm C into **C-typed vs C-untyped** |
 
-**Pre-registered prediction.** C > B > A, with **C − A ≈ 0.25 SD on the
+Pre-registered prediction. C > B > A, with **C − A ≈ 0.25 SD on the
 prerequisite-dependent subscale and ≈ 0 on the topic-local subscale.** The
 *localisation* is the real prediction; a uniform gain would indicate a confound.
 
 Two design details carry most of the value. The control must be
 summary-carryover rather than a true amnesiac, or the comparison measures
 politeness rather than memory. And the typed/untyped sub-ablation converts a null
-into a **diagnosis** — because the deep obstacle is knowledge-component
+into a diagnosis — because the deep obstacle is knowledge-component
 alignment, and the numbers there are not encouraging: expert KC models add
 **≤ 0.01 AUC on 7 of 9 datasets**, and on 4 of 9 the KC model is so poor that a
 skill-only model loses to an item-difficulty-only model. **A memory whose
@@ -134,7 +134,7 @@ none of which anyone has measured either.
 
 ## Experiment 3 — does the guardrail that removes harm ever add benefit?
 
-**Why third, and why it is this survey's own thesis on trial.** The central
+Why third, and why it is this survey's own thesis on trial. The central
 design claim running through these sections is that **restraint is the active
 ingredient**. The evidence for that claim is currently *entirely* about harm
 removal. The guardrail took the unassisted effect from −17% to exactly zero (§01). **No
@@ -155,7 +155,7 @@ the corpus adds the AI *on top of* normal instruction, which makes the AI arm
 strictly advantaged and the resulting effect uninterpretable as evidence about
 the AI.
 
-**Pre-registered prediction.** A > C by 0.15–0.25 SD — the constrained system
+Pre-registered prediction. A > C by 0.15–0.25 SD — the constrained system
 beats the best cheap alternative, but modestly — and B < C. **Honest confidence
 in A > C: about 55%.** That is precisely the confidence level at which an
 experiment is worth running.
@@ -203,7 +203,7 @@ most rigorous studies in their respective literatures.**
 | UDL | outcomes **not demonstrated** |
 
 **Premise 3 — added mechanism adds load, and the load is real while the benefit
-is speculative.** This is the sharpest version, and **this survey's own evidence
+is speculative. This is the sharpest version, and this survey's own evidence
 supplies it.** Multiple concrete representations *harmed* symbol learning, with
 the harm attributable to multiplicity. Five ladder rungs did not beat three
 (Mdiff = 0.16 [−0.78, 1.09], p = .738). Persistent decorative detail carries
@@ -216,12 +216,12 @@ error-holding tutees and a pivot engine" is the most elaborate system anyone has
 proposed. The base rate for elaboration in this literature is not good.
 
 **Premise 4 — the mechanism the survey most relies on has a moderator that dwarfs
-it.** AI tutoring **with teacher support: g = 1.426. Without teacher support:
+it. AI tutoring with teacher support: g = 1.426. Without teacher support:
 g = 0.077** — approximately null. If the human is doing the work, every
 architectural refinement is optimising the small term.
 
 **Premise 5 — the field's positive results degrade under scrutiny in one
-direction only.** Sierra Leone's unadjusted estimate (**+0.216 SD, SE 0.137**) is
+direction only. Sierra Leone's unadjusted estimate (+0.216 SD, SE 0.137**) is
 not significant (§09). The largest positive LLM-tutoring meta-analysis (g = 0.867) was
 **retracted in 2026**. One prominent tutor was built and analysed by its first
 author with no funding statement. One trial has 11 clusters. Another lost 43% of
@@ -230,7 +230,7 @@ signature of a literature whose true effect is smaller than its published mean.*
 
 ### What the survey says back — as reasons to test, not refutations
 
-**One: the nulls are mostly about branding, not mechanism.** Orton-Gillingham
+One: the nulls are mostly about branding, not mechanism. Orton-Gillingham
 nulls while its active ingredient — explicit systematic decoding instruction —
 carries d = 0.41 to 0.55. Expanding intervals null while *scheduling retrieval at
 all* carries classroom d = 0.54, with only 12 of 271 massed-versus-spaced
@@ -238,12 +238,12 @@ comparisons failing. Lesson Study nulls as a *process* while content-bearing
 interventions do not. The pattern is that **the wrapper fails and the mechanism
 holds**, and this survey's programme is explicitly mechanism-level.
 
-**Two: the dissociation results are sign results, not ceiling results.** A
+Two: the dissociation results are sign results, not ceiling results. A
 ceiling story predicts small positive effects everywhere. It does not predict
 −17%, and it does not predict the same model with a different interaction policy
 landing at zero in the same study (§01).
 
-**Three: the empty chair.** Zero randomised trials of AI tutoring on learners
+Three: the empty chair. Zero randomised trials of AI tutoring on learners
 with disabilities is not a verdict. The ceiling argument cannot even be assessed
 for the population where prior-knowledge, dosage and fidelity constraints bind
 hardest — which is exactly where the mechanism-level case is strongest.
@@ -313,7 +313,7 @@ hypothesis.**
 
 The measurement gap is the widest one in applied AI: dozens of benchmarks for
 whether a model is smart, roughly one field trial per organisation per year for
-whether it teaches. **Anyone building in this space is building without a ruler.**
+whether it teaches. Anyone building in this space is building without a ruler.
 The correct posture is not to wait for the benchmark. It is to build the ruler,
 publish the falsifier alongside the design, and be the kind of project that would
 notice if it were wrong.

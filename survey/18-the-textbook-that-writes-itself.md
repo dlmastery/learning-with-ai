@@ -73,7 +73,7 @@ criteria, rather than as disposable chat, is a small and genuinely novel idea.
 Now the audit against the claims. `adaptive` appears in two files;
 `personaliz*` in one; `spaced repetition` in **zero**. The four-level Reader
 Ladder (Beginner → Builder → Engineer → Specialist) is declared in two planning
-documents and **the manuscript never branches on it** — chapters 13, 14 and 15
+documents and the manuscript never branches on it — chapters 13, 14 and 15
 mention "beginner" zero times, and every reader gets identical text. `quiz`: 0
 files. `answer key`: 0. `self-test`: 0. The "Extension Exercises" are five
 ungraded prose prompts per chapter with no solutions, no tests, no keys. Nothing
@@ -116,7 +116,7 @@ files including ten `.claude/skills/` directories:
 > `deployment` · `devops` · `nextjs` · `auth` · `architecture` — **nine of which
 > build the website** — and `robotics-tutor`, **which teaches**.
 
-**Nine to one.** The genre has industrialised author-side agentic tooling and
+Nine to one. The genre has industrialised author-side agentic tooling and
 shipped, as its learner-side contribution, a chatbot that can search the book.
 
 This forces a correction to a positioning claim that circulates widely, including
@@ -148,7 +148,7 @@ solutions and test cases, and manually evaluated 120:
 Read 89.7% and 30.9% together. **The code runs. It just does not solve the
 problem.** Syntactically valid, semantically wrong — and the prose has the same
 signature: 90% of explanations covered all parts of the code while a third of
-their lines were incorrect. **Coverage and correctness are uncorrelated.**
+their lines were incorrect. Coverage and correctness are uncorrelated.
 
 Corroboration from the item side: teachers rated only 53% of LLM-generated
 multiple-choice distractors as high quality, meaning roughly **47% were
@@ -175,11 +175,11 @@ unknown — it is unmeasured by construction.
 This is the null result that most changes what a course generator may claim, and
 it deserves its own space.
 
-**Difficulty** — what fraction of students get an item right — is moderately
+Difficulty — what fraction of students get an item right — is moderately
 predictable from item text. A systematic review reports best-case RMSE as low as
 0.165 and Pearson up to 0.87; independent studies land at r ≈ 0.75–0.82.
 
-**Discrimination** — whether the item separates strong students from weak ones —
+Discrimination — whether the item separates strong students from weak ones —
 is not. Direct prediction on reading-comprehension items reaches a best
 **Spearman correlation of 0.152**, and response-based calibration only 0.241. A
 separate benchmark reports that every model tested **"falls below random chance
@@ -192,12 +192,12 @@ value — a ramp that looks right and assesses nothing.**
 
 And the failure does not scale away. One study reports "systematic misalignment
 where scaling up model size is not reliably helpful," and names the mechanism:
-**high performance often impedes accurate difficulty estimation.** The model is
+high performance often impedes accurate difficulty estimation. The model is
 too good at the task to model a student failing it.
 
 Prerequisite ordering fails in the same place. On the one curriculum-aligned
 knowledge-graph benchmark available, frontier models reach 57% and 46% exact
-match, with the report noting **"Prereq and Neighbor being the hardest tasks."**
+match, with the report noting "Prereq and Neighbor being the hardest tasks."
 Every learning-path recommender in the adjacent literature *assumes* a correct
 prerequisite graph as input. Nobody has closed that loop, because closing it
 requires generated items to arrive with valid difficulty parameters and valid
@@ -219,7 +219,7 @@ practice problem | try it yourself`:
 | `mrdbourke/pytorch-deep-learning` | 9 | **9** | **89** |
 
 The canonical zero-to-hero corpus — the one the phrase comes from — has nine
-files total, and **not one filename contains** exercise, homework, problem-set,
+files total, and not one filename contains exercise, homework, problem-set,
 assignment, quiz, or solution. Six of its seven notebooks contain zero exercise
 scaffolding. And the four markers that do exist are *pre-solved in place*: the
 comment reads `# Exercise 1: backprop through the whole thing manually`, and the
@@ -230,7 +230,7 @@ do is zero.**
 
 **But the generalisation people reach for is wrong, and this is the negative
 result of the audit.** The pattern is *not* "notebook corpora lack exercises."
-Three of the four are dense with them. All three are **books** — one from
+Three of the four are dense with them. All three are books — one from
 O'Reilly, one from Manning, one a structured course. The variable is not format
 and not language and not domain. **It is authorial intent: works written as books
 have exercises; works written as lecture transcripts do not.** A roughly 20×
@@ -258,7 +258,7 @@ human keeps the pedagogy and the machine gets the prose or the conversation.
 - SchoolAI: **"Every Space starts with a teacher."**
 - Curipod: **"100% teacher controlled."**
 
-**The AI-native textbook does not exist as a shipped commercial product.** What
+The AI-native textbook does not exist as a shipped commercial product. What
 ships is AI-native *delivery* over human-authored *structure*. The cleanest proof
 comes from inside the most AI-native company in the set: a platform whose landing
 page promises courses generated from your uploads was, at the time of this
@@ -268,7 +268,7 @@ courses with named human authors**. No mention of AI generation appears anywhere
 on that page.
 
 And the efficacy pattern is inverted in a way worth stating plainly. Across ten
-products: **five publish no outcome number at all**; three publish internal
+products: five publish no outcome number at all; three publish internal
 self-measured numbers with no methodology; one has an externally reviewed
 correlational study (ESSA Level III, which is the *non-causal* tier); one cites
 external state test data in self-selected case studies. **Zero RCTs. Zero effect

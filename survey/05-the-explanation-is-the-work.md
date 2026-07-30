@@ -149,14 +149,14 @@ meta-analytic prior attached.
 
 This is the finding that inverts the request.
 
-Wang, Cheng & Mayer (2023) compared teaching **to a camera**, to **one** student,
-and to **seven**. Teaching to the camera won on transfer — with **lower social
+Wang, Cheng & Mayer (2023) compared teaching to a camera, to one student,
+and to seven. Teaching to the camera won on transfer — with **lower social
 presence, lower pulse rate, lower anxiety, lower cognitive load, and *more* idea
 units produced**, mediated by exactly those paths. The audience consumed capacity
 that would otherwise have gone into explaining.
 
 Supporting results: written teaching scripts equal spoken teaching at one week,
-and written-versus-spoken mode is a **null moderator** in the meta-analysis.
+and written-versus-spoken mode is a null moderator in the meta-analysis.
 
 So "give a presentation to the class" is not the high-value version of this
 technique. It is the version with an anxiety tax attached, and the tax buys
@@ -174,7 +174,7 @@ than inferred.
 
 ### 8. The gap nobody has looked into
 
-**No study compares an AI audience to a human audience.** Four independent search
+No study compares an AI audience to a human audience. Four independent search
 routes came up empty.
 
 That absence defines this section's central hypothesis, and it is a sharp one:
@@ -197,11 +197,11 @@ That is testable now, cheaply, and it has never been run.
 An explanation is worthless as evidence if we cannot score it, and the two obvious
 scorers are both disqualified by measurements already in this survey.
 
-**Not an LLM judge.** Selection by LLM judge alone measured **−3.20pp and
-−1.68pp**, against **+8.14pp** for test-based selection. A judge is worse than
+Not an LLM judge. Selection by LLM judge alone measured **−3.20pp and
+−1.68pp, against +8.14pp** for test-based selection. A judge is worse than
 nothing here.
 
-**Not a human holistic rater either.** Human graders of code reach
+Not a human holistic rater either. Human graders of code reach
 **Krippendorff's α ≈ 0.20.** The "gold standard" is noise.
 
 What is left is everything checkable about an explanation:

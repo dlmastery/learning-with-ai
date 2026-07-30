@@ -96,7 +96,7 @@ of them*.
 So the naive implementation — one AI-conducted thirty-minute high-stakes viva
 replacing the final exam — reproduces exactly the psychometric weakness that killed
 orals, now at scale, with an unappealable machine judge. The correct implementation is
-**many short, structured, low-stakes orals distributed across a term**, aggregated
+many short, structured, low-stakes orals distributed across a term, aggregated
 programmatically. Frequency is the entire point. Structure is the second lever:
 objective structured viva formats measurably outperform traditional ones, and an LLM
 examiner is *natively* structurable — rubric, probe bank and follow-up policy are all
@@ -125,8 +125,8 @@ modality they are fluent in.
 ## 3. The DiVERT inversion: model the error, derive the distractor
 
 The Force Concept Inventory works, and its power is not in the stems. It is in the
-**distractors**, each derived empirically from documented student misconceptions.
-Which means a multiple-choice item is a **frozen interrogation** — one scripted
+distractors, each derived empirically from documented student misconceptions.
+Which means a multiple-choice item is a frozen interrogation — one scripted
 branch of a diagnostic conversation, with the follow-ups precomputed into four
 options. It was frozen because conversation was expensive. That constraint is gone.
 
@@ -145,7 +145,7 @@ prompting problem.
 The mechanism is clean. An LLM's prior over "wrong answer" is a prior over *plausible
 text*, learned from a corpus in which correct answers dominate and student errors are
 rare and unlabelled. The empirical distribution of student errors is a different
-distribution, and it is **not recoverable from text describing the domain.** It is
+distribution, and it is not recoverable from text describing the domain. It is
 recoverable only from response data.
 
 DiVERT (Fernandez, Scarlatos, Feng, Woodhead & Lan, EMNLP 2024) inverts the
@@ -193,21 +193,21 @@ LLM quiz generators need on the wall.
 Fifteen years of pre-LLM automatic item generation, mostly in medical education,
 established that items generated from cognitive models are rated by blinded expert
 panels as comparable to traditionally authored ones, and demonstrated end-to-end IRT
-and CAT integration. But the load-bearing assumption is **isomorphicity** — that
+and CAT integration. But the load-bearing assumption is isomorphicity — that
 sibling items from one item model share parameters — and it is an assumption. When
 tested: only **9 of 23** expert-built templates produced psychometrically isomorphic
 instances without revision, and **9 of 23 required major modification**.
 
 Three consequences follow, and the third is the one nobody is watching.
 
-**(a) The psychometric object is the generator.** If item text comes from a
+(a) The psychometric object is the generator. If item text comes from a
 stochastic policy conditioned on a specification, the object with parameters is the
 *distribution* the policy induces, not any individual item. Random-item and crossed
 random-effects IRT is the existing apparatus; what must be demonstrated is that
 generator-level parameters are stable enough to support inference even though
 item-level ones are not.
 
-**(b) Every operational system currently understates measurement error.**
+(b) Every operational system currently understates measurement error.
 Conventional adaptive-test scoring treats calibrated item parameters as *known*. Under
 generation they are draws, so the standard error of θ must include item-sampling
 variance, and no shipping system appears to do this. The prediction is falsifiable
@@ -216,14 +216,14 @@ systematically optimistic, and the gap widens as item novelty increases.** Duoli
 own published numbers illustrate the size of the gap — **test–retest 0.84 against
 internal consistency 0.96**, and only one of those two is estimable under generation.
 
-**(c) Fairness moves to the generator, and there is a new failure mode.**
+(c) Fairness moves to the generator, and there is a new failure mode.
 Differential item functioning assumes a fixed item administered to multiple groups.
 If every student receives distinct items, item-level DIF is undefined; what must be
-demonstrated is **generator invariance** — that the policy produces equivalent
+demonstrated is generator invariance — that the policy produces equivalent
 difficulty distributions across subgroups. Worse: personalised generation, the
 flagship selling point, conditions item content on student context. A generator
 drawing contexts from a learner's interests or locale can produce
-**personalisation-induced DIF** — construct-irrelevant difficulty variation
+personalisation-induced DIF — construct-irrelevant difficulty variation
 correlated with demographics, arising *by design*, invisible to every existing
 fairness procedure, and defended as a feature.
 
@@ -232,7 +232,7 @@ own framing and no study of it was located. It is offered as the most serious
 unexamined fairness risk in AI-driven assessment, and as a hypothesis someone should
 test.*
 
-**And the replacement for alpha.** Cronbach himself supplies the exit route,
+And the replacement for alpha. Cronbach himself supplies the exit route,
 pointing to generalizability theory. G-theory decomposes score variance into facets —
 persons, items, occasions, raters — and asks how well a score generalises to a
 universe of admissible observations. That framing is *native* here, because **a
@@ -244,7 +244,7 @@ The concrete protocol, offered as a specification to test rather than a finding:
 make the probe policy π seed-deterministic so that (π, s) reproduces the exact
 administered set; administer π under seeds s and s′ to the same learner within a
 window short enough that true change is negligible, and report the correlation as
-**seeded-replicate reliability ρ_π**; run a G-study with generator as a facet;
+seeded-replicate reliability ρ_π; run a G-study with generator as a facet;
 derive from it the number of probes n required for a target dependability at the
 decision threshold; and **report the pair (ρ_π, n_required(Φ)), never a single
 number, never α.** Because generators drift with model updates and prompt edits,
@@ -275,7 +275,7 @@ essays by non-native writers and on US eighth-graders' essays:
 | FPR after prompting an LLM to rewrite in "literary" language | 61.22% → **11.77%** |
 
 The mechanism is explicit: unanimously flagged essays had significantly **lower
-perplexity**. Which means the false positive is not a malfunction. **The detector is
+perplexity. Which means the false positive is not a malfunction. The detector is
 a conventionality meter** — it measures distance from the distributional centre of
 unconstrained fluent English, and fluent-but-conventional prose is the signal.
 Conventionality is exactly what a writing course teaches a second-language writer.
@@ -288,27 +288,27 @@ True positives 22.5; false positives 23.75; **false discovery rate 51.4%.** More
 than half of accusations wrong, with generous parameters. At Liang's measured rate,
 among 100 honest non-native speakers, 61 false accusations.
 
-**Human grading is not the gold standard either**, and this is the null that should
+Human grading is not the gold standard either, and this is the null that should
 make everyone humbler. Human graders of programming assignments reached
 **Krippendorff's α ≈ 0.20 on correctness and below 0.10 on style**, and **only 1 of
 22 reproduced their own grade on a hidden duplicate.** The authors' conclusion: "the
 idea of a 'gold standard' of human grading might be flawed."
 
-**Equivalence by readability formula is invalid.** Six oral-reading-fluency passages
+Equivalence by readability formula is invalid. Six oral-reading-fluency passages
 "developed to be comparable based on readability formulas" produced mean fluency
 from **67.9 to 93.9 words correct per minute** — roughly a semester of growth,
 purely from which passage a child happened to get.
 
-**Progress-monitoring decision rules rest on expert opinion.** A systematic review of
+Progress-monitoring decision rules rest on expert opinion. A systematic review of
 102 documents found curriculum-based measurement decision rules have "very limited
 psychometric or empirical support."
 
 And two clean negatives that cut *against* the fashionable direction, reported
 because omitting inconvenient nulls is worse than reporting them. Testwiseness
-manipulations produced **little post-instruction effect** on modified concept
+manipulations produced little post-instruction effect on modified concept
 inventories, despite option-avoidance and position effects being individually
 significant. And misconception structure in FCI incorrect-answer groupings had
-**little relation** to previously identified gender-unfair items — the proposed
+little relation to previously identified gender-unfair items — the proposed
 explanation for the FCI gender gap was tested and failed.
 
 Finally, a null that constrains criticism of AI items rather than endorsing them:
@@ -340,7 +340,7 @@ artifacts, consequential decisions require proctored or verification-anchored
 observation. Say so rather than approximating it.
 
 Explicitly permitted at every tier, worth stating because the prohibitions are long:
-**telling the learner what they got wrong and why.** Diagnostic feedback is not a
+telling the learner what they got wrong and why. Diagnostic feedback is not a
 score claim.
 
 Three standalone prohibitions. Never report α or ω for an assessment where learners
@@ -379,7 +379,7 @@ from which they learn nothing, and **the grading system cannot tell the differen
 and in fact rewards it.** Cheating is a distribution-of-credit problem. This is a
 capability-destruction problem, and it operates on students who are not cheating at
 all. Which reassigns assessment's job: if practice is now AI-saturated, assessment's
-primary function is to **create the incentive to practise in the guardrailed mode.**
+primary function is to create the incentive to practise in the guardrailed mode.
 Only a frequent, secured, diagnostic system can do that.
 
 ---

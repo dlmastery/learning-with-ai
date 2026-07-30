@@ -107,7 +107,7 @@ confident answers. When it never says *I don't know*, it teaches that not knowin
 not a state a competent agent occupies. When it accepts a sloppy question and
 produces a clean answer, it teaches that precision in asking is optional.
 
-This is **epistemic curriculum**, it runs on every single turn, and it is measured
+This is epistemic curriculum, it runs on every single turn, and it is measured
 nowhere. No benchmark scores it. No rubric in the corpus contains a line for it.
 
 We think it is plausibly larger than the subject-matter effect, for a simple reason:
@@ -132,7 +132,7 @@ childhood the subject changes faster than the model converges, and a model that 
 finally learned who a child was in October is describing someone who no longer
 exists by March.
 
-Worse than merely stale: **potentially constraining.** A system that has confidently
+Worse than merely stale: potentially constraining. A system that has confidently
 concluded a child struggles with multi-step reasoning will route around multi-step
 reasoning, and the routing is invisible to the child, the parent, and the model. The
 prediction becomes a wall. We know this failure mode intimately from human education
@@ -144,7 +144,7 @@ not a question the field's instruments are shaped to ask, because measuring it
 requires following the same child for years while withholding the personalisation
 from a matched group.
 
-**The design response, which we adopt without waiting for the answer:** the learner
+The design response, which we adopt without waiting for the answer: the learner
 model is inspectable and correctable by the learner and the parent, it decays by
 default, and any inference that would *restrict* what is offered requires stronger
 evidence than one that expands it.
@@ -159,7 +159,7 @@ absolute ones do.
 
 Every effect size in this document was measured in a world where the treatment group
 had something the control group did not. What the same technique does when
-**everyone** has it is not a smaller version of that result. It is a different
+everyone has it is not a smaller version of that result. It is a different
 question, and it has never been asked.
 
 Two mechanisms make it different rather than merely attenuated. If a tutor lifts
@@ -186,7 +186,7 @@ documented accommodation*, because those frames lower perplexity by design. The 
 catches the honest and misses the dishonest.
 
 Treating this as a cheating problem may be the deepest frame error in contemporary
-education. It is a **measurement** crisis: our instruments stopped measuring what
+education. It is a measurement crisis: our instruments stopped measuring what
 they were built to measure. Detection tries to restore the old instrument. The
 alternative — building assessment that is valid *given* assistance, measuring the
 process rather than the artifact, and testing what a person can do unassisted when
@@ -201,7 +201,7 @@ classifier.
 ## 7. Nobody has checked whether staying wrong is safe
 
 The teachable agent is this survey's most promising untested mechanism. It requires
-an agent that **adopts a learner's flawed model and holds it** — applies it visibly,
+an agent that adopts a learner's flawed model and holds it — applies it visibly,
 does not silently repair it, and lets the world deliver the disconfirmation.
 
 Every argument for it is good. The human analogue is strong (g = 0.48 with prior
@@ -223,7 +223,7 @@ about. We flag it against ourselves.
 ## 8. Ten questions that expose most of this
 
 If the sections above are what we cannot see, these are the instruments for looking.
-They are aimed at any vendor, any paper, any demo — **and at this document.** Most
+They are aimed at any vendor, any paper, any demo — and at this document. Most
 claims in this field fail on the first three.
 
 1. **Show me the delayed, unassisted, novel-item test.** Not the practice score, not
@@ -244,7 +244,7 @@ claims in this field fail on the first three.
    prompt-alone pedagogy from the human structure surrounding it.
 
 5. **Is that a backtest or an intervention?** On a 350-million-review benchmark, a
-   **zero-parameter moving average beats every FSRS version.** Predicting what a
+   zero-parameter moving average beats every FSRS version. Predicting what a
    learner already did is not causing them to remember.
 
 6. **What is your inter-rater reliability on the construct you claim to measure?**
@@ -262,7 +262,7 @@ claims in this field fail on the first three.
 
 9. **Who consented out?** Every result is conditioned on a connected, consenting,
    mostly curious population. In one census, the learners this field most claims to
-   serve appear **zero** times.
+   serve appear zero times.
 
 10. **What would falsify your thesis, and has it already happened?**
 
@@ -277,14 +277,14 @@ The evidence for that reading is not weak. The best-powered studies on record ar
 nulls — lesson study at **ES 0.02** across 181 schools and 12,747 pupils with very
 high security and no dose–response; expanding intervals at **g = 0.032** with
 **I² = 0%** across 54 experiments; Orton-Gillingham non-significant. And our own
-corpus repeatedly shows **elaboration losing to simplicity**: five explanation rungs
+corpus repeatedly shows elaboration losing to simplicity: five explanation rungs
 did not beat three (**p = .738**), multiple representations harmed, mixed agent
 panels lost to one good agent, eight random substitutions bought nothing over one.
 
 There is a reading of this document in which every sophisticated mechanism we
 propose is another elaboration about to lose to simplicity.
 
-**What would force us to concede:** a well-powered trial of the assembled system —
+What would force us to concede: a well-powered trial of the assembled system —
 constrained, grounded, pivoting, remembering, teachable — with a delayed unassisted
 novel-item outcome, landing inside the 0.2–0.4 band. Not below it. *Inside* it.
 That would mean the mechanisms are decorative and the band is the ceiling.

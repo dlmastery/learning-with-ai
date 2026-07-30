@@ -52,7 +52,7 @@ learner's own numbers*. **Grounding is what buys a tutor permission to shut up.*
 > harms in this survey. Bounded failure is a policy setting on the learner model, not
 > a default.
 
-Two more that follow directly. **The learner's own conjectures get the same ladder** —
+Two more that follow directly. The learner's own conjectures get the same ladder —
 a learner who writes "I think the sum is n²/2" gets back "that fails at n = 3, here is
 the value," which is what a working mathematician does and is available to
 approximately nobody below graduate school. And **a curriculum can be checked against
@@ -127,7 +127,7 @@ can never emit `PASS`**: dimensional homogeneity is a mandatory gate that may re
 and may never accept. A pipeline that collapses `{PASS, FAIL, ABSTAIN}` to a boolean
 has destroyed the guarantee, not compressed it.
 
-**And the rungs are not a staircase.** The ladder is a *router*. Climbing past the
+And the rungs are not a staircase. The ladder is a *router*. Climbing past the
 rung that can falsify a claim buys nothing and costs a great deal.
 
 ---
@@ -168,7 +168,7 @@ universal quantifier, or when the claim is reused enough that the tail risk matt
 
 Four, and three of them contradict something a reasonable engineer would have assumed.
 
-**Eight random substitutions buy nothing over one.** Recall is flat at 112/113 across
+Eight random substitutions buy nothing over one. Recall is flat at 112/113 across
 a 16× sampling budget. The cost is not flat: p95 latency rises **6.8×** for zero
 measured benefit. On textbook-scale expressions a single substitution is the entire
 signal, because the mutation classes that matter (sign, factor, exponent, dropped
@@ -177,7 +177,7 @@ So k should be set by the *structure* of the claim — a suspected removable sin
 or a piecewise domain needs more points; a polynomial identity does not — never by a
 fixed constant.
 
-**Sampling wider makes the checker worse.** This inverts a natural instinct.
+Sampling wider makes the checker worse. This inverts a natural instinct.
 
 | Sampling domain (k=8) | Recall | False alarms / 37 |
 |---|---|---|
@@ -185,15 +185,15 @@ fixed constant.
 | wide positive `U(0.05, 20)` | 99.1% | **1** |
 | signed `±U(0.05, 20)` | 99.1% | **2** (3 at k=4 and k=16) |
 
-Widening gained **zero** recall and cost up to three rejections of *correct* rewrites.
+Widening gained zero recall and cost up to three rejections of *correct* rewrites.
 The mechanism: `√p·√q = √(pq)` and `log(exp z) = z` are true on the positive reals and
 false off them, so a checker sampling outside the claim's declared domain is not being
-more rigorous — **it is evaluating a different claim.** Adding assumptions until a
+more rigorous — it is evaluating a different claim. Adding assumptions until a
 check passes is laundering; sampling outside the declared assumptions is manufacturing.
 Both are failures of the declaration, not of the arbiter, which is exactly what the
 invariant predicts.
 
-**And a proposal from this project's own corpus was benchmarked and falsified.** An
+And a proposal from this project's own corpus was benchmarked and falsified. An
 earlier section proposed permutation-based fidelity checking, modelled on the Vedic
 *pāṭha* recitation protocols: instead of re-asking a model the same question k times,
 ask k structurally *different* questions about the same content — state it, invert it,
@@ -210,10 +210,10 @@ verdict decided by a deterministic comparator so no model judges anything.
 | Self-consistency, k=6 | gemma3:4b | 18.8% | 0.0% | +18.8 pts |
 | Self-consistency, k=6 | hermes3:8b | 43.8% | 0.0% | +43.8 pts |
 
-**Exactly at chance, on both models.** It flags corrupted and correct claims at
+Exactly at chance, on both models. It flags corrupted and correct claims at
 identical rates. Self-consistency is a poor detector that never cries wolf, and
 therefore wins. And going from 4B to 8B improved self-consistency's discrimination by
-+25 points and improved pāṭha's by **zero** — the larger model simply flagged
++25 points and improved pāṭha's by zero — the larger model simply flagged
 everything, in both conditions. **A protocol whose false-alarm rate rises exactly as
 fast as its recall does not get better with scale; it gets louder.**
 
@@ -233,7 +233,7 @@ rate on known-true claims, per model and per version, and probes above threshold
 dropped.** The calibration set is not amortisable infrastructure; it is a per-deployment
 artefact.
 
-**One more null, about the substrate:** only **1.54%** of valid public Python notebooks
+One more null, about the substrate: only **1.54%** of valid public Python notebooks
 import any testing module. A printed output is not a check.
 
 ---
@@ -275,22 +275,22 @@ Once you know to look for obligation 3, it is already measured under other names
 
 An independent audit of agent-formalized numerical analysis found "recurring unfaithful
 formalization patterns, including incomplete multi-part statements, added weakening
-hypotheses, and parameter restrictions, **that kernel acceptance entirely obscures**,"
+hypotheses, and parameter restrictions, that kernel acceptance entirely obscures,"
 concluding that "compilation-based metrics substantially overstate formalization
 quality." That is obligation 3 failing while 1 and 2 pass. **The strongest available
 guarantee has a systematic blind spot in the direction of over-reporting.**
 
 The fix is not to verify the translator. Compiler verification has been here: prove the
-compiler correct once, or **validate each translation as it happens.** No
+compiler correct once, or validate each translation as it happens. No
 autoformalizer, item generator or IR emitter will be proved correct; every one can be
 asked for a per-instance certificate.
 
-Concretely: author an atomic question set against the *input*, **before** the
+Concretely: author an atomic question set against the *input*, before the
 translation, with answers fixed in advance; ask the same questions of the output in the
 output's own language; require identical answers, disagreement a `FAIL` and
 unanswerability an `ABSTAIN`. Only ask about identifiable quantities — a boxplot does not
 contain its samples, and asking a checker to recover them "encourages hallucination and
-over-specified code generation." And **back-translation alone is not enough**: comparing
+over-specified code generation." And back-translation alone is not enough: comparing
 the formal statement's prose rendering to the original is an entailment check performed
 by a model correlated with the one that produced it, which violates the independence
 condition outright.
@@ -306,11 +306,11 @@ is, absent obligation 3, not a claim about the pipeline at all.
 This project publishes its internal disagreements rather than smoothing them, and there
 is one here worth stating plainly.
 
-An earlier report listed **"the choice of what to omit"** as unverifiable in principle,
+An earlier report listed "the choice of what to omit" as unverifiable in principle,
 alongside intuition, analogy quality, and "why this matters," on the grounds that "a
 perfectly verified explanation of the wrong 20% is a failure no tier detects."
 
-**That row does not survive, and it should be split into three.**
+That row does not survive, and it should be split into three.
 
 **(a) Omission that *falsifies* is machine-checkable, and it is the class that causes
 harm.** Five properties a simplification may never falsify, each a property of the *pair*
@@ -326,20 +326,20 @@ harm.** Five properties a simplification may never falsify, each a property of t
 
 Those five and not others, for a reason with a measurement behind it: misconceptions
 *across* ontological kinds are robust and *within* kinds are repairable, and a
-classical–quantum hybrid conception was measured **unchanged across a full semester** of
+classical–quantum hybrid conception was measured unchanged across a full semester of
 university chemistry. An undeclared drop is, at retrieval time, indistinguishable from a
 planted misconception. **It is a type error, not an editorial judgement the checker
 cannot reach.**
 
-**(b) Omission of required coverage is a set difference against a blueprint.** "Did the
+(b) Omission of required coverage is a set difference against a blueprint. "Did the
 artefact cover what it was supposed to cover?" is a set-cover computation, and assessment
 has done it since the 1950s under the name *table of specifications*. The earlier report's
 own right-hand column concedes the mechanism — "coverage against a syllabus" — and then
 leaves the row in the unverifiable table anyway. That is an inconsistency, not a finding.
 
-**(c) The choice of the declared scope itself is genuinely, permanently unverifiable.**
+(c) The choice of the declared scope itself is genuinely, permanently unverifiable.
 Whether *this* syllabus is the right syllabus; whether the 20% you declared out of scope
-was the 20% that mattered. Not truth-apt. **The residue is one line long.**
+was the 20% that mattered. Not truth-apt. The residue is one line long.
 
 The general move, and it is the most useful idea in this section:
 
@@ -354,12 +354,12 @@ The general move, and it is the most useful idea in this section:
 
 The obvious attack: declare a trivially narrow scope and every fidelity check passes.
 Real — and it is why the two checks run as a *pair*. Narrowing the scope to escape a
-fidelity failure mechanically produces a **coverage** failure against the blueprint. They
+fidelity failure mechanically produces a coverage failure against the blueprint. They
 pull in opposite directions, which is what makes a pair sound where either alone is
 gameable.
 
 And the sentence the earlier report got exactly right, which nothing above weakens:
-**verification is a floor, not a quality.** A fully verified explanation can be badly
+verification is a floor, not a quality. A fully verified explanation can be badly
 sequenced, pitched wrong, and pointless. Grounding removes a failure mode; it never adds a
 virtue.
 
@@ -372,7 +372,7 @@ virtue.
 The boundary moves from the model's fluency — an unbounded, undiagnosable surface — to the
 map from the learner's world into the checker's world: the units you assigned, the symbols
 you bound, the source you selected, the domain you declared, the scope you announced. That
-surface is **small, enumerable, auditable, and the same object at every rung.** You have
+surface is small, enumerable, auditable, and the same object at every rung. You have
 not eliminated trust; you have compressed it into a finite list a human can review and a
 learner can be shown. It also explains why four sections' hardest problems are one
 problem: the autoformalization gap, "the IR does not encode the intended figure," the
@@ -384,14 +384,14 @@ badge**, because it transfers the arbiter's narrow guarantee onto the whole arte
 State what was checked, operationally, in one sentence a twelve-year-old can read ("I
 checked this formula against 8 sets of numbers and it agreed every time"). State the
 declaration, including any assumption needed to make it pass, because **the assumption is
-part of the claim**. State what was *not* checked, by name. **Show `ABSTAIN`** — an
+part of the claim**. State what was *not* checked, by name. Show `ABSTAIN` — an
 explicit "I couldn't check this" is information and a missing badge is not. And make the
 verdict falsifiable: ship the check, not just its result, so the learner can change the
 numbers and watch it break.
 
 One measured constraint: groundedness and comprehensibility trade off — "humans prefer
 responses generated using RAG, but not when responses are too grounded in the textbook
-content." **Ground the claim; do not ground the prose.**
+content." Ground the claim; do not ground the prose.
 
 ---
 

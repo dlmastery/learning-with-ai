@@ -98,27 +98,27 @@ shows **g = 0.22, p = .40** and **g = 0.14, p = .59** — non-significant. What 
 evidenced is explicit, systematic decoding instruction. The multisensory branding is
 not carrying the effect. Ship the mechanism, not the brand name.
 
-**UDL is a design philosophy, not an evidence-based intervention.** The best
+UDL is a design philosophy, not an evidence-based intervention. The best
 meta-analysis concludes it improves the learning *process* while "the impact on
 educational outcomes has not been demonstrated"; a policy review found no rigorous
 published research demonstrating improvement. The component practices it bundles —
 multiple representations, choice, scaffolded engagement — are individually
-well-evidenced. **Keep the components; drop the claim.** We build to the accessibility
+well-evidenced. Keep the components; drop the claim. We build to the accessibility
 standard the law actually incorporates — see below — because access is a right, not
 because a framework promises a score.
 
-**Do not build a working-memory trainer.** Working-memory training produces reliable
+Do not build a working-memory trainer. Working-memory training produces reliable
 near-transfer to the trained task and does not transfer to anything anyone cares
 about. Given that our eleven-year-old's central constraint *is* working memory, the
 temptation is enormous and the evidence is unambiguous. **Externalise memory
 instead** — off-load it into the environment, the notation, the shared canvas, the
 persistent record. Do not try to enlarge the buffer. Reduce what has to go in it.
 
-**And a framework can be implemented faithfully and still hurt.** The federal
+And a framework can be implemented faithfully and still hurt. The federal
 evaluation of Response to Intervention covered **146 schools across 13 states**, all
 experienced with RTI, 86% reporting full implementation. Regression discontinuity
 around the screening threshold found that Grade-1 students who scored *just below*
-the cut, and were therefore assigned to reading intervention, had **lower** spring
+the cut, and were therefore assigned to reading intervention, had lower spring
 scores than those just above it. Grades 2 and 3: no significant impact.
 
 The mechanism most discussed is that intervention pulls a child *out of* effective
@@ -177,9 +177,9 @@ the fast loop, called it personalisation, and shipped.
 
 ### 4.3 Restraint matters *more* here, not less
 
-Unconstrained LLM access **widens** the gap between low- and high-prior-knowledge
+Unconstrained LLM access widens the gap between low- and high-prior-knowledge
 learners. The largest AI-tutoring trial in Nigeria found gains accruing
-disproportionately to students with **higher** initial performance. Sierra Leone's
+disproportionately to students with higher initial performance. Sierra Leone's
 effect loaded at **+0.195 SD per SD of baseline mathematics** — the strong pulled
 further ahead (§09).
 
@@ -190,7 +190,7 @@ pedagogical nicety here. It is the difference between a tool that closes the gap
 one that widens it.
 
 There is an important asymmetry to state honestly, because it constrains what we may
-claim. Guardrails have been measured to **remove harm**: unguarded assistance left
+claim. Guardrails have been measured to remove harm: unguarded assistance left
 learners **17% worse** on later unassisted work, and the guardrailed arm's unassisted
 coefficient was **−0.004, not significant.** Harm removed (§01). **Benefit not
 demonstrated.** Anyone selling guardrails as a learning gain is ahead of the
@@ -233,7 +233,7 @@ They are what good instruction looks like for anyone, made visible because at th
 margin you cannot get away with anything less.
 
 The evidential half needs a caveat we should state ourselves rather than have pointed
-out. Effects for learners with disabilities do **not** transfer automatically to
+out. Effects for learners with disabilities do not transfer automatically to
 typical learners or the reverse; non-responders to well-implemented intervention
 exist and are predictable; and an effect size of 0.41 is a statement about a
 distribution, never a promise to a child. "It works for the margin so it works for
@@ -255,7 +255,7 @@ learners.
 
 That is not a reason to wait. It is the specification for the first experiment worth
 running — and the obligation that comes with building this is that we run it, with a
-**delayed, unassisted, novel-item** primary outcome, and publish it whichever way it
+delayed, unassisted, novel-item primary outcome, and publish it whichever way it
 lands.
 
 The chair is empty because nobody sat down. Not because the seat was taken.

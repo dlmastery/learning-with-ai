@@ -48,22 +48,22 @@ not — specifically that **rewind density** marks where comprehension failed.
 
 That hypothesis is dead, and it died three separate times.
 
-**Measured.** YouTube's "most replayed" heatmap was extracted for 51 videos and
+Measured. YouTube's "most replayed" heatmap was extracted for 51 videos and
 analysed. Median entropy **0.976**, where 1.0 is perfectly flat. Enrichment over
 uniform: **1.95×**. Peaks explain roughly **16%** of variance by concept, and land
-**closer to chapter boundaries than chance** (49.8s versus 87.6s) — that is, they
+closer to chapter boundaries than chance (49.8s versus 87.6s) — that is, they
 mostly mark navigation, not confusion.
 
-**Structurally foreclosed.** The signal is **min–max normalised within each video in
+Structurally foreclosed. The signal is **min–max normalised within each video in
 51 of 51 cases.** Every video has a peak at 1.0 by construction. Cross-video
 comparison — the entire point of an atlas — is impossible from this data.
 
-**And it was already built.** LectureScape (UIST 2014) implemented exactly this
-interface. It was **null on every task**, *slower* than baseline outside peaks, and
-significantly better on **perceived** efficiency. The felt/real dissociation, appearing
+And it was already built. LectureScape (UIST 2014) implemented exactly this
+interface. It was null on every task, *slower* than baseline outside peaks, and
+significantly better on perceived efficiency. The felt/real dissociation, appearing
 in the tool built to escape it.
 
-**Worse, the sign may be backwards.** Brinton et al. found backward-scrubbing predicts
+Worse, the sign may be backwards. Brinton et al. found backward-scrubbing predicts
 getting the *next question right* — engagement, not confusion.
 
 The distinction between attitudinal and behavioural signals was the right one to
@@ -73,7 +73,7 @@ draw. Drawing it properly is what killed the proposal.
 
 ## 3. We ran our own predicate as code, and it mostly did not fire
 
-Section 29 proposed that a simplification is legal iff its **quantifier prefix** is
+Section 29 proposed that a simplification is legal iff its quantifier prefix is
 entailed by the formal statement's, and called this *"decidable, cheap, and the most
 valuable entry in the table."*
 
@@ -103,7 +103,7 @@ contribution has now been tested, by us, and mostly did not work.
 ## 4. What does predict a good explanation — the one thing with a number
 
 Amid all of that, one feature has a measured effect size, and it is the one Muller's
-thesis isolates: **which misconception the explanation names.**
+thesis isolates: which misconception the explanation names.
 
 His four versions of the same physics content, measured:
 
@@ -115,8 +115,8 @@ His four versions of the same physics content, measured:
 | **Dialogue — two speakers, one holding the misconception** | **4.77** |
 
 And in the same work, perceived learning was **flat (5.7 vs 5.6)** while real learning
-differed by **d = 0.71** — with the better format rated significantly **duller**,
-**too long**, and **less wanted in lectures.**
+differed by **d = 0.71** — with the better format rated significantly duller,
+too long, and less wanted in lectures.
 
 Every one of those three is a signal a recommender system acts on. **A platform
 optimising for watch-through would systematically down-rank the version that
@@ -126,14 +126,14 @@ teaches.**
 
 ## 5. The design, and the falsifier that is free today
 
-`DESIGN` — **the explanation atlas.** Harvest candidate explanations per concept, grade
+`DESIGN` — the explanation atlas. Harvest candidate explanations per concept, grade
 them mechanically, measure delayed unassisted transfer on a subset, and learn which
 graded features predict the outcome. Once features predict, you can select or generate
 without running a trial each time.
 
 But the ordering has changed, and the reasoning is the useful part:
 
-**Build the error atlas first.** The explanation atlas's only feature with a measured
+Build the error atlas first. The explanation atlas's only feature with a measured
 effect is *which misconception it names* — which is worthless unless you know which
 misconceptions a population actually holds. That is precisely the error atlas's output.
 The two are sequenced, not parallel.
@@ -143,7 +143,7 @@ lawfully available. The explanation atlas's interesting corpus is **legally
 foreclosing** — captions now return 200 with zero bytes, and an anti-circumvention suit
 was heard in August.
 
-**And the decisive test costs nothing.** Muller published four explanations of the
+And the decisive test costs nothing. Muller published four explanations of the
 same content with measured outcomes. Grade them with §29's predicates and see whether
 the grader recovers the order.
 
@@ -171,5 +171,5 @@ spent.
 
 The instinct behind this section is sound: somewhere there is a better explanation of
 every concept than the one in the book, and it is probably free. What this survey can
-now say is that **finding it by popularity selects against it** — and that the one
+now say is that finding it by popularity selects against it — and that the one
 property worth grading for is whether it names the thing the learner already believes.

@@ -33,7 +33,7 @@ implementation to land.
 
 **And it is precisely why the two-hour figure cannot explain the attainment claim.**
 If two hours buys parity, it buys parity. Something else has to account for students
-scoring above their peers — and the candidates are **targeting** and **selection**,
+scoring above their peers — and the candidates are **targeting** and selection,
 not the clock.
 
 That distinction is the whole section. The compression is real; it is not the
@@ -44,7 +44,7 @@ mechanism being advertised.
 ## 2. The attainment claim rests on a denominator
 
 The operator's white paper contains one worked example of its "2×" figure. Its
-denominator is **the RIT gap between adjacent grades at a fixed percentile** — how far
+denominator is the RIT gap between adjacent grades at a fixed percentile — how far
 apart grade 5 and grade 6 sit on the scale, at the same percentile.
 
 That is not a growth norm. The published growth norm for the same cell is **9.61 RIT**
@@ -62,7 +62,7 @@ average student.** It is a property of the denominator, not of the instruction.
 
 Two further mismatches compound it. The frequently quoted **99th *school* percentile
 corresponds to roughly the 90th *student* percentile** in maths and 84th–87th in
-reading. And the norms are built on **US public-school students** — a comparison a
+reading. And the norms are built on US public-school students — a comparison a
 private school will win on composition alone.
 
 None of this shows the school does not work. It shows **the published number does not
@@ -77,7 +77,7 @@ Marketing is `VENDOR`. A charter application is a filing with consequences, and 
 something different.
 
 In its Pennsylvania application the same operator projected ranking **in the top half
-of Pennsylvania schools** — not the top percentile. **Four of five states refused**,
+of Pennsylvania schools — not the top percentile. Four of five states refused**,
 with the Pennsylvania department finding *"deficiencies in all five of the required
 criteria."*
 
@@ -106,8 +106,8 @@ Nine "school reinvented" precedents are on the record — AltSchool, Summit Lear
 Teach to One, Rocketship, Carpe Diem, Khan Lab School among them. One is worth
 isolating because its evidence pattern is exactly the one under examination here.
 
-**Teach to One** has two evaluations. The independent one, on state tests, is
-**null**. The positive one is **MAP-growth-based.**
+Teach to One has two evaluations. The independent one, on state tests, is
+null. The positive one is MAP-growth-based.
 
 Same programme. Same period. Different instrument, opposite conclusion.
 

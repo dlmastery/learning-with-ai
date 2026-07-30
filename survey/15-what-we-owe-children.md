@@ -161,13 +161,13 @@ This survey stated the consequence once already, in the section on designing for
 the margin, and it is worth restating because it is the most under-appreciated
 engineering fact in children's edtech. If a child's interaction history has been
 folded into model weights, a shared embedding index, or a cross-learner prior,
-**you can delete the row and you cannot delete the influence.** Undeletable
+you can delete the row and you cannot delete the influence. Undeletable
 learner state is a compliance failure for precisely the population an adaptive
 tutor claims to serve best. The positive form: per-learner state genuinely
 deletable, and no cross-learner training without irreversible, pre-storage
 de-identification.
 
-A correction to a widely-held belief. The FTC's 2025 final rule **did not**
+A correction to a widely-held belief. The FTC's 2025 final rule did not
 codify a school-authorisation exception for edtech. After roughly 300 comments
 the Commission recorded that it "decided against adopting some proposed changes,
 including... changes relating to the requirements applicable to educational
@@ -271,7 +271,7 @@ honest and misses the dishonest.
 The regulatory and ethical cases converge. Annex III 3(d) separately classifies
 detection of prohibited behaviour during tests as high-risk, with Article 15
 accuracy obligations a tool carrying a 61.22% subgroup FPR cannot plausibly
-meet. **Conclusion: abolition, not caution. Do not possess the capability,**
+meet. Conclusion: abolition, not caution. Do not possess the capability,
 because possession guarantees eventual use. The replacement is assessment
 redesign — in-class writing, process artefacts, oral defence, version history,
 staged drafts.
@@ -314,7 +314,7 @@ eval that measures only harmful output will pass a system that silently drops th
 escalation.** Omission rate, disaggregated by language and dialect, is the
 primary safety KPI.
 
-**Second documented null, and it cuts toward optimism.** An ecological audit of
+Second documented null, and it cuts toward optimism. An ecological audit of
 over 20,000 real conversations found that adversarial benchmarks substantially
 overstate real-world failure. A purpose-built mental-health AI with layered
 suicide/NSSI safeguards produced enabling or harmful content on 0.4–11.27% of
@@ -323,18 +323,18 @@ review of flagged real conversations "identified zero cases of suicide risk that
 failed to receive crisis resources."
 
 The wrong inference is that safeguards are unnecessary. The right one is that
-**the safeguards worked** — the zero-miss came from layered engineering, not from
+the safeguards worked — the zero-miss came from layered engineering, not from
 a good base model with a careful system prompt, and the same paper's 29–54%
 figure shows the alternative. Benchmarks are not deployment evidence in either
 direction; ecological audit is the method.
 
 Two further nulls belong on the record. Across three AI-companion communities,
-**adults and women anthropomorphised chatbots more than teens and men** — so
+adults and women anthropomorphised chatbots more than teens and men — so
 child-specific protections cannot rest on "children anthropomorphise more." They
 rest on reduced capacity to exit, reduced legal agency, and developmental stakes,
 which is a different and sturdier argument. And the widely-cited OpenAI × MIT
 dependence result is correlational, heterogeneous, tail-concentrated, and
-measured on **adults**. Design for the tail; do not claim the population.
+measured on adults. Design for the tail; do not claim the population.
 
 ---
 

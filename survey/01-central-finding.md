@@ -80,7 +80,7 @@ narrated animations on transfer. Paik & Schraw (2013) found representational
 animation *negatively* affected learning.
 
 And the mirror image completes it: Deslauriers et al. (2019, PNAS) showed active
-learning **raises real learning while lowering felt learning.** Students in the
+learning raises real learning while lowering felt learning. Students in the
 condition that taught them more reported learning less.
 
 ## Why this is a systems problem, not a research curiosity
@@ -125,7 +125,7 @@ subjective confidence exceeding objective retention. So a system optimising
 learner-reported satisfaction, and a learner choosing what feels effective, fail
 in the same direction — together, and confidently.
 
-This is why the survey treats **frequent low-stakes retrieval** (H1.2) as
+This is why the survey treats frequent low-stakes retrieval (H1.2) as
 non-negotiable infrastructure rather than a feature. It is the only routinely
 available instrument that measures the thing that matters.
 
@@ -151,7 +151,7 @@ quietly edited, per the editorial standard.
    main effect); Nigeria +0.151; Lehmann concurs. **A student 1 SD below the mean
    gains ≈0.055 SD.** Three countries, three tools, three age groups, same sign.
 
-**The load-bearing gap:** no study in the corpus administered a delayed retention
+The load-bearing gap: no study in the corpus administered a delayed retention
 test. ERIC counts (2026-07-27): ChatGPT + "learning outcomes" = 95;
 + "delayed post-test" = **2**; + "retention test" = **0**; + "transfer test" =
 **0**; + "preregistered" = **0** — against 273 ERIC records using delayed
@@ -160,7 +160,7 @@ post-tests on other topics. The instrument exists. The field does not use it.
 And the field's most-cited meta-analysis (Wang & Fan 2025, g = 0.867, >250
 citations) was **retracted in 2026**; the authors have not responded.
 
-**What survives:** supervised LLM tutoring lands at **0.2–0.4 SD** — the same band
+What survives: supervised LLM tutoring lands at **0.2–0.4 SD** — the same band
 as pre-LLM ITS (0.32–0.42) and in-person human tutoring (**0.288**, 96 RCTs). That
 is a real, useful, affordable effect. It is not an order-of-magnitude jump, and
 **GenAI without teacher support is null (g = 0.077)**.

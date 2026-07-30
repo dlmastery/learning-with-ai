@@ -81,7 +81,7 @@ a selection effect unless dosage was randomised.
 
 ## 2. What the market measures instead of learning
 
-**Finding one: the evidence gradient runs opposite to the funding gradient.** The
+Finding one: the evidence gradient runs opposite to the funding gradient. The
 two products in this section with genuine independent randomised evidence —
 ASSISTments, a nonprofit that is free to teachers, and Cognitive Tutor, a
 forty-year-old curriculum publisher — report **0.03 to 0.22 SD**. The products with
@@ -96,7 +96,7 @@ is real and scarce. But it needs one distinction that no vendor in this survey m
 signature of harm.** The unguarded arm of the Bastani trial also saved the student
 enormous time, and §01 carries what happened when the tool was taken away.
 
-**Finding three: mechanism claims are checkable and outcome claims usually are not.**
+Finding three: mechanism claims are checkable and outcome claims usually are not.
 "Guides rather than answers." "Listens as students read aloud." "Makes teaching
 decisions in the moment." Each of those describes what the system *does*, and each is
 verifiable by inspection. That makes them worth more than an unreproducible outcome
@@ -104,9 +104,9 @@ number — and §23 records the case that limits the principle, where a fully tr
 mechanism claim bought nothing because the mechanism only fired when a student first
 recognised they needed help.
 
-**Finding four: a resolving DOI is not a result.** Several products' "studies"
+Finding four: a resolving DOI is not a result. Several products' "studies"
 resolve only to AEA RCT registry identifiers with the prefix `10.1257/rct.` — for
-example `10.1257/rct.13519`. **Those are pre-registrations. They contain no results.**
+example `10.1257/rct.13519`. Those are pre-registrations. They contain no results.
 A DOI here means someone intends to run a trial. Treat the prefix as a red flag, not
 a citation.
 
@@ -114,7 +114,7 @@ And the case that shows the gradient inside a single company: Curipod holds the 
 real evidence of any product in its batch and markets on the weakest number it owns.
 Its homepage leads with district testimonials — pre/post state-test comparisons with
 no control group, no sample size and no statistical test, one of them spanning **two
-teachers**. Its genuine study is a randomised trial with **n = 142** at
+teachers. Its genuine study is a randomised trial with n = 142** at
 **d = 0.301–0.800** — in *university nursing students*, against a control of
 "conventional lectures supplemented with PowerPoint presentations and textbooks," on
 survey constructs rather than achievement tests. It cannot support the K-12 state-test
@@ -129,7 +129,7 @@ narrower and less flattering.**
 Edtech's failure record is the most informative dataset it has, and unlike its
 success literature it is not vendor-controlled.
 
-**One Laptop Per Child** has a randomised verdict. Cristia et al., **319 rural
+One Laptop Per Child has a randomised verdict. Cristia et al., **319 rural
 Peruvian primary schools**, 15 months: computers per student rose from **0.12 to
 1.18** and use rose substantially at school and at home. "No evidence is found of
 effects on enrollment and test scores in Math and Language." The ten-year follow-up
@@ -137,18 +137,18 @@ across 531 schools found no significant effects on academic performance, complet
 or university enrolment. Delivery succeeded completely. The theory of change was
 wrong.
 
-**inBloom** was a $100 million student-data warehouse. Every district and state
+inBloom was a $100 million student-data warehouse. Every district and state
 withdrew after parent protests and it closed in April 2014. The technology worked;
 every customer left. §11 and §15 carry the custody lesson.
 
-**Knewton** raised roughly **$157M disclosed** across seven rounds against a claim —
+Knewton raised roughly **$157M disclosed** across seven rounds against a claim —
 "sophisticated, real-time analysis of reams of student performance data" — that was
 never stated in a form that could fail. Its assets sold to Wiley for **under $17
 million** in 2019. Roughly 90% capital destruction. §11 establishes the deeper
 problem independently: knowledge-tracing accuracy had already plateaued. Knewton was
 selling precision from a region of the design space where precision had run out.
 
-**AltSchool** raised $133M and built a network of schools in order to build software.
+AltSchool raised $133M and built a network of schools in order to build software.
 The schools were the R&D cost centre for a product that did not exist yet; when the
 software pivot came, the schools — the thing families had actually bought — closed.
 The surviving artefact, a parent progress portal, is now a table-stakes feature.
@@ -158,7 +158,7 @@ Right about the feature, wrong about the business.
 profit, and filed Chapter 11 on 25 July 2024. Its revenue-share structure made
 student *volume*, not student *outcome*, the only lever it had.
 
-**Byju's** reached a **$22bn valuation** and 150 million claimed registered users. Its
+Byju's reached a **$22bn valuation** and 150 million claimed registered users. Its
 founder said publicly in October 2024 that "the company is worth zero." Its reported
 85% retention rate was never independently verified and this survey does not repeat
 it.
@@ -189,7 +189,7 @@ Every company above would have failed that test.
 
 The graveyard is retrospective. Two live failures matter more.
 
-**A core claim was falsified after sale.** Turnitin shipped AI-detection in early
+A core claim was falsified after sale. Turnitin shipped AI-detection in early
 2023. Weber-Wulff et al. (2023, *International Journal for Educational Integrity*)
 tested twelve public tools plus two commercial systems in wide academic use for
 accuracy, error type, and robustness to machine translation and obfuscation. The
@@ -198,7 +198,7 @@ students alleged false accusations, including cases involving grammar-correction
 software those schools recommend. A vendor-stated false-positive rate of about 1%,
 against tens of millions of submissions, is a large number of accused innocents.
 
-**And consolidation concentrated the blast radius.** In late April 2026 Canvas LMS
+And consolidation concentrated the blast radius. In late April 2026 Canvas LMS
 suffered a security breach that *404 Media* described as the largest educational
 security breach on record: **3.65 terabytes, approximately 275 million records,
 8,809 universities and education institutions.** By 8 May, seven federal lawsuits had
@@ -227,21 +227,21 @@ discussed.
 What is interesting is a set of design decisions arrived at from customer discovery
 rather than from citation, which converge with the evidence in this survey.
 
-**Withholding is classified as a safety property, not a feature.** "Socratic method
+Withholding is classified as a safety property, not a feature. "Socratic method
 only. Guides students to answers, never gives them" sits on the page under *safety
 guardrails*. That is the correct taxonomy: the trial evidence says unfettered
 answering is the harm condition, so answer-withholding belongs with the guardrails
 and not with the features.
 
-**The architecture puts the AI behind the human.** The positioning — "AI will not
+The architecture puts the AI behind the human. The positioning — "AI will not
 replace tutors, but it will redefine how they work" — is structurally the Tutor
 CoPilot configuration, which is the one AI-tutoring architecture with a
 live-classroom randomised trial behind it (§09, §26). The wedge identified from
-interviewing tutors was **continuity**, not comprehension: nobody remembers what
+interviewing tutors was continuity, not comprehension: nobody remembers what
 happened last Wednesday. That is the correct read of the literature, reached without
 reading it.
 
-**Oversight is total rather than sampled**, with human review gates on every artefact
+Oversight is total rather than sampled, with human review gates on every artefact
 that leaves the system — profiles reviewed before sharing, parent emails reviewed
 before sending — and synthetic-origin labelling at the point of consumption. The
 same three commitments appear independently at SchoolAI and MagicSchool: **adult
@@ -263,13 +263,13 @@ the survey author's own work. It is reported rather than omitted because the sur
 credibility depends on applying its own test to itself first.
 
 Three further criticisms follow from the same evidence base, and they are not
-softened. **The refusal is unverified**: no transcript audit, no red-team result, no
+softened. The refusal is unverified: no transcript audit, no red-team result, no
 refusal-failure rate. "Never gives answers directly" is currently an assertion about
-a prompt. **"Socratic only" is stronger than the evidence supports**: §04's archetype
+a prompt. "Socratic only" is stronger than the evidence supports: §04's archetype
 work is explicit that for reasoning and abstraction gaps, discovery learning is
 actively harmful and explicit instruction is required. The defensible version is
 narrower — *never answer the question the student was assigned; may directly instruct
-on the prerequisite they lack.* And **the substitute is unmodelled**: a student
+on the prerequisite they lack.* And the substitute is unmodelled: a student
 blocked by a Socratic tutor at eleven at night has a general-purpose chatbot in the
 next tab. One vendor refusing does not eliminate the harm condition. It relocates it.
 A refusal engine with no theory of the substitute is measuring its own compliance,

@@ -169,14 +169,14 @@ to the result. The −17% stands (§01).
 
 Four, none of which is in the headline of the paper that contains it.
 
-**Tutor CoPilot is the cleanest proximal/distal dissociation in the field.** A
+Tutor CoPilot is the cleanest proximal/distal dissociation in the field. A
 preregistered, independently funded RCT — 900 tutors, 1,800 Title I students, 4,136
 sessions — moved exit-ticket mastery by 4 percentage points (p < 0.01), 9 points
 for students of the lowest-rated tutors. Verbatim from its limitations section:
 "**we did not find statistically significant improvements in end-of-year math test
 scores.**" The in-platform metric moved. The state test did not.
 
-**Lehmann, Cornelius & Sting is a preregistered, incentivised, replicated null.**
+Lehmann, Cornelius & Sting is a preregistered, incentivised, replicated null.
 Two lab experiments (107 and 69 subjects) plus a field study: "we find no effect of
 LLMs on overall learning outcomes." Students who substituted LLM use for study
 "increase the volume of topics they can learn about but decrease their
@@ -190,7 +190,7 @@ survives scrutiny is a teacher-designed, teacher-supervised activity with an LLM
 one component. The measured entity is *teacher-plus-AI activity design*. **No study
 in the corpus isolates the AI's contribution.**
 
-**And offering AI access reduced engagement.** Nie et al. randomised GPT-4 access
+And offering AI access reduced engagement. Nie et al. randomised GPT-4 access
 across 5,831 students in 146 countries: "the advertisement of GPT-4 led to a
 significant average decrease in exam participation." The positive effect for
 adopters is selection, not a randomised contrast — and peer review made the authors
@@ -216,7 +216,7 @@ has made to render pedagogy measurable, and because its famous numbers measure
 something other than learning.
 
 The programme's flagship evaluations — the "+31% over GPT-4o", the "73.2% overall
-win rate" — are **pedagogical plausibility**, not outcomes. The dependent variable
+win rate" — are pedagogical plausibility, not outcomes. The dependent variable
 is a third-party expert's agreement with a statement about a transcript. Google
 says so themselves, in R2's conclusion: "it is unclear how well the results
 translate to improvements in learning outcomes." R3 asks the question outright: "do
@@ -225,7 +225,7 @@ students?"
 
 Two findings inside that programme are more useful than the win rates.
 
-**The rubric's reliability was reported once.** R1 published Krippendorff's α per
+The rubric's reliability was reported once. R1 published Krippendorff's α per
 dimension: overall **0.359**, and on three of nine tutoring moves —
 *inspires interest* **0.066**, *monitors motivation* **0.023**, *identifies goal*
 **0.031** — credentialed pedagogy experts agreed with each other at approximately
@@ -233,7 +233,7 @@ chance. Two of LearnLM's five principles rest substantially on constructs raters
 cannot reliably identify in a transcript. R2 and R3 report no inter-rater statistic
 at all. Publishing that α was the right thing to do; stopping was not.
 
-**And the learners disagreed with the experts.** Twice, in two reports. The people
+And the learners disagreed with the experts. Twice, in two reports. The people
 role-playing the conversation "indicated no substantial preference between LearnLM
 and Gemini 1.5 Pro or between LearnLM and Claude 3.5 Sonnet." In R3, educators
 interacting directly scored Gemini 2.5 Pro and ChatGPT-4o as tied; only the
@@ -256,7 +256,7 @@ position — and the retention evidence will arrive.*
 Most of that is correct, and it is why this section leads with the band rather than
 the gaps. But two things break the defence.
 
-First, **the instrument is not expensive or novel.** Two hundred and seventy-three
+First, the instrument is not expensive or novel. Two hundred and seventy-three
 ERIC records use it. It is four weeks of patience and a fresh item set — and item
 generation is now the cheapest thing in the system. The field is not failing to
 measure retention because retention is hard to measure.

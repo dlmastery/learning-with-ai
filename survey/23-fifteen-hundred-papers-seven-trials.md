@@ -122,13 +122,13 @@ Vendor copy is not evidence, but SEC filings are audited and carry liability.
 generative AI. That is a company stating under oath that the business of selling
 homework answers is being dismantled.
 
-**Synthesis School, SEC Form C-AR:** revenue **+6.5%**, losses roughly halved,
+Synthesis School, SEC Form C-AR: revenue **+6.5%**, losses roughly halved,
 total assets **−53%**, 26 employees — filed alongside a **termination of
 reporting**. Modest growth, shrinking balance sheet, and going dark.
 
 And one number that dissolved on contact. MagicSchool's widely repeated **"28%
-literacy improvement"** is **unattributable**: five candidate URLs return 404, and
-the full 153-URL sitemap contains **no research page at all.** Not weak evidence —
+literacy improvement" is unattributable**: five candidate URLs return 404, and
+the full 153-URL sitemap contains no research page at all. Not weak evidence —
 *no locatable source*. It should not be cited by anyone, and the fact that it
 circulates is a small case study in how a `VENDOR` claim becomes a "finding"
 through repetition.
@@ -137,7 +137,7 @@ through repetition.
 
 ## 5. What is genuinely newly possible
 
-The sweep's good news is concrete and it is about **sovereignty** rather than
+The sweep's good news is concrete and it is about sovereignty rather than
 capability.
 
 **Gemma 4 is Apache-2.0 and ungated.** Weights can go to a school on a USB stick.
@@ -146,8 +146,8 @@ vendor able to deprecate the model a district built its year around. For the
 populations in §07 — the ones behind connectivity, language, and permission
 barriers — that is a larger change than another point of benchmark accuracy.
 
-And a genuinely maintained local stack now exists end to end: **Kolibri** for
-offline content and progress, **llama.cpp / Ollama** for inference, **sherpa-onnx**
+And a genuinely maintained local stack now exists end to end: Kolibri for
+offline content and progress, llama.cpp / Ollama for inference, sherpa-onnx
 for speech. All actively maintained, all self-hostable.
 
 ---
@@ -183,7 +183,7 @@ evidence. This is a question about somebody writing an adapter.
 This sweep also caught a live error in our own §15, and the correction is
 time-sensitive enough to repeat here.
 
-The EU AI Act's **Annex III** education obligations were widely expected to apply
+The EU AI Act's Annex III education obligations were widely expected to apply
 from 2 August 2026. **They were deferred to 2 December 2027** by Regulation (EU)
 2026/1744 — the Digital Omnibus on AI, in force **27 July 2026**, verified against
 the EUR-Lex primary text.

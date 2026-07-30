@@ -72,7 +72,7 @@ is wrong by next year in the same direction. Any design that treats attention as
 scarce is designing for a world that is closing.
 
 So stop asking what we can afford to give a child, and ask the harder question:
-**what would we give them if attention were free?**
+what would we give them if attention were free?
 
 Not more of the same. Not a chatbot that answers faster. The things that were
 *structurally impossible* under scarcity:
@@ -91,7 +91,7 @@ Not more of the same. Not a chatbot that answers faster. The things that were
 Every one of those was unbuildable not because we lacked the idea but because we
 lacked the attention to spend on it. That is the constraint that is lifting.
 
-**And the real-time layer is already here:** 640×368 at 25 FPS with ~200 ms
+And the real-time layer is already here: 640×368 at 25 FPS with ~200 ms
 model-side latency — inside the human conversational turn-gap — with a persistent
 world and a separate event stream. The thing that was science fiction in 2023 runs
 on a desk in 2026.
@@ -119,10 +119,10 @@ Not one tutor. A crew.
 Seven roles here; the full registry is ten, and the number that actually governs
 design is the **active set of 3–5 per learner-hour** — the economics would allow
 about forty, the orchestration evidence allows three to five, and you design to the
-smaller number. One shared learner model. **No votes** — a precedence ladder where
+smaller number. One shared learner model. No votes — a precedence ladder where
 executable ground truth wins outright and dissent is *recorded*, never averaged
 away. And the crew must be genuinely heterogeneous: three independent benchmarks
-find multi-agent debate does **not** reliably beat plain self-consistency, and one
+find multi-agent debate does not reliably beat plain self-consistency, and one
 finds a single well-prompted agent nearly matches the best discussion method.
 Seven copies of the same model wearing hats is theatre. Different grounding,
 different evidence, different authority is a crew.
@@ -150,13 +150,13 @@ with *human* tutees — the agent version is untested),
 and essentially nobody has deployed it, because every commercial model is
 incapable of staying wrong.
 
-**4. It ladders.** One concept at **three** distinct altitudes — three rungs beat
+**4. It ladders.** One concept at three distinct altitudes — three rungs beat
 two (p=0.032); five did not beat three (p=0.738) — held as a **library the learner
 enters at the right height**, not an itinerary anyone walks. Fidelity rule:
 monotone refinement. A level may *drop* precision, formalism, mechanism-depth. It
 may never falsify **ontology, causal sign, quantifier strength, or uniqueness of
 mechanism** — because errors *across* ontological categories are the ones a full
-semester of instruction does not shift. Entry is **measured, never preferred**:
+semester of instruction does not shift. Entry is measured, never preferred:
 preference moves d≈0.48 while knowledge moves zero.
 
 **5. It grounds.** Derivations are checked, not asserted. Numerically, then
@@ -198,7 +198,7 @@ hypothesis rather than a pitch. The rules stay:
 - **Watch for gap-widening — and know that it is a property of *delivery*, not of
   technology.** Untargeted deployment reliably helps strong learners more (Sierra
   Leone loaded at +0.195 SD per SD of baseline). But across eight *targeted*
-  interventions, **not one widened gaps and several sharply narrowed them.**
+  interventions, not one widened gaps and several sharply narrowed them.
   Gap-widening is therefore a design failure we can avoid, not a law we must
   accept. If ours widens gaps, it has failed, whatever the mean says.
 - **The Null-Learner Test** on every metric: simulate an agent maximising it while
@@ -211,16 +211,16 @@ hypothesis rather than a pitch. The rules stay:
 
 The myth is usually told as a story about access, and that half is right: Droṇa
 refused him, so he built a clay image and trained against it anyway. AI removes
-both of those barriers permanently — **the teacher's veto** and **the requirement
+both of those barriers permanently — the teacher's veto and **the requirement
 of the teacher's consent**. No prerequisite lock. No "you're not ready yet." No
 one deciding in advance who is allowed to be taught.
 
-But the thumb is taken **after** he succeeds. Not for learning badly — for
+But the thumb is taken after he succeeds. Not for learning badly — for
 learning *well*, and without authorisation. The veto that mattered was never the
-teacher's. It was **the guild's**, and it acted at the moment of recognition.
+teacher's. It was the guild's, and it acted at the moment of recognition.
 
 So any claim that AI democratises learning is telling the true half and stopping
-one page early. Attention becomes free; **credentialing does not.** A system that
+one page early. Attention becomes free; credentialing does not. A system that
 teaches a child brilliantly and then hands them nothing the world will accept has
 reproduced the story exactly, in a nicer voice.
 
@@ -230,4 +230,4 @@ about a learner. Portable, inspectable, contestable, owned by the child.
 
 Ekalavya lost his thumb so the hierarchy could keep its best archer at the top.
 
-**Nobody's thumb, ever again — and this time, the record travels with them.**
+Nobody's thumb, ever again — and this time, the record travels with them.

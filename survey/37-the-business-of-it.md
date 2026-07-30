@@ -55,7 +55,7 @@ The efficiency reading is not solid. The authors state that their design
 > *"precludes a rigorous measurement of throughput or efficiency."*
 
 The published throughput gain — concurrency 2.3 → 3.5, netting −13.6% cost per
-session — comes from a **six-tutor role-play simulation** in an appendix, and the
+session — comes from a six-tutor role-play simulation in an appendix, and the
 labour rate underpinning the saving is cited to **a tutoring marketplace's blog
 post**.
 
@@ -90,12 +90,12 @@ asked to produce the ratio monthly.
 
 ## 4. Two market facts that relocate the opportunity
 
-**The funding wave never arrived where everyone models it.** Summed from the education
+The funding wave never arrived where everyone models it. Summed from the education
 department's own state-level obligation data, the reported *tutoring* line of the
 pandemic relief appropriation is **$994.7 million — 0.52% of $189.5 billion**. The
 category most often cited as the demand driver received half a percent of it.
 
-**And the numbers in circulation mostly have no source.** Six of six analyst houses
+And the numbers in circulation mostly have no source. Six of six analyst houses
 fail traceability on the tutoring market size — two dead links, one report not shown
 to exist, one figure internally inconsistent by three orders of magnitude. For scale
 on how far the reported totals drift: **Korea alone (₩27.5 trillion, and falling) is
@@ -111,8 +111,8 @@ that the sector it points at is the least financially measured in education.
 ## 5. China is a policy risk, not a market
 
 Retrieved in full from the Ministry of Education: the July 2021 *double reduction*
-order states that **no new approvals** will be issued for core-subject tutoring
-institutions and that existing ones **re-register as non-profits**. One listed
+order states that no new approvals will be issued for core-subject tutoring
+institutions and that existing ones re-register as non-profits. One listed
 operator's revenue fell **62% in twelve months**, per its filing.
 
 And the compounding finding: **no official Chinese statistic on tutoring market size
@@ -136,13 +136,13 @@ software multiple.
 **2 · "What is your delayed, unannounced, novel-item transfer result — with n, and who
 held the item bank?"**
 *Disqualifying:* the only outcome evidence is in-product mastery or engagement. One
-deployment moved its exit ticket **+4pp** and was **null on the state test** — and
+deployment moved its exit ticket **+4pp** and was null on the state test — and
 that dissociation between the proxy and the outcome is the most reproducible finding
 in this literature.
 
 **3 · "Have you ever run an arm against plain ChatGPT?"**
 *Disqualifying:* never tried, or tried and buried it. A controlled trial (n = 371)
-found scaffolded generative AI **no better than plain ChatGPT** on domain knowledge.
+found scaffolded generative AI no better than plain ChatGPT on domain knowledge.
 If the pedagogy has never beaten the free substitute customers already have, the moat
 is a prompt.
 

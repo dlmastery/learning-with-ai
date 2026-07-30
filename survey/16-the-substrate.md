@@ -87,7 +87,7 @@ current substrate.
 
 ## 2. What the camera can and cannot see
 
-Vision into a live session is **stills at one frame per second**, not video.
+Vision into a live session is stills at one frame per second, not video.
 That single constraint sorts the use cases cleanly.
 
 - **Camera on paper: works, today, on both platforms.** A worked problem is a
@@ -99,14 +99,14 @@ That single constraint sorts the use cases cleanly.
   makes procedural feedback possible. Anyone claiming "the AI watches how you
   solve it" is over-claiming: it watches snapshots of the result.
 
-Two absences follow. There is **no code execution inside a live session** on
+Two absences follow. There is no code execution inside a live session on
 Gemini Live at all. And neither API has any output channel other than audio,
 transcript, and tool calls — no cursor, no overlay, no highlight primitive.
 Deixis, the "*this* term, *that* bracket" that is among the most powerful moves a
 human tutor makes, has to be reconstructed by your own client from a model
 reasoning about coordinates in an image it saw at ≤ 1 FPS.
 
-**A correction the project owes its readers here.** The research behind this
+A correction the project owes its readers here. The research behind this
 section concluded flatly that "the pointing layer does not exist" and that
 nobody had built a shared-pointing surface. The project's own correction ledger
 subsequently records a deixis substrate in the literature (arXiv:2604.02893).
@@ -133,7 +133,7 @@ So a locally-rendered talking tutor at 25 FPS is buildable today. The question
 is whether it should be, and here the evidence is unusually clean and unusually
 deflationary.
 
-**The null, stated at full strength.** Three field experiments in real
+The null, stated at full strength. Three field experiments in real
 university courses — exam-relevant videos over 30 minutes, taught by a
 personally known instructor — compared a visible instructor with no visible
 instructor:
@@ -159,7 +159,7 @@ avatar.
 Two things the evidence does support. Embodiment helps *relative to a static
 agent* — gestures, gaze and expression beat their absence on a transfer test,
 which is an argument about how to animate rather than whether to show a face.
-And **reducing consistency in human realism increases the uncanny effect**, so a
+And reducing consistency in human realism increases the uncanny effect, so a
 photoreal face with slightly-off mouth motion is worse than a stylised face with
 the same motion. Cartoon-quality avatars are an engineering choice, not a
 compromise.
@@ -239,7 +239,7 @@ Three lines of evidence converge on this.
 **Generated code beats generated pixels, and it has been tested in a real
 course.** The CU Boulder group behind PhET ran a three-condition study in
 second-semester physics for life-science majors: physical equipment, a prebuilt
-simulator, and students **generating their own simulation with AI**. Conceptual
+simulator, and students generating their own simulation with AI. Conceptual
 assessment showed **η² = 0.359**, a large effect, and post hoc **both simulation
 conditions scored significantly higher than the physical-equipment condition**,
 with AI-generated not distinguishable from prebuilt. The mechanism was
@@ -251,7 +251,7 @@ that is robust to model error rather than dependent on its absence.** It is also
 a single preliminary study, one topic, one course; do not inflate it into
 "generated worlds teach as well as PhET."
 
-**Symbolic worlds already work and are almost free.** ScienceWorld is an
+Symbolic worlds already work and are almost free. ScienceWorld is an
 interactive text environment at fifth-grade science curriculum level, with state
 maintained by a symbolic simulator and therefore correct by construction. Its
 headline result belongs in any argument about substrate: **a 1.5M-parameter agent
@@ -259,7 +259,7 @@ trained interactively for 100k steps outperforms an 11B model statically trained
 on millions of expert demonstrations.** Learning by doing beat learning by
 reading, in a world that could not be wrong about itself.
 
-**And the category error worth correcting explicitly.** Kimi K3 circulates in
+And the category error worth correcting explicitly. Kimi K3 circulates in
 summaries as a world model that creates interactive worlds. Moonshot's own
 release blog **never uses the words "world model," "simulation," "physics," or
 "environment."** What it says is that K3 "combines strong 3D reasoning, coding,
@@ -280,18 +280,18 @@ construction.
 
 ## 6. The nulls that should change what you build
 
-**Long context is a non-event for learning.** A whole textbook has fit
+Long context is a non-event for learning. A whole textbook has fit
 comfortably in context for over a year; 1M tokens is now the default across an
 entire commodity vendor's services. Yet a targeted arXiv query for
 long-context / whole-textbook educational grounding returned **literally zero
 results**, while curriculum-RAG is one of the healthiest clusters in the same
 sweep. The field looked at "put the textbook in the window" and chose retrieval.
 That is not inertia — the binding constraint was never capacity, it was
-**attribution**. A teacher needs to know which page the claim came from, and a
+attribution. A teacher needs to know which page the claim came from, and a
 stuffed context window destroys that affordance while adding cost and latency.
 
 **Model capability does not transfer to tutoring capability, and there is now a
-number.** Solving ability and pedagogical ability correlate at **r = 0.421** on
+number. Solving ability and pedagogical ability correlate at r = 0.421** on
 public benchmarks. The maths a learner needs help with is not Putnam; it is
 fractions, and the specific fraction misconception this specific child holds.
 Every current model solves that perfectly. The unsolved problem is diagnosing the
@@ -299,13 +299,13 @@ misconception and choosing *not* to solve it, and no maths benchmark measures
 that — note that two frontier labs published no maths claims at all in their most
 recent flagship posts.
 
-**And the pedagogy layer is permanently yours.** LearnLM no longer exists as a
+And the pedagogy layer is permanently yours. LearnLM no longer exists as a
 model family; Google's own documentation states its capabilities were "integrated
 into Gemini starting with the 2.5 model series." There is no model ID that
 returns a tutor. What survives is a product surface built from system
 instructions, and OpenAI's Study Mode is described the same way; independently,
 training-free prompt optimisation was found to beat RL-trained pedagogical
-baselines. **Pedagogy is a prompt-and-product layer, not a weights layer** — which
+baselines. Pedagogy is a prompt-and-product layer, not a weights layer — which
 is simultaneously the largest opportunity here and the reason most frontier model
 releases are irrelevant to this work.
 

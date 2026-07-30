@@ -99,17 +99,17 @@ Fix nothing else and fix this, and the measured quality of everything downstream
 The pessimism above is about one missing component, not about capability. Where a
 check exists, the numbers are startling.
 
-**Sampling is a real multiplier.** Coverage scales log-linearly across **four orders
+Sampling is a real multiplier. Coverage scales log-linearly across **four orders
 of magnitude** of samples — and a *weak* model at 250 samples beat a *strong* model at
 1: **56% against 43%.** Compute spent on breadth substitutes for model quality,
 provided you can select.
 
-**Structured disagreement makes non-experts better judges.** Debate raised non-expert
+Structured disagreement makes non-experts better judges. Debate raised non-expert
 human accuracy from **60% to 88%.** Note what this is not: it is not agents agreeing
 with each other more efficiently. It is a human adjudicating a genuine disagreement
 and getting the right answer.
 
-**Literature synthesis is solved well enough to rely on.** PaperQA2 matches or exceeds
+Literature synthesis is solved well enough to rely on. PaperQA2 matches or exceeds
 subject-matter experts, with **70% of flagged contradictions validated.** The "find me
 the three papers that resolve my confusion" capability is real today.
 
@@ -133,7 +133,7 @@ RL *"has been most successful in cases where it has been constrained with ideas 
 theories from cognitive psychology and the learning sciences."* Corrected in §08 and
 §22; logged as C-29.
 
-**The "Google rots your memory" result has failed replication twice** (BF01 = 5.07).
+The "Google rots your memory" result has failed replication twice (BF01 = 5.07).
 It is one of the most-cited claims in every argument about AI and cognition, and it is
 not standing.
 
@@ -143,11 +143,11 @@ not standing.
 
 Two literatures exist. They have never met.
 
-**Self-improvement optimisers** — GEPA, DGM, AlphaEvolve — have spent three years
+Self-improvement optimisers — GEPA, DGM, AlphaEvolve — have spent three years
 getting very good at optimising a system against a fitness signal. Their fitness
 signal has been benchmark accuracy, every time.
 
-**Instructional-policy research** closed the loop on real human retention with 2014
+Instructional-policy research closed the loop on real human retention with 2014
 machinery, and got **+16.5% semester retention** in a middle-school course.
 
 Six arXiv queries and ten ERIC queries confirm it: **zero optimiser-in-the-loop trials

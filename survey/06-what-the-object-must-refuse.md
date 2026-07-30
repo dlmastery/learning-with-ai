@@ -65,7 +65,7 @@ active ingredient. Representational compression is.** A gesture is already a
 structure. That discarding is the learning. Handling the real blocks does the
 opposite — it binds the idea to the instance.
 
-Consistent with this: physical versus virtual manipulatives comes out **null** in
+Consistent with this: physical versus virtual manipulatives comes out null in
 both randomised, fidelity-documented head-to-heads (N = 350, within-class
 randomisation, Welch t = 1.015, p = 0.316). The one pooled estimate favouring
 virtual (d = 1.603) has **I² = 97.95%** and is uninterpretable — we report it
@@ -89,7 +89,7 @@ That is *self-correction*, and it is the mechanism. It is also, precisely, a
 constraint solver with a rendering layer.
 
 This resolves an apparent conflict in our own corpus. An earlier section scored
-Montessori's materials as **not surviving substitution** — remove the physical
+Montessori's materials as not surviving substitution — remove the physical
 object and the mechanism goes with it. That verdict is right *about Montessori*
 and does not generalise, because what fails to survive is the wood. What survives
 is the refusal.
@@ -102,7 +102,7 @@ together, which no physical object has ever done.
 
 ## 4. The inversion that matters most here
 
-Physical manipulation is an **access barrier**, and virtual is the accessible
+Physical manipulation is an access barrier, and virtual is the accessible
 option.
 
 In the head-to-head comparisons the virtual arm showed **fewer demographic
@@ -160,10 +160,10 @@ promises that a learner cannot produce an inconsistent state. That is the "refus
 illegal states" property applied to a document.
 
 Measured across eight hazard classes, the promise is **substantially but not
-entirely** kept. Reactive execution **refuses to load** duplicate definitions and
+entirely kept. Reactive execution refuses to load** duplicate definitions and
 cycles, and eliminates use-before-define and deleted-cell residue. But the same
 three cells with identical dependencies produce `total = 106` or `total = 6`
-**purely by source position.**
+purely by source position.
 
 Hazard reduction, not a guarantee. Worth having, and not worth trusting blindly.
 
@@ -197,7 +197,7 @@ idea run to its visible consequence — is a constraint solver and a renderer, w
 is exactly what small JavaScript is good at.
 
 A note worth keeping: Observable's own team, asked whether to run computation in
-the browser, shipped a **static site generator**.
+the browser, shipped a static site generator.
 
 ---
 
@@ -219,4 +219,4 @@ the browser, shipped a **static site generator**.
 
 The through-line, which is the same one the grounding sections reached from the
 other direction: what teaches is not the richness of what the learner is given. It
-is the **precision of what they are not allowed to do wrong without noticing.**
+is the precision of what they are not allowed to do wrong without noticing.

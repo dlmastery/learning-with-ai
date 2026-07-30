@@ -70,13 +70,13 @@ Chi's test says errors *within* an ontological category are repairable and error
 *across* categories are robust — the Bohr-model hybrid population was **unchanged
 across a full semester** of university chemistry (§25).
 
-Mathematics has its own canonical crossing: **process versus object.** A limit as
+Mathematics has its own canonical crossing: process versus object. A limit as
 *something you do* versus *a number that exists*. A function as *a rule you apply*
 versus *a point in a space*.
 
 A student holding "limit" in the process category can compute limits indefinitely and
 cannot understand uniform convergence — because uniform convergence quantifies over a
-**space of functions**, which requires functions to be objects first. The
+space of functions, which requires functions to be objects first. The
 misconception survives instruction exactly as Chi's test predicts, because the repair
 is a category change rather than a correction. `INFERENCE`, from Chi's mechanism plus
 the process/object literature in mathematics education.
@@ -94,8 +94,8 @@ dodge makes the machinery look arbitrary.**
 
 **Corrected 2026-07-29, and the correction is more useful than the original claim.**
 Muller's doctoral work (Sydney, 2008) ran the nearest thing to a controlled test of
-this, and it points somewhere else. His **Refutation** condition is the Exposition
-script **verbatim, plus explicit statements of the misconception** — the same
+this, and it points somewhere else. His Refutation condition is the Exposition
+script verbatim, plus explicit statements of the misconception — the same
 definitions-first order, no reordering at all. It scored **d = 0.79** against the
 Exposition.
 
@@ -109,7 +109,7 @@ reconstruct it, and cannot tell which parts are essential and which are incident
 which is precisely the failure that makes an explanation feel clear and leave nothing
 behind. It is a fluency illusion with a specific cause.
 
-**The rule, narrowed by the correction above: name the wrong idea explicitly.** The
+The rule, narrowed by the correction above: name the wrong idea explicitly. The
 obstacle-first *ordering* is a plausible way to do that and is not what the evidence
 isolates — Muller's Refutation condition kept the original order and simply stated the
 misconception aloud. So: say what does not work, out loud, before or after the
@@ -121,7 +121,7 @@ predicate over an outline, not a judgement about prose.
 
 ### 3.2 A determined quantity presented as tunable
 
-This falsifies **uniqueness of mechanism**, and it is endemic in engineering
+This falsifies uniqueness of mechanism, and it is endemic in engineering
 explanation.
 
 When a quantity is *determined* — by a conservation law, a stationarity condition, a
@@ -129,7 +129,7 @@ dimensional constraint — and the explanation presents it as a knob someone cho
 reader concludes the design is taste. They will then tune it, and be confused when it
 breaks, because they were told it was theirs to set.
 
-**The check:** for each numeric constant in an explanation, is it (a) determined by a
+The check: for each numeric constant in an explanation, is it (a) determined by a
 stated condition, (b) empirically fitted, or (c) arbitrary? All three are fine. Not
 saying which is the violation.
 
@@ -148,10 +148,10 @@ test of what makes an explanation teach.
 N = 364, F(3,461) = 13.625, p < .001; **d = 0.83** for Dialogue, **d = 0.79** for
 Refutation. Replicated at n = 73 on quantum tunnelling (d = 0.71).
 
-**And the same thesis contains the felt/real dissociation, measured.** On the opinion
+And the same thesis contains the felt/real dissociation, measured. On the opinion
 form, *"I learned something from the video"* scored **5.7 for Dialogue against 5.6 for
 Exposition — flat**, while actual learning differed by d = 0.71. Perceived clarity did
-not differ either. What *did* differ: students found the better format **more dull**
+not differ either. What *did* differ: students found the better format more dull
 (p < .01) and said they would rather see the worse one in lectures (**p < .05**).
 
 The author's own conclusion is the sentence this survey has been circling for eighty
@@ -184,7 +184,7 @@ Every piece of machinery in an energy-based model exists to dodge one fact:
 
 > **You can write the probability of any image up to a constant you cannot compute.**
 
-*p(x) = e^(−E(x)) / Z*, where *Z* integrates over **every possible image**. In 784
+*p(x) = e^(−E(x)) / Z*, where *Z* integrates over every possible image. In 784
 dimensions that integral is not hard; it is hopeless.
 
 Introduce *Z* as the antagonist first and every later step is *forced* rather than
@@ -194,7 +194,7 @@ different retention — §3.1.
 
 ### 4.2 The one line the method turns on
 
-**∇ₓ log p(x) = −∇ₓ E(x)**, because *Z* is constant in *x* and vanishes under the
+∇ₓ log p(x) = −∇ₓ E(x), because *Z* is constant in *x* and vanishes under the
 gradient.
 
 You cannot evaluate the probability. You can always compute *which direction makes it
@@ -204,23 +204,23 @@ derivation. It is the hinge, and it belongs at the top of rung 2.
 ### 4.3 The noise scale is not a knob
 
 "Rolling downhill while wandering" is the right picture with the *why* missing.
-Gradient descent finds **a mode**. You do not want the most likely image; you want a
+Gradient descent finds a mode. You do not want the most likely image; you want a
 *sample*. So Langevin adds noise:
 
 *x*ₜ₊₁ = *x*ₜ − (ε/2)∇E(*x*ₜ) + √ε · *z*ₜ
 
-The **√ε is not a hyperparameter.** It is the unique scale at which the stationary
+The √ε is not a hyperparameter. It is the unique scale at which the stationary
 distribution equals *p*. Present it as tunable and you have falsified uniqueness of
 mechanism — §3.2, exactly.
 
 And the persistent replay buffer stops being a hack once the tug-of-war is visible:
 training pushes energy *down* on real data and *up* on model samples, and the "up"
 push lands wherever the negative samples happen to be. Unconverged samples mean
-**pushing up in the wrong places** — teaching the model to distrust regions it should
+pushing up in the wrong places — teaching the model to distrust regions it should
 like. The buffer maintains a population near equilibrium so that after the landscape
 shifts, the samples are still approximately right.
 
-Note what that is: **continuity of state across steps**, because recomputing from
+Note what that is: continuity of state across steps, because recomputing from
 scratch each time is biased and slow. The same argument this survey makes for
 persistent learner state (§11), in a different domain.
 
@@ -235,14 +235,14 @@ Three, not five — five did not beat three, **p = 0.738** (§25).
 | **3** | Maximum likelihood on −E − log Z; ∇_θ log Z = −𝔼_{p_θ}[∇_θ E], estimated by MCMC. Persistent contrastive divergence approximates that expectation with a maintained chain, because a fresh chain per step is both biased and slow. |
 
 Every rung is entailed by the one below it. Rung 1 drops the normaliser entirely —
-legal, it drops precision. It does **not** claim the score *is* a probability — that
+legal, it drops precision. It does not claim the score *is* a probability — that
 would falsify ontology.
 
 ---
 
 ## 5. Probe on the obstacle, not the definition
 
-§22 established that entry must be **measured, never preferred**: preference moves
+§22 established that entry must be measured, never preferred: preference moves
 d ≈ 0.48 while knowledge moves zero, and rapid dynamic assessment recovers an
 actionable estimate from 1–3 items in 15–40 seconds at r = 0.66–0.92 against full
 diagnostics.

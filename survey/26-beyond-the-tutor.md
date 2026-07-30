@@ -63,7 +63,7 @@ produces divergent thinking, and performance improves. Exposure to opposing
 **majority** views produces convergent thinking — narrowing onto the proposed view,
 which does not help and can impair.
 
-**The dissenter's value does not depend on the dissenter being right.** It depends
+The dissenter's value does not depend on the dissenter being right. It depends
 on the dissent being real.
 
 That is a remarkable licence for an AI adversary, because it means the objection
@@ -86,7 +86,7 @@ that convincing, and here is specifically why" — where the *why* is the model'
 
 That reframes anti-sycophancy work usefully. We do not need models that pretend to
 disagree. We need models that stop suppressing disagreements they have already
-generated. **That is a far more tractable engineering target**, and it is directly
+generated. That is a far more tractable engineering target, and it is directly
 testable: divergent-thinking and learning outcomes under (a) announced devil's
 advocate, (b) unannounced authentic objection, (c) agreeable baseline. The template
 exists — Marvel & Ju (2026) ran a pre-registered **N = 1,492** study crossing a
@@ -97,20 +97,20 @@ version has not been run.
 
 Two boundary results keep this honest.
 
-**Children experience persistent questioning as pushy.** A 2024 study of elementary
+Children experience persistent questioning as pushy. A 2024 study of elementary
 students with a Socratic chatbot is titled "This Chatbot is Kind of Pushing It!" and
 the title is the finding. Satisfaction and pedagogical value diverge, which is what
 desirable-difficulty theory predicts and what a five-star rating loop will destroy.
-**An adversary role cannot be tuned on satisfaction.**
+An adversary role cannot be tuned on satisfaction.
 
-**And adding help to the struggle does not help.** Sinha & Kapur (2021) compared
+And adding help to the struggle does not help. Sinha & Kapur (2021) compared
 problem-solving-before-instruction, *scaffolded* problem-solving-before-instruction,
 and alternative sensemaking activities across **118 comparisons**: scaffolding
 showed a small descriptive advantage and **no significant difference, g = −0.08
 [−0.20, 0.04].** The struggle phase does not want a co-pilot.
 
 One more constraint, because "let them struggle" is as over-claimable as "give them
-a tutor": **the instruction phase is mandatory.** Productive failure is problem
+a tutor": the instruction phase is mandatory. Productive failure is problem
 solving *followed by* instruction, and consolidation must contrast the learner's own
 failed attempts against the canonical solution. An AI that only obstructs is as
 wrong as one that only helps.
@@ -132,13 +132,13 @@ followed with a second, isomorphic question answered individually:
 The mechanism is not transmission. It is articulation, commitment, and the
 reconciliation of conflicting commitments. **Two wrong students arguing produce
 understanding neither had.** Smith et al. (2011) added the sequencing: peer
-discussion **followed by** instructor explanation beat either alone, substantially.
+discussion followed by instructor explanation beat either alone, substantially.
 
 So can an AI hold the peer position? Three obstacles, not equally tractable.
-**Known asymmetry**: the learner knows the model has read everything, so a model
+Known asymmetry: the learner knows the model has read everything, so a model
 asserting a wrong answer is either deferred to or dismissed as roleplaying, and
-neither is peer engagement. **No stakes symmetry**: a human peer is embarrassed to
-be wrong, and that embarrassment is what makes the commitment real. **Capitulation**:
+neither is peer engagement. No stakes symmetry: a human peer is embarrassed to
+be wrong, and that embarrassment is what makes the commitment real. Capitulation:
 a peer who abandons their position the moment you push back supplies nothing to
 reconcile, and measured capitulation rates sit around **58%** with **78.5%
 [77.2, 79.8]** persistence once it happens — figures §02 works through.
@@ -150,7 +150,7 @@ supply this. Any asymmetry is simulated, and the learner knows the model could
 produce the other fragments on request. **Jigsaw requires scarcity of knowledge, and
 AI is defined by its abundance.**
 
-The honest verdict: **the peer role is the weakest of the six for AI**, and "AI
+The honest verdict: the peer role is the weakest of the six for AI, and "AI
 study buddy" is the least defensible product framing in the category. The salvage
 is not to fake symmetry. It is to be a committed adversary, or one voice among
 several — both of which preserve the conflicting-committed-positions mechanism
@@ -165,7 +165,7 @@ without requiring a symmetry that does not exist.
 Two findings from independent literatures converge on a single mechanism.
 
 Rosenshine, Meister & Chapman (1996) meta-analysed teaching students to **generate
-questions**: median ES **0.36** on standardised tests, **0.86** on
+questions: median ES 0.36 on standardised tests, 0.86** on
 experimenter-developed ones. Their most useful sentence is the deflating one — "the
 traditional skill-based instructional approach and the reciprocal teaching approach
 yielded similar results." The *format* was not the intervention. The
@@ -183,10 +183,10 @@ monitoring.
 ### 4.2 The environment role
 
 The environment holds no epistemic stance toward the learner. It holds
-**consequences**: a simulation that diverges, a failing test suite, a patient that
+consequences: a simulation that diverges, a failing test suite, a patient that
 deteriorates, a quiz the agent you taught then fails.
 
-This is the only role where **disconfirmation is structural rather than social**,
+This is the only role where disconfirmation is structural rather than social,
 and that property does more work than any amount of model tuning. A unit test cannot
 be sycophantic. A simulation cannot be talked round. The error surfaces as a
 consequence rather than a correction from an authority, which also preserves the
@@ -211,7 +211,7 @@ the teacher."
 
 Tutor CoPilot supplies real-time suggestions to *human* tutors during live sessions.
 The AI never faces the learner. Its distributional signature is the interesting
-part: **the largest gains went to the least experienced tutors** — the inverse of
+part: the largest gains went to the least experienced tutors — the inverse of
 the pattern where unstructured AI access widens the gap between low- and
 high-prior-knowledge students.
 
@@ -223,26 +223,26 @@ instrument role is real and that its distal effects are unproven, not as a headl
 
 ## 6. The nulls this section has to carry
 
-**Announced adversarialism backfires.** Nemeth, Brown & Rogers (2001). The obvious
+Announced adversarialism backfires. Nemeth, Brown & Rogers (2001). The obvious
 implementation of "AI adversary" — tell the learner you are about to argue the other
 side — is the one that produces bolstering rather than divergence. This is the most
 consequential negative result in the section and it is why §2.2 exists.
 
-**Fluency raises confidence and ratings with no effect on learning.** Carpenter and
+Fluency raises confidence and ratings with no effect on learning. Carpenter and
 colleagues, across **five studies from 2013 to 2020**, found that a fluent
 instructor produced higher judgments of learning and higher instructor ratings with
-**zero** gain in actual learning. An LLM is a maximally fluent instructor by
+zero gain in actual learning. An LLM is a maximally fluent instructor by
 construction. This is the most directly transferable warning in educational
 psychology and it is essentially absent from AI-education discourse. The felt/real
 dissociation itself is established in **§14** and **§17**; the transferable part
 here is that *fluency of delivery* is one of its cheapest triggers.
 
-**Perceptual disfluency failed to replicate.** Bjork & Yue (2016), from the
+Perceptual disfluency failed to replicate. Bjork & Yue (2016), from the
 originators of desirable difficulties: hard-to-read fonts largely do not work.
 Difficulty per se is not the mechanism; retrieval and generation are. **Do not build
 an AI that is gratuitously hard to read. Build one that makes you generate.**
 
-**LLMs had no main effect on overall learning.** Lehmann, Cornelius & Sting
+LLMs had no main effect on overall learning. Lehmann, Cornelius & Sting
 (2024/2025), pre-registered lab experiments plus a field study. The effects were
 entirely in the *usage pattern*: substitution use — generate the solution — broadened
 coverage while reducing depth; complementation use — ask for an explanation —
@@ -250,15 +250,15 @@ deepened understanding without broadening. And LLM access widened the gap betwee
 low- and high-prior-knowledge students, a property §07 establishes belongs to
 untargeted delivery rather than to the technology.
 
-**The socially engaging agent is not a universal win.** Tärning, Haake & Gulz (2011)
+The socially engaging agent is not a universal win. Tärning, Haake & Gulz (2011)
 added a social chat module to a teachable-agent maths game. High- and mid-achievers
-improved. **Low-achievers disliked it, chatted more, and went off-task more** — the
+improved. Low-achievers disliked it, chatted more, and went off-task more — the
 learners who most need the ego-protection property were the ones the social framing
 cost. An aptitude–treatment interaction, not a feature.
 
-**And one paper must be flagged rather than cited.** A 2025 quasi-experimental study
+And one paper must be flagged rather than cited. A 2025 quasi-experimental study
 titled "AI as a Socratic Dialogue Partner," with a critical-thinking instrument as
-its outcome, describes its own findings as **hypothetical**. It is unverifiable as
+its outcome, describes its own findings as hypothetical. It is unverifiable as
 evidence and it will be cited by others as though it were not. We name it here so
 that nobody, including us, launders it later.
 
@@ -296,7 +296,7 @@ That is also the answer to the "grilling" requirement this project started with.
 Grilling — sustained, escalating, unsympathetic interrogation of a claim the learner
 has just made — is the union of four validated mechanisms: retrieval practice,
 question generation, illusion-puncturing through attempted explanation, and authentic
-dissent. **No study evaluates grilling as a named construct with an AI.** Given four
+dissent. No study evaluates grilling as a named construct with an AI. Given four
 converging literatures and zero direct evidence, it is the highest-expected-value
 untested intervention in this report, and it should be run before it is sold.
 

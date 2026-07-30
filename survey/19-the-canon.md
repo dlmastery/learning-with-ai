@@ -107,7 +107,7 @@ The evidence base is the strongest in this catalogue:
   objection, found the structured models beat the unstructured ones on affective
   and self-concept outcomes too.
 
-And DI is **cheap**: student workbooks around $20, teacher guides $180–232.
+And DI is cheap: student workbooks around $20, teacher guides $180–232.
 
 It won the largest educational experiment ever run and was then sidelined — for
 teacher resistance to scripting framed as a constraint on creativity, for
@@ -115,7 +115,7 @@ ideological mismatch with constructivist orthodoxy, and for a dissemination
 apparatus that went on to recommend programmes that had *not* been validated. A
 former US Education Commissioner called endorsing all models when "only one of
 the sponsors (Direct Instruction) was found to produce positive results more
-consistently" **"inappropriate and irresponsible."**
+consistently" "inappropriate and irresponsible."
 
 **Cost was never the binding constraint. Professional identity and institutional
 politics were, and AI has no purchase on those.** Attributing DI's fate to
@@ -136,14 +136,14 @@ base without inheriting any of it.
 
 ## 4. Four classes, and where each tradition lands
 
-**Class A — survives fully.** The mechanism is a property of the learner's
+Class A — survives fully. The mechanism is a property of the learner's
 cognitive activity; the human was only the delivery vehicle. Mastery gating and
 unlimited fresh retesting; scaffolding with contingency and fading (the only
 mechanism whose *computer-based* version is directly meta-analytically validated,
 ḡ = 0.46 across 144 studies); worked-example modelling; precision-teaching rate
 measurement; productive-failure sequencing; DI's sequences *if validated*.
 
-**Class B — survives with a named casualty.** The tutorial keeps unlimited
+Class B — survives with a named casualty. The tutorial keeps unlimited
 "defend your work" sessions and loses **the fallible expert whose regard you earn
 and whom you can argue into changing their mind.** Cognitive apprenticeship loses
 the community of practice. The case method loses seventy-nine peers publicly
@@ -152,7 +152,7 @@ and loses refutation and *aporia* — a model trained to be agreeable and resolv
 tension will not leave a learner in productive puzzlement, and cannot honestly
 occupy Socrates' position of not knowing the answer.
 
-**Class C — does not survive.** Chavruta needs a genuine equal with stakes who
+Class C — does not survive. Chavruta needs a genuine equal with stakes who
 cannot be dismissed by closing a tab. Jigsaw needs real interdependence. Peer
 instruction needs a real distribution of peer misconceptions and real persuasion.
 Harkness needs twelve prepared peers — and note that the expensive input there is
@@ -195,10 +195,10 @@ randomised:
 | **Technology-mediated collaborative learning** | **+3 months against +5** for the in-person version |
 | **Multi-agent debate** | does not reliably beat self-consistency; a single agent with strong prompts ≈ the best discussion method |
 
-Three of these deserve a sentence each. The **Lesson Study** null is the most
+Three of these deserve a sentence each. The Lesson Study null is the most
 uncomfortable finding in the section: very high security, good fidelity, 181
 schools, and a flat zero — which is what a well-run trial of a beloved method
-looks like when the method does not work at scale. The **Singapore Math** result
+looks like when the method does not work at scale. The Singapore Math result
 means that using the brand while the evidence base is empty is a vendor claim
 restated as a finding, which this project's editorial standard forbids outright.
 And **technology-mediated collaboration at +3 versus +5** is a measured price for
@@ -213,7 +213,7 @@ randomised estimate: **0.288 SD across 96 RCTs**. Expert one-to-one is worth rou
 eight tenths of a standard deviation under favourable synthesis and **under three
 tenths** when you pool the trials. Not two.
 
-**And a correction this survey must publish about its own work.** The research
+And a correction this survey must publish about its own work. The research
 behind this section proposed a *pāṭha* protocol — permutation-based fidelity
 checking, derived from Vedic recitation's *krama*/*jaṭā*/*ghana* schemes — as a
 concrete, falsifiable alternative to self-consistency sampling. It was
@@ -265,7 +265,7 @@ path from where you are," and explicit design for the learner nobody would admit
 — the adult with gaps, the disabled learner, the out-of-sequence child.
 
 The honest limit ships with the feature. Ekalavya lost his thumb *after*
-succeeding. **Removing the teacher's veto does not remove the guild's**, and any
+succeeding. Removing the teacher's veto does not remove the guild's, and any
 product making this claim without a story about credential recognition is telling
 half of it.
 
@@ -276,12 +276,12 @@ half of it.
 Four mechanisms that pass the survival test, are implementable today, and almost
 nobody has built.
 
-**A named, citable feedback taxonomy.** Nyāya's *nigrahasthāna* enumerates
+A named, citable feedback taxonomy. Nyāya's *nigrahasthāna* enumerates
 twenty-two grounds for defeat in argument. The list matters less than the
 property: a fixed, published, learner-visible taxonomy makes feedback
-**learnable** (the learner acquires the categories and self-diagnoses),
-**auditable** (a wrong category assignment is visibly wrong, unlike a wrong
-vibe), and **symmetric** (the learner can apply it back to the AI). Current
+learnable (the learner acquires the categories and self-diagnoses),
+auditable (a wrong category assignment is visibly wrong, unlike a wrong
+vibe), and symmetric (the learner can apply it back to the AI). Current
 tutors give fluent, hedged, unnamed feedback, which is none of those things.
 
 **Variation-theoretic example generation, gated by *shu–ha–ri*.** Enumerate a
@@ -289,22 +289,22 @@ concept's critical aspects; vary exactly one while holding the rest invariant;
 present differences against a background of sameness. Adaptive systems today vary
 *difficulty* and *quantity* — randomly generated problems vary many dimensions at
 once and thereby make the critical aspect *harder* to discern. The gate is the
-other half: **shu**, one canonical method enforced with deviation corrected;
-**ha**, alternatives introduced deliberately; **ri**, the learner adapts and the
+other half: shu, one canonical method enforced with deviation corrected;
+ha, alternatives introduced deliberately; ri, the learner adapts and the
 system shifts to critique. Current tutors are stuck permanently in *ha* —
 maximally accommodating, always offering another way to look at it, including at
 the stage where a beginner most needs to be told to do it exactly this way.
 
-**Precision-teaching rate measurement as telemetry.** Pinpoint a behaviour, time
+Precision-teaching rate measurement as telemetry. Pinpoint a behaviour, time
 short trials, chart rate per minute, let the slope drive the decision. Thin
 evidence base (11 studies, 170 participants), pure measurement labour, free for
 software. Highest ratio of neglect to feasibility in the catalogue.
 
-**AI-brokered human pairing.** For everything in Class C the correct role is
+AI-brokered human pairing. For everything in Class C the correct role is
 orchestrator, not participant: matching chavruta partners with compatible level
 and incompatible blind spots, authoring ConcepTests, partitioning jigsaw groups
 and detecting free-riding, guaranteeing every seminar participant arrives having
-engaged the text. **AI supplies the objections; it does not supply the partner.**
+engaged the text. AI supplies the objections; it does not supply the partner.
 
 ---
 
@@ -315,7 +315,7 @@ engaged the text. **AI supplies the objections; it does not supply the partner.*
   orchestration.
 - **Build PSI's spine first** — prerequisite graph, 80–90% mastery bar, unlimited
   retests on *freshly generated* equivalent items, immediate certification, full
-  records — **and add pacing pressure**, because self-pacing is a documented
+  records — and add pacing pressure, because self-pacing is a documented
   failure mode.
 - **Take DI's discipline and never claim its evidence.** Generated sequences are
   not validated sequences. Faultless communication, placement, high response rate

@@ -46,7 +46,7 @@ the harmless regime.
 
 **That over-read a null.** The transient cell is **g = 0.12, 95% CI [−0.33, 0.57],
 k = 18** — an interval that *contains* the persistent estimate of 0.43. Transience is
-**unmeasured, not null**, and treating a wide non-significant interval as evidence of
+unmeasured, not null, and treating a wide non-significant interval as evidence of
 no effect is exactly the error this survey exists to catch.
 
 ### And "make it fun" is falsified twice, independently
@@ -55,7 +55,7 @@ In the same studies where learning moves **0.27–0.39**, liking moves **0.09–
 The manipulation that works barely moves enjoyment at all.
 
 What it moves instead is **perceived difficulty, at −0.21.** The lever is
-**approachability, not amusement** — making the thing feel *possible*, not making it
+approachability, not amusement — making the thing feel *possible*, not making it
 feel fun. Those are different design targets and the field routinely conflates them.
 
 ---
@@ -68,10 +68,10 @@ significant (b = 2.68, p = .01). Most of the literature compares a good story to
 worse essay about a different thing.
 
 The one direct randomised test of narrative *as framing* (N = 145) found it helped at
-exactly one step: **mapping the situation to the symbol** — and most for struggling
+exactly one step: mapping the situation to the symbol — and most for struggling
 students.
 
-Which is the same rule again. Narrative works where **the story is the referent** —
+Which is the same rule again. Narrative works where the story is the referent —
 where the situation being described *is* the structure to be learned. Narrative
 wrapped around unchanged content is decoration with a plot.
 
@@ -83,7 +83,7 @@ The instinct that great explainers *ask* rather than *tell* is correct. The
 mechanism is not curiosity.
 
 **Prequestions — being asked before you know — measure g = 0.54 when specific and
-g = 0.04 when general (p = .349).** And the work is in the attempt: **guessing scores
+g = 0.04 when general (p = .349). And the work is in the attempt: guessing scores
 0.65 against reading at 0.22.**
 
 Then the result that cuts against the curiosity account: **factual prequestions
@@ -96,7 +96,7 @@ by an intriguing question, the deep conceptual question should win. It loses.
 Two boundaries that matter for the learner this project is built for. The effect runs
 **0.62 in adults against 0.22 in children**. Productive failure **reverses for grades
 2–5**. And the best trial of teaching young children to ask questions (N = 103,
-preregistered) is a **null on learning**, positive only on *valuing* information.
+preregistered) is a null on learning, positive only on *valuing* information.
 
 The Socratic method, for the record, has **no meta-analysis and one N = 25 null.**
 
@@ -107,7 +107,7 @@ The Socratic method, for the record, has **no meta-analysis and one N = 25 null.
 Now the harder half, and the reframe this section exists for.
 
 The corpus already says: do not build a working-memory trainer, because it does not
-transfer. **Externalise instead.** That remains right and it is not the whole
+transfer. Externalise instead. That remains right and it is not the whole
 picture.
 
 **Executive function is not only a learner trait to accommodate. It is a resource
@@ -118,8 +118,8 @@ help, sustain across an interruption, resume after a break, and abandon a failin
 strategy. A learner whose binding constraint is executive function fails at the
 *first* of those and never reaches the pedagogy at all.
 
-**And this was measured twenty-five years before anyone said "AI tutor."** In
-Cognitive Tutor logs: after **three consecutive errors**, a hint request followed only
+And this was measured twenty-five years before anyone said "AI tutor." In
+Cognitive Tutor logs: after three consecutive errors, a hint request followed only
 **34%** of the time — and **68% of hint levels were viewed for under one second.** The
 help was there. It was not summoned, and when summoned it was not read.
 
@@ -129,9 +129,9 @@ only fired when a student recognised they needed it.
 ### The null that has to be respected
 
 Carnegie Mellon then did the obvious thing. They built help-seeking support, and it
-**worked** — help-seeking improved, durably, months after the support was removed.
+worked — help-seeking improved, durably, months after the support was removed.
 
-**Domain learning did not move.**
+Domain learning did not move.
 
 Fixing the metacognition did not fix the learning. That is the single most important
 constraint on everything in this section, and any design that supplies executive
@@ -142,7 +142,7 @@ be *sufficient*. Supplying it removes a blocker and does not, on its own, teach.
 
 ### The ledger
 
-The source report audits **twelve points** in a normal session where the design makes
+The source report audits twelve points in a normal session where the design makes
 an unaided executive demand, and specifies an external supply for each. `DESIGN` —
 falsified if the count of unaided demands fails to predict non-completion once
 time-on-task and prior knowledge are controlled.
@@ -157,18 +157,18 @@ story about why learners quit, and the real cause is elsewhere.
 The folk model says attention is fine at first and decays — so accommodations focus on
 breaks, chunking and sustaining.
 
-The measurement says otherwise. The **vigilance decrement** — the decay itself — runs
+The measurement says otherwise. The vigilance decrement — the decay itself — runs
 **δ = 0.54 with an 80% credibility interval from −0.14 to 1.22**, an interval that
 includes zero. Against that: overall omission errors at **δ = 1.34** and detection
 sensitivity at **d′ = 0.98**.
 
-**The deficit is present in the first block.** It is not that attention fades. It is
+The deficit is present in the first block. It is not that attention fades. It is
 that it starts impaired.
 
 That inverts the design. Chunking and breaks address a decay that may not be the
-problem. **Initiation and re-entry** — starting, and getting back in after any
+problem. Initiation and re-entry — starting, and getting back in after any
 interruption — are where the measured deficit actually is. And this survey already
-records that testing accommodations are **legally mandated and evidentially weak**;
+records that testing accommodations are legally mandated and evidentially weak;
 both halves must be held at once.
 
 Nothing here licenses diagnosis. An AI may observe that a strategy is not working and
@@ -195,4 +195,4 @@ say so in behavioural terms. It may not label a child.
   block.
 
 The through-line: the best teachers are not making the material *fun*. They are making
-it **attemptable**, and pointing everything they say at the thing itself.
+it attemptable, and pointing everything they say at the thing itself.

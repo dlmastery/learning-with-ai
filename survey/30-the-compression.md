@@ -128,7 +128,7 @@ Two more nulls, and the second is our own thesis biting back:
 - **Seamon (2004):** the intensive-format advantage is real immediately and **gone at
   three years.**
 - **Whillier & Lystad:** the same contact hours compressed produced significantly
-  **worse** grades (P = 0.001) — and **higher satisfaction.** The felt-learning trap,
+  **worse** grades (P = 0.001) — and higher satisfaction. The felt-learning trap,
   arriving exactly where a compression claim is most tempting to believe.
 
 There is also no meta-analysis of intensive versus traditional formats. Every review
@@ -139,7 +139,7 @@ its confidence.
 
 ## 6. Durability does not compress — but it is nearly free
 
-Retention is built by **elapsed time between retrievals**, and that cannot be
+Retention is built by elapsed time between retrievals, and that cannot be
 accelerated. A memory durable for a year needs gaps of **18–36 days**. There is no
 version of this where you finish on Tuesday.
 
@@ -147,7 +147,7 @@ But the cost of durability is routinely overstated, and one experiment settles i
 Rohrer and Taylor obtained their large four-week benefit from **the same ten
 problems, merely split** across sessions instead of massed into one.
 
-**Same total effort. Same items. Different calendar.**
+Same total effort. Same items. Different calendar.
 
 So the honest shape of the claim is not "everything compresses" or "nothing does".
 It is:
@@ -167,8 +167,8 @@ with lower citation impact at every career stage.
 
 Why so few? Not learning rate — that varies by **1.14×**. Not practice hours —
 deliberate practice explains **4% of variance in education** and **under 1% in
-professions**. The binding constraint is the one parameter that varies by **3.6×**:
-**where you start**, which is to say the fixed cost of orientation in a new field.
+professions. The binding constraint is the one parameter that varies by 3.6×**:
+where you start, which is to say the fixed cost of orientation in a new field.
 
 Orientation is knowing what the field's real question is, which of its words mean
 something different here, what a good question sounds like, which results are load-

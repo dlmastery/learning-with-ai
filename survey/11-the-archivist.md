@@ -174,7 +174,7 @@ accuracy frontier for this task. Capacity is demonstrably not the bottleneck —
 503-parameter GRU ties an 8,869-parameter LSTM. The residual appears to be
 aleatoric: individual review outcomes are close to irreducibly stochastic.
 
-Which means **the entire learner model runs on the learner's device.** Privacy here
+Which means the entire learner model runs on the learner's device. Privacy here
 costs approximately zero accuracy.
 
 That inverts the usual trade. Normally, keeping data local means accepting a weaker
@@ -182,9 +182,9 @@ model. Here, the strong model *is* small. The custodial architecture this sectio
 argues for is not a sacrifice made for ethics; it is what the measurement record
 permits at no cost.
 
-Compare the alternatives honestly. **Federated learning** buys population priors
+Compare the alternatives honestly. Federated learning buys population priors
 without pooling raw traces, but leaks through gradients and still needs a
-coordinator. **Differential privacy** gives a formal guarantee and is a poor fit here:
+coordinator. Differential privacy gives a formal guarantee and is a poor fit here:
 cohorts are a class of twenty-five, traces are per-item and long, and *the useful
 signal is the outlier* — this learner's specific misconception. A DP budget that
 protects the student destroys the diagnostic. And the "just anonymise it" move is
@@ -198,7 +198,7 @@ it.**
 
 The single most important architectural idea in this literature comes from Judy
 Kay's group and is almost entirely unexploited outside it. The Personis user-model
-server stores **per-component evidence lists with pluggable resolvers** — the model
+server stores per-component evidence lists with pluggable resolvers — the model
 stores evidence, and interpretation happens at query time.
 
 **A lifelong learner model should store evidence and resolve it on demand, not
@@ -208,7 +208,7 @@ re-interpreted by a better model in 2035.
 
 Three consequences follow, and each is a design commitment.
 
-**Misconceptions are first-class, not a subtype of "incorrect."** In 1978, Brown &
+Misconceptions are first-class, not a subtype of "incorrect." In 1978, Brown &
 Burton's BUGGY built a deep-structure model of a student's bugs that could explain
 *why* a student was making a mistake, not merely identify it. Forty-eight years
 later, the state of the art outputs a scalar probability that they will get the next
@@ -220,14 +220,14 @@ subtraction-borrows-from-the-larger-digit bug" implies a specific refutation. It
 *enumerable*: the Force Concept Inventory covers Newtonian mechanics with about
 thirty items whose distractors each encode an identifiable Aristotelian or impetus
 belief — and Hake's 6,542-student result separating interactive engagement
-(g ≈ 0.48) from lecture (g ≈ 0.23) was possible **only** because the instrument
+(g ≈ 0.48) from lecture (g ≈ 0.23) was possible only because the instrument
 measured misconceptions rather than performance. And it *survives the model*: a
 misconception label written in 2026 still means something in 2036; a BKT posterior
 does not. The raw material exists — Eedi's diagnostic-question corpus is **over 20
 million student answers** where the label is *which wrong belief*, not *wrong*. The
 vocabulary is the missing work.
 
-**Everything decays, and the two literatures have never been joined.** Every
+Everything decays, and the two literatures have never been joined. Every
 knowledge-tracing model assumes knowledge is monotone or near-monotone within a
 session. None models what a mastery estimate from 2023 is worth in 2026. The spaced
 repetition literature has exactly that model — stability and retrievability — and
@@ -236,7 +236,7 @@ unexploited join in the field**, and it is why the schema below makes memory sta
 mandatory layer: a mastery estimate without a decay model is a lie about the
 present.
 
-**And prior knowledge is the variable that matters.** Not style. If a system can
+And prior knowledge is the variable that matters. Not style. If a system can
 measure exactly one thing before instruction, it measures prior knowledge in the
 domain of the next task — because the expertise reversal effect means the *sign* of
 a treatment effect flips with it. Worked examples beat problem-solving for novices
@@ -262,7 +262,7 @@ access, no meaningful consent, no deletion — is a property of *custody*, not o
 *schema*.
 
 The empirical record since has not improved. Human Rights Watch analysed **163
-EdTech products across 49 countries**: **145 of 163 (89%)** engaged in data
+EdTech products across 49 countries: 145 of 163 (89%)** engaged in data
 practices that risked, undermined, or infringed children's rights, sending or
 granting access to children's data to **196 third-party companies**, overwhelmingly
 ad-tech. **39 of 42 governments** that built their own EdTech built systems with the
@@ -270,7 +270,7 @@ same problem.
 
 The legal floor has holes worth knowing. FERPA's school-official exception was
 widened by rulemaking to cover contractors, directory information may be disclosed
-without consent unless opted out, and **there is no private right of action** —
+without consent unless opted out, and there is no private right of action —
 enforcement runs through a funding-withdrawal power that has never been exercised.
 
 Two provisions cut the other way and should be treated as design requirements rather
@@ -304,7 +304,7 @@ Seven layers: **L0** identity (a DID the learner controls, pairwise per-provider
 pseudonyms, and a guardianship record with an automatic transition date). **L1** a
 domain map anchored to public identifiers, never a vendor's internal skill ids.
 **L2** an append-only evidence log — the only primary data — where every response
-record carries the **chosen distractor**, because that is the diagnostic bit. **L3**
+record carries the chosen distractor, because that is the diagnostic bit. **L3**
 memory state per knowledge component, borrowed wholesale from the spaced-repetition
 literature. **L4** belief state with knowledge *and* misconceptions as co-equal
 sections, every estimate carrying an uncertainty interval, a calibration reference,
@@ -315,17 +315,17 @@ governance, co-equal with the data: grants with mandatory expiry, default-deny o
 transfer, a learner-readable access log, and erasure receipts.
 
 Nine conformance guarantees, of which four carry most of the weight:
-**recomputability** (every derived number regenerates from L2 alone, given the
-recorded model id and parameter hash); **decay-awareness** (no knowledge claim is
-served without a retrievability adjustment); **error symmetry** (misconceptions are
-queryable exactly as knowledge is); and **contestability** (the learner can dispute
+recomputability (every derived number regenerates from L2 alone, given the
+recorded model id and parameter hash); decay-awareness (no knowledge claim is
+served without a retrievability adjustment); error symmetry (misconceptions are
+queryable exactly as knowledge is); and contestability (the learner can dispute
 any estimate, and the dispute travels with it).
 
-Three problems remain genuinely unsolved and are stated as such. **KC alignment**:
+Three problems remain genuinely unsolved and are stated as such. KC alignment:
 portability requires a shared domain map and the evidence says our domain maps are
-bad — the binding constraint on the whole proposal. **The misconception vocabulary**:
+bad — the binding constraint on the whole proposal. The misconception vocabulary:
 the FCI's thirty items encode decades of physics-education interviews and nothing
-comparable exists for most of the curriculum. **Verification**: a learner-owned
+comparable exists for most of the curriculum. Verification: a learner-owned
 record the learner can forge is worthless for high stakes, but a record only
 institutions can write is not learner-owned. The likely resolution — self-attested
 and issuer-attested evidence coexisting with different confidence values and
@@ -347,7 +347,7 @@ the evidence that produced it, or whether a family can compel deletion and get a
 receipt.
 
 But the counter-argument lands hard on one point, and this section concedes it: the
-value of persistence is **currently a design hypothesis, not a finding.** It should
+value of persistence is currently a design hypothesis, not a finding. It should
 be labelled that way everywhere, including by us. And it is testable, cheaply: the
 cold-start result gives a ready-made design — measure whether a warm prior from
 another subject reduces burn-in the way a within-subject history does. That is one

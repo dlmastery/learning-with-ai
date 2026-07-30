@@ -49,7 +49,7 @@ need conventional schooling most systematically violates.
 > selects which 3 to display, and orders them by predicted engagement is supplying
 > **choice architecture masquerading as volition.**
 
-**Competence — AI can supply it, conditional on being willing to say no.** Competence
+Competence — AI can supply it, conditional on being willing to say no. Competence
 support is optimal challenge plus immediate informative feedback plus visible progress
 against a real standard. Every one of those is continuous and cheap for an LLM tutor
 and impossible for a human at any realistic ratio. The strongest direct evidence is
@@ -63,7 +63,7 @@ AI tutor learned more in less time and reported feeling more engaged and more mo
 > **Sycophancy is the AI-specific mechanism by which competence support silently
 > inverts.**
 
-**Relatedness — no, for the load-bearing part.** Section 6 below.
+Relatedness — no, for the load-bearing part. Section 6 below.
 
 Two of three, at zero marginal cost, both previously rationed. That is a real and large
 change, and it is what this section leads with. The sharpest available failure mode is
@@ -85,17 +85,17 @@ fourteen years.
 
 And the load-bearing finding, from six years of HarvardX/MITx edX data: *"the vast
 majority of MOOC learners never return after their first year"*; growth concentrated
-**almost entirely in the world's most affluent countries**; and *"the bane of MOOCs —
+almost entirely in the world's most affluent countries; and *"the bane of MOOCs —
 low completion rates — has not improved over 6 years."*
 
 Read the third against what the field shipped between 2012 and 2018: better video,
 better platforms, mobile apps, adaptive sequencing, mastery gating, cohorts, gamified
-progress, social forums, certificates, paid verification. **Completion did not move.**
+progress, social forums, certificates, paid verification. Completion did not move.
 And the second destroys the access narrative: the marginal MOOC user was not an
 underserved learner in a low-income country. It was an already-credentialed
 professional in a rich one.
 
-**The honest rebuttal, stated because it is measured rather than rhetorical.**
+The honest rebuttal, stated because it is measured rather than rhetorical.
 Completion is arguably the wrong denominator, because most enrollees never intended to
 complete. Henderikx et al. ran the same two MOOCs under both definitions:
 completion-based success **6.5% and 5.6%**; intention-adjusted success — did the
@@ -104,11 +104,11 @@ definitional choice. Kizilcec's four-trajectory taxonomy (completing, auditing,
 disengaging, sampling) made this tractable by treating the clusters as different
 products being consumed rather than degrees of failure. *And the replication note that
 belongs with it:* an attempt to reproduce that structure on a different,
-social-constructivist platform **failed to fully replicate**, with only samplers and
+social-constructivist platform failed to fully replicate, with only samplers and
 completers stable across platforms. Engagement patterns are shaped by pedagogy, not
 intrinsic to learners.
 
-**Where the rebuttal fails.** It rescues MOOCs from the charge of failure but not from
+Where the rebuttal fails. It rescues MOOCs from the charge of failure but not from
 irrelevance to the persistence problem. Reframing sampling as success does not produce
 one additional person who learned a hard thing they could not previously do. And
 platform-level non-return across a *year* is not a definitional artefact.
@@ -144,7 +144,7 @@ nulls:
 nothing. Binding your own future self does a lot.**
 
 The structural reason is the organising idea of this section. A commitment device is the
-only intervention in that list that **transfers volition to the learner** instead of
+only intervention in that list that transfers volition to the learner instead of
 spending it. Every other one is the system acting *on* the learner. Hold that distinction
 — it predicts, retroactively, almost every result below.
 
@@ -161,30 +161,30 @@ Two independent meta-analyses converge on a real, medium effect, and this survey
 
 So the headline is *not* "gamification doesn't work." Four caveats the marketing omits.
 
-**The cell vendors sell is the weakest one.** The cognitive effect "was stable in a
+The cell vendors sell is the weakest one. The cognitive effect "was stable in a
 subsplit analysis of studies employing high methodological rigor," whereas "effects on
-motivational and behavioral outcomes were **less stable**." The claim actually made —
+motivational and behavioral outcomes were less stable." The claim actually made —
 *it makes people keep coming back* — rests on g = .25 with a lower CI bound of .04.
 
-**The moderators point away from points, badges and leaderboards.** The significant
-moderators were **game fiction** and **social interaction**, with "combining competition
+The moderators point away from points, badges and leaderboards. The significant
+moderators were game fiction and social interaction, with "combining competition
 with collaboration" particularly effective. Nothing supports the PBL triad as the active
 ingredient.
 
-**Novelty decay is measured, not folklore.** Perceived benefits decline with how long
+Novelty decay is measured, not folklore. Perceived benefits decline with how long
 users have been using the service. And the best longitudinal test deliberately built
 *need-supporting*, SDT-designed elements and measured motivation four times over 15
-weeks: autonomous motivation was **curvilinear — an initial downward trend** that only
+weeks: autonomous motivation was curvilinear — an initial downward trend that only
 later recovered. Even theory-driven gamification produced a medium-run motivational
-**dip**.
+dip.
 
-**And the undermining effect is the mechanism.** Across 128 experiments, tangible,
+And the undermining effect is the mechanism. Across 128 experiments, tangible,
 expected, performance-contingent rewards significantly undermine intrinsic motivation for
 interesting tasks, measured by free-choice persistence; verbal and informational feedback
 does not. *Contested at the time and reported as contested*, with the contest resolved
 mostly in SDT's favour for the interesting-task case. A useful refinement from a
-forty-year meta-analysis: incentives predict the **quantity** of performance; intrinsic
-motivation predicts the **quality**.
+forty-year meta-analysis: incentives predict the quantity of performance; intrinsic
+motivation predicts the quality.
 
 > Gamification's genuine cognitive effect most likely arrives via the mundane mechanisms
 > it smuggles in — increased practice frequency, immediate feedback, clearer goals. Its
@@ -206,33 +206,33 @@ custom bandit algorithm explicitly designed to handle novelty effects. The repor
 result: **"a 0.5% increase in total daily active users and a 2% increase in new user
 retention over a strong baseline."**
 
-Read the objective function. The target is **DAU** and **new-user retention**. Not
+Read the objective function. The target is DAU and new-user retention. Not
 vocabulary retained, not level attained, not time-to-proficiency. It is a competent,
 well-executed piece of engineering whose loss function contains **no learning term at
 all** — published honestly, and it is the industry-standard objective.
 
 The streak claims are vendor claims, labelled as such and never restated as findings.
 "Learners who reach a streak of just 7 days are 3.6 times more likely to complete their
-course" is **selection, not causation**. New streak animations raised seven-day return by
+course" is selection, not causation. New streak animations raised seven-day return by
 +1.7%. Two simultaneous streak freezes raised relative DAU by +0.38%. And the thing that
 is absent: **the published mechanism reports no data comparing learning outcomes between
 streak-holders and non-holders.** Every number is in engagement units.
 
 The mechanism is well-understood and not learning-specific. A streak counter is a pure
-**endowed-progress** device, and endowed progress is measured to drive retention in
+endowed-progress device, and endowed progress is measured to drive retention in
 reward programmes; past a certain length the streak is maintained to avoid losing it, not
 to gain anything. Habit automaticity in the real world took a **median 66 days, range
 18–254** — a genuine reason to want daily return in the first two months and no reason at
 all to want it in year three.
 
-**And streaks get metagamed, documented.** Adolescents maintaining structurally identical
+And streaks get metagamed, documented. Adolescents maintaining structurally identical
 Snapchat streaks develop strategies to uphold the counter while hollowing out the
 underlying activity: content becomes minimal, meaningless, purely instrumental to the
 number. **A streak counter measures counter-preservation, and any user under time
 pressure will find the cheapest lesson that preserves it** — the precise inverse of
 desirable difficulty. Run the Null-Learner Test on it: it maxes it.
 
-On outcomes, the independent evidence is thin: a semester-long study with **nine**
+On outcomes, the independent evidence is thin: a semester-long study with nine
 participants; company-affiliated studies of learners who *completed* beginner courses
 reaching roughly **CEFR A2**; and a flagship favourable efficacy study that is
 **vendor-commissioned and could not be retrieved through any bibliographic API used in
@@ -250,12 +250,12 @@ creation of tools rather than the process and outcomes of language learning."*
 
 The human baseline is strong: 99 studies, ~88,000 students, affective teacher–student
 relationships significantly associated with engagement and achievement — with effects on
-**engagement larger than on achievement**, meaning the human relationship is primarily a
+engagement larger than on achievement, meaning the human relationship is primarily a
 *persistence* technology.
 
 The AI-companion evidence is real and should not be dismissed. Five studies find AI
-companions **do** reduce loneliness, "on par only with interacting with another person,"
-mediated by whether the chatbot makes users **feel heard**. A survey of 1,006 student
+companions do reduce loneliness, "on par only with interacting with another person,"
+mediated by whether the chatbot makes users feel heard. A survey of 1,006 student
 Replika users found them lonelier than typical student populations yet perceiving high
 social support, with **3% reporting the agent halted their suicidal ideation** — *work
 contested in the same journal* on the grounds that important context was omitted, and
@@ -280,7 +280,7 @@ scheduler, not friend**: pair cohorts, surface a real person who will notice a m
 week, make the learner's progress legible to someone who cares.
 
 One more negative result belongs here, and it indicts the single most-deployed social
-mechanic. Exposure to **exemplary peer performance undermined motivation and success**,
+mechanic. Exposure to exemplary peer performance undermined motivation and success,
 causing people to perceive high performance as unattainable and to **de-identify with the
 domain** — demonstrated in a MOOC context. *Contested, with a clear moderator:* a separate
 trial found social-comparison framing can raise completion when the comparison target is
@@ -298,7 +298,7 @@ nobody.**
 This is the result that should govern every training decision in an AI learning system.
 
 Randomised, identical content, same instructors, introductory college physics: students in
-active classrooms **learned more but felt they learned less** — and the paper shows the
+active classrooms learned more but felt they learned less — and the paper shows the
 negative correlation is caused in part by the increased cognitive effort active learning
 requires. The general statement is the desirable-difficulties framework: conditions that
 impair performance during acquisition frequently *enhance* long-term retention and
@@ -309,13 +309,13 @@ transfer.
 
 Any system that optimises for what learners report liking — or for behavioural proxies of
 liking, such as session length, return rate, or rating — will be systematically pushed
-**away** from the methods that work. This is not a risk. It is a demonstrated experimental
+away from the methods that work. This is not a risk. It is a demonstrated experimental
 result, and it applies with full force to any model tuned on learner preference.
 
 Hence the quarantine: **preference data may be used for tone and safety. Never for
 pedagogy.**
 
-A footnote on **flow**, the most-cited motivational idea in edtech and the least useful as
+A footnote on flow, the most-cited motivational idea in edtech and the least useful as
 stated: its meta-analytic association with performance is correlational, and flow may be a
 consequence of competence rather than a cause of learning. Exactly two of its conditions
 are engineerable — challenge calibrated to current skill, and immediate feedback — and both
@@ -326,8 +326,8 @@ are already justified by competence support. Implement those and stop talking ab
 ## 8. What actually moves phase 3
 
 Hidi and Renninger's four-phase interest model is the most design-relevant framework here
-because it is developmental: **triggered situational** interest, **maintained situational**
-interest, **emerging individual** interest, **well-developed individual** interest.
+because it is developmental: triggered situational interest, maintained situational
+interest, emerging individual interest, well-developed individual interest.
 
 The critical structural fact: gamification, notifications and streaks operate **entirely in
 phases 1–2** and are constitutionally incapable of producing phases 3–4, because phases 3–4
@@ -341,18 +341,18 @@ are *defined* by voluntary re-engagement in the absence of external triggers.
 Two interventions have real causal evidence for the 2→3 transition, and both are
 AI-native.
 
-**Utility-value writing.** High-school science students asked to write about the relevance
+Utility-value writing. High-school science students asked to write about the relevance
 of the material to their own lives showed increased interest and grades, **concentrated in
-students with low initial success expectations**; a college biology replication **closed
+students with low initial success expectations; a college biology replication closed
 achievement gaps** for first-generation and underrepresented-minority students. *Caveat
 required by §3:* the 247-course scale-up found value-relevance effects only in courses that
 *had* a global achievement gap — real and conditional, not universal. It is also a
-**generative** task, which is exactly what an LLM can elicit, read and respond to at scale
+generative task, which is exactly what an LLM can elicit, read and respond to at scale
 and a multiple-choice platform cannot.
 
-**Manufactured curiosity.** Curiosity arises from awareness of a *gap* and is maximised at
+Manufactured curiosity. Curiosity arises from awareness of a *gap* and is maximised at
 intermediate knowledge levels — you must know enough to know what you don't know. Curiosity
-states enhance hippocampus-dependent encoding, including of **incidental** material. And
+states enhance hippocampus-dependent encoding, including of incidental material. And
 the actionable result: requiring learners to **generate a prediction before seeing an
 answer** raised both curiosity ratings and learning, relative to generating an example.
 
@@ -368,16 +368,16 @@ is a feature. It is how you tell the two kinds of system apart.
 >
 > **Retained Transferable Capability per Learner-Hour.**
 
-**D(t+30d)** is the score on a **delayed** (≥30 days), **unannounced**, **novel-item**
+**D(t+30d)** is the score on a delayed (≥30 days), unannounced, novel-item
 assessment — items never seen, generated post hoc, not drawn from practised sets. Delay and
-novelty are what make it un-gameable; announcement would reintroduce cramming. **T** is the
+novelty are what make it un-gameable; announcement would reintroduce cramming. T is the
 transfer coefficient: the proportion earned on items requiring application in an unpractised
-context rather than recognition. **H** is total learner hours invested, *including time
+context rather than recognition. H is total learner hours invested, *including time
 outside the system*.
 
-**The denominator is the entire design.** Putting learner time in the denominator inverts
+The denominator is the entire design. Putting learner time in the denominator inverts
 the commercial incentive: the system now profits by making learning *faster*, and every
-minute of retained attention it does not convert into durable capability **costs it score.**
+minute of retained attention it does not convert into durable capability costs it score.
 An engagement-optimising system and an RTC/h-optimising system diverge on the first design
 decision they make.
 
@@ -391,21 +391,21 @@ Guardrail metrics, all non-decreasing, any decrease blocking release:
 | **Off-Platform Application Rate** | Evidence the capability was used somewhere that is not the product. The only measure definitionally external to the engagement loop |
 | **Human-Connection Rate** | Fraction of learners connected to at least one real person who would notice their absence |
 
-And the list that is **reported but never optimised**, monitored as harm indicators with
+And the list that is reported but never optimised, monitored as harm indicators with
 alarm thresholds: DAU/MAU, session length, streak length, notification-response rate, XP,
 leaderboard engagement, satisfaction ratings. **A sustained rise in any of these without a
 corresponding rise in RTC/h is a defect report, not a success.**
 
 Four governance rules. Run the Null-Learner Test on any metric before it enters any
-objective; failure excludes it. **Unprompted Return Rate is the tie-breaker** when RTC/h and
+objective; failure excludes it. Unprompted Return Rate is the tie-breaker when RTC/h and
 an engagement measure conflict, because a system that only works while pushing has not
 taught anyone to want anything. Preference data is quarantined to tone and safety.
-**Graduation is a success event, not churn** — a learner leaving because they got what they
+Graduation is a success event, not churn — a learner leaving because they got what they
 came for is the product working, and any metric that penalises this is disqualified.
 
 *Honest limitations, stated rather than hidden.* RTC/h is expensive in learner goodwill:
 delayed unannounced assessment is a burden no consumer product can bear at full population
-scale. It is realistically measurable on a **sampled, compensated panel** with cheap online
+scale. It is realistically measurable on a sampled, compensated panel with cheap online
 proxies calibrated against it — which is how ad-supported media measures reach, so the
 tooling pattern exists. And RTC/h says nothing about *who never enrolled*; it optimises the
 experience of people already inside the funnel.
@@ -421,7 +421,7 @@ operationalise.*
 
 The first sentence is true and the conclusion does not follow.
 
-**The tools do not work at scale.** 800,000 students, null. 250,000 students across 247
+The tools do not work at scale. 800,000 students, null. 250,000 students across 247
 courses, order-of-magnitude effect decay. 20,000 students over five years, null on
 outcomes. Alert tools and distraction blockers, null. That is not a philosophical objection
 to reminders; it is the measured record of reminders.

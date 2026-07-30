@@ -124,28 +124,28 @@ baselines."* **21 of 41 (51%) significantly beat all baselines**; 10 found no
 significant difference; 1 where the baseline won. Publishing the 0-of-8 sub-cut
 without the 21-of-41 headline is selective reporting, and it is the exact failure this
 survey exists to name. The domain split above is real and it sits inside a review whose
-overall verdict is **positive**.
+overall verdict is positive.
 
 The authors' own qualifier is the load-bearing part: RL *"has been most successful in
 cases where it has been **constrained with ideas and theories from cognitive
 psychology and the learning sciences**."* Which is an argument for the architecture in
 this document rather than against it.
 
-Adaptive scheduling works on material with no internal structure and has **never**
+Adaptive scheduling works on material with no internal structure and has never
 worked on material with structure. Every trial that tried failed.
 
 Supporting evidence points the same way. Duolingo's half-life regression, tested
-against plain Leitner boxes on roughly **one million students**, produced **+0.3%
-engagement (not significant)** and **−7.3% practice (significant)** — the adaptive
+against plain Leitner boxes on roughly one million students, produced **+0.3%
+engagement (not significant) and −7.3% practice (significant)** — the adaptive
 scheduler made people practise *less*. The famous "+12%" figure comes from a
 different experiment and does not describe this comparison. Kerfoot's adaptive
 trial: p = 0.37. Cen 2007: p = 0.772 on posttest, p = 0.602 on retention, with 12%
-time saved. Mettler's adaptive system was beaten on raw accuracy by a **random**
+time saved. Mettler's adaptive system was beaten on raw accuracy by a random
 schedule (d = 0.746).
 
 And knowledge tracing, the sophisticated cousin, does not rescue it. Roughly
 **82% of deep knowledge tracing's founding gain was an evaluation-procedure
-artefact plus a forgetting term**; an **untrained LSTM is within 0.03 AUC** of the
+artefact plus a forgetting term; an untrained LSTM is within 0.03 AUC** of the
 trained one; and an oracle that *knows the exact moment learning occurred* beats
 simple logistic PFA by **0.002**.
 
@@ -157,12 +157,12 @@ nearly exhausted. The remaining headroom is not in the model.
 
 ## 5. The named product, assessed fairly
 
-This section was commissioned partly to evaluate **zemomemo.com**. It is a free
+This section was commissioned partly to evaluate zemomemo.com. It is a free
 SvelteKit flashcard application built on FSRS-6, with five study modes, LLM deck
 generation, and Quizlet and Anki import. It is competent, and it is free, and
 people plainly find it useful.
 
-It cites **no study, trial, or efficacy datum**; its only external reference is the
+It cites no study, trial, or efficacy datum; its only external reference is the
 FSRS community wiki. Four observations place it precisely:
 
 - Its **"stickiness — the number of days a flashcard will stay in your brain"** is
@@ -185,25 +185,25 @@ this survey exists to hold is between a competent tool and a scientific claim.
 
 Here is where this gets interesting, because the null results above clear space
 rather than closing it. Every capability below is currently at `DEMO` or
-confounded-`OBSERVED` — **nobody has run the trial** — and each is now cheap.
+confounded-`OBSERVED` — nobody has run the trial — and each is now cheap.
 
-**Generate the cue instead of storing it.** A flashcard is a frozen question,
+Generate the cue instead of storing it. A flashcard is a frozen question,
 which is why the paradigm only works on unstructured material: the card *is* the
 atom. If the question is generated at retrieval time from the concept, then the
 same knowledge can be probed from a different angle every time, and recognition of
 the card can no longer be mistaken for knowledge of the thing.
 
-**Schedule concepts, not cards.** This is the direct attack on the 0-of-8 result.
+Schedule concepts, not cards. This is the direct attack on the 0-of-8 result.
 Structured material failed under card scheduling because scheduling operated on
 the wrong object. Schedule the *concept*, with its prerequisites, and derive the
 probe.
 
-**Separate recognition strength from generative competence.** These are different
+Separate recognition strength from generative competence. These are different
 memories and current systems conflate them. A learner who recognises the answer
 instantly and cannot produce it unprompted has one and not the other — and only
 the second is what anyone means by knowing.
 
-**Detect inert knowledge.** Retrievable when cued in the original context, and
+Detect inert knowledge. Retrievable when cued in the original context, and
 never spontaneously deployed when relevant. This is the failure mode that most
 frustrates teachers, it is invisible to every scheduler in existence, and it is
 detectable by a system that watches a learner work rather than only quizzing them.

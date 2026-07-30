@@ -51,9 +51,9 @@ present system a foreign and un-American type of organization which should be
 superseded."* The story's rhetorical function predates its evidentiary status by 110
 years. It is now marked `UNVERIFIED` wherever this project used it.
 
-**What is sourced is worse for us.** The real precedent is the **monitorial
+What is sourced is worse for us. The real precedent is the **monitorial
 system** — explicitly designed so that *"one master teacher could instruct from 200
-to 1,000 pupils at one time."* It was **abandoned when it proved ineffective.**
+to 1,000 pupils at one time."* It was abandoned when it proved ineffective.
 
 Which gives this section its most important null, and it is aimed at ourselves:
 
@@ -97,14 +97,14 @@ ordering below is the section's real recommendation.
 
 ### 3.1 Build the falsifier before the thing it falsifies
 
-**The population-transfer check.** `DESIGN`
+The population-transfer check. `DESIGN`
 
 Five of the eight designs assume that **how people get a concept wrong transfers
 across populations** — that a misconception observed in one cohort predicts the
 misconceptions of another. If it does not, the shared error corpus is not an asset
 and most of what follows collapses.
 
-That assumption is testable **now, at no cost**: two existing distractor-labelled
+That assumption is testable now, at no cost: two existing distractor-labelled
 corpora, one rank correlation. No new data, no learners, no consent.
 
 > **What would show it wrong:** a low or unstable rank correlation of misconception
@@ -115,18 +115,18 @@ rest.
 
 ### 3.2 The decaying capability portfolio
 
-**Replace the transcript.** `DESIGN`
+Replace the transcript. `DESIGN`
 
 A transcript is a record of events that happened. It says a person passed calculus in
 2019. It does not claim they can do calculus now, and everyone reading it quietly
 knows that.
 
-Replace it with a portfolio of **live capabilities that decay** and can be
+Replace it with a portfolio of live capabilities that decay and can be
 re-verified on demand. Not a grade — a claim with a freshness date, and a procedure
 for renewing it.
 
 The anchor is measured: skill decay over a year of nonuse runs from **d = −0.01 to
-−1.4**, and is **fastest for cognitive-accuracy skills** (Arthur et al. 1998). The
+−1.4, and is fastest for cognitive-accuracy skills** (Arthur et al. 1998). The
 transcript's implicit claim of permanence is false by an effect size that can reach
 1.4 standard deviations.
 
@@ -139,8 +139,8 @@ most consequential and least defended artifact in education.
 
 ### 3.3 The error atlas and the evidence-maintained graph, as one object
 
-**A public map of how humans actually get each concept wrong** — and a curriculum
-that is **a graph traversed by evidence** rather than a sequence authored by a
+A public map of how humans actually get each concept wrong — and a curriculum
+that is a graph traversed by evidence rather than a sequence authored by a
 committee. `DESIGN`
 
 No textbook has ever contained an error atlas, because no author could observe one. A
@@ -165,8 +165,8 @@ A section of only good ideas is a pitch. The source report records seven rejecte
 designs with reasons; the pattern in the rejections is more useful than any single
 one.
 
-Most failed the **pre-AI analogue test** — they turned out to be an existing thing
-with a model bolted on. Several failed on the **exclusion ledger** from this survey's
+Most failed the pre-AI analogue test — they turned out to be an existing thing
+with a model bolted on. Several failed on the exclusion ledger from this survey's
 history section: nearly every high-fidelity learning tradition bought its quality
 partly by rationing access, and a design that reproduces the rationing has
 reproduced the tradition's actual mechanism rather than its stated one.
@@ -214,4 +214,4 @@ answer — treated as the alarm.**
 
 The 31:1 ratio was not rigour. It was a label set with a hole in it, and a review
 process that could only see one direction. Both are fixed. What remains is the harder
-discipline: **construction, anchored, with its own falsifier attached.**
+discipline: construction, anchored, with its own falsifier attached.

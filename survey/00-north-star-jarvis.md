@@ -126,7 +126,7 @@ Ranked by (impact for the target learner) ÷ (blocker difficulty):
 *Added 2026-07-25 after direct source review. Supersedes the latency and avatar
 analysis above where they conflict.*
 
-**Sources.** Wan-Streamer v0.2, arXiv:2607.04443 (Huang et al., 5 Jul 2026);
+Sources. Wan-Streamer v0.2, arXiv:2607.04443 (Huang et al., 5 Jul 2026);
 Wan Streamer v0.3, https://wan-streamer.com/v0.3/ (16 Jul 2026). Local install
 present at `~/wan-streamer` — note this directory is actually **StreamDiffusionV2**
 (arXiv:2511.07399, MLSys 2026 Best Paper), a *different* real-time V2V system with
@@ -148,8 +148,8 @@ Architecture: single-GPU *thinker* (perception) + multi-GPU *performer*
 
 ### The v0.3 contribution: world / event-stream decomposition
 
-v0.3 separates **the world** (scene, characters, appearance, sound — must stay
-coherent) from **the event stream** (speech, motion, camera movement,
+v0.3 separates the world (scene, characters, appearance, sound — must stay
+coherent) from the event stream (speech, motion, camera movement,
 environmental change — varies moment to moment). *"Establish the world once,
 follow the timeline, and learn what happens next."*
 
@@ -163,7 +163,7 @@ This is the sharpest architectural fit for tutoring in the entire survey:
 It also addresses Genie 3's two disqualifying limits for education directly:
 persistent world state (vs ~1 minute of visual memory) and legible on-screen text
 (v0.2's stated goal is "readable details during real-time conversation").
-One of v0.3's own demo categories is **"instructional activity."**
+One of v0.3's own demo categories is "instructional activity."
 
 ### What this does *not* fix
 

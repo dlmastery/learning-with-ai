@@ -106,7 +106,7 @@ details belong here rather than there. **The type of prior-knowledge assessment 
 itself a significant moderator** of the expertise-reversal effect (Tetzlaff et al.
 2025) — the probe is the largest tunable parameter in the system, not an incidental.
 And the selection is per prerequisite: compute the mastery vector over the concept's
-transitive prerequisite closure and **enter at the weakest link**, laddering that
+transitive prerequisite closure and enter at the weakest link, laddering that
 prerequisite separately rather than dragging the whole explanation down.
 
 ---
@@ -123,17 +123,17 @@ exist.
 
 The ladder is a refinement chain, not five independent texts. Level *n* is level
 *n+1* minus declared drops. One engineering consequence follows immediately and is
-not negotiable: **ladders must be generated top-down.** You cannot check a
+not negotiable: ladders must be generated top-down. You cannot check a
 non-falsification constraint against an account you have not written yet. Writing
 the ELI10 first and "adding detail" is structurally incapable of passing the test.
 
-What a rung **may** drop: numeric precision; higher-order corrections; formal
+What a rung may drop: numeric precision; higher-order corrections; formal
 machinery — derivation, notation, proof; mechanism depth, by black-boxing a
 subcomponent *provided the box is named as a box*; edge cases outside a declared
 scope; historical provenance; one of several equivalent formulations, provided it is
 not asserted as *the* formulation.
 
-What a rung may **never** falsify:
+What a rung may never falsify:
 
 | Never | Why it is unrepairable |
 |---|---|
@@ -155,12 +155,12 @@ The legal ELI10 for the same subject is a sentence away: *"An electron in an ato
 can only have certain specific amounts of energy — not anything in between. Light
 is given off when it drops from a higher one to a lower one."* Every proposition
 there survives verbatim into the full quantum account. It drops the wavefunction,
-the orbital, the selection rules and the entire mechanism. **It falsifies nothing.**
+the orbital, the selection rules and the entire mechanism. It falsifies nothing.
 
-Two more tests complete the rule. Every drop leaves a **named, retrievable marker** —
+Two more tests complete the rule. Every drop leaves a named, retrievable marker —
 not "it's more complicated than that" but a token the learner can carry upward:
 *"this assumes no friction; the friction case is rung 3."* And every analogy ships a
-declared **alignment set** (which relations map) and **limit set** (which do not);
+declared alignment set (which relations map) and limit set (which do not);
 for concepts with high reductive-bias risk, Spiro's prescription is two mutually
 *dis*analogous sources rather than one good one.
 
@@ -191,18 +191,18 @@ dimensions. **Liminality appeared in Pre, Post and Outgroup explanations alike,
 felt unsure. Feeling uncertain does not identify not having crossed.
 
 So a generator that asks "is this a threshold concept?" and branches on the answer
-is branching on an unreliable label. **Chi's ontology test is the replacement**:
+is branching on an unreliable label. Chi's ontology test is the replacement:
 does this rung place the concept in the correct ontological category? That question
 is domain-general, answerable, and grounded in conceptual-change research with
 measurement behind it.
 
 For concepts where no simplification passes the ontology test, the move is not a
-false model but a **pre-concept rung**: state the phenomenology, decline to assert
+false model but a pre-concept rung: state the phenomenology, decline to assert
 a mechanism. *"When you cool helium enough, it flows up the walls of its container.
 Nothing in everyday physics explains that."* That is honest, it has a real
 assessment ceiling — recognise and predict — and it plants nothing. It is Clement's
 anchoring-intuition strategy, whose measured version (21 students, matched groups)
-produced significant gains on target **and transfer** problems.
+produced significant gains on target and transfer problems.
 
 ---
 
@@ -211,13 +211,13 @@ produced significant gains on target **and transfer** problems.
 This section's foundations have more holes than its confident tone would suggest,
 and they need naming.
 
-**Concreteness fading has no pooled effect size.** Fyfe, McNeil, Son & Goldstone
+Concreteness fading has no pooled effect size. Fyfe, McNeil, Son & Goldstone
 (2014) is the empirical backbone of this whole area and it is a **systematic
 review, not a meta-analysis**. No pooled estimate for concreteness fading exists
 anywhere in the retrievable record. Anyone quoting "the effect size of concreteness
 fading" is quoting something that does not exist.
 
-**And it does not beat its main alternative.** Lichtenberger, Kokkonen & Schalk
+And it does not beat its main alternative. Lichtenberger, Kokkonen & Schalk
 (2024, *JRST*), N = 187 high-school students, Faraday's law: no significant
 difference between concreteness fading and simultaneous presentation, and an
 **equivalence test with pre-specified bounds d = ±0.5 showed the two approaches
@@ -225,37 +225,37 @@ performed equally.** The authors' conclusion is the one that matters here:
 facilitating understanding "may involve more than determining the optimal order."
 Ordering is not the mechanism.
 
-**Variety of surface actively harms.** Bennett, Inglis & Gilmore (2019, *JEP*),
+Variety of surface actively harms. Bennett, Inglis & Gilmore (2019, *JEP*),
 three experiments: children who learned novel numerical symbols paired with a
 single abstract representation outperformed those given multiple concrete ones —
-and the harm was attributable to **the multiplicity itself**, not to concreteness.
+and the harm was attributable to the multiplicity itself, not to concreteness.
 Day, Motz & Goldstone (2015) found the same shape in two classroom experiments:
-**greater contextualisation, poorer transfer**, in undergraduates and
+greater contextualisation, poorer transfer, in undergraduates and
 middle-schoolers alike. An ELI10 rendered as "here are four fun everyday analogies"
 reproduces both results at once.
 
-**A well-motivated analogy manipulation produced nothing.** Sota (2012) randomly
+A well-motivated analogy manipulation produced nothing. Sota (2012) randomly
 assigned participants to refutational contrasting analogies, non-refutational
 contrasting analogies, or none, for natural selection: "**no differences among
 groups** on either understanding of or reasoning about natural selection" — though
 the groups engaged differently with the analogy materials. Different experience,
 identical learning.
 
-**The Feynman technique has essentially no research base.** An ERIC search across
-the entire corpus returns **two records**, both 2025–2026, both small, both from
+The Feynman technique has essentially no research base. An ERIC search across
+the entire corpus returns two records, both 2025–2026, both small, both from
 the same ESL niche, and both confounding the technique with analogical reasoning so
 that it cannot be isolated. The *mechanism* — generating an explanation, finding the
 gap, iterating — is self-explanation, which carries **g ≈ 0.55 across 69 effect
 sizes** (Bisra et al. 2018) and is the subject of §05. The branded four-step
 protocol carries nothing. Cite the mechanism; do not cite the brand.
 
-**One number in our own brief was unverifiable.** The expertise-reversal interaction
+One number in our own brief was unverifiable. The expertise-reversal interaction
 was given to this project as **d = 0.971**. It could not be verified in any
 retrievable source; the publisher abstract supports only the two marginals
 (novices +0.505, experts −0.428), which imply an interaction of **≈ 0.93** by simple
 difference. We report the marginals and the ≈0.93, and we do not assert 0.971.
 
-**And the composite has never been tested.** No study in the retrieved literature
+And the composite has never been tested. No study in the retrieved literature
 tests laddering as such — the same concept authored at N levels under a fidelity
 constraint, entry chosen by measurement. Every component is evidenced. The assembly
 is not. That is simultaneously the contribution and the risk, and it is the
@@ -274,17 +274,17 @@ the same relational structure**. Goldstone & Son (2005) found that switching
 representation in *either* direction beat not switching. Gentner's analogical-
 encoding studies found that comparing two examples beats studying them serially.
 Bennett's harm was unaligned multiplicity. The active ingredient across all of them
-is **aligned comparison of two instantiations of one structure** — which is what a
+is aligned comparison of two instantiations of one structure — which is what a
 refinement chain is, expressed as text.
 
 So the design does not claim a fading benefit. It claims that a learner who has an
 entailment-preserving pair of accounts at two adjacent depths can compare them, and
 that comparison is the evidenced act. When transfer succeeds but load is high, the
-move is not to climb — it is a **second aligned instantiation at the same rung**.
+move is not to climb — it is a second aligned instantiation at the same rung.
 
 One instrumentation warning makes or breaks this. Rey & Fischer (2013) tested
 expertise reversal specifically on *instructional explanations*: it replicated on
-**transfer** and **not on retention**. A ladder that evaluates itself with recall
+transfer and not on retention. A ladder that evaluates itself with recall
 questions is instrumented to be blind to its own primary failure mode. **Probe with
 a transfer item.**
 

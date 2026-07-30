@@ -117,7 +117,7 @@ what held.
 
 **The testing effect failed to appear in a 2026 replication pair.** Two Prolific
 experiments with delayed post-tests, corrective feedback, attention checks and fair
-pay found **no testing effect at all**. The authors attribute it to insufficient
+pay found no testing effect at all. The authors attribute it to insufficient
 sustained engagement in crowdsourced settings. This is the single most
 uncomfortable result in the section for anything built on self-directed AI study,
 because the condition it identifies — a learner nominally retrieving, without
@@ -125,7 +125,7 @@ sustained effortful attention — is exactly the condition a chat interface make
 easy to enter. **The effect is contingent on effortful attentive retrieval, not on
 the surface form of being quizzed.**
 
-**Self-explanation prompts reduced the worked-example effect.** Barbieri et al.
+Self-explanation prompts reduced the worked-example effect. Barbieri et al.
 (2023) found pairing worked examples with self-explanation prompts to be a
 significant *negative* moderator, and correct examples alone outperformed
 incorrect-only and correct-plus-incorrect combinations. The authors: "pairing
@@ -142,13 +142,13 @@ mathematics is the population most often invoked in AI-tutoring pitches, and it 
 the population where the closest technological precedent measured approximately
 nothing.
 
-**The founding retrieval-practice result had a design confound.** Soderstrom, Kerr
+The founding retrieval-practice result had a design confound. Soderstrom, Kerr
 & Bjork (2016) replicated Karpicke & Roediger (2008) between subjects, then
 controlled the spacing differences inherent to that design within subjects — and
-**both repeated testing and repeated restudy improved learning.** The testing
+both repeated testing and repeated restudy improved learning. The testing
 effect survives. The strong claim that restudy does nothing does not.
 
-**Prior knowledge did not moderate multimedia design effects** in Noetel's
+Prior knowledge did not moderate multimedia design effects in Noetel's
 meta-meta-analysis (**p = 0.14**), which sits in open tension with the
 expertise-reversal literature in the row above it. The honest reading: the reversal
 is well established for *assistance and guidance* manipulations and is not reliably
@@ -159,7 +159,7 @@ than picking the side that suits us.
 
 ## 5. Folklore
 
-**Germane cognitive load is not a measurable quantity.** The
+Germane cognitive load is not a measurable quantity. The
 intrinsic/extraneous/germane trichotomy has never been cleanly operationalised as
 three separately measurable additive quantities. Kalyuga (2011) argues germane load
 is not independently identifiable and that the framework risks unfalsifiability —
@@ -177,22 +177,22 @@ outcome. **Cite cognitive load theory for its design predictions, which are
 excellent. Do not cite "reduces extraneous load" as though it were a measured
 quantity.**
 
-**The redundancy principle is wrong in one direction.** Adesope & Nesbit: adding
+The redundancy principle is wrong in one direction. Adesope & Nesbit: adding
 text to audio, **g = 0.29 [0.20, 0.39]**; adding audio to text, **g = −0.04
 [−0.14, 0.06], n.s.** "Never duplicate" is not what the data say.
 
-**Decoration does nothing.** Decorative animation **g = −0.05, n.s.**; meaningful
+Decoration does nothing. Decorative animation **g = −0.05, n.s.**; meaningful
 representational animation **g = 0.40**. 3D pedagogical agents **g = 0.11, n.s.**;
 2D agents g = 0.38. Seductive details harm when persistent on screen (g = 0.43
 for removal) and not when transient (g = 0.12, n.s.).
 
 **Conversational style expires at 35 minutes.** The personalisation principle pools
 at g = 0.33 [0.23, 0.44] — but its own meta-analysis reports interest **d = 0.15,
-n.s.**, learning-assistance **d = 0.16, n.s.**, and effects that are small and
+n.s., learning-assistance d = 0.16, n.s.**, and effects that are small and
 non-significant in studies longer than **35 minutes**. Almost every citation of
 this principle omits the boundary.
 
-**Pre-training is under-evidenced, not evidenced.** No independent systematic
+Pre-training is under-evidenced, not evidenced. No independent systematic
 review covers it. The commonly quoted d ≈ 0.75 comes from lab-of-origin tallies of
 about sixteen comparisons.
 
@@ -203,8 +203,8 @@ al. (2015), no interaction; Husmann & O'Loughlin (2019), **N = 426**, VARK score
 uncorrelated with course performance and strategy–style alignment uncorrelated with
 outcome; Melzner & Kappes (2024), **N = 222**, adequately powered, no interaction
 and no prediction of judgments of learning. Against that: **89.1% of 15,405
-educators across 18 countries** believe matching works, with **no decline over
-time**, and **91% of 112 recent health-professions education papers** are premised
+educators across 18 countries believe matching works, with no decline over
+time, and 91% of 112 recent health-professions education papers** are premised
 on it — so an educator who searches the literature is given a consistent and
 inaccurate endorsement. An AI that grills a learner for a sensory-modality label is
 automating a forty-year null at scale.
@@ -219,7 +219,7 @@ figures are in **§19** and **§03**, and are not repeated here.
 *If I² is 88%, the pooled numbers are noise and you should stop quoting them.*
 
 Take it seriously, because it is half right. Heterogeneity that large means the
-pooled value is a poor predictor of any specific implementation. It does **not**
+pooled value is a poor predictor of any specific implementation. It does not
 mean the direction is unstable. Cepeda's 271 massed-versus-spaced comparisons
 produced **only 12** showing no effect or a negative effect. Latimier's expanding-
 versus-uniform comparison — the one that came out null — produced **I² = 0%** across
@@ -233,8 +233,8 @@ useless; its moderator table is a specification.
 
 Two further limits belong to this objection rather than to a footnote. Donoghue &
 Hattie's meta-analysis of ten techniques (**242 studies, 1,619 effects, 169,179
-participants, mean ES = 0.56**) found effects **much greater for lower-ability than
-higher-ability students** and a corpus dominated by **surface and factual
+participants, mean ES = 0.56) found effects much greater for lower-ability than
+higher-ability students and a corpus dominated by surface and factual
 outcomes** — the authors explicitly caution against extrapolating to deeper
 relational learning. And **6% of classroom retrieval-practice experiments were
 conducted in non-WEIRD countries**; the interleaving literature is, in its own

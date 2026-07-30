@@ -51,9 +51,9 @@ Three ways it breaks, all silent:
 
 ## 3. The architecture that works: the teachable agent
 
-**Betty's Brain** solved this twenty years ago and almost nobody has rebuilt it
+Betty's Brain solved this twenty years ago and almost nobody has rebuilt it
 with LLMs. The move is to take truth *out* of the agent's disposition and put it
-in a **verifier**:
+in a verifier:
 
 ```
   learner explains  →  agent ADOPTS the explanation as given, errors included
@@ -68,12 +68,12 @@ in a **verifier**:
   learner debugs their own model  →  re-teaches
 ```
 
-The agent never says "you're wrong." **The world does.** That converts sycophancy
+The agent never says "you're wrong." The world does. That converts sycophancy
 from an alignment problem you cannot solve into a systems-design choice you can —
 the same move as the grounding ladder: correctness lives in the checker, not the
 model's manners.
 
-**Hard requirements for the student-agent:**
+Hard requirements for the student-agent:
 
 | Requirement | Why |
 |---|---|
@@ -89,7 +89,7 @@ problem, not a model-capability problem — which means it is available today.
 
 ## 4. Slides and presentations: who generates matters
 
-On-the-fly slide generation is valuable **only in one direction**.
+On-the-fly slide generation is valuable only in one direction.
 
 | Direction | Pedagogical value |
 |---|---|
@@ -123,8 +123,8 @@ Design consequences:
 
 ## 6. Open problem
 
-Nobody has published an LLM teachable agent that reliably **stays wrong**. The
+Nobody has published an LLM teachable agent that reliably stays wrong. The
 required behaviour is the exact inverse of every alignment objective the base
 models were trained on. Whether this is achievable by prompting and scaffolding
 alone, or requires fine-tuning, is — as far as this survey can determine —
-**unanswered and worth answering.**
+unanswered and worth answering.

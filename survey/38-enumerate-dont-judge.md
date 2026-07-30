@@ -79,10 +79,10 @@ practice.
 Every spaced-repetition and learner-model system decays belief strength toward zero.
 For misconceptions this is **wrong in the case that matters most**. Cross-ontological
 errors — a limit held as a process, an electron held as an orbiting particle — do
-**not** decay. The Bohr-model hybrid population was unchanged across a full semester of
+not decay. The Bohr-model hybrid population was unchanged across a full semester of
 university chemistry.
 
-What decays is our **confidence** that the learner still holds it.
+What decays is our confidence that the learner still holds it.
 
 So the parameter must not fall toward zero. The **credible interval widens toward the
 population prior**, and a belief last seen six months ago returns as *probably still
@@ -102,14 +102,14 @@ An explanation is compiled, not written. Three layers:
 | **Surface bindings** | Words, marks, animation parameters | At the boundary |
 
 The four fidelity invariants — a rung may drop precision but never falsify **ontology,
-causal sign, quantifier strength, or uniqueness of mechanism** — become **compiler
+causal sign, quantifier strength, or uniqueness of mechanism — become compiler
 passes that block a render.** Not review guidance. A build failure.
 
 Two passes are worth naming because they come from measured results rather than
-principle. One enforces that the misconception is **named explicitly**, from the finding
+principle. One enforces that the misconception is named explicitly, from the finding
 that a Refutation condition scoring **d = 0.79** was the exposition script *verbatim
 plus explicit statements of the wrong idea* — same order, nothing rearranged. The other
-enforces **referential-status ordering**, from the result that referential status, not
+enforces referential-status ordering, from the result that referential status, not
 persistence, decides whether an added element helps or harms.
 
 ---
@@ -117,7 +117,7 @@ persistence, decides whether an added element helps or harms.
 ## 5. Latency is a schema property
 
 The naive framing treats mid-stream revision as a performance problem — make the model
-faster. It is a **type problem**.
+faster. It is a type problem.
 
 Of the available patch operations, **`annotate` is the only one that falsifies no
 invariant.** Adding a label, a pointer, a highlight cannot make a true claim false. So
@@ -134,16 +134,16 @@ by discipline.
 
 ## 6. What the system may watch, and why the legal answer is the better one
 
-Emotion inference in education is **prohibited** under EU AI Act Article 5(1)(f) — not
+Emotion inference in education is prohibited under EU AI Act Article 5(1)(f) — not
 high-risk, banned. Gaze-based frustration detection is out.
 
-The replacement is better on the merits. Legal triggers reduce to **voluntary acts**:
+The replacement is better on the merits. Legal triggers reduce to voluntary acts:
 a committed answer, a deictic act (pointing, selecting, circling), a produced artifact.
 Each is unambiguous, learner-initiated, and carries far more information than an
 inferred affective state — which, on this survey's own evidence, would optimise the
 felt axis rather than the real one.
 
-One tempting signal is explicitly rejected: **rewind and replay density**, which was
+One tempting signal is explicitly rejected: rewind and replay density, which was
 measured null and opposite-signed. The obvious proxy for confusion is not one.
 
 ---
@@ -153,7 +153,7 @@ measured null and opposite-signed. The obvious proxy for confusion is not one.
 Pointing at the thing was earlier described as the cleanest greenfield, with a substrate
 at **49% IoU** fine-tuned against under 1% zero-shot.
 
-That number is the cost of grounding references in images **you did not author**. Once
+That number is the cost of grounding references in images you did not author. Once
 an explanation is compiled from an IR, every object in the scene has a **compile-time
 identifier**, and pointing is exact by construction. The hard version of the problem
 only exists for systems that generate pixels first and try to understand them
@@ -163,7 +163,7 @@ afterwards.
 
 ## 8. The hole, and the experiment nobody will want to run
 
-**`break()` cannot address ontological crossings.** Running a wrong rule forward
+`break()` cannot address ontological crossings. Running a wrong rule forward
 requires the rule to have dynamics. "A limit is a process" has no dynamics to execute —
 there is nothing to run until it contradicts itself. And that class is precisely the one
 the literature shows to be most robust and least repairable by instruction.
@@ -173,7 +173,7 @@ Ontological repair needs a different mechanism, and this document does not have 
 
 And the falsifier that matters is not the obvious one. Comparing a responsive system
 against a fixed explanation confounds targeting with timing. The arm that settles it is
-**A′: identical targeting, revision deferred to the end.**
+A′: identical targeting, revision deferred to the end.
 
 > If A ≈ A′, then mid-stream revision is theatre and the entire latency argument was
 > decoration on a targeting result.

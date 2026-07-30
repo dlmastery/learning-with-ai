@@ -71,7 +71,7 @@ further ahead. Sierra Leone's effect loaded at **+0.195 SD per SD of baseline
 mathematics**, and we have treated that as close to a law (§09).
 
 It is not a law. Across **eight targeted interventions**, examined together for
-this section: **not one widened gaps, and several sharply narrowed them.**
+this section: not one widened gaps, and several sharply narrowed them.
 
 So the honest statement is:
 
@@ -122,14 +122,14 @@ population data to a full multilingual benchmark table:
 
 Read the third row twice. For roughly **375 million children** we cannot state
 whether a model works in their language, because nobody has measured it. That is
-not a capability gap; it is a **measurement** gap, and it is cheaper to close.
+not a capability gap; it is a measurement gap, and it is cheaper to close.
 
 The tractable part: a **0.55B fine-tuned encoder** cuts the below-50-score
 population from **37.6% to 4.4%**. Small, targeted models move this enormously —
 which is a genuinely hopeful result, since it means the fix does not wait on
 frontier scale.
 
-The stubborn part: that same intervention **barely moves the unmeasured group**,
+The stubborn part: that same intervention barely moves the unmeasured group,
 because you cannot fine-tune against a benchmark that does not exist. And **no
 learner-weighted multilingual benchmark exists anywhere** — every benchmark
 weights languages by convenience or by corpus size, never by how many children are
@@ -143,7 +143,7 @@ and it would be one of the highest-leverage artifacts in the field.
 ## 6. Ranking the barriers honestly
 
 Nine barriers stand between a child and a tutor. Abundant attention removes
-**three**.
+three.
 
 | Barrier | Does abundant attention remove it? |
 |---|---|
@@ -183,7 +183,7 @@ And the least-connected are the least reachable, which no amount of capability
 fixes.
 
 What we do not concede is the inference. Every null in §1 shares a structure:
-**something was distributed, and nothing was targeted.** The interventions that
+something was distributed, and nothing was targeted. The interventions that
 worked all targeted. Abundant attention is precisely an input to targeting — it is
 what makes meeting each learner where they are affordable at population scale for
 the first time.
@@ -208,6 +208,6 @@ running, stated at the strength the evidence actually supports.
   three we do.
 
 The title of this section is the discipline it asks for. Every claim about reach
-should be checkable against a specific person who is **not in the room** — and for
+should be checkable against a specific person who is not in the room — and for
 375 million children, we cannot currently say whether the room would even be in
 their language.

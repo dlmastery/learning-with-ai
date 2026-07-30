@@ -33,24 +33,24 @@ every schedule change, and every substitute a re-notification event.** Progress
 probes, and graphing them, because the graph is the §300.309(b)(2) evidentiary record
 and not a wall display.
 
-**On a rolling cycle.** An IEP meeting is 1.5 hours in the room and **2 hours to write
+On a rolling cycle. An IEP meeting is 1.5 hours in the room and **2 hours to write
 the document**, plus 2 hours a month scheduling and 1 hour mailing notices — and each
-one carries §300.322's parent-participation duties, including a **record of attempts**
+one carries §300.322's parent-participation duties, including a record of attempts
 if the parent does not attend and a duty to *"take whatever action is necessary to
 ensure that the parent understands the proceedings."* Progress reports: **8 hours,
 every 7 weeks.** Initial evaluations: 7.5 hours a month administering, 4.2 reviewing.
 Behaviour logs 5, intervention plans 2, functional assessments 2.
 
-**On the compliance calendar**, each of these a date that arrives whatever else is
+On the compliance calendar, each of these a date that arrives whatever else is
 happening: 60 days from consent to evaluation. 30 days from eligibility to the IEP
 meeting. An IEP in effect for every child on the first day of school. Annual review.
 Triennial reevaluation. Safeguards notice once a year plus on trigger. **Ten school
 days to a manifestation determination** after a disciplinary placement change.
 
-**And then the part no calendar holds.** A safeguarding disclosure — personal duty,
+And then the part no calendar holds. A safeguarding disclosure — personal duty,
 immediate, routed around the parent. A behaviour crisis. A removal. A parent's request
 for an independent evaluation, which starts a clock the moment it is spoken. A
-transfer student arriving mid-year who must receive comparable services **immediately**.
+transfer student arriving mid-year who must receive comparable services immediately.
 
 That is the week. Notice what it is mostly made of, and notice that the five-against-
 four deficit is not the paperwork *around* the job. **The paperwork is the job's
@@ -60,10 +60,10 @@ second full-time role**, and it is the one with the legal exposure.
 
 ## 2. Half of the legal test is procedural, and §04 argued only the other half
 
-The federal standard for a free appropriate public education has **two prongs**
+The federal standard for a free appropriate public education has two prongs
 (*Rowley*, 458 U.S. at 206–07). One asks whether the programme was reasonably
 calculated to confer educational benefit. The other asks whether the state complied
-with the **procedures** set out in the Act.
+with the procedures set out in the Act.
 
 A survey that discusses only instructional efficacy has addressed one half of the
 statute. That is why §04 read as research wearing a lanyard: it was arguing about
@@ -89,7 +89,7 @@ will generate advice that is wrong in both directions.
 
 An earlier framing in this project said: *an AI that changes a child's programme
 without generating prior written notice has created a procedural violation.*
-Directionally right; **wrong in three specifics**, and the specifics matter because
+Directionally right; wrong in three specifics, and the specifics matter because
 they decide what a system is allowed to do without a meeting.
 
 1. **The duty attaches to the agency, not to the tool.** A vendor cannot create or
@@ -106,7 +106,7 @@ The load-bearing sentence is the Department's own, from the 2006 commentary:
 > *"Placement refers to the provision of special education and related services rather
 > than a specific place."* (71 FR 46588)
 
-So the line an AI must not cross is between the **service** and the **method** — not
+So the line an AI must not cross is between the service and the method — not
 between a big change and a small one. Changing which explanation strategy a child
 sees on Tuesday is methodology. Changing the minutes of specialised instruction is
 placement, and that is a team decision with notice.
@@ -129,7 +129,7 @@ regulator, in advance.
 
 Now consider what a recommendation engine does. It arrives at a proposal before the
 meeting, without parent input, and presents it with the authority of having processed
-the data. **Every recommendation engine is a predetermination machine by default.**
+the data. Every recommendation engine is a predetermination machine by default.
 
 The design consequence is specific and cheap: an AI may prepare *options with their
 evidence*, and must not arrive with *a recommendation*. The difference is legally
@@ -170,8 +170,8 @@ compliance minutes are nearly the same quantity.
 
 This changes what the honest pitch is. This survey has argued that AI's contribution
 at the margin is *fidelity and dosage of known-good intervention* (§04). That remains
-true. But the largest **practical** contribution available today is probably
-**administrative** — and saying so strengthens the instructional argument rather than
+true. But the largest practical contribution available today is probably
+administrative — and saying so strengthens the instructional argument rather than
 conceding it, because every hour returned from paperwork is an hour available for the
 thing with 4,000 effect estimates behind it.
 
@@ -187,8 +187,8 @@ was wrong, and the correction is uncomfortable enough to state in full:
 - Elbaum 2007: the effect **reverses** at secondary level
 - Teachers assign accommodations **at chance** (N = 1,218)
 
-Both halves have to be held at once. Accommodations are **legally required** and
-**evidentially weak**. That is not an argument for withholding them — the legal
+Both halves have to be held at once. Accommodations are legally required and
+evidentially weak. That is not an argument for withholding them — the legal
 obligation is not contingent on effect size, and access is a right rather than an
 intervention. It is an argument against counting them in the efficacy column, and
 against a system that recommends them as though it were prescribing something
@@ -203,15 +203,15 @@ not run.
 ## 8. Escalation, and a null that should temper every safeguarding feature
 
 Two figures define the gap. NIS-4 found that **≥80% of school-recognised maltreatment
-never reached investigation**, while CPS would have investigated **72%** of it. The
+never reached investigation, while CPS would have investigated 72%** of it. The
 recognition is happening; the referral is not.
 
 And the obvious fix has been tested. Wyman's randomised trial of gatekeeper training
-moved **confidence by ES 1.22** and **identification behaviour by nothing.**
+moved **confidence by ES 1.22** and identification behaviour by nothing.
 
 That pattern — large movement in how prepared people feel, zero movement in what they
 do — is the felt-learning trap in a safeguarding costume, and it is the reason a
-safeguarding feature must be measured on **referrals made**, never on staff confidence
+safeguarding feature must be measured on referrals made, never on staff confidence
 or completion of a module.
 
 ---
@@ -230,7 +230,7 @@ that a decision rule has fired. It may not author the IEP, determine eligibility
 decide placement, select a disability category, or arrive at a meeting with a
 recommendation.
 
-And one more, from §3: it may prepare **options with their evidence**. Never a
+And one more, from §3: it may prepare options with their evidence. Never a
 recommendation.
 
 ---

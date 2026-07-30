@@ -148,7 +148,7 @@ informational-equivalence control is almost never run, and when you run it,
 motion adds nothing.**" In the AI-generated-video boom, that control is not run
 at all.
 
-**The moderator that does survive is directly actionable: animate what changes.**
+The moderator that does survive is directly actionable: animate what changes.
 A systematic review of 194 studies found the field assessing *conceptual* mental
 models while neglecting *kinematic* ones, and the follow-up experiment argues
 animation earns its keep specifically when the specifics of the displayed change
@@ -165,7 +165,7 @@ graphics presented simultaneously, successively, self-paced, or animated:
 
 Animation moves *liking* without moving *learning*. Set that beside the
 randomised active-learning result where students in the active classroom
-**learned more but felt they learned less**, and the dissociation runs in both
+learned more but felt they learned less, and the dissociation runs in both
 directions: subjective fluency is anti-correlated with effortful learning, and
 animation is a fluency machine.
 
@@ -210,7 +210,7 @@ footnote. First, the highest-value missing experiment here is cheap: expose
 learners to a legible-but-wrong generated figure and measure misconception
 formation and durability. We know roughly 6% of post-repair charts are
 hallucinated; we know from the conceptual-change literature that misconceptions
-are sticky. **Nobody has multiplied those two facts together.** Second, the
+are sticky. Nobody has multiplied those two facts together. Second, the
 informational-equivalence control — generated figure versus generated prose of
 equal information content, on transfer — has never been run in the AI era.
 
@@ -234,7 +234,7 @@ Schroeder & Cenkci (2018) on spatial contiguity and split attention, and Ginns
 (2006) on contiguity broadly. k = 58 is not nested inside k = 46. They agree on
 direction and differ on scope, which is why both are shown.
 
-**The strongest multimedia principle is also the most mechanically checkable one.**
+The strongest multimedia principle is also the most mechanically checkable one.
 Contiguity — **g = 0.63 to 0.74** across those two estimates, the largest effect in
 the table on either measure — reduces to a distance predicate on two bounding boxes.
 Coherence, at g = 0.33, is the smallest and requires judgement. Spend the automated
@@ -261,7 +261,7 @@ is specific and it is the second major null in this section.
   and frontier models drop **up to 30%**. The checker is reading text, not
   geometry — blind exactly where geometric error lives.
 - **The "Mirage" ablation:** in circuit-diagram→Verilog generation, replacing the
-  diagram with a **blank image leaves Pass@k unchanged or even higher**, because
+  diagram with a blank image leaves Pass@k unchanged or even higher, because
   models read identifier names in the module header instead of the picture.
 - **Misleading-visualisation benchmark:** VLMs detect design errors more reliably
   than reasoning-based misinformation, and **"frequently misclassify
@@ -319,7 +319,7 @@ survey of 20 studies on STEM image description reports persistent "factual
 inaccuracies and hallucinations" plus "heavy reliance on automatic text-overlap
 metrics that poorly capture perceived usefulness and trust." Interviews with
 blind and low-vision scientists record the cost in behaviour rather than score:
-they **abandoned AI workflows** after vague or incorrect descriptions. Until an
+they abandoned AI workflows after vague or incorrect descriptions. Until an
 accuracy figure licenses otherwise, alt text delivered to a BLV learner is
 human-reviewed.
 

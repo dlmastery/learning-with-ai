@@ -97,7 +97,7 @@ tested.** The second is the RHSI above, which applies to any agent optimised
 against a proxy — which is every agent that touches sequencing, difficulty, or
 engagement.
 
-The unit of certification is a **role card**: a YAML object declaring what the role
+The unit of certification is a role card: a YAML object declaring what the role
 may assert, what it may *not* assert, which layers of the learner model it reads
 and writes, its grounding tier, and its scores at each certification tier. Three
 properties of that card matter more than its contents. `may_not_assert` is enforced
@@ -132,7 +132,7 @@ same model are not independent minds. They share a prior, a training set, and a
 failure mode.** Debate between them is closer to self-consistency sampling than to
 argument, which is exactly what the benchmarks report.
 
-And model diversity is not a free fix either. **Self-MoA** found that aggregating
+And model diversity is not a free fix either. Self-MoA found that aggregating
 outputs from a *single top-performing* model beats mixing different models — +6.6%
 on AlpacaEval 2.0, +3.8% average across MMLU/CRUX/MATH — because "the MoA
 performance is rather sensitive to the quality, and mixing different LLMs often
@@ -142,7 +142,7 @@ Read those together and the naive village is in serious trouble. **Persona
 diversity buys no accuracy. Model diversity can cost it. Debate does not reliably
 beat asking once, well.**
 
-**A contested finding, stated as contested.** An earlier section of this project
+A contested finding, stated as contested. An earlier section of this project
 cited *Diversity of Thought Elicits Stronger Reasoning Capabilities in Multi-Agent
 Debate Frameworks* (2024), in which a set of medium-capacity models beat GPT-4 on
 GSM-8K after four rounds — "heterogeneity beats raw capability." Self-MoA finds the
@@ -150,7 +150,7 @@ opposite in the aggregation setting. The reconcilable reading is that heterogene
 helps when the mechanism is *adversarial* (debate reopens the search) and hurts when
 the mechanism is *aggregative* (a weak proposer dilutes a strong one). That reading
 is consistent with the arbitration rule below, which permits debate and forbids
-synthesis. **It is a reading, not a demonstrated result**, and this survey publishes
+synthesis. It is a reading, not a demonstrated result, and this survey publishes
 it as unresolved.
 
 ---
@@ -179,7 +179,7 @@ next section does double duty here as an arbitration mechanism.
 correct minority answer that is voted away is unrecoverable. A correct minority
 answer appended to the evidence log with `confidence: inferred` and full attribution
 is recoverable — by a later probe, by a human reviewer, by an offline audit.
-**Dissent is cheap to store and catastrophic to discard.**
+Dissent is cheap to store and catastrophic to discard.
 
 **T3 is where the architecture earns its keep pedagogically**, and it is the one
 result in the multi-agent literature that is about the *learner* rather than the
@@ -211,17 +211,17 @@ transfers to independent reasoning. It is a design bet with a strong prior.
 
 Two absolute prohibitions, and the evidence behind each.
 
-**No majority voting anywhere, on anything.** Not as a tie-break, not as a
+No majority voting anywhere, on anything. Not as a tie-break, not as a
 confidence estimate, not as a sanity check. This project's earlier research found
 that majority voting discards a correct minority answer roughly one time in four —
-and that figure is **project-internal and not externally verified**, so it is
+and that figure is project-internal and not externally verified, so it is
 reported here as such rather than laundered into a citation. The mechanism is not in
 dispute: voting is a popularity estimator, and correctness and popularity come apart
 precisely on the hard items, which are the items that matter. In a learning system,
 the discarded correct answer is often the one that would have diagnosed the
 misconception.
 
-**No synthesis of conflicting substantive claims.** Prose may be merged. *Claims*
+No synthesis of conflicting substantive claims. Prose may be merged. *Claims*
 may not. This project measured judge-based selection at 0.810 against synthesis at
 0.179 — again **project-internal**, again flagged. The externally verified
 corroboration is Self-MoA: aggregation is sensitive to proposer quality, and mixing
@@ -230,7 +230,7 @@ better prose, and fluent-and-wrong is the single most damaging output a tutor ca
 produce.
 
 Two further constraints on the T2 judge, both externally grounded. It must be a
-**different model family from every proposer**, because Panickssery, Bowman & Feng
+different model family from every proposer, because Panickssery, Bowman & Feng
 (2024) showed LLM evaluators recognise their own generations, and fine-tuning
 reveals a linear correlation between self-recognition capability and the strength of
 self-preference bias. And it must **publish a selection accuracy on a held-out
@@ -251,7 +251,7 @@ where T0 already sits.
 
 ## 6. The nulls, given their own space
 
-**Coordination failure is the dominant failure mode, and it is catalogued.** MAST
+Coordination failure is the dominant failure mode, and it is catalogued. MAST
 (Cemri et al., 2025) derives **14 unique failure modes** from 150 traces, validated
 on **1,600+ annotated traces** across 7 popular multi-agent frameworks, with
 inter-annotator κ = 0.88. Three categories: system design, inter-agent misalignment,
@@ -261,7 +261,7 @@ benchmarks are often minimal."* Two of the three categories are arbitration
 problems, which is the strongest available argument that arbitration should be a
 named, designed, tested component rather than an emergent property.
 
-**Some of the multi-agent gain may be nothing but more compute.** On BrowseComp,
+Some of the multi-agent gain may be nothing but more compute. On BrowseComp,
 "token usage by itself explains 80% of the variance" in performance (`VENDOR`,
 Anthropic engineering, not restated as a finding). If that generalises even
 partially, the specialisation thesis is in question. **Any claim that role
@@ -269,13 +269,13 @@ specialisation helps must be tested against a token-matched single-agent baselin
 and no published education multi-agent system has done this.** It should be the
 first ablation in any village evaluation, including ours.
 
-**And the education multi-agent literature is uniformly demo-grade.** Eight systems
+And the education multi-agent literature is uniformly demo-grade. Eight systems
 surveyed: IntelliCode (six agents over a centralised versioned learner state,
 validated on *simulated* learners); SimClass (a multi-agent classroom in two real
 courses, evaluated with Flanders interaction analysis and Community of Inquiry — not
 learning gains); a four-agent XR authoring framework (teacher-facing prototype);
 ParLD (state-prediction accuracy); FairTutor (its own C2-tier benchmark). One
-controlled experiment exists, on 65 pre-service teachers, with a **self-reported**
+controlled experiment exists, on 65 pre-service teachers, with a self-reported
 outcome.
 
 > **Not one measures a delayed, novel-item, human learning outcome against a
@@ -294,7 +294,7 @@ limitation to be buried.
 
 Not the count. Three structural properties.
 
-**One shared state, and it is a database row rather than a conversation.** This
+One shared state, and it is a database row rather than a conversation. This
 matters because the strongest counter-argument to the whole design is Anthropic's
 own guidance: *"domains that require all agents to share the same context or involve
 many dependencies between agents are not a good fit for multi-agent systems."*
@@ -318,13 +318,13 @@ attributed, confidence-tagged record, so eight agents can observe concurrently
 without corrupting what another observed, and dissent is just an append. Derived
 state — memory strength, belief about mastery — is **single-writer, and the writer
 is arithmetic**: a declared memory model and a declared knowledge-tracing model run
-over the evidence log. **No model writes a mastery estimate.** That preserves the
+over the evidence log. No model writes a mastery estimate. That preserves the
 guarantee that every derived number regenerates from the evidence alone, which is
 what makes a disputed number traceable by a parent or a learner. And it is not a
 sacrifice: a 21-parameter memory model and a ~34-feature logistic model sit at the
 accuracy frontier for exactly this task.
 
-**One voice.** Exactly one role is conversational. Every other role's output reaches
+One voice. Exactly one role is conversational. Every other role's output reaches
 the learner through it, or not at all. This is not a UX preference; it is the fix
 for MAST's inter-agent-misalignment category. A learner who receives two different
 accounts of what they know has been given a worse model of themselves than they
@@ -333,7 +333,7 @@ the conversational critical path by construction, because a village that adds a
 round-trip to the learner's turn has failed the accessibility gate regardless of how
 good its pedagogy is.
 
-The roster that falls out is a **registry of ten roles** — tutor (the only voice),
+The roster that falls out is a registry of ten roles — tutor (the only voice),
 diagnostician, curriculum planner, assessor, librarian, verifier, adversary,
 peer/protégé, safeguarding monitor, connector — plus a scribe that is not an agent
 at all. But the roster is not the crew. **The active set for any given learner-hour
@@ -342,12 +342,12 @@ stable mastery loop needs tutor, assessor, scribe. A learner who has just trippe
 pivot rule needs tutor, diagnostician, planner, verifier. Nobody needs all ten at
 once, and running all ten at once is precisely the failure MAST catalogues.
 
-Note what is **absent**, and why. No "friend." No "motivator." No "engagement
+Note what is absent, and why. No "friend." No "motivator." No "engagement
 agent." No emotion detector. Each was considered and each is excluded by a named
 finding: relatedness is the one self-determination need an AI cannot supply, because
 regard that is unconditional and costless by construction cannot underwrite a
 commitment; emotion inference in education is prohibited under EU AI Act Art.
-5(1)(f). In place of a friend there is a **connector**, whose job is matchmaking and
+5(1)(f). In place of a friend there is a connector, whose job is matchmaking and
 scheduling — surfacing a real person who will notice a missed week.
 
 ---
