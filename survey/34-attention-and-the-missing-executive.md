@@ -9,8 +9,8 @@ source_report: research/raw/N2-executive-function-and-attention.md
 # Attention, and the Missing Executive
 
 Every great teacher grabs attention. They joke, they tell a story, they ask the
-question that makes you lean forward. The instinct is universal and the folk theory
-around it — *make it fun, make it engaging* — is wrong in a specific and fixable way.
+question that makes you lean forward. The instinct is universal. The folk theory
+around it (*make it fun, make it engaging*) is wrong in a specific and fixable way.
 
 This section replaces the folk theory with one rule, and then turns to the harder
 problem underneath it: the capacity every learning product silently requires and
@@ -18,7 +18,7 @@ none of them supplies.
 
 ---
 
-## 1. The rule is referential status, not entertainment
+## 1. What the element points at decides whether it helps
 
 Order the evidence by **what the element points at**, and it lines up cleanly:
 
@@ -29,46 +29,45 @@ Order the evidence by **what the element points at**, and it lines up cleanly:
 | **Adjacent, with no referent** — decorative animation, decorative borders | **g = −0.05** (k = 17), and flat null |
 | **Carries a competing referent** — a vivid aside that is *about something else* | **g = −0.16 to −0.43** |
 
-Read the third row carefully, because it kills the usual explanation. Pure decoration
-is **inert, not harmful**. So "extraneousness" is not the mechanism. What harms is a
-detail that installs a *different* referent and competes for the one the learner is
-trying to build.
+The third row kills the usual explanation. Pure decoration is **inert, not harmful**.
+So "extraneousness" is not the mechanism. What harms is a detail that installs a
+*different* referent and competes for the one the learner is trying to build.
 
-> **A great teacher's joke is about the thing.** That is why it works — not because it
+> **A great teacher's joke is about the thing.** That is why it works. Not because it
 > is brief, and not because it is entertaining.
 
 ### The correction to our own account
 
 An earlier draft of this survey, and a claim made directly to its owner, said the
-hinge was **persistence**: seductive details harm at g = 0.43 when persistent and
+hinge was persistence: seductive details harm at g = 0.43 when persistent and
 g = 0.12, non-significant, when transient — so a teacher's four-second aside was in
 the harmless regime.
 
 **That over-read a null.** The transient cell is **g = 0.12, 95% CI [−0.33, 0.57],
-k = 18** — an interval that *contains* the persistent estimate of 0.43. Transience is
-unmeasured, not null, and treating a wide non-significant interval as evidence of
-no effect is exactly the error this survey exists to catch.
+k = 18**, an interval that *contains* the persistent estimate of 0.43. Transience is
+unmeasured rather than null, and treating a wide non-significant interval as evidence
+of no effect is exactly the error this survey exists to catch.
 
 ### And "make it fun" is falsified twice, independently
 
-In the same studies where learning moves **0.27–0.39**, liking moves **0.09–0.11**.
+In the same studies where learning moves 0.27–0.39, liking moves 0.09–0.11.
 The manipulation that works barely moves enjoyment at all.
 
 What it moves instead is **perceived difficulty, at −0.21.** The lever is
-approachability, not amusement — making the thing feel *possible*, not making it
-feel fun. Those are different design targets and the field routinely conflates them.
+approachability and not amusement: make the thing feel *possible*, which is a
+different design target from making it feel fun. The field routinely conflates them.
 
 ---
 
 ## 2. Story: the effect is real and mostly unmeasured
 
-Narrative beats expository text at **g = 0.55** — and only **28% of those effect
+Narrative beats expository text at g = 0.55, and only **28% of those effect
 sizes come from studies that controlled content across genres**. Egger's test is
 significant (b = 2.68, p = .01). Most of the literature compares a good story to a
 worse essay about a different thing.
 
 The one direct randomised test of narrative *as framing* (N = 145) found it helped at
-exactly one step: mapping the situation to the symbol — and most for struggling
+exactly one step: mapping the situation to the symbol, and most for struggling
 students.
 
 Which is the same rule again. Narrative works where the story is the referent —
@@ -82,8 +81,8 @@ wrapped around unchanged content is decoration with a plot.
 The instinct that great explainers *ask* rather than *tell* is correct. The
 mechanism is not curiosity.
 
-**Prequestions — being asked before you know — measure g = 0.54 when specific and
-g = 0.04 when general (p = .349). And the work is in the attempt: guessing scores
+**A prequestion asks before you know. It measures g = 0.54 when specific and
+g = 0.04 when general (p = .349), and the work is in the attempt: guessing scores
 0.65 against reading at 0.22.**
 
 Then the result that cuts against the curiosity account: **factual prequestions
@@ -94,7 +93,7 @@ by an intriguing question, the deep conceptual question should win. It loses.
 > be attempted, which is why "pay attention, this is important" does nothing.**
 
 Two boundaries that matter for the learner this project is built for. The effect runs
-**0.62 in adults against 0.22 in children**. Productive failure **reverses for grades
+0.62 in adults against 0.22 in children. Productive failure **reverses for grades
 2–5**. And the best trial of teaching young children to ask questions (N = 103,
 preregistered) is a null on learning, positive only on *valuing* information.
 
@@ -120,7 +119,7 @@ strategy. A learner whose binding constraint is executive function fails at the
 
 And this was measured twenty-five years before anyone said "AI tutor." In
 Cognitive Tutor logs: after three consecutive errors, a hint request followed only
-**34%** of the time — and **68% of hint levels were viewed for under one second.** The
+34% of the time — and **68% of hint levels were viewed for under one second.** The
 help was there. It was not summoned, and when summoned it was not read.
 
 That is the Khanmigo diagnosis, a quarter of a century early: the mechanism worked and
@@ -143,7 +142,7 @@ be *sufficient*. Supplying it removes a blocker and does not, on its own, teach.
 ### The ledger
 
 The source report audits twelve points in a normal session where the design makes
-an unaided executive demand, and specifies an external supply for each. `DESIGN` —
+an unaided executive demand, and specifies an external supply for each. `DESIGN`,
 falsified if the count of unaided demands fails to predict non-completion once
 time-on-task and prior knowledge are controlled.
 
@@ -157,17 +156,17 @@ story about why learners quit, and the real cause is elsewhere.
 The folk model says attention is fine at first and decays — so accommodations focus on
 breaks, chunking and sustaining.
 
-The measurement says otherwise. The vigilance decrement — the decay itself — runs
+The measurement says otherwise. The vigilance decrement, the decay itself, runs
 **δ = 0.54 with an 80% credibility interval from −0.14 to 1.22**, an interval that
-includes zero. Against that: overall omission errors at **δ = 1.34** and detection
-sensitivity at **d′ = 0.98**.
+includes zero. Against that: overall omission errors at δ = 1.34 and detection
+sensitivity at d′ = 0.98.
 
 The deficit is present in the first block. It is not that attention fades. It is
 that it starts impaired.
 
 That inverts the design. Chunking and breaks address a decay that may not be the
-problem. Initiation and re-entry — starting, and getting back in after any
-interruption — are where the measured deficit actually is. And this survey already
+problem. Initiation and re-entry (starting, and getting back in after any
+interruption) are where the measured deficit actually is. And this survey already
 records that testing accommodations are legally mandated and evidentially weak;
 both halves must be held at once.
 
@@ -176,23 +175,24 @@ say so in behavioural terms. It may not label a child.
 
 ---
 
-## 6. What this section commits us to
+## 6. Design rules for attention and executive load
 
 - **Every attention-getting element must point at the target.** If it installs a
   competing referent it measures negative; if it points at nothing it is merely
   wasted.
-- **Optimise approachability, not amusement.** The lever is perceived difficulty at
-  −0.21, and liking barely moves at all.
+- **Optimise for approachability; amusement is not the lever.** Perceived difficulty
+  moves −0.21, and liking barely moves at all.
 - **Ask questions that can be attempted.** Specific beats general by an order of
   magnitude; guessing beats reading; and an exhortation is not a question.
 - **Do not over-read a wide null.** A non-significant interval containing the effect
-  you are dismissing is not evidence of absence — we made that error in this very
+  you are dismissing is not evidence of absence, and we made that error in this very
   section.
-- **Count the unaided executive demands** in every flow, and supply each one — while
+- **Count the unaided executive demands** in every flow, and supply each one, while
   accepting that the one time this was done well, help-seeking improved and learning
   did not.
-- **Design for initiation, not for sustaining.** The measured deficit is in the first
-  block.
+- **Design for initiation, and not for sustaining.** The measured deficit is in the
+  first block.
 
-The through-line: the best teachers are not making the material *fun*. They are making
-it attemptable, and pointing everything they say at the thing itself.
+What the best teachers are doing is making the material attemptable, and pointing
+everything they say at the thing itself. Fun, where it happens, is a by-product and
+not the mechanism.

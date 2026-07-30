@@ -227,7 +227,7 @@ copy is `VENDOR` and is not restated as a finding. Its operating economics are n
 discussed.
 
 What is interesting is a set of design decisions arrived at from customer discovery
-rather than from citation, which converge with the evidence in this survey.
+and not from citation, which converge with the evidence in this survey.
 
 Withholding is classified as a safety property, not a feature. "Socratic method
 only. Guides students to answers, never gives them" sits on the page under *safety
@@ -239,11 +239,11 @@ The architecture puts the AI behind the human. The positioning — "AI will not
 replace tutors, but it will redefine how they work" — is structurally the Tutor
 CoPilot configuration, which is the one AI-tutoring architecture with a
 live-classroom randomised trial behind it (§09, §26). The wedge identified from
-interviewing tutors was continuity, not comprehension: nobody remembers what
+interviewing tutors was continuity and never comprehension: nobody remembers what
 happened last Wednesday. That is the correct read of the literature, reached without
 reading it.
 
-Oversight is total rather than sampled, with human review gates on every artefact
+Oversight is total, never sampled, with human review gates on every artefact
 that leaves the system — profiles reviewed before sharing, parent emails reviewed
 before sending — and synthetic-origin labelling at the point of consumption. The
 same three commitments appear independently at SchoolAI and MagicSchool: **adult
@@ -261,7 +261,7 @@ survey most explicitly designed around a falsifiable pedagogical claim has not
 instrumented the claim.** It measures acquisition precisely and pedagogy not at all.
 
 That is the §3 pathology — measuring what the organisation controls — appearing in
-the survey author's own work. It is reported rather than omitted because the survey's
+the survey author's own work. It is reported and not omitted because the survey's
 credibility depends on applying its own test to itself first.
 
 Three further criticisms follow from the same evidence base, and they are not
@@ -274,8 +274,8 @@ narrower — *never answer the question the student was assigned; may directly i
 on the prerequisite they lack.* And the substitute is unmodelled: a student
 blocked by a Socratic tutor at eleven at night has a general-purpose chatbot in the
 next tab. One vendor refusing does not eliminate the harm condition. It relocates it.
-A refusal engine with no theory of the substitute is measuring its own compliance,
-not the student's behaviour.
+A refusal engine with no theory of the substitute is measuring its own compliance
+and not the student's behaviour.
 
 One more datum from the same instance generalises. Its privacy and terms pages were
 opened by a vanishingly small fraction of visitors. **Consent architectures that
@@ -285,7 +285,7 @@ the three convergent norms above are worth more than a longer policy.
 
 ---
 
-## 6. What this section commits us to
+## 6. How to read a claim from this market
 
 - **Quote the gradient, not the number.** 0.61 → 0.22 → 0.10 → 0.03 as n rises and
   the evaluator becomes independent. Any effect size from a vendor sits somewhere on
@@ -295,7 +295,7 @@ the three convergent norms above are worth more than a longer policy.
 - **Prefer mechanism claims and audit them.** A mechanism claim that survives
   adversarial inspection is worth more than an outcome claim nobody can replicate —
   provided somebody actually inspects it.
-- **Treat `10.1257/rct.` as a red flag.** It is an intention, not a finding.
+- **Treat `10.1257/rct.` as a red flag.** It is an intention and not a finding.
 - **Name the disconfirming metric and its latency**, before shipping. Every company
   in the graveyard would have failed that test, and so, today, would ours.
 - **Instrument the pedagogy before marketing it.** Our own product does not, and that
@@ -303,7 +303,7 @@ the three convergent norms above are worth more than a longer policy.
 - **Minimise custody.** 275 million records, 8,809 institutions. The strongest privacy
   control is not holding the record.
 
-The market's problem is not that it lies. It is that it measures the thing it can
-move, publishes the number that survives translation into marketing, and waits out
-the school years it would take for anyone to notice the difference. The fix is not
-better claims. It is naming, in advance, the observation that would prove you wrong.
+The market does not, on the whole, lie. It measures the thing it can move, publishes
+the number that survives translation into marketing, and waits out the school years
+it would take for anyone to notice the difference. Better claims will not fix that.
+Naming, in advance, the observation that would prove you wrong might.

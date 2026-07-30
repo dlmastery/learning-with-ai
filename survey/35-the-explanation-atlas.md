@@ -19,24 +19,21 @@ best explanation does.
 
 ## 1. The literature exists, filed under a name nobody looks up
 
-We predicted this literature would be empty. It is not — head-to-head comparisons of
-explanations live under **refutation text**, and finding them was worth more than the
-prediction.
+We predicted this literature would be empty. It is not. Head-to-head comparisons of
+explanations live under **refutation text**.
 
 Pooled across 44 studies: **g = 0.41 raw, g = 0.28 after trim-and-fill.** A real
 effect, with a publication-bias correction that removes a third of it.
 
-Then the part that matters for anyone building on it:
-
-> **Exactly two studies in that meta-analysis exceeded one month. Transfer was never
-> coded at all.**
+Then the part that matters for anyone building on it: **exactly two studies in that
+meta-analysis exceeded one month, and transfer was never coded at all.**
 
 So the field knows that naming a misconception beats explaining cleanly, at short
 delay, on retention-style items. It does not know whether the advantage survives to a
 month, and it has never asked whether it transfers.
 
-And the strict question — *two real published explanations, head to head, on a
-learning outcome* — has **one journal-quality instance in the entire literature.**
+And the strict question (*two real published explanations, head to head, on a
+learning outcome*) has **one journal-quality instance in the entire literature.**
 
 ---
 

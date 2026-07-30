@@ -41,22 +41,22 @@ craft and enormous discipline, for the felt sense of understanding.
 This survey has a standing rule about this material and it is worth stating before
 anything else.
 
-The portfolio examined here — roughly 35 active repositories, nine live deployed
-apps, 128 notebooks, all inspected first-hand by downloading the production
-JavaScript bundles and reading the shipped system prompts — belongs to this
-project's owner. It arrives **last**, as validation, and it is **never** the seed
+The portfolio examined here belongs to this project's owner: roughly 35 active
+repositories, nine live deployed apps and 128 notebooks, all inspected first-hand
+by downloading the production JavaScript bundles and reading the shipped system
+prompts. It arrives **last**, as validation, and it is **never** the seed
 for what should be built.
 
-The reason is measured, not stylistic. Research within this project found that
-seeding a generator with examples produced **zero diversity gain** — p = .95, .89
-and .49 across three comparisons — while anchoring moved **57–77% of
+The reason is measured and not stylistic. Research within this project found that
+seeding a generator with examples produced **zero diversity gain** (p = .95, .89
+and .49 across three comparisons) while anchoring moved **57–77% of
 correct answers to wrong ones**. A portfolio shown to a generator before the
 literature does not expand the design space. It collapses it, and it does so most
 strongly on the items the generator would otherwise have got right.
 
 So the question here is not "what should we build." It is the narrower and more
 interesting one: **when a capable practitioner is handed frontier models and no
-constraints, what actually gets built — and what reliably does not?**
+constraints, what actually gets built, and what reliably does not?**
 
 ---
 
@@ -76,7 +76,7 @@ What that machine demonstrably does, in production, today:
 - **Live bilingual transcripts**, with both input and output transcription enabled.
 - **Mid-session language switching**, injected into the live stream as an
   instruction.
-- **Tool calls that drive the interface mid-sentence** — the model narrates by voice
+- **Tool calls that drive the interface mid-sentence.** The model narrates by voice
   while mutating application state.
 - **Curriculum synthesis on demand**: any topic to a schema-constrained ten-chapter
   path in one call, conditioned on grade, location, culture, interests, dialect and
@@ -92,13 +92,13 @@ Three design patterns recur and are worth naming because they were arrived at
 independently.
 
 Make generation legible. Every app narrates the model's work during a 10–40
-second wait — "Architecting Learning Path…", "Clustering 50 Mastery Paths…",
-"Validating Narrative Integrity…" — rather than hiding it behind a spinner. It is
+second wait: "Architecting Learning Path…", "Clustering 50 Mastery Paths…",
+"Validating Narrative Integrity…". Nothing hides behind a spinner. It is
 genuinely good interface design for a latency that is not going away.
 
 The schema is the pedagogical commitment. The flagship app's curriculum
 generator enforces a JSON schema with `globalGifts[]`, provocation questions, a
-peer collaborative challenge, showcase-based assessment, and a journaling prompt —
+peer collaborative challenge, showcase-based assessment, and a journaling prompt,
 recognisably Froebel plus Reggio Emilia plus Socratic method, encoded as a type
 rather than as an aspiration. A schema is a pedagogy you cannot quietly drop.
 
@@ -145,14 +145,14 @@ It is written to nothing. There is no persistence layer in those bundles. The
 mastery signal is discarded at page reload.
 
 And the sharpest version of the same gap: cross-session memory exists in this
-portfolio — a meditation app injects *"CONTEXT FROM PREVIOUS SESSIONS"* into every
+portfolio. A meditation app injects *"CONTEXT FROM PREVIOUS SESSIONS"* into every
 live session from a Firestore-backed store, alongside affect-conditioned pacing that
 slows down when the user sounds anxious. A separate research-agent codebase solves
 the memoryless-collaborator problem again, with an explicit thesis that *"the
 repository is the memory."*
 
-> **The same author solved cross-session memory twice — once for meditation, once
-> for a machine-learning agent — and shipped it in neither of the tutors.**
+The same author solved cross-session memory twice, once for meditation and once for
+a machine-learning agent, and shipped it in neither of the tutors.
 
 §11 argues that persistent learner state is the load-bearing component of an AI-native
 learning system. This is what its absence looks like in built artefacts, from
@@ -160,9 +160,9 @@ someone who demonstrably knew how to build it.
 
 ### 3.3 Assessment lives in a different repository
 
-The one instrument in the corpus with real practice structure — an interview
-gauntlet with 29 trap markers and 31 follow-ups, structured *question → intuition →
-rigorous answer → code check → follow-ups* — is **one notebook out of 128**. The
+The one instrument in the corpus with real practice structure is **one notebook out
+of 128**: an interview gauntlet with 29 trap markers and 31 follow-ups, structured
+*question → intuition → rigorous answer → code check → follow-ups*. The
 exam-prep notebook contains 36 problems in a strict four-beat format, mapped to
 textbook exercises and cross-checked against the official solutions manual, and
 the solution sits immediately below every problem. No hidden answer, no attempt
@@ -186,7 +186,7 @@ plain-language explanation; *"no formula verbatim — a formula stated with no
 build-up is a defect"*; *"prove it AND verify it"*, every derivation shown in LaTeX
 and confirmed numerically.
 
-The research corpus compiles its rules — into regexes, word floors, SHA-256
+The research corpus compiles its rules into regexes, word floors, SHA-256
 fingerprints, and independent audit agents that exit non-zero with no bypass flag.
 
 Then look at what happened to each.
@@ -211,8 +211,7 @@ tasks beating a published benchmark, in the corpus whose rules exit non-zero.
 
 > **A survey advocating AI-generated curricula must advocate gates, not guidelines.**
 
-That is the sentence this section contributes, and it is earned by a natural
-experiment rather than argued from principle.
+That is the sentence this section contributes, and a natural experiment earned it.
 
 ---
 
@@ -223,8 +222,8 @@ product requirements document targets rural learners on low-end Android devices,
 on-device inference offline the great majority of the time, a small initial download,
 solar-friendly operation, and a hundred low-resource languages. What shipped is an
 online-only single-page web app whose voice path requires a persistent WebSocket and
-whose audio capture uses a deprecated main-thread API — in *every* app in the
-portfolio — that will glitch on precisely the target device. The design research
+whose audio capture uses a deprecated main-thread API, in *every* app in the
+portfolio, that will glitch on precisely the target device. The design research
 document runs to 78.5 KB. **Every hard constraint was dropped and the easy 20% was
 built.** That gap is more useful to this survey than a success story would be, and it
 is the single most honest datum in the report.
@@ -252,7 +251,7 @@ guidance delivered in the voice of a deity. No source allowlist, no provenance
 display, no medical disclaimer in the extracted strings. One app in the set asserts
 uncited clinical statistics as fact — *"diagnostic simulation benchmarks outperform
 junior residents in 8/10 categories"* — with no citation mechanism anywhere in the
-bundle. §13 argues that correctness must live in a verifier rather than in the
+bundle. §13 argues that correctness must live in a verifier and not in the
 generator; this is what the alternative ships as. **The same portfolio contains a
 codified "citation rigor" discipline. It is not applied to the consumer apps.**
 
@@ -275,8 +274,8 @@ actually be produced.
 
 A working closed loop over curriculum coverage. A programmatic keyword audit of
 every notebook against every subsection of the reference textbook produced a
-pass/warn/fail verdict per chapter, found a real gap — a named list of clustering
-algorithms entirely missing — generated an action item, and the gap-fill notebook was
+pass/warn/fail verdict per chapter, found a real gap (a named list of clustering
+algorithms entirely missing), generated an action item, and the gap-fill notebook was
 then built. **Audit → gap → targeted build → re-audit is the one place in the whole
 portfolio where an automated signal changed the curriculum**, and it is a template
 anyone can copy.
@@ -292,7 +291,7 @@ more useful artefact than either half alone.
 
 ---
 
-## 7. What this section commits us to
+## 7. What thirty-five builds oblige us to do
 
 - **The portfolio is evidence, never a seed.** Zero measured diversity gain from
   example-seeding; 57–77% correct→wrong movement under anchoring. It arrives after

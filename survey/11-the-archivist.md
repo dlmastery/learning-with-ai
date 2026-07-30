@@ -34,21 +34,20 @@ to their configuration will be changed", then:
 ```
 
 That base64 trick is the whole genre in one line. It is an attempt to build the two
-things this survey cares most about — a **learner model** and **hidden tutor
-reasoning** — using the only substrate a prompt has: the transcript itself,
-obfuscated so the student cannot read it. It is ingenious, and it is structurally
+things this survey cares most about, a **learner model** and **hidden tutor
+reasoning**, using the only substrate a prompt has: the transcript itself,
+obfuscated so the student cannot read it. It is ingenious, and structurally
 doomed. The model lives in the context window, so it dies with the session. The one
-other persistence attempt — `<save prerequisite and main curriculum into a .txt
-file>` — writes into the Code Interpreter sandbox, which is also session-scoped.
+other persistence attempt, `<save prerequisite and main curriculum into a .txt
+file>`, writes into the Code Interpreter sandbox, which is also session-scoped.
 
 **The artifact wanted persistent learner state, tried twice to get it, and could
 not, because the platform gave it nowhere to put it.** Twenty-nine thousand stars
 bought no immunity.
 
 The substrate is the thing this section is about. What follows is what should go in
-it, what should not, and — stated up front because it is the section's most
-important negative result — the fact that **nobody has ever measured whether
-persistence helps.**
+it and what should not. Stated up front, because it is the section's most important
+negative result: **nobody has ever measured whether persistence helps.**
 
 ---
 
@@ -57,8 +56,8 @@ persistence helps.**
 Two literatures that almost never cite each other have been telling the same story
 for a decade.
 
-Knowledge tracing — the field that predicts whether a learner will get the next
-item right — lives in a band of **AUC ≈ 0.67–0.83 and has essentially not moved
+Knowledge tracing, the field that predicts whether a learner will get the next
+item right, lives in a band of **AUC ≈ 0.67–0.83 and has essentially not moved
 since 2015.** The definitive study (Gervet, Koedinger, Schneider & Mitchell, JEDM
 2020) ran nine datasets across three model families and found that **logistic
 regression with good features leads on four of nine datasets and deep knowledge
@@ -78,7 +77,7 @@ instructive.
 
 ---
 
-## 2. The nulls, given their own space
+## 2. What replication did to deep knowledge tracing
 
 Deep knowledge tracing announced itself in 2015 with **AUC 0.86 for DKT against
 0.67 for BKT** on ASSISTments 2009-2010. Xiong, Zhao, Van Inwegen & Beck (EDM 2016)
@@ -114,7 +113,7 @@ personalisation at all.
 And the deep-learning result that *does* survive is not an accuracy result. DKT
 reaches near-peak accuracy on a new learner in about **10 interactions where good
 logistic regression needs 60** — a 6× reduction in burn-in. That is a **cold-start**
-win, and it is the honest thing to claim.
+win, and the right thing to claim.
 
 ---
 
@@ -122,11 +121,11 @@ win, and it is the honest thing to claim.
 
 Every number above is about prediction. Here is the one about persistence.
 
-> **No study anywhere in this project's learner-modelling corpus — 88 sources —
+> No study anywhere in this project's learner-modelling corpus (88 sources)
 > compares a system that remembers a learner across sessions, subjects and years
-> against the same system starting fresh, on a human learning outcome.**
+> against the same system starting fresh, on a human learning outcome.
 
-The closest adjacent facts make the gap sharper rather than softer:
+The closest adjacent facts sharpen the gap:
 
 - There is **no controlled evidence that switching scheduling algorithm improves
   any learning outcome.** There is good evidence that FSRS predicts recall better
@@ -147,11 +146,11 @@ by accident, because Anki is a general-purpose tool that individuals own.
 > **Learner-owned tools produce longitudinal data. Institution-owned tools produce
 > annual data, because institutions are annual.**
 
-That is the strongest empirical argument in this section, and it is an argument
+That is the strongest empirical argument in this section, and an argument
 about custody rather than about modelling.
 
 A second, softer null. The open-learner-model and learning-analytics-dashboard
-literature — four systematic reviews — converges on a methodological finding: these
+literature, across four systematic reviews, converges on a methodological finding: these
 systems overwhelmingly evaluate **perception** rather than learning; the grounding in
 self-regulated learning theory is thin or post-hoc; and the most common design,
 comparison against a peer average, targets *awareness*, the weakest link in the chain.
@@ -161,13 +160,13 @@ designs are additionally a documented demotivation risk.
 And an under-appreciated compounding problem: the best knowledge-tracing models are
 "severely biased on some datasets." **An open learner model inherits the calibration
 debt of the model it opens**, and shows a learner a number with the authority of an
-interface. Every OLM should publish reliability diagrams, not AUC.
+interface. Every OLM should publish a reliability diagram in place of an AUC.
 
 ---
 
 ## 4. The inversion: the ceiling is a privacy gift
 
-Now the good news, and it is structural.
+Now the good news, which is structural.
 
 A 21-parameter memory model and a ~34-feature logistic regression sit at the
 accuracy frontier for this task. Capacity is demonstrably not the bottleneck — a
@@ -210,7 +209,7 @@ Three consequences follow, and each is a design commitment.
 
 Misconceptions are first-class, not a subtype of "incorrect." In 1978, Brown &
 Burton's BUGGY built a deep-structure model of a student's bugs that could explain
-*why* a student was making a mistake, not merely identify it. Forty-eight years
+*why* a student was making a mistake instead of merely identifying it. Forty-eight years
 later, the state of the art outputs a scalar probability that they will get the next
 one right. **We replaced a theory of error with a number between 0 and 1.**
 

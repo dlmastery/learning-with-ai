@@ -178,7 +178,7 @@ next section does double duty here as an arbitration mechanism.
 **T1's dissent record is the direct architectural answer to the voting problem.** A
 correct minority answer that is voted away is unrecoverable. A correct minority
 answer appended to the evidence log with `confidence: inferred` and full attribution
-is recoverable: by a later probe, by a human reviewer, by an offline audit.
+is recoverable — by a later probe, by a human reviewer, by an offline audit.
 Dissent is cheap to store and catastrophic to discard.
 
 **T3 is where the architecture earns its keep pedagogically.** It rests on the one
@@ -272,8 +272,8 @@ first ablation in any village evaluation, including ours.
 And the education multi-agent literature is uniformly demo-grade. Eight systems
 surveyed: IntelliCode (six agents over a centralised versioned learner state,
 validated on *simulated* learners); SimClass (a multi-agent classroom in two real
-courses, evaluated with Flanders interaction analysis and Community of Inquiry — not
-learning gains); a four-agent XR authoring framework (teacher-facing prototype);
+courses, evaluated with Flanders interaction analysis and Community of Inquiry, never
+on learning gains); a four-agent XR authoring framework (teacher-facing prototype);
 ParLD (state-prediction accuracy); FairTutor (its own C2-tier benchmark). One
 controlled experiment exists, on 65 pre-service teachers, with a self-reported
 outcome.
@@ -284,9 +284,9 @@ outcome.
 Combined with the absence of any measured evidence that multi-agent AI tutoring
 helps learners with disabilities — the 2026 state of the art in that area is a paper
 whose own abstract says the research is absent, evaluated on 690 synthetic dialogues
-scored by an LLM judge — the honest position is that the village is an architecture
-with good mechanical properties and no outcome evidence. That is a finding, not a
-limitation to be buried.
+scored by an LLM judge — the position this survey takes is that the village is an
+architecture with good mechanical properties and no outcome evidence. Say that as a
+finding; do not bury it as a limitation.
 
 ---
 
@@ -294,7 +294,7 @@ limitation to be buried.
 
 Not the count. Three structural properties.
 
-One shared state, and it is a database row rather than a conversation. This
+One shared state, held as a database row and not as a conversation. This
 matters because the strongest counter-argument to the whole design is Anthropic's
 own guidance: *"domains that require all agents to share the same context or involve
 many dependencies between agents are not a good fit for multi-agent systems."*
@@ -316,13 +316,13 @@ handing every agent the transcript and Anthropic's warning applies exactly.
 model.** Evidence is append-only and many-writer: any agent may append an immutable,
 attributed, confidence-tagged record, so eight agents can observe concurrently
 without corrupting what another observed, and dissent is just an append. Derived
-state — memory strength, belief about mastery — is **single-writer, and the writer
+state (memory strength, belief about mastery) is **single-writer, and the writer
 is arithmetic**: a declared memory model and a declared knowledge-tracing model run
 over the evidence log. No model writes a mastery estimate. That preserves the
 guarantee that every derived number regenerates from the evidence alone, which is
 what makes a disputed number traceable by a parent or a learner. And it is not a
 sacrifice: a 21-parameter memory model and a ~34-feature logistic model sit at the
-accuracy frontier for exactly this task.
+accuracy frontier for this task.
 
 One voice. Exactly one role is conversational. Every other role's output reaches
 the learner through it, or not at all. This is not a UX preference; it is the fix
@@ -333,9 +333,9 @@ the conversational critical path by construction, because a village that adds a
 round-trip to the learner's turn has failed the accessibility gate regardless of how
 good its pedagogy is.
 
-The roster that falls out is a registry of ten roles — tutor (the only voice),
+The roster that falls out is a registry of ten roles: tutor (the only voice),
 diagnostician, curriculum planner, assessor, librarian, verifier, adversary,
-peer/protégé, safeguarding monitor, connector — plus a scribe that is not an agent
+peer/protégé, safeguarding monitor, connector, plus a scribe that is not an agent
 at all. But the roster is not the crew. **The active set for any given learner-hour
 is three to five**, selected by the planner from the learner model. A learner in a
 stable mastery loop needs tutor, assessor, scribe. A learner who has just tripped a
@@ -352,7 +352,7 @@ scheduling — surfacing a real person who will notice a missed week.
 
 ---
 
-## 8. What this section commits us to
+## 8. What we will build into the village, and what we refuse
 
 - **No agent is "certified" by its prompt.** 162 personas, 2,410 questions, no
   accuracy gain. Certification is a published, held-out eval, at a labelled tier.
@@ -370,11 +370,11 @@ scheduling — surfacing a real person who will notice a missed week.
 - **One conversational voice, three to five active roles.** The economics would
   permit many more; the coordination evidence does not.
 - **Our first ablation is a token-matched single-agent baseline.** Until that runs,
-  every claim we make for the village is a claim about auditability, not about
+  every claim we make for the village is a claim about auditability and never about
   teaching.
 
-The village is not a better tutor. It is the shape in which a refusal can be
-enforced instead of requested, a wrong answer can be caught by a program instead of
-a vote, and a disputed number can be traced to the evidence that produced it. **Those
-are engineering guarantees, and this section claims exactly those and nothing
-more.**
+Nobody has shown that a village teaches better than a single tutor. What the
+decomposition buys is a shape: a refusal that can be enforced instead of requested, a
+wrong answer caught by a program instead of by a vote, a disputed number traceable to
+the evidence that produced it. **Those are engineering guarantees, and this section
+claims those and nothing more.**
