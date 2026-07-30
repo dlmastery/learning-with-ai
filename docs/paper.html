@@ -9,9 +9,9 @@
    Learning in the New Frontier AI World — the design system.
 
    One file. Every page on this site links it: the dashboard,
-   the paper, the demo gallery and all thirteen demos. If a
-   token or a component is used on more than one page it lives
-   here, so the three surfaces cannot drift apart again.
+   the paper, the demo gallery and every demo. If a token or a
+   component is used on more than one page it lives here, so
+   the surfaces cannot drift apart again.
 
    Palette is CVD-validated (protan ΔE 16.7 light / 18.3 dark).
    --felt and --real are the only categorical hues. --good,
@@ -112,7 +112,11 @@ footer a:hover{color:var(--felt)}
 .chips{display:flex;gap:var(--s2);flex-wrap:wrap;margin-top:var(--s5)}
 .chip{font:600 10.5px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;
   padding:6px 9px;border-radius:6px;border:1px solid var(--line-2);
-  color:var(--ink-3);white-space:nowrap}
+  color:var(--ink-3);max-width:100%;white-space:normal}
+/* Chips wrap. They were specified for single tokens (MEASURED-RCT), for which
+   nowrap was safe, but demo pages put a sentence of provenance in one and three
+   of them overflowed at 390px. A token is far narrower than its container and
+   will not break; a sentence must. */
 .chip.m{color:var(--real);border-color:color-mix(in oklab,var(--real) 42%,transparent)}
 .chip.d{color:var(--felt);border-color:color-mix(in oklab,var(--felt) 42%,transparent)}
 .chip.n{color:var(--bad);border-color:color-mix(in oklab,var(--bad) 42%,transparent)}
@@ -142,7 +146,11 @@ footer a:hover{color:var(--felt)}
 
 /* ── tables — wide content scrolls in its own box ─────────── */
 .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:var(--s5) 0}
-table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+/* A table only gets its min-width inside a .scroll container. Loose tables must
+   never widen the page — three demo pages overflowed at 390px this way. */
+table{border-collapse:collapse;width:100%;font-size:14px}
+.scroll>table{min-width:520px}
+table:not(.scroll>table){display:block;overflow-x:auto;max-width:100%}
 th{text-align:left;font:600 11px/1.3 var(--sans);letter-spacing:.09em;text-transform:uppercase;
   color:var(--ink-3);padding:0 14px 10px 0;border-bottom:1px solid var(--line-2);vertical-align:bottom}
 td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}

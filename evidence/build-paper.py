@@ -257,7 +257,8 @@ One of them documents a mechanism this project proposed, benchmarked, and
 """
     doc = head + "\n".join(parts_out)
     (ROOT / "PAPER.md").write_text(doc, encoding="utf-8")
-    print(f"PAPER.md — {stats['sections']} sections, , {len(PARTS)} parts")
+    print(f"PAPER.md — {stats['sections']} sections, "
+          f"{stats['words']:,} words, {len(PARTS)} parts")
     if missing: print(f"  declared but missing: {', '.join(missing)}")
     if orphans: print(f"  NOT IN THE PAPER: {', '.join(orphans)}")
     return doc, stats, structure

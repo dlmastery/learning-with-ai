@@ -27,7 +27,8 @@ try {
 }
 
 const dir = join(dirname(fileURLToPath(import.meta.url)), '..', 'docs', 'demos');
-const pages = readdirSync(dir).filter(f => f.endsWith('.html')).sort();
+// index.html is the gallery, not a demo — it carries no evidence chip.
+const pages = readdirSync(dir).filter(f => f.endsWith('.html') && f !== 'index.html').sort();
 if (!pages.length) { console.error('no demo pages found — refusing to pass'); process.exit(2); }
 
 const CONFIGS = [

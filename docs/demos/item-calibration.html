@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Generating Items Is Free — Demo 18</title>
+<title>Generating Items Is Free — Demo 26</title>
 <meta name="description" content="An item bank that grows instantly and a calibration that does not. Difficulty and discrimination are recovered from simulated responses, alpha is shown to be undefined rather than biased, and the four-tier score-claim licence is computed from the bank's actual state." />
 <link rel="stylesheet" href="../site.css" />
 <link rel="stylesheet" href="demo.css" />
@@ -67,7 +67,7 @@ input[type=range]{max-width:100%}
 <nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../paper.html">The paper</a></nav>
 
 <header>
-  <div class="eyebrow">Demo 18 · The mechanisms</div>
+  <div class="eyebrow">Demo 26 · The mechanisms</div>
   <h1>Generating items is free; knowing what they measure is not</h1>
   <p class="lede">The item bank was never valuable because items were scarce. It was valuable
   because <strong>calibration</strong> was scarce — and an item's parameters come from examinee
@@ -312,7 +312,7 @@ function renderPlot(host,spec){
     t.textContent=tk.label; svg.appendChild(t);});
   const xl=mk('text',{x:(L+W-R)/2,y:H-6,'text-anchor':'middle',class:'ax'});
   xl.textContent=spec.x.label; svg.appendChild(xl);
-  if(spec.yLabel){const t=mk('text',{x:L-8,y:T-3,'text-anchor':'end',class:'ax'});
+  if(spec.yLabel){const t=mk('text',{x:L-2,y:T-3,'text-anchor':'start',class:'ax'});
     t.textContent=spec.yLabel; svg.appendChild(t);}
   spec.series.forEach(s=>{
     const col=HUE(s.series);

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Referral, Not the Confidence — Demo 19</title>
+<title>The Referral, Not the Confidence — Demo 27</title>
 <meta name="description" content="A safeguarding routing path executed end to end: what an AI may draft, what it must never author, who receives it, and when. Plus the two dashboards built from the same cohort — one passes on confidence, one fails on referrals." />
 <link rel="stylesheet" href="../site.css" />
 <link rel="stylesheet" href="demo.css" />
@@ -48,6 +48,12 @@ input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
 .chain div{display:grid;grid-template-columns:66px 1fr auto;gap:12px;align-items:baseline;
   background:var(--sunken);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:13.4px}
 .chain .t{font:600 12px/1.4 var(--mono);color:var(--real)}
+@media(max-width:640px){
+  .layer{grid-template-columns:1fr;gap:5px}
+  .chain div{grid-template-columns:1fr auto}
+  .chain .t{grid-column:1/-1;margin-bottom:2px}
+  .five div{grid-template-columns:1fr;gap:4px}
+}
 .dash{display:grid;gap:14px;margin:18px 0}
 @media(min-width:760px){.dash{grid-template-columns:1fr 1fr}}
 .dcard{border:1px solid var(--line);border-radius:12px;padding:19px 20px;background:var(--surface)}
@@ -81,7 +87,7 @@ input[type=range]{max-width:100%}
 <nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../paper.html">The paper</a></nav>
 
 <header>
-  <div class="eyebrow">Demo 19 · The village</div>
+  <div class="eyebrow">Demo 27 · The village</div>
   <h1>The referral, not the confidence</h1>
   <p class="lede">A concern surfaces mid-session. What happens next is the highest-stakes path in
   any learning system, and it is almost entirely a routing problem: the duty is
@@ -286,7 +292,7 @@ function renderPlot(host,spec){
     t.textContent=tk.label; svg.appendChild(t);});
   const xl=mk('text',{x:(L+W-R)/2,y:H-6,'text-anchor':'middle',class:'ax'});
   xl.textContent=spec.x.label; svg.appendChild(xl);
-  if(spec.yLabel){const t=mk('text',{x:L-8,y:T-3,'text-anchor':'end',class:'ax'});
+  if(spec.yLabel){const t=mk('text',{x:L-2,y:T-3,'text-anchor':'start',class:'ax'});
     t.textContent=spec.yLabel; svg.appendChild(t);}
   (spec.rules||[]).forEach(r=>{
     svg.appendChild(mk('line',{x1:L,y1:py(r.at),x2:W-R,y2:py(r.at),
