@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Stuck Detector — help that arrives before you ask</title>
+<meta name="description" content="A stuck-ness estimate built only from legal, voluntary signals — no affect inference, no gaze. Move the threshold and watch interrupting productive struggle trade against leaving someone to wheel-spin." />
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="demo.css" />
+<script src="../theme.js"></script>
+<style>
+.stage{background:var(--sunken);border:1px solid var(--line);border-radius:var(--r);
+  padding:17px;margin:18px 0}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3);margin-top:11px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;
+  vertical-align:-1px}
+svg .est{stroke:var(--real);stroke-width:2.2;fill:none}
+svg .fi{stroke:var(--felt);stroke-width:2.2;fill:none}
+svg .thr{stroke:var(--line-2);stroke-width:1.2;stroke-dasharray:4 3}
+svg .ax{stroke:var(--line-2);stroke-width:1}
+svg text{font:10.5px var(--sans);fill:var(--ink-3)}
+svg .fire{fill:var(--real)}
+.dials{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:660px){.dials{grid-template-columns:1fr 1fr}}
+input[type=range]{width:100%;accent-color:var(--real);height:24px;padding:0;border:0;background:none}
+.val{float:right;font:13px/1 var(--mono);color:var(--ink);text-transform:none;letter-spacing:0}
+.two{display:grid;gap:12px;grid-template-columns:1fr;margin:18px 0}
+@media(min-width:640px){.two{grid-template-columns:1fr 1fr}}
+.mode{border:1px solid var(--line);border-radius:var(--r);padding:17px 19px;background:var(--surface)}
+.mode .mh{font:600 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;margin-bottom:11px}
+.mode.a .mh{color:var(--felt)} .mode.b .mh{color:var(--real)}
+.mode .mv{font:400 32px/1 var(--serif);color:var(--ink);margin-bottom:8px}
+.mode.a .mv{color:var(--felt)} .mode.b .mv{color:var(--real)}
+.mode p{font-size:13.5px;line-height:1.55;margin:0;color:var(--ink-3)}
+.readout{font:12.7px/1.7 var(--mono);white-space:pre-wrap;color:var(--ink-2)}
+.tog button.on{border-color:var(--felt);color:var(--felt)}
+table.sig td:first-child{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+.no td{color:var(--ink-3)}
+.no td:nth-child(2){color:var(--bad);font-weight:650}
+.yes td:nth-child(2){color:var(--good);font-weight:650}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../deck.html">The deck</a>
+· <a href="../paper.html">The paper</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 19 · The mechanism</div>
+  <h1>Help that arrives before you ask</h1>
+  <p class="lede">The measured failure point is not <em>reaching</em> the help. It is
+  <strong>recognising you need it</strong> — and the best-instrumented tutor in the world published
+  a null traced to exactly that. This page builds the detector that removes the summoning step,
+  using only signals a learner emits by acting, and then refuses to pretend the threshold is easy.</p>
+  <div class="chips">
+    <span class="chip m">Detector, sweep and optimum all computed</span>
+    <span class="chip m">Deterministic seed — the same session every time</span>
+    <span class="chip d">The learner is simulated</span>
+    <span class="chip n">No affect inference, by law and by design</span>
+  </div>
+</header>
+
+<section class="orient">
+  <div class="o"><b>What this is</b><p>A running estimate of stuck-ness over one simulated
+  session, computed from five behavioural signals and an intervention threshold you control.
+  Underneath it, a ground-truth label the detector never sees: at each moment the learner is in
+  <em>flow</em>, in <em>productive struggle</em>, or <em>wheel-spinning</em>.</p></div>
+  <div class="o"><b>Why it matters</b><p>Cognitive Tutor logs, twenty-five years ago: after three
+  consecutive errors a hint was requested only <b>34%</b> of the time, and <b>68% of hint levels
+  were viewed for under one second</b>. The help was there. It was not summoned, and when summoned
+  it was not read. Khanmigo's published null is the same diagnosis, a quarter of a century
+  later.</p></div>
+  <div class="o"><b>How to use it</b><p>There is one control that matters and it has no right
+  setting. Slide the threshold down and the detector rescues wheel-spinners while interrupting
+  people who were about to get there on their own; slide it up and the reverse. §5 puts the same
+  threshold in front of two learners and shows it cannot be one number.</p></div>
+</section>
+
+<div class="note warn"><b>The tension this page must not dodge.</b> Productive failure measures
+<strong>g = 0.36–0.58</strong>, and the finding is blunt: <em>adding help to the struggle does not
+help.</em> A system optimised to notice you are stuck and intervene is optimised to destroy the
+mechanism that produces that effect. The resolution proposed here — intervene on the
+<em>wrong kind</em> of stuck — is a design claim, not a measured one, and the cost of a false
+interrupt on this page is set accordingly high.</div>
+
+<h2>1 · The session</h2>
+<p>One learner, one multi-step problem, 72 observation windows of about fifteen seconds each. The
+blue line is the detector's estimate. The strip beneath the axis is the ground truth the detector
+cannot see.</p>
+
+<div class="row">
+  <label style="margin:0 8px 0 0">Learner</label>
+  <div class="tog" id="who">
+    <button data-v="lo" class="on">Bottom quintile of prior knowledge</button>
+    <button data-v="hi">Top quintile</button>
+  </div>
+  <label style="margin:0 8px 0 18px">Signals</label>
+  <div class="tog" id="feat">
+    <button data-v="full" class="on">Full legal set</button>
+    <button data-v="lat">Latency only</button>
+  </div>
+</div>
+
+<div class="stage">
+  <svg id="tl" viewBox="0 0 660 250" role="img"
+       aria-label="Stuck-ness estimate across one session with the intervention threshold and the ground-truth state strip."></svg>
+  <div class="legend">
+    <span><i style="background:var(--real)"></i>stuck-ness estimate</span>
+    <span><i style="background:var(--felt)"></i>ground truth: wheel-spinning</span>
+    <span><i style="background:var(--felt);opacity:.38"></i>ground truth: productive struggle</span>
+    <span><i style="background:var(--line-2)"></i>ground truth: flow · threshold</span>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="dials">
+    <div>
+      <label for="thr">Intervention threshold <span class="val" id="thrv">0.55</span></label>
+      <input type="range" id="thr" min="2" max="98" step="1" value="55" />
+    </div>
+    <div>
+      <label for="cost">Cost of one false interrupt, in units of one missed wheel-spin
+        <span class="val" id="costv">3.0×</span></label>
+      <input type="range" id="cost" min="2" max="100" step="1" value="30" />
+    </div>
+  </div>
+  <div class="psub" style="margin:16px 0 0">The cost ratio is a <em>value judgement, not a
+  measurement</em>. It is set above 1 here because the thing a false interrupt destroys —
+  productive failure — has a measured effect size, and the thing a missed wheel-spin wastes is
+  time. Move it and the optimum moves with it.</div>
+</div>
+
+<div class="two">
+  <div class="mode a">
+    <div class="mh">Failure mode A · interrupting</div>
+    <div class="mv" id="fiN">—</div>
+    <p id="fiP">—</p>
+  </div>
+  <div class="mode b">
+    <div class="mh">Failure mode B · wheel-spinning unattended</div>
+    <div class="mv" id="mwN">—</div>
+    <p id="mwP">—</p>
+  </div>
+</div>
+
+<h2>2 · What the detector is allowed to see</h2>
+<p>Five signals, each one a by-product of the learner acting on the problem. Nothing is inferred
+about how they feel, and nothing is observed that they did not choose to emit.</p>
+
+<div class="scroll">
+<table class="sig">
+  <thead><tr><th>Signal</th><th>Status</th><th>Weight</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr class="yes"><td>response_latency</td><td>used</td><td class="num">0.90</td>
+      <td>Seconds since the last action, standardised. Long latency alone means nothing — it is
+      what productive struggle looks like too.</td></tr>
+    <tr class="yes"><td>edit_backtrack</td><td>used</td><td class="num">0.35</td>
+      <td>Deletions and reversals in the window. A learner rewriting is a learner still trying.</td></tr>
+    <tr class="yes"><td>repeat_error_run</td><td>used</td><td class="num">0.62</td>
+      <td>Consecutive identical error signatures. <b>The load-bearing signal.</b> Repetition
+      without variation is the definition of wheel-spinning.</td></tr>
+    <tr class="yes"><td>no_state_change</td><td>used</td><td class="num">0.22</td>
+      <td>Windows since the answer last changed at all, capped at ten. Distinguishes thinking from
+      stalling.</td></tr>
+    <tr class="yes"><td>help_avoidance</td><td>used</td><td class="num">0.80</td>
+      <td>Help offered and declined, or a hint opened and closed inside a second — the behaviour
+      that produced the 68% figure.</td></tr>
+    <tr class="no"><td>affect / frustration</td><td>refused</td><td class="num">—</td>
+      <td>Emotion inference in education is <b>prohibited outright</b> under EU AI Act
+      Art. 5(1)(f) — a prohibition, not a risk tier. Not a compliance cost: nothing on this page
+      needs it.</td></tr>
+    <tr class="no"><td>gaze / webcam</td><td>refused</td><td class="num">—</td>
+      <td>Continuous biometric capture of a child, for a signal the behavioural set already
+      carries.</td></tr>
+    <tr class="no"><td>keystroke dynamics as mood proxy</td><td>refused</td><td class="num">—</td>
+      <td>Emotion inference wearing a behavioural costume. The prohibition is on the inference, not
+      the sensor.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="panel sunken">
+  <div class="ptitle">The estimate, at the currently selected window</div>
+  <div class="psub">The logistic sum, then exponential smoothing at α = 0.35. Drag the threshold or
+  switch learners to recompute.</div>
+  <div class="readout" id="calc">—</div>
+</div>
+
+<h2>3 · The trade-off, swept</h2>
+<p>The threshold is swept across its whole range and both failure modes are counted at every
+setting. There is no value at which both go to zero, and the curves cross where they cross.</p>
+
+<div class="stage">
+  <svg id="tr" viewBox="0 0 660 235" role="img"
+       aria-label="Both failure modes counted across every threshold setting, with the current and cost-optimal thresholds marked."></svg>
+  <div class="legend">
+    <span><i style="background:var(--felt)"></i>productive struggle interrupted</span>
+    <span><i style="background:var(--real)"></i>wheel-spin windows left running</span>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="ptitle">Where the cost function puts it</div>
+  <div class="psub">Computed by sweeping every threshold at the current cost ratio, on this
+  learner's session.</div>
+  <div class="readout" id="opt">—</div>
+</div>
+
+<h2>4 · Against waiting to be asked</h2>
+<p>The comparison that justifies the whole apparatus. The alternative to a detector is not
+<em>nothing</em> — it is a help button, which is what every system already ships.</p>
+
+<div class="panel">
+  <div class="readout" id="vsask">—</div>
+  <div class="note" style="margin:16px 0 0"><b>The 34% is measured; its application here is
+  arithmetic.</b> The rate comes from Cognitive Tutor logs — after three consecutive errors a hint
+  followed 34% of the time. Applying it to this simulated session tells you what a help button
+  would have caught <em>if these learners behaved like those learners</em>. It is an illustration
+  of a measured rate, not a measurement of this page.</div>
+</div>
+
+<h2>5 · Why the threshold cannot be one number</h2>
+<p>The same detector, the same threshold, two learners. Students in the bottom quintile of
+prerequisite knowledge <strong>wheel-spin 50% of the time</strong> against <strong>10%</strong> for
+the top quintile — half of a weak learner's session spent going nowhere, for a reason that was
+fixed before the session started.</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Learner</th><th class="num">Wheel-spin, actual</th>
+    <th class="num">Interrupted at your θ</th><th class="num">Missed at your θ</th>
+    <th class="num">Cost-optimal θ</th></tr></thead>
+  <tbody id="qt"></tbody>
+</table>
+</div>
+<div class="note" id="qnote"></div>
+
+<h2>What this proves / what it does not</h2>
+<p class="sub">Read this as a list of who pays when each part is wrong.</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Component</th><th>Status on this page</th><th>Who pays if it is wrong</th></tr></thead>
+  <tbody>
+    <tr><td><b>The detector</b></td>
+      <td>Real. A logistic sum over five declared features with published weights, smoothed, run on
+      every window. You can read every coefficient in §2.</td>
+      <td>Nobody yet — the weights are a design proposal and no trial has fitted them. In
+      production, a badly fitted weight on <code>repeat_error_run</code> is the difference between
+      the two failure modes.</td></tr>
+    <tr><td><b>The trade-off</b></td>
+      <td>Real, and the shape is the finding: swept exhaustively, both curves counted at every
+      threshold. There is no setting where both are zero.</td>
+      <td>The learner, either way. This is the honest structure of the problem and it does not go
+      away with a better model.</td></tr>
+    <tr><td><b>The learner</b></td>
+      <td class="mut">Simulated, from a seeded generator. The 50% / 10% wheel-spin rates are
+      measured; everything about how those states <em>look</em> in the signal stream is assumed.</td>
+      <td>This page. If real productive struggle and real wheel-spinning are less separable than
+      the generator makes them, every number in §3 is optimistic.</td></tr>
+    <tr><td><b>The latency-only comparison</b></td>
+      <td class="mut">Honest but circular. It fails here because the generator gives productive
+      struggle the <em>longer</em> latencies — which is what the observational literature reports,
+      and which this page assumed rather than showed.</td>
+      <td>Anyone who reads it as evidence. It is a demonstration that a single-signal detector
+      <em>can</em> invert, not proof that it does.</td></tr>
+    <tr><td><b>The premise — that arriving unasked helps</b></td>
+      <td class="mut">Not shown, and there is a null against the adjacent claim. Carnegie Mellon
+      built help-seeking support; help-seeking improved durably, months after the support was
+      removed. <b>Domain learning did not move.</b></td>
+      <td>Everyone, including this design. The honest reading is that help-seeking was a
+      <em>necessary</em> condition that turned out not to be <em>sufficient</em>. Supplying it
+      removes a blocker; it does not teach.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note"><b>What survives that null.</b> Invocation is part of the intervention — a tutor
+that must be summoned reaches the students who need it least, and that much is measured twice, in
+two decades, by two organisations. What is <em>not</em> established is that removing the summoning
+step produces learning rather than merely producing more help. Any design that supplies executive
+function externally has to explain why it would not land in the same place, and this one does not
+yet have that explanation.</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../deck.html">The deck</a> ·
+  <a href="../paper.html">The paper</a>
+  <br /><br />Sources: Cognitive Tutor help-seeking logs (34% · 68%) · Khan on Khanmigo ·
+  CMU help-seeking support trial · productive failure meta-analysis (g = 0.36–0.58) ·
+  wheel-spinning by prior-knowledge quintile (50% / 10%) · EU AI Act Art. 5(1)(f).
+</footer>
+
+</div>
+<script>
+const tt=document.getElementById('tt'),R=document.documentElement;
+tt.onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+<script>
+const $=id=>document.getElementById(id);
+const NS='http://www.w3.org/2000/svg';
+const mk=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const N=72, ALPHA=0.35;
+
+/* ── deterministic generator. Same seed, same session, every load. ─────── */
+function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);
+  t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+
+function session(wheelRate,seed){
+  const r=rng(seed), out=[];
+  const pP=0.30, pW=wheelRate, pF=Math.max(0.05,1-pP-pW);
+  while(out.length<N){
+    const u=r()*(pF+pP+pW);
+    const st= u<pF?'F' : u<pF+pP?'P' : 'W';
+    const len=3+Math.floor(r()*6);
+    for(let k=0;k<len&&out.length<N;k++){
+      let s;
+      if(st==='F') s={lat:8+r()*14, ed:r()<0.25?1:0, rep:0, nos:0, avo:0};
+      else if(st==='P') s={lat:22+r()*55, ed:1+Math.floor(r()*4), rep:k<2?0:1,
+                           nos:Math.min(k,4), avo:r()<0.15?1:0};
+      else s={lat:18+r()*45, ed:Math.floor(r()*2), rep:Math.min(2+k,8),
+              nos:Math.min(10,5+k*2), avo:r()<0.55?1:0};
+      s.truth=st; s.k=k; out.push(s);
+    }
+  }
+  return out;
+}
+const W={lat:0.90, ed:0.35, rep:0.62, nos:0.22, avo:0.80, b:-3.40};
+const sig=z=>1/(1+Math.exp(-z));
+function score(s,mode){
+  const zl=Math.max(-1.2,Math.min(2.2,(s.lat-25)/25));
+  return mode==='lat' ? sig(-1.60+1.80*zl)
+    : sig(W.b + W.lat*zl + W.ed*s.ed + W.rep*s.rep + W.nos*s.nos + W.avo*s.avo);
+}
+function estimate(ses,mode){
+  let e=0; return ses.map(s=>{e=ALPHA*score(s,mode)+(1-ALPHA)*e;return e;});
+}
+function counts(ses,est,th){
+  let fi=0,mw=0,fires=0,prev=false;
+  ses.forEach((s,i)=>{const on=est[i]>=th;
+    if(on&&!prev)fires++;
+    if(on&&s.truth==='P')fi++;
+    if(!on&&s.truth==='W')mw++;
+    prev=on;});
+  return {fi,mw,fires};
+}
+/* median windows from the start of a wheel-spin episode to the first intervention */
+function latency(ses,est,th){
+  const eps=[]; let cur=null;
+  ses.forEach((s,i)=>{
+    if(s.truth==='W'&&s.k===0){cur={i0:i,hit:null};eps.push(cur);}
+    if(cur&&s.truth==='W'&&cur.hit===null&&est[i]>=th)cur.hit=i-cur.i0;
+    if(s.truth!=='W')cur=null;});
+  const hit=eps.filter(e=>e.hit!==null).map(e=>e.hit).sort((a,b)=>a-b);
+  return {eps:eps.length, caught:hit.length,
+    med:hit.length?hit[Math.floor(hit.length/2)]:null};
+}
+function sweep(ses,est,ratio){
+  const rows=[];
+  for(let t=2;t<=98;t++){const th=t/100, c=counts(ses,est,th);
+    rows.push({th, fi:c.fi, mw:c.mw, cost:ratio*c.fi+c.mw});}
+  let best=rows[0]; for(const r of rows) if(r.cost<best.cost) best=r;
+  return {rows,best};
+}
+
+/* ── state ──────────────────────────────────────────────────────────────── */
+const SES={lo:session(0.50,20260729), hi:session(0.10,20260730)};
+let who='lo', mode='full', th=0.55, ratio=3.0;
+
+/* ── plots ──────────────────────────────────────────────────────────────── */
+function timeline(ses,est){
+  const svg=$('tl'); svg.replaceChildren();
+  const Wd=660,H=250,PL=40,PR=12,PT=14,PB=54;
+  const X=i=>PL+(i/(N-1))*(Wd-PL-PR), Y=v=>H-PB-v*(H-PB-PT);
+  svg.appendChild(mk('line',{x1:PL,y1:H-PB,x2:Wd-PR,y2:H-PB,class:'ax'}));
+  svg.appendChild(mk('line',{x1:PL,y1:PT,x2:PL,y2:H-PB,class:'ax'}));
+  for(const v of [0,0.5,1]){const t=mk('text',{x:6,y:Y(v)+4});t.textContent=v.toFixed(1);svg.appendChild(t);}
+  svg.appendChild(mk('line',{x1:PL,y1:Y(th),x2:Wd-PR,y2:Y(th),class:'thr'}));
+  const tl=mk('text',{x:Wd-PR-92,y:Y(th)-5});tl.textContent='threshold '+th.toFixed(2);svg.appendChild(tl);
+  const w=(Wd-PL-PR)/N;
+  ses.forEach((s,i)=>{
+    const c=s.truth==='W'?'var(--felt)':s.truth==='P'?'var(--felt)':'var(--line-2)';
+    svg.appendChild(mk('rect',{x:X(i)-w/2,y:H-PB+8,width:Math.max(1,w-1),height:12,
+      fill:c,opacity:s.truth==='P'?0.38:s.truth==='F'?0.7:1,rx:1}));});
+  const d=est.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(' ');
+  svg.appendChild(mk('path',{d,class:'est'}));
+  let prev=false;
+  est.forEach((v,i)=>{const on=v>=th;
+    if(on&&!prev) svg.appendChild(mk('circle',{cx:X(i),cy:Y(v),r:3.4,class:'fire'}));
+    prev=on;});
+  const x1=mk('text',{x:PL,y:H-8});x1.textContent='session window (≈15 s each) · strip below the axis is ground truth';
+  svg.appendChild(x1);
+  const y1=mk('text',{x:4,y:PT-2});y1.textContent='stuck-ness';svg.appendChild(y1);
+}
+function tradeoff(sw){
+  const svg=$('tr'); svg.replaceChildren();
+  const Wd=660,H=235,PL=42,PR=12,PT=16,PB=32;
+  const mx=Math.max(...sw.rows.map(r=>Math.max(r.fi,r.mw)),1);
+  const X=t=>PL+t*(Wd-PL-PR), Y=v=>H-PB-(v/mx)*(H-PB-PT);
+  svg.appendChild(mk('line',{x1:PL,y1:H-PB,x2:Wd-PR,y2:H-PB,class:'ax'}));
+  svg.appendChild(mk('line',{x1:PL,y1:PT,x2:PL,y2:H-PB,class:'ax'}));
+  for(const v of [0,Math.round(mx/2),mx]){const t=mk('text',{x:6,y:Y(v)+4});t.textContent=v;svg.appendChild(t);}
+  const path=(k,cls)=>svg.appendChild(mk('path',{class:cls,
+    d:sw.rows.map((r,i)=>`${i?'L':'M'}${X(r.th).toFixed(1)},${Y(r[k]).toFixed(1)}`).join(' ')}));
+  path('fi','fi'); path('mw','est');
+  for(const [t,lab,dy] of [[th,'your θ',PT+11],[sw.best.th,'cost-optimal θ',PT+26]]){
+    svg.appendChild(mk('line',{x1:X(t),y1:PT,x2:X(t),y2:H-PB,class:'thr'}));
+    const tx=mk('text',{x:Math.min(X(t)+5,Wd-110),y:dy});tx.textContent=lab+' = '+t.toFixed(2);
+    svg.appendChild(tx);}
+  const x1=mk('text',{x:PL,y:H-8});x1.textContent='intervention threshold';svg.appendChild(x1);
+  const y1=mk('text',{x:4,y:PT-3});y1.textContent='windows';svg.appendChild(y1);
+}
+
+/* ── render ─────────────────────────────────────────────────────────────── */
+function render(){
+  const ses=SES[who], est=estimate(ses,mode);
+  const c=counts(ses,est,th), L=latency(ses,est,th), sw=sweep(ses,est,ratio);
+  const nP=ses.filter(s=>s.truth==='P').length, nW=ses.filter(s=>s.truth==='W').length;
+  timeline(ses,est); tradeoff(sw);
+  $('thrv').textContent=th.toFixed(2);
+  $('costv').textContent=ratio.toFixed(1)+'×';
+  $('fiN').textContent=c.fi+' / '+nP+' windows';
+  $('fiP').innerHTML=`Windows of genuine productive struggle in which the detector would have
+    spoken. Productive failure measures <b>g = 0.36–0.58</b>, and adding help to the struggle does
+    not help — so every one of these is an intervention that costs something measurable.`;
+  $('mwN').textContent=c.mw+' / '+nW+' windows';
+  $('mwP').innerHTML=`Windows of wheel-spinning the detector left running.
+    ${L.caught} of ${L.eps} wheel-spin episodes were caught at all, and the ones that were caught
+    took a median of <b>${L.med===null?'—':L.med+' window'+(L.med===1?'':'s')}</b>
+    ${L.med===null?'':'(about '+(L.med*15)+' s)'} from the start of the episode.`;
+
+  /* the worked estimate at the most recently fired window, or the peak */
+  let idx=0,prev=false,found=-1;
+  est.forEach((v,i)=>{if(v>=th&&!prev&&found<0)found=i;prev=v>=th;});
+  idx=found>=0?found:est.indexOf(Math.max(...est));
+  const s=ses[idx], zl=Math.max(-1.2,Math.min(2.2,(s.lat-25)/25));
+  $('calc').innerHTML= mode==='full'
+   ? `window ${idx} of ${N}   ·   ground truth (hidden from the detector): ${
+      {F:'flow',P:'productive struggle',W:'wheel-spinning'}[s.truth]}\n\n`+
+     `  response_latency   ${s.lat.toFixed(1)} s  → z ${zl.toFixed(2)}   × ${W.lat.toFixed(2)}  = ${(W.lat*zl).toFixed(3)}\n`+
+     `  edit_backtrack     ${s.ed}              × ${W.ed.toFixed(2)}  = ${(W.ed*s.ed).toFixed(3)}\n`+
+     `  repeat_error_run   ${s.rep}              × ${W.rep.toFixed(2)}  = ${(W.rep*s.rep).toFixed(3)}\n`+
+     `  no_state_change    ${s.nos}              × ${W.nos.toFixed(2)}  = ${(W.nos*s.nos).toFixed(3)}\n`+
+     `  help_avoidance     ${s.avo}              × ${W.avo.toFixed(2)}  = ${(W.avo*s.avo).toFixed(3)}\n`+
+     `  intercept                             ${W.b.toFixed(2)}\n\n`+
+     `  logistic  → ${score(s,mode).toFixed(4)}      smoothed (α ${ALPHA}) → <b>${est[idx].toFixed(4)}</b>\n`+
+     `  threshold   ${th.toFixed(2)}            ${est[idx]>=th?'<b>fires</b>':'silent'}\n\n`+
+     `  affect inferred: none.  gaze: none.  biometrics: none.`
+   : `window ${idx} of ${N}   ·   ground truth (hidden from the detector): ${
+      {F:'flow',P:'productive struggle',W:'wheel-spinning'}[s.truth]}\n\n`+
+     `  response_latency   ${s.lat.toFixed(1)} s  → z ${zl.toFixed(2)}   × 1.80  = ${(1.8*zl).toFixed(3)}\n`+
+     `  intercept                             -1.60\n\n`+
+     `  logistic  → ${score(s,mode).toFixed(4)}      smoothed (α ${ALPHA}) → <b>${est[idx].toFixed(4)}</b>\n\n`+
+     `  Latency alone cannot tell the two states apart here: productive struggle carries the\n`+
+     `  longer pauses, so a latency-only detector fires preferentially on the learner who was\n`+
+     `  getting there. Compare the two failure-mode counters above with the full set.`;
+
+  $('opt').innerHTML=
+   `cost ratio        : one false interrupt = ${ratio.toFixed(1)} missed wheel-spin windows\n`+
+   `thresholds swept  : 97 (every setting from 0.02 to 0.98)\n`+
+   `your θ            : ${th.toFixed(2)}  →  ${c.fi} interrupted, ${c.mw} missed, cost ${(ratio*c.fi+c.mw).toFixed(1)}\n`+
+   `cost-optimal θ    : <b>${sw.best.th.toFixed(2)}</b>  →  ${sw.best.fi} interrupted, ${sw.best.mw} missed, cost ${sw.best.cost.toFixed(1)}\n`+
+   `floor             : the best achievable cost is ${sw.best.cost.toFixed(1)}, not 0. There is no\n`+
+   `                    threshold at which both failure modes vanish, and there never will be —\n`+
+   `                    the two states overlap in the signal, which is the actual problem.`;
+
+  /* against the help button */
+  const runs=[]; let run=0;
+  ses.forEach(s=>{if(s.rep>=3){run++;}else{if(run)runs.push(run);run=0;}});
+  if(run)runs.push(run);
+  const askable=runs.length, expect=askable*0.34;
+  $('vsask').innerHTML=
+   `episodes with ≥3 consecutive identical errors : ${askable}\n`+
+   `a help button, at the measured 34% request rate: <b>${expect.toFixed(1)}</b> of them would be summoned\n`+
+   `                                                and 68% of the hints opened would be closed\n`+
+   `                                                inside one second\n`+
+   `the detector at θ = ${th.toFixed(2)}                       : <b>${L.caught}</b> of ${L.eps} wheel-spin episodes reached,\n`+
+   `                                                median delay ${L.med===null?'—':L.med+' window'+(L.med===1?'':'s')}\n\n`+
+   `The detector does not make the help better. It removes the step the measurement says\n`+
+   `people fail at — noticing they are stuck and deciding to act on it.`;
+
+  /* the two quintiles at one threshold */
+  $('qt').innerHTML=['lo','hi'].map(k=>{
+    const S=SES[k], E=estimate(S,mode), C=counts(S,E,th), SW=sweep(S,E,ratio);
+    const w=S.filter(x=>x.truth==='W').length;
+    return `<tr><td><b>${k==='lo'?'Bottom quintile':'Top quintile'}</b>${k===who?' <span class="mut">— shown above</span>':''}</td>
+      <td class="num">${(w/N*100).toFixed(0)}% (${w} windows)</td>
+      <td class="num">${C.fi}</td><td class="num">${C.mw}</td>
+      <td class="num"><b>${SW.best.th.toFixed(2)}</b></td></tr>`;}).join('');
+  const oLo=sweep(SES.lo,estimate(SES.lo,mode),ratio).best.th;
+  const oHi=sweep(SES.hi,estimate(SES.hi,mode),ratio).best.th;
+  $('qnote').innerHTML=`<b>The optimal thresholds differ by ${Math.abs(oLo-oHi).toFixed(2)}.</b> `+
+   (oLo<oHi
+    ? `The weaker learner's optimum is <em>lower</em> — more of their session is wheel-spinning, so
+       the same threshold leaves more of it unattended. A global constant, tuned on the average
+       learner, is tuned against the learner who needs it.`
+    : `On this seed the two optima land close together, which is itself worth reading: the
+       difference between these learners is not mainly in the shape of the signal, it is in how
+       much of the session is spent in the bad state.`)+
+   ` And the underlying asymmetry was fixed before the session started — prior knowledge varies
+     <b>3.6×</b> between quartiles while learning rate varies <b>1.14×</b>.`;
+}
+$('thr').oninput=e=>{th=+e.target.value/100;render();};
+$('cost').oninput=e=>{ratio=+e.target.value/10;render();};
+for(const [box,fn] of [['who',v=>who=v],['feat',v=>mode=v]])
+  $(box).querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    $(box).querySelectorAll('button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); fn(b.dataset.v); render();});
+render();
+</script>
+</body>
+</html>
+</content>
+</invoke>

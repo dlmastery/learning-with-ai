@@ -287,7 +287,7 @@ function drawProbe(){
   }).join('');
 }
 $('topics').addEventListener('click',e=>{const b=e.target.closest('button[data-t]');if(!b)return;
-  topic=+b.dataset.t; drawProbe(); $('ptime').textContent='';});
+  topic=+b.dataset.t; t0=null; drawProbe(); $('ptime').textContent='';});
 $('probe').addEventListener('click',e=>{
   const b=e.target.closest('button[data-j]'); if(!b) return;
   const T=TOPICS[topic]; if(t0===null) t0=performance.now();
@@ -305,6 +305,7 @@ $('score').onclick=()=>{
   T.items.forEach((it,i)=>{ den+=it.w; if(A[i]===it.c) num+=it.w; });
   const raw=num/den, k=0.05+0.90*raw;
   placed[T.id]={k, raw, secs, right:T.items.filter((it,i)=>A[i]===it.c).length};
+  t0=null;                       /* the next topic is timed from its own first click */
   $('ptime').textContent=`scored in ${secs.toFixed(1)} s`;
   K=k; $('k').value=Math.round(k*100); render();
   /* mark the items */

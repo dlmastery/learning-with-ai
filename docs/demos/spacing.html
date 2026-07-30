@@ -34,6 +34,13 @@ input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
   border-radius:10px;padding:14px 16px;overflow-x:auto;white-space:pre}
 .verdict{font:600 15px/1.5 var(--sans);color:var(--ink);margin:14px 0 0}
 .verdict em{color:var(--ink-3);font-weight:400;font-style:normal;font-size:13.5px}
+
+/* nothing may widen the page; wide content scrolls inside its own box */
+*{min-width:0}
+table{display:block;overflow-x:auto;max-width:100%}
+pre,.readout,.mono-block,.eq{overflow-x:auto;max-width:100%}
+svg{max-width:100%}
+input[type=range]{max-width:100%}
 </style>
 </head>
 <body>

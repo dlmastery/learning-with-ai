@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Generating Items Is Free — Demo 18</title>
+<meta name="description" content="An item bank that grows instantly and a calibration that does not. Difficulty and discrimination are recovered from simulated responses, alpha is shown to be undefined rather than biased, and the four-tier score-claim licence is computed from the bank's actual state." />
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="demo.css" />
+<script src="../theme.js"></script>
+<style>
+.gl{stroke:var(--line);stroke-width:1}
+.ax{font:600 10px var(--sans);letter-spacing:.11em;fill:var(--ink-3)}
+.vl{font:600 11px var(--mono);fill:var(--ink-3)}
+input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
+.ctls{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px 22px;margin:6px 0 10px}
+.ctl label{display:flex;justify-content:space-between;gap:8px;align-items:baseline;text-transform:none;
+  letter-spacing:0;font:600 12px/1.4 var(--sans);color:var(--ink-2);margin-bottom:5px}
+.ctl label .v{font:600 12px var(--mono);color:var(--felt)}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(138px,1fr));gap:11px;margin:18px 0}
+.stat div{background:var(--sunken);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+.stat .k{font:600 10px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+.stat .n{font:400 22px/1.1 var(--mono);color:var(--ink)}
+.stat .n.real{color:var(--real)} .stat .n.felt{color:var(--felt)} .stat .n.bad{color:var(--bad)}
+.stat .s{font:12px/1.4 var(--sans);color:var(--ink-3);margin-top:6px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:13px;font-size:12.5px;color:var(--ink-2)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+.legend i.ln{width:16px;height:2px;border-radius:0;vertical-align:3px}
+.item{background:var(--sunken);border:1px solid var(--line);border-radius:11px;padding:15px 17px;margin:12px 0}
+.item .q{font:14.6px/1.55 var(--sans);color:var(--ink);margin-bottom:11px}
+.item .opts{display:grid;gap:6px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.item .opts span{font:13px/1.4 var(--mono);color:var(--ink-2);background:var(--surface);
+  border:1px solid var(--line);border-radius:7px;padding:7px 9px}
+.item .opts span.key{border-color:color-mix(in oklab,var(--good) 45%,transparent);color:var(--good)}
+.item .why{font:12.3px/1.5 var(--sans);color:var(--ink-3);margin-top:10px}
+.cov{display:grid;gap:3px;margin:12px 0 6px;width:max-content;min-width:0}
+.cov div{display:flex;gap:3px}
+.cov i{width:26px;height:26px;border-radius:4px;display:inline-block;
+  font:600 9px/26px var(--mono);text-align:center;font-style:normal}
+.cov i.f{background:color-mix(in oklab,var(--real) 30%,transparent);color:var(--ink)}
+.cov i.e{background:var(--sunken);border:1px dashed var(--line-2);color:var(--ink-3)}
+.tiers{display:grid;gap:9px;margin:16px 0}
+.tier{border:1px solid var(--line);border-radius:11px;padding:14px 16px;background:var(--surface)}
+.tier.earned{border-color:color-mix(in oklab,var(--good) 50%,transparent)}
+.tier.blocked{background:var(--sunken)}
+.tier .th{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.tier .tn{font:650 14.5px/1.35 var(--sans);color:var(--ink)}
+.tier .cl{font:13.5px/1.5 var(--sans);color:var(--ink-2);margin:6px 0 0}
+.tier .blk{font:12.5px/1.5 var(--sans);color:var(--bad);margin-top:8px}
+.reqs{display:grid;gap:8px;margin:14px 0}
+@media(min-width:700px){.reqs{grid-template-columns:1fr 1fr}}
+.reqs button{text-align:left;padding:11px 13px;font:13.2px/1.4 var(--sans);border-radius:9px}
+.reqs button.on{border-color:var(--good);color:var(--good)}
+
+/* nothing may widen the page; wide content scrolls inside its own box */
+*{min-width:0}
+table{display:block;overflow-x:auto;max-width:100%}
+pre,.readout,.mono-block{overflow-x:auto;max-width:100%}
+svg{max-width:100%}
+input[type=range]{max-width:100%}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../paper.html">The paper</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 18 · The mechanisms</div>
+  <h1>Generating items is free; knowing what they measure is not</h1>
+  <p class="lede">The item bank was never valuable because items were scarce. It was valuable
+  because <strong>calibration</strong> was scarce — and an item's parameters come from examinee
+  responses, which generation does nothing to make free. Below, both halves run: the bank grows
+  by fifty items a click, and the measurement properties arrive one respondent at a time.</p>
+  <div class="chips">
+    <span class="chip m">Items generated and calibrated live</span>
+    <span class="chip m">Score-claim tier computed from bank state</span>
+    <span class="chip n">Shows a statistic that is undefined, not biased</span>
+  </div>
+</header>
+
+<section class="orient">
+  <div class="o"><b>What this is</b><p>An item bank with a truth underneath it. Every generated
+  item carries latent parameters the page knows and the calibration does not; simulated learners
+  answer; the estimates are recovered and scored against the truth they were never shown.</p></div>
+  <div class="o"><b>Why it matters</b><p><b>An infinite bank of uncalibrated items has no
+  measurement properties at all.</b> That sentence belongs on the wall of every institution
+  rolling out a quiz generator. The binding constraint moved from authoring to a calibration
+  sample, and almost every product built since has optimised the term that collapsed.</p></div>
+  <div class="o"><b>How to use it</b><p>Generate a few hundred items while holding the respondent
+  count still. Precision does not stay flat — it degrades, because the same responses are now
+  spread over more items. That single interaction is the whole argument, and it is the one thing
+  a bigger bank cannot buy its way out of.</p></div>
+</section>
+
+<h2>1 · The free half</h2>
+<p>One fine-grained content area — <em>area of composite figures, grades 4–7</em>, which is the
+grain size the economics is measured at. Items are generated from a cognitive model: each has
+structural features that <em>cause</em> its difficulty, and distractors derived from named student
+errors rather than from plausible-looking wrong numbers.</p>
+
+<div class="panel">
+  <div class="ptitle">Generator</div>
+  <div class="psub">Seeded and deterministic — the same bank size reproduces the same bank.</div>
+  <div class="row">
+    <button class="pri" id="gen50">Generate 50 more items</button>
+    <button id="gen200">+200</button>
+    <button id="reset">Reset to 40</button>
+    <span class="sub" id="genstat" style="margin:0"></span>
+  </div>
+  <div id="sample"></div>
+</div>
+
+<h2>2 · The half that is not free</h2>
+<p>Simulated learners with ability θ ~ N(0, 1) answer a 20-item probe drawn from the bank. Each
+response is a 2PL draw against the item's latent parameters; a wrong answer selects the distractor
+matching that learner's misconception with probability 0.6. Nothing is looked up — the estimates
+below are recovered from the response matrix alone.</p>
+
+<div class="panel">
+  <div class="ptitle">Calibration sample</div>
+  <div class="psub">Responses per item is the quantity that matters, and it is respondents ×
+  probe length ÷ bank size. Growing the bank divides it.</div>
+  <div class="ctls">
+    <div class="ctl"><label for="nresp">Respondents <span class="v" id="nrv"></span></label>
+      <input type="range" id="nresp" min="25" max="2000" step="25" value="400" /></div>
+    <div class="ctl"><label for="probe">Probe length <span class="v" id="pv"></span></label>
+      <input type="range" id="probe" min="5" max="40" step="1" value="20" /></div>
+  </div>
+  <div class="stat" id="calstat"></div>
+</div>
+
+<figure class="panel">
+  <div class="ptitle">Recovered difficulty against the truth it was never shown</div>
+  <div class="psub">One point per item with at least five responses. The dashed line is perfect
+  recovery. Points scatter around it by exactly the standard error the sample supports.</div>
+  <div id="recov"></div>
+</figure>
+
+<figure class="panel">
+  <div class="ptitle">Which distractor catches which misconception</div>
+  <div class="psub">Posterior over named errors given that a learner selected this option,
+  estimated from the simulated responses. A cell with fewer than thirty selections is not a
+  diagnosis and is marked as such.</div>
+  <div class="scroll"><table id="dist"></table></div>
+</figure>
+
+<h2>3 · The inversion, priced</h2>
+<p>The only careful cost-benefit analysis of automatic item generation put the break-even in K-12
+mathematics at <strong>173 to 247 items within a single fine-grained content area</strong>. Template
+AIG has a large fixed cost — cognitive model, item model, tooling — and a near-zero marginal cost.
+Manual authoring is the reverse.</p>
+
+<figure class="panel">
+  <div class="ptitle">Cost of a bank, three ways</div>
+  <div class="psub">The shaded band is the published 173–247 break-even. The fixed cost of the
+  template line is set so that it crosses manual authoring inside that band — that is the
+  calibration, and it is the only fitted quantity on this page.</div>
+  <div class="legend">
+    <span><i class="ln" style="background:var(--felt)"></i>Manual authoring</span>
+    <span><i class="ln" style="background:var(--real)"></i>Template AIG</span>
+    <span><i class="ln" style="background:var(--ink-3)"></i>LLM generation + the calibration nobody prices</span>
+  </div>
+  <div id="cost"></div>
+  <div class="stat" id="costsplit"></div>
+</figure>
+
+<div class="note warn"><b>The term everyone optimises is the term that collapsed.</b> The published
+cost model prices <em>item development</em>. It does not price calibration, review, or the ongoing
+security cost — and it did not need to, because before 2023 development dominated. Under LLM
+generation the development term falls to fractions of a cent and <b>review becomes essentially
+100% of the cost</b>. The grey line is this page's construction rather than the published model's:
+it charges <span id="revcost">expert review and a calibration sample</span>, both of which
+generation left exactly where they were. Note also what the shaded band means now. Template AIG's
+break-even is <em>per content area</em>, so a system covering 4,000 fine-grained objectives needed
+4,000 × ~200 items before it paid — which is precisely why LLM generation, whose fixed cost is one
+prompt, is genuinely transformative and not merely faster. It moved the cheap term to zero.</div>
+
+<div class="note"><b>And the bank saturates before you do.</b> Generators show diminishing marginal
+syntactic return: a bank's <em>effective</em> item count is the number of psychometrically and
+syntactically distinguishable instances it can emit, and that number saturates well below the
+combinatorial count. A learner who sees thirty probes from one template has not made thirty
+independent observations. The item counter above is a raw count, and a raw count is the
+optimistic one.</div>
+
+<h2>4 · The statistic that stops existing</h2>
+<p>Cronbach's α needs a fixed number of items <em>k</em>, administered to a common sample, so that
+per-item variances and a total variance are estimable over the same people. If every learner sees
+a different item set, there is no item covariance matrix. Not a noisy one — <strong>no such
+object</strong>. α is not biased under generated assessment; it is undefined. McDonald's ω has the
+same structural requirement and dies the same way.</p>
+
+<div class="panel">
+  <div class="ptitle">Co-observation, eight items</div>
+  <div class="psub">A filled cell is a pair of items that some common set of learners both saw, so
+  a covariance is estimable. An empty cell is a covariance that does not exist.</div>
+  <div class="row" style="margin-bottom:10px">
+    <button id="fixed" class="on">One fixed form</button>
+    <button id="gener">Everyone sees different items</button>
+  </div>
+  <div class="scroll"><div class="cov" id="cov"></div></div>
+  <div id="alpha"></div>
+</div>
+
+<div class="panel">
+  <div class="ptitle">What replaces it</div>
+  <div class="psub">Generalizability theory, which is native here: <b>a generator is a formal
+  specification of a universe of admissible observations</b> — arguably the first time in the
+  history of measurement that this universe has been written down executably rather than gestured
+  at. Both quantities below are computed by administering the generator twice.</div>
+  <div class="stat" id="gtheory"></div>
+  <div class="note" style="margin-bottom:0">Report the pair <code>(ρ_π, n_required(Φ))</code>,
+  never a single number and never α. ρ_π carries a version, because generators drift with model
+  updates and prompt edits, and it is re-estimated on change. One incentive property of this
+  design is worth keeping: a high-variance generator needs more probes for the same precision,
+  which means <b>a sloppy generator costs the learner time</b>. That is the right direction for
+  the pressure to point.</div>
+</div>
+
+<h2>5 · Which claim this bank has actually earned</h2>
+<p>A system asserts a tier and must be able to produce the evidence for it. The tier is a property
+of the probe policy, not of the product. Toggle the evidence you have; the licence recomputes.</p>
+
+<div class="reqs" id="reqs"></div>
+<div class="tiers" id="tiers"></div>
+
+<div class="note warn"><b>Most AI tutoring systems in 2026 sit at Tier 0 and report as if they
+were at Tier 2.</b> That is the single most common measurement error in the field. And <b>Tier 3
+is not currently attainable by a purely generative system</b>: the largest systematic review of
+AI-generated multiple-choice validity concludes the evidence "does not yet support unsupervised
+use in summative assessment." Say so rather than approximating it.</div>
+
+<h2>6 · What this proves, and where it stops</h2>
+
+<div class="panel">
+  <div class="ptitle">Demonstrated in the page</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>The two halves have opposite cost curves, and you can watch them fight.</strong>
+    Adding two hundred items takes one click and degrades every parameter estimate in the bank,
+    because responses per item is respondents × probe length ÷ bank size and only the denominator
+    moved.</li>
+    <li><strong>Calibration really is recoverable, and really does need a sample.</strong> The
+    scatter converges on the diagonal at the rate the standard error predicts. Nothing about that
+    is a mystery — it is the reason a calibration sample cannot be skipped, stated as arithmetic
+    rather than as caution.</li>
+    <li><strong>α's failure is structural and visible.</strong> The co-observation grid fills in
+    under one fixed form and empties under per-learner generation. There is no estimator to fix,
+    no correction to apply, and no sample size that rescues it.</li>
+    <li><strong>The tier licence is decidable.</strong> Every requirement above is either
+    satisfiable by evidence or not, and the page names the first unmet one instead of awarding a
+    grade.</li>
+  </ul>
+  <div class="ptitle">Where it stops</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>The learner is simulated and the truth is planted.</strong> Recovery is easy when
+    the generating model and the fitting model are the same family. Real response data is not 2PL,
+    and the honest version of this scatter is wider than the one above for reasons no simulation
+    reproduces.</li>
+    <li><strong>Isomorphicity is an assumption, and it has been tested.</strong> The load-bearing
+    premise of item generation is that sibling items from one item model share parameters. When
+    checked, only <strong>9 of 23</strong> expert-built templates produced psychometrically
+    isomorphic instances without revision, and 9 of 23 required major modification. This page
+    assumes it holds within a template; the field's own data says it holds about 40% of the
+    time.</li>
+    <li><strong>Every shipping system understates its measurement error.</strong> Adaptive scoring
+    treats calibrated item parameters as <em>known</em>. Under generation they are draws, so the
+    standard error of θ must include item-sampling variance, and no deployed system appears to do
+    this. The prediction is falsifiable and cheap: reported reliabilities for LLM-generated
+    adaptive quizzes are systematically optimistic, and the gap widens with item novelty.
+    Duolingo's own published numbers show the size of it — <strong>test–retest 0.84 against
+    internal consistency 0.96</strong>, and only one of those two is estimable under
+    generation.</li>
+    <li><strong>Fairness moves to the generator, and this page cannot check it.</strong> If every
+    student receives distinct items, item-level differential functioning is undefined; what must
+    be shown is <em>generator</em> invariance. Worse, personalised generation conditions item
+    content on learner context, which can produce construct-irrelevant difficulty variation
+    correlated with demographics — arising by design, invisible to every existing fairness
+    procedure, and defended as a feature. That last risk is this project's own framing and no
+    study of it was located. It is a hypothesis someone should test, and it is offered as the most
+    serious unexamined fairness risk in AI-driven assessment.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../deck.html">The deck</a> ·
+  <a href="../paper.html">The paper</a>
+  <br /><br />Every figure traceable in the survey.
+</footer>
+
+</div>
+<script>
+/* ══ chart IR ══════════════════════════════════════════════════════════ */
+const NS='http://www.w3.org/2000/svg';
+const mk=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const el=id=>document.getElementById(id);
+const HUE=s=>s==='real'?'var(--real)':s==='felt'?'var(--felt)':'var(--ink-3)';
+
+/* {series:[{series,kind:'line'|'dots',pts,dash}], x:{min,max,label,ticks}, y:{...}, band:[x0,x1] } */
+function renderPlot(host,spec){
+  const narrow=innerWidth<620, W=narrow?380:720, H=narrow?240:300, L=46, R=14, T=14, B=44;
+  const px=v=>L+(v-spec.x.min)/(spec.x.max-spec.x.min)*(W-L-R);
+  const py=v=>T+(1-(v-spec.y.min)/(spec.y.max-spec.y.min))*(H-T-B);
+  const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
+  if(spec.band) svg.appendChild(mk('rect',{x:px(spec.band[0]),y:T,
+    width:Math.max(2,px(spec.band[1])-px(spec.band[0])),height:H-T-B,fill:'var(--ink-3)',opacity:.12}));
+  for(let i=0;i<=4;i++){const v=spec.y.min+(spec.y.max-spec.y.min)*i/4,yy=py(v);
+    svg.appendChild(mk('line',{x1:L,y1:yy,x2:W-R,y2:yy,class:'gl'}));
+    const t=mk('text',{x:L-8,y:yy+4,'text-anchor':'end',class:'vl'});
+    t.textContent=spec.y.fmt?spec.y.fmt(v):v.toFixed(1); svg.appendChild(t);}
+  (spec.x.ticks||[]).forEach(tk=>{const t=mk('text',{x:px(tk.at),y:H-24,'text-anchor':'middle',class:'vl'});
+    t.textContent=tk.label; svg.appendChild(t);});
+  const xl=mk('text',{x:(L+W-R)/2,y:H-6,'text-anchor':'middle',class:'ax'});
+  xl.textContent=spec.x.label; svg.appendChild(xl);
+  if(spec.yLabel){const t=mk('text',{x:L-8,y:T-3,'text-anchor':'end',class:'ax'});
+    t.textContent=spec.yLabel; svg.appendChild(t);}
+  spec.series.forEach(s=>{
+    const col=HUE(s.series);
+    if(s.kind==='dots') s.pts.forEach(p=>svg.appendChild(mk('circle',
+      {cx:px(p[0]),cy:py(p[1]),r:3.2,fill:col,opacity:.72})));
+    else{
+      const d=s.pts.map((p,i)=>(i?'L':'M')+px(p[0]).toFixed(2)+' '+py(p[1]).toFixed(2)).join(' ');
+      const at={d,fill:'none',stroke:col,'stroke-width':2.2};
+      if(s.dash) at['stroke-dasharray']=s.dash;
+      svg.appendChild(mk('path',at));}
+  });
+  if(spec.bandLabel){const t=mk('text',{x:px((spec.band[0]+spec.band[1])/2),y:T+12,
+    'text-anchor':'middle',class:'ax'});t.textContent=spec.bandLabel;svg.appendChild(t);}
+  host.replaceChildren(svg);
+}
+
+/* ══ deterministic RNG ═════════════════════════════════════════════════ */
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;
+  let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;
+  return((t^t>>>14)>>>0)/4294967296;};}
+const gauss=r=>{let u=0,v=0;while(!u)u=r();while(!v)v=r();
+  return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);};
+
+/* ══ 1 · the generator ═════════════════════════════════════════════════ */
+const MIS=[
+ {id:'PERIM', nm:'adds perimeters instead of areas'},
+ {id:'NOSUB', nm:'forgets to subtract the cut-out'},
+ {id:'DIAM',  nm:'uses the diameter as the radius'},
+ {id:'UNIT',  nm:'ignores the unit conversion'}
+];
+const SHAPES=['rectangle','triangle','semicircle','trapezium'];
+function makeItem(seed){
+  const r=mulberry32(seed*2654435761+11);
+  const sub=r()<0.45, unit=r()<0.35, parts=2+(r()<0.4?1:0);
+  const circ=r()<0.4;
+  const w=4+Math.floor(r()*11), h=3+Math.floor(r()*9), cut=1+Math.floor(r()*3);
+  const b = -0.9 + 0.80*sub + 0.95*unit + 0.45*(parts-2) + 0.30*circ + 0.55*gauss(r);
+  const a = 0.85 + 0.75*r();
+  const key = parts*w*h/2 + (sub?-cut*cut:0);
+  const opts=[{v:key,key:true,mis:null}];
+  const push=(v,mis)=>opts.push({v:Math.max(1,Math.round(v*10)/10),key:false,mis});
+  push(2*(w+h)+parts, 'PERIM');
+  if(sub) push(key+cut*cut, 'NOSUB'); else push(key*1.5+1,'DIAM');
+  if(unit) push(key*100, 'UNIT'); else push(key/2+2,'DIAM');
+  return {seed,b,a,sub,unit,parts,circ,w,h,cut,
+    stem:`A ${parts>2?'three':'two'}-part figure is built from a ${SHAPES[Math.floor(r()*4)]} and a ${circ?'semicircle':'triangle'}, `+
+      `${w} by ${h}${unit?' centimetres':' units'}${sub?`, with a ${cut}×${cut} square removed`:''}. `+
+      `Find the total area${unit?' in square metres':''}.`,
+    opts};
+}
+let BANK=[];
+function grow(n){const s=BANK.length;for(let i=0;i<n;i++)BANK.push(makeItem(s+i+1));}
+function resetBank(n){BANK=[];grow(n);}
+
+/* ══ 2 · simulation and calibration ════════════════════════════════════ */
+function simulate(N,probe){
+  const M=BANK.length, r=mulberry32(97531);
+  const nj=new Array(M).fill(0), cj=new Array(M).fill(0);
+  const dsel=BANK.map(()=>({}));            // option index -> {misId: count}
+  for(let i=0;i<N;i++){
+    const th=gauss(r);
+    const mis=MIS[Math.floor(r()*MIS.length)].id;
+    for(let q=0;q<probe;q++){
+      const j=Math.floor(r()*M); const it=BANK[j];
+      const p=1/(1+Math.exp(-1.7*it.a*(th-it.b)));
+      const ok=r()<p;
+      nj[j]++; if(ok){cj[j]++;}
+      else{
+        const wrong=it.opts.map((o,k)=>[o,k]).filter(x=>!x[0].key);
+        let pick;
+        const match=wrong.filter(x=>x[0].mis===mis);
+        if(match.length && r()<0.6) pick=match[Math.floor(r()*match.length)];
+        else pick=wrong[Math.floor(r()*wrong.length)];
+        const key='o'+pick[1];
+        dsel[j][key]=dsel[j][key]||{}; dsel[j][key][mis]=(dsel[j][key][mis]||0)+1;
+      }
+    }
+  }
+  return {nj,cj,dsel};
+}
+const logit=p=>Math.log(p/(1-p));
+function calibrate(sim){
+  const rows=[];
+  for(let j=0;j<BANK.length;j++){
+    const n=sim.nj[j]; if(n<5) continue;
+    let p=sim.cj[j]/n; p=Math.min(1-0.5/n,Math.max(0.5/n,p));
+    const bhat=-logit(p)/1.7;
+    const se=1/(1.7*Math.sqrt(n*p*(1-p)));
+    rows.push({j,n,p,bhat,se,btrue:BANK[j].b});
+  }
+  return rows;
+}
+const mean=a=>a.reduce((s,x)=>s+x,0)/(a.length||1);
+function corr(x,y){const mx=mean(x),my=mean(y);
+  let sxy=0,sxx=0,syy=0;
+  for(let i=0;i<x.length;i++){sxy+=(x[i]-mx)*(y[i]-my);sxx+=(x[i]-mx)**2;syy+=(y[i]-my)**2;}
+  return sxx&&syy?sxy/Math.sqrt(sxx*syy):0;}
+
+let SIM=null, CAL=null;
+function recalc(){
+  const N=+el('nresp').value, probe=+el('probe').value;
+  el('nrv').textContent=N; el('pv').textContent=probe+' items';
+  SIM=simulate(N,probe); CAL=calibrate(SIM);
+  const rpi=N*probe/BANK.length;
+  const medSE=CAL.length?CAL.map(r=>r.se).sort((a,b)=>a-b)[Math.floor(CAL.length/2)]:NaN;
+  const rmse=CAL.length?Math.sqrt(mean(CAL.map(r=>(r.bhat-r.btrue)**2))):NaN;
+  const rho=CAL.length>2?corr(CAL.map(r=>r.bhat),CAL.map(r=>r.btrue)):0;
+  const usable=CAL.filter(r=>r.se<=0.30).length;
+  el('calstat').innerHTML=
+   `<div><div class="k">Items in bank</div><div class="n">${BANK.length}</div><div class="s">cost of the last 50: about a cent</div></div>
+    <div><div class="k">Responses per item</div><div class="n ${rpi<40?'bad':'real'}">${rpi.toFixed(0)}</div><div class="s">${N} × ${probe} ÷ ${BANK.length}</div></div>
+    <div><div class="k">Median SE of difficulty</div><div class="n ${medSE>0.30?'bad':'real'}">${medSE.toFixed(2)}</div><div class="s">logits — 0.30 is the usable threshold</div></div>
+    <div><div class="k">Items calibrated to ±0.30</div><div class="n ${usable<BANK.length*0.8?'felt':'real'}">${usable} / ${BANK.length}</div><div class="s">the rest have text and nothing else</div></div>
+    <div><div class="k">Recovery r</div><div class="n real">${rho.toFixed(3)}</div><div class="s">RMSE ${rmse.toFixed(2)} logits against planted truth</div></div>`;
+  drawRecovery(); drawDistractors(); drawTiers(); drawCov(); drawG();
+}
+function drawRecovery(){
+  const pts=CAL.map(r=>[r.btrue,r.bhat]);
+  const lim=3;
+  renderPlot(el('recov'),{alt:'Recovered item difficulty plotted against planted true difficulty.',
+    x:{min:-lim,max:lim,label:'true difficulty (logits)',
+       ticks:[-3,-1.5,0,1.5,3].map(v=>({at:v,label:v}))},
+    y:{min:-lim,max:lim,fmt:v=>v.toFixed(1)}, yLabel:'recovered',
+    series:[{series:'ink',kind:'line',pts:[[-lim,-lim],[lim,lim]],dash:'5 4'},
+            {series:'real',kind:'dots',pts}]});
+}
+function drawDistractors(){
+  const it=BANK[0]; const sel=SIM.dsel[0]||{};
+  let rows='';
+  it.opts.forEach((o,k)=>{
+    if(o.key){rows+=`<tr><td><b>${o.v}</b> <span class="pill y">key</span></td><td colspan="2" class="mut">correct response</td><td class="num">—</td></tr>`;return;}
+    const c=sel['o'+k]||{}; const tot=Object.values(c).reduce((s,x)=>s+x,0);
+    const best=Object.entries(c).sort((a,b)=>b[1]-a[1])[0];
+    const nm=best?MIS.find(m=>m.id===best[0]).nm:'—';
+    const post=best&&tot?(best[1]/tot*100).toFixed(0)+'%':'—';
+    rows+=`<tr><td class="num">${o.v}</td><td>${nm}</td>
+      <td class="num">${post}</td>
+      <td class="num">${tot} ${tot<30?'<span class="pill c">too few</span>':'<span class="pill y">usable</span>'}</td></tr>`;
+  });
+  el('dist').innerHTML=`<thead><tr><th>Option</th><th>Modal misconception among selectors</th>
+    <th>Posterior</th><th>Selections</th></tr></thead><tbody>${rows}</tbody>`;
+}
+
+/* ══ 3 · the cost curves ═══════════════════════════════════════════════ */
+const MANUAL=200, TMPL_MARGINAL=3, LLM_MARGINAL=0.01;
+const REVIEW_MIN=20, REVIEW_RATE=90, RESP_PER_ITEM=200, RESP_COST=0.05;
+const REVIEW=REVIEW_MIN/60*REVIEW_RATE + RESP_PER_ITEM*RESP_COST;  // $/item, unchanged by generation
+const FIXED=Math.round(210*(MANUAL-TMPL_MARGINAL));                 // crosses manual inside 173–247
+(function(){
+  const pts=f=>{const a=[];for(let n=0;n<=400;n+=10)a.push([n,f(n)]);return a;};
+  renderPlot(el('cost'),{alt:'Cumulative cost of building an item bank under manual authoring, template generation, and LLM generation plus the unchanged review and calibration cost.',
+    x:{min:0,max:400,label:'items in one fine-grained content area',
+       ticks:[0,100,173,247,400].map(v=>({at:v,label:v}))},
+    y:{min:0,max:80000,fmt:v=>'$'+(v/1000).toFixed(0)+'k'},
+    band:[173,247], bandLabel:'published break-even',
+    series:[{series:'felt',kind:'line',pts:pts(n=>MANUAL*n)},
+            {series:'real',kind:'line',pts:pts(n=>FIXED+TMPL_MARGINAL*n)},
+            {series:'ink', kind:'line',pts:pts(n=>LLM_MARGINAL*n+REVIEW*n)}]});
+  const dev=LLM_MARGINAL*400, rev=REVIEW*400;
+  el('costsplit').innerHTML=
+   `<div><div class="k">LLM development · 400 items</div><div class="n real">$${dev.toFixed(2)}</div>
+      <div class="s">the term that collapsed</div></div>
+    <div><div class="k">Review + calibration · same 400</div><div class="n felt">$${rev.toLocaleString()}</div>
+      <div class="s">${REVIEW_MIN} min expert review at $${REVIEW_RATE}/h, plus ${RESP_PER_ITEM} responses at $${RESP_COST.toFixed(2)}</div></div>
+    <div><div class="k">Share of the pipeline</div><div class="n felt">${(rev/(rev+dev)*100).toFixed(2)}%</div>
+      <div class="s">is the term generation did not touch</div></div>
+    <div><div class="k">Template break-even</div><div class="n real">${Math.round(FIXED/(MANUAL-TMPL_MARGINAL))}</div>
+      <div class="s">items — inside the published 173–247</div></div>`;
+  el('revcost').textContent=`$${REVIEW.toFixed(2)} per item — ${REVIEW_MIN} minutes of expert review plus ${RESP_PER_ITEM} calibration responses`;
+})();
+
+/* ══ 4 · alpha, and what replaces it ═══════════════════════════════════ */
+let COVMODE='fixed';
+function drawCov(){
+  const K=8, r=mulberry32(24680);
+  const co=Array.from({length:K},()=>new Array(K).fill(0));
+  if(COVMODE==='fixed'){for(let i=0;i<K;i++)for(let j=0;j<K;j++)co[i][j]=200;}
+  else{
+    for(let l=0;l<240;l++){
+      const seen=[]; while(seen.length<2){const x=Math.floor(r()*K); if(!seen.includes(x))seen.push(x);}
+      seen.forEach(i=>seen.forEach(j=>co[i][j]++));
+    }
+  }
+  let html='';
+  for(let i=0;i<K;i++){html+='<div>';
+    for(let j=0;j<K;j++){const v=co[i][j];
+      html+=`<i class="${v>=30?'f':'e'}" title="items ${i+1}×${j+1}: ${v} common respondents">${v>=30?'':'∅'}</i>`;}
+    html+='</div>';}
+  el('cov').innerHTML=html;
+  const est=co.flat().filter(v=>v>=30).length, tot=K*K;
+  if(COVMODE==='fixed'){
+    /* compute alpha for real on a fixed 8-item form */
+    const rr=mulberry32(1357), N=240, items=BANK.slice(0,K);
+    const X=[];
+    for(let i=0;i<N;i++){const th=gauss(rr);
+      X.push(items.map(it=>(rr()<1/(1+Math.exp(-1.7*it.a*(th-it.b))))?1:0));}
+    const vi=items.map((_,j)=>{const c=X.map(row=>row[j]);const m=mean(c);
+      return mean(c.map(x=>(x-m)**2))*N/(N-1);});
+    const tots=X.map(row=>row.reduce((s,x)=>s+x,0)); const mt=mean(tots);
+    const vt=mean(tots.map(x=>(x-mt)**2))*N/(N-1);
+    const alpha=K/(K-1)*(1-vi.reduce((s,x)=>s+x,0)/vt);
+    el('alpha').innerHTML=`<div class="stat" style="margin:14px 0 0">
+      <div><div class="k">Estimable covariances</div><div class="n real">${est} / ${tot}</div><div class="s">every pair shares a sample</div></div>
+      <div><div class="k">Cronbach's α</div><div class="n real">${alpha.toFixed(3)}</div><div class="s">computed from 240 simulated response vectors</div></div>
+      <div><div class="k">Status</div><div class="n">defined</div><div class="s">and reportable, on this form only</div></div></div>`;
+  } else {
+    el('alpha').innerHTML=`<div class="stat" style="margin:14px 0 0">
+      <div><div class="k">Estimable covariances</div><div class="n bad">${est} / ${tot}</div><div class="s">240 learners, two items each</div></div>
+      <div><div class="k">Cronbach's α</div><div class="n bad">undefined</div><div class="s">there is no item covariance matrix to reduce</div></div>
+      <div><div class="k">Status</div><div class="n bad">not estimable</div><div class="s">no sample size repairs this</div></div></div>`;
+  }
+}
+function drawG(){
+  /* seeded-replicate reliability: administer the generator twice to the same learners */
+  const N=300, probe=+el('probe').value, M=BANK.length;
+  const rA=mulberry32(11111), rB=mulberry32(22222), rT=mulberry32(33333);
+  const A=[],B=[];
+  for(let i=0;i<N;i++){
+    const th=gauss(rT);
+    const run=r=>{let c=0;for(let q=0;q<probe;q++){const it=BANK[Math.floor(r()*M)];
+      if(r()<1/(1+Math.exp(-1.7*it.a*(th-it.b))))c++;} return c/probe;};
+    A.push(run(rA)); B.push(run(rB));
+  }
+  const rho=corr(A,B);
+  const need=(PHI)=>{const r1=Math.max(1e-6,rho*1);        // per-form reliability at this length
+    const n=PHI*(1-r1)/(r1*(1-PHI)); return Math.max(1,Math.ceil(n*probe));};
+  el('gtheory').innerHTML=
+   `<div><div class="k">ρ_π · seeded replicate</div><div class="n real">${rho.toFixed(3)}</div>
+      <div class="s">two seeds, same ${N} learners, ${probe} probes each</div></div>
+    <div><div class="k">Probes for Φ = 0.80</div><div class="n">${need(0.80)}</div>
+      <div class="s">Spearman–Brown on ρ_π, not on α</div></div>
+    <div><div class="k">Probes for Φ = 0.90</div><div class="n">${need(0.90)}</div>
+      <div class="s">the price of a consequential decision</div></div>
+    <div><div class="k">Growth claims</div><div class="n felt">≈14</div>
+      <div class="s">controlled probes over 8–15 weeks — fewer is a trend line through noise</div></div>`;
+}
+
+/* ══ 5 · the tier licence ══════════════════════════════════════════════ */
+const REQ=[
+ {k:'qmat',  t:'Q-matrix authored before generation'},
+ {k:'dxfit', t:'Diagnostic model fitted, classification accuracy reported'},
+ {k:'ext',   t:'One attribute claim validated against non-generator evidence'},
+ {k:'review',t:'100% human review of keyed answers on administered items'},
+ {k:'equate',t:'Documented equating and published subgroup invariance'},
+ {k:'appeal',t:'Appeals path and an independent validity study'}
+];
+let HAVE={};
+function drawReqs(){
+  el('reqs').innerHTML=REQ.map(r=>
+   `<button data-k="${r.k}" class="${HAVE[r.k]?'on':''}">${HAVE[r.k]?'✓ ':'○ '}${r.t}</button>`).join('');
+}
+function drawTiers(){
+  const medSE=CAL.length?CAL.map(r=>r.se).sort((a,b)=>a-b)[Math.floor(CAL.length/2)]:99;
+  const calOK=medSE<=0.30;
+  const T=[
+   {n:'T0 — Practice signal',cl:'"You got 7 of 10 right on items about this."',
+    ok:true, need:null,
+    no:'No number on a scale. No comparison to another learner or to the same learner last month. Not the words mastery, level, proficiency, grade or ready.'},
+   {n:'T1 — Calibrated formative estimate',cl:'"Ability 0.6 ± 0.3 logits on this construct, policy π v1.2."',
+    ok:calOK, need:`median SE is ${medSE.toFixed(2)} logits — add respondents or shrink the bank until it is ≤ 0.30`,
+    no:'No cross-learner ranking. No high-stakes gate. No growth claim from fewer than about fourteen controlled probes over 8–15 weeks.'},
+   {n:'T2 — Diagnostic profile',cl:'"Mastered these attributes; not yet that one."',
+    ok:calOK&&HAVE.qmat&&HAVE.dxfit&&HAVE.ext,
+    need:!calOK?'T1 is not met yet':(!HAVE.qmat?'no Q-matrix authored before generation':(!HAVE.dxfit?'no fitted diagnostic model with reported accuracy':'no external validation of any attribute claim')),
+    no:'No profile whose fit was assessed only against generator-produced data, and none that is indistinguishable from a rescaled total score.'},
+   {n:'T3 — Summative / consequential',cl:'"This learner meets the standard."',
+    ok:false,
+    need:'not attainable by a purely generative system — the systematic review of AI-generated item validity does not support unsupervised summative use, whatever else is ticked',
+    no:'—'}
+  ];
+  el('tiers').innerHTML=T.map(t=>
+   `<div class="tier ${t.ok?'earned':'blocked'}">
+      <div class="th"><span class="tn">${t.n}</span>
+        <span class="pill ${t.ok?'y':'n'}">${t.ok?'earned':'not earned'}</span></div>
+      <p class="cl">${t.cl}</p>
+      ${t.ok?`<p class="cl" style="color:var(--ink-3);font-size:12.8px">Prohibited at this tier: ${t.no}</p>`
+            :`<p class="blk">Blocked: ${t.need}.</p>`}
+    </div>`).join('');
+}
+
+/* ══ wiring ════════════════════════════════════════════════════════════ */
+function showSample(){
+  el('genstat').textContent=`${BANK.length} items · generated in ${BANK.length<200?'under a millisecond':'a few milliseconds'}`;
+  const it=BANK[0];
+  el('sample').innerHTML=
+   `<div class="item"><div class="q">${it.stem}</div>
+      <div class="opts">${it.opts.map(o=>`<span class="${o.key?'key':''}">${o.v}${o.key?'  ✓':''}</span>`).join('')}</div>
+      <div class="why">Latent parameters the calibration is not shown: difficulty
+        <b>${it.b.toFixed(2)}</b>, discrimination <b>${it.a.toFixed(2)}</b>. Difficulty is
+        <em>caused</em> here — ${it.sub?'a cut-out to subtract, ':''}${it.unit?'a unit conversion, ':''}${it.parts} parts.
+        Each distractor is the answer a specific documented error produces, not a plausible-looking number.</div>
+    </div>`;
+}
+el('gen50').onclick=()=>{grow(50);showSample();recalc();};
+el('gen200').onclick=()=>{grow(200);showSample();recalc();};
+el('reset').onclick=()=>{resetBank(40);showSample();recalc();};
+['nresp','probe'].forEach(id=>el(id).addEventListener('input',recalc));
+el('reqs').addEventListener('click',e=>{const b=e.target.closest('button[data-k]');if(!b)return;
+  HAVE[b.dataset.k]=!HAVE[b.dataset.k];drawReqs();drawTiers();});
+el('fixed').onclick=()=>{COVMODE='fixed';el('fixed').classList.add('on');el('gener').classList.remove('on');drawCov();};
+el('gener').onclick=()=>{COVMODE='gen';el('gener').classList.add('on');el('fixed').classList.remove('on');drawCov();};
+let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(drawRecovery,180);});
+
+resetBank(40); showSample(); drawReqs(); recalc();
+
+const R=document.documentElement;
+el('tt').onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+</body>
+</html>

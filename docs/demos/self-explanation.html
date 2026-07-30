@@ -296,11 +296,13 @@ function score(){
   });
   /* performance.now() is deliberately coarsened, so time a batch and divide */
   let reps=0, t1=performance.now();
-  while(performance.now()-t1<18){
+  while(performance.now()-t1<18 && reps<24000){   /* hard cap: never spin on a frozen clock */
     for(let k=0;k<40;k++){ PROBES.forEach((P,i)=>{const s=($('ta'+i).value||'');
       P.props.forEach(p=>matchProp(s,p));}); reps++; }
   }
-  const us=((performance.now()-t1)/reps)*1000;
+  const el=performance.now()-t1, us=reps?(el/reps)*1000:0;
+  const cost=us>0?`${us.toFixed(1)} µs per full scoring pass, measured over ${reps.toLocaleString()} repetitions`
+                 :`below this browser's timer resolution over ${reps.toLocaleString()} repetitions`;
   const ms=(performance.now()-t0);
   const tot=results.reduce((s,r)=>s+r.P.props.length,0);
   const got=results.reduce((s,r)=>s+r.hit,0);
@@ -331,7 +333,7 @@ function score(){
   const reported = (missP3||missQ1) ? roots.map(r=>r.x) : roots.filter(r=>r.ok).map(r=>r.x);
   let L=[];
   L.push(`coverage      : ${got}/${tot} propositions  (${Math.round(100*got/tot)}%)`);
-  L.push(`matcher cost  : ${us.toFixed(1)} µs per full scoring pass, measured over ${reps.toLocaleString()} repetitions on this device`);
+  L.push(`matcher cost  : ${cost}`);
   L.push(`quadratic     : x² − 3x − 4 = 0  →  roots ${roots.map(r=>r.x).join(', ')}   (solved here, not stored)`);
   roots.forEach(r=>{
     L.push(`  x = ${String(r.x).padStart(2)}      : √(x+5) = ${r.lhs.toFixed(0)}   x − 1 = ${r.rhs.toFixed(0)}   → ${r.ok?'satisfies the original':'FAILS the original'}`);
@@ -352,7 +354,7 @@ function score(){
   if(missP4) L.push(`\nStill missing the mechanism: squaring maps ${bad.rhs.toFixed(0)} and ${Math.abs(bad.rhs).toFixed(0)} to the same value ${bad.sqr}, which is\nprecisely how a negative right-hand side survives into the quadratic.`);
   if(missP2 && !missP3) L.push(`\nYou described the check without naming what it is checking for. That is a procedure\nheld in memory rather than a reason held in understanding — it survives this problem\nand fails the first one shaped differently.`);
   $('conseq').innerHTML=L.join('\n');
-  $('sfb').textContent=`${got}/${tot} propositions · ${us.toFixed(0)} µs per pass`;
+  $('sfb').textContent=`${got}/${tot} propositions`+(us>0?` · ${us.toFixed(0)} µs per pass`:'');
   $('cards').scrollIntoView({behavior:'smooth',block:'start'});
 }
 $('score').onclick=score;
