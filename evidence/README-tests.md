@@ -46,3 +46,20 @@ apparent breadth and makes a paper read as a binder of essays.
 The rule: outside its home section, a recurring claim must carry a section
 cross-reference within a paragraph, so a reader can tell they are meeting an old
 finding rather than a new one. First run flagged 21 bare restatements.
+
+## Stance check
+
+```bash
+python3 evidence/check-stance.py --strict
+```
+
+The mission is that everyone becomes a polymath. The research discipline is
+adversarial. Those are compatible only if the discipline is the *warrant* and the
+mission is the *message* — and repeatedly that inverted. The dashboard opened on three
+disqualifying findings; the deck's identity became "we build the examiner"; section
+titles read *"what it cannot buy"* and *"what that is worth"*.
+
+Each was fixed when pointed at and reappeared elsewhere, because nothing measured the
+pattern. This does: defensive heading shapes, first-screen stance (claims that
+something fails vs claims that something is possible), and volume used as an opening
+argument. `research/raw/` is exempt — those are audits by design.

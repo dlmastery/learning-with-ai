@@ -42,9 +42,13 @@ DEFENSIVE = re.compile(
     r"|read as evidence and not", re.I)
 
 # Words that assert a limit, and words that assert a possibility.
-LIMIT = re.compile(r"\b(not|never|no|nothing|nobody|cannot|fails?|failed|null|"
-                   r"wrong|error|absent|missing|unmeasured|unverifiable|"
-                   r"disqualif\w+|harm|worse|inert|zero)\b", re.I)
+# Bare "not"/"no" are excluded deliberately: "not better tutoring — the end of
+# having to choose" is an affirmative sentence with a negative particle in it.
+# What we are measuring is claims that something FAILS, not negation as syntax.
+LIMIT = re.compile(r"\b(fails?|failed|failure|null|wrong|error|absent|missing|"
+                   r"unmeasured|unverifiable|unproven|disqualif\w+|harm|harmful|"
+                   r"worse|inert|useless|broken|nobody has|nothing works|"
+                   r"no evidence|does not work|did not work)\b", re.I)
 POSSIBLE = re.compile(r"\b(can|could|becomes?|possible|unlocks?|enables?|builds?|"
                       r"buildable|now|new|first|works?|gains?|reaches?|"
                       r"achieves?|opportunity)\b", re.I)
