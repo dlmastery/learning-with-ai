@@ -3,7 +3,7 @@ title: "Second-language learning: the one subject where the randomised evidence 
 wave: R
 section: R4
 date_researched: 2026-07-30
-sources_count: 0
+sources_count: 62
 status: raw-research
 ---
 
@@ -671,19 +671,16 @@ same data, better partitioned).
 
 **Vanhove (2013),** *PLOS ONE* 8(7):e69172,
 [10.1371/journal.pone.0069172](https://doi.org/10.1371/journal.pone.0069172), makes the
-prior methodological point: most critical-period studies use statistical tools that
-cannot address the prediction they claim to test, because a critical period requires a
-**discontinuity** and the usual analyses cannot distinguish one from a smooth decline.
+prior methodological point: a critical period requires a **discontinuity**, and the
+analyses this literature usually runs cannot distinguish one from a smooth decline.
 Reanalysing two datasets with piecewise regression, he finds the predicted age patterns
-are not cross-linguistically robust and concludes, by parsimony, that age patterns in L2
-acquisition are not governed by a critical period.
+are not cross-linguistically robust.
 
-There is a further inferential problem that no reanalysis can fix, because it sits in the
-sampling and not the modelling. The respondents are people who chose to take a viral quiz
-billed as a grammar test, in English, on a social network. Age of acquisition, current
-age, immigration history, education and willingness to take an English grammar quiz for
-fun are all correlated in that population, and there is no sampling frame to reweight
-against. The dataset is enormous and underdetermined at once.
+A further inferential problem sits in the sampling, where no reanalysis can reach it. The
+respondents chose to take a viral quiz billed as a grammar test, in English, on a social
+network. Age of acquisition, current age, immigration history, education and willingness
+to take an English grammar quiz for fun are all correlated in that population, with no
+sampling frame to reweight against.
 
 **What survives.** Age effects are real, they are largest for phonology and smallest for
 vocabulary, and they are gradual. Adults are *faster* than children in the early stages of

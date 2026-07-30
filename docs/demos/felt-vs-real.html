@@ -73,12 +73,12 @@ input[type=range]{width:100%;accent-color:var(--felt);margin:0;padding:0;height:
 
 
 <div class="note warn"><b>Read this before the numbers.</b> Everything on this page is
-<em>computed</em> — the sampling, the means, the pooled standard deviations, Welch's <i>t</i>,
+<em>computed</em>. The sampling, the means, the pooled standard deviations, Welch's <i>t</i>,
 the degrees of freedom and the <i>p</i>-values are all calculated in your browser from data
 generated on the spot. But <strong>the participants are synthetic.</strong> The generative model
 is printed in full below, and its coefficients are choices, not measurements. A simulation can
 show that a pattern is <em>coherent</em>. It cannot show that the pattern is <em>true</em>. The
-real anchors — the ones that are measurements — are in the second panel, separately labelled.</div>
+real anchors, the ones that are measurements, sit in the second panel, separately labelled.</div>
 
 <h2>1 · Run the study</h2>
 <p class="sub">Two conditions, identical content. One is fluent to sit through; one is effortful.</p>
@@ -128,9 +128,9 @@ real anchors — the ones that are measurements — are in the second panel, sep
   <div class="mono-block" id="model"></div>
   <div class="note">The only claim being made by these three lines is that
   <strong>fluency loads heavily on satisfaction and barely at all on retention</strong>, and that
-  <strong>effort has an optimum</strong> that depends on prior knowledge. Both of those are
-  positions taken from the evidence below. Everything else — the exact coefficients, the noise
-  scale — is arbitrary and you should treat any specific number this page prints as arbitrary too.</div>
+  effort has an optimum that depends on prior knowledge. Both of those are positions taken from
+  the evidence below. Everything else — the exact coefficients, the noise scale — is arbitrary,
+  and you should treat any specific number this page prints as arbitrary too.</div>
 </div>
 
 <figure class="panel">
@@ -147,8 +147,9 @@ real anchors — the ones that are measurements — are in the second panel, sep
 
 <figure class="panel">
   <div class="ptitle">The divergence, swept across the whole effort range</div>
-  <div class="psub">Expected values under the model — no noise — with fluency held at 55 and prior
-  knowledge at your current setting. The two vertical marks are where your two arms sit.</div>
+  <div class="psub">Expected values under the model with the noise term switched off, fluency held
+  at 55 and prior knowledge at your current setting. The two vertical marks are where your two
+  arms sit.</div>
   <div class="legend">
     <span><i style="background:var(--felt)"></i>Satisfaction</span>
     <span><i style="background:var(--real)"></i>Delayed retention</span>
@@ -173,7 +174,7 @@ real anchors — the ones that are measurements — are in the second panel, sep
   <tr><td><b>Preference vs knowledge</b></td><td class="num">d ≈ 0.48</td><td class="num">0</td>
     <td>Three randomised comparisons. Learners reliably <em>prefer</em> one presentation over
     another; the knowledge difference is nil. Critically, <strong>it survives explicit
-    debiasing</strong> — telling learners about the effect does not repair the judgement.</td></tr>
+    debiasing</strong>. Telling learners about the effect does not repair the judgement.</td></tr>
   <tr><td><b>Deslauriers et al., <i>PNAS</i> 2019</b></td><td class="num">felt worse</td><td class="num">learned more</td>
     <td>Randomised, identical materials, passive lecture vs active learning. Students in the
     active classroom <strong>learned more and reported learning less</strong>, mediated by
@@ -193,10 +194,10 @@ fail to help; it is being actively steered away from the interventions with the 
 <h2>3 · The Null-Learner Test</h2>
 <p class="sub">A falsification test you can apply to any metric, in one line.</p>
 
-<p><strong>Simulate an agent that maximises the metric while learning nothing</strong> — the
-cheapest action sequence that satisfies the measurement. If it scores well, the metric is invalid
-as a learning objective. Below, both agents are actually simulated for 30 days under stated
-policies, and all five metrics are derived from the resulting event logs. Nothing is hardcoded.</p>
+<p>Simulate an agent that maximises the metric while learning nothing, using the cheapest action
+sequence that satisfies the measurement. If it scores well, the metric is invalid as a learning
+objective. Below, both agents are actually simulated for 30 days under stated policies, and all
+five metrics are derived from the resulting event logs. Nothing is hardcoded.</p>
 
 <div class="panel">
   <div class="ptitle">Pick a metric</div>
