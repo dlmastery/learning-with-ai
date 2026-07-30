@@ -48,10 +48,10 @@ the point the census was recruited for.
 Soori, Khojasteh & Javed (2025), *Technology in Language Teaching & Learning*
 7(3). `MEASURED-RCT` (cluster-assigned). Eighty-eight adult learners in IELTS
 writing courses, three feedback conditions over a semester: teacher screencast
-video feedback, AI feedback (ChatGPT-4 plus Grammarly Premium against five
-scripted prompts mapped to the IELTS criteria), and hybrid. Pre- and post-test
-Task 2 essays, anonymised, order-scrambled, double-marked blind to condition and
-time point, weighted κ = 0.85 — better measurement than most of this literature.
+video feedback, AI feedback (ChatGPT-4 plus Grammarly Premium), and hybrid. Pre-
+and post-test Task 2 essays, anonymised, order-scrambled, double-marked blind to
+condition and time point, weighted κ = 0.85 — better measurement than most of
+this literature.
 
 No arm goes without feedback, so the study cannot estimate whether any of the
 three beats writing the same essays unaided. Three intact classes were randomly
@@ -88,7 +88,7 @@ the claim worth establishing properly.
 Xodabande, Shiri & Zohrabi (2025), *Discover Education* 4:307. `MEASURED-RCT`.
 Sixty intermediate Iranian EFL learners, randomised 30/30, three weeks, ten
 target words a week, ChatGPT-4's voice feature against electronic dictionaries.
-Outcome: read 30 sentences aloud, one target word each, scored binary by three
+Outcome: 30 sentences read aloud, one target word each, scored binary by three
 blinded raters, α = 0.91.
 
 Both groups practised those 30 words for three weeks, and those 30 words are the
@@ -110,7 +110,7 @@ describes this as ChatGPT retaining gains better.
 One ambiguity outweighs all of that. The paper says learners used *"the voice
 feature"* without saying which. If it was the speech-to-text pipeline, the model
 received a transcript and never the audio, and could not have perceived a
-mispronunciation at all. §5 shows why that is not a quibble.
+mispronunciation. §5 shows why that is not a quibble.
 
 ### 2.3 Speaking: the largest trial, unreadable
 
@@ -128,13 +128,13 @@ between-group comparison, and the public record carries a within-group one.
 
 ## 3. The within-group number and the between-group number are different quantities
 
-This is the finding in the section that travels furthest outside it.
+This is the finding here that travels furthest outside the domain.
 
 Lee & Lee (2024), *Language Learning & Technology* 28(2):134–162, meta-analysed
-17 projects, N = 8,282, and did what the other syntheses here do not: computed
-both estimates on overlapping samples and printed both forest plots. Overall,
-**d = 1.18 within-group and d = 0.39 against business as usual**. Seven studies
-sit in both pools. `MEASURED-META` (Figures 4 and 5, read directly).
+17 projects, N = 8,282, computing both estimates on overlapping samples and
+printing both forest plots. Overall, **d = 1.18 within-group and d = 0.39 against
+business as usual**, with seven studies in both pools. `MEASURED-META`
+(Figures 4 and 5, read directly).
 
 | Study | Within-group d (pre→post) | Between-group d (vs BAU) |
 |---|---|---|
@@ -165,9 +165,9 @@ those two is a null, and the third reports none.
 
 Bibauw, Van den Noortgate, François & Desmet (2022), *LL&T* 26(1), meta-analysed
 dialogue systems for language learning: 17 publications, 100 effect sizes, 803
-participants, overall **d = 0.58 [0.35, 0.82]** on measured language outcomes,
-motivation studies excluded. Their cross-modality breakdown is the only
-quantitative transfer test the field has:
+participants, **d = 0.58 [0.35, 0.82]** on measured language outcomes with
+motivation studies excluded. Their cross-modality breakdown is the field's only
+quantitative transfer test:
 
 | Practice → outcome | d | 95% CI |
 |---|---|---|
@@ -208,10 +208,10 @@ that ships a scheduler and calls vocabulary solved has built the d = 0.10 half.
 ## 5. What a machine can hear, and why better recognition makes it worse
 
 Pearson's copy for Versant says its scores are *"virtually indistinguishable from
-expert human scoring,"* on a machine–human correlation of **r = 0.97**. That
-figure is `VENDOR`: a vendor technical report, whole-test Overall against a
-purpose-built human criterion, n = 143, where the pronunciation subscore is 0.88
-and the correlation with an ILR speaking interview 0.75 on n = 51.
+expert human scoring,"* on a machine–human correlation of **r = 0.97**. `VENDOR`:
+a vendor technical report, whole-test Overall against a purpose-built human
+criterion, n = 143, where the pronunciation subscore is 0.88 and the correlation
+with an ILR speaking interview 0.75 on n = 51.
 
 The peer-reviewed comparison is ETS's SpeechRater (Zechner, Higgins & Xi, SLaTE
 2007): machine–human **r = 0.61** on a single item and **0.68** on a six-item
@@ -265,7 +265,7 @@ thing being assessed.
 
 The inversion is free to try. Run the learner's speech through a small,
 deliberately accent-brittle recogniser and treat its failures as an
-intelligibility signal, which is closer to what a real listener supplies than any
+intelligibility signal, closer to what a real listener supplies than any
 similarity-to-native score. `SPEC`, untested, and cheap to test.
 
 ---
@@ -317,11 +317,10 @@ the median gives about 69 hours.
 
 The company's own later measurement disagrees with its famous one. Jiang,
 Rollinson, Plonsky, Gustafson & Pajak (2021), *Foreign Language Annals* 54(4),
-peer-reviewed with four of five authors employed by Duolingo, reports median time
-to finish the beginning content at **112 hours**, and the follow-up research
-report through Unit 7 at **203 hours**. `VENDOR`. Same company, same product, its
-own instrumentation, and the hours figure has grown six-fold while the marketing
-number has not moved.
+peer-reviewed with four of five authors employed by Duolingo, puts median time to
+finish the beginning content at **112 hours**, and the follow-up report through
+Unit 7 at **203 hours**. `VENDOR`. Same product, its own instrumentation, and the
+hours figure has grown six-fold while the marketing number has not moved.
 
 The FY2025 Form 10-K says learners completing five sections *"achieved
 proficiency comparable to five university semesters"* and that
@@ -357,8 +356,8 @@ Graham & Busse (2024), *Learning and Instruction* 93:101961, across 200
 comparisons, report surface-level feedback improving surface outcomes at
 g = 0.58 while moving **foreign-language learners' deep-level outcomes to
 g = −0.23**. `MEASURED-META`. Grammar feedback measurably degrades content and
-organisation for FL writers, and a study measuring only accuracy cannot see the
-trade it just made.
+organisation for FL writers, and a study measuring only accuracy cannot see that
+trade.
 
 And one a survey counting effect sizes will read as supportive. Rachels &
 Rockinson-Szapkiw (2018), *CALL* 31(1–2), third and fourth graders,
@@ -371,7 +370,7 @@ class. `OBSERVED` (non-equivalent control group). From the published abstract:
 
 Those two sentences are adjacent. A non-significant difference in an underpowered
 quasi-experiment is reported as a demonstration of usefulness, with no
-equivalence margin stated and no design able to support one.
+equivalence margin and no design able to support one.
 
 Two citations circulate here that do not exist in OpenAlex or Crossref: a Mollica
 & Piantadosi commentary on Hartshorne et al., and a "Zhang & Zou" pronunciation
@@ -382,11 +381,11 @@ checked.
 
 ## 9. Whether language is the easy win
 
-A frontier model already converses in a dozen languages, corrects a wrong
-sentence, adapts register on request and never tires of the eightieth attempt at
-one vowel, with none of the machinery this survey specifies (§16). So: is
-language the easiest domain to build for, or the one where a pedagogical system
-has the least to add over plain ChatGPT?
+A frontier model converses in a dozen languages, corrects a wrong sentence,
+adapts register on request and never tires of the eightieth attempt at one vowel,
+with none of the machinery this survey specifies (§16). So: is language the
+easiest domain to build for, or the one where a pedagogical system has least to
+add over plain ChatGPT?
 
 The evidence says the second, and the survey already had the result. Fütterer et
 al. (2026), n = 371, Grades 7–9, ran two scaffolded generative-AI conditions
@@ -432,10 +431,10 @@ the binding constraint on anything.
   reference profiles (arXiv:2606.21981). `MEASURED-BENCH`.
 - **Run the transfer trial.** Three arms, individually randomised; primary
   outcome four weeks after the last session, in an unscripted conversation with a
-  human the participant has not met, scored for comprehensibility by two raters
-  blind to condition. Plan against Lee & Lee's control-adjusted 0.39 and §2.1's
-  null, so d = 0.35: 129 per arm, n ≈ 465 with attrition, or 310 for the two-arm
-  version a builder actually faces.
+  human the participant has not met, scored for comprehensibility by two blinded
+  raters. Plan against Lee & Lee's control-adjusted 0.39 and §2.1's null, so
+  d = 0.35: 129 per arm, n ≈ 465 with attrition, or 310 for the two-arm version a
+  builder actually faces.
 
 The organising constraint of this project is a child who can hold a conversation
 about photosynthesis and cannot pass the worksheet about it. She is not a

@@ -26,14 +26,14 @@ by *what was being sequenced*.
 
 `MEASURED-META`
 
-The third row is curriculum sequencing: the cluster the authors describe as "closest
-to traditional curriculum sequencing," where "a network specifying the relationship
-between different content areas or KCs (such as a prerequisite graph) must either be
-prespecified or automatically inferred from data." **Zero of eight beat their
-baselines.** The six clean nulls include Clement et al. (2015) with 133 seven- and
-eight-year-olds on arithmetic, Doroudi et al. (2017) with 69 fourth and fifth graders
-on fractions, and the authors' own Appendix B study with 100 more children — none of
-which shows in a headline where over half the comparisons favoured the induced policy.
+The third row is curriculum sequencing: the cluster where "a network specifying the
+relationship between different content areas or KCs (such as a prerequisite graph)
+must either be prespecified or automatically inferred from data." **Zero of eight beat
+their baselines.** The six clean nulls include Clement et al. (2015) with 133 seven-
+and eight-year-olds on arithmetic, Doroudi et al. (2017) with 69 fourth and fifth
+graders on fractions, and the authors' own Appendix B study with 100 more children —
+none of which shows in a headline where over half the comparisons favoured the induced
+policy.
 
 The two clusters that did win are decisions about *when to bring an item back*
 (paired-associate scheduling, the spacing literature §08 owns) and *what kind of
@@ -61,10 +61,9 @@ project's research corpus; `curriculum sequencing` twice and `knowledge space` n
 
 For the eleven-year-old this survey is organised around, the gap has a face. She can
 hold a conversation about photosynthesis and cannot pass a worksheet about it. A
-system that verifies the transitive closure before teaching the target will find gaps
-in it — her mathematics is behind, her writing fluency is behind — and route her away
-from the one topic she was ready to think about. The gate is the expensive part of the
-architecture and the part with no evidence behind it.
+system that verifies the transitive closure first will find gaps in it and route her
+away from the one topic she was ready to think about. The gate is the expensive part
+of the architecture and the part with no evidence behind it.
 
 ---
 
@@ -90,11 +89,11 @@ The boundary conditions deserve the same prominence as the number. All three
 skip-level studies come from one laboratory, sharing instruments, trajectory
 definitions and analytic conventions; two share four of five authors. The domains are
 early number and early shape, where developmental order is unusually constrained by
-what the arithmetic itself permits. The instruction is one-to-one. And the 2019 *AERJ*
+what the arithmetic itself permits, and the instruction is one-to-one. The 2019 *AERJ*
 companion on shape composition, which found the trajectory group learned significantly
-more, found it **mainly on near-transfer items**. A fourth study in the same series
-(Clements et al. 2020, *ZDM*) is cited constantly and has **n = 25** across both arms;
-it should never appear without that number. `INFERENCE`
+more, found it **mainly on near-transfer items**. A fourth study in the series
+(Clements et al. 2020, *ZDM*) is cited constantly and has **n = 25**; it should never
+appear without that number. `INFERENCE`
 
 Nothing here establishes that a prerequisite graph over secondary chemistry, or
 programming, or a second language, has the same standing. Nobody has run the
@@ -134,8 +133,8 @@ every classification the system then makes. `INFERENCE`
 
 ALEKS is the commercial instantiation of knowledge space theory (Doignon &
 Falmagne). Its own research page describes the mechanism, a knowledge state assessed
-"after the student has answered only 20–25 questions," and cites no efficacy study and
-no effect size. `VENDOR` Two meta-analyses reach the same place. Fang, Ren, Hu &
+"after the student has answered only 20–25 questions," and cites no efficacy study.
+`VENDOR` Two meta-analyses reach the same place. Fang, Ren, Hu &
 Graesser (2019), *Educational Psychology*, 15 studies and 24 independent samples:
 ALEKS was as good as, but not better than, traditional classroom teaching. Sun,
 Else-Quest, Hodges, French & Dowling (2021), 33 studies, 56 independent effect sizes,
@@ -146,10 +145,9 @@ Two flags travel with those numbers. The ERIC record prints a pooled interval th
 not symmetric about the point estimate and could not be checked against the article,
 so the point estimates are citable and the interval is not. And **the two
 meta-analyses are not independent**: Sun et al.'s window subsumes Fang et al.'s and
-the study pools certainly overlap. What survives is that no synthesis of the flagship
+the study pools overlap. What survives is that no synthesis of the flagship
 prerequisite-structured system finds a general advantage, and that its one positive
-moderator is a dosage result — adding a supplementary practice system to teaching
-beats teaching alone.
+moderator is a dosage result.
 
 §08 carries the strongest datum from inside the same system: across 32.9 million
 randomised topic sequences in production, raising the mastery threshold cost +29% time
@@ -164,13 +162,11 @@ anything either.
 Slavin's 1987 synthesis (*RER* 57(2):175–213) is where the two-sigma provenance
 lives. The claims it was testing ran from Kulik et al.'s 0.52 and 0.54 through
 Walberg's 0.81 to Bloom's own 1.00 "when mastery learning procedures are done
-systematically and well," with two sigma as the prediction.
-
-Slavin then restricted to practical applications in real schools running at least four
-weeks, with equal time for treatment and control, on standardised measures. Seven
-studies qualified. **Median effect size +0.04.** The single non-trivial result (+0.25)
-came from a study where teachers self-selected into conditions, and was not significant
-at the class level. `MEASURED-META`
+systematically and well," with two sigma as the prediction. Slavin then restricted to
+practical applications in real schools running at least four weeks, with equal time
+for treatment and control, on standardised measures. Seven studies qualified.
+**Median effect size +0.04.** The single non-trivial result (+0.25) came from a study
+where teachers self-selected into conditions. `MEASURED-META`
 
 Two design facts from his methods section rarely survive the citation trail.
 **Anania's study — one of the Chicago dissertations Bloom's essay rests on — ran three
@@ -217,18 +213,17 @@ and year.
 | Year 2 (2016–17) | −0.113 | 0.087 |
 | Year 3 (2017–18) | −0.170 | 0.087 |
 
-All three are statistically non-significant, and the unadjusted estimates trace the
-same V. `MEASURED-BENCH` (quasi-experimental)
+All three are non-significant, and the unadjusted estimates trace the same V.
+`MEASURED-BENCH` (quasi-experimental)
 
 This is a three-year funded deployment of the architecture a "school in a box" would
-build, and not a laboratory manipulation. And the point estimates drift *downward*
-across the three years, the opposite of the implementation-maturity curve every
-adaptive-sequencing vendor forecasts.
+build, and the point estimates drift *downward* across the three years, the opposite
+of the implementation-maturity curve every adaptive-sequencing vendor forecasts.
 
 A second null in the same family: KinderTEK, an iPad mathematics program with
-individualised progression, cluster-randomised across 70 kindergarten classrooms,
-**1,368 students**, with no significant differences on early number fluency, broad
-mathematics achievement, or proximal math content (ERIC ED679597). `MEASURED-RCT`
+individualised progression, cluster-randomised across 70 kindergarten classrooms and
+**1,368 students**, found no significant differences on any outcome (ERIC ED679597).
+`MEASURED-RCT`
 
 ---
 
@@ -245,11 +240,10 @@ effects "decreased through fourth grade but reemerged at fifth grade." The numbe
 above belong to the conference paper. `MEASURED-RCT`
 
 Kang, Duncan, Clements, Sarama & Bailey (2019), *JEP*, decomposed that decay on the
-same trial. Treated children did forget more in the following year than controls —
-but forgetting accounted for **only about one quarter of the fade-out**, and an
-offsetting transfer effect was small and non-significant, worth roughly one tenth of
-the end-of-program treatment effect. **Most of the fade was the control group catching
-up.** `MEASURED-RCT`
+same trial. Treated children did forget more in the following year than controls, but
+forgetting accounted for **only about one quarter of the fade-out**, and an offsetting
+transfer effect was small and non-significant. **Most of the fade was the control
+group catching up.** `MEASURED-RCT`
 
 That distinction changes what a durability claim means. If the majority of the decay
 is convergence, an early tutoring advantage is largely an *acceleration*, and the
@@ -257,10 +251,10 @@ question becomes whether acceleration is worth anything by itself. It also means
 "did the learner retain it," measured against a control group, answers a different
 question from "does the learner still have it." §09 documents that almost nobody in
 AI tutoring measures retention at all; this is why measuring it against a control
-would still not settle the promise. The subgroup pattern compounds it: durability was
-greatest where the sustaining environment was strongest, with higher-SES children in
-the no-follow-through arm reaching 0.6–0.7 SD by fifth grade while lower-SES effects
-held only through kindergarten. `OBSERVED`
+would still not settle the promise. Durability was also greatest where the sustaining
+environment was strongest: higher-SES children in the no-follow-through arm reached
+0.6–0.7 SD by fifth grade, while lower-SES effects held only through kindergarten.
+`OBSERVED`
 
 Absolute retention is the other question, and Bahrick's permastore programme is where
 it lives. His summary of the fifty-year Spanish study, restated in Bahrick & Phelps
@@ -298,9 +292,8 @@ The genuinely independent arrival is Shea & Morgan (1979), *JEP:HLM* 5(2):179–
 barrier-knockdown task in a motor-behaviour laboratory descending from Battig (1966),
 with no methodological contact with verbal spacing research. Blocked practice won
 during acquisition; random practice won at 10-minute and 10-day retention, whether the
-retention test was itself blocked or random. `MEASURED-RCT` One manipulation,
-contextual interference, reproduces the acquisition–retention reversal in a discipline
-that did not borrow it.
+retention test was itself blocked or random. `MEASURED-RCT` Contextual interference
+reproduces the acquisition–retention reversal in a discipline that did not borrow it.
 
 Whether the rest reproduces is a separate question. Czyż, Wójcik, Solarská & Kiper
 (2024), *Scientific Reports* 14, meta-analysed **54 studies** on delayed retention
