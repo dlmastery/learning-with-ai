@@ -27,15 +27,17 @@ PARTS = [
   "a division of labour, and a selection policy — each constrained by a "
   "measurement rather than a preference.",
   ["00-north-star-jarvis", "30-the-compression", "32-pedagogy-has-no-pytest", "38-enumerate-dont-judge", "03-the-vision", "10-the-village",
-   "22-the-one-interaction-that-survived", "11-the-archivist"]),
+   "22-the-one-interaction-that-survived", "11-the-archivist",
+   "45-sequencing-and-durability"]),
 
  ("III", "The mechanisms",
-  "Eight techniques, each with a measured effect and a specified failure mode. "
+  "The techniques, each with a measured effect and a specified failure mode. "
   "These are the parts that do the teaching.",
   ["02-teach-to-learn", "05-the-explanation-is-the-work",
    "25-the-ladder-of-explanation", "39-what-the-explainers-invented", "29-explaining-hard-things", "35-the-explanation-atlas",
    "08-nobody-needs-a-better-scheduler",
-   "26-beyond-the-tutor", "06-what-the-object-must-refuse", "17-showing"]),
+   "26-beyond-the-tutor", "06-what-the-object-must-refuse", "17-showing",
+   "40-the-relationship", "43-reading-and-writing", "44-second-language"]),
 
  ("IV", "Correctness",
   "How a tutor can be wrong safely, and how a learner's work can be measured "
@@ -45,14 +47,17 @@ PARTS = [
  ("V", "Who it is for",
   "The learners the evidence was not collected on, the learners it cannot "
   "reach, and the legal floor that turns out to be a design specification.",
-  ["04-the-empty-chair", "31-the-coordinators-week", "07-who-is-not-in-the-room", "15-what-we-owe-children"]),
+  ["04-the-empty-chair", "31-the-coordinators-week", "07-who-is-not-in-the-room",
+   "15-what-we-owe-children", "42-anxiety-and-self-concept",
+   "46-groups-and-the-lifespan"]),
 
  ("VI", "The field, and what it has already built",
   "The frontier's actual capabilities, the artifacts other people have shipped, "
   "the pedagogical canon that settled most of this decades ago, and the "
   "question of whether anyone wants to continue.",
   ["16-the-substrate", "18-the-textbook-that-writes-itself", "19-the-canon",
-   "27-the-market", "37-the-business-of-it", "36-the-two-hour-school", "28-prior-art", "14-motivation"]),
+   "27-the-market", "37-the-business-of-it", "41-the-exam", "36-the-two-hour-school",
+   "28-prior-art", "14-motivation"]),
 
  ("VII", "What we do not know",
   "The catalogued gaps, the uncatalogued ones, what we would build with none of the "

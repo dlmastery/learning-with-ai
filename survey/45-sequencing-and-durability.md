@@ -28,21 +28,21 @@ sequenced*.
 
 `MEASURED-META`
 
-The third row is curriculum sequencing. The authors describe it as the cluster
-"closest to traditional curriculum sequencing, or ordering various content areas for
-a given topic," where "a network specifying the relationship between different
-content areas or KCs (such as a prerequisite graph) must either be prespecified or
-automatically inferred from data." **Zero of eight beat their baselines.** The six
-clean nulls include Clement et al. (2015) with 133 seven- and eight-year-olds on
-arithmetic, Doroudi et al. (2017) with 69 fourth and fifth graders on fractions, and
-the authors' own Appendix B study with 100 more children — none of which shows in a
-headline where over half the comparisons favoured the induced policy.
+The third row is curriculum sequencing: the cluster the authors describe as "closest
+to traditional curriculum sequencing, or ordering various content areas for a given
+topic," where "a network specifying the relationship between different content areas
+or KCs (such as a prerequisite graph) must either be prespecified or automatically
+inferred from data." **Zero of eight beat their baselines.** The six clean nulls
+include Clement et al. (2015) with 133 seven- and eight-year-olds on arithmetic,
+Doroudi et al. (2017) with 69 fourth and fifth graders on fractions, and the authors'
+own Appendix B study with 100 more children — none of which shows in a headline where
+over half the comparisons favoured the induced policy.
 
 The two clusters that did win are decisions about *when to bring an item back*
 (paired-associate scheduling, the spacing literature §08 owns) and *what kind of
-activity to give next for fixed content* (worked example against problem, which is
-§22's territory). Both are decisions about time and modality inside a topic that has
-already been chosen. Neither is a decision about which topic comes next.
+activity to give next for fixed content* (worked example against problem, §22's
+territory). Both concern time and modality inside a topic that has already been
+chosen. Neither is a decision about which topic comes next.
 
 ---
 
@@ -228,15 +228,12 @@ z-scored within grade and year.
 | Year 3 (2017–18) | −0.170 | 0.087 |
 
 All three are statistically non-significant, and the unadjusted estimates trace the
-same V. The report's own summary: "the results of the CITS models were statistically
-non-significant in each of the three implementation years." `MEASURED-BENCH`
-(quasi-experimental)
+same V. `MEASURED-BENCH` (quasi-experimental)
 
-Two things make this the right null to give space to. It is a three-year funded
-deployment of the architecture a "school in a box" would build, and not a laboratory
-manipulation. And the point estimates drift *downward* across the three years, the
-opposite of the implementation-maturity curve every adaptive-sequencing vendor
-forecasts.
+This is a three-year funded deployment of the architecture a "school in a box" would
+build, and not a laboratory manipulation. And the point estimates drift *downward*
+across the three years, the opposite of the implementation-maturity curve every
+adaptive-sequencing vendor forecasts.
 
 A second null in the same family: KinderTEK, an iPad mathematics program with
 individualised progression, cluster-randomised across 70 kindergarten classrooms,
@@ -252,11 +249,10 @@ best-documented decay. Clements, Sarama, Layzer, Unlu & Wolfe (2016), SREE confe
 paper ERIC ED567218, gives the trajectory in standard deviations: **0.86** (with
 follow-through) and **0.75** (without) at the end of pre-K, falling through
 kindergarten and grade 1, **not distinguishable from zero at grades 3 and 4**, then
-**0.26 and 0.21, both significant, at the end of grade 5.** The published paper of
-record for the pattern is Clements, Sarama, Layzer & Unlu (2023), *JRME*, whose
+**0.26 and 0.21, both significant, at the end of grade 5.** The citation of record for
+the pattern is the published Clements, Sarama, Layzer & Unlu (2023), *JRME*, whose
 abstract states that early effects "decreased through fourth grade but reemerged at
-fifth grade"; the numeric trajectory above belongs to the conference paper and should
-be cited as such. `MEASURED-RCT`
+fifth grade"; the numbers above belong to the conference paper. `MEASURED-RCT`
 
 Kang, Duncan, Clements, Sarama & Bailey (2019), *JEP*, decomposed that decay on the
 same trial. Treated children did forget more in the following year than controls —
@@ -366,28 +362,25 @@ default **off** and are earned by measurement.
 
 ## 9. Numbers this section refuses to carry
 
-The source report marks several things untraceable in its retrieval session, and they
-stay untraceable here.
+The source report marks several things untraceable, and they stay untraceable here.
 
 - **"Only 10% of training transfers to the job."** Two decades of edtech decks rest on
   it. It traces to Georgenson (1982), where it was, in the words of the paper that
   chased it down, a **"conversational gambit"** and never an estimate (Farrington 2011,
-  *PIQ*, ERIC EJ921207). No study stands behind it and it should not be cited.
+  *PIQ*, ERIC EJ921207). No study stands behind it.
 - **Rupp & Templin's (2007) misspecification numbers**, the quantitative form of the
   risk in letting a model emit a graph.
 - **Pooled estimates from Lee & Genovese (1988, 1989) and Donovan & Radosevich
   (1999)** on massed against distributed motor practice.
 - **The pooled interval in Sun et al. (2021).** The point estimate is safe.
 - **Which Building Blocks persistence figure is right.** The 2013 *AERJ* third-year
-  effects (0.51 / 0.28) do not reconcile with the same team's long-term analysis.
-  Anyone citing "the Building Blocks persistence effect" must say which paper and
-  which model.
+  effects (0.51 / 0.28) do not reconcile with the same team's long-term analysis, so
+  anyone citing that persistence effect must say which paper and which model.
 - **Transfer from instruction to job performance outside health professions
-  education.** The best available evidence is Vermylen et al. (2025), where
-  competency-based simulation beats non-competency-based simulation on skill outcomes
-  at a large effect while "outcomes are favorable, but small, for behaviors in practice
-  and patient effects." The further you get from the measurement, the smaller the
-  effect becomes.
+  education.** The best available evidence is Vermylen et al. (2025): competency-based
+  simulation beats non-competency-based simulation on skill outcomes at a large effect,
+  while "outcomes are favorable, but small, for behaviors in practice and patient
+  effects."
 
 ---
 

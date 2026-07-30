@@ -123,12 +123,10 @@ computes it for nothing. This is the one place where a group mechanism is
 **(b) Explaining and being explained to, partly recoverable.** This survey already
 records `g = 0.56` for human learning-by-teaching and `g = 0.43` for peer tutoring's
 tutor gain (§02). Marion & Thorley (2016), *Psychological Bulletin*, 75 effect sizes
-from 64 studies, supply the mechanism for one part: collaborative inhibition is
-robust, so a group recalls less than the pooled non-redundant recall of the same
-number of individuals alone, while a separate 27-effect analysis found that
-*"collaborative remembering tends to benefit later individual retrieval"* with
-re-exposure to the study material partly responsible. Hearing the material again in
-someone else's order does not require the other person to be a person.
+from 64 studies, add the part with a known mechanism: *"collaborative remembering
+tends to benefit later individual retrieval,"* with re-exposure to the study material
+partly responsible. Hearing the material again in someone else's order does not
+require the other person to be a person.
 
 **(c) Being disagreed with by someone genuinely uncertain, which AI cannot supply.**
 Smith et al. (2009), *Science*, in undergraduate genetics, followed peer discussion
@@ -194,13 +192,12 @@ distributes the work. Magnitude is not in the abstract and the article is closed
 
 This is a good null because it is not a failure to detect an effect. It found an
 effect with the wrong sign, in the condition Slavin predicted would produce it, in
-the setting where group projects are most heavily used. Alongside it, Murphy et al.
-(2009), *Journal of Educational Psychology*, meta-analysed classroom discussion
-approaches: they reliably increased student talk, reduced teacher talk and improved
-text comprehension, while *"few approaches to discussion were effective at increasing
+the setting where group projects are most heavily used. Murphy et al. (2009),
+*Journal of Educational Psychology*, point the same way from a much larger base:
+classroom discussion approaches reliably increased student talk and improved text
+comprehension, while *"few approaches to discussion were effective at increasing
 students' literal or inferential comprehension and critical thinking and
-reasoning."* `MEASURED-META`. Discussion changes who is talking; whether it changes
-what anyone understands depends on the approach, and for most approaches it did not.
+reasoning."* `MEASURED-META`.
 
 ---
 
@@ -245,28 +242,25 @@ and background television at `r = −0.10`. `MEASURED-META`, observational.
 ### The product decision
 
 **Under three, ship nothing child-facing.** WHO (2019) recommends no screen time for
-infants under 1 and for 1-year-olds, and no more than one hour for ages 2 and 3–4.
+infants under 1 and for 1-year-olds, and no more than one hour at ages 2 and 3–4.
 DeLoache et al. (2010) randomised a month of at-home baby-media DVD viewing in
-12–18-month-olds: *"children who viewed the DVD did not learn any more words,"* with
-the highest learning in a no-video condition where parents taught the same words
-during everyday activities. And the intervention family that works moves the adult:
-Dowdall et al. (2020), 19 RCTs, `N = 2,594`, caregiver book-sharing competence
-**`d = 1.01`** against child expressive language `d = 0.41`, while Noble et al. (2019)
-put shared reading at **`ḡ = 0.021, p = .783`** against active controls, confirmed by
-their own `n = 150` RCT. There is no gap in that picture for a child-facing tutor to
-fill.
+12–18-month-olds: *"children who viewed the DVD did not learn any more words."* And
+the intervention family that does work moves the adult: Dowdall et al. (2020), 19
+RCTs, `N = 2,594`, caregiver book-sharing competence **`d = 1.01`** against child
+expressive language `d = 0.41`. There is no gap in that picture for a child-facing
+tutor to fill.
 
 **Three to five, ship one shape.** Xu, Aubele, Vigil, Bustamante, Kim & Warschauer
 (2022), *Child Development*: **117 children aged 3–6**, randomly assigned in a 2×2
 crossing dialogic against non-dialogic reading with a conversational agent against a
-human partner. Dialogic reading raised story comprehension — event memorisation
-`β = 0.53, p < .001`, inference making `β = 0.38, p < .05`, sequence understanding
-`β = 0.34, p < .05` — and *"the interaction model suggested that dialogic reading
+human partner. Dialogic reading raised story comprehension (event memorisation
+`β = 0.53, p < .001`; inference making `β = 0.38, p < .05`; sequence understanding
+`β = 0.34, p < .05`), and *"the interaction model suggested that dialogic reading
 with an agent induced a comparable level of positive effect on children's story
 comprehension as an adult reader (β = 0.22, p = .35)."* `MEASURED-RCT`. Carry the
 caution the authors state themselves: a non-significant interaction at `n = 117` is
-an underpowered equivalence claim and not demonstrated equivalence, and the sample
-had *"homogeneous high language proficiency."*
+an underpowered equivalence claim, and the sample had *"homogeneous high language
+proficiency."*
 
 Written as the product decision it is: for ages three to five the system's user is
 the caregiver and the child is the beneficiary; the surface is a dialogic reading
@@ -286,13 +280,13 @@ of andragogical against pedagogical method, 15 of them dissertations. Of the **1
 examined achievement, 10 found no significant difference and 2 found the traditional
 group performed better.** Two variables did favour andragogy: application of the
 learned material, and attendance. `MEASURED-META`, a vote-count review with no
-pooling. The most recent randomised test agrees: Bradley (2010) randomised 52
-non-profit staff to andragogical or pedagogical online grant-writing modules and
-analysed 33, finding no significant differences in reaction, achievement growth,
-grant-writing performance or completion. `MEASURED-RCT`, null on every outcome. And
-`OBSERVED — absence`: **no meta-analysis of andragogy exists**, ERIC returning zero
-records for `"andragog*" AND "meta-analysis"`, with the one item calling itself a
-meta-analysis being a narrative review carrying no `k` and no pooled estimate.
+pooling. Bradley (2010) randomised 52 non-profit staff to andragogical or pedagogical
+online grant-writing modules and analysed 33, finding no significant differences in
+reaction, achievement growth, grant-writing performance or completion.
+`MEASURED-RCT`, null on every outcome. And `OBSERVED — absence`: **no meta-analysis
+of andragogy exists**, ERIC returning zero records for `"andragog*" AND
+"meta-analysis"`, with the one item calling itself a meta-analysis being a narrative
+review carrying no `k` and no pooled estimate.
 
 What survives is not a learning mechanism. It is two behavioural facts, that adults
 who chose to be there apply the material and attend, plus one design constraint, that

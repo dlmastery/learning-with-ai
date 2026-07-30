@@ -104,7 +104,17 @@ itself a significant moderator** of the expertise-reversal effect (Tetzlaff et a
 2025). That makes the probe the largest tunable parameter in the system.
 And the selection is per prerequisite: compute the mastery vector over the concept's
 transitive prerequisite closure and enter at the weakest link, laddering that
-prerequisite separately rather than dragging the whole explanation down.
+prerequisite separately instead of dragging the whole explanation down.
+
+> **That last move is a `SPEC` with no measured warrant, and §45 is where it gets
+> tested.** Every instructional-sequencing experiment since the 1960s, sorted by
+> what was sequenced, splits three ways: scheduling within a set of paired
+> associates wins 11 of 14, choosing the activity type wins 8 of 10, and ordering
+> interdependent content over a prerequisite graph wins **0 of 8**. The two that
+> work are decisions inside a topic. The between-topic decision this paragraph
+> depends on has never been shown to pay. We keep the specification because the
+> entry-rung probe it sits on is measured, and we flag the closure step as the
+> part that is not.
 
 ---
 

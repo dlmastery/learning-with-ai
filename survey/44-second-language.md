@@ -121,13 +121,13 @@ mispronunciation at all. §5 shows why that is not a quibble.
 Zhang, Liao, Li & Luo (2026), *Journal of Educational Computing Research*
 64(1):59–91. N = 436, four arms, twelve weeks, ChatGPT role-play against machine
 translation, automatic summarisation and traditional instruction. Behind Sage,
-403 to every retrieval route, and OpenAlex confirms no repository copy exists.
-The abstract reports *"adaptability (M = 85.50, Δ + 40.25), accuracy
-(M = 84.24, Δ + 43.93), and fluency (M = 85.04, Δ + 42.54; all p < 0.001)"* —
-the treatment arm's post-test means and its own pre-post change, with no
-control-group value, no standard deviation, no standardised effect size, no
-interval and no delayed post-test. A four-arm design was built to produce a
-between-group comparison and the public record contains a within-group one.
+403 to every retrieval route, with no repository copy in OpenAlex. The abstract
+reports *"adaptability (M = 85.50, Δ + 40.25), accuracy (M = 84.24, Δ + 43.93),
+and fluency (M = 85.04, Δ + 42.54; all p < 0.001)"* — the treatment arm's
+post-test means and its own pre-post change, with no control-group value, no SD,
+no standardised effect size, no interval and no delayed post-test. A four-arm
+design was built to produce a between-group comparison and the public record
+carries a within-group one.
 
 ---
 
@@ -328,15 +328,14 @@ cost.
 
 The 34-hour claim — Duolingo teaching in 34 hours what a university semester
 teaches — comes from Vesselinov & Grego (2012), a self-published, never
-peer-reviewed report with no control group. `VENDOR`. It is a within-subject
-pre/post design; the "one university semester" comparison is against the WebCAPE
-placement cut-off of 270 points, a scoring threshold and not a cohort of
-students; and 34 is arithmetic, 270 ÷ 8.1 points-per-hour extrapolated linearly
-from zero. The funnel ran 727 banner-ad viewers to **88 analysed**, mean actual
-study time 22 hours, 16% (n = 14) scoring the same or lower at post-test. Krashen
-(2014) added the decisive point: the median gain rate was 3.9 points per hour
-against a mean of 8.1, and the same arithmetic on the median gives about 69
-hours.
+peer-reviewed, uncontrolled within-subject pre/post study. `VENDOR`. The "one
+university semester" comparison is against the WebCAPE placement cut-off of 270
+points, a scoring threshold and not a cohort of students, and 34 is arithmetic:
+270 ÷ 8.1 points-per-hour, extrapolated linearly from zero. Of 196 participants
+sampled, **88 were analysed**, mean actual study time 22 hours, 16% (n = 14)
+scoring the same or lower at post-test. Krashen (2014) added the decisive point:
+the median gain rate was 3.9 points per hour against a mean of 8.1, and the same
+arithmetic on the median gives about 69 hours.
 
 The company's own later measurement disagrees with its famous one. Jiang,
 Rollinson, Plonsky, Gustafson & Pajak (2021), *Foreign Language Annals* 54(4),
@@ -412,10 +411,9 @@ has found a reference list nobody checked.
 
 A frontier model already converses in a dozen languages, corrects a wrong
 sentence, adapts register on request and never tires of the eightieth attempt at
-one vowel — with none of the machinery this survey specifies. §16 carries what
-the substrate supplies. The question that follows is whether that makes language
-the easiest domain to build for or the one where a pedagogical system has the
-least to add over plain ChatGPT.
+one vowel, with none of the machinery this survey specifies (§16). So: is
+language the easiest domain to build for, or the one where a pedagogical system
+has the least to add over plain ChatGPT?
 
 The evidence says the second, and the survey already had the result. Fütterer et
 al. (2026), n = 371, Grades 7–9, ran two scaffolded generative-AI conditions
