@@ -613,18 +613,17 @@ diagnostic accuracy.
 
 ### 5.3 Willingness to communicate, and the transfer nobody has measured
 
-Anxiety in L2 learning is real and it is measured. Teimouri, Goetze & Plonsky (2019),
-*Studies in Second Language Acquisition* 41(2), meta-analysed 97 reports, 105 independent
-samples, **N = 19,933**, 23 countries, 216 correlations: mean **r = −0.36** between L2
-anxiety and language achievement, moderated by achievement-measure type, educational
-level, target language and anxiety type. `MEASURED-META`. That is the largest and best
-estimate in the area and it is correlational, so it does not establish direction.
+Anxiety in L2 learning is real and measured. Teimouri, Goetze & Plonsky (2019), *Studies in
+Second Language Acquisition* 41(2), meta-analysed 97 reports, 105 independent samples,
+**N = 19,933**, 23 countries, 216 correlations: mean **r = −0.36** between L2 anxiety and
+language achievement. `MEASURED-META`. It is the best estimate in the area and it is
+correlational, so it establishes no direction.
 
 The chatbot-and-WTC literature is where marketing and measurement diverge. Waluyo &
-Pratiwi (2025), *JALT CALL Journal* 21(2), synthesised the Asian EFL evidence across
-Iran, South Korea, Taiwan, China, Saudi Arabia, Egypt, Thailand and Vietnam and reported
-that chatbot interaction enhances willingness to communicate, communicative confidence
-and motivation by reducing speaking anxiety. It also reported, in the same abstract:
+Pratiwi (2025), *JALT CALL Journal* 21(2), synthesised the Asian EFL evidence across eight
+countries and reported that chatbot interaction enhances willingness to communicate,
+communicative confidence and motivation by reducing speaking anxiety. It also reported, in
+the same abstract:
 
 > *"[E]vidence on long-term transfer to real-world communication remains scarce."*
 
@@ -882,13 +881,13 @@ post-tests, analysed by ANCOVA. From the abstract:
 > students who were taught with traditional face-to-face instruction. **This demonstrates
 > that Duolingo® is a useful tool for teaching Spanish to elementary students.**"*
 
-The final sentence follows the previous one in the published abstract. A non-significant
-difference in an underpowered quasi-experiment is being reported as a demonstration of
-usefulness. Nothing here is fraudulent; equivalence is a defensible thing to want to
-claim. But the study was not designed or powered as an equivalence trial, no equivalence
-margin is specified, and the inference from "we did not detect a difference" to "it
-works" is the single most common error in this literature. It is recorded here because a
-survey that only counts effect sizes will read this paper as supportive.
+Those two sentences are adjacent in the published abstract. A non-significant difference in
+an underpowered quasi-experiment is being reported as a demonstration of usefulness.
+Equivalence is a defensible thing to want to claim, but the study was not designed or
+powered as an equivalence trial and specifies no equivalence margin. The move from "we did
+not detect a difference" to "it works" is the most common error in this literature, and it
+is recorded here because a survey that only counts effect sizes will read this paper as
+supportive.
 
 ### 8.3 The AI-versus-teacher null inside a positive paper
 

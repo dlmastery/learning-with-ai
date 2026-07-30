@@ -880,9 +880,9 @@ computable from interaction logs and the corpus already logs the necessary field
 help-seeking analysis.
 
 **A defensible reference-class policy.** The BFLPE is β = −0.28 pooled over 1.28 million
-students and negative in all 26 countries tested. A personalised system that suppresses cohort
-comparison is acting on the best-evidenced construct in this report. That is now a citable
-design commitment rather than a preference.
+students and negative in all 26 countries tested, which is a firmer evidential footing than any
+other construct surveyed here. A personalised system that suppresses cohort comparison can now
+cite that, and it is a design commitment instead of a preference.
 
 **A stop-list.** Do not build a stereotype-threat countermeasure; the operational estimate is
 d = −.01 across four samples and d = −.09 after bias correction on the focal sample. Do not
