@@ -230,7 +230,12 @@ ITS improvement "depended to a great extent" on whether the test was locally
 developed or standardised; Slavin's mastery-learning synthesis found positive
 effects on experimenter-made measures and "essentially no evidence" on
 standardised ones. **Any evaluation in which the system's designers also wrote the
-test should be discounted before you read the number.**
+test should be discounted before you read the number.** Say where that discount comes
+from, though, because it gets applied to modern trials and its whole evidential base
+is pre-LLM: two early Chicago dissertations, an ITS meta-analysis and a
+mastery-learning synthesis. It is a claim about who writes the test and not about
+what kind of system sits behind it, which is why we think it ports. Nobody has
+checked that it does.
 
 **Corrections shrink effects, and most effects have never been corrected.** The
 modality effect went 0.38 → 0.20 under publication-bias adjustment. Almost nothing
@@ -631,13 +636,13 @@ And the field's most-cited meta-analysis (Wang & Fan 2025, g = 0.867, >250
 citations) was **retracted in 2026**; the authors have not responded.
 
 What survives, each figure carrying the machine it measured: supervised LLM tutoring
-in six-to-eight-week classroom deployments lands at **0.2–0.4 SD**; pre-LLM
-rule-based ITS pooled at 0.32–0.42; in-person human tutoring pools at **0.288**
-across 96 RCTs run mostly before 2020. Three machines, one band. That is a real,
-useful, affordable effect and not an order-of-magnitude jump. It is also not a
-ceiling — none of those trials went looking for the limit of a frontier system, and
-two of the three figures contain no frontier system at all (§3). GenAI without
-teacher support is null (g = 0.077).
+in six-to-eight-week classroom deployments lands at **0.2–0.4 SD**, which is a
+rounding of three field trials; pre-LLM rule-based ITS at 0.32–0.42, a range spliced
+from two 2014 meta-analyses; in-person human tutoring at **0.288** across 96 RCTs.
+Three machines, one band. That is a real, useful, affordable effect and not an
+order-of-magnitude jump. It is also not a ceiling — none of those trials went looking
+for the limit of a frontier system, and two of the three figures contain no frontier
+system at all (§3). GenAI without teacher support is null (g = 0.077).
 
 
 ## 3. The Scoreboard — what AI tutoring has actually been measured to do
@@ -675,8 +680,8 @@ One thing we cannot tell you about it, and should say so: **the corpus establish
 the year of the synthesis and not the years of the trials inside it.** Nickow's pool
 appeared as an NBER working paper in 2020 and in *AERJ* in 2024; no source we hold
 gives the date range of the 96. The same is true of VanLehn's reviewed experiments
-and of both 2014 ITS meta-analyses. Where a vintage below is a publication year
-rather than a fieldwork year, the column says so.
+and of both 2014 ITS meta-analyses. Where a vintage below is a publication year and
+not a fieldwork year, the column says so.
 
 Now the AI results, all immediate post-tests unless stated. Every row carries the
 class of system it measured and the year that system ran, because those two facts
@@ -699,6 +704,17 @@ tutoring systems and as human tutors.** Sierra Leone 0.258, Nigeria 0.23–0.31,
 Rori 0.37, ITS 0.32–0.42, human tutoring 0.288. Three classes of machine, one band.
 There is no order-of-magnitude jump in those numbers, and there may be no difference
 between the three classes at all.
+
+Two things have to be said about that comparison before anyone uses it again. **The
+frontier side of the band is three field trials**, Sierra Leone and Nigeria and
+Rori, and it is a rounding of those three and not a pooled estimate: no
+meta-analysis, no confidence interval, n = 3. And **the ITS figure 0.32–0.42 appears
+in no single source.** It splices Steenbergen-Hu & Cooper's college range
+(0.32–0.37) onto Ma et al.'s ITS-versus-teacher-led figure (0.42), which is why the
+table above prints 0.32–0.57 instead: that upper endpoint is Ma's comparison against
+other computer-based instruction, a third comparator again. The spliced range stays
+visible here because this survey published it. It does not get quoted again without
+both of its sources.
 
 Two readings of that coincidence are available and only one is licensed. **It does
 not license 0.2–0.4 as a ceiling on a frontier system.** No study in the ITS or
@@ -946,10 +962,14 @@ eight weeks or shorter.
   which of the three is being invoked. Never cite g = 0.867; it is retracted. Never
   cite Bastani's +127%; it is a practice-session number.
 - **Never bound one class of system with a measurement of another.** VanLehn 2011
-  measured rule-based ITS against human tutors. Nickow pools randomised trials of
-  human tutors, run mostly before 2020. Bloom 1984 measured human tutors on their
-  own aligned tests, and is retired here (§1). Each is the right benchmark for the
-  machine it measured and evidence about no other.
+  measured rule-based ITS against human tutors. Nickow pools 96 randomised trials of
+  human tutors. Bloom 1984 measured human tutors on their own aligned tests, and is
+  retired here (§1). Each is the right benchmark for the machine it measured and
+  evidence about no other.
+- **Give a synthesis year when that is all we have.** The corpus establishes when
+  Bloom, VanLehn, Ma, Steenbergen-Hu and Nickow were *published* and never when their
+  constituent trials were *run*. Write "the 2011 review" and never "the 1980s
+  studies", which would be a span nobody has established.
 - **Every claim we make gets a delayed, unassisted, novel-item test**, or it is
   reported as a performance result and labelled as one.
 - **Report the unadjusted estimate next to the adjusted one.** Sierra Leone's
@@ -2098,8 +2118,10 @@ in 1984 on their own aligned tests, and this survey retired it (§1, §37). Reti
 it does not promote whatever came next to a ceiling. VanLehn 2011 measured *human*
 tutoring at **d = 0.79** and *rule-based* intelligent tutoring systems at **0.76**;
 Nickow et al. pooled 96 randomised trials of *human* tutors at **0.288 SD** in peer
-review, almost all of them run before 2020. Those are the correct benchmarks for a
-person and for a rule-based machine. Not one of them contains a frontier model.
+review. Those are the correct benchmarks for a person and for a rule-based machine.
+Not one of them contains a frontier model, and no source we hold even dates the
+trials inside them — we know when the syntheses were published and not when the
+experiments were run (§3).
 
 The frontier-era measurement is Kestin's Harvard AI-tutor RCT: **d ≈ 0.63**
 (0.73–1.3 after the authors' own ceiling correction), in a median 49 minutes against
@@ -13265,10 +13287,17 @@ claims in this field fail on the first three.
 
 The counter-case to this entire survey, at full strength: **0.2–0.4 SD may be a
 population parameter and not a technology limit.** The band pools three different
-machines — human tutors, rule-based ITS, and six-to-eight-week deployments of
+machines: human tutors, rule-based ITS, and six-to-eight-week deployments of
 frontier assistants (§3). Three things that different landing in one place is
 exactly what you would see if the constraint belonged to the learners and the
 setting and not to any of the machines.
+
+The concession is only evaluable if we say what the band is, so: **its frontier side
+is three field trials.** Sierra Leone, whose unadjusted estimate is not significant;
+Nigeria, which lost 43% of its sample; Rori, which has eleven clusters and was
+authored by the people who sell it. It is a rounding of those three, with no pooling
+and no confidence interval. A number that thin is a weak ceiling and it is also a
+weak floor, and the project's falsifier is staked on it either way.
 
 The evidence for that reading is not weak. The best-powered studies on record are
 nulls — lesson study at **ES 0.02** across 181 schools and 12,747 pupils with very

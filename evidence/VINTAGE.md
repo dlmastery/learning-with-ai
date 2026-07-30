@@ -349,6 +349,38 @@ Two of these are **live published corrections that no checker catches**: V15/V16
 
 ---
 
+### 5.5 Re-scan status
+
+The worklist above is the audit as first written. Other agents began rewriting these files
+during the audit, so it was re-scanned on completion. Status as of the final run of
+`evidence/check-vintage.py`:
+
+| Entry | Status | Note |
+|---|---|---|
+| **V1–V3** `docs/index.html` ladder | **closed** | Rows now carry `cls:"HUMAN · VanLehn 2011"`, `cls:"ITS · VanLehn 2011"`, `cls:"FRONTIER · Kestin 2025"`, and the 0.79 note reads *"the real ceiling for a person in the room"* — attributed |
+| **V4** figcaption | **closed** | *"VanLehn reviewed controlled experiments in 2011 … Nickow's 2024 meta-analysis of 96 human-tutoring RCTs, nearly all of them run before GPT-4"* |
+| **V5** Nickow ladder row | **closed** | *"96 randomised studies of human tutoring, nearly all pre-GPT-4. The field-wide figure for a person."* |
+| **V6** `survey/03` | **closed** | Section 5 now leads *"The provenance of the band is the whole bet … Two of the three figures inside it, ITS and human tutoring, predate the technology entirely."* |
+| **V7** `survey/09` reporting rule | **closed** | Now reads *"Quote every number with its class and its year."* |
+| **V8** `survey/09` ITS table row | **closed** | Row carries `ITS · rule-based; metas 2011–2014` |
+| **V9** `survey/09` "same band" | **closed** | Followed by *"does not license 0.2–0.4 as a ceiling on a frontier system"* |
+| **V10** `survey/01` | **closed** | *"each figure carrying the machine it measured … Three machines, one band … two of the three figures contain no frontier system at all"* |
+| **V11** `survey/19` | open | Unchanged at re-scan |
+| **V12** `README` | **closed with a defect** | The class attribution is now explicit, but the new text describes the band as *"an average taken across three different machines"*. **No averaging was performed by any source** — see §1.2, "What the band is NOT". Also still prints `0.32–0.42` without naming Ma et al. / Steenbergen-Hu (`README:161`) |
+| **V13** `survey/20`, `survey/21` | **partially closed** | `survey/21` now states the composition. `survey/20`'s concession conditions (lines 273, 291) and `docs/index.html:473` still print a bare `0.2–0.4 SD` |
+| **V14** `survey/24` | open | Unchanged at re-scan |
+| **V15–V18** the 223-domain claim | **closed** | `docs/thesis.html`, `docs/deck.html` and `README` now all read *"the four models tested"*, and `thesis.html` adds *"four August–October 2024 model snapshots … zero-shot, with no tool use, in what its authors call an initial evaluation"* |
+| **V19** BEA 2025 / MRBench absent | **open** | `BEA 2025`, `MRBench` and `71.81` return **zero hits** across `survey/*.md`, `README.md` and `docs/*.html` at re-scan |
+| **V20** Buljan d ≈ 0.48 | **open — 12 sites** | The largest remaining cluster. Five survey sections and four demo pages, none carrying the scope C-52 requires |
+| **V21** gamification | open | Unchanged at re-scan |
+
+**Still open and machine-detected: 22 in source surfaces** (9 × V-BAND, 1 × V-ITS-SPLICE,
+12 × V-PREFERENCE), plus 31 in `PAPER.md` and `docs/paper.html` which clear on rebuild.
+**Still open and not machine-detectable: V11, V14, V19, V21**, and the "average across three
+machines" defect in `README`.
+
+---
+
 ## 6. The machine check
 
 `evidence/check-vintage.py` encodes §5 as rules. Each rule fires when a legacy or
@@ -363,3 +395,34 @@ python3 evidence/check-vintage.py --self-test --strict
 rule does not fire. A scan that finds fewer than 20 surfaces fails rather than reporting OK. Both
 requirements exist because of **C-30**: the first corrections checker printed *"0 violations"*
 while every error it was built to catch was present in the tree.
+
+**Ten rules**, each with a trigger, a required-nearby-context that makes the usage legitimate,
+and a message:
+
+| Rule | Fires when | Cured by |
+|---|---|---|
+| `V-BLOOM` | 2σ / two sigma / Bloom's 2 within 220 chars of a frontier capability claim | naming the human class, 1984, the dissertations, or that it does not replicate |
+| `V-BAND` | any `0.2–0.4` band | naming what it is a band *of* — LLM tutoring, the three trials, an LLM-era year |
+| `V-BAND-SAMEBAND` | "the same band as ITS and human tutoring" | naming the two 2014 metas or Nickow's 96 RCTs |
+| `V-ITS-SPLICE` | `0.32–0.42` or `0.32–0.57` | naming Ma et al. / Steenbergen-Hu / 2014 / that it is spliced |
+| `V-NICKOW` | Nickow or 0.288 near a frontier claim | naming human tutoring, 96 RCTs, preK-12 or J-PAL |
+| `V-VANLEHN` | VanLehn / 0.79 / 0.76 near a frontier claim | naming the human or ITS class, or the 2011/2014 vintage |
+| `V-CEILING` | a HUMAN or ITS number called "the ceiling" | *a ceiling for a person / a human / pre-LLM* — the ceiling itself must be attributed |
+| `V-TUTORGYM` | the 223-domain result | naming the four models, the snapshots, or the Aug–Oct 2024 vintage |
+| `V-PREFERENCE` | `d ≈ 0.48` preference-vs-knowledge | naming Buljan, the infographic material, n = 334, or three RCTs |
+| `V-UNDATED-META` | "machine tutoring already matched human tutoring" | naming the class and era |
+
+Three design decisions worth knowing before editing the rules:
+
+- **Proximity windows use `[\s\S]{0,N}`, never `[^.]{0,N}`.** A dot-excluding window cannot cross
+  the period in *"Nickow et al."* — that is the defect that produced C-30.
+- **Cure phrases are specific, never generic.** No rule is cleared by the words "corrected",
+  "superseded" or "caveat". `V-CEILING` in particular is not cleared by the word "human"
+  appearing nearby: a chart row reading `label:"Human tutoring", note:"the real ceiling"`
+  contains that word and still asserts an unqualified ceiling. Only an attributed ceiling clears it.
+- **A match may not cross a section boundary** (`\n#`, `\n---`, `<h1..6>`, `<hr>`). Two numbers in
+  adjacent sections are not near each other, and treating them as adjacent turns a proximity
+  checker into noise nobody reads.
+- **`docs/thesis.html` and `docs/deck.html` are in `SURFACES` here.** They are absent from
+  `evidence/check-corrections.py`'s list, which is how a live C-51 violation survived on the
+  thesis page (worklist V15). Adding them there is a separate, recommended fix.

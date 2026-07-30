@@ -39,8 +39,8 @@ One thing we cannot tell you about it, and should say so: **the corpus establish
 the year of the synthesis and not the years of the trials inside it.** Nickow's pool
 appeared as an NBER working paper in 2020 and in *AERJ* in 2024; no source we hold
 gives the date range of the 96. The same is true of VanLehn's reviewed experiments
-and of both 2014 ITS meta-analyses. Where a vintage below is a publication year
-rather than a fieldwork year, the column says so.
+and of both 2014 ITS meta-analyses. Where a vintage below is a publication year and
+not a fieldwork year, the column says so.
 
 Now the AI results, all immediate post-tests unless stated. Every row carries the
 class of system it measured and the year that system ran, because those two facts

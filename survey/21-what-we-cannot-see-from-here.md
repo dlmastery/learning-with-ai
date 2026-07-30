@@ -271,10 +271,17 @@ claims in this field fail on the first three.
 
 The counter-case to this entire survey, at full strength: **0.2–0.4 SD may be a
 population parameter and not a technology limit.** The band pools three different
-machines — human tutors, rule-based ITS, and six-to-eight-week deployments of
+machines: human tutors, rule-based ITS, and six-to-eight-week deployments of
 frontier assistants (§09). Three things that different landing in one place is
 exactly what you would see if the constraint belonged to the learners and the
 setting and not to any of the machines.
+
+The concession is only evaluable if we say what the band is, so: **its frontier side
+is three field trials.** Sierra Leone, whose unadjusted estimate is not significant;
+Nigeria, which lost 43% of its sample; Rori, which has eleven clusters and was
+authored by the people who sell it. It is a rounding of those three, with no pooling
+and no confidence interval. A number that thin is a weak ceiling and it is also a
+weak floor, and the project's falsifier is staked on it either way.
 
 The evidence for that reading is not weak. The best-powered studies on record are
 nulls — lesson study at **ES 0.02** across 181 schools and 12,747 pupils with very

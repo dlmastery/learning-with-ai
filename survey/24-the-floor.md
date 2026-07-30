@@ -37,7 +37,12 @@ ITS improvement "depended to a great extent" on whether the test was locally
 developed or standardised; Slavin's mastery-learning synthesis found positive
 effects on experimenter-made measures and "essentially no evidence" on
 standardised ones. **Any evaluation in which the system's designers also wrote the
-test should be discounted before you read the number.**
+test should be discounted before you read the number.** Say where that discount comes
+from, though, because it gets applied to modern trials and its whole evidential base
+is pre-LLM: two early Chicago dissertations, an ITS meta-analysis and a
+mastery-learning synthesis. It is a claim about who writes the test and not about
+what kind of system sits behind it, which is why we think it ports. Nobody has
+checked that it does.
 
 **Corrections shrink effects, and most effects have never been corrected.** The
 modality effect went 0.38 → 0.20 under publication-bias adjustment. Almost nothing

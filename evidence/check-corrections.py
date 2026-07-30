@@ -36,8 +36,14 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 # Published surfaces only. research/raw/ is an immutable record of what an agent
 # found at a point in time and is deliberately NOT rewritten (see CORRECTIONS.md).
+# Every published surface. docs/thesis.html and docs/deck.html were missing until
+# 30 Jul, which is why a C-51 violation survived on both — the two artifacts an
+# investor is most likely to read were the two the propagation checker never saw.
+# Add a path here the moment a new published surface exists.
 SURFACES = ["README.md", "PAPER.md", "process/CLAUDE.md", "process/AUDIT.md",
-            "docs/index.html", "docs/paper.html", "survey/*.md", "docs/demos/*.html"]
+            "process/ASSUMPTIONS.md", "evidence/VINTAGE.md",
+            "docs/index.html", "docs/paper.html", "docs/thesis.html", "docs/deck.html",
+            "survey/*.md", "docs/demos/*.html"]
 # CORRECTIONS.md is excluded: it is the ledger and must quote superseded values.
 
 WINDOW = 400   # chars either side that may carry the cure

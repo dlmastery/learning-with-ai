@@ -81,9 +81,10 @@ frontier era has not run into a ceiling. It has not yet run the experiment that 
 ### The finding the survey turns on
 
 Across **223 tutoring domains, the four models TutorGym evaluated did not beat chance at
-labelling an incorrect student action** — GPT-4o and Claude 3.5 among them, in what its authors
-call an initial evaluation. Reading a learner's belief from what they did is the most basic thing
-a tutor does, and no instrument for it has been built.
+labelling an incorrect student action** — an August–October 2024 snapshot set, prompted zero-shot
+with no tools, in what the authors call an initial evaluation. Date it, because that is a
+two-year-old measurement and the obvious next move is to rerun it. Reading a learner's belief from
+what they did is the most basic thing a tutor does, and no instrument for it has been built.
 
 Scope it correctly, because that sharpens the claim. Step-checking a model's *own* reasoning
 trace is not at chance: ProcessBench reports open models competitive with GPT-4o at finding the
@@ -126,8 +127,9 @@ difficulty are all the arm without the rule.
 Turkish high-school students with GPT-4, and the arm given an unconstrained assistant came back
 **17% worse** on unassisted work. Adding guardrails takes the damage away without putting a
 benefit in its place: the guardrailed arm's unassisted coefficient is **−0.004, not significant.**
-This is the strongest evidence in the corpus that constraint design is the live variable, and
-it is also the reason no constrained system can yet claim a gain.
+This is the strongest evidence in the corpus that constraint design is the live variable, and it
+is also the reason no constrained system can yet claim a gain. It has 109 citing works in fourteen
+months and no replication with a withdrawal design.
 
 ### On speed
 
@@ -157,17 +159,23 @@ beginner.
 
 ## The central claim, and how to kill it
 
-The 0.2–0.4 SD band this field quotes at itself is an average taken across three different
-machines: human tutors at 0.288, pre-LLM intelligent tutoring systems at 0.32–0.42 g, and a
-handful of LLM deployments. Pooling them was a reasonable way to ask whether the LLM trials had
-produced an order-of-magnitude jump. It is not a ceiling on a frontier model, because a 2011
-rule-based tutor cannot bound a 2026 one, and because the LLM trials that did not fit the band
-were left out of it at both ends: Kestin at 0.63 above, Bastani at −0.054 below.
+The "measured 0.2–0.4 SD band" is a rounding of three frontier-era field trials, with no pooled
+estimate, no meta-analysis and no confidence interval behind it. Its *n* is three: Sierra Leone at
++0.258, Nigeria at +0.23–0.31, Rori at +0.37. One of those headlines is not significant unadjusted.
+One loses a third of its effect on the school's own exam. One has eleven clusters and was written
+by the provider's own staff.
 
-Every one of those LLM deployments was a chatbot with a prompt. It answers freely, forgets
-everything between sessions, cannot see the work, cannot point, never changes method, and agrees
-with the learner. The constrained, grounded, pivoting, remembering, teachable alternative that
-this survey specifies has not been assembled, and so has never been measured against anything.
+What turned a three-trial rounding into a law was the clause attached to it, *the same band as
+pre-LLM intelligent tutoring systems and in-person human tutoring*. Those comparators are two 2014
+meta-analyses of rule-based courseware and a 2024 meta-analysis of 96 human-tutoring trials, all
+of which ran before 2020. Landing near them is a fact about three field trials and never a ceiling
+on the technology, because a 2014 rule-based system and a human tutor measure something else.
+Kestin at 0.63 and Bastani at −0.054 are both frontier-era, and both already sit outside the band.
+
+Every trial in that band ran a chatbot with a prompt. It answers freely, forgets everything between
+sessions, cannot see the work, cannot point, never changes method, and agrees with the learner. The
+constrained, grounded, pivoting, remembering, teachable alternative that this survey specifies has
+not been assembled, and so has never been measured against anything.
 
 **That nobody has measured the assembled system is proven. That it would do better is a
 hypothesis.**
