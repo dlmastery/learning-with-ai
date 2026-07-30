@@ -3006,85 +3006,54 @@ negative result: **nobody has ever measured whether persistence helps.**
 
 ---
 
-## 1. The ceiling, and why it is good news
+## 1. The measured part of a learner model is memory, and the good model is tiny
 
-Two literatures that almost never cite each other have been telling the same story
-for a decade.
+One layer of the learner model has a large, contemporary, real-world measurement
+record, and it is the memory layer. On **349,923,850 reviews from ~10,000 Anki
+users**, a **zero-parameter moving average beats every released FSRS version on log
+loss.** An earlier section of this survey established that in detail and this one
+takes it as given.
 
-Knowledge tracing, the field that predicts whether a learner will get the next
-item right, lives in a band of **AUC ≈ 0.67–0.83 and has essentially not moved
-since 2015.** Every number in this section comes from that task, on the pre-LLM
-benchmark datasets (ASSISTments, KDD Cup 2010, EdNet, Duolingo), where the label
-is one bit per item. The definitive study (Gervet, Koedinger, Schneider & Mitchell, JEDM
-2020) ran nine datasets across three model families and found that **logistic
-regression with good features leads on four of nine datasets and deep knowledge
-tracing on five**, with margins where DKT wins of +0.007, +0.010, +0.020, +0.029.
+The same benchmark carries its own cautionary case. Duolingo's Half-Life Regression
+(~136 citations) has trained weights for **both** `right` and `wrong` that are
+negative; more than 90% of its predicted half-lives exceed 120 days; a **constant
+baseline beats it** on its own metric, and it ranks near the bottom of the
+independent Anki benchmark.
 
-Spaced repetition tells the same story with a bigger hammer: on 349,923,850 real
-reviews from ~10,000 users, a **zero-parameter moving average beats every released
-FSRS version on log loss.** An earlier section of this survey established that in
-detail and this one takes it as given.
+Nor is personalisation where the gain is. In a five-year simulation, **Memrise's
+fixed 1→6→12→48→96→180-day ladder comes within 2% of FSRS on learning
+efficiency** — a hard-coded ladder, no personalisation at all.
 
-Read together, the finding is: **next-item prediction has a low ceiling, that
-ceiling was reached by simple models, and much of the reported progress past it
-was measurement error.**
-
-Say what that ceiling is and is not, because this section has been read as
-setting a bound on learner modelling at large and it does not. It is a ceiling on
-one task, established on pre-LLM systems and pre-LLM datasets, and the quantity it
-caps is the probability of the next answer. It is silent on what a frontier model
-can read off a transcript: which misconception is live, which explanation landed,
-what the learner said they were confused by. Nobody has benchmarked that, which is
-a gap and not a ceiling; §12.8 returns to it.
-
-The reason the prediction ceiling is good news arrives in §12.4. First, the errors,
-because they are instructive.
+Capacity is not the bottleneck either: a **503-parameter GRU ties an 8,869-parameter
+LSTM**, and the marginal return to capacity, holding features fixed, is close to
+zero. The residual appears to be aleatoric — individual review outcomes are close to
+irreducibly stochastic. §12.4 turns that into an argument about where the model runs.
 
 ---
 
-## 2. What replication did to deep knowledge tracing
+## 2. What a frontier model reads off a transcript has never been benchmarked
 
-Deep knowledge tracing announced itself in 2015 with **AUC 0.86 for DKT against
-0.67 for BKT** on ASSISTments 2009-2010. Xiong, Zhao, Van Inwegen & Beck (EDM 2016)
-took the dataset apart and found **123,778 duplicated rows out of 525,535 — 23.6%**
-(acknowledged by the ASSISTments team), **73,466 rows of scaffolding records** that
-BKT and PFA excluded and DKT was fed, and multi-skill items decomposed by repeating
-the same action log once per skill, so the network saw each answer and then saw it
-again.
+That is the whole of the measurement record. It is a record about *scheduling*, and
+this section has previously been read as though it bounded learner modelling at
+large. It does not, and the survey has published a correction for reading it that
+way.
 
-Quantified: merging multi-skill items to remove the repeats drops **DKT's average
-AUC from 0.81 to 0.74** and r² from 0.30 to 0.18. Split the predictions and the
-mechanism is naked — on the *repeated* data points DKT scores AUC 0.97; on the
-*leading* records, 0.77. Their verdict: on the clean datasets, **PFA performs as
-well as DKT.**
+Nobody has measured what a frontier model can identify from a session: which
+misconception is live, which explanation landed, what the learner said they were
+confused by, whether a gap named in March is still open in September. There is no
+dataset for it, no task definition, no baseline and no trial.
 
-The rest of the replication record, compressed:
-
-| Claim | What replication found |
-|---|---|
-| DKT's representational advantage | Give BKT recency, contextualised trials, inter-skill similarity and individual ability, and **BKT is indistinguishable from DKT** (Khajah et al. 2016) |
-| Neural nets beat psychometrics | Standard, hierarchical and temporal **IRT matched or outperformed DKT across all datasets** (Wilson et al. 2016) |
-| SAKT, AUC 0.85 on ASSISTments 2015 | **Observed 0.73.** "SAKT underperforms DKT on all datasets" (Gervet et al.) |
-| DAS3H's time-window features (EDM 2019 best paper) | **No predictive power added**; the gain over PFA "is simply due to the addition of an item difficulty parameter" |
-| Expert-designed knowledge-component models | **≤ +0.01 AUC on 7 of 9 datasets**; on 4 of 9 a skill-only model loses to an item-difficulty-only model |
-| The DLKT literature since 2015 | pyKT (NeurIPS 2022): "wrong evaluation setting may cause **label leakage**"; improvements over the original DKT are "**minimal**" |
-| Duolingo's Half-Life Regression (~136 citations) | Trained weights for **both** `right` and `wrong` are negative; >90% of predicted half-lives exceed 120 days; a **constant baseline beats it** on its own metric, and it ranks near the bottom of the independent Anki benchmark |
-
-One more, because it is the one that should make anyone building personalisation
-uncomfortable: in a five-year simulation, **Memrise's fixed 1→6→12→48→96→180-day
-ladder comes within 2% of FSRS on learning efficiency.** A hard-coded ladder, no
-personalisation at all.
-
-And the deep-learning result that *does* survive is not an accuracy result. DKT
-reaches near-peak accuracy on a new learner in about **10 interactions where good
-logistic regression needs 60** — a 6× reduction in burn-in. That is a **cold-start**
-win, and the right thing to claim.
+That is a gap and not a ceiling, and the difference decides what gets built. A
+ceiling says stop; a gap says build the instrument and specify it. **The instrument
+is the missing artefact, and it is the cheapest thing on this section's agenda**:
+a held-out set of transcripts, an expert-labelled misconception per session, and a
+frontier model scored against the labels. §12.8 returns to it.
 
 ---
 
 ## 3. The null this section exists to state
 
-Every number above is about prediction. Here is the one about persistence.
+Every number above is about scheduling. Here is the one about persistence.
 
 > No study anywhere in this project's learner-modelling corpus (88 sources)
 > compares a system that remembers a learner across sessions, subjects and years
@@ -3100,8 +3069,8 @@ The closest adjacent facts sharpen the gap:
   learner's model in algebra improves the cold-start prior in chemistry, though the
   prior-knowledge literature says it should.
 - There is **no public dataset of a single learner's traces across years and across
-  subjects.** ASSISTments is one school year. KDD Cup 2010 is one course. EdNet is
-  ~2 years of TOEIC prep. Duolingo's release is two weeks of vocabulary.
+  subjects.** The public releases in this area are single-course or single-year, and
+  the longest of them covers about two years of one test-prep subject.
 
 The one exception is instructive. The `anki-revlogs-10k` corpus contains up to ten
 years per user, across whatever the user chose to make cards about — the closest
@@ -3122,23 +3091,23 @@ comparison against a peer average, targets *awareness*, the weakest link in the 
 The field's own title for this is **"Awareness Is Not Enough."** Social-comparison
 designs are additionally a documented demotivation risk.
 
-And an under-appreciated compounding problem: the best knowledge-tracing models are
-"severely biased on some datasets." **An open learner model inherits the calibration
-debt of the model it opens**, and shows a learner a number with the authority of an
-interface. Every OLM should publish a reliability diagram in place of an AUC.
+And an under-appreciated compounding problem: the models these dashboards open are
+frequently miscalibrated — "severely biased on some datasets," in the benchmark's own
+words. **An open learner model inherits the calibration debt of the model it opens**,
+and shows a learner a number with the authority of an interface. Every OLM should
+publish a reliability diagram in place of a headline accuracy figure.
 
 ---
 
-## 4. The inversion: the ceiling is a privacy gift
+## 4. The inversion: small models are a privacy gift
 
 Now the good news, which is structural.
 
 A 21-parameter memory model and a ~34-feature logistic regression sit at the
-accuracy frontier for this task. Capacity is demonstrably not the bottleneck — a
-503-parameter GRU ties an 8,869-parameter LSTM. The residual appears to be
-aleatoric: individual review outcomes are close to irreducibly stochastic.
+accuracy frontier of the one layer with a measurement record, and the residual there
+is aleatoric rather than a modelling deficit.
 
-Which means the predictive layer of the learner model runs on the learner's
+Which means the memory layer of the learner model runs on the learner's
 device. Privacy costs approximately zero accuracy on the layer anyone has
 measured, and the layers nobody has measured are not an argument for moving the
 data off it.
@@ -3288,8 +3257,8 @@ queryable just as knowledge is); and contestability (the learner can dispute
 any estimate, and the dispute travels with it).
 
 Three problems remain genuinely unsolved and are stated as such. KC alignment:
-portability requires a shared domain map and the evidence says our domain maps are
-bad — the binding constraint on the whole proposal. The misconception vocabulary:
+portability requires a shared domain map, and nobody has demonstrated one that
+survives transfer between two systems — the binding constraint on the whole proposal. The misconception vocabulary:
 the FCI's thirty items encode decades of physics-education interviews and nothing
 comparable exists for most of the curriculum. Verification: a learner-owned
 record the learner can forge is worthless for high stakes, but a record only
@@ -3301,14 +3270,15 @@ different downstream permissions, is a proposal and not yet a solution.
 
 ## 8. Why not just throw the session away?
 
-*If simple models are already at the ceiling, and persistence has never been shown
-to help, why build the archivist at all? Keep the session, throw it away, and ship.*
+*If a hard-coded ladder is within 2% of the best scheduler, and persistence has never
+been shown to help, why build the archivist at all? Keep the session, throw it away,
+and ship.*
 
-The answer is that **the claim for persistence is not an accuracy claim, and AUC
-does not measure anything this section wants.** It does not measure whether a
-learner's misconception from March is still active in September. It does not measure
-whether a tutor in chemistry can start from what the learner already proved in
-algebra. It does not measure whether a parent can trace a disputed number back to
+The answer is that **the claim for persistence is not a scheduling-accuracy claim,
+and no released benchmark measures anything this section wants.** None of them
+measures whether a learner's misconception from March is still active in September.
+None measures whether a tutor in chemistry can start from what the learner already
+proved in algebra. None measures whether a parent can trace a disputed number back to
 the evidence that produced it, or whether a family can compel deletion and get a
 receipt.
 

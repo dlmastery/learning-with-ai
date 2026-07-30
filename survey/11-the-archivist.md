@@ -302,8 +302,8 @@ queryable just as knowledge is); and contestability (the learner can dispute
 any estimate, and the dispute travels with it).
 
 Three problems remain genuinely unsolved and are stated as such. KC alignment:
-portability requires a shared domain map and the evidence says our domain maps are
-bad — the binding constraint on the whole proposal. The misconception vocabulary:
+portability requires a shared domain map, and nobody has demonstrated one that
+survives transfer between two systems — the binding constraint on the whole proposal. The misconception vocabulary:
 the FCI's thirty items encode decades of physics-education interviews and nothing
 comparable exists for most of the curriculum. Verification: a learner-owned
 record the learner can forge is worthless for high stakes, but a record only
@@ -315,23 +315,24 @@ different downstream permissions, is a proposal and not yet a solution.
 
 ## 8. Why not just throw the session away?
 
-*If simple models are already at the ceiling, and persistence has never been shown
-to help, why build the archivist at all? Keep the session, throw it away, and ship.*
+*If a hard-coded ladder is within 2% of the best scheduler, and persistence has never
+been shown to help, why build the archivist at all? Keep the session, throw it away,
+and ship.*
 
-The answer is that **the claim for persistence is not an accuracy claim, and AUC
-does not measure anything this section wants.** It does not measure whether a
-learner's misconception from March is still active in September. It does not measure
-whether a tutor in chemistry can start from what the learner already proved in
-algebra. It does not measure whether a parent can trace a disputed number back to
+The answer is that **the claim for persistence is not a scheduling-accuracy claim,
+and no released benchmark measures anything this section wants.** None of them
+measures whether a learner's misconception from March is still active in September.
+None measures whether a tutor in chemistry can start from what the learner already
+proved in algebra. None measures whether a parent can trace a disputed number back to
 the evidence that produced it, or whether a family can compel deletion and get a
 receipt.
 
 But the counter-argument lands hard on one point, and this section concedes it: the
 value of persistence is currently a design hypothesis, not a finding. It should
-be labelled that way everywhere, including by us. And it is testable, cheaply: the
-cold-start result gives a ready-made design — measure whether a warm prior from
-another subject reduces burn-in the way a within-subject history does. That is one
-experiment, and no one has run it.
+be labelled that way everywhere, including by us. And it is testable, cheaply:
+measure whether a warm prior carried from another subject shortens the number of
+interactions a tutor needs before its diagnosis stabilises, against the same tutor
+starting cold. That is one experiment, and no one has run it.
 
 ---
 
@@ -345,9 +346,10 @@ experiment, and no one has run it.
 - **Every knowledge claim carries a decay model.** A mastery estimate without one is
   a lie about the present.
 - **The model runs on the learner's device**, because a 21-parameter memory model and
-  a 34-feature logistic regression sit at the accuracy frontier *for next-item
-  prediction*, which is the only part of a learner model anyone has benchmarked.
-  Privacy costs approximately zero accuracy on that part.
+  a 34-feature logistic regression sit at the accuracy frontier of the memory layer,
+  which is the only part of a learner model anyone has benchmarked. Privacy costs
+  approximately zero accuracy on that part, and nothing measured argues for moving
+  the record off the device.
 - **Custody sits with the learner.** Scoped, expiring, revocable, default-deny onward
   transfer, with a learner-readable access log and erasure receipts. inBloom failed on
   custody, not schema.
