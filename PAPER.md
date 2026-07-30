@@ -2768,7 +2768,7 @@ The last row is the one that gets over-read, so it is worth stating at full size
 Buljan et al. 2018 ran **three randomised comparisons — n = 334 adults, an infographic
 against a plain-language Cochrane summary of the same review, scored on an immediate
 quiz.** Preference moved d ≈ 0.48; knowledge moved zero. That is one format contrast
-in one adult population on one immediate test, not a law about how learners feel.
+in one adult population on one immediate test. It is not a law about how learners feel.
 It belongs in the table because the dissociation it shows is corroborated by work that
 shares none of its design: Deslauriers et al. 2019, where randomised active-learning
 students learned more and reported learning less; the Wilson writing results in §25,
@@ -4831,14 +4831,14 @@ probability, which would falsify ontology.
 ## 5. What the probe should ask
 
 §11 established that entry must be measured, never preferred. The sharpest single
-measurement behind that rule is narrow — Buljan et al. 2018, three randomised
+measurement behind that rule is narrow. Buljan et al. 2018 ran three randomised
 comparisons, n = 334 adults, an infographic against a plain-language Cochrane
 summary, scored on an immediate quiz: preference moved d ≈ 0.48 and knowledge moved
-zero. Read it as one format contrast rather than a law about learners, and the rule
-still holds, because the felt/real split recurs in trials built quite differently
-(§3, §25) and because rapid dynamic assessment recovers an actionable estimate from
-1–3 items in 15–40 seconds at r = 0.66–0.92 against full diagnostics — a real
-measurement is available, so there is no reason to ask.
+zero. Read that as one format contrast in one adult population and the rule still
+holds, because the felt/real split recurs in trials built quite differently (§3,
+§25), and because rapid dynamic assessment recovers an actionable estimate from 1–3
+items in 15–40 seconds at r = 0.66–0.92 against full diagnostics. A real measurement
+is available, so there is no reason to ask.
 
 This section adds *what the probe should ask*. **Probe on the obstacle, not the
 definition.**
