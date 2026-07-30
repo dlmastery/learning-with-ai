@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>One Learner-Hour — University in a Box</title>
+<meta name="description" content="An end-to-end, computed demonstration of diagnosis, agent routing, representation choice, fading, teach-back and durable scheduling.">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="demo.css">
+<script src="../theme.js"></script>
+<style>
+.stage{display:grid;gap:16px;margin:24px 0}
+@media(min-width:900px){.stage{grid-template-columns:270px 1fr 290px;align-items:start}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:19px}
+.panel h3{font:650 14px/1.3 var(--sans);margin:0 0 14px}
+.steps{display:grid;gap:7px}
+.step{border:1px solid var(--line);border-radius:8px;padding:10px 11px;background:var(--bg);
+  color:var(--ink-3);font:600 11px/1.35 var(--sans);text-align:left;width:100%}
+.step.active{border-color:var(--felt);color:var(--ink);background:var(--surface)}
+.step.done{color:var(--real)}
+.work{min-height:480px}
+.work h2{margin-top:4px}
+.prompt{font:400 25px/1.25 var(--serif);max-width:27ch;margin:18px 0}
+.choice{display:block;width:100%;text-align:left;background:var(--bg);color:var(--ink);
+ border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin:8px 0;font:14px/1.4 var(--sans)}
+.choice:hover,.choice.selected{border-color:var(--felt)}
+.agents{display:grid;gap:8px}.agent{border-left:3px solid var(--line);padding:7px 9px}
+.agent.on{border-left-color:var(--real);background:var(--bg)}.agent b{font-size:12px}.agent span{display:block;font-size:11px;color:var(--ink-3);margin-top:3px}
+.state{display:grid;grid-template-columns:1fr auto;gap:7px 12px;font:12px/1.4 var(--mono)}
+.state dt{color:var(--ink-3)}.state dd{color:var(--ink);text-align:right}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+button.primary{background:var(--ink);color:var(--bg);border:0;border-radius:7px;padding:10px 14px;font-weight:650}
+button.secondary{background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:10px 14px}
+.access{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.access label{font-size:12px;border:1px solid var(--line);border-radius:7px;padding:9px;cursor:pointer}
+.viz{height:160px;border:1px solid var(--line);border-radius:10px;position:relative;overflow:hidden;
+ background:linear-gradient(145deg,color-mix(in srgb,var(--felt) 8%,var(--surface)),var(--surface));margin:15px 0}
+.sun{position:absolute;width:46px;height:46px;border-radius:50%;background:#f2b84b;left:22px;top:28px}
+.leaf{position:absolute;width:110px;height:64px;border-radius:70% 18% 70% 18%;background:#5c9b67;right:32px;top:48px;transform:rotate(-12deg)}
+.arrow{position:absolute;left:77px;top:48px;font:700 38px/1 var(--sans);color:var(--felt)}
+.meter{height:6px;background:var(--line);border-radius:8px;overflow:hidden;margin:6px 0 14px}.meter i{display:block;height:100%;background:var(--real);width:0;transition:width .35s}
+.small{font-size:12.5px;color:var(--ink-2)}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+<nav class="crumb"><a href="./">← Demo gallery</a></nav>
+<header>
+  <div class="eyebrow">The integrated system · computed demo</div>
+  <h1>One learner-hour, end to end</h1>
+  <p class="lede">Set an access profile, expose a misconception, route a specialist,
+  change representation, remove help, teach the idea back, and schedule its return.
+  The learner operates one lesson; the system coordinates the faculty.</p>
+  <div class="chips">
+    <span class="chip m">Computed live</span>
+    <span class="chip d">Integrated design · efficacy unmeasured</span>
+  </div>
+</header>
+
+<div class="orientation">
+  <div><b>What</b><p>A state machine joining six mechanisms that the gallery previously showed separately.</p></div>
+  <div><b>Why</b><p>A school in a box is the control loop between capabilities. A directory of clever agents leaves the coordination work with the learner.</p></div>
+  <div><b>How</b><p>Your answers update explicit learner state and determine the next representation. Refreshing resets everything; no data leaves this page.</p></div>
+</div>
+
+<div class="note">What this proves: the workflow, state transitions and routing rules
+are executable in one interface. It does not prove learning efficacy. The active-control
+experiment is this loop against a token-matched frontier tutor on delayed, unassisted,
+novel items.</div>
+
+<div class="stage">
+  <aside class="panel">
+    <h3>The learner-hour</h3>
+    <div class="steps" id="steps"></div>
+    <h3 style="margin-top:20px">Access is part of the route</h3>
+    <div class="access">
+      <label><input type="checkbox" id="speech" checked> speech + text</label>
+      <label><input type="checkbox" id="chunks" checked> short turns</label>
+      <label><input type="checkbox" id="timer" checked> visible time</label>
+      <label><input type="checkbox" id="decode"> reduce decoding</label>
+    </div>
+    <p class="small">These settings change the session contract. They do not lower the target concept.</p>
+  </aside>
+
+  <main class="panel work" id="work" aria-live="polite"></main>
+
+  <aside>
+    <div class="panel">
+      <h3>Active faculty</h3>
+      <div class="agents" id="agents"></div>
+    </div>
+    <div class="panel" style="margin-top:16px">
+      <h3>Inspectable learner state</h3>
+      <dl class="state">
+        <dt>Goal</dt><dd>photosynthesis</dd>
+        <dt>Belief</dt><dd id="belief">unknown</dd>
+        <dt>Representation</dt><dd id="representation">probe</dd>
+        <dt>Assistance</dt><dd id="assistance">none</dd>
+        <dt>Evidence</dt><dd id="evidence">0 acts</dd>
+        <dt>Next retrieval</dt><dd id="retrieval">unscheduled</dd>
+      </dl>
+      <h3 style="margin-top:18px">Session completion</h3>
+      <div class="meter"><i id="meter"></i></div>
+      <button class="secondary" id="export">Export state</button>
+    </div>
+  </aside>
+</div>
+
+<section>
+<h2>The architecture this page exercises</h2>
+<p>The same typed actions can be invoked from the learner interface or by an agent:
+<code>submit_evidence</code>, <code>propose_state_patch</code>,
+<code>render</code>, <code>request_specialist</code> and
+<code>schedule_retrieval</code>. Every mutation remains visible. This is the
+agent-native boundary missing from the original research corpus.</p>
+</section>
+</div>
+
+<script>
+const phases=[
+ {name:"Arrive",sub:"set goal + access"},
+ {name:"Expose",sub:"distinguish beliefs"},
+ {name:"Manipulate",sub:"change representation"},
+ {name:"Fade",sub:"remove the help"},
+ {name:"Teach",sub:"defend the reason"},
+ {name:"Return",sub:"schedule durability"}
+];
+const faculty=[
+ ["Diagnostician","competing belief hypotheses"],
+ ["Domain mentor","next conceptual move"],
+ ["Representation director","smallest useful medium"],
+ ["Access coach","response and initiation cost"],
+ ["Verifier","contamination and correctness"]
+];
+let phase=0, acts=0, state={belief:"unknown",representation:"probe",assistance:"none",retrieval:"unscheduled"};
+const $=s=>document.querySelector(s);
+function drawChrome(){
+ $("#steps").innerHTML=phases.map((p,i)=>`<button class="step ${i===phase?"active":i<phase?"done":""}" ${i>phase?"disabled":""} data-i="${i}">${i+1} · ${p.name}<br><span>${p.sub}</span></button>`).join("");
+ document.querySelectorAll(".step").forEach(b=>b.onclick=()=>{phase=+b.dataset.i;render()});
+ $("#agents").innerHTML=faculty.map((a,i)=>`<div class="agent ${activeAgents().includes(i)?"on":""}"><b>${a[0]}</b><span>${a[1]}</span></div>`).join("");
+ $("#belief").textContent=state.belief; $("#representation").textContent=state.representation;
+ $("#assistance").textContent=state.assistance; $("#evidence").textContent=`${acts} act${acts===1?"":"s"}`;
+ $("#retrieval").textContent=state.retrieval; $("#meter").style.width=((phase+1)/6*100)+"%";
+}
+function activeAgents(){return [[2,3],[0,3],[1,2,4],[1,4],[0,1,4],[3,4]][phase]}
+function next(){phase=Math.min(5,phase+1);render()}
+function render(){
+ drawChrome();
+ const w=$("#work");
+ if(phase===0) w.innerHTML=`<span class="tag">Minute 0–4</span><h2>Make the first action obvious</h2>
+   <p class="prompt">Today: explain where a plant's mass comes from.</p>
+   <p>The concept stays fixed. Access settings change how the learner can enter it.</p>
+   <div class="toolbar"><button class="primary" id="start">Start with a prediction</button></div>`;
+ if(phase===1) w.innerHTML=`<span class="tag">Minute 4–12</span><h2>Ask an act that separates beliefs</h2>
+   <p class="prompt">Most of the dry mass in a growing tree came from…</p>
+   ${["the soil","water absorbed by the roots","carbon dioxide in the air"].map((x,i)=>`<button class="choice" data-v="${i}">${x}</button>`).join("")}
+   <p class="small">“Do you understand photosynthesis?” cannot distinguish these models. This prediction can.</p>`;
+ if(phase===2) w.innerHTML=`<span class="tag">Minute 12–30</span><h2>Make the obstacle manipulable</h2>
+   <p>Your choice predicts that matter enters through the roots. The representation director selects a mass-flow diagram; a generated world would add cost without clarifying this invariant.</p>
+   <div class="viz" role="img" aria-label="Sunlight reaches a leaf while carbon dioxide enters it"><div class="sun"></div><div class="arrow">→</div><div class="leaf"></div></div>
+   <p>Track atoms through the system: carbon enters the leaf from CO₂. Water supplies hydrogen and electrons. Light supplies energy; light does not become matter.</p>
+   <div class="toolbar"><button class="primary" id="manip">Run a carbon accounting check</button></div>`;
+ if(phase===3) w.innerHTML=`<span class="tag">Minute 30–42</span><h2>Remove the diagram</h2>
+   <p class="prompt">A sealed plant gains 8 g of dry mass while soil mass barely changes. Name the external source of most new carbon atoms.</p>
+   <label for="cold">Answer without the diagram</label><textarea id="cold" rows="4" style="width:100%;margin-top:8px" placeholder="Type or speak your reason…"></textarea>
+   <div class="toolbar"><button class="primary" id="check">Commit answer</button></div>`;
+ if(phase===4) w.innerHTML=`<span class="tag">Minute 42–52</span><h2>The student you teach stays wrong</h2>
+   <div class="note"><b>Protégé:</b> “I agree carbon matters, but roots pull carbon from carbon-rich soil. That still explains the mass.”</div>
+   <p class="prompt">What observation would prove that model wrong?</p>
+   <button class="choice" data-teach="0">Plants can grow in water with measured dissolved minerals while taking carbon from labelled CO₂.</button>
+   <button class="choice" data-teach="1">Leaves are green, so they must collect mass from sunlight.</button>
+   <p class="small">The agent changes belief only after the learner supplies discriminating evidence.</p>`;
+ if(phase===5) w.innerHTML=`<span class="tag">Minute 52–60</span><h2>Close this loop and open the next</h2>
+   <p>The system stores the misconception, the representation that resolved it, every hint shown, and the unassisted response separately.</p>
+   <div class="note"><b>Scheduled:</b> a two-minute novel carbon-flow problem in 3 days; an interleaved plant-mass item in 11 days. Both arrive without this diagram.</div>
+   <div class="toolbar"><button class="primary" id="finish">Schedule and finish</button><button class="secondary" id="again">Restart session</button></div>`;
+ bind();
+}
+function bind(){
+ if($("#start")) $("#start").onclick=()=>{acts++;next()};
+ document.querySelectorAll("[data-v]").forEach(b=>b.onclick=()=>{
+   document.querySelectorAll("[data-v]").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");
+   acts++; state.belief=+b.dataset.v===2?"air supplies carbon":"roots supply mass";
+   state.representation="mass-flow diagram";state.assistance="diagnostic prompt";setTimeout(next,280)
+ });
+ if($("#manip")) $("#manip").onclick=()=>{acts++;state.assistance="diagram + atom trace";next()};
+ if($("#check")) $("#check").onclick=()=>{acts++;state.assistance="withdrawn";state.belief="CO₂ supplies carbon";next()};
+ document.querySelectorAll("[data-teach]").forEach(b=>b.onclick=()=>{acts++;if(b.dataset.teach==="0"){state.belief="transfer-ready";state.assistance="adversarial question";next()}else b.textContent="That confuses energy with matter. Try evidence that separates soil-carbon from air-carbon."});
+ if($("#finish")) $("#finish").onclick=()=>{state.retrieval="3d · 11d";acts++;drawChrome();$("#finish").textContent="Scheduled ✓";$("#finish").disabled=true};
+ if($("#again")) $("#again").onclick=()=>{phase=0;acts=0;state={belief:"unknown",representation:"probe",assistance:"none",retrieval:"unscheduled"};render()};
+}
+$("#export").onclick=()=>{
+ const blob=new Blob([JSON.stringify({goal:"photosynthesis",access:{speech:$("#speech").checked,chunks:$("#chunks").checked,timer:$("#timer").checked,reduce_decoding:$("#decode").checked},...state,evidence_acts:acts},null,2)],{type:"application/json"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="learner-state-demo.json";a.click();URL.revokeObjectURL(a.href)
+};
+render();
+</script>
+</body>
+</html>

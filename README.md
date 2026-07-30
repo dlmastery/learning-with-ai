@@ -12,7 +12,31 @@ what it should be.**
 
 ## What this is
 
-An open research artifact. Not a product, not a library. It contains three things:
+The specification and evidence base for a personalized school and university in a
+box. Its goal is direct: give every learner the faculty, attention and learning tools
+available to a wealthy family at token cost—including the child this
+project began with, an eleven-year-old served under a SELPA plan.
+
+The system is one continuous loop:
+
+> understand the learner → compile the next experience → observe produced work →
+> infer the belief behind it → change method → require the learner to teach it →
+> schedule the next durable encounter
+
+A learner should never have to coordinate a chatbot, flashcard app, video library,
+calendar, notebook, simulator and accessibility tool. The agent faculty does that
+work. Three to five specialists are active in an hour: a diagnostician, domain mentor,
+representation director, access and executive-function coach, and verifier. They can
+render the same concept as interruptible live dialogue, a diagram, an executable
+notebook, an animation, a mini-app or an interactive world; the smallest
+representation that makes the obstacle manipulable wins.
+
+[Run one learner-hour](https://dlmastery.github.io/learning-with-ai/demos/university-in-a-box.html).
+It begins with access settings, exposes a misconception, routes the faculty, changes
+representation, fades help, requires teach-back and schedules retrieval. It is a
+computed product specification, not an efficacy result.
+
+This repository is the open research artifact behind that system. It contains:
 
 1. **A survey**, assembled into a single paper, on what the evidence supports about learning with
    AI. Every claim carries an evidence label. Every section carries at least one documented null
@@ -29,7 +53,15 @@ to measure next, and for anyone who needs to tell a real finding from a vendor c
 
 ## Why it exists
 
-The field has produced an enormous amount of work and almost no evidence.
+Frontier capabilities changed the buildable system before education research caught
+up. Real-time models now accept live speech, images and video; generated apps can be
+created and deployed inside a conversation; world models produce navigable
+environments; source-grounded systems generate interactive study guides, audio,
+slides and video; agent runtimes persist, execute tools and work between sessions.
+None of those capabilities teaches by itself. Together, behind a learner model and an
+external learning check, they end the rationing of expert attention.
+
+The evidence base is much thinner than the capability base.
 
 Across twenty education-AI subfields there are **2,907 arXiv papers, at most 1.79% carrying any
 learning-outcome marker, and eight subfields at exactly zero.** ERIC holds 1,565 records on

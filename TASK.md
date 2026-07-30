@@ -123,6 +123,10 @@ Status: **done** · **partial** · **open** · **other project**
 | 60 | *"you will not miss even single point - since beginning everythihg i asked you will ensure it is there in task.md"* | done — rebuilt from the raw transcript, 105 turns |
 | 61 | *"my raw asks - dont spin to some garbage"* | done — verbatim, not paraphrased |
 | 62 | *"sanitize expletives"* | done |
+| 63 | *"continue what you were doing"* | in progress — resumed from the repository state |
+| 64 | *"i tell you to identify huge gaps to meet the visison and fix across board"* | in progress — `process/VISION-GAP-AUDIT.md`; integrated paper section, dashboard path and learner-hour demo added |
+| 65 | *"task.md had my original vision"* | done — Part A and founding ask 1 are the acceptance rubric for the sweep |
+| 66 | *"opus generated so ,much slop and missed out so many things in research raw"* | in progress — `research/raw/Z2-frontier-capability-gap-audit.md`; false grep-based gaps explicitly corrected, true research, propagation and integration gaps separated |
 
 ### Other projects in the same session — not learning-with-ai
 

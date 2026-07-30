@@ -26,7 +26,7 @@ PARTS = [
   "What follows from that evidence if you take it seriously: an architecture, "
   "a division of labour, and a selection policy — each constrained by a "
   "measurement rather than a preference.",
-  ["00-north-star-jarvis", "30-the-compression", "32-pedagogy-has-no-pytest", "38-enumerate-dont-judge", "03-the-vision", "10-the-village",
+  ["00-north-star-jarvis", "47-the-learning-operating-system", "30-the-compression", "32-pedagogy-has-no-pytest", "38-enumerate-dont-judge", "03-the-vision", "10-the-village",
    "22-the-one-interaction-that-survived", "11-the-archivist",
    "45-sequencing-and-durability"]),
 
@@ -73,6 +73,20 @@ N_EXT = len([1 for _l in (ROOT / "CORRECTIONS.md").read_text().splitlines()
 
 
 ABSTRACT = f"""\
+This survey specifies a personalized school and university in a box: an agent faculty
+that diagnoses the learner, compiles the next experience across live speech, diagrams,
+notebooks, simulations and generated worlds, observes produced work, changes method,
+requires teach-back, and schedules durable retrieval. It is designed first for the
+eleven-year-old served under a SELPA plan whose knowledge disappears when a worksheet
+adds decoding and working-memory load. The same architecture extends from early
+literacy to graduate proof.
+
+The frontier substrate now exists in pieces. Live models see, hear, speak, point and
+call tools; agents persist and work between sessions; generated apps and worlds make
+an obstacle manipulable inside the turn where it appears. Those are documented
+capabilities, not learning results. The control loop joining them has not been tested
+against a plain frontier tutor.
+
 A frontier model, supervised by a human expert, already tutors like one. On a UK
 maths platform in 2025, students who answered a question wrong and were then helped
 by **LearnLM drafting under a human tutor's supervision** were correct on the retry
