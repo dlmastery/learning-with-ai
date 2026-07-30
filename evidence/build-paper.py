@@ -33,7 +33,7 @@ PARTS = [
   "Eight techniques, each with a measured effect and a specified failure mode. "
   "These are the parts that do the teaching.",
   ["02-teach-to-learn", "05-the-explanation-is-the-work",
-   "25-the-ladder-of-explanation", "29-explaining-hard-things", "35-the-explanation-atlas",
+   "25-the-ladder-of-explanation", "39-what-the-explainers-invented", "29-explaining-hard-things", "35-the-explanation-atlas",
    "08-nobody-needs-a-better-scheduler",
    "26-beyond-the-tutor", "06-what-the-object-must-refuse", "17-showing"]),
 
