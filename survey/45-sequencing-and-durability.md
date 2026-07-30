@@ -132,57 +132,15 @@ every classification the system then makes. `INFERENCE`
 
 ---
 
-## 4. The deployed system built entirely on prerequisite structure sits at g ≈ 0.05
+## 4. Refusing to advance has not been shown to build anything durable
 
-ALEKS is the commercial instantiation of knowledge space theory (Doignon &
-Falmagne): a rule-based system, and the syntheses below cover deployments from 2005
-to 2020. Its own research page describes the mechanism, a knowledge state assessed
-"after the student has answered only 20–25 questions," and cites no efficacy study.
-`VENDOR` Two meta-analyses reach the same place. Fang, Ren, Hu & Graesser (2019),
-*Educational Psychology*, 15 studies and 24 independent samples: ALEKS was as good
-as, but not better than, traditional classroom teaching. Sun,
-Else-Quest, Hodges, French & Dowling (2021), 33 studies, 56 independent effect sizes,
-**9,238 students**: pooled **Hedges' g = 0.05** against ordinary instruction, with a
-supplemental-use moderator at **g = 0.43**. `MEASURED-META`
+Slavin's 1987 synthesis (*RER* 57(2):175–213) is the closest this literature has to a
+fair test of the mastery principle: he restricted it to practical applications in real
+schools running at least four weeks, with equal time for treatment and control, on
+standardised measures. Seven studies qualified — all of them group-based classroom
+mastery learning, none of them a machine.
 
-Two flags travel with those numbers. The ERIC record prints a pooled interval that is
-not symmetric about the point estimate and could not be checked against the article,
-so the point estimates are citable and the interval is not. And **the two
-meta-analyses are not independent**: Sun et al.'s window subsumes Fang et al.'s and
-the study pools overlap. What survives is that no synthesis of the flagship
-prerequisite-structured system finds a general advantage, and that its one positive
-moderator is a dosage result.
-
-§08 carries the strongest datum from inside the same system: across 32.9 million
-randomised topic sequences in production, raising the mastery threshold cost +29% time
-for a retention difference under 0.02. Inside a fixed topic, how hard you push mastery
-barely moves anything; across topics, which order you use has never been shown to move
-anything either. Both statements are about rule-based sequencers, which are the only
-kind that has been tested at this question — which is why this section closes by
-randomising the graph inside a frontier system instead of inheriting the verdict.
-
----
-
-## 5. Mastery learning was given 20–33% more time, and Bloom's study ran three weeks
-
-Slavin's 1987 synthesis (*RER* 57(2):175–213) is where the two-sigma provenance
-lives. The claims it was testing ran from Kulik et al.'s 0.52 and 0.54 through
-Walberg's 0.81 to Bloom's own 1.00 "when mastery learning procedures are done
-systematically and well," with two sigma as the prediction. Slavin then restricted to
-practical applications in real schools running at least four weeks, with equal time
-for treatment and control, on standardised measures. Seven studies qualified.
-**Median effect size +0.04.** The single non-trivial result (+0.25) came from a study
-where teachers self-selected into conditions. `MEASURED-META`
-
-Two design facts from his methods section rarely survive the citation trail.
-**Anania's study — one of the Chicago dissertations Bloom's essay rests on — ran three
-weeks.** And all the Chicago dissertations "provided the mastery learning classes with
-similar amounts of additional instruction," amounting to **20–33% more instructional
-time** than control classes received. Bloom's own characterisation was that the time
-costs "have usually been very small." `OBSERVED` §24 and §19 retire the two-sigma
-claim on replication grounds; this is the mechanism underneath that verdict.
-
-Then the part nobody quotes. Slavin also examined maintenance: six comparisons in
+The part nobody quotes is the maintenance analysis: six comparisons in
 five studies assessing retention 4–12 weeks out, all on experimenter-made measures.
 **The median retention effect is essentially zero**, and the largest one (+0.49) came
 from the single study that had found no differences on standardised measures.
@@ -200,7 +158,7 @@ this project can build. `INFERENCE`
 
 ---
 
-## 6. Teach to One: three years, five schools, and estimates that drift downward
+## 5. Teach to One: three years, five schools, and estimates that drift downward
 
 Ready, Conn, Bretas & Daruwala (2018), Consortium for Policy Research in Education,
 ERIC ED618425, evaluated the purest deployed instantiation of the thesis this section
@@ -233,7 +191,7 @@ individualised progression, cluster-randomised across 70 kindergarten classrooms
 
 ---
 
-## 7. Most of fade-out was the control group catching up
+## 6. Most of fade-out was the control group catching up
 
 The TRIAD trial is this corpus's best-documented early-mathematics effect and its
 best-documented decay. Clements, Sarama, Layzer, Unlu & Wolfe (2016), ERIC ED567218,
@@ -280,7 +238,7 @@ duration, tiny in sample, imperfectly controlled.
 
 ---
 
-## 8. Motor learning arrived independently, and half of it does not replicate
+## 7. Motor learning arrived independently, and half of it does not replicate
 
 This survey's central empirical theme is that conditions producing the best
 performance during practice produce the worst retention. Motor learning reached the
@@ -345,7 +303,7 @@ default **off** and are earned by measurement.
 
 ---
 
-## 9. Numbers this section refuses to carry
+## 8. Numbers this section refuses to carry
 
 The source report marks several things untraceable, and they stay untraceable here.
 
@@ -356,7 +314,6 @@ The source report marks several things untraceable, and they stay untraceable he
   risk in letting a model emit a graph.
 - **Pooled estimates from Lee & Genovese (1988, 1989) and Donovan & Radosevich (1999)**
   on massed against distributed practice.
-- **The pooled interval in Sun et al. (2021).** The point estimate is safe.
 - **Which Building Blocks persistence figure is right.** The 2013 *AERJ* third-year
   effects (0.51 / 0.28) do not reconcile with the same team's long-term analysis, so
   anyone citing that persistence effect must say which paper and which model.
@@ -367,7 +324,7 @@ The source report marks several things untraceable, and they stay untraceable he
 
 ---
 
-## 10. Demote the graph, then randomise it
+## 9. Demote the graph, then randomise it
 
 The graph does not go away. It changes job.
 
@@ -392,13 +349,13 @@ give the schedule a starting shape. `SPEC`
 
 **And the experiment: randomise the graph, not the policy.** Every existing study
 randomises which traversal policy walks a fixed graph. The untested question is
-whether the graph earns its cost. Within-learner, topic-level randomisation, mirroring
-the ALEKS production design: each eligible topic is randomly assigned to
+whether the graph earns its cost, and it has never been asked of a frontier sequencer.
+Within-learner, topic-level randomisation: each eligible topic is randomly assigned to
 graph-respecting entry (verify the closure, remediate any gap, then teach the target)
 or demand-driven entry (teach the requested target immediately, repair prerequisites
 reactively when an error names a missing component). Instructional time is capped
-identically in both arms, the condition Slavin showed almost no mastery-learning study
-met. Primary outcome: delayed transfer at 28 days on freshly generated items, scored
+identically in both arms, so neither condition can win by being given more teaching.
+Primary outcome: delayed transfer at 28 days on freshly generated items, scored
 blind. Secondary: time to criterion, a 90-day probe, and how often a verified
 prerequisite gap turned out to be real.
 
@@ -406,8 +363,7 @@ The question is whether any difference is large enough to pay for the graph, so 
 is an **equivalence trial** at a pre-registered margin of **δ = 0.10 SD**. Two
 one-sided tests, α = .05, 90% power, paired within learner at a between-condition
 correlation of 0.5 gives **n ≈ 857 learners** × 8 topic pairs: about 7,200 topic
-sequences, two terms of a mid-sized deployment, four orders of magnitude smaller than
-the ALEKS study.
+sequences, or two terms of a mid-sized deployment.
 
 Either answer is worth having. If the graph is equivalent within 0.10 SD, §25 stops
 computing prerequisite closures and §18's generative-textbook problem collapses from
