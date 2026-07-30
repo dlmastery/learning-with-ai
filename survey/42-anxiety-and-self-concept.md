@@ -8,22 +8,22 @@ source_report: research/raw/R3-anxiety-and-self-concept.md
 
 # Anxiety Is Not a Knowledge Gap
 
-Kohn and colleagues (2020) randomised 67 children with developmental dyscalculia to
-the adaptive trainer Calcularis 2.0 or to a waiting control, minimum 42 sessions, with
-gains still present at three months. The programme worked. Then they asked who it
-worked *for*: **"this self-directed training was especially beneficial for children
-with low math anxiety scores and without an additional reading and/or spelling
-disorder."** `MEASURED-RCT`
+Kohn and colleagues (2020) randomised 67 children with developmental dyscalculia to the
+adaptive trainer Calcularis 2.0 or to a waiting control, minimum 42 sessions, gains
+still present at three months. The programme worked. Then they asked who it worked
+*for*: **"this self-directed training was especially beneficial for children with low
+math anxiety scores and without an additional reading and/or spelling disorder."**
+`MEASURED-RCT`
 
 Adaptivity did not neutralise anxiety. The children who benefited least were the
 children the trainer was built for.
 
 That result is the one most capable of invalidating this project's premise, so it goes
 first. The eleven-year-old on a SELPA plan who can discuss photosynthesis and cannot
-pass a worksheet about it is not in the low-anxiety cell. If
-the Kohn pattern is a property of adaptive self-directed practice in general, then
-personalisation is a benefit that arrives sorted by who needs it least, and the whole
-argument of this survey lands on the wrong child.
+pass a worksheet about it is not in the low-anxiety cell. If the Kohn pattern is a
+property of adaptive self-directed practice in general, personalisation is a benefit
+that arrives sorted by who needs it least, and this survey's argument lands on the
+wrong child.
 
 ---
 
@@ -50,9 +50,8 @@ were **not** significant moderators (Johnson et al. 2026). A worksheet taxes dec
 before it taxes arithmetic, so the child who discusses photosynthesis and fails the
 sheet may be failing a reading task with an anxiety consequence attached.
 
-The trial that would settle it is specified in §9 below, and its distinguishing feature
-is that the anxiety × arm interaction is a pre-registered primary contrast instead of a
-subgroup note written afterwards.
+The trial that would settle it is specified in §9, with the anxiety × arm interaction
+as a pre-registered primary contrast instead of a subgroup note written afterwards.
 
 ---
 
@@ -76,7 +75,7 @@ children who are already struggling, distress and attainment come apart.
 
 Devine et al. (2018) screened 1,757 children aged 8–9 and 12–13 for developmental
 dyscalculia and for maths anxiety. Children with dyscalculia were twice as likely to be
-highly anxious. And **77% of the children with high maths anxiety had typical or high
+highly anxious, and **77% of the children with high maths anxiety had typical or high
 mathematics performance**; the authors conclude that cognitive and emotional
 mathematics problems largely dissociate. `OBSERVED`
 
@@ -101,10 +100,10 @@ window a tutoring system is most likely to be given.
 
 ## 3. Direction is unresolved, and the asymmetry is the finding
 
-Carey et al. (2016) name the two accounts. The Deficit Theory has poor performance
-producing later anxiety; the Debilitating Anxiety Model has anxiety degrading the
-processing and retrieval that performance depends on. Their summary of the evidence is
-the sentence this section is built around: the Deficit Theory **"is supported by
+Carey et al. (2016) name two accounts: the Deficit Theory, in which poor performance
+produces later anxiety, and the Debilitating Anxiety Model, in which anxiety degrades
+the processing and retrieval that performance depends on. Their summary of the evidence
+is the sentence this section is built around: the Deficit Theory **"is supported by
 longitudinal studies and studies of children with mathematical learning disabilities,
 but the Debilitating Anxiety Model is supported by research which manipulates anxiety
 levels and observes a change in mathematics performance."**
@@ -129,7 +128,7 @@ and not merely worth proposing.
 
 ## 4. The working-memory cost is conditional, and it shows up in the log
 
-Ashcraft & Krause (2007) restate the founding result with the numbers attached:
+Ashcraft & Krause (2007) restate the founding result with its numbers:
 
 > "we used two different verbal-based span assessments, and found no significant
 > anxiety-group differences at all. But when a computation-based span task was
@@ -146,9 +145,9 @@ inducing state anxiety, non-carry trials would have suffered too, and they did n
 
 Beilock & Carr (2005) is the adjacent result: only individuals **high** in working-
 memory capacity were harmed by performance pressure, and the decrements were confined
-to problems making the heaviest demands on capacity. Three retrieval routes failed on
-that paper and the source report marks its cell means **UNVERIFIED**; the flag travels
-with the claim here, and no design below rests on the unretrieved numbers.
+to the problems making the heaviest demands on capacity. Three retrieval routes failed
+on that paper and the source report marks its cell means **UNVERIFIED**; the flag
+travels with the claim here, and no design below rests on those numbers.
 `MEASURED-RCT` (abstract only)
 
 Pooled, the mechanism is modest. Finell et al. (2022) give maths anxiety × working
@@ -157,7 +156,7 @@ mediated path to performance thinner still at −0.092 [−0.169, −0.015] from
 studies. That is a correlation with working memory and not the anxiety-to-achievement
 correlation, which remains the −.28 to −.34 of §2.
 
-The line a tutoring system can actually act on is elsewhere in the same paper:
+The line a tutoring system can act on is in the same paper:
 
 > "high-math-anxious participants often sacrifice accuracy for speed, especially as
 > problems become more difficult, which we interpreted as an avoidance-like effort to
@@ -241,10 +240,9 @@ not produce a detectable change in what they achieve. The result cuts against th
 theory's own mediation story, because the studies that best establish the mediator are
 the studies that fail to show the outcome.
 
-Two full nulls sit beside it, where neither the feeling nor the achievement moved:
-Myers, Davis & Chan (2021) on expressive writing across four authentic psychology
-exams, and Thormodsæter et al. (2026), a replication of a cognitive-reappraisal
-intervention across 12 courses at 7 institutions. `MEASURED-RCT` (null)
+A full null sits beside it, where neither the feeling nor the achievement moved:
+Thormodsæter et al. (2026), a replication of a cognitive-reappraisal intervention
+across 12 courses at 7 institutions. `MEASURED-RCT` (null)
 
 ---
 
@@ -323,8 +321,8 @@ study measuring academic self-concept in learners using a one-to-one AI tutor.
 The choice has to be made explicitly, because the system implies one whether or not it
 decides. The learner's own past performance is the reference class the evidence
 supports, and the constraint the corpus has not previously stated is that the
-comparison must not be smuggled back in through percentiles, leaderboards or "students
-like you" framing.
+comparison must not be smuggled back in through percentiles, leaderboards or
+"students like you".
 
 ---
 
@@ -346,7 +344,7 @@ like you" framing.
   general growth-mindset module: d̄ = 0.04 [−0.01, 0.10] where the belief verifiably
   moved. No motivation-flavoured anxiety reducer: g = −0.251, interval containing zero.
 - **Every affective feature names its delayed unassisted outcome before it ships**, or
-  it is more likely than not measuring the wrong thing.
+  it is probably measuring the wrong thing.
 
 The experiment this section owes is a three-arm dismantling trial, stratified on a
 baseline anxiety screen: **A**, skill only, with every affective
