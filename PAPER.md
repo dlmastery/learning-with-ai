@@ -9,17 +9,40 @@ Interactive demonstrations: <https://dlmastery.github.io/learning-with-ai/demos/
 
 ## Abstract
 
-Generative AI arrived in education as a capability without a specification. Three
-years on, the field has produced roughly 2,900 papers and, by our census, **seven
-randomised controlled trials** — three of them second-language learning. It measures
-resemblance, preference and engagement. It very rarely measures whether anyone
-learned anything, and almost never measures it **after the tool is taken away**.
+A frontier model, supervised by a human expert, already tutors like one. On a UK
+maths platform in 2025, students who answered a question wrong and were then helped
+by **LearnLM drafting under a human tutor's supervision** were correct on the retry
+**93.0%** of the time, against **91.2%** for the expert tutor working alone and
+**65.4%** for a static hint written for their exact misconception; the supervising
+tutors sent **74.4%** of the model's drafts unedited, and a review of all 3,617
+messages found zero harmful ones and five factual errors. A Harvard physics RCT the
+same year put a purpose-built tutor **d ≈ 0.63** above an active-learning classroom
+in a median 49 minutes — developer-built and developer-evaluated, so a starting point
+and not a proof. Deployed at country scale the effects are smaller and stay positive:
+**+0.258 SD** adjusted in Sierra Leone, where the unadjusted estimate is **+0.216 SD,
+SE 0.137, not significant**; **+0.206 SD** on the school's own exam in Nigeria; and
+**+4 percentage points** of exit-ticket mastery across 900 tutors in US Title I
+classrooms, **+9** for the students of the lowest-rated tutors.
 
-This survey is an attempt to write the missing specification. It rests on 53 research
-reports. Every claim carries an evidence label,
-every section carries at least one documented null, and every one of the authors'
-errors is published in an append-only ledger rather than quietly edited — **23 of
+Every number in that paragraph was measured on an LLM from 2023 onward. This survey
+keeps them apart from the figures the field usually quotes, because those measured a
+different class of machine. Bloom's two sigma is 1984 and human. VanLehn's *d* = 0.76
+is a 2011 rule-based intelligent tutoring system. The **0.288 SD** that Nickow et al.
+pool across 96 randomised trials is in-person human tutoring, mostly pre-2020. Each of
+those results stands, and none of them is a ceiling on a machine it never saw.
+
+What is missing is the specification. Roughly 2,900 papers into generative AI in
+education, our census of the ERIC record finds **seven randomised controlled trials**
+of ChatGPT — three of them second-language learning. The field measures resemblance,
+preference and engagement; it rarely measures whether anyone learned, and almost never
+**after the tool is taken away**. That is a finding about the literature, not about
+the capability, and this survey is an attempt to write what the literature has not.
+It rests on 53 research reports. Every claim carries an evidence label, every section
+carries at least one documented null, and every one of the authors' errors is
+published in an append-only ledger rather than quietly edited — **23 of
 the 68 corrections were found by an adversarial reviewer rather than by us.**
+That discipline is the warrant for the paragraph above it, and not a substitute for
+making the claim.
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
@@ -28,20 +51,27 @@ the value of the external check it closes on.* That rule explains the whole reli
 Where a check exists, agents reach **79.2%** (SWE-bench Verified) and **83.8%**
 (Terminal-Bench). Where the check is weak or absent, **21.0%** (PaperBench) and **4.6%**
 (SciCode, which has hand-written tests — hence a bound rather than an equality).
-Teaching is in the second column, and the reason is now measured: across **223
-tutoring domains, the models tested did not beat chance at labelling an incorrect
-student action.**
+Teaching sits in the second column, and the reason is measured: across **223
+tutoring domains, the four models tested — a 2024 set, in what the authors call an
+initial evaluation — did not beat chance at labelling an incorrect student action.**
+Scope that precisely, because the adjacent result runs the other way: on ProcessBench,
+open models identify the earliest erroneous step in a reasoning trace competitively
+with that same GPT-4o vintage. **Checking a model's own reasoning is not the unsolved
+part. Reading a learner's belief from what they did is.**
 Coding agents work because `pytest` exists. **Pedagogy has no `pytest`, and every
 agentic capability in education is waiting on one.**
 
-Three findings constrain what may be built. **Felt learning and real learning move in
-opposite directions** — preference shifts at *d* ≈ 0.48 while knowledge does not, and
-the effect survives explicit debiasing, so every cheaply optimisable metric is the
-wrong one. **Measurement without a decision rule is inert** — both arms of the
-decisive trial revised instruction more often; only the arm told *what to change*
-moved achievement. **Unguarded assistance is an active harm**, leaving learners 17%
-worse on later unassisted work, while the guardrailed arm's unassisted coefficient is
-−0.004, not significant: restraint removes harm and has not been shown to teach.
+Three findings constrain what may be built. Two are facts about learners and hold
+whatever machine is in the room. **Felt learning and real learning move in opposite
+directions** — across three randomised comparisons preference shifts at *d* ≈ 0.48
+while knowledge does not, and the effect survives explicit debiasing, so every cheaply
+optimisable metric is the wrong one. **Measurement without a decision rule is inert** —
+in a 1991 trial of 33 teachers, both measuring arms revised instruction more often and
+only the arm told *what to change* moved achievement, which is why the age of that
+result does not weaken it. The third was measured on a frontier model: **unguarded
+assistance is an active harm**, leaving ~1,000 Turkish high-school students 17% worse
+on later unassisted work, while the guardrailed arm's unassisted coefficient is
+−0.004, not significant. Restraint removes the harm and has not been shown to teach.
 
 On speed, the popular claim is roughly right and imprecise. Learning is counted in
 **opportunities, not days** — across 1.3 million observations, learning *rate* varies
@@ -57,12 +87,15 @@ generative-AI tutoring that mention students and **zero** that mention disabilit
 dyslexia, ADHD, autism, special education or an IEP. Every effect size in this field
 was measured on somebody else's child.
 
-The central claim is that the measured 0.2–0.4 SD band describes systems that answer
-freely, forget between sessions, cannot see the work, cannot point, never change
-method, and agree with the learner — and that nobody has built and measured the
-constrained, grounded, pivoting, remembering, teachable alternative. **That nobody has
-measured it is proven. That it would do better is a hypothesis**, and Part VII states
-the conditions under which we would withdraw it.
+The central claim follows. The deployment trials above land in a **0.2–0.4 SD** band,
+and so do pre-LLM intelligent tutoring systems (0.32–0.42) and in-person human
+tutoring (0.288 SD across 96 randomised trials). Three classes of machine, one band —
+and every system in it answers freely, forgets between sessions, cannot see the work,
+cannot point, never changes method, and agrees with the learner. **What that band
+bounds is a design, and the constrained, grounded, pivoting, remembering, teachable
+alternative has never been built and measured. That nobody has measured it is proven.
+That it would do better is a hypothesis**, and Part VII states the conditions under
+which we would withdraw it.
 
 ---
 
@@ -609,37 +642,57 @@ Here is what the record currently says, and what it does not.
 
 ---
 
-## 1. The band
+## 1. The band, and the three machines inside it
 
-Start with the ceiling, because everything else is read against it.
+Start with what each number measured and when it ran, because the class of system
+that produced an effect size decides what that effect size can be evidence about.
 
 Intensive, in-person, one-to-one and small-group human tutoring — the most
 expensive and best-evidenced intervention in education — pools at **0.288 SD (SE
 0.029)** across 96 randomised studies (Nickow, Oreopoulos & Quan, *AERJ* 2024,
-funded by J-PAL North America). That is the number to hold.
+funded by J-PAL North America). Those are randomised trials of human tutors, run
+mostly before 2020. So 0.288 is the benchmark a machine has to clear: what a hired,
+trained person alone with a child has been measured to deliver. It is not a bound on
+any machine, because no machine appears in it.
 
-Now the AI results, all immediate post-tests unless stated:
+Now the AI results, all immediate post-tests unless stated. Every row carries the
+class of system it measured and the year that system ran, because those two facts
+govern what the row can be quoted for:
 
-| Study | Effect | n | Duration | Delayed test? | Distal outcome? |
-|---|---|---|---|---|---|
-| **Sierra Leone**, Gemini Guided Learning (RCT-P) | **+0.258 SD** adjusted; **+0.216 SD unadjusted, n.s.** | 1,423 analysed, 48 classrooms | 8 weeks | No | Blind-scored, curriculum-aligned |
-| **Nigeria**, Copilot after-school English (RCT) | +0.310 SD composite; **+0.206 SD on the school's own exam** | 759 analysed of 1,328 | 6 weeks | No | Yes |
-| **Bastani et al.**, Turkey (PNAS) | Assisted practice +127%. **Unassisted exam: −17% unguarded, −0.004 guarded** (§2)| ~1,000 | 4 sessions | AI-removed, same session | No |
-| **Kestin et al.**, Harvard physics | d ≈ 0.63 (to 1.3 ceiling-corrected) | 194 | **two ~1-hour lessons** | No | No |
-| **Tutor CoPilot** (RCT-P) | +4 p.p. exit ticket | 900 tutors, 1,800 students | 2 months | No | **Yes — and null** |
-| **Rori**, Ghana | 0.37 SD | ~1,000, **11 clusters** | 8 months | No | No |
-| **LearnLM + Eedi**, UK | +5.5 p.p. on novel problems vs human tutors | **165** | not stated | No | No |
-| Pre-LLM ITS (VanLehn; Ma et al.; Steenbergen-Hu) | d = 0.76; g = 0.32–0.57 | meta | — | — | — |
-| **Human tutoring** (Nickow, 96 RCTs) | **0.288 SD** | meta | — | — | — |
+| Study | Class · ran | Effect | n | Duration | Delayed test? | Distal outcome? |
+|---|---|---|---|---|---|---|
+| **Sierra Leone**, Gemini Guided Learning (RCT-P) | FRONTIER · Gemini 2.5→3.0 Pro, ran Oct–Dec 2025 | **+0.258 SD** adjusted; **+0.216 SD unadjusted, n.s.** | 1,423 analysed, 48 classrooms | 8 weeks | No | Blind-scored, curriculum-aligned |
+| **Nigeria**, Copilot after-school English (RCT) | FRONTIER · GPT-4, reported 2025 | +0.310 SD composite; **+0.206 SD on the school's own exam** | 759 analysed of 1,328 | 6 weeks | No | Yes |
+| **Bastani et al.**, Turkey (PNAS) | FRONTIER · prompt layer over GPT-4, PNAS 2025 | Assisted practice +127%. **Unassisted exam: −17% unguarded, −0.004 guarded** (§2)| ~1,000 | 4 sessions | AI-removed, same session | No |
+| **Kestin et al.**, Harvard physics | FRONTIER · purpose-built tutor, *Sci Rep* 2025 | d ≈ 0.63 (to 1.3 ceiling-corrected) | 194 | **two ~1-hour lessons** | No | No |
+| **Tutor CoPilot** (RCT-P) | FRONTIER · ran from March 2024 | +4 p.p. exit ticket | 900 tutors, 1,800 students | 2 months | No | **Yes — and null** |
+| **Rori**, Ghana | FRONTIER-era chatbot · 2024 | 0.37 SD | ~1,000, **11 clusters** | 8 months | No | No |
+| **LearnLM + Eedi**, UK | FRONTIER · LearnLM, Dec 2025 | +5.5 p.p. on novel problems vs human tutors | **165** | not stated | No | No |
+| Pre-LLM ITS (VanLehn; Ma et al.; Steenbergen-Hu) | ITS · rule-based; metas 2011–2014 | d = 0.76; g = 0.32–0.57 | meta | — | — | — |
+| **Human tutoring** (Nickow, 96 RCTs) | HUMAN · trials pooled mostly pre-2020 | **0.288 SD** | meta | — | — | — |
 
-**The good LLM trials land in the same band as pre-LLM intelligent tutoring systems
-and as human tutors.** Sierra Leone 0.258, Nigeria 0.23–0.31, Rori 0.37, ITS
-0.32–0.42, human tutoring 0.288. There is no order-of-magnitude jump. There may not
-be a difference at all.
+**The classroom deployment trials land in the same band as pre-LLM intelligent
+tutoring systems and as human tutors.** Sierra Leone 0.258, Nigeria 0.23–0.31,
+Rori 0.37, ITS 0.32–0.42, human tutoring 0.288. Three classes of machine, one band.
 
-That is not a disappointing result. It is a *stable* one, and stability is what
-makes a foundation. An effect that reproduces across four countries, three
-languages and two technology generations is an effect you can design against.
+Two readings of that coincidence are available and only one is licensed. **It does
+not license 0.2–0.4 as a ceiling on a frontier system.** No study in the ITS or
+human-tutoring meta-analyses had a frontier model in it, and every frontier trial
+inside the band shares one design: a general-purpose assistant distributed into a
+classroom, six to eight weeks, measured the week it stopped. That is a measurement
+of a deployment pattern.
+
+What it does license is the thing worth having. **The band is a floor**, and it
+reproduces across four countries, three languages and three classes of technology,
+which is what makes it something you can design against rather than a result you
+have to hope for.
+
+The frontier-era number sitting outside the band is Kestin's **d ≈ 0.63**, and it is
+also the row with the least independence and the shortest exposure: two hours, an
+immediate ceiling-limited post-test, and a first author who built the tutor, ran the
+analysis, and declared no funding (§9). It is evidence that an engineered frontier
+tutor cleared an active control in two hours. It is not evidence about a term, and
+this survey does not quote it as one.
 
 ---
 
@@ -848,8 +901,10 @@ ERIC records use it. It is four weeks of patience and a fresh item set — and i
 generation is now the cheapest thing in the system. The field is not failing to
 measure retention because retention is hard to measure.
 
-Second, **the pre-LLM literature did meet the standard, and the comparisons that
-count live there.** Roschelle et al.'s ASSISTments trial moved an end-of-year state
+Second, **the pre-LLM literature did meet the standard, and it is where the design
+template lives.** Those trials are not the bar a frontier system has to come in
+under. They are the shape of a study that could tell you where it came in.
+Roschelle et al.'s ASSISTments trial moved an end-of-year state
 standardised test across 43 Maine schools, with the largest gains for low prior
 achievers. It is the strongest distal-outcome edtech RCT in the corpus, and it
 predates the LLMs entirely. Pane et al. ran Cognitive Tutor Algebra I across 147
@@ -861,9 +916,16 @@ eight weeks or shorter.
 
 ## 7. How we will report an effect size
 
-- **Quote the band, not the ceiling.** 0.2–0.4 SD, the same band as ITS and human
-  tutoring. Never cite g = 0.867; it is retracted. Never cite Bastani's +127%; it is
-  a practice-session number.
+- **Quote every number with its class and its year.** The 0.2–0.4 band is what
+  six-to-eight-week classroom deployments of general-purpose assistants measured; it
+  happens to coincide with pre-LLM ITS and with human tutoring, and a reader is owed
+  which of the three is being invoked. Never cite g = 0.867; it is retracted. Never
+  cite Bastani's +127%; it is a practice-session number.
+- **Never bound one class of system with a measurement of another.** VanLehn 2011
+  measured rule-based ITS against human tutors. Nickow pools randomised trials of
+  human tutors, run mostly before 2020. Bloom 1984 measured human tutors on their
+  own aligned tests, and is retired here (§1). Each is the right benchmark for the
+  machine it measured and evidence about no other.
 - **Every claim we make gets a delayed, unassisted, novel-item test**, or it is
   reported as a performance result and labelled as one.
 - **Report the unadjusted estimate next to the adjusted one.** Sierra Leone's

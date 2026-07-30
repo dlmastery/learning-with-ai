@@ -61,11 +61,46 @@ h3{font:650 15.5px/1.4 var(--sans);margin:var(--s6) 0 var(--s3)}
   be verified are not here.</p>
 </header>
 
-<h2>1. The artifact is structurally incapable of what works</h2>
+<h2>1. A supervised frontier tutor already matches an expert human</h2>
 
-<p>This is not a complaint about badly written textbooks. Most are carefully made. The
-indictment is narrower and worse: <strong>a printed book cannot do the things that are
-measured to work</strong>, and every one of those things is now cheap.</p>
+<p>Start with what has been measured on the current generation of machine, because most of
+the numbers quoted at this argument were measured on a different one. On a UK maths platform
+in 2025, a student who answered a question wrong was randomised to one of three kinds of
+help:</p>
+
+<div class="scroll">
+<table class="moat">
+  <tr><th>Help after a wrong answer</th><th>Correct on retry</th><th>What produced it, and when</th></tr>
+  <tr><td><b>LearnLM drafting, expert tutor supervising</b></td><td class="num">93.0%</td><td>Frontier LLM · 2025</td></tr>
+  <tr><td><b>Expert human tutor, working alone</b></td><td class="num">91.2%</td><td>Human · 2025</td></tr>
+  <tr><td><b>Static hint written for that misconception</b></td><td class="num">65.4%</td><td>Pre-written · 2025</td></tr>
+</table>
+</div>
+
+<p>The supervising tutors sent <strong>74.4%</strong> of the model's drafts unedited, and a
+review of all 3,617 messages found zero harmful ones and five factual errors. Three further
+frontier-era results sit beside it. A purpose-built Harvard physics tutor measured
+<strong>d ≈ 0.63</strong> over an active-learning classroom in a median 49 minutes, though
+the first author built the tutor and ran the analysis. Sierra Leone's eight-week deployment
+measured <strong>+0.258 SD</strong> adjusted, and <strong>+0.216 SD unadjusted, SE 0.137,
+not significant</strong>. Tutor CoPilot moved exit-ticket mastery 4 percentage points across
+900 tutors, 9 points for the students of the lowest-rated ones, and returned a null on the
+end-of-year state test.</p>
+
+<p>Every one of those was measured on an LLM from 2023 onward, and they are the only figures
+that describe this class of machine. Bloom's two sigma is 1984 and human. VanLehn's
+<em>d</em> = 0.76 is a 2011 rule-based tutoring system. The 0.288 SD pooled across 96
+randomised trials is in-person human tutoring from mostly before 2020. Each result stands on
+its own terms, and none of them is a bound on a machine it never saw.</p>
+
+<h3>The artifact carrying the load has none of it</h3>
+
+<p>That capability reaches almost nobody, because wherever a tutor is absent the thing
+carrying the instruction is a printed book. This is not a complaint about badly written
+textbooks. Most are carefully made. The indictment is narrower and worse: <strong>a printed
+book cannot do the things that are measured to work</strong>, and every one of those things
+is now cheap. The four rows below measure human learners and hold whatever machine is in the
+room; the last two are properties of any instructional system.</p>
 
 <div class="scroll">
 <table class="moat">

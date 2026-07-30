@@ -22,37 +22,56 @@ Here is what the record currently says, and what it does not.
 
 ---
 
-## 1. The band
+## 1. The band, and the three machines inside it
 
-Start with the ceiling, because everything else is read against it.
+Start with what each number measured and when it ran, because the class of system
+that produced an effect size decides what that effect size can be evidence about.
 
 Intensive, in-person, one-to-one and small-group human tutoring — the most
 expensive and best-evidenced intervention in education — pools at **0.288 SD (SE
 0.029)** across 96 randomised studies (Nickow, Oreopoulos & Quan, *AERJ* 2024,
-funded by J-PAL North America). That is the number to hold.
+funded by J-PAL North America). Those are randomised trials of human tutors, run
+mostly before 2020. So 0.288 is the benchmark a machine has to clear: what a hired,
+trained person alone with a child has been measured to deliver. It is not a bound on
+any machine, because no machine appears in it.
 
-Now the AI results, all immediate post-tests unless stated:
+Now the AI results, all immediate post-tests unless stated. Every row carries the
+class of system it measured and the year that system ran, because those two facts
+govern what the row can be quoted for:
 
-| Study | Effect | n | Duration | Delayed test? | Distal outcome? |
-|---|---|---|---|---|---|
-| **Sierra Leone**, Gemini Guided Learning (RCT-P) | **+0.258 SD** adjusted; **+0.216 SD unadjusted, n.s.** | 1,423 analysed, 48 classrooms | 8 weeks | No | Blind-scored, curriculum-aligned |
-| **Nigeria**, Copilot after-school English (RCT) | +0.310 SD composite; **+0.206 SD on the school's own exam** | 759 analysed of 1,328 | 6 weeks | No | Yes |
-| **Bastani et al.**, Turkey (PNAS) | Assisted practice +127%. **Unassisted exam: −17% unguarded, −0.004 guarded** (§01)| ~1,000 | 4 sessions | AI-removed, same session | No |
-| **Kestin et al.**, Harvard physics | d ≈ 0.63 (to 1.3 ceiling-corrected) | 194 | **two ~1-hour lessons** | No | No |
-| **Tutor CoPilot** (RCT-P) | +4 p.p. exit ticket | 900 tutors, 1,800 students | 2 months | No | **Yes — and null** |
-| **Rori**, Ghana | 0.37 SD | ~1,000, **11 clusters** | 8 months | No | No |
-| **LearnLM + Eedi**, UK | +5.5 p.p. on novel problems vs human tutors | **165** | not stated | No | No |
-| Pre-LLM ITS (VanLehn; Ma et al.; Steenbergen-Hu) | d = 0.76; g = 0.32–0.57 | meta | — | — | — |
-| **Human tutoring** (Nickow, 96 RCTs) | **0.288 SD** | meta | — | — | — |
+| Study | Class · ran | Effect | n | Duration | Delayed test? | Distal outcome? |
+|---|---|---|---|---|---|---|
+| **Sierra Leone**, Gemini Guided Learning (RCT-P) | FRONTIER · Gemini 2.5→3.0 Pro, ran Oct–Dec 2025 | **+0.258 SD** adjusted; **+0.216 SD unadjusted, n.s.** | 1,423 analysed, 48 classrooms | 8 weeks | No | Blind-scored, curriculum-aligned |
+| **Nigeria**, Copilot after-school English (RCT) | FRONTIER · GPT-4, reported 2025 | +0.310 SD composite; **+0.206 SD on the school's own exam** | 759 analysed of 1,328 | 6 weeks | No | Yes |
+| **Bastani et al.**, Turkey (PNAS) | FRONTIER · prompt layer over GPT-4, PNAS 2025 | Assisted practice +127%. **Unassisted exam: −17% unguarded, −0.004 guarded** (§01)| ~1,000 | 4 sessions | AI-removed, same session | No |
+| **Kestin et al.**, Harvard physics | FRONTIER · purpose-built tutor, *Sci Rep* 2025 | d ≈ 0.63 (to 1.3 ceiling-corrected) | 194 | **two ~1-hour lessons** | No | No |
+| **Tutor CoPilot** (RCT-P) | FRONTIER · ran from March 2024 | +4 p.p. exit ticket | 900 tutors, 1,800 students | 2 months | No | **Yes — and null** |
+| **Rori**, Ghana | FRONTIER-era chatbot · 2024 | 0.37 SD | ~1,000, **11 clusters** | 8 months | No | No |
+| **LearnLM + Eedi**, UK | FRONTIER · LearnLM, Dec 2025 | +5.5 p.p. on novel problems vs human tutors | **165** | not stated | No | No |
+| Pre-LLM ITS (VanLehn; Ma et al.; Steenbergen-Hu) | ITS · rule-based; metas 2011–2014 | d = 0.76; g = 0.32–0.57 | meta | — | — | — |
+| **Human tutoring** (Nickow, 96 RCTs) | HUMAN · trials pooled mostly pre-2020 | **0.288 SD** | meta | — | — | — |
 
-**The good LLM trials land in the same band as pre-LLM intelligent tutoring systems
-and as human tutors.** Sierra Leone 0.258, Nigeria 0.23–0.31, Rori 0.37, ITS
-0.32–0.42, human tutoring 0.288. There is no order-of-magnitude jump. There may not
-be a difference at all.
+**The classroom deployment trials land in the same band as pre-LLM intelligent
+tutoring systems and as human tutors.** Sierra Leone 0.258, Nigeria 0.23–0.31,
+Rori 0.37, ITS 0.32–0.42, human tutoring 0.288. Three classes of machine, one band.
 
-That is not a disappointing result. It is a *stable* one, and stability is what
-makes a foundation. An effect that reproduces across four countries, three
-languages and two technology generations is an effect you can design against.
+Two readings of that coincidence are available and only one is licensed. **It does
+not license 0.2–0.4 as a ceiling on a frontier system.** No study in the ITS or
+human-tutoring meta-analyses had a frontier model in it, and every frontier trial
+inside the band shares one design: a general-purpose assistant distributed into a
+classroom, six to eight weeks, measured the week it stopped. That is a measurement
+of a deployment pattern.
+
+What it does license is the thing worth having. **The band is a floor**, and it
+reproduces across four countries, three languages and three classes of technology.
+A result that stable is something you can design against instead of hope for.
+
+The frontier-era number sitting outside the band is Kestin's **d ≈ 0.63**, which is
+also the row with the least independence and the shortest exposure: two hours, an
+immediate ceiling-limited post-test, and a first author who built the tutor, ran the
+analysis, and declared no funding (§03). It is evidence that an engineered frontier
+tutor cleared an active control in two hours. It is not evidence about a term, and
+this survey does not quote it as one.
 
 ---
 
@@ -261,8 +280,10 @@ ERIC records use it. It is four weeks of patience and a fresh item set — and i
 generation is now the cheapest thing in the system. The field is not failing to
 measure retention because retention is hard to measure.
 
-Second, **the pre-LLM literature did meet the standard, and the comparisons that
-count live there.** Roschelle et al.'s ASSISTments trial moved an end-of-year state
+Second, **the pre-LLM literature did meet the standard, which makes it the place the
+design template lives.** Those trials are not the bar a frontier system has to come
+in under. They are the shape of a study that could tell you where it came in.
+Roschelle et al.'s ASSISTments trial moved an end-of-year state
 standardised test across 43 Maine schools, with the largest gains for low prior
 achievers. It is the strongest distal-outcome edtech RCT in the corpus, and it
 predates the LLMs entirely. Pane et al. ran Cognitive Tutor Algebra I across 147
@@ -274,9 +295,16 @@ eight weeks or shorter.
 
 ## 7. How we will report an effect size
 
-- **Quote the band, not the ceiling.** 0.2–0.4 SD, the same band as ITS and human
-  tutoring. Never cite g = 0.867; it is retracted. Never cite Bastani's +127%; it is
-  a practice-session number.
+- **Quote every number with its class and its year.** The 0.2–0.4 band is what
+  six-to-eight-week classroom deployments of general-purpose assistants measured; it
+  happens to coincide with pre-LLM ITS and with human tutoring, and a reader is owed
+  which of the three is being invoked. Never cite g = 0.867; it is retracted. Never
+  cite Bastani's +127%; it is a practice-session number.
+- **Never bound one class of system with a measurement of another.** VanLehn 2011
+  measured rule-based ITS against human tutors. Nickow pools randomised trials of
+  human tutors, run mostly before 2020. Bloom 1984 measured human tutors on their
+  own aligned tests, and is retired here (§24). Each is the right benchmark for the
+  machine it measured and evidence about no other.
 - **Every claim we make gets a delayed, unassisted, novel-item test**, or it is
   reported as a performance result and labelled as one.
 - **Report the unadjusted estimate next to the adjusted one.** Sierra Leone's

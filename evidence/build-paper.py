@@ -73,16 +73,39 @@ N_EXT = len([1 for _l in (ROOT / "CORRECTIONS.md").read_text().splitlines()
 
 
 ABSTRACT = f"""\
-Generative AI arrived in education as a capability without a specification. Three
-years on, the field has produced roughly 2,900 papers and, by our census, **seven
-randomised controlled trials** — three of them second-language learning. It measures
-resemblance, preference and engagement. It very rarely measures whether anyone
-learned anything, and almost never measures it **after the tool is taken away**.
+A frontier model, supervised by a human expert, already tutors like one. On a UK
+maths platform in 2025, students who answered a question wrong and were then helped
+by **LearnLM drafting under a human tutor's supervision** were correct on the retry
+**93.0%** of the time, against **91.2%** for the expert tutor working alone and
+**65.4%** for a static hint written for their exact misconception; the supervising
+tutors sent **74.4%** of the model's drafts unedited, and a review of all 3,617
+messages found zero harmful ones and five factual errors. A Harvard physics RCT the
+same year put a purpose-built tutor **d ≈ 0.63** above an active-learning classroom
+in a median 49 minutes — developer-built and developer-evaluated, so a starting point
+and not a proof. Deployed at country scale the effects are smaller and stay positive:
+**+0.258 SD** adjusted in Sierra Leone, where the unadjusted estimate is **+0.216 SD,
+SE 0.137, not significant**; **+0.206 SD** on the school's own exam in Nigeria; and
+**+4 percentage points** of exit-ticket mastery across 900 tutors in US Title I
+classrooms, **+9** for the students of the lowest-rated tutors.
 
-This survey is an attempt to write the missing specification. It rests on {N_REPORTS} research
-reports. Every claim carries an evidence label,
-every section carries at least one documented null, and every one of the authors'
-errors is published in an append-only ledger rather than quietly edited — **{N_EXT} of\nthe {N_CORR} corrections were found by an adversarial reviewer rather than by us.**
+Every number in that paragraph was measured on an LLM from 2023 onward. This survey
+keeps them apart from the figures the field usually quotes, because those measured a
+different class of machine. Bloom's two sigma is 1984 and human. VanLehn's *d* = 0.76
+is a 2011 rule-based intelligent tutoring system. The **0.288 SD** that Nickow et al.
+pool across 96 randomised trials is in-person human tutoring, mostly pre-2020. Each of
+those results stands, and none of them is a ceiling on a machine it never saw.
+
+What is missing is the specification. Roughly 2,900 papers into generative AI in
+education, our census of the ERIC record finds **seven randomised controlled trials**
+of ChatGPT — three of them second-language learning. The field measures resemblance,
+preference and engagement; it rarely measures whether anyone learned, and almost never
+**after the tool is taken away**. That is a finding about the literature, not about
+the capability, and this survey is an attempt to write what the literature has not.
+It rests on {N_REPORTS} research reports. Every claim carries an evidence label, every section
+carries at least one documented null, and every one of the authors' errors is
+published in an append-only ledger rather than quietly edited — **{N_EXT} of\nthe {N_CORR} corrections were found by an adversarial reviewer rather than by us.**
+That discipline is the warrant for the paragraph above it, and not a substitute for
+making the claim.
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
@@ -91,20 +114,27 @@ the value of the external check it closes on.* That rule explains the whole reli
 Where a check exists, agents reach **79.2%** (SWE-bench Verified) and **83.8%**
 (Terminal-Bench). Where the check is weak or absent, **21.0%** (PaperBench) and **4.6%**
 (SciCode, which has hand-written tests — hence a bound rather than an equality).
-Teaching is in the second column, and the reason is now measured: across **223
-tutoring domains, the models tested did not beat chance at labelling an incorrect
-student action.**
+Teaching sits in the second column, and the reason is measured: across **223
+tutoring domains, the four models tested — a 2024 set, in what the authors call an
+initial evaluation — did not beat chance at labelling an incorrect student action.**
+Scope that precisely, because the adjacent result runs the other way: on ProcessBench,
+open models identify the earliest erroneous step in a reasoning trace competitively
+with that same GPT-4o vintage. **Checking a model's own reasoning is not the unsolved
+part. Reading a learner's belief from what they did is.**
 Coding agents work because `pytest` exists. **Pedagogy has no `pytest`, and every
 agentic capability in education is waiting on one.**
 
-Three findings constrain what may be built. **Felt learning and real learning move in
-opposite directions** — preference shifts at *d* ≈ 0.48 while knowledge does not, and
-the effect survives explicit debiasing, so every cheaply optimisable metric is the
-wrong one. **Measurement without a decision rule is inert** — both arms of the
-decisive trial revised instruction more often; only the arm told *what to change*
-moved achievement. **Unguarded assistance is an active harm**, leaving learners 17%
-worse on later unassisted work, while the guardrailed arm's unassisted coefficient is
-−0.004, not significant: restraint removes harm and has not been shown to teach.
+Three findings constrain what may be built. Two are facts about learners and hold
+whatever machine is in the room. **Felt learning and real learning move in opposite
+directions** — across three randomised comparisons preference shifts at *d* ≈ 0.48
+while knowledge does not, and the effect survives explicit debiasing, so every cheaply
+optimisable metric is the wrong one. **Measurement without a decision rule is inert** —
+in a 1991 trial of 33 teachers, both measuring arms revised instruction more often and
+only the arm told *what to change* moved achievement, which is why the age of that
+result does not weaken it. The third was measured on a frontier model: **unguarded
+assistance is an active harm**, leaving ~1,000 Turkish high-school students 17% worse
+on later unassisted work, while the guardrailed arm's unassisted coefficient is
+−0.004, not significant. Restraint removes the harm and has not been shown to teach.
 
 On speed, the popular claim is roughly right and imprecise. Learning is counted in
 **opportunities, not days** — across 1.3 million observations, learning *rate* varies
@@ -120,12 +150,15 @@ generative-AI tutoring that mention students and **zero** that mention disabilit
 dyslexia, ADHD, autism, special education or an IEP. Every effect size in this field
 was measured on somebody else's child.
 
-The central claim is that the measured 0.2–0.4 SD band describes systems that answer
-freely, forget between sessions, cannot see the work, cannot point, never change
-method, and agree with the learner — and that nobody has built and measured the
-constrained, grounded, pivoting, remembering, teachable alternative. **That nobody has
-measured it is proven. That it would do better is a hypothesis**, and Part VII states
-the conditions under which we would withdraw it.
+The central claim follows. The deployment trials above land in a **0.2–0.4 SD** band,
+and so do pre-LLM intelligent tutoring systems (0.32–0.42) and in-person human
+tutoring (0.288 SD across 96 randomised trials). Three classes of machine, one band —
+and every system in it answers freely, forgets between sessions, cannot see the work,
+cannot point, never changes method, and agrees with the learner. **What that band
+bounds is a design, and the constrained, grounded, pivoting, remembering, teachable
+alternative has never been built and measured. That nobody has measured it is proven.
+That it would do better is a hypothesis**, and Part VII states the conditions under
+which we would withdraw it.
 """
 
 def read(slug):
