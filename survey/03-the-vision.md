@@ -172,7 +172,7 @@ any of this.** The tutor measured at 0.2–0.4 SD answers freely, has no memory,
 cannot see the work, cannot point, never pivots, and agrees with everything.
 
 We call that *the floor with the brakes on*. The status of that phrase is worth
-being exact about, because §20 is and this section was not. **"Nobody has built
+being exact about, because §20 is, and this section was not. **"Nobody has built
 and measured the assembled system" is proven. "It would do better" is a hypothesis,
 not a finding.** It is the project's central bet, it is stated as falsifiable in §20
 with its concession conditions named in advance, and nothing in this survey

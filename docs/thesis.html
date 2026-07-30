@@ -52,8 +52,8 @@ h3{font:650 15.5px/1.4 var(--sans);margin:var(--s6) 0 var(--s3)}
 <header class="hero">
   <div class="eyebrow">The core competency</div>
   <h1>The instrument that unlocks every other capability</h1>
-  <p class="lede">Everything an agentic tutor can do, from pivoting and generating to teaching
-  back and intervening before you ask, is waiting on one component. It is buildable now, it compounds
+  <p class="lede">Everything an agentic tutor can do — pivoting, generating, teaching back,
+  intervening before you ask — is waiting on one component. It is buildable now, it compounds
   with use, and a better base model makes it <em>more</em> valuable rather than less. This is
   the case for building it.</p>
   <p class="src">Everything on this page is drawn from
@@ -114,8 +114,8 @@ measuring.</p></div></div>
 <h3>And the end-of-chapter questions were never calibrated</h3>
 
 <p>An item bank was valuable because it held <em>calibrated</em> items, with known difficulty,
-known discrimination, and distractors mapped to real student errors. Practically no textbook's exercises
-have ever been validated against response data. They are plausible questions written by an
+known discrimination, and distractors mapped to real student errors. Practically no textbook's
+exercises have ever been validated against response data. They are plausible questions written by an
 expert, which is exactly the thing the assessment literature says is insufficient: experts
 classify their own items' quality at <strong>below chance</strong>.</p>
 
@@ -157,8 +157,8 @@ rather than argued:</p>
 <div class="claim">Across 223 real tutoring domains, no model beat chance at labelling an
 incorrect student action.</div>
 
-<p>Not "performed poorly." <strong>Chance.</strong> Looking at what a learner did and saying
-what is wrong with it is the most basic operation a tutor performs, and it is currently
+<p>Not "performed poorly." <strong>Chance.</strong> The most basic operation a tutor
+performs — look at what a learner did and say what is wrong with it — is currently
 unverifiable by the systems being sold to do it.</p>
 
 <h2>4. What that means commercially</h2>
@@ -167,9 +167,8 @@ unverifiable by the systems being sold to do it.</p>
 <p><strong>Every AI-tutoring capability is downstream of the verifier.</strong> Adaptive
 pivoting needs to know the learner is wrong and how. Generate-and-select needs a selector, and
 selection by test measures +8.14pp against −3.20pp for selection by LLM judge, an eleven-point
-spread in the wrong direction for the judge. A
-teachable agent needs its tutee's downstream accuracy as ground truth. None of it works
-without the instrument.</p></div></div>
+spread in the wrong direction for the judge. A teachable agent needs its tutee's downstream
+accuracy as ground truth. None of it works without the instrument.</p></div></div>
 
 <div class="step"><div class="n">2</div><div>
 <p><strong>The field is currently optimising against two instruments that do not work.</strong>
@@ -254,8 +253,8 @@ narrow, and nowhere near solved by the labs, which sit at chance across 223 doma
 find out in six weeks.</div>
 
 <p>A developer accepts a completion and the code compiles, the tests pass or fail, the thing
-runs. The label is <strong>cheap to collect and immediately grounded</strong>, which is the
-same fact as <code>pytest</code> existing, arriving from the other direction.</p>
+runs. The label is cheap to collect and immediately grounded, which is the same fact as
+<code>pytest</code> existing, arriving from the other direction.</p>
 
 <p>A tutor accepts a draft. Was it the right pedagogical move? You cannot know from the
 acceptance. <strong>Accepting is a judgement about plausibility, and plausibility is the signal
@@ -305,8 +304,8 @@ $1,419.66 for 429 tutors over two months, or $19.86 per tutor per year, against 
 200 hours at the US mean tutor wage. Same number, from two directions.</p>
 
 <p>That retires a category of pitch. <em>"Our costs fall as models get cheaper"</em> is true and
-worth 0.43%. <strong>The entire margin question is the leverage ratio</strong>, meaning how many
-learner-hours one paid tutor-hour can supervise, and nobody has measured it.</p>
+worth 0.43%. <strong>The entire margin question is the leverage ratio</strong> — how many
+learner-hours one paid tutor-hour can supervise — and nobody has measured it.</p>
 
 <h3>The one audited comparable went the wrong way</h3>
 
@@ -343,7 +342,7 @@ advantage survive or does it get handed to your competitors for free?</em></p>
 <table class="moat">
   <tr><th>Candidate moat</th><th>Survives?</th><th>Why</th></tr>
   <tr><td><b>Model quality</b></td><td class="v-no">No</td><td>A frontier release hands it to everyone simultaneously</td></tr>
-  <tr><td><b>Prompt / pedagogy design</b></td><td class="v-no">No</td><td>Copyable in an afternoon. In a controlled trial, two designed interventions <b>failed to beat plain ChatGPT</b></td></tr>
+  <tr><td><b>Prompt / pedagogy design</b></td><td class="v-no">No</td><td>Copyable in an afternoon. In a controlled trial, two designed interventions failed to beat plain ChatGPT</td></tr>
   <tr><td><b>Content library</b></td><td class="v-no">No</td><td>Generation cost went to zero; calibration cost did not, and libraries are not calibrated</td></tr>
   <tr><td><b>Brand / distribution</b></td><td class="v-mid">Partly</td><td>Real, slow, and not technology. The incumbents already have it</td></tr>
   <tr><td><b>Procurement conformance</b></td><td class="v-mid">Partly</td><td>SOC 2, FERPA, COPPA, accessibility, and from 2 Aug 2026 the EU AI Act's Article 50. A durable barrier and a commodity once cleared</td></tr>
@@ -370,9 +369,8 @@ semester in a middle-school course, produced +16.5% retention with the machinery
 <h3>The engineering problem, stated exactly</h3>
 
 <p>An optimiser needs thousands of fitness evaluations. A delayed unassisted retention test
-yields <strong>one evaluation per learner per six weeks</strong>, with enormous variance. The
-gap between those two rates, rather than compute or model quality, is why the loop does not
-exist.</p>
+yields <strong>one evaluation per learner per six weeks</strong>, with enormous variance. That
+gap — not compute, not model quality — is why the loop does not exist.</p>
 
 <p>A three-tier fitness function follows, and the middle tier is this page's subject:</p>
 
@@ -386,10 +384,10 @@ exist.</p>
 </div>
 
 <p>The recursive loop is what the verifier unlocks, not a second play alongside it.
-<strong>The verifier is the surrogate fitness function</strong>, the only thing that can stand in
-for a six-week outcome at the frequency an optimiser needs. Build it and the loop follows; skip it and you are
-optimising plausibility at scale, which is the failure mode already documented in the field's
-leading systems.</p>
+<strong>The verifier is the surrogate fitness function</strong>, the only thing that can stand
+in for a six-week outcome at the frequency an optimiser needs. Build it and the loop follows;
+skip it and you are optimising plausibility at scale, which is the failure mode already
+documented in the field's leading systems.</p>
 
 <h2>10. Auto-research: one half is done, the other is not automatable</h2>
 
@@ -418,7 +416,7 @@ That is worth a great deal and is not the same as a self-improving tutor.</p>
   to infer frustration, confusion or engagement is the one thing on this list that is illegal
   rather than difficult.</p>
   <p>Article 3(39) restricts the ban to <em>biometric-derived</em> inference, which leaves
-  clickstream-based affect detection, the dominant technique in the research literature, in a
+  clickstream-based affect detection — the dominant technique in the research literature — in a
   grey zone. That is the highest-value unresolved legal question in the field.</p>
 </div>
 
@@ -429,16 +427,14 @@ runs <em>opposite</em> to the real one.</p>
 
 <h3>What video-in is genuinely for</h3>
 
-<div class="step"><div class="n">1</div><div><p><strong>Watching the work, not the face.</strong> Answer-position recognition on student
-work reaches 98.4%. One mandatory caveat: vision-language models silently repair student errors
-while transcribing them, returning the corrected work because that is what training rewards.
-The mistakes are the entire reason for looking.
-Transcription must be constrained to a verbatim, error-preserving task and checked against
-exactly that.</p></div></div>
+<div class="step"><div class="n">1</div><div><p>Watching the work, not the face. Answer-position recognition on student work reaches 98.4%.
+One mandatory caveat: vision-language models silently repair student errors while transcribing
+them, returning the corrected work because that is what training rewards. The mistakes are the
+entire reason for looking. Transcription must be constrained to a verbatim, error-preserving
+task and checked against exactly that.</p></div></div>
 
-<div class="step"><div class="n">2</div><div><p><strong>Watching gesture, which is the unexploited one.</strong> In a three-arm trial
-teaching the same strategy as physical action, concrete gesture and abstract gesture, only
-gesture transferred. Handling the objects produced learning that stayed stuck to the objects.</p>
+<div class="step"><div class="n">2</div><div><p>Watching gesture, which is the unexploited one. In a three-arm trial teaching the same
+strategy as physical action, concrete gesture and abstract gesture, only gesture transferred. Handling the objects produced learning that stayed stuck to the objects.</p>
 <p>Gesture is <em>representational compression</em>, having already thrown away the specific
 instance and kept the structure. So a camera watching a learner's hands is watching the leading
 indicator of transfer, weeks before a test could show it. It is legal, it is grounded in the one
@@ -455,7 +451,7 @@ world generative and the physics symbolic.</strong></p>
 <h2>12. Gamification: the moderators point away from what everyone ships</h2>
 
 <p>Gamification's cognitive effect is real and survives a high-rigour subsplit. The claim
-vendors actually make, <em>that it keeps people coming back</em>, rests on the
+vendors actually make — <em>it keeps people coming back</em> — rests on the
 <strong>weakest and least stable cell in the table: behavioural g = .25, with the confidence
 interval's lower bound at .04.</strong></p>
 
@@ -467,16 +463,15 @@ points, badges or leaderboards as the active ingredient.</div>
 
 <p>Three further results that should govern any roadmap here:</p>
 
-<div class="step"><div class="n">a</div><div><p><strong>Novelty decay is measured, not folklore.</strong> Perceived benefit declines with
-time on the service.</p></div></div>
-<div class="step"><div class="n">b</div><div><p><strong>Even theory-driven design dips.</strong> A deliberately need-supporting
-implementation, measured four times across 15 weeks, produced a <em>curvilinear</em> autonomous
-motivation curve, an initial downward trend that only later recovered. The
-companion paper is titled <em>"Unravelling the ambivalent motivational power of
-gamification."</em></p></div></div>
-<div class="step"><div class="n">c</div><div><p><strong>The undermining effect is specific.</strong> Across 128 experiments: tangible,
-expected, performance-contingent rewards significantly undermine intrinsic motivation. That is
-the exact description of an XP bar.</p></div></div>
+<div class="step"><div class="n">a</div><div><p>Novelty decay is measured, not folklore. Perceived benefit declines with time on the
+service.</p></div></div>
+<div class="step"><div class="n">b</div><div><p>Even theory-driven design dips. A deliberately need-supporting implementation, measured four
+times across 15 weeks, produced a <em>curvilinear</em> autonomous motivation curve, an initial
+downward trend that only later recovered. The companion paper is titled <em>"Unravelling the
+ambivalent motivational power of gamification."</em></p></div></div>
+<div class="step"><div class="n">c</div><div><p>The undermining effect is specific. Across 128 experiments: tangible, expected,
+performance-contingent rewards significantly undermine intrinsic motivation. That is the exact
+description of an XP bar.</p></div></div>
 
 <p>So the buildable version is <strong>fiction and genuine social structure, never a points
 economy</strong>. And no engagement metric may serve as an objective, because streaks, XP,
@@ -495,9 +490,9 @@ you to have the result.</strong></p>
 <div class="claim">SAT · PSAT · JEE · NEET · GATE · EAMCET · gaokao. Proctored. Novel items
 each cycle. Months after study. Scored, ranked, and reported.</div>
 
-<p>Read that against the requirements. <strong>Proctored</strong> means genuinely unassisted,
-the condition almost no edtech study achieves. New paper each cycle means novel items, not the
-ones practised. Months later means delayed. And the score comes back <em>because the candidate
+<p>Read that against the requirements. Proctored means genuinely unassisted, the condition
+almost no edtech study achieves. New paper each cycle means novel items, not the ones
+practised. Months later means delayed. And the score comes back <em>because the candidate
 cares about it more than you do.</em></p>
 
 <p>The truth signal that costs everyone else a research programme is, in this segment, the
@@ -506,7 +501,7 @@ customer's own objective.</p>
 <h3>Cold start, counterfactual, motivation, syllabus</h3>
 
 <div class="step"><div class="n">1</div><div><p><strong>The verifier's cold-start problem is smallest here.</strong> Past papers with
-published keys, official rubrics, and, for the big exams, decades of item-level response data.
+published keys, official rubrics, and — for the big exams — decades of item-level response data.
 A closed syllabus and a definitive answer key is the nearest thing education has to
 <code>pytest</code>.</p></div></div>
 
@@ -556,15 +551,15 @@ it produces the data that makes the next edition genuinely adaptive.</p>
 <div class="kill">
   <div class="k">Three findings that should change the plan, not just caveat it</div>
   <p><strong>China is a policy risk, not a market.</strong> The 2021 <em>double reduction</em>
-  order, retrieved in full from the Ministry of Education, states that no new approvals will
+  order — retrieved in full from the Ministry of Education — states that no new approvals will
   be issued for core-subject tutoring institutions and that existing ones re-register as
-  non-profits. One listed operator's revenue fell 62% in twelve months, per its filing. Gaokao preparation is not an addressable commercial market
-  under current policy.</p>
+  non-profits. One listed operator's revenue fell 62% in twelve months, per its filing. Gaokao
+  preparation is not an addressable commercial market under current policy.</p>
   <p><strong>The market-size figures you will be shown do not exist.</strong> No official Chinese
   statistic on tutoring market size could be located, before or after 2021. Every
   "$100bn+ market" number in circulation descends from vendor reports rather than from a
-  national statistics office. The destroyed value is itself unmeasurable,
-  which should be sobering about the downside and not only the upside.</p>
+  national statistics office. The destroyed value is itself unmeasurable, which should be
+  sobering about the downside and not only the upside.</p>
   <p><strong>And this segment is maximally positional.</strong> Exam preparation buys
   <em>rank</em>. Every effect size in this survey was measured where the treatment group had
   something the control group did not. If a tool that lifts everyone by 0.4 SD reaches everyone,
@@ -587,8 +582,8 @@ throughout.</p>
 <div class="scroll">
 <table class="moat">
   <tr><th>Kindle</th><th>The equivalent here</th><th>Why it matters</th></tr>
-  <tr><td>The book, unchanged</td><td>The book, unchanged</td><td>Non-threatening to the publisher. No migration and no replacement, just an <b>addendum</b></td></tr>
-  <tr><td>Whispersync: position, notes, highlights follow you</td><td><b>The learner model</b>: what you know, what you got wrong, what is still live</td><td>The switching cost. And it has <b>never been measured against a stateless baseline</b>, so it is also an open experiment</td></tr>
+  <tr><td>The book, unchanged</td><td>The book, unchanged</td><td>Non-threatening to the publisher. No migration and no replacement, just an addendum</td></tr>
+  <tr><td>Whispersync: position, notes, highlights follow you</td><td><b>The learner model</b>: what you know, what you got wrong, what is still live</td><td>The switching cost. And it has never been measured against a stateless baseline, so it is also an open experiment</td></tr>
   <tr><td>Reading telemetry: where people stop, what they highlight</td><td><b>The instrumented practice loop</b>: what was attempted, where it stalled, which error</td><td>Nobody else has it, and it is generated by ordinary use</td></tr>
   <tr><td>Popular Highlights: emergent, from aggregate behaviour</td><td><b>Where readers of this chapter go wrong</b>: aggregate misconception data</td><td>This <em>is</em> the calibration corpus. It is the verifier's training set, arriving free</td></tr>
   <tr><td>X-Ray: terms and characters, generated from the text</td><td><b>The three-rung ladder</b>, per concept, entered by a measured probe</td><td>Fifteen to forty seconds to place a reader, not a placement test</td></tr>
@@ -597,16 +592,15 @@ throughout.</p>
 
 <h3>The channel, the asset, and the closed loop</h3>
 
-<div class="step"><div class="n">1</div><div><p><strong>The publisher keeps their product and their channel.</strong> That is what makes the
-deal signable. They are not being platformed; they are being instrumented.</p></div></div>
-<div class="step"><div class="n">2</div><div><p><strong>The mentor is the surface; the learner model is the asset.</strong> Same structure as
-the device being sold at cost while the account is the moat. Give away the conversation. Own the
-state and the verifier.</p></div></div>
-<div class="step"><div class="n">3</div><div><p><strong>And in exam prep the loop closes.</strong> Aggregate misconception data supplies the
-volume, the verifier supplies the surrogate signal, and <strong>the exam supplies the
-truth</strong>. It is proctored, novel, delayed, and reported back because the candidate wants
-it reported. That is
-the three-tier fitness function from §9, fully instantiated, in one product.</p></div></div>
+<div class="step"><div class="n">1</div><div><p>The publisher keeps their product and their channel, which is what makes the deal signable.
+They are not being platformed; they are being instrumented.</p></div></div>
+<div class="step"><div class="n">2</div><div><p>The mentor is the surface; the learner model is the asset. Same structure as the device being
+sold at cost while the account is the moat. Give away the conversation. Own the state and the
+verifier.</p></div></div>
+<div class="step"><div class="n">3</div><div><p>And in exam prep the loop closes. Aggregate misconception data supplies the volume, the
+verifier supplies the surrogate signal, and <strong>the exam supplies the truth</strong>. It is
+proctored, novel, delayed, and reported back because the candidate wants it reported. That is the
+three-tier fitness function from §9, fully instantiated, in one product.</p></div></div>
 
 <h3>Disintermediation, and correlated error</h3>
 
@@ -652,7 +646,7 @@ end, because what binds in this market is the gate rather than the appetite.</p>
   <tr><th>Partner</th><th>Time to live</th><th>What they bring</th><th>What they lack</th></tr>
   <tr><td><b>Individual authors and creators</b></td><td class="v-yes">Days</td><td>Highest content velocity, no procurement, willing to experiment</td><td>No instrumentation capability at all</td></tr>
   <tr><td><b>Online course sites</b></td><td class="v-mid">Weeks–months</td><td>Existing telemetry, existing accounts, a practice loop already running</td><td>They measure completion; nobody measures diagnosis</td></tr>
-  <tr><td><b>Publishers</b></td><td class="v-mid">Quarters</td><td><b>Decades of item-level response data</b>, the calibration corpus</td><td>Slow, and valuing themselves on the pages</td></tr>
+  <tr><td><b>Publishers</b></td><td class="v-mid">Quarters</td><td>Decades of item-level response data, the calibration corpus</td><td>Slow, and valuing themselves on the pages</td></tr>
   <tr><td><b>Institutions</b></td><td class="v-no">Years</td><td>Contract size, durability</td><td>SOC 2, FERPA, COPPA, accessibility conformance, and from 2 Aug 2026 the EU AI Act's Article 50</td></tr>
 </table>
 </div>
@@ -686,7 +680,7 @@ specific incorrect model of this concept, and here is the evidence.</em></p>
 
 <p>Whoever defines that representation defines how the ecosystem exchanges its most valuable
 object, and publishing it openly is what makes a neutral layer trustworthy enough for
-competitors to route through. <code>INFERENCE</code>.</p>
+competitors to route through, which is an <code>INFERENCE</code> rather than an observation.</p>
 
 <h3>Neutrality is the product, and it has to have teeth</h3>
 
@@ -710,12 +704,12 @@ competitors to route through. <code>INFERENCE</code>.</p>
 <p>Three things make it hard, and all three are surmountable by an operator rather than by a
 lab:</p>
 
-<div class="step"><div class="n">a</div><div><p><strong>The labels must come from real student work, in the wild.</strong> Simulated
+<div class="step"><div class="n">a</div><div><p>The labels must come from real student work, in the wild. Simulated
 students have near-zero misconception faithfulness. You cannot synthesise this corpus.</p></div></div>
-<div class="step"><div class="n">b</div><div><p><strong>Judgement of a pedagogical action is not a single ground truth.</strong> It needs
+<div class="step"><div class="n">b</div><div><p>Judgement of a pedagogical action is not a single ground truth. It needs
 the tutor's decision, the learner's subsequent behaviour, and a delayed outcome, which means
 you need the delivery relationship, not just the transcripts.</p></div></div>
-<div class="step"><div class="n">c</div><div><p><strong>Decades of labelled intelligent-tutoring logs already exist and are public.</strong>
+<div class="step"><div class="n">c</div><div><p>Decades of labelled intelligent-tutoring logs already exist and are public.
 The cold-start is smaller than it looks, and the public testbed is sitting there unused.</p></div></div>
 
 <h2>19. The three questions to ask any competitor</h2>
@@ -744,8 +738,8 @@ worse.</p></div></div>
   how bad the counterfactual was, largest where instruction is scarce and near zero in a
   well-resourced classroom. If that holds, the addressable market is not where the money is.</p>
   <p><strong>The prior on the adjacent claim is bad.</strong> Four separate attempts to reduce
-  special-education administrative burden, by computerisation, delegation, deregulation, and a
-  statutory waiver authority, were measured, and all four returned zero. The AI claim is the
+  special-education administrative burden — computerisation, delegation, deregulation, and a
+  statutory waiver authority — were measured, and all four returned zero. The AI claim is the
   fifth attempt, and its entire measured base is one RCT of 22 novice teachers.</p>
 </div>
 

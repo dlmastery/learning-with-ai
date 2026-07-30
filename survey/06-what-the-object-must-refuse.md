@@ -14,8 +14,8 @@ need the blocks. You need to *move the thing*. Fractions become real when a chil
 cuts a circle, not when a circle is cut for them.
 
 This section set out to establish what that intuition is worth and where the
-boundary sits — because if physical manipulation is load-bearing, there is a hard
-ceiling on what an AI reaches, and honesty requires naming it.
+boundary sits. If physical manipulation is load-bearing, there is a hard ceiling
+on what an AI reaches, and honesty requires naming it.
 
 The measurement says the intuition is pointing at something real and **has
 misidentified what it is.**
@@ -63,12 +63,12 @@ The reading is counterintuitive and, once seen, obvious. **Physicality is not th
 active ingredient. Representational compression is.** A gesture is already a
 *symbol* of the action; it has thrown away the specific blocks and kept the
 structure. That discarding is the learning. Handling the real blocks does the
-opposite — it binds the idea to the instance.
+opposite. It binds the idea to the instance.
 
 Consistent with this: physical versus virtual manipulatives comes out null in
 both randomised, fidelity-documented head-to-heads (N = 350, within-class
 randomisation, Welch t = 1.015, p = 0.316). The one pooled estimate favouring
-virtual (d = 1.603) has **I² = 97.95%** and is uninterpretable — we report it
+virtual (d = 1.603) has **I² = 97.95%** and is uninterpretable. We report it
 because omitting an inconvenient number is worse than discounting a bad one.
 
 ---
@@ -81,15 +81,15 @@ both are implementable in software:
 > **The object must refuse illegal states, and it must link representations.**
 
 A Montessori pink tower cannot be built wrong and stay standing. A number line
-will not let you put 7 to the left of 3. The correction comes from the object, not
-from an adult — which is why the child can be wrong in private, repeatedly, at
-their own pace, without anyone's face changing.
+will not let you put 7 to the left of 3. The object corrects, and no adult has to.
+That is why the child can be wrong in private, repeatedly, at their own pace,
+without anyone's face changing.
 
 That is *self-correction*, and it is the mechanism. It is also, precisely, a
 constraint solver with a rendering layer.
 
 This resolves an apparent conflict in our own corpus. An earlier section scored
-Montessori's materials as not surviving substitution — remove the physical
+Montessori's materials as not surviving substitution: remove the physical
 object and the mechanism goes with it. That verdict is right *about Montessori*
 and does not generalise, because what fails to survive is the wood. What survives
 is the refusal.
@@ -113,8 +113,8 @@ physical version quietly imposes and the virtual version does not.
 And the adjacent literature on sensory accommodations does not support the folk
 consensus. Sensory-integration treatment effects decline from **0.60 to 0.03**
 across study eras and sit at **0.09, non-significant, against active controls**.
-Alternative seating — the wobble stools and therapy balls that appear in every
-classroom that is trying — has moderate-strength evidence of **no effect on
+Alternative seating, the wobble stools and therapy balls that appear in every
+classroom that is trying, has moderate-strength evidence of **no effect on
 attention**.
 
 These are not reasons to withhold anything a child finds comfortable. They are
@@ -142,7 +142,7 @@ sentence in this section for anyone building:
 > **Vision-language models silently "fix" student errors while transcribing them.**
 
 Asked to read a page of student work, the model returns the *corrected* work. It
-repairs the sign, closes the parenthesis, completes the step — because that is
+repairs the sign, closes the parenthesis, completes the step, because that is
 what its training rewards. The mistakes are the entire reason for looking at the
 page, and they are the thing being erased.
 
@@ -152,10 +152,10 @@ and it must be checked against exactly that.
 
 ---
 
-## 6. Executable material: reactivity is a hazard reduction, not a guarantee
+## 6. Executable material: reactivity reduces hazards
 
 The same theme carries into how teaching material itself is built. A reactive
-notebook — one whose cells form a dependency graph and recompute on change —
+notebook, one whose cells form a dependency graph and recompute on change,
 promises that a learner cannot produce an inconsistent state. That is the "refuses
 illegal states" property applied to a document.
 
@@ -165,7 +165,8 @@ cycles, and eliminates use-before-define and deleted-cell residue. But the same
 three cells with identical dependencies produce `total = 106` or `total = 6`
 purely by source position.
 
-Hazard reduction, not a guarantee. Worth having, and not worth trusting blindly.
+Hazard reduction rather than a guarantee. Worth having, and not worth trusting
+blindly.
 
 And the honest gap: **zero empirical evaluations of reactive notebooks as an
 instructional medium exist.** The claim that a consistent-by-construction document
@@ -173,7 +174,7 @@ prevents misconception formation is a design hypothesis, not a finding. It is
 stated here as the former.
 
 What *is* verified is the recipe. Applying a nine-rule conformance checker to
-teaching scripts — ~38 ms per script, non-zero exit on violation — an injected
+teaching scripts (~38 ms per script, non-zero exit on violation), an injected
 sign flip in an entropy definition **failed loudly and named the claim it
 violated.** That is the thing byte-identical reproduction alone cannot do:
 reproducing a wrong answer perfectly is still reproducing a wrong answer.
@@ -192,8 +193,8 @@ become interactive is a chapter most learners never see interact.
 | **Pyodide** | **21.89 MB + 4.5 s CPU per cold visit** | Real scientific stack. 293 packages, no threads or sockets, torch impossible. **Cap at ≤3 chapters** |
 
 The 27 KB default is not a compromise. Almost everything this survey wants a
-mini-app to do — refuse an illegal state, link four representations, let a wrong
-idea run to its visible consequence — is a constraint solver and a renderer, which
+mini-app to do (refuse an illegal state, link four representations, let a wrong
+idea run to its visible consequence) is a constraint solver and a renderer, which
 is exactly what small JavaScript is good at.
 
 A note worth keeping: Observable's own team, asked whether to run computation in
@@ -201,22 +202,22 @@ the browser, shipped a static site generator.
 
 ---
 
-## 8. What this section commits us to
+## 8. What we require of every object we build
 
-- **Build for representational compression, not physical fidelity.** Gesture beat
-  action on objects. The goal is to help a learner *discard* the instance, not to
-  make the instance more vivid.
-- **Every manipulative must refuse illegal states and link representations.** If
-  it does neither, it is a picture.
-- **Virtual is the accessibility default**, because it removes requirements the
+- Build for representational compression instead of physical fidelity. Gesture
+  beat action on objects. The goal is to help a learner *discard* the instance,
+  never to make the instance more vivid.
+- Every manipulative must refuse illegal states and link representations. If it
+  does neither, it is a picture.
+- Virtual is the accessibility default, because it removes requirements the
   physical version imposes silently.
-- **Never let a model transcribe student work unconstrained.** The errors are the
+- Never let a model transcribe student work unconstrained. The errors are the
   payload.
-- **Reactive documents reduce hazards; conformance checks catch what reactivity
-  misses.** Ship both.
-- **27 KB of JavaScript, not 21.89 MB of Python**, unless the learner needs to read
-  the Python.
+- Reactive documents reduce hazards; conformance checks catch what reactivity
+  misses. Ship both.
+- 27 KB of JavaScript instead of 21.89 MB of Python, unless the learner needs to
+  read the Python.
 
-The through-line, which is the same one the grounding sections reached from the
-other direction: what teaches is not the richness of what the learner is given. It
-is the precision of what they are not allowed to do wrong without noticing.
+Richness in what a learner is given teaches less than precision about what they
+cannot get wrong without noticing. The grounding sections arrive at the same place
+from the other direction (§13).

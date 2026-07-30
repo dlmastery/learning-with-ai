@@ -63,7 +63,7 @@ immediate assisted test.**
 That last clause is the finding that matters, because it invalidates the
 measurement practice of the entire field rather than one product.
 
-> **Falsifier.** If immediate assisted performance and 6-week unassisted
+> Falsifier. If immediate assisted performance and 6-week unassisted
 > performance rank the arms identically, with **r > .8** across a range of
 > systems, then immediate measurement is a valid proxy, this problem dissolves,
 > and the field's existing evidence base is worth far more than this survey
@@ -110,8 +110,8 @@ prerequisite-dependent subscale and ≈ 0 on the topic-local subscale.** The
 *localisation* is the real prediction; a uniform gain would indicate a confound.
 
 Two design details carry most of the value. The control must be
-summary-carryover rather than a true amnesiac, or the comparison measures
-politeness rather than memory. And the typed/untyped sub-ablation converts a null
+summary-carryover and not a true amnesiac, or the comparison measures
+politeness instead of memory. And the typed/untyped sub-ablation converts a null
 into a diagnosis — because the deep obstacle is knowledge-component
 alignment, and the numbers there are not encouraging: expert KC models add
 **≤ 0.01 AUC on 7 of 9 datasets**, and on 4 of 9 the KC model is so poor that a
@@ -125,9 +125,9 @@ replication on all nine datasets tested (0.85 reported → 0.73 observed). The c
 has to be continuity, diagnosis and pivoting — none of which AUC measures and
 none of which anyone has measured either.
 
-> **Falsifier.** C = B = A on prerequisite-dependent transfer, with no advantage
+> Falsifier. C = B = A on prerequisite-dependent transfer, with no advantage
 > even on redundant-re-explanation counts, would mean persistent state is an
-> engineering preference rather than a pedagogical mechanism — and given its
+> engineering preference rather than a pedagogical mechanism. Given its
 > privacy cost, **that finding should stop people building it.**
 
 ---
@@ -155,12 +155,12 @@ the corpus adds the AI *on top of* normal instruction, which makes the AI arm
 strictly advantaged and the resulting effect uninterpretable as evidence about
 the AI.
 
-Pre-registered prediction. A > C by 0.15–0.25 SD — the constrained system
-beats the best cheap alternative, but modestly — and B < C. **Honest confidence
-in A > C: about 55%.** That is precisely the confidence level at which an
+Pre-registered prediction. A > C by 0.15–0.25 SD, so the constrained system
+beats the best cheap alternative but only modestly, and B < C. **Honest
+confidence in A > C: about 55%.** That is the confidence level at which an
 experiment is worth running.
 
-> **Falsifier.** **A ≈ C at adequate power is the result that should change this
+> Falsifier. **A ≈ C at adequate power is the result that should change this
 > survey's posture most.** It would mean the guardrailed tutor's contribution is
 > the *scalability of a known-good intervention*, not a new mechanism — still
 > valuable, and a completely different claim, which should then be stated in
@@ -171,9 +171,9 @@ experiment is worth running.
 ## What would falsify this survey
 
 This survey argues that the measured **0.2–0.4 SD** band for LLM tutoring is the
-floor with the brakes on — that constrained, grounded, pivoting, remembering
-systems would do better, and that nobody has built the good version and measured
-it. Here is the strongest case against that, stated properly rather than as a
+floor with the brakes on; that constrained, grounded, pivoting, remembering
+systems would do better; and that nobody has built the good version and measured
+it. Here is the strongest case against that, stated properly and not as a
 strawman. Anyone who cannot state it in this form has not earned the right to the
 survey's conclusion.
 
@@ -228,10 +228,10 @@ author with no funding statement. One trial has 11 clusters. Another lost 43% of
 its sample. **Where independence and rigour increase, effects shrink. That is the
 signature of a literature whose true effect is smaller than its published mean.**
 
-### What the survey says back — as reasons to test, not refutations
+### What the survey says back, as reasons to test and not refutations
 
-One: the nulls are mostly about branding, not mechanism. Orton-Gillingham
-nulls while its active ingredient — explicit systematic decoding instruction —
+One: the nulls are mostly about branding and not about mechanism. Orton-Gillingham
+nulls while its active ingredient, explicit systematic decoding instruction,
 carries d = 0.41 to 0.55. Expanding intervals null while *scheduling retrieval at
 all* carries classroom d = 0.54, with only 12 of 271 massed-versus-spaced
 comparisons failing. Lesson Study nulls as a *process* while content-bearing
@@ -246,13 +246,13 @@ landing at zero in the same study (§01).
 Three: the empty chair. Zero randomised trials of AI tutoring on learners
 with disabilities is not a verdict. The ceiling argument cannot even be assessed
 for the population where prior-knowledge, dosage and fidelity constraints bind
-hardest — which is exactly where the mechanism-level case is strongest.
+hardest, which is where the mechanism-level case is strongest.
 
 ---
 
 ## The concession conditions, stated in advance
 
-We would concede that 0.2–0.4 SD is a real ceiling rather than a floor, and that
+We would concede that 0.2–0.4 SD is a real ceiling and not a floor, and that
 added mechanism does not pay, if:
 
 1. **Experiment 3 returns A ≈ C** at n = 300/arm. The single most decisive test:
@@ -272,7 +272,7 @@ added mechanism does not pay, if:
 6. **A well-powered, independent, preregistered trial of a system implementing
    several of these mechanisms together lands inside 0.2–0.4 SD** on a delayed
    unassisted outcome. This is the cleanest trigger and the one we should most
-   want run, because it tests the conjunction rather than the parts.
+   want run, because it tests the conjunction instead of the parts.
 
 **If (1) and (6) both land, the correct revision is not a hedge.** It is to
 rewrite the thesis as: *AI's contribution to learning is the scalable,
@@ -280,7 +280,7 @@ high-fidelity, high-dosage delivery of interventions we already knew worked, and
 the design space of novel mechanisms is a distraction.*
 
 That would still be an important and actionable finding. It would redirect the
-field toward fidelity and dosage — which is precisely what the section on
+field toward fidelity and dosage, which is what the section on
 designing for the margin already argues for special education, where the
 known-good intervention base is two orders of magnitude larger than the AI base.
 **We say this now, in advance, so that conceding costs us nothing but a
@@ -288,14 +288,14 @@ hypothesis.**
 
 ---
 
-## What this section commits us to
+## How this agenda gets run
 
 - **Run the outcome instrument first.** Delayed, unassisted, novel-item,
   blind-scored. Report the immediate-to-delayed rank correlation as a headline
   number, because it tells everyone whether their existing evidence base means
   anything.
 - **Ablate memory before building more of it.** Same model, same prompt, same
-  UI, differing only in what crosses the session boundary — and split typed from
+  UI, differing only in what crosses the session boundary. Split typed from
   untyped so a null is a diagnosis.
 - **Put restraint on trial against worked examples plus retrieval practice, at
   matched time.** Not against business as usual. Pre-register d = 0.20 as the
@@ -306,7 +306,7 @@ hypothesis.**
 - **Publish the falsifier before the result.** Each of the three experiments
   above has one written down, and none of them is a formality.
 - **Three of these are runnable inside one instrumented product** with a few
-  hundred consented users and no new modelling work — the memory ablation, the
+  hundred consented users and no new modelling work: the memory ablation, the
   gap-widening moderator, and the permutation-vs-self-consistency check, which
   needs no learners at all. A shared delayed-assessment panel is the
   infrastructure that makes the rest reportable.
@@ -314,6 +314,6 @@ hypothesis.**
 The measurement gap is the widest one in applied AI: dozens of benchmarks for
 whether a model is smart, roughly one field trial per organisation per year for
 whether it teaches. Anyone building in this space is building without a ruler.
-The correct posture is not to wait for the benchmark. It is to build the ruler,
-publish the falsifier alongside the design, and be the kind of project that would
-notice if it were wrong.
+Waiting for someone else to supply one is not a posture this project can afford.
+Build the ruler, publish the falsifier alongside the design, and be the kind of
+project that would notice if it were wrong.

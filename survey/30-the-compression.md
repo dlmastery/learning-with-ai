@@ -128,7 +128,7 @@ Two more nulls, and the second is our own thesis biting back:
 - **Seamon (2004):** the intensive-format advantage is real immediately and **gone at
   three years.**
 - **Whillier & Lystad:** the same contact hours compressed produced significantly
-  **worse** grades (P = 0.001) — and higher satisfaction. The felt-learning trap,
+  worse grades (P = 0.001) — and higher satisfaction. The felt-learning trap,
   arriving exactly where a compression claim is most tempting to believe.
 
 There is also no meta-analysis of intensive versus traditional formats. Every review
@@ -140,7 +140,7 @@ its confidence.
 ## 6. Durability does not compress — but it is nearly free
 
 Retention is built by elapsed time between retrievals, and that cannot be
-accelerated. A memory durable for a year needs gaps of **18–36 days**. There is no
+accelerated. A memory durable for a year needs gaps of 18–36 days. There is no
 version of this where you finish on Tuesday.
 
 But the cost of durability is routinely overstated, and one experiment settles it.
@@ -149,24 +149,25 @@ problems, merely split** across sessions instead of massed into one.
 
 Same total effort. Same items. Different calendar.
 
-So the honest shape of the claim is not "everything compresses" or "nothing does".
-It is:
+The shape of the claim is therefore neither "everything compresses" nor "nothing
+does". It is:
 
 > **A week's understanding in an hour. A year's retention in six hours spread across
 > two months.**
 
 That is a *stronger* claim than the one it replaces, because it is specific enough to
-plan against — and it says the expensive part is calendar patience, not effort.
+plan against. The expensive resource it names is calendar patience, and effort is not
+what runs short.
 
 ---
 
 ## 7. Polymathy, and why it is bounded by orientation
 
-Scientists work in **3–4 topics across an entire career**, and switching correlates
+Scientists work in 3–4 topics across an entire career, and switching correlates
 with lower citation impact at every career stage.
 
-Why so few? Not learning rate — that varies by **1.14×**. Not practice hours —
-deliberate practice explains **4% of variance in education** and **under 1% in
+Why so few? Not learning rate, which varies by 1.14×. Not practice hours:
+deliberate practice explains 4% of variance in education and **under 1% in
 professions. The binding constraint is the one parameter that varies by 3.6×**:
 where you start, which is to say the fixed cost of orientation in a new field.
 
@@ -179,11 +180,11 @@ to do with intelligence.**
 It is also the part an agent can collapse most completely — it is retrieval,
 structuring, and diagnosis, none of which require the learner's own working memory.
 
-> **What limits polymathy is not how many fields you can learn. It is how many times
-> you can afford to be a beginner.** That price is what falls.
+What limits polymathy is not how many fields you can learn but how many times you can
+afford to be a beginner. That price is what falls.
 
 This is the strongest version of the claim in this section, and it is
-`INFERENCE` — it follows from the measured parameters rather than from a trial of
+`INFERENCE`, following from the measured parameters and not from a trial of
 anyone becoming a polymath. Nobody has run that study. It is eminently runnable.
 
 ---
@@ -192,11 +193,11 @@ anyone becoming a polymath. Nobody has run that study. It is eminently runnable.
 
 **10–40× on elapsed calendar. 3–5× on engaged effort.**
 
-Rising above 40× — documented once at ~300× — when the baseline is *informal
+Rising above 40×, documented once at ~300×, when the baseline is *informal
 experience* rather than a structured course, because informal experience has the
 worst opportunity density of any learning arrangement.
 
-Falling to **1×** for procedural and production domains, and **1×** for durability.
+Falling to 1× for procedural and production domains, and 1× for durability.
 
 Three conditions, and all three are load-bearing:
 
@@ -211,20 +212,20 @@ Three conditions, and all three are load-bearing:
 
 ---
 
-## 9. What this section commits us to
+## 9. Rules for quoting a compression factor
 
 - **Never quote a compression factor without saying which resource.** Calendar,
   engaged effort, and durability compress at wildly different rates, and a single
   number that does not name one is marketing.
 - **Optimise opportunities, not minutes.** Time-based models of learning have
   systematically poor fit. Count attempts at the right difficulty.
-- **Spend the compression budget on orientation and prerequisite repair**, which are
-  worth 3.6×, not on speeding up the productive hour, which is already near its
+- **Spend the compression budget on orientation and prerequisite repair.** Those are
+  worth 3.6×. Speeding up the productive hour is not, because it is already near its
   floor.
 - **Claim 1× on procedural skill**, out loud, every time. The FSI hours are real and
   no model shortens them.
 - **Ship the session decomposition study.** Nobody has measured where a study hour
   actually goes. One instrumented cohort and a fortnight would close it.
 
-The sentence to keep: **almost none of a week is spent learning, and that — not
-processing speed, not talent, not effort — is what an agent takes back.**
+Almost none of a week is spent learning. That, and not processing speed or talent or
+effort, is what an agent takes back.

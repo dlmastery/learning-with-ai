@@ -69,7 +69,7 @@ utterance is an attention leak on every turn.
 
 ## 4. The refusal engine is the pedagogy
 
-Everything above is infrastructure. This is the pedagogy, and no vendor ships it.
+Everything above is infrastructure. No vendor ships this part.
 
 The tutor must continuously decide **answer / ask / wait / pivot / escalate**, and
 default to *not answering*. Inputs it must weigh:

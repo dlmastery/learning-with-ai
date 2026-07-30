@@ -57,7 +57,7 @@ no new capability, and no additional cost. It needs a loop that decides when
 
 ## Why the field mostly builds the other one
 
-The cause is a measurement problem, and measurement problems are fixable.
+This is a measurement problem, and measurement problems are fixable.
 
 Three research streams in this survey converged independently on one result. It
 is the paper's central finding and it indicts most of what the field is building.

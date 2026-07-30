@@ -10,7 +10,7 @@ source_report: research/raw/F4-reach-economics.md
 
 If attention stops being scarce, the natural conclusion is that everyone gets a
 tutor. This section is the audit of that conclusion, and it does not survive
-intact — but what replaces it is more useful, because the remaining barriers are
+intact. What replaces it is more useful, because the remaining barriers are
 nameable, rankable, and several of them are ours to fix.
 
 The short version: **price was never the binding constraint, and language is.**
@@ -40,7 +40,7 @@ test scores or enrollment."* Worldreader's iREAD programme in Ghana saw the
 device breakage**; the sponsor has since exited e-readers entirely.
 
 The lesson is not that technology fails. It is that **the device was never the
-intervention** — and a survey that skipped this would be repeating the error it is
+intervention**, and a survey that skipped this would be repeating the error it is
 documenting.
 
 ---
@@ -53,9 +53,9 @@ Against that record, a set of interventions with real effects:
 - **Mindspark** — 0.37 and 0.23 SD
 - **Adaptive instruction 0.42** versus **non-adaptive 0.12** on comparable content
 
-The separator is **targeting**. Not the hardware, not the bandwidth, not the
-model — whether the instruction met the learner where they actually were rather
-than where the curriculum said they should be.
+The separator is **targeting**: whether the instruction met the learner where they
+actually were rather than where the curriculum said they should be. Not the
+hardware. Not the bandwidth. Not the model.
 
 Honesty requires the counter-example in the same breath: **TaRL has its own
 scaling nulls**, in Bihar and Uttarakhand. Targeting is the ingredient; delivering
@@ -64,7 +64,7 @@ plausibly helps with more than it helps with anything else in this section.
 
 ---
 
-## 3. The correction: gap-widening is a property of delivery, not of technology
+## 3. The correction: gap-widening is a property of delivery
 
 This survey has repeatedly warned that AI tutoring widens gaps — the strong pull
 further ahead. Sierra Leone's effect loaded at **+0.195 SD per SD of baseline
@@ -76,18 +76,18 @@ this section: not one widened gaps, and several sharply narrowed them.
 So the honest statement is:
 
 > **Untargeted delivery widens gaps. Targeted delivery does not.** Gap-widening is
-> a design failure we know how to avoid — not a property of the technology, and
+> a design failure we know how to avoid, not a property of the technology, and
 > not a tax we have to accept.
 
-That is a materially more optimistic finding than the one it replaces, and it
-raises the standard rather than lowering it: a system that widens gaps no longer
-has the excuse that everything does.
+That replaces a pessimistic finding with an optimistic one, and it raises the
+standard: a system that widens gaps no longer has the excuse that everything
+does.
 
 ---
 
 ## 4. The narrowest channel has the best evidence
 
-The instinct is that reach improves with bandwidth — richer channel, better
+The instinct is that reach improves with bandwidth: richer channel, better
 learning. The measurements say close to the opposite.
 
 | Channel | Effect |
@@ -125,13 +125,13 @@ whether a model works in their language, because nobody has measured it. That is
 not a capability gap; it is a measurement gap, and it is cheaper to close.
 
 The tractable part: a **0.55B fine-tuned encoder** cuts the below-50-score
-population from **37.6% to 4.4%**. Small, targeted models move this enormously —
+population from **37.6% to 4.4%**. Small, targeted models move this enormously,
 which is a genuinely hopeful result, since it means the fix does not wait on
 frontier scale.
 
 The stubborn part: that same intervention barely moves the unmeasured group,
 because you cannot fine-tune against a benchmark that does not exist. And **no
-learner-weighted multilingual benchmark exists anywhere** — every benchmark
+learner-weighted multilingual benchmark exists anywhere**. Every benchmark
 weights languages by convenience or by corpus size, never by how many children are
 sitting in a classroom being taught in them.
 
@@ -161,7 +161,7 @@ Six of nine are untouched. A document that celebrated the first three and stayed
 quiet about the rest would be marketing.
 
 But note what kind of problems the remaining six are. Language is a measurement
-and fine-tuning problem — tractable, and *now* tractable at 0.55B. Interface
+and fine-tuning problem, tractable, and *now* tractable at 0.55B. Interface
 accessibility is a design standard we already committed to. Evidence is
 experiments we have specified and can run. Devices, connectivity and permission
 are genuinely outside this document's reach and should be named as such rather
@@ -184,27 +184,27 @@ fixes.
 
 What we do not concede is the inference. Every null in §1 shares a structure:
 something was distributed, and nothing was targeted. The interventions that
-worked all targeted. Abundant attention is precisely an input to targeting — it is
-what makes meeting each learner where they are affordable at population scale for
-the first time.
+worked all targeted. Abundant attention is an input to targeting. It is what makes
+meeting each learner where they are affordable at population scale for the first
+time.
 
 That is not a promise that it will work. It is the reason the experiment is worth
 running, stated at the strength the evidence actually supports.
 
 ---
 
-## 8. What this section commits us to
+## 8. What we owe the people not in the room
 
-- **Never ship distribution as an intervention.** If it does not target, it is a
+- Never ship distribution as an intervention. If it does not target, it is a
   device programme, and device programmes have a measured record of zero.
-- **Try the phone call first.** +0.327 SD sets a bar that most rich-channel designs
+- Try the phone call first. +0.327 SD sets a bar that most rich-channel designs
   will not clear.
-- **Report gap change as a primary outcome**, not a robustness check — because we
-  now know targeted systems can avoid widening, so failing to is a defect.
-- **Treat language as the frontier it is.** Publish in the learner's home language
+- Report gap change as a primary outcome and never as a robustness check, because
+  we now know targeted systems can avoid widening, so failing to is a defect.
+- Treat language as the frontier it is. Publish in the learner's home language
   where a model supports it, state plainly where one does not, and contribute to
   closing the 21.7% measurement gap rather than routing around it.
-- **Name the six barriers we do not remove**, every time, in the same breath as the
+- Name the six barriers we do not remove, every time, in the same breath as the
   three we do.
 
 The title of this section is the discipline it asks for. Every claim about reach

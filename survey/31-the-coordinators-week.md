@@ -25,7 +25,7 @@ hour count.
 **five hours a week against four available.** The deficit is structural. It does not
 clear on Friday.
 
-**Standing, every week.** Direct instruction — the part the job is named after.
+**Standing, every week.** Direct instruction, the part the job is named after.
 Consultation with every general-education teacher, who under §300.323(d)(2) must be
 informed of their specific responsibilities and of *"the specific accommodations,
 modifications, and supports that must be provided"* — which makes **every new teacher,
@@ -34,7 +34,7 @@ probes, and graphing them, because the graph is the §300.309(b)(2) evidentiary 
 and not a wall display.
 
 On a rolling cycle. An IEP meeting is 1.5 hours in the room and **2 hours to write
-the document**, plus 2 hours a month scheduling and 1 hour mailing notices — and each
+the document**, plus 2 hours a month scheduling and 1 hour mailing notices. Each
 one carries §300.322's parent-participation duties, including a record of attempts
 if the parent does not attend and a duty to *"take whatever action is necessary to
 ensure that the parent understands the proceedings."* Progress reports: **8 hours,
@@ -94,10 +94,10 @@ they decide what a system is allowed to do without a meeting.
 
 1. **The duty attaches to the agency, not to the tool.** A vendor cannot create or
    discharge a PWN obligation; the district holds it.
-2. **It fires on identification, evaluation, placement, and the provision of FAPE —
-   not on teaching methodology.** §300.501(b)(3) places methodology outside the
+2. **It fires on identification, evaluation, placement, and the provision of FAPE,
+   and not on teaching methodology.** §300.501(b)(3) places methodology outside the
    meeting requirement entirely.
-3. **A procedural violation denies FAPE only through §300.513(a)(2)'s three gates** —
+3. **A procedural violation denies FAPE only through §300.513(a)(2)'s three gates**:
    impeding the right to FAPE, significantly impeding parental participation, or
    causing deprivation of educational benefit. Not every misstep is a denial.
 
@@ -154,9 +154,9 @@ teachers on goal drafting.**
 
 We report that ratio rather than soften it. Four measured nulls against one small
 trial is the correct prior, and anyone promising administrative relief should be made
-to say why this attempt differs from the four that did not work. Our answer — that the
+to say why this attempt differs from the four that did not work. Our answer, that the
 previous four automated *storage and transmission* while the cost is in *composition
-and judgement* — is a hypothesis, not a finding.
+and judgement*, is a hypothesis and not a finding.
 
 ---
 
@@ -188,8 +188,8 @@ was wrong, and the correction is uncomfortable enough to state in full:
 - Teachers assign accommodations **at chance** (N = 1,218)
 
 Both halves have to be held at once. Accommodations are legally required and
-evidentially weak. That is not an argument for withholding them — the legal
-obligation is not contingent on effect size, and access is a right rather than an
+evidentially weak. That is not an argument for withholding them. The legal
+obligation is not contingent on effect size, and access is a right and not an
 intervention. It is an argument against counting them in the efficacy column, and
 against a system that recommends them as though it were prescribing something
 measured.
@@ -219,8 +219,8 @@ or completion of a module.
 ## 9. The ownership line
 
 The question a builder needs answered is not "can AI help" but "who owns this
-artefact." The full table is in the source report — 17 artefacts, four columns; the rule it
-produces is short:
+artefact." The full table is in the source report, 17 artefacts across four columns;
+the rule it produces is short:
 
 > **An AI may draft anything and may author nothing that a signature attaches to.**
 
@@ -235,11 +235,11 @@ recommendation.
 
 ---
 
-## 10. What this section commits us to
+## 10. What the coordinator's week requires of a system
 
 - **Argue both prongs of FAPE.** Substantive efficacy is half the statute. A system
   that ignores procedure is not deployable regardless of its effect size.
-- **Draw the line at service versus method**, not at size of change. Methodology sits
+- **Draw the line at service versus method**, never at size of change. Methodology sits
   outside the meeting requirement; minutes of specialised instruction do not.
 - **Present options, never a recommendation.** Every recommendation engine is a
   predetermination machine by default, and the regulator said so before AI existed.

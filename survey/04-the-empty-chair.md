@@ -151,9 +151,9 @@ Now look at what the industry ships. Dashboards. Streaks. Mastery bars. Adaptive
 difficulty. Engagement analytics. Every one of those is the **CBM-without-expert-system
 arm** — the arm that measured more, changed more, and moved nothing.
 
-So build the expert system. The dashboard is the arm that measured more, changed
-more, and moved nothing. The active ingredient is a prescribed, principled change
-of instruction, drawn from a known-good menu, triggered by a stated rule.
+So build the expert system, and not the dashboard. The active ingredient is a
+prescribed, principled change of instruction, drawn from a known-good menu,
+triggered by a stated rule.
 
 ### 4.2 Two clocks, and the slow one is slower than you think
 

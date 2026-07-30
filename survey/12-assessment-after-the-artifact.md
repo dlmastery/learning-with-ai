@@ -161,8 +161,8 @@ thousands of students:
 Independently replicated in a different modality: L2 listening items with response
 data from 2,267 EFL undergraduates, where generative revision under principled
 prompts "effectively enhanced distractor quality" but "struggled to fully capture
-listening miscomprehension patterns." Same finding: **LLMs fix form, not
-diagnosticity.** And note the pipeline shape in both — response data first,
+listening miscomprehension patterns." Same finding: **LLMs fix form and leave
+diagnosticity where it was.** And note the pipeline shape in both — response data first,
 generation second.
 
 The design rule falls out: **do not ask a model for a wrong answer; ask it for an
@@ -259,10 +259,10 @@ learner time.** That is the right direction for the pressure to point.
 
 **Detection is bounded in theory and broken in practice, and its errors are not
 random.** The theoretical result bounds the AUROC of the *best possible* detector by
-the total variation distance between human and machine text distributions — as
+the total variation distance between human and machine text distributions: as
 models improve, achievable detection falls toward chance. Empirically, the largest
 comparative test of 14 systems concluded they are "neither accurate nor reliable."
-Then Liang et al., usually cited too weakly — seven deployed detectors, run on TOEFL
+Then Liang et al., usually cited too weakly. Seven deployed detectors, run on TOEFL
 essays by non-native writers and on US eighth-graders' essays:
 
 | Measure | Value |
@@ -282,7 +282,7 @@ The construct the detector measures is negatively correlated with the construct 
 course develops. That is a validity failure, and no threshold repairs it.
 
 The base-rate arithmetic nobody ran: 500 students, 5% undisclosed AI use, and a
-detector *better* than any documented — 90% sensitivity, 5% false-positive rate.
+detector *better* than any documented, at 90% sensitivity and a 5% false-positive rate.
 True positives 22.5; false positives 23.75; **false discovery rate 51.4%.** More
 than half of accusations wrong, with generous parameters. At Liang's measured rate,
 among 100 honest non-native speakers, 61 false accusations.
@@ -295,25 +295,25 @@ idea of a 'gold standard' of human grading might be flawed."
 
 Equivalence by readability formula is invalid. Six oral-reading-fluency passages
 "developed to be comparable based on readability formulas" produced mean fluency
-from **67.9 to 93.9 words correct per minute** — roughly a semester of growth,
+from **67.9 to 93.9 words correct per minute**, roughly a semester of growth,
 purely from which passage a child happened to get.
 
 Progress-monitoring decision rules rest on expert opinion. A systematic review of
 102 documents found curriculum-based measurement decision rules have "very limited
 psychometric or empirical support."
 
-And two clean negatives that cut *against* the fashionable direction, reported
-because omitting inconvenient nulls is worse than reporting them. Testwiseness
+And two clean negatives that cut *against* the fashionable direction. Testwiseness
 manipulations produced little post-instruction effect on modified concept
 inventories, despite option-avoidance and position effects being individually
 significant. And misconception structure in FCI incorrect-answer groupings had
 little relation to previously identified gender-unfair items — the proposed
 explanation for the FCI gender gap was tested and failed.
 
-Finally, a null that constrains criticism of AI items rather than endorsing them:
+Finally, a null that constrains criticism of AI items without endorsing them:
 AI- and human-generated MCQs showed **no significant difference in discrimination
 index (p = 0.17)**, despite significant differences in difficulty and
-non-functioning distractors. "AI items are worse" is dimension-specific, not global.
+non-functioning distractors. "AI items are worse" is a dimension-specific claim,
+never a global one.
 
 ---
 
@@ -330,37 +330,35 @@ is a property of the probe policy, not of the product.**
 | **T3 — Summative / consequential** | "This learner meets the standard" | All of T2, plus **100% human review of keyed answers on administered items**, documented equating, published subgroup invariance, an appeals path, and an independent validity study | — |
 
 Two observations about that table matter more than its contents. **Most AI tutoring
-systems in 2026 sit at Tier 0 and report as if they were at Tier 2** — the single most
+systems in 2026 sit at Tier 0 and report as if they were at Tier 2**, the single most
 common measurement error in the field. And **Tier 3 is not currently attainable by a
 purely generative system**: the largest systematic review of AI-generated MCQ validity
 concludes the evidence "does not yet support unsupervised use in summative
 assessment," and combined with the collapse of the process claim on unsupervised
 artifacts, consequential decisions require proctored or verification-anchored
-observation. Say so rather than approximating it.
+observation. Say so; do not approximate it.
 
 Explicitly permitted at every tier, worth stating because the prohibitions are long:
 telling the learner what they got wrong and why. Diagnostic feedback is not a
 score claim.
 
 Three standalone prohibitions. Never report α or ω for an assessment where learners
-receive different items — undefined, not merely inaccurate. Never present a
+receive different items: the statistic is undefined and not merely inaccurate. Never present a
 wrong-answer analysis as diagnostic unless the distractors were derived from observed
 student errors; doing so manufactures a diagnosis. Never claim a growth trend from
 probes whose equivalence has not been empirically established.
 
 ---
 
-## 7. The strongest counter-argument
+## 7. Nobody will build this
 
 *This is an argument for making assessment far more elaborate. Frequent secured orals,
 human review of every keyed answer, G-studies per generator — you have replaced a
 simple system that mostly worked with one nobody will build.*
 
-Two answers.
-
-First, the burden moved rather than grew. Human review, not generation, is now the
-bottleneck — a system claiming "AI removes the item-writing bottleneck" has *moved* it
-and should say so. And verification-first assessment makes the product claim genuinely
+First, the burden moved without growing. Human review has replaced generation as the
+bottleneck, and a system claiming "AI removes the item-writing bottleneck" has *moved*
+it and should say so. And verification-first assessment makes the product claim genuinely
 free wherever the discipline has already agreed to submit to an oracle: mathematics
 agreed centuries ago, software by construction, empirical science via replication.
 Institutions that adopted autograders as a saving inverted the logic — they banked it
@@ -383,7 +381,7 @@ Only a frequent, secured, diagnostic system can do that.
 
 ---
 
-## 8. What this section commits us to
+## 8. What we will and will not claim from a score
 
 - **Say which of the four claims is at stake**, every time. Product, process,
   capability, learning need four instruments.

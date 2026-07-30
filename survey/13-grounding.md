@@ -9,18 +9,18 @@ source_report: research/raw/G1-grounding-synthesis.md
 # Grounding
 
 Substituting one random set of numbers into two expressions and comparing the
-results takes **0.38–0.61 ms** — two harnesses in this project measured each, and
-both are reported rather than the flattering one — and catches **112 of 113** seeded
+results takes **0.38–0.61 ms** (two harnesses in this project measured each, and
+both are reported rather than the flattering one) and catches **112 of 113** seeded
 derivation errors: 99.1% recall, with **zero** false alarms across 37
 semantically-equivalent rewrites. (A third, independent implementation in
 `docs/demos/grounding-ladder.html` measures 170 ns on a smaller formula set; the
 figures are not directly comparable and the demo says so.)
 
-That is the whole economic argument, and it is over before it starts. **There is no
+That is the whole economic argument, over before it starts. **There is no
 engineering, pedagogical, or performance reason to ever ship an unchecked formula.**
 
 What follows is more interesting than that, because grounding is usually sold as a
-safety feature — *stop the tutor lying* — and that framing produces bad products. It
+safety feature (*stop the tutor lying*), and that framing produces bad products. It
 makes verification a filter bolted onto the end of a generator. The better framing
 is capability.
 
@@ -30,7 +30,7 @@ is capability.
 
 **A tutor can contradict a confident learner without asserting authority.** Today,
 when a tutor says you are wrong, it is staking status: *believe me, I am the machine
-that knows* — exactly the posture that fails with the learner who is already right and
+that knows*, the posture that fails with the learner who is already right and
 the learner who has learned not to argue. With a checker, the move changes from
 *assertion* to *experiment*: "I think that's off — let's evaluate both versions at
 x = 3 and see." The tutor stops being the authority and becomes the person who knows
@@ -84,7 +84,7 @@ four angles.
 > 4. **LEGIBILITY.** The verdict and the declaration travel with the artefact, in a
 >    form the learner can read and re-run.
 >
-> **The rung is defined by the arbiter, not by the medium.**
+> The rung is defined by the arbiter, not by the medium.
 
 Each condition was discovered independently, and each has a documented failure that
 violates exactly one of them:
@@ -109,7 +109,7 @@ where the ladder is made of axioms. Everywhere else the top rung is the world.**
 ## 3. The six rungs
 
 Named for their arbiters. L2 splits into two orthogonal sub-rungs because they catch
-disjoint error classes at comparable — negligible — cost.
+disjoint error classes at comparable and negligible cost.
 
 | Rung | Arbiter | Measured cost | Measured coverage | Cannot check |
 |---|---|---|---|---|
@@ -125,7 +125,7 @@ never emit `FAIL`** — `simplify(e) ≠ 0` does not mean `e ≠ 0`, by Richards
 theorem, so the symbolic rung emits `PASS` or `ABSTAIN` and nothing else. And **L2a
 can never emit `PASS`**: dimensional homogeneity is a mandatory gate that may reject
 and may never accept. A pipeline that collapses `{PASS, FAIL, ABSTAIN}` to a boolean
-has destroyed the guarantee, not compressed it.
+has destroyed the guarantee; it has not compressed it.
 
 And the rungs are not a staircase. The ladder is a *router*. Climbing past the
 rung that can falsify a claim buys nothing and costs a great deal.
@@ -138,7 +138,7 @@ The instinct is that numeric checking is the cheap approximation and symbolic ch
 is the real thing you escalate to when it matters. **The measurement says the
 opposite: the default is numeric and the escalation is symbolic.** L3 buys about +0.9
 points of recall over L2b for roughly 3× the median cost, an unbounded worst case —
-and a **38.3% hole** located precisely where physics and engineering teaching lives:
+and a **38.3% hole** in the domains where physics and engineering teaching lives:
 
 | Wester section | Tests | Failing | Rate |
 |---|---|---:|---:|
@@ -164,7 +164,7 @@ universal quantifier, or when the claim is reused enough that the tail risk matt
 
 ---
 
-## 5. The nulls, given their own space
+## 5. Four measurements that went the other way
 
 Four, and three of them contradict something a reasonable engineer would have assumed.
 
@@ -172,10 +172,10 @@ Eight random substitutions buy nothing over one. Recall is flat at 112/113 acros
 a 16× sampling budget. The cost is not flat: p95 latency rises **6.8×** for zero
 measured benefit. On textbook-scale expressions a single substitution is the entire
 signal, because the mutation classes that matter (sign, factor, exponent, dropped
-term, wrong variable) perturb the value almost everywhere, not on a measure-zero set.
-So k should be set by the *structure* of the claim — a suspected removable singularity
-or a piecewise domain needs more points; a polynomial identity does not — never by a
-fixed constant.
+term, wrong variable) perturb the value almost everywhere, and never merely on a
+measure-zero set. So k should be set by the *structure* of the claim (a suspected
+removable singularity or a piecewise domain needs more points; a polynomial identity
+does not) and never by a fixed constant.
 
 Sampling wider makes the checker worse. This inverts a natural instinct.
 
@@ -190,16 +190,17 @@ The mechanism: `√p·√q = √(pq)` and `log(exp z) = z` are true on the posit
 false off them, so a checker sampling outside the claim's declared domain is not being
 more rigorous — it is evaluating a different claim. Adding assumptions until a
 check passes is laundering; sampling outside the declared assumptions is manufacturing.
-Both are failures of the declaration, not of the arbiter, which is exactly what the
+Both are failures of the declaration and never of the arbiter, which is what the
 invariant predicts.
 
 And a proposal from this project's own corpus was benchmarked and falsified. An
 earlier section proposed permutation-based fidelity checking, modelled on the Vedic
 *pāṭha* recitation protocols: instead of re-asking a model the same question k times,
-ask k structurally *different* questions about the same content — state it, invert it,
-evaluate it at two points, ask the scaling factor, write it in zero form — claiming this
-is "strictly stronger than self-consistency sampling because the permutations are
-adversarial to semantic smoothing," and flagging it for benchmarking. It was
+ask k structurally *different* questions about the same content: state it, invert it,
+evaluate it at two points, ask the scaling factor, write it in zero form. The claim
+was that this is "strictly stronger than self-consistency sampling because the
+permutations are adversarial to semantic smoothing," and it was flagged for
+benchmarking. It was
 benchmarked: 768 generations, two models, matched budget of six calls each, every
 verdict decided by a deterministic comparator so no model judges anything.
 
@@ -219,8 +220,8 @@ fast as its recall does not get better with scale; it gets louder.**
 
 The diagnosis generalises: **permutation-based fidelity checking is confounded with
 probe competence.** It detects "the model cannot do algebra" far more reliably than "the
-claim is corrupted." The original mechanism argument — that structurally different
-redundancy is uncorrelated with the original error — is *correct*, and is precisely why
+claim is corrupted." The original mechanism argument, that structurally different
+redundancy is uncorrelated with the original error, is *correct*, and is why
 it fails: the permuted probes have their own, independent, much larger error rate. On
 one model two of six probes have *negative* discrimination, and probe rankings do not
 transfer between models.
@@ -246,7 +247,7 @@ The single most important number in this area:
 
 That was stated as a fact about Lean. It is a fact about *chains*.
 
-> **The composition rule.** Chaining a verified stage A into a verified stage B
+> The composition rule. Chaining a verified stage A into a verified stage B
 > produces **three** verification obligations, and the field routinely ships two:
 >
 > 1. `wellformed(A.out)` — A's output is legal in A's target language. *Usually
@@ -297,7 +298,7 @@ condition outright.
 
 The ruling: **no chain of verified stages may be reported as verified end-to-end unless
 every interface carries a round-trip certificate.** "97% formalization and 69% proving"
-is, absent obligation 3, not a claim about the pipeline at all.
+is, absent obligation 3, no claim about the pipeline at all.
 
 ---
 
@@ -312,7 +313,7 @@ perfectly verified explanation of the wrong 20% is a failure no tier detects."
 
 That row does not survive, and it should be split into three.
 
-**(a) Omission that *falsifies* is machine-checkable, and it is the class that causes
+**(a) Omission that *falsifies* is machine-checkable, and this is the class that causes
 harm.** Five properties a simplification may never falsify, each a property of the *pair*
 (simple rung, detailed rung), each decidable given both:
 
