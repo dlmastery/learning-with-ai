@@ -709,6 +709,8 @@ def sync_dashboard(stats):
     # docs/index.html carries them as <span data-gen="key">, README.md as
     # <!--gen:key-->…<!--/gen-->. Same counts, two syntaxes, one source.
     targets = [(f, r'(data-gen="%s"[^>]*>)([^<]*)(</span>)'),
+               (ROOT / "docs" / "deck.html",
+                r'(data-gen="%s"[^>]*>)([^<]*)(</span>)'),
 ]  # README carries no generated counts — a prose front door does not
                   # open on a word count. The dashboard is where the numbers live.
     for path, tpl in targets:
@@ -719,7 +721,7 @@ def sync_dashboard(stats):
             out = re.sub(tpl % key, lambda m: m.group(1) + val + m.group(3), out)
         if out != src:
             path.write_text(out, encoding="utf-8")
-    print("counts synced into docs/index.html: " +
+    print("counts synced into docs/index.html and docs/deck.html: " +
           ", ".join(f"{k}={v}" for k, v in counts.items()))
 
 HOW_TO_READ = """\

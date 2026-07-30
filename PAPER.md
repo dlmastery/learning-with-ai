@@ -40,7 +40,7 @@ the capability, and this survey is an attempt to write what the literature has n
 It rests on 53 research reports. Every claim carries an evidence label, every section
 carries at least one documented null, and every one of the authors' errors is
 published in an append-only ledger rather than quietly edited — **23 of
-the 71 corrections were found by an adversarial reviewer rather than by us.**
+the 75 corrections were found by an adversarial reviewer rather than by us.**
 That discipline is the warrant for the opening paragraph, and not a substitute for
 making its claim.
 
@@ -718,8 +718,8 @@ both of its sources.
 
 Two readings of that coincidence are available and only one is licensed. **It does
 not license 0.2–0.4 as a ceiling on a frontier system.** No study in the ITS or
-human-tutoring meta-analyses had a frontier model in it, and every frontier trial
-inside the band shares one design: a general-purpose assistant distributed into a
+human-tutoring meta-analyses had a frontier model in it, and the three field trials
+inside the band share one design: a general-purpose assistant distributed into a
 classroom, six to eight weeks, measured the week it stopped. That is a measurement
 of a deployment pattern.
 
@@ -933,8 +933,9 @@ took fifty years to meet. Effects in the 0.2–0.4 band, replicated across four
 countries, on a technology that did not exist in 2022, is a remarkable starting
 position — and the retention evidence will arrive.*
 
-Most of that is correct, which is why this section leads with the band and not with
-the gaps. But two things break the defence.
+Most of that is correct, which is why this section leads with the band — three field
+trials, named and dated above — and not with the gaps. But two things break the
+defence.
 
 First, the instrument is not expensive or novel. Two hundred and seventy-three
 ERIC records use it. It is four weeks of patience and a fresh item set — and item
@@ -2234,9 +2235,10 @@ the learner enters at the right height**. It is not an itinerary anyone walks. F
 monotone refinement. A level may *drop* precision, formalism, mechanism-depth. It
 may never falsify **ontology, causal sign, quantifier strength, or uniqueness of
 mechanism**, because errors *across* ontological categories are the ones a full
-semester of instruction does not shift. Entry is measured, never preferred:
-preference moves d≈0.48 while knowledge moves zero, which is the felt/real
-dissociation of **§2** showing up inside the ladder.
+semester of instruction does not shift. Entry is measured, never preferred: in the
+three RCTs that put it to the test (n = 334, adults, immediate quiz) preference
+moved d≈0.48 while knowledge moved zero, which is the felt/real dissociation of
+**§2** showing up inside the ladder.
 
 **5. It grounds.** Derivations are checked, not asserted. Numerically, then
 symbolically, then formally where it matters. Correctness lives in the verifier,
@@ -2248,8 +2250,9 @@ never in the model's manners.
 
 The provenance of the band is the whole bet. **0.2–0.4 SD was measured on systems
 that do almost none of this.** Two of the three figures inside it, ITS and human
-tutoring, predate the technology entirely. The third is a general-purpose assistant
-distributed into a classroom: it answers freely, has no memory, cannot see the work,
+tutoring, predate the technology entirely. The third is three field trials of a
+general-purpose assistant distributed into a classroom, and that assistant answers
+freely, has no memory, cannot see the work,
 cannot point, never pivots, and agrees with everything. The one frontier trial whose
 tutor was constrained — Kestin's, which refused to advance until the student produced
 reasoning — is also the one that came in above the band (§3).
@@ -13287,10 +13290,10 @@ claims in this field fail on the first three.
 
 The counter-case to this entire survey, at full strength: **0.2–0.4 SD may be a
 population parameter and not a technology limit.** The band pools three different
-machines: human tutors, rule-based ITS, and six-to-eight-week deployments of
-frontier assistants (§3). Three things that different landing in one place is
-exactly what you would see if the constraint belonged to the learners and the
-setting and not to any of the machines.
+machines: human tutors, rule-based ITS, and three field trials of frontier
+assistants running six to eight weeks (§3). Three things that different landing in
+one place is exactly what you would see if the constraint belonged to the learners
+and the setting and not to any of the machines.
 
 The concession is only evaluable if we say what the band is, so: **its frontier side
 is three field trials.** Sierra Leone, whose unadjusted estimate is not significant;
@@ -13314,8 +13317,9 @@ What would force us to concede: a well-powered trial of the assembled system,
 constrained and grounded and pivoting and remembering and teachable, with a delayed unassisted
 novel-item outcome, landing inside the 0.2–0.4 band. Not below it. *Inside* it.
 That would mean the mechanisms are decorative and the band is the ceiling — and it
-would be the first time the band had been measured on this class of system, which is
-the only reason the trial settles anything.
+would be the first time that band had been measured on this class of system with
+more than three field trials behind it, which is the only reason the trial settles
+anything.
 
 If that happens, the rewrite we would owe the reader is already drafted: *AI's
 contribution is scalable, high-fidelity, high-dosage delivery of what already

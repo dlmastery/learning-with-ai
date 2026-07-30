@@ -124,6 +124,10 @@ measured, or it is a pitch.
 | **C-62** | 30 Jul | §27 asserted that **only the pre-LLM generation has trials** and that *"the LLM generation inherited the marketing claim and none of the measurement"* | **False against this survey's own §09**, which holds seven frontier randomised trials. The defensible claim is narrower and sharper: frontier trials exist, and they are not what this market quotes — a 2016 meta-analysis of rule-based software is still being used to sell a 2026 model | SELF-RESEARCH (vintage pass) |
 | **C-63** | 30 Jul | §11 generalised a next-item-prediction ceiling (AUC 0.67–0.83, pre-LLM benchmark datasets) into *"learner modelling has a low ceiling"* | **A benchmark on one task, read as a bound on a capability.** It is silent on what a frontier model reads off a transcript, which makes it a gap rather than a ceiling. This was the section's most damaging propagation, because §11 is where the band entered the project's planning assumptions | SELF-RESEARCH (vintage pass) |
 | **C-64** | 30 Jul | §19 carried the EEF finding that mastery approaches are *"much less effective when students work at their own pace"* as a documented failure mode of PSI **and of AI tutors** | Both findings come from **human-run courses**; neither measured an AI tutor. Pacing pressure now owes a trial instead of inheriting a verdict | SELF-RESEARCH (vintage pass) |
+| **C-65** | 30 Jul | The **0.2–0.4 SD band** was treated throughout as a pooled, pre-LLM ceiling that a frontier system must break | **It is a frontier measurement, and there is no pool.** It is one sentence in `B2` rounding **three LLM-era field trials** — Sierra Leone +0.258, Nigeria +0.23–0.31, Rori +0.37 — with no *k*, SE, I² or CI, and no averaging ever performed. What made it read as a shared pre-LLM band was the clause attached to it. Landing near a 2014 rule-based system and a human tutor is a fact about three trials, never a bound. Kestin at 0.63 and Bastani at −0.054 are both frontier-era and both already sit outside it | SELF-RESEARCH (vintage audit) |
+| **C-66** | 30 Jul | *"ITS 0.32–0.42 g"* published as a single comparator | **Appears in no single source.** Spliced from Steenbergen-Hu & Cooper 2014 (g = 0.32–0.37, 39 studies) and Ma et al. 2014 (g = 0.42 vs teacher-led). §09 separately prints 0.32–0.57 in a table and 0.32–0.42 two lines below, so **three different ITS ranges circulate from the same two 2014 meta-analyses** | SELF-RESEARCH (vintage audit) |
+| **C-67** | 30 Jul | `B2`'s verdict names *"at much lower cost"* as **the genuinely important finding**, and the survey dropped that clause while keeping the band | The source's own headline was that a frontier system reaches the same effect as a human tutor at a fraction of the cost. Publishing the band without it inverts the finding | SELF-RESEARCH (vintage audit) |
+| **C-68** | 30 Jul | `check-corrections.py` never scanned **docs/thesis.html, docs/deck.html, process/PRD.md or process/README.md** | Four published surfaces outside `SURFACES`, including the two an investor is most likely to read. A live C-51 violation survived on the thesis, and C-3 and C-26 violations survived in the PRD. `SURFACES` is now pattern-based and a coverage guard fails the check when any published file is unaccounted for — it found the two PRD violations on its first run | SELF-RESEARCH, the same hole as C-30/C-36 |
 
 ---
 
@@ -134,13 +138,13 @@ hand-maintained, which is the whole argument for generating it.*
 
 | Source | Count |
 |---|---|
-| Caught by our own research | 41 |
+| Caught by our own research | 45 |
 | Caught by our own verification — including of our own warnings | 3 |
 | Caught by our own builders, working against their own briefs | 4 |
 | **Caught by an adversarial external reviewer** | **23** |
-| **Total** | **71** |
+| **Total** | **75** |
 
-23 of 71 were found by someone whose job was to fail us — including
+23 of 75 were found by someone whose job was to fail us — including
 the two most damaging (C-12, C-13), the one about this ledger itself (C-23), and the one
 that proved the propagation checker did not work (C-30). That ratio is the honest measure
 of what an internal review process is worth, and it is the argument for commissioning the

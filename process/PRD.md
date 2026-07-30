@@ -231,8 +231,9 @@ Designing for the margin first produces a better system for the centre. That is
 the section's thesis and it should govern the reference architecture in G2.
 
 **Evidence spine.** This is the most replication-rich area in education and must
-be treated as such: National Reading Panel; structured literacy and
-Orton-Gillingham for dyslexia; explicit/direct instruction (Project Follow
+be treated as such: National Reading Panel; structured literacy — and
+Orton-Gillingham specifically, which is **g = 0.22, p = .40 against an active
+comparison** and must never be listed as settled; explicit/direct instruction (Project Follow
 Through, Stockard et al. meta-analysis); Response to Intervention / MTSS;
 mathematics interventions for dyscalculia; AAC and assistive technology
 evidence; executive-function supports for ADHD; autism-spectrum instructional
@@ -250,7 +251,8 @@ research. Report effect sizes, and report where the evidence is weak.
    afford — not invention.
 3. **Diagnosis is out of scope.** Screening signals may be surfaced to
    professionals; the system must never label a child.
-4. **Accessibility is a floor, not a feature.** WCAG 2.2 AA minimum, keyboard-
+4. **Accessibility is a floor, not a feature.** WCAG 2.1 AA minimum — the level
+   ADA Title II actually incorporates, with deadlines of 26 Apr 2027 and 2028 — keyboard-
    only operation, screen-reader correctness, captions, no
    colour-only encoding, adjustable motion. A learning system that fails
    accessibility has failed its hardest users first.

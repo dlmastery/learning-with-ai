@@ -40,11 +40,26 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 # 30 Jul, which is why a C-51 violation survived on both — the two artifacts an
 # investor is most likely to read were the two the propagation checker never saw.
 # Add a path here the moment a new published surface exists.
-SURFACES = ["README.md", "PAPER.md", "process/CLAUDE.md", "process/AUDIT.md",
-            "process/ASSUMPTIONS.md", "evidence/VINTAGE.md",
-            "docs/index.html", "docs/paper.html", "docs/thesis.html", "docs/deck.html",
-            "survey/*.md", "docs/demos/*.html"]
+SURFACES = ["README.md", "PAPER.md", "process/*.md", "evidence/VINTAGE.md",
+            "docs/*.html", "survey/*.md", "docs/demos/*.html"]
 # CORRECTIONS.md is excluded: it is the ledger and must quote superseded values.
+
+# Nothing was checking that SURFACES actually covered everything published, so two
+# artifacts sat outside it for weeks. These are the only permitted omissions, each
+# with a reason; anything else published must be added to SURFACES or listed here.
+NOT_A_SURFACE = {
+    "CORRECTIONS.md":  "the ledger — it must quote superseded values",
+    "docs/demos/index.html": "the gallery; its cards are generated from .gen-gallery.py",
+}
+
+def uncovered(root):
+    """Published files that neither SURFACES nor NOT_A_SURFACE accounts for."""
+    covered = {f.resolve() for pat in SURFACES for f in root.glob(pat)}
+    covered |= {(root / k).resolve() for k in NOT_A_SURFACE}
+    published = set(root.glob("docs/**/*.html")) | set(root.glob("*.md")) \
+              | set(root.glob("process/*.md")) | set(root.glob("survey/*.md"))
+    return sorted(f.relative_to(root) for f in published if f.resolve() not in covered)
+
 
 WINDOW = 400   # chars either side that may carry the cure
 
@@ -222,6 +237,15 @@ def main():
         print(f"corrections propagation: FAILED — only {n_surfaces} surfaces found. "
               f"An empty or truncated scan is not a pass.")
         return 1
+    miss = uncovered(ROOT)
+    if miss:
+        print(f"corrections propagation: FAILED — {len(miss)} published file(s) are "
+              f"outside SURFACES and unaccounted for:")
+        for f in miss[:10]:
+            print(f"    {f}")
+        print("  Add each to SURFACES, or to NOT_A_SURFACE with a reason.")
+        return 1
+
     v = scan(ROOT)
     if not v:
         print(f"corrections propagation: OK — {len(RULES)} rules, "

@@ -77,8 +77,8 @@ both of its sources.
 
 Two readings of that coincidence are available and only one is licensed. **It does
 not license 0.2–0.4 as a ceiling on a frontier system.** No study in the ITS or
-human-tutoring meta-analyses had a frontier model in it, and every frontier trial
-inside the band shares one design: a general-purpose assistant distributed into a
+human-tutoring meta-analyses had a frontier model in it, and the three field trials
+inside the band share one design: a general-purpose assistant distributed into a
 classroom, six to eight weeks, measured the week it stopped. That is a measurement
 of a deployment pattern.
 
@@ -293,7 +293,8 @@ countries, on a technology that did not exist in 2022, is a remarkable starting
 position — and the retention evidence will arrive.*
 
 Most of that is correct, which is why this section leads with the band and not with
-the gaps. But two things break the defence.
+the gaps. The band is three field trials, named and dated above. But two things
+break the defence.
 
 First, the instrument is not expensive or novel. Two hundred and seventy-three
 ERIC records use it. It is four weeks of patience and a fresh item set — and item

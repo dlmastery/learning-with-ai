@@ -46,6 +46,8 @@ figcaption{font-size:13px;color:var(--ink-3);margin-top:var(--s4);line-height:1.
 .ax{font:600 10px var(--sans);letter-spacing:.11em;fill:var(--ink-3)}
 .sl{fill:var(--ink-2)}
 .vl{font:600 12px var(--mono);fill:var(--ink-2)}
+/* the class of system, printed on the chart rather than hidden in a tooltip */
+.cx{font:600 9px var(--mono);letter-spacing:.09em;fill:var(--ink-3);opacity:.85}
 .dot{stroke:var(--surface);stroke-width:2}
 
 /* ── card grids ─────────────────────────────────────────── */
@@ -237,7 +239,8 @@ effort has not landed, and each one is a constraint you can design against.</p>
     <p>Bastani 2025, ~1,000 Turkish students on GPT-4, is the frontier-era result that matters
     most here. Later unassisted work came back <b>17% worse</b>. Add guardrails and the
     unassisted coefficient is <b>−0.004, not significant</b>: harm gone, teaching not
-    demonstrated. Anyone selling restraint as a learning gain is ahead of the evidence —
+    demonstrated. 109 citing works in fourteen months, and no replication with a withdrawal
+    design. Anyone selling restraint as a learning gain is ahead of the evidence —
     <em>including this page, in an earlier draft.</em></p>
   </div>
 </div>
@@ -268,9 +271,10 @@ the number.</p>
   <div class="ftitle">What works, and by how much</div>
   <div class="fsub">Generated from a declarative spec by a deterministic renderer. No coordinate on
   this page is hand-positioned, because our own research rates hand-written SVG Tier D.
-  <b>One row here was measured on a frontier model.</b> The rest are human tutors, pre-LLM
-  systems, and classroom techniques, so read them as evidence about teaching and never as a bound
-  on what a 2026 model can do. The table view below prints the class for every row.</div>
+  Every row prints the class of system that produced it: <b>HUMAN</b> a person, <b>ITS</b>
+  rule-based pre-LLM courseware, <b>FRONTIER</b> an LLM from 2023 on, <b>TECHNIQUE</b> an
+  instructional move with no delivery system attached. Only one row is FRONTIER. Read the others
+  as evidence about teaching, and never as a bound on what a 2026 model can do.</div>
   <div class="legend">
     <span><i style="background:var(--real)"></i>Supported</span>
     <span><i style="background:var(--felt)"></i>Overstated, contested, or null</span>
@@ -492,7 +496,7 @@ run in the demos.</p>
     to withdraw the central claim. Persistent contents, an abstract, and every claim carrying an
     evidence label.</p>
     <div class="nm"><span data-gen="sections">47</span> SECTIONS ·
-      <span data-gen="words">118,381</span> WORDS</div>
+      <span data-gen="words">118,427</span> WORDS</div>
   </a>
   <a href="demos/">
     <div class="nt">The demos</div>
@@ -507,7 +511,7 @@ run in the demos.</p>
 <p class="sub">No survey gets everything right. This one did not, and the record is the
 point.</p>
 
-<p><span data-gen="corrections">71</span> corrections are published in an append-only ledger
+<p><span data-gen="corrections">75</span> corrections are published in an append-only ledger
 with a provenance column naming who caught each one. <span data-gen="external">23</span> were found
 by an adversarial reviewer rather than by us — including the two most damaging, and one about the
 ledger itself, which we had been silently editing inside a table headed
@@ -585,19 +589,19 @@ const LADDER = {
     {label:"Intelligent tutoring",   cls:"ITS · VanLehn 2011",       note:"rule-based step-based courseware, statistically indistinguishable from a human tutor in that review", v:0.76, ok:true},
     {label:"Best AI tutor RCT",      cls:"FRONTIER · Kestin 2025",   note:"d ≈ 0.63 regression, in 49 min vs 60. The one frontier-model row on this ladder. Developer-built AND developer-evaluated; no funding statement; immediate post-test only", v:0.63, ok:true},
     {label:"Learning by teaching",   cls:"HUMAN · Kobayashi 2019",   note:"human tutee, expectancy set first. The teachable-AGENT version has never been measured", v:0.56, ok:true},
-    {label:"Self-explanation",       cls:"LEARNER · Bisra et al.",   note:"pooled estimate across prompted self-explanation studies", v:0.55, ok:true},
-    {label:"Spacing",                cls:"LEARNER · 2025 meta",      note:"classroom meta-analysis · 31 effects · N > 3,000",    v:0.54,  ok:true},
-    {label:"Retrieval practice",     cls:"LEARNER · meta",           note:"222 classroom studies · 48,478 students · I² = 88%",  v:0.50,  ok:true},
-    {label:"Worked examples",        cls:"LEARNER · meta",           note:"reverses for experts, d = −0.428",                    v:0.48,  ok:true},
+    {label:"Self-explanation",       cls:"TECHNIQUE · Bisra et al.",   note:"pooled estimate across prompted self-explanation studies", v:0.55, ok:true},
+    {label:"Spacing",                cls:"TECHNIQUE · 2025 meta",      note:"classroom meta-analysis · 31 effects · N > 3,000",    v:0.54,  ok:true},
+    {label:"Retrieval practice",     cls:"TECHNIQUE · meta",           note:"222 classroom studies · 48,478 students · I² = 88%",  v:0.50,  ok:true},
+    {label:"Worked examples",        cls:"TECHNIQUE · meta",           note:"reverses for experts, d = −0.428",                    v:0.48,  ok:true},
     {label:"Teaching w/ expectancy", cls:"HUMAN · Kobayashi 2024",   note:"k=39, human tutees. Without the expectancy: g = −0.02", v:0.48, ok:true},
     {label:"Scaffolding (computer)", cls:"ITS · Belland 2017",       note:"144 pre-LLM studies, the only directly meta-validated computer-based form", v:0.46, ok:true},
-    {label:"Interleaving",           cls:"LEARNER · meta",           note:"varies sharply by domain",                            v:0.42,  ok:true},
-    {label:"Mayer design principles",cls:"LEARNER · multimedia meta",note:"contiguity alone reaches 0.74",                       v:0.38,  ok:true},
+    {label:"Interleaving",           cls:"TECHNIQUE · meta",           note:"varies sharply by domain",                            v:0.42,  ok:true},
+    {label:"Mayer design principles",cls:"TECHNIQUE · multimedia meta",note:"contiguity alone reaches 0.74",                       v:0.38,  ok:true},
     {label:"Tutoring, pooled RCTs",  cls:"HUMAN · Nickow 2024",      note:"96 randomised studies of human tutoring, nearly all pre-GPT-4. The field-wide figure for a person. Was 0.37 in the 2020 working paper", v:0.288, ok:true},
-    {label:"Productive failure",     cls:"LEARNER · meta",           note:"requires prior knowledge; fails without it",          v:0.36,  ok:true},
+    {label:"Productive failure",     cls:"TECHNIQUE · meta",           note:"requires prior knowledge; fails without it",          v:0.36,  ok:true},
     {label:"Voice call + SMS",       cls:"HUMAN · 5-country RCTs",   note:"N = 8,902, and the mechanism is a person on the line at a scheduled time", v:0.327, ok:true},
-    {label:"VR vs desktop",          cls:"LEARNER · 35 RCTs",        note:"the presence premium, and it is modest",              v:0.24,  ok:false},
-    {label:"Animation vs static",    cls:"LEARNER · meta",           note:"affect moves; learning mostly does not",              v:0.23,  ok:false},
+    {label:"VR vs desktop",          cls:"TECHNIQUE · 35 RCTs",        note:"the presence premium, and it is modest",              v:0.24,  ok:false},
+    {label:"Animation vs static",    cls:"TECHNIQUE · meta",           note:"affect moves; learning mostly does not",              v:0.23,  ok:false},
     {label:"Orton-Gillingham",       cls:"HUMAN · meta",             note:"p = .40, NOT significant against active comparison",  v:0.22,  ok:false},
     {label:"Robot vs same on tablet",cls:"ITS · 78 studies",         note:"−0.06 when the robot replaces a teacher",             v:0.20,  ok:false},
     {label:"Pedagogical avatars",    cls:"ITS · 43 studies",         note:"pre-LLM avatars: affect d ≈ .85–1.01, learning ≈ 0",  v:0.19,  ok:false},
@@ -605,17 +609,17 @@ const LADDER = {
     {label:"Expanding SRS intervals",cls:"ITS · k = 54",             note:"I² = 0%, a clean and well-powered nothing",           v:0.032, ok:false},
     {label:"Lesson study",           cls:"HUMAN · 181 schools",      note:"12,747 pupils · p = 0.65 · no dose-response",         v:0.02,  ok:false},
     {label:"Teaching w/o expectancy",cls:"HUMAN · Kobayashi 2024",   note:"'now explain it back to me', asked at the end. The null condition", v:-0.02, ok:false},
-    {label:"Alternative seating",    cls:"LEARNER · reviews",        note:"moderate-strength evidence of NO effect on attention",v:0.0,   ok:false},
-    {label:"Learning styles",        cls:"LEARNER · four decades",   note:"no credible support, and 89.1% of educators believe it", v:0.0, ok:false}
+    {label:"Alternative seating",    cls:"TECHNIQUE · reviews",        note:"moderate-strength evidence of NO effect on attention",v:0.0,   ok:false},
+    {label:"Learning styles",        cls:"TECHNIQUE · four decades",   note:"no credible support, and 89.1% of educators believe it", v:0.0, ok:false}
   ]
 };
 
 const SLOPE = {
   rows:[
     {label:"AI assistance",          a:"+48%",        b:"−17%",         bad:true,  cls:"FRONTIER · Bastani 2025, GPT-4", note:"Practice soared. Unassisted exam collapsed."},
-    {label:"Preference vs knowledge",a:"d ≈ 0.48",    b:"0",            bad:false, cls:"LEARNER · Buljan 2018, n = 334 adults", note:"Infographic vs plain-language summary, immediate quiz. Preference moves; knowledge does not. Survives an explicit debiasing video (Kaspar 2025)."},
+    {label:"Preference vs knowledge",a:"d ≈ 0.48",    b:"0",            bad:false, cls:"TECHNIQUE · Buljan 2018, n = 334 adults", note:"Infographic vs plain-language summary, immediate quiz. Preference moves; knowledge does not. Survives an explicit debiasing video (Kaspar 2025)."},
     {label:"Pedagogical avatars",    a:"d = .85–1.01",b:"no change",    bad:false, cls:"ITS · pre-LLM avatars", note:"Three 2024 field experiments on scripted agents. Affect moved a lot; learning did not move."},
-    {label:"Animation vs static",    a:"interest ↑",  b:"no change",    bad:false, cls:"LEARNER · multimedia meta", note:"Engagement is real. Transfer is not."},
+    {label:"Animation vs static",    a:"interest ↑",  b:"no change",    bad:false, cls:"TECHNIQUE · multimedia meta", note:"Engagement is real. Transfer is not."},
     {label:"Active learning",        a:"felt worse",  b:"learned more", bad:false, invert:true, cls:"HUMAN · Deslauriers 2019", note:"Harvard physics, human instructors — the mirror image, and the tell."}
   ]
 };
@@ -650,11 +654,17 @@ function fmt(v){
 
 function renderBars(host, spec){
   const narrow = innerWidth < 640;
-  const LW = narrow ? 132 : 212, RW = 52, ROW = narrow ? 29 : 26, PAD = 8;
+  // RW reserves the value column AND the class column. The class has to be legible
+  // without hovering: sorting rows from four different classes on one axis is what
+  // made a 2011 ITS number read as a bound on a 2026 model, and a tooltip cannot
+  // undo an ordering the eye has already read.
+  const LW = narrow ? 134 : 212, RW = narrow ? 104 : 120, ROW = narrow ? 29 : 26, PAD = 8;
   const W = 720, H = spec.rows.length * ROW + PAD * 2;
   const trackX = LW + 10, trackW = W - LW - RW - 22;
   const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, role:'img',
-    'aria-label':'Bar chart of pooled effect sizes for learning techniques, ordered largest to smallest. A table view follows.'});
+    'aria-label':'Bar chart of effect sizes for learning techniques, ordered largest to smallest, '
+      + 'each labelled with the class of system that produced it: HUMAN, ITS, FRONTIER or '
+      + 'TECHNIQUE. A table view follows.'});
   spec.rows.forEach((r, i) => {
     const y = PAD + i * ROW + ROW / 2;
     const g = mk('g', {});
@@ -678,6 +688,11 @@ function renderBars(host, spec){
     const val = mk('text', {x:trackX + trackW + 8, y:y+4, class:'vl'});
     val.textContent = fmt(r.v);
     g.appendChild(val);
+    const code = r.cls.split(' · ')[0];
+    const cl = mk('text', {x:W - 6, y:y+4, 'text-anchor':'end', class:'cx',
+      style: code === 'FRONTIER' ? 'fill:var(--real);opacity:1' : ''});
+    cl.textContent = code;
+    g.appendChild(cl);
     g.appendChild(mk('rect', {x:0, y:y-ROW/2, width:W, height:ROW, fill:'transparent'}));
     // The class of system comes before the caveat, because it is what decides
     // whether the number is evidence about the thing the reader is holding.

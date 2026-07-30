@@ -166,9 +166,10 @@ the learner enters at the right height**. It is not an itinerary anyone walks. F
 monotone refinement. A level may *drop* precision, formalism, mechanism-depth. It
 may never falsify **ontology, causal sign, quantifier strength, or uniqueness of
 mechanism**, because errors *across* ontological categories are the ones a full
-semester of instruction does not shift. Entry is measured, never preferred:
-preference moves d≈0.48 while knowledge moves zero, which is the felt/real
-dissociation of **§01** showing up inside the ladder.
+semester of instruction does not shift. Entry is measured, never preferred: in the
+three RCTs that put it to the test (n = 334, adults, immediate quiz) preference
+moved d≈0.48 while knowledge moved zero, which is the felt/real dissociation of
+**§01** showing up inside the ladder.
 
 **5. It grounds.** Derivations are checked, not asserted. Numerically, then
 symbolically, then formally where it matters. Correctness lives in the verifier,
@@ -180,8 +181,9 @@ never in the model's manners.
 
 The provenance of the band is the whole bet. **0.2–0.4 SD was measured on systems
 that do almost none of this.** Two of the three figures inside it, ITS and human
-tutoring, predate the technology entirely. The third is a general-purpose assistant
-distributed into a classroom: it answers freely, has no memory, cannot see the work,
+tutoring, predate the technology entirely. The third is three field trials of a
+general-purpose assistant distributed into a classroom, and that assistant answers
+freely, has no memory, cannot see the work,
 cannot point, never pivots, and agrees with everything. The one frontier trial whose
 tutor was constrained — Kestin's, which refused to advance until the student produced
 reasoning — is also the one that came in above the band (§09).

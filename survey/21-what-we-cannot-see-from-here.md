@@ -271,10 +271,10 @@ claims in this field fail on the first three.
 
 The counter-case to this entire survey, at full strength: **0.2–0.4 SD may be a
 population parameter and not a technology limit.** The band pools three different
-machines: human tutors, rule-based ITS, and six-to-eight-week deployments of
-frontier assistants (§09). Three things that different landing in one place is
-exactly what you would see if the constraint belonged to the learners and the
-setting and not to any of the machines.
+machines: human tutors, rule-based ITS, and three field trials of frontier
+assistants running six to eight weeks (§09). Three things that different landing in
+one place is exactly what you would see if the constraint belonged to the learners
+and the setting and not to any of the machines.
 
 The concession is only evaluable if we say what the band is, so: **its frontier side
 is three field trials.** Sierra Leone, whose unadjusted estimate is not significant;
@@ -298,8 +298,9 @@ What would force us to concede: a well-powered trial of the assembled system,
 constrained and grounded and pivoting and remembering and teachable, with a delayed unassisted
 novel-item outcome, landing inside the 0.2–0.4 band. Not below it. *Inside* it.
 That would mean the mechanisms are decorative and the band is the ceiling — and it
-would be the first time the band had been measured on this class of system, which is
-the only reason the trial settles anything.
+would be the first time that band had been measured on this class of system with
+more than three field trials behind it, which is the only reason the trial settles
+anything.
 
 If that happens, the rewrite we would owe the reader is already drafted: *AI's
 contribution is scalable, high-fidelity, high-dosage delivery of what already
