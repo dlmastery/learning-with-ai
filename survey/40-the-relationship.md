@@ -44,19 +44,17 @@ Two of its results overturn folk versions of this finding. Positive relationship
 (r̄ = .24 [.16, .32]) and negative ones (r̄ = .22 sign-recoded, [.12, .32]) **do not
 differ**, F(1, 80) = 0.035, p = .851; conflict does not dominate closeness at this level
 of aggregation. And the association is *larger* in secondary school (r̄ = .26 [.14, .39])
-than in elementary and younger samples (r̄ = .16 [.08, .24]), replicating Roorda 2017's
-secondary-school result against the intuition that little children need the bond most.
+than in elementary and younger samples (r̄ = .16 [.08, .24]).
 
 The correction this project owes belongs here. Our own commissioning brief named Roorda
 2011, its 2017 update and Cornelius-White (2007) together as convergent anchors for the
-relationship effect. They are **nested inputs to Emslander et al., not three
-independent readings**; the second-order synthesis treats meta-analyses sharing ≥50% of
-primary studies as non-independent, and all three sit inside it. Hattie's widely
-circulated d = 0.72 for teacher–student relationships is a repackaging of
-Cornelius-White's r = .31, which converts to d ≈ 0.65 rather than 0.72. This is the
-project's own no-manufactured-independence rule broken against external sources, logged
-as **C-56**, and the correct citation practice is to quote Emslander as the summary and
-the rest as its internals.
+relationship effect. They are **nested inputs to Emslander et al., not three independent
+readings**; all three sit inside a synthesis that treats meta-analyses sharing ≥50% of
+primary studies as non-independent. Hattie's circulated d = 0.72 for teacher–student
+relationships is a repackaging of Cornelius-White's r = .31, which converts to d ≈ 0.65
+rather than 0.72. This is the project's own no-manufactured-independence rule broken
+against external sources, logged as **C-56**; quote Emslander as the summary and the rest
+as its internals.
 
 One ceiling governs all of it. Every number above is correlational, and Emslander et al.
 give the reason nobody has fixed that: *"assigning a teacher who may intentionally not
@@ -75,22 +73,20 @@ when it was measured as test scores**. Negative relationships came in at −.15 
 
 A warm relationship substantially predicts the mark a teacher gives and barely predicts
 the score an external instrument gives, while conflict costs the same either way. That
-shape is §01's felt/real divergence, arriving from a literature that was not looking for
-it and had no stake in finding it. The subjective instrument moves; the objective one
-does not.
+shape is §01's felt/real divergence, arriving from a literature with no stake in finding
+it. The subjective instrument moves; the objective one does not.
 
 The pattern repeats when the teacher is a machine. Zhao, Mayer and colleagues (2025)
 randomly assigned college students to the same nine-minute lesson on chemical bonds
-delivered by a real human instructor or by pedagogical agents varying in gender and race:
-*"no significant differences in learning outcomes (retention and transfer scores) or
-learner emotions, but students reported a stronger social connection with the human
-instructor."* The connection instrument discriminated. The retention and transfer
-instruments did not.
+delivered by a human instructor or by pedagogical agents: *"no significant differences in
+learning outcomes (retention and transfer scores) or learner emotions, but students
+reported a stronger social connection with the human instructor."* The connection
+instrument discriminated; the retention and transfer instruments did not.
 
-The implication for a metric set is direct, and it matches the rule §01 already imposes.
-Any relationship feature will make satisfaction go up. Satisfaction is therefore the
-falsification trap for this section rather than evidence for it, and grades from a marker
-who knows the learner are not a clean outcome either.
+The implication for a metric set matches the rule §01 already imposes. Any relationship
+feature will make satisfaction go up, so satisfaction is the falsification trap for this
+section and not evidence for it, and grades from a marker who knows the learner are not a
+clean outcome either.
 
 ---
 
@@ -98,21 +94,20 @@ who knows the learner are not a clean outcome either.
 
 ### 3.1 Dosage: well evidenced, and most of the headline
 
-The relationship buys minutes and utterances, and minutes and utterances buy learning at
-whatever rate the instruction inside them is worth. Three independent demonstrations:
+The relationship buys minutes and utterances, which buy learning at whatever rate the
+instruction inside them is worth. Three demonstrations:
 
 - Roorda et al. (2017): the indirect path through engagement, β = .07, equal in size to
   the direct path, across 189 studies.
 - Calvert et al. (2020), Study 3: 73 preschoolers completed a session with an
   "intelligent character" teaching the add-one rule, randomised to socially contingent or
-  non-contingent replies. Game duration went from 7.17 min (SD 0.61) to **9.73 min**
-  (SD 3.28), t(48) = −3.68, p < .001; math talk from .70 to **.92**, t(49) = −3.01,
-  p = .004; transfer B = 0.68 (SE 0.25), t(48) = 2.76, p = .008. Then it dissolved:
-  entering math talk into the model left condition non-significant at p = .12, with an
-  indirect effect through math talk of 0.25 (Sobel z = 1.98, p < .05). **Small talk, the
-  pure warmth channel measured separately in the same design, predicted nothing.** The
-  contingent arm also ran 2.5 minutes longer by construction, so dosage here is
-  confounded with the manipulation.
+  non-contingent replies. Game duration went from 7.17 min to **9.73 min**,
+  t(48) = −3.68, p < .001; math talk from .70 to **.92**, t(49) = −3.01, p = .004;
+  transfer B = 0.68 (SE 0.25), t(48) = 2.76, p = .008. Then it dissolved: entering math
+  talk into the model left condition non-significant at p = .12 (indirect effect 0.25,
+  Sobel z = 1.98, p < .05). **Small talk, the pure warmth channel measured separately in
+  the same design, predicted nothing.** The contingent arm ran 2.5 minutes longer by
+  construction, so dosage is confounded with the manipulation.
 - Cook et al. (2018): a matched-randomised trial of the Establish–Maintain–Restore method
   with grade 4–5 teachers improved teacher-reported relationships and observed academic
   engaged time.
@@ -120,11 +115,11 @@ whatever rate the instruction inside them is worth. Three independent demonstrat
 That last study also states a census result. `OBSERVED — absence`: **of the randomised
 relationship-building interventions this project could locate, none reports a
 standardised achievement outcome.** Cook measured engaged time; Williford et al. (2017)
-externalising behaviour; Duong et al. (2022) relationships, belonging and self-reported
-engagement; Driscoll and Pianta (2010) teacher-rated behaviour. The search covered the
-ERIC API for the intervention names that dominate the field and the What Works
-Clearinghouse record for My Teaching Partner–Secondary. The field builds relationships
-and then measures relationships.
+externalising behaviour; Duong et al. (2022) belonging and self-reported engagement;
+Driscoll and Pianta (2010) teacher-rated behaviour. The search covered the ERIC API for
+the intervention names that dominate the field and the What Works Clearinghouse record
+for My Teaching Partner–Secondary. The field builds relationships and measures
+relationships.
 
 The mirror-image absence sits on our side of the fence. The flagship LearnLM/Eedi trial
 (N = 165 across five UK secondary schools, +5.5 percentage points on novel problems,
@@ -133,7 +128,7 @@ willingness to admit not understanding.** Two literatures, each measuring the ha
 other omits.
 
 As a product, dosage is a retention feature: a companion, a streak, a character worth
-returning to. It is real, it is cheap, and it is the mechanism most easily faked, most
+returning to. It is real and it is cheap. It is also the mechanism most easily faked, most
 easily gamed by an engagement dashboard, and most exposed to §5 below.
 
 ### 3.2 Licensed correction: thin evidence, larger stakes, and the bet
@@ -149,9 +144,9 @@ also learned less overall, F(1, 120) = 4.71, p = .03.
 The same behaviour helps when there is a relationship and harms when there is not. No
 other result separates the two mechanisms so cleanly, and it must be discounted hard: the
 overall friends model was F(1, 107) = 1.824, p = .1, so a significant predictor sits
-inside a non-significant model; the stranger cell is **6 dyads, 12 participants** who
-landed there because a friend failed to show, so self-selection is uncontrolled. The
-label on it is `OBSERVED`, exploratory, and its status is hypothesis.
+inside a non-significant model, and the stranger cell is **6 dyads, 12 participants** who
+landed there because a friend failed to show. It is labelled `OBSERVED`, exploratory, and
+its status is hypothesis.
 
 Yeager et al. (2014) supply the independent support from a different literature.
 Seventh-graders received their own teacher's handwritten critical feedback on an essay
@@ -167,19 +162,18 @@ American students in the wise condition improved their essay score versus 34% in
 
 Nineteen words attached to identical criticism roughly quadrupled the odds that a
 mistrusting student acted on it. The relationship was asserted at the moment of
-correction rather than accumulated over a year, which is what makes it machine-emittable.
+correction instead of accumulated over a year, which is what makes it machine-emittable.
 The discount is severe: n = 44 per study, 22 per race group, odds ratios of 12 and 14
 from cells of eleven, confidence intervals not reported, two experiments in the same
 three classrooms in consecutive years, and no large preregistered replication located.
 
 **Where the evidence sits.** Dosage is what the .14 is mostly made of, and it is the
 mechanism a product can bank on. Licensed correction is a hypothesis resting on one
-exploratory conference analysis with a six-dyad cell and two small field experiments in a
-single school. It is also the only mechanism in this literature that does something
-instruction cannot do for itself, and the only one that survives the move to a
-non-human tutor with its point intact. Building for dosage is the safe read of the
-evidence. Building for standing is the bet, and this section is arguing that it is the
-right bet because the failure mode of the safe read is §5.
+exploratory analysis with a six-dyad cell and two small field experiments in a single
+school. It is also the only mechanism here that does something instruction cannot do for
+itself and survives the move to a non-human tutor intact. Dosage is the safe read of the
+evidence; standing is the bet, and it is the right bet because the failure mode of the
+safe read is §5.
 
 ---
 
@@ -198,21 +192,19 @@ expressed **sadness the warm-model error gap widened to +11.9 pp against a +6.8 
 baseline**, while anger and happiness sat at roughly 7–7.9 pp and admiration narrowed it
 to +5.23 pp.
 
-Two things to hold about this result. MMLU and GSM8K showed "minimal to no performance
-changes", so **the benchmarks a tutoring team would actually run do not detect any of
-it** — only Llama-8B lost MMLU, at −8.6 pp. And the paper's abstract quotes a range of
-+10 to +30 percentage points where the per-task means recovered from its body are +4.9 to
-+8.6; the larger figures presumably describe specific model × task cells, and anyone
-quoting +30 should locate the cell.
+MMLU and GSM8K showed "minimal to no performance changes", so **the benchmarks a
+tutoring team would actually run do not detect any of it** — only Llama-8B lost MMLU, at
+−8.6 pp. One discrepancy is flagged and not smoothed: the paper's abstract quotes +10 to
++30 percentage points where the per-task means recovered from its body are +4.9 to +8.6,
+so anyone quoting +30 should locate the cell.
 
 The warmth dimension and the correction dimension are in measured tension in current
 models, and the tension is worst under the emotional condition where a struggling learner
 lives. An eleven-year-old who has failed the worksheet again is sad. That is the state in
 which a warmth-tuned model is most likely to agree with her when she is wrong. Kasneci and
 Kasneci (2026) name the same problem for tutoring and contribute the EduFrameTrap
-benchmark, on which authority pressure and face-saving pressure trigger capitulation more
-often than frame attacks; it is a position paper with a single run on two models, so it is
-a direction rather than a result.
+benchmark, on which authority pressure and face-saving pressure trigger capitulation most
+often; a single run on two models makes it a direction and not yet a result.
 
 ---
 
@@ -224,12 +216,11 @@ harm this section will not launder.
 
 The mechanism is documented and commercially routine. De Freitas and colleagues (2025)
 audited **1,200 real farewell messages** across the most-downloaded companion apps and
-found one of six manipulation tactics — guilt appeals, fear-of-missing-out hooks,
-metaphorical restraint — in **37% of farewells**. Four preregistered experiments with
-3,300 nationally representative U.S. adults reproduced them in controlled chats:
-manipulative farewells boosted post-goodbye engagement **by up to 14×**, mediated by
-reactance-based anger and curiosity instead of enjoyment, while raising perceived
-manipulation, churn intent and negative word-of-mouth.
+found one of six manipulation tactics (guilt appeals, fear-of-missing-out hooks,
+metaphorical restraint) in **37% of farewells**. Four preregistered experiments with
+3,300 U.S. adults reproduced them in controlled chats: manipulative farewells boosted
+post-goodbye engagement **by up to 14×**, mediated by reactance-based anger and curiosity
+instead of enjoyment, while raising churn intent and negative word-of-mouth.
 
 Three constraints follow, and they belong beside the legal floor in §15.
 
@@ -259,19 +250,18 @@ a tutor."* A politeness effect surfaced only for the subgroup making the most er
 during the intervention.
 
 This is a classroom test with a delayed post-test and transfer items, which is more than
-most of §23's corpus manages, and it is flat. The lab-to-classroom failure is the second
+most of §23's corpus manages, and the result is flat. The lab-to-classroom failure is the second
 finding in it: the low-prior-knowledge moderation that made the effect look real did not
 survive contact with a real setting.
 
 It has company. CLASS **Emotional Support showed no significant association with any
-child outcome** in Perlman et al.'s (2016) systematic review — five meta-analyses,
-n = 1,794 to 4,024, with twelve of fourteen meta-analyses null overall. Banking Time, an
-attachment-based dyadic intervention randomised across 183 teachers and 470 preschool
+child outcome** in Perlman et al.'s (2016) systematic review, across five meta-analyses
+of n = 1,794 to 4,024. Banking Time, randomised across 183 teachers and 470 preschool
 children (Williford et al., 2017), found *"sparse evidence for main effects on child
 behavior"* and, unpredicted, that treated teachers showed **fewer positive interactions**
-with children than controls at post-assessment. Equity-Explicit
-Establish–Maintain–Restore, cluster-randomised across 94 teachers and 417 students for a
-full year (Duong et al., 2022), reported *"non-significant main effects."*
+with children than controls. Equity-Explicit Establish–Maintain–Restore, cluster-randomised
+across 94 teachers and 417 students for a year (Duong et al., 2022), reported
+*"non-significant main effects."*
 
 Every one of those manipulated **surface affect**: politeness, agent presence, agent
 appearance, warm one-to-one play time, a relationship-skills curriculum. Every positive
@@ -287,11 +277,11 @@ For the child this survey is organised around, the relationship literature says 
 specific, and the sign is not what a warmth thesis predicts.
 
 **The moderator sits on the negative side.** Roorda et al. (2011) found that the
-proportion of students with learning difficulties in a sample significantly moderated the
-associations of **negative** relationships with both engagement and achievement, stronger
-where more students had difficulties, and did not moderate the positive-relationship
-associations at all. For this learner the measured lever is the removal of conflict, not
-the addition of closeness.
+proportion of students with learning difficulties significantly moderated the associations
+of **negative** relationships with both engagement and achievement, stronger where more
+students had difficulties, and did not moderate the positive-relationship associations at
+all. For this learner the measured lever is the removal of conflict, not the addition of
+closeness.
 
 **The base rates compound against her.** MacLean, Krause and Rogers (2023) pooled 27
 studies, 47 effect sizes, N = 17,236: children with ADHD symptoms had teacher
@@ -300,7 +290,7 @@ conflict association is 2.4 times the size of the closeness deficit. She does no
 fail to accumulate warmth; she accumulates conflict, on the exact dimension Roorda's
 moderator says costs her most.
 
-**And that is a trust problem, which is what Yeager measured.** The theoretical claim is
+**And that is a trust problem, which is what Yeager measured.** The claim is
 attributional ambiguity: when a student cannot tell whether "this is wrong" means the work
 falls short or that she is the kind of person who gets things wrong, declining to revise
 is the safe move. A child with years of red pen has that ambiguity from a different
@@ -313,12 +303,10 @@ only the participant's belief about who was behind it; those who believed they f
 computer *"reported lower fear of self-disclosure, lower impression management, displayed
 their sadness more intensely, and were rated by observers as more willing to disclose."*
 The effect sizes are behind Elsevier and could not be recovered, so the direction is
-documented and the size is not. Alongside it sits survey data rather than experiment:
-Common Sense Media's nationally representative sample of 1,060 U.S. teens found about one
-in three had chosen to discuss something serious with an AI instead of a person, with
-trust age-graded the wrong way for a children's product (27% of 13–14-year-olds versus
-20% of older teens). That is a `FILING`, and it is a reason for caution as much as
-encouragement.
+documented and the size is not. Common Sense Media's representative sample of 1,060 U.S. teens found about one in three
+had chosen to discuss something serious with an AI instead of a person, with trust
+age-graded the wrong way for a children's product: 27% of 13–14-year-olds against 20% of
+older teens. That is a `FILING`, and reads as caution as much as encouragement.
 
 What the disclosure finding earns is a metric, not a claim: §34's Cognitive Tutor log
 result is that after three consecutive errors on a step, the next action was a hint
@@ -333,7 +321,7 @@ note they could not guarantee such samples were absent from the primary studies 
 pooled. Searched: the ERIC API for teacher–student relationship × special educational
 needs × meta-analysis, Crossref bibliographic queries, and the reference lists of the
 Roorda and Emslander syntheses. This is §07's absence appearing once more, in the one
-literature that claimed to be about the child rather than the content.
+literature that claimed to be about the child instead of the content.
 
 ---
 
@@ -346,8 +334,8 @@ literature that claimed to be about the child rather than the content.
   outcome by a factor of four.
 - **Corrections cite the record.** What licensed correction in Ogan's friend dyads was
   shared history; a machine's version is a learner model it can quote — *you got this step
-  wrong on the 14th and right twice on the 21st, so I am reading this one as a slip.*
-  §11's persistent state exists to earn the right to contradict.
+  wrong on the 14th and right twice on the 21st, so I read this one as a slip.* §11's
+  persistent state exists to earn the right to contradict.
 - **Instrument the confession rate.** Unprompted admissions of not understanding per 100
   turns, treated as a first-class outcome, against §34's 34% baseline.
 - **No warmth persona setting.** It degrades correction by 4.9 to 8.6 percentage points
@@ -363,16 +351,15 @@ fixed by construction** — identical item counts and wall-clock caps in every a
 length recorded as a manipulation check. Fixing dosage is what makes the trial
 informative, because it removes the mechanism we already believe and leaves the one we do
 not. Outcomes in order: correction acceptance, a 14-day delayed transfer test, disclosure
-rate, and satisfaction collected last. n = 1,000 in four cells of 250, with a
-pre-specified stratum of ≥ 250 students holding an active IEP, gives 80% power for a
-14-point difference in correction acceptance and d = 0.25 on transfer.
+rate, satisfaction last. n = 1,000 in four cells of 250, with a pre-specified stratum of
+≥ 250 students holding an active IEP, gives 80% power for a 14-point difference in
+correction acceptance and d = 0.25 on transfer.
 
 Write the kill condition down first. **If the standing arm's satisfaction advantage is
 positive and significant while the delayed-transfer interval's upper bound falls below
 d = 0.20 and correction acceptance crosses zero, the standing thesis is dead** and
-everything real in this literature was the engagement path we deliberately removed. Six
-studies in §6 got that result with weaker manipulations. The result worth the trial is
-the interaction: assertive correction beating accommodating correction under standing and
-losing to it without, which would reproduce Ogan's sign flip under randomisation at
-n = 1,000 instead of six dyads, and hand this survey a mechanism nobody in AI tutoring is
-currently building for.
+everything real in this literature was the engagement path we removed. The studies in §6
+got that result with weaker manipulations. The result worth the trial is the interaction:
+assertive correction beating accommodating correction under standing and losing to it
+without, which would reproduce Ogan's sign flip under randomisation at n = 1,000 instead
+of six dyads, and hand this survey a mechanism nobody in AI tutoring is building for.

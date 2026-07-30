@@ -96,47 +96,47 @@ them pass the exercises. Here is what it does to them.</p>
 
 <h2>2 · The teardown</h2>
 
-<div class="flag"><b>Failure 1 — quantifier strength</b>
+<div class="flag"><b>Failure 1 · quantifier strength</b>
 <p>“<em>arbitrarily close … sufficiently close</em>” is a natural-language paraphrase of
-<strong>∀ε ∃δ</strong>. It does not encode the <em>order</em>. A reader cannot recover from this
-sentence whether δ may depend on ε — and that dependency <em>is</em> the definition. It is also
-the difference between continuity and <strong>uniform</strong> continuity, which is the second
+∀ε ∃δ. It does not encode the <em>order</em>. A reader cannot recover from this
+sentence whether δ may depend on ε, and that dependency <em>is</em> the definition. It is also
+the difference between continuity and <em>uniform</em> continuity, which is the second
 half of a real-analysis course.</p>
 <p>This is the invariant a simplification may never falsify, and it is the one mathematics
-breaks most often. It is also <em>mechanically checkable</em> — see §5 below.</p></div>
+breaks most often. It is also <em>mechanically checkable</em>; see §5 below.</p></div>
 
-<div class="flag"><b>Failure 2 — ontological crossing</b>
+<div class="flag"><b>Failure 2 · ontological crossing</b>
 <p>“<em>heading towards</em>”, “<em>walking along the curve</em>”, “<em>approaching</em>” place
-the limit in the <strong>process</strong> category. A limit is an <strong>object</strong> — a
+the limit in the process category. A limit is an object — a
 number that exists.</p>
 <p>Chi's test: errors <em>within</em> a category are repairable; errors <em>across</em>
-categories are robust. Measured instance from chemistry — the Bohr-model hybrid population was
-<strong>unchanged across a full semester</strong> of university instruction. A student holding
-“limit” as a process computes correctly for years and cannot understand uniform convergence,
-because uniform convergence quantifies over a <em>space of functions</em> — which requires
-functions to be objects first.</p></div>
+categories are robust. The measured instance comes from chemistry — the Bohr-model hybrid
+population was <strong>unchanged across a full semester</strong> of university instruction. A
+student holding “limit” as a process computes correctly for years and cannot understand uniform
+convergence, because uniform convergence quantifies over a <em>space of functions</em>, which
+requires functions to be objects first.</p></div>
 
-<div class="flag"><b>Failure 3 — the example teaches the wrong skill</b>
+<div class="flag"><b>Failure 3 · the example teaches the wrong skill</b>
 <p>Cancelling (x − 2) is <em>algebra</em>. It rehearses a manipulation and never touches the
-definition. A student can complete all eighteen exercises without once using ε or δ — and will,
+definition. A student can complete all eighteen exercises without once using ε or δ, and will,
 because the exercises are the same skill eighteen times.</p></div>
 
-<div class="flag"><b>Failure 4 — one rung, no entry point</b>
-<p>Three explanation rungs beat two (<strong>p = 0.032</strong>); five did not beat three
-(p = 0.738). This page has <strong>one</strong>, pitched at a reader who does not exist. For
-anyone above it, added exposition is measurably <em>harmful</em> — expertise reversal runs
-<strong>+0.505</strong> for novices and <strong>−0.428</strong> for experts.</p></div>
+<div class="flag"><b>Failure 4 · one rung, no entry point</b>
+<p>Three explanation rungs beat two (p = 0.032); five did not beat three
+(p = 0.738). This page has <em>one</em>, pitched at a reader who does not exist. For
+anyone above it, added exposition is measurably <em>harmful</em>. Expertise reversal runs
++0.505 for novices and −0.428 for experts.</p></div>
 
-<div class="flag"><b>Failure 5 — no retrieval, no spacing, no feedback, no rule</b>
-<p>Retrieval practice is <strong>g = 0.50</strong>; the page's affordance is re-reading. Spacing
-is <strong>d = 0.54</strong>; the page is linear and §4.2 never returns. The answer key says
+<div class="flag"><b>Failure 5 · no retrieval, no spacing, no feedback, no rule</b>
+<p>Retrieval practice is g = 0.50; the page's affordance is re-reading. Spacing
+is d = 0.54; the page is linear and §4.2 never returns. The answer key says
 <em>what</em>, never <em>why</em>. And with no measurement there can be no decision rule — the
 component that, in the randomised trial, was the only thing that moved achievement.</p></div>
 
 <h2>3 · The probe that selects the strategy</h2>
 
-<p>Entry is <strong>measured, never preferred</strong> — stated preference moves at
-<em>d</em> ≈ 0.48 while knowledge moves zero — a <em>preference</em> effect, unrelated to the teaching-expectancy <em>g</em> = 0.48 in §4. One question, fifteen seconds, and it probes the
+<p>Entry is <strong>measured, never preferred</strong>. Stated preference moves at
+<em>d</em> ≈ 0.48 while knowledge moves zero, a <em>preference</em> effect unrelated to the teaching-expectancy <em>g</em> = 0.48 in §4. One question, fifteen seconds, and it probes the
 <em>obstacle</em> rather than the definition.</p>
 
 <div class="panel">
@@ -146,7 +146,7 @@ component that, in the randomised trial, was the only thing that moved achieveme
     <button data-k="process">Because the function gets closer and closer to it as you approach.</button>
     <button data-k="algebra">Because you can cancel the factor that causes the problem.</button>
     <button data-k="object">Because the limit is about values <em>near</em> a, and never uses the value <em>at</em> a.</button>
-    <button data-k="quant">Because for any tolerance you name, I can find a neighbourhood that meets it — without using a.</button>
+    <button data-k="quant">Because for any tolerance you name, I can find a neighbourhood that meets it, without using a.</button>
   </div>
   <div id="verdict"></div>
 </div>
@@ -169,10 +169,10 @@ is the cheap rung of the grounding ladder. Both will disagree with you if you ar
   statement's. Pick a phrasing.</div>
   <div class="row">
     <select id="qsel">
-      <option value="AE">"for every ε there exists δ" — ∀ε ∃δ</option>
-      <option value="EA">"there exists δ such that for every ε" — ∃δ ∀ε</option>
-      <option value="NONE">"gets arbitrarily close as x gets sufficiently close" — unordered</option>
-      <option value="AEU">"for every ε there exists δ, independent of the point" — ∀ε ∃δ (uniform)</option>
+      <option value="AE">"for every ε there exists δ" (∀ε ∃δ)</option>
+      <option value="EA">"there exists δ such that for every ε" (∃δ ∀ε)</option>
+      <option value="NONE">"gets arbitrarily close as x gets sufficiently close" (unordered)</option>
+      <option value="AEU">"for every ε there exists δ, independent of the point" (∀ε ∃δ, uniform)</option>
     </select>
     <button class="pri" id="qrun">Check against the definition of continuity at a point</button>
   </div>
@@ -180,7 +180,7 @@ is the cheap rung of the grounding ladder. Both will disagree with you if you ar
 </div>
 
 <div class="panel">
-  <div class="ptitle">Numeric falsification — before you prove anything</div>
+  <div class="ptitle">Numeric falsification, before you prove anything</div>
   <div class="psub">Claim a limit. The checker samples points approaching <em>a</em> from both
   sides and reports whether your claim survives. Measured elsewhere in this project at 99.1%
   recall on seeded errors, in 0.38–0.61 ms, with zero false alarms.</div>
@@ -202,12 +202,12 @@ is the cheap rung of the grounding ladder. Both will disagree with you if you ar
 <div class="scroll">
 <table>
   <tr><th></th><th>The page</th><th>The rebuilt loop</th></tr>
-  <tr><td><b>Quantifier order</b></td><td class="fail">Unrecoverable from the text</td><td class="pass">Stated, and checked</td></tr>
-  <tr><td><b>Ontological category</b></td><td class="fail">Process — and it persists</td><td class="pass">Object, with the process語 flagged</td></tr>
-  <tr><td><b>Entry level</b></td><td class="fail">One, for nobody</td><td class="pass">Three, chosen by a 15-second probe</td></tr>
-  <tr><td><b>Retrieval</b></td><td class="fail">Re-reading</td><td class="pass">Generated, spaced, with feedback</td></tr>
-  <tr><td><b>Diagnosis on error</b></td><td class="fail">An answer key</td><td class="pass">A named misconception and the rule that fired</td></tr>
-  <tr><td><b>Evidence it worked</b></td><td class="fail">None — the failure is silent</td><td class="pass">A delayed unassisted item on a novel function</td></tr>
+  <tr><td>Quantifier order</td><td class="fail">Unrecoverable from the text</td><td class="pass">Stated, and checked</td></tr>
+  <tr><td>Ontological category</td><td class="fail">Process, and it persists</td><td class="pass">Object, with the process語 flagged</td></tr>
+  <tr><td>Entry level</td><td class="fail">One, for nobody</td><td class="pass">Three, chosen by a 15-second probe</td></tr>
+  <tr><td>Retrieval</td><td class="fail">Re-reading</td><td class="pass">Generated, spaced, with feedback</td></tr>
+  <tr><td>Diagnosis on error</td><td class="fail">An answer key</td><td class="pass">A named misconception and the rule that fired</td></tr>
+  <tr><td>Evidence it worked</td><td class="fail">None; the failure is silent</td><td class="pass">A delayed unassisted item on a novel function</td></tr>
 </table>
 </div>
 
@@ -231,7 +231,7 @@ machine, and both will reject a claim you make.</p>
   treatment in common calculus texts; no single book is being criticised.</li>
   <li><strong>The strategy selection is a rule engine, not a model.</strong> Eight strategies, one
   probe, deterministic mapping. A real system would need the diagnosis to work on free-form student
-  work — which is the thing measured at chance across 223 domains.</li>
+  work, which is the thing measured at chance across 223 domains.</li>
   <li><strong>The numeric checker refutes; it never establishes.</strong> Surviving every sample is
   consistent with the claim and is not a proof of it.</li>
 </ul>

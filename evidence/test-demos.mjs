@@ -13,7 +13,7 @@
  *   npx playwright install chromium     # once
  *   node evidence/test-demos.mjs        # exits non-zero on failure
  */
-import { readdirSync } from 'fs';
+import { readdirSync, readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
@@ -41,6 +41,12 @@ let fail = 0;
 
 for (const f of pages) {
   const bad = [];
+  // Three published pages carried tool-call residue after </html>. Browsers ignore
+  // it and every render test passed, so nothing caught it.
+  const src = readFileSync(join(dir, f), 'utf8');
+  const tail = src.slice(src.lastIndexOf('</html>') + 7).trim();
+  if (!src.includes('</html>')) bad.push('no closing </html>');
+  else if (tail) bad.push(`${tail.length} chars after </html>: ${tail.slice(0, 40).replace(/\s+/g, ' ')}`);
   for (const [name, width, height, colorScheme] of CONFIGS) {
     const ctx = await b.newContext({ viewport: { width, height }, colorScheme });
     const p = await ctx.newPage();

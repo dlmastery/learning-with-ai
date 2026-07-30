@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Archivist — Demo 05</title>
-<meta name="description" content="A real persistent learner model in localStorage: inspectable, correctable, exportable, and genuinely destroyable — with the read-back that proves the deletion happened." />
+<meta name="description" content="A real persistent learner model in localStorage: inspectable, correctable, exportable, and genuinely destroyable, with the read-back that proves the deletion happened." />
 <link rel="stylesheet" href="../site.css" />
 <link rel="stylesheet" href="demo.css" />
 <script src="../theme.js"></script>
@@ -65,8 +65,8 @@
 <code>localStorage</code> on your device, under the key <code id="key1">—</code>. Nothing is sent
 anywhere, because there is no server on the other end of this page. The knowledge estimate is Bayesian
 Knowledge Tracing (Corbett &amp; Anderson 1995), computed here, with its four parameters exposed
-and editable. The delete button really deletes, and the receipt is a genuine read-back, not a
-message.</div>
+and editable. The delete button really deletes, and the receipt is a genuine read-back rather than
+a message.</div>
 
 <div class="note warn" id="lsWarn" style="display:none"><b><code>localStorage</code> is unavailable
 in this context.</b> The page has fallen back to memory only, so the model will not survive a
@@ -200,7 +200,7 @@ you are shown has bought you precisely nothing.</div>
     <div>
       <div class="stars">29,606 ★</div>
       <div class="mini" style="margin-top:6px">3,293 forks · created 2023-03-31 · last push 2025-09-30 ·
-      no license · 342 KB repo, of which the artifact is <b>one 14,095-byte text file</b></div>
+      no license · 342 KB repo, of which the artifact is one 14,095-byte text file</div>
     </div>
     <div>
       <div class="mono-block" style="margin:0">JushBJJ/Mr.-Ranedeer-AI-Tutor
@@ -214,15 +214,15 @@ README.md, line 1:
 <p>Mr. Ranedeer contained more pedagogical mechanism than most funded products: a learner
 configuration as a first-class object, a prerequisite ladder from 0.1 to 0.9, a 3/6/9-difficulty
 familiar/unfamiliar test, python-verified problems, a <code>/test</code> command. It tried to
-persist a learner model <strong>twice</strong> — once by base64-encoding it into the transcript,
-once as a file in the code-interpreter sandbox — and both attempts were <em>requests to one vendor's
+persist a learner model twice, once by base64-encoding it into the transcript and
+once as a file in the code-interpreter sandbox. Both attempts were <em>requests to one vendor's
 model with one vendor's tool surface</em>. When the tool surface moved, both decayed. Roughly half
 the stars of nanoGPT conferred no immunity whatsoever.</p>
 
 <div class="note"><b>The rule it leaves behind.</b> Never make a vendor behaviour load-bearing. A
 prompt is not a mechanism; it is a <em>request</em> for a mechanism. The record on this page is
-forty lines of JSON in a key you own, on hardware you own, in a format you can read without us —
-which is a much less impressive engineering achievement and a much more durable one.</div>
+forty lines of JSON in a key you own, on hardware you own, in a format you can read without us.
+That is a much less impressive engineering achievement and a much more durable one.</div>
 
 <h2>What this proves / what it does not</h2>
 <div class="panel">
@@ -230,8 +230,8 @@ which is a much less impressive engineering achievement and a much more durable 
   <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
     <li>A learner model can be <strong>fully legible</strong>: every belief the system holds about
     you, in a format you can read, edit and contradict, with the evidence attached to each claim.</li>
-    <li>Deletion can be made <strong>real and provable</strong> — not a confirmation dialogue but a
-    read-back showing the key returns <code>null</code>.</li>
+    <li>Deletion can be made <strong>real and provable</strong>: a read-back showing the key
+    returns <code>null</code>, rather than a confirmation dialogue.</li>
     <li>Persistence does not require a server, an account, or a vendor. One key, one JSON blob,
     one storage API that has not changed since 2009.</li>
     <li>The parameters that drive the estimates can be exposed. Most systems hide them, which means
@@ -242,7 +242,7 @@ which is a much less impressive engineering achievement and a much more durable 
     <li><strong>That any of this helps anyone learn.</strong> See §5: the comparison has not been
     run. This demo makes the mechanism inspectable; it does not make it effective.</li>
     <li>That BKT's estimates are accurate for you. The four parameters are defaults. Real
-    deployments fit them to a population, and you may not be in it — which is exactly why they are
+    deployments fit them to a population, and you may not be in it. That is exactly why they are
     editable here and, in most systems, are not.</li>
     <li>That <code>localStorage</code> is an adequate answer for a real deployment. It is
     per-device, per-browser, silently cleared, and offers no audit trail. It is the right

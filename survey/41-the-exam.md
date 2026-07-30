@@ -36,10 +36,9 @@ programme outside school. The design is observational and the authors open their
 discussion by saying so: *"There was no random assignment to treatments."* `OBSERVED`
 
 Because coaching is self-selected, they ran seven estimators on the same data and
-took the envelope as the answer: propensity matching, instrumental variable, ANCOVA,
-raw change, repeated measures, Belson, Heckman. Their summary, discounting two
-outliers, is **6–8 scale points on SAT verbal and 13–18 on SAT mathematics** — *"by
-commonly used standards (Cohen, 1988), these effects can be regarded as small."*
+took the envelope as the answer. Their summary, discounting two outliers, is
+**6–8 scale points on SAT verbal and 13–18 on SAT mathematics** — *"by commonly used
+standards (Cohen, 1988), these effects can be regarded as small."*
 
 The estimand is the difference in scale points between coached and matched uncoached
 candidates on an operational retest. It is not a pre-post gain, and the gap between
@@ -58,8 +57,8 @@ Two further readings, and they are the same literature read twice, so no indepen
 is claimed between them. Becker (1990), *Review of Educational Research* 60(3),
 synthesising 48 studies in 23 reports: coached groups exceeded controls by **0.09 SD
 on SAT-V and 0.16 SD on SAT-M**. `MEASURED-META` Briggs (2001), *Chance* 14(1), on
-NELS:88 with n = 4,730 who took the PSAT and then the SAT or ACT: under full controls
-for demographics, ability, motivation proxies and other preparation activities,
+NELS:88 with n = 4,730 who took the PSAT and then the SAT or ACT: under controls for
+demographics, ability, motivation proxies and other preparation activities,
 **mathematics +15, verbal +6, about 20 points combined**. `OBSERVED` Students in that
 same panel who simply retook the test improved 33 points on mathematics and 27 on
 verbal with no intervention at all.
@@ -73,10 +72,10 @@ an equal-time control was located. The product a very large industry sells is cl
 to unmeasured.
 
 Briggs also carries the result nobody quotes. Under full controls, coaching's effect
-on ACT mathematics is not significant, on English is +0.3 to +0.6 scale points, and
-on **reading is negative, about −0.6 to −0.7** against uncoached students matched on
-prior PSAT verbal. A preparation regime tuned to one test's item style transfers
-negatively to another test of the same construct.
+on ACT mathematics is not significant and on **reading it is negative, about −0.6 to
+−0.7 scale points** against uncoached students matched on prior PSAT verbal. A
+preparation regime tuned to one test's item style transfers negatively to another
+test of the same construct.
 
 ---
 
@@ -105,23 +104,23 @@ The report also corrects its own predecessor: the controlled 2017 figure was *"3
 additional points on their last SAT compared to students who did not use OSP."*
 Thirty, against the 115 that travelled.
 
-Two consequences. A free platform and a $1,500 course produce effects of the same
-order, which is the most useful sentence in this literature for anyone pricing a
-product. And the distribution of use matters more than the effect per hour: about
-**80% of users spend under three hours, median 1.8**. The binding constraint in the
-field is hours, not efficacy.
+A free platform and a $1,500 course therefore produce effects of the same order,
+which is the most useful sentence in this literature for anyone pricing a product.
+And the distribution of use matters more than the effect per hour: about **80% of
+users spend under three hours, median 1.8**. The binding constraint in the field is
+hours, not efficacy.
 
 ---
 
 ## 3. Preparation is a complement to prior advantage
 
 One moderator recurs in all four sources and it cuts against the equity claim. Powers
-and Rock found mathematics coaching effects correlated positively with English grades
-(r = .14), mathematics grades (r = .12) and parental education (r = .12). Briggs
-found coaching most effective for high-SES students with good mathematics grades.
-The Khan Academy report found best-practice behaviours least common where they would
-help most: in the bottom PSAT quartile 5% levelled up 15 or more skills against 24%
-in the top quartile, and 8% completed a practice examination against 19%. `OBSERVED`
+and Rock found coaching effects correlated positively with English grades (r = .14),
+mathematics grades (r = .12) and parental education (r = .12). Briggs found coaching
+most effective for high-SES students with good mathematics grades. The Khan Academy
+report found best-practice behaviours least common where they would help most: in the
+bottom PSAT quartile 5% levelled up 15 or more skills against 24% in the top
+quartile, and 8% completed a practice examination against 19%. `OBSERVED`
 
 Free access did not flatten the gradient, because the gradient lives in usage. §04
 argues that designing for the margin is what makes a system work for everyone; this
@@ -143,14 +142,14 @@ The scale against which that absence should be read: India's NSS 75th round
 education expenditure**, peaking around 29–31% of students at secondary level, and
 the 2025 Comprehensive Modular Survey on Education reports roughly 27% of students
 taking private coaching. `FILING` Physics Wallah's pre-IPO disclosures report 4.46
-million paid users; that figure reaches this survey through business press citing the
-DRHP and has not been verified against the filing itself.
+million paid users, a figure reaching this survey through business press citing the
+DRHP and not verified against the filing itself.
 
 There is no causal estimate of what attending Kota, Allen, Aakash or Physics Wallah
 does to a NEET or JEE rank. No trial, no regression discontinuity, no published
 estimate of selection. The industry's headline metric is its count of students in the
-top ranks, which is a survivorship statistic on a population selected on ability at
-intake. `VENDOR`, and it is not restated here as a finding.
+top ranks, a survivorship statistic on a population selected on ability at intake.
+`VENDOR`, and it is not restated here as a finding.
 
 China is one degree better and the answer is null. Zhang (2013), *Economics of
 Education Review* 32, on Jinan: *"The average effect of private tutoring is not
@@ -190,9 +189,8 @@ Roediger & Karpicke (2006), Experiment 2, n = 180, explains the choice.
 | STTT (study once, test three times) | 3.4 | 4.0 | 61% |
 
 The prediction ordering inverts the outcome ordering, and the differences are
-significant (SSSS vs STTT d = 0.61). Proportional forgetting over the week ran 52%,
-28% and 14%. Fluency is read as evidence of knowing, and the reading is wrong in a
-stable, predictable direction.
+significant (SSSS vs STTT d = 0.61). Fluency is read as evidence of knowing, and the
+reading is wrong in a stable, predictable direction.
 
 Dunlosky et al. (2013), *Psychological Science in the Public Interest*, rates ten
 techniques. The two rated **high utility** are practice testing and distributed
@@ -243,9 +241,9 @@ literature nor the coaching industry poses it that way.
 Past papers themselves have a sharply diminishing return. Bangert-Drowns, Kulik &
 Kulik (1991), 40 studies: at least one test over 15 weeks is worth about **half a
 standard deviation** on the criterion examination against no tests, while more
-frequent testing against less frequent testing is worth about **one tenth**.
-`MEASURED-META` An unlimited supply of generated papers is therefore worth little on
-its own. The value has to come from what is extracted per paper.
+frequent testing against less frequent is worth about **one tenth**. `MEASURED-META`
+An unlimited supply of generated papers is worth little on its own. The value has to
+come from what is extracted per paper.
 
 ---
 
@@ -272,10 +270,9 @@ under random effects; the two models disagree about the sign. The estimand is
 self-reported *time spent*, so a struggling student who takes longer over the same
 assignment produces a negative correlation under a positive causal effect. And
 **every one of the seven parent-report correlations came from Grades K–6**, so
-respondent and grade band are confounded. Cooper et al. re-ran the analysis using
-student reports only: under random effects, secondary r = .19 [.17, .22] against
-elementary r = .22 [−.00, .42], **Q(1) = 0.57, ns**. The grade-level moderation
-disappears.
+respondent and grade band are confounded. Re-run on student reports only, under
+random effects, secondary r = .19 [.17, .22] against elementary r = .22 [−.00, .42],
+**Q(1) = 0.57, ns**. The grade-level moderation disappears.
 
 Where the sign is genuinely negative is parental help. Fernández-Alonso et al.
 (2022), *Psicothema* 34(1), pooling **180 effects** across PISA 2009, 2012, 2015 and
@@ -310,10 +307,9 @@ Oreopoulos et al. (2023), *The Economic Journal*, `doi:10.1093/ej/uead064`.
 
 Randomised, published in a top-five economics journal, powered for small effects, and
 with the mediator measured. It moved the variable everyone assumes is the bottleneck
-and did not move the outcome. Any product in this space whose mechanism reduces to
-encouragement, nudging or time-management advice should be assumed ineffective until
-a trial says otherwise — and that description covers a large fraction of what
-currently ships.
+and did not move the outcome. Any product whose mechanism reduces to encouragement,
+nudging or time-management advice should be assumed ineffective until a trial says
+otherwise, and that description covers a large fraction of what currently ships.
 
 ---
 
@@ -327,10 +323,14 @@ project wrote that down as a hypothesis — *exams are pedagogy's missing `pytes
 and commissioned the research to test it. It failed, and the refutation is logged in
 `process/ASSUMPTIONS.md` alongside two others from the same wave.
 
-It failed on two objections. First, **a mark scheme checks the learner's answer, not
-the tutor's diagnosis**. `pytest` verifies the agent's own output; in tutoring the
-agent's output is an explanation or a diagnosis, and a rubric grades the artefact
-while staying silent about the belief behind it.
+It was put against four objections. The decisive one is the first: **a mark scheme
+checks the learner's answer, not the tutor's diagnosis**. `pytest` verifies the
+agent's own output; in tutoring the agent's output is an explanation or a diagnosis,
+and a rubric grades the artefact while staying silent about the belief behind it. Two
+of the others are real without being fatal — extended-response marking carries
+inter-rater variance, which makes the rubric a flaky test, and public examinations
+cover a subset of subjects for about a dozen years of a life, with no comparable
+artefact in early literacy, vocational skill, or the population §04 centres.
 
 Second, the oracle is gameable and the gaming is measured. Koretz (2005), CSE Report
 655, reports the first empirical study of score inflation, and its 1990 component is a
@@ -340,11 +340,11 @@ over three years, and then, when the **retired test was administered to randomly
 selected classrooms**, scored half an academic year lower than the current test
 showed. `MEASURED-RCT` Across the literature since, *"gains on high-stakes tests have
 been 3 to 5 times as large as gains on other tests… with low (or lower) stakes."*
-Koretz's mechanical distinction is the one that bites here: reallocation inflates
-scores *without* biasing performance on individual elements, whereas **coaching does
-bias performance on individual elements**. The per-item signal, the part that most
-resembles a unit test, is the part most susceptible to corruption. Briggs's negative
-ACT-reading coefficient is what that prediction looks like in the wild.
+Koretz's mechanical distinction bites here: reallocation inflates scores *without*
+biasing performance on individual elements, whereas **coaching does bias performance
+on individual elements**. The per-item signal, the part that most resembles a unit
+test, is the part most susceptible to corruption. Briggs's negative ACT-reading
+coefficient is that prediction in the wild.
 
 What survives is narrower and more useful. A mark scheme supplies a per-item
 ground-truth signal at a granularity of one or two marks, for millions of released
@@ -388,19 +388,18 @@ of the same problem.
   tenth 0.1; review gaps at 20–40% of the time remaining; confidence elicited only
   after a closed-book attempt. None of that needs a capability that does not exist.
 - **Test per-item attribution before building on it.** If the system's attributions
-  of lost marks agree with expert human attributions at no better than chance, §09
-  and this section both collapse into score reporting. It is cheap to test against
-  marked scripts and nobody has tested it. `OBSERVED — absence`
-- **Randomise allocation, not technique.** Every other ingredient is established
-  (retrieval, spacing) or already null (nudging). Allocation is the large unmeasured
-  degree of freedom, and the one a coaching centre structurally cannot personalise
-  because it teaches a cohort. Two arms with identical past-paper libraries, marking
-  and spacing defaults; the treatment arm's sessions allocated by expected-marks
-  maximisation over the learner's per-topic posterior and the specification's
-  historical topic weights. Detecting d = 0.15 needs n ≈ 700 per arm; conditioning on
-  a pre-test at a conservative ρ = 0.80 brings that to about 252 per arm, and 20%
-  attrition gives **roughly 630 candidates**. One school district, not a national
-  programme.
+  of lost marks agree with expert human attributions at no better than chance, the
+  constructive half of this section collapses into score reporting. It is cheap to
+  test against marked scripts and nobody has tested it. `OBSERVED — absence`
+- **Randomise the allocation and not the technique.** Every other ingredient is
+  established (retrieval, spacing) or already null (nudging). Allocation is the large
+  unmeasured degree of freedom, and the one a coaching centre structurally cannot
+  personalise because it teaches a cohort. Two arms with identical past-paper
+  libraries, marking and spacing defaults; the treatment arm's sessions allocated by
+  expected-marks maximisation over the learner's per-topic posterior and the
+  specification's historical topic weights. Detecting d = 0.15 needs n ≈ 700 per arm;
+  conditioning on a pre-test at a conservative ρ = 0.80 brings that to about 252 per
+  arm, and 20% attrition gives **roughly 630 candidates**. A single school district.
 - **Carry an audit instrument.** A held-out paper from a different board covering the
   same specification, never trained or allocated against. If the gain appears on the
   primary examination and not on the audit paper, the system produced inflation and
