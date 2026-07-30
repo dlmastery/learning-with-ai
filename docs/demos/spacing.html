@@ -46,7 +46,7 @@ input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
   <div class="eyebrow">Demo 16 · The mechanisms</div>
   <h1>The same ten problems, split</h1>
   <p class="lede">Effort is held fixed. Only the calendar moves. Retrieval practice is
-  <strong>g = 0.499</strong> across 222 classroom studies and 48,478 students, spacing is
+  <strong>g = 0.499</strong> [0.442, 0.557], I² = 88%, across 222 classroom studies and 48,478 students, spacing is
   <strong>d = 0.54</strong>, and the cheapest of the two is the one nobody schedules — because
   the price of durability is <em>patience</em>, not work.</p>
   <div class="chips">
@@ -242,8 +242,8 @@ const HUE=s=>s==='real'?'var(--real)':'var(--felt)';
 
 /* grouped bars: {groups:[{label, bars:[{series,value,tag}]}], y:{max,fmt}, alt} */
 function renderBars(host,spec){
-  const narrow=innerWidth<620, W=720, GH=narrow?92:64, T=10, B=30;
-  const L=narrow?4:104, R=narrow?54:46;
+  const narrow=innerWidth<620, W=narrow?380:720, GH=narrow?86:64, T=10, B=30;
+  const L=narrow?2:104, R=narrow?52:46;
   const H=spec.groups.length*GH+T+B;
   const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
   const track=W-L-R, px=v=>track*Math.min(1,v/spec.y.max);
@@ -269,7 +269,7 @@ function renderBars(host,spec){
 }
 /* line plot: {series:[{series,pts,dash}], x:{min,max,label,ticks}, y:{min,max,label}, marks, band } */
 function renderPlot(host,spec){
-  const narrow=innerWidth<620, W=720, H=narrow?250:290, L=48, R=16, T=14, B=46;
+  const narrow=innerWidth<620, W=narrow?380:720, H=narrow?230:290, L=44, R=14, T=14, B=44;
   const px=v=>L+(v-spec.x.min)/(spec.x.max-spec.x.min)*(W-L-R);
   const py=v=>T+(1-(v-spec.y.min)/(spec.y.max-spec.y.min))*(H-T-B);
   const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});

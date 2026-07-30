@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A Phone Call Beats the Avatar — Demo 17</title>
+<meta name="description" content="Four measured delivery channels, decomposed into ingredients you can toggle. The richness coefficient comes out negative. Then the language wall: 21.7% of the world's children are unmeasured entirely." />
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="demo.css" />
+<script src="../theme.js"></script>
+<style>
+.gl{stroke:var(--line);stroke-width:1}
+.ax{font:600 10px var(--sans);letter-spacing:.11em;fill:var(--ink-3)}
+.vl{font:600 11px var(--mono);fill:var(--ink-3)}
+.sl{font:12.5px var(--sans);fill:var(--ink-2)}
+input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
+.ing{display:grid;gap:9px;margin:16px 0 6px}
+@media(min-width:700px){.ing{grid-template-columns:1fr 1fr}}
+.ing button{text-align:left;padding:13px 15px;font:14px/1.45 var(--sans);border-radius:10px}
+.ing button .nm{display:block;font-weight:650;color:var(--ink);margin-bottom:3px}
+.ing button .ds{display:block;font-size:12.8px;color:var(--ink-3);line-height:1.45}
+.ing button.on{border-color:var(--real);box-shadow:inset 0 0 0 1px var(--real)}
+.ing button.on .nm{color:var(--real)}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:11px;margin:18px 0}
+.stat div{background:var(--sunken);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+.stat .k{font:600 10px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+.stat .n{font:400 23px/1.1 var(--mono);color:var(--ink)}
+.stat .n.real{color:var(--real)} .stat .n.felt{color:var(--felt)}
+.stat .s{font:12px/1.4 var(--sans);color:var(--ink-3);margin-top:6px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:13px;font-size:12.5px;color:var(--ink-2)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+.verdict{border-radius:11px;padding:17px 19px;margin:16px 0 0;background:var(--sunken);
+  border:1px solid var(--line);border-left:2px solid var(--real)}
+.verdict.extrap{border-left-color:var(--warn)}
+.verdict .h{font:600 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--real);margin-bottom:11px}
+.verdict.extrap .h{color:var(--warn)}
+.verdict .big{font:400 30px/1.05 var(--mono);color:var(--ink);margin-bottom:9px}
+.verdict p{font-size:14px;line-height:1.58;margin:0;color:var(--ink-2)}
+.presets{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 4px}
+.eq{font:12.5px/1.75 var(--mono);color:var(--ink-2);background:var(--sunken);border:1px solid var(--line);
+  border-radius:10px;padding:14px 16px;overflow-x:auto;white-space:pre}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../paper.html">The paper</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 17 · The village</div>
+  <h1>A phone call beats the avatar</h1>
+  <p class="lede">The instinct is that reach improves with bandwidth. Four measured arms say
+  otherwise, and they say it with enough structure to be decomposed: <strong>voice call + SMS,
+  +0.327 SD across five countries and N = 8,902</strong>, against SMS alone at +0.083, IVR at
+  null, and live calls in Sierra Leone at −0.008. Below, the ingredients are separated and the
+  richness term is solved for. It does not come out positive.</p>
+  <div class="chips">
+    <span class="chip m">Decomposition solved in the page</span>
+    <span class="chip m">Language coverage computed from published shares</span>
+    <span class="chip n">Flags every unmeasured combination</span>
+  </div>
+</header>
+
+<section class="orient">
+  <div class="o"><b>What this is</b><p>A channel comparator with an arithmetic spine. Four
+  published effects, four ingredients, one exactly-determined linear system — solved live, then
+  used to price channel combinations that nobody has run.</p></div>
+  <div class="o"><b>Why it matters</b><p>Most designs for reaching children who are not in the
+  room start by specifying bandwidth: video, avatars, a 25 FPS face. The best-evidenced
+  intervention in this whole literature is <b>a text message and a person who rings at an agreed
+  time</b>. That is a standing rebuke, and the arithmetic below says where its power lives.</p></div>
+  <div class="o"><b>How to use it</b><p>Switch off <em>targeting</em> and leave everything else
+  on. Whatever remains is what bandwidth and human presence are worth on their own. Then look at
+  the badge on the readout: anything that is not one of the four measured arms is labelled an
+  extrapolation, because it is one.</p></div>
+</section>
+
+<h2>1 · Four arms, four ingredients, no spare parameters</h2>
+<p>Each measured arm is written as a vector of ingredients. <em>Contact</em> is worth one on every
+arm — something reached the learner. <em>Human</em> means a person was on the line.
+<em>Targeting</em> means the content was matched to what this learner could already do.
+<em>Richness</em> is a bandwidth score on the channel itself, from a text message at 0.05 to full
+video at 1.0.</p>
+
+<div class="scroll">
+<table>
+<thead><tr><th>Measured arm</th><th>Contact</th><th>Human</th><th>Targeting</th><th>Richness</th>
+<th>Observed effect</th></tr></thead>
+<tbody id="arms"></tbody>
+</table>
+</div>
+
+<p>Four equations, four unknowns. The system is solved by elimination in the page — no fitting,
+no residual, because there is nothing left over to fit.</p>
+
+<div class="panel">
+  <div class="ptitle">Solved coefficients</div>
+  <div class="psub">Standard-deviation contribution per unit of each ingredient.</div>
+  <div id="coef"></div>
+  <div class="eq" id="proof"></div>
+</div>
+
+<h2>2 · Build a channel</h2>
+<p>Toggle the ingredients. The prediction is the dot product of your vector with the coefficients
+above.</p>
+
+<div class="presets" id="presets"></div>
+<div class="ing" id="ing"></div>
+
+<div class="ctl" style="margin:14px 0 4px">
+  <label for="rich">Channel richness <span class="v" style="font:600 12px var(--mono);color:var(--felt)" id="richv"></span></label>
+  <input type="range" id="rich" min="0" max="100" step="5" value="45" />
+</div>
+
+<div class="verdict" id="verdict"></div>
+
+<figure class="panel">
+  <div class="ptitle">Your channel against the measured record</div>
+  <div class="psub">The four measured arms in blue; your constructed channel in orange. Zero is a
+  programme that changed nothing.</div>
+  <div class="legend">
+    <span><i style="background:var(--real)"></i>Measured arm</span>
+    <span><i style="background:var(--felt)"></i>Your channel — predicted</span>
+  </div>
+  <div id="cmp"></div>
+</figure>
+
+<div class="note"><b>The one conclusion that survives the missing degrees of freedom.</b> With
+four arms and four parameters the individual coefficients are an accounting identity, not an
+estimate — they have no standard errors because they have no residuals. But the sign of the
+richness term does not depend on the coding at all. IVR is a richer channel than SMS by any
+ordering anyone would defend, and IVR measured <em>lower</em>. So the richness coefficient is
+<code>−0.083 / (r<sub>IVR</sub> − r<sub>SMS</sub>)</code>, which is negative for every positive
+gap between them. Move the richness slider on any arm and watch the sign hold.</div>
+
+<h2>3 · The wall the channel argument never reaches</h2>
+<p>Bandwidth is a solvable problem and it is the wrong one. The barrier that actually decides
+whether a child can be taught by a model is whether a model exists in a language they
+understand. These shares come from joining World Bank child-population data to a full
+multilingual benchmark table.</p>
+
+<figure class="panel">
+  <div class="ptitle">The world's children, by language coverage</div>
+  <div class="psub">These three shares are <strong>not a partition</strong> — a child counted in
+  the first row may also be counted in the second. They are three separate questions asked of the
+  same population.</div>
+  <div id="lang"></div>
+</figure>
+
+<div class="note warn"><b>Read the third bar twice.</b> For roughly <b>375 million children</b> we
+cannot state whether a model works in their language, because nobody has measured it. That is not
+a capability gap. It is a measurement gap — and a measurement gap is the cheaper of the two to
+close. No learner-weighted multilingual benchmark exists anywhere: every benchmark weights
+languages by convenience or corpus size, never by how many children are sitting in a classroom
+being taught in them.</div>
+
+<h2>4 · And the part that is already tractable</h2>
+<p>The hopeful result, and it does not wait on frontier scale. A <strong>0.55-billion-parameter
+fine-tuned encoder</strong> collapses the population of children whose languages score below 50
+on the benchmark.</p>
+
+<figure class="panel">
+  <div class="ptitle">Share of children below a benchmark score of 50</div>
+  <div class="psub">Before and after a small targeted encoder. The same intervention barely moves
+  the unmeasured group, because you cannot fine-tune against a benchmark that does not exist.</div>
+  <div id="enc"></div>
+  <div class="stat" id="encstat"></div>
+</figure>
+
+<h2>5 · Nine barriers, and which three this removes</h2>
+<p class="sub">Abundant attention is real. It is also narrow. Stating the six it does not touch,
+every time, in the same breath as the three it does.</p>
+
+<div class="scroll">
+<table>
+<thead><tr><th>Barrier between a child and a tutor</th><th>Removed by abundant attention?</th></tr></thead>
+<tbody>
+<tr><td>Cost of expert attention-minutes</td><td><span class="pill y">yes</span></td></tr>
+<tr><td>Cost of assessment and regrading</td><td><span class="pill y">yes</span></td></tr>
+<tr><td>Availability at the hour the learner is free</td><td><span class="pill y">yes</span></td></tr>
+<tr><td><b>Language coverage</b></td><td><span class="pill n">no</span></td></tr>
+<tr><td><b>Connectivity</b></td><td><span class="pill n">no</span></td></tr>
+<tr><td><b>Devices</b></td><td><span class="pill n">no</span></td></tr>
+<tr><td><b>Evidence that it works for this learner</b></td><td><span class="pill n">no</span></td></tr>
+<tr><td><b>Institutional permission</b></td><td><span class="pill n">no</span></td></tr>
+<tr><td><b>Interface accessibility</b></td><td><span class="pill n">no</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>6 · What this proves, and what it licenses you to build</h2>
+
+<div class="panel">
+  <div class="ptitle">Established here</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>Bandwidth is not the mechanism, and that is provable from two arms.</strong> SMS
+    beats IVR. Any richness ordering that puts voice above text forces the richness coefficient
+    negative. No amount of parameter choice rescues it.</li>
+    <li><strong>The winning arm's advantage is separable and cheap.</strong> Targeting solves to
+    <span id="tinline">+0.335</span> SD — on its own, more than the entire measured effect of the
+    best arm, because the richness of the phone call is charged against it. Every ingredient that
+    matters is available to a programme with no video budget and no app.</li>
+    <li><strong>Extrapolation is marked rather than hidden.</strong> The builder above reaches
+    eight ingredient vectors at twenty-one richness settings. <span id="ncomb">Four</span> of
+    those combinations correspond to something somebody actually ran. Every other readout carries
+    a badge saying so, instead of quietly returning a number.</li>
+  </ul>
+  <div class="ptitle">Conditions of use</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>Zero degrees of freedom is a real limitation.</strong> Four observations cannot
+    identify four parameters and an error term. Treat the coefficients as a decomposition of what
+    was measured, not as an estimate of what would happen. The robust claim is the sign of one of
+    them, and it is stated above with its proof.</li>
+    <li><strong>Ingredient additivity is an assumption.</strong> The survey's own reading is that
+    the winning arm works through <em>accountability and targeting together</em> — a human at a
+    scheduled time, delivering something matched to the learner. An additive model cannot see an
+    interaction, so it charges the whole combined effect to whichever ingredient is unique to the
+    winning arm. That is why targeting takes the credit here and human presence does not, and it
+    is a property of the model rather than a finding about people.</li>
+    <li><strong>Untargeted delivery is the failure mode, not the technology.</strong> Every null
+    in this literature shares a structure: something was distributed and nothing was targeted.
+    That is a design failure we know how to avoid, which raises the standard rather than lowering
+    it — a system that widens gaps no longer has the excuse that everything does.</li>
+    <li><strong>The language numbers are shares, not outcomes.</strong> "Has a functional model"
+    is benchmark coverage above a threshold, not evidence that a child learns. And the third bar
+    is the honest one: for 21.7% of the world's children the question has not been asked, so
+    every optimistic sentence on this page is silent about them.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../deck.html">The deck</a> ·
+  <a href="../paper.html">The paper</a>
+  <br /><br />Every figure traceable in the survey.
+</footer>
+
+</div>
+<script>
+/* ══ chart IR ══════════════════════════════════════════════════════════ */
+const NS='http://www.w3.org/2000/svg';
+const mk=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const el=id=>document.getElementById(id);
+const HUE=s=>s==='real'?'var(--real)':'var(--felt)';
+
+/* horizontal bars with a signed axis: {rows:[{label,value,series,note}], x:{min,max,fmt}, alt} */
+function renderBars(host,spec){
+  const narrow=innerWidth<620, W=narrow?380:720, RH=narrow?56:44, T=8, B=32;
+  const L=narrow?2:236, R=narrow?54:64;
+  const H=spec.rows.length*RH+T+B;
+  const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
+  const track=W-L-R, px=v=>L+(v-spec.x.min)/(spec.x.max-spec.x.min)*track;
+  for(let i=0;i<=4;i++){const v=spec.x.min+(spec.x.max-spec.x.min)*i/4;
+    svg.appendChild(mk('line',{x1:px(v),y1:T,x2:px(v),y2:H-B,class:'gl'}));
+    const t=mk('text',{x:px(v),y:H-B+16,'text-anchor':'middle',class:'vl'});
+    t.textContent=spec.x.fmt(v); svg.appendChild(t);}
+  const zero=Math.max(spec.x.min,Math.min(spec.x.max,0));
+  svg.appendChild(mk('line',{x1:px(zero),y1:T,x2:px(zero),y2:H-B,stroke:'var(--line-2)','stroke-width':1.4}));
+  spec.rows.forEach((r,i)=>{
+    const y=T+i*RH+(narrow?22:12), h=18;
+    const lb=mk('text',narrow?{x:L,y:T+i*RH+14,class:'sl'}:{x:L-12,y:y+14,'text-anchor':'end',class:'sl'});
+    lb.textContent=r.label; svg.appendChild(lb);
+    const x0=Math.min(px(zero),px(r.value)), w=Math.max(2,Math.abs(px(r.value)-px(zero)));
+    svg.appendChild(mk('rect',{x:x0,y,width:w,height:h,rx:4,fill:HUE(r.series)}));
+    const right=r.value>=zero;
+    const t=mk('text',{x:right?x0+w+7:x0-7,y:y+14,'text-anchor':right?'start':'end',
+      class:'vl',style:`fill:${HUE(r.series)}`});
+    t.textContent=spec.x.fmt(r.value,true); svg.appendChild(t);
+  });
+  host.replaceChildren(svg);
+}
+
+/* ══ 1 · the arms, and the exact solve ═════════════════════════════════ */
+const ARMS=[
+ {id:'sms',  nm:'SMS only',                 c:1,h:0,t:0,r:0.05, y:0.083,
+  note:'5-country pooled; null in Kenya, Nepal and Botswana'},
+ {id:'ivr',  nm:'Interactive voice response',c:1,h:0,t:0,r:0.35, y:0.000,
+  note:'a recorded voice on a schedule, nobody on the line'},
+ {id:'sl',   nm:'Sierra Leone live calls',  c:1,h:1,t:0,r:0.45, y:-0.008,
+  note:'a real person, calling — and untargeted'},
+ {id:'vsms', nm:'Voice call + SMS',         c:1,h:1,t:1,r:0.45, y:0.327,
+  note:'5 countries, N = 8,902 — the best-evidenced arm in the literature'}
+];
+
+/* solve the 4×4 system by Gaussian elimination — no hand-derived formula */
+function solve(A,b){
+  const n=b.length, M=A.map((row,i)=>[...row,b[i]]);
+  for(let k=0;k<n;k++){
+    let p=k; for(let i=k+1;i<n;i++) if(Math.abs(M[i][k])>Math.abs(M[p][k])) p=i;
+    [M[k],M[p]]=[M[p],M[k]];
+    for(let i=0;i<n;i++){ if(i===k) continue;
+      const f=M[i][k]/M[k][k];
+      for(let j=k;j<=n;j++) M[i][j]-=f*M[k][j]; }
+  }
+  return M.map((row,i)=>row[n]/row[i]);
+}
+let COEF=solve(ARMS.map(a=>[a.c,a.h,a.t,a.r]), ARMS.map(a=>a.y));
+const KEYS=['contact','human','targeting','richness'];
+const LABEL={contact:'Contact exists',human:'A human on the line',
+             targeting:'Targeted to the learner',richness:'Channel richness (per unit)'};
+
+el('arms').innerHTML=ARMS.map(a=>
+ `<tr><td><b>${a.nm}</b><br><span style="font-size:12.5px;color:var(--ink-3)">${a.note}</span></td>
+  <td class="num">${a.c}</td><td class="num">${a.h}</td><td class="num">${a.t}</td>
+  <td class="num">${a.r.toFixed(2)}</td>
+  <td class="num" style="color:${a.y>0.05?'var(--real)':'var(--ink-3)'}">${a.y>=0?'+':'−'}${Math.abs(a.y).toFixed(3)} SD</td></tr>`).join('');
+
+function showCoef(){
+  el('coef').innerHTML='<div class="stat" style="margin:6px 0 4px">'+KEYS.map((k,i)=>
+   `<div><div class="k">${LABEL[k]}</div>
+      <div class="n ${COEF[i]<0?'felt':'real'}">${COEF[i]>=0?'+':'−'}${Math.abs(COEF[i]).toFixed(3)}</div>
+      <div class="s">SD per unit</div></div>`).join('')+'</div>';
+  const resid=ARMS.map(a=>Math.abs(a.c*COEF[0]+a.h*COEF[1]+a.t*COEF[2]+a.r*COEF[3]-a.y));
+  const rIVR=ARMS[1].r, rSMS=ARMS[0].r;
+  el('proof').textContent=
+`system            4 arms × 4 ingredients, solved by elimination
+max residual      ${Math.max(...resid).toExponential(1)}  — exact by construction, not by fit
+degrees of freedom 0
+
+why the richness sign is forced, independent of coding:
+  contact + ${rSMS.toFixed(2)}·richness = ${ARMS[0].y.toFixed(3)}      (SMS)
+  contact + ${rIVR.toFixed(2)}·richness = ${ARMS[1].y.toFixed(3)}      (IVR)
+  ------------------------------------------------
+  richness = (${ARMS[1].y.toFixed(3)} − ${ARMS[0].y.toFixed(3)}) / (${rIVR.toFixed(2)} − ${rSMS.toFixed(2)}) = ${COEF[3].toFixed(3)}
+  negative whenever IVR is scored richer than SMS.`;
+  el('tinline').textContent='+'+COEF[2].toFixed(3);
+}
+
+/* ══ 2 · the builder ═══════════════════════════════════════════════════ */
+const ING=[
+ {k:'c',nm:'Something reaches the learner',ds:'A message arrives at all — the floor every measured arm shares.'},
+ {k:'h',nm:'A human on the line, at an agreed time',ds:'A live person who can tell whether anyone is listening. Accountability rides on this, and no arm separates the person from the appointment, so neither does the model.'},
+ {k:'t',nm:'Targeted to the learner',ds:'Content matched to what this child can already do. The one ingredient unique to the winning arm.'}
+];
+let ST={c:1,h:1,t:1};
+const PRESETS=[
+ {nm:'Voice call + SMS',st:{c:1,h:1,t:1},r:45},
+ {nm:'SMS only',st:{c:1,h:0,t:0},r:5},
+ {nm:'IVR',st:{c:1,h:0,t:0},r:35},
+ {nm:'Untargeted live calls',st:{c:1,h:1,t:0},r:45},
+ {nm:'A 25 FPS avatar',st:{c:1,h:0,t:0},r:100},
+ {nm:'Targeted avatar',st:{c:1,h:0,t:1},r:100}
+];
+el('presets').innerHTML=PRESETS.map((p,i)=>`<button data-p="${i}">${p.nm}</button>`).join('');
+el('ing').innerHTML=ING.map(g=>
+ `<button data-k="${g.k}"><span class="nm">${g.nm}</span><span class="ds">${g.ds}</span></button>`).join('');
+
+function matchArm(){
+  const r=+el('rich').value/100;
+  return ARMS.find(a=>a.c===ST.c&&a.h===ST.h&&a.t===ST.t&&Math.abs(a.r-r)<0.005);
+}
+function predict(){
+  const r=+el('rich').value/100;
+  return ST.c*COEF[0]+ST.h*COEF[1]+ST.t*COEF[2]+r*COEF[3];
+}
+function draw(){
+  const r=+el('rich').value/100;
+  el('richv').textContent=r.toFixed(2);
+  [...el('ing').querySelectorAll('button')].forEach(b=>b.classList.toggle('on',!!ST[b.dataset.k]));
+  const p=predict(), arm=matchArm();
+  const v=el('verdict');
+  v.className='verdict'+(arm?'':' extrap');
+  v.innerHTML=
+   `<div class="h">${arm?'Measured combination · '+arm.nm:'Extrapolation — this combination has not been run'}</div>
+    <div class="big">${p>=0?'+':'−'}${Math.abs(p).toFixed(3)} SD</div>
+    <p>${arm
+      ? `This is a real arm. Observed <b>${arm.y>=0?'+':'−'}${Math.abs(arm.y).toFixed(3)} SD</b> — ${arm.note}.`
+      : `No trial has run this vector. The number above is the decomposition applied outside the four points that defined it, and it should be read as a hypothesis with a price tag rather than as evidence. ${
+         p<0.327 ? `It is below the +0.327 SD that a phone call and a text message already achieve.` : `It exceeds +0.327 SD, which is the strongest claim in this literature — a good reason to be suspicious of the model rather than excited about the channel.`}`}</p>`;
+  renderBars(el('cmp'),{alt:'Measured channel effects and the reader’s constructed channel, in standard deviations.',
+    x:{min:-0.10,max:0.40,fmt:(x,s)=>(x>=0?'+':'−')+Math.abs(x).toFixed(s?3:2)},
+    rows:[...ARMS.map(a=>({label:a.nm,value:a.y,series:'real'})),
+          {label:'Your channel',value:p,series:'felt'}]});
+}
+el('presets').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-p]'); if(!b) return;
+  const p=PRESETS[+b.dataset.p]; ST={...p.st}; el('rich').value=p.r; draw();});
+el('ing').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-k]'); if(!b) return;
+  ST[b.dataset.k]=ST[b.dataset.k]?0:1; draw();});
+el('rich').addEventListener('input',draw);
+
+/* ══ 3 · the language wall ═════════════════════════════════════════════ */
+const CHILDREN_M=1730; // world child population, millions — 375M ÷ 0.217
+renderBars(el('lang'),{alt:'Share of the world’s children with model coverage in their language of instruction, their home language, and with no coverage at all.',
+  x:{min:0,max:60,fmt:(x,s)=>x.toFixed(s?1:0)+'%'},
+  rows:[
+   {label:'Language of instruction — covered',value:55.6,series:'real'},
+   {label:'Language spoken at home — covered',value:30.7,series:'real'},
+   {label:'Unmeasured entirely',value:21.7,series:'felt'}]});
+
+/* ══ 4 · the encoder ═══════════════════════════════════════════════════ */
+renderBars(el('enc'),{alt:'Share of children whose languages score below 50 on the benchmark, before and after a 0.55B fine-tuned encoder.',
+  x:{min:0,max:40,fmt:(x,s)=>x.toFixed(s?1:0)+'%'},
+  rows:[{label:'Before — off-the-shelf',value:37.6,series:'felt'},
+        {label:'After — 0.55B fine-tuned',value:4.4,series:'real'}]});
+const before=37.6, after=4.4;
+el('encstat').innerHTML=
+ `<div><div class="k">Population moved</div><div class="n real">${(before-after).toFixed(1)} pts</div>
+    <div class="s">≈ ${Math.round((before-after)/100*CHILDREN_M)} million children, on the ~${(CHILDREN_M/1000).toFixed(2)} bn implied by 375 M ÷ 21.7%</div></div>
+  <div><div class="k">Reduction</div><div class="n real">${(before/after).toFixed(1)}×</div>
+    <div class="s">from a 0.55B model, not a frontier one</div></div>
+  <div><div class="k">Unmeasured group</div><div class="n felt">21.7%</div>
+    <div class="s">barely moved — no benchmark to fine-tune against</div></div>`;
+
+showCoef(); draw();
+let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(draw,160);});
+
+const R=document.documentElement;
+el('tt').onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+</body>
+</html>
