@@ -71,9 +71,10 @@ These are the trials that put a post-2023 LLM in front of a learner and measured
 
 Two things are true of that table at once. It holds the strongest tutoring result anyone has
 measured on a frontier model, and it holds a trial where assistance left learners worse off once
-the tool was taken away. What separates those two rows is what the system was permitted to do,
-and not which model sat inside it. That is the encouraging reading: the variance is in the
-design, which is the part you get to choose.
+the tool was taken away. Bastani is the one study that isolates why: both of its arms ran the same
+GPT-4, and the arm allowed to answer freely produced the harm while the constrained arm did not.
+The live variable there is what the system was permitted to do, which is the part a builder
+chooses.
 
 **Not one row measured a delayed, unassisted test on items the learner had never seen.** The
 frontier era has not run into a ceiling. It has not yet run the experiment that could find one.
