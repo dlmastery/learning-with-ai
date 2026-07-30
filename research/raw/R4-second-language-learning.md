@@ -592,13 +592,210 @@ that trial does not exist in ERIC.
 
 ## 6. The critical-period question, stated accurately
 
-<!--SEC6-->
+The folk version says adults cannot learn languages. The literature says something much
+narrower, and the most-cited recent attempt to say it quantitatively has a published
+reanalysis that dissolves its headline.
+
+**Hartshorne, Tenenbaum & Pinker (2018),** *Cognition* 177:263–277,
+[10.1016/j.cognition.2018.04.007](https://doi.org/10.1016/j.cognition.2018.04.007).
+Two-thirds of a million English speakers took a viral online grammar quiz. Fitting an
+exponential-learning-with-sigmoidal-decay model, the authors concluded that the *rate* of
+grammar learning stays high until about **17.4 years of age** and then drops sharply. The
+claim is about learning rate, not about ceiling: a learner who starts at 17 can still
+improve, but does so more slowly, and because near-native grammar takes roughly thirty
+years of exposure, starting much after about 10 makes native-like attainment unlikely on
+a normal lifespan. `OBSERVED` — a cross-sectional web survey, not an experiment.
+
+**van der Slik, Schepens, Bongaerts & van Hout (2021),** *Language Learning* 71(1),
+[10.1111/lang.12470](https://doi.org/10.1111/lang.12470), reanalysed the same data and
+concluded that *"their overall conclusion of one sharply defined critical age at 17.4 for
+all language learners is based on artificial results."* Fitted separately by learner type,
+a **continuous** decay model fits better for monolinguals, bilinguals and early-immersion
+learners; only non-immersion and later-immersion learners fit a discontinuous model, with
+break points at **18.6 and 19.0 years**. Their reading: those break points look like
+**schooling effects**, produced by changes in living circumstances and socialisation
+around the end of secondary education, not by a cognitive developmental window.
+`MEASURED-META` (reanalysis of the original dataset, so not independent evidence — the
+same data, better partitioned).
+
+**Vanhove (2013),** *PLOS ONE* 8(7):e69172,
+[10.1371/journal.pone.0069172](https://doi.org/10.1371/journal.pone.0069172), makes the
+prior methodological point: most critical-period studies use statistical tools that
+cannot address the prediction they claim to test, because a critical period requires a
+**discontinuity** and the usual analyses cannot distinguish one from a smooth decline.
+Reanalysing two datasets with piecewise regression, he finds the predicted age patterns
+are not cross-linguistically robust and concludes, by parsimony, that age patterns in L2
+acquisition are not governed by a critical period.
+
+There is a separate inferential problem with the Hartshorne design that none of the
+reanalyses can fix, because it is in the sampling rather than the modelling. The
+respondents are people who chose to take a viral quiz called a grammar test, in English,
+on a social network. Age of acquisition, current age, immigration history, education and
+willingness to take an English grammar quiz for fun are all correlated in that population,
+and there is no sampling frame against which to reweight. The result is enormous and
+underdetermined at the same time.
+
+**What survives.** Age effects are real, they are largest for phonology and smallest for
+vocabulary, and they are gradual. Adults are *faster* than children in the early stages of
+naturalistic acquisition (the classic demonstration being Snow and Hoefnagel-Höhle's
+Dutch study), and children overtake later. For a product, the operative fact is that
+nothing in this literature identifies an age past which instruction stops working, and
+the one number everyone quotes has a published reanalysis attributing it to leaving
+school.
 
 ---
 
 ## 7. The commercial reality
 
-<!--SEC7-->
+Duolingo appears 93 times in this corpus and never once as evidence about acquisition.
+That is defensible, and the reason is worth setting out, because the largest body of
+efficacy research in language learning is a vendor's, and this survey's rule is that a
+`VENDOR` claim is never restated as a finding. Applying the rule properly means reading
+the studies, describing their designs, and saying which claim rests on which.
+
+### 7.1 The 34 hours
+
+**Vesselinov & Grego (2012), "Duolingo Effectiveness Study."** `VENDOR`
+(Duolingo-funded, external authors; self-published PDF, no DOI, never peer-reviewed).
+
+The design has no control group. It is a pre/post within-subject study, and the
+"one university semester" comparison is against the **WebCAPE placement cut-off of 270
+points**, a scoring threshold, not against students. The 34 hours is arithmetic:
+270 ÷ 8.1 points-per-hour, extrapolated linearly from zero. The recruitment funnel, from
+the report's own Figure A1: 727 viewed the invitation → 556 completed the entry survey →
+386 eligible → 211 took a baseline WebCAPE → 196 randomly sampled → **88 analysed**.
+Recruitment was a banner ad shown to logged-in Duolingo Spanish learners. Mean actual
+study time was 22 hours, the range was 2 to 133, and **16% of participants (n = 14)
+scored the same or lower at post-test**, minimum change −57 points. WebCAPE tests
+vocabulary, reading and grammar. The authors themselves recommend adding *"some test of
+spoken proficiency."*
+
+Krashen (2014), *International Journal of Foreign Language Teaching*, made the decisive
+statistical point: the **median** gain rate was 3.9 points per hour against a mean of 8.1,
+because the distribution is heavily right-skewed. The same arithmetic on the median gives
+**about 69 hours**. He also notes participants averaged 35 years old and 69% were college
+graduates.
+
+The same two authors produced the same design for a series of vendors: Rosetta Stone
+(2009) 55 hours; Duolingo (2012) 34; an **anonymised "Language App"** (2015) 25, published
+under a generic name because *"the report was not officially made public"*; Babbel (2016)
+21; italki (2018) 19. Each successive sponsor gets a better number. The 2015 report is a
+file drawer with the door open.
+
+### 7.2 The company's own later measurement contradicts its famous one
+
+**Jiang, Rollinson, Plonsky, Gustafson & Pajak (2021),** *Foreign Language Annals*
+54(4):974–1002, [10.1111/flan.12600](https://doi.org/10.1111/flan.12600). `VENDOR`
+(four of five authors are Duolingo employees; peer-reviewed).
+
+Cross-sectional, post-test only. No control group and no pre-test. Learners reaching
+Checkpoint 5 were tested once and compared by ANOVA against published means and SDs from
+other researchers' university cohorts (Tschirner 2016; Rubio & Hacking 2019). n = 225,
+paid $100 each, over 80% holding at least a bachelor's degree. ACTFL Reading and Listening
+administered externally by Language Testing International; the paper states plainly that
+**"No other skills were assessed."** Outcome: Reading at Intermediate Low, Listening at
+Novice High, with Spanish listening scoring **significantly lower** than the university
+comparison cohort.
+
+The number that matters is buried in the methods. Median time to finish the beginning
+content was **112 hours** (125 Spanish, 99 French). The 2012 study priced roughly the same
+milestone at 34. The later follow-up (DRR-21-03, n = 340, through Unit 7) reports a median
+of **203 hours**. Same company, same product, its own instrumentation, and the hours
+figure has grown six-fold while the marketing number stayed put.
+
+`OBSERVED` on a related structural point: **no Duolingo Research Report before DRR-25-06
+(June 2025) used a control group.** Every reading, listening and speaking report is
+single-cohort and post-test-only, benchmarked against published university averages or
+against Duolingo's own CEFR expectations. Selection is heavy: DRR-24-04's funnel is 3,153
+invitations → 862 responses → 505 eligible → **165 tested**, 5.2%.
+
+To be fair where fairness is owed: the instruments are mostly external and reputable
+(ACTFL via LTI, Pearson Versant, Avant STAMP 4S). And DRR-25-06 appears to be a genuine
+randomised trial, n = 567 with Versant pre/post. It is not listed on the company's
+`/efficacy/studies` page and its live link returns 403.
+
+### 7.3 The independent record, which is thin and mostly null
+
+| Study | Independence | Design | Result |
+|---|---|---|---|
+| Rachels & Rockinson-Szapkiw (2018), *CALL* 31(1–2), [10.1080/09588221.2017.1382536](https://doi.org/10.1080/09588221.2017.1382536) | Independent | Quasi-exp., grades 3–4, 12 weeks, Duolingo vs regular Spanish class | **Null on achievement and on self-efficacy** (§8.2) |
+| Loewen et al. (2019), *ReCALL* 31(3), [10.1017/S0958344019000065](https://doi.org/10.1017/S0958344019000065) | Independent | n = 9, Turkish, one semester, self-study | Gains; time-on-app correlated with gains; not an efficacy estimate |
+| Kim, Payant, Skalicky & Namkung (2026), *SSLA*, [10.1017/S0272263126101521](https://doi.org/10.1017/S0272263126101521) | Duolingo Efficacy Research Program funding | Classroom-only (58) vs Duolingo-only (65) vs both (60), 16 weeks, beginner French | **All three improved by similar magnitudes** on proficiency, grammar, vocabulary and communicative competence; the only difference was *tu/vous* pragmatics favouring Classroom+Duolingo |
+| Meltzer et al. (2023), *Aging Neuropsychol. Cogn.*, [10.1080/13825585.2021.1991262](https://doi.org/10.1080/13825585.2021.1991262), NCT03638882 | Independent | **True RCT**, n = 76, ages 65–75, Duolingo vs BrainHQ vs waitlist, 4 months | A **cognitive-ageing** trial. Duolingo matched BrainHQ on two measures; BrainHQ was superior on reaction time |
+| James & Mayer (2019), *Appl. Cogn. Psychol.* | Independent | RCT, n = 64, Duolingo vs matched-content slideshow | **Null on achievement**, large effects on affect (§8.1) |
+
+The Kim et al. result deserves its own sentence because it cuts both ways and gets
+reported one way. Sixteen weeks of Duolingo alone produced beginner French gains
+statistically similar to a semester of university classroom instruction. That is a real
+achievement for a free app. It is also a null for the app's incremental value, and a null
+for the classroom's, and the study was funded by the vendor whose product came out level
+with a university course.
+
+**The strongest single sentence in the independent literature is still Loewen et al.'s
+framing** that one *commissioned* study found favourable outcomes while limited
+independent research *"reported issues related to learner persistence, motivation, and
+program efficacy."*
+
+### 7.4 The English Test, where the vendor research is strongest and one result went missing
+
+The Duolingo English Test carries far more psychometric apparatus than the learning app.
+Its Technical Manual is self-published, not peer-reviewed, and carries a DOI under
+Duolingo's own self-assigned prefix `10.46999`, which makes it look peer-reviewed in a
+reference list.
+
+Concurrent validity, from the manual: DET Overall against official TOEFL iBT reports
+(n = 328) **r = .71** overall, **.82** center-based, **.61 for the Home Edition**. The
+Home Edition is the product actually used in admissions. Against IELTS (n = 1,943),
+Overall **r = .73** but subscores **Writing .54, Reading .53, Listening .57**, and
+subscore concordance tables are published from those.
+
+**Isaacs, Hu, Trenkic & Varga (2023),** *Language Testing* 40(3):748–770,
+[10.1177/02655322231158550](https://doi.org/10.1177/02655322231158550), is
+**Duolingo-commissioned** (its funding statement says so), which is worth noting because
+its result is unfavourable: across 1,881 DET-admitted students at a large London
+university, DET correlated with first-year credit-weighted grades at **adj. r = 0.195**
+for postgraduates and **adj. r = −0.112** for undergraduates, and DET-admitted students
+had lower academic success than IELTS and TOEFL iBT entrants. That paper is **cited zero
+times in both the 2025 and 2026 Technical Manuals**. The manual's predictive-validity
+section rests instead on a blog post (Kostromitina 2024) with no paper and no
+methodology document.
+
+Wagner (2020), *Language Assessment Quarterly* 17(3), independent: *"there is a lack of
+independent research validating the use of DET scores for admissions. Given these
+shortcomings, the use of DET scores cannot be recommended."*
+
+### 7.5 What the audited filings say, and one sentence in them that is not supported
+
+`FILING` — Duolingo, Inc., CIK 0001562088. Q1 2026 Form 10-Q (filed 2026-05-05):
+**DAU 56.5 million** (up 21% year over year from 46.6 M), **MAU 137.8 million**, **paid
+subscribers 12.5 million**, subscription bookings $268.065 M for the quarter. FY2025
+10-K: DAU 52.7 M against MAU 133.1 M (**DAU/MAU ≈ 39.6%**), paid subscribers 12.2 M
+(~9% of MAU), and roughly 43 M users with a seven-day streak against roughly 15 M with a
+365-day streak. The FY2022 10-K disclosed **over 800 million cumulative downloads**
+against 60.7 M MAU; the FY2025 filing no longer reports cumulative downloads.
+
+**No filing discloses course completion.** Searches of the FY2025 10-K for "complete a
+course," "churn," and "learning objectives" return nothing.
+
+And this, from the FY2025 10-K:
+
+> *"According to an internal study, learners who completed five sections of Duolingo
+> achieved proficiency comparable to five university semesters of language education.
+> **Independent studies corroborate this finding**: Duolingo learners' speaking skills
+> were found to match those of university students…"*
+
+The company labels its own work "internal," correctly. The studies that fit the
+description of the corroborating work are Duolingo-funded (Smith, Jiang & Peters 2024 in
+*Language Learning & Technology* states *"This study was supported financially by
+Duolingo"*; the Colombia comparison is a Duolingo whitepaper whose link is dead). The
+word "independent" is doing work in an audited document that the underlying papers do not
+support. Note also that FY2022 said "four university semesters" and FY2025 says "five."
+
+`INFERENCE`. The rule that a vendor claim is never restated as a finding is not an
+inconvenience here. It is the only thing that separates "Duolingo is the most successful
+habit-formation product in the history of education" — which is true, audited, and
+remarkable — from "Duolingo teaches a language better than the alternative," for which no
+randomised evidence exists in either direction.
 
 ---
 

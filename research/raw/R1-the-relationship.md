@@ -49,34 +49,28 @@ status: raw-research
 
 WebSearch was exhausted mid-session at the project cap (200 calls) per `process/CLAUDE.md` §5.
 Everything after that point was recovered through **Crossref REST**, the **ERIC API**
-(`api.ies.ed.gov`), **NCBI E-utilities** (`efetch.fcgi?db=pmc`), the **arXiv API**,
-**Semantic Scholar**, **Unpaywall**, and the **OSF API**, plus `curl` + `pdftotext` on
-open-access PDFs.
+(`api.ies.ed.gov`), **NCBI E-utilities**, the **arXiv API**, **Semantic Scholar**,
+**Unpaywall**, and the **OSF API**, plus `curl` + `pdftotext` on open-access PDFs.
 
 - **Two workhorse full texts were recovered as PDFs and quoted verbatim below**: Roorda et al.
   (2011) via `expertisecentrumkinderopvang.nl`, and Roorda et al. (2017) via UvA-DARE
-  (`pure.uva.nl`). Both were converted with `pdftotext -layout`. Every number in §1 and §2
-  comes from those two files, not from a secondary summary.
+  (`pure.uva.nl`). Every number in §1 and §2 comes from those files, not from a summary.
 - **Emslander et al. (2025), *Psychological Bulletin*** — the current authoritative synthesis,
-  which no summary of this literature I found online mentions — was located through a Crossref
+  which no online summary of this literature I saw mentions — was located through a Crossref
   bibliographic query and read as the **preregistered PsyArXiv preprint** (`osf.io/qxntb`,
-  99 pp.). The published version (`10.1037/bul0000461`) is paywalled. Where the two could
-  differ I say so.
+  99 pp.). The published version (`10.1037/bul0000461`) is paywalled.
 - **SAGE, Elsevier, Taylor & Francis, Springer, Hogrefe and APA PsycNet** all return `403` or a
-  `303` redirect to an identity provider for `curl` and `WebFetch`. **Cornelius-White (2007)**,
-  **McLaren, DeLeeuw & Mayer (2011)**, **Domagk (2010)**, **Lucas et al. (2014)**,
-  **MacLean et al. (2023)**, **Williford et al. (2017)**, **Duong et al. (2022)** and
-  **Zhao et al. (2025)** were unobtainable in full text by that route. For each, the **ERIC
-  API returned the complete author abstract**, which is the source of the numbers attributed to
-  them here; where an abstract does not carry an effect size, I say the effect size is
-  untraceable rather than importing one from a blog.
+  `303` redirect to an identity provider. **Cornelius-White (2007)**, **McLaren, DeLeeuw &
+  Mayer (2011)**, **Domagk (2010)**, **Lucas et al. (2014)**, **MacLean et al. (2023)**,
+  **Williford et al. (2017)**, **Duong et al. (2022)** and **Zhao et al. (2025)** were
+  unobtainable in full text. For each, the **ERIC API returned the complete author abstract**,
+  which is the source of the numbers attributed to them; where an abstract carries no effect
+  size, I mark it untraceable instead of importing one from a blog.
 - **Unpaywall reports Cornelius-White (2007) as `is_oa: false`** with no OA location. Its
-  per-outcome breakdown (cognitive vs affective vs behavioural correlations) could not be
-  retrieved this session and is marked untraceable in §1.3.
-- **Europe PMC/NCBI** recovered Calvert et al. (2020) and Allen et al. (2013, 2015) in full,
-  including the mediation analyses and the exact regression coefficients.
-- **arXiv `/abs` and `/html`** both served; the HTML route recovered the per-task numbers in
-  Ibrahim et al. that the abstract does not give.
+  per-outcome breakdown could not be retrieved and is marked untraceable in §1.3.
+- **NCBI `efetch.fcgi?db=pmc`** recovered Calvert et al. (2020) and Allen et al. (2013, 2015) in
+  full, including the mediation analyses and the regression coefficients.
+- **arXiv `/html`** recovered the per-task numbers in Ibrahim et al. that the abstract omits.
 
 **Evidence labels** are the project standard, plus `OBSERVED — absence` for a gap established by
 a stated, reproducible query, and `[X]` for a census performed in this session.
@@ -160,22 +154,20 @@ Stage-2 standardised paths, with 95% likelihood-based CIs:
 Total effect of positive relationships on achievement: **.14**. Of negative relationships:
 **−.12**. Model R² = 15% for engagement, **9% for achievement**. `MEASURED-META`
 
-This is the load-bearing structural fact of the whole literature and the corpus has never had
-it. **Half of the relationship's effect on achievement is engagement.** Engagement in these 189
-studies is a composite of effort, persistence, concentration, participation, school liking and
-task orientation. The path that survives after engagement is partialled out is β = .07, an
-effect that would need roughly 1,600 randomised subjects to detect.
+This is the load-bearing structural fact of the literature and the corpus has never had it.
+**Half of the relationship's effect on achievement is engagement**, where engagement across
+these 189 studies is a composite of effort, persistence, concentration, participation, school
+liking and task orientation. The path surviving after engagement is partialled out is β = .07,
+an effect needing roughly 1,600 randomised subjects to detect.
 
-Two secondary results are worth carrying:
-
-- **Longitudinal subsample (k = 52).** The direct positive→achievement path is unchanged at .07
-  [.02, .11]. The positive→engagement path shrinks (.29 → .16) while the negative→engagement
-  path grows (−.19 → −.23). The authors read this as a possible cumulative process in which
-  "negative relationships and disengagement strengthen each other over time."
-- **Does negative beat positive?** In the total sample, no: −.19 vs .29 on engagement, −.12 vs
-  .14 total on achievement. In the longitudinal subsample the engagement paths cross over
-  (−.23 vs .16). The blunt claim that conflict matters more than closeness is a
-  primary-school-and-behaviour finding that does not generalise to the achievement path.
+Two secondary results carry forward. In the **longitudinal subsample (k = 52)** the direct
+positive→achievement path is unchanged at .07 [.02, .11], while the positive→engagement path
+shrinks (.29 → .16) and the negative→engagement path grows (−.19 → −.23); the authors read this
+as a possible cumulative process in which "negative relationships and disengagement strengthen
+each other over time." And on **whether negative beats positive**: in the total sample it does
+not (−.19 vs .29 on engagement, −.12 vs .14 total on achievement); only in the longitudinal
+subsample do the engagement paths cross over. The claim that conflict matters more than
+closeness is a primary-school behaviour finding that does not generalise to achievement.
 
 ### 1.3 Cornelius-White (2007), and a manufactured-independence warning
 
@@ -198,14 +190,13 @@ invent one.
 
 `Hattie's widely circulated d = 0.72 for "teacher-student relationships" is a repackaging of
 Cornelius-White (2007) and not independent corroboration of it.` Citing both as convergent
-evidence is the manufactured independence the brief prohibits. Note also that r = .31 converts
-to d ≈ 0.65, not 0.72; the gap is not explained in anything I could retrieve, and I am reporting
-the meta-analysis, not the meta-meta.
+evidence is the manufactured independence the brief prohibits. And r = .31 converts to
+d ≈ 0.65, not 0.72; the gap is unexplained in anything I could retrieve.
 
-Second: Cornelius-White's construct is not the same as Roorda's. Cornelius-White pools
-*person-centred teacher behaviours* — empathy, warmth, genuineness, non-directivity, encouraging
-higher-order thinking, adapting to individual differences. That last pair are instructional
-moves. The .31 is therefore partly an instruction effect wearing a relationship label.
+Second: Cornelius-White's construct is not Roorda's. He pools *person-centred teacher
+behaviours* — empathy, warmth, genuineness, non-directivity, encouraging higher-order thinking,
+adapting to individual differences. The last two are instructional moves. The .31 is therefore
+partly an instruction effect wearing a relationship label.
 
 ### 1.4 Emslander et al. (2025): the second-order synthesis nobody in this corpus cites
 
@@ -317,36 +308,34 @@ p < .0001, equivalent to d = .579**. Internet-based psychotherapy: **r = .275, k
 same. Heterogeneity: Q(294) = 1017.6, p < .0001, **I² = 70.8, 95% CI [61.9, 73.1]**. Two percent
 of the 295 effect sizes were negative. `MEASURED-META`
 
-Three qualifications that the citing literature routinely drops:
+Three qualifications the citing literature routinely drops:
 
 1. **It is the same dataset as the previous one.** The authors note the estimate "is to the third
    decimal place identical to what was found in the 2011 meta-analysis (r = .278; Horvath et
-   al., 2011)." That is not independent replication; it is an extension. Within the 2018 paper,
-   the *newly added* 2011–2017 studies give an adjusted r = .22 (k = 105) against r = .26 for
-   the pre-2011 studies (k = 190). The effect is drifting down as the field's methods improve.
-2. **Causality is contested by the authors themselves**, who devote a section to it and conclude
-   only that the alliance "is a moderate causal facilitative factor," resting on
-   cross-lagged and early-symptom-controlled designs rather than experiment.
+   al., 2011)." That is an extension, not an independent replication. Within the 2018 paper the
+   *newly added* 2011–2017 studies give an adjusted r = .22 (k = 105) against r = .26 for the
+   pre-2011 studies (k = 190). The effect drifts down as the field's methods improve.
+2. **Causality is contested by the authors themselves**, who conclude only that the alliance "is
+   a moderate causal facilitative factor," resting on cross-lagged and early-symptom-controlled
+   designs.
 3. The r = .275 for internet-delivered therapy is the strongest single argument that an alliance
    does not require a body in the room.
 
-**Now the objection, which is decisive for this project.** The alliance construct — Bordin's
-agreement on *goals*, agreement on *tasks*, and the affective *bond* — is two-thirds a
-specification of shared purpose and only one-third affect. In psychotherapy the alliance is
-plausibly close to the mechanism, because the treatment *is* a relationship and the outcome
-(symptom change) is partly constituted by the patient's stance toward their own experience. In
-instruction, the outcome is whether a learner can do a thing they could not do before, and that
-is produced by retrieval, feedback, spacing and worked examples, all of which this corpus has
-measured at effect sizes larger than .14. The alliance literature also measures outcome largely
-by self-report; Roorda's grades-versus-tests split (§1.1) is the direct warning about what
-happens when you do that in education.
+**Now the objection, which is decisive here.** Bordin's alliance construct — agreement on
+*goals*, agreement on *tasks*, and the affective *bond* — is two-thirds a specification of
+shared purpose and one-third affect. In psychotherapy the alliance is plausibly close to the
+mechanism, because the treatment *is* a relationship and symptom change is partly constituted by
+the patient's stance toward their own experience. In instruction the outcome is whether a
+learner can do a thing they previously could not, which is produced by retrieval, feedback,
+spacing and worked examples, all measured in this corpus at effect sizes above .14. The alliance
+literature also takes outcome largely by self-report, and Roorda's grades-versus-tests split
+(§1.1) is the warning about what that does in education.
 
-`INFERENCE` (ours): **the alliance number should not be carried into this survey as an effect
-size.** What should be carried is the alliance literature's *structure*: agreement on goals and
-tasks is separable from bond, is measurable, and is the part most likely to matter for a tutor.
-A tutor that establishes what we are doing and why, and gets the learner to assent to it, is
-building the two-thirds of an alliance that is not warmth. That is a specification, and §11
-turns it into one.
+`INFERENCE` (ours): **the alliance number should not enter this survey as an effect size.** What
+should enter is the construct's *structure*: agreement on goals and tasks is separable from
+bond, is measurable, and is the part most likely to matter for a tutor. A tutor that establishes
+what we are doing and why, and secures the learner's assent to it, is building the two-thirds of
+an alliance that is not warmth. §11 turns that into a specification.
 
 ---
 
@@ -359,17 +348,14 @@ meta-analysed **43 studies, 3,088 participants**, comparing learning with an on-
 pedagogical agent to the same material without one. Overall **g = 0.19, SE = .04, 95% CI
 [0.12, 0.27]**, Q(42) = 73.62, I² = 42.95. `MEASURED-META`
 
-The moderators are where it gets interesting for a warmth thesis:
-
-- Agents communicating by **on-screen text**: g = 0.51 (k = 8, N = 384). Agents communicating by
-  **narration**: g = 0.12. The social-presence channel that carries voice, prosody and warmth
-  performs *worse* than silent text.
-- **Static** agents: g = 0.00 (k = 2). Animated: g = 0.15.
-- **Learners with low prior knowledge: g = −0.01, non-significant.** The population that most
-  needs help gets nothing from the social presence. The authors ask openly whether the agent
-  "made learning the material more difficult for these participants."
-- Classroom settings k = 4, g = 0.68 — the authors themselves attribute this to novelty and
-  warn against it.
+The moderators are hostile to a warmth thesis. Agents communicating by **on-screen text** score
+g = 0.51 (k = 8, N = 384); agents communicating by **narration** score g = 0.12 — the channel
+carrying voice, prosody and warmth performs *worse* than silent text. **Static** agents:
+g = 0.00 (k = 2). And **learners with low prior knowledge: g = −0.01, non-significant**, with the
+authors asking openly whether the agent "made learning the material more difficult for these
+participants." The population that most needs help gets nothing from the social presence. The
+one large cell, classroom settings at g = 0.68, rests on k = 4 and the authors attribute it to
+novelty.
 
 ### 4.2 The direct test: same content, human face vs agent face
 
@@ -451,20 +437,20 @@ Three independent demonstrations, already given:
   improved teacher-reported relationships **and observed academic engaged time and disruptive
   behaviour**. The outcome set contains no achievement measure. `MEASURED-RCT`
 
-That last point generalises and is worth stating as a census finding. `OBSERVED — absence`:
-**of the relationship-building interventions with random assignment that I could locate, none
-reports a standardised achievement outcome.** Cook et al. (2018) measured engaged time. Williford
-et al. (2017) measured externalising behaviour. Duong et al. (2022) measured relationships,
-belonging, motivation and self-reported engagement. Driscoll & Pianta (2010) measured
-teacher-rated behaviour. Searched: ERIC API for `Establish-Maintain-Restore`, `Banking Time`
-randomized, and teacher-child relationship intervention trials; plus the WWC study record for
-MTP-S. The field builds relationships and measures relationships.
+That last point generalises into a census finding. `OBSERVED — absence`: **of the
+relationship-building interventions with random assignment I could locate, none reports a
+standardised achievement outcome.** Cook et al. (2018) measured engaged time; Williford et al.
+(2017) externalising behaviour; Duong et al. (2022) relationships, belonging, motivation and
+self-reported engagement; Driscoll & Pianta (2010) teacher-rated behaviour. Searched: ERIC API
+for `Establish-Maintain-Restore`, `Banking Time` randomized, and teacher-child relationship
+intervention trials, plus the WWC study record for MTP-S. The field builds relationships and
+measures relationships.
 
-**What dosage implies as a product:** a retention feature. Streaks, a companion, a character the
-learner returns to. It raises minutes-on-task, and minutes-on-task raises learning at whatever
-rate the instruction inside those minutes is worth. It is real, it is worth building, and it is
-worth nothing if the instruction is weak. It is also the mechanism most easily faked, most
-easily gamed by engagement metrics, and most exposed to the ethical objection in §8.
+**What dosage implies as a product:** a retention feature — streaks, a companion, a character
+the learner returns to. It raises minutes-on-task, and minutes-on-task raise learning at
+whatever rate the instruction inside them is worth. It is real, worth building, and worth
+nothing if the instruction is weak. It is also the mechanism most easily faked, most easily
+gamed by engagement metrics, and most exposed to §8.
 
 ### 5.2 Mechanism (a): licensed correction. Thinly evidenced, larger, and the one worth building
 
@@ -644,20 +630,18 @@ proximity maintenance, separation distress, safe haven, secure base — and iden
 caregiving motivation against disengagement. This is `INFERENCE` by its author, not measurement,
 and I label it so.
 
-Three commitments follow for anything built here, and they are design constraints rather than
-sentiment:
+Three design constraints follow:
 
-1. **Attachment must be to the learner's own record, not to a persona.** The asset that licenses
-   correction is the system's demonstrable knowledge of this learner's work over time. That
-   asset should be exportable, inspectable by the parent, and portable to another system. A
+1. **Attachment belongs to the learner's own record, never to a persona.** The asset that
+   licenses correction is the system's demonstrable knowledge of this learner's work over time.
+   That asset should be exportable, inspectable by the parent, and portable to a competitor. A
    relationship a family can take with them is not a hostage.
-2. **No farewell manipulation, ever, and it should be a tested property.** The De Freitas
-   taxonomy is a six-item red-team suite. A tutor for children should score zero on it and the
-   score should be published.
+2. **No farewell manipulation, and it should be a tested property.** The De Freitas taxonomy is a
+   six-item red-team suite. A children's tutor should score zero on it publicly.
 3. **Engagement is not an objective function for a children's tutor.** Mechanism (b) delivers
-   dosage, and dosage is the metric most easily optimised into harm. If minutes-on-task is a
-   target rather than a diagnostic, this report's §5.1 becomes the business case for the thing
-   §8 prohibits.
+   dosage, and dosage is the metric most easily optimised into harm. Treat minutes-on-task as a
+   diagnostic; the moment it becomes a target, §5.1 turns into the business case for what §8
+   prohibits.
 
 ---
 
@@ -775,31 +759,29 @@ not as a predictor of her achievement.
 
 ### 11.1 What is buildable that was not before this report
 
-**A tutor with standing, specified as three mechanisms rather than a persona.** The design object
-is not warmth. It is:
+**A tutor with standing, specified as three mechanisms and no persona.**
 
 - **Standing** — `SPEC`. Every correction carries the standard it is measured against and an
-  assertion of reachability, in the Yeager form: this is what the target is, here is where the
-  work falls short of it, and here is why I am giving you this rather than a softer version. The
-  nineteen-word note is a template, not a metaphor. It costs no tokens worth counting and it is
-  the only manipulation in this report that moved a behavioural outcome by a factor of four.
+  assertion of reachability, in the Yeager form: here is the target, here is where the work
+  falls short of it, and here is why you are getting this instead of a softer version. The
+  nineteen-word note is a template. It costs no tokens worth counting and it is the only
+  manipulation in this report that moved a behavioural outcome by a factor of four.
 - **Receipts** — `SPEC`. What licenses correction in Ogan's friend dyads is history. A machine's
-  version of history is a learner record it can cite: *you got this same step wrong on the 14th
-  and then got it right twice on the 21st, which is why I think this one is a slip and not a
-  gap.* That is a use for the corpus's existing learner model (`F5`) that no report has proposed:
-  the model exists to earn the right to contradict.
+  history is a learner record it can cite: *you got this same step wrong on the 14th and right
+  twice on the 21st, which is why I read this one as a slip and not a gap.* That is a use for the
+  corpus's learner model (`F5`) no report has proposed — the model exists to earn the right to
+  contradict.
 - **Confessability** — `SPEC`. Instrument the "I don't get it" rate as a first-class metric, on
   the Lucas finding that removing the judging observer lowers the cost of admitting. `N2`
-  already establishes that the failure mode is a student who does not ask after three errors. A
-  tutor that raises the disclosure rate is doing something the classroom measurably cannot.
+  already establishes the failure mode: a student who does not ask after three errors.
 
-**Two things this report removes from the buildable list.** A warmth persona setting, because §6
-shows it degrades correction under sadness at the moment of need. And engagement-as-objective,
-because §5.1 shows dosage is real and §8 shows what optimising it becomes.
+**Two things this removes from the buildable list.** A warmth persona setting, because §6 shows
+it degrades correction under sadness at the moment of need. And engagement-as-objective, because
+§5.1 shows dosage is real and §8 shows what optimising it becomes.
 
-**One thing it adds to the safety suite.** `SPEC`: the De Freitas six-tactic farewell audit and
-a sycophancy-under-social-pressure eval in the Kasneci form, run as release gates, with the
-scores published. `F8` owns safety for children and has neither.
+**One thing it adds to the safety suite.** `SPEC`: the De Freitas six-tactic farewell audit and a
+sycophancy-under-social-pressure eval in the Kasneci form, run as release gates with published
+scores. `F8` owns child safety and has neither.
 
 ### 11.2 The single highest-value experiment
 

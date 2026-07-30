@@ -11,10 +11,8 @@ status: raw-research
 
 > **Why this report exists.** `Z1-coverage-audit.md` row 8 records the gap: `exam technique` 0 hits,
 > `study skills` 0, `past paper` 0, `test preparation` 1, `homework` 26 hits all incidental. The
-> markets this project has named by name are SAT, PSAT, NEET, JEE, GATE, EAMCET and the gaokao.
-> Those are the places where the customer's stated goal is a number, and where the largest sums of
-> money in tutoring already sit. A survey that specifies a tutor and never asks how people prepare
-> for the examination that decides their life has left its commercial half unmeasured.
+> markets this project has named are SAT, PSAT, NEET, JEE, GATE, EAMCET and the gaokao — the places
+> where the customer's stated goal is a number and where the largest sums in tutoring already sit.
 >
 > **The four findings, stated first.**
 >
@@ -39,21 +37,20 @@ status: raw-research
 > and tested three times.
 > 4. **Public examinations are the one domain in education that ships an external correctness
 > oracle, and the oracle is gameable in a documented, measured way.** Mark schemes make the
-> learner's answer machine-checkable in a sense that `survey/32` says pedagogy lacks. Koretz's
+> learner's answer checkable in a sense that `survey/32` says pedagogy lacks. Koretz's
 > score-inflation literature says the check can be optimised against without the underlying
-> competence moving: high-stakes gains run 3–5× low-stakes gains on the same students. Both things
-> are true, and the design consequence is a specific one about held-out audit instruments.
+> competence moving: high-stakes gains run 3–5× low-stakes gains on the same students. §12 states
+> the boundary that reconciles them, and §14 turns it into a trial design.
 
 ---
 
 ## Source reachability log (2026-07-30)
 
-WebSearch budget was exhausted at 200 calls mid-session. Everything after that point ran on
-**ERIC** (`api.ies.ed.gov/eric/`, the workhorse; JSON, reliable, and the only route to the
-test-preparation and homework literature), **Crossref REST** (abstracts present for Becker 1990,
-Cepeda 2008 and the *Economic Journal* coaching null; absent for most APA titles), **Semantic
-Scholar** (returned empty result sets for every query attempted this session), and direct
-`curl` + `pdftotext -layout` against open PDF hosts.
+WebSearch budget was exhausted at 200 calls mid-session. Everything after that ran on **ERIC**
+(`api.ies.ed.gov/eric/`, the workhorse and the only route to the test-preparation and homework
+literature), **Crossref REST** (abstracts present for Becker 1990, Cepeda 2008 and the *Economic
+Journal* coaching null; absent for most APA titles), **Semantic Scholar** (empty result sets for
+every query attempted), and direct `curl` + `pdftotext -layout` against open PDF hosts.
 
 - **Full texts recovered and quoted verbatim below:** Powers & Rock's ETS report and Koretz's CSE
   Report 655 from `files.eric.ed.gov`; the Official SAT Practice technical report from
@@ -87,26 +84,19 @@ the learning-science floor. `C2` and `F1` own psychometrics and assessment recon
 | # | Quantity | Value | Source | Label |
 |---|---|---|---|---|
 | 1 | SAT coaching effect, seven estimators | verbal 6–12 pts, math 13–26 pts; medians 8 and 18 | Powers & Rock 1999 | `OBSERVED` |
-| 3 | SAT coaching, meta-analysed | +0.09 SD verbal, +0.16 SD math (published comparison studies) | Becker 1990, 48 studies / 23 reports | `MEASURED-META` |
 | 4 | SAT coaching, independent national data | math +14 to +15, verbal +6 to +8, combined ~20 pts | Briggs 2001, NELS:88, n = 4,730 | `OBSERVED` |
 | 6 | Advertised at the time | Kaplan 120 pts, Princeton Review 140 pts combined; PR guaranteed 100 | quoted in Powers & Rock 1999 | `VENDOR` |
 | 8 | Khan Academy OSP, 6 hours, controlled | +21 SAT points, ES 0.11 | Weatherholtz et al. 2020, n ≈ 299,315 linkers | `OBSERVED` (working paper) |
-| 9 | …6 hours plus ≥1 best-practice behaviour | +39 points, ES 0.20; propensity-weighted ATT 35.7–38.6 | ibid., Appendix F | `OBSERVED` |
 | 11 | Private tutoring and the gaokao | average effect on NCEE total not significant | Zhang 2013, *Econ. Educ. Rev.* | `OBSERVED` (null) |
 | 12 | Any test in 15 weeks vs no tests | ~+0.5 SD on criterion exam | Bangert-Drowns, Kulik & Kulik 1991, 40 studies | `MEASURED-META` |
 | 14 | Practice testing vs restudy | g = 0.51; vs no activity g = 0.93; overall g = 0.61 | Adesope et al. 2017 (carried from F11) | `MEASURED-META` |
 | 15 | Cramming's purchase: recall at 5 minutes | restudy 81% vs test 75%, d = 0.52 for restudy | Roediger & Karpicke 2006, Exp. 1, n = 120 | `MEASURED-RCT` |
-| 17 | …at 1 week | test 56% vs restudy 42%, d = 0.83 | ibid. | `MEASURED-RCT` |
 | 19 | Optimal review gap as a fraction of test delay | 20–40% at a 1-week delay; 5–10% at a 1-year delay | Cepeda et al. 2008, n > 1,350 | `MEASURED-RCT` |
-| 20 | Confidence, by condition, in Roediger & Karpicke Exp. 2 | SSSS 4.8 > SSST 4.2 > STTT 4.0 on a 7-point scale | ibid., n = 180 | `MEASURED-RCT` |
 | 22 | Students listing rereading as a study strategy | 83.6%; 54.8% rank it first | Karpicke, Butler & Roediger 2009, n = 177 | `OBSERVED` |
 | 24 | Dunlosky utility ratings, low | summarisation, highlighting, keyword mnemonic, imagery for text, rereading | Dunlosky et al. 2013, *PSPI* | `MEASURED-META` |
 | 26 | Homework vs no homework, experiments | d = 0.60 [0.38, 0.82], k = 5; randomised subset d = 0.53 [0.29, 0.79], k = 3 | Cooper, Robinson & Patall 2006 | `MEASURED-META` |
 | 27 | Time-on-homework × achievement, Grades 7–12 | r = +0.25 fixed / +0.20 [0.17, 0.22] random, k = 23 | ibid. | `MEASURED-META` |
-| 28 | …Grades K–6 | r = −0.04 [−0.06, −0.02] fixed / +0.05 [−0.03, 0.13] random, k = 10 | ibid. | `MEASURED-META` |
-| 30 | …grade effect re-run with students only, random model | Q(1) = 0.57, ns — the moderation disappears | ibid. | `MEASURED-META` |
 | 31 | Parental help with homework, PISA 2009–2018 | more help → lower achievement, d = 0.23 [0.21, 0.25], 180 effects | Fernández-Alonso et al. 2022 | `MEASURED-META` |
-| 33 | Practice quizzes and test anxiety | g = −0.52, 25 effects / 3,374 participants, BF₁₀ > 25,000 | Yang et al. 2023, *EPR* | `MEASURED-META` |
 | 34 | Low-touch study-skills coaching, 5 years | study time up, academic outcomes unmoved, N ≈ 20,000 | Oreopoulos et al. 2023, *Economic Journal* | `MEASURED-RCT` (null) |
 | 35 | Rereading a real textbook chapter, 4 experiments | "with only several exceptions, rereading did not significantly increase performance" | Callender & McDaniel 2009 | `MEASURED-RCT` (null) |
 | 37 | High-stakes score gains vs low-stakes gains, same students | typically 3–5×; in numerous cases the low-stakes gain is zero | Koretz 2005, CSE Report 655 | `OBSERVED` |
@@ -235,12 +225,12 @@ good maths grades, smallest for those already scoring high on PSAT maths.
 ### 1.4 The Khan Academy study, correctly labelled
 
 The claim in circulation is that 20 hours of Official SAT Practice on Khan Academy is worth 115
-points. Its origin is a **College Board / Khan Academy press release of 8 May 2017**. The quantity
-in that release is an average **PSAT/NMSQT-to-SAT score change** among students who reported
-studying 20 hours, in a cohort of about 250,000 early adopters. It has no comparison group net of
-typical growth, and typical growth between those two tests is large (Briggs's NELS figure: about 60
-combined points for simply waiting and retaking). Restating 115 as an effect is the identical
-arithmetic error Powers and Rock diagnosed in 1999. `VENDOR`
+points. Its origin is a **College Board / Khan Academy press release of 8 May 2017**, and the
+quantity is an average **PSAT/NMSQT-to-SAT score change** among students reporting 20 hours of study
+in a cohort of about 250,000 early adopters, with no comparison group net of typical growth. Typical
+growth between those two tests is large: Briggs's NELS figure is about 60 combined points for simply
+waiting and retaking. Restating 115 as an effect is the arithmetic error Powers and Rock diagnosed
+in 1999. `VENDOR`
 
 The primary source is **Weatherholtz, K., Grimaldi, P., Hicks, C., Hill, K. M., Freeman, C.,
 Akbayin-Sahin, B., Coker, C., Ma, J., & Henneman, L. (2020), *Use of Khan Academy Official SAT
@@ -280,19 +270,16 @@ in the field is not efficacy per hour. It is hours.
 
 ## 2. Whose scores move
 
-One moderator recurs across all four sources and deserves its own line, because it bears on the
-project's equity claim. Powers & Rock found math coaching effects correlated negatively with prior
-PSAT-M (r = −.12) — lower scorers gained slightly more — but positively with English grades (r =
-.14), maths grades (r = .12) and parental education (r = .12 each). Briggs found coaching most
-effective for high-SES students and least effective for those already scoring well. The OSP report
-found best-practice behaviours least common exactly where they would help most: among students in
-the bottom PSAT quartile, 5% levelled up 15+ skills against 24% in the top quartile, and 8%
-completed a practice exam against 19%. `OBSERVED`
+One moderator recurs across all four sources and bears directly on the project's equity claim.
+Powers & Rock found math coaching effects correlated negatively with prior PSAT-M (r = −.12, lower
+scorers gained slightly more) but positively with English grades (r = .14), maths grades (r = .12)
+and parental education (r = .12 each). Briggs found coaching most effective for high-SES students.
+The OSP report found best-practice behaviours least common where they would help most: in the bottom
+PSAT quartile 5% levelled up 15+ skills against 24% in the top quartile, and 8% completed a practice
+exam against 19%. `OBSERVED`
 
-The pattern is that **preparation is a complement to prior advantage, not a substitute for it**, and
-that the free platform reproduces the paid platform's gradient because the gradient lives in usage
-rather than in access. This is the finding most directly relevant to a system whose organising
-constraint is an eleven-year-old on a SELPA plan.
+**Preparation is a complement to prior advantage, not a substitute for it**, and the free platform
+reproduces the paid platform's gradient because the gradient lives in usage rather than in access.
 
 ---
 
@@ -302,11 +289,11 @@ This section reports an absence, established by stated queries, and treats the a
 finding.
 
 **What exists.** ERIC's entire holding on Indian entrance-examination coaching, under the query
-`"entrance exam" AND coaching AND India`, is two records, both qualitative and sociological: Ørberg
-(2018) in *Higher Education* on the JEE coaching industry's relationship with the IITs, and Punjabi
-(2020) in *Contemporary Education Dialogue* on how IIT-JEE coaching pedagogy displaces school
-pedagogy in Delhi. Neither estimates an effect on a score. The query `"shadow education" AND India
-AND achievement` returns zero.
+`"entrance exam" AND coaching AND India`, is two records, both sociological: Ørberg (2018) in
+*Higher Education* on the JEE coaching industry's relationship with the IITs, and Punjabi (2020) in
+*Contemporary Education Dialogue* on how IIT-JEE coaching pedagogy displaces school pedagogy in
+Delhi. Neither estimates an effect on a score. `"shadow education" AND India AND achievement`
+returns zero.
 
 **Scale, from official statistics.** India's NSS 75th round (July 2017–June 2018) records private
 coaching as **11.8% of average household education expenditure**, with incidence peaking at the
@@ -321,11 +308,9 @@ filing and should be re-verified before publication.)
 
 **What does not exist.** No causal estimate of the effect of attending Kota, Allen, Aakash or
 Physics Wallah on a NEET or JEE rank or score. No randomised trial. No regression-discontinuity
-design exploiting a coaching-institute admission cutoff, which is the obvious identification
-strategy and which the sector's own entrance tests would make feasible. No published estimate of
-selection: the industry's headline metric is the count of its students in the top ranks, which is a
-survivorship statistic on a population selected on ability at intake. `VENDOR` and never restated
-here as a finding.
+design exploiting a coaching-institute admission cutoff. No published estimate of selection: the
+industry's headline metric is the count of its students in the top ranks, a survivorship statistic
+on a population selected on ability at intake. `VENDOR`, and never restated here as a finding.
 
 **China is one degree better, and the answer is null.** **Zhang, Yu (2013), "Does private tutoring
 improve students' National College Entrance Exam performance? A case study from Jinan, China,"
@@ -339,13 +324,11 @@ improve students' National College Entrance Exam performance? A case study from 
 `OBSERVED` (null). One city, one 2010 dataset, observational. It is the only estimate this session
 located of tutoring's effect on the gaokao itself.
 
-`INFERENCE`: the two largest examination-preparation markets on earth, serving something on the
-order of ten million candidates a year between NEET, JEE and the gaokao, have between them one
+`INFERENCE`: the two largest examination-preparation markets on earth have between them one
 non-significant observational estimate and zero trials. Everything else offered as evidence is a
-selection statistic published by a seller. **A single well-identified study in either market would
-be the highest-value empirical contribution available in this entire report's subject area**, and
-the design is not exotic — coaching institutes run entrance tests with score cutoffs, and a
-regression discontinuity at the cutoff would identify the effect for marginal admits.
+selection statistic published by a seller. The design that would fix this is not exotic: coaching
+institutes run their own entrance tests with score cutoffs, and a regression discontinuity at the
+cutoff would identify the effect for marginal admits.
 
 ---
 
@@ -411,9 +394,9 @@ The crossover is complete by two days. The tested group's one-week recall (56%) 
 the restudy group's two-day recall (54%), which the authors describe as testing having *"prevented
 forgetting of information for an additional 5 days relative to repeated study."*
 
-Experiment 2 (n = 180, 30 per cell) escalates the dose. SSSS read the passage four times; SSST read
-three times and tested once; STTT read once and tested three times. Recorded reading counts: 14.2,
-10.3 and 3.4 passes respectively.
+Experiment 2 (n = 180, 30 per cell) escalates the dose. SSSS studied four times, SSST studied three
+times and tested once, STTT studied once and tested three times. Recorded passes through the
+passage: 14.2, 10.3 and 3.4.
 
 | Final test | SSSS | SSST | STTT |
 |---|---|---|---|
@@ -430,12 +413,12 @@ reading. On a delayed test, performance was greater after distributed versus sin
 performance for massed rereading and single reading no longer differed significantly."* The delay
 was **two days**. `MEASURED-RCT`
 
-**So: what does cramming buy on a test tomorrow?** Putting the two together, the answer is narrower
-than folklore. Massing buys roughly 5–12 percentage points of recall on a test taken within minutes,
-and by 48 hours that advantage has fully decayed to zero relative to a single reading. Cramming is
-not a trade of long-term retention for short-term performance across a horizon of days. It is a
-trade across a horizon of **hours**. A student who crams on Thursday for a Friday-morning
-examination is already outside the window where the evidence shows massing winning.
+**So: what does cramming buy on a test tomorrow?** The answer is narrower than folklore. Massing
+buys roughly 5–12 percentage points of recall on a test taken within minutes, and by 48 hours that
+advantage has decayed to zero relative to a single reading. Cramming trades long-term retention for
+short-term performance across a horizon of **hours**, not days. A student who crams on Thursday for
+a Friday-morning examination is already outside the window where the evidence shows massing
+winning.
 
 **What does it cost at three months?** No cell in either experiment runs to three months, and this
 report will not extrapolate one. What runs further is **Cepeda, Vul, Rohrer, Wixted & Pashler
@@ -475,19 +458,15 @@ negatively.
 
 ### 6.2 Mark-scheme literacy
 
-The construct — knowing how credit is allocated, and writing to it — has a small literature under the
-heading of rubric transparency, weakly designed. The most-cited positive result is
-**Jonsson, A. (2010), "The use of transparency in the 'interactive examination' for student
-teachers," *Assessment in Education* 17(1)**: three successive cohorts of first-year student
-teachers (n = 170, 154, 138); when self-assessment criteria, a scoring rubric and exemplars were
-introduced between the 2004 and 2005 cohorts the score difference was **d = 3.21**, and between 2005
-and 2006 with no change it was d = 0.27. `OBSERVED`
-
-A between-cohort difference of three standard deviations is not a plausible instructional effect. It
-is far more likely to be an artefact of a changed assessment instrument or changed marking, and the
-design cannot separate those. Reported here because it is what the field has, and flagged as
-uninterpretable. Jonsson (2014), *Assessment & Evaluation in Higher Education*, n = 176, finds
-students appreciate and use rubrics; it measures perception and use, not attainment.
+The construct — knowing how credit is allocated, and writing to it — has a small literature under
+the heading of rubric transparency, weakly designed. The most-cited positive result is **Jonsson, A.
+(2010), *Assessment in Education* 17(1)**: three successive cohorts of student teachers (n = 170,
+154, 138); introducing self-assessment criteria, a scoring rubric and exemplars between the 2004 and
+2005 cohorts produced **d = 3.21**, against d = 0.27 between 2005 and 2006 with no change.
+`OBSERVED` A between-cohort difference of three standard deviations is not a plausible instructional
+effect; it is far more likely an artefact of a changed instrument or changed marking, and the design
+cannot separate those. Reported because it is what the field has, and flagged as uninterpretable.
+Jonsson (2014) measures whether students appreciate and use rubrics, not attainment.
 
 Panadero & Romero (2014), *Assessment in Education*, n = 218 pre-service teachers randomised to
 rubric or non-rubric self-assessment, is the closest thing to a trial: the rubric group showed
@@ -544,9 +523,8 @@ something else. And of the 91% who said they do quiz themselves at some point, *
 "to figure out how well I have learned the information I'm studying"** rather than because it
 improves learning. Self-testing is used as a thermometer, not as a treatment. `OBSERVED`
 
-**Why they choose it.** The mechanism is in Roediger & Karpicke's Experiment 2 questionnaire, which
-asked students at the end of the learning session how well they thought they would remember the
-passage in a week (7-point scale):
+**Why they choose it.** Roediger & Karpicke's Experiment 2 asked students at the end of the learning
+session how well they thought they would remember the passage in a week (7-point scale):
 
 | Condition | Predicted recall | Actual recall at 1 week |
 |---|---|---|
@@ -559,18 +537,17 @@ significant (SSSS vs SSST d = 0.54; SSSS vs STTT d = 0.61). `MEASURED-RCT` Repea
 processing fluency, fluency is read as evidence of knowing, and the reading is wrong in a direction
 that is stable and predictable.
 
-The primary source for the mechanism itself is **Koriat, A., & Bjork, R. A. (2005), "Illusions of
-competence in monitoring one's knowledge during study," *Journal of Experimental Psychology:
-Learning, Memory, and Cognition* 31(2), 187–194**: judgments of learning are inflated whenever
-information present at study is absent at test, because learners fail to discount the availability
-of the answer in front of them. Rereading is the study condition that maximises that
-availability. The companion paper, **Koriat & Bjork (2006), *Memory & Cognition* 34(5), 959–972**,
-shows the illusion is **remediable** by manipulations that increase sensitivity to retrieval
-conditions at test. `Z1` §2.1 flags that this corpus cites the remedy in `B1` and loses it
-downstream, and that the corpus's design rule "measure, never ask" overstates the source literature,
-which says stated judgment is biased and partly correctable. That correction applies here directly:
-the revision assistant's job is not to stop asking the learner how confident they are. It is to
-**ask under retrieval conditions**, where the judgment is far better calibrated.
+The primary source for the mechanism is **Koriat, A., & Bjork, R. A. (2005), "Illusions of
+competence in monitoring one's knowledge during study," *JEP: Learning, Memory, and Cognition*
+31(2), 187–194**: judgments of learning are inflated whenever information present at study is absent
+at test, because learners fail to discount the availability of the answer in front of them.
+Rereading is the study condition that maximises that availability. The companion paper, **Koriat &
+Bjork (2006), *Memory & Cognition* 34(5), 959–972**, shows the illusion is **remediable** by
+manipulations that increase sensitivity to retrieval conditions at test. `Z1` §2.1 flags that this
+corpus cites the remedy in `B1` and loses it downstream, and that its design rule "measure, never
+ask" overstates a source literature which says stated judgment is biased and partly correctable.
+That correction applies here: the revision assistant's job is to **ask under retrieval conditions**,
+where the judgment is far better calibrated, not to stop asking.
 
 **And the field's own verdict on the technique.** Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan,
 M. J., & Willingham, D. T. (2013), "Improving students' learning with effective learning techniques:
@@ -593,14 +570,13 @@ Public Interest* 14(1), 4–58. Full monograph recovered; Table 4 reproduced:
 P = positive, N = largely ineffective, Q = positive under some conditions only, I = insufficient
 evidence. `MEASURED-META`
 
-Highlighting is the only technique in the table carrying an **N** rating, and it carries two: on
-criterion tasks and in educational contexts. The authors add a specific harm: highlighting *"may
-actually hurt performance on higher-level tasks that require inference making"* (their reading of
-Peterson, 1992), with the proposed mechanism that underlining draws attention to individual concepts
-at the expense of connections across them. On rereading: *"in head-to-head comparisons of learning
-techniques, rereading has not fared well… The relative disadvantage of rereading to other techniques
-is the largest strike against rereading and is the factor that weighed most heavily in our decision
-to assign it a rating of low utility."*
+Highlighting is the only technique carrying an **N** rating, and it carries two: on criterion tasks
+and in educational contexts. The authors add a specific harm — highlighting *"may actually hurt
+performance on higher-level tasks that require inference making"* (their reading of Peterson, 1992),
+because underlining draws attention to individual concepts at the expense of connections across
+them. On rereading: *"The relative disadvantage of rereading to other techniques is the largest
+strike against rereading and is the factor that weighed most heavily in our decision to assign it a
+rating of low utility."*
 
 The two techniques rated high are the two things a competent revision system does. The five rated
 low are what a learner does unaided. That gap is the product.
@@ -612,31 +588,28 @@ low are what a learner does unaided. That gap is the product.
 ### 8.1 What the two Cooper syntheses actually say
 
 **Cooper, H. (1989)**, reviewing ~120 studies: of 20 experiments comparing homework to no homework
-between 1962 and 1986, 14 favoured homework and 6 favoured no homework. The average high-school
-student in a homework class outperformed 69% of the no-homework class; the junior-high effect was
-half that; *"in elementary school, homework had no association with achievement gains."* Of 50
-correlational studies, the average correlation between time on homework and achievement was
-*"nearly r = 0"* in elementary, r = .07 in middle grades and r = .25 in high school.
+between 1962 and 1986, 14 favoured homework. The average high-school student in a homework class
+outperformed 69% of the no-homework class; the junior-high effect was half that; *"in elementary
+school, homework had no association with achievement gains."* Across 50 correlational studies the
+average time-on-homework correlation was *"nearly r = 0"* in elementary, r = .07 in middle grades
+and r = .25 in high school.
 
 **Cooper, H., Robinson, J. C., & Patall, E. A. (2006), "Does homework improve academic achievement?
 A synthesis of research, 1987–2003," *Review of Educational Research* 76(1), 1–62.** Full text
 recovered. `MEASURED-META`
 
 The experimental arm: five studies from which effect sizes could be computed, weighted mean
-**d = 0.60, 95% CI [0.38, 0.82]** under both fixed and random models. Three used successful random
-assignment: **d = 0.53 [0.29, 0.79]**. Two used other equating methods: d = 0.83 [0.37, 1.30]. The
-difference between those sets was not significant. Trim-and-fill imputing two missing effect sizes
-lowers the pooled estimate to **d = 0.48 [0.22, 0.74]**. The authors' own robustness check is the
-sobering one: recomputing with an assumed intraclass correlation of .35 to account for classroom-level
-assignment gives d = 0.63 with CI [0.03, 1.23], and they state that *"the mean d-index would not
-have been significant if an intraclass correlation of .4 was assumed."*
+**d = 0.60, 95% CI [0.38, 0.82]**; the three with successful random assignment **d = 0.53 [0.29,
+0.79]**; trim-and-fill imputing two missing effects lowers the pooled estimate to **d = 0.48 [0.22,
+0.74]**. The sobering robustness check is the authors' own: recomputing with an assumed intraclass
+correlation of .35 to account for classroom-level assignment gives d = 0.63 [0.03, 1.23], and *"the
+mean d-index would not have been significant if an intraclass correlation of .4 was assumed."*
 
 So the causal evidence that homework works is **five studies, three of them randomised, with a
-pooled effect whose significance turns on an assumed clustering parameter**. The estimand is a
-standardised difference on unit tests, mostly at secondary level, over short durations.
-
-The correlational arm is where the quotable number lives: 35 samples, weighted r = .243 [.240, .246]
-fixed, r = .161 [.13, .17] random.
+pooled effect whose significance turns on an assumed clustering parameter**, and an estimand of a
+standardised difference on unit tests, mostly secondary, over short durations. The correlational arm
+is where the quotable number lives: 35 samples, weighted r = .243 [.240, .246] fixed, r = .161
+random.
 
 ### 8.2 The grade-level moderation, correctly
 
@@ -816,13 +789,13 @@ Koretz's taxonomy of test preparation is the most useful classification this rep
 separates preparation that produces real gains from preparation that produces inflation, and puts
 most of the coaching industry in the second category:
 
-1. **Working harder / teaching more effectively** — meaningful gains.
-2. **Teaching more** (extra instructional hours) — meaningful gains.
+1. **Working harder / teaching more effectively**, and 2. **teaching more** (extra hours) — both
+   produce meaningful gains.
 3. **Reallocation** — shifting instructional resources toward tested elements. Inflates when the
    deemphasised elements matter for the inference. Does not bias performance on individual elements.
 4. **Alignment** — a special case of reallocation; no better protected.
-5. **Coaching**, in two forms. *Substantive*: exploiting a narrow stylistic or content emphasis of the
-   items. *Non-substantive*: distractor characteristics, unimportant features of scoring rubrics,
+5. **Coaching**, in two forms. *Substantive*: exploiting a narrow stylistic or content emphasis of
+   the items. *Non-substantive*: distractor characteristics, unimportant features of scoring rubrics,
    process of elimination, plug-in. Koretz: *"In some cases… a modest amount of certain types of
    non-substantive coaching can increase scores and improve validity by removing irrelevant barriers
    to performance. In most cases, however, it either wastes time or inflates scores."*
@@ -834,13 +807,12 @@ And the mechanical distinction that matters most for §12:
 > domain as a whole, without biasing estimates of performance on individual elements. In contrast,
 > coaching does bias performance on individual elements."*
 
-The principle behind all of it is **Campbell, D. T. (1979), "Assessing the impact of planned social
-change," *Evaluation and Program Planning* 2(1), 67–90**: *"The more any quantitative social
-indicator is used for social decision-making, the more subject it will be to corruption pressures and
-the more apt it will be to distort and corrupt the social processes it is intended to monitor."*
-Campbell's own 1976 education example: *"when test scores become the goal of the teaching process,
-they both lose their value as indicators of educational status and distort the educational process in
-undesirable ways."*
+The principle behind all of it is **Campbell, D. T. (1979), *Evaluation and Program Planning* 2(1),
+67–90**: *"The more any quantitative social indicator is used for social decision-making, the more
+subject it will be to corruption pressures and the more apt it will be to distort and corrupt the
+social processes it is intended to monitor."* Campbell's own 1976 education example: *"when test
+scores become the goal of the teaching process, they both lose their value as indicators of
+educational status and distort the educational process in undesirable ways."*
 
 `INFERENCE`: what §1 measured is item 5 on Koretz's list. The coaching industry sells substantive and
 non-substantive coaching, its measured effect is 0.1–0.2 SD, and Koretz's framework predicts that
@@ -871,12 +843,10 @@ that coaching *biases performance on individual elements* — meaning the per-it
 thing that looks most like a unit test, is the part most susceptible to corruption. A `pytest` that
 the agent can overfit is a `pytest` you cannot trust as a fitness function.
 
-**Objection 3: mark schemes are not deterministic.** Extended-response marking has real
-inter-rater variance, and `C2` owns that machinery. A rubric that two examiners apply differently is
-a flaky test.
-
-**Objection 4: the domain covered is narrow.** Public examinations exist for perhaps a dozen years of
-a learner's life in a subset of subjects. Nothing in early literacy, vocational skill or the SELPA
+**Objection 3: mark schemes are not deterministic**, since extended-response marking has real
+inter-rater variance (`C2` owns that machinery). A rubric two examiners apply differently is a flaky
+test. **Objection 4: the domain is narrow.** Public examinations cover perhaps a dozen years of a
+learner's life in a subset of subjects; nothing in early literacy, vocational skill or the SELPA
 population this project centres has a comparable artefact.
 
 **What survives all four.** Something does, and it is narrower and more useful than the headline.
