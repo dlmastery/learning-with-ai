@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Belief Probe — the question that separates what you believe from what is true</title>
+<meta name="description" content="A belief is an object with predict(), discriminate() and break(). Nothing here is asked whether an answer is wrong — the probe is chosen by search and the posterior is closed-form Bayes over an enumerated set." />
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="demo.css" />
+<script src="../theme.js"></script>
+<style>
+.lib{display:grid;gap:9px;margin:16px 0}
+@media(min-width:760px){.lib{grid-template-columns:1fr 1fr}}
+.bcard{border:1px solid var(--line);border-radius:10px;padding:13px 15px;background:var(--surface)}
+.bcard .id{font:600 11px/1 var(--mono);color:var(--ink-3);letter-spacing:.06em}
+.bcard .nm{display:block;font:650 14px/1.35 var(--sans);color:var(--ink);margin:5px 0 4px}
+.bcard .rl{font:12.5px/1.4 var(--mono);color:var(--real)}
+.bcard .nt{font-size:12.8px;line-height:1.5;color:var(--ink-3);margin-top:6px}
+.bar{display:grid;grid-template-columns:118px 1fr 64px;gap:10px;align-items:center;
+  font:12.5px/1.5 var(--mono);padding:3px 0}
+.bar .t{width:100%;height:11px;background:var(--sunken);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--real)}
+.bar.lead .t i{background:var(--felt)}
+.bar .v{text-align:right;color:var(--ink-2)}
+.bar .k{color:var(--ink-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar.lead .k{color:var(--felt);font-weight:700}
+.opts{display:grid;gap:8px;margin:14px 0 0}
+@media(min-width:560px){.opts{grid-template-columns:repeat(3,1fr)}}
+.opt{font:15px/1 var(--mono);padding:15px 10px;text-align:center}
+.opt.picked{border-color:var(--felt);color:var(--felt)}
+.item{font:400 30px/1.2 var(--serif);color:var(--ink);letter-spacing:-.01em}
+.readout{font:12.7px/1.7 var(--mono);white-space:pre-wrap;color:var(--ink-2)}
+.readout b{color:var(--ink)}
+.hit{color:var(--felt);font-weight:700}
+.eq{color:var(--ink-3)}
+.viol{color:var(--bad);font-weight:650}
+.ok{color:var(--good);font-weight:650}
+table.tight td,table.tight th{padding-right:10px}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../deck.html">The deck</a>
+· <a href="../paper.html">The paper</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 16 · The mechanism</div>
+  <h1>The question that separates what you believe from what is true</h1>
+  <p class="lede">Every tutoring system asks a model <em>“is this wrong, and why?”</em> — an
+  open judgement over an unbounded space, and the thing models are measurably worst at. This page
+  never asks that question. It holds six enumerated beliefs about adding fractions, asks two of
+  them <strong>where they disagree</strong>, and updates a posterior in closed form. The whole
+  loop is a table lookup.</p>
+  <div class="chips">
+    <span class="chip m">Search, Bayes and timings all computed</span>
+    <span class="chip m">1,296-item space, enumerated exhaustively</span>
+    <span class="chip d">Population priors are design proposals</span>
+  </div>
+</header>
+
+<section class="orient">
+  <div class="o"><b>What this is</b><p>A belief modelled as an <em>object</em> rather than a label
+  with a strength attached. Three methods: <code>predict(item)</code> returns a distribution over
+  responses, <code>discriminate(rival)</code> returns the item on which two beliefs part company,
+  and <code>break()</code> runs a belief against invariants until it contradicts itself.</p></div>
+  <div class="o"><b>Why it matters</b><p>Across <b>223 real tutoring domains no model beat chance</b>
+  at labelling an incorrect student action. That result closes one door and leaves another wide
+  open: an argmax over precomputed distributions needs no judgement at all. It is available today,
+  at any capability level, and it costs microseconds.</p></div>
+  <div class="o"><b>How to use it</b><p>Three things happen below, in this order: the library is
+  shown, a probe is <em>found</em> rather than written, and your answer moves a posterior. The
+  number worth watching is not the verdict — it is the microsecond count under §3, because that is
+  what makes the mechanism sit on the real-time path.</p></div>
+</section>
+
+<h2>1 · The library</h2>
+<p>Six enumerated beliefs about <code>a/b + c/d</code>. Five are documented errors; one is the
+canonical procedure. Nothing outside this set can be diagnosed — which is the honest cost of the
+approach and the reason it is fast.</p>
+
+<div class="lib" id="lib"></div>
+
+<div class="note"><b>Note what is missing from that list.</b> There is no “misconception detector”,
+no classifier, no prompt. Each belief is <em>executable</em>: given an item it returns an answer.
+That single property is what turns diagnosis from a judgement into a lookup.</div>
+
+<h2>2 · <code>discriminate()</code> — the probe is found, not authored</h2>
+<p>Pick any two beliefs. The system scans the entire item space, throws away every item on which
+the two agree, and among the survivors chooses the one that maximises expected information gain
+over the whole posterior. It is a search, and the search is shown.</p>
+
+<div class="panel">
+  <div class="row" style="margin-bottom:14px">
+    <label style="margin:0 6px 0 0">Belief A</label><select id="selA" style="width:auto;min-width:170px"></select>
+    <label style="margin:0 6px 0 12px">Belief B</label><select id="selB" style="width:auto;min-width:170px"></select>
+    <button class="pri" id="disc">Find the separating item</button>
+  </div>
+  <div class="readout" id="dout">Choose two beliefs and press the button.</div>
+</div>
+
+<div class="scroll">
+<table class="tight" id="dtab"><thead><tr><th>Item</th><th class="num">A predicts</th>
+<th class="num">B predicts</th><th class="num">Expected gain</th><th>Verdict</th></tr></thead>
+<tbody><tr><td colspan="5" class="mut">The top candidates appear here after a search.</td></tr></tbody></table>
+</div>
+
+<div class="note warn"><b>Partial equivalence is the interesting output.</b> Several pairs in this
+library are <em>indistinguishable on most of the space</em> — “multiply the bottoms” and “use the
+lcm” give identical answers on <b>788 of the 1,296 items — 60.8%</b> of the space.
+A diagnostic written by hand would land in that region most of the time and learn nothing. The
+search will not.</div>
+
+<h2>3 · The probe loop</h2>
+<p class="sub">The two beliefs currently leading the posterior are asked for their separating item.
+You answer it. The posterior updates by Bayes. Repeat. At no point is anything asked whether your
+answer is wrong.</p>
+
+<div class="panel">
+  <div class="ptitle">Posterior over the belief library</div>
+  <div class="psub">Prior is the population estimate; each probe multiplies it by a likelihood.</div>
+  <div id="post"></div>
+  <div class="row" style="margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line)">
+    <button class="pri" id="next">Ask for the next probe</button>
+    <button id="reset">Reset to prior</button>
+    <span class="sub" id="pn" style="margin:0 0 0 6px"></span>
+  </div>
+</div>
+
+<div class="panel sunken" id="probe" hidden>
+  <div class="ptitle">Probe <span id="pidx">1</span></div>
+  <div class="psub" id="pwhy"></div>
+  <div class="item" id="pitem">—</div>
+  <div class="opts" id="popts"></div>
+</div>
+
+<div class="panel">
+  <div class="ptitle">The update, in full</div>
+  <div class="psub">Closed-form Bayes over six hypotheses. Every number below is printed from the
+  computation that just ran.</div>
+  <div class="readout" id="uout">Answer a probe to see the arithmetic.</div>
+</div>
+
+<div class="callout">
+  <div class="k">The line that carries the architecture</div>
+  <p>The belief object <strong>never asks whether an answer is wrong.</strong> It asks which of its
+  enumerated beliefs predicted that answer. Chance-level open-ended judgement becomes a table
+  lookup over a bounded set — and the library <em>is</em> the verifier, not a model that has
+  learned to be one.</p>
+</div>
+
+<h2>4 · <code>break()</code> — running a belief until it contradicts itself</h2>
+<p>The third method takes no rival. It takes the belief alone and searches a case space for a pair
+of instances the belief itself cannot reconcile. Four invariants, checked exhaustively. A belief
+that survives all four returns <code>⊥</code> — no contradiction found — which is what the correct
+procedure does.</p>
+
+<div class="row">
+  <select id="selC" style="width:auto;min-width:240px"></select>
+  <button class="pri" id="brk">Run it until it breaks</button>
+</div>
+
+<div class="panel sunken">
+  <div class="ptitle">Invariant search</div>
+  <div class="psub">Each invariant is a property any addition must have. The counterexamples below
+  are the first found, by exhaustive scan, not by selection.</div>
+  <div class="readout" id="bout">Choose a belief and press the button.</div>
+</div>
+
+<div class="note"><b>Why <code>break()</code> matters more than being told.</b> A counterexample
+generated <em>from the learner's own stated rule</em> closes the escape route “that isn't what I
+meant”. And the measured warrant for the whole move is narrower than the folklore: prediction has
+no main effect — the entire effect is the expectancy-violation interaction, <b>p = .002</b>.
+Predicting and being right does approximately nothing.</div>
+
+<h2>What this proves / what it does not</h2>
+<p>Read this table rather than a summary. The left column is what the page executed in front of
+you; the right column is what would still have to be true in a deployed system.</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Claim</th><th>Demonstrated here</th><th>Still open</th></tr></thead>
+  <tbody>
+    <tr><td><b>Diagnosis can avoid judgement entirely</b></td>
+      <td>Yes — every verdict on this page is an argmax over precomputed distributions. No
+      classifier, no model, no prompt anywhere on the path.</td>
+      <td>Only for errors <em>inside</em> the library. A learner holding a seventh belief is
+      diagnosed as the nearest of six, confidently and wrongly.</td></tr>
+    <tr><td><b>The probe can be found rather than written</b></td>
+      <td>Yes, and the search reports its own blind spots: it prints how much of the space cannot
+      separate the two beliefs at all.</td>
+      <td>That the found item is <em>askable</em> — well-formed, in the learner's zone, and not
+      pathological. Nothing here checks readability or difficulty.</td></tr>
+    <tr><td><b>It runs at interaction speed</b></td>
+      <td>Yes, and the timings are measured on your machine, not quoted. The posterior update is
+      the cheap part by three orders of magnitude.</td>
+      <td>Nothing. This one is settled. Enumerated Bayes over ≤40 hypotheses will not be the
+      bottleneck in any system anyone builds.</td></tr>
+    <tr><td><b>Enumerating beliefs is feasible for a real curriculum</b></td>
+      <td class="mut">Not shown. Six beliefs for one operation took an afternoon of reading.</td>
+      <td>The scaling cost. Fraction addition is the best-documented misconception space in
+      education; most topics have no such literature, and the library would have to be mined from
+      learner data rather than papers.</td></tr>
+    <tr><td><b>The learner changes their mind</b></td>
+      <td class="mut">Not shown, and not shown anywhere else either.</td>
+      <td>Everything. Cross-ontological errors do not decay: the Bohr-model hybrid population was
+      unchanged across a full semester. Correct diagnosis is upstream of repair, not a substitute
+      for it.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note"><b>One design consequence worth carrying.</b> Because misconceptions do not
+decay, a belief's strength must not be decayed toward zero between sessions. What decays is
+<em>confidence that the learner still holds it</em> — so the credible interval widens back toward
+the population prior. A system that decays misconception strength has quietly decided that
+untested errors repaired themselves.</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../deck.html">The deck</a> ·
+  <a href="../paper.html">The paper</a>
+  <br /><br />Sources: 223-domain labelling result · fraction-misconception literature ·
+  expectancy-violation interaction <em>p</em> = .002.
+</footer>
+
+</div>
+<script>
+const tt=document.getElementById('tt'),R=document.documentElement;
+tt.onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+<script>
+const $=id=>document.getElementById(id);
+const gcd=(a,b)=>b?gcd(b,a%b):a, lcm=(a,b)=>a/gcd(a,b)*b;
+const red=f=>{if(f[0]===0)return[0,1];const k=gcd(Math.abs(f[0]),f[1]);return [f[0]/k,f[1]/k];};
+const key=f=>{const r=red(f);return r[0]+'/'+r[1];};
+const val=f=>f[0]/f[1];
+const EPS=0.12;                       /* response slip rate */
+
+/* ── the library: six enumerated beliefs, each executable ──────────────── */
+const LIB=[
+ {id:'B0',nm:'Common denominator, numerators scaled',r:'(ad + cb) / bd',correct:1,pri:.30,
+  f:(a,b,c,d)=>[a*d+c*b,b*d],
+  nt:'The canonical procedure. Present here as a hypothesis like any other — the probe must be able to conclude that you are simply right.'},
+ {id:'B1',nm:'Add across',r:'(a + c) / (b + d)',pri:.22,
+  f:(a,b,c,d)=>[a+c,b+d],
+  nt:'The freshman sum. The single most reported error in the fractions literature, and the only one most systems detect.'},
+ {id:'B2',nm:'Common denominator, numerators left alone',r:'(a + c) / lcm(b,d)',pri:.16,
+  f:(a,b,c,d)=>[a+c,lcm(b,d)],
+  nt:'Half the procedure, executed correctly. Far harder to see than B1 because the answer usually looks reasonable.'},
+ {id:'B3',nm:'Multiply the bottoms, add the tops',r:'(a + c) / bd',pri:.12,
+  f:(a,b,c,d)=>[a+c,b*d],
+  nt:'Imports the multiplication rule for the denominator and the addition rule for the numerator.'},
+ {id:'B4',nm:'Keep the first denominator',r:'(a + c) / b',pri:.10,
+  f:(a,b,c,d)=>[a+c,b],
+  nt:'Order-dependent, which is the only belief here that breaks commutativity — and that is how break() catches it.'},
+ {id:'B5',nm:'Keep the larger denominator',r:'(a + c) / max(b,d)',pri:.10,
+  f:(a,b,c,d)=>[a+c,Math.max(b,d)],
+  nt:'A repair of B4 that survives commutativity and fails elsewhere. Indistinguishable from B4 on every item where b > d.'}
+];
+const N=LIB.length;
+
+/* ── the item space, enumerated once ───────────────────────────────────── */
+const ITEMS=[];
+for(let b=2;b<=9;b++)for(let a=1;a<b;a++)
+for(let d=2;d<=9;d++)for(let c=1;c<d;c++) ITEMS.push([a,b,c,d]);
+const M=ITEMS.length;
+
+/* predict(item) → distribution over the response space of that item */
+function responses(it){
+  const s=new Set(); for(const B of LIB) s.add(key(B.f(...it)));
+  const arr=[...s]; arr.sort((x,y)=>{const [p,q]=x.split('/'),[u,v]=y.split('/');return p/q-u/v;});
+  arr.push('other'); return arr;
+}
+function predict(B,it,R){
+  const own=key(B.f(...it)), m=R.length, p=new Array(m);
+  for(let i=0;i<m;i++) p[i]= R[i]===own ? (1-EPS) : EPS/(m-1);
+  return p;
+}
+function entropy(p){let h=0;for(const q of p) if(q>1e-12) h-=q*Math.log2(q);return h;}
+
+/* expected information gain of an item under the current posterior */
+function eig(it,post,R){
+  R=R||responses(it);
+  const P=LIB.map(B=>predict(B,it,R));
+  let h=0;
+  for(let r=0;r<R.length;r++){
+    let m=0; for(let k=0;k<N;k++) m+=post[k]*P[k][r];
+    if(m<1e-12) continue;
+    const q=new Array(N); for(let k=0;k<N;k++) q[k]=post[k]*P[k][r]/m;
+    h+=m*entropy(q);
+  }
+  return entropy(post)-h;
+}
+
+/* discriminate(i,j) — the search, reported */
+function discriminate(i,j,post,skip){
+  const t0=performance.now();
+  let same=0, cand=[];
+  for(const it of ITEMS){
+    const A=key(LIB[i].f(...it)), B=key(LIB[j].f(...it));
+    if(A===B){same++;continue;}
+    if(skip&&skip.has(it.join(','))) continue;
+    cand.push([it, eig(it,post), A, B]);
+  }
+  cand.sort((x,y)=> (y[1]-x[1]) || ((x[0][1]+x[0][3])-(y[0][1]+y[0][3])) );
+  const ms=performance.now()-t0;
+  return {scanned:M, same, n:cand.length, top:cand.slice(0,5), best:cand[0], ms};
+}
+
+/* ── §1 render library ─────────────────────────────────────────────────── */
+$('lib').innerHTML=LIB.map(B=>
+  `<div class="bcard"><span class="id">${B.id}${B.correct?' · correct':''}</span>
+   <span class="nm">${B.nm}</span><span class="rl">a/b + c/d = ${B.r}</span>
+   <div class="nt">${B.nt}</div></div>`).join('');
+for(const s of ['selA','selB','selC'])
+  $(s).innerHTML=LIB.map(B=>`<option value="${B.id}">${B.id} — ${B.nm}</option>`).join('');
+$('selA').value='B2'; $('selB').value='B3'; $('selC').value='B1';
+
+/* ── §2 discriminate button ────────────────────────────────────────────── */
+const idx=id=>LIB.findIndex(B=>B.id===id);
+function fmt(it){return `${it[0]}/${it[1]} + ${it[2]}/${it[3]}`;}
+$('disc').onclick=()=>{
+  const i=idx($('selA').value), j=idx($('selB').value);
+  if(i===j){$('dout').textContent='Pick two different beliefs — a belief does not disagree with itself.';return;}
+  const flat=LIB.map(()=>1/N);
+  const d=discriminate(i,j,flat);
+  const pct=(d.same/d.scanned*100).toFixed(1);
+  $('dout').innerHTML=
+   `pair        : ${LIB[i].id} vs ${LIB[j].id}\n`+
+   `scanned     : ${d.scanned.toLocaleString()} items (all of them — the space is finite and enumerated)\n`+
+   `agree on    : <span class="eq">${d.same.toLocaleString()} items (${pct}%) — indistinguishable, no probe here can help</span>\n`+
+   `candidates  : ${d.n.toLocaleString()} items on which the two beliefs give different answers\n`+
+   (d.best
+    ? `chosen      : <span class="hit">${fmt(d.best[0])}</span>  — highest expected information gain, then smallest denominators\n`+
+      `              ${LIB[i].id} says ${d.best[2]} · ${LIB[j].id} says ${d.best[3]} · gain ${d.best[1].toFixed(3)} bits\n`
+    : `chosen      : <span class="eq">none — these two beliefs are EQUIVALENT on the entire space. No item separates them.</span>\n`)+
+   `search time : <b>${d.ms.toFixed(2)} ms</b> for the exhaustive scan`;
+  $('dtab').querySelector('tbody').innerHTML = d.top.length
+    ? d.top.map((c,k)=>`<tr${k?'':' class="hit"'}><td class="num">${fmt(c[0])}</td>
+       <td class="num">${c[2]}</td><td class="num">${c[3]}</td>
+       <td class="num">${c[1].toFixed(3)} bits</td>
+       <td>${k?'runner-up':'<b>chosen</b> — most information, fewest digits'}</td></tr>`).join('')
+    : `<tr><td colspan="5" class="mut">No separating item exists. These beliefs are observationally identical on this space.</td></tr>`;
+};
+
+/* ── §3 the probe loop ─────────────────────────────────────────────────── */
+let post=LIB.map(B=>B.pri), pcount=0, cur=null, perUpdate=null, asked=new Set();
+function drawPost(){
+  const mx=Math.max(...post);
+  $('post').innerHTML=LIB.map((B,k)=>
+    `<div class="bar${post[k]===mx?' lead':''}"><span class="k">${B.id} ${B.nm}</span>
+     <span class="t"><i style="width:${(post[k]*100).toFixed(1)}%"></i></span>
+     <span class="v">${(post[k]*100).toFixed(1)}%</span></div>`).join('');
+  const lead=LIB[post.indexOf(mx)];
+  $('pn').innerHTML= pcount
+    ? `${pcount} probe${pcount>1?'s':''} answered · best predictor of you: <b>${lead.id}</b> at ${(mx*100).toFixed(1)}%`
+    : 'Starting from the population prior. No probes answered yet.';
+}
+function topTwo(){
+  const o=post.map((p,k)=>[p,k]).sort((a,b)=>b[0]-a[0]);
+  return [o[0][1],o[1][1]];
+}
+$('next').onclick=()=>{
+  const [i,j]=topTwo();
+  const d=discriminate(i,j,post,asked);
+  if(!d.best){
+    $('probe').hidden=false; $('pitem').textContent='—'; $('popts').innerHTML='';
+    $('pwhy').innerHTML='<b>No probe exists.</b> Every item that separates the two leading beliefs has already been asked, or the two are equivalent on the whole space. That is a finding about the library, not a failure of the search.';
+    return;}
+  cur={it:d.best[0], R:responses(d.best[0]), i, j, d};
+  asked.add(cur.it.join(','));
+  pcount++;
+  $('pidx').textContent=pcount;
+  $('probe').hidden=false;
+  $('pwhy').innerHTML=`Leading pair <b>${LIB[i].id}</b> and <b>${LIB[j].id}</b>. `+
+    `${d.scanned.toLocaleString()} items scanned in ${d.ms.toFixed(2)} ms; ${d.same.toLocaleString()} `+
+    `could not separate them; this one carries ${d.best[1].toFixed(3)} bits. `+
+    `<b>Nobody wrote this question.</b>`;
+  $('pitem').textContent=fmt(cur.it)+' =';
+  $('popts').innerHTML=cur.R.map((r,k)=>
+    `<button class="opt" data-k="${k}">${r==='other'?'none of these':r}</button>`).join('');
+  $('popts').querySelectorAll('button').forEach(b=>b.onclick=()=>answer(+b.dataset.k,b));
+};
+function answer(r,btn){
+  $('popts').querySelectorAll('button').forEach(b=>b.classList.remove('picked'));
+  btn.classList.add('picked');
+  const P=LIB.map(B=>predict(B,cur.it,cur.R));
+  const prior=post.slice();
+  const un=prior.map((p,k)=>p*P[k][r]);
+  const Z=un.reduce((a,b)=>a+b,0);
+  post=un.map(u=>u/Z);
+  /* time the update itself, isolated from rendering */
+  const t0=performance.now();
+  for(let n=0;n<200000;n++){
+    let z=0; for(let k=0;k<N;k++) z+=prior[k]*P[k][r];
+    for(let k=0;k<N;k++) un[k]=prior[k]*P[k][r]/z;
+  }
+  perUpdate=(performance.now()-t0)/200000*1000;
+  const rows=LIB.map((B,k)=>
+    `  ${B.id}   prior ${prior[k].toFixed(4)}   × P(r|${B.id}) ${P[k][r].toFixed(4)}   = ${(prior[k]*P[k][r]).toFixed(6)}   → <b>${post[k].toFixed(4)}</b>`).join('\n');
+  const mx=Math.max(...post), lead=LIB[post.indexOf(mx)];
+  $('uout').innerHTML=
+   `item       : ${fmt(cur.it)}\nyour answer: ${cur.R[r]==='other'?'none of these':cur.R[r]}\n`+
+   `response   : one of ${cur.R.length} enumerated outcomes for this item\n\n`+
+   rows+`\n\n  normaliser Z = ${Z.toFixed(6)}\n\n`+
+   `<span class="hit">argmax → ${lead.id} · ${lead.nm} · ${(mx*100).toFixed(1)}%</span>\n\n`+
+   `posterior update: <b>${perUpdate.toFixed(3)} µs</b> (mean of 200,000 runs)\n`+
+   `probe search   : <b>${cur.d.ms.toFixed(2)} ms</b>\n`+
+   `model calls    : <b>0</b> — nothing was asked whether your answer was wrong`;
+  drawPost();
+}
+$('reset').onclick=()=>{post=LIB.map(B=>B.pri);pcount=0;asked=new Set();$('probe').hidden=true;
+  $('uout').textContent='Answer a probe to see the arithmetic.';drawPost();};
+drawPost();
+
+/* ── §4 break() ────────────────────────────────────────────────────────── */
+const SPACE=[];
+for(let b=2;b<=8;b++)for(let a=1;a<b;a++) SPACE.push([a,b]);
+const INV=[
+ {n:'Monotonicity',d:'x + y must be greater than x whenever y > 0.',
+  scan:B=>{for(const[a,b]of SPACE)for(const[c,d]of SPACE){
+    const s=val(B.f(a,b,c,d)); if(!(s>val([a,b])+1e-12))
+      return `${a}/${b} + ${c}/${d} = ${key(B.f(a,b,c,d))}, which is not greater than ${key([a,b])}`;} return null;}},
+ {n:'Commutativity',d:'x + y must equal y + x. Addition does not know which one you wrote first.',
+  scan:B=>{for(const[a,b]of SPACE)for(const[c,d]of SPACE){
+    if(key(B.f(a,b,c,d))!==key(B.f(c,d,a,b)))
+      return `${a}/${b} + ${c}/${d} = ${key(B.f(a,b,c,d))} but ${c}/${d} + ${a}/${b} = ${key(B.f(c,d,a,b))}`;} return null;}},
+ {n:'Value, not notation',d:'Equal inputs must give equal outputs. 2/4 and 1/2 are the same number.',
+  scan:B=>{for(const[a,b]of SPACE)for(const[e,f]of SPACE){
+    if(a*f!==e*b||(a===e&&b===f)) continue;
+    for(const[c,d]of SPACE)
+      if(key(B.f(a,b,c,d))!==key(B.f(e,f,c,d)))
+        return `${a}/${b} + ${c}/${d} = ${key(B.f(a,b,c,d))} but ${e}/${f} + ${c}/${d} = ${key(B.f(e,f,c,d))} — and ${a}/${b} is ${e}/${f}`;} return null;}},
+ {n:'Additive identity',d:'x + 0 must equal x.',
+  scan:B=>{for(const[a,b]of SPACE)for(let d=2;d<=8;d++){
+    if(key(B.f(a,b,0,d))!==key([a,b]))
+      return `${a}/${b} + 0/${d} = ${key(B.f(a,b,0,d))}, not ${key([a,b])}`;} return null;}}
+];
+$('brk').onclick=()=>{
+  const B=LIB[idx($('selC').value)];
+  const t0=performance.now();
+  const res=INV.map(I=>[I,I.scan(B)]);
+  const ms=performance.now()-t0;
+  const broke=res.filter(r=>r[1]).length;
+  $('bout').innerHTML=
+   `belief   : ${B.id} · ${B.nm}\nrule     : a/b + c/d = ${B.r}\n`+
+   `space    : ${SPACE.length} fractions, invariants checked over every ordered pair and triple\n\n`+
+   res.map(([I,cx])=>
+     `  ${I.n.padEnd(21)} ${cx?`<span class="viol">VIOLATED</span>\n      ${I.d}\n      counterexample: ${cx}`:`<span class="ok">holds</span>\n      ${I.d}`}`).join('\n\n')+
+   `\n\nscan time: ${ms.toFixed(1)} ms\n`+
+   (broke
+     ? `verdict  : <span class="viol">CONTRADICTION</span> — ${broke} of ${INV.length} invariants fail. The belief is not merely\n           different from the correct rule; it is not an addition at all.`
+     : `verdict  : <span class="ok">⊥</span> — no contradiction found. Every invariant holds. break() returns bottom,\n           which is the only honest thing to return about a rule that is correct.`);
+};
+</script>
+</body>
+</html>
+</content>
+</invoke>

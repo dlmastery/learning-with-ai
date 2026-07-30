@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Watch the Scaffold Come Off — worked example to independent problem</title>
+<meta name="description" content="A four-step stoichiometry problem faded from fully worked to independent, with the fade decision rule printed, evaluated and replayed against fixed and no-fading schedules." />
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="demo.css" />
+<script src="../theme.js"></script>
+<style>
+.readout{font:13px/1.7 var(--mono);white-space:pre-wrap;color:var(--ink-2)}
+.ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:0 0 var(--s5)}
+.rung2{border:1px solid var(--line);border-radius:9px;padding:9px 8px;background:var(--surface);
+  font:600 10.5px/1.25 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);
+  text-align:center}
+.rung2.on{border-color:var(--real);color:var(--real);box-shadow:inset 0 0 0 1px var(--real)}
+.rung2.done{color:var(--ink-3);background:var(--sunken)}
+.rung2 b{display:block;font:400 17px/1 var(--serif);color:inherit;margin-bottom:5px}
+.step{display:grid;grid-template-columns:26px 1fr;gap:12px;padding:13px 0;
+  border-bottom:1px solid var(--line);align-items:start}
+.step:last-child{border-bottom:0}
+.step .sn{font:600 11px/1.7 var(--mono);color:var(--ink-3)}
+.step .lb{font:600 12.5px/1.4 var(--sans);color:var(--ink);margin-bottom:5px}
+.step .ex{font:13px/1.6 var(--mono);color:var(--ink-3);word-break:break-word}
+.step .ans{font:13px/1.6 var(--mono);color:var(--real)}
+.step.given{opacity:.92}
+.step .inrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:7px}
+.step input[type=text]{width:130px;font:13.5px/1.4 var(--mono);padding:8px 10px}
+.step .unit{font:12.5px/1 var(--mono);color:var(--ink-3)}
+.step .mark{font:600 11px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase}
+.step .mark.ok{color:var(--good)} .step .mark.no{color:var(--bad)}
+.rule{font:12.5px/1.75 var(--mono);white-space:pre;color:var(--ink-3);overflow-x:auto;
+  background:var(--sunken);border:1px solid var(--line);border-radius:10px;padding:14px}
+.rule .hit{color:var(--real);font-weight:650}
+.opts{display:grid;gap:7px;margin-top:9px}
+.opt{text-align:left;font:14px/1.4 var(--sans);padding:10px 12px;font-weight:400}
+.opt.sel{border-color:var(--real);box-shadow:inset 0 0 0 1px var(--real)}
+.opt.ok{border-color:var(--good);color:var(--good)}
+.opt.no{border-color:var(--bad);color:var(--bad)}
+.val{font:13px/1 var(--mono);color:var(--ink);float:right;text-transform:none;letter-spacing:0}
+input[type=range]{width:100%;accent-color:var(--real);height:22px;padding:0;border:0;background:none}
+svg text{font:11px var(--sans);fill:var(--ink-3)}
+svg .ad{stroke:var(--real);stroke-width:2.5;fill:none}
+svg .fx{stroke:var(--felt);stroke-width:2.5;fill:none;stroke-dasharray:5 4}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3);margin-top:12px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../deck.html">The deck</a>
+· <a href="../paper.html">The paper</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 17 · Mechanisms</div>
+  <h1>Watch the scaffold come off</h1>
+  <p class="lede">Worked examples measure <strong>g = 0.48</strong> across 181 effect sizes, and
+  then reverse on the learner who no longer needs them. So the interesting object is not the
+  example. It is the <em>removal schedule</em> — and here it is, running on a real four-step
+  calculation, with the rule that decides each removal printed on the page and evaluated in front
+  of you.</p>
+  <div class="chips">
+    <span class="chip m">Problems, marking and fade decisions all computed</span>
+    <span class="chip d">Six problem templates, authored</span>
+    <span class="chip n">Fading did not moderate scaffolding in 144 studies</span>
+  </div>
+</header>
+
+<section class="orient">
+  <div class="o"><b>What this is</b><p>A completion-problem sequence over combustion stoichiometry.
+  Stage 0 hands you the whole solution; stage 4 hands you nothing but the question. In between,
+  blanks appear from the bottom up. Every number is generated from atomic masses and a balanced
+  equation computed at load — nothing is stored.</p></div>
+  <div class="o"><b>Why it matters</b><p>A worked example is a gift to someone who cannot yet do
+  the steps and an obstacle to someone who can. The scaffold therefore has to come off, and the
+  only defensible trigger is <em>evidence of unaided competence</em> — which means the system needs
+  something to measure before it is allowed to withdraw anything.</p></div>
+  <div class="o"><b>How to use it</b><p>Work a problem badly on purpose and the ladder moves
+  backwards; work one cleanly and it moves forward. Either way the rule trace underneath prints
+  the exact inputs it branched on. The fade threshold is a slider, so the rule is not just visible
+  — it is arguable.</p></div>
+</section>
+
+<h2>1 · Where you are on the ladder</h2>
+<div class="ladder" id="ladder"></div>
+
+<div class="panel">
+  <div class="ptitle" id="ptitle">Problem</div>
+  <div class="psub" id="psub">—</div>
+  <div id="stem" style="font-size:15px;line-height:1.6;color:var(--ink);margin-bottom:14px"></div>
+  <div id="steps"></div>
+  <div class="row" style="margin:18px 0 0">
+    <button class="pri" id="submit">Submit</button>
+    <button id="next" disabled>Next problem</button>
+    <span class="sub" id="fb" style="margin-left:4px;margin-bottom:0"></span>
+  </div>
+</div>
+
+<h2>2 · The rule that decided</h2>
+<p>Not a black box, not a model call. Nine lines, evaluated on the numbers you just produced. The
+branch it took is highlighted.</p>
+
+<div class="panel">
+  <div class="ptitle">fade_decision(stage, blanks, correct, study_check)</div>
+  <div class="psub">Threshold is a control, below. Everything else is fixed.</div>
+  <div class="rule" id="rulebox"></div>
+  <div class="readout" id="trace" style="margin-top:16px">Submit a problem and the trace appears here.</div>
+</div>
+
+<div style="max-width:420px">
+  <label for="thr">Fade threshold — score needed to remove a scaffold
+    <span class="val" id="thrv">1.00</span></label>
+  <input type="range" id="thr" min="50" max="100" step="5" value="100" />
+  <div class="sub" style="margin:6px 0 0;font-size:12.5px">At 1.00 the scaffold comes off only on a
+  flawless unaided solve. Lower it and the system starts fading on partial evidence — which is how
+  most adaptive systems are actually tuned, and is the assumption the evidence does not
+  underwrite.</div>
+</div>
+
+<h2>3 · Your record</h2>
+<div class="scroll">
+<table>
+  <thead><tr><th>#</th><th>Problem</th><th>Stage</th><th>Blanks</th><th>Correct</th><th>Score</th>
+  <th>Decision</th><th>Next stage</th></tr></thead>
+  <tbody id="hist"><tr><td colspan="8" class="mut">No attempts yet.</td></tr></tbody>
+</table>
+</div>
+
+<h2>4 · The same learner under three schedules</h2>
+<p>Your attempts replayed against the two schedules that are not evidence-gated: a
+<strong>fixed</strong> fade that removes one scaffold per problem regardless, and
+<strong>no fading</strong>, which parks the learner at one level forever.</p>
+
+<div class="panel">
+  <div class="ptitle">Stage trajectory</div>
+  <div class="psub" id="trajsub">Complete at least two problems to draw this.</div>
+  <svg id="traj" viewBox="0 0 640 210" role="img"
+       aria-label="Stage over problem number for the evidence-gated schedule and the fixed schedule."></svg>
+  <div class="legend">
+    <span><i style="background:var(--real)"></i>evidence-gated (what you did)</span>
+    <span><i style="background:var(--felt)"></i>fixed schedule (one scaffold per problem)</span>
+  </div>
+  <div class="readout" id="cmp" style="margin-top:16px"></div>
+</div>
+
+<div class="note warn"><b>What this replay cannot tell you.</b> It compares <em>schedules</em>, not
+outcomes. Your accuracy at a stage you never attempted is unobserved, and no amount of arithmetic
+recovers it. That is not a shortcoming of this page — it is the reason the fading literature is
+thin: measuring a fade schedule properly requires randomising learners to schedules and testing
+them later, and almost nobody has.</div>
+
+<h2>5 · What this proves / what it does not</h2>
+
+<div class="panel">
+  <div class="ptitle">What is demonstrated here</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>The completion-problem gradient is real and mechanical.</strong> One problem
+    generator produces five different instructional objects — study, one blank, two, three, all
+    four — from the same balanced equation. Building the gradient costs nothing; the reason it is
+    rare in software is not difficulty.</li>
+    <li><strong>The fade trigger can be made inspectable.</strong> The rule is nine lines, its
+    inputs are printed, its branch is highlighted, and its threshold is a control you can move.
+    Compare that to a system that says only "we adapt to you".</li>
+    <li><strong>Withdrawal needs unaided evidence, and stage 0 has none.</strong> The study stage
+    carries a comprehension check, and the rule explicitly refuses to count it as competence — it
+    only prevents click-through. When there is no unaided evidence, any advancement is an
+    assumption, and the page marks it as one.</li>
+  </ul>
+  <div class="ptitle">Which parts are evidenced, and which are design</div>
+  <ul style="margin:0 0 6px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>Evidenced:</strong> that worked examples beat unguided problem solving for
+    learners without the schema — <strong>g = 0.48</strong>, 181 effect sizes — and that the
+    advantage reverses with expertise. That much licenses stage 0 for a novice and stage 4 for
+    someone fluent.</li>
+    <li><strong>Not evidenced — and this is the load-bearing caveat:</strong> that the path between
+    them matters. Belland, Walker, Kim &amp; Lefler's meta-analysis of <strong>144 experimental
+    studies and 333 outcomes</strong> found <em>no moderation</em> by "presence or absence of
+    scaffolding change, and the logic by which scaffolding change is implemented". The earlier
+    pilot found something worse for the tidy story: <strong>no fading outperformed fixed
+    fading</strong>, with fading or its absence accounting for 30% of variability. Adaptive fading
+    is a <em>design claim</em> resting on the expertise-reversal mechanism, not a measured effect.</li>
+    <li><strong>Also not evidenced:</strong> that bolting a prompt onto an example improves it.
+    Barbieri et al. found self-explanation prompts a significant <em>negative</em> moderator of the
+    worked-example effect. This page deliberately does not add one.</li>
+    <li><strong>The honest position:</strong> fade on unaided evidence or do not fade. A fixed
+    schedule is the one option the evidence actively discourages, and it is the one almost every
+    curriculum ships.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../deck.html">The deck</a> ·
+  <a href="../paper.html">The paper</a>
+  <br /><br />g = 0.48: Barbieri et al. 2023. Fading nulls: Belland et al. 2015, 2017.
+</footer>
+
+</div>
+<script>
+const tt=document.getElementById('tt'),R=document.documentElement;
+tt.onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+<script>
+const $=id=>document.getElementById(id);
+const AM={C:12.01,H:1.008,O:16.00}, MO2=32.00;
+const FUELS=[
+ {nm:"methane",  f:"CH₄",    C:1,H:4,O:0},
+ {nm:"ethane",   f:"C₂H₆",   C:2,H:6,O:0},
+ {nm:"propane",  f:"C₃H₈",   C:3,H:8,O:0},
+ {nm:"butane",   f:"C₄H₁₀",  C:4,H:10,O:0},
+ {nm:"ethanol",  f:"C₂H₆O",  C:2,H:6,O:1},
+ {nm:"methanol", f:"CH₄O",   C:1,H:4,O:1}
+];
+/* seeded generator — reload gives the identical sequence, so the page is checkable */
+function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);
+  t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+const rnd=mulberry(20250729);
+const SEQ=[]; for(let i=0;i<14;i++){
+  const fu=FUELS[Math.floor(rnd()*FUELS.length)];
+  const m=Math.round((4+rnd()*56)*2)/2;
+  SEQ.push({fu,m});
+}
+const frac=x=>Number.isInteger(x)?String(x):(x*2)%2===1?(x*2)+"/2":x.toFixed(2);
+
+function build(p){
+  const {fu,m}=p;
+  const M=fu.C*AM.C+fu.H*AM.H+fu.O*AM.O;
+  const ratio=fu.C+fu.H/4-fu.O/2;
+  const n=m/M, nO=ratio*n, mO=nO*MO2;
+  const eq=`${fu.f} + ${frac(ratio)} O₂ → ${fu.C} CO₂ + ${frac(fu.H/2)} H₂O`;
+  return {fu,m,M,ratio,n,nO,mO,eq, steps:[
+   {lb:"Molar mass of the fuel",
+    ex:`M = ${fu.C}(12.01) + ${fu.H}(1.008)${fu.O?` + ${fu.O}(16.00)`:""}`,
+    v:M, u:"g/mol"},
+   {lb:"Moles of fuel",
+    ex:`n = m / M = ${m.toFixed(1)} / ${M.toFixed(2)}`, v:n, u:"mol"},
+   {lb:"Moles of O₂ from the balanced equation",
+    ex:`n(O₂) = ${frac(ratio)} × ${n.toFixed(4)}`, v:nO, u:"mol"},
+   {lb:"Mass of O₂",
+    ex:`m(O₂) = ${nO.toFixed(4)} × 32.00`, v:mO, u:"g"}
+  ]};
+}
+const CHECKS=[
+ {q:"Which single step would change if the balanced equation were wrong?",
+  o:["Step 1 — the molar mass","Step 2 — moles of fuel","Step 3 — the mole ratio","Step 4 — the final mass"],c:2},
+ {q:"If the fuel mass were doubled, which steps change?",
+  o:["Step 1 only","Steps 2, 3 and 4","All four steps","Step 4 only"],c:1},
+ {q:"Why is the molar mass computed before anything else?",
+  o:["Convention","Because moles cannot be obtained from grams without it",
+     "To check the formula is spelled correctly","It is not needed; it is a habit"],c:1}
+];
+
+let idx=0, stage=0, cur=null, chk=null, chkPick=null, marked=false, thr=1.00;
+const hist=[];
+
+/* ── the rule, as text and as code ───────────────────────────────────────── */
+function ruleText(hl){
+  const L=[
+   ["", "fade_decision(stage, blanks, correct, study_check):"],
+   ["A","  if stage == 0:                       # no unaided evidence exists here"],
+   ["A","      return ADVANCE if study_check else REPEAT"],
+   ["", "  score = correct / blanks             # first submission only"],
+   ["B",`  if score >= ${thr.toFixed(2)}:                      # threshold (slider)`],
+   ["B","      return FADE      # stage + 1, one more scaffold removed"],
+   ["C","  if score >= 0.50:"],
+   ["C","      return HOLD      # same stage, new problem"],
+   ["D","  return UNFADE        # stage − 1, put a scaffold back"]
+  ];
+  return L.map(([k,s])=>k&&k===hl?`<span class="hit">${s}</span>`:s).join("\n");
+}
+$('rulebox').innerHTML=ruleText(null);
+$('thr').addEventListener('input',()=>{thr=+$('thr').value/100;$('thrv').textContent=thr.toFixed(2);
+  $('rulebox').innerHTML=ruleText(null);});
+
+/* ── rendering ───────────────────────────────────────────────────────────── */
+const STAGENM=["Study","1 blank","2 blanks","3 blanks","Independent"];
+function ladder(){
+  $('ladder').innerHTML=STAGENM.map((s,i)=>
+    `<div class="rung2 ${i===stage?'on':(i<stage?'done':'')}"><b>${i}</b>${s}</div>`).join('');
+}
+function newProblem(){
+  cur=build(SEQ[idx%SEQ.length]);
+  chk=CHECKS[idx%CHECKS.length]; chkPick=null; marked=false;
+  ladder(); draw();
+  $('next').disabled=true; $('submit').disabled=false; $('fb').textContent='';
+}
+function draw(){
+  const blanks=stage; const first=cur.steps.length-blanks;
+  $('ptitle').textContent=`Problem ${idx+1} · stage ${stage} — ${STAGENM[stage]}`;
+  $('psub').innerHTML=`Balanced equation: <code>${cur.eq}</code> · atomic masses C 12.01, H 1.008,
+    O 16.00, O₂ 32.00 · answers accepted within ±1.5%.`;
+  $('stem').innerHTML=`How many grams of O₂ are required for the complete combustion of
+    <b>${cur.m.toFixed(1)} g</b> of ${cur.fu.nm} (${cur.fu.f})?`;
+  let h=cur.steps.map((s,i)=>{
+    const given=i<first;
+    return `<div class="step${given?' given':''}"><span class="sn">${i+1}</span><span>
+      <span class="lb">${s.lb}</span>
+      <span class="ex">${s.ex}</span>
+      ${given?`<div class="ans">= ${fmt(s.v)} ${s.u}</div>`
+             :`<div class="inrow"><input type="text" inputmode="decimal" id="in${i}"
+                 placeholder="?" autocomplete="off" /><span class="unit">${s.u}</span>
+                 <span class="mark" id="mk${i}"></span></div>`}
+      </span></div>`;
+  }).join('');
+  if(stage===0){
+    h+=`<div class="step"><span class="sn">✓</span><span><span class="lb">Study check —
+      <em>not counted as competence</em></span><span class="ex">${chk.q}</span>
+      <div class="opts">`+chk.o.map((o,j)=>
+        `<button class="opt${chkPick===j?' sel':''}" data-c="${j}">${o}</button>`).join('')+
+      `</div></span></div>`;
+  }
+  $('steps').innerHTML=h;
+}
+const fmt=v=>v>=100?v.toFixed(1):v>=10?v.toFixed(2):v.toFixed(4);
+$('steps').addEventListener('click',e=>{const b=e.target.closest('button[data-c]');if(!b||marked)return;
+  chkPick=+b.dataset.c; draw();});
+
+/* ── marking + decision ──────────────────────────────────────────────────── */
+$('submit').onclick=()=>{
+  if(marked) return;
+  const blanks=stage, first=cur.steps.length-blanks;
+  let correct=0, answered=0;
+  for(let i=first;i<cur.steps.length;i++){
+    const el=$('in'+i); const raw=(el.value||'').trim().replace(/,/g,'');
+    const x=parseFloat(raw); const t=cur.steps[i].v;
+    const ok=isFinite(x)&&Math.abs(x-t)<=Math.abs(t)*0.015;
+    if(raw!=='') answered++;
+    if(ok) correct++;
+    $('mk'+i).textContent=ok?'correct':(raw===''?'blank':'≠ '+fmt(t));
+    $('mk'+i).className='mark '+(ok?'ok':'no');
+    el.disabled=true;
+  }
+  marked=true; $('submit').disabled=true; $('next').disabled=false;
+
+  let branch, decision, nextStage, score=null;
+  if(stage===0){
+    branch='A';
+    const ok=chkPick===chk.c;
+    decision=ok?'ADVANCE':'REPEAT'; nextStage=ok?1:0;
+    [...$('steps').querySelectorAll('.opt')].forEach(b=>{
+      const j=+b.dataset.c;
+      if(j===chk.c) b.classList.add('ok'); else if(chkPick===j) b.classList.add('no');
+    });
+    $('trace').innerHTML=
+      `stage        : 0  (study)\nstudy_check  : ${ok?'correct':'incorrect'}\n`+
+      `unaided evid.: none — the rule refuses to treat a comprehension check as competence\n\n`+
+      `decision     : <b>${decision}</b>  →  stage ${nextStage}\n`+
+      (ok?`This advance is an <em>assumption</em>, not a measurement, and the page says so rather\n`+
+          `than dressing it up as adaptation.`
+         :`Repeated with a different problem. Nothing was withdrawn, because nothing was shown.`);
+  } else {
+    score=correct/blanks;
+    if(score>=thr){branch='B';decision='FADE';nextStage=Math.min(4,stage+1);}
+    else if(score>=0.50){branch='C';decision='HOLD';nextStage=stage;}
+    else {branch='D';decision='UNFADE';nextStage=Math.max(1,stage-1);}
+    $('trace').innerHTML=
+      `stage        : ${stage}\nblanks       : ${blanks}\ncorrect      : ${correct}`+
+      `\nanswered     : ${answered}\nscore        : ${correct}/${blanks} = ${score.toFixed(2)}`+
+      `\nthreshold    : ${thr.toFixed(2)}\n\n`+
+      `decision     : <b>${decision}</b>  →  stage ${nextStage}` +
+      (decision==='FADE'?`\nOne scaffold removed, on unaided evidence you produced.`:
+       decision==='HOLD'?`\nSame level, fresh problem. Partial evidence does not license withdrawal.`:
+       `\nA scaffold goes back on. Fading is not a ratchet — it has to be able to reverse,\nor the first bad day becomes permanent.`);
+  }
+  $('rulebox').innerHTML=ruleText(branch);
+  hist.push({n:idx+1, fuel:cur.fu.f, stage, blanks, correct, score, decision, nextStage});
+  $('fb').textContent=decision==='FADE'?'Scaffold removed.':decision==='UNFADE'?'Scaffold restored.':
+    decision==='ADVANCE'?'Moving to completion problems.':'Holding at this level.';
+  stage=nextStage; ladder(); table(); traj();
+};
+$('next').onclick=()=>{idx++; newProblem();};
+
+function table(){
+  $('hist').innerHTML=hist.map(h=>
+    `<tr><td class="num">${h.n}</td><td>${h.fuel}</td><td class="num">${h.stage}</td>
+     <td class="num">${h.blanks||'—'}</td><td class="num">${h.blanks?h.correct:'—'}</td>
+     <td class="num">${h.score===null?'—':h.score.toFixed(2)}</td>
+     <td><span class="pill ${h.decision==='FADE'||h.decision==='ADVANCE'?'y':h.decision==='UNFADE'?'n':'c'}">${h.decision}</span></td>
+     <td class="num">${h.nextStage}</td></tr>`).join('');
+}
+
+/* ── schedule replay ─────────────────────────────────────────────────────── */
+const NS="http://www.w3.org/2000/svg";
+const mk=(n,at)=>{const e=document.createElementNS(NS,n);for(const k in at)e.setAttribute(k,at[k]);return e;};
+function traj(){
+  if(hist.length<2){return;}
+  const ad=hist.map(h=>h.stage), fx=hist.map((_,i)=>Math.min(4,i));
+  const svg=$('traj'); svg.replaceChildren();
+  const W=640,H=210,PL=44,PB=40,PT=14,n=Math.max(2,hist.length);
+  const X=i=>PL+(i/(n-1))*(W-PL-18), Y=s=>H-PB-(s/4)*(H-PB-PT);
+  for(let s=0;s<=4;s++){
+    svg.appendChild(mk('line',{x1:PL,y1:Y(s),x2:W-18,y2:Y(s),stroke:'var(--line)','stroke-width':1}));
+    const t=mk('text',{x:PL-8,y:Y(s)+4,'text-anchor':'end'}); t.textContent=s; svg.appendChild(t);
+  }
+  const line=(arr,cls)=>{
+    let d=''; arr.forEach((v,i)=>{ d+= i? ` L${X(i).toFixed(1)},${Y(arr[i-1]).toFixed(1)} L${X(i).toFixed(1)},${Y(v).toFixed(1)}`
+                                        : `M${X(0).toFixed(1)},${Y(v).toFixed(1)}`; });
+    svg.appendChild(mk('path',{d,class:cls}));
+  };
+  line(fx,'fx'); line(ad,'ad');
+  const a=mk('text',{x:PL,y:H-14}); a.textContent='problem 1'; svg.appendChild(a);
+  const b=mk('text',{x:W-18,y:H-14,'text-anchor':'end'}); b.textContent='problem '+n; svg.appendChild(b);
+  const c=mk('text',{x:4,y:PT+2}); c.textContent='stage'; svg.appendChild(c);
+
+  const solved=hist.filter(h=>h.blanks&&h.score>=thr).length;
+  const ahead=hist.filter((h,i)=>fx[i]>h.stage).length;
+  const behind=hist.filter((h,i)=>fx[i]<h.stage).length;
+  $('trajsub').innerHTML=`${hist.length} attempts · evidence-gated ended at stage
+    <b>${stage}</b>, the fixed schedule would be at stage <b>${Math.min(4,hist.length)}</b>.`;
+  $('cmp').innerHTML=
+   `attempts                    : ${hist.length}\n`+
+   `clean unaided solves        : ${solved}\n`+
+   `fixed schedule ran ahead of : ${ahead} attempt${ahead===1?'':'s'}   (scaffold removed with no evidence for it)\n`+
+   `fixed schedule ran behind on: ${behind} attempt${behind===1?'':'s'}   (scaffold kept after competence was shown)\n`+
+   `no-fading schedule          : stage 0 for all ${hist.length} attempts — a fully worked example every time\n\n`+
+   (ahead>0
+     ? `<b>The fixed schedule withdrew support ${ahead} time${ahead===1?'':'s'} without evidence.</b> That is the\n`+
+       `condition under which the pilot meta-analysis found no-fading beating fixed fading:\n`+
+       `a schedule that is not reading anything can be worse than one that never moves.`
+     : `On this run the two schedules agreed. That is the common case with a short, clean\n`+
+       `record — the schedules only separate when a learner stalls, and a demo where\n`+
+       `nobody stalls cannot show the separation. Get one wrong on purpose.`);
+}
+
+ladder(); newProblem();
+</script>
+</body>
+</html>
