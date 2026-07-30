@@ -90,21 +90,51 @@ def prose(p):
 
 
 def dupes(texts, n=DUP_RUN):
-    """Longest repeated word-runs of length >= n, reported once each."""
-    seen, hits = {}, []
-    for label, t in texts:
-        w = re.findall(r"[A-Za-z][\w'-]*", re.sub(r"<[^>]+>", " ", t))
+    """Maximal repeated word-runs of length >= n, each reported once.
+
+    A naive n-gram scan reports every shifted window of one long repeat, so a
+    40-word pasted paragraph arrives as 27 findings. This walks each file once,
+    and on a hit extends the run as far as it goes before skipping past it.
+    """
+    # A rule or an aphorism quoted on two surfaces is deliberate — the same
+    # sentence in a blockquote on the README and on the deck is the point of
+    # having a pull-quote. Only running prose can be pasted.
+    def strip_quoted(s):
+        s = re.sub(r"<blockquote[\s\S]*?</blockquote>", " ", s, flags=re.I)
+        return re.sub(r"(?m)^\s*>.*$", " ", s)
+
+    tok = [(label, re.findall(r"[A-Za-z][\w'-]*",
+                              re.sub(r"<[^>]+>", " ", strip_quoted(txt))))
+           for label, txt in texts]
+    index = {}
+    for label, w in tok:
         for i in range(len(w) - n + 1):
-            key = " ".join(w[i:i + n]).lower()
-            if key in seen and seen[key] != (label, i - 1):
-                hits.append((seen[key][0], label, " ".join(w[i:i + n])))
-            seen.setdefault(key, (label, i))
-    out, used = [], set()
-    for a, b, s in hits:
-        head = " ".join(s.split()[:6]).lower()
-        if head not in used:
-            used.add(head); out.append((a, b, s))
-    return out
+            index.setdefault(" ".join(w[i:i + n]).lower(), []).append((label, i))
+
+    out = []
+    for label, w in tok:
+        i = 0
+        while i <= len(w) - n:
+            hits = [h for h in index.get(" ".join(w[i:i + n]).lower(), []) if h != (label, i)]
+            if not hits:
+                i += 1
+                continue
+            other, j = hits[0]
+            end = i
+            while (end + n <= len(w) and
+                   any(h != (label, end) for h in index.get(" ".join(w[end:end + n]).lower(), []))):
+                end += 1
+            if (other, label) not in {(a, b) for a, b, _, _ in out} or other == label:
+                out.append((label, other, end - i + n - 1, " ".join(w[i:i + n])))
+            i = end + n
+    seen, uniq = set(), []
+    for a, b, ln, s in out:
+        key = tuple(sorted((a, b))) + (s.lower(),)
+        rev = tuple(sorted((a, b))) + (s.lower(),)
+        if rev in seen:
+            continue
+        seen.add(key); uniq.append((a, b, ln, s))
+    return uniq
 
 
 def body(p):
@@ -184,10 +214,10 @@ def main():
         print(f"  [SHARED HEADER ×{len(f)}] \"{h[:64]}\"")
         print(f"    {', '.join(sorted(f))}\n")
 
-    for a, b, s in duplicated:
+    for a, b, ln, s in duplicated:
         where = f"twice in {a}" if a == b else f"{a} and {b}"
-        print(f"  [DUPLICATED ≥{DUP_RUN} WORDS] {where}")
-        print(f"    \"{s[:96]}…\"\n")
+        print(f"  [DUPLICATED {ln} WORDS] {where}")
+        print(f"    \"{s[:92]}…\"\n")
 
     if over_closers:
         print(f"  [CLOSING MOVE ×{len(closers)}] the `not X. It is Y.` antithesis ends "
