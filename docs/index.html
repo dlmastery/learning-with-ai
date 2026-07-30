@@ -83,6 +83,9 @@ figcaption{font-size:13px;color:var(--ink-3);margin-top:var(--s4);line-height:1.
   background:var(--ink);color:var(--bg);font:12.5px/1.5 var(--sans);padding:8px 11px;
   border-radius:7px;max-width:264px;box-shadow:0 4px 16px rgba(0,0,0,.18)}
 #tip b{color:var(--bg);display:block;font-weight:650;margin-bottom:2px}
+/* the system class and vintage, set as a label so it reads before the caveat */
+#tip i{display:block;font:600 9.5px/1.5 var(--mono);font-style:normal;letter-spacing:.09em;
+  text-transform:uppercase;opacity:.6;margin-bottom:5px}
 </style>
 </head>
 <body>
@@ -125,8 +128,9 @@ because one adult cannot sit beside thirty children every hour for a decade.</p>
   <p>A fresh, unGoogleable problem at the exact edge of what you know, on demand, forever.</p></div>
   <div class="card"><span class="tag">Now buildable</span><h4>A student you teach</h4>
   <p>An agent that adopts your explanation <em>including its errors</em>, applies them visibly,
-  and does not quietly self-correct. Learning by teaching is <b>g = 0.48</b>, and nobody has
-  shipped it.</p></div>
+  and does not quietly self-correct. Learning by teaching measures <b>g = 0.48</b> with a human
+  tutee when the expectancy is set first; the agent version has never been built or measured, so
+  that number is the reason to try it and not a result it can claim.</p></div>
   <div class="card"><span class="tag">Now buildable</span><h4>Your wrong rule, executed</h4>
   <p>State a belief; it compiles to a law and runs beside the correct one until they visibly
   diverge. Reality corrects you, not our authority. <a href="demos/twin-run.html">Run it →</a></p></div>
@@ -157,6 +161,53 @@ because one adult cannot sit beside thirty children every hour for a decade.</p>
     free anyway: the same items, merely split.</p></div>
 </div>
 
+<h2>What a frontier model has been measured to do</h2>
+<p class="sub">Seven trials have put a post-2023 LLM in front of a learner and measured a learning
+outcome. This is all of them. Every other effect size on this page came from a human tutor, a
+rule-based system, or a classroom technique, and none of those can put a ceiling on this one.</p>
+
+<div class="scroll">
+<table>
+  <tr><th>Trial</th><th>Year</th><th>What moved</th><th>What it does not establish</th></tr>
+  <tr><td><b>Kestin</b> · Harvard physics</td><td class="num">2025</td><td class="num">d ≈ 0.63</td>
+    <td>One lesson, researcher-written test near ceiling. The tutor's builder also ran the
+    analysis, and the paper carries no funding statement.</td></tr>
+  <tr><td><b>Rori</b> · Ghana, WhatsApp</td><td class="num">2024</td><td class="num">+0.37 SD</td>
+    <td>Eight months, but only 11 clusters, and the provider's own staff authored it.</td></tr>
+  <tr><td><b>World Bank</b> · Nigeria</td><td class="num">2025</td><td class="num">+0.310 SD</td>
+    <td>Reached the school's own third-term exam at +0.206 SD, the sole distal outcome here that
+    moved. Roughly 43% attrition.</td></tr>
+  <tr><td><b>Gemini Guided Learning</b> · Sierra Leone</td><td class="num">2026</td><td class="num">+0.258 SD</td>
+    <td>Unadjusted, <b>+0.216 SD and not significant</b>. Endline only. The gain loads on Grade 8
+    and grows with prior attainment.</td></tr>
+  <tr><td><b>LearnLM + Eedi</b> · UK secondary</td><td class="num">2025</td><td class="num">+5.5 p.p.</td>
+    <td>Against human tutors, on the next unit's first problem. 165 students, and a 95% credible
+    interval of [−1.4, +12.4].</td></tr>
+  <tr><td><b>Tutor CoPilot</b> · Stanford</td><td class="num">2024</td><td class="num">+4 p.p.</td>
+    <td>Exit ticket only. Null on the end-of-year test, reported by the authors in their own
+    limitations.</td></tr>
+  <tr><td><b>Bastani</b> · Turkey</td><td class="num">2025</td><td class="num">+127%</td>
+    <td>Assisted practice. With the tool removed, the unconstrained arm was 17% worse and the
+    guarded arm sat at −0.004, n.s.</td></tr>
+</table>
+</div>
+
+<p>Those rows run from an unassisted-work penalty up to <b>d ≈ 0.63</b>, and the spread tracks
+what each system was permitted to do far more closely than which model sat inside it. Bastani ran
+the same GPT-4 in both arms: unconstrained, learners came back worse without it; constrained, the
+penalty disappeared. Gu &amp; Yan's 2025 meta-analysis says the same thing from above, <b>g =
+1.426</b> for LLM tutoring with teacher support against <b>g = 0.077</b> without it. Most of the
+measured effect lives in the design that wraps the model, which is the part a builder controls.</p>
+
+<div class="callout">
+  <div class="k">The measurement nobody has run</div>
+  <p>No trial above carries a delayed, unassisted, novel-item outcome. Sierra Leone tested at
+  endline with the tool still in the room. Kestin tested at the end of the hour. Tutor CoPilot did
+  reach a distal outcome and came back null there. The frontier era has not met a ceiling; it has
+  not yet run the study that could locate one. That is a hole in the record, and a very
+  specific one, which is why the open problems are written as experiments anyone can run.</p>
+</div>
+
 <h2>What separates a system that works from one that feels like it</h2>
 <p class="sub">Three results with a build consequence. They are why most of the field's
 effort has not landed, and each one is a constraint you can design against.</p>
@@ -165,25 +216,28 @@ effort has not landed, and each one is a constraint you can design against.</p>
   <div class="finding">
     <span class="fn"></span>
     <h3>Felt learning and real learning move in opposite directions</h3>
-    <p>Preference moves at <b>d ≈ 0.48</b> while knowledge stays where it was, and the effect
-    survives explicit debiasing. Ratings, satisfaction and engagement all track the preference
-    and none of them track the knowledge. Every metric a product can cheaply optimise is the
-    wrong one.</p>
+    <p>Buljan 2018: three RCTs, 334 adults, an infographic against a plain-language summary.
+    Preference moved <b>d ≈ 0.48</b> and knowledge moved zero. Kaspar 2025 played a debiasing
+    video first and the easiness effect survived it. No model was involved in either, which is
+    why it carries: this is how people misjudge their own learning, so any system that optimises
+    on ratings inherits it on day one.</p>
   </div>
   <div class="finding">
     <span class="fn"></span>
     <h3>A dashboard has to name the next move</h3>
-    <p>Both arms of the randomised trial that settles this revised instruction more often.
-    Achievement moved only in the arm that was told <em>what to change</em>. Streaks, mastery
-    bars and adaptive difficulty measure more and decide nothing, and finer resolution does
-    not fix it: the rule is the product.</p>
+    <p>Fuchs 1991 randomised 33 teachers to progress data, progress data plus a rule for acting
+    on it, or neither. Both measured arms revised instruction more often. Achievement moved only
+    in the arm told <em>what to change</em>. That is human teachers and a rule-based expert
+    system in 1991, and it constrains a 2026 dashboard for a structural reason: streaks, mastery
+    bars and adaptive difficulty are all the arm without the rule.</p>
   </div>
   <div class="finding">
     <span class="fn"></span>
     <h3>Unguarded assistance is an active harm</h3>
-    <p>Later unassisted work comes back <b>17% worse</b>. Add guardrails and the unassisted
-    coefficient is <b>−0.004, not significant</b>: harm gone, teaching not demonstrated.
-    Anyone selling restraint as a learning gain is ahead of the evidence —
+    <p>Bastani 2025, ~1,000 Turkish students on GPT-4, is the frontier-era result that matters
+    most here. Later unassisted work came back <b>17% worse</b>. Add guardrails and the
+    unassisted coefficient is <b>−0.004, not significant</b>: harm gone, teaching not
+    demonstrated. Anyone selling restraint as a learning gain is ahead of the evidence —
     <em>including this page, in an earlier draft.</em></p>
   </div>
 </div>
@@ -205,26 +259,33 @@ effort has not landed, and each one is a constraint you can design against.</p>
 
 <h2>What actually works, and by how much</h2>
 <p class="sub">Pooled effect sizes, ordered. Blue is supported by replication; rust is overstated,
-contested, or null. Hover any row for the base and the caveat.</p>
+contested, or null. Hover any row for the base, the caveat, and the class of system that produced
+the number.</p>
 
 <figure>
   <div class="ftitle">What works, and by how much</div>
   <div class="fsub">Generated from a declarative spec by a deterministic renderer. No coordinate on
-  this page is hand-positioned, because our own research rates hand-written SVG Tier D.</div>
+  this page is hand-positioned, because our own research rates hand-written SVG Tier D.
+  <b>One row here was measured on a frontier model.</b> The rest are human tutors, pre-LLM
+  systems, and classroom techniques, so read them as evidence about teaching and never as a bound
+  on what a 2026 model can do. The table view below prints the class for every row.</div>
   <div class="legend">
     <span><i style="background:var(--real)"></i>Supported</span>
     <span><i style="background:var(--felt)"></i>Overstated, contested, or null</span>
   </div>
   <div id="bars"></div>
-  <figcaption>Bloom's 2σ does not appear, because it does not replicate. VanLehn
-  measured human tutoring at 0.79 and intelligent tutoring at 0.76; Nickow's pooled tutoring RCTs
-  land at <strong>0.288</strong>, and that number itself fell from 0.37 in the working paper to
-  0.288 in peer review, which is why this survey discounts working-paper effect sizes. Chasing 2σ
-  inflates the target roughly 7× against the pooled estimate.</figcaption>
+  <figcaption>Bloom's 2σ does not appear, because it does not replicate. VanLehn reviewed
+  controlled experiments in 2011 and measured human tutoring at 0.79 and rule-based intelligent
+  tutoring at 0.76; Nickow's 2024 meta-analysis of 96 human-tutoring RCTs, nearly all of them run
+  before GPT-4, lands at <strong>0.288</strong>, and that number itself fell from 0.37 in the
+  working paper to 0.288 in peer review, which is why this survey discounts working-paper effect
+  sizes. Chasing 2σ inflates the target roughly 7× against the pooled estimate. Each figure is
+  correct for the machine it measured, and 1984, 2011 and 2024 are three different machines.</figcaption>
 </figure>
 
 <details>
-  <summary>Table view of the ladder, an accessible alternative generated from the same spec</summary>
+  <summary>Table view of the ladder, with the class of system behind every number, generated from
+  the same spec</summary>
   <div class="scroll"><table id="bartable"></table></div>
 </details>
 
@@ -275,8 +336,8 @@ six-year-old and a PhD student? No, and the axis it varies along is not age.</p>
 <p class="sub">Twelve results with a direct consequence for a product decision.</p>
 
 <div class="grid">
-  <div class="card"><span class="tag">Kills a product</span><h4>The exit ticket is not the outcome</h4><p>One deployment moved its in-product exit ticket <b>+4pp</b> and was null on the state test. That dissociation between the proxy a product can see and the outcome anyone cares about is the most reproducible finding in this literature.</p></div>
-  <div class="card"><span class="tag">Free fix</span><h4>Say it before they study</h4><p>Teaching with a prior expectancy: <b>g = 0.48</b>. Without: <b>g = −0.02</b>. "Now explain it back to me," asked at the end, is the null condition, and is how nearly every product ships it.</p></div>
+  <div class="card"><span class="tag">Kills a product</span><h4>The exit ticket is not the outcome</h4><p>Tutor CoPilot, 2024, a frontier LLM behind 900 human tutors, moved its in-product exit ticket <b>+4pp</b> and returned a null on the end-of-year test. That dissociation between the proxy a product can see and the outcome anyone cares about is the most reproducible finding in this literature, and it predates LLMs by a decade.</p></div>
+  <div class="card"><span class="tag">Free fix</span><h4>Say it before they study</h4><p>Teaching with a prior expectancy: <b>g = 0.48</b>, k = 39, human tutees. Without: <b>g = −0.02</b>. "Now explain it back to me," asked at the end, is the null condition, and is how nearly every product ships it. Ordering one sentence is free, and no LLM study has tested it.</p></div>
   <div class="card"><span class="tag">Inverts the ask</span><h4>The audience is a net cost</h4><p>Teaching to a camera beat teaching to one student and to seven — on transfer, with lower pulse rate, lower anxiety, lower load and <em>more</em> idea units. Presenting to a room is a barrier that buys nothing.</p></div>
   <div class="card"><span class="tag">Must-fix bug</span><h4>Vision models erase the mistakes</h4><p>Asked to transcribe student work, VLMs silently <b>repair</b> the errors — the sign, the paren, the missing step. The mistakes are the entire reason for looking at the page.</p></div>
   <div class="card"><span class="tag">Boundary</span><h4>Scheduling fails on structure</h4><p>Adaptive scheduling: <b>11 of 14</b> trials significant on flashcard-type material, <b>0 of 8</b> on interdependent content. Duolingo's scheduler vs plain Leitner on ~1M students: −7.3% practice.</p></div>
@@ -284,7 +345,7 @@ six-year-old and a PhD student? No, and the axis it varies along is not age.</p>
   <div class="card"><span class="tag">Backfire</span><h4>Announced devil's advocate</h4><p>Saying "let me play devil's advocate" produces cognitive <em>bolstering</em> of the learner's original view. The exit is unannounced, model-owned objection.</p></div>
   <div class="card"><span class="tag">Fairness</span><h4>Detectors are conventionality meters</h4><p><b>61.22%</b> false-positive on non-native writers versus 5.19% native. Students taught sentence frames <em>as an accommodation</em> are maximally exposed, because the accommodation lowers perplexity by design.</p></div>
   <div class="card"><span class="tag">Objective</span><h4>The Null-Learner Test</h4><p>Simulate an agent maximising your metric while teaching nothing. DAU, streaks, XP and time-on-app all pass, so all are disqualified as objectives.</p></div>
-  <div class="card"><span class="tag">Reach</span><h4>A phone call beats the avatar</h4><p>Voice call + SMS: <b>+0.327 SD</b> across 5 countries, N = 8,902. SMS alone: +0.083, null in three. The mechanism is a human on the line at a scheduled time. Bandwidth is doing none of the work.</p></div>
+  <div class="card"><span class="tag">Reach</span><h4>A phone call beats the avatar</h4><p>Human-delivered voice call + SMS: <b>+0.327 SD</b> across 5 countries, N = 8,902. SMS alone: +0.083, null in three. The mechanism is a person on the line at a scheduled time, which is the one thing a model can now supply at zero marginal cost. Bandwidth is doing none of the work.</p></div>
   <div class="card"><span class="tag">Frontier</span><h4>Real-time is solved</h4><p>640×368 at 25 FPS, <b>~200 ms model-side latency</b>: shorter than the pause between two people in conversation. The world persists, and events arrive on a stream of their own.</p></div>
   <div class="card"><span class="tag">Empty chair</span><h4>Zero RCTs on disabled learners</h4><p>ERIC + Europe PMC, censused twice: 30 GenAI-education RCTs mention students, <b>0</b> mention disability. Every effect size in this field was measured on somebody else's child.</p></div>
 </div>
@@ -407,9 +468,14 @@ field fail on the first three.</p>
   <em>none</em> of them are.</p></div>
 
   <div class="q"><h4>What would falsify your thesis — and has it already happened?</h4>
-  <p>The counter-case to this whole survey: 0.2–0.4 SD may be a population parameter rather
-  than a technology limit. The best-powered studies on record are nulls. And our own evidence
-  repeatedly shows elaboration losing to simplicity: five explanation rungs did not beat three
+  <p>The counter-case: 0.2–0.4 SD may be the modal result of educational intervention research
+  in general, in which case a frontier system landing there tells you nothing about the model.
+  Which is why the falsifier we accept is an active control — a plain frontier chatbot, run
+  against the assembled system on a delayed unassisted test — and never a band pooled across
+  human tutors, 2011 courseware and seven LLM deployments. Fütterer 2026 has already run that
+  comparison against a lighter set of mechanisms and found no advantage on knowledge, effort or
+  strategy use. The best-powered studies on record are nulls. And our own evidence repeatedly
+  shows elaboration losing to simplicity: five explanation rungs did not beat three
   (<b>p = .738</b>), multiple representations harmed, mixed agent panels lost to one good agent.</p></div>
 </div>
 
@@ -424,7 +490,7 @@ run in the demos.</p>
     to withdraw the central claim. Persistent contents, an abstract, and every claim carrying an
     evidence label.</p>
     <div class="nm"><span data-gen="sections">47</span> SECTIONS ·
-      <span data-gen="words">117,315</span> WORDS</div>
+      <span data-gen="words">117,897</span> WORDS</div>
   </a>
   <a href="demos/">
     <div class="nt">The demos</div>
@@ -501,35 +567,44 @@ rule stays silent.</p>
    correct target. The accessible table view is generated from the same spec,
    so it can never drift from the chart.                                      */
 
+/* `cls` is the class of system that produced the number, and its vintage. It is
+   not decoration: this page previously ran a 2011 rule-based-tutor effect size and
+   a 1984 human-tutoring one as though they bounded a 2026 frontier model, which is
+   a category error and the reason the whole page read as an argument against its
+   own subject. A number may sit on this ladder only with its provenance attached.
+      HUMAN     a human tutor or teacher
+      ITS       rule-based, pre-LLM courseware
+      FRONTIER  an LLM from 2023 onward
+      LEARNER   a technique measured on human learners, tutor-agnostic           */
 const LADDER = {
   max: 0.85,
   rows: [
-    {label:"Human tutoring",         note:"VanLehn — the real ceiling, not 2σ",                      v:0.79,  ok:true},
-    {label:"Intelligent tutoring",   note:"VanLehn — statistically indistinguishable from human",    v:0.76,  ok:true},
-    {label:"Best AI tutor RCT",      note:"Kestin — d ≈ 0.63 regression, in 49 min vs 60. Developer-built AND developer-evaluated; no funding statement", v:0.63, ok:true},
-    {label:"Learning by teaching",   note:"Kobayashi 2019 — human tutee, expectancy set first",      v:0.56,  ok:true},
-    {label:"Self-explanation",       note:"Bisra et al. pooled estimate",                            v:0.55,  ok:true},
-    {label:"Spacing",                note:"2025 classroom meta-analysis · 31 effects · N > 3,000",    v:0.54,  ok:true},
-    {label:"Retrieval practice",     note:"222 classroom studies · 48,478 students · I² = 88%",       v:0.50,  ok:true},
-    {label:"Worked examples",        note:"reverses for experts — d = −0.428",                       v:0.48,  ok:true},
-    {label:"Teaching w/ expectancy", note:"Kobayashi 2024, k=39. Without expectancy: g = −0.02",     v:0.48,  ok:true},
-    {label:"Scaffolding (computer)", note:"Belland, 144 studies — the only directly meta-validated computer-based form", v:0.46, ok:true},
-    {label:"Interleaving",           note:"varies sharply by domain",                                v:0.42,  ok:true},
-    {label:"Mayer design principles",note:"contiguity alone reaches 0.74",                           v:0.38,  ok:true},
-    {label:"Tutoring, pooled RCTs",  note:"Nickow 2024 AERJ, 96 randomised studies — the honest field-wide number. Was 0.37 in the 2020 working paper", v:0.288, ok:true},
-    {label:"Productive failure",     note:"requires prior knowledge; fails without it",              v:0.36,  ok:true},
-    {label:"Voice call + SMS",       note:"5 countries · N = 8,902 — beats most of this list",       v:0.327, ok:true},
-    {label:"VR vs desktop",          note:"35 RCTs — the presence premium, and it is modest",        v:0.24,  ok:false},
-    {label:"Animation vs static",    note:"affect moves; learning mostly does not",                  v:0.23,  ok:false},
-    {label:"Orton-Gillingham",       note:"p = .40 — NOT significant against active comparison",     v:0.22,  ok:false},
-    {label:"Robot vs same on tablet",note:"78 studies — but −0.06 when the robot replaces a teacher",v:0.20,  ok:false},
-    {label:"Pedagogical avatars",    note:"43 studies — affect d ≈ .85–1.01, learning ≈ 0",          v:0.19,  ok:false},
-    {label:"Slides vs no slides",    note:"CI [−0.103, 0.236] — the deck itself is worth nothing",   v:0.067, ok:false},
-    {label:"Expanding SRS intervals",note:"k = 54, I² = 0% — a clean, well-powered nothing",         v:0.032, ok:false},
-    {label:"Lesson study",           note:"181 schools · 12,747 pupils · p = 0.65 · no dose-response",v:0.02, ok:false},
-    {label:"Teaching w/o expectancy",note:"'now explain it back to me' — the null condition",        v:-0.02, ok:false},
-    {label:"Alternative seating",    note:"moderate-strength evidence of NO effect on attention",    v:0.0,   ok:false},
-    {label:"Learning styles",        note:"no credible support in four decades — 89.1% of educators believe it", v:0.0, ok:false}
+    {label:"Human tutoring",         cls:"HUMAN · VanLehn 2011",     note:"the real ceiling for a person in the room, and not 2σ", v:0.79,  ok:true},
+    {label:"Intelligent tutoring",   cls:"ITS · VanLehn 2011",       note:"rule-based step-based courseware, statistically indistinguishable from a human tutor in that review", v:0.76, ok:true},
+    {label:"Best AI tutor RCT",      cls:"FRONTIER · Kestin 2025",   note:"d ≈ 0.63 regression, in 49 min vs 60. The one frontier-model row on this ladder. Developer-built AND developer-evaluated; no funding statement; immediate post-test only", v:0.63, ok:true},
+    {label:"Learning by teaching",   cls:"HUMAN · Kobayashi 2019",   note:"human tutee, expectancy set first. The teachable-AGENT version has never been measured", v:0.56, ok:true},
+    {label:"Self-explanation",       cls:"LEARNER · Bisra et al.",   note:"pooled estimate across prompted self-explanation studies", v:0.55, ok:true},
+    {label:"Spacing",                cls:"LEARNER · 2025 meta",      note:"classroom meta-analysis · 31 effects · N > 3,000",    v:0.54,  ok:true},
+    {label:"Retrieval practice",     cls:"LEARNER · meta",           note:"222 classroom studies · 48,478 students · I² = 88%",  v:0.50,  ok:true},
+    {label:"Worked examples",        cls:"LEARNER · meta",           note:"reverses for experts, d = −0.428",                    v:0.48,  ok:true},
+    {label:"Teaching w/ expectancy", cls:"HUMAN · Kobayashi 2024",   note:"k=39, human tutees. Without the expectancy: g = −0.02", v:0.48, ok:true},
+    {label:"Scaffolding (computer)", cls:"ITS · Belland 2017",       note:"144 pre-LLM studies, the only directly meta-validated computer-based form", v:0.46, ok:true},
+    {label:"Interleaving",           cls:"LEARNER · meta",           note:"varies sharply by domain",                            v:0.42,  ok:true},
+    {label:"Mayer design principles",cls:"LEARNER · multimedia meta",note:"contiguity alone reaches 0.74",                       v:0.38,  ok:true},
+    {label:"Tutoring, pooled RCTs",  cls:"HUMAN · Nickow 2024",      note:"96 randomised studies of human tutoring, nearly all pre-GPT-4. The field-wide figure for a person. Was 0.37 in the 2020 working paper", v:0.288, ok:true},
+    {label:"Productive failure",     cls:"LEARNER · meta",           note:"requires prior knowledge; fails without it",          v:0.36,  ok:true},
+    {label:"Voice call + SMS",       cls:"HUMAN · 5-country RCTs",   note:"N = 8,902, and the mechanism is a person on the line at a scheduled time", v:0.327, ok:true},
+    {label:"VR vs desktop",          cls:"LEARNER · 35 RCTs",        note:"the presence premium, and it is modest",              v:0.24,  ok:false},
+    {label:"Animation vs static",    cls:"LEARNER · meta",           note:"affect moves; learning mostly does not",              v:0.23,  ok:false},
+    {label:"Orton-Gillingham",       cls:"HUMAN · meta",             note:"p = .40, NOT significant against active comparison",  v:0.22,  ok:false},
+    {label:"Robot vs same on tablet",cls:"ITS · 78 studies",         note:"−0.06 when the robot replaces a teacher",             v:0.20,  ok:false},
+    {label:"Pedagogical avatars",    cls:"ITS · 43 studies",         note:"pre-LLM avatars: affect d ≈ .85–1.01, learning ≈ 0",  v:0.19,  ok:false},
+    {label:"Slides vs no slides",    cls:"HUMAN · meta",             note:"CI [−0.103, 0.236]. A deck buys nothing by itself",   v:0.067, ok:false},
+    {label:"Expanding SRS intervals",cls:"ITS · k = 54",             note:"I² = 0%, a clean and well-powered nothing",           v:0.032, ok:false},
+    {label:"Lesson study",           cls:"HUMAN · 181 schools",      note:"12,747 pupils · p = 0.65 · no dose-response",         v:0.02,  ok:false},
+    {label:"Teaching w/o expectancy",cls:"HUMAN · Kobayashi 2024",   note:"'now explain it back to me', asked at the end. The null condition", v:-0.02, ok:false},
+    {label:"Alternative seating",    cls:"LEARNER · reviews",        note:"moderate-strength evidence of NO effect on attention",v:0.0,   ok:false},
+    {label:"Learning styles",        cls:"LEARNER · four decades",   note:"no credible support, and 89.1% of educators believe it", v:0.0, ok:false}
   ]
 };
 
@@ -602,7 +677,9 @@ function renderBars(host, spec){
     val.textContent = fmt(r.v);
     g.appendChild(val);
     g.appendChild(mk('rect', {x:0, y:y-ROW/2, width:W, height:ROW, fill:'transparent'}));
-    bind(g, `<b>${esc(r.label)}</b>${esc(r.note)}`);
+    // The class of system comes before the caveat, because it is what decides
+    // whether the number is evidence about the thing the reader is holding.
+    bind(g, `<b>${esc(r.label)}</b><i>${esc(r.cls)}</i>${esc(r.note)}`);
     svg.appendChild(g);
   });
   host.replaceChildren(svg);
@@ -648,9 +725,10 @@ function renderSlope(host, spec){
 
 /* generated from the same spec, so it can never drift from the chart */
 function renderTable(host, spec){
-  host.innerHTML = ['<tr><th>Technique</th><th>Effect</th><th>Note</th></tr>']
+  host.innerHTML = ['<tr><th>Technique</th><th>Effect</th><th>Measured on</th><th>Note</th></tr>']
     .concat(spec.rows.map(r =>
-      `<tr><td><b>${esc(r.label)}</b></td><td class="num">${fmt(r.v)}</td><td>${esc(r.note)}</td></tr>`))
+      `<tr><td><b>${esc(r.label)}</b></td><td class="num">${fmt(r.v)}</td>` +
+      `<td class="num">${esc(r.cls)}</td><td>${esc(r.note)}</td></tr>`))
     .join('');
 }
 

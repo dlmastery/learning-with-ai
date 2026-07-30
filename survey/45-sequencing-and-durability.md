@@ -10,12 +10,13 @@ source_report: research/raw/R6-sequencing-and-durability.md
 
 Doroudi, Aleven & Brunskill (2019), *IJAIED* 29:568–620, collected every empirical
 study since the 1960s that pitted a machine-induced instructional sequencing policy
-against a baseline. The review closes in 2019, so every comparison in it ran on a
-rule-based or reinforcement-learned system and none ran on a language model. Their headline is positive, and this survey has already published
+against a baseline. Their headline is positive, and this survey has already published
 a correction for quoting it selectively: **over half** the comparisons, 21 of 41,
 found an induced policy significantly better than every baseline, often at Cohen's
 *d* of 0.8 or more. The finding is in their Table 2, where the comparisons are grouped
-by *what was being sequenced*.
+by *what was being sequenced*. The review closes in 2019, so every comparison in it
+ran on a rule-based or reinforcement-learned sequencer and none ran on a language
+model; read the table as the record of what those systems did.
 
 | Cluster | Sig | ATI | Mixed | Not sig | Sig worse |
 |---|---|---|---|---|---|

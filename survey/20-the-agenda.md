@@ -179,9 +179,9 @@ from frontier-model deployment trials of six to eight weeks — Sierra Leone 0.2
 Nigeria 0.206–0.310, Rori 0.37 (§09) — and it already omits both ends of that
 record: Kestin's developer-built, developer-evaluated d ≈ 0.63 above it and
 Bastani's unassisted −17% below it (§01). The pre-LLM ITS syntheses and the
-human-tutoring pool land in the same range, and that is a comparison rather than a
-constraint. Those studies measured other machines, and older ones; they cannot
-bound this one.
+human-tutoring pool land in the same range, and that coincidence is a comparison
+and never a constraint. Those studies measured other machines, and older ones;
+they cannot bound this one.
 
 Here is the strongest case against the survey's reading, stated properly and not
 as a strawman. Anyone who cannot state it in this form has not earned the right to the

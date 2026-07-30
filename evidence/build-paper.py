@@ -82,7 +82,7 @@ tutors sent **74.4%** of the model's drafts unedited, and a review of all 3,617
 messages found zero harmful ones and five factual errors. A Harvard physics RCT the
 same year put a purpose-built tutor **d ≈ 0.63** above an active-learning classroom
 in a median 49 minutes — developer-built and developer-evaluated, so a starting point
-and not a proof. Deployed at country scale the effects are smaller and stay positive:
+and not a proof. In the field the effects are smaller and stay positive:
 **+0.258 SD** adjusted in Sierra Leone, where the unadjusted estimate is **+0.216 SD,
 SE 0.137, not significant**; **+0.206 SD** on the school's own exam in Nigeria; and
 **+4 percentage points** of exit-ticket mastery across 900 tutors in US Title I
@@ -104,8 +104,8 @@ the capability, and this survey is an attempt to write what the literature has n
 It rests on {N_REPORTS} research reports. Every claim carries an evidence label, every section
 carries at least one documented null, and every one of the authors' errors is
 published in an append-only ledger rather than quietly edited — **{N_EXT} of\nthe {N_CORR} corrections were found by an adversarial reviewer rather than by us.**
-That discipline is the warrant for the paragraph above it, and not a substitute for
-making the claim.
+That discipline is the warrant for the opening paragraph, and not a substitute for
+making its claim.
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on

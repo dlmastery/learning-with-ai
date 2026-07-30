@@ -165,7 +165,8 @@ monotone refinement. A level may *drop* precision, formalism, mechanism-depth. I
 may never falsify **ontology, causal sign, quantifier strength, or uniqueness of
 mechanism**, because errors *across* ontological categories are the ones a full
 semester of instruction does not shift. Entry is measured, never preferred:
-preference moves d≈0.48 while knowledge moves zero.
+preference moves d≈0.48 while knowledge moves zero, which is the felt/real
+dissociation of **§01** showing up inside the ladder.
 
 **5. It grounds.** Derivations are checked, not asserted. Numerically, then
 symbolically, then formally where it matters. Correctness lives in the verifier,

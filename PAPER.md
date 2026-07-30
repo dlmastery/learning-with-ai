@@ -18,7 +18,7 @@ tutors sent **74.4%** of the model's drafts unedited, and a review of all 3,617
 messages found zero harmful ones and five factual errors. A Harvard physics RCT the
 same year put a purpose-built tutor **d ≈ 0.63** above an active-learning classroom
 in a median 49 minutes — developer-built and developer-evaluated, so a starting point
-and not a proof. Deployed at country scale the effects are smaller and stay positive:
+and not a proof. In the field the effects are smaller and stay positive:
 **+0.258 SD** adjusted in Sierra Leone, where the unadjusted estimate is **+0.216 SD,
 SE 0.137, not significant**; **+0.206 SD** on the school's own exam in Nigeria; and
 **+4 percentage points** of exit-ticket mastery across 900 tutors in US Title I
@@ -41,8 +41,8 @@ It rests on 53 research reports. Every claim carries an evidence label, every se
 carries at least one documented null, and every one of the authors' errors is
 published in an append-only ledger rather than quietly edited — **23 of
 the 68 corrections were found by an adversarial reviewer rather than by us.**
-That discipline is the warrant for the paragraph above it, and not a substitute for
-making the claim.
+That discipline is the warrant for the opening paragraph, and not a substitute for
+making its claim.
 
 **The organising finding is about agents.** An agent differs from a chatbot in four
 ways — sampling, execution, persistence, absence — and each is a multiplier on
@@ -223,7 +223,7 @@ Richter), ~90% (Tetzlaff et al.). A pooled g of 0.50 is not a prediction that yo
 will get 0.50. It is a one-number summary of a very lumpy distribution.
 
 **Test alignment inflates effects by roughly 2–3×.** Documented three separate
-times: Bloom's tutoring studies gave **0.84 SD on the authors' own narrow tests
+times: Bloom's 1984 human-tutoring studies gave **0.84 SD on the authors' own narrow tests
 versus 0.27 SD on broad standardised tests**; Kulik & Fletcher say the size of the
 ITS improvement "depended to a great extent" on whether the test was locally
 developed or standardised; Slavin's mastery-learning synthesis found positive
@@ -327,12 +327,15 @@ strongest evidence against the naive form of that argument. It does not overturn
 self-explanation as an activity; it means bolting a prompt onto a worked example is
 not the way to get it.
 
-**Intelligent tutoring in K–12 mathematics is near zero.** Steenbergen-Hu &
-Cooper (2013): ITS "had no negative and perhaps a small positive effect," with
-effects *larger* for the general population than for low achievers. K–12
-mathematics is the population most often invoked in AI-tutoring pitches, and it is
-the population where the closest technological precedent measured approximately
-nothing.
+**Rule-based intelligent tutoring in K–12 mathematics is near zero.**
+Steenbergen-Hu & Cooper (2013): ITS "had no negative and perhaps a small positive
+effect," with effects *larger* for the general population than for low achievers.
+K–12 mathematics is the population most often invoked in AI-tutoring pitches, and it
+is the population where the pre-LLM machine measured approximately nothing. Read it
+for what it measured: a null on rule-based software, in the hardest population, on
+the subject with the least give in it. It says nothing about what a frontier system
+will do there, and it is the reason a frontier system that ships into K–12
+mathematics owes a delayed unassisted test before it claims anything.
 
 The founding retrieval-practice result had a design confound. Soderstrom, Kerr
 & Bjork (2016) replicated Karpicke & Roediger (2008) between subjects, then
@@ -402,7 +405,10 @@ inaccurate endorsement. An AI that grills a learner for a sensory-modality label
 automating a forty-year null at scale.
 
 Bloom's two sigma is retired in this survey; the argument and the replacement
-figures are in **§37** and **§9**, and are not repeated here.
+figures are in **§37** and **§9**, and are not repeated here. The part that matters
+for everything downstream is that it must not return as an implicit yardstick. It
+was a 1984 measurement of human tutors on tests aligned to their own instruction. It
+sets no target for a machine, high or low.
 
 ---
 
@@ -447,13 +453,18 @@ reviewers' words, "dominated by laboratory studies of university undergraduates.
   mediation story.
 - **No modality labels, ever.** Adapt on prior knowledge, task properties,
   self-regulation and motivation type, the four adaptation targets with evidence.
-- **Assume decline.** ITS effects were significantly larger in earlier studies than
-  in later, better-controlled ones. Expect the same trajectory for AI tutoring, and
-  write the claims so they survive it.
+- **Assume better controls shrink the number.** Rule-based ITS effects were
+  significantly larger in earlier studies than in later, better-controlled ones.
+  That is a regularity about evaluation quality, and it is a warning about our own
+  first result. It is a fact about a different class of machine, so it forecasts no
+  trajectory for a frontier one. Write every claim to survive the trial that has an
+  active control, an independent test and a delay.
 - **Benchmark honestly.** An AI tutor showing **d ≈ 0.4 on a test it did not help
   design, against an active control, at a delayed post-test** would sit at the top
-  of this entire literature. Anything above 0.8 should be presumed to reflect
-  aligned tests or weak controls until shown otherwise.
+  of this entire literature. Above 0.8, the burden falls on the evaluation: show the
+  test was independent and the control was active, and the number stands. That
+  burden is about study design and carries no prior about what a frontier system can
+  reach, because nothing measured in this section was one.
 
 The floor is not low. Retrieval practice and distributed practice are among the
 largest, most replicated effects anyone in education has ever measured, and they
@@ -2192,7 +2203,8 @@ monotone refinement. A level may *drop* precision, formalism, mechanism-depth. I
 may never falsify **ontology, causal sign, quantifier strength, or uniqueness of
 mechanism**, because errors *across* ontological categories are the ones a full
 semester of instruction does not shift. Entry is measured, never preferred:
-preference moves d≈0.48 while knowledge moves zero.
+preference moves d≈0.48 while knowledge moves zero, which is the felt/real
+dissociation of **§2** showing up inside the ladder.
 
 **5. It grounds.** Derivations are checked, not asserted. Numerically, then
 symbolically, then formally where it matters. Correctness lives in the verifier,
@@ -2986,7 +2998,7 @@ for a decade.
 Knowledge tracing, the field that predicts whether a learner will get the next
 item right, lives in a band of **AUC ≈ 0.67–0.83 and has essentially not moved
 since 2015.** Every number in this section comes from that task, on the pre-LLM
-benchmark datasets — ASSISTments, KDD Cup 2010, EdNet, Duolingo — where the label
+benchmark datasets (ASSISTments, KDD Cup 2010, EdNet, Duolingo), where the label
 is one bit per item. The definitive study (Gervet, Koedinger, Schneider & Mitchell, JEDM
 2020) ran nine datasets across three model families and found that **logistic
 regression with good features leads on four of nine datasets and deep knowledge
@@ -3005,7 +3017,7 @@ Say what that ceiling is and is not, because this section has been read as
 setting a bound on learner modelling at large and it does not. It is a ceiling on
 one task, established on pre-LLM systems and pre-LLM datasets, and the quantity it
 caps is the probability of the next answer. It is silent on what a frontier model
-can read off a transcript — which misconception is live, which explanation landed,
+can read off a transcript: which misconception is live, which explanation landed,
 what the learner said they were confused by. Nobody has benchmarked that, which is
 a gap and not a ceiling; §12.8 returns to it.
 
@@ -3110,8 +3122,10 @@ accuracy frontier for this task. Capacity is demonstrably not the bottleneck —
 503-parameter GRU ties an 8,869-parameter LSTM. The residual appears to be
 aleatoric: individual review outcomes are close to irreducibly stochastic.
 
-Which means the entire learner model runs on the learner's device. Privacy here
-costs approximately zero accuracy.
+Which means the predictive layer of the learner model runs on the learner's
+device. Privacy costs approximately zero accuracy on the layer anyone has
+measured, and the layers nobody has measured are not an argument for moving the
+data off it.
 
 That inverts the usual trade. Normally, keeping data local means accepting a weaker
 model. Here, the strong model *is* small. The custodial architecture this section
@@ -3301,8 +3315,9 @@ experiment, and no one has run it.
 - **Every knowledge claim carries a decay model.** A mastery estimate without one is
   a lie about the present.
 - **The model runs on the learner's device**, because a 21-parameter memory model and
-  a 34-feature logistic regression are the frontier. Privacy costs approximately zero
-  accuracy here.
+  a 34-feature logistic regression sit at the accuracy frontier *for next-item
+  prediction*, which is the only part of a learner model anyone has benchmarked.
+  Privacy costs approximately zero accuracy on that part.
 - **Custody sits with the learner.** Scoped, expiring, revocable, default-deny onward
   transfer, with a learner-readable access log and erasure receipts. inBloom failed on
   custody, not schema.
@@ -3330,7 +3345,9 @@ against a baseline. Their headline is positive, and this survey has already publ
 a correction for quoting it selectively: **over half** the comparisons, 21 of 41,
 found an induced policy significantly better than every baseline, often at Cohen's
 *d* of 0.8 or more. The finding is in their Table 2, where the comparisons are grouped
-by *what was being sequenced*.
+by *what was being sequenced*. The review closes in 2019, so every comparison in it
+ran on a rule-based or reinforcement-learned sequencer and none ran on a language
+model; read the table as the record of what those systems did.
 
 | Cluster | Sig | ATI | Mixed | Not sig | Sig worse |
 |---|---|---|---|---|---|
@@ -3370,7 +3387,8 @@ mechanism-level `INFERENCE`."
 Read against Table 2, the two halves of that rule have opposite standing. Picking the
 technique for a chosen target has meta-analytic support. Traversing a prerequisite
 closure to decide what the target should be has no positive result anywhere in sixty
-years of experiments. It is `SPEC` with no measured warrant, load-bearing in at least
+years of experiments on pre-LLM sequencers, and no experiment at all on a frontier
+one. It is `SPEC` with no measured warrant, load-bearing in at least
 three places in this document. The word `prerequisite` appears 196 times across this
 project's research corpus; `curriculum sequencing` twice and `knowledge space` never.
 `OBSERVED — absence`
@@ -3448,7 +3466,8 @@ every classification the system then makes. `INFERENCE`
 ## 4. The deployed system built entirely on prerequisite structure sits at g ≈ 0.05
 
 ALEKS is the commercial instantiation of knowledge space theory (Doignon &
-Falmagne). Its own research page describes the mechanism, a knowledge state assessed
+Falmagne): a rule-based system, and the syntheses below cover deployments from 2005
+to 2020. Its own research page describes the mechanism, a knowledge state assessed
 "after the student has answered only 20–25 questions," and cites no efficacy study.
 `VENDOR` Two meta-analyses reach the same place. Fang, Ren, Hu & Graesser (2019),
 *Educational Psychology*, 15 studies and 24 independent samples: ALEKS was as good
@@ -3469,7 +3488,9 @@ moderator is a dosage result.
 randomised topic sequences in production, raising the mastery threshold cost +29% time
 for a retention difference under 0.02. Inside a fixed topic, how hard you push mastery
 barely moves anything; across topics, which order you use has never been shown to move
-anything either.
+anything either. Both statements are about rule-based sequencers, which are the only
+kind that has been tested at this question — which is why this section closes by
+randomising the graph inside a frontier system instead of inheriting the verdict.
 
 ---
 
@@ -9309,9 +9330,11 @@ across 64 models, **F1 = 0.880 for suicidal-ideation detection and 0.907 for ris
 assessment** — comparable to trained human operators on plan identification.
 Good enough to route, nowhere near good enough to decide. And the dominant
 failure is not what people expect: against 2,075 structured mental-health
-prompts, hallucinations occurred in 6.5% of responses but **omissions in 13.2%,
-concentrated in crisis and suicidal-ideation prompts.** The model rarely says
-something harmful in a crisis; it fails to say the necessary thing. **A safety
+prompts put to a single model, Llama 3.3, hallucinations occurred in 6.5% of
+responses but **omissions in 13.2%, concentrated in crisis and suicidal-ideation
+prompts.** That model rarely says something harmful in a crisis; it fails to say
+the necessary thing. One model is a signal and not a property of the class, and
+the KPI below is what a deployment should measure for itself. **A safety
 eval that measures only harmful output will pass a system that silently drops the
 escalation.** Omission rate, disaggregated by language and dialect, is the
 primary safety KPI.
@@ -11189,7 +11212,7 @@ Each primitive is a falsifiable hypothesis about how learning happens.
 | Primitive | The bet | State of the evidence |
 |---|---|---|
 | **Content generation** | The bottleneck is materials | Every retrievable metric is a **teacher-time** metric |
-| **Tutoring** | The bottleneck is one-to-one attention | Splits into answer-giving and withholding; only the pre-LLM generation has trials |
+| **Tutoring** | The bottleneck is one-to-one attention | Splits into answer-giving and withholding; the effect sizes this market advertises are all pre-LLM, and the frontier-era trials that do exist (§3) are cited by nobody selling |
 | **Assessment** | The bottleneck is grading cost | Works where the mechanism is clustering; fails where it is judgement |
 | **Teacher tooling** | The highest leverage is not on the student at all | Best evidence-to-deployment ratio; least glamorous |
 | **Language** | The bottleneck is practice hours with a patient interlocutor | The one cluster where "practice, not answers" is commercially natural |
@@ -11200,15 +11223,21 @@ Each primitive is a falsifiable hypothesis about how learning happens.
 
 Two clusters deserve their evidence stated in full.
 
-**Tutoring's real numbers are pre-LLM.** Kulik & Fletcher (2016), 50 controlled
-evaluations at **median 0.66 SD**, is the most-cited figure in the market and comes
+**The numbers this market advertises are pre-LLM.** Kulik & Fletcher (2016), 50
+controlled evaluations of rule-based intelligent tutoring at **median 0.66 SD**, is
+the most-cited figure in the market and comes
 with its own debunking attached: the improvement "depended to a great extent on
 whether improvement was measured on locally developed or standardized tests," and
 §1 puts test alignment at a factor of 2–3. Pane et al.'s Cognitive Tutor Algebra I
 trial, matched-pair randomisation across seven states, is the best large-scale
-evidence anyone has: **no effect in year one**, positive in year two, significant
-for high schools and **not** for middle schools, at roughly eight percentile points.
-The LLM generation inherited the marketing claim and none of the measurement.
+evidence any *pre-LLM* system has: **no effect in year one**, positive in year two,
+significant for high schools and **not** for middle schools, at roughly eight
+percentile points. The LLM generation inherited that marketing claim without the
+measurement under it. Randomised trials of frontier tutors do exist — §3 holds
+seven, from Sierra Leone to Tutor CoPilot — and not one of them is the number a
+product page in this market quotes at you. A 2016 meta-analysis of rule-based
+software is being used to sell a 2026 model, which is the same category error the
+buyer's side of this market keeps falling for.
 
 **Early literacy is the most defensible bet in the market**, in mechanism terms
 rather than enthusiasm terms. The AI does something a human demonstrably cannot
@@ -11227,7 +11256,8 @@ a selection effect unless dosage was randomised.
 Finding one: the evidence gradient runs opposite to the funding gradient. The
 two products in this section with genuine independent randomised evidence
 (ASSISTments, a nonprofit that is free to teachers, and Cognitive Tutor, a
-forty-year-old curriculum publisher) report **0.03 to 0.22 SD**. The products with
+forty-year-old curriculum publisher — both pre-LLM systems) report **0.03 to
+0.22 SD**. The products with
 the largest claims report no retrievable design, sample or comparison group. And the
 best-funded entity in the sector, at a $4.8bn buyout, makes no learning claim at all.
 
@@ -13224,7 +13254,11 @@ claims in this field fail on the first three.
 ## 9. Turning question ten on ourselves
 
 The counter-case to this entire survey, at full strength: **0.2–0.4 SD may be a
-population parameter and not a technology limit.**
+population parameter and not a technology limit.** The band pools three different
+machines — human tutors, rule-based ITS, and six-to-eight-week deployments of
+frontier assistants (§3). Three things that different landing in one place is
+exactly what you would see if the constraint belonged to the learners and the
+setting and not to any of the machines.
 
 The evidence for that reading is not weak. The best-powered studies on record are
 nulls — lesson study at **ES 0.02** across 181 schools and 12,747 pupils with very
@@ -13240,7 +13274,9 @@ propose is another elaboration about to lose to simplicity.
 What would force us to concede: a well-powered trial of the assembled system,
 constrained and grounded and pivoting and remembering and teachable, with a delayed unassisted
 novel-item outcome, landing inside the 0.2–0.4 band. Not below it. *Inside* it.
-That would mean the mechanisms are decorative and the band is the ceiling.
+That would mean the mechanisms are decorative and the band is the ceiling — and it
+would be the first time the band had been measured on this class of system, which is
+the only reason the trial settles anything.
 
 If that happens, the rewrite we would owe the reader is already drafted: *AI's
 contribution is scalable, high-fidelity, high-dosage delivery of what already
@@ -13262,6 +13298,10 @@ what the special-education evidence argues for on its own terms.
   expansion.**
 - **State the scarcity condition** whenever quoting an effect size measured in a
   world where the control group had nothing.
+- **State the class of system and the year alongside it.** A 1984 measurement of
+  human tutors and a 2011 measurement of rule-based ITS are evidence about those
+  machines and about nothing else (§3), and a survey that lets them stand in for a
+  frontier system has miscounted its own evidence in the direction that feels safest.
 - **Ask question ten first**, of everyone, including us.
 
 The list above is incomplete. That is not modesty; it is the definition of the
@@ -13851,9 +13891,9 @@ from frontier-model deployment trials of six to eight weeks — Sierra Leone 0.2
 Nigeria 0.206–0.310, Rori 0.37 (§3) — and it already omits both ends of that
 record: Kestin's developer-built, developer-evaluated d ≈ 0.63 above it and
 Bastani's unassisted −17% below it (§2). The pre-LLM ITS syntheses and the
-human-tutoring pool land in the same range, and that is a comparison rather than a
-constraint. Those studies measured other machines, and older ones; they cannot
-bound this one.
+human-tutoring pool land in the same range, and that coincidence is a comparison
+and never a constraint. Those studies measured other machines, and older ones;
+they cannot bound this one.
 
 Here is the strongest case against the survey's reading, stated properly and not
 as a strawman. Anyone who cannot state it in this form has not earned the right to the

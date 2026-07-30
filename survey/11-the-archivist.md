@@ -59,7 +59,7 @@ for a decade.
 Knowledge tracing, the field that predicts whether a learner will get the next
 item right, lives in a band of **AUC ≈ 0.67–0.83 and has essentially not moved
 since 2015.** Every number in this section comes from that task, on the pre-LLM
-benchmark datasets — ASSISTments, KDD Cup 2010, EdNet, Duolingo — where the label
+benchmark datasets (ASSISTments, KDD Cup 2010, EdNet, Duolingo), where the label
 is one bit per item. The definitive study (Gervet, Koedinger, Schneider & Mitchell, JEDM
 2020) ran nine datasets across three model families and found that **logistic
 regression with good features leads on four of nine datasets and deep knowledge
@@ -78,7 +78,7 @@ Say what that ceiling is and is not, because this section has been read as
 setting a bound on learner modelling at large and it does not. It is a ceiling on
 one task, established on pre-LLM systems and pre-LLM datasets, and the quantity it
 caps is the probability of the next answer. It is silent on what a frontier model
-can read off a transcript — which misconception is live, which explanation landed,
+can read off a transcript: which misconception is live, which explanation landed,
 what the learner said they were confused by. Nobody has benchmarked that, which is
 a gap and not a ceiling; §8 returns to it.
 
