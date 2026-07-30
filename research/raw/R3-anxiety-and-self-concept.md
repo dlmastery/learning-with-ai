@@ -9,40 +9,35 @@ status: raw-research
 
 # R3 — Maths anxiety, test anxiety, stereotype threat, mindset, self-concept
 
-> **Why this report exists.** `Z1` row 11 found the clinical-affective layer absent from the
-> corpus: `math anxiety` 2 hits, `test anxiety` 0, `stereotype threat` 0, `self-concept` 3,
+> **Why this report exists.** `Z1` row 11 found the clinical-affective layer absent:
+> `math anxiety` 2 hits, `test anxiety` 0, `stereotype threat` 0, `self-concept` 3,
 > `growth mindset` 0. `F6` owns *why learners quit*. It does not own *why a specific child
-> freezes on a worksheet they can discuss fluently*. Those are different mechanisms.
+> freezes on a worksheet they can discuss fluently*. Different mechanisms, different evidence.
 >
 > **The five findings, stated first.**
 >
 > 1. The maths-anxiety/achievement correlation is real, replicated across half a century, and
->   small: r ≈ −.28 pooled over 747 effect sizes. It is a *pairing*, not a diagnosis. In the
->   largest prevalence study, **77% of children with high maths anxiety had typical or high
->   maths performance**, and in the meta-analysis the correlation collapses to r = −.09 in
->   samples selected for low maths ability. A system that treats anxiety as a proxy for a
->   knowledge gap will mis-route roughly three quarters of the anxious children it meets.
-> 2. Direction is genuinely bidirectional and the two arms have different evidence. Prior
->   *performance* predicting later *anxiety* is the arm supported by longitudinal data;
->   anxiety depressing performance is the arm supported by experimental manipulation. This
->   means the intervention question has no single answer, and it is answerable by a
->   three-arm trial that nobody has run.
+>   small: r ≈ −.28 over 747 effect sizes. It is a pairing and not a diagnosis. In the largest
+>   prevalence study **77% of children with high maths anxiety had typical or high maths
+>   performance**, and the meta-analytic correlation collapses to r = −.09 in samples selected
+>   for low maths ability. A system that reads anxiety as a knowledge gap will mis-route roughly
+>   three quarters of the anxious children it meets.
+> 2. Direction is bidirectional and the two arms carry different evidence. Performance
+>   predicting later anxiety is the arm supported by longitudinal data; anxiety depressing
+>   performance is the arm supported by experimental manipulation. The intervention question
+>   therefore has no single answer, and it is answerable by a three-arm trial nobody has run.
 > 3. The working-memory mechanism is specific enough to be an item-selection rule. Anxiety
 >   costs capacity only when the task loads it: computation-based span correlates −.40 with
->   maths anxiety while verbal span shows no group difference at all, and the damage in the
->   dual-task study appeared on carry problems under high load, not on the rest.
-> 4. Two of the five constructs the audit named do not survive contact with their replication
->   records in the textbook form. Stereotype threat in operational testing conditions is
->   d = −.14 falling to −.09 after trim-and-fill and **d = −.01 in the four actual
->   high-stakes samples**. Growth-mindset interventions restricted to trials where the
->   manipulation check passed are d̄ = 0.04, 95% CI [−0.01, 0.10]. The moderated versions of
->   both survive; the general versions do not.
-> 5. The survey's most reproducible finding is present here in its cleanest form. In the
->   National Study of Learning Mindsets the intervention moved the belief it targeted by
->   0.33 SD and moved higher-achieving students' grades by 0.01 SD, in the same
->   pre-registered trial. Felt change and real change dissociate, and every affective
->   feature this report proposes is therefore specified with a delayed unassisted outcome
->   attached.
+>   maths anxiety while verbal span shows no group difference at all.
+> 4. Two of the constructs the audit named do not survive their replication records in
+>   textbook form. Stereotype threat in operational conditions is d = −.14, falling to −.09
+>   after trim-and-fill and to **−.01 in the four actual high-stakes samples**. Growth-mindset
+>   trials whose manipulation check passed give d̄ = 0.04 [−0.01, 0.10]. The moderated versions
+>   survive; the general versions do not.
+> 5. The felt/real dissociation appears here in its cleanest form. In the National Study of
+>   Learning Mindsets one pre-registered trial moved the targeted belief by 0.33 SD and moved
+>   higher-achieving students' grades by 0.01 SD. Every affective feature proposed below is
+>   therefore specified with a delayed unassisted outcome attached.
 
 ---
 
@@ -54,17 +49,16 @@ record. Retrieval then ran on **ERIC** (`api.ies.ed.gov`), **Europe PMC** (searc
 on every attempt in two bursts and contributed nothing.
 
 - **Open PDFs that served to `curl` and `pdftotext`, quoted verbatim below:** Barroso et al.
-  (2021) accepted manuscript at `psycnet.apa.org/manuscript/2020-80018-001.pdf`; Caviola et al.
-  (2022) at the Genoa IRIS repository; Flore & Wicherts (2015) at a Warsaw mirror; Shewach
-  et al. (2019) and Warne (2022) at `gwern.net`; Macnamara & Burgoyne (2023) at
-  `englelab.gatech.edu`; the EEF *Changing Mindsets* evaluation report at UCL Discovery;
-  Sammallahti et al. (2023) at `files.eric.ed.gov`; Ashcraft & Krause (2007) at
-  `link.springer.com/content/pdf/`.
-- **Europe PMC `fullTextXML`** recovered the Yeager et al. (2019) *Nature* paper in full
-  (`PMC6786290`), including every coefficient and confidence interval quoted in §5.
-- **Publisher walls hit:** SAGE, Wiley, Taylor & Francis, Elsevier and `nature.com` all
-  returned `403` or an identity-provider redirect. Flore, Mulder & Wicherts (2018) was
-  recovered from the Tilburg research portal rather than the journal.
+  (2021) accepted manuscript at `psycnet.apa.org/manuscript/`; Caviola et al. (2022) at the
+  Genoa IRIS repository; Flore & Wicherts (2015) at a Warsaw mirror; Shewach et al. (2019) and
+  Warne (2022) at `gwern.net`; Macnamara & Burgoyne (2023) at `englelab.gatech.edu`; the EEF
+  *Changing Mindsets* report at UCL Discovery; Sammallahti et al. (2023) at `files.eric.ed.gov`;
+  Ashcraft & Krause (2007) at `link.springer.com/content/pdf/`.
+- **Europe PMC `fullTextXML`** recovered Yeager et al. (2019) in full (`PMC6786290`), including
+  every coefficient quoted in §5.
+- **Publisher walls hit:** SAGE, Wiley, Taylor & Francis, Elsevier and `nature.com` returned
+  `403` or an identity-provider redirect. Flore, Mulder & Wicherts (2018) came from the Tilburg
+  research portal instead.
 - **UNVERIFIED and flagged at point of use:** the cell means and interaction statistics of
   Beilock & Carr (2005). Three routes (ResearchGate, Semantic Scholar, SAGE) returned 403 or
   empty. The finding is reported from the published abstract and from Ashcraft & Krause's
@@ -514,90 +508,75 @@ and find little evidence of heterogeneity."* `MEASURED-RCT` (null)
 
 ## 6. Stereotype threat: what survives the replication record
 
-This is the most contested item in the brief and it deserves the numbers rather than a verdict.
+The contested item. It deserves numbers rather than a verdict.
 
 **The original.** Steele & Aronson (1995) reported four laboratory studies in which reminders
 of racial stereotypes lowered the test scores of African American examinees and not of White
-examinees. The most consequential feature of the design was not in most retellings of it:
-scores were analysed **adjusted for prior SAT**. Sackett, Hardison & Cullen (2004, *American
-Psychologist* 59(1), 7) showed that the paper demonstrates threat *creating* a gap on adjusted
-scores and does **not** show that removing threat eliminates the raw Black–White mean
-difference. A 2022 re-audit in *Personnel Assessment and Decisions* found the misinterpretation
-rate in journal articles had fallen from 90.9% to 62.8%, and in textbooks from 55.6% to 41.2%.
-`OBSERVED`
+examinees. The feature missing from most retellings: scores were analysed **adjusted for prior
+SAT**. Sackett, Hardison & Cullen (2004, *American Psychologist* 59(1), 7) showed the paper
+demonstrates threat *creating* a gap on adjusted scores and does **not** show that removing
+threat eliminates the raw Black–White mean difference. A 2022 re-audit found the
+misinterpretation rate in journal articles had fallen from 90.9% to 62.8%, and in textbooks
+from 55.6% to 41.2%. `OBSERVED`
 
-**The child and adolescent meta-analysis.** Flore & Wicherts (2015, *Journal of School
-Psychology* 53(1), 25–44) pooled 47 effect sizes from (quasi-)experimental studies of girls
-under 18 on maths, science and spatial tests. Random-effects estimate g = −0.22, z = −3.63,
-p < .001, CI [−0.34, −0.10]. Heterogeneity τ̂² = 0.10, Q(46) = 117.19, I² = 61.75%, with a 95%
-credibility interval of [−0.85, 0.41] — a range that includes substantial *reverse* effects.
-None of the four pre-registered moderators reached significance.
+**Children and adolescents.** Flore & Wicherts (2015, *Journal of School Psychology* 53(1))
+pooled 47 effect sizes from (quasi-)experimental studies of girls under 18 on maths, science
+and spatial tests: g = −0.22, z = −3.63, p < .001, CI [−0.34, −0.10]; τ̂² = 0.10,
+Q(46) = 117.19, I² = 61.75%, 95% credibility interval [−0.85, 0.41], a range including
+substantial reverse effects. No moderator reached significance.
 
-Then the bias analyses, quoted verbatim from the retrieved PDF: trim-and-fill imputed 11
-missing effect sizes and *"reduced the estimated effect size to g = −0.07, z = −1.10, p = .27,
-CI95 = −0.21; 0.06."* Egger's test z = −3.25, p = .001; Begg and Mazumdar's rank correlation
-Kendall's τ = −.27, p = .01. Splitting by sample size: small samples (N < 60) g = −0.34 [−0.52,
-−0.16], k = 24; large samples (N ≥ 60) g = −0.13 [−0.29, 0.03], **p = .10**, k = 23. Ioannidis
-and Trikalinos's excess-significance test χ²(1) = 8.50, p = .004. The authors' conclusion:
-*"publication bias might seriously distort the literature on the effects of stereotype threat
-among schoolgirls. We propose a large replication study."* `MEASURED-META`
+Then the bias analyses, verbatim from the retrieved PDF: trim-and-fill imputed 11 missing
+effect sizes and *"reduced the estimated effect size to g = −0.07, z = −1.10, p = .27,
+CI95 = −0.21; 0.06."* Egger's z = −3.25, p = .001; Begg's Kendall's τ = −.27, p = .01. By
+sample size: N < 60 g = −0.34 [−0.52, −0.16], k = 24; N ≥ 60 g = −0.13 [−0.29, 0.03],
+**p = .10**, k = 23. Excess-significance χ²(1) = 8.50, p = .004. Their conclusion:
+*"publication bias might seriously distort the literature… We propose a large replication
+study."* `MEASURED-META`
 
 **The replication they proposed, run by them.** Flore, Mulder & Wicherts (2018, *Comprehensive
-Results in Social Psychology* 3(2), 140–174), a registered report with N = 2,064 Dutch high
-school students, tested the overall effect and four theoretical moderators (domain
-identification, gender identification, maths anxiety, test difficulty). They found *"neither an
-overall effect of stereotype threat on math performance, nor any moderated stereotype threat
-effects."* Most variance in maths performance was explained by gender, domain identification
-and maths identification. `MEASURED-RCT` (null)
+Results in Social Psychology* 3(2)), a registered report with N = 2,064 Dutch high school
+students testing the overall effect plus domain identification, gender identification, maths
+anxiety and test difficulty: *"neither an overall effect of stereotype threat on math
+performance, nor any moderated stereotype threat effects."* `MEASURED-RCT` (null)
 
-**The operational-settings meta-analysis.** Shewach, Sackett & Quint (2019, *Journal of Applied
-Psychology* 104(12), 1514) is the largest and the most decision-relevant, because it asks what
-size of effect can occur in the conditions a real test actually has. Overall sample:
-d = −.31, k = 181, N = 10,436, SDδ = .38 (d = −.33 with covariate studies included, k = 212,
-N = 11,521). Restricting to conditions plausible in operational testing gives a focal sample
-d = −.14, k = 45, N = 3,532, and trim-and-fill on that focal sample gives **d = −.09**. The
-four samples conducted in actual operational contexts give **d = −.01, k = 4, N = 1,670**,
-against lab contexts d = −.36, k = 177, N = 8,766, a significant difference at
-t(179) = −5.73, p < .01. Studies with motivational incentives d = −.14, k = 11, against
-d = −.41 without, k = 137; the monetary-incentive subset gives **d = .00, k = 9, N = 526**.
-Published studies d = −.37 (k = 132) against unpublished d = −.17 (k = 49), t(179) = −3.08,
-p < .01. The 10% most precise studies give d = −.11; the least precise give d = −.38.
-`MEASURED-META`
+**Operational settings.** Shewach, Sackett & Quint (2019, *JAP* 104(12)) is the most
+decision-relevant, because it asks what size of effect can occur under conditions a real test
+has. Overall d = −.31, k = 181, N = 10,436 (−.33 with covariate studies, k = 212). Restricted
+to operationally plausible conditions, d = −.14, k = 45, N = 3,532, and trim-and-fill on that
+focal sample **−.09**. The four samples run in actual operational contexts give **d = −.01,
+k = 4, N = 1,670** against lab d = −.36, k = 177, t(179) = −5.73, p < .01. With motivational
+incentives d = −.14 (k = 11) against −.41 without (k = 137); the monetary subset **d = .00,
+k = 9**. Published d = −.37 (k = 132) against unpublished −.17 (k = 49), t(179) = −3.08,
+p < .01. The 10% most precise studies give d = −.11; the least precise, −.38. `MEASURED-META`
 
-**The contested meta-analysis and its commentary.** Picho-Kiroga, Turnbull &
-Rodriguez-Leahy (2021, *Journal of Advanced Academics*) reported a mean d = .28 in females and
-argued that effects are inflated by designs omitting the theory's own necessary conditions.
-Their own Table 2 shows the effect **falling** as more of Steele's three essential conditions
-are present, until studies with all three are statistically indistinguishable from zero.
-Warne (2022, same journal) re-analysed their data file: median sample size 40; mean a priori
-power .189; 31 of 101 computable effect sizes significant against 19.0 expected under no bias,
-χ² = 8.656, p = .003; correlation between sample size and effect size in their file
-r = −.361, p < .001. His arithmetic on required samples: at d = .28, 202 participants per group
-for 80% power and 270 for 90%; a typical 20-per-group study has power .1386. He concludes the
-data are *"most consistent with a population effect size of zero."* `MEASURED-META` plus
-commentary.
+**The contested meta-analysis.** Picho-Kiroga, Turnbull & Rodriguez-Leahy (2021, *Journal of
+Advanced Academics*) reported mean d = .28 in females, with the effect **falling** as more of
+Steele's three essential conditions were present, until studies containing all three were
+indistinguishable from zero. Warne (2022, same journal) re-analysed their data file: median
+sample size 40; mean a priori power .189; 31 of 101 computable effect sizes significant against
+19.0 expected, χ² = 8.656, p = .003; sample-size/effect-size correlation r = −.361, p < .001.
+At d = .28 an adequately powered study needs 202 per group for 80% power. He concludes the data
+are *"most consistent with a population effect size of zero."* `MEASURED-META` plus commentary.
 
 ### 6.1 What this report concludes, and from which numbers
 
-The laboratory phenomenon is real in the sense that it can be produced in a laboratory. The
-effect that could occur in a setting resembling a real test is **d = −.09 to −.14** (Shewach's
-focal sample, before and after trim-and-fill), and in the only four operational samples that
-exist it is **d = −.01**. In children and adolescents the pooled estimate is g = −0.22 and
-becomes g = −0.07, p = .27 once funnel asymmetry is corrected, with the large-sample subset at
-p = .10. The one large pre-registered replication, N = 2,064, found nothing, including nothing
-for any of the four moderators the theory names. `INFERENCE`
+The laboratory phenomenon is real in the sense that a laboratory can produce it. The effect
+available in a setting resembling a real test is **d = −.09 to −.14**, and in the only four
+operational samples that exist, **d = −.01**. In children the pooled g = −0.22 becomes −0.07,
+p = .27 once funnel asymmetry is corrected, with the large-sample subset at p = .10. The one
+large pre-registered replication found nothing, including nothing for any moderator the theory
+names. `INFERENCE`
 
-What this does **not** license is the reverse overcorrection. Shewach's overall d = −.31 is
-not zero, the female subgroup d = −.33 is the largest cell in his table, and none of these
-analyses touches whether stereotypes affect *enrolment, persistence and choice*, which is a
-different dependent variable with a different literature. What the numbers rule out is the
-proposition that a tutoring system needs a stereotype-threat countermeasure in order for a
-learner's test score to be valid. That proposition has been tested at scale and does not hold.
+What this does **not** license is the reverse overcorrection. Shewach's overall d = −.31 is not
+zero, the female subgroup d = −.33 is his largest cell, and none of these analyses touches
+whether stereotypes affect enrolment, persistence and choice, which is a different dependent
+variable with its own literature. What the numbers rule out is that a tutoring system needs a
+stereotype-threat countermeasure for a learner's score to be valid.
 
 `INFERENCE` for this project: build nothing for stereotype threat. The design moves it would
-motivate (removing demographic questions before assessment, avoiding diagnostic framing) are
-either already required by `F8`'s data-minimisation posture or already justified by the test
-anxiety evidence in §4, which is stronger. There is no unique architectural obligation here.
+motivate (no demographic questions before assessment, no diagnostic framing) are already
+required by `F8`'s data-minimisation posture or already justified by §4's stronger test-anxiety
+evidence.
 
 ---
 

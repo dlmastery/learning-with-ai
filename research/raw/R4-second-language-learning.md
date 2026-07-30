@@ -141,13 +141,13 @@ English better" from "memorised 30 pronunciations."
 
 **The 30 items are lexical facts wearing a phonological costume.** The paper says the
 words were chosen for *"segmental and suprasegmental features (e.g., consonant clusters,
-vowel length)."* The list is *albeit, choir, colonel, niche, enzyme, aisle, debt, island,
-plumber, aesthetic, genre, entrepreneur, chaos, mischievous, recipe, gauge, queue,
-rendezvous, anonymous, subtle, bouquet, debris, buffet, epitome, plough, suite, squirrel,
-quay, zebra*. That is a list of English orthographic irregularities and French loanwords.
-Knowing that *colonel* is /ˈkɜːnəl/ is a word-specific fact of the same kind as knowing
-what *colonel* means. It is not a motor-phonetic skill, and success on it does not imply
-anything about producing an unfamiliar consonant cluster.
+vowel length)."* The list is *albeit, choir, colonel, niche, aisle, debt, island, plumber,
+genre, entrepreneur, chaos, mischievous, gauge, queue, rendezvous, subtle, bouquet,
+debris, buffet, epitome, plough, suite, squirrel, quay* and six more of the same kind:
+English orthographic irregularities and French loanwords. Knowing that *colonel* is
+/ˈkɜːnəl/ is a word-specific fact of the same order as knowing what *colonel* means. It is
+not a motor-phonetic skill, and success on it implies nothing about producing an
+unfamiliar consonant cluster.
 
 **The retention claim inverts on inspection.** The authors' own post-hoc table shows the
 treatment group flat between post-test and delayed (+0.867, p = 1.000) and the control
@@ -227,10 +227,10 @@ not state whether learners had tool access during the post-test essay.
 
 The qualitative half deserves a sentence because the paper is unusually open about it.
 Reflection prompts went only to the winning arm, after the quantitative result was known,
-with the intervention name filled into a placeholder `x` that had been left blank for
-that purpose. Eleven of 28 responded. The authors describe this as *"a deliberate design
-feature, not an oversight."* It is a confirmation instrument, and the 73% who "reported
-reduced writing anxiety" is a number about eleven volunteers from the arm that won.
+with the intervention name filled into a placeholder `x` left blank for that purpose.
+Eleven of 28 responded. The authors call this *"a deliberate design feature, not an
+oversight."* The 73% who "reported reduced writing anxiety" are eleven volunteers from the
+arm that won.
 
 ### 2.3 Speaking: the largest trial, and I could not read it
 
@@ -293,32 +293,116 @@ This is the number to carry into every claim in §2. All three of the ERIC trial
 large within-group gains. Two of them also report a control contrast; one of those
 contrasts (§2.2) is a null. The third reports no control contrast at all.
 
-Two further cautions on the GenAI meta-analyses specifically. Li et al. find their largest
-moderator effects for *"the first language (L1) represented by Indonesian"* and for
-*"intervention time of 1–7 days."* Lee & Lee's Duolingo and Memrise samples are almost
-entirely Indonesian undergraduate quasi-experiments (Ali 2021; Aulia et al. 2020;
-Purwanto et al. 2022; Rohim et al. 2022; Taebenu & Katemba 2021; Nuralisah & Kareviati
-2020; Maesaroh 2021). Two syntheses reporting their strongest effects in the same small
-national quasi-experimental literature is not two pieces of evidence. And a moderator
-showing effects concentrate in interventions lasting **under a week** is the standard
-signature of novelty and unblinded outcome measurement, not of durable acquisition.
+Two cautions on the GenAI syntheses. Li et al. find their largest moderator effects for
+*"the first language (L1) represented by Indonesian"* and for *"intervention time of 1–7
+days,"* and Lee & Lee's Duolingo and Memrise samples are almost entirely Indonesian
+undergraduate quasi-experiments (Ali 2021; Aulia et al. 2020; Purwanto et al. 2022; Rohim
+et al. 2022; Taebenu & Katemba 2021). Two syntheses reporting their strongest effects in
+the same small national quasi-experimental literature is not two pieces of evidence. A
+moderator showing effects concentrated in interventions lasting **under a week** is the
+signature of novelty and unblinded measurement.
 
-Lee & Lee's own moderator table carries one more result worth stating with its caveat.
-Coding intervention type by AI role, the adjusted between-group estimate for
-**"individual learning tool"** — the Duolingo/Babbel/Memrise/Busuu category — is
-**−0.02 (SE 0.50)**, against 0.44 for intelligent tutoring systems and 0.50 for learning
-management. The caveat is that this estimate comes from a meta-regression with nine
-predictors over 35 samples in which tool type, adult learners, and foreign-language
-context are nearly collinear; the standard error of 0.50 says so. The raw between-group
-estimates for those same consumer-app studies are positive (0.49 to 0.71). The correct
-reading is that the design cannot separate these factors, and that the confident-looking
-0.39 headline should not be attributed to the consumer apps.
+Lee & Lee's moderator table carries one more result, stated with its caveat. Coding by AI
+role, the adjusted between-group estimate for **"individual learning tool"** (the
+Duolingo/Babbel/Memrise/Busuu category) is **−0.02 (SE 0.50)** against 0.44 for
+intelligent tutoring systems. That estimate comes from a meta-regression with nine
+predictors over 35 samples in which tool type, adult learners and foreign-language context
+are nearly collinear, and the standard error says so; the raw between-group estimates for
+those same consumer-app studies are positive (0.49 to 0.71). The reading is that the model
+cannot separate these factors, and that the 0.39 headline should not be attributed to the
+consumer apps.
 
 ---
 
 ## 3. The acquisition literature that predates all of this
 
-<!--SEC3-->
+A tutor architecture makes commitments about mechanism whether or not it states them. The
+SLA field has been arguing about those commitments since 1982, and the argument is
+usefully unresolved.
+
+**Comprehensible input.** Krashen's Input Hypothesis holds that acquisition happens when
+the learner understands input slightly beyond current competence, that conscious learning
+of rules cannot become acquisition, and that an affective filter can block input from
+reaching the acquisition device. It is the most influential idea in language teaching and
+it is also the one that survives by being hard to disconfirm: "slightly beyond current
+competence" is not independently measurable, and a learner who fails to acquire can always
+be described as having received insufficiently comprehensible input or as having had a
+raised filter. Gregg's 1984 critique in *Applied Linguistics* is the canonical statement
+of this objection. `CRAFT` for the pedagogy, and the theoretical status is contested.
+
+The practical residue is real regardless. Extensive comprehensible input at a coverage
+the learner can handle is the thing a generative model can now supply in unlimited
+quantity, which is why §4.1's coverage arithmetic matters more than the theory does.
+
+**Interaction.** Long's Interaction Hypothesis adds that negotiation of meaning — the
+repairs, clarification requests and confirmation checks that happen when comprehension
+breaks down — is what makes input usable, by drawing attention to the gap between what the
+learner said and what the language requires. This is the mechanism a conversational tutor
+is implicitly betting on, and it is the one a chatbot can execute at will.
+
+**Output.** Swain's Output Hypothesis, from the Canadian immersion data where learners
+with years of rich input still had non-native production, holds that producing language
+forces a shift from semantic to syntactic processing: you can understand a sentence
+without parsing it, but you cannot say one. **Pushed output**, production under pressure
+to be accurate and precise, is the operative version. This is the mechanism most consumer
+products have least of, and the one an AI conversational partner supplies for free.
+
+### 3.1 Corrective feedback, and the one question a tutor design depends on
+
+Does correcting a learner help, is explicit correction better than implicit, and does the
+advantage survive to a delayed post-test? Two meta-analyses, published the same year,
+answer differently, and the difference is instructive.
+
+**Li, Shaofeng (2010),** *Language Learning* 60(2):309–365,
+[10.1111/j.1467-9922.2010.00561.x](https://doi.org/10.1111/j.1467-9922.2010.00561.x).
+`MEASURED-META`. 33 primary studies (22 published, 11 doctoral dissertations), coded on
+17 features. Findings, in the author's own summary: a **medium overall effect** for
+corrective feedback, maintained over time; **the effect of implicit feedback was better
+maintained than that of explicit feedback**; published studies did not exceed
+dissertations; **lab-based studies exceeded classroom-based studies**; **shorter treatments
+produced larger effects than longer ones**; and foreign-language contexts produced larger
+effects than second-language contexts.
+
+**Lyster, Roy & Saito, Kazuya (2010),** *Studies in Second Language Acquisition*
+32(2):265–302, [10.1017/S0272263109990520](https://doi.org/10.1017/S0272263109990520).
+`MEASURED-META`. 15 classroom-based studies, **N = 827**. Corrective feedback had
+significant and durable effects; **effects were larger for prompts than for recasts**;
+effects were **"most apparent in measures that elicit free constructed responses"**;
+younger learners benefited more than older ones.
+
+Three things follow that a build should act on.
+
+**Implicit and explicit reverse across the retention interval.** Li's headline reversal —
+explicit ahead at immediate test, implicit better maintained — is the finding that should
+worry anyone whose tutor's design instinct is to explain the rule. If it is real, the
+correction style that wins the demo loses at eight weeks. The caution is that the contrast
+is between-study rather than within: the implicit studies are not the same studies as the
+explicit ones, and Li's own moderator table shows implicit feedback concentrated in the
+laboratory and in longer treatments. This is a confound the meta-analytic design cannot
+resolve, and no primary trial located here manipulates feedback explicitness and retention
+interval factorially in the same learners.
+
+**Prompts beat recasts, and prompts are pushed output.** A recast supplies the correct
+form; a prompt withholds it and pushes the learner to produce it. Lyster and Saito's
+result is the corrective-feedback literature's version of the generation effect, and it is
+a direct design instruction: a tutor that reformulates the learner's sentence correctly is
+doing the less effective thing, and doing it because it is the easier thing for a language
+model to do.
+
+**The outcome measure decides the answer.** Lyster and Saito find effects largest on free
+constructed response, which is the good news; Norris & Ortega (2000), *Language Learning*
+50(3), whose synthesis established that explicit instruction beats implicit, also
+established that the L2 instruction literature's outcome measures are dominated by
+discrete-point and metalinguistic formats that favour explicit knowledge. Both facts are
+in the same literature and they pull opposite ways.
+
+**Untraceable in this session.** The specific pooled *d* values for Li (2010) and Lyster &
+Saito (2010), and their confidence intervals, could not be retrieved: both papers are
+closed access (Wiley and Cambridge respectively return 403, and OpenAlex records
+`oa_status: closed` with no repository full text for either). The directional findings
+above are quoted verbatim from the authors' own published abstracts. The widely circulated
+point estimates for these two meta-analyses are therefore **not stated here**, because
+this report could not read them at source.
 
 ---
 
@@ -536,22 +620,20 @@ pronunciation tutor needs. This is the measured form of the ambiguity in §2.1: 
 Tehran learners were talking to a speech-to-text pipeline, the model was reading a
 transcript that had already fixed their errors.
 
-**The best purpose-built systems are at F1 ≈ 0.60–0.72 on read speech.** Independent of
-the above, the 2026 mispronunciation-detection literature on the same benchmark reports
-F1 = 59.52% (arXiv:2606.05569) and 71.77% (arXiv:2604.22133) for dedicated architectures.
+**The best purpose-built systems reach F1 ≈ 0.60–0.72 on read speech.** The 2026
+mispronunciation-detection literature on the same benchmark reports F1 = 59.52%
+(arXiv:2606.05569) and 71.77% (arXiv:2604.22133) for dedicated architectures.
 `MEASURED-BENCH`. Read speech is the easy case: known target text, no spontaneity, no
-disfluency. Nothing here supports a claim that unscripted conversational pronunciation
-feedback is a solved capability.
+disfluency.
 
-Against that, a useful equivalence result: Neri, Mich, Gerosa & Giuliani (2008),
+Against that, a useful equivalence result. Neri, Mich, Gerosa & Giuliani (2008),
 *Computer Assisted Language Learning* 21(5), gave eleven-year-olds either teacher-fronted
-pronunciation instruction or a CAPT system with a **simple** ASR component, and found
-both groups improved significantly on word-level pronunciation quality, including on
-words judged particularly difficult, with the two modes comparable. `MEASURED-RCT`
-(small, word-level, short-term). A crude recogniser producing an approximate signal, used
-to structure repeated practice, matched a teacher. That is a real result and it also
-suggests the mechanism doing the work is the structured repetition, not the diagnostic
-accuracy.
+pronunciation instruction or a CAPT system with a **simple** ASR component, and both
+groups improved significantly on word-level pronunciation quality, including on words
+judged particularly difficult, with the two modes comparable. `MEASURED-RCT` (small,
+word-level, short-term). A crude recogniser used to structure repeated practice matched a
+teacher, which suggests the work is being done by the structured repetition and not by
+diagnostic accuracy.
 
 ### 5.3 Willingness to communicate, and the transfer nobody has measured
 
@@ -624,21 +706,18 @@ Reanalysing two datasets with piecewise regression, he finds the predicted age p
 are not cross-linguistically robust and concludes, by parsimony, that age patterns in L2
 acquisition are not governed by a critical period.
 
-There is a separate inferential problem with the Hartshorne design that none of the
-reanalyses can fix, because it is in the sampling rather than the modelling. The
-respondents are people who chose to take a viral quiz called a grammar test, in English,
-on a social network. Age of acquisition, current age, immigration history, education and
-willingness to take an English grammar quiz for fun are all correlated in that population,
-and there is no sampling frame against which to reweight. The result is enormous and
-underdetermined at the same time.
+There is a further inferential problem that no reanalysis can fix, because it sits in the
+sampling and not the modelling. The respondents are people who chose to take a viral quiz
+billed as a grammar test, in English, on a social network. Age of acquisition, current
+age, immigration history, education and willingness to take an English grammar quiz for
+fun are all correlated in that population, and there is no sampling frame to reweight
+against. The dataset is enormous and underdetermined at once.
 
 **What survives.** Age effects are real, they are largest for phonology and smallest for
 vocabulary, and they are gradual. Adults are *faster* than children in the early stages of
-naturalistic acquisition (the classic demonstration being Snow and Hoefnagel-Höhle's
-Dutch study), and children overtake later. For a product, the operative fact is that
-nothing in this literature identifies an age past which instruction stops working, and
-the one number everyone quotes has a published reanalysis attributing it to leaving
-school.
+naturalistic acquisition, and children overtake later. For a product the operative fact is
+that nothing here identifies an age past which instruction stops working, and the one
+number everyone quotes has a published reanalysis attributing it to leaving school.
 
 ---
 

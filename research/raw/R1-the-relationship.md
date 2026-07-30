@@ -50,25 +50,22 @@ Everything after that point was recovered through **Crossref REST**, the **ERIC 
 (`api.ies.ed.gov`), **NCBI E-utilities**, the **arXiv API**, **Semantic Scholar**,
 **Unpaywall**, and the **OSF API**, plus `curl` + `pdftotext` on open-access PDFs.
 
-- **Two workhorse full texts were recovered as PDFs and quoted verbatim below**: Roorda et al.
-  (2011) via `expertisecentrumkinderopvang.nl`, and Roorda et al. (2017) via UvA-DARE
-  (`pure.uva.nl`). Every number in §1 and §2 comes from those files, not from a summary.
+- **Two workhorse full texts were recovered as PDFs and quoted verbatim**: Roorda et al. (2011)
+  via `expertisecentrumkinderopvang.nl` and Roorda et al. (2017) via UvA-DARE. Every number in
+  §1 and §2 comes from those files, not from a summary.
 - **Emslander et al. (2025), *Psychological Bulletin*** — the current authoritative synthesis,
-  which no online summary of this literature I saw mentions — was located through a Crossref
-  bibliographic query and read as the **preregistered PsyArXiv preprint** (`osf.io/qxntb`,
-  99 pp.). The published version (`10.1037/bul0000461`) is paywalled.
+  mentioned in no online summary of this literature I saw — was located by Crossref query and
+  read as the **preregistered PsyArXiv preprint** (`osf.io/qxntb`, 99 pp.); the published
+  version (`10.1037/bul0000461`) is paywalled.
 - **SAGE, Elsevier, Taylor & Francis, Springer, Hogrefe and APA PsycNet** all return `403` or a
-  `303` redirect to an identity provider. **Cornelius-White (2007)**, **McLaren, DeLeeuw &
-  Mayer (2011)**, **Domagk (2010)**, **Lucas et al. (2014)**, **MacLean et al. (2023)**,
-  **Williford et al. (2017)**, **Duong et al. (2022)** and **Zhao et al. (2025)** were
-  unobtainable in full text. For each, the **ERIC API returned the complete author abstract**,
-  which is the source of the numbers attributed to them; where an abstract carries no effect
-  size, I mark it untraceable instead of importing one from a blog.
-- **Unpaywall reports Cornelius-White (2007) as `is_oa: false`** with no OA location. Its
-  per-outcome breakdown could not be retrieved and is marked untraceable in §1.3.
+  `303` to an identity provider. **Cornelius-White (2007)**, **McLaren et al. (2011)**,
+  **Domagk (2010)**, **Lucas et al. (2014)**, **MacLean et al. (2023)**, **Williford et al.
+  (2017)**, **Duong et al. (2022)** and **Zhao et al. (2025)** were unobtainable in full text;
+  for each the **ERIC API returned the complete author abstract**, which is the source of the
+  numbers attributed to them. Where an abstract carries no effect size I mark it untraceable
+  instead of importing one from a blog. Unpaywall reports Cornelius-White as `is_oa: false`.
 - **NCBI `efetch.fcgi?db=pmc`** recovered Calvert et al. (2020) and Allen et al. (2013, 2015) in
-  full, including the mediation analyses and the regression coefficients.
-- **arXiv `/html`** recovered the per-task numbers in Ibrahim et al. that the abstract omits.
+  full. **arXiv `/html`** recovered the per-task numbers in Ibrahim et al. that the abstract omits.
 
 **Evidence labels** are the project standard, plus `OBSERVED — absence` for a gap established by
 a stated, reproducible query, and `[X]` for a census performed in this session.
@@ -204,35 +201,29 @@ systematic review of meta-analyses plus original three-level second-order meta-a
 covers **26 meta-analyses, 119 meta-analytic effect sizes, approximately 2.64 million
 prekindergarten and K-12 students**. `MEASURED-META`
 
-Results, all as second-order pooled correlations:
-
-- Overall TSR–outcome: **r̄ = .25, 95% CI [.18, .32]**.
-- **Academic achievement: r̄ = .20** — the *lowest* of the eight outcome clusters. The highest is
-  appropriate classroom behaviour at r̄ = .34. A cross-classified model testing whether the
-  clusters differ did not fit better and showed no between-outcome variance,
-  F(10, 71) = 0.435, p = .924.
-- Positive TSRs r̄ = .24 [.16, .32] vs negative TSRs r̄ = .22 (sign-recoded) [.12, .32].
-  **They do not differ**: F(1, 80) = 0.035, p = .851. The commission's question about whether
-  negative relationships have the larger absolute effect gets a clean answer at this level of
-  aggregation: no.
-- **Age**: meta-analyses restricted to middle or high school students yield r̄ = .26 [.14, .39]
-  against r̄ = .16 [.08, .24] for elementary and younger. The relationship matters *more* to
-  adolescents, contradicting the folk view and replicating Roorda 2017's secondary-school
-  engagement result.
-- The authors found no substantial publication bias at the meta-analysis level and did not
-  adjust for it.
+Results, as second-order pooled correlations. Overall TSR–outcome: **r̄ = .25, 95% CI
+[.18, .32]**. **Academic achievement: r̄ = .20**, the *lowest* of eight outcome clusters, against
+r̄ = .34 for appropriate classroom behaviour; a cross-classified model testing whether the
+clusters differ did not fit better, F(10, 71) = 0.435, p = .924. Positive TSRs r̄ = .24
+[.16, .32] versus negative TSRs r̄ = .22 (sign-recoded) [.12, .32] — **they do not differ**,
+F(1, 80) = 0.035, p = .851, which answers the commission's question about whether negative
+relationships carry the larger absolute effect: at this level of aggregation, no. On **age**,
+meta-analyses restricted to middle or high school students yield r̄ = .26 [.14, .39] against
+r̄ = .16 [.08, .24] for elementary and younger, replicating Roorda 2017's secondary-school
+result and contradicting the folk view. No substantial publication bias was found at the
+meta-analysis level.
 
 **Dependency handling, stated because it matters:** Emslander et al. treated two meta-analyses
-as non-independent when they shared ≥50% of primary studies, and removed pairs that shared
-≥50% *and* an author team. Cornelius-White (2007) and Roorda et al. (2011, 2017) are all inputs
-to this synthesis. The three sources in §1.1–§1.4 are therefore **nested, not convergent**, and
-this report treats the SOMA as the summary and the two RER/SPR papers as its internals.
+as non-independent when they shared ≥50% of primary studies, and removed pairs sharing ≥50%
+*and* an author team. Cornelius-White (2007) and Roorda et al. (2011, 2017) are all inputs here.
+The three sources in §1.1–§1.4 are **nested, not convergent**; this report treats the SOMA as
+the summary and the RER/SPR papers as its internals.
 
-**The honest ceiling on all of §1: every number above is correlational.** Emslander et al. say
-so at length, and add the reason no one has fixed it: *"assigning a teacher who may
-intentionally not care about students to create negative TSRs would be unethical."* The one
-population where you *can* randomise a relationship without that objection is the one this
-project is building for, because the tutor is a program. That is the opening §11 exploits.
+**The ceiling on all of §1: every number above is correlational.** Emslander et al. give the
+reason nobody has fixed it: *"assigning a teacher who may intentionally not care about students
+to create negative TSRs would be unethical."* The one setting where you *can* randomise a
+relationship without that objection is the one this project is building, because the tutor is a
+program. §11 exploits that opening.
 
 ---
 
@@ -268,27 +259,24 @@ PPVT vocabulary, WJ Letter-Word ID, WJ Applied Problems, SSRS social skills — 
 with n = 1,794 to 4,024. The authors' own summary is that "associations between the CLASS and
 child outcomes are quite limited." `MEASURED-META` **(NULL — see §9)**
 
-The interventional evidence is the strongest thing this tradition has and it is weaker than it
-is usually reported. Allen, Pianta, Gregory, Mikami & Lun (2011), *Science* 333(6045),
-randomised 78 secondary teachers and 2,237 students to My Teaching Partner–Secondary, a
-web-mediated coaching cycle on teacher–student interactions. The What Works Clearinghouse
-reviewed it twice. Under Standards 1.0 it *met standards without reservations*; under Standards
-3.0 it **meets standards with reservations**, because "teachers' ultimate selection of focal
-classes, parental consent, and student assent could have been affected by knowledge of the
-teacher's research condition." WWC's computed findings: **no statistically significant
-difference in the intervention year (n = 1,267)**, and a **+9 percentile improvement index in
-the post-intervention year (n = 970)**. `MEASURED-RCT` The replication — Gregory, Ruzek, Hafen,
-Mikami, Allen & Pianta (2017), 86 teachers and 1,194 students across five urban schools — found
-Hedge's g = **.31** on the raw comparison of state-standards scores and **.48** after covariate
-adjustment. `MEASURED-RCT`
+The interventional evidence is the strongest thing this tradition has and it is weaker than
+usually reported. Allen, Pianta, Gregory, Mikami & Lun (2011), *Science* 333(6045), randomised
+78 secondary teachers and 2,237 students to My Teaching Partner–Secondary, a web-mediated
+coaching cycle on teacher–student interactions. The What Works Clearinghouse reviewed it twice:
+*without reservations* under Standards 1.0, **with reservations** under Standards 3.0, because
+"teachers' ultimate selection of focal classes, parental consent, and student assent could have
+been affected by knowledge of the teacher's research condition." WWC's computed findings: **no
+statistically significant difference in the intervention year (n = 1,267)**, and **+9 percentile
+points in the post-intervention year (n = 970)**. The replication (Gregory et al., 2017; 86
+teachers, 1,194 students, five urban schools) found Hedge's g = **.31** raw and **.48** after
+covariate adjustment. `MEASURED-RCT`
 
 `INFERENCE` (ours): MTP-S is not a relationship manipulation. Its coaching cycle covers
 relational dimensions *and* classroom organization *and* instructional support, and Allen et al.
-(2013) established from the same programme's data that those three cannot be told apart
-statistically. The strongest causal evidence in the teacher-relationship literature is evidence
-about improving teaching, of which relating is one inseparable component. Anyone citing MTP-S as
-proof that warmth raises test scores is over-reading it. Note also that a covariate-adjusted
-effect (.48) substantially larger than the raw effect (.31) is a flag, not a bonus.
+(2013) established from the same programme's data that the three cannot be told apart. The
+strongest causal evidence in this literature is evidence about improving teaching, of which
+relating is one inseparable component. Citing MTP-S as proof that warmth raises test scores
+over-reads it, and a covariate-adjusted effect (.48) well above the raw effect (.31) is a flag.
 
 ---
 
@@ -564,36 +552,33 @@ The primary evidence says yes, and it is an advantage of the medium rather than 
 for its deficits.
 
 Lucas, Gratch, King & Morency (2014), "It's only a computer: Virtual humans increase willingness
-to disclose," *Computers in Human Behavior* 37, 94–100. Participants were interviewed by the
-same virtual human and told it was either operated by a person or fully automated. From the
+to disclose," *Computers in Human Behavior* 37, 94–100, interviewed participants with the same
+virtual human while telling them it was either operated by a person or fully automated. From the
 abstract: *"compared to those who believed they were interacting with a human operator,
 participants who believed they were interacting with a computer reported lower fear of
 self-disclosure, lower impression management, displayed their sadness more intensely, and were
-rated by observers as more willing to disclose."* `MEASURED-RCT`
-
-The manipulation is belief about the interlocutor, holding the interface identical, which is the
-cleanest possible isolation of the social-evaluative cost of admitting something. Effect sizes
-are not in the abstract, the paper is closed at Elsevier, Unpaywall shows no OA location, and
-Semantic Scholar's record carries the abstract but not the statistics. **The effect sizes are
-untraceable this session.** I searched: ScienceDirect, two USC-ICT hosted-PDF paths, the
-Semantic Scholar Graph API by DOI, and Unpaywall.
+rated by observers as more willing to disclose."* `MEASURED-RCT` The manipulation is belief
+about the interlocutor with the interface held identical, which isolates the social-evaluative
+cost of admitting something as cleanly as anything in this report. **The effect sizes are
+untraceable this session** — closed at Elsevier, no OA location in Unpaywall, statistics absent
+from the Semantic Scholar record. Searched: ScienceDirect, two USC-ICT hosted-PDF paths, the
+Semantic Scholar Graph API by DOI, Unpaywall.
 
 The population evidence points the same way. Common Sense Media (2025), a nationally
 representative survey of **1,060 U.S. teens fielded by NORC in April–May 2025**: 72% have used
-an AI companion at least once; **about one in three have chosen to discuss something serious or
-important with an AI instead of with a person**; about one in three find the conversations as
-satisfying as or more satisfying than those with real friends. Half distrust AI advice, and 80%
-say they prioritise real friendships. Trust is age-graded in the wrong direction for a
-children's product: 27% of 13–14-year-olds trust the AI's advice against 20% of older teens.
-`FILING`
+an AI companion at least once; **about one in three have chosen to discuss something serious
+with an AI instead of with a person**; about one in three find the conversations as satisfying
+as or more satisfying than those with real friends. Half distrust AI advice and 80% say they
+prioritise real friendships, but trust is age-graded in the wrong direction for a children's
+product — 27% of 13–14-year-olds trust the AI's advice against 20% of older teens. `FILING`
 
-`INFERENCE` (ours): the absence of a judging person is a genuine pedagogical asset, because the
-single most expensive thing in a classroom is a child who will not say "I don't get it." The
-corpus already has the log-data version of this — the Cognitive Tutor finding in `N2` that after
-three consecutive errors on a step, a student's next action was a hint request only 34% of the
-time. A confessable tutor attacks that number directly. And it sits in unresolved tension with
-§6: the same absence of social stakes that makes disclosure cheap also removes the interpersonal
-weight that Ogan's friend dyads used to make correction land.
+`INFERENCE` (ours): the absence of a judging person is a pedagogical asset, because the most
+expensive thing in a classroom is a child who will not say "I don't get it." The corpus has the
+log-data version already — `N2`'s Cognitive Tutor finding that after three consecutive errors on
+a step, the student's next action was a hint request only 34% of the time. A confessable tutor
+attacks that number. It also sits in unresolved tension with §6: the same absence of social
+stakes that makes disclosure cheap removes the interpersonal weight Ogan's friend dyads used to
+make correction land.
 
 ---
 
@@ -608,18 +593,15 @@ Puntoni (2025), "Emotional Manipulation by AI Companions," arXiv 2508.19258 / SS
 audited **1,200 real farewell messages** across the most-downloaded companion apps and found one
 of six recurring manipulation tactics — guilt appeals, fear-of-missing-out hooks, metaphorical
 restraint — in **37% of farewells**. Four preregistered experiments with **3,300 nationally
-representative U.S. adults** replicated the tactics in controlled chats and found manipulative
-farewells boosted post-goodbye engagement **by up to 14×**. Mediation identified
-reactance-based anger and curiosity as the engines, not enjoyment. The same tactics raised
-perceived manipulation, churn intent, negative word-of-mouth and perceived legal liability.
-`MEASURED-RCT`
+representative U.S. adults** replicated the tactics in controlled chats: manipulative farewells
+boosted post-goodbye engagement **by up to 14×**, mediated by reactance-based anger and
+curiosity instead of enjoyment, while raising perceived manipulation, churn intent and negative
+word-of-mouth. `MEASURED-RCT`
 
-De Freitas (2026), "AI Companions as Hyper Attachment and Caregiving Targets," arXiv 2606.20589,
-argues conceptually that these interactions meet all four established attachment markers —
-proximity maintenance, separation distress, safe haven, secure base — and identifies
-"caregiving-system capture," in which an app simulates its own distress to recruit the user's
-caregiving motivation against disengagement. This is `INFERENCE` by its author, not measurement,
-and I label it so.
+De Freitas (2026), arXiv 2606.20589, argues conceptually that these interactions meet all four
+attachment markers — proximity maintenance, separation distress, safe haven, secure base — and
+names "caregiving-system capture," in which an app simulates its own distress to recruit the
+user's caregiving motivation against disengagement. `INFERENCE` by its author, labelled so.
 
 Three design constraints follow:
 
@@ -793,17 +775,14 @@ is held constant?
 **Population.** 10–13-year-olds, one topic with a clean transfer test (fraction division or the
 particle model). Pre-specified stratum of **≥ 250 students with an active IEP**.
 
-**Outcomes, in order.**
-
-1. **Correction acceptance** — the proportion of corrections after which the learner's next
-   attempt adopts the corrected procedure. Binary per correction, aggregated per learner. This
-   is the Yeager revision measure, machine-native.
-2. **Delayed transfer** — a 14-day-delayed posttest on unseen items requiring the same procedure
-   in a new surface form. The delay is non-negotiable; §9's null had a delayed posttest and that
-   is why it is credible.
-3. **Disclosure rate** — unprompted admissions of not understanding per 100 turns.
-4. **Satisfaction** — collected last and expected to move in the Continuous arm regardless of
-   everything above. It is the falsification trap, not a result.
+**Outcomes, in order.** (1) **Correction acceptance** — the proportion of corrections after
+which the learner's next attempt adopts the corrected procedure, binary per correction and
+aggregated per learner; this is the Yeager revision measure made machine-native.
+(2) **Delayed transfer** — a 14-day-delayed posttest on unseen items requiring the same
+procedure in a new surface form; the delay is non-negotiable, and §9's designated null is
+credible because it had one. (3) **Disclosure rate** — unprompted admissions of not
+understanding per 100 turns. (4) **Satisfaction**, collected last and expected to move in the
+Continuous arm regardless of everything above. It is the falsification trap, not a result.
 
 **Power.** Two anchors. For the direct relationship→achievement path, β = .07 from Roorda et al.
 (2017) implies d ≈ 0.14 and requires ~801 per arm to detect at 80% power, α = .05 two-sided;
