@@ -225,11 +225,11 @@ effort has not landed, and each one is a constraint you can design against.</p>
   <div class="finding">
     <span class="fn"></span>
     <h3>A dashboard has to name the next move</h3>
-    <p>Fuchs 1991 randomised 33 teachers to progress data, progress data plus a rule for acting
-    on it, or neither. Both measured arms revised instruction more often. Achievement moved only
-    in the arm told <em>what to change</em>. That is human teachers and a rule-based expert
-    system in 1991, and it constrains a 2026 dashboard for a structural reason: streaks, mastery
-    bars and adaptive difficulty are all the arm without the rule.</p>
+    <p>Fuchs 1991: 33 teachers, three arms. One saw progress data. One saw the same data beside
+    an expert system that named the next move. One saw neither. Both measuring arms changed their
+    teaching more often; only the second lifted achievement. Human teachers, 1991 courseware, and
+    still binding on a 2026 dashboard, because what was missing there was never compute. Streaks,
+    mastery bars and adaptive difficulty all sit in that middle arm.</p>
   </div>
   <div class="finding">
     <span class="fn"></span>
@@ -253,8 +253,10 @@ effort has not landed, and each one is a constraint you can design against.</p>
   </div>
   <div id="slope"></div>
   <figcaption>The last row is the mirror image, and the tell: students in the condition that taught
-  them <em>more</em> reported learning <em>less</em> (Deslauriers, PNAS 2019). Felt learning is what
-  every optimisation loop can measure. Real learning is what almost none of them measure.</figcaption>
+  them <em>more</em> reported learning <em>less</em> (Deslauriers, PNAS 2019). Only the top row was
+  measured on a frontier model; the other four are human instructors, static documents and scripted
+  agents, which is what makes the dissociation general. Felt learning is what every optimisation
+  loop can measure. Real learning is what almost none of them measure.</figcaption>
 </figure>
 
 <h2>What actually works, and by how much</h2>
@@ -470,7 +472,7 @@ field fail on the first three.</p>
   <div class="q"><h4>What would falsify your thesis — and has it already happened?</h4>
   <p>The counter-case: 0.2–0.4 SD may be the modal result of educational intervention research
   in general, in which case a frontier system landing there tells you nothing about the model.
-  Which is why the falsifier we accept is an active control — a plain frontier chatbot, run
+  That is why the falsifier we accept is an active control — a plain frontier chatbot, run
   against the assembled system on a delayed unassisted test — and never a band pooled across
   human tutors, 2011 courseware and seven LLM deployments. Fütterer 2026 has already run that
   comparison against a lighter set of mechanisms and found no advantage on knowledge, effort or
@@ -490,7 +492,7 @@ run in the demos.</p>
     to withdraw the central claim. Persistent contents, an abstract, and every claim carrying an
     evidence label.</p>
     <div class="nm"><span data-gen="sections">47</span> SECTIONS ·
-      <span data-gen="words">117,897</span> WORDS</div>
+      <span data-gen="words">117,917</span> WORDS</div>
   </a>
   <a href="demos/">
     <div class="nt">The demos</div>
@@ -541,7 +543,7 @@ rule stays silent.</p>
   <div class="scroll"><table>
     <tr><th>What</th><th>Where</th></tr>
     <tr><td>The append-only corrections ledger, with provenance</td><td><a href="https://github.com/dlmastery/learning-with-ai/blob/main/CORRECTIONS.md"><code>CORRECTIONS.md</code></a></td></tr>
-    <tr><td>Three adversarial reviews. The first two returned <em>not publishable</em></td><td><a href="https://github.com/dlmastery/learning-with-ai/tree/main/evidence"><code>evidence/</code></a></td></tr>
+    <tr><td>The adversarial reviews. The first four returned <em>not publishable</em></td><td><a href="https://github.com/dlmastery/learning-with-ai/tree/main/evidence"><code>evidence/</code></a></td></tr>
     <tr><td>Propagation check, so no superseded value survives anywhere</td><td class="num">python3 evidence/check-corrections.py --self-test --strict</td></tr>
     <tr><td>Render-and-run check on every demo page</td><td class="num">node evidence/test-demos.mjs</td></tr>
     <tr><td>The research reports, the input, never rewritten</td><td><a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw"><code>research/raw/</code></a></td></tr>
@@ -610,11 +612,11 @@ const LADDER = {
 
 const SLOPE = {
   rows:[
-    {label:"AI assistance",          a:"+48%",        b:"−17%",         bad:true,  note:"Practice soared. Unassisted exam collapsed."},
-    {label:"Preference vs knowledge",a:"d ≈ 0.48",    b:"0",            bad:false, note:"Three RCTs. Preference moves; knowledge does not. Survives explicit debiasing."},
-    {label:"Pedagogical avatars",    a:"d = .85–1.01",b:"no change",    bad:false, note:"Three 2024 field experiments. Affect moved a lot; learning did not move."},
-    {label:"Animation vs static",    a:"interest ↑",  b:"no change",    bad:false, note:"Engagement is real. Transfer is not."},
-    {label:"Active learning",        a:"felt worse",  b:"learned more", bad:false, invert:true, note:"Deslauriers PNAS 2019 — the mirror image, and the tell."}
+    {label:"AI assistance",          a:"+48%",        b:"−17%",         bad:true,  cls:"FRONTIER · Bastani 2025, GPT-4", note:"Practice soared. Unassisted exam collapsed."},
+    {label:"Preference vs knowledge",a:"d ≈ 0.48",    b:"0",            bad:false, cls:"LEARNER · Buljan 2018, n = 334 adults", note:"Infographic vs plain-language summary, immediate quiz. Preference moves; knowledge does not. Survives an explicit debiasing video (Kaspar 2025)."},
+    {label:"Pedagogical avatars",    a:"d = .85–1.01",b:"no change",    bad:false, cls:"ITS · pre-LLM avatars", note:"Three 2024 field experiments on scripted agents. Affect moved a lot; learning did not move."},
+    {label:"Animation vs static",    a:"interest ↑",  b:"no change",    bad:false, cls:"LEARNER · multimedia meta", note:"Engagement is real. Transfer is not."},
+    {label:"Active learning",        a:"felt worse",  b:"learned more", bad:false, invert:true, cls:"HUMAN · Deslauriers 2019", note:"Harvard physics, human instructors — the mirror image, and the tell."}
   ]
 };
 
@@ -717,7 +719,7 @@ function renderSlope(host, spec){
       style: r.invert ? 'fill:var(--good)' : (r.bad ? 'fill:var(--bad)' : '')});
     b.textContent = r.b; g.appendChild(b);
     g.appendChild(mk('rect', {x:0, y:y-ROW/2, width:W, height:ROW, fill:'transparent'}));
-    bind(g, `<b>${esc(r.label)}</b>${esc(r.note)}`);
+    bind(g, `<b>${esc(r.label)}</b><i>${esc(r.cls)}</i>${esc(r.note)}`);
     svg.appendChild(g);
   });
   host.replaceChildren(svg);

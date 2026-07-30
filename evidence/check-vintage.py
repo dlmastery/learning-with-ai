@@ -56,6 +56,16 @@ SURFACES = ["README.md", "PAPER.md", "process/CLAUDE.md", "process/AUDIT.md",
 MIN_SURFACES = 20
 WINDOW = 400   # chars either side that may carry the class attribution
 
+# PAPER.md and docs/paper.html are ASSEMBLED from survey/*.md by build-paper.py. They are
+# scanned (omitting them is the C-36 hole) but reported separately, because fixing the
+# survey source and rebuilding clears them. Fixing them directly does not.
+GENERATED = {"PAPER.md", "docs/paper.html"}
+
+# Proximity must not cross a section boundary. Two numbers in adjacent sections are not
+# "near" each other in any sense a reader would recognise, and treating them as adjacent
+# is how a proximity checker turns into noise nobody reads.
+BOUNDARY = re.compile(r"\n\s*#|\n\s*-{3,}|\n\s*\*{3,}|<h[1-6]\b|<hr\b")
+
 # A ledger row is ALLOWED to quote the bad form. Identified structurally, by a real id.
 LEDGER_ROW = re.compile(r'^\s*(?:\|\s*(?:\*\*)?(C-\d+)|<tr><td>(C-\d+))', re.M)
 
@@ -85,10 +95,15 @@ def in_ledger_row(text, pos):
 # Note the [\s\S] proximity windows: `[^.]{0,N}` cannot cross the period in
 # "Nickow et al.", which is the exact defect that produced C-30.
 
+# A bare trial name is NOT a claim. "Sierra Leone" and "Kestin" appear in correction
+# ledgers and source lists where no capability is being asserted; including them made the
+# rule fire on process/AUDIT.md's list of self-corrections. A claim needs a system term
+# joined to an achievement or bound.
 FRONTIER_CLAIM = (
-    r"(?:AI[- ]tutor|AI tutoring|LLM tutor|LLM|frontier (?:model|system)|"
-    r"the (?:real )?ceiling|Kestin|Sierra Leone|Tutor CoPilot|LearnLM|Gemini|GPT|"
-    r"Bastani|what (?:a |an )?(?:AI|model|system)s? can|best AI)"
+    r"(?:AI[- ]tutor(?:ing|s)?|LLM tutor(?:ing|s)?|frontier (?:model|system)|"
+    r"the (?:real )?ceiling|best AI|"
+    r"what (?:a |an |the )?(?:AI|LLM|model|system)s? (?:can|could|achieve)|"
+    r"(?:AI|LLM|the model)s? (?:can|achieves?|reach(?:es)?|lands? at|is bounded))"
 )
 
 # Naming the class is the cure. These are the phrases that make the usage legitimate,
@@ -170,13 +185,18 @@ RULES = [
          "VanLehn 2011 reports TWO classes: human tutoring d = 0.79 and rule-based ITS d = 0.76. "
          "The review is 2011; the years of the trials it reviews are unestablished here. Neither "
          "number measured an LLM, and neither is a ceiling for one. Say which arm and which era.",
-         "Human tutoring — VanLehn — the real ceiling for any AI tutor, not 2σ"),
+         "VanLehn measured 0.79, and that is the bar an AI tutor has to clear."),
 
     # ── V-CEILING ─────────────────────────────────────────────────────────────
     Rule("V-CEILING",
          r"the (?:real )?ceiling[\s\S]{0,120}?(?:VanLehn|Nickow|\b0\.79\b|\b0\.288\b|2\s?σ|two[- ]sigma)"
          r"|(?:VanLehn|Nickow|\b0\.79\b|\b0\.288\b)[\s\S]{0,120}?the (?:real )?ceiling",
-         HUMAN_CLASS + r"|" + ITS_CLASS + r"|for human|of human",
+         # The cure is that THE CEILING is attributed, not that a class word floats nearby.
+         # A chart row reading `label:"Human tutoring", note:"the real ceiling"` contains the
+         # words "human tutoring" and still asserts an unqualified ceiling.
+         r"ceiling for (?:a )?(?:human|pre-?LLM|rule-based|ITS)|(?:human|pre-?LLM|ITS)[- ]"
+         r"tutoring ceiling|ceiling (?:of|on) (?:a )?human|not (?:a|the) ceiling for (?:AI|LLM)|"
+         r"ceiling for what (?:a )?human",
          "Calling a HUMAN or ITS measurement 'the ceiling' on a surface about AI tutoring asserts "
          "that a 2011/2024 measurement of another class of system bounds a frontier one. If it is "
          "a ceiling, say a ceiling for what.",
@@ -233,9 +253,11 @@ def scan(root):
             for m in r.bad.finditer(text):
                 if in_ledger_row(text, m.start()):
                     continue
+                if BOUNDARY.search(m.group(0)):
+                    continue          # the two halves sit in different sections
                 lo, hi = max(0, m.start() - WINDOW), min(len(text), m.end() + WINDOW)
                 if not r.cure.search(text[lo:hi]):
-                    out.append((f.relative_to(root),
+                    out.append((str(f.relative_to(root)),
                                 text.count("\n", 0, m.start()) + 1,
                                 r.vid,
                                 re.sub(r"\s+", " ", m.group(0))[:90],
@@ -295,11 +317,37 @@ def main():
               f"{len(REAL_IDS)} ledger ids, 0 violations")
         return rc
 
-    print(f"vintage check: {len(v)} VIOLATION(S) — a legacy number is bounding a frontier system\n")
-    for path, line, vid, snippet, note in v:
-        print(f"  {path}:{line}  [{vid}]\n    found : {snippet!r}\n    rule  : {note}\n")
+    src = [x for x in v if x[0] not in GENERATED]
+    gen = [x for x in v if x[0] in GENERATED]
+    print(f"vintage check: {len(v)} VIOLATION(S) — a legacy number is bounding a frontier "
+          f"system\n  {len(src)} in source surfaces, {len(gen)} in the assembled paper "
+          f"(which clears on rebuild)\n")
+
+    by_rule = {}
+    for path, line, vid, snippet, note in src:
+        by_rule.setdefault(vid, {"note": note, "hits": []})["hits"].append((path, line, snippet))
+
+    for r in RULES:                       # stable, declared order
+        if r.vid not in by_rule:
+            continue
+        blk = by_rule[r.vid]
+        print(f"  [{r.vid}] {len(blk['hits'])} hit(s)")
+        print(f"    rule : {blk['note']}")
+        for path, line, snippet in blk["hits"]:
+            print(f"      {path}:{line}  {snippet!r}")
+        print()
+
+    if gen:
+        counts = {}
+        for path, _, vid, _, _ in gen:
+            counts[(path, vid)] = counts.get((path, vid), 0) + 1
+        print("  assembled paper (rebuild after fixing survey/):")
+        for (path, vid), n in sorted(counts.items()):
+            print(f"      {path}  [{vid}] ×{n}")
+        print()
+
     print("The fix is never to delete the number. Name what class of system it measured, "
-          "and when.\nSee evidence/VINTAGE.md for the per-claim worklist.")
+          "and when.\n  See evidence/VINTAGE.md for the per-claim worklist.")
     return 1
 
 

@@ -63,8 +63,9 @@ agentic capability in education is waiting on one.**
 
 Three findings constrain what may be built. Two are facts about learners and hold
 whatever machine is in the room. **Felt learning and real learning move in opposite
-directions** — across three randomised comparisons preference shifts at *d* ≈ 0.48
-while knowledge does not, and the effect survives explicit debiasing, so every cheaply
+directions** — across three RCTs of an infographic against a plain-language summary,
+n = 334 adults on an immediate quiz, preference shifted at *d* ≈ 0.48 while knowledge
+did not, and the easiness effect survives explicit debiasing, so every cheaply
 optimisable metric is the wrong one. **Measurement without a decision rule is inert** —
 in a 1991 trial of 33 teachers, both measuring arms revised instruction more often and
 only the arm told *what to change* moved achievement, which is why the age of that
@@ -689,6 +690,8 @@ govern what the row can be quoted for:
 **The classroom deployment trials land in the same band as pre-LLM intelligent
 tutoring systems and as human tutors.** Sierra Leone 0.258, Nigeria 0.23–0.31,
 Rori 0.37, ITS 0.32–0.42, human tutoring 0.288. Three classes of machine, one band.
+There is no order-of-magnitude jump in those numbers, and there may be no difference
+between the three classes at all.
 
 Two readings of that coincidence are available and only one is licensed. **It does
 not license 0.2–0.4 as a ceiling on a frontier system.** No study in the ITS or
@@ -13888,7 +13891,7 @@ that nobody has built the good version and measured it.
 
 Say first what the band is made of, because the argument turns on it. It is drawn
 from frontier-model deployment trials of six to eight weeks — Sierra Leone 0.258,
-Nigeria 0.206–0.310, Rori 0.37 (§3) — and it already omits both ends of that
+Nigeria 0.23–0.31, Rori 0.37 (§3) — and it already omits both ends of that
 record: Kestin's developer-built, developer-evaluated d ≈ 0.63 above it and
 Bastani's unassisted −17% below it (§2). The pre-LLM ITS syntheses and the
 human-tutoring pool land in the same range, and that coincidence is a comparison

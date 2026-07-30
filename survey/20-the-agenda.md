@@ -176,7 +176,7 @@ that nobody has built the good version and measured it.
 
 Say first what the band is made of, because the argument turns on it. It is drawn
 from frontier-model deployment trials of six to eight weeks — Sierra Leone 0.258,
-Nigeria 0.206–0.310, Rori 0.37 (§09) — and it already omits both ends of that
+Nigeria 0.23–0.31, Rori 0.37 (§09) — and it already omits both ends of that
 record: Kestin's developer-built, developer-evaluated d ≈ 0.63 above it and
 Bastani's unassisted −17% below it (§01). The pre-LLM ITS syntheses and the
 human-tutoring pool land in the same range, and that coincidence is a comparison

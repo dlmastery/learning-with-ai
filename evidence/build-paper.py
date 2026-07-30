@@ -126,8 +126,9 @@ agentic capability in education is waiting on one.**
 
 Three findings constrain what may be built. Two are facts about learners and hold
 whatever machine is in the room. **Felt learning and real learning move in opposite
-directions** — across three randomised comparisons preference shifts at *d* ≈ 0.48
-while knowledge does not, and the effect survives explicit debiasing, so every cheaply
+directions** — across three RCTs of an infographic against a plain-language summary,
+n = 334 adults on an immediate quiz, preference shifted at *d* ≈ 0.48 while knowledge
+did not, and the easiness effect survives explicit debiasing, so every cheaply
 optimisable metric is the wrong one. **Measurement without a decision rule is inert** —
 in a 1991 trial of 33 teachers, both measuring arms revised instruction more often and
 only the arm told *what to change* moved achievement, which is why the age of that
