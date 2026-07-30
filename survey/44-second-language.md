@@ -240,16 +240,15 @@ moderator. `MEASURED-BENCH`. These engines rank whole speakers well and localise
 individual errors poorly. Localisation is the product; the ranking is where the
 validation number comes from.
 
-The instructional literature agrees about which construct is worth scoring.
-Saito & Plonsky (2019), 77 studies of pronunciation instruction, report
-between-group d = 0.68 [0.49, 0.86] against a control-group test–retest floor of
-0.31 [0.24, 0.38], and in their Table 7 every interval covering *global*
-pronunciation crosses zero, as does every interval involving *spontaneous*
-speech. `MEASURED-META`. Levis (2020) draws the consequence: under the
-intelligibility principle accentedness is *"largely irrelevant."* Most
-computer-assisted pronunciation scoring is similarity to a native reference,
-which is an accentedness measure, so the standard build optimises the one
-construct the field has said out loud is not the goal.
+The instructional literature agrees about which construct is worth scoring. Saito
+& Plonsky (2019), 77 studies of pronunciation instruction, report between-group
+d = 0.68 [0.49, 0.86] against a control test–retest floor of 0.31 [0.24, 0.38],
+and in their Table 7 every interval covering *global* pronunciation crosses zero,
+as does every interval involving *spontaneous* speech. `MEASURED-META`. Most
+computer-assisted scoring is similarity to a native reference, an accentedness
+measure, which Levis (2020) calls *"largely irrelevant"* under the
+intelligibility principle. The standard build optimises the construct the field
+has said out loud is not the goal.
 
 ### 5.1 The mechanism worth stealing: robust ASR repairs the error first
 

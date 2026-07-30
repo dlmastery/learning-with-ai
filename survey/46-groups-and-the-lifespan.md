@@ -314,7 +314,7 @@ training changes anything an employer would pay for. Blume, Ford, Baldwin & Huan
 obtained by the same source in the same measurement context *"consistently inflated
 transfer relationships."*
 
-For practice figures, use the survey that has a DOI. Twitchell (1997), LSU
+Twitchell (1997), LSU
 dissertation, published as Twitchell, Holton & Trott (2000), `n = 146` returned
 surveys at a 42% response rate, found technical training managers reporting each of
 Kirkpatrick's four levels in this percentage of their courses: **Level 1 — 72.74%,
