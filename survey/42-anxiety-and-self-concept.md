@@ -29,7 +29,7 @@ argument of this survey lands on the wrong child.
 
 ## 1. What would have to be true for it not to generalise
 
-Three conditions, each of which is checkable and none of which is currently checked.
+Three conditions, each checkable and none currently checked.
 
 **The trial is one programme, one disorder, 67 children.** The responder finding is a
 subgroup split inside a sample that size, which is the design that most reliably
@@ -177,9 +177,9 @@ The design that follows is **load-flat escalation**: on the avoidance signature,
 storage demand constant while conceptual demand rises, keeping the carry and
 externalising the intermediate state on screen. Its falsifier is stated in advance:
 delayed unassisted transfer at seven or more days on isomorphic items with the scaffold
-withdrawn, against a matched arm given the same items and pacing without the
-externalisation. A learner who cannot do the item once the scratchpad is gone means the
-design bought a feeling and lost the skill.
+withdrawn, against a matched arm given the same items and pacing without it. A learner
+who cannot do the item once the scratchpad is gone means the design bought a feeling
+and lost the skill.
 
 ---
 
@@ -221,26 +221,25 @@ pupils, KS2 maths −0.01 [−0.04, 0.01]; and Ganimian (2020), 202 Argentinian 
 schools, small effects ruled out on every outcome measured.
 
 What that licenses: a *targeted* version, screened and delivered to a subgroup, at
-around a tenth of a standard deviation — Yeager's pre-registered SMD 0.11 and Burnette
+around a tenth of a standard deviation. Yeager's pre-registered SMD 0.11 and Burnette
 et al.'s targeted-subgroup d = 0.14 [0.06, 0.22] are the same claim from overlapping
 study pools. What it does not license is a general mindset module for everyone who logs
-in, which is the version the evidence puts at d̄ = 0.02 in the six highest-quality
-trials.
+in, the version the evidence puts at d̄ = 0.02 in the six highest-quality trials.
 
 ---
 
 ## 6. Conditioning on the belief having moved leaves d̄ = 0.04
 
-Macnamara & Burgoyne ran the analysis that this survey would have asked for. They
-isolated the **13 studies, N = 18,355, in which the intervention verifiably influenced
-students' mindsets as intended** — the subset where the manipulation check passed and
-the self-report outcome moved. In that subset the achievement effect was
-**d̄ = 0.04, 95% CI [−0.01, 0.10]**, non-significant. `MEASURED-META`
+Macnamara & Burgoyne ran the analysis this survey would have asked for. They isolated
+the **13 studies, N = 18,355, in which the intervention verifiably influenced students'
+mindsets as intended**, the subset where the manipulation check passed. In it, the
+achievement effect was **d̄ = 0.04, 95% CI [−0.01, 0.10]**, non-significant.
+`MEASURED-META`
 
-Stated plainly: conditioning on having successfully changed what learners report about
-themselves does not produce a detectable change in what they achieve. The result cuts
-against the theory's own mediation story, because the studies that best establish the
-mediator are the studies that fail to show the outcome.
+Conditioning on having successfully changed what learners report about themselves does
+not produce a detectable change in what they achieve. The result cuts against the
+theory's own mediation story, because the studies that best establish the mediator are
+the studies that fail to show the outcome.
 
 Two full nulls sit beside it, where neither the feeling nor the achievement moved:
 Myers, Davis & Chan (2021) on expressive writing across four authentic psychology
@@ -286,17 +285,17 @@ achievement d̄ = 0.04.
 The cleanest case is Yılmazer et al. (2024), who pooled 18 studies and 1,275
 participants on mindfulness for test anxiety: ES = −0.716 [−1.383, −0.049], Egger's
 test significant at p = .025, and **no achievement outcome anywhere in the
-meta-analysis** — because there is none in the primary studies at the level required
-for pooling. An entire intervention literature, pooled in 2024, has never been asked
-whether the students then did better.
+meta-analysis**, because there is none in the primary studies at the level pooling
+requires. An entire intervention literature has never been asked whether the students
+then did better.
 
 One apparent counterexample belongs in the open: Sammallahti reports anxiety g = −0.467
 against performance g = 0.502, the ratio inverted. That meta-analysis also finds
 significant Egger asymmetry on both outcomes and reports that **higher study-quality
 ratings were associated with non-significant intervention outcomes**, so its larger
-performance estimate is the one most exposed to the bias. That quality gradient also
-runs through Macnamara's coding and Shewach's: three literatures, three quality
-codings, better-designed studies finding less each time.
+performance estimate is the one most exposed to the bias. The same quality gradient
+runs through Macnamara's coding and Shewach's: better-designed studies finding less,
+three times over.
 
 This is §01's felt/real dissociation arriving from a third direction, and this
 literature is where it is easiest to commit. A private, patient, unlimited tutor that
@@ -307,12 +306,12 @@ that will test well, review well, retain well, and fail the child it was built f
 
 ## 8. Draining the pond, and the number nobody has taken
 
-The big-fish-little-pond effect is the firmest evidence in this section. Fang et al.
-(2018) pooled 33 studies and 56 effect sizes over N = 1,276,838: school-average
-achievement depresses individual academic self-concept at **β = −0.28 [−0.32, −0.24]**.
-Marsh & Hau (2003) found it negative in **all 26 countries** tested across 103,558
-fifteen-year-olds, mean β = −.20. On the reciprocal-effects model self-concept is not
-decorative; it feeds back into achievement.
+The big-fish-little-pond effect rests on the largest samples anything here is built on.
+Fang et al. (2018) pooled 33 studies and 56 effect sizes over N = 1,276,838:
+school-average achievement depresses individual academic self-concept at
+**β = −0.28 [−0.32, −0.24]**. Marsh & Hau (2003) found it negative in **all 26
+countries** tested across 103,558 fifteen-year-olds, mean β = −.20. On the
+reciprocal-effects model self-concept is not decorative; it feeds back into achievement.
 
 A personalised tutor deletes the comparison class: there is no class average because
 there is no class. On the contrast logic that should be protective; on the assimilation

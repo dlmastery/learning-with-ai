@@ -44,7 +44,7 @@ measured on somebody else's child.
 
 This project started with one child: eleven years old, served under a SELPA plan, able to hold a
 conversation about photosynthesis and unable to pass a worksheet about it. Designing for her is
-the organising constraint, not a charitable sidebar.
+the organising constraint here, and never a charitable sidebar.
 
 ---
 
@@ -70,7 +70,8 @@ Each multiplies something else and none produces value alone, which gives a rule
 Where a strong check exists, agents reach **79.2%** (SWE-bench Verified) and **83.8%**
 (Terminal-Bench). Where it is weak or missing, **21.0%** (PaperBench) and **4.6%** (SciCode,
 which does have hand-written tests, and is why the rule is a bound and not an equality). A
-twenty-fold spread that tracks the quality of the check, not the difficulty of the task.
+twenty-fold spread, and what varies across it is the quality of the check. Task difficulty
+does not explain it.
 
 **Coding agents work because `pytest` exists. Pedagogy has no `pytest`**, and every agentic
 capability in education is waiting on that one missing instrument.
@@ -139,7 +140,7 @@ nulls.
 This survey got things wrong. The record of that is the reason to trust the rest of it.
 
 [`CORRECTIONS.md`](CORRECTIONS.md) is an append-only ledger with a provenance column. A
-substantial minority of its entries were found by **adversarial reviewers, not by us**,
+**adversarial reviewers found a substantial minority of its entries**,
 including the two most damaging numbers, and one about the ledger itself, which was being
 silently edited inside a table headed *"published rather than silently edited."*
 
@@ -150,7 +151,7 @@ Six machine checks guard the repository, and all six are runnable:
 ```bash
 python3 evidence/check-corrections.py --self-test --strict   # no superseded value survives anywhere
 python3 evidence/check-repetition.py                         # every restated finding is cross-referenced
-python3 evidence/check-stance.py --strict                    # the discipline is the warrant, not the message
+python3 evidence/check-stance.py --strict                    # the discipline is the warrant behind the mission
 python3 evidence/check-voice.py --strict                     # no sentence shape used until it stops meaning anything
 node evidence/test-demos.mjs                                 # every demo renders and runs, 390/1400 × light/dark
 node evidence/check-links.mjs                                # every internal link and anchor resolves
@@ -189,5 +190,5 @@ Corrections are the currency here. If you find an error, **open an issue with th
 source.** Every correction gets published in the ledger with attribution, including the ones that
 make this project look bad. Those are the ones worth having.
 
-If you cite this work, cite the report in [`research/raw/`](research/raw/), not the survey
-summary. The report carries the sources and the evidence labels.
+If you cite this work, cite the report in [`research/raw/`](research/raw/). The report carries
+the sources and the evidence labels; the survey summary carries neither.

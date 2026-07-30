@@ -312,13 +312,14 @@ and commissioned the research to test it. It failed, and the refutation is logge
 It was put against four objections. The decisive one is the first: **a mark scheme
 checks the learner's answer, not the tutor's diagnosis**. `pytest` verifies the
 agent's own output; in tutoring that output is an explanation or a diagnosis, and a
-rubric grades the artefact while staying silent about the belief behind it. Two more
-are real without being fatal — extended-response marking carries inter-rater
+rubric grades the artefact while staying silent about the belief behind it. Two
+others are real without being fatal — extended-response marking carries inter-rater
 variance, making the rubric a flaky test, and public examinations cover a subset of
 subjects for a dozen years of a life, with no comparable artefact in early literacy,
 vocational skill, or the population §04 centres.
 
-Second, the oracle is gameable and the gaming is measured. Koretz (2005), CSE Report
+The fourth is the one that bites: the oracle is gameable, and the gaming has been
+measured for thirty-five years. Koretz (2005), CSE Report
 655, reports the first empirical study of score inflation, and its 1990 component is a
 genuine experiment: a district whose third graders averaged a grade equivalent of 4.3
 in mathematics dropped to 3.7 on switching instruments in 1987, climbed back to 4.3
@@ -342,8 +343,8 @@ why**. Then mark the paper against the published scheme. The prediction scores
 automatically, with per-item resolution and no human in the loop.
 
 That move converts an unverifiable output into a verifiable one, which is what made
-`pytest` useful in the first place. It also answers Koretz: the fitness function
-becomes prediction accuracy on unseen papers instead of score on seen ones. A system
+`pytest` useful. It also answers Koretz: the fitness function becomes prediction
+accuracy on unseen papers instead of score on seen ones. A system
 that inflates a score by teaching item-style tricks does not thereby improve its
 predictions on a paper from a different year with a different emphasis; it should
 degrade them, having absorbed a stylistic regularity in place of a knowledge state.
@@ -365,9 +366,8 @@ say about a person; this is the per-item version of the same problem.
 - **Promise a number inside the measured band.** Commercial coaching moves an
   admissions test by 0.09–0.16 SD; the best free digital alternative by 0.11–0.20 SD.
   A product entering this market should quote that range and its provenance, because
-  the competition's advertised figures run three to seven times their measured ones
-  and that gap is now documented well enough to use. §27 and §37 own the commercial
-  argument this feeds.
+  the competition's advertised figures run three to seven times their measured ones.
+  §27 and §37 own the commercial argument this feeds.
 - **Ship the boring floor first.** Closed-book retrieval instead of rereading; a
   first practice paper early, because the first is worth 0.5 SD and the tenth 0.1;
   review gaps at 20–40% of the time remaining; confidence elicited only after a

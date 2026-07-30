@@ -58,7 +58,7 @@ FLOOR = 3   # minimum occurrences before a rate overrun is a habit
 # the gallery's contract. Penalising them would push against what the pages exist
 # to do.
 PROSE_ONLY = {
-    "`X, not Y`":    (re.compile(r",\s+not\s+\w"),        1.6),
+    "`X, not Y`":    (re.compile(r",\s+not\s+(?!significant\b)\w"), 1.6),
     "`rather than`": (re.compile(r"\brather than\b"),      1.0),
     "`exactly`":     (re.compile(r"\bexactly\b"),          0.6),
 }
