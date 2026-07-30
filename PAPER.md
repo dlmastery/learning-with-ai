@@ -88,12 +88,11 @@ generative-AI tutoring that mention students and **zero** that mention disabilit
 dyslexia, ADHD, autism, special education or an IEP. Every effect size in this field
 was measured on somebody else's child.
 
-The central claim follows. The deployment trials above land in a **0.2–0.4 SD** band,
-and so do pre-LLM intelligent tutoring systems (0.32–0.42) and in-person human
-tutoring (0.288 SD across 96 randomised trials). Three classes of machine, one band —
-and every system in it answers freely, forgets between sessions, cannot see the work,
-cannot point, never changes method, and agrees with the learner. **What that band
-bounds is a design, and the constrained, grounded, pivoting, remembering, teachable
+The central claim follows. Those deployment trials cluster at **0.2–0.4 SD**, which is
+a rounding of three field studies carrying no pooled estimate and no confidence
+interval — and every system in them answers freely, forgets between sessions, cannot
+see the work, cannot point, never changes method, and agrees with the learner. **What
+that cluster bounds is a design, and the constrained, grounded, pivoting, remembering, teachable
 alternative has never been built and measured. That nobody has measured it is proven.
 That it would do better is a hypothesis**, and Part VII states the conditions under
 which we would withdraw it.
@@ -11152,7 +11151,7 @@ nobody had to lie to get there. **The translation layer between effect sizes and
 is where most of this market's dishonesty lives, and it does not require anyone to
 lie.**
 
-Which makes the useful questions structural rather than numerical, and they run
+Which makes the useful questions structural, not numerical, and they run
 through every part of this section: who evaluated it, against what comparison, at
 what sample, and what the vendor would accept as disconfirmation.
 
@@ -13869,7 +13868,7 @@ survey's conclusion.
 It is the measurement.** Every trial listed above ran a real frontier model, in a
 real classroom, with real teachers, and none of them was a deliberately degraded
 version of what a good system would be. Sierra Leone had tablets, a 2:1 device
-ratio and supervision; Tutor CoPilot had trained human tutors in the loop; Kestin's
+ratio and supervision (§3); Tutor CoPilot had trained human tutors in the loop; Kestin's
 tutor was purpose-built by a physics-education group and still needed a developer to
 evaluate it. On this premise the survey's move — *these results are what bad systems
 do* — is unfalsifiable special pleading: any result below expectation gets attributed
@@ -13950,7 +13949,7 @@ hardest, which is where the mechanism-level case is strongest.
 ## The concession conditions, stated in advance
 
 We would concede that the frontier results already on record are what this
-technology does, rather than a floor set by unfinished systems, and that added
+technology does, and not a floor set by unfinished systems, and that added
 mechanism does not pay, if:
 
 1. **Experiment 3 returns A ≈ C** at n = 300/arm. The single most decisive test:

@@ -151,12 +151,11 @@ generative-AI tutoring that mention students and **zero** that mention disabilit
 dyslexia, ADHD, autism, special education or an IEP. Every effect size in this field
 was measured on somebody else's child.
 
-The central claim follows. The deployment trials above land in a **0.2–0.4 SD** band,
-and so do pre-LLM intelligent tutoring systems (0.32–0.42) and in-person human
-tutoring (0.288 SD across 96 randomised trials). Three classes of machine, one band —
-and every system in it answers freely, forgets between sessions, cannot see the work,
-cannot point, never changes method, and agrees with the learner. **What that band
-bounds is a design, and the constrained, grounded, pivoting, remembering, teachable
+The central claim follows. Those deployment trials cluster at **0.2–0.4 SD**, which is
+a rounding of three field studies carrying no pooled estimate and no confidence
+interval — and every system in them answers freely, forgets between sessions, cannot
+see the work, cannot point, never changes method, and agrees with the learner. **What
+that cluster bounds is a design, and the constrained, grounded, pivoting, remembering, teachable
 alternative has never been built and measured. That nobody has measured it is proven.
 That it would do better is a hypothesis**, and Part VII states the conditions under
 which we would withdraw it.
