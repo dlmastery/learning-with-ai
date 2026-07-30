@@ -1462,6 +1462,627 @@ prohibition costs nothing.
 
 ---
 
+## PART VI — WHAT THE DOMAIN REPORTS OPENED
+### The domain layer
+### Extension of 2026-07-30. Seven problems added; nothing above is altered.
+
+---
+
+**How this part relates to the rest of the file.** Parts I–V, the ranking in §3.1 and the
+verification log in §5 were written on **2026-07-27** and are left exactly as written, per the
+project's rule that a report in `research/raw/` is superseded by a dated successor and never
+rewritten in place. Seven domain reports — `R1` relationship, `R2` exam technique and revision,
+`R3` anxiety and self-concept, `R4` second-language learning, `R5` reading and writing,
+`R6` sequencing and durability, `R7` groups and the lifespan — were delivered on **2026-07-30**,
+each closing with a specified experiment and a power justification. **None of the seven appears
+in Parts I–V, and none appears in the §3.1 ranking**, because none of them existed when that
+ranking was scored.
+
+This part adds them as **OP-20 to OP-26** in the same form as the nineteen above, and closes
+with a merged ranking that supersedes §3.1's table without editing it. It also records, without
+touching its text, the one entry above that has since been answered.
+
+**Two of the seven test specifications this survey itself publishes**, which is a category the
+original nineteen did not contain. OP-25 tests `survey/25`'s rule to compute a concept's
+transitive prerequisite closure and enter at the weakest link — a rule the survey instructs
+builders to implement and which `survey/45` reports as zero-for-eight in the only tally that
+separates between-topic sequencing from within-topic sequencing. OP-24 tests the restraint
+thesis in the one domain where the machine can perform the whole task rather than supply the
+answer to part of it. An open problem that can retire a published specification of our own
+outranks one that can only retire a mechanism we proposed, and the merged ranking reflects
+that.
+
+---
+
+### OP-20. Relational standing has never been randomised with dosage held constant
+
+**Statement.** No trial has manipulated an AI tutor's relational standing with the learner
+while holding instructional dosage fixed, so the relationship effect and the attendance it buys
+have never been separated in any system, human or machine.
+
+**Why it matters.** Two mechanisms are bundled inside every relationship finding: **(b) dosage**
+— a learner who likes the tutor attends more, and more of everything happens — and **(a) a
+licence to correct**, the standing that lets a tutor say *that is wrong* without the learner
+disengaging. If the whole effect is (b), the correct product is a retention feature, it is worth
+whatever the instruction inside it is worth, and it is the mechanism most easily faked by an
+engagement metric. If part of it is (a), that is a mechanism nobody in AI tutoring is currently
+building for, and it changes what the tutor is permitted to say and when. The two imply opposite
+designs and the field has never told them apart.
+
+**What we know.**
+- **Of the relationship-building interventions with random assignment `R1` could locate, none
+  reports a standardised achievement outcome.** Cook et al. (2018) measured academic engaged
+  time and disruptive behaviour; Williford et al. (2017) externalising behaviour; Duong et al.
+  (2022) relationships, belonging, motivation and self-reported engagement; Driscoll & Pianta
+  (2010) teacher-rated behaviour. Searched: the ERIC API for `Establish-Maintain-Restore` and
+  `Banking Time` randomised trials, plus the WWC study record for MTP-S. The field builds
+  relationships and measures relationships. `OBSERVED — absence`
+- **The flagship LLM-tutoring trial with a rapport-shaped premise collected no rapport
+  measure.** LearnLM Team & Eedi, arXiv:2512.23633 — an exploratory RCT, N = 165 across five UK
+  secondary schools, +5.5 percentage points on novel problems (66.2% vs 60.7%) — recorded no
+  measure of rapport, trust, help-seeking, or willingness to admit not understanding.
+  `OBSERVED — absence`
+- **The direct path is small and is not what the trial should chase.** Roorda et al. (2017) give
+  β = .07 for the relationship→achievement path, implying d ≈ 0.14 and ~801 per arm at 80%
+  power. `MEASURED-META` — and see C-55 and C-56 in `CORRECTIONS.md`: the achievement subsamples
+  are k = 61 / N = 52,718 and k = 28 / N = 18,944, and Roorda 2011, its 2017 update and
+  Cornelius-White 2007 are **nested inputs to Emslander et al. (2025)**, not three independent
+  anchors.
+- **The population where the mechanism should bind hardest is excluded from the synthesis.**
+  Emslander et al. (2025) explicitly excluded samples with psychological disorders or medical
+  conditions, and no meta-analysis of the relationship–achievement association restricted to
+  students with IEPs or identified disabilities was located. `OBSERVED — absence`
+
+**Why it is hard.** The two mechanisms are confounded *by construction* in every field setting:
+the manipulation that raises standing also raises attendance, so a positive result is
+uninterpretable and a null is under-powered. Removing dosage requires an instrument that caps
+items and wall-clock time identically across arms while varying only how the tutor frames a
+correction. A classroom cannot do that. A tutor can, which is why this became answerable only
+once the tutor was software.
+
+**The experiment that would settle it.**
+*Design.* A 2 × 2 between-subjects randomised trial delivered as a working tutor.
+**Factor A — standing.** *Continuous*: the tutor carries a visible record of the learner's prior
+sessions, cites it by name when correcting, and frames every correction with the standard plus
+an assertion of reachability. *Neutral*: identical content, identical corrections, no record
+cited, no framing sentence, competent and impersonal.
+**Factor B — correction stance.** *Assertive*: the tutor states the answer is wrong and says
+why. *Accommodating*: the tutor hedges, asks the learner to reconsider, and accepts the
+learner's second assertion. This factor exists because it is the behaviour `R1` §6 shows warmth
+training silently changes, and nobody has randomised it.
+*Dosage is fixed by construction.* Every arm gets the same number of items and the same
+wall-clock cap. This is the design decision that makes the trial informative: it removes
+mechanism (b) and leaves mechanism (a) alone in the model. Session length is recorded as a
+manipulation check and never as an outcome.
+*Population.* 10–13-year-olds, one topic with a clean transfer test (fraction division or the
+particle model), with a pre-specified stratum of **≥ 250 students with an active IEP** — which
+makes this the only design in this document that returns disability-stratified randomised
+evidence as a by-product (OP-14).
+*Outcomes, in order.* (1) **Correction acceptance** — the proportion of corrections after which
+the learner's next attempt adopts the corrected procedure, binary per correction, aggregated per
+learner. (2) **Delayed transfer** at **14 days**, on unseen items requiring the same procedure
+in a new surface form; the delay is non-negotiable. (3) Disclosure rate — unprompted admissions
+of not understanding per 100 turns. (4) Satisfaction, collected last, expected to move in the
+Continuous arm regardless of everything above. It is the falsification trap, not a result.
+*N justification.* For correction acceptance, a conservative 0.50 vs 0.35 split gives 80% power
+at **n = 167 per cell**. For delayed transfer at d = 0.25, **n = 251 per arm**. **n = 1,000 in
+four cells of 250** gives 80% power for a 14-point difference in correction acceptance, d = 0.25
+on transfer as a main effect, and d = 0.35 within the 250-student IEP stratum — the smallest
+effect worth a product decision for that population. The trial is deliberately *not* powered for
+the β = .07 direct path.
+*The second-most-informative result.* The **A × B interaction**. If assertive correction beats
+accommodating correction under Continuous standing and loses to it under Neutral standing, a
+friend/stranger sign flip previously seen in six dyads has been reproduced under randomisation
+at n = 1,000.
+
+**Falsifier.** The relationship thesis for an AI tutor is dead if, with dosage fixed, **the
+Continuous arm's satisfaction advantage is positive and significant while the delayed transfer
+contrast has a 95% CI whose upper bound falls below d = 0.20 and the correction acceptance
+contrast crosses zero.** That result says the standing manipulation bought feeling and nothing
+else, and that everything real in the relationship literature was the engagement path this
+design deliberately removed. `R1` §9 contains six studies that got that result with weaker
+manipulations, so it is a live possibility and the interpretation must be pre-registered.
+
+---
+
+### OP-21. Revision *allocation* has never been randomised, and no test-preparation trial has ever carried an audit instrument
+
+**Statement.** Every measured intervention in test preparation manipulates a *technique*.
+Nobody has randomised what the learner works on next, and nobody has ever run a
+test-preparation trial with a held-out instrument capable of distinguishing learning from score
+inflation.
+
+**Why it matters.** Allocation is the one degree of freedom in revision that is simultaneously
+large, unmeasured, and structurally unavailable to the incumbent: a coaching centre cannot
+personalise it because it teaches a cohort. Everything else the market sells is either already
+established (retrieval, spacing) or already null (nudging). And the audit instrument decides
+whether the whole category is worth anything: a system that allocates against a specification
+can raise marks on that specification without raising the underlying competence, which is the
+exact failure the score-inflation literature describes and which no test-preparation study has
+ever been designed to detect.
+
+**What we know.**
+- **The population that does the most past-paper practice on earth is absent from the
+  experimental literature.** No trial was located that randomises complete past-paper practice
+  under timed conditions against an equal-time alternative with a real public-examination
+  outcome. Candidates for GCSE, A-level, the gaokao, NEET and JEE are not represented at all.
+  `OBSERVED — absence`
+- **Question spotting is unmeasured.** Nothing was located that measures predicted-question
+  practice. The nearest evidence is Koretz's account of substantive coaching — *"an emphasis on
+  the narrow, substantive aspects of a test that capitalizes on a particular style or emphasis
+  of test items"* — which raises scores by biasing performance on individual elements.
+  `OBSERVED — absence`
+- **Exam technique, the product a very large industry sells, has one meta-analytic trace and no
+  intervention meta-analysis.** ERIC `"test-taking strategies" AND meta-analysis` returns 96
+  records and no meta-analysis of an intervention; the literature since 1990 is scale
+  development and think-aloud protocol. `OBSERVED — absence`
+- **The pre-test correlation is unusually strong here, which is what makes the trial small.**
+  Briggs reports a PSAT–SAT section correlation of *"almost .9"*; Powers & Rock's baseline
+  regressions predicting later SAT from prior test scores return multiple Rs of .87–.94.
+  `MEASURED-RCT` / `MEASURED-META`
+
+**Why it is hard.** Not statistically — politically. The outcome is a real public examination,
+which means a school system has to consent to randomising its candidates' revision, and the
+audit instrument exists specifically to produce the finding a vendor least wants. It is also the
+one trial in this document whose primary outcome nobody in this project scores, which is its
+principal virtue.
+
+**The experiment that would settle it.**
+*Design.* Candidates for a public examination with published past papers and granular mark
+schemes; GCSE or A-level mathematics is cleanest because the specification is stable.
+Individual-level randomisation to two arms. **Control**: full access to the same past-paper
+library, the same generated items and the same marking, with the learner choosing what to work
+on. **Treatment**: identical resources, with the system allocating each session's topics by
+expected-marks maximisation over the learner's per-topic posterior and the specification's
+historical topic weights. Both arms get closed-book retrieval and the same spacing defaults, so
+the contrast isolates **allocation** and nothing else.
+*Primary outcome.* Marks on the real public examination — externally scored, publicly
+documented, and immune to the LLM-as-judge failure this corpus documents elsewhere.
+*Secondary.* Per-topic marks, to test whether any gain is concentrated where the optimiser
+reallocated.
+*The audit condition that makes it credible.* A third small arm, or a within-subject audit: a
+held-out instrument the system never trained or allocated against — a paper from a **different
+examination board** covering the same specification. If the treatment gain appears on the
+primary examination and not on the audit paper, the system produced score inflation and the
+trial says so. **No test-preparation study in this literature has ever included an audit
+instrument, and every one of them should have.**
+*N justification.* The effects worth detecting are 0.10–0.20 SD. Two arms, 80% power,
+α = .05 two-sided, d = 0.15 → **n ≈ 700 per arm, 1,400 total**. A deliberately conservative
+ANCOVA adjustment at ρ = 0.80 multiplies by (1 − ρ²) = 0.36 → **n ≈ 252 per arm, about 505
+total**. Inflating for 20% attrition between consent and the examination sitting gives **roughly
+630 candidates** — a single school district, not a national programme.
+
+**Falsifier.** If the treatment arm's marks gain reproduces on the off-board audit paper at the
+same magnitude, allocation is teaching and not coaching, and the score-inflation objection to
+this whole product category is answered. If the gain appears on the primary paper and is absent
+on the audit paper, the system is a score-inflation engine and should be described as one.
+Either result is publishable and only one of them is commercially convenient.
+
+---
+
+### OP-22. No trial has ever moved skill without moving anxiety, or anxiety without moving skill
+
+**Statement.** Every classroom intervention in the maths-anxiety literature moves both
+constructs at once, so the direction question — does anxiety cause the performance deficit, or
+does the deficit cause the anxiety — has never been resolved experimentally.
+
+**Why it matters.** The two causal stories imply different products. If the deficit is primary,
+the correct build is adaptive remediation of the prerequisite gap and every affective feature is
+decoration. If anxiety is primary, item selection has to be conditioned on an affective state
+the system currently does not model, and a tutor that only remediates will keep failing the
+learners it is most often sold to. A system with item-level control can hold one constant while
+moving the other. Nothing in a classroom can.
+
+**What we know.**
+- **No study measures academic self-concept in learners using a one-to-one AI tutor**, and no
+  study measures what a frame of reference does when there is no reference group. Queries:
+  `big-fish-little-pond` (ERIC, 101 records, none involving a tutoring system); `"academic
+  self-concept" AND (chatbot OR "AI tutor" OR "intelligent tutoring")` (Europe PMC); arXiv
+  `all:"math anxiety"` and `abs:"anxiety" AND abs:"tutor"`. `OBSERVED — absence`
+- **No AI tutor has ever been measured on an anxiety outcome.** Europe PMC `("AI tutor" OR
+  chatbot OR "large language model" OR "intelligent tutoring") AND "math anxiety"` → 10 records,
+  none an intervention trial with anxiety as a pre-registered outcome; arXiv `all:"math anxiety"`
+  → 8, all network-psychometric or dataset papers; `abs:"anxiety" AND abs:"tutor"` → 3. The
+  closest is a 59-participant quasi-experiment in second-language speaking. `OBSERVED — absence`
+- **The nearest adjacent literature is thinner than it is quoted as being.** ERIC queries for
+  learned helplessness or attributional style **in students with an IEP** return work from the
+  1980s and no modern intervention trial; the attributional-retraining evidence base is almost
+  entirely first-year undergraduates, and one study found *"unanticipated negative treatment
+  effects for students with higher self-esteem."* `OBSERVED — absence` / `OBSERVED`
+- **A correction filed against our own corpus.** C-57: `H1`'s r = −0.168 from Finell et al.
+  (2022) is the anxiety-to-**working-memory** correlation, not anxiety-to-performance; the
+  mediated path to performance is r = −0.092 from 8 studies / 15 effect sizes / 1,824
+  participants, which the authors themselves flag as thinly supported.
+
+**Why it is hard.** The manipulation has to be surgical. An affect-only arm must move framing,
+reassurance and stakes while holding item difficulty to the learner's existing level so that no
+new skill is taught — which is easy to specify and easy to violate, because a reassuring tutor
+drifts toward easier items. Fidelity here is an engineering problem, not a research-design
+problem, and it is the reason the trial belongs inside software.
+
+**The experiment that would settle it.**
+*Design.* A three-arm dismantling trial, stratified on a baseline maths-anxiety screen.
+**A — skill only**: adaptive remediation of the prerequisite gap, all affective features
+disabled. **B — affect only**: the affective features at full strength, item selection held to
+the learner's existing level so no new skill is taught. **C — both.**
+*Primary outcome.* **Delayed unassisted performance on transfer items at 6 weeks**, administered
+without the tutor, blind-scored. *Secondary.* Maths anxiety on the same instrument at 6 weeks,
+and the avoidance-signature rate from logs.
+*What makes it a dismantling trial rather than a horse race.* Deficit Theory predicts
+A ≈ C > B on both outcomes. The Debilitating Anxiety Model predicts B > A on the anxiety outcome
+and B ≈ A on performance in the short run, with B's advantage appearing only at follow-up.
+The Reciprocal Theory predicts C > A ≈ B on performance with a super-additive gap. These are
+distinguishable, which is the point.
+*N justification.* Smallest difference worth detecting between two arms: **d = 0.25**. Three
+pairwise contrasts at Bonferroni-corrected α = .0167 two-sided, 80% power:
+n = 2(2.394 + 0.842)² / 0.25² = **335 per arm, 1,005 total**. Covariate adjustment on a baseline
+unassisted pre-test at r = 0.6 reduces residual variance by (1 − r²) = 0.64 → **215 per arm, 645
+total**: two school terms of a single district partnership. Enriching to the top tercile of the
+anxiety screen brings it below 500 while narrowing the population the answer applies to.
+
+**Falsifier.** Pre-registered in advance: **arm B moves the anxiety instrument and does not move
+the 6-week unassisted outcome.** That is the result the null register predicts, and it would be
+worth more to this project than a positive finding, because it would mean the affective layer is
+a comfort feature and should be costed as one.
+
+---
+
+### OP-23. Nobody has measured whether AI speaking practice transfers to speaking with a person
+
+**Statement.** The marketed value proposition of conversational language practice is that
+talking to a machine makes you better at talking to a human. No trial measures that outcome.
+
+**Why it matters.** Speaking practice is the one place where an AI tutor holds a capability
+advantage that is not merely economic: unlimited low-stakes practice with a partner who cannot
+be embarrassed and cannot be embarrassing. Every trial in the literature scores the material it
+trained. If the gain does not survive the change of interlocutor, the category's central claim
+is unsupported and the product should be sold as fluency drill.
+
+**What we know.**
+- **The randomised generative-AI record in this domain is three trials, not four.** C-58: the
+  ERIC query reproduces but the classification did not; EJ1415077 is an RCT in a foundational
+  chemistry course in a blended-learning setting and EJ1484052 is VR with embedded IoT tasks.
+  Corrected across three published surfaces.
+- **The nearest quantitative estimate runs against the hypothesis.** Bibauw et al.'s
+  cross-modality contrasts are **0.29 [−0.21, 0.79]** and **0.19 [−0.31, 0.70]**, against
+  same-modality contrasts of 0.65–0.84. `MEASURED-META`
+- **The largest trial in the domain is unread**: Zhang et al. (2026), N = 436, behind a
+  publisher paywall with no repository copy, and its abstract reports pre-post change for the
+  treatment arm only. `[X]`
+- **The diagnostic layer is not ready and should not be shipped as though it were.**
+  GPT-4o-Audio reaches F1 = 46.3 on read speech, which bounds phoneme-level correction rather
+  than practice volume. `MEASURED-BENCH`
+- **A design inversion the benchmark hands over.** Stronger ASR *repairs* learner errors before
+  any model sees them, so a deliberately non-robust recogniser is a better proxy for a real
+  listener's difficulty than a robust one. `SPEC`, untested, cheap to test.
+
+**Why it is hard.** The outcome instrument is a human being. Comprehensibility has to be scored
+by raters blind to condition, in an unscripted conversation with an interlocutor the participant
+has never met, four weeks after the last session — which is expensive, slow, and cannot be
+automated without reintroducing the machine whose effect is being measured.
+
+**The experiment that would settle it.**
+*Design.* Three arms, individually randomised. **(A)** 12 weeks of AI conversational practice.
+**(B)** 12 weeks of human conversation partners matched on **speaking minutes**. **(C)**
+matched-time non-speaking study.
+*Primary outcome.* Collected **four weeks after the last session**, in an unscripted
+conversation with a human interlocutor the participant has not met, scored for
+**comprehensibility** on a nine-point scale by two raters blind to condition, with
+**intelligibility** (orthographic transcription accuracy by naive listeners) as the co-primary.
+*Secondary.* Minutes of L2 speech produced, turns initiated, and self-reported willingness to
+communicate — so that the self-report and the behavioural measure can be compared in the same
+sample, which is the link the marketed story rests on and which has never been checked.
+*N justification.* The prior to plan against is not a trained-item effect. Plan for **d = 0.35**
+on A vs C: 80% power, α = .05 two-sided → **129 per arm**. Three arms with a hierarchical
+testing order (A vs C, then A vs B) and 20% attrition gives **n ≈ 465**. If only two arms are
+affordable, drop C and run **A against B at 310 participants** — the question a builder actually
+faces.
+*A cheaper second experiment if the first is unaffordable.* Randomise learners to a spaced deck
+of 300 word families versus matched-time reading of text containing those families; measure
+recall of the 300, comprehension of **novel** text at controlled coverage, and lexical-decision
+priming, at eight weeks. Nobody has run it inside a single L2 sample.
+
+**Falsifier.** A ≈ B on delayed comprehensibility would be the *best* available outcome for the
+category and should be reported as such: machine practice substitutes for scarce human practice
+at a fraction of the cost. A ≈ C — no transfer to an unmet human interlocutor — retires the
+central marketing claim of the largest consumer segment in this field, and would be worth more
+than another significant result on trained items.
+
+---
+
+### OP-24. Does the writing guardrail add benefit where the machine can do the whole task?
+
+**Statement.** The restraint finding — that a guardrail removes measured harm without
+demonstrating benefit — was established in mathematics practice, where the machine supplies the
+answer to part of the task. It has never been tested in a domain where the machine can perform
+the entire task on the learner's behalf.
+
+**Why it matters.** This is **this survey's own central design claim on trial in the domain most
+likely to break it** (§01, §43). In mathematics the unguarded assistant hands over an answer; in
+writing it hands over the artifact. If the guardrail's contribution is domain-specific, the
+restraint thesis is narrower than this survey states it. And the fifteen-year automated-writing-
+evaluation transfer null is currently ambiguous between two readings — weak automated feedback,
+or automated feedback as such — which this design separates.
+
+**What we know.**
+- **The trial does not exist.** Across ERIC (`title:"AI" AND title:"writing" AND
+  title:"transfer"` → 0; `title:"generative AI" AND title:"writing" AND title:"randomized"` → 0;
+  `title:"automated feedback" AND title:"writing" AND title:"experiment"` → 0;
+  `title:"artificial intelligence" AND title:"writing" AND title:"dependence"` → 0), Crossref
+  title queries, and OpenAlex free-text search, **no randomised trial of generative-AI writing
+  support with a delayed, unassisted post-test on a new composition** was located. The result set
+  is dominated by EFL quasi-experiments with pre/post designs, no control or a non-equivalent
+  one, and n between 30 and 120. `OBSERVED — absence`
+- **The nearest artifact does not carry the claim.** An unrefereed EEG preprint with n = 18 in
+  its crossover session, with a published comment (arXiv:2601.00856) raising sample size,
+  reproducibility, EEG methodology, inconsistent reporting and transparency. `OBSERVED`
+  (preprint). The crossover is the right instinct; the design cannot bear the conclusion.
+- **The reference effect cannot be translated into an SD from the published abstract**, so the
+  power calculation is anchored to the smallest difference that would change a build decision
+  rather than to the reference result.
+
+**Why it is hard.** The assistance condition cannot be enforced by instruction. A learner told
+not to ask for generated prose will ask for generated prose, and a class-level assignment to
+condition inflates the required sample by a factor of 4.6. The design is only affordable if the
+guardrail is a property of the software the learner is issued, which is exactly why the trial
+has not been run by a school and has to be run by a builder.
+
+**The experiment that would settle it.**
+*Design.* Three arms, randomised **at the learner level within class**, over one term.
+**(A)** unguarded AI writing assistance: drafting, rewriting and feedback without restriction.
+**(B)** guarded assistance: task-level feedback only, no generated prose, no holistic score,
+structured to prescribe the next move. **(C)** no AI, ordinary instruction with teacher
+feedback. All three write the same number of compositions on the same prompts.
+*Primary outcome.* **A delayed, unassisted, cold-prompt composition written four weeks after the
+last session, on a new topic, scored by blinded human raters on the standard rubric.**
+*Secondary.* The assisted compositions during the term — which is what every existing study
+measures and which establishes only that the assistance worked at all — and a content-knowledge
+test on the topics written about, since writing-to-learn predicts a second effect.
+*N justification.* Smallest difference that would change a build decision: **d = 0.30**. Two-
+sided α = .05, 80% power, 15.7/d² → ⌈15.7/0.09⌉ = **175 per arm**, 525 for three arms.
+Correcting for two pairwise comparisons at Bonferroni α = .025 → **212 per arm, 636 total**. If
+randomisation is by class rather than by learner, a design effect of 1 + (m − 1)ρ with m = 25 and
+ρ = 0.15 multiplies by 1 + 24(0.15) = 4.6 → **≈ 2,930 learners across 117 classes**. That
+arithmetic is the whole reason the design randomises within class and enforces the condition in
+software. A trial half this size can still rule out *large* harm; it cannot rule out the harm
+that matters, which is a quarter of a standard deviation on what the child can do alone.
+
+**Falsifier.** **B ≈ C at 212 per arm** on the delayed cold-prompt composition would mean the
+guardrail's contribution in this domain is nil and the restraint thesis does not generalise past
+mathematics practice — the single most damaging result available to this survey's design claim.
+**B ≈ A** would mean the guardrail is theatre. And if **A < C** reproduces the withdrawal
+effect in writing, the harm is a property of unguarded assistance in general rather than of
+mathematics specifically, which is the reading this survey currently assumes without warrant.
+
+---
+
+### OP-25. Does the prerequisite graph earn its cost?
+
+**Statement.** Every study in the sequencing literature randomises which traversal *policy*
+walks a fixed graph. Nobody has randomised the *graph* — whether respecting a prerequisite
+ordering beats answering the question that was asked.
+
+**Why it matters.** This survey publishes the rule. `survey/25` instructs a builder to compute
+the mastery vector over a concept's **transitive prerequisite closure** and enter at the weakest
+link; `survey/18` treats a prerequisite graph as an input to generative textbook construction;
+`J1`'s selection policy and four other reports assume the architecture. The only tally that
+separates between-topic sequencing from within-topic sequencing puts the between-topic cluster
+at **zero of eight** beating its baselines, while the two clusters that worked — when to bring an
+item back, and which activity type to give next — are both decisions *inside* a topic. So the
+survey publishes a specification whose warrant is a different question's evidence. **An open
+problem that can retire a specification of our own outranks one that can only retire a mechanism
+we proposed.**
+
+**What we know.**
+- **Zero of eight.** In the cluster the authors describe as *"closest to traditional curriculum
+  sequencing"* — the one where *"a network specifying the relationship between different content
+  areas or KCs (such as a prerequisite graph) must either be prespecified or automatically
+  inferred from data"* — no RL-induced policy beat its baseline. The nulls include 133
+  seven-to-eight-year-olds on arithmetic, 69 fourth and fifth graders on fractions, and 100 more
+  in the authors' own appendix study. `MEASURED-META`
+- **No study randomised the ordering itself.** No located study took an assumed prerequisite
+  ordering in a real domain, randomised learners to respect or violate it, and measured delayed
+  transfer. The skip-level trials come closest and operate at the scale of one trajectory in one
+  domain under one-to-one instruction. `OBSERVED — absence`
+- **Prerequisite orderings outside early mathematics are unestablished.** The only skip-level
+  trials in existence are in early number and early shape, from one laboratory. Nobody has run
+  the design in secondary algebra, chemistry, programming or a second language.
+  `OBSERVED — absence`
+- **A language model emitting a graph is producing an expert-judgement Q-matrix with no
+  validation**, and the quantitative cost of misspecification could not be retrieved this
+  session. `INFERENCE` / `[X]`
+
+**Why it is hard.** It is not hard; it is unfashionable. The question sounds like a negative
+result waiting to happen, the architecture is already built, and the only party positioned to run
+it is the party that has already paid for the graph. It is also the cheapest information per
+learner in this document, because within-learner randomisation lets one learner contribute eight
+paired observations.
+
+**The experiment that would settle it.**
+*Design.* **Randomise the graph, not the policy.** Within-learner, topic-level randomisation.
+For each learner, each eligible topic is randomly assigned to **graph-respecting entry** (verify
+the prerequisite closure, remediate any gap, then teach the target) or **demand-driven entry**
+(teach the requested target immediately, repair prerequisites reactively when an error diagnoses
+a specific missing component). Total instructional time is capped identically in both arms, so
+neither condition can win by being given more teaching.
+*Primary outcome.* Delayed transfer at **28 days** on freshly generated items for the target
+topic, scored blind. *Secondary.* Time to criterion; a 90-day retention probe; and the
+proportion of graph-respecting sessions in which the verified prerequisite gap turned out to be
+real — a diagnostic number nobody has ever published.
+*Framing.* The question is not whether there is a difference but whether any difference is large
+enough to pay for the graph, so this is an **equivalence trial** at a pre-registered margin of
+**δ = 0.10 SD**.
+*N justification.* Two one-sided tests, α = .05, 90% power, paired within learner at a
+between-condition correlation of 0.5 gives σ_d ≈ 1.0 SD and
+n ≈ (1.645 + 1.282)² / 0.10² ≈ **857 learners**, each contributing at least eight topic pairs.
+At a correlation of 0.7, σ_d falls to ≈ 0.77 and n to ≈ 510. Budget **900 learners × 8 pairs ≈
+7,200 topic sequences**: roughly two terms of a mid-sized deployment.
+
+**Falsifier.** **Equivalence within δ = 0.10 SD** means `survey/25` should stop computing
+prerequisite closures and withdraw the weakest-link entry rule, `survey/18`'s generative-textbook
+problem collapses from *"construct a validated ordering"* to *"answer the question that was
+asked"*, and `J1` sheds the traversal layer. **A win above 0.10 SD** gives this corpus its first
+direct warrant for an architecture four of its own reports already assume, and the gate it has
+been using on credit is paid for. Both outcomes change a build. That is what puts this second in
+the merged ranking.
+
+---
+
+### OP-26. The residual peer mechanism, and the cheap question hiding inside the expensive one
+
+**Statement.** One part of what a group does cannot be supplied by an AI tutor — being disagreed
+with by someone who is genuinely uncertain — and the trial that would size it is out of reach of
+every organisation currently arguing about it. The trial that would answer the *adjacent*
+question rides in the same three arms and needs 99 learners instead of 4,600, and nobody runs
+that one either.
+
+**Why it matters.** The corpus has treated one-to-one as the ideal and the classroom as a
+rationing artifact. Most of the classroom *is* a rationing artifact, and individual
+accountability — the entire measured achievement margin of cooperative learning, +0.32 against
++0.07 for a single group product — is a mechanism software computes for free where a classroom
+manages it in 17% of lessons. What survives substitution is commitment plus genuine mutual
+uncertainty, and a model that knows the answer and performs uncertainty is not in that state.
+The residual is estimated at **0.1–0.2 SD**. The arithmetic of detecting it is the reason the
+question stays open, and stating that arithmetic is more useful than another opinion about it.
+
+**What we know.**
+- **Discussion improves performance *"even when none of the students in a discussion group
+  originally knows the correct answer"*** — the load-bearing result, and the one that requires
+  two agents who have committed to positions and whose commitment is real. `MEASURED-RCT`
+- **The loss is concentrated somewhere specific.** Scripted collaboration moves domain knowledge
+  by **0.20–0.24** and collaboration skills by **0.72–0.95**. Perfect personalisation loses
+  little subject matter and loses the outcome the group was uniquely good at teaching.
+  `MEASURED-META`
+- **The field's most-quoted per-method table was never peer reviewed and could not be
+  retrieved.** An ERIC title search for Johnson, Johnson & Stanne (2000) returns zero records; it
+  circulates as a University of Minnesota Cooperative Learning Center document. `[X]` /
+  `OBSERVED — absence`
+- **No meta-analysis of socially shared regulation exists.** `OBSERVED — absence`
+
+**Why it is hard.** Arithmetic. See the N justification below: **any study in this space with
+n < 500 per arm reporting a null on peers has not tested the hypothesis**, and a 60-learner pilot
+has 80% power only for d ≈ 0.51 — larger than the entire cooperative-learning effect. That
+sentence is the finding.
+
+**The experiment that would settle it.**
+*Design.* Three arms, randomised at learner level within classrooms, one term, one subject with
+a validated concept inventory; introductory mechanics is the obvious choice because the FCI
+exists. **A** — AI tutor alone: full personalisation, individual-accountability scoring, no
+peers. **B** — AI tutor plus an AI peer that commits to a possibly-wrong position and defends it.
+**C** — AI tutor plus brokered human pairing on disagreement items.
+*Primary outcome.* Delayed concept-inventory score at eight weeks, scored blind.
+*Secondary.* A collaboration-skill measure, because that is where the group's distinctive effect
+lives and no arm-A system can produce it.
+*N justification, the expensive half (OP-26a).* The contrast that matters is **C − B**: whether
+human uncertainty beats simulated uncertainty. At the low end of the residual, detecting
+**d = 0.15** at 80% power, α = .05 two-sided, needs **n ≈ 699 per arm**
+(2 × (1.96 + 0.84)² / 0.15²) — about **2,100 across three arms**. With individual randomisation
+inside classrooms, an ICC of 0.05 and average cluster size 25 give a design effect of
+1 + (25 − 1)(0.05) = 2.2 against classroom-level contamination, raising the requirement to
+roughly **4,600**. At a more optimistic d = 0.25 it is n ≈ 252 per arm before the design effect
+and about 1,700 after it. `INFERENCE`: that arithmetic says the peer-mechanism question cannot be
+answered by anything smaller than a multi-school trial, which is why nobody has answered it.
+*N justification, the cheap half (OP-26b).* The **collaboration-skill secondary outcome** is
+where the CSCL syntheses predict **g ≈ 0.7**, and at that magnitude **n ≈ 33 per arm** suffices
+before the design effect. The highest-value cheap experiment here is not the achievement question
+at all. It is measuring whether an AI-mediated group teaches a learner to work with a person.
+**The contrast between 4,600 and 99 is the entry, not a footnote to it:** the same three arms,
+the same term, the same instrument set, and a 46-fold difference in cost depending on which
+question is asked.
+
+**Falsifier.** **C ≈ B at n ≈ 699 per arm** means simulated commitment is as good as real
+commitment and the irreducible peer mechanism is not irreducible — which would remove the last
+principled objection to a pure one-to-one architecture. **A ≈ B ≈ C on collaboration skill at
+n = 33 per arm** means an AI-mediated group does not teach a learner to work with a person, and
+the single-tutor thesis has a cost it currently does not price.
+
+---
+
+### The merged ranking (2026-07-30)
+
+Same key as §3.1 — expected information gain × feasibility, both 1–5, product is the rank key,
+`INFERENCE` and stated as such. §3.1's table is left exactly as it was written on 2026-07-27;
+this one supersedes it.
+
+| Rank | # | Problem | EIG | Feas. | Score | |
+|---|---|---|---|---|---|---|
+| 1 | **OP-1** | Delayed, unassisted, novel-item outcome | 5 | 5 | **25** | |
+| 2 | **OP-25** | Does the prerequisite graph earn its cost? | 5 | 5 | **25** | new |
+| 3 | **OP-6** | Persistent state vs stateless baseline | 5 | 5 | **25** | |
+| 4 | **OP-11** | Does the guardrail add benefit? | 5 | 4 | **20** | |
+| 5 | **OP-24** | The guardrail where the machine can do the whole task | 5 | 4 | **20** | new |
+| 6 | **OP-21** | Revision allocation, with an off-board audit paper | 4 | 5 | **20** | new |
+| 7 | **OP-15** | Gap-widening as a primary outcome | 4 | 4 | **16** | |
+| 8 | **OP-9** | Village vs token-matched single agent | 4 | 4 | **16** | |
+| 9 | **OP-8** | Deixis | 4 | 4 | **16** | |
+| 10 | **OP-22** | Anxiety and skill, moved separately | 4 | 4 | **16** | new |
+| 11 | **OP-23** | Does AI speaking practice transfer to a person? | 4 | 4 | **16** | new |
+| 12 | **OP-14** | The empty chair (disability RCT) | 5 | 3 | **15** | |
+| 13 | **OP-4** | Benchmarks anchored to human learning | 5 | 3 | **15** | |
+| 14 | **OP-2** | Felt/real: liked *and* effective | 5 | 3 | **15** | |
+| 15 | **OP-20** | Relational standing with dosage fixed | 5 | 3 | **15** | new |
+| 16 | **OP-18** | *Pāṭha* permutation vs self-consistency | 3 | 5 | **15** | **answered — see below** |
+| 17 | **OP-26b** | Collaboration skill as the cheap arm | 3 | 5 | **15** | new |
+| 18 | **OP-7** | An agent that can stay wrong | 4 | 3 | **12** | |
+| 19 | **OP-10** | Pivot latency and trigger | 4 | 3 | **12** | |
+| 20 | **OP-3** | Reliability for generated assessment | 4 | 3 | **12** | |
+| 21 | **OP-12** | Grilling as a named intervention | 4 | 3 | **12** | |
+| 22 | **OP-13** | Laddering as such | 3 | 4 | **12** | |
+| 23 | **OP-16** | Statement fidelity across the chain | 4 | 3 | **12** | |
+| 24 | **OP-17** | Verifying the omission | 4 | 2 | **8** | |
+| 25 | **OP-5** | Personalisation-induced DIF | 4 | 2 | **8** | |
+| 26 | **OP-19** | Affect detection under Art. 5(1)(f) | 4 | 2 | **8** | |
+| 27 | **OP-26a** | The peer mechanism on achievement | 4 | 1 | **4** | new |
+
+Twenty-six problems in twenty-seven rows: OP-26 is split, because the achievement question and
+the collaboration-skill question ride in the same trial and sit twenty-three places apart.
+
+**What moved, and why.**
+
+1. **OP-25 enters at 2 and displaces OP-6 to 3, and OP-11 to 4.** It is the only entry in the
+   document that tests a specification this survey *publishes and instructs builders to
+   implement*. OP-6 tests a mechanism the survey proposes. A published rule with a zero-of-eight
+   tally underneath it is a larger liability than an unproposed mechanism, and the equivalence
+   framing means both outcomes change a build rather than only one.
+2. **OP-24 enters at 5, immediately behind OP-11**, because it is the same contrast in the
+   domain where it is most likely to break, and the two should be read as one programme rather
+   than as two studies.
+3. **OP-21 enters at 6** on feasibility: 630 candidates in one school district, and an outcome
+   this project does not score.
+4. **OP-20 enters at 15 and carries OP-14 partway.** Its ≥ 250-student IEP stratum is the only
+   pre-specified disability stratum anywhere in this agenda. It does not answer OP-14 — one topic
+   and one manipulation is not the empty chair — but it is the first design here that would
+   return disability-stratified randomised evidence at all.
+5. **Two rows move that have nothing to do with the new reports.** §3.1 was not sorted strictly
+   by its own key: OP-18 sat at rank 5 with a score of 15 while OP-15 sat at rank 6 with 16. This
+   table sorts by score. That is a defect in the old table, recorded here rather than corrected
+   there.
+
+**One entry above is now answered, and its text is left standing.** **OP-18** asked whether
+permutation-based fidelity checking beats self-consistency. It was benchmarked and its own
+falsifier fired: 768 generations, two models, a deterministic comparator, **87.5%/87.5% and
+100%/100% — at chance both times**, with plain self-consistency winning discrimination by 18.8
+and 43.8 points. See **C-9** in `CORRECTIONS.md` and `evidence/G1-patha-vs-selfconsistency.py`.
+It keeps its rank-16 row because the ranking is a record of what was scored, and it should not be
+counted as an open problem by anyone reading this list. **A stated open problem that turns out to
+be answered is a correction we would welcome and publish** — this is one, and it was answered by
+this project.
+
+**Nothing else above is withdrawn.** Two entries are narrowed rather than superseded, and both
+narrowings are additive: OP-14's population question is partly reachable through OP-20's
+stratum, and OP-10's pivot-trigger question acquires a second domain in OP-22's affect-only arm,
+where item selection has to respond to an affective state rather than to an error.
+
+**Sources added by this part.** `R1`–`R7` (`research/raw/R1-the-relationship.md`,
+`R2-exam-technique-and-revision.md`, `R3-anxiety-and-self-concept.md`,
+`R4-second-language-learning.md`, `R5-reading-and-writing.md`,
+`R6-sequencing-and-durability.md`, `R7-groups-and-the-lifespan.md`), each of which carries its
+own source list and its own reachability log for the primary literature quoted above. Numbers in
+this part are traced to those reports and checked against `CORRECTIONS.md`; C-55, C-56, C-57,
+C-58 and C-61 bear directly on the material here and are cited where they bite.
+
+---
+
 ## 2. WHAT WOULD FALSIFY THIS SURVEY'S OWN THESIS
 
 The document argues that the measured **0.2–0.4 SD** band for LLM tutoring is *"the floor
