@@ -47,27 +47,23 @@ status: raw-research
 ## 0. Retrieval note (2026-07-30)
 
 `WebSearch` returns `budget exhausted (200/200)` for this session, per `process/CLAUDE.md` §5;
-two calls were spent confirming it. Retrieval therefore ran on **ERIC** (`api.ies.ed.gov`, the
+two calls were spent confirming it. Retrieval therefore ran on ERIC (`api.ies.ed.gov`, the
 workhorse and the only route to the special-education, mastery-learning and evaluation-report
-literature), **Crossref REST**, **Europe PMC**, and `curl` against open-access PDFs.
+literature), Crossref REST, Europe PMC, and `curl` against open-access PDFs.
 
-- **OpenAlex** worked for approximately eight queries and then hard-stopped with
-  `HTTP 429 — Too Many Requests`. It is metered by daily spend (`cost_usd: 0.001` per query,
-  visible in the response envelope). Everything after that point came from Crossref and ERIC.
-- **Semantic Scholar** returned `429` on nearly every call including at 6-second spacing; it
-  contributed one record.
-- **SAGE, Taylor & Francis, APA PsycNet** returned `403` to `WebFetch`. This blocked direct
-  retrieval of Rupp & Templin (2007), Sun et al. (2021), and Bahrick (1984); each is handled
-  below by a route that is stated.
-- **`files.eric.ed.gov/fulltext/ED*.pdf` serves to `curl`** and is the single most productive
-  route in this session. It recovered Slavin (1987) in full, the two Clements grantee
-  submissions, the TRIAD long-term conference paper, the Teach to One impact report, and two
-  Annenberg working papers.
-- **`gwern.net/doc/psychology/spaced-repetition/`** serves Bahrick & Phelps (1987) and Bahrick
-  et al. (1993) as PDFs; the 1984 and 1991 papers are not mirrored there and were characterised
-  through Bahrick's own later restatements, which is stated at the point of use.
+- OpenAlex worked for about eight queries then hard-stopped with `HTTP 429`. It is metered by
+  daily spend (`cost_usd: 0.001` per query, visible in the response envelope). Semantic Scholar
+  returned `429` on nearly every call even at 6-second spacing and contributed one record.
+- SAGE, Taylor & Francis and APA PsycNet returned `403` to `WebFetch`, blocking direct retrieval
+  of Rupp & Templin (2007), Sun et al. (2021), Arthur et al. (2003) and Bahrick (1984). Each is
+  handled below by a route that is stated at the point of use.
+- **`files.eric.ed.gov/fulltext/ED*.pdf` serves to `curl`** and was the most productive route of
+  the session: Slavin (1987) in full, both Clements grantee submissions, the TRIAD long-term
+  conference paper, the Teach to One impact report, and two Annenberg working papers.
+- `gwern.net/doc/psychology/spaced-repetition/` serves Bahrick & Phelps (1987) and Bahrick et al.
+  (1993) as PDFs; the 1984 and 1991 papers are not mirrored there.
 
-**Evidence labels** are the project standard. `MEASURED-RCT` · `MEASURED-META` · `OBSERVED` ·
+Evidence labels are the project standard. `MEASURED-RCT` · `MEASURED-META` · `OBSERVED` ·
 `VENDOR` · `INFERENCE` · `SPEC`.
 
 ---
@@ -102,7 +98,7 @@ the child's current level of thinking.**
 
 ### 2.1 The efficacy trials
 
-**Clements, Sarama, Spitler, Lange & Wolfe (2011)**, *JRME*, ERIC EJ918252. Cluster-randomised,
+Clements, Sarama, Spitler, Lange & Wolfe (2011), *JRME*, ERIC EJ918252. Cluster-randomised,
 42 schools serving low-resource communities, randomised block design, 1,375 preschoolers in 106
 classrooms, three conditions. The Building Blocks curriculum, structured around the trajectories,
 against business-as-usual: **g = 0.72** on the researcher-administered early-mathematics measure,
@@ -112,7 +108,7 @@ with classroom mathematics environment and teaching quality partially mediating.
 Follow-through mattered more than the pre-K dose alone. **Sarama, Clements, Wolfe & Spitler
 (2012)**, *JREE*, ERIC EJ961450: at the end of kindergarten, intent-to-treat **g = 0.33** with
 follow-through and **g = 0.22** without; treatment-on-the-treated 0.38 and 0.30.
-**Clements, Sarama, Wolfe & Spitler (2013)**, *AERJ*, ERIC EJ1014930, reports at the end of the
+Clements, Sarama, Wolfe & Spitler (2013), *AERJ*, ERIC EJ1014930, reports at the end of the
 third year **g = 0.51** (follow-through) and **g = 0.28** (no follow-through) against control,
 with follow-through beating no-follow-through at **g = 0.24**. `MEASURED-RCT`
 
@@ -131,20 +127,20 @@ and it is the closest thing the field has to a direct test of prerequisite order
 study, the counterfactual is not "no instruction" but *equal-dose instruction aimed straight at
 the target level*, skipping the intervening levels.
 
-- **Clements, Sarama, Baroody, Joswick & Wolfe (2019)**, *AERJ*, ERIC EJ1234710, grantee
+- Clements, Sarama, Baroody, Joswick & Wolfe (2019), *AERJ*, ERIC EJ1234710, grantee
   submission ED594902. Early shape composition. Preschoolers at least two levels below the
   target received either trajectory-based instruction or an equal amount of instruction focused
   only on the target level. The trajectory group learned significantly more, **mainly on
   near-transfer items**, with no significant child-level moderators. `MEASURED-RCT`
-- **Clements, Sarama, Baroody & Joswick (2020)**, *ZDM* 52(4):637–648, ERIC EJ1261937. Addition
+- Clements, Sarama, Baroody & Joswick (2020), *ZDM* 52(4):637–648, ERIC EJ1261937. Addition
   and subtraction. Thirteen kindergartners in the trajectory condition against twelve in the
   skip condition, teaching experiments embedded in a quasi-experimental design. More children in
   the trajectory group showed greater learning. **n = 25 total.** This study is frequently cited
   as evidence for trajectories and it should not be cited without its sample size. `OBSERVED`
-- **Clements, Sarama, Baroody, Kutaka & Chernyavskiy (2021)**, *JEP* 113(7):1323–1337, ERIC
+- Clements, Sarama, Baroody, Kutaka & Chernyavskiy (2021), *JEP* 113(7):1323–1337, ERIC
   EJ1318761, grantee submission ED619003. The one with power. **291 kindergartners** from four
   schools, randomly assigned to one-on-one instruction one level above their present level, or
-  to one-on-one instruction on story problems **three levels above** their initial level.
+  to one-on-one instruction on story problems three levels above their initial level.
   Baseline equivalence established (Cohen's d = .05 counting, .07 arithmetic). Dosage was
   equalised and non-significant between arms (196 minutes over 13.4 sessions versus 212 minutes
   over 14.3). The trajectory condition scored higher at posttest, **d = 1.20** for the main
@@ -160,7 +156,7 @@ want it: on the children who arrive with the least.
 **What it does not license.** All three studies come from the same research group, sharing
 instruments, trajectory definitions and analytic conventions; two share four of five authors.
 That is not a criticism of the work, it is a statement about what "replicated" means. The 2019
-result was **mainly on near transfer**. The domains are early number and shape, where
+result was mainly on near transfer. The domains are early number and shape, where
 developmental sequence is unusually constrained by what the arithmetic itself permits. Nothing
 here establishes that a prerequisite graph over, say, secondary chemistry has the same standing.
 `INFERENCE`
@@ -177,13 +173,13 @@ Learning progressions are the science-education cousin of trajectories: ordered 
 how understanding of a concept develops. If the ordering is real, a student should sit *at* a
 level and reason from it consistently.
 
-**Steedle & Shavelson (2009)**, *JRST*, ERIC EJ850695, tested this with latent class analysis on
+Steedle & Shavelson (2009), *JRST*, ERIC EJ850695, tested this with latent class analysis on
 diagnostic multiple-choice items about forces on an object moving at constant speed. Students
 with a scientifically accurate understanding did reason systematically across items. **Many other
 students did not**, and the authors' conclusion is that interpretations of learning-progression
 level diagnoses "would often be invalid" on the progression they examined. `MEASURED-BENCH`
 
-**Alonzo & Steedle (2009)**, *Science Education*, ERIC EJ836037, found the same thing from the
+Alonzo & Steedle (2009), *Science Education*, ERIC EJ836037, found the same thing from the
 other direction: students **do not respond consistently to similar problems set in different
 contexts**, and misinterpretation of item language produces inaccurate level diagnoses for a
 subset of students. Their own conclusion is that this matters less for classroom use than for
@@ -198,25 +194,22 @@ literature says the underlying construct is not stable enough across contexts to
 
 ### 3.2 Q-matrices: the machinery exists and it is fragile
 
-The formal object a tutor would need is a **Q-matrix**: items on the rows, latent skills on the
+The formal object a tutor would need is a Q-matrix: items on the rows, latent skills on the
 columns, a 1 where the item requires the skill. Cognitive diagnostic models such as DINA estimate
 each learner's skill profile from responses given a Q-matrix. Two facts about them govern any
 design that leans on this machinery.
 
 First, Q-matrices can be validated and refined against data rather than only asserted by experts.
-**de la Torre & Chiu (2016)**, *Psychometrika* 81(2):253–273, `10.1007/s11336-015-9467-8`, give a
-general empirical validation method; **Ma & de la Torre (2019)**, *BJMSP* 73(1):142–163, extend it
+de la Torre & Chiu (2016), *Psychometrika* 81(2):253–273, `10.1007/s11336-015-9467-8`, give a
+general empirical validation method; Ma & de la Torre (2019), *BJMSP* 73(1):142–163, extend it
 to sequential G-DINA. `MEASURED-BENCH`
 
-Second, and more important for a builder: **the consequences of getting the matrix wrong are
-severe and asymmetric**. Rupp & Templin (2007), *Educational and Psychological Measurement*
-68(1):78–96, `10.1177/0013164407301545`, is the standard citation for what deleting or adding
-entries does to parameter estimates and attribute classification accuracy in DINA. The publisher
-returned `403` to every retrieval route available in this session and **I did not obtain the
-paper's numbers; I am therefore citing its existence and scope, not a result.** Kunina-Habenicht,
-Rupp & Wilhelm (2012), *JEM* 49(1):59–81, `10.1111/j.1745-3984.2011.00160.x`, covers the same
-ground for log-linear diagnostic classification models and was likewise unobtainable.
-`OBSERVED — untraceable in this session`
+Second, misspecification is costly. Rupp & Templin (2007), *EPM* 68(1):78–96,
+`10.1177/0013164407301545`, is the standard citation for what deleting or adding entries does to
+parameter estimates and attribute classification accuracy in DINA; Kunina-Habenicht, Rupp &
+Wilhelm (2012), *JEM* 49(1):59–81, covers log-linear diagnostic classification models. Both
+publishers returned `403` to every route available here. **I did not obtain either paper's
+numbers and am citing scope, not a result.** `OBSERVED — untraceable in this session`
 
 The design consequence stands even without the numbers. An LLM asked to emit a prerequisite graph
 for a topic is producing an expert-judgement Q-matrix with no validation step, in a formalism
@@ -225,7 +218,7 @@ the system then makes. `INFERENCE`
 
 ### 3.3 The decisive tally: what happens when you actually sequence
 
-**Doroudi, Aleven & Brunskill (2019)**, *IJAIED* 29:568–620, `10.1007/s40593-019-00187-x`,
+Doroudi, Aleven & Brunskill (2019), *IJAIED* 29:568–620, `10.1007/s40593-019-00187-x`,
 ERIC EJ1235264, reviewed every empirical study since the 1960s that compared a
 reinforcement-learning-induced instructional policy against a baseline sequencing policy. Thirty-
 six studies met inclusion. The headline is positive: 21 of 36 found at least one RL-induced
@@ -239,7 +232,7 @@ and the clusters separate cleanly (their Table 2):
 |---|---|---|---|---|---|
 | Paired-associate learning tasks | 11 | 0 | 0 | 2 | 1 |
 | Concept learning tasks | 4 | 0 | 2 | 1 | 0 |
-| **Sequencing interdependent content** | **0** | **0** | **2** | **6** | **0** |
+| Sequencing interdependent content | 0 | 0 | 2 | 6 | 0 |
 | Sequencing activity types | 4 | 4 | 0 | 2 | 0 |
 | Maximising other objectives | 2 | 0 | 0 | 0 | 0 |
 
@@ -252,8 +245,8 @@ year-olds on arithmetic, Doroudi et al. (2017) with 69 fourth and fifth graders 
 the authors' own Appendix B study with 100 more. `MEASURED-META`
 
 Meanwhile the two clusters that *did* work are the ones where the sequencing decision is about
-**when to bring an item back** (paired-associate scheduling, which is the spacing literature
-`F11` already owns) and **what kind of activity to give next for fixed content** (worked example
+when to bring an item back (paired-associate scheduling, which is the spacing literature
+`F11` already owns) and what kind of activity to give next for fixed content (worked example
 versus problem, which is `J1`'s territory). Both are decisions about time and modality within a
 fixed topic. Neither is a decision about which topic comes next.
 
@@ -263,7 +256,7 @@ in is the part with no positive evidence anywhere. `INFERENCE`
 
 ### 3.4 ALEKS: the deployed system whose whole premise is prerequisite structure
 
-Knowledge space theory, due to **Doignon & Falmagne** (collected in *Knowledge Spaces*,
+Knowledge space theory, due to Doignon & Falmagne (collected in *Knowledge Spaces*,
 Springer 1999, `10.1007/978-3-642-58625-5`), models a domain as a family of *knowledge states* —
 the sets of problems a learner could plausibly be able to solve — closed under union. The
 "outer fringe" of a state is precisely the set of items the learner is ready to learn next. ALEKS
@@ -277,12 +270,12 @@ cites no efficacy study and reports no effect size. `VENDOR`
 
 **Two independent meta-analyses reach the same place.**
 
-- **Fang, Ren, Hu & Graesser (2019)**, *Educational Psychology*, ERIC EJ1232632. 15 studies,
+- Fang, Ren, Hu & Graesser (2019), *Educational Psychology*, ERIC EJ1232632. 15 studies,
   24 independent samples, 2005–2015. Conclusion: ALEKS was **as good as, but not better than,
   traditional classroom teaching**. Effect sizes did not differ by schooling level, by whether
   ALEKS was principal or supplementary instruction, or by standardised versus instructor-designed
   outcome. Effect sizes were *larger for shorter* implementations. `MEASURED-META`
-- **Sun, Else-Quest, Hodges, French & Dowling (2021)**, *Investigations in Mathematics Learning*,
+- Sun, Else-Quest, Hodges, French & Dowling (2021), *Investigations in Mathematics Learning*,
   ERIC EJ1314175. 33 studies, 56 independent effect sizes, **9,238 students**, 2000 to August
   2020. Pooled **Hedges' g = 0.05**, with ALEKS "especially effective when used to supplement
   traditional instruction" at **g = 0.43**. `MEASURED-META`
@@ -334,7 +327,7 @@ Bloom himself claimed an effect size of **1.00** "when mastery learning procedur
 systematically and well," and predicted that mastery learning would consistently reach two sigma.
 
 Against that, Slavin restricted to practical applications in real schools running at least four
-weeks, with **equal time** for treatment and control, on **standardised** measures. Seven studies
+weeks, with equal time for treatment and control, on standardised measures. Seven studies
 qualified. **Median effect size = +0.04.** The single non-trivial result in the set (+0.25) came
 from a study in which teachers self-selected into conditions or were assigned by their principals,
 and was not significant at the class level. `MEASURED-META`
@@ -386,7 +379,7 @@ The *direct* comparison literature is thin and partisan. Snider (2004), *Journal
 Instruction*, ERIC EJ755132, argues the case against spiral organisation and for "strand" design
 and is an argument, not an evaluation. `OBSERVED`
 
-The empirically strong descendant of the spiral is **interleaving**, which the corpus covers at
+The empirically strong descendant of the spiral is interleaving, which the corpus covers at
 depth (46 occurrences across `F11`, `N2`, `B1`), including Brunmair & Richter's (2019) moderator
 meta-analysis and Nemeth et al.'s (2019) null in elementary mathematics. The useful reframing
 is that interleaving is a *within-topic* scheduling decision of the kind §3.3 shows actually
@@ -415,9 +408,9 @@ z-scored within grade and year. Adjusted treatment estimates, with standard erro
 
 | Implementation year | Estimate (SD) | SE |
 |---|---|---|
-| Year 1 (2015–16) | **+0.062** | 0.089 |
-| Year 2 (2016–17) | **−0.113** | 0.087 |
-| Year 3 (2017–18) | **−0.170** | 0.087 |
+| Year 1 (2015–16) | +0.062 | 0.089 |
+| Year 2 (2016–17) | −0.113 | 0.087 |
+| Year 3 (2017–18) | −0.170 | 0.087 |
 
 All three are statistically non-significant; the unadjusted estimates trace the same V-shape. The
 report's own summary: "the results of the CITS models were statistically non-significant in each
@@ -428,7 +421,7 @@ three-year, funded, well-implemented deployment of exactly the architecture a "s
 would build. And the point estimates drift *downward* across the three years, which is the
 opposite of the implementation-maturity curve every adaptive-sequencing vendor forecasts.
 
-A second, smaller null for the same family: **KinderTEK**, an iPad mathematics program with
+A second, smaller null for the same family: KinderTEK, an iPad mathematics program with
 individualised progression, cluster-randomised across 70 kindergarten classrooms, **1,368
 students** (690 treatment, 678 business-as-usual). No statistically significant differences on
 early number fluency, broad mathematics achievement, or proximal math content. ERIC ED679597,
@@ -447,11 +440,11 @@ The TRIAD trial (§2.1) was followed to fifth grade. **Clements, Sarama, Layzer,
 
 | Timepoint | TRIAD follow-through | TRIAD no-follow-through |
 |---|---|---|
-| End of pre-K | **0.86** | **0.75** |
+| End of pre-K | 0.86 | 0.75 |
 | End of kindergarten | ≈ 0.4 SD lower than pre-K, still significant | ≈ 0.4 SD lower, still significant |
 | End of grade 1 | ≈ 0.2 SD lower again; significant at *p* < .10 for FT only | not significant |
-| Grades 3 and 4 | **not distinguishable from zero** | **not distinguishable from zero** |
-| End of grade 5 | **0.26** (significant) | **0.21** (significant) |
+| Grades 3 and 4 | not distinguishable from zero | not distinguishable from zero |
+| End of grade 5 | 0.26 (significant) | 0.21 (significant) |
 
 `MEASURED-RCT` (conference paper; the published version is **Clements, Sarama, Layzer & Unlu
 (2023)**, *JRME*, ERIC EJ1372925, `10.5951/jresematheduc-2020-0245`, whose abstract states that
@@ -466,7 +459,7 @@ foundations show up when the curriculum finally asks for them. That is a *latent
 hypothesis, and it makes a falsifiable prediction: fade-out measured on a test that does not
 demand the foundation is not evidence that the foundation is gone.
 
-Note also the subgroup pattern, which cuts against the usual story: effects for **higher-SES**
+Note also the subgroup pattern, which cuts against the usual story: effects for higher-SES
 students in the no-follow-through condition were significant at every timepoint and reached
 0.6–0.7 SD in fourth and fifth grade, while lower-SES students' effects were significant only in
 pre-K and kindergarten. The intervention's durability was greatest where the sustaining
@@ -474,8 +467,8 @@ environment was strongest. `OBSERVED`
 
 ### 6.2 The mechanism study, on the same trial
 
-**Kang, Duncan, Clements, Sarama & Bailey (2019)**, *JEP*, ERIC EJ1213721, decomposed the fade.
-Children who received the intervention **forgot more** in the following year than children who
+Kang, Duncan, Clements, Sarama & Bailey (2019), *JEP*, ERIC EJ1213721, decomposed the fade.
+Children who received the intervention forgot more in the following year than children who
 did not — but forgetting accounted for **only about one quarter** of the fade-out. An offsetting
 transfer effect was small and statistically non-significant, worth roughly one tenth of the
 end-of-program treatment effect. The authors' conclusion: **most of the fade-out was the control
@@ -489,7 +482,7 @@ have it," and the corpus has been conflating them.
 
 ### 6.3 How general is fade-out?
 
-**Watts, Hart & Bailey (2025)**, EdWorkingPaper 25-1366, Annenberg Institute, ERIC ED678313.
+Watts, Hart & Bailey (2025), EdWorkingPaper 25-1366, Annenberg Institute, ERIC ED678313.
 87 randomised trials of educational interventions across developmental stages, **1,459 follow-up
 effect sizes**. Average impact **0.21 SD at posttest**, falling to **0.07 SD at follow-up**
 (*p* < .01), with longer-run estimates hovering near 0.10 SD and imprecisely estimated. The
@@ -497,19 +490,19 @@ authors tested widely held theories about which intervention features predict pe
 found that "salient features of interventions explained only a small portion" of the variation.
 `MEASURED-META` — **working paper, not peer-reviewed; discounted accordingly.**
 
-A companion working paper, **Rosengarten, Hart, Bailey, McCormick & Lovett (2024)**,
+A companion working paper, Rosengarten, Hart, Bailey, McCormick & Lovett (2024),
 EdWorkingPaper 24-1069, ERIC ED672296, tested the popular "constrained skills" explanation — that
 impacts on skills everyone eventually masters should fade while impacts on open-ended skills
 persist. Across the same meta-analytic database, they **found no evidence** that unconstrained
 skills persisted better; in some specifications the sign ran the other way. `MEASURED-META`
 — **working paper.**
 
-The peer-reviewed anchor for the theoretical debate is **Bailey, Duncan, Odgers & Yu (2017)**,
+The peer-reviewed anchor for the theoretical debate is Bailey, Duncan, Odgers & Yu (2017),
 *JREE*, ERIC EJ1125358, which sets out the three competing mechanisms — skill-building,
 foot-in-the-door, and sustaining environments — and shows they generate competing predictions
 about *when* and *whom* to target. The debate is genuinely unresolved and both sides have
-numbers: **Pages, Protzko & Bailey (2022)**, *JREE*, ERIC EJ1349873, found that Abecedarian's
-impacts on IQ subtests from age 5 to 21 (n = 107) were consistent with a **persistent** effect on
+numbers: Pages, Protzko & Bailey (2022), *JREE*, ERIC EJ1349873, found that Abecedarian's
+impacts on IQ subtests from age 5 to 21 (n = 107) were consistent with a persistent effect on
 general ability, with the subtest-specific variance fading. Persistence and fade-out are both
 real; which one you observe depends on how broad the measured construct is. `MEASURED-RCT`
 
@@ -519,10 +512,10 @@ The fade-out literature measures a *relative advantage against a control group*.
 programme measures something different and more directly relevant to a tutor's promise:
 **absolute retention of formally taught material across decades**.
 
-**Bahrick (1984)**, *JEP: General* 113(1):1–29, `10.1037/0096-3445.113.1.1`, is the cross-
+Bahrick (1984), *JEP: General* 113(1):1–29, `10.1037/0096-3445.113.1.1`, is the cross-
 sectional study of Spanish learned in school and tested up to fifty years later. The publisher
 blocked retrieval; I am characterising it through Bahrick's own restatement in
-**Bahrick & Phelps (1987)**, *JEP:LMC* 13(2):344–349, which I did obtain:
+Bahrick & Phelps (1987), *JEP:LMC* 13(2):344–349, which I did obtain:
 
 > "A portion of the acquired knowledge has a life span of more than 25 years even if the knowledge
 > is not rehearsed or accessed during that long interval. Another part of the originally acquired
@@ -533,15 +526,15 @@ blocked retrieval; I am characterising it through Bahrick's own restatement in
 Bahrick's later summary adds that the size of the surviving portion "depended on the total amount
 and the distribution of practice."
 
-**Bahrick & Phelps (1987)** itself: **35 individuals** who had learned and relearned 50
-English-Spanish word pairs, tested for recall and recognition after **8 years**. Two variables
+Bahrick & Phelps (1987) itself: 35 individuals who had learned and relearned 50
+English-Spanish word pairs, tested for recall and recognition after 8 years. Two variables
 predicted permastore retention — the spacing between relearning sessions and the number of
 presentations needed to encode a pair — and together they spanned a range from **0% to 23%
 recall**. Optimum recall came from words encoded in 1–2 presentations and accessed at intervals
 of **30 days**. `MEASURED-RCT`
 
-**Bahrick, Bahrick, Bahrick & Bahrick (1993)**, *Psychological Science* 4(5):316–321, is the
-9-year longitudinal follow-up. **Four subjects**, 300 English-foreign word pairs, 13 or 26
+Bahrick, Bahrick, Bahrick & Bahrick (1993), *Psychological Science* 4(5):316–321, is the
+9-year longitudinal follow-up. Four subjects, 300 English-foreign word pairs, 13 or 26
 relearning sessions at intervals of 14, 28, or 56 days, retention tested at 1, 2, 3 and 5 years.
 Longer intervals slowed acquisition slightly. The retention functions **crossed over during the
 first year** and stayed crossed for five: recall became lowest for the 14-day interval and
@@ -570,8 +563,8 @@ McGaghie, Issenberg, Kessler et al. (2025), *Simulation in Healthcare*,
 `10.1097/sih.0000000000000895`, PMID 41217357, is a systematic review and meta-analysis of
 competency-based (mastery) simulation education for medical procedural skills across a wide range
 of domains and professions. The finding, in the authors' own summary statement: competency-based
-simulation beats non-competency-based simulation **for skill outcomes (large effect)**, while
-"outcomes are favorable, but small, for **behaviors in practice and patient effects**." They also
+simulation beats non-competency-based simulation for skill outcomes (large effect), while
+"outcomes are favorable, but small, for behaviors in practice and patient effects." They also
 report that **no instructional design feature** they examined had a significant impact on skill
 acquisition, and they name the gap directly: "a limited number of studies assessing the impact on
 behaviors in practice and patient effects." `MEASURED-META`
@@ -582,8 +575,8 @@ the measured skill, and the further you get from the measurement the smaller it 
 **The lifecycle result nobody in edtech cites.** Hanushek, Schwerdt, Woessmann & Zhang, "General
 Education, Vocational Education, and Labor-Market Outcomes over the Lifecycle," *Journal of Human
 Resources* 52(1):48–87, `10.3368/jhr.52.1.0415-7074r`. Using International Adult Literacy Survey
-micro-data for **18 countries**, a difference-in-differences comparison of employment rates across
-ages finds that the early employment advantage of vocational education **decreases with age**, and
+micro-data for 18 countries, a difference-in-differences comparison of employment rates across
+ages finds that the early employment advantage of vocational education decreases with age, and
 that the trade-off is "most pronounced in countries emphasizing apprenticeship programs." Robust
 to ability controls and propensity-score matching. `OBSERVED` (quasi-experimental)
 
@@ -623,7 +616,7 @@ The question is how much of that convergence survives inspection.
 
 ### 8.1 The convergence, stated carefully
 
-`F11` already imports **Schmidt & Bjork (1992)**, *Psychological Science* 3(4):207–218,
+`F11` already imports Schmidt & Bjork (1992), *Psychological Science* 3(4):207–218,
 `10.1111/j.1467-9280.1992.tb00029.x`, and quotes its thesis: "Manipulations that maximize
 performance during training can be detrimental in the long term; conversely, manipulations that
 degrade the speed of acquisition can support the long-term goals of training." `F11`'s worked
@@ -635,7 +628,7 @@ difficulties framework on the verbal side. A paper that argues two literatures a
 by the person whose framework one of them is, cannot be counted as the two literatures agreeing.
 `INFERENCE`
 
-What *is* independent is the empirical work. **Shea & Morgan (1979)**, *JEP: Human Learning and
+What *is* independent is the empirical work. Shea & Morgan (1979), *JEP: Human Learning and
 Memory* 5(2):179–187, `10.1037/0278-7393.5.2.179`, was conducted in a motor-behaviour laboratory,
 on a barrier-knockdown task, in a tradition descending from Battig's 1966 work on contextual
 interference, with no methodological contact with the verbal spacing literature. Blocked practice
@@ -651,7 +644,7 @@ reproduces is a separate question, and the answer is largely no.
 
 ### 8.2 Contextual interference under meta-analysis, with the boundary conditions
 
-**Czyż, Wójcik, Solarská & Kiper (2024)**, *Scientific Reports* 14, "High contextual interference
+Czyż, Wójcik, Solarská & Kiper (2024), *Scientific Reports* 14, "High contextual interference
 improves retention in motor learning: systematic review and meta-analysis,"
 `10.1038/s41598-024-65753-3`. 1,255 records screened, 294 full texts, **54 studies in the
 meta-analysis**, delayed retention (>24 h) only. Two models were fitted: a three-level mixed model
@@ -659,12 +652,12 @@ and a random-effects model on study-averaged effects. `MEASURED-META`
 
 | Subgroup | Three-level SMD | 95% CI | Notes |
 |---|---|---|---|
-| Overall | **0.63** | 0.33, 0.93 | 0.43 (0.19, 0.67) after outlier removal; random-effects model gives 0.71 |
-| **Laboratory settings** | **0.92** | 0.48, — | random-effects model 0.99 |
-| **Applied settings** | **0.23** | −0.16, 0.62 | after outlier removal **−0.01** (−0.35, 0.32), *p* = .94, favouring blocked |
-| Under 18 ("young") | **0.02** | −0.90, 0.94 | *p* = .97; 49 effect sizes, 418 participants |
-| Adults (18–59) | **0.63** | 0.30, 0.96 | 119 effect sizes, 1,425 participants |
-| Older adults (≥60) | **1.45** | 0.55, 2.35 | 24 effect sizes, 205 participants |
+| Overall | 0.63 | 0.33, 0.93 | 0.43 (0.19, 0.67) after outlier removal; random-effects model gives 0.71 |
+| Laboratory settings | 0.92 | 0.48, — | random-effects model 0.99 |
+| Applied settings | 0.23 | −0.16, 0.62 | after outlier removal −0.01 (−0.35, 0.32), *p* = .94, favouring blocked |
+| Under 18 ("young") | 0.02 | −0.90, 0.94 | *p* = .97; 49 effect sizes, 418 participants |
+| Adults (18–59) | 0.63 | 0.30, 0.96 | 119 effect sizes, 1,425 participants |
+| Older adults (≥60) | 1.45 | 0.55, 2.35 | 24 effect sizes, 205 participants |
 
 Heterogeneity is high throughout (I² in the 62–83% range where reported).
 
@@ -672,7 +665,7 @@ Heterogeneity is high throughout (I² in the 62–83% range where reported).
 gyms, courts, clinics, anything that is not a laboratory task — the effect is not distinguishable
 from zero and flips sign under outlier removal. In learners under 18 it is 0.02.
 
-This is not an artefact of the meta-analysis. **Wulf & Shea (2002)**, *Psychonomic Bulletin &
+This is not an artefact of the meta-analysis. Wulf & Shea (2002), *Psychonomic Bulletin &
 Review* 9(2):185–211, `10.3758/BF03196276`, reviewed the primary studies twenty years earlier and
 found the same pattern in the underlying data: French, Rink & Werner found no differential
 effectiveness of blocked, random, or mixed schedules for ninth-graders learning volleyball skills;
@@ -691,7 +684,7 @@ spare processing capacity and hurts when they do not. Their title is the warning
 
 ### 8.3 The half that did not replicate: feedback scheduling
 
-The other pillar of the motor-learning dissociation is the **guidance hypothesis** (Salmoni,
+The other pillar of the motor-learning dissociation is the guidance hypothesis (Salmoni,
 Schmidt & Walter, 1984): augmented feedback after every trial functions like physical guidance,
 propping up performance during acquisition while preventing the learner from developing intrinsic
 error detection, so that reduced-frequency feedback should lose during practice and win at
@@ -699,7 +692,7 @@ retention. This is the source of the "fade the feedback" advice in every motor-l
 and it is the instance `F11` §5 already flagged as cutting against its own guidance on corrective
 feedback.
 
-**McKay, Hussien, Vinh, Mir-Orefice, Brooks & Ste-Marie (2022)**, *Psychology of Sport and
+McKay, Hussien, Vinh, Mir-Orefice, Brooks & Ste-Marie (2022), *Psychology of Sport and
 Exercise* 61:102165, `10.1016/j.psychsport.2022.102165` (preprint `10.31234/osf.io/v2cp7`, from
 which the text below is quoted). 1,662 records screened; **61 papers, k = 75, N = 2,228**.
 
@@ -731,10 +724,10 @@ it lead to more accurate error estimation skills." `MEASURED-RCT`
 ### 8.4 Massed against distributed motor practice: located, not quoted
 
 The distribution-of-practice literature in motor learning is the third leg the commission asked
-for. The two canonical meta-analyses are **Lee & Genovese (1988)**, *RQES* 59(4):277–287,
-`10.1080/02701367.1988.10609373`, with its follow-up **Lee & Genovese (1989)**, *RQES*
+for. The two canonical meta-analyses are Lee & Genovese (1988), *RQES* 59(4):277–287,
+`10.1080/02701367.1988.10609373`, with its follow-up Lee & Genovese (1989), *RQES*
 60(1):59–65, `10.1080/02701367.1989.10607414`, whose title states the central moderator —
-*Different Effects for Discrete and Continuous Tasks* — and **Donovan & Radosevich (1999)**,
+*Different Effects for Discrete and Continuous Tasks* — and Donovan & Radosevich (1999),
 *JAP* 84(5):795–805, `10.1037/0021-9010.84.5.795`, "A meta-analytic review of the distribution of
 practice effect: Now you see it, now you don't," whose title states its own.
 
@@ -807,9 +800,9 @@ learner means off by default and earned by measurement. `SPEC`
 walks a fixed graph. The untested question is whether the graph earns its cost.
 
 *Design.* Within-learner, topic-level randomisation, mirroring Matayoshi et al.'s production
-design. For each learner, each eligible topic is randomly assigned to **graph-respecting** entry
+design. For each learner, each eligible topic is randomly assigned to graph-respecting entry
 (the tutor verifies the prerequisite closure and remediates any gap before teaching the target)
-or **demand-driven** entry (the tutor teaches the requested target immediately and repairs
+or demand-driven entry (the tutor teaches the requested target immediately and repairs
 prerequisites only reactively, when an error diagnoses a specific missing component). Total
 instructional time is capped identically in both arms, which is the condition Slavin showed
 almost no mastery-learning study met.

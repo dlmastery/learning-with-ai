@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Pointing At The Thing — Demo 06</title>
-<meta name="description" content="A tutor that circles, arrows and highlights a shared figure and says “this”, versus the same tutor describing position in words. Drag a vertex — the gestures follow, because they are computed from the geometry." />
+<meta name="description" content="A tutor that circles, arrows and highlights a shared figure and says “this”, versus the same tutor describing position in words. Drag a vertex and the gestures follow, because they are computed from the geometry." />
 <link rel="stylesheet" href="../site.css" />
 <link rel="stylesheet" href="demo.css" />
 <script src="../theme.js"></script>
@@ -66,17 +66,17 @@
 </header>
 
 <section class="orient">
-  <div class="o"><b>What this is</b><p>A shared visual field the tutor can point at. It circles, arrows and highlights while its words say &ldquo;this&rdquo; — and a toggle strips the pointing so you feel what is lost.</p></div>
-  <div class="o"><b>Why it matters</b><p>Pointing at a shared referent is how humans teach anything spatial, and no vendor exposes it as a live-session primitive. The substrate now exists (<b>49% IoU</b> fine-tuned against &lt;1% zero-shot); the tutoring loop built on it does not.</p></div>
-  <div class="o"><b>How to use it</b><p>Step through the tutor's turns with the pointing on. Then switch to <em>words only</em> and read the same explanation — the sentences are identical and the burden on your working memory is not. That difference is the whole argument.</p></div>
+  <div class="o"><b>What this is</b><p>A shared visual field the tutor can point at. It circles, arrows and highlights while its words say &ldquo;this&rdquo;. A toggle strips the pointing so you feel what is lost.</p></div>
+  <div class="o"><b>Why it matters</b><p>Pointing at a shared referent is how humans teach anything spatial, and no vendor exposes it as a live-session primitive. The substrate now exists (49% IoU fine-tuned against &lt;1% zero-shot); the tutoring loop built on it does not.</p></div>
+  <div class="o"><b>How to use it</b><p>Step through the tutor's turns with the pointing on. Then switch to <em>words only</em> and read the same explanation. The sentences are identical and the burden on your working memory is not. That difference is the whole argument.</p></div>
 </section>
 
 
 <div class="note"><b>COMPUTED.</b> The figure is not a picture. Every angle, arc, parallel line and
-pointing gesture is computed from three vertex coordinates, live — drag a vertex and the
+pointing gesture is computed live from three vertex coordinates. Drag a vertex and the
 <em>referents move with it</em>, because they are derived from the object rather than drawn on top
-of it. That is the actual technical claim behind deixis: a gesture has to resolve to a region of
-the current scene, not to a location on a canvas. The tutor's <b>sentences are a fixed script</b>,
+of it. That is the actual technical claim behind deixis. A gesture has to resolve to a region of
+the current scene. A location on a canvas will not do. The tutor's <b>sentences are a fixed script</b>,
 which is labelled below every time it matters.</div>
 
 <h2>1 · The shared field</h2>
@@ -93,22 +93,22 @@ which is labelled below every time it matters.</div>
   <button id="nxt">Next ▶</button>
   <button id="reset">Reset the triangle</button>
 </div>
-<div class="sum" id="angles" style="margin-top:14px">—</div>
+<div class="sum" id="angles" style="margin-top:14px">…</div>
 
 <h2>2 · The tutor’s turns</h2>
-<p class="sub" id="modeNote">—</p>
+<p class="sub" id="modeNote">…</p>
 <div class="turns" id="turns"></div>
 
 <div class="two">
   <div class="stat a">
     <div class="sn">Deictic transcript</div>
-    <div class="sv" id="wA">—</div>
+    <div class="sv" id="wA">…</div>
     <p>Words needed when the tutor can point. “This angle” is two words because the pointing does
     the referring.</p>
   </div>
   <div class="stat b">
     <div class="sn">Words-only transcript</div>
-    <div class="sv" id="wB">—</div>
+    <div class="sv" id="wB">…</div>
     <p id="wBn">Words needed when the same content must locate every referent in prose. Counted
     from the two scripts on this page.</p>
   </div>
@@ -122,23 +122,23 @@ away from it, because the learner does not have to hold a search in working memo
 integrating. Deixis is a mechanism for achieving contiguity in a moving, interactive figure.
 <b>The effect size belongs to contiguity, not to this demo.</b></div>
 
-<h2>3 · The substrate now exists — and stops one step short</h2>
+<h2>3 · The substrate now exists, and stops one step short</h2>
 
 <div class="scroll">
 <table>
   <thead><tr><th>Capability</th><th class="num">Measured</th><th>Status</th></tr></thead>
   <tbody>
-    <tr><td>Resolving “the angle at the base of the triangle” to a <b>region of a diagram</b><br />
+    <tr><td>Resolving “the angle at the base of the triangle” to a region of a diagram<br />
       <span class="mini">Florence-2 fine-tuned on 200k synthetic geometry diagrams, referring-expression segmentation</span></td>
       <td class="num up"><b>49% IoU</b><br />85% buffered IoU</td>
       <td>Exists. arXiv:2604.02893, <code>MEASURED-BENCH</code></td></tr>
-    <tr><td>The same task, <b>zero-shot</b></td>
+    <tr><td>The same task, zero-shot</td>
       <td class="num down"><b>&lt; 1% IoU</b></td>
       <td>The gap that fine-tuning closed. Nothing about this was free.</td></tr>
-    <tr><td>A <b>tutoring loop</b> built on that grounding — point, ask, watch, re-point</td>
-      <td class="num">—</td><td><b>Does not exist</b> in any located work</td></tr>
-    <tr><td>An <b>efficacy measurement</b> of deictic tutoring vs the same tutor without pointing</td>
-      <td class="num">—</td><td><b>Does not exist.</b> This is the missing trial</td></tr>
+    <tr><td>A tutoring loop built on that grounding (point, ask, watch, re-point)</td>
+      <td class="num">none</td><td><b>Does not exist</b> in any located work</td></tr>
+    <tr><td>An efficacy measurement of deictic tutoring vs the same tutor without pointing</td>
+      <td class="num">none</td><td><b>Does not exist.</b> This is the missing trial</td></tr>
   </tbody>
 </table>
 </div>
@@ -154,7 +154,7 @@ learner's side, circled a different angle.</div>
 <p>Switch the mode and read turn 4 in both versions. In the deictic version the learner's eye is
 led to the referent before the claim arrives. In the words-only version the learner must
 <em>parse a locative description, search the figure, commit to a candidate, and only then</em>
-receive the claim — and if they picked the wrong candidate, the claim lands on the wrong object and
+receive the claim. If they picked the wrong candidate, the claim lands on the wrong object and
 nothing in the interaction detects it. That is the failure the pointing removes. It is also,
 precisely, the failure a 49%-IoU pointer <em>reintroduces</em> half the time.</p>
 
@@ -162,17 +162,17 @@ precisely, the failure a 49%-IoU pointer <em>reintroduces</em> half the time.</p
 <div class="panel">
   <div class="ptitle">What it proves</div>
   <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
-    <li>Deictic reference can be made <strong>computational</strong>: gestures resolved against a
-    live geometric model, not baked into an image. Drag a vertex and every referent follows.</li>
+    <li>Deictic reference can be made computational: gestures are resolved against a
+    live geometric model instead of being baked into an image. Drag a vertex and every referent follows.</li>
     <li>The contrast is felt rather than argued. One toggle, same content, and the words-only
     version is immediately worse to follow.</li>
-    <li>A shared, manipulable field is buildable with no dependency — SVG, pointer events, and
-    about a hundred lines of trigonometry.</li>
+    <li>A shared, manipulable field is buildable with no dependency at all, out of SVG, pointer
+    events and about a hundred lines of trigonometry.</li>
     <li>The verbosity cost of banning deixis is real and countable.</li>
   </ul>
   <div class="ptitle">What it does not prove</div>
   <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.8px;line-height:1.65">
-    <li><strong>That pointing teaches better.</strong> The comparison — deictic tutor versus the
+    <li>That pointing teaches better. The comparison — deictic tutor versus the
     same tutor without gestures, on learning outcomes — has not been run. What exists is the
     contiguity literature, which is adjacent and not the same claim.</li>
     <li>That a model could produce these gestures. Here they are hand-authored against known

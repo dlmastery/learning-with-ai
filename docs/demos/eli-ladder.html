@@ -123,9 +123,9 @@ they diminish early. Charts at the bottom.</div>
     <p style="font-size:13.5px;color:var(--ink-3);margin:8px 0 12px">The system stores this so
     it can be audited. It is not an input to the rule. See the note underneath.</p>
     <select id="pref">
-      <option value="1">Rung 1 — just tell me what happens</option>
-      <option value="2" selected>Rung 2 — I want the mechanism</option>
-      <option value="3">Rung 3 — give me the real thing</option>
+      <option value="1">Rung 1: just tell me what happens</option>
+      <option value="2" selected>Rung 2: I want the mechanism</option>
+      <option value="3">Rung 3: give me the real thing</option>
     </select>
   </div>
 
@@ -136,8 +136,8 @@ they diminish early. Charts at the bottom.</div>
 </div>
 
 <div class="note warn"><b>Why preference is inadmissible as an input.</b> Across three randomised
-comparisons, learners' <strong>preference between two versions moved d ≈ 0.48 while their
-knowledge moved zero</strong> — and the bias <strong>survives explicit debiasing</strong>.
+comparisons, learners' preference between two versions moved d ≈ 0.48 while their
+knowledge moved zero, and the bias <strong>survives explicit debiasing</strong>.
 Worse, the direction is not random: a simplified account <em>raises</em> confidence and perceived
 credibility independently of competence, so a learner who has just read the easy rung is
 <em>more</em> confident and therefore <em>less</em> likely to ask for the harder one.
@@ -157,25 +157,25 @@ override and an audit trail. It may never be the default input.</div>
 <div class="scroll">
 <table>
   <tr><th>A rung MAY drop</th><th>A rung may NEVER falsify</th></tr>
-  <tr><td>Numeric precision; higher-order corrections</td><td><b>Ontological category</b> — thing vs. direct process vs. <em>emergent</em> process</td></tr>
-  <tr><td>Formal machinery — the derivation, the notation, the proof</td><td><b>Sign or direction of a causal relation</b></td></tr>
-  <tr><td>Mechanism depth — black-boxing a subcomponent, <em>iff the box is named as a box</em></td><td><b>Quantifier strength</b> — "all" asserted where only "some" or "overwhelmingly probable" holds</td></tr>
-  <tr><td>Edge cases outside the declared scope, <em>iff the scope is declared</em></td><td><b>Uniqueness of a mechanism</b> — presenting one of several as <em>the</em> mechanism</td></tr>
+  <tr><td>Numeric precision; higher-order corrections</td><td><b>Ontological category</b>: thing vs. direct process vs. <em>emergent</em> process</td></tr>
+  <tr><td>Formal machinery: the derivation, the notation, the proof</td><td><b>Sign or direction of a causal relation</b></td></tr>
+  <tr><td>Mechanism depth: black-boxing a subcomponent, <em>iff the box is named as a box</em></td><td><b>Quantifier strength</b>: "all" asserted where only "some" or "overwhelmingly probable" holds</td></tr>
+  <tr><td>Edge cases outside the declared scope, <em>iff the scope is declared</em></td><td><b>Uniqueness of a mechanism</b>: presenting one of several as <em>the</em> mechanism</td></tr>
 </table>
 </div>
 
 <div class="panel">
   <div class="ptitle">Run the checker</div>
-  <div class="psub">Each rung is stored as a structured claim, not as prose. The checker compares
-  it field-by-field against the reference account. Switch in a violating simplification and watch
-  it get rejected — the rejection is computed from the fields, not looked up.</div>
+  <div class="psub">Each rung is stored as a structured claim rather than as prose. The checker
+  compares it field-by-field against the reference account. Switch in a violating simplification
+  and watch it get rejected. The rejection is computed from the fields; nothing is looked up.</div>
   <div class="row" id="fpick"></div>
   <div id="fout"></div>
 </div>
 
 <div class="panel sunken">
   <div class="ptitle">The checker</div>
-  <div class="psub">This is the function that produced the table above — the same field comparisons, in the same order. Forty lines is the whole enforcement mechanism.</div>
+  <div class="psub">This is the function that produced the table above, with the same field comparisons in the same order. Forty lines is the whole enforcement mechanism.</div>
   <div class="mono-block" id="chksrc"></div>
 </div>
 
@@ -218,7 +218,7 @@ and the field's evidence says re-categorisation mostly does not happen.</p>
   <div class="scroll"><table id="citable"></table></div>
   <figcaption class="psub" style="margin:14px 0 0">Read the second row carefully. It is not
   "five rungs are worse". It is <strong>"five rungs bought nothing you can distinguish from
-  zero, at 166 pupils"</strong> — a wide interval straddling zero. The honest reading is that
+  zero, at 166 pupils"</strong>, a wide interval straddling zero. The honest reading is that
   the third rung is where the evidence stops, not that a fourth is harmful.</figcaption>
 </figure>
 
@@ -235,7 +235,7 @@ and the field's evidence says re-categorisation mostly does not happen.</p>
   <div class="ptitle">What this page proves</div>
   <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
     <li>That the <strong>fidelity rule is mechanisable</strong>. It is not a stylistic
-    aspiration — represent a rung as structured claims rather than prose and the four
+    aspiration. Represent a rung as structured claims rather than prose and the four
     never-falsify invariants become a forty-line pure function that returns pass or fail with a
     named failure class.</li>
     <li>That <strong>entry-by-probe is buildable</strong>, cheap, and produces a different answer
@@ -260,8 +260,8 @@ and the field's evidence says re-categorisation mostly does not happen.</p>
     <em>instrument</em> is a demonstration.</li>
     <li>That three is the right number of rungs for <em>your</em> concept. The p = 0.032 /
     p = 0.738 result is 166 nine-year-olds learning network routing. It is the only direct
-    granularity comparison anyone has run, which is a statement about how thin this literature
-    is, not about how strong the finding is.</li>
+    granularity comparison anyone has run, which says more about how thin this literature is
+    than about how strong the finding is.</li>
   </ul>
 </div>
 

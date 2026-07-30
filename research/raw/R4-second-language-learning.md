@@ -632,43 +632,79 @@ person, and will say it eighty times. No human tutor supplies that, at any price
 question is whether the machine on the other end can tell the difference between the
 eighty attempts.
 
-### 5.1 What is measured on automated pronunciation feedback
+### 5.1 What is measured, and the table that reorganises the field
 
-The CALL literature's answer is positive and its own authors say it should not be
-believed yet.
+The CALL literature's headline is positive. The best-designed synthesis in it says the
+positive number does not survive being asked what it is a number *about*.
 
-Mahdi & Al Khateeb (2019), *Review of Education* 7(3), meta-analysed 20 studies,
-1,014 participants, computer-assisted pronunciation training versus traditional
-instruction: d = 0.68, equally effective for young and adult learners, larger for
-beginners and intermediates than for advanced learners. `MEASURED-META`. Their own
-closing caution is the part to carry forward:
+Saito & Plonsky (2019), *Language Learning* 69(3):652–708,
+[10.1111/lang.12345](https://doi.org/10.1111/lang.12345), meta-analysed 77 studies of
+pronunciation instruction: between-group **d = 0.68 [0.49, 0.86]**, within-group
+**0.73 [0.69, 0.78]**, and a control-group test-retest band of **0.31 [0.24, 0.38]** that
+sets the floor. Their Table 7 then splits the estimate by construct and by task:
+
+| Construct | Task | k | d | 95% CI |
+|---|---|---|---|---|
+| Global (comprehensibility, intelligibility, fluency, accentedness) | controlled | 6 | 0.33 | **[−0.18, 0.85]** |
+| Global | spontaneous | 4 | 0.73 | **[−0.03, 1.50]** |
+| Specific segmentals/suprasegmentals, expert-rated | controlled | 19 | 0.75 | [0.42, 1.07] |
+| Specific, expert-rated | spontaneous | 3 | 0.40 | **[−0.44, 1.26]** |
+| Specific, acoustic | controlled | 17 | 0.84 | [0.45, 1.24] |
+| Specific, acoustic | spontaneous | 6 | 0.24 | **[−0.22, 0.71]** |
+
+`MEASURED-META`. Every interval covering **global** pronunciation crosses zero, and so does
+**every interval involving spontaneous speech**. In the authors' words, effectiveness "could
+be limited to L2 learners' acquisition of specific segmental and suprasegmental features at
+a controlled speech level." They also note the within-group funnel plot is "almost cut-off
+at zero," making even 0.73 a slightly inflated estimate.
+
+Now the technology layer, which does not beat the instruction layer. Mahdi & Al Khateeb
+(2019), *Review of Education* 7(3):733–753, put CAPT against traditional teaching at
+**d = 0.68** over 20 studies and 1,014 participants, with a self-critique worth quoting in
+full:
 
 > *"The small number of studies, all of very low quality (most with fewer than 100
 > participants, conducted within the same institution using intervention-related
 > assessments) means that the evidence of effectiveness can only be indicative and not
 > conclusive."*
 
-"Intervention-related assessments" is the same defect as §2.1: the test is made of the
-material that was trained. A meta-analysis that warns its own readers this way is doing
-its job, and the d = 0.68 should not be quoted without the sentence attached.
+Ngo, Chen & Lai (2024), *ReCALL* 36(1):4–21,
+[10.1017/S0958344023000113](https://doi.org/10.1017/S0958344023000113), isolates ASR
+specifically: 15 studies, 38 effect sizes, three-level random effects,
+**g = 0.69, 95% CI [0.31, 1.08]**, I²(L3) = 56.6%. The interval runs from small to very
+large, so the point estimate carries little. The moderators carry more:
 
-Almusharraf, Mahdi, Al-Nofaie & Aljasser (2024), *J. Computer Assisted Learning* 40(6),
-updated the synthesis to 31 studies and 42 effect sizes from experimental-versus-control
-designs. Its abstract reports every result as a verbal magnitude, "medium" or "large,"
-with no numeric effect size, confidence interval or heterogeneity statistic, and the
-full text was not retrievable here. It is recorded so that it is not silently treated as
-a second, converging estimate of Mahdi & Al Khateeb.
+| Moderator | g | k |
+|---|---|---|
+| Segmental target | 0.82 | 15 |
+| Suprasegmental target | 0.37 | 5 |
+| **Practising alone** | **0.44** | 11 |
+| With peers | 0.89 | 5 |
+| With teacher | 1.24 | 2 |
+| Short intervention (1–4 wk) | **0.07** | 3 |
 
-The distinction the whole area rests on is Munro and Derwing's separation of
-**accentedness** (how different a speaker sounds from a reference variety),
-**comprehensibility** (how much effort a listener spends) and **intelligibility** (how much
-the listener actually recovers). The three dissociate: heavily accented speech is routinely
-fully intelligible, and only the last two are legitimate instructional targets. Their
-primary papers were **not retrieved in this session**, so the framework is described here
-and no effect size is attributed to it. The design consequence stands regardless: most CAPT
-tools score similarity to a native reference, which is an accentedness measure, and an AI
-pronunciation tutor built that way optimises the one construct the field says is not the
-goal.
+Solo ASR practice, which is how every consumer product is used, is g = 0.44. The large
+effects live in conditions containing a human. And Amrate & Tsai's (2024) systematic review
+of 30 CAPT studies reports that **21 used discrete segmental measures and only 4 used
+global measures** such as intelligibility, with practice "characterized by the predominant
+use of drilling through listen-and-repeat and read-aloud activities."
+
+**Which construct, and why it decides the product.** Munro & Derwing (1995), *Language
+Learning* 45(1):73–97, [10.1111/j.1467-1770.1995.tb00963.x](https://doi.org/10.1111/j.1467-1770.1995.tb00963.x),
+separated three things and operationalised them differently: **intelligibility** is
+objective (orthographic transcription scored by exact word match), while
+**comprehensibility** and **accentedness** are 9-point listener ratings. Their finding is
+that utterances "tended to be highly intelligible and highly rated for comprehensibility"
+while accent judgements "ranged widely," and that "a strong foreign accent does not
+necessarily reduce the comprehensibility or intelligibility of L2 speech." The paper is
+closed access with no repository copy, so **the individual correlations are not quoted
+here**; the abstract is verbatim. Levis (2020), *JSLP* 6(3):310–328, draws the design
+consequence: under the intelligibility principle accentedness is "largely irrelevant," the
+nativeness principle assumes things "largely unattainable… and unnecessary," and "as a
+field, we should simply stop encouraging such unlikely and unnecessary goals."
+
+Most CAPT scoring is similarity to a native reference, which is an accentedness measure. A
+tutor built that way optimises the one construct the field says is not the goal.
 
 ### 5.2 The benchmark that bounds the product
 
@@ -724,38 +760,94 @@ word-level, short-term). A crude recogniser used to structure repeated practice 
 teacher, which suggests the work is being done by the structured repetition and not by
 diagnostic accuracy.
 
-### 5.3 Willingness to communicate, and the transfer nobody has measured
+### 5.3 Willingness to communicate, and the link the whole marketed story rests on
 
-Anxiety in L2 learning is real and measured. Teimouri, Goetze & Plonsky (2019), *Studies in
-Second Language Acquisition* 41(2), meta-analysed 97 reports, 105 independent samples,
-N = 19,933, 23 countries, 216 correlations: mean r = −0.36 between L2 anxiety and
-language achievement. `MEASURED-META`. It is the best estimate in the area and it is
-correlational, so it establishes no direction.
+The product story is a three-link chain: bot practice raises willingness to communicate and
+lowers anxiety, which raises real L2 use with people, which raises proficiency. Each link
+has evidence. They do not join up.
 
-The chatbot-and-WTC literature is where marketing and measurement diverge. Waluyo &
-Pratiwi (2025), *JALT CALL Journal* 21(2), synthesised the Asian EFL evidence across eight
-countries and reported that chatbot interaction enhances willingness to communicate,
-communicative confidence and motivation by reducing speaking anxiety. It also reported, in
-the same abstract:
+**Link one is measured almost entirely by questionnaire, and the nulls are published.**
+Chatbot studies reporting WTC or anxiety gains are dominated by single-group or
+version-comparison designs. Against them:
 
-> *"[E]vidence on long-term transfer to real-world communication remains scarce."*
+| Study | Design | Result |
+|---|---|---|
+| Çakmak (2022), *Novitas-ROYAL* 16(2) | N = 89, single-group pre/post, Replika | Speaking anxiety **rose**: 2.95 → 3.27, t(88) = 10.64, p < .001 |
+| El Shazly (2021), *Expert Systems* 38(3), [10.1111/exsy.12667](https://doi.org/10.1111/exsy.12667) | N = 48, quasi-exp., 8 weeks | Anxiety "slightly intensified"; "learners' speech-related anxieties were not reduced" |
+| Ballıdağ & Aydın (2025), *Future in Educ. Res.* 3(2) | N = 44, chatbot vs peer tasks | Chatbot ns; **peer interaction significantly reduced anxiety** |
+| Ayedoun et al. (2019), *IJAIED* 29(1) | N = 40, one lab session | Self-reported confidence d = 1.42, anxiety only p < .1, and actual **time spent talking F(2,37) = 0.28, p = .75** |
+| Susoy (2026), *Front. Psychol.* 16:1745942 | N = 48, within-subjects, counterbalanced, AI vs human examiner | Anxiety lower before the AI exam by **d = 0.39**; measured speaking achievement **did not differ**; anxiety across conditions correlated **r = .918** |
 
-`MEASURED-META` (narrative meta-synthesis, so no pooled estimate). The pattern is
-consistent and it is entirely made of self-report. Willingness to communicate is a
-questionnaire. Communicative confidence is a questionnaire. Speaking anxiety is the
-FLCAS, a questionnaire. Every one of those can move without a single additional word
-being spoken to a human being.
+`MEASURED-RCT` / `OBSERVED` as marked. Susoy's r = .918 is the most useful number here: the
+AI shifts the group mean a little and leaves the rank ordering of anxious learners
+essentially untouched.
 
-**What is absent, stated as specifically as I can make it.** No study located in this
-session measured whether practice with an AI conversational partner changes behaviour
-with a human interlocutor: minutes of unscripted L2 speech produced with a person,
-turns initiated, conversations not avoided, or a blind rating of comprehensibility in a
-human-to-human exchange. The trial would need an AI-practice arm and a human-practice arm
-matched on speaking minutes, with the primary outcome collected in a **human** interaction
-by a rater blind to condition, at least four weeks after the last AI session. Currently
-that trial does not exist in ERIC.
+**Link two is close to untested, and the base rate is discouraging.** MacIntyre, Dörnyei,
+Clément & Noels (1998), *MLJ* 82(4), is explicitly a heuristic pyramid with **no data
+collected** — "a work-in-progress, more of a starting point than a finished product." Where
+actual talk has been counted rather than self-reported, self-reported WTC explains between
+**0% and 21%** of the variance: R² = .209 for hand-raises in teacher-led Q&A but **R² = .006
+in a peer-led activity** in the same 48 learners (Shaffer 2021, ERIC EJ1293960); R² = .21 on
+recorded discussion word count in the strongest study, n = 439 (Leeming et al. 2024,
+*Language Learning* 74(4)); and outright nulls on output, turn-taking and public-speaking
+performance elsewhere.
 
----
+And the anxiety construct behaves oddly in exactly the skill this section is about. Botes,
+Dewaele & Greiff (2020), *JPLL* 2(1), meta-analysed 99 FLCAS effect sizes, N = 14,128:
+general achievement **r = −.39 [−.45, −.33]**, writing −.47, listening −.53 — and
+**speaking the weakest at −.26 [−.40, −.12], falling to −.19 after trim-and-fill**, with
+**four of the sixteen speaking studies reporting a positive correlation**. Teimouri, Goetze
+& Plonsky (2019), *SSLA* 41(2), give the larger pooled figure of **r = −.36** across 105
+samples and N = 19,933; that paper is closed access and its confidence interval is not
+quoted here. `MEASURED-META`. All of it is correlational, and Botes et al. state the
+directionality caveat themselves.
+
+**Link three has one quantitative estimate and it is not encouraging.** Bibauw, Van den
+Noortgate, François & Desmet (2022), *LL&T* 26(1), meta-analysed dialogue systems for
+language learning — 17 publications, 100 effect sizes, 803 participants, overall
+**d = 0.58 [0.35, 0.82]** on measured language outcomes, with motivation studies
+deliberately excluded. Their cross-modality breakdown is the closest thing the field has to
+a transfer test:
+
+| Practice → outcome | d | 95% CI |
+|---|---|---|
+| Speaking → speaking | 0.84 | [0.42, 1.26] |
+| Writing → writing | 0.65 | [0.27, 1.04] |
+| **Written practice → speaking** | **0.29** | **[−0.21, 0.79]** |
+| **Oral practice → writing** | **0.19** | **[−0.31, 0.70]** |
+
+Both cross-modality intervals cross zero, and the authors call the transfer "quite
+limited." Effects also decline with proficiency, from d = 0.68 at A1 to **d = −0.33 at B2**.
+The whole search cut off in January 2018, so none of it is about generative models.
+`MEASURED-META`.
+
+Hou & Min (2025), *ReCALL* 37(3), update the speaking-specific estimate to
+**g = 0.61 [0.34, 0.89]** over 16 studies, with a limitation they state themselves:
+**"nearly all the studies (k = 15, 94%) involved fewer than 60 learners,"** the largest
+being 73, and "instead of drawing definitive conclusions, we hope the following findings
+stimulate greater research attention."
+
+**And against an active human comparison the measured advantage keeps collapsing.** Chen,
+Jia, Li & Liu (2024), *J. Educ. Computing Research* 63(1),
+[10.1177/07356331241299058](https://doi.org/10.1177/07356331241299058), n = 53, GenAI-agent
+role-play against peer role-play: **"no significant difference in speaking performance
+improvement"** — while self-reported intrinsic motivation and self-efficacy did exceed the
+control. Kim, Kim & Cha (2021), *J. AsiaTEFL* 18(1), n = 110 across face-to-face, AI text
+chat and AI voice chat: **no significant differences on two of the three measured speaking
+tasks.** Tai & Chen (2024), *CALL* 37(5–6), randomised, one semester: the Google Assistant
+effect was "similar to that of interaction with L1 English speakers." Susoy (2026), above:
+identical measured achievement.
+
+**What is absent, stated as specifically as I can make it.** The pattern in the paragraph
+above is the diagnostic one for this whole area: self-report separates the conditions and
+measured performance does not. No study located here measures whether AI conversational
+practice changes behaviour with a **human** interlocutor — minutes of unscripted L2 speech
+produced with a person, turns initiated, conversations not avoided, or blind-rated
+comprehensibility in a human-to-human exchange. The single exception is Ding & Yusof (2025),
+*Humanit. Soc. Sci. Commun.* 12:1223, whose outcome is a live face-to-face IELTS Speaking
+exam, double-rated (F(1,57) = 5.79, p = .022, η² = .11) — but the groups were two intact
+classes, and the **control also improved significantly** (5.14 → 5.42, p = .016). That is a
+rated test, not spontaneous interaction, and it is one non-randomised study.
 
 ## 6. The critical-period question, stated accurately
 

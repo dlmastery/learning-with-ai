@@ -121,5 +121,47 @@ These are constraints, not a thesis. They should bound the vision, not replace i
 
 ---
 
+## 2026-07-30 — Three commissioned hypotheses, three refutations
+
+Seven research reports were commissioned to close the absent rows in the coverage
+audit. Each brief carried a hypothesis, written by me, stated as the thing to test.
+Three came back refuted, and the pattern in how they failed is the useful part.
+
+**1. "Exams are pedagogy's missing `pytest`."** The survey's central architectural
+claim is that coding agents work because a strong external check exists and pedagogy
+has none. Exams looked like the exception: a real rubric, a real score. R2 put it
+against four objections and it fails. A mark scheme checks the *learner's answer*,
+not the *tutor's diagnosis*, and Koretz's inflation literature shows the per-item
+signal is the part coaching most biases — high-stakes gains run 3–5× low-stakes
+gains. What survives is narrower: the mark scheme is a **held-out test set**, and the
+checkable target is predicting which marks a learner will lose before they sit the
+paper.
+
+**2. "Comprehension strategies have a much weaker effect than background
+knowledge."** Traced to primaries, both land in the same band on standardised
+comprehension: strategies 0.186 (k = 125), struggling-reader interventions 0.21,
+content-rich instruction 0.25, reciprocal teaching 0.32. Recht & Leslie is a strong
+result and is correlational, so it cannot license a claim about *building* knowledge.
+The defensible version is that knowledge-building pays a second time — content
+knowledge at ES 0.89 — which strategy instruction has no analogue for.
+
+**3. "The relationship literature will show a large moderator we have ignored."**
+It shows a real one that is smaller than its reputation: β = .14 total,
+half of it indirect through engagement, direct path β = .07, model R² 9%.
+
+**What this says about how the briefs were written.** Each hypothesis was an
+*inference this project already believed*, handed to a researcher as a thing to
+confirm. Two of the three were built on an analogy (`pytest`, the knowledge/strategy
+split) rather than on a measurement. The briefs were right to state them, because a
+stated hypothesis can be refuted and an unstated one silently steers the reading —
+but the framing should have been *test this*, which it was, rather than *establish
+this*, which two of them also said.
+
+**What changes.** A commissioning brief states its hypothesis and states, in the same
+sentence, what result would kill it. Where the hypothesis is an analogy to another
+field, say so in the brief, because that is the class that failed here.
+
+---
+
 *This file is append-only. Assumptions do not get quietly revised — they get a new entry
 with a date, like everything else in this repository.*

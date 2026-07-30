@@ -297,21 +297,21 @@ standardised-outcome estimates up:
 
 Every one of these sits between 0.18 and 0.32. Nothing in this table licenses "knowledge
 has a large effect and strategies a small one." What the table does license is a different
-and more defensible claim: **the two families cost the same on the comprehension outcome,
-and only one of them also produces content knowledge at ES ≈ 0.89.** Knowledge-building
+and more defensible claim: **the two families deliver about the same on the comprehension
+outcome, and only one of them also produces content knowledge at ES ≈ 0.89.** Knowledge-building
 wins on the second outcome, not the first. For a tutor whose learner has to pass a science
 test as well as read a passage, that is decisive, and it is decisive for a reason nobody
 argues about. `INFERENCE`
 
 **What would falsify it.** The claim above is that knowledge-building and strategy
 instruction are indistinguishable on standardised comprehension and separable on content
-knowledge. It is falsified by any adequately powered trial that randomises the *same*
-learners, over the *same* instructional hours, to (a) explicit comprehension-strategy
+knowledge. It is falsified by any adequately powered trial that randomises comparable
+learners, over equated instructional hours, to (a) explicit comprehension-strategy
 instruction on domain-general texts and (b) content-rich instruction in one domain, and
 finds a between-arm difference on a standardised comprehension measure with a confidence
 interval excluding zero in either direction. Time-on-task must be equated, because every
 knowledge-building study above adds content time. If such a trial exists I did not find it;
-the queries are in §4. `SPEC`
+see §5. `SPEC`
 
 ### 1.7 The reading nulls
 

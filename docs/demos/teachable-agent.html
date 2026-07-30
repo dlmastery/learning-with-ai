@@ -81,8 +81,8 @@ indistinguishable from zero. The obligation has to be announced <em>first</em>. 
 
 <h2>2 · Teach the rule</h2>
 <p>The protégé works on problems of the form <code>a/b + c/d</code>. Say what its numerator and
-denominator should be. You may write it in words — the phrase table below shows exactly what
-vocabulary the parser recognises — or edit the formulas directly.</p>
+denominator should be. You may write it in words, using the vocabulary the phrase table below
+prints in full, or edit the formulas directly.</p>
 
 <div class="panel">
   <div class="ptitle">Your explanation</div>
@@ -116,8 +116,8 @@ vocabulary the parser recognises — or edit the formulas directly.</p>
 </table>
 </div>
 <p class="sub">That is the whole vocabulary. Anything else in your sentence is ignored, and the
-protégé says so rather than guessing — which is itself the point: an agent that silently repairs
-your phrasing hides your misconception from you.</p>
+protégé says so instead of guessing. That is itself the point, because an agent that silently
+repairs your phrasing hides your misconception from you.</p>
 
 <h2>3 · The protégé works the problems</h2>
 <p class="sub">Substitution shown line by line. This is what it actually did, not a summary of it.</p>
@@ -158,11 +158,11 @@ It has no sanity check, no floor, no “that can’t be right”.</p>
 <table>
   <thead><tr><th>Contrast</th><th class="num">Effect</th><th>k</th><th>Source</th></tr></thead>
   <tbody>
-    <tr><td>Teaching after study <b>with</b> teaching expectancy</td><td class="num up">g = 0.48 [0.34, 0.63]</td><td>39</td><td>Kobayashi 2024, <code>MEASURED-META</code></td></tr>
-    <tr><td>Teaching after study <b>without</b> teaching expectancy</td><td class="num down">g = −0.02 [−0.14, 0.11]</td><td>39</td><td>Kobayashi 2024, <code>MEASURED-META</code> · <b>null</b></td></tr>
+    <tr><td>Teaching after study <em>with</em> teaching expectancy</td><td class="num up">g = 0.48 [0.34, 0.63]</td><td>39</td><td>Kobayashi 2024, <code>MEASURED-META</code></td></tr>
+    <tr><td>Teaching after study <em>without</em> teaching expectancy</td><td class="num down">g = −0.02 [−0.14, 0.11]</td><td>39</td><td>Kobayashi 2024, <code>MEASURED-META</code> · <b>null</b></td></tr>
     <tr><td>Preparing to teach, expectancy only, no delivery</td><td class="num">g = 0.35</td><td>28</td><td>Kobayashi 2019, <code>MEASURED-META</code></td></tr>
     <tr><td>Delivery’s increment over expectancy-framed study alone</td><td class="num">g = 0.38 [0.17, 0.60]</td><td>14</td><td>Kobayashi 2024, <code>MEASURED-META</code></td></tr>
-    <tr><td>Human learning-by-teaching, pooled</td><td class="num">g = 0.56</td><td>—</td><td><b>Human</b> LBT — not this mechanism</td></tr>
+    <tr><td>Human learning-by-teaching, pooled</td><td class="num">g = 0.56</td><td>—</td><td><b>Human</b> LBT, not this mechanism</td></tr>
     <tr><td><b>An AI teachable agent that stays wrong</b></td><td class="num">no measurement exists</td><td>0</td><td>—</td></tr>
   </tbody>
 </table>
@@ -185,7 +185,7 @@ to repair it.</div>
     <li>Non-self-correction is implementable as an explicit property, not a hoped-for behaviour.
     The engine has no path by which it could notice the rule is wrong.</li>
     <li>A test suite can make a misconception <em>visible as a score</em>, including the case where
-    a bad rule accidentally passes an easy item — which is a real property of assessment design,
+    a bad rule accidentally passes an easy item. That is a real property of assessment design and
     not a bug in the demo.</li>
     <li>The teaching expectancy can be set reliably, for free, before every study episode. That is
     the moderator carrying the effect, and software is unusually good at it.</li>
