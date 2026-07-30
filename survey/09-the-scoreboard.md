@@ -54,8 +54,8 @@ who sell the product.
 **A band that thin is a starting position and not a ceiling.** The three trials share
 one design: a general-purpose assistant handed to a classroom, six to eight weeks,
 measured the week it stopped. What they measure is a deployment pattern, and what
-they establish is that the pattern works at all, in four countries and three
-languages, **at an inference cost measured at 0.43% of a delivered session** (§37).
+they establish is that the pattern produces a positive effect at all, in three
+countries, **at an inference cost measured at 0.43% of a delivered session** (§37).
 That last clause is the one this survey kept dropping, and it carries more
 consequence than the effect size does: the gain is modest, and the marginal cost of
 the next child receiving it is close to nothing. What that does *not* mean is that

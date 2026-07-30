@@ -16,9 +16,23 @@ error. `evidence/VINTAGE.md` is the audit; this file is its enforcement.
 
 WHAT COUNTS AS A VIOLATION.
 
-A legacy number appearing near a claim about what AI or a frontier system achieves,
-WITHOUT the nearby text naming the class of system that number measured. The fix is
-never to delete the number. The fix is to write down what it measured and when.
+A legacy number appearing anywhere an argument is made about what an AI tutor can or
+cannot do.
+
+THE FIX IS TO DELETE IT, and this file's guidance said the opposite until 30 Jul.
+
+Labelling a 1984 measurement does not stop it framing the argument — the owner
+rejected that compromise twice. A pre-LLM number may not appear as a ceiling, a
+bound, a comparator, a benchmark to beat, a concession condition, or a row in a
+chart against a frontier result. Cut the sentence. Where no frontier measurement
+exists, say the trial has not been run and specify it: an honest gap is a better
+argument than a borrowed number, because the gap is an opportunity and the borrowed
+number is a false ceiling.
+
+They may still appear in three places, because there they are the RECORD of retiring
+a number rather than an argument using it: `survey/19-the-canon.md` (history is its
+subject), `CORRECTIONS.md` and the backstage `process/` docs, and any passage whose
+surrounding text marks it as superseded, retracted or corrected.
 
 WHY IT HAS A SELF-TEST, AND WHY AN EMPTY SCAN FAILS.
 
@@ -348,8 +362,9 @@ def main():
             print(f"      {path}  [{vid}] ×{n}")
         print()
 
-    print("The fix is never to delete the number. Name what class of system it measured, "
-          "and when.\n  See evidence/VINTAGE.md for the per-claim worklist.")
+    print("The fix is to DELETE the sentence, not to label the number. Where the claim\n"
+          "  needs evidence, use a frontier-era measurement or state that the trial has\n"
+          "  not been run.\n  See evidence/VINTAGE.md for the per-claim worklist.")
     return 1
 
 

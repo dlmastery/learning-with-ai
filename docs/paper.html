@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Learning in the New Frontier AI World — the survey</title>
-<meta name="description" content="A 118,242-word survey of what AI-native learning has actually been measured to do. Evidence-labelled throughout, nulls first-class, corrections published.">
+<meta name="description" content="A 117,795-word survey of what AI-native learning has actually been measured to do. Evidence-labelled throughout, nulls first-class, corrections published.">
 <link rel="stylesheet" href="site.css">
 <style>
 /* ============================================================
@@ -1206,8 +1206,8 @@ who sell the product.</p>
 <p><strong>A band that thin is a starting position and not a ceiling.</strong> The three trials share
 one design: a general-purpose assistant handed to a classroom, six to eight weeks,
 measured the week it stopped. What they measure is a deployment pattern, and what
-they establish is that the pattern works at all, in four countries and three
-languages, <strong>at an inference cost measured at 0.43% of a delivered session</strong> (§39).
+they establish is that the pattern produces a positive effect at all, in three
+countries, <strong>at an inference cost measured at 0.43% of a delivered session</strong> (§39).
 That last clause is the one this survey kept dropping, and it carries more
 consequence than the effect size does: the gain is modest, and the marginal cost of
 the next child receiving it is close to nothing. What that does <em>not</em> mean is that
@@ -3980,49 +3980,13 @@ emit a prerequisite graph is producing an expert-judgement Q-matrix with no vali
 step, in a formalism whose known failure mode is that misspecification propagates into
 every classification the system then makes. <code>INFERENCE</code></p>
 <hr />
-<h3>4. The deployed system built entirely on prerequisite structure sits at g ≈ 0.05</h3>
-<p>ALEKS is the commercial instantiation of knowledge space theory (Doignon &amp;
-Falmagne): a rule-based system, and the syntheses below cover deployments from 2005
-to 2020. Its own research page describes the mechanism, a knowledge state assessed
-"after the student has answered only 20–25 questions," and cites no efficacy study.
-<code>VENDOR</code> Two meta-analyses reach the same place. Fang, Ren, Hu &amp; Graesser (2019),
-<em>Educational Psychology</em>, 15 studies and 24 independent samples: ALEKS was as good
-as, but not better than, traditional classroom teaching. Sun,
-Else-Quest, Hodges, French &amp; Dowling (2021), 33 studies, 56 independent effect sizes,
-<strong>9,238 students</strong>: pooled <strong>Hedges' g = 0.05</strong> against ordinary instruction, with a
-supplemental-use moderator at <strong>g = 0.43</strong>. <code>MEASURED-META</code></p>
-<p>Two flags travel with those numbers. The ERIC record prints a pooled interval that is
-not symmetric about the point estimate and could not be checked against the article,
-so the point estimates are citable and the interval is not. And <strong>the two
-meta-analyses are not independent</strong>: Sun et al.'s window subsumes Fang et al.'s and
-the study pools overlap. What survives is that no synthesis of the flagship
-prerequisite-structured system finds a general advantage, and that its one positive
-moderator is a dosage result.</p>
-<p>§20 carries the strongest datum from inside the same system: across 32.9 million
-randomised topic sequences in production, raising the mastery threshold cost +29% time
-for a retention difference under 0.02. Inside a fixed topic, how hard you push mastery
-barely moves anything; across topics, which order you use has never been shown to move
-anything either. Both statements are about rule-based sequencers, which are the only
-kind that has been tested at this question — which is why this section closes by
-randomising the graph inside a frontier system instead of inheriting the verdict.</p>
-<hr />
-<h3>5. Mastery learning was given 20–33% more time, and Bloom's study ran three weeks</h3>
-<p>Slavin's 1987 synthesis (<em>RER</em> 57(2):175–213) is where the two-sigma provenance
-lives. The claims it was testing ran from Kulik et al.'s 0.52 and 0.54 through
-Walberg's 0.81 to Bloom's own 1.00 "when mastery learning procedures are done
-systematically and well," with two sigma as the prediction. Slavin then restricted to
-practical applications in real schools running at least four weeks, with equal time
-for treatment and control, on standardised measures. Seven studies qualified.
-<strong>Median effect size +0.04.</strong> The single non-trivial result (+0.25) came from a study
-where teachers self-selected into conditions. <code>MEASURED-META</code></p>
-<p>Two design facts from his methods section rarely survive the citation trail.
-<strong>Anania's study — one of the Chicago dissertations Bloom's essay rests on — ran three
-weeks.</strong> And all the Chicago dissertations "provided the mastery learning classes with
-similar amounts of additional instruction," amounting to <strong>20–33% more instructional
-time</strong> than control classes received. Bloom's own characterisation was that the time
-costs "have usually been very small." <code>OBSERVED</code> §1 and §37 retire the two-sigma
-claim on replication grounds; this is the mechanism underneath that verdict.</p>
-<p>Then the part nobody quotes. Slavin also examined maintenance: six comparisons in
+<h3>4. Refusing to advance has not been shown to build anything durable</h3>
+<p>Slavin's 1987 synthesis (<em>RER</em> 57(2):175–213) is the closest this literature has to a
+fair test of the mastery principle: he restricted it to practical applications in real
+schools running at least four weeks, with equal time for treatment and control, on
+standardised measures. Seven studies qualified — all of them group-based classroom
+mastery learning, none of them a machine.</p>
+<p>The part nobody quotes is the maintenance analysis: six comparisons in
 five studies assessing retention 4–12 weeks out, all on experimenter-made measures.
 <strong>The median retention effect is essentially zero</strong>, and the largest one (+0.49) came
 from the single study that had found no differences on standardised measures.
@@ -4037,7 +4001,7 @@ groups or by peer tutors. Mastery learning has never been tested with unlimited
 individual correction, because until now nobody could afford it. That is the version
 this project can build. <code>INFERENCE</code></p>
 <hr />
-<h3>6. Teach to One: three years, five schools, and estimates that drift downward</h3>
+<h3>5. Teach to One: three years, five schools, and estimates that drift downward</h3>
 <p>Ready, Conn, Bretas &amp; Daruwala (2018), Consortium for Policy Research in Education,
 ERIC ED618425, evaluated the purest deployed instantiation of the thesis this section
 is testing. Teach to One: Math runs a daily algorithmic scheduler that assigns each
@@ -4084,7 +4048,7 @@ individualised progression, cluster-randomised across 70 kindergarten classrooms
 <strong>1,368 students</strong>, found no significant differences on any outcome (ERIC ED679597).
 <code>MEASURED-RCT</code></p>
 <hr />
-<h3>7. Most of fade-out was the control group catching up</h3>
+<h3>6. Most of fade-out was the control group catching up</h3>
 <p>The TRIAD trial is this corpus's best-documented early-mathematics effect and its
 best-documented decay. Clements, Sarama, Layzer, Unlu &amp; Wolfe (2016), ERIC ED567218,
 gives the trajectory in standard deviations: <strong>0.86</strong> (with follow-through) and
@@ -4124,7 +4088,7 @@ schedule departures, an omitted terminal session, a three-year test given at fou
 years, and subjects who travelled in France. <code>MEASURED-RCT</code> — extraordinary in
 duration, tiny in sample, imperfectly controlled.</p>
 <hr />
-<h3>8. Motor learning arrived independently, and half of it does not replicate</h3>
+<h3>7. Motor learning arrived independently, and half of it does not replicate</h3>
 <p>This survey's central empirical theme is that conditions producing the best
 performance during practice produce the worst retention. Motor learning reached the
 same dissociation independently, which looks like corroboration and is only partly
@@ -4211,7 +4175,7 @@ interference, feedback fading and practice distribution are therefore
 capacity-conditional, and for a novice, on a complex task, under eighteen, they
 default <strong>off</strong> and are earned by measurement.</p>
 <hr />
-<h3>9. Numbers this section refuses to carry</h3>
+<h3>8. Numbers this section refuses to carry</h3>
 <p>The source report marks several things untraceable, and they stay untraceable here.</p>
 <ul>
 <li><strong>"Only 10% of training transfers to the job."</strong> Two decades of edtech decks rest on
@@ -4221,7 +4185,6 @@ default <strong>off</strong> and are earned by measurement.</p>
   risk in letting a model emit a graph.</li>
 <li><strong>Pooled estimates from Lee &amp; Genovese (1988, 1989) and Donovan &amp; Radosevich (1999)</strong>
   on massed against distributed practice.</li>
-<li><strong>The pooled interval in Sun et al. (2021).</strong> The point estimate is safe.</li>
 <li><strong>Which Building Blocks persistence figure is right.</strong> The 2013 <em>AERJ</em> third-year
   effects (0.51 / 0.28) do not reconcile with the same team's long-term analysis, so
   anyone citing that persistence effect must say which paper and which model.</li>
@@ -4231,7 +4194,7 @@ default <strong>off</strong> and are earned by measurement.</p>
   small, for behaviors in practice and patient effects."</li>
 </ul>
 <hr />
-<h3>10. Demote the graph, then randomise it</h3>
+<h3>9. Demote the graph, then randomise it</h3>
 <p>The graph does not go away. It changes job.</p>
 <p><strong>Every edge gets a stated epistemic status.</strong> <em>Constitutive</em> edges are entailed by the
 domain's own logic — you cannot compose shapes you cannot recognise. <em>Empirical</em> edges
@@ -4251,21 +4214,20 @@ alongside any comparative claim. Bahrick's 30-day optimum and the 56-day crossov
 give the schedule a starting shape. <code>SPEC</code></p>
 <p><strong>And the experiment: randomise the graph, not the policy.</strong> Every existing study
 randomises which traversal policy walks a fixed graph. The untested question is
-whether the graph earns its cost. Within-learner, topic-level randomisation, mirroring
-the ALEKS production design: each eligible topic is randomly assigned to
+whether the graph earns its cost, and it has never been asked of a frontier sequencer.
+Within-learner, topic-level randomisation: each eligible topic is randomly assigned to
 graph-respecting entry (verify the closure, remediate any gap, then teach the target)
 or demand-driven entry (teach the requested target immediately, repair prerequisites
 reactively when an error names a missing component). Instructional time is capped
-identically in both arms, the condition Slavin showed almost no mastery-learning study
-met. Primary outcome: delayed transfer at 28 days on freshly generated items, scored
+identically in both arms, so neither condition can win by being given more teaching.
+Primary outcome: delayed transfer at 28 days on freshly generated items, scored
 blind. Secondary: time to criterion, a 90-day probe, and how often a verified
 prerequisite gap turned out to be real.</p>
 <p>The question is whether any difference is large enough to pay for the graph, so this
 is an <strong>equivalence trial</strong> at a pre-registered margin of <strong>δ = 0.10 SD</strong>. Two
 one-sided tests, α = .05, 90% power, paired within learner at a between-condition
 correlation of 0.5 gives <strong>n ≈ 857 learners</strong> × 8 topic pairs: about 7,200 topic
-sequences, two terms of a mid-sized deployment, four orders of magnitude smaller than
-the ALEKS study.</p>
+sequences, or two terms of a mid-sized deployment.</p>
 <p>Either answer is worth having. If the graph is equivalent within 0.10 SD, §16 stops
 computing prerequisite closures and §36's generative-textbook problem collapses from
 "construct a validated ordering" to "answer the question that was asked" — the cheaper
