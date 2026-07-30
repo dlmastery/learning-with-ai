@@ -199,7 +199,7 @@ survey's conclusion.
 It is the measurement.** Every trial listed above ran a real frontier model, in a
 real classroom, with real teachers, and none of them was a deliberately degraded
 version of what a good system would be. Sierra Leone had tablets, a 2:1 device
-ratio and supervision; Tutor CoPilot had trained human tutors in the loop; Kestin's
+ratio and supervision (§09); Tutor CoPilot had trained human tutors in the loop; Kestin's
 tutor was purpose-built by a physics-education group and still needed a developer to
 evaluate it. On this premise the survey's move — *these results are what bad systems
 do* — is unfalsifiable special pleading: any result below expectation gets attributed
@@ -280,7 +280,7 @@ hardest, which is where the mechanism-level case is strongest.
 ## The concession conditions, stated in advance
 
 We would concede that the frontier results already on record are what this
-technology does, rather than a floor set by unfinished systems, and that added
+technology does, and not a floor set by unfinished systems, and that added
 mechanism does not pay, if:
 
 1. **Experiment 3 returns A ≈ C** at n = 300/arm. The single most decisive test:

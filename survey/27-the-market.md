@@ -17,7 +17,7 @@ nobody had to lie to get there. **The translation layer between effect sizes and
 is where most of this market's dishonesty lives, and it does not require anyone to
 lie.**
 
-Which makes the useful questions structural rather than numerical, and they run
+Which makes the useful questions structural, not numerical, and they run
 through every part of this section: who evaluated it, against what comparison, at
 what sample, and what the vendor would accept as disconfirmation.
 
