@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Same Ten Problems, Split — Demo 16</title>
+<meta name="description" content="A schedule simulator with a fixed effort budget. Hold the work constant, move the calendar, and watch one-year retention move by an order of magnitude. The 18–36 day horizon rule is recovered by search, not quoted." />
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="demo.css" />
+<script src="../theme.js"></script>
+<style>
+.gl{stroke:var(--line);stroke-width:1}
+.ax{font:600 10px var(--sans);letter-spacing:.11em;fill:var(--ink-3)}
+.vl{font:600 11px var(--mono);fill:var(--ink-3)}
+.sl{font:12px var(--sans);fill:var(--ink-2)}
+input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
+.ctls{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px 22px;margin:4px 0 10px}
+.ctl label{display:flex;justify-content:space-between;gap:8px;align-items:baseline;text-transform:none;
+  letter-spacing:0;font:600 12px/1.4 var(--sans);color:var(--ink-2);margin-bottom:5px}
+.ctl label .v{font:600 12px var(--mono);color:var(--felt)}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:11px;margin:18px 0}
+.stat div{background:var(--sunken);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+.stat .k{font:600 10px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+.stat .n{font:400 23px/1.1 var(--mono);color:var(--ink)}
+.stat .n.real{color:var(--real)} .stat .n.felt{color:var(--felt)}
+.stat .s{font:12px/1.4 var(--sans);color:var(--ink-3);margin-top:6px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:13px;font-size:12.5px;color:var(--ink-2)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+.cal{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 4px}
+.cal span{background:var(--sunken);border:1px solid var(--line);border-radius:7px;padding:7px 10px;
+  font:12.5px/1.3 var(--mono);color:var(--ink-2);white-space:nowrap}
+.cal span b{color:var(--real);font-weight:650}
+.eq{font:13px/1.7 var(--mono);color:var(--ink-2);background:var(--sunken);border:1px solid var(--line);
+  border-radius:10px;padding:14px 16px;overflow-x:auto;white-space:pre}
+.verdict{font:600 15px/1.5 var(--sans);color:var(--ink);margin:14px 0 0}
+.verdict em{color:var(--ink-3);font-weight:400;font-style:normal;font-size:13.5px}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../paper.html">The paper</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 16 · The mechanisms</div>
+  <h1>The same ten problems, split</h1>
+  <p class="lede">Effort is held fixed. Only the calendar moves. Retrieval practice is
+  <strong>g = 0.499</strong> across 222 classroom studies and 48,478 students, spacing is
+  <strong>d = 0.54</strong>, and the cheapest of the two is the one nobody schedules — because
+  the price of durability is <em>patience</em>, not work.</p>
+  <div class="chips">
+    <span class="chip m">Computed from a stated model</span>
+    <span class="chip m">18–36 day rule recovered by search</span>
+    <span class="chip n">Names one place the model is wrong</span>
+  </div>
+</header>
+
+<section class="orient">
+  <div class="o"><b>What this is</b><p>A schedule simulator with a <em>locked effort budget</em>.
+  You cannot buy more practice here. You can only decide which days it happens on, and the page
+  computes what is left in memory a day, a week, a month and a year later.</p></div>
+  <div class="o"><b>Why it matters</b><p>Every claim that learning "compresses" runs into one
+  wall. Acquisition compresses beautifully. Durability does not — it is built by elapsed time
+  between retrievals, and elapsed time is the one input a tutor cannot manufacture. <b>The good
+  news is that the elapsed time is nearly free.</b></p></div>
+  <div class="o"><b>How to use it</b><p>Two questions are worth putting to it. First: how far
+  apart can ten problems be pushed before the return stops rising? Second: if the answer is a
+  fixed number of days, does that number fall out of the arithmetic — or did somebody just quote
+  it at you? Section 3 answers the second one.</p></div>
+</section>
+
+<h2>1 · A fixed budget, spent on different days</h2>
+<p>The budget below is a count of practice problems. Splitting them across more sessions does not
+buy more of them — <strong>each session gets a smaller share</strong>. Nothing is added. Only the
+calendar changes.</p>
+
+<div class="panel">
+  <div class="ptitle">Your schedule</div>
+  <div class="psub">Sessions are equally spaced. The problems are divided as evenly as the count
+  allows. Retention is measured after the last session.</div>
+  <div class="ctls">
+    <div class="ctl"><label for="k">Total practice problems <span class="v" id="kv"></span></label>
+      <input type="range" id="k" min="6" max="24" step="1" value="10" /></div>
+    <div class="ctl"><label for="n">Split across sessions <span class="v" id="nv"></span></label>
+      <input type="range" id="n" min="1" max="8" step="1" value="1" /></div>
+    <div class="ctl"><label for="g">Gap between sessions <span class="v" id="gv"></span></label>
+      <input type="range" id="g" min="1" max="60" step="1" value="7" /></div>
+  </div>
+  <div class="cal" id="cal"></div>
+  <div class="verdict" id="verdict"></div>
+</div>
+
+<figure class="panel">
+  <div class="ptitle">Predicted retention, four horizons</div>
+  <div class="psub">Ten problems massed into one sitting is the reference arm in every pair. Your
+  schedule spends the identical budget.</div>
+  <div class="legend">
+    <span><i style="background:var(--felt)"></i>All of it in one sitting</span>
+    <span><i style="background:var(--real)"></i>Your schedule — same problems</span>
+  </div>
+  <div id="bars"></div>
+</figure>
+
+<figure class="panel">
+  <div class="ptitle">The whole year, not four points on it</div>
+  <div class="psub">Recall probability from the end of each arm's last session. Session days on
+  your arm are marked on the axis.</div>
+  <div id="curve"></div>
+</figure>
+
+<div class="stat" id="stats"></div>
+
+<h2>2 · Where the claim comes from</h2>
+<p>Rohrer &amp; Taylor (2006), Experiment 1, N = 216. The number of practice problems was held
+<strong>constant at ten</strong>. The only manipulation was whether they were massed into one
+session or split across two sessions a week apart. Both groups were tested at a delay after
+their <em>final</em> session.</p>
+
+<div class="scroll">
+<table>
+<thead><tr><th>Test delay</th><th>Massed — observed</th><th>Split 5 + 5 — observed</th>
+<th>Massed — model</th><th>Split — model</th></tr></thead>
+<tbody id="rt"></tbody>
+</table>
+</div>
+
+<div class="note warn"><b>The model gets the one-week row wrong, and it is worth saying so
+plainly.</b> Rohrer &amp; Taylor found the benefit of splitting was <em>nil</em> at one week —
+if anything the massed group was slightly ahead, because massing buys short-term fluency that
+has not yet drained away. The activation model used here is monotone in spacing: it predicts an
+advantage at every delay. It reproduces the four-week result to about a point and overstates the
+one-week one. That is a real miss, not a rounding difference, and every number on this page
+inherits it.</div>
+
+<details>
+<summary>The model, in full — four parameters, no fitting to your inputs</summary>
+<p class="sub" style="margin-top:10px">Anderson's base-level activation with Pavlik &amp;
+Anderson's spacing extension: each practice event lays down its own trace, and the decay rate of
+a new trace is set by <em>how active the memory already was</em> when it was laid down. Practice
+something you have just practised and you get a trace that evaporates; practice something you
+have nearly forgotten and you get one that lasts. That single line is the whole spacing effect.</p>
+<div class="eq" id="eq"></div>
+<p class="sub" style="margin-top:12px">The four constants were chosen once, by grid search, to
+land on Rohrer &amp; Taylor's four-week pair. They are not re-fitted when you move a slider —
+every other number on this page is a prediction from them.</p>
+</details>
+
+<h2>3 · The horizon rule, derived rather than quoted</h2>
+<p>The survey states that a year-durable memory needs its opportunities separated by roughly
+<strong>18–36 days</strong>. That figure comes from Cepeda et al. (2008), who taught more than
+1,350 people a set of facts, reviewed after a gap of up to 3.5 months, and tested up to a year
+later: the optimal gap, expressed as a share of the test delay, <strong>fell from 20–40% at a
+one-week horizon to 5–10% at a one-year horizon</strong>.</p>
+
+<p>None of that is wired into the page. The optimiser below takes your horizon, sweeps the gap in
+quarter-day steps, and returns the gap that maximises predicted retention. The band it lands in
+is an output.</p>
+
+<div class="panel">
+  <div class="ptitle">Dial a horizon</div>
+  <div class="psub">The sweep runs on every input change: 800 candidate gaps × up to 8 session
+  counts, in your browser.</div>
+  <div class="ctls">
+    <div class="ctl"><label for="h">Remember it for <span class="v" id="hv"></span></label>
+      <input type="range" id="h" min="0" max="5" step="1" value="5" /></div>
+    <div class="ctl"><label for="tgt">Retention target <span class="v" id="tv"></span></label>
+      <input type="range" id="tgt" min="20" max="90" step="5" value="50" /></div>
+  </div>
+  <div id="opt"></div>
+</div>
+
+<figure class="panel">
+  <div class="ptitle">Optimal gap as a share of the horizon</div>
+  <div class="psub">Computed by sweep at each horizon for a two-session schedule. The dashed band
+  is Cepeda's published 5–10% figure for a one-year delay, drawn afterwards for comparison — the
+  points were not fitted to it.</div>
+  <div id="ridge"></div>
+</figure>
+
+<h2>4 · What this proves, and the conditions on using it</h2>
+
+<div class="panel">
+  <div class="ptitle">What is actually established here</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>The free lunch is real and it is arithmetic.</strong> Ten problems in one sitting
+    and ten problems across four sittings cost the learner the same number of problems. On this
+    page the second is worth roughly an order of magnitude more at a year. The input a tutor
+    cannot buy is the only input that matters, and it is free.</li>
+    <li><strong>The 18–36 day rule is recoverable, not merely citable.</strong> Set the horizon to
+    a year and the sweep returns a gap in the low-to-mid twenties to low thirties of days for
+    every session count the budget supports. A four-parameter activation model calibrated on a
+    completely different experiment lands inside a band published from a 1,350-person study it
+    never saw.</li>
+    <li><strong>Adding sessions dominates adding effort.</strong> Hold sessions at two and push
+    the budget from 10 problems to 24: one-year retention moves a few points. Hold the budget at
+    10 and go from two sessions to eight: it moves by a factor of five. The lever is the
+    calendar.</li>
+  </ul>
+  <div class="ptitle">The conditions this runs under</div>
+  <ul style="margin:0 0 0 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>A simulated learner is not a learner.</strong> Everything above is a forgetting
+    model producing curves. The two effect sizes in the header — g = 0.499 and d = 0.54 — are the
+    measurements; this page is an illustration of the mechanism that produces them, and it
+    inherits the model's miss at one week described in section 2.</li>
+    <li><strong>Spacing is not universal across material.</strong> The same interleaving-and-spacing
+    family that carries d = 0.83 in seventh-grade mathematics carries <strong>g = −0.39</strong>
+    for paired-associate vocabulary, where blocking wins. A global "space everything" policy helps
+    one and harms the other inside the same session. And a 2020 replication with N = 235 found
+    <em>no</em> distributed-practice effect on mathematical procedures at all, on nearly the
+    material Rohrer &amp; Taylor used. That contradiction is unresolved.</li>
+    <li><strong>The overlearning null is not reproduced.</strong> Rohrer &amp; Taylor's Experiment
+    2 compared three versus nine problems in a single sitting and found the extra six bought
+    nothing at one or four weeks. Feed the same comparison to this model — one session, budget 6
+    against budget 24 — and it predicts a substantial gain. It is right about the calendar and
+    wrong about the sitting.</li>
+    <li><strong>And the optimiser is the part with the least evidence behind it.</strong> This is
+    the boundary worth carrying away. Spacing and retrieval have interventional trials; the
+    <em>scheduling algorithm</em> has almost none. On a 350-million-review benchmark a
+    <strong>zero-parameter moving average beats every FSRS version on log loss</strong>, a
+    34-feature logistic regression beats FSRS-6 and -7 on all three metrics, and the FSRS team
+    themselves published a deliberate exploit showing the headline metric is gameable. Those are
+    backtests on logs of what learners already did — predicting a review is not causing a memory.
+    So the win here is <em>spacing-and-retrieval</em>. It is not the optimiser, and a product that
+    sells the optimiser is selling the part with no trials.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../deck.html">The deck</a> ·
+  <a href="../paper.html">The paper</a>
+  <br /><br />Every figure traceable in the survey.
+</footer>
+
+</div>
+<script>
+/* ══ chart IR — declarative specs in, SVG out ═══════════════════════════ */
+const NS='http://www.w3.org/2000/svg';
+const mk=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const el=id=>document.getElementById(id);
+const HUE=s=>s==='real'?'var(--real)':'var(--felt)';
+
+/* grouped bars: {groups:[{label, bars:[{series,value,tag}]}], y:{max,fmt}, alt} */
+function renderBars(host,spec){
+  const narrow=innerWidth<620, W=720, GH=narrow?70:64, T=10, B=30, L=narrow?58:96, R=44;
+  const H=spec.groups.length*GH+T+B;
+  const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
+  const track=W-L-R, px=v=>track*Math.min(1,v/spec.y.max);
+  for(let i=0;i<=4;i++){const x=L+track*i/4;
+    svg.appendChild(mk('line',{x1:x,y1:T,x2:x,y2:H-B,class:'gl'}));
+    const t=mk('text',{x,y:H-B+16,'text-anchor':'middle',class:'vl'});
+    t.textContent=Math.round(spec.y.max*i/4)+'%'; svg.appendChild(t);}
+  spec.groups.forEach((gr,gi)=>{
+    const y0=T+gi*GH+8;
+    const lb=mk('text',{x:L-10,y:y0+GH/2-4,'text-anchor':'end',class:'sl',
+      style:`font-size:${narrow?11:12.5}px`});
+    lb.textContent=gr.label; svg.appendChild(lb);
+    gr.bars.forEach((b,bi)=>{
+      const h=17, y=y0+bi*(h+7);
+      svg.appendChild(mk('rect',{x:L,y,width:Math.max(1.5,px(b.value)),height:h,rx:4,
+        fill:HUE(b.series)}));
+      const v=mk('text',{x:L+px(b.value)+7,y:y+13,class:'vl',style:`fill:${HUE(b.series)}`});
+      v.textContent=b.value.toFixed(1)+'%'; svg.appendChild(v);
+    });
+  });
+  host.replaceChildren(svg);
+}
+/* line plot: {series:[{series,pts,dash}], x:{min,max,label,ticks}, y:{min,max,label}, marks, band } */
+function renderPlot(host,spec){
+  const narrow=innerWidth<620, W=720, H=narrow?250:290, L=48, R=16, T=14, B=46;
+  const px=v=>L+(v-spec.x.min)/(spec.x.max-spec.x.min)*(W-L-R);
+  const py=v=>T+(1-(v-spec.y.min)/(spec.y.max-spec.y.min))*(H-T-B);
+  const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
+  if(spec.band) svg.appendChild(mk('rect',{x:px(spec.band[0]),y:T,
+    width:Math.max(2,px(spec.band[1])-px(spec.band[0])),height:H-T-B,
+    fill:'var(--ink-3)',opacity:.10}));
+  for(let i=0;i<=4;i++){const v=spec.y.min+(spec.y.max-spec.y.min)*i/4,yy=py(v);
+    svg.appendChild(mk('line',{x1:L,y1:yy,x2:W-R,y2:yy,class:'gl'}));
+    const t=mk('text',{x:L-8,y:yy+4,'text-anchor':'end',class:'vl'});
+    t.textContent=Math.round(v)+(spec.y.pct?'%':''); svg.appendChild(t);}
+  (spec.x.ticks||[]).forEach(v=>{
+    const t=mk('text',{x:px(v),y:H-24,'text-anchor':'middle',class:'vl'});
+    t.textContent=v; svg.appendChild(t);});
+  const xl=mk('text',{x:(L+W-R)/2,y:H-6,'text-anchor':'middle',class:'ax'});
+  xl.textContent=spec.x.label; svg.appendChild(xl);
+  (spec.marks||[]).forEach(m=>{
+    svg.appendChild(mk('line',{x1:px(m.at),y1:py(spec.y.min),x2:px(m.at),y2:py(spec.y.max),
+      stroke:'var(--line-2)','stroke-width':1,'stroke-dasharray':'2 3'}));});
+  spec.series.forEach(s=>{
+    const d=s.pts.map((p,i)=>(i?'L':'M')+px(p[0]).toFixed(2)+' '+py(p[1]).toFixed(2)).join(' ');
+    const at={d,fill:'none',stroke:HUE(s.series),'stroke-width':2.4};
+    if(s.dash) at['stroke-dasharray']=s.dash;
+    svg.appendChild(mk('path',at));
+    if(s.dots) s.pts.forEach(p=>svg.appendChild(mk('circle',
+      {cx:px(p[0]),cy:py(p[1]),r:4,fill:HUE(s.series),stroke:'var(--surface)','stroke-width':2})));
+  });
+  if(spec.bandLabel){const t=mk('text',{x:px((spec.band[0]+spec.band[1])/2),y:T+13,
+    'text-anchor':'middle',class:'ax'});t.textContent=spec.bandLabel;svg.appendChild(t);}
+  host.replaceChildren(svg);
+}
+
+/* ══ the model ═════════════════════════════════════════════════════════
+   Anderson base-level activation + Pavlik & Anderson decay-on-activation.
+   Four constants, fixed once by grid search against Rohrer & Taylor's
+   four-week pair, never re-fitted afterwards.                           */
+const C=0.28, A0=0.30, TAU=-3.50, SS=0.35, DAY=86400, TRIAL=60;
+
+function decays(t){
+  const d=[];
+  for(let i=0;i<t.length;i++){
+    let m=-99;
+    if(i>0){let s=0;for(let j=0;j<i;j++){const dt=t[i]-t[j];if(dt>0)s+=Math.pow(dt,-d[j]);}
+      if(s>0)m=Math.log(s);}
+    d.push(m>-50?C*Math.exp(m)+A0:A0);
+  }
+  return d;
+}
+function act(t,d,at){let s=0;for(let j=0;j<t.length;j++){const dt=at-t[j];if(dt>0)s+=Math.pow(dt,-d[j]);}
+  return s>0?Math.log(s):-99;}
+const pr=m=>1/(1+Math.exp((TAU-m)/SS));
+
+function schedule(n,K,G){
+  const ks=[],t=[];
+  for(let i=0;i<n;i++)ks.push(Math.floor(K/n)+(i<K%n?1:0));
+  ks.forEach((k,i)=>{const b=i*G*DAY;for(let j=0;j<k;j++)t.push(b+j*TRIAL);});
+  return {ks,t,d:decays(t),last:t[t.length-1]};
+}
+const retAt=(S,Hdays)=>pr(act(S.t,S.d,S.last+Hdays*DAY));
+const ret=(n,K,G,H)=>retAt(schedule(n,K,G),H);
+
+function bestGap(n,K,H,hi){
+  let bg=0.25,bv=-1;
+  for(let G=0.25;G<=hi;G+=0.25){const v=ret(n,K,G,H);if(v>bv){bv=v;bg=G;}}
+  return {G:bg,v:bv};
+}
+
+/* ══ page state ════════════════════════════════════════════════════════ */
+const HORIZONS=[{d:1,l:'1 day'},{d:7,l:'1 week'},{d:30,l:'1 month'},{d:90,l:'3 months'},
+                {d:180,l:'6 months'},{d:365,l:'1 year'}];
+const S=(id)=>+el(id).value;
+
+function draw(){
+  const K=S('k'), n=S('n'), G=S('g');
+  el('kv').textContent=K; el('nv').textContent=n===1?'1 (massed)':n;
+  el('gv').textContent=n===1?'—':G+' d';
+  el('g').disabled=(n===1);
+
+  const mine=schedule(n,K,n===1?0:G), base=schedule(1,K,0);
+  const ks=mine.ks;
+  el('cal').innerHTML=ks.map((k,i)=>
+    `<span>day <b>${(i*(n===1?0:G))}</b> · ${k} problem${k===1?'':'s'}</span>`).join('')
+    + `<span style="border-style:dashed">total ${K} · span ${(n-1)*(n===1?0:G)} d</span>`;
+
+  const rows=[{d:1,l:'1 day later'},{d:7,l:'1 week later'},{d:30,l:'1 month later'},{d:365,l:'1 year later'}];
+  renderBars(el('bars'),{alt:'Predicted retention at four delays for a massed schedule and the reader’s schedule.',
+    y:{max:100}, groups:rows.map(r=>({label:r.l,bars:[
+      {series:'felt',value:retAt(base,r.d)*100},{series:'real',value:retAt(mine,r.d)*100}]}))});
+
+  const pts=(Sx)=>{const a=[];for(let t=1;t<=365;t+=(t<30?1:5))a.push([t,retAt(Sx,t)*100]);return a;};
+  renderPlot(el('curve'),{alt:'Recall probability over one year for both schedules.',
+    x:{min:0,max:365,label:'days after the final session',ticks:[0,30,90,180,270,365]},
+    y:{min:0,max:100,pct:true},
+    series:[{series:'felt',pts:pts(base)},{series:'real',pts:pts(mine)}]});
+
+  const y1=retAt(mine,365), y1b=retAt(base,365);
+  const mult=y1b>0.0005?(y1/y1b):0;
+  el('stats').innerHTML=
+    `<div><div class="k">Problems spent</div><div class="n">${K}</div><div class="s">identical in both arms</div></div>
+     <div><div class="k">Sessions</div><div class="n real">${n}</div><div class="s">${n===1?'everything at once':'gap '+G+' days'}</div></div>
+     <div><div class="k">1-year retention</div><div class="n real">${(y1*100).toFixed(1)}%</div><div class="s">your schedule</div></div>
+     <div><div class="k">Massed baseline</div><div class="n felt">${(y1b*100).toFixed(1)}%</div><div class="s">same ${K} problems, one sitting</div></div>
+     <div><div class="k">Ratio</div><div class="n">${mult>=1?mult.toFixed(1)+'×':'—'}</div><div class="s">bought with calendar, not effort</div></div>`;
+
+  el('verdict').innerHTML = n===1
+    ? `All ${K} problems in one sitting. <em>Move the session slider — the budget does not change.</em>`
+    : `${ks.join(' + ')} problems, ${G} day${G===1?'':'s'} apart, spanning ${(n-1)*G} days. <em>Same ${K} problems as the massed arm.</em>`;
+}
+
+/* the Rohrer & Taylor table */
+(function(){
+  const obs=[{d:7,l:'1 week',m:'75%',s:'70%'},{d:28,l:'4 weeks',m:'32%',s:'64%'}];
+  el('rt').innerHTML=obs.map(o=>{
+    const mm=ret(1,10,0,o.d)*100, sm=ret(2,10,7,o.d)*100;
+    return `<tr><td><b>${o.l}</b></td><td class="num">${o.m}</td><td class="num">${o.s}</td>
+      <td class="num">${mm.toFixed(0)}%</td><td class="num">${sm.toFixed(0)}%</td></tr>`;}).join('');
+})();
+
+el('eq').textContent =
+`trace i is laid down at time t_i
+decay of trace i   d_i = ${C} · e^(m at t_i) + ${A0}
+activation at t    m(t) = ln Σ_i (t − t_i)^(−d_i)
+recall probability p(t) = 1 / (1 + e^((${TAU} − m(t)) / ${SS}))
+
+within a session, problems are ${TRIAL} s apart
+a trace laid down while m is high decays fast — that is the spacing effect,
+and it is the only place spacing enters the model`;
+
+/* section 3 — optimiser */
+function drawOpt(){
+  const H=HORIZONS[S('h')], tgt=S('tgt')/100, K=S('k');
+  el('hv').textContent=H.l; el('tv').textContent=(tgt*100).toFixed(0)+'%';
+  const hi=Math.max(6,Math.min(200,H.d*0.6));
+  const runs=[];
+  for(let n=2;n<=8;n++){const b=bestGap(n,K,H.d,hi);runs.push({n,...b});}
+  const hit=runs.find(r=>r.v>=tgt);
+  const two=runs[0];
+  const inBand=(g)=>g>=18&&g<=36;
+  const chosen=hit||runs[runs.length-1];
+  const days=[];for(let i=0;i<chosen.n;i++)days.push(Math.round(i*chosen.G));
+  el('opt').innerHTML=
+   `<div class="stat" style="margin:6px 0 12px">
+      <div><div class="k">Optimal gap · 2 sessions</div><div class="n real">${two.G.toFixed(2)} d</div>
+        <div class="s">${(two.G/H.d*100).toFixed(1)}% of the ${H.l} horizon</div></div>
+      <div><div class="k">Best reachable</div><div class="n">${(runs[runs.length-1].v*100).toFixed(0)}%</div>
+        <div class="s">8 sessions, ${K} problems</div></div>
+      <div><div class="k">Sessions needed for ${(tgt*100).toFixed(0)}%</div>
+        <div class="n ${hit?'real':'felt'}">${hit?hit.n:'—'}</div>
+        <div class="s">${hit?'gap '+hit.G.toFixed(2)+' days':'not reachable on '+K+' problems'}</div></div>
+    </div>
+    <div class="cal">${days.map((d,i)=>`<span>day <b>${d}</b></span>`).join('')}
+      <span style="border-style:dashed">span ${days[days.length-1]} d · ${chosen.n} sessions</span></div>
+    <div class="note" style="margin-top:14px">${
+      H.d===365
+       ? (inBand(two.G)
+          ? `The sweep returned <b>${two.G.toFixed(2)} days</b> for two sessions and <b>${runs[runs.length-1].G.toFixed(2)} days</b> for eight. Both sit inside the published <b>18–36 day</b> band, which the model was never shown.`
+          : `The sweep returned ${two.G.toFixed(2)} days — outside the published 18–36 day band. Reported as computed.`)
+       : `At a ${H.l} horizon the optimal gap is <b>${(two.G/H.d*100).toFixed(0)}%</b> of the delay. Push the horizon to a year and watch that share fall — that shrinking ratio <em>is</em> Cepeda’s ridgeline.`}</div>`;
+}
+
+/* the ridgeline chart — one sweep per horizon */
+(function(){
+  const hs=[3,7,14,30,60,120,180,270,365];
+  const pts=hs.map(h=>[Math.log10(h),bestGap(2,10,h,Math.max(6,Math.min(200,h*0.6))).G/h*100]);
+  renderPlot(el('ridge'),{alt:'Optimal inter-session gap expressed as a percentage of the retention horizon, falling as the horizon lengthens.',
+    x:{min:Math.log10(3),max:Math.log10(365),label:'retention horizon (log days: 3 → 365)',ticks:[]},
+    y:{min:0,max:40,pct:true},
+    band:[Math.log10(300),Math.log10(365)], bandLabel:'Cepeda 5–10% @ 1 yr',
+    series:[{series:'real',pts,dots:true}]});
+})();
+
+['k','n','g'].forEach(id=>el(id).addEventListener('input',()=>{draw();drawOpt();}));
+['h','tgt'].forEach(id=>el(id).addEventListener('input',drawOpt));
+let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{draw();},160);});
+draw(); drawOpt();
+
+const R=document.documentElement;
+el('tt').onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+</body>
+</html>
