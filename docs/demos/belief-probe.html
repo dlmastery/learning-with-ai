@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Belief Probe — the question that separates what you believe from what is true</title>
-<meta name="description" content="A belief is an object with predict(), discriminate() and break(). Nothing here is asked whether an answer is wrong — the probe is chosen by search and the posterior is closed-form Bayes over an enumerated set." />
+<meta name="description" content="A belief is an object with predict(), discriminate() and break(). Nothing here is asked whether an answer is wrong. The probe is chosen by search and the posterior is closed-form Bayes over an enumerated set." />
 <link rel="stylesheet" href="../site.css" />
 <link rel="stylesheet" href="demo.css" />
 <script src="../theme.js"></script>
@@ -48,9 +48,9 @@ table.tight td,table.tight th{padding-right:10px}
 <header>
   <div class="eyebrow">Demo 16 · The mechanism</div>
   <h1>The question that separates what you believe from what is true</h1>
-  <p class="lede">Every tutoring system asks a model <em>“is this wrong, and why?”</em> — an
+  <p class="lede">Every tutoring system asks a model <em>“is this wrong, and why?”</em> That is an
   open judgement over an unbounded space, and the thing models are measurably worst at. This page
-  never asks that question. It holds six enumerated beliefs about adding fractions, asks two of
+  never asks it. It holds six enumerated beliefs about adding fractions, asks two of
   them <strong>where they disagree</strong>, and updates a posterior in closed form. The whole
   loop is a table lookup.</p>
   <div class="chips">
@@ -71,14 +71,14 @@ table.tight td,table.tight th{padding-right:10px}
   at any capability level, and it costs microseconds.</p></div>
   <div class="o"><b>How to use it</b><p>Three things happen below, in this order: the library is
   shown, a probe is <em>found</em> rather than written, and your answer moves a posterior. The
-  number worth watching is not the verdict — it is the microsecond count under §3, because that is
-  what makes the mechanism sit on the real-time path.</p></div>
+  verdict is the least interesting thing on the page. Watch the microsecond count under §3, because
+  that is what makes the mechanism sit on the real-time path.</p></div>
 </section>
 
 <h2>1 · The library</h2>
 <p>Six enumerated beliefs about <code>a/b + c/d</code>. Five are documented errors; one is the
-canonical procedure. Nothing outside this set can be diagnosed — which is the honest cost of the
-approach and the reason it is fast.</p>
+canonical procedure. Nothing outside this set can be diagnosed. That is the cost of the approach
+and the reason it is fast.</p>
 
 <div class="lib" id="lib"></div>
 
@@ -86,7 +86,7 @@ approach and the reason it is fast.</p>
 no classifier, no prompt. Each belief is <em>executable</em>: given an item it returns an answer.
 That single property is what turns diagnosis from a judgement into a lookup.</div>
 
-<h2>2 · <code>discriminate()</code> — the probe is found, not authored</h2>
+<h2>2 · <code>discriminate()</code> finds the probe nobody wrote</h2>
 <p>Pick any two beliefs. The system scans the entire item space, throws away every item on which
 the two agree, and among the survivors chooses the one that maximises expected information gain
 over the whole posterior. It is a search, and the search is shown.</p>
@@ -108,7 +108,7 @@ over the whole posterior. It is a search, and the search is shown.</p>
 
 <div class="note warn"><b>Partial equivalence is the interesting output.</b> Several pairs in this
 library are <em>indistinguishable on most of the space</em> — “multiply the bottoms” and “use the
-lcm” give identical answers on <b>788 of the 1,296 items — 60.8%</b> of the space.
+lcm” give identical answers on <b>788 of the 1,296 items, 60.8%</b> of the space.
 A diagnostic written by hand would land in that region most of the time and learn nothing. The
 search will not.</div>
 
@@ -146,11 +146,11 @@ answer is wrong.</p>
   <div class="k">The line that carries the architecture</div>
   <p>The belief object <strong>never asks whether an answer is wrong.</strong> It asks which of its
   enumerated beliefs predicted that answer. Chance-level open-ended judgement becomes a table
-  lookup over a bounded set — and the library <em>is</em> the verifier, not a model that has
-  learned to be one.</p>
+  lookup over a bounded set. The library <em>is</em> the verifier. No model had to learn to be
+  one.</p>
 </div>
 
-<h2>4 · <code>break()</code> — running a belief until it contradicts itself</h2>
+<h2>4 · <code>break()</code> runs a belief until it contradicts itself</h2>
 <p>The third method takes no rival. It takes the belief alone and searches a case space for a pair
 of instances the belief itself cannot reconcile. Four invariants, checked exhaustively. A belief
 that survives all four returns <code>⊥</code> — no contradiction found — which is what the correct
@@ -164,7 +164,7 @@ procedure does.</p>
 <div class="panel sunken">
   <div class="ptitle">Invariant search</div>
   <div class="psub">Each invariant is a property any addition must have. The counterexamples below
-  are the first found, by exhaustive scan, not by selection.</div>
+  are the first ones an exhaustive scan finds. Nothing was picked to make a point.</div>
   <div class="readout" id="bout">Choose a belief and press the button.</div>
 </div>
 
@@ -183,7 +183,7 @@ you; the right column is what would still have to be true in a deployed system.<
   <thead><tr><th>Claim</th><th>Demonstrated here</th><th>Still open</th></tr></thead>
   <tbody>
     <tr><td><b>Diagnosis can avoid judgement entirely</b></td>
-      <td>Yes — every verdict on this page is an argmax over precomputed distributions. No
+      <td>Yes. Every verdict on this page is an argmax over precomputed distributions. No
       classifier, no model, no prompt anywhere on the path.</td>
       <td>Only for errors <em>inside</em> the library. A learner holding a seventh belief is
       diagnosed as the nearest of six, confidently and wrongly.</td></tr>
@@ -193,7 +193,7 @@ you; the right column is what would still have to be true in a deployed system.<
       <td>That the found item is <em>askable</em> — well-formed, in the learner's zone, and not
       pathological. Nothing here checks readability or difficulty.</td></tr>
     <tr><td><b>It runs at interaction speed</b></td>
-      <td>Yes, and the timings are measured on your machine, not quoted. The posterior update is
+      <td>Yes, and the timings come off your machine as the page runs. The posterior update is
       the cheap part by three orders of magnitude.</td>
       <td>Nothing. This one is settled. Enumerated Bayes over ≤40 hypotheses will not be the
       bottleneck in any system anyone builds.</td></tr>
@@ -213,7 +213,7 @@ you; the right column is what would still have to be true in a deployed system.<
 
 <div class="note"><b>One design consequence worth carrying.</b> Because misconceptions do not
 decay, a belief's strength must not be decayed toward zero between sessions. What decays is
-<em>confidence that the learner still holds it</em> — so the credible interval widens back toward
+<em>confidence that the learner still holds it</em>, so the credible interval widens back toward
 the population prior. A system that decays misconception strength has quietly decided that
 untested errors repaired themselves.</div>
 
@@ -458,5 +458,3 @@ $('brk').onclick=()=>{
 </script>
 </body>
 </html>
-</content>
-</invoke>

@@ -46,8 +46,8 @@ input[type=range]{width:100%;accent-color:var(--real);height:22px;padding:0;bord
   <div class="eyebrow">Demo 03 · Mechanisms</div>
   <h1>Six Rungs of Proof</h1>
   <p class="lede">A model asserts a formula. Before a learner sees it, something has to check it.
-  Three of those checks run below — <strong>on your machine, right now, timed with
-  <code>performance.now()</code></strong> — against a corpus of textbook formulas and five classes
+  Three of those checks run below, <strong>on your machine, right now, timed with
+  <code>performance.now()</code></strong>, against a corpus of textbook formulas and five classes
   of deliberate corruption.</p>
   <div class="chips">
     <span class="chip m">Computed live</span>
@@ -57,9 +57,9 @@ input[type=range]{width:100%;accent-color:var(--real);height:22px;padding:0;bord
 </header>
 
 <section class="orient">
-  <div class="o"><b>What this is</b><p>A real verification stack running in your browser. Twenty textbook formulas, five ways of breaking each, and three checkers — dimensional, numeric, symbolic — timed with <code>performance.now()</code>. Nothing here is hardcoded.</p></div>
-  <div class="o"><b>Why it matters</b><p>If a tutor can be <em>checked</em>, it can contradict a confident learner without anyone asserting authority. The measured surprise: numeric checking is the cheap default at near-perfect recall, and symbolic escalation costs far more for almost nothing — the opposite of how everyone builds it.</p></div>
-  <div class="o"><b>How to use it</b><p>Run the suite and read the per-rung table. Then raise <em>k</em>, the number of random substitutions, and watch recall stay flat while latency climbs — that is a null we measured. Look for the row where our own symbolic checker <b>gets it wrong</b>; it is disclosed, not hidden.</p></div>
+  <div class="o"><b>What this is</b><p>A real verification stack running in your browser. Twenty textbook formulas, five ways of breaking each, and three checkers (dimensional, numeric, symbolic) timed with <code>performance.now()</code>. Nothing here is hardcoded.</p></div>
+  <div class="o"><b>Why it matters</b><p>If a tutor can be <em>checked</em>, it can contradict a confident learner without anyone asserting authority. The measured surprise: numeric checking is the cheap default at near-perfect recall, while symbolic escalation costs far more for almost nothing. That is the opposite of how everyone builds it.</p></div>
+  <div class="o"><b>How to use it</b><p>Run the suite and read the per-rung table. Then raise <em>k</em>, the number of random substitutions, and watch recall stay flat while latency climbs. That is a null we measured. Look for the row where our own symbolic checker <b>gets it wrong</b>; it is disclosed, not hidden.</p></div>
 </section>
 
 

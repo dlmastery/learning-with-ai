@@ -301,91 +301,202 @@ consumer apps.
 
 ## 3. The acquisition literature that predates all of this
 
-A tutor architecture makes commitments about mechanism whether or not it states them. The
-SLA field has been arguing about those commitments since 1982, and the argument is
-usefully unresolved.
+A tutor architecture makes commitments about mechanism whether or not it states them, and
+the SLA field has been arguing about those commitments since 1982. Before any of the
+numbers, the fact that governs how to read them:
+
+> Plonsky & Brown (2015), *Second Language Research* 31(2):267–278,
+> `10.1177/0267658314536436`, counted **18 unique meta-analyses of corrective feedback**
+> whose overall effect sizes range from **d = −0.155 to d = 1.16**. Their diagnosis is that
+> the 1.3-SD spread is driven by **inclusion decisions rather than sampling error**, and
+> that L2 meta-analysts use "a stable but very limited set of search strategies, none of
+> which is likely to yield unpublished studies." `MEASURED-META`.
+
+So the question "does correcting a learner help, and by how much" does not have a stable
+meta-analytic answer. It has a family of answers that track their authors' criteria.
 
 **Comprehensible input.** Krashen's Input Hypothesis holds that acquisition happens when
 the learner understands input slightly beyond current competence, that conscious rule
 learning cannot become acquisition, and that an affective filter can block input from
-reaching the acquisition device. It is the most influential idea in language teaching and
-it survives partly by being hard to disconfirm: "slightly beyond current competence" is
-not independently measurable, and a learner who fails to acquire can always be described
-as having received insufficiently comprehensible input or as having had a raised filter.
-Gregg's 1984 critique in *Applied Linguistics* is the canonical statement of the
-objection. `CRAFT` for the pedagogy; the theoretical status is contested. The practical
-residue holds regardless: extensive input at a coverage the learner can handle is what a
-generative model can now supply without limit, which is why §4.1's coverage arithmetic
-matters more here than the theory does.
+reaching the acquisition device. *Principles and Practice* (1982) is unambiguous about
+correction: "Error correction has little or no effect on subconscious acquisition" (p. 10);
+"a sure method of raising the filter is attempting to correct errors… in my view it has
+been a serious mistake" (pp. 74–75). The unfalsifiability is visible in Krashen's own
+statement of the filter (p. 31): an acquirer who receives a great deal of comprehensible
+input and still fossilises has done so "due to the affective filter." Any disconfirming
+case is absorbed by the construct meant to explain it. Gregg's 1984 critique in *Applied
+Linguistics* is the canonical objection; **it is paywalled with no published abstract and
+was not read in this session**, so its detail is second-hand and is not quoted here.
+`CRAFT` for the pedagogy; the theory is contested.
 
-**Interaction.** Long's Interaction Hypothesis adds that negotiation of meaning — the
-repairs, clarification requests and confirmation checks that occur when comprehension
-breaks down — is what makes input usable, by drawing attention to the gap between what the
-learner said and what the language requires. That is the mechanism a conversational tutor
-is implicitly betting on, and a chatbot can execute it at will.
+Note where Krashen's anti-correction position comes from. It is a consequence of the
+non-interface claim, stipulated rather than measured: there is no mechanism by which
+feedback could reach the acquired system, so feedback cannot help.
 
-**Output.** Swain's Output Hypothesis, from Canadian immersion data where learners with
-years of rich input still produced non-native speech, holds that production forces a shift
-from semantic to syntactic processing: a sentence can be understood without being parsed,
-and cannot be said without it. **Pushed output**, production under pressure to be accurate,
-is the operative version, and it is the mechanism consumer products have least of.
+**Interaction, output, and noticing** supply the mechanism Krashen closed off. Long (1996)
+routes negative feedback through selective attention, with a scope limitation that
+citations usually drop: feedback is facilitative "at least for vocabulary, morphology, and
+language-specific syntax, and essential for learning certain specifiable L1–L2 contrasts"
+(p. 414). Swain's pushed output is production under pressure to convey a message
+"precisely, coherently, and appropriately," a concept she explicitly parallels to i+1, on
+the grounds that using a language "may force the learner to move from semantic processing
+to syntactic processing" (1985, pp. 248–249). Schmidt (1990) adds the condition that makes
+this testable, defining noticing operationally as availability for verbal report and
+refusing the escape hatch: "subconscious noticing… is oxymoronic."
 
-### 3.1 Corrective feedback, and the one question a tutor design depends on
+**And White (1987)**, *Applied Linguistics* 8(2):95–110, supplies the in-principle argument
+for correction that the rest of this section is about. Positive evidence can show a learner
+that a form is possible; it can never show that one is impossible. Input "will not be able
+to show the learner how to retreat from certain non-target forms: the input hypothesis is
+geared to handling additions to intermediate grammars, rather than losses." Retreat from
+over-generation requires negative evidence. That is why a tutor corrects at all.
 
-Does correcting a learner help, is explicit correction better than implicit, and does the
-advantage survive to a delayed post-test? Two meta-analyses, published the same year,
-answer differently, and the difference is instructive.
-
-**Li, Shaofeng (2010),** *Language Learning* 60(2):309–365,
-[10.1111/j.1467-9922.2010.00561.x](https://doi.org/10.1111/j.1467-9922.2010.00561.x).
-`MEASURED-META`. 33 primary studies (22 published, 11 doctoral dissertations), coded on
-17 features. Findings, in the author's own summary: a **medium overall effect** for
-corrective feedback, maintained over time; **the effect of implicit feedback was better
-maintained than that of explicit feedback**; published studies did not exceed
-dissertations; **lab-based studies exceeded classroom-based studies**; **shorter treatments
-produced larger effects than longer ones**; and foreign-language contexts produced larger
-effects than second-language contexts.
+### 3.1 What corrective feedback is actually worth
 
 **Lyster, Roy & Saito, Kazuya (2010),** *Studies in Second Language Acquisition*
 32(2):265–302, [10.1017/S0272263109990520](https://doi.org/10.1017/S0272263109990520).
-`MEASURED-META`. 15 classroom-based studies, N = 827. Corrective feedback had
-significant and durable effects; **effects were larger for prompts than for recasts**;
-effects were **"most apparent in measures that elicit free constructed responses"**;
-younger learners benefited more than older ones.
+`MEASURED-META`. Fifteen **classroom** studies, N = 827; they deliberately excluded the 19
+laboratory studies on the ground that lab results "cannot predict the pedagogical
+effectiveness of CF." Their Table 3, transcribed:
 
-Three things follow that a build should act on.
+| Contrast | n | k | d | 95% CI |
+|---|---|---|---|---|
+| CF vs control, all | 15 | 43 | 0.74 | 0.58–0.86 |
+| Recasts | 7 | 13 | 0.53 | 0.32–0.74 |
+| Prompts | 7 | 15 | 0.83 | 0.56–1.10 |
+| Explicit correction | 6 | 10 | 0.84 | 0.57–1.11 |
+| Immediate post-test | 15 | 25 | 0.63 | 0.45–0.81 |
+| Delayed post-test | 10 | 18 | 0.84 | 0.63–1.05 |
+| Free constructed response | 5 | 13 | 0.97 | 0.68–1.33 |
+| Constrained constructed response | 9 | 38 | 0.70 | 0.55–0.85 |
+| Metalinguistic judgement | 5 | 27 | 0.45 | 0.26–0.64 |
+| *Within-group* CF gain | 10 | 33 | 0.91 | 0.76–1.06 |
+| *Within-group* control gain | 10 | 17 | 0.39 | 0.30–0.48 |
 
-**Implicit and explicit reverse across the retention interval.** Li's reversal — explicit
-ahead at immediate test, implicit better maintained — should worry anyone whose design
-instinct is to explain the rule, because if it is real then the correction style that wins
-the demo loses at eight weeks. The caution is that the contrast is between-study: the
-implicit studies are not the same studies as the explicit ones, and Li's own moderators put
-implicit feedback disproportionately in the laboratory and in longer treatments. No primary
-trial located here manipulates feedback explicitness and retention interval factorially in
-the same learners, so the reversal is suggestive and confounded.
+The estimand for the first block is the standardised post-test difference between a CF
+group and a control group, pooled SD. The last two rows are pre-to-post gains, and the
+authors' own net figure is **0.91 − 0.39 = 0.52**.
 
-**Prompts beat recasts, and a prompt is pushed output.** A recast supplies the correct
-form; a prompt withholds it and pushes the learner to produce it. This is the
-corrective-feedback literature's version of the generation effect, and it is a direct
-design instruction: a tutor that smoothly reformulates the learner's sentence is doing the
-less effective thing, and doing it because reformulating is what a language model finds
-easy.
+**Li, Shaofeng (2010),** *Language Learning* 60(2):309–365. `MEASURED-META`. Thirty-three
+studies (22 published, 11 dissertations), 17 coded features. **The paper is closed access
+with no repository copy and was not read.** Its abstract reports a medium overall effect
+maintained over time, that "the effect of implicit feedback was better maintained than that
+of explicit feedback," that lab studies exceeded classroom studies, and that **shorter
+treatments produced larger effects than longer ones**. Second-hand sources give d = 0.61
+fixed / 0.64 random, and Truscott's restatement gives a sequence of 0.70/0.88 initially,
+0.61/0.64 after outlier removal, and **0.56/0.53 after adjustment for likely missing
+findings**. Those numbers are `[2nd]` and are not treated as established here.
 
-**The outcome measure decides the answer.** Lyster and Saito find effects largest on free
-constructed response. Norris & Ortega (2000), *Language Learning* 50(3), whose synthesis
-established that explicit instruction beats implicit, also established that this
-literature's outcome measures are dominated by discrete-point and metalinguistic formats
-that favour explicit knowledge. Both facts sit in the same literature and pull opposite
-ways.
+Four things follow that a build should act on.
 
-**Untraceable in this session.** The pooled *d* values for Li (2010) and Lyster & Saito
-(2010) and their confidence intervals could not be retrieved: both are closed access
-(Wiley and Cambridge return 403; OpenAlex records `oa_status: closed` with no repository
-full text for either). The directional findings above are quoted from the authors'
-published abstracts. The widely circulated point estimates are **not stated here**,
-because this report could not read them at source.
+**The implicit-at-long-delay reversal is not safe to design around.** Li's contrast is
+between-study, his own moderator table puts implicit feedback disproportionately in the
+laboratory and in longer treatments, and with 33 studies split across feedback type by
+three post-test timings the long-delayed implicit cell must be small. The k for that cell
+is the number that decides the question and it is not publicly available. Against it,
+Ellis, Loewen & Erlam (2006), *SSLA* 28(2):339–368, tested recasts against metalinguistic
+explanation at one day and two weeks and found "a clear advantage for explicit feedback
+over implicit feedback for both the delayed imitation and grammaticality judgement
+post-tests."
 
----
+**Prompts beat recasts less than everyone says.** In Lyster and Saito the difference is
+significant **only in the within-group contrasts**. In the between-group analysis, which is
+the one that controls for maturation and testing, recasts (0.53) and prompts (0.83) have
+overlapping intervals, and explicit correction (0.84) is numerically largest and
+distinguishable from neither. The design instruction survives in weaker form: a prompt
+withholds the form and pushes the learner to produce it, which is the generation effect,
+and it is the harder thing for a language model to do than smoothly reformulating.
+
+**Li's explicit/implicit and Lyster–Saito's prompts/recasts are the same studies in
+different bins.** Lyster and Saito state that Ellis's and Ellis et al.'s "explicit CF" was
+"operationalized as metalinguistic information in the form of a prompt. Therefore, we
+categorized Ellis's explicit feedback as prompts." Treating "explicit beats implicit" and
+"prompts beat recasts" as converging evidence double-counts.
+
+**The measurement critique cuts both ways, which is not how it is usually reported.**
+Norris & Ortega (2000), *Language Learning* 50(3), established that explicit instruction
+beats implicit (**d = 1.13 vs 0.54**, non-overlapping intervals) and in the same paper
+established why to distrust it: roughly **90% of outcome measures required discrete,
+focused L2 use and only 10% extended communicative use** (p. 486), with selected and
+constrained responses returning d = 1.20 against **d = 0.55 for free constructed
+response**. But Lyster and Saito's classroom set inverts that: free constructed response is
+their **largest** effect (0.97) and metalinguistic judgement their smallest (0.45).
+Corrective feedback effects do show up on free production. Anyone asserting flatly that
+these effects are artefacts of explicit-knowledge measures is overstating it for oral CF.
+
+### 3.2 What "durable" means here, and the power problem
+
+**Two to seven weeks.** Lyster and Saito define delayed as two to six weeks, and the
+longest delay anywhere in their fifteen studies is seven. Norris and Ortega's average
+immediate post-test came 1.57 days after treatment and their delayed post-tests 4.34 weeks
+after. Ten of Lyster and Saito's fifteen studies ran any delayed post-test; 22 of Norris
+and Ortega's 49 did. In Jeon and Kaya's pragmatics synthesis, one of thirteen did.
+
+The delayed estimate in Lyster and Saito is *higher* than the immediate one (0.84 against
+0.63), which reads better than it is: the ten studies contributing delayed effect sizes are
+not the fifteen contributing immediate ones. Norris and Ortega's honest version is that
+effects fell by about **one-fifth of a standard deviation** from immediate to delayed, with
+their own hedge (p. 500) that the finding "should not be interpreted as indicative" given
+how few studies had delayed post-tests.
+
+**And the median study in this literature had 35 participants across all groups.** To
+detect Lyster and Saito's own pooled effect of 0.74 at 80% power needs about 29 per group;
+their median study has roughly twelve per cell, giving about **43% power** for d = 0.74 and
+**25%** for the recast effect of 0.53. Lyster and Saito report no heterogeneity statistics,
+no publication-bias assessment, no random-effects model and no inverse-variance weighting,
+so a study of 179 counts the same as one of 25. Underpowered studies that reach
+significance necessarily overestimate; with no bias assessment, these pooled values should
+be read as upper bounds.
+
+One more recalibration applies to every number above. Plonsky & Oswald (2014), *Language
+Learning* 64(4):878–912, derived field-specific benchmarks from 346 studies and 91
+meta-analyses (N > 604,000): for between-group d, **0.40 is small, 0.70 medium, 1.00
+large**. Read against those, Lyster and Saito's 0.74 is medium and not "medium-to-large,"
+their within-group 0.91 falls below medium, and recasts at 0.53 are barely above small.
+The meta-analysts used Cohen's benchmarks, so every headline in this area drops a category
+when read against its own field.
+
+### 3.3 Written correction, where the null case is strongest
+
+Truscott (1996) argued that grammar correction "has no place in writing courses and should
+be abandoned," and his 2007 meta-analysis in *JSLW* 16(4) puts the point estimate at
+**d = −0.1555** on new writing: "we can be 95% confident that if it has any actual
+benefits, they are very small." Ferris's reply concedes more than it disputes ("Truscott is
+right in asserting that the evidence supporting the effectiveness of error correction is
+scant"), and by 2004 she reported that only **six studies in the entire literature make a
+correction/no-correction comparison at all**, two of them over time. Later syntheses are
+more favourable: Kang & Han (2015), *MLJ* 99(1), report g ≈ 0.54 across 21 studies, and
+Lim & Renandya (2020), *TESL-EJ* 24(3), report **g = 0.59, 95% CI [0.423, 0.755],
+Q = 83.11, τ² = 0.144, I² = 59.09%** across 35 studies. The two disagree in sign on two
+headline moderators, which is Plonsky and Brown's dispersion finding in miniature.
+
+Three results from this literature belong in any tutor's design file.
+
+**Revision success is not learning.** Truscott & Hsu (2008), *JSLW* 17(4):292–305,
+underlined errors for half a group and had both halves revise. The underlined group revised
+significantly better. A week later everyone wrote a **new** narrative and "the two groups
+were virtually identical" (**g = −0.068**). A tutor measuring whether the learner fixed the
+flagged error is measuring the thing that does not transfer.
+
+**The flagship positive result is narrower than its citation.** Bitchener and Knoch's
+studies, including the 10-month one (n = 52, g = 0.642, the **smallest** in the set), target
+two functions of the English article. Ekiert & di Gennaro's conceptual replication
+(*Language Teaching* 54(1)) kept the design and widened the outcome to all article
+functions, finding that "the same WCF may negatively impact the remaining non-targeted
+article functions, especially for the group that received the most explicit WCF."
+
+**Correction can cost something an accuracy measure cannot see.** Scherer, Graham & Busse
+(2024), *Learning and Instruction* 93:101961, across 200 comparisons, report surface
+feedback improving surface outcomes at g = 0.58 while moving **foreign-language learners'
+deep-level outcomes at g = −0.23**. Grammar feedback measurably degrades content and
+organisation for FL writers, and any study measuring only accuracy is blind to it.
+
+**The cleanest oral-CF null is a failed self-replication.** Loewen & Erlam (2006),
+*Computer Assisted Language Learning* 19(1):1–14, repeated Ellis, Loewen & Erlam (2006) in
+a synchronous chat environment with N = 31 and found "no statistically significant gains in
+response to either type of feedback." Two of the same authors, the same contrast, the
+opposite result — from a study with about ten per cell, i.e. roughly 20% power for
+d = 0.74. The positives and the nulls in this literature are equally underpowered.
 
 ## 4. Vocabulary: how many words, gained how, and whether the deck transfers
 
@@ -566,9 +677,6 @@ errors), one-shot prompted. `MEASURED-BENCH`. Detection precision / recall / F1:
 | System | P | R | F1 |
 |---|---|---|---|
 | Whisper Large + Mistral-7B | 48.9 | 3.4 | 6.4 |
-| Whisper Medium + Mistral-7B | 48.2 | 4.0 | 7.4 |
-| Whisper Small + Mistral-7B | 53.6 | 4.9 | 9.0 |
-| Whisper Large + Llama-3.1-8B | 52.8 | 8.4 | 14.5 |
 | Whisper Small + Llama-3.1-8B | 53.3 | 12.1 | 19.7 |
 | Wav2vec2 Base + Llama-3.1-8B (best cascade) | 53.8 | 17.8 | 26.8 |
 | Qwen2-Audio (end-to-end) | 41.7 | 22.0 | 28.8 |
@@ -883,26 +991,26 @@ not detect a difference" to "it works" is the most common error in this literatu
 is recorded here because a survey that only counts effect sizes will read this paper as
 supportive.
 
-### 8.3 The AI-versus-teacher null inside a positive paper
+### 8.3 Two more, briefly
 
-Soori, Khojasteh & Javed (2025), §2.2 above: AI feedback versus experienced-teacher
-video feedback on overall IELTS writing, mean difference 0.079 bands, p = 0.921, with
-task achievement at p = 1.000 and grammatical accuracy numerically favouring the teacher.
-The paper's abstract and title report the hybrid advantage and do not mention this
-contrast. `MEASURED-RCT` (cluster-assigned).
-
-### 8.4 The K-12 null that includes language lessons, already in this corpus
+Soori, Khojasteh & Javed (2025), §2.2: AI feedback versus experienced-teacher video
+feedback on overall IELTS writing, mean difference 0.079 bands, p = 0.921, with task
+achievement at p = 1.000 and grammatical accuracy numerically favouring the teacher. The
+title and abstract report the hybrid advantage and never mention this contrast.
+`MEASURED-RCT` (cluster-assigned).
 
 Fütterer et al. (2026), *Educational Psychology Review*, n = 371, Grades 7–9, six 45-minute
-sessions **in regular physics or English lessons**, two scaffolded GenAI conditions
-against a control condition using standard ChatGPT: *"no statistically significant
-advantages of either intervention over the control condition… for effort,
-domain-specific knowledge, or elaboration-based strategy use."* `MEASURED-RCT`
-(doi:10.1007/s10648-026-10133-8; E3 §7.3, M1, survey §23).
-
-E3 treated this as the K-12 core-subject result. Half its sessions ran in English
-lessons, which makes it also the only randomised test in the ERIC set of whether
+sessions **in regular physics or English lessons**, two scaffolded GenAI conditions against
+a control using **standard ChatGPT**: *"no statistically significant advantages of either
+intervention over the control condition… for effort, domain-specific knowledge, or
+elaboration-based strategy use"* (doi:10.1007/s10648-026-10133-8; E3 §7.3, survey §23).
+`MEASURED-RCT`. E3 read this as the K-12 core-subject result. Half its sessions ran in
+English lessons, which also makes it the only randomised test in the ERIC set of whether
 designed pedagogy beats plain ChatGPT in a language classroom. It did not.
+
+See also §3.3 for Loewen & Erlam (2006), a failed self-replication of the flagship
+explicit-feedback study, and Truscott & Hsu (2008), where revision gains did not survive to
+a new piece of writing (g = −0.068).
 
 ---
 
