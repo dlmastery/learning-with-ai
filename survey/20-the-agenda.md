@@ -236,6 +236,199 @@ experiment is worth running.
 
 ---
 
+## Experiment 5. The guardrail where the machine can write the essay
+
+**Why fifth.** Experiment 4 puts restraint on trial in mathematics practice,
+where an unguarded assistant hands over the answer to part of a task. Writing is
+the domain where it hands over the artifact, and where a fifteen-year automated
+feedback transfer null is still ambiguous between two readings: weak automated
+feedback, or automated feedback as such. Across ERIC, Crossref and OpenAlex, §43
+could not locate a single randomised trial of generative-AI writing support with
+a delayed, unassisted post-test on a new composition. That result set is
+dominated by pre/post designs with no control and n between 30 and 120.
+
+| | |
+|---|---|
+| **Population** | 636 learners, one term, randomised **at learner level within class** |
+| **Arms** (212 each) | **A** — unguarded AI writing assistance: drafting, rewriting and feedback without restriction · **B** — guarded assistance: task-level feedback only, no generated prose, no holistic score, structured to prescribe the next move · **C** — no AI, ordinary instruction with teacher feedback. All three write the same number of compositions on the same prompts |
+| **Power** | Smallest difference that would change a build decision: **d = 0.30**. 15.7/d² gives **175 per arm**; two pairwise comparisons at Bonferroni α = .025 raise it to **212 per arm, 636 total**. Class-level randomisation would multiply by a design effect of 1 + 24(0.15) = **4.6**, or **≈ 2,930 learners across 117 classes** |
+| **Primary outcome** | A **delayed, unassisted, cold-prompt composition** written four weeks after the last session, on a new topic, scored by blinded human raters on the standard rubric |
+| **Secondary** | The assisted compositions during the term, which is what every existing study measures; and a content-knowledge test on the topics written about |
+
+That design effect is why the assistance condition has to be enforced in
+software instead of by instruction. A learner told not to ask for generated prose
+will ask for generated prose, and assigning whole classes to condition costs
+2,294 additional learners. A trial half this size can still rule out large harm;
+it cannot rule out the harm that matters, which is a quarter of a standard
+deviation on what the child can do alone.
+
+> Falsifier. B ≈ C at 212 per arm means the guardrail adds nothing where the
+> machine can do the whole task, and the restraint claim running through these
+> sections is a finding about mathematics practice. B ≈ A means the guardrail is
+> theatre. And if A < C reproduces the withdrawal effect in writing, the harm
+> belongs to unguarded assistance in general and not to one subject (§01).
+
+---
+
+## Experiment 6. Relational standing, with dosage designed out
+
+**Why sixth.** Every relationship finding bundles two mechanisms. One is dosage:
+a learner who likes the tutor comes back more, and more of everything happens.
+The other is a licence to correct, the standing that lets a tutor say *that is
+wrong* without the learner disengaging. They imply opposite products, and no
+trial in any literature has told them apart, because the manipulation that raises
+standing also raises attendance. A tutor can cap items and wall-clock time
+identically across arms. A classroom cannot, which is why this became answerable
+only once the tutor was software (§40).
+
+| | |
+|---|---|
+| **Population** | 1,000 learners aged 10–13, one topic with a clean transfer test, including a pre-specified stratum of **≥ 250 students with an active IEP** |
+| **Design** (2 × 2, four cells of 250) | **Factor A — standing.** *Continuous*: the tutor carries a visible record of prior sessions, cites it by name when correcting, and frames each correction with the standard plus an assertion of reachability · *Neutral*: identical content and identical corrections, no record cited, competent and impersonal. **Factor B — correction stance.** *Assertive*: states that the answer is wrong and says why · *Accommodating*: hedges, asks the learner to reconsider, accepts the second assertion |
+| **Dosage** | **Fixed by construction.** Every arm gets the same number of items and the same wall-clock cap, which designs the attendance mechanism out and leaves the correction mechanism alone in the model. Session length is a manipulation check and never an outcome |
+| **Power** | Correction acceptance at a conservative 0.50 vs 0.35 split: **167 per cell**. Delayed transfer at d = 0.25: **251 per arm**. Four cells of 250 give 80% power for a 14-point difference in correction acceptance, d = 0.25 on transfer as a main effect, and **d = 0.35 inside the IEP stratum**. The trial is deliberately not powered for the β = .07 direct relationship-to-achievement path |
+| **Primary outcome** | **Correction acceptance** — the proportion of corrections after which the learner's next attempt adopts the corrected procedure |
+| **Co-primary** | **Delayed transfer at 14 days**, on unseen items requiring the same procedure in a new surface form |
+| **Secondary** | Unprompted admissions of not understanding per 100 turns; and satisfaction, collected last, which is expected to move in the Continuous arm regardless and is the falsification trap |
+
+The IEP stratum earns this trial a place it would not otherwise hold. It is the
+only pre-specified disability stratum anywhere in this agenda, and while one topic
+and one manipulation is not the empty chair (§04), it is the first design here
+that returns disability-stratified randomised evidence at all.
+
+> Falsifier. Written in advance by the report that proposed it: the relationship
+> thesis for an AI tutor is dead if, with dosage fixed, the Continuous arm's
+> satisfaction advantage is positive and significant while the delayed transfer
+> contrast has a 95% CI whose upper bound falls below d = 0.20 and the correction
+> acceptance contrast crosses zero. Six studies with weaker manipulations have
+> already landed there, so the interpretation has to be pre-registered.
+
+---
+
+## Experiment 7. Randomise revision allocation, and score it on an off-board paper
+
+**Why seventh.** Every measured intervention in test preparation manipulates a
+technique. Allocation, meaning what the learner works on next, is the one degree
+of freedom that is large, unmeasured, and structurally unavailable to a coaching
+centre, which teaches a cohort. Everything else in the category is either
+established (retrieval, spacing) or already null (nudging). And no
+test-preparation study in that literature has ever carried an instrument capable
+of separating learning from score inflation (§41).
+
+| | |
+|---|---|
+| **Population** | ~630 candidates for a public examination with published past papers and granular mark schemes; GCSE or A-level mathematics is cleanest because the specification is stable |
+| **Arms** (individually randomised) | **Control** — full access to the same past-paper library, the same generated items and the same marking, with the learner choosing what to work on · **Treatment** — identical resources, with the system allocating each session's topics by expected-marks maximisation over the learner's per-topic posterior and the specification's historical topic weights. Both arms get closed-book retrieval and the same spacing defaults |
+| **Power** | Effects worth detecting are 0.10–0.20 SD. d = 0.15 needs **700 per arm, 1,400 total**; ANCOVA at a deliberately conservative ρ = 0.80 multiplies by (1 − ρ²) = 0.36, giving **252 per arm, ~505 total**; 20% attrition between consent and the sitting gives **~630 candidates** |
+| **Primary outcome** | Marks on the real public examination — externally scored, publicly documented, and outside the reach of the LLM-as-judge failure §32 describes |
+| **Audit instrument** | A held-out paper from a **different examination board** covering the same specification, which the system never trained or allocated against |
+| **Secondary** | Per-topic marks, to test whether any gain is concentrated where the optimiser reallocated |
+
+The audit paper is the contribution. No test-preparation study in that
+literature has ever included one, and every one of them should have. It is also
+why a school district can run this in a year: 630 candidates, one specification,
+and a primary outcome nobody in this project scores.
+
+> Falsifier. If the treatment arm's gain reproduces on the off-board paper at the
+> same magnitude, allocation is teaching, and the score-inflation objection to
+> this whole product category is answered. If the gain appears on the primary
+> paper and is absent on the audit paper, the system is a score-inflation engine
+> and should be described as one. Only one of those results is commercially
+> convenient, which is most of the argument for registering both.
+
+---
+
+## Experiment 8. Skill only, affect only, both
+
+**Why eighth.** No trial in the anxiety literature can hold anxiety constant
+while moving skill, or the reverse, because every classroom intervention moves
+both at once. That is why the direction question is still open after decades, and
+it is what a system with item-level control can do that a classroom cannot (§42).
+
+| | |
+|---|---|
+| **Population** | 645 learners, two school terms, one district partnership, stratified on a baseline maths-anxiety screen |
+| **Arms** (215 each) | **A — skill only**: adaptive remediation of the prerequisite gap, every affective feature disabled · **B — affect only**: the affective features at full strength, with item selection held to the learner's existing level so that no new skill is taught · **C — both** |
+| **Power** | Smallest difference worth detecting between two arms: **d = 0.25**. Three pairwise contrasts at Bonferroni α = .0167 two-sided, 80% power: **335 per arm, 1,005 total**. ANCOVA on a baseline unassisted pre-test at r = 0.6 gives **215 per arm, 645 total**. Enriching to the top tercile of the screen brings it below 500 and narrows the population the answer applies to |
+| **Primary outcome** | **Delayed unassisted performance on transfer items at 6 weeks**, administered without the tutor, blind-scored |
+| **Secondary** | Anxiety on the same instrument at 6 weeks, and the avoidance-signature rate from the logs |
+
+Three theories make three different predictions here and the trial separates
+them. Deficit Theory predicts A ≈ C > B on both outcomes. The Debilitating
+Anxiety Model predicts B > A on anxiety and B ≈ A on performance in the short
+run, with B's advantage appearing only at follow-up. Reciprocal Theory predicts
+C > A ≈ B on performance with a super-additive gap.
+
+> Falsifier. Registered before the trial runs: arm B moves the anxiety instrument
+> and does not move the 6-week unassisted outcome. That would make the affective
+> layer a comfort feature, and it should then be costed as one and sold as one.
+
+---
+
+## Experiment 9. Does speaking to a machine transfer to speaking to a person?
+
+**Why ninth.** Unlimited low-stakes practice with a partner who cannot be
+embarrassed is the one capability advantage in this field that is not merely
+economic. It is also what the whole consumer segment is sold on. Every trial in
+the domain scores the material it trained. The nearest quantitative estimate runs
+against the hypothesis: cross-modality contrasts of 0.29 [−0.21, 0.79] and
+0.19 [−0.31, 0.70], against same-modality contrasts of 0.65–0.84 (§44).
+
+| | |
+|---|---|
+| **Population** | 465 learners across three arms with a hierarchical testing order, or **310 for the two-arm A-versus-B version**, which is the question a builder actually faces |
+| **Arms** | **A** — 12 weeks of AI conversational practice · **B** — 12 weeks of human conversation partners matched on **speaking minutes** · **C** — matched-time non-speaking study |
+| **Power** | Plan against **d = 0.35** on A vs C, a control-adjusted estimate against business-as-usual and not a trained-item effect: **129 per arm** at 80% power, α = .05 two-sided. Three arms with hierarchical testing (A vs C, then A vs B) and 20% attrition gives **n ≈ 465** |
+| **Primary outcome** | Collected **four weeks after the last session**, in an unscripted conversation with a human interlocutor the participant has never met, scored for **comprehensibility** on a nine-point scale by two raters blind to condition |
+| **Co-primary** | **Intelligibility** — orthographic transcription accuracy by naive listeners |
+| **Secondary** | Minutes of L2 speech produced, turns initiated, and self-reported willingness to communicate, so that the self-report and the behavioural measure can be compared in the same sample |
+
+The outcome instrument is a human being, which is most of why nobody has run it.
+It cannot be automated without reintroducing the machine whose effect is under
+measurement.
+
+> Falsifier. A ≈ B on delayed comprehensibility is the best available outcome for
+> this category and should be reported as one: machine practice substitutes for
+> scarce human practice at a fraction of the cost. A ≈ C retires the central
+> marketing claim of the largest consumer segment in the field, and would be worth
+> more than another significant result on trained items.
+
+---
+
+## Experiment 10. The peer mechanism, and the cheap question inside it
+
+**Why last, and why it is here at all.** One part of a group cannot be supplied
+by an AI tutor: being disagreed with by someone who is genuinely uncertain. A
+model that knows the answer and performs uncertainty is not in that state. The
+residual is worth on the order of 0.1–0.2 SD (§46), and detecting it takes a
+multi-school trial nobody will fund. The cheap question rides in the same three
+arms and needs 99 learners.
+
+| | |
+|---|---|
+| **Population** | Three arms, learner-level randomisation within classrooms, one term, one subject with a validated concept inventory — introductory mechanics, because the FCI exists |
+| **Arms** | **A** — AI tutor alone: full personalisation, individual-accountability scoring, no peers · **B** — AI tutor plus an AI peer that commits to a possibly-wrong position and defends it · **C** — AI tutor plus brokered human pairing on disagreement items |
+| **Power, the expensive half** | The contrast is **C − B**. At the low end of the residual, **d = 0.15** needs **699 per arm**, about 2,100 across three arms; an ICC of 0.05 and cluster size 25 give a design effect of 1 + 24(0.05) = **2.2**, raising it to roughly **4,600**. At d = 0.25 it is 252 per arm before the design effect and about 1,700 after it |
+| **Power, the cheap half** | The **collaboration-skill** secondary outcome is where the CSCL syntheses predict **g ≈ 0.7**, and at that magnitude **33 per arm** suffices before the design effect — **99 learners** |
+| **Primary outcome** | Delayed concept-inventory score at eight weeks, scored blind |
+| **Secondary, and the one worth running first** | A collaboration-skill measure, because that is where the group's distinctive effect lives and no arm-A system can produce it |
+
+The 46-fold gap between those two rows is the entry, and not a footnote to it.
+Same three arms, same term, same instrument set, and the question you pick
+decides whether the study costs 4,600 learners or 99. It also sets a floor under
+what counts as evidence here: any study in this space with fewer than 500 per arm
+reporting a null on peers has not tested the hypothesis, and a 60-learner pilot
+has 80% power only for d ≈ 0.51, which is larger than the whole cooperative
+learning effect.
+
+> Falsifier. C ≈ B at 699 per arm means simulated commitment is as good as real
+> commitment, and the last principled objection to a pure one-to-one architecture
+> goes with it. A ≈ B ≈ C on collaboration skill at 33 per arm means an
+> AI-mediated group does not teach a learner to work with a person, and the
+> single-tutor thesis carries a cost it currently does not price.
+
+---
+
 ## What would falsify this survey
 
 This survey argues that the frontier deployment results on record are a floor with
@@ -351,10 +544,10 @@ We would concede that the frontier results already on record are what this
 technology does, and not a floor set by unfinished systems, and that added
 mechanism does not pay, if:
 
-1. **Experiment 3 returns A ≈ C** at n = 300/arm. The single most decisive test:
+1. **Experiment 4 returns A ≈ C** at n = 300/arm. The single most decisive test:
    the flagship design against the best cheap known-good alternative on our own
    preferred outcome.
-2. **Experiment 2 returns C = B = A** on prerequisite-dependent transfer *and*
+2. **Experiment 3 returns C = B = A** on prerequisite-dependent transfer *and*
    the typed-vs-untyped ablation shows no difference — persistent state buys
    nothing even when correctly typed.
 3. **The village-vs-single-agent comparison returns parity at matched compute** —
@@ -371,6 +564,15 @@ mechanism does not pay, if:
    smallest effect of interest of d = 0.20. This is the cleanest trigger and the
    one we should most want run, because it tests the conjunction instead of the
    parts.
+7. **Experiment 2 returns equivalence within δ = 0.10 SD.** The transitive
+   prerequisite closure §25 publishes and §18 assumes is then an architecture we
+   pay for and cannot detect, and the weakest-link entry rule comes out of §25.
+   This is the first concession condition in this survey that would retire a
+   specification we wrote, which is why it belongs at the top of the list and not
+   at the bottom.
+8. **Experiment 5 returns B ≈ C at 212 per arm.** Restraint would then be a
+   finding about mathematics practice, and the design claim running through these
+   sections would have to be restated at that width.
 
 **If (1) and (6) both land, the correct revision is not a hedge.** It is to
 rewrite the thesis as: *AI's contribution to learning is the scalable,
@@ -392,22 +594,33 @@ hypothesis.**
   blind-scored. Report the immediate-to-delayed rank correlation as a headline
   number, because it tells everyone whether their existing evidence base means
   anything.
+- **Randomise the graph before building another one.** Within learner, at topic
+  level, time capped identically, registered as an equivalence trial at 0.10 SD.
+  A specification we publish should be the first thing we put at risk.
 - **Ablate memory before building more of it.** Same model, same prompt, same
   UI, differing only in what crosses the session boundary. Split typed from
   untyped so a null is a diagnosis.
 - **Put restraint on trial against worked examples plus retrieval practice, at
-  matched time.** Not against business as usual. Pre-register d = 0.20 as the
-  smallest effect worth claiming.
+  matched time**, in mathematics and again in writing, where the machine can
+  produce the artifact. Not against business as usual. Pre-register d = 0.20 as
+  the smallest effect worth claiming.
 - **Report gap-widening by prior-knowledge quartile as a pre-registered
   moderator on every trial**, because the sign of the effect depends on the
   learner.
-- **Publish the falsifier before the result.** Each of the three experiments
-  above has one written down, and none of them is a formality.
+- **Enforce the arm in software.** Experiments 5 and 6 both fail if the condition
+  is a request: a learner told not to ask for prose asks for prose, and a warm
+  tutor that also runs longer sessions has measured dosage instead of standing.
+- **Publish the falsifier before the result.** Each of the ten experiments above
+  has one written down, and none of them is a formality.
 - **Three of these are runnable inside one instrumented product** with a few
   hundred consented users and no new modelling work: the memory ablation, the
-  gap-widening moderator, and the permutation-vs-self-consistency check, which
-  needs no learners at all. A shared delayed-assessment panel is the
-  infrastructure that makes the rest reportable.
+  gap-widening moderator, and the collaboration-skill arm of Experiment 10, which
+  needs 33 learners per arm. A shared delayed-assessment panel is the
+  infrastructure that makes the rest reportable. The
+  permutation-vs-self-consistency check that used to occupy that third slot has
+  been run, and its own falsifier fired: 768 generations, two models, a
+  deterministic comparator, at chance both times (C-9). It is a result now and
+  no longer an item on this list.
 
 The measurement gap is the widest one in applied AI: dozens of benchmarks for
 whether a model is smart, roughly one field trial per organisation per year for

@@ -296,7 +296,7 @@ effort has not landed, and each one is a constraint you can design against.</p>
 </div>
 
 <figure>
-  <div class="ftitle">The first finding, in four studies</div>
+  <div class="ftitle">The first finding, in the studies that measured both halves</div>
   <div class="fsub">Paired outcomes, not a slope chart: the two columns are different units
   (percentages, <em>d</em>, and qualitative change), so they share no scale and the connector
   encodes pairing only, never magnitude. Hover a row.</div>
@@ -596,7 +596,7 @@ run in the demos.</p>
     to withdraw the central claim. Persistent contents, an abstract, and every claim carrying an
     evidence label.</p>
     <div class="nm"><span data-gen="sections">47</span> SECTIONS ·
-      <span data-gen="words">117,778</span> WORDS</div>
+      <span data-gen="words">121,622</span> WORDS</div>
   </a>
   <a href="demos/">
     <div class="nt">The demos</div>
@@ -721,10 +721,10 @@ const EST = {
   rows:[
     {label:"Alphie's Alley",  a:"2.35", b:"0.05", cls:"Chambers et al. 2008a", note:"Within-group 2.35 [2.10, 2.60]; against a control 0.05 [−0.15, 0.25]. The two estimates are 2.30 SD apart, from the same learners."},
     {label:"ITSS",            a:"1.55", b:"0.31", cls:"Wijekumar et al. 2012", note:"Within-group 1.55 [1.10, 2.00]; against a control 0.31 [−0.08, 0.70], interval crossing zero."},
-    {label:"A2i",             a:"1.09", b:"0.26", cls:"Al Otaiba et al. 2011", note:"Within-group 1.09 [0.91, 1.27]; against a control 0.26 [0.08, 0.44] — the one row here whose control contrast excludes zero."},
-    {label:"A2i",             a:"1.09", b:"0.14", cls:"Connor et al. 2007",    note:"Within-group 1.09 [0.91, 1.27]; against a control 0.14 [−0.02, 0.30]."},
-    {label:"A2i",             a:"1.03", b:"0.11", cls:"Connor et al. 2011a",   note:"Within-group 1.03 [0.81, 1.25]; against a control 0.11 [−0.09, 0.31]."},
-    {label:"A2i",             a:"0.45", b:"0.09", cls:"Connor et al. 2011b",   note:"Within-group 0.45 [0.25, 0.64]; against a control 0.09 [−0.09, 0.27]."},
+    {label:"A2i · Al Otaiba", a:"1.09", b:"0.26", cls:"Al Otaiba et al. 2011", note:"Within-group 1.09 [0.91, 1.27]; against a control 0.26 [0.08, 0.44] — the one row here whose control contrast excludes zero."},
+    {label:"A2i · Connor 07", a:"1.09", b:"0.14", cls:"Connor et al. 2007",    note:"Within-group 1.09 [0.91, 1.27]; against a control 0.14 [−0.02, 0.30]."},
+    {label:"A2i · Connor 11a",a:"1.03", b:"0.11", cls:"Connor et al. 2011a",   note:"Within-group 1.03 [0.81, 1.25]; against a control 0.11 [−0.09, 0.31]."},
+    {label:"A2i · Connor 11b",a:"0.45", b:"0.09", cls:"Connor et al. 2011b",   note:"Within-group 0.45 [0.25, 0.64]; against a control 0.09 [−0.09, 0.27]."},
     {label:"Moodle",          a:"0.23", b:"0.16", cls:"Jia et al. 2012",       note:"Within-group 0.23 [−0.16, 0.62]; against a control 0.16 [−0.23, 0.55]. The smallest within-group number has the smallest gap, which is the pattern."}
   ],
   left:"WITHIN-GROUP", right:"VS CONTROL",
@@ -806,9 +806,12 @@ function renderBars(host, spec){
 
 function renderSlope(host, spec){
   const narrow = innerWidth < 640;
-  const LW = narrow ? 96 : 184, ROW = 50, PAD = 28;
+  // At 390px the left gutter cannot hold a row label and a value at once — the
+  // labels were running through the numbers — so at that width the values move
+  // INSIDE the track, where 400 units sit empty, and the label gets the gutter.
+  const LW = narrow ? 118 : 184, ROW = 50, PAD = 28;
   const W = 700, H = spec.rows.length * ROW + PAD * 2;
-  const x1 = LW + 62, x2 = W - 118;
+  const x1 = LW + (narrow ? 18 : 62), x2 = W - (narrow ? 60 : 118);
   // Column labels and the accessible description come from the spec: the same
   // renderer draws two different pairs of quantities, and a hand-written count of
   // rows in an aria-label goes stale the first time a row is added.
@@ -831,10 +834,12 @@ function renderSlope(host, spec){
       'stroke-width':1, 'stroke-dasharray':'2 4'}));
     g.appendChild(mk('circle', {cx:x1, cy:y, r:6, fill:'var(--felt)', class:'dot'}));
     g.appendChild(mk('circle', {cx:x2, cy:y, r:6, fill:'var(--real)', class:'dot'}));
-    const a = mk('text', {x:x1-13, y:y+4, 'text-anchor':'end', class:'vl',
+    const a = mk('text', {x:narrow ? x1+13 : x1-13, y:y+4,
+      'text-anchor':narrow ? 'start' : 'end', class:'vl',
       style:`fill:${r.invert ? 'var(--bad)' : 'var(--felt)'}`});
     a.textContent = r.a; g.appendChild(a);
-    const b = mk('text', {x:x2+13, y:y+4, class:'vl',
+    const b = mk('text', {x:narrow ? x2-13 : x2+13, y:y+4,
+      'text-anchor':narrow ? 'end' : 'start', class:'vl',
       style: r.invert ? 'fill:var(--good)' : (r.bad ? 'fill:var(--bad)' : '')});
     b.textContent = r.b; g.appendChild(b);
     g.appendChild(mk('rect', {x:0, y:y-ROW/2, width:W, height:ROW, fill:'transparent'}));
