@@ -318,8 +318,8 @@ variance, making the rubric a flaky test, and public examinations cover a subset
 subjects for a dozen years of a life, with no comparable artefact in early literacy,
 vocational skill, or the population §04 centres.
 
-The fourth is the one that bites: the oracle is gameable, and the gaming has been
-measured for thirty-five years. Koretz (2005), CSE Report
+The fourth is the one that bites: the oracle is gameable, and the gaming was
+measured in 1991. Koretz (2005), CSE Report
 655, reports the first empirical study of score inflation, and its 1990 component is a
 genuine experiment: a district whose third graders averaged a grade equivalent of 4.3
 in mathematics dropped to 3.7 on switching instruments in 1987, climbed back to 4.3

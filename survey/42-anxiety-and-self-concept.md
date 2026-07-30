@@ -19,8 +19,8 @@ Adaptivity did not neutralise anxiety. The children who benefited least were the
 children the trainer was built for.
 
 That result is the one most capable of invalidating this project's premise, so it goes
-first. An eleven-year-old on a SELPA plan who can hold a conversation about
-photosynthesis and cannot pass a worksheet about it is not in the low-anxiety cell. If
+first. The eleven-year-old on a SELPA plan who can discuss photosynthesis and cannot
+pass a worksheet about it is not in the low-anxiety cell. If
 the Kohn pattern is a property of adaptive self-directed practice in general, then
 personalisation is a benefit that arrives sorted by who needs it least, and the whole
 argument of this survey lands on the wrong child.
@@ -276,10 +276,10 @@ disclosure of confusion: the child who will not raise her hand may also not type
 don't understand*, which makes elicitation the design problem (§05).
 
 Now the trap. Across every literature surveyed here the self-report outcome outruns the
-achievement outcome **inside the same trials**. Huntley et al. (2019), 44 RCTs of
-interventions for test-anxious university students, n = 2,209: test anxiety g = −0.76,
-academic performance g = 0.37, with publication bias found by the authors. Yeager: belief
-SMD 0.33, grades SMD 0.11 and SMD 0.01. Macnamara: manipulation check passed,
+achievement outcome **inside the same trials**. Huntley et al. (2019), 44 RCTs for
+test-anxious university students, n = 2,209: test anxiety g = −0.76, academic
+performance g = 0.37, with publication bias found by the authors. Yeager: belief
+SMD 0.33 against grades SMD 0.11 and SMD 0.01. Macnamara: manipulation check passed,
 achievement d̄ = 0.04.
 
 The cleanest case is Yılmazer et al. (2024), who pooled 18 studies and 1,275
@@ -328,16 +328,16 @@ like you" framing.
 
 ---
 
-## 9. What ships with an outcome measure attached, and what does not ship at all
+## 9. What ships with an outcome measure, and what does not ship
 
 - **Two channels in the learner model.** Affect carries a stated provenance (a
   screening instrument or a logged behavioural signature) and is never inferred from
   accuracy. Devine's 77% and Barroso's r = −.09 are the warrant (§11).
 - **Screen, then treat.** Elbaum & Vaughn (2003) found self-concept interventions
-  benefited only students with documented low self-concept; Yeager's lower-achiever
-  restriction and Burnette's targeted subgroup say the same from two other directions.
-  Gate the affective machinery on a short validated screen and evaluate it on the
-  screening × treatment interaction, never on the main effect.
+  benefited only students with documented low self-concept, and Yeager's lower-achiever
+  restriction and Burnette's targeted subgroup agree. Gate the affective machinery on a
+  short validated screen and evaluate it on the screening × treatment interaction,
+  never on the main effect.
 - **Load-flat escalation** on the avoidance signature, with delayed unassisted transfer
   at seven or more days as the falsifier (§4).
 - **No pond.** No percentiles, no cohort comparison, no leaderboards (§8).
@@ -348,8 +348,8 @@ like you" framing.
 - **Every affective feature names its delayed unassisted outcome before it ships**, or
   it is more likely than not measuring the wrong thing.
 
-The experiment this section owes the rest of the survey is a three-arm dismantling
-trial, stratified on a baseline anxiety screen: **A**, skill only, with every affective
+The experiment this section owes is a three-arm dismantling trial, stratified on a
+baseline anxiety screen: **A**, skill only, with every affective
 feature disabled; **B**, affect only, with item selection frozen at the learner's
 current level so no new skill is taught; **C**, both. Primary outcome is delayed
 unassisted performance on transfer items at six weeks, administered without the tutor
@@ -360,10 +360,9 @@ contrasts at Bonferroni-corrected α = .0167 and 80% power, that is 335 per arm,
 to 215 per arm with a baseline unassisted pre-test correlating r = 0.6 with the
 outcome: 645 learners, two school terms, one district partnership (§20).
 
-The pre-registration has to state the null it is willing to publish: that arm B moves
-the anxiety instrument and leaves the six-week unassisted outcome where it was. That
-result is what §6 predicts, and it would be worth more to this project than a positive
-finding.
+The pre-registration has to state the null it is willing to publish: arm B moves the
+anxiety instrument and leaves the six-week unassisted outcome where it was. That is
+what §6 predicts, and it would be worth more here than a positive finding.
 
 What the medium offers the eleven-year-old is a helper with no anxiety of its own to
 transmit, patience for the fourth attempt, an item selector that can hold storage
