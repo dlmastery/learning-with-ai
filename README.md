@@ -92,8 +92,7 @@ presentation is being rebuilt.
 - The paper is being reduced and reorganized into a publishable argument.
 - The dashboard is being redesigned around the product thesis and research program.
 - The previous “University in a Box” walkthrough was a scripted interface prototype,
-  not a credible product demonstration. It is being removed from the primary
-  presentation.
+  not a credible product demonstration. It has been removed.
 
 The existing paper, deck and dashboard should be treated as working drafts until that
 editorial rebuild is complete.
