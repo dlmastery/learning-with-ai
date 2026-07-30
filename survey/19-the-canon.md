@@ -15,9 +15,9 @@ produced into things worth rebuilding and things worth admiring from a distance:
 > learner does still the thing that caused the effect?**
 
 For the Keller Plan, yes. For chavruta, no. That one question does more work than
-any amount of enthusiasm about AI tutors, and this section is an attempt to run
-it across the catalogue honestly — including where it returns an answer the
-field would rather not hear.
+any amount of enthusiasm about AI tutors, and this section runs it across the
+whole catalogue, including where it returns an answer the field would rather not
+hear.
 
 The thesis under test is the seductive one: *most great pedagogical systems were
 abandoned for cost, not efficacy; if AI changes the cost structure, the question
@@ -43,9 +43,9 @@ components, and AI does not touch them equally.
 | **Institutional and political permission** | **No — and this killed several systems outright** |
 
 AI collapses two of seven components to near zero, substantially reduces two
-more, and does nothing at all for three. **The thesis is therefore true precisely
-for pedagogies whose costs sat in the first two buckets** — and one system sat
-almost entirely there.
+more, and does nothing at all for three. **The thesis is therefore true for
+pedagogies whose costs sat in the first two buckets**, and one system sat almost
+entirely there.
 
 ---
 
@@ -63,16 +63,15 @@ A meta-analysis of **75 comparative studies** concluded that PSI "generally
 produces **superior student achievement, less variation in achievement, and
 higher student ratings** in college courses."
 
-Read the middle clause, because it is almost never quoted. **Mastery designs
-compress the bottom tail.** That is a distributional claim, and it is exactly
-what a system designed for the margin should want.
+The middle clause is almost never quoted. **Mastery designs compress the bottom
+tail.** That is a distributional claim, and the margin is where it matters.
 
-PSI died of administrative labour and proctor cost — item generation, immediate
-marking, unlimited fresh retests, and record-keeping. Those are precisely the two
+PSI died of administrative labour and proctor cost: item generation, immediate
+marking, unlimited fresh retests, and record-keeping. Those are the two
 components AI zeroes and the two it substantially reduces. Nothing in the
-mechanism requires a human: the proctor's function is certification and
-immediacy, not relationship. **PSI is the clean case, and it is the one that
-should be built first.**
+mechanism requires a human, because the proctor's function is certification and
+immediacy rather than relationship. **PSI is the clean case, and it is the one
+that should be built first.**
 
 With one measured caveat carried in the same breath. Self-pacing is a documented
 failure mode of PSI *and* of AI tutors, and the policy toolkits state that
@@ -88,7 +87,7 @@ faultless-communication engineering discipline: sequences designed so the
 examples presented logically permit only the intended generalisation, scripted
 wording to eliminate ambiguity, placement by assessment into skill-homogeneous
 groups, signals and rapid response to maximise responses per minute, mastery
-gating, and — the load-bearing part — **sequences that were empirically debugged
+gating, and the load-bearing part: **sequences that were empirically debugged
 over decades. If children misgeneralise, the script is what gets fixed.**
 
 The evidence base is the strongest in this catalogue:
@@ -102,8 +101,8 @@ The evidence base is the strongest in this catalogue:
 - Effects showed little decline during maintenance and grew with exposure.
   Reported magnitude ≈ 0.6 SD. In special education: 25 studies, **none**
   favouring comparison groups.
-- Project Follow Through — roughly **352,000 children, 178 projects, 20 sponsored
-  models** — found DI strongest on basic skills and, contrary to the standard
+- Project Follow Through, roughly **352,000 children, 178 projects, 20 sponsored
+  models**, found DI strongest on basic skills and, contrary to the standard
   objection, found the structured models beat the unstructured ones on affective
   and self-concept outcomes too.
 
@@ -121,10 +120,10 @@ consistently" "inappropriate and irresponsible."
 politics were, and AI has no purchase on those.** Attributing DI's fate to
 economics is a factual error and this survey will not make it.
 
-There is one genuine and underrated twist, and it is not a cost argument: **an AI
-tutor has no professional identity to protect and cannot resent a script.** The
-one thing that blocked the best-evidenced curriculum in education is exactly the
-thing a machine does not have.
+There is one genuine and underrated twist, and cost has nothing to do with it:
+**an AI tutor has no professional identity to protect and cannot resent a
+script.** The one thing that blocked the best-evidenced curriculum in education
+is the one thing a machine does not have.
 
 Which makes the failure mode obvious and worth naming loudly. DI's effect size
 comes from *validated* sequences. **An LLM generating "DI-style" scripts on the
@@ -136,14 +135,14 @@ base without inheriting any of it.
 
 ## 4. Four classes, and where each tradition lands
 
-Class A — survives fully. The mechanism is a property of the learner's
+Class A survives fully. The mechanism is a property of the learner's
 cognitive activity; the human was only the delivery vehicle. Mastery gating and
 unlimited fresh retesting; scaffolding with contingency and fading (the only
 mechanism whose *computer-based* version is directly meta-analytically validated,
 ḡ = 0.46 across 144 studies); worked-example modelling; precision-teaching rate
 measurement; productive-failure sequencing; DI's sequences *if validated*.
 
-Class B — survives with a named casualty. The tutorial keeps unlimited
+Class B survives with a named casualty. The tutorial keeps unlimited
 "defend your work" sessions and loses **the fallible expert whose regard you earn
 and whom you can argue into changing their mind.** Cognitive apprenticeship loses
 the community of practice. The case method loses seventy-nine peers publicly
@@ -152,15 +151,15 @@ and loses refutation and *aporia* — a model trained to be agreeable and resolv
 tension will not leave a learner in productive puzzlement, and cannot honestly
 occupy Socrates' position of not knowing the answer.
 
-Class C — does not survive. Chavruta needs a genuine equal with stakes who
+Class C does not survive. Chavruta needs a genuine equal with stakes who
 cannot be dismissed by closing a tab. Jigsaw needs real interdependence. Peer
 instruction needs a real distribution of peer misconceptions and real persuasion.
-Harkness needs twelve prepared peers — and note that the expensive input there is
-not the teacher's attention but the ratio itself, which is precisely what elite
+Harkness needs twelve prepared peers. The expensive input there is
+not the teacher's attention but the ratio itself, which is what elite
 private schooling purchases. Guild apprenticeship needs real production with real
 consequences.
 
-**Class D — there was no mechanism to port, because there was never a
+**Class D had no mechanism to port, because there was never a
 measurement.** Waldorf, Reggio (except its documentation practice), Sudbury,
 unschooling, Kumon's own evidence base, the Harvard case method specifically, and
 the Oxbridge tutorial as such. **Building an AI version of an unmeasured
@@ -207,15 +206,15 @@ digitising a social mechanism — not a hypothesis, a number.
 The correction already on this project's record belongs here too, because it is
 the same species of error: Bloom's two-sigma claim did not replicate. Human
 tutoring is **d = 0.79** in VanLehn's synthesis, and intelligent tutoring systems
-were already at **0.76** before LLMs existed. But the figure that should be quoted
-alongside it — and which an earlier version of this paragraph omitted — is the pooled
+were already at **0.76** before LLMs existed. An earlier version of this paragraph
+omitted the figure that should be quoted alongside those, the pooled
 randomised estimate: **0.288 SD across 96 RCTs**. Expert one-to-one is worth roughly
 eight tenths of a standard deviation under favourable synthesis and **under three
 tenths** when you pool the trials. Not two.
 
 And a correction this survey must publish about its own work. The research
-behind this section proposed a *pāṭha* protocol — permutation-based fidelity
-checking, derived from Vedic recitation's *krama*/*jaṭā*/*ghana* schemes — as a
+behind this section proposed a *pāṭha* protocol, permutation-based fidelity
+checking derived from Vedic recitation's *krama*/*jaṭā*/*ghana* schemes, as a
 concrete, falsifiable alternative to self-consistency sampling. It was
 explicitly offered for benchmarking. It was benchmarked, and it was falsified.
 The idea was good, the mechanism was clearly stated, and the measurement said no.
@@ -225,8 +224,8 @@ That is how this is supposed to work.
 
 ## 6. The exclusion ledger
 
-This is the deepest thing the historical record has to say, and it is almost
-never said.
+This is the deepest thing the historical record has to say, and almost nobody
+says it.
 
 | Tradition | Who was excluded | Constitutive or incidental? |
 |---|---|---|
@@ -249,8 +248,8 @@ the entire cost thesis. The traditional mechanisms are not expensive because the
 are good; **they are good, and they were affordable because they were
 exclusive.**
 
-AI changes exactly one variable — the marginal cost of attention — and that is
-precisely the variable the exclusions were rationing. Which yields the selection
+AI changes one variable, the marginal cost of attention, and that is the variable
+the exclusions were rationing. Which yields the selection
 rule for everything in this catalogue: **port the mechanisms whose quality did
 not depend on the exclusion.**
 
@@ -264,7 +263,7 @@ of content (only of framing), never "you're not ready" but "here is the shortest
 path from where you are," and explicit design for the learner nobody would admit
 — the adult with gaps, the disabled learner, the out-of-sequence child.
 
-The honest limit ships with the feature. Ekalavya lost his thumb *after*
+The limit ships with the feature. Ekalavya lost his thumb *after*
 succeeding. Removing the teacher's veto does not remove the guild's, and any
 product making this claim without a story about credential recognition is telling
 half of it.
@@ -308,14 +307,14 @@ engaged the text. AI supplies the objections; it does not supply the partner.
 
 ---
 
-## 8. What this section commits us to
+## 8. What we port from the canon
 
 - **Run the survival test before building anything.** Remove the other human and
   the objects; if what remains is not the mechanism, the correct role is
   orchestration.
-- **Build PSI's spine first** — prerequisite graph, 80–90% mastery bar, unlimited
+- **Build PSI's spine first.** Prerequisite graph, 80–90% mastery bar, unlimited
   retests on *freshly generated* equivalent items, immediate certification, full
-  records — and add pacing pressure, because self-pacing is a documented
+  records. Then add pacing pressure, because self-pacing is a documented
   failure mode.
 - **Take DI's discipline and never claim its evidence.** Generated sequences are
   not validated sequences. Faultless communication, placement, high response rate
@@ -332,8 +331,8 @@ engaged the text. AI supplies the objections; it does not supply the partner.
 - **Publish the corrections.** Bloom's two sigma did not replicate. Our own
   *pāṭha* protocol was falsified. Say so and move on.
 
-The historical record is not a museum of things we can now afford. It is a
-partially validated engineering catalogue with a very uneven evidence base, an
-uncomfortable access history, and a small number of mechanisms that were only
+Read as an engineering catalogue and not as a museum of things we can now
+afford, the historical record is partially validated, unevenly evidenced, and
+uncomfortable about who it let in. A small number of its mechanisms were only
 ever gated by the price of attention. Those are the ones to build. The rest are
 worth knowing so that we do not mistake a tradition for a finding.

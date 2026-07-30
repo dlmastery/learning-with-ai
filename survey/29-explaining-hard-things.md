@@ -13,15 +13,15 @@ refinement.** A rung may drop precision, formalism, or mechanism-depth. It may n
 falsify **ontology, causal sign, quantifier strength, or uniqueness of mechanism**.
 
 That rule is correct and, as stated, nearly unusable. Four abstract invariants do not
-tell an author what to check on a Tuesday. This section instantiates them — which one
+tell an author what to check on a Tuesday. This section instantiates them: which one
 breaks in which domain, what the breakage looks like, and what a machine can check.
 
 **Provenance, stated because this section's evidential status differs from the rest.**
-What follows was derived by applying §25's rule to two live cases — graduate
-mathematics, and a specific published explanation of energy-based models — rather than
+What follows was derived by applying §25's rule to two live cases: graduate
+mathematics, and a specific published explanation of energy-based models. It was not
 retrieved from a literature. The invariants themselves carry the evidence of §25. The
 instantiations are `INFERENCE`. Where a claim below is measured, it is labelled and
-sourced; where it is derived, it says so. We flag this rather than let the section
+sourced; where it is derived, it says so. We flag this so the section does not
 borrow §25's authority.
 
 ---
@@ -39,7 +39,7 @@ almost all bad explanation dies.
 | **Biology / medicine** | **Causal sign** | Correlational mechanism narrated as causal, direction unmarked |
 | **Statistics** | **Quantifier strength** again | "The probability the hypothesis is true", which reverses the conditional |
 
-This is a design table, not a finding. Its use is that it tells an author *what to
+This is a design table and not a finding. Its use is that it tells an author *what to
 check first*, and it tells a verifier which predicate to spend its budget on.
 
 ---
@@ -47,7 +47,7 @@ check first*, and it tells a verifier which predicate to spend its budget on.
 ## 2. Mathematics: quantifier strength is the whole game
 
 > "For every ε there is a δ" and "there is a δ that works for every ε" are the
-> difference between continuity and **uniform** continuity — and the entire second
+> difference between continuity and **uniform** continuity, and the entire second
 > half of a real-analysis course.
 
 Nearly every "intuitive" explanation of a limit, a convergence, or a bound quietly
@@ -55,19 +55,19 @@ reorders those quantifiers, because the reordered version is easier to say. The
 student computes correctly for two years and then cannot understand uniform
 convergence, and the trace goes back to a sentence nobody flagged.
 
-**This is mechanically checkable on written statements** — with a scope limit we
+**This is mechanically checkable on written statements**, with a scope limit we
 established by testing it. Implemented and run against 1,524 sentences of lecture
 transcript, the check **fired zero times**: speech *elides* quantifiers rather than
 reordering them, so there is no prefix to compare. It is a check for **authored
-technical prose and generated output**, not for transcript mining (C-50). Within that
+technical prose and generated output**, and not for transcript mining (C-50). Within that
 scope: an explanation is legal iff **its quantifier prefix is entailed by the formal
-statement's, under the declared scope.** That is a predicate, not a matter of taste,
-and it is decidable at the cheap rung of the grounding ladder given both statements.
+statement's, under the declared scope.** That is a predicate and not a matter of taste,
+decidable at the cheap rung of the grounding ladder given both statements.
 
 ### The ontological crossing that follows it
 
 Chi's test says errors *within* an ontological category are repairable and errors
-*across* categories are robust — the Bohr-model hybrid population was **unchanged
+*across* categories are robust. The Bohr-model hybrid population was **unchanged
 across a full semester** of university chemistry (§25).
 
 Mathematics has its own canonical crossing: process versus object. A limit as
@@ -75,10 +75,10 @@ Mathematics has its own canonical crossing: process versus object. A limit as
 versus *a point in a space*.
 
 A student holding "limit" in the process category can compute limits indefinitely and
-cannot understand uniform convergence — because uniform convergence quantifies over a
+cannot understand uniform convergence, because uniform convergence quantifies over a
 space of functions, which requires functions to be objects first. The
 misconception survives instruction exactly as Chi's test predicts, because the repair
-is a category change rather than a correction. `INFERENCE`, from Chi's mechanism plus
+is a category change and not a correction. `INFERENCE`, from Chi's mechanism plus
 the process/object literature in mathematics education.
 
 ---
@@ -87,7 +87,7 @@ the process/object literature in mathematics education.
 
 These are the section's original contributions, and both are checkable.
 
-### 3.1 Machinery before obstacle — and the experiment that narrows it
+### 3.1 Machinery before obstacle, and the experiment that narrows it
 
 **An explanation that presents machinery before the obstacle the machinery exists to
 dodge makes the machinery look arbitrary.**
@@ -95,8 +95,8 @@ dodge makes the machinery look arbitrary.**
 **Corrected 2026-07-29, and the correction is more useful than the original claim.**
 Muller's doctoral work (Sydney, 2008) ran the nearest thing to a controlled test of
 this, and it points somewhere else. His Refutation condition is the Exposition
-script verbatim, plus explicit statements of the misconception — the same
-definitions-first order, no reordering at all. It scored **d = 0.79** against the
+script verbatim, plus explicit statements of the misconception, in the same
+definitions-first order, with no reordering at all. It scored d = 0.79 against the
 Exposition.
 
 So in the one experiment that isolates it, the load-bearing variable is **naming the
@@ -104,28 +104,29 @@ wrong idea**, not the order in which the machinery arrives. Ordering may still h
 it has not been shown to be what does the work, and this section originally implied
 it was. See §3.3.
 
-The reader has no slot to put it in. They remember it as a list of tricks, cannot
+The original argument was mechanistic. Machinery before obstacle leaves the reader
+with no slot to put it in. They remember it as a list of tricks, cannot
 reconstruct it, and cannot tell which parts are essential and which are incidental —
 which is precisely the failure that makes an explanation feel clear and leave nothing
 behind. It is a fluency illusion with a specific cause.
 
 The rule, narrowed by the correction above: name the wrong idea explicitly. The
 obstacle-first *ordering* is a plausible way to do that and is not what the evidence
-isolates — Muller's Refutation condition kept the original order and simply stated the
+isolates. Muller's Refutation condition kept the original order and simply stated the
 misconception aloud. So: say what does not work, out loud, before or after the
 machinery. The naming is the mechanism; the position is a preference.
 
 This is checkable in a weak but useful sense — for a technical explanation, does the
-obstacle appear before the first piece of machinery it motivates? A structural
-predicate over an outline, not a judgement about prose.
+obstacle appear before the first piece of machinery it motivates? That is a structural
+predicate over an outline and not a judgement about prose.
 
 ### 3.2 A determined quantity presented as tunable
 
 This falsifies uniqueness of mechanism, and it is endemic in engineering
 explanation.
 
-When a quantity is *determined* — by a conservation law, a stationarity condition, a
-dimensional constraint — and the explanation presents it as a knob someone chose, the
+When a quantity is *determined* by a conservation law, a stationarity condition or a
+dimensional constraint, and the explanation presents it as a knob someone chose, the
 reader concludes the design is taste. They will then tune it, and be confused when it
 breaks, because they were told it was theirs to set.
 
@@ -133,7 +134,7 @@ The check: for each numeric constant in an explanation, is it (a) determined by 
 stated condition, (b) empirically fitted, or (c) arbitrary? All three are fine. Not
 saying which is the violation.
 
-### 3.3 Name the misconception — the strongest single result on explanation
+### 3.3 Name the misconception
 
 Three experiments, one thesis, and it is the closest thing the field has to a direct
 test of what makes an explanation teach.
@@ -152,7 +153,7 @@ And the same thesis contains the felt/real dissociation, measured. On the opinio
 form, *"I learned something from the video"* scored **5.7 for Dialogue against 5.6 for
 Exposition — flat**, while actual learning differed by d = 0.71. Perceived clarity did
 not differ either. What *did* differ: students found the better format more dull
-(p < .01) and said they would rather see the worse one in lectures (**p < .05**).
+(p < .01) and said they would rather see the worse one in lectures (p < .05).
 
 The author's own conclusion is the sentence this survey has been circling for eighty
 thousand words:
@@ -174,7 +175,7 @@ at all."* The demonstration is worth nothing without the commitment that precede
 ## 4. Worked example: energy-based models
 
 A test of whether any of this improves an explanation that is already good. The
-subject is a published walkthrough of energy-based generative models — energy
+subject is a published walkthrough of energy-based generative models: energy
 landscape, a particle in a fluid, rolling downhill while wandering, a persistent
 replay buffer. The physics framing is the right instinct. Three things sharpen it.
 
@@ -226,7 +227,7 @@ persistent learner state (§11), in a different domain.
 
 ### 4.4 The three rungs
 
-Three, not five — five did not beat three, **p = 0.738** (§25).
+Three rungs, because five did not beat three at **p = 0.738** (§25).
 
 | Rung | The claim |
 |---|---|
@@ -234,13 +235,13 @@ Three, not five — five did not beat three, **p = 0.738** (§25).
 | **2** | The score is an unnormalised log-probability. The normaliser is uncomputable, but its gradient is zero — so sampling works where evaluating does not. The noise scale is fixed by requiring the correct stationary distribution. |
 | **3** | Maximum likelihood on −E − log Z; ∇_θ log Z = −𝔼_{p_θ}[∇_θ E], estimated by MCMC. Persistent contrastive divergence approximates that expectation with a maintained chain, because a fresh chain per step is both biased and slow. |
 
-Every rung is entailed by the one below it. Rung 1 drops the normaliser entirely —
-legal, it drops precision. It does not claim the score *is* a probability — that
-would falsify ontology.
+Every rung is entailed by the one below it. Rung 1 drops the normaliser entirely,
+which is legal because it drops precision. It does not claim the score *is* a
+probability, which would falsify ontology.
 
 ---
 
-## 5. Probe on the obstacle, not the definition
+## 5. What the probe should ask
 
 §22 established that entry must be measured, never preferred: preference moves
 d ≈ 0.48 while knowledge moves zero, and rapid dynamic assessment recovers an
@@ -256,8 +257,8 @@ definition.**
 
 The second sorts by whether the reader holds the *constraint that generates the
 field*. Someone who can answer it belongs at rung 2 whatever their credentials;
-someone who cannot will not understand rung 2 however much they have read. `INFERENCE`
-— this follows from §3.1 rather than from a trial, and it is cheap to test.
+someone who cannot will not understand rung 2 however much they have read.
+`INFERENCE`. This follows from §3.1 and not from a trial, and testing it is cheap.
 
 ---
 
@@ -285,11 +286,11 @@ What remains, in order of value:
    × 69% proving yields **36% end-to-end**, because the formal statement stops matching
    the informal one (§13). The kernel moves the trust boundary; it does not remove it.
 
-Explanation is fourth at best, and it is the learner's output rather than the tutor's.
+Explanation is fourth at best, and the explanation that counts is the learner's.
 
 ---
 
-## 7. What this section commits us to
+## 7. What an author must check first
 
 - **Instantiate the invariant before authoring.** Name which of the four is at risk in
   this domain, and check that one first.
@@ -303,5 +304,5 @@ Explanation is fourth at best, and it is the learner's output rather than the tu
   question measures understanding.
 - **At expert level, stop explaining.** Falsify, object, and let them teach it back.
 
-The general form, which is the section in one line: **a simplification is legal when
-the reader can still tell what would break.**
+A simplification is legal when the reader can still tell what would break. Everything
+above is that sentence made checkable, one domain at a time.

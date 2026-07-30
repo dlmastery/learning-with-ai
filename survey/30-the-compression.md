@@ -12,8 +12,8 @@ The claim is that an AI tutor collapses a week of learning into an hour, and mak
 polymaths of ordinary people. It deserves to be taken seriously rather than
 deflected, so this section tries to establish the actual bound.
 
-The answer is **10–40× on elapsed calendar time and 3–5× on engaged effort**, with
-one documented case at roughly **300×** — and a hard floor of **1×** on durability
+The answer is 10–40× on elapsed calendar time and 3–5× on engaged effort, with
+one documented case at roughly 300×, and a hard floor of 1× on durability
 and on procedural skill. The mechanism is not that anyone thinks faster. It is that
 almost none of a week is spent learning.
 
@@ -21,35 +21,35 @@ almost none of a week is spent learning.
 
 ## 1. Decompose the week
 
-A calendar week of a university course is **9 nominal student hours** inside 112
+A calendar week of a university course is 9 nominal student hours inside 112
 waking ones. That is the Carnegie arithmetic and it is already an 12× gap before
 anyone opens a book.
 
 Now go inside the 9. The Beginning Teacher Evaluation Study followed the cascade
 from allocated time → engaged time → time at an appropriate success rate, and the
-median case loses about **65%**. Their arithmetic produces the single most useful
+median case loses about 65%. Their arithmetic produces the single most useful
 number in this section:
 
-> The same nominal school day yields **~4 minutes** or **~52 minutes** of productive
+> The same nominal school day yields ~4 minutes or ~52 minutes of productive
 > learning, depending on allocation × engagement × success rate. **A 13× spread,
 > inside identical calendars.**
 
-So the encoding fraction is small and the headroom is enormous — which is what makes
-the original claim plausible rather than silly.
+The encoding fraction is small and the headroom is enormous, which is what makes
+the original claim plausible instead of silly.
 
 **And here is the gap we could not close.** Two independent retrieval passes found
 **no study anywhere that decomposes a study session into search, orientation,
 practice, and stuck.** The proportions everyone in this field assumes are not
 measured. We flag that as this survey's highest-value missing measurement rather
-than fill it with a vendor figure — it would take one instrumented cohort and a
+than fill it with a vendor figure. It would take one instrumented cohort and a
 fortnight.
 
 ---
 
-## 2. Learning is counted in opportunities, not days
+## 2. Learning is counted in opportunities
 
 This is the finding that reorganises the question. Koedinger et al. (PNAS 2023),
-**1.3 million observations across 27 datasets**:
+1.3 million observations across 27 datasets:
 
 | Quantity | Spread, 25th → 75th percentile |
 |---|---|
@@ -69,7 +69,7 @@ Time does not predict learning. **Opportunities do.** Which means the question i
 put in front of this person, and are they starting from the right place."
 
 Downstream corroboration: students in the bottom quintile of prerequisite knowledge
-**wheel-spin 50% of the time**, against **10%** for the top quintile. Half of a weak
+wheel-spin 50% of the time, against 10% for the top quintile. Half of a weak
 learner's session is spent going nowhere, for a reason that was set before the
 session started.
 
@@ -78,13 +78,13 @@ session started.
 ## 3. The good hour is already near the floor
 
 There is exactly one randomised trial that measured both learning *and* time. Its
-learners took a **median 49 minutes against 60**, and learned **d ≈ 0.63** more.
+learners took a median 49 minutes against 60, and learned d ≈ 0.63 more.
 
 But the detail that matters is buried: **there was no correlation between
 time-on-task and score.**
 
 That kills the obvious model. You do not compress by making the productive hour more
-efficient — the productive hour is close to irreducible. **You compress the 111 hours
+efficient. The productive hour is close to irreducible. **You compress the 111 hours
 around it**: the search, the waiting, the scheduling, the re-reading, and above all
 the time spent blocked on a prerequisite nobody diagnosed.
 
@@ -97,7 +97,7 @@ troubleshooting tutor, in the source's own words:
 
 > **20–25 hours of tutor time ≈ four extra years of on-the-job experience.**
 
-Roughly **300×**, achieved by nothing more exotic than opportunity density: 34
+Roughly 300×, achieved by nothing more exotic than opportunity density: 34
 problems in 20 hours, each targeted, each with feedback. Four years of a job
 contains very few genuine troubleshooting opportunities and a great deal of
 everything else.
@@ -106,22 +106,22 @@ Broader and duller: Kulik's synthesis of 51 studies found **39–88% learning-ti
 savings** for mastery-based approaches at equal or better outcomes.
 
 Two things we will not claim. Digital Tutor's widely-quoted "d = 1.9–3.7" is
-**unverified** — the documented language is only *"in excess of two standard
-deviations"* — and its Phase 1 result used **human tutors for 14 of its 16 weeks.**
+unverified; the documented language is only *"in excess of two standard
+deviations"*, and its Phase 1 result used **human tutors for 14 of its 16 weeks.**
 
 ---
 
 ## 5. The counter-anchor, and it is severe
 
 The Foreign Service Institute has spent seventy years removing every compressible
-element from language training. Its programmes still require **552–2,200 hours**.
+element from language training. Its programmes still require 552–2,200 hours.
 
-Compression there is approximately **1×**.
+Compression there is approximately 1×.
 
 That is the boundary of this entire section. **Procedural and production skill does
 not compress**, because the bottleneck is repetitions of the motor or productive act
 and nothing can perform them on your behalf. Speaking, playing, operating, drawing,
-surgery, sport — the hours are the mechanism, not overhead around it.
+surgery, sport — the hours are the mechanism and not overhead around it.
 
 Two more nulls, and the second is our own thesis biting back:
 

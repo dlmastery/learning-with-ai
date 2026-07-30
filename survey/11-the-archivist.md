@@ -200,8 +200,8 @@ Kay's group and is almost entirely unexploited outside it. The Personis user-mod
 server stores per-component evidence lists with pluggable resolvers — the model
 stores evidence, and interpretation happens at query time.
 
-**A lifelong learner model should store evidence and resolve it on demand, not
-store a fitted posterior.** Posteriors go stale. They embed the assumptions of
+**A lifelong learner model should store evidence and resolve it on demand. It should
+never store a fitted posterior.** Posteriors go stale. They embed the assumptions of
 whichever model was current in 2019 and cannot be re-derived. Evidence can be
 re-interpreted by a better model in 2035.
 
@@ -220,7 +220,7 @@ subtraction-borrows-from-the-larger-digit bug" implies a specific refutation. It
 thirty items whose distractors each encode an identifiable Aristotelian or impetus
 belief — and Hake's 6,542-student result separating interactive engagement
 (g ≈ 0.48) from lecture (g ≈ 0.23) was possible only because the instrument
-measured misconceptions rather than performance. And it *survives the model*: a
+measured misconceptions and not performance. And it *survives the model*: a
 misconception label written in 2026 still means something in 2036; a BKT posterior
 does not. The raw material exists — Eedi's diagnostic-question corpus is **over 20
 million student answers** where the label is *which wrong belief*, not *wrong*. The
@@ -229,10 +229,10 @@ vocabulary is the missing work.
 Everything decays, and the two literatures have never been joined. Every
 knowledge-tracing model assumes knowledge is monotone or near-monotone within a
 session. None models what a mastery estimate from 2023 is worth in 2026. The spaced
-repetition literature has exactly that model — stability and retrievability — and
+repetition literature has exactly that model (stability and retrievability) and
 the knowledge tracing literature does not use it. **This is the most obvious
-unexploited join in the field**, and it is why the schema below makes memory state a
-mandatory layer: a mastery estimate without a decay model is a lie about the
+unexploited join in the field, and why the schema below makes memory state a
+mandatory layer**: a mastery estimate without a decay model is a lie about the
 present.
 
 And prior knowledge is the variable that matters. Not style. If a system can
@@ -240,8 +240,8 @@ measure exactly one thing before instruction, it measures prior knowledge in the
 domain of the next task — because the expertise reversal effect means the *sign* of
 a treatment effect flips with it. Worked examples beat problem-solving for novices
 and lose to it for experts. Kalyuga & Sweller showed you can get an actionable
-expertise estimate in seconds with a first-step verification item rather than a full
-diagnostic. Learning styles get no field, because the meshing hypothesis requires a
+expertise estimate in seconds with a first-step verification item, no full
+diagnostic required. Learning styles get no field, because the meshing hypothesis requires a
 crossover interaction in a randomised design and does not get one, replicated again
 in 2026 in primary-school students.
 
@@ -256,8 +256,8 @@ collaboration toward closed proprietary systems adopted piecemeal.
 
 The lesson is precise: **inBloom failed not because centralised learner data is
 technically hard but because it was centralised in an entity that was not the
-learner.** Every property people objected to — indefinite retention, third-party
-access, no meaningful consent, no deletion — is a property of *custody*, not of
+learner.** Every property people objected to (indefinite retention, third-party
+access, no meaningful consent, no deletion) is a property of *custody* and never of
 *schema*.
 
 The empirical record since has not improved. Human Rights Watch analysed **163
@@ -302,7 +302,7 @@ posterior that dies with the vendor.
 Seven layers: **L0** identity (a DID the learner controls, pairwise per-provider
 pseudonyms, and a guardianship record with an automatic transition date). **L1** a
 domain map anchored to public identifiers, never a vendor's internal skill ids.
-**L2** an append-only evidence log — the only primary data — where every response
+**L2** an append-only evidence log, the only primary data, where every response
 record carries the chosen distractor, because that is the diagnostic bit. **L3**
 memory state per knowledge component, borrowed wholesale from the spaced-repetition
 literature. **L4** belief state with knowledge *and* misconceptions as co-equal
@@ -317,7 +317,7 @@ Nine conformance guarantees, of which four carry most of the weight:
 recomputability (every derived number regenerates from L2 alone, given the
 recorded model id and parameter hash); decay-awareness (no knowledge claim is
 served without a retrievability adjustment); error symmetry (misconceptions are
-queryable exactly as knowledge is); and contestability (the learner can dispute
+queryable just as knowledge is); and contestability (the learner can dispute
 any estimate, and the dispute travels with it).
 
 Three problems remain genuinely unsolved and are stated as such. KC alignment:
@@ -326,13 +326,13 @@ bad — the binding constraint on the whole proposal. The misconception vocabula
 the FCI's thirty items encode decades of physics-education interviews and nothing
 comparable exists for most of the curriculum. Verification: a learner-owned
 record the learner can forge is worthless for high stakes, but a record only
-institutions can write is not learner-owned. The likely resolution — self-attested
+institutions can write is not learner-owned. The likely resolution, self-attested
 and issuer-attested evidence coexisting with different confidence values and
-different downstream permissions — is a proposal, not a solution.
+different downstream permissions, is a proposal and not yet a solution.
 
 ---
 
-## 8. The strongest counter-argument
+## 8. Why not just throw the session away?
 
 *If simple models are already at the ceiling, and persistence has never been shown
 to help, why build the archivist at all? Keep the session, throw it away, and ship.*
@@ -354,7 +354,7 @@ experiment, and no one has run it.
 
 ---
 
-## 9. What this section commits us to
+## 9. How this project will store a learner
 
 - **Store evidence, resolve on demand.** Never store a posterior as primary data.
   Every derived number carries the model id and version that produced it and

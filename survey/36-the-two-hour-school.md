@@ -21,20 +21,19 @@ established**, and the arithmetic that produces it is checkable.
 
 Section 30 argues that a school week is mostly overhead: 9 nominal hours inside 112,
 and the engagement cascade loses about 65% of the 9, so the same nominal day yields
-**4 minutes or 52 minutes** of productive learning depending on allocation,
+4 minutes or 52 minutes of productive learning depending on allocation,
 engagement and success rate.
 
 Run that against two hours of high-engagement work held at 70–95% accuracy, and the
 result is **roughly parity in academic learning time with a median six-hour day.**
 
-That is a real removal of overhead and it is exactly what this survey predicted — at
-the **low end** of §30's stated range, which is the honest place for a real-world
-implementation to land.
+That is a real removal of overhead and it is what this survey predicted, at the low
+end of §30's stated range, which is where a real-world implementation ought to land.
 
-**And it is precisely why the two-hour figure cannot explain the attainment claim.**
-If two hours buys parity, it buys parity. Something else has to account for students
-scoring above their peers — and the candidates are **targeting** and selection,
-not the clock.
+Which is why the two-hour figure cannot explain the attainment claim. If two hours
+buys parity, it buys parity. Something else has to account for students scoring above
+their peers, and the candidates are targeting and selection. The clock is not one of
+them.
 
 That distinction is the whole section. The compression is real; it is not the
 mechanism being advertised.
@@ -44,25 +43,25 @@ mechanism being advertised.
 ## 2. The attainment claim rests on a denominator
 
 The operator's white paper contains one worked example of its "2×" figure. Its
-denominator is the RIT gap between adjacent grades at a fixed percentile — how far
+denominator is the RIT gap between adjacent grades at a fixed percentile: how far
 apart grade 5 and grade 6 sit on the scale, at the same percentile.
 
-That is not a growth norm. The published growth norm for the same cell is **9.61 RIT**
-against the **4** the paper uses.
+That is not a growth norm. The published growth norm for the same cell is 9.61 RIT
+against the 4 the paper uses.
 
 The consequences follow arithmetically:
 
-- The **8 points** the paper credits to a student sits at about the **40th conditional
-  growth percentile** — *below* median growth for that starting point.
+- The 8 points the paper credits to a student sits at about the **40th conditional
+  growth percentile**, *below* median growth for that starting point.
 - Fed a nationally average student, the same metric returns **1.2×–2.4× in maths,
   1.0×–1.7× in reading, and ∞ at grade 8.**
 
-Read the second line again. **The metric produces a multiple greater than one for an
-average student.** It is a property of the denominator, not of the instruction.
+The metric produces a multiple greater than one for an average student. **That is a
+property of the denominator and not of the instruction.**
 
 Two further mismatches compound it. The frequently quoted **99th *school* percentile
 corresponds to roughly the 90th *student* percentile** in maths and 84th–87th in
-reading. And the norms are built on US public-school students — a comparison a
+reading. And the norms are built on US public-school students, a comparison a
 private school will win on composition alone.
 
 None of this shows the school does not work. It shows **the published number does not
@@ -77,7 +76,7 @@ Marketing is `VENDOR`. A charter application is a filing with consequences, and 
 something different.
 
 In its Pennsylvania application the same operator projected ranking **in the top half
-of Pennsylvania schools — not the top percentile. Four of five states refused**,
+of Pennsylvania schools, and not the top percentile. Four of five states refused**,
 with the Pennsylvania department finding *"deficiencies in all five of the required
 criteria."*
 
@@ -90,7 +89,7 @@ Three more facts a diligent reader should have:
 - The adaptive software vendor **deactivated the school's account in July 2025 for
   *"violating our terms of service."*** The stack that produced the published results
   is therefore not the current stack.
-- A state education department **declined to recognise** the $65,000-tuition Manhattan
+- A state education department declined to recognise the $65,000-tuition Manhattan
   campus as a school.
 - The group files **no Form 990, no Form D, nothing.** There is no audited financial
   or enrolment record to check anything against.
@@ -102,8 +101,8 @@ multiplier, it was **n = 5.**
 
 ## 4. The precedent that matters most
 
-Nine "school reinvented" precedents are on the record — AltSchool, Summit Learning,
-Teach to One, Rocketship, Carpe Diem, Khan Lab School among them. One is worth
+Nine "school reinvented" precedents are on the record, among them AltSchool, Summit
+Learning, Teach to One, Rocketship, Carpe Diem and Khan Lab School. One is worth
 isolating because its evidence pattern is exactly the one under examination here.
 
 Teach to One has two evaluations. The independent one, on state tests, is
@@ -112,7 +111,7 @@ null. The positive one is MAP-growth-based.
 Same programme. Same period. Different instrument, opposite conclusion.
 
 That is the shape to watch for. **A growth-metric result and a state-test result are
-not two measurements of one thing** — and when only the first is offered, the reader
+not two measurements of one thing**. When only the first is offered, the reader
 should ask for the second rather than treat its absence as neutral.
 
 *(This survey's own brief for this section cited a state-test study of Teach to One
@@ -125,7 +124,7 @@ ours.)*
 
 The bar is the same one this survey applies to everyone, including itself:
 
-- **An externally administered assessment** — not one the operator gives and scores.
+- **An externally administered assessment**, and not one the operator gives and scores.
 - **A comparison group that is a real alternative**, ideally a matched private school,
   since selection is the live confound and cannot be ruled out without one.
 - **A delayed, unassisted, novel-item outcome**, which is the only trustworthy signal
@@ -140,7 +139,7 @@ survive scale.
 
 ---
 
-## 6. What this section commits us to
+## 6. How to read a claim like this one
 
 - **Separate the compression claim from the attainment claim.** The first is
   supported and modest; the second is unestablished. They are routinely sold as one
@@ -151,8 +150,8 @@ survive scale.
   its operator will defend under consequence.
 - **Ask which instrument.** Growth-metric positive with state-test null has happened
   before, in this exact category.
-- **Report our own errors in the brief**, not only in the findings.
+- **Report our own errors in the brief**, and not only in the findings.
 
-The honest summary: **a two-hour academic day is a real and defensible removal of
-overhead, and it is not evidence of extraordinary learning.** Those are two different
-claims, and this survey's own argument only supports the first one.
+A two-hour academic day is a real and defensible removal of overhead. It is not
+evidence of extraordinary learning. Those are two different claims, and this survey's
+own argument only supports the first one.

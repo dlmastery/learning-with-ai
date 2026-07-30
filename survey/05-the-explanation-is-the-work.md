@@ -9,7 +9,7 @@ source_report: research/raw/C3-slides-and-presentations.md
 # The Explanation Is the Work
 
 Two requests sit behind this section, and they look like one thing. *Generate
-slides on the fly.* *Have the learner explain the topic, give a presentation —
+slides on the fly.* *Have the learner explain the topic, give a presentation,
 because the best way to learn is to teach.*
 
 They are not one thing. One is about how a machine should show a concept. The
@@ -19,7 +19,7 @@ uncomfortable.
 
 ---
 
-## Part A — Slides
+## Part A: Slides
 
 ### 1. The deck is worth nothing
 
@@ -41,9 +41,9 @@ than effect on a mind.
 
 ### 2. What *is* worth something
 
-The multimedia design principles, individually, carry real effects — **contiguity
+The multimedia design principles, individually, carry real effects. **Contiguity
 reaches g = 0.74.** So the value is not in producing the deck. It is in
-**enforcing the principles the deck must satisfy**, on every deck, without
+enforcing the principles the deck must satisfy, on every deck, without
 exception, which is precisely the thing a human author cannot reliably do at 2 a.m.
 and a deterministic checker can do every time.
 
@@ -69,17 +69,17 @@ The redundancy effect — that putting the narration on the slide as text *harms
 learning — is the most-violated principle in AI-generated decks and the most
 frequently misstated.
 
-The pooled estimate is **g = 0.15**, and it is **direction-dependent**:
+The pooled estimate is **g = 0.15**, and the direction decides the sign:
 
 - Adding text to existing audio: **g = 0.29**
-- Adding audio to existing text: **g = −0.04, not significant**
+- Adding audio to existing text: **g = −0.04 (not significant)**
 
 And it goes null or reverses under identifiable conditions, including a documented
 double reversal of *both* redundancy and modality for second-language learners.
 
 So the rule is not "never put text on the slide." The rule is a **conditional
 switch**, evaluated per learner, on language status, pacing control, reading
-support, and hearing access — with hard exemptions for formulae, code, and
+support, and hearing access, with hard exemptions for formulae, code, and
 numerals, which are never redundant with speech.
 
 Here is the part that matters. **A lecturer cannot evaluate that switch. A
@@ -100,21 +100,21 @@ one confusion in one head. That constraint is the one that lifts.
 
 ---
 
-## Part B — The learner as explainer
+## Part B: The learner as explainer
 
-### 5. First, the numbers were misattributed — including by us
+### 5. First, the numbers were misattributed, including by us
 
 This survey has repeatedly cited **g = 0.56** as the effect size for *teachable
 agents*. That is wrong, and the correction matters because it changes what is and
 is not evidenced:
 
-- **g = 0.56** is **human** learning-by-teaching, with a human tutee (Kobayashi
+- **g = 0.56** is human learning-by-teaching, with a human tutee (Kobayashi
   2019).
-- **g = 0.43** is **peer tutoring's effect on the tutor's own achievement**
+- **g = 0.43** is peer tutoring's effect on the tutor's own achievement
   (Leung 2018, k = 16).
-- The self-explanation pooled estimate is **g = 0.55** (Bisra et al.), not 0.56.
+- The self-explanation pooled estimate is **g = 0.55** (Bisra et al.) and not 0.56.
 
-The teachable-agent version — an artificial protégé — does **not** have a
+The teachable-agent version — an artificial protégé — does *not* have a
 meta-analytic effect size of 0.56 behind it. It has a strong human analogue and an
 untested machine implementation. That distinction is the difference between a
 finding and a hope, and this document has been blurring it.
@@ -134,7 +134,7 @@ options: **expectancy-framed preparation is a precondition, and delivery
 consolidates it.**
 
 Now read the null condition again. *Teaching after study, without a prior
-expectancy* — that is **"now explain it back to me,"** asked at the end.
+expectancy* is **"now explain it back to me,"** asked at the end.
 
 It is the single most common implementation of learning-by-teaching in every
 tutoring product on the market, and its measured effect is **−0.02.**
@@ -150,7 +150,7 @@ meta-analytic prior attached.
 This is the finding that inverts the request.
 
 Wang, Cheng & Mayer (2023) compared teaching to a camera, to one student,
-and to seven. Teaching to the camera won on transfer — with **lower social
+and to seven. Teaching to the camera won on transfer, with **lower social
 presence, lower pulse rate, lower anxiety, lower cognitive load, and *more* idea
 units produced**, mediated by exactly those paths. The audience consumed capacity
 that would otherwise have gone into explaining.
@@ -162,8 +162,8 @@ So "give a presentation to the class" is not the high-value version of this
 technique. It is the version with an anxiety tax attached, and the tax buys
 nothing.
 
-For a learner with attention differences, anxiety, or speech and language needs —
-the learners in §4 — this is decisive:
+For the learners in §4, those with attention differences, anxiety, or speech and
+language needs, this is decisive:
 
 > **"Give a presentation" is a barrier that buys nothing. Letting the learner
 > explain to a camera, or in writing, is not an accommodation. It is the
@@ -206,15 +206,15 @@ Not a human holistic rater either. Human graders of code reach
 
 What is left is everything checkable about an explanation:
 
-1. **Proposition coverage** against a reference decomposition — did the required
+1. Proposition coverage against a reference decomposition. Did the required
    propositions appear, in a stated scope?
-2. **Elaboration and monitoring counts** — the instruments that actually
-   *mediated* the effect in Mayer's studies. Count the behaviour that carries the
+2. Elaboration and monitoring counts, the instruments that actually *mediated*
+   the effect in Mayer's studies. Count the behaviour that carries the
    mechanism, not the impression it leaves.
-3. **Executable prediction checks** — instantiate the learner's explanation and
+3. Executable prediction checks. Instantiate the learner's explanation and
    run it. If their model of the circuit says the bulb lights, simulate it. The
    world disagrees, not the tutor.
-4. **The tutee's downstream accuracy**, capped — did the protégé, taught only
+4. The tutee's downstream accuracy, capped. Did the protégé, taught only
    this, get the next problem right?
 
 Every one of those is a declaration checked by an arbiter that shares no weights
@@ -222,18 +222,18 @@ with the generator. It is the grounding ladder applied to prose.
 
 ---
 
-## 10. What this section commits us to
+## 10. The constraints we hold every artifact to
 
-- Slides are generated as a **checked declarative spec**, never drawn. Tier D is
-  prohibited, including hand-written SVG — which this project's own dashboard was
+- Slides are generated as a checked declarative spec, never drawn. Tier D is
+  prohibited, including hand-written SVG, which this project's own dashboard was
   guilty of shipping.
-- Redundancy is a **runtime switch per learner**, not a style rule.
+- Redundancy is a runtime switch per learner and never a style rule.
 - The expectancy sentence comes **before** study. Always. It is free and it is the
   difference between g = 0.48 and g = −0.02.
-- The default audience is a **camera or a page**, not a room. Presenting to humans
-  is available, never required, and never framed as the real version.
-- Explanations are scored on **coverage, elaboration, execution and downstream
-  accuracy** — never on a judge's impression of quality.
+- The default audience is a camera or a page rather than a room. Presenting to
+  humans is available, never required, and never framed as the real version.
+- Explanations are scored on coverage, elaboration, execution and downstream
+  accuracy, never on a judge's impression of quality.
 
 The unifying idea is small and does a lot of work. In both halves of this section,
 the artifact — the deck, the presentation — turned out to be worth almost nothing

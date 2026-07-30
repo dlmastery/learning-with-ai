@@ -16,7 +16,7 @@ Two ERIC queries, run 2026-07-27:
 | `"transfer test" AND "ChatGPT"` | **0** |
 
 A third, `"artificial intelligence" AND "delayed posttest"`, returns seven, and
-the recent entries are EFL vocabulary studies rather than conceptual transfer.
+the recent entries are EFL vocabulary studies and not conceptual transfer.
 
 So: **no adequately powered trial of an LLM tutor has measured what a learner can
 do, without the AI, on novel items, four or more weeks after the intervention
@@ -27,7 +27,7 @@ The one study that separated them found the sign flips. In a randomised trial of
 roughly 1,000 students across ~50 classrooms, assisted practice performance rose
 by **+48%** for an unguarded GPT assistant and **+127%** for a hint-only tutor.
 On the closed-book exam with the AI removed, the unguarded arm was **−0.054
-(SE 0.022), p < .05 — a 17% deficit relative to never having had access** — and
+(SE 0.022), p < .05, a 17% deficit relative to never having had access**, and
 the guardrailed arm was **−0.004 (SE 0.013), not significant.**
 
 That is the whole problem in one study. **A variable that moves an outcome from
@@ -40,7 +40,7 @@ case that this survey is wrong.
 
 ---
 
-## Experiment 1 — the delayed, unassisted, novel-item outcome
+## Experiment 1. The delayed, unassisted, novel-item outcome
 
 **Why first.** It is the measurement precondition for everything else.
 Seventeen of the nineteen open problems in the underlying research name a
@@ -81,7 +81,7 @@ party positioned to fund it has an interest in the immediate number.
 
 ---
 
-## Experiment 2 — persistent learner state against a stateless baseline
+## Experiment 2. Persistent learner state against a stateless baseline
 
 **Why second.** Memory is the headline feature of the current product
 generation and the organising premise of every lifelong-learner-model
@@ -132,7 +132,7 @@ none of which anyone has measured either.
 
 ---
 
-## Experiment 3 — does the guardrail that removes harm ever add benefit?
+## Experiment 3. Does the guardrail that removes harm ever add benefit?
 
 Why third, and why it is this survey's own thesis on trial. The central
 design claim running through these sections is that **restraint is the active
@@ -177,7 +177,7 @@ it. Here is the strongest case against that, stated properly rather than as a
 strawman. Anyone who cannot state it in this form has not earned the right to the
 survey's conclusion.
 
-**Premise 1 — 0.2–0.4 SD is not a floor. It is the modal result of educational
+**Premise 1. 0.2–0.4 SD is not a floor. It is the modal result of educational
 intervention research, full stop.** It is where tutoring lands, where formative
 assessment lands, where feedback lands, and where most well-implemented
 instructional technology lands once the trial is adequately powered and
@@ -187,7 +187,7 @@ instructional manipulation given fixed time, prior knowledge and motivation.
 **On this reading, the survey has mistaken a population parameter for a
 technology limitation.**
 
-**Premise 2 — the nulls already on record are the honest prior, and they are the
+**Premise 2. The nulls already on record are the honest prior, and they are the
 most rigorous studies in their respective literatures.**
 
 | Result | Effect |
@@ -202,7 +202,7 @@ most rigorous studies in their respective literatures.**
 | Working-memory training | **no transfer** |
 | UDL | outcomes **not demonstrated** |
 
-**Premise 3 — added mechanism adds load, and the load is real while the benefit
+**Premise 3. Added mechanism adds load, and the load is real while the benefit
 is speculative. This is the sharpest version, and this survey's own evidence
 supplies it.** Multiple concrete representations *harmed* symbol learning, with
 the harm attributable to multiplicity. Five ladder rungs did not beat three
@@ -215,12 +215,12 @@ one**, and "a village of agents with persistent state, deixis, laddering,
 error-holding tutees and a pivot engine" is the most elaborate system anyone has
 proposed. The base rate for elaboration in this literature is not good.
 
-**Premise 4 — the mechanism the survey most relies on has a moderator that dwarfs
+**Premise 4. The mechanism the survey most relies on has a moderator that dwarfs
 it. AI tutoring with teacher support: g = 1.426. Without teacher support:
 g = 0.077** — approximately null. If the human is doing the work, every
 architectural refinement is optimising the small term.
 
-**Premise 5 — the field's positive results degrade under scrutiny in one
+**Premise 5. The field's positive results degrade under scrutiny in one
 direction only. Sierra Leone's unadjusted estimate (+0.216 SD, SE 0.137**) is
 not significant (§09). The largest positive LLM-tutoring meta-analysis (g = 0.867) was
 **retracted in 2026**. One prominent tutor was built and analysed by its first

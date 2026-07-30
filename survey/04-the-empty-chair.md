@@ -20,8 +20,8 @@ memory that spends most of its capacity on the part everyone else automated year
 ago.
 
 There are millions of her. In the United States they are served under
-individualised education programs, coordinated regionally — in California, through
-Special Education Local Plan Areas. Roughly one child in seven.
+individualised education programs, coordinated regionally, and in California
+through Special Education Local Plan Areas. Roughly one child in seven.
 
 Here is the state of the evidence on whether generative AI helps her.
 
@@ -43,7 +43,7 @@ Widen from RCTs to everything: the entire world literature on AI interventions f
 students with learning disabilities, 2022–2025, across seven databases, is
 **11 studies, 10 independent experiments, 3,033 participants**. At most one is a
 randomised trial (n = 60). **None** was rated low risk of bias. All eleven reported
-positive results — which is not encouraging, it is a publication-bias signature.
+positive results, which is a publication-bias signature and not an encouragement.
 
 So every effect size quoted in the AI-tutoring conversation — every headline, every
 pilot, every deck — was measured on somebody else's child.
@@ -55,14 +55,13 @@ That is the empty chair. It is not a verdict. Nobody has run the experiment.
 ## 2. The inversion that makes this the *best* place to build
 
 The intuitive read is that the margin is the hardest problem and should therefore
-come last. The evidence says the opposite, and this is the most useful thing in the
-section.
+come last. The evidence says the opposite.
 
 **Special education is the most replication-rich area in all of education.**
 
 While the AI-and-disabilities literature totals eleven studies, the Direct
 Instruction literature alone is **328 studies, 413 designs, roughly 4,000 effect
-estimates** — all positive, all significant except on affective outcomes, with
+estimates**, all positive, all significant except on affective outcomes, with
 unusually *no publication-bias signature*. Swanson's syntheses of interventions for
 learning disabilities cover 180 experimental studies and land at **M = 0.79**.
 Gersten's mathematics synthesis draws on 42 randomised and quasi-experimental
@@ -73,7 +72,7 @@ of magnitude larger** than the AI base.
 
 That inverts the job description. In most of education, the interesting question is
 *what should we teach and how*. Here, that question has largely been answered, in
-public, with replication, for decades. What has never been solved is **delivery** —
+public, with replication, for decades. What has never been solved is **delivery**:
 the fidelity, the dosage, the individualisation, the sheer number of adult-attention
 minutes that explicit systematic instruction requires to work.
 
@@ -94,24 +93,24 @@ will automate a mistake at scale.
 
 **Orton-Gillingham is not the evidenced ingredient.** It is the intervention most
 requested by parents of dyslexic children. Against active comparison instruction it
-shows **g = 0.22, p = .40** and **g = 0.14, p = .59** — non-significant. What *is*
-evidenced is explicit, systematic decoding instruction. The multisensory branding is
-not carrying the effect. Ship the mechanism, not the brand name.
+shows **g = 0.22, p = .40** and **g = 0.14, p = .59**, both non-significant. What
+*is* evidenced is explicit, systematic decoding instruction. The multisensory
+branding is not carrying the effect. Ship the mechanism and drop the brand name.
 
 UDL is a design philosophy, not an evidence-based intervention. The best
 meta-analysis concludes it improves the learning *process* while "the impact on
 educational outcomes has not been demonstrated"; a policy review found no rigorous
-published research demonstrating improvement. The component practices it bundles —
-multiple representations, choice, scaffolded engagement — are individually
+published research demonstrating improvement. The component practices it bundles
+(multiple representations, choice, scaffolded engagement) are individually
 well-evidenced. Keep the components; drop the claim. We build to the accessibility
-standard the law actually incorporates — see below — because access is a right, not
-because a framework promises a score.
+standard the law actually incorporates, described below, because access is a right
+and not because a framework promises a score.
 
 Do not build a working-memory trainer. Working-memory training produces reliable
 near-transfer to the trained task and does not transfer to anything anyone cares
 about. Given that our eleven-year-old's central constraint *is* working memory, the
 temptation is enormous and the evidence is unambiguous. **Externalise memory
-instead** — off-load it into the environment, the notation, the shared canvas, the
+instead.** Off-load it into the environment, the notation, the shared canvas, the
 persistent record. Do not try to enlarge the buffer. Reduce what has to go in it.
 
 And a framework can be implemented faithfully and still hurt. The federal
@@ -136,8 +135,8 @@ Three findings, each of which kills a popular product pattern.
 
 ### 4.1 Measurement without a decision rule is inert
 
-This is the single most load-bearing result for the whole system, and it is a clean
-randomised trial. Thirty-three teachers, three arms, twenty weeks: curriculum-based
+The result that most constrains the whole system is a clean randomised trial.
+Thirty-three teachers, three arms, twenty weeks: curriculum-based
 measurement plus an expert system that told teachers *what to change*; CBM alone; and
 no-CBM control.
 
@@ -152,9 +151,9 @@ Now look at what the industry ships. Dashboards. Streaks. Mastery bars. Adaptive
 difficulty. Engagement analytics. Every one of those is the **CBM-without-expert-system
 arm** — the arm that measured more, changed more, and moved nothing.
 
-> **Build the expert system, not the dashboard.** The active ingredient is a
-> prescribed, principled change of instruction, drawn from a known-good menu,
-> triggered by a stated rule.
+So build the expert system. The dashboard is the arm that measured more, changed
+more, and moved nothing. The active ingredient is a prescribed, principled change
+of instruction, drawn from a known-good menu, triggered by a stated rule.
 
 ### 4.2 Two clocks, and the slow one is slower than you think
 
@@ -175,7 +174,7 @@ The fast loop is responsive. The slow loop is skeptical. A system with only the 
 loop thrashes; a system with only the slow loop is inert. Most products have built
 the fast loop, called it personalisation, and shipped.
 
-### 4.3 Restraint matters *more* here, not less
+### 4.3 Restraint matters *more* at the margin
 
 Unconstrained LLM access widens the gap between low- and high-prior-knowledge
 learners. The largest AI-tutoring trial in Nigeria found gains accruing
@@ -192,7 +191,7 @@ one that widens it.
 There is an important asymmetry to state honestly, because it constrains what we may
 claim. Guardrails have been measured to remove harm: unguarded assistance left
 learners **17% worse** on later unassisted work, and the guardrailed arm's unassisted
-coefficient was **−0.004, not significant.** Harm removed (§01). **Benefit not
+coefficient was **−0.004 (not significant).** Harm removed (§01). **Benefit not
 demonstrated.** Anyone selling guardrails as a learning gain is ahead of the
 evidence, including us.
 
@@ -208,14 +207,15 @@ Four hard limits, and they are not negotiable by product decision.
 - **An AI may not diagnose or label a child.** It may observe that a strategy is not
   working and say so, in behavioural terms, to the humans responsible.
 - **The accessibility standard is WCAG 2.1 AA, and the deadline moved.** *Corrected
-  2026-07-28:* the ADA Title II web rule incorporates **WCAG 2.1**, not 2.2, and the
+  2026-07-28:* the ADA Title II web rule incorporates **WCAG 2.1** and not 2.2, and the
   compliance dates were pushed twelve months in April 2026 (91 FR 20902) to
-  **26 April 2027** and **26 April 2028**. Most published guidance — including an
-  earlier version of this section — still says WCAG 2.2 and April 2026. Build to 2.2
+  **26 April 2027** and **26 April 2028**. Most published guidance, including an
+  earlier version of this section, still says WCAG 2.2 and April 2026. Build to 2.2
   if you like; conform to 2.1 because that is what is enforceable.
 - **Disability status is sensitive data.** Under **IDEA §300.624**, personally
-  identifiable information "must be destroyed at the request of the parents" — which makes an undeletable model weight a compliance
-  failure for precisely the population it claims to serve. The learner model is
+  identifiable information "must be destroyed at the request of the parents." An
+  undeletable model weight is therefore a compliance failure for the population the
+  system claims to serve. The learner model is
   local, inspectable, correctable, and deletable, or it is not shippable.
 
 ---
@@ -228,7 +228,7 @@ everyone with a bad knee. Build the SELPA-grade system and it serves every learn
 
 The engineering half of that thesis holds well. Explicit instruction, externalised
 memory, a shared canvas that carries working-memory load, honest pacing, a decision
-rule instead of a dashboard, restraint by default — none of these are concessions.
+rule instead of a dashboard, restraint by default. None of these are concessions.
 They are what good instruction looks like for anyone, made visible because at the
 margin you cannot get away with anything less.
 
@@ -248,14 +248,14 @@ estimates on what to teach. A randomised trial telling us that measurement witho
 prescription is inert. A number — 7 to 10 weeks — on how long to wait before
 changing course. A clear prohibition on the brain-trainer, and a clear instruction to
 externalise memory instead. A gap-widening result that makes restraint mandatory
-rather than optional.
+instead of optional.
 
 What does not exist is a single randomised trial of any of it, assembled, with these
 learners.
 
-That is not a reason to wait. It is the specification for the first experiment worth
-running — and the obligation that comes with building this is that we run it, with a
-delayed, unassisted, novel-item primary outcome, and publish it whichever way it
-lands.
+We do not treat that absence as a reason to wait. We treat it as the specification
+for the first experiment worth running, and building this system carries the
+obligation to run it: a delayed, unassisted, novel-item primary outcome, published
+whichever way it lands.
 
 The chair is empty because nobody sat down. Not because the seat was taken.

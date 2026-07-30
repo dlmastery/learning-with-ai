@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Learning in the New Frontier AI World</title>
-<meta name="description" content="A survey of what AI-native learning has actually been measured to do — and a specification for what it should be. Evidence-graded, nulls first-class, corrections published." />
+<meta name="description" content="A survey of what AI-native learning has actually been measured to do, and a specification for what it should be. Evidence-graded, nulls first-class, corrections published." />
 <link rel="stylesheet" href="site.css" />
 <script src="theme.js"></script>
 <style>
@@ -62,7 +62,9 @@ figcaption{font-size:13px;color:var(--ink-3);margin-top:var(--s4);line-height:1.
   padding:18px 20px 18px 56px;margin-bottom:11px;position:relative}
 .q::before{counter-increment:q;content:counter(q);position:absolute;left:20px;top:17px;
   font:400 19px/1 var(--serif);color:var(--felt)}
-.q > b{display:block;font:650 14.5px/1.4 var(--sans);color:var(--ink);margin-bottom:6px}
+/* the run-in title of a numbered item is a heading, not emphasis — it is set as
+   one, so the only bold left inside .q is a number the reader should carry away */
+.q > h4{display:block;font:650 14.5px/1.4 var(--sans);color:var(--ink);margin:0 0 6px}
 .q p{font-size:13.5px;margin:0;color:var(--ink-2);max-width:none}
 .q p b{color:var(--ink);font-weight:650}
 
@@ -114,7 +116,7 @@ because one adult cannot sit beside thirty children every hour for a decade.</p>
 
 <div class="grid">
   <div class="card"><span class="tag">Now buildable</span><h4>A tutor that watches the process</h4>
-  <p>Not the submitted answer. The attempt, the hesitation, the step where it went wrong — for
+  <p>Not the submitted answer. The attempt, the hesitation, the step where it went wrong, for
   every learner, every hour.</p></div>
   <div class="card"><span class="tag">Now buildable</span><h4>A memory that spans years</h4>
   <p>It can tell you in March which misconception from October is still live. No human tutor
@@ -123,7 +125,7 @@ because one adult cannot sit beside thirty children every hour for a decade.</p>
   <p>A fresh, unGoogleable problem at the exact edge of what you know, on demand, forever.</p></div>
   <div class="card"><span class="tag">Now buildable</span><h4>A student you teach</h4>
   <p>An agent that adopts your explanation <em>including its errors</em>, applies them visibly,
-  and does not quietly self-correct. Learning by teaching is <b>g = 0.48</b> — and nobody has
+  and does not quietly self-correct. Learning by teaching is <b>g = 0.48</b>, and nobody has
   shipped it.</p></div>
   <div class="card"><span class="tag">Now buildable</span><h4>Your wrong rule, executed</h4>
   <p>State a belief; it compiles to a law and runs beside the correct one until they visibly
@@ -134,7 +136,7 @@ because one adult cannot sit beside thirty children every hour for a decade.</p>
 </div>
 
 <h2>The size of it</h2>
-<p class="sub">Learning is counted in opportunities, not days — and almost none of a week is
+<p class="sub">Learning is counted in opportunities, not days, and almost none of a week is
 spent learning.</p>
 
 <div class="findings">
@@ -142,55 +144,54 @@ spent learning.</p>
     <h3>Polymathy was never about intelligence</h3>
     <p>Across 1.3 million observations, learning <em>rate</em> varies by <b>1.14×</b> between
     the 25th and 75th percentile. <em>Prior knowledge</em> varies by <b>3.6×</b>. What limits
-    how many fields you can enter is the cost of being a beginner — which is search, access and
+    how many fields you can enter is the cost of being a beginner: search, access and
     orientation. All attention. None of it talent.</p></div>
   <div class="finding"><span class="fn"></span>
     <h3>Four minutes, or fifty-two</h3>
     <p>The same nominal school day yields either, depending on the cascade from allocated time
-    to engaged time to time at the right difficulty. <b>A thirteen-fold spread inside identical
-    calendars.</b> The explaining was never the scarce part.</p></div>
+    to engaged time to time at the right difficulty. A thirteen-fold spread inside identical
+    calendars. The explaining was never the scarce part.</p></div>
   <div class="finding"><span class="fn"></span>
     <h3>A week's understanding in an hour</h3>
     <p><b>10–40× on the calendar, 3–5× on engaged effort</b>, one documented case near 300×.
-    Durability does not compress — a year-durable memory needs 18–36 day gaps — but it is nearly
-    free: the same items, merely split.</p></div>
+    Durability does not compress; a year-durable memory needs 18–36 day gaps. It is nearly
+    free anyway: the same items, merely split.</p></div>
 </div>
 
-<h2>Three findings</h2>
-<p class="sub">The three results that decide whether a system like this works or merely
-feels like it does. They are why most of the field's effort has not landed — and they are
-buildable constraints, not objections.</p>
+<h2>What separates working from feeling like it works</h2>
+<p class="sub">Three results with a build consequence. They are why most of the field's
+effort has not landed, and they are constraints you can design against rather than
+objections.</p>
 
 <div class="findings">
   <div class="finding">
     <span class="fn"></span>
     <h3>Felt learning and real learning move in opposite directions</h3>
-    <p>Preference shifts at <b>d ≈ 0.48</b> while knowledge does not move, and the effect
-    survives explicit debiasing. Students in the condition that taught them <em>more</em>
-    reported learning <em>less</em>. Every metric a product can cheaply optimise is the
-    wrong one.</p>
+    <p>Preference moves at <b>d ≈ 0.48</b> while knowledge stays where it was, and the effect
+    survives explicit debiasing. Ratings, satisfaction and engagement all track the first
+    number. Every metric a product can cheaply optimise is the wrong one.</p>
   </div>
   <div class="finding">
     <span class="fn"></span>
-    <h3>Measurement without a decision rule is inert</h3>
-    <p>In the randomised trial that settles it, both arms revised instruction more often —
-    and <b>only the arm told <em>what to change</em></b> moved achievement. Dashboards,
-    streaks, mastery bars and adaptive difficulty are all the arm that measured more and
-    moved nothing.</p>
+    <h3>A dashboard has to name the next move</h3>
+    <p>Both arms of the randomised trial that settles it revised instruction more often.
+    Achievement moved only in the arm that was told <em>what to change</em>. Streaks, mastery
+    bars and adaptive difficulty measure more and decide nothing, and finer resolution does
+    not fix it: the rule is the product.</p>
   </div>
   <div class="finding">
     <span class="fn"></span>
     <h3>Unguarded assistance is an active harm</h3>
-    <p>It leaves learners <b>17% worse</b> on later unassisted work. The guardrailed arm's
-    unassisted coefficient is <b>−0.004, not significant</b>. Restraint removes the harm;
-    it has not been shown to teach. Anyone selling it as a learning gain is ahead of the
-    evidence — <em>including this page, in an earlier draft.</em></p>
+    <p>Later unassisted work comes back <b>17% worse</b>. Add guardrails and the unassisted
+    coefficient is <b>−0.004, not significant</b>: harm gone, teaching not demonstrated.
+    Anyone selling restraint as a learning gain is ahead of the evidence —
+    <em>including this page, in an earlier draft.</em></p>
   </div>
 </div>
 
 <figure>
   <div class="ftitle">The first finding, in five studies</div>
-  <div class="fsub">Paired outcomes, not a slope chart — the two columns are different units
+  <div class="fsub">Paired outcomes, not a slope chart: the two columns are different units
   (percentages, <em>d</em>, and qualitative change), so they share no scale and the connector
   encodes pairing only, never magnitude. Hover a row.</div>
   <div class="legend">
@@ -216,30 +217,30 @@ contested, or null. Hover any row for the base and the caveat.</p>
     <span><i style="background:var(--felt)"></i>Overstated, contested, or null</span>
   </div>
   <div id="bars"></div>
-  <figcaption><strong>Bloom's 2σ does not appear</strong>, because it does not replicate. VanLehn
+  <figcaption>Bloom's 2σ does not appear, because it does not replicate. VanLehn
   measured human tutoring at 0.79 and intelligent tutoring at 0.76; Nickow's pooled tutoring RCTs
-  land at <strong>0.288</strong> — and that number itself fell from 0.37 in the working paper to
+  land at <strong>0.288</strong>, and that number itself fell from 0.37 in the working paper to
   0.288 in peer review, which is why this survey discounts working-paper effect sizes. Chasing 2σ
   inflates the target roughly 7× against the pooled estimate.</figcaption>
 </figure>
 
 <details>
-  <summary>Table view of the ladder — accessible alternative, generated from the same spec</summary>
+  <summary>Table view of the ladder, an accessible alternative generated from the same spec</summary>
   <div class="scroll"><table id="bartable"></table></div>
 </details>
 
 <h2>Kindergarten to doctorate</h2>
 <p class="sub">The question this survey gets asked most: does any of this work the same way for a
-six-year-old and a PhD student? No — and the axis it varies along is not age.</p>
+six-year-old and a PhD student? No, and the axis it varies along is not age.</p>
 
 <div class="callout">
   <div class="k">The organising principle</div>
-  <p><strong>Expertise reversal.</strong> The same instructional support measures
+  <p>Expertise reversal. The same instructional support measures
   <b>d = +0.505</b> for novices and <b>d = −0.428</b> for experts. Not "less useful" — actively
   harmful. Worked examples, explicit guidance and scaffolding are the strongest tools we have for
   beginners, and become <em>obstacles</em> for people who already know the domain.</p>
-  <p>So the K-12 → postgraduate span is not a difficulty gradient. It is a <strong>reversal</strong>,
-  and it runs per-topic rather than per-person: the same learner is a novice in one chapter and an
+  <p>So the K-12 → postgraduate span is a reversal rather than a difficulty gradient, and it runs
+  per-topic, not per-person: the same learner is a novice in one chapter and an
   expert in the next. A system that scales instruction <em>up</em> as the learner advances has it
   exactly backwards.</p>
 </div>
@@ -266,7 +267,7 @@ six-year-old and a PhD student? No — and the axis it varies along is not age.<
 
 <h3>What the tutor's job actually is, at each end</h3>
 <div class="grid">
-  <div class="card"><span class="tag">K–5</span><h4>Be the thing that cannot be argued with</h4><p>Explicit, systematic, high-dosage, and above all <em>consistent</em>. The object refuses illegal states; the child is wrong in private, repeatedly, without anyone's face changing. Withholding does damage here — this is where the Socratic instinct is wrong.</p></div>
+  <div class="card"><span class="tag">K–5</span><h4>Be the thing that cannot be argued with</h4><p>Explicit, systematic, high-dosage, and above all <em>consistent</em>. The object refuses illegal states; the child is wrong in private, repeatedly, without anyone's face changing. Withholding does damage here; this is where the Socratic instinct is wrong.</p></div>
   <div class="card"><span class="tag">6–12</span><h4>Fade the scaffold on evidence, not schedule</h4><p>The band where the reversal actually happens, so it is the band where measuring prior knowledge <em>per topic</em> becomes load-bearing. Fading too early and fading too late are both failures, and they look the same from the outside.</p></div>
   <div class="card"><span class="tag">Undergraduate</span><h4>Stop explaining. Start interrogating.</h4><p>Guidance now costs more than it gives. The high-value moves become productive failure, unannounced objection, and problems that have never existed before. Explanation becomes something the <em>learner</em> produces.</p></div>
   <div class="card"><span class="tag">Postgraduate</span><h4>The learner knows more than the tutor</h4><p>Inside their niche the model is not the expert, and pretending otherwise is the failure mode. Its job inverts completely: adversary, verifier, literature memory, connector to humans. It must be <em>useful without being right</em>.</p></div>
@@ -276,26 +277,26 @@ six-year-old and a PhD student? No — and the axis it varies along is not age.<
 <p class="sub">Twelve results with a direct consequence for a product decision.</p>
 
 <div class="grid">
-  <div class="card"><span class="tag">Kills a product</span><h4>The exit ticket is not the outcome</h4><p>One deployment moved its in-product exit ticket <b>+4pp</b> and was <b>null on the state test</b>. That dissociation between the proxy a product can see and the outcome anyone cares about is the most reproducible finding in this literature.</p></div>
-  <div class="card"><span class="tag">Free fix</span><h4>Say it before they study</h4><p>Teaching with a prior expectancy: <b>g = 0.48</b>. Without: <b>g = −0.02</b>. "Now explain it back to me," asked at the end, is the null condition — and is how nearly every product ships it.</p></div>
+  <div class="card"><span class="tag">Kills a product</span><h4>The exit ticket is not the outcome</h4><p>One deployment moved its in-product exit ticket <b>+4pp</b> and was null on the state test. That dissociation between the proxy a product can see and the outcome anyone cares about is the most reproducible finding in this literature.</p></div>
+  <div class="card"><span class="tag">Free fix</span><h4>Say it before they study</h4><p>Teaching with a prior expectancy: <b>g = 0.48</b>. Without: <b>g = −0.02</b>. "Now explain it back to me," asked at the end, is the null condition, and is how nearly every product ships it.</p></div>
   <div class="card"><span class="tag">Inverts the ask</span><h4>The audience is a net cost</h4><p>Teaching to a camera beat teaching to one student and to seven — on transfer, with lower pulse rate, lower anxiety, lower load and <em>more</em> idea units. Presenting to a room is a barrier that buys nothing.</p></div>
   <div class="card"><span class="tag">Must-fix bug</span><h4>Vision models erase the mistakes</h4><p>Asked to transcribe student work, VLMs silently <b>repair</b> the errors — the sign, the paren, the missing step. The mistakes are the entire reason for looking at the page.</p></div>
-  <div class="card"><span class="tag">Boundary</span><h4>Scheduling fails on structure</h4><p>Adaptive scheduling: <b>11 of 14</b> trials significant on flashcard-type material, <b>0 of 8</b> on interdependent content. Duolingo's scheduler vs plain Leitner on ~1M students: <b>−7.3% practice</b>.</p></div>
+  <div class="card"><span class="tag">Boundary</span><h4>Scheduling fails on structure</h4><p>Adaptive scheduling: <b>11 of 14</b> trials significant on flashcard-type material, <b>0 of 8</b> on interdependent content. Duolingo's scheduler vs plain Leitner on ~1M students: −7.3% practice.</p></div>
   <div class="card"><span class="tag">Ceiling</span><h4>Knowledge tracing is exhausted</h4><p>An <em>untrained</em> LSTM is within 0.03 AUC of the trained one. An oracle that knows the exact moment of learning beats simple logistic PFA by <b>0.002</b>. The headroom is not in the model.</p></div>
-  <div class="card"><span class="tag">Backfire</span><h4>Announced devil's advocate</h4><p>Saying "let me play devil's advocate" produces cognitive <em>bolstering</em> of the learner's original view. The exit is unannounced, model-owned objection — not performed disagreement.</p></div>
+  <div class="card"><span class="tag">Backfire</span><h4>Announced devil's advocate</h4><p>Saying "let me play devil's advocate" produces cognitive <em>bolstering</em> of the learner's original view. The exit is unannounced, model-owned objection, not performed disagreement.</p></div>
   <div class="card"><span class="tag">Fairness</span><h4>Detectors are conventionality meters</h4><p><b>61.22%</b> false-positive on non-native writers versus 5.19% native. Students taught sentence frames <em>as an accommodation</em> are maximally exposed, because the accommodation lowers perplexity by design.</p></div>
-  <div class="card"><span class="tag">Objective</span><h4>The Null-Learner Test</h4><p>Simulate an agent maximising your metric while teaching nothing. DAU, streaks, XP and time-on-app all pass — so all are disqualified as objectives.</p></div>
+  <div class="card"><span class="tag">Objective</span><h4>The Null-Learner Test</h4><p>Simulate an agent maximising your metric while teaching nothing. DAU, streaks, XP and time-on-app all pass, so all are disqualified as objectives.</p></div>
   <div class="card"><span class="tag">Reach</span><h4>A phone call beats the avatar</h4><p>Voice call + SMS: <b>+0.327 SD</b> across 5 countries, N = 8,902. SMS alone: +0.083, null in three. The mechanism is a human on the line at a scheduled time, not the bandwidth.</p></div>
-  <div class="card"><span class="tag">Frontier</span><h4>Real-time is solved</h4><p>640×368 at 25 FPS with <b>~200 ms model-side latency</b> — inside the human conversational turn-gap — with a persistent world and a separate event stream.</p></div>
+  <div class="card"><span class="tag">Frontier</span><h4>Real-time is solved</h4><p>640×368 at 25 FPS, <b>~200 ms model-side latency</b>: shorter than the pause between two people in conversation. The world persists, and events arrive on a stream of their own.</p></div>
   <div class="card"><span class="tag">Empty chair</span><h4>Zero RCTs on disabled learners</h4><p>ERIC + Europe PMC, censused twice: 30 GenAI-education RCTs mention students, <b>0</b> mention disability. Every effect size in this field was measured on somebody else's child.</p></div>
 </div>
 
 <div class="callout">
   <div class="k">Time-sensitive · verified 28 Jul 2026</div>
-  <p><strong>The EU AI Act's Annex III education obligations were deferred to
-  2 December 2027</strong> by Regulation (EU) 2026/1744 (Digital Omnibus on AI, in force
-  27 July 2026) — verified against the EUR-Lex primary text. But <strong>Article 50 —
-  chatbot disclosure and synthetic-content marking — still applies from 2 August
+  <p>The EU AI Act's Annex III education obligations were deferred to
+  2 December 2027 by Regulation (EU) 2026/1744 (Digital Omnibus on AI, in force
+  27 July 2026), verified against the EUR-Lex primary text. But <strong>Article 50
+  (chatbot disclosure and synthetic-content marking) still applies from 2 August
   2026.</strong> For a conversational tutor that is the live deadline. Two sources a
   reasonable person would check still give the wrong answer: <code>artificialintelligenceact.eu</code>
   is stamped "last updated 1 August 2024," and the Commission's own Digital Omnibus page
@@ -303,55 +304,55 @@ six-year-old and a PhD student? No — and the axis it varies along is not age.<
 </div>
 
 <h2>Where we are still in the dark</h2>
-<p class="sub">Not open problems — those are catalogued and specified with experiments. These are the
+<p class="sub">Not open problems: those are catalogued and specified with experiments. These are the
 places where the whole frame may be wrong, and where nobody is currently looking.</p>
 
 <div class="qlist">
-  <div class="q"><b>Correlated pedagogical error at population scale</b>
+  <div class="q"><h4>Correlated pedagogical error at population scale</h4>
   <p>A human teacher's blind spots are idiosyncratic — thirty teachers make thirty different
   mistakes and the system averages them out. A model's blind spots are <em>systematic and identical
   for every learner simultaneously</em>. Nobody has studied what happens when ten million children
   are taught the same subtle misconception on the same afternoon. There is no monitoring for it and
   no name for it.</p></div>
 
-  <div class="q"><b>Every effect we have is measured in weeks</b>
+  <div class="q"><h4>Every effect we have is measured in weeks</h4>
   <p>The longest outcome in this corpus is months; most are a single session. A technique that
   measures +0.5 SD at six weeks and quietly corrodes a learner's willingness to struggle over three
   years would look <em>identical</em> in every study we cite. We are optimising on a horizon far
   shorter than the thing we claim to affect.</p></div>
 
-  <div class="q"><b>What the model teaches implicitly, every single turn</b>
-  <p>Every interaction teaches epistemics — what counts as an answer, how much confidence is
+  <div class="q"><h4>What the model teaches implicitly, every single turn</h4>
+  <p>Every interaction teaches epistemics: what counts as an answer, how much confidence is
   appropriate, whether to defer, when a question is finished. That curriculum runs constantly, is
   measured nowhere, and is plausibly larger than the subject-matter effect.</p></div>
 
-  <div class="q"><b>The learner model may be a category error</b>
+  <div class="q"><h4>The learner model may be a category error</h4>
   <p>We assume a stable person to be modelled. In childhood the subject changes faster than the
   model converges, and a good fit to who a child was in October may be an active constraint on who
   they are becoming by March. Nobody has asked whether personalisation is developmentally
   <em>anti</em>-adaptive.</p></div>
 
-  <div class="q"><b>Every study is one classroom in a world where nobody else has it</b>
-  <p>Education is heavily positional — credentials, ranking, admission. Every effect size quoted
+  <div class="q"><h4>Every study is one classroom in a world where nobody else has it</h4>
+  <p>Education is heavily positional: credentials, ranking, admission. Every effect size quoted
   here was measured where the treatment group had something the others did not. What the same
-  technique does when <em>everyone</em> has it is not a smaller version of that result. It is a
-  different question, and it has never been asked.</p></div>
+  technique does when <em>everyone</em> has it is a different question, not a smaller version
+  of that result, and it has never been asked.</p></div>
 
-  <div class="q"><b>We cannot tell competence from performance any more</b>
+  <div class="q"><h4>We cannot tell competence from performance any more</h4>
   <p>Every assessment instrument in existence assumes the artifact reflects the person who submitted
-  it. That assumption broke. The field's response has been detection — which runs
-  <b>61.22% false-positive on non-native writers</b>. Treating a measurement crisis as a cheating
+  it. That assumption broke. The field's response has been detection, which runs
+  61.22% false-positive on non-native writers. Treating a measurement crisis as a cheating
   problem may be the wrong frame entirely.</p></div>
 
-  <div class="q"><b>Nobody has checked whether a wrong-on-purpose agent is safe</b>
+  <div class="q"><h4>Nobody has checked whether a wrong-on-purpose agent is safe</h4>
   <p>The teachable agent is this survey's most promising untested mechanism, and it requires an agent
   that <em>holds an error</em> without self-correcting. No one has measured whether learners repair
   the error or internalise it. The failure mode is obvious in hindsight and entirely unstudied.</p></div>
 
-  <div class="q"><b>375 million children are unmeasured — and that number is itself an artifact</b>
+  <div class="q"><h4>375 million children are unmeasured — and that number is itself an artifact</h4>
   <p>We can state that 21.7% of the world's children have no benchmark coverage in any of their
   languages. What we cannot state is what happens to a language when its children are taught through
-  a model that speaks it badly — whether that accelerates a shift already underway, and on what
+  a model that speaks it badly: whether that accelerates a shift already underway, and on what
   timescale.</p></div>
 </div>
 
@@ -360,57 +361,57 @@ places where the whole frame may be wrong, and where nobody is currently looking
 field fail on the first three.</p>
 
 <div class="qlist">
-  <div class="q"><b>Show me the delayed, unassisted, novel-item test.</b>
+  <div class="q"><h4>Show me the delayed, unassisted, novel-item test.</h4>
   <p>Not the practice score. Not the same items. Weeks later, device closed, problems never seen
   before. ERIC returns <b>0 records</b> for "retention test" AND "ChatGPT", and <b>0</b> for
   "transfer test". Without a delayed unassisted outcome, nothing was measured about learning.</p></div>
 
-  <div class="q"><b>What happened to the gap, not the mean?</b>
+  <div class="q"><h4>What happened to the gap, not the mean?</h4>
   <p>Report the interaction with prior attainment. An intervention with a healthy mean that loads on
-  already-strong learners has made things worse. Untargeted delivery reliably does this — Sierra
+  already-strong learners has made things worse. Untargeted delivery reliably does this: Sierra
   Leone loaded at <b>+0.195 SD per SD</b> of baseline.</p></div>
 
-  <div class="q"><b>Does your metric survive the Null-Learner Test?</b>
+  <div class="q"><h4>Does your metric survive the Null-Learner Test?</h4>
   <p>Simulate an agent that maximises it while teaching nothing. If the metric cannot tell the
   difference, it is not an objective. Engagement, time-on-task, streaks, satisfaction and session
   count all fail.</p></div>
 
-  <div class="q"><b>Which arm isolates the AI from the humans around it?</b>
+  <div class="q"><h4>Which arm isolates the AI from the humans around it?</h4>
   <p>Both real outcome trials of the best-resourced AI tutor wrapped it in human structure doing
-  visible work — in one, <b>44.3% of tutor edits were slowing the AI's questioning down</b>. No
+  visible work. In one, 44.3% of tutor edits were slowing the AI's questioning down. No
   published trial isolates prompt-alone pedagogy from tablets, pair-work and teacher lesson
   design.</p></div>
 
-  <div class="q"><b>Is that a backtest or an intervention?</b>
+  <div class="q"><h4>Is that a backtest or an intervention?</h4>
   <p>Log-loss on review histories is not a learning outcome. On a 350-million-review benchmark a
-  <b>zero-parameter moving average beats every FSRS version</b>. Predicting what a learner already
+  zero-parameter moving average beats every FSRS version. Predicting what a learner already
   did is a different quantity from causing them to remember.</p></div>
 
-  <div class="q"><b>What is your inter-rater reliability on the thing you claim to measure?</b>
+  <div class="q"><h4>What is your inter-rater reliability on the thing you claim to measure?</h4>
   <p>Published once for the field's leading pedagogy rubric and never again: Krippendorff's α of
   <b>0.066</b> for "inspires interest" and <b>0.023</b> for "monitors motivation". Two of five
   principles rest on constructs experts cannot reliably identify. Human graders of code reach
   α ≈ 0.20.</p></div>
 
-  <div class="q"><b>Active control, or nothing?</b>
+  <div class="q"><h4>Active control, or nothing?</h4>
   <p>Against "no intervention", almost everything works. Orton-Gillingham looks excellent until it is
   compared with other explicit instruction, where it is <b>g = 0.22, p = .40</b>. The robot
   meta-analysis spans +0.75 versus nothing to <b>−0.06</b> versus a teacher.</p></div>
 
-  <div class="q"><b>What did you pre-register, and what did you report?</b>
+  <div class="q"><h4>What did you pre-register, and what did you report?</h4>
   <p>The largest AI-tutoring trial in this corpus abandoned its pre-registered subdomain analyses,
   had differential attrition favouring treatment, and swapped models mid-trial. All three are visible
   only in the appendix.</p></div>
 
-  <div class="q"><b>Who consented out?</b>
+  <div class="q"><h4>Who consented out?</h4>
   <p>Every result is conditioned on a connected, consenting, mostly curious population. The learners
   this field most claims to serve are the ones least likely to be in the sample — and in one census,
   <em>none</em> of them are.</p></div>
 
-  <div class="q"><b>What would falsify your thesis — and has it already happened?</b>
+  <div class="q"><h4>What would falsify your thesis — and has it already happened?</h4>
   <p>The honest counter-case to this whole survey: 0.2–0.4 SD may be a population parameter rather
   than a technology limit. The best-powered studies on record are nulls. And our own evidence
-  repeatedly shows elaboration losing to simplicity — five explanation rungs did not beat three
+  repeatedly shows elaboration losing to simplicity: five explanation rungs did not beat three
   (<b>p = .738</b>), multiple representations harmed, mixed agent panels lost to one good agent.</p></div>
 </div>
 
@@ -430,7 +431,7 @@ run in the demos.</p>
   <a href="demos/">
     <div class="nt">The demos</div>
     <p>Because a survey that only describes techniques is a reading list. Each runs in the browser
-    with no server and no key, and states what it proves and what it merely illustrates — including
+    with no server and no key, and states what it proves and what it merely illustrates, including
     the one this project proposed, benchmarked and falsified.</p>
     <div class="nm"><span data-gen="demos">27</span> TECHNIQUES · NO SIGN-IN</div>
   </a>
@@ -440,45 +441,46 @@ run in the demos.</p>
 <p class="sub">The claim that should make you suspicious of any survey is that it got everything
 right. This one did not, and the record is the point.</p>
 
-<p><b><span data-gen="corrections">61</span> corrections are published in an append-only ledger</b>
+<p><span data-gen="corrections">61</span> corrections are published in an append-only ledger
 with a provenance column naming who caught each one. <span data-gen="external">23</span> were found
-by an adversarial reviewer rather than by us — including the two most damaging, and one about the ledger itself, which we had
-been silently editing inside a table headed <em>"published rather than silently edited."</em></p>
+by an adversarial reviewer rather than by us — including the two most damaging, and one about the
+ledger itself, which we had been silently editing inside a table headed
+<em>"published rather than silently edited."</em></p>
 
 <div class="scroll">
 <table>
   <tr><th>We said</th><th>Actually</th></tr>
-  <tr><td><b>C-12</b> — Nickow pooled tutoring <b>0.37</b>, published in five places, including a
+  <tr><td><b>C-12</b> · Nickow pooled tutoring <b>0.37</b>, published in five places, including a
     chart bar labelled "the honest field-wide number"</td>
-    <td><b>0.288.</b> The 0.37 is the superseded 2020 working-paper figure — and
+    <td><b>0.288.</b> The 0.37 is the superseded 2020 working-paper figure, and
     <code>survey/09</code> states our own rule to discount working-paper effect sizes. We broke our
     own rule on the front page</td></tr>
-  <tr><td><b>C-13</b> — Kestin AI tutor, a range spliced from two different estimands and then
+  <tr><td><b>C-13</b> · Kestin AI tutor, a range spliced from two different estimands and then
     plotted at its midpoint</td>
-    <td><b>A range that exists in no source.</b> 0.63 is the regression estimate; the upper figure
+    <td>A range that exists in no source. 0.63 is the regression estimate; the upper figure
     is <em>ceiling-corrected</em>. Correct: <b>d ≈ 0.63</b>, from a study that is developer-built
     and developer-evaluated with no funding statement</td></tr>
-  <tr><td><b>C-23</b> — <em>(process)</em> Corrections were applied by <b>rewriting the ledger rows
-    in place</b>, inside a table headed "each published rather than silently edited"</td>
+  <tr><td><b>C-23</b> · <em>(process)</em> Corrections were applied by rewriting the ledger rows
+    in place, inside a table headed "each published rather than silently edited"</td>
     <td>Rows are now append-only and carry provenance, and the counts on this page are generated
     from the filesystem rather than typed by hand</td></tr>
 </table>
 </div>
 
-<p>Two machine checks guard the ledger, and both are runnable. The first version of the corrections
-checker <strong>did not work</strong> — a reviewer planted the original errors back in and it
-reported zero violations. It now ships with a self-test that plants each violation and fails if the
-rule does not fire.</p>
+<p>Two machine checks guard the ledger, and both are runnable. A reviewer defeated the first one
+we wrote: every original error planted back into a copy of the repository, zero violations
+reported. It now carries a self-test that plants each violation itself and fails the build if a
+rule stays silent.</p>
 
 <details>
-  <summary>The full record — ledger, reviews, checkers, reports, audit</summary>
+  <summary>The full record: ledger, reviews, checkers, reports, audit</summary>
   <div class="scroll"><table>
     <tr><th>What</th><th>Where</th></tr>
     <tr><td>The append-only corrections ledger, with provenance</td><td><a href="https://github.com/dlmastery/learning-with-ai/blob/main/CORRECTIONS.md"><code>CORRECTIONS.md</code></a></td></tr>
     <tr><td>Three adversarial reviews. The first two returned <em>not publishable</em></td><td><a href="https://github.com/dlmastery/learning-with-ai/tree/main/evidence"><code>evidence/</code></a></td></tr>
-    <tr><td>Propagation check — no superseded value survives anywhere</td><td class="num">python3 evidence/check-corrections.py --self-test --strict</td></tr>
+    <tr><td>Propagation check, so no superseded value survives anywhere</td><td class="num">python3 evidence/check-corrections.py --self-test --strict</td></tr>
     <tr><td>Render-and-run check on every demo page</td><td class="num">node evidence/test-demos.mjs</td></tr>
-    <tr><td>The research reports — the input, never rewritten</td><td><a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw"><code>research/raw/</code></a></td></tr>
+    <tr><td>The research reports, the input, never rewritten</td><td><a href="https://github.com/dlmastery/learning-with-ai/tree/main/research/raw"><code>research/raw/</code></a></td></tr>
     <tr><td>Requirements audit against the original brief</td><td><a href="https://github.com/dlmastery/learning-with-ai/blob/main/AUDIT.md"><code>AUDIT.md</code></a></td></tr>
   </table></div>
 </details>

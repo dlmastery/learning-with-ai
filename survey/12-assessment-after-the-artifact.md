@@ -30,7 +30,7 @@ is in genuine trouble.
 
 ## 1. What actually broke: the forgery margin
 
-Assessment was never about artifacts. It is an inference — from something observed
+Assessment was never about artifacts. It is an inference from something observed
 to a claim about a person, licensed by an argument. The essay was never the
 evidence. It was a *sampling instrument*, and a spectacularly cheap one, which is
 why it colonised education.
@@ -63,15 +63,14 @@ approximately zero while leaving the *learning cost* untouched. The proportion o
 people willing to exploit the gap barely moved; the population who *could* became
 everyone.
 
-This reframing is generative rather than gloomy, because it says the design problem
-is not "invent tasks AI cannot do" — a race whose finish line recedes annually. The
-problem is to **restore a margin**, and there are exactly four ways: bind the
+The design problem is not "invent tasks AI cannot do", a race whose finish line
+recedes annually. The problem is to **restore a margin**, and there are four ways: bind the
 response to real time (orals, live problem-solving); bind the claim to a verifiable
 object (proof assistants, test suites, withheld data); bind the artifact to a process
 trace (version control, revision history); or abandon per-task security and secure
 the aggregate (programmatic assessment).
 
-Detection is not on that list. That is the diagnosis, not an oversight: detection
+Detection is not on that list. Its absence is the diagnosis and not an oversight: detection
 tries to recover the margin *post hoc, from the artifact itself*, after the
 information is already gone.
 
@@ -93,8 +92,8 @@ generalisable scores require sampling broadly across tasks. The OSCE's advantage
 the long case was never that stations are more objective — it is that there are *more
 of them*.
 
-So the naive implementation — one AI-conducted thirty-minute high-stakes viva
-replacing the final exam — reproduces exactly the psychometric weakness that killed
+So the naive implementation (one AI-conducted thirty-minute high-stakes viva
+replacing the final exam) reproduces the psychometric weakness that killed
 orals, now at scale, with an unappealable machine judge. The correct implementation is
 many short, structured, low-stakes orals distributed across a term, aggregated
 programmatically. Frequency is the entire point. Structure is the second lever:
@@ -110,13 +109,13 @@ Performance and grades improved, and **there were no significant differences by
 gender, international status, or language background.** Anxiety was reported
 initially and declined with familiarity without depressing performance. The caveats
 belong in the same breath: single institution, single discipline, a cohort comparison
-across fourteen years rather than randomisation, and **no reported reliability
+across fourteen years in place of randomisation, and **no reported reliability
 coefficients**.
 
 The reading this survey adopts: **the equity case for AI-conducted orals rests on
-frequency and practice, not on the technology.** Every documented fairness risk of
-orals — anxiety, unfamiliarity, differential coaching — is a *first-exposure* effect
-that decays with repetition. What made orals inequitable was that students met one,
+frequency and practice. The technology carries none of it.** Every documented
+fairness risk of orals (anxiety, unfamiliarity, differential coaching) is a
+*first-exposure* effect that decays with repetition. What made orals inequitable was that students met one,
 once, at maximum stakes. A modality students encounter forty times per degree is a
 modality they are fluent in.
 
@@ -187,14 +186,14 @@ Now the trap.
 An item's parameters come from examinee responses. Generation makes item *text*
 free; it does nothing to make examinee responses free. The binding constraint moves
 from authoring to a calibration sample. **An infinite bank of uncalibrated items has
-no measurement properties at all** — that is the sentence institutions rolling out
+no measurement properties at all.** That is the sentence institutions rolling out
 LLM quiz generators need on the wall.
 
 Fifteen years of pre-LLM automatic item generation, mostly in medical education,
 established that items generated from cognitive models are rated by blinded expert
 panels as comparable to traditionally authored ones, and demonstrated end-to-end IRT
-and CAT integration. But the load-bearing assumption is isomorphicity — that
-sibling items from one item model share parameters — and it is an assumption. When
+and CAT integration. But the load-bearing assumption is isomorphicity: that
+sibling items from one item model share parameters. It is an assumption. When
 tested: only **9 of 23** expert-built templates produced psychometrically isomorphic
 instances without revision, and **9 of 23 required major modification**.
 
@@ -202,7 +201,7 @@ Three consequences follow, and the third is the one nobody is watching.
 
 (a) The psychometric object is the generator. If item text comes from a
 stochastic policy conditioned on a specification, the object with parameters is the
-*distribution* the policy induces, not any individual item. Random-item and crossed
+*distribution* the policy induces and never any individual item. Random-item and crossed
 random-effects IRT is the existing apparatus; what must be demonstrated is that
 generator-level parameters are stable enough to support inference even though
 item-level ones are not.
@@ -213,7 +212,7 @@ generation they are draws, so the standard error of θ must include item-samplin
 variance, and no shipping system appears to do this. The prediction is falsifiable
 and cheap to test: **reported reliabilities for LLM-generated adaptive quizzes are
 systematically optimistic, and the gap widens as item novelty increases.** Duolingo's
-own published numbers illustrate the size of the gap — **test–retest 0.84 against
+own published numbers illustrate the size of the gap: **test–retest 0.84 against
 internal consistency 0.96**, and only one of those two is estimable under generation.
 
 (c) Fairness moves to the generator, and there is a new failure mode.
@@ -227,20 +226,20 @@ personalisation-induced DIF — construct-irrelevant difficulty variation
 correlated with demographics, arising *by design*, invisible to every existing
 fairness procedure, and defended as a feature.
 
-*Flagged as construction, not finding: personalisation-induced DIF is this project's
+*Flagged as construction and not as finding: personalisation-induced DIF is this project's
 own framing and no study of it was located. It is offered as the most serious
 unexamined fairness risk in AI-driven assessment, and as a hypothesis someone should
 test.*
 
 And the replacement for alpha. Cronbach himself supplies the exit route,
-pointing to generalizability theory. G-theory decomposes score variance into facets —
-persons, items, occasions, raters — and asks how well a score generalises to a
+pointing to generalizability theory. G-theory decomposes score variance into facets
+(persons, items, occasions, raters) and asks how well a score generalises to a
 universe of admissible observations. That framing is *native* here, because **a
 generator is a formal specification of a universe of admissible observations**,
 arguably the first time in the history of measurement that this universe has been
 written down explicitly and executably rather than gestured at.
 
-The concrete protocol, offered as a specification to test rather than a finding:
+The concrete protocol, offered as a specification to test and not as a finding:
 make the probe policy π seed-deterministic so that (π, s) reproduces the exact
 administered set; administer π under seeds s and s′ to the same learner within a
 window short enough that true change is negligible, and report the correlation as
@@ -256,7 +255,7 @@ learner time.** That is the right direction for the pressure to point.
 
 ---
 
-## 5. The nulls, given their own space
+## 5. The negatives, including the ones that cut our way
 
 **Detection is bounded in theory and broken in practice, and its errors are not
 random.** The theoretical result bounds the AUROC of the *best possible* detector by
