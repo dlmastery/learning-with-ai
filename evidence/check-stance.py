@@ -53,6 +53,35 @@ POSSIBLE = re.compile(r"\b(can|could|becomes?|possible|unlocks?|enables?|builds?
                       r"buildable|now|new|first|works?|gains?|reaches?|"
                       r"achieves?|opportunity)\b", re.I)
 
+# Counts of this repository's own artifacts, written by hand, go stale silently.
+# README carried four at once (thirty-eight sections, forty reports, fourteen
+# demos, a fifteen-slide deck) and the deck carried "fourteen working demos" when
+# there were 27. Either generate the number or do not state it.
+WORDS = {w: i for i, w in enumerate(
+    "zero one two three four five six seven eight nine ten eleven twelve thirteen "
+    "fourteen fifteen sixteen seventeen eighteen nineteen twenty".split())}
+WORDS.update({"thirty": 30, "forty": 40, "fifty": 50, "sixty": 60})
+COUNTED = re.compile(
+    r"\b([\d,]+|" + "|".join(WORDS) + r")[- ]?(?:working |published |research |slide )?"
+    r"(demos?|sections?|research reports?|reports?|corrections?|slides?)\b", re.I)
+
+
+def actual(root):
+    n = lambda g: len(list(root.glob(g)))
+    demos = len([f for f in (root / "docs" / "demos").glob("*.html")
+                 if f.name != "index.html"]) if (root / "docs" / "demos").exists() else 0
+    deck = (root / "docs" / "deck.html")
+    return {"demo": demos, "demos": demos,
+            "section": n("survey/*.md"), "sections": n("survey/*.md"),
+            "report": n("research/raw/*.md"), "reports": n("research/raw/*.md"),
+            "research report": n("research/raw/*.md"),
+            "research reports": n("research/raw/*.md"),
+            "slide": deck.read_text(errors="ignore").count('class="slide') if deck.exists() else 0,
+            "slides": deck.read_text(errors="ignore").count('class="slide') if deck.exists() else 0,
+            "correction": len(re.findall(r"(?m)^\| \*\*C-", (root / "CORRECTIONS.md").read_text()))
+                          if (root / "CORRECTIONS.md").exists() else 0}
+
+
 VANITY = re.compile(r"\b[\d,]{4,}\s*(words|sources|citations)"
                     r"|\b\d+\s+sections\s*[·,]"
                     r"|\b\d+\s+research reports\b"
@@ -110,6 +139,29 @@ def main():
             for m in VANITY.finditer(text_of(f)[:2500]):
                 issues.append(("VANITY METRIC", f.relative_to(ROOT), m.group(0).strip(),
                                "volume is not an argument; counts belong on the status page"))
+
+    # 4 — hand-written counts of our own artifacts, checked against reality
+    truth = actual(ROOT)
+    for pat in FRONT:
+        for f in sorted(ROOT.glob(pat)):
+            raw = f.read_text(encoding="utf-8", errors="ignore")
+            for m in COUNTED.finditer(text_of(f)):
+                said, noun = m.group(1).lower(), m.group(2).lower()
+                real = truth.get(noun) or truth.get(noun.rstrip("s"))
+                if real is None:
+                    continue
+                if said in ("zero", "one"):
+                    continue          # "one report" is a noun phrase, not a count
+                num = WORDS.get(said, None)
+                if num is None:
+                    try: num = int(said.replace(",", ""))
+                    except ValueError: continue
+                # a generated span is allowed to say anything; it is regenerated
+                if re.search(r'data-gen="[^"]*"[^<]*>\s*' + re.escape(m.group(1)), raw):
+                    continue
+                if num != real:
+                    issues.append(("STALE COUNT", f.relative_to(ROOT), m.group(0).strip(),
+                                   f"there are {real}; generate the number or drop it"))
 
     if not issues:
         n = len(list(ROOT.glob("survey/*.md"))) + len(FRONT)

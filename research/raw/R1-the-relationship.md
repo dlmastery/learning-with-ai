@@ -18,30 +18,28 @@ status: raw-research
 >
 > **The finding, stated first.**
 >
-> 1. **The headline number is real and small, and half of it is attendance.** Across 189
->    studies and 249,198 students, the total standardised association between a positive
->    teacher–student relationship and achievement is β = .14. Half of that runs through
->    student engagement (indirect β = .07); the path that remains after engagement is
->    controlled is β = .07, 95% CI [.04, .11]. The whole model explains 9% of achievement
->    variance. `MEASURED-META`
-> 2. **The effect is largest on the outcome a teacher controls.** In the 2011 meta-analysis,
->    positive relationships correlate r = .24 with *grades* and r = .07 with *test scores*.
->    Negative relationships correlate −.15 with both. Warmth moves the mark more than it moves
->    the knowledge, and the corpus's existing felt/real divergence reappears here in a form
->    nobody in this project had looked for. `MEASURED-META`
-> 3. **The relationship does not transfer to a machine as warmth. It transfers as
->    licence.** The only measured mechanism that survives the move to a non-human tutor and
->    does something instruction cannot is that a relationship changes the *sign* of the effect
->    of being told you are wrong. In friend dyads, face-threatening correction predicts higher
->    learning gains (β = .375); in stranger dyads the same behaviour predicts lower gains
->    (β = −.678). `OBSERVED`
+> 1. **The headline number is real, small, and half of it is attendance.** Across 189 studies
+>    and 249,198 students, the total standardised association between a positive
+>    teacher–student relationship and achievement is β = .14. Half runs through student
+>    engagement (indirect β = .07); the path remaining after engagement is controlled is
+>    β = .07, 95% CI [.04, .11]. The model explains 9% of achievement variance. `MEASURED-META`
+> 2. **The effect is largest on the outcome a teacher controls.** In the 2011 meta-analysis
+>    positive relationships correlate r = .24 with *grades* and r = .07 with *test scores*;
+>    negative relationships correlate −.15 with both. Warmth moves the mark more than the
+>    knowledge, and the corpus's felt/real divergence reappears in a form nobody here had
+>    looked for. `MEASURED-META`
+> 3. **What transfers to a machine is licence, not warmth.** The only measured mechanism that
+>    survives the move to a non-human tutor and does something instruction cannot is that a
+>    relationship changes the *sign* of the effect of being told you are wrong. In friend dyads
+>    face-threatening correction predicts higher learning gains (β = .375); in stranger dyads
+>    the same behaviour predicts lower gains (β = −.678). `OBSERVED`
 > 4. **And the obvious build is the trap.** Fine-tuning a language model for warmth raises its
->    error rate by roughly 5–9 percentage points per task, raises agreement with a user's false
->    belief by 11 points, and raises it further when the user sounds sad — while leaving MMLU
->    and GSM8K untouched. A warm tutor is a tutor that stops saying "that's wrong" at the
->    moment the learner most needs to hear it. `MEASURED-BENCH`
+>    error rate by 5–9 percentage points per task and its agreement with a user's false belief
+>    by 11 points, worst when the user sounds sad, while leaving MMLU and GSM8K untouched. A
+>    warm tutor stops saying "that's wrong" at the moment the learner most needs to hear it.
+>    `MEASURED-BENCH`
 >
-> The product implication is stated in §11 and it is not "make the tutor kind."
+> The product implication is in §11 and it is not "make the tutor kind."
 
 ---
 
@@ -107,16 +105,16 @@ achievement."* The positive-relationship effect on standardised test scores is r
 teacher-assigned grades it is more than three times that. The negative-relationship effect is
 identical on both. `MEASURED-META`
 
-`INFERENCE` (ours): a warm relationship substantially predicts the *mark a teacher gives*, and
+`INFERENCE` (ours): a warm relationship substantially predicts the *mark a teacher gives* and
 barely predicts the *score an external test gives*, while conflict predicts both equally. That
-is a measurement-source artefact hiding inside the most-cited finding in this literature, and it
-is the same shape as the corpus's existing felt/real divergence: the subjective instrument moves
-and the objective one does not. A bad relationship, by contrast, appears to cost real knowledge.
+is a measurement-source artefact sitting inside the most-cited finding in this literature, and
+it has the shape of the corpus's felt/real divergence: the subjective instrument moves and the
+objective one does not. A bad relationship, by contrast, appears to cost real knowledge.
 
-**Shared-informant inflation.** For engagement, studies using the same informant for predictor
-and outcome reported r = .41 (positive) and −.42 (negative); studies using different informants
-reported .23 and −.30. For achievement the direction reverses and is small (.14 vs .17). The
-engagement finding is roughly half method variance. `MEASURED-META`
+**Shared-informant inflation.** For engagement, same-informant studies reported r = .41
+(positive) and −.42 (negative) against .23 and −.30 for different-informant studies. Half of the
+engagement finding is method variance. For achievement the direction reverses and is small
+(.14 vs .17). `MEASURED-META`
 
 **Learning difficulties.** *"The number of students with learning difficulties significantly
 influenced the strength of the associations of negative relationships with both engagement and
@@ -124,8 +122,8 @@ achievement; associations were stronger in samples with more students with learn
 difficulties."* Positive relationships showed no such moderation. Held for §10.
 `MEASURED-META`
 
-**Publication bias:** none detected. Correlations between sample size and effect size ranged
-rs = −.08 to .13, all non-significant, and the scatterplots were clean.
+**Publication bias:** none detected (rs = −.08 to .13 between sample size and effect size, all
+non-significant; clean scatterplots).
 
 ### 1.2 Roorda et al. (2017): the update, and where the effect actually goes
 

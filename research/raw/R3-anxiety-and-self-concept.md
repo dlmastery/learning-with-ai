@@ -988,74 +988,72 @@ predicts and which would be worth more to this project than a positive finding.
 
 ## References
 
-Ordered by first appearance. `†` marks a source whose full text was retrieved and quoted
-verbatim this session; others are cited from abstract, indexed record, or a retrieved
-secondary description that is named at point of use.
+`†` marks a source whose full text was retrieved and quoted verbatim this session; others are
+cited from abstract, indexed record, or a retrieved secondary description named at point of use.
 
-1. Ma, X. (1999). A meta-analysis of the relationship between anxiety toward mathematics and achievement in mathematics. *Journal for Research in Mathematics Education*, 30(5), 520–540. ERIC EJ595981. `MEASURED-META`
-2. Hembree, R. (1990). The nature, effects, and relief of mathematics anxiety. *JRME*, 21(1), 33–46. Cited via Barroso et al. and Caviola et al. `MEASURED-META`
-3. † Barroso, C., Ganley, C. M., McGraw, A. L., Geer, E. A., Hart, S. A., & Daucourt, M. C. (2021). A meta-analysis of the relation between math anxiety and math achievement. *Psychological Bulletin*, 147(2), 134–168. `10.1037/bul0000307`. `MEASURED-META`
-4. † Caviola, S., Toffalini, E., Giofrè, D., Ruiz, J. M., Szűcs, D., & Mammarella, I. C. (2022). Math performance and academic anxiety forms, from sociodemographic to cognitive aspects: a meta-analysis on 906,311 participants. *Educational Psychology Review*, 34, 363–399. `10.1007/s10648-021-09618-5`. `MEASURED-META`
-5. Namkung, J. M., Peng, P., & Lin, X. (2019). The relation between mathematics anxiety and mathematics performance among school-aged students: a meta-analysis. *Review of Educational Research*, 89(3). ERIC. `MEASURED-META`
-6. Devine, A., Hill, F., Carey, E., & Szűcs, D. (2018). Cognitive and emotional math problems largely dissociate: prevalence of developmental dyscalculia and mathematics anxiety. *Journal of Educational Psychology*, 110(3). `10.1037/edu0000222`. `OBSERVED`
-7. † Carey, E., Hill, F., Devine, A., & Szűcs, D. (2016). The chicken or the egg? The direction of the relationship between mathematics anxiety and mathematics performance. *Frontiers in Psychology*, 6, 1987. `10.3389/fpsyg.2015.01987`, PMC4703847. `MEASURED-META` (review)
-8. Ma, X., & Xu, J. (2004). The causal ordering of mathematics anxiety and mathematics achievement. *Journal of Adolescence*, 27(2). Quoted via Carey et al. (2016). `OBSERVED`
-9. Sorvo, R., Kiuru, N., Koponen, T., Aro, T., Viholainen, H., Ahonen, T., & Aro, M. (2022). Longitudinal and situational associations between math anxiety and performance among early adolescents. *Annals of the NY Academy of Sciences*, 1512(1). `10.1111/nyas.14788`. `OBSERVED`
-10. Bula, M. M., Khanolainen, D., Koponen, T., Sorvo, R., & Torppa, M. (2025). The interplay between math and reading anxiety and academic skills in primary school. PsyArXiv `10.31234/osf.io/jwh6m_v1`. **Preprint, discounted.** `OBSERVED`
-11. Beilock, S. L., Gunderson, E. A., Ramirez, G., & Levine, S. C. (2010). Female teachers' math anxiety affects girls' math achievement. *PNAS*, 107(5), 1860–1863. `10.1073/pnas.0910967107`, PMC2836676. `OBSERVED`
-12. Maloney, E. A., Ramirez, G., Gunderson, E. A., Levine, S. C., & Beilock, S. L. (2015). Intergenerational effects of parents' math anxiety on children's math achievement and anxiety. *Psychological Science*, 26(9). `10.1177/0956797615592630`. `OBSERVED`
-13. Ashcraft, M. H., & Kirk, E. P. (2001). The relationships among working memory, math anxiety, and performance. *JEP: General*, 130(2), 224–237. PMID 11409101. `OBSERVED`
-14. † Ashcraft, M. H., & Krause, J. A. (2007). Working memory, math performance, and math anxiety. *Psychonomic Bulletin & Review*, 14(2), 243–248. `10.3758/BF03194059`. Source of the verbatim quotations in §3. `OBSERVED`
-15. † Finell, J., Sammallahti, E., Korhonen, J., Eklöf, H., & Jonsson, B. (2022). Working memory and its mediating role on the relationship of math anxiety and math performance: a meta-analysis. *Frontiers in Psychology*, 12, 798090. `10.3389/fpsyg.2021.798090`. `MEASURED-META`
-16. Beilock, S. L., & Carr, T. H. (2005). When high-powered people fail: working memory and "choking under pressure" in math. *Psychological Science*, 16(2), 101–105. PMID 15686575. **Full text unobtainable; cell means UNVERIFIED.** `MEASURED-RCT`
-17. Faust, M. W., Ashcraft, M. H., & Fleck, D. E. (1996). Mathematics anxiety effects in simple and complex addition. *Mathematical Cognition*, 2(1). Cited via Ashcraft & Krause (2007). `OBSERVED`
-18. von der Embse, N., Jester, D., Roy, D., & Post, J. (2018). Test anxiety effects, predictors, and correlates: a 30-year meta-analytic review. *Journal of Affective Disorders*, 227, 483–493. `10.1016/j.jad.2017.11.048`. `MEASURED-META`
-19. Huntley, C. D., Young, B., Temple, J., Longworth, M., Smith, C. T., Jha, V., & Fisher, P. L. (2019). The efficacy of interventions for test-anxious university students: a meta-analysis of randomized controlled trials. *Journal of Anxiety Disorders*, 63, 36–50. `10.1016/j.janxdis.2019.01.007`. `MEASURED-META`
-20. Yılmazer, E., Hamamcı, Z., & Türk, F. (2024). Effects of mindfulness on test anxiety: a meta-analysis. *Frontiers in Psychology*, 15, 1401467. `10.3389/fpsyg.2024.1401467`, PMC11238660. `MEASURED-META`
-21. † Sammallahti, E., Finell, J., Jonsson, B., & Korhonen, J. (2023). A meta-analysis of math anxiety interventions. *Journal of Numerical Cognition*, 9(2), 346–362. `10.5964/jnc.8401`, ERIC EJ1400784. `MEASURED-META`
-22. Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans. *JPSP*, 69(5), 797–811. Design described via Sackett et al. (2004) and Warne (2022). `MEASURED-RCT`
-23. Sackett, P. R., Hardison, C. M., & Cullen, M. J. (2004). On interpreting stereotype threat as accounting for African American–White differences on cognitive tests. *American Psychologist*, 59(1), 7–13. `10.1037/0003-066x.59.1.7`. `OBSERVED`
-24. Sackett and colleagues (2022). On the continued misinterpretation of stereotype threat as accounting for Black–White differences on cognitive tests. *Personnel Assessment and Decisions*. `10.25035/pad.2022.01.001`. `OBSERVED`
-25. † Flore, P. C., & Wicherts, J. M. (2015). Does stereotype threat influence performance of girls in stereotyped domains? A meta-analysis. *Journal of School Psychology*, 53(1), 25–44. `10.1016/j.jsp.2014.10.002`. `MEASURED-META`
-26. Flore, P. C., Mulder, J., & Wicherts, J. M. (2018). The influence of gender stereotype threat on mathematics test scores of Dutch high school students: a registered report. *Comprehensive Results in Social Psychology*, 3(2), 140–174. `10.1080/23743603.2018.1559647`. Abstract retrieved from the Tilburg research portal. `MEASURED-RCT` (null)
-27. † Shewach, O. R., Sackett, P. R., & Quint, S. (2019). Stereotype threat effects in settings with features likely versus unlikely in operational test settings: a meta-analysis. *Journal of Applied Psychology*, 104(12), 1514–1534. `10.1037/apl0000420`. `MEASURED-META`
-28. Picho-Kiroga, K., Turnbull, A., & Rodriguez-Leahy, A. (2021). Stereotype threat and its problems: theory misspecification in research, consequences, and remedies. *Journal of Advanced Academics*, 32(3), 231–264. `10.1177/1932202X20986161`. `MEASURED-META`
-29. † Warne, R. T. (2022). No strong evidence of stereotype threat in females: a reassessment of the Picho-Kiroga et al. (2021) meta-analysis. *Journal of Advanced Academics*. `10.1177/1932202X211061517`, ERIC EJ1341866. Commentary. `MEASURED-META`
-30. † Yeager, D. S., Hanselman, P., Walton, G. M., Murray, J. S., Crosnoe, R., Muller, C., Tipton, E., et al. (2019). A national experiment reveals where a growth mindset improves achievement. *Nature*, 573, 364–369. `10.1038/s41586-019-1466-y`, PMC6786290. Full text retrieved via Europe PMC. `MEASURED-RCT`
-31. † Macnamara, B. N., & Burgoyne, A. P. (2023). Do growth mindset interventions impact students' academic achievement? A systematic review and meta-analysis with recommendations for best practices. *Psychological Bulletin*, 149(3–4), 133–173. `10.1037/bul0000352`. `MEASURED-META`
-32. Burnette, J. L., Billingsley, J., Banks, G. C., Knouse, L. E., Hoyt, C. L., Allison, J. M., & Larkin, S. (2023). A systematic review and meta-analysis of growth mindset interventions: for whom, how, and why might such interventions work? *Psychological Bulletin*, 149(3–4), 174–205. PMID 36227318. **Overlapping study pool with (31).** `MEASURED-META`
-33. † Foliano, F., Rolfe, H., Buzzeo, J., Runge, J., & Wilkinson, D. (2019). *Changing Mindsets: effectiveness trial — evaluation report*. Education Endowment Foundation / NIESR. UCL Discovery 10118795. `MEASURED-RCT` (null)
-34. Ganimian, A. J. (2020). Growth-mindset interventions at scale: experimental evidence from Argentina. *Educational Evaluation and Policy Analysis*, 42(3). `10.3102/0162373720938041`. `MEASURED-RCT` (null)
-35. Guay, F., Marsh, H. W., & Boivin, M. (2003). Academic self-concept and academic achievement: developmental perspectives on their causal ordering. *Journal of Educational Psychology*, 95(1). ERIC. `OBSERVED`
-36. Seaton, M., Parker, P., Marsh, H. W., Craven, R. G., & Yeung, A. S. (2014). The reciprocal relations between self-concept, motivation and achievement. *Educational Psychology*, 34(1). ERIC. `OBSERVED`
-37. Marsh, H. W., & Hau, K.-T. (2003). Big-fish-little-pond effect on academic self-concept: a cross-cultural (26-country) test. *American Psychologist*, 58(5), 364–376. PMID 12971085. `OBSERVED`
-38. Fang, J., Huang, X., Zhang, M., Huang, F., Li, Z., & Yuan, Q. (2018). The big-fish-little-pond effect on academic self-concept: a meta-analysis. *Frontiers in Psychology*, 9, 1569. `10.3389/fpsyg.2018.01569`. `MEASURED-META`
-39. Marsh, H. W., Chessor, D., Craven, R., & Roche, L. (1995). The effects of gifted and talented programs on academic self-concept: the big fish strikes again. *AERJ*, 32(2). ERIC. `OBSERVED`
-40. Parker, P., Dicke, T., Guo, J., Basarkod, G., & Marsh, H. (2021). Ability stratification predicts the size of the big-fish-little-pond effect. *Educational Researcher*, 50(6). ERIC. `OBSERVED`
-41. Preckel, F., & Brüll, M. (2010). The benefit of being a big fish in a big pond: contrast and assimilation effects on academic self-concept. *Learning and Individual Differences*, 20(5). ERIC. `OBSERVED`
-42. Bear, G. G., Minke, K. M., & Manning, M. A. (2002). Self-concept of students with learning disabilities: a meta-analysis. *School Psychology Review*, 31(3). ERIC. `MEASURED-META`
-43. Elbaum, B. (2002). The self-concept of students with learning disabilities: a meta-analysis of comparisons across different placements. *Learning Disabilities: Research & Practice*, 17(4). ERIC. `MEASURED-META`
-44. Elbaum, B., & Vaughn, S. (2001). School-based interventions to enhance the self-concept of students with learning disabilities: a meta-analysis. *Elementary School Journal*, 101(3). ERIC. `MEASURED-META`
-45. Elbaum, B., & Vaughn, S. (2003). For which students with learning disabilities are self-concept interventions effective? *Journal of Learning Disabilities*, 36(2). ERIC. `MEASURED-META`
-46. Nelson, J. M. (2012). General and domain-specific self-concepts of adults with learning disabilities: a meta-analysis. *Learning Disabilities: A Multidisciplinary Journal*, 18(1). ERIC. `MEASURED-META`
-47. Krämer, S., Möller, J., & Zimmermann, F. (2021). Inclusive education of students with general learning difficulties: a meta-analysis. *Review of Educational Research*, 91(3). ERIC. `MEASURED-META`
-48. Namkung, J. M., Peng, P., & Goodrich, M. J. (2025). The relation between mathematics anxiety and mathematics competence for students with versus without mathematics learning difficulties. *Learning Disability Quarterly*. ERIC. `OBSERVED`
-49. Johnson, R. M., Schaefer, M., Norris, C. U., Wagner, R. K., & Hart, S. A. (2026). The association between reading anxiety and reading achievement: a meta-analysis and systematic review. *Psychological Bulletin*. `10.1037/bul0000517`, PMC13225606. Pre-registered. `MEASURED-META`
-50. Johnson, D. S. (1981). Naturally acquired learned helplessness. *Journal of Educational Psychology*, 73(2). ERIC. `OBSERVED`
-51. Valås, H. (2001). Learned helplessness and psychological adjustment. *Scandinavian Journal of Educational Research*, 45(1). ERIC. `OBSERVED`
-52. Haynes Stewart, T. L., Clifton, R. A., Daniels, L. M., Perry, R. P., Chipperfield, J. G., & Ruthig, J. C. (2011). Attributional retraining: reducing the likelihood of failure. *Social Psychology of Education*, 14(1). ERIC. `MEASURED-RCT`
-53. Hall, N. C., Jackson Gradt, S. E., Goetz, T., & Musu-Gillette, L. E. (2011). Attributional retraining, self-esteem, and the job interview. *Journal of Experimental Education*, 79(3). ERIC. `MEASURED-RCT`
-54. Kohn, J., Rauscher, L., Kucian, K., Käser, T., Wyschkon, A., Esser, G., & von Aster, M. (2020). Efficacy of a computer-based learning program in children with developmental dyscalculia: what influences individual responsiveness? *Frontiers in Psychology*, 11, 1115. `10.3389/fpsyg.2020.01115`, PMC7373797. `MEASURED-RCT`
-55. Myers, S. J., Davis, S. D., & Chan, J. C. K. (2021). Does expressive writing or an instructional intervention reduce the impacts of test anxiety in a college classroom? *Cognitive Research: Principles and Implications*, 6, 44. `10.1186/s41235-021-00309-x`, PMC8192598. `MEASURED-RCT` (null)
-56. Thormodsæter, R. S., Ballen, C. J., Fagbodun, S., et al. (2026). Can we mitigate the impacts of test anxiety through reappraisal interventions? A replication study in science courses across multiple institution types. *CBE—Life Sciences Education*. `10.1187/cbe.25-04-0055`, PMC12936497. `MEASURED-RCT` (null)
-57. Ramirez, G., & Beilock, S. L. (2011). Writing about testing worries boosts exam performance in the classroom. *Science*, 331(6014), 211–213. `10.1126/science.1199427`. Named as the intervention family (55) and (56) failed to reproduce. `MEASURED-RCT`
-58. Lucas, G. M., Gratch, J., King, A., & Morency, L.-P. (2014). It's only a computer: virtual humans increase willingness to disclose. *Computers in Human Behavior*, 37, 94–100. `10.1016/j.chb.2014.04.043`. `MEASURED-RCT`
-59. Qu, Z., & Chen, L. (2026). Simulating the "cultural other": the impact of GenAI interlocutors on EFL learners' intercultural communicative competence, speaking anxiety, and learning engagement. *Frontiers in Psychology*. `10.3389/fpsyg.2026.1799695`, PMC13071047. Quasi-experimental, N = 59. `OBSERVED`
-60. Alsaad, A., Alanezi, S., Melhim, L. K. B., Alsyouf, A., & Alsaad, A. (2026). Can medical chatbots trigger disinhibition and encourage health information disclosure? *Healthcare*, 14(9), 1218. `10.3390/healthcare14091218`, PMC13163985. `MEASURED-RCT`
-61. Qi, L., & Zhao, L. (2026). Social friction vs. cognitive efficiency: a comparative analysis of help-seeking behaviors in human communities and generative AI. *PLoS One*. `10.1371/journal.pone.0348441`, PMC13127939. `OBSERVED`
+1. Ma, X. (1999). *JRME* 30(5), 520–540. ERIC EJ595981. `MEASURED-META`
+2. Hembree, R. (1990). *JRME* 21(1), 33–46. Cited via (3) and (4). `MEASURED-META`
+3. † Barroso, C., Ganley, C. M., McGraw, A. L., Geer, E. A., Hart, S. A., & Daucourt, M. C. (2021). A meta-analysis of the relation between math anxiety and math achievement. *Psychological Bulletin* 147(2), 134–168. `10.1037/bul0000307`. `MEASURED-META`
+4. † Caviola, S., Toffalini, E., Giofrè, D., Ruiz, J. M., Szűcs, D., & Mammarella, I. C. (2022). Math performance and academic anxiety forms: a meta-analysis on 906,311 participants. *EPR* 34, 363–399. `10.1007/s10648-021-09618-5`. `MEASURED-META`
+5. Namkung, J. M., Peng, P., & Lin, X. (2019). *Review of Educational Research* 89(3). ERIC. `MEASURED-META`
+6. Devine, A., Hill, F., Carey, E., & Szűcs, D. (2018). Cognitive and emotional math problems largely dissociate. *JEP* 110(3). `10.1037/edu0000222`. `OBSERVED`
+7. † Carey, E., Hill, F., Devine, A., & Szűcs, D. (2016). The chicken or the egg? *Frontiers in Psychology* 6, 1987. `10.3389/fpsyg.2015.01987`, PMC4703847. `MEASURED-META` (review)
+8. Ma, X., & Xu, J. (2004). *Journal of Adolescence* 27(2). Quoted via (7). `OBSERVED`
+9. Sorvo, R., et al. (2022). *Annals of the NY Academy of Sciences* 1512(1). `10.1111/nyas.14788`. `OBSERVED`
+10. Bula, M. M., et al. (2025). PsyArXiv `10.31234/osf.io/jwh6m_v1`. **Preprint, discounted.** `OBSERVED`
+11. Beilock, S. L., Gunderson, E. A., Ramirez, G., & Levine, S. C. (2010). Female teachers' math anxiety affects girls' math achievement. *PNAS* 107(5), 1860–1863. PMC2836676. `OBSERVED`
+12. Maloney, E. A., Ramirez, G., Gunderson, E. A., Levine, S. C., & Beilock, S. L. (2015). *Psychological Science* 26(9). `10.1177/0956797615592630`. `OBSERVED`
+13. Ashcraft, M. H., & Kirk, E. P. (2001). *JEP: General* 130(2), 224–237. PMID 11409101. `OBSERVED`
+14. † Ashcraft, M. H., & Krause, J. A. (2007). Working memory, math performance, and math anxiety. *Psychonomic Bulletin & Review* 14(2), 243–248. `10.3758/BF03194059`. `OBSERVED`
+15. † Finell, J., Sammallahti, E., Korhonen, J., Eklöf, H., & Jonsson, B. (2022). *Frontiers in Psychology* 12, 798090. `10.3389/fpsyg.2021.798090`. `MEASURED-META`
+16. Beilock, S. L., & Carr, T. H. (2005). *Psychological Science* 16(2), 101–105. PMID 15686575. **Full text unobtainable; cell means UNVERIFIED.** `MEASURED-RCT`
+17. Faust, M. W., Ashcraft, M. H., & Fleck, D. E. (1996). *Mathematical Cognition* 2(1). Cited via (14). `OBSERVED`
+18. von der Embse, N., Jester, D., Roy, D., & Post, J. (2018). *Journal of Affective Disorders* 227, 483–493. `10.1016/j.jad.2017.11.048`. `MEASURED-META`
+19. Huntley, C. D., et al. (2019). *Journal of Anxiety Disorders* 63, 36–50. `10.1016/j.janxdis.2019.01.007`. `MEASURED-META`
+20. Yılmazer, E., Hamamcı, Z., & Türk, F. (2024). *Frontiers in Psychology* 15, 1401467. PMC11238660. `MEASURED-META`
+21. † Sammallahti, E., Finell, J., Jonsson, B., & Korhonen, J. (2023). A meta-analysis of math anxiety interventions. *Journal of Numerical Cognition* 9(2), 346–362. `10.5964/jnc.8401`. `MEASURED-META`
+22. Steele, C. M., & Aronson, J. (1995). *JPSP* 69(5), 797–811. Design described via (23) and (29). `MEASURED-RCT`
+23. Sackett, P. R., Hardison, C. M., & Cullen, M. J. (2004). *American Psychologist* 59(1), 7–13. `10.1037/0003-066x.59.1.7`. `OBSERVED`
+24. Sackett and colleagues (2022). *Personnel Assessment and Decisions*. `10.25035/pad.2022.01.001`. `OBSERVED`
+25. † Flore, P. C., & Wicherts, J. M. (2015). Does stereotype threat influence performance of girls in stereotyped domains? *Journal of School Psychology* 53(1), 25–44. `10.1016/j.jsp.2014.10.002`. `MEASURED-META`
+26. Flore, P. C., Mulder, J., & Wicherts, J. M. (2018). Registered report. *Comprehensive Results in Social Psychology* 3(2), 140–174. `10.1080/23743603.2018.1559647`. `MEASURED-RCT` (null)
+27. † Shewach, O. R., Sackett, P. R., & Quint, S. (2019). *Journal of Applied Psychology* 104(12), 1514–1534. `10.1037/apl0000420`. `MEASURED-META`
+28. Picho-Kiroga, K., Turnbull, A., & Rodriguez-Leahy, A. (2021). *Journal of Advanced Academics* 32(3), 231–264. `10.1177/1932202X20986161`. `MEASURED-META`
+29. † Warne, R. T. (2022). No strong evidence of stereotype threat in females. *Journal of Advanced Academics*. `10.1177/1932202X211061517`. Commentary. `MEASURED-META`
+30. † Yeager, D. S., Hanselman, P., Walton, G. M., Murray, J. S., et al. (2019). A national experiment reveals where a growth mindset improves achievement. *Nature* 573, 364–369. `10.1038/s41586-019-1466-y`, PMC6786290. `MEASURED-RCT`
+31. † Macnamara, B. N., & Burgoyne, A. P. (2023). *Psychological Bulletin* 149(3–4), 133–173. `10.1037/bul0000352`. `MEASURED-META`
+32. Burnette, J. L., et al. (2023). *Psychological Bulletin* 149(3–4), 174–205. PMID 36227318. **Overlapping study pool with (31).** `MEASURED-META`
+33. † Foliano, F., Rolfe, H., Buzzeo, J., Runge, J., & Wilkinson, D. (2019). *Changing Mindsets: effectiveness trial*. EEF / NIESR. UCL Discovery 10118795. `MEASURED-RCT` (null)
+34. Ganimian, A. J. (2020). *EEPA* 42(3). `10.3102/0162373720938041`. `MEASURED-RCT` (null)
+35. Guay, F., Marsh, H. W., & Boivin, M. (2003). *JEP* 95(1). ERIC. `OBSERVED`
+36. Seaton, M., Parker, P., Marsh, H. W., Craven, R. G., & Yeung, A. S. (2014). *Educational Psychology* 34(1). ERIC. `OBSERVED`
+37. Marsh, H. W., & Hau, K.-T. (2003). *American Psychologist* 58(5), 364–376. PMID 12971085. `OBSERVED`
+38. Fang, J., Huang, X., Zhang, M., Huang, F., Li, Z., & Yuan, Q. (2018). The BFLPE on academic self-concept: a meta-analysis. *Frontiers in Psychology* 9, 1569. `10.3389/fpsyg.2018.01569`. `MEASURED-META`
+39. Marsh, H. W., Chessor, D., Craven, R., & Roche, L. (1995). *AERJ* 32(2). ERIC. `OBSERVED`
+40. Parker, P., Dicke, T., Guo, J., Basarkod, G., & Marsh, H. (2021). *Educational Researcher* 50(6). ERIC. `OBSERVED`
+41. Preckel, F., & Brüll, M. (2010). *Learning and Individual Differences* 20(5). ERIC. `OBSERVED`
+42. Bear, G. G., Minke, K. M., & Manning, M. A. (2002). *School Psychology Review* 31(3). ERIC. `MEASURED-META`
+43. Elbaum, B. (2002). *LD: Research & Practice* 17(4). ERIC. `MEASURED-META`
+44. Elbaum, B., & Vaughn, S. (2001). *Elementary School Journal* 101(3). ERIC. `MEASURED-META`
+45. Elbaum, B., & Vaughn, S. (2003). For which students with learning disabilities are self-concept interventions effective? *Journal of Learning Disabilities* 36(2). ERIC. `MEASURED-META`
+46. Nelson, J. M. (2012). *LD: A Multidisciplinary Journal* 18(1). ERIC. `MEASURED-META`
+47. Krämer, S., Möller, J., & Zimmermann, F. (2021). Inclusive education of students with general learning difficulties. *RER* 91(3). ERIC. `MEASURED-META`
+48. Namkung, J. M., Peng, P., & Goodrich, M. J. (2025). *Learning Disability Quarterly*. ERIC. `OBSERVED`
+49. Johnson, R. M., Schaefer, M., Norris, C. U., Wagner, R. K., & Hart, S. A. (2026). Reading anxiety and reading achievement. *Psychological Bulletin*. `10.1037/bul0000517`, PMC13225606. Pre-registered. `MEASURED-META`
+50. Johnson, D. S. (1981). *JEP* 73(2). ERIC. `OBSERVED`
+51. Valås, H. (2001). *Scandinavian Journal of Educational Research* 45(1). ERIC. `OBSERVED`
+52. Haynes Stewart, T. L., et al. (2011). *Social Psychology of Education* 14(1). ERIC. `MEASURED-RCT`
+53. Hall, N. C., Jackson Gradt, S. E., Goetz, T., & Musu-Gillette, L. E. (2011). *Journal of Experimental Education* 79(3). ERIC. `MEASURED-RCT`
+54. Kohn, J., Rauscher, L., Kucian, K., Käser, T., Wyschkon, A., Esser, G., & von Aster, M. (2020). *Frontiers in Psychology* 11, 1115. PMC7373797. `MEASURED-RCT`
+55. Myers, S. J., Davis, S. D., & Chan, J. C. K. (2021). *Cognitive Research: Principles and Implications* 6, 44. PMC8192598. `MEASURED-RCT` (null)
+56. Thormodsæter, R. S., Ballen, C. J., Fagbodun, S., et al. (2026). *CBE—Life Sciences Education*. `10.1187/cbe.25-04-0055`, PMC12936497. `MEASURED-RCT` (null)
+57. Ramirez, G., & Beilock, S. L. (2011). *Science* 331(6014), 211–213. `10.1126/science.1199427`. The intervention family (55) and (56) failed to reproduce. `MEASURED-RCT`
+58. Lucas, G. M., Gratch, J., King, A., & Morency, L.-P. (2014). It's only a computer. *Computers in Human Behavior* 37, 94–100. `10.1016/j.chb.2014.04.043`. `MEASURED-RCT`
+59. Qu, Z., & Chen, L. (2026). *Frontiers in Psychology*. PMC13071047. Quasi-experimental, N = 59. `OBSERVED`
+60. Alsaad, A., et al. (2026). *Healthcare* 14(9), 1218. PMC13163985. `MEASURED-RCT`
+61. Qi, L., & Zhao, L. (2026). *PLoS One*. `10.1371/journal.pone.0348441`, PMC13127939. `OBSERVED`
 
-**Carried from the corpus, not re-derived:** `H1` §4.7 (the anxiety design consequence, with
-the citation correction filed in §2.3); `N2` (Aleven & Koedinger help-seeking logs, the
-coherence and split-attention machinery); `F6` (self-determination and gamification, whose
-boundary against this report is drawn in §4.2); `F11` (retrieval frequency without stakes);
-`survey/05` §8 (the machine-audience hypothesis); `survey/01` (Deslauriers, Bastani).
+**Carried from the corpus, not re-derived:** `H1` §4.7 (with the citation correction filed in
+§2.3); `N2` (help-seeking logs; coherence and split-attention machinery); `F6` (the boundary
+drawn in §4.2); `F11` (retrieval frequency without stakes); `survey/05` §8 (the machine-audience
+hypothesis); `survey/01` (Deslauriers, Bastani).

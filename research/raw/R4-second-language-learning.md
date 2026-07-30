@@ -29,20 +29,19 @@ status: raw-research
 >    gap is **d ≈ 1.57** at post-test and **d ≈ 0.65** two weeks later, because the
 >    control group kept improving after the treatment group plateaued. Nobody reports
 >    the second number.
-> 4. **Vocabulary has the cleanest transfer test in education, and it is discouraging
->    for anything deck-shaped.** Vocabulary instruction moves comprehension of passages
->    containing the taught words at **d = 0.50** and standardised reading comprehension
->    at **d = 0.10** (Elleman et al. 2009, k = 37). Meanwhile the target is
->    **8,000–9,000 word families** for unassisted reading (Nation 2006), and the
->    98% coverage figure everyone quotes **failed a preregistered replication** in 2023.
+> 4. **Vocabulary carries a clean transfer test, and it is discouraging for anything
+>    deck-shaped.** Vocabulary instruction moves comprehension of passages containing the
+>    taught words at **d = 0.50** and standardised reading comprehension at **d = 0.10**
+>    (Elleman et al. 2009, k = 37). The target is **8,000–9,000 word families** for
+>    unassisted reading (Nation 2006), and the 98% coverage figure everyone quotes
+>    **failed a preregistered replication** in 2023.
 > 5. **A frontier audio model cannot yet hear a mispronunciation.** On L2-ARCTIC,
 >    GPT-4o-Audio detects L2 mispronunciations at **F1 = 46.3** (precision 52.7, recall
->    41.3). Cascaded Whisper + LLM does worse, and *worse the better the ASR gets*,
->    because a robust recogniser's job is to recover the word the learner meant. This is
->    the measured version of a thing the pronunciation trial assumed.
-> 6. **Language is where a frontier model's native capability most nearly is the
->    product, and that is an argument against building the machinery, not for it** —
->    for high-resource languages. For low-resource ones the same models score at chance
+>    41.3), and cascaded Whisper + LLM does worse *the better the ASR gets*, because a
+>    robust recogniser's job is to recover the word the learner meant.
+> 6. **Language is the subject where a frontier model's native capability most nearly is
+>    the product**, which argues against building the machinery rather than for it — in
+>    high-resource languages. In low-resource ones the same models score at chance
 >    (F4 §3.5) and the pedagogical system is the least of the problem.
 
 ---
