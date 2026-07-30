@@ -156,11 +156,10 @@ repeats down the table.
 
 Every effect size in this survey now has a question to answer before it is read:
 *which difference is this?* An unlabelled `d = 1.2` in a product claim is almost
-always the first column. That is why §24's benchmark for a credible AI tutoring
-result specifies an active control and a delayed post-test, and why the three
-trials above line up as they do: all three report large within-group gains, two
-report a control contrast, one of those two is a null, and the third reports
-none.
+always the first column, which is why §24's benchmark specifies an active control
+and a delayed post-test. It also explains how the three trials above line up: all
+three report large within-group gains, two report a control contrast, one of
+those two is a null, and the third reports none.
 
 ---
 
@@ -261,12 +260,12 @@ Large. The authors' explanation: *"stronger ASR models tend to correct
 pronunciation errors during transcription due to their robustness to accent
 variations, preventing them from accurately reflecting learners' speech
 errors."* A recogniser's whole objective is to recover the word the speaker
-intended, and every improvement against that objective destroys the signal a
-pronunciation tutor needs. Any diagnostic layered on a perception model inherits
-that model's objective, and where the two point in opposite directions the
-upgrade path runs backwards. This is the measured form of the ambiguity in §2.2:
-a learner talking to a speech-to-text pipeline is assessed on a transcript that
-already fixed the thing being assessed.
+intended, and every improvement against it destroys the signal a pronunciation
+tutor needs. Any diagnostic layered on a perception model inherits that model's
+objective, and where the two point in opposite directions the upgrade path runs
+backwards. This is the measured form of the ambiguity in §2.2: a learner talking
+to a speech-to-text pipeline is assessed on a transcript that already fixed the
+thing being assessed.
 
 The inversion is free to try. Run the learner's speech through a small,
 deliberately accent-brittle recogniser and treat its failures as an
@@ -299,8 +298,8 @@ corrective feedback teachers actually give and prompts 30%**. `MEASURED-META`.
 The most-supplied type is the least-supported one, and a language model's reflex
 when a learner produces a wrong sentence is to restate it correctly, which is a
 recast. Prompting the learner to self-repair withholds the form and recruits the
-generation effect. It is also a change to a system prompt, which makes it the
-cheapest pedagogical edit available in this domain.
+generation effect — a change to a system prompt, and the cheapest pedagogical
+edit available in this domain.
 
 ---
 
@@ -425,8 +424,8 @@ pedagogical architecture is not the binding constraint on anything.
 
 - **Report trained-item and untrained-item performance separately, always.** For
   any target set a model can generate a matched held-out probe controlled for
-  frequency band, phonological structure and part of speech, so this costs
-  nothing. `SPEC`. Nothing in this literature would have survived the convention
+  frequency band, phonological structure and part of speech, so this is free.
+  `SPEC`. Nothing in this literature would have survived the convention
   unchanged, which is the argument for adopting it.
 - **Name which difference an effect size is.** Within-group and between-group
   differed by 2.30 SD in the same trial. A product number with no comparison
@@ -444,14 +443,14 @@ pedagogical architecture is not the binding constraint on anything.
 - **Run the transfer trial.** Three arms, individually randomised; primary
   outcome four weeks after the last session, in an unscripted conversation with a
   human the participant has not met, scored for comprehensibility by two raters
-  blind to condition, with intelligibility as co-primary. Plan against Lee &
-  Lee's control-adjusted 0.39 and §2.1's null, so d = 0.35: 129 per arm, n ≈ 465
-  with attrition, or 310 for the two-arm version a builder actually faces.
+  blind to condition. Plan against Lee & Lee's control-adjusted 0.39 and §2.1's
+  null, so d = 0.35: 129 per arm, n ≈ 465 with attrition, or 310 for the two-arm
+  version a builder actually faces.
 
 The organising constraint of this project is a child who can hold a conversation
 about photosynthesis and cannot pass the worksheet about it. She is not a
 second-language learner, and the language literature still describes her
 situation better than any other here: every trial in it scores the taught item,
-which is the worksheet, and none of them scores the conversation. The field
-measured what was easy to instrument and reported it as proficiency. The
-instrument for the other thing is buildable now, and nobody has built it.
+which is the worksheet, and none scores the conversation. The field measured what
+was easy to instrument and reported it as proficiency. The instrument for the
+other thing is buildable now, and nobody has built it.

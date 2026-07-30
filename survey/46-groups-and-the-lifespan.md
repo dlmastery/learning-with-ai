@@ -16,10 +16,10 @@ elementary and secondary schools, each running at least four weeks, each compari
 achievement gains against a control class taught the same content conventionally. Of
 the 64 whose group reward was computed from the sum of members' individual learning,
 **50 (78%) found significantly positive effects on achievement and none found
-negative effects, median effect size +0.32.** Studies whose group goal rested on a
-single group product, or which gave no group reward at all, found few positive
-effects: **median +0.07.** `MEASURED-META`, and a vote-count review with median
-effect sizes, so no confidence interval exists or can.
+negative effects, median effect size +0.32.** Those resting on a single group
+product, or giving no group reward at all, found few positive effects: **median
++0.07.** `MEASURED-META`, a vote-count review with median effect sizes, so no
+confidence interval exists or can.
 
 Slavin states the mechanism in the same paper: if the reward comes from a single
 group product, *"there is little incentive for group members to explain concepts to
@@ -65,8 +65,8 @@ confidence.
 
 **Johnson, Johnson & Stanne (2000)**, *Cooperative Learning Methods: A
 Meta-Analysis*, is the usual source for per-method effect sizes. An ERIC title search
-returns zero records. It circulates as a University of Minnesota Cooperative Learning
-Center document; the authors run the Cooperative Learning Institute and publish
+returns zero records; it circulates as a University of Minnesota Cooperative Learning
+Center document, and the authors run the Cooperative Learning Institute and publish
 through Interaction Book Company. `OBSERVED — absence`. That is not an accusation. It
 is a statement that the per-method table the field quotes was never peer reviewed and
 could not be retrieved.
@@ -314,7 +314,7 @@ Adults have the most money, the least time, and the only unambiguous transfer
 criterion in this survey: a job, recorded by somebody else in state
 unemployment-insurance wage records. Every other population requires the evaluator to
 build the outcome measure first. This is the one segment where an outcome could
-genuinely be measured, and it is the segment that measures results 26 times.
+genuinely be measured. It is also the segment that measures results 26 times.
 
 ---
 

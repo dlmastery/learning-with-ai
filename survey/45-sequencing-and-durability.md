@@ -73,19 +73,18 @@ architecture and the part with no evidence behind it.
 Clements and Sarama's learning trajectories are a goal, a hypothesised developmental
 progression of levels of thinking, and tasks matched to each level. The claim is
 narrow and falsifiable: instruction works best when it targets the level one step
-above the child's current level. The decisive studies do not compare a trajectory
-against nothing. They compare it against *equal-dose instruction aimed straight at
-the target*, skipping the intervening levels.
+above the child's current level. The decisive studies compare that against *equal-dose
+instruction aimed straight at the target*, skipping the intervening levels.
 
 Clements, Sarama, Baroody, Kutaka & Chernyavskiy (2021), *JEP* 113(7):1323–1337, is
 the one with power. **291 kindergartners** from four schools, randomly assigned to
 one-on-one instruction one level above their present level, or to one-on-one
-instruction on story problems three levels above their initial level. Baseline
-equivalence was established (d = .05 counting, .07 arithmetic). Dosage was equalised
-and non-significant between arms: 196 minutes over 13.4 sessions against 212 minutes
-over 14.3. The one-level-up condition scored higher at posttest, **d = 1.20** for the
-main effect of condition in the baseline model, **and the advantage was largest for
-children with low entry knowledge of arithmetic.** `MEASURED-RCT`
+instruction on story problems three levels above it. Baseline equivalence was
+established (d = .05 counting, .07 arithmetic), and dosage was equalised and
+non-significant between arms: 196 minutes over 13.4 sessions against 212 minutes over
+14.3. The one-level-up condition scored higher at posttest, **d = 1.20** for the main
+effect of condition in the baseline model, **and the advantage was largest for children
+with low entry knowledge of arithmetic.** `MEASURED-RCT`
 
 The boundary conditions deserve the same prominence as the number. All three
 skip-level studies come from one laboratory, sharing instruments, trajectory
@@ -261,10 +260,10 @@ question becomes whether acceleration is worth anything by itself. It also means
 "did the learner retain it," measured against a control group, answers a different
 question from "does the learner still have it." §09 documents that almost nobody in
 AI tutoring measures retention at all; this is why measuring it against a control
-would still not settle the promise. The subgroup pattern compounds it: higher-SES
-students in the no-follow-through arm reached 0.6–0.7 SD in fourth and fifth grade,
-while lower-SES students' effects were significant only in pre-K and kindergarten.
-Durability was greatest where the sustaining environment was strongest. `OBSERVED`
+would still not settle the promise. The subgroup pattern compounds it: durability was
+greatest where the sustaining environment was strongest, with higher-SES students in
+the no-follow-through arm reaching 0.6–0.7 SD in fourth and fifth grade while
+lower-SES effects held only through kindergarten. `OBSERVED`
 
 Absolute retention is the other question, and Bahrick's permastore programme is where
 it lives. His summary of the fifty-year Spanish study, restated in Bahrick & Phelps
@@ -295,8 +294,8 @@ The bridge citation the corpus reaches for is Schmidt & Bjork (1992), *Psycholog
 Science* 3(4):207–218. Robert Bjork co-authored it and originated the
 desirable-difficulties framework on the verbal side, so a paper arguing that two
 literatures agree cannot be counted as those two literatures agreeing. This project
-forbids claiming independence between two of its own workstreams; the same rule
-applies to a citation we imported. `INFERENCE`
+forbids claiming independence between two of its own workstreams; the rule applies to
+a citation we imported. `INFERENCE`
 
 The genuinely independent arrival is Shea & Morgan (1979), *JEP:HLM* 5(2):179–187: a
 barrier-knockdown task in a motor-behaviour laboratory descending from Battig (1966),
@@ -382,21 +381,20 @@ The graph does not go away. It changes job.
 domain's own logic — you cannot compose shapes you cannot recognise. *Empirical* edges
 are ones a skip-level trial has tested, which today means early number and early
 shape. *Conventional* edges are everything else, which is most of them. A system that
-treats the three alike will be wrong in a specific and predictable way. `SPEC`
+treats the three alike will be wrong in a predictable way. `SPEC`
 
-**The graph is used for diagnosis and never for gating.** Table 2 is the design rule.
-A dropback triggered by a diagnosed error, aimed at a named missing component, is the
-supported use. "The learner may not proceed to *c* until the closure of *c* is
-verified" is the unsupported one, and §25 should drop it until it is tested. For the
-learner in §04 this is the difference between a tutor that teaches photosynthesis and
-one that sends her back to fractions first.
+**The graph is used for diagnosis and never for gating.** A dropback triggered by a
+diagnosed error, aimed at a named missing component, is the supported use. "The
+learner may not proceed to *c* until the closure of *c* is verified" is the
+unsupported one, and §25 should drop it until it is tested. For the learner in §04
+this is the difference between a tutor that teaches photosynthesis and one that sends
+her back to fractions first.
 
-**A durability instrument, because nobody has one.** Kang et al. show that a
-control-referenced retention measure answers a different question from the one a
-promise makes. A tutor can afford what no trial could: unannounced delayed transfer
-probes at 30, 90 and 365 days, on freshly generated items the learner has stopped
-studying, reporting *absolute* retention alongside any comparative claim. Bahrick's
-30-day optimum and the 56-day crossover give the schedule a starting shape. `SPEC`
+**A durability instrument, because nobody has one.** A tutor can afford what no trial
+could: unannounced delayed transfer probes at 30, 90 and 365 days, on freshly
+generated items the learner has stopped studying, reporting *absolute* retention
+alongside any comparative claim. Bahrick's 30-day optimum and the 56-day crossover
+give the schedule a starting shape. `SPEC`
 
 **And the experiment: randomise the graph, not the policy.** Every existing study
 randomises which traversal policy walks a fixed graph. The untested question is
