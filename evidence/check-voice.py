@@ -30,6 +30,10 @@ FILES = sorted(ROOT.glob("survey/*.md"))
 # separately and have their own tics — see evidence/slop-front-matter.md.
 FRONT = ["README.md", "docs/index.html", "docs/deck.html", "docs/thesis.html"]
 
+# The demo pages carry ~34,000 words of prose and were never counted. They ran the
+# same habits as the survey: 16.3 em-dashes and 3.7 `X, not Y` per 1,000 words.
+DEMOS = "docs/demos/*.html"
+
 # ── per-file rates, per 1,000 words ───────────────────────────────────────────
 RATE = {
     "em-dash":            (re.compile(r"—"),                                    6.0),
@@ -170,26 +174,31 @@ def main():
         if CLOSING_ANTITHESIS.search(tail):
             closers.append(p.name)
 
+    surfaces = [ROOT / r for r in FRONT if (ROOT / r).exists()]
+    surfaces += [f for f in sorted(ROOT.glob(DEMOS)) if f.name != "index.html"]
+
     front_texts = []
-    for rel in FRONT:
-        f = ROOT / rel
-        if not f.exists():
-            continue
+    for f in surfaces:
+        rel = str(f.relative_to(ROOT))
         t = prose(f)
         w = words(re.sub(r"<[^>]+>", " ", t))
-        front_texts.append((rel, t))
+        # Only the four front-matter surfaces are scanned for cross-page pasting;
+        # demos legitimately restate the survey line they demonstrate.
+        if rel in FRONT:
+            front_texts.append((rel, t))
         for name, (pat, budget) in FRONT_RATE.items():
             n = len(pat.findall(t))
             if n * 1000 / w > budget and n >= FLOOR:
                 issues.append((rel, name, n, round(n * 1000 / w, 1), budget))
 
     duplicated = dupes(front_texts)
+    n_front = len(surfaces)
 
     shapes = [(h, f) for h, f in headers.items() if len(f) > SHAPE_CAP]
     over_closers = len(closers) > SHAPE_CAP
 
     if not issues and not shapes and not over_closers and not duplicated:
-        print(f"voice: OK — {len(FILES)} sections + {len(front_texts)} front-matter "
+        print(f"voice: OK — {len(FILES)} sections + {n_front} HTML "
               f"surfaces, every tic within budget, no header shared by more than "
               f"{SHAPE_CAP} files, no duplicated passages")
         return 0

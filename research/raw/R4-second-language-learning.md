@@ -46,24 +46,12 @@ status: raw-research
 
 ---
 
-## Source reachability log (2026-07-30)
-
-WebSearch budget was exhausted at 200 calls partway through §4. Retrieval thereafter ran
-on the **ERIC API** (`api.ies.ed.gov/eric`), **Crossref**, **OpenAlex**, **arXiv**, and
-direct `curl` + `pdftotext` of open-access PDFs.
-
-**Full texts read**: Xodabande et al. (Springer OA; the HTML landing page 303s to
-`idp.springer.com`, the PDF path does not), Soori et al. (`files.eric.ed.gov`), Lee & Lee
-2024 (*LL&T*, including both forest plots), Kremmel et al. 2023 (green OA, Innsbruck),
-Liu et al. arXiv:2601.14744, Duolingo's Q1 2026 10-Q via EDGAR.
-
-**Blocked**: Sage **403** for Zhang et al. (N = 436) and for Wang et al.'s *RER*
-meta-analysis; OpenAlex confirms `oa_status: closed` with no repository copy of the
-former, so its methods and results are unread and everything in §2.3 comes from the
-Crossref-deposited abstract, and the confidence interval on g = 0.484 was not retrieved.
-Wiley **403** for Li et al.'s *JCAL* meta-analysis (full structured abstract obtained from
-Crossref, which carries the point estimate and CI) and for Rachels & Rockinson-Szapkiw.
-Semantic Scholar API returned **HTTP 429** throughout and was not used.
+**Retrieval note.** WebSearch budget was exhausted at 200 calls partway through §4.
+Retrieval thereafter ran on the **ERIC API** (`api.ies.ed.gov/eric`), **Crossref**,
+**OpenAlex**, **arXiv**, **SEC EDGAR**, and direct `curl` + `pdftotext` of open-access
+PDFs. Full texts read: Xodabande et al., Soori et al., Lee & Lee 2024 (including both
+forest plots), Kremmel et al. 2023, Liu et al. arXiv:2601.14744, Duolingo's Q1 2026 10-Q.
+Blocks are itemised in §9.3.
 
 ---
 
@@ -722,29 +710,26 @@ the studies, describing their designs, and saying which claim rests on which.
 **Vesselinov & Grego (2012), "Duolingo Effectiveness Study."** `VENDOR`
 (Duolingo-funded, external authors; self-published PDF, no DOI, never peer-reviewed).
 
-The design has no control group. It is a pre/post within-subject study, and the
-"one university semester" comparison is against the **WebCAPE placement cut-off of 270
-points**, a scoring threshold, not against students. The 34 hours is arithmetic:
-270 ÷ 8.1 points-per-hour, extrapolated linearly from zero. The recruitment funnel, from
-the report's own Figure A1: 727 viewed the invitation → 556 completed the entry survey →
-386 eligible → 211 took a baseline WebCAPE → 196 randomly sampled → **88 analysed**.
-Recruitment was a banner ad shown to logged-in Duolingo Spanish learners. Mean actual
-study time was 22 hours, the range was 2 to 133, and **16% of participants (n = 14)
-scored the same or lower at post-test**, minimum change −57 points. WebCAPE tests
-vocabulary, reading and grammar. The authors themselves recommend adding *"some test of
-spoken proficiency."*
+The design has no control group. It is a pre/post within-subject study, and the "one
+university semester" comparison is against the **WebCAPE placement cut-off of 270 points**,
+a scoring threshold, not against students. The 34 hours is arithmetic: 270 ÷ 8.1
+points-per-hour, extrapolated linearly from zero. The recruitment funnel, from the report's
+Figure A1: 727 viewed a banner ad shown to logged-in Duolingo Spanish learners → 556
+completed the entry survey → 386 eligible → 211 took a baseline WebCAPE → 196 sampled →
+**88 analysed**. Mean actual study time was 22 hours, the range 2 to 133, and **16%
+(n = 14) scored the same or lower at post-test**. WebCAPE tests vocabulary, reading and
+grammar; the authors themselves recommend adding *"some test of spoken proficiency."*
 
 Krashen (2014), *International Journal of Foreign Language Teaching*, made the decisive
 statistical point: the **median** gain rate was 3.9 points per hour against a mean of 8.1,
 because the distribution is heavily right-skewed. The same arithmetic on the median gives
-**about 69 hours**. He also notes participants averaged 35 years old and 69% were college
-graduates.
+**about 69 hours**.
 
-The same two authors produced the same design for a series of vendors: Rosetta Stone
-(2009) 55 hours; Duolingo (2012) 34; an **anonymised "Language App"** (2015) 25, published
-under a generic name because *"the report was not officially made public"*; Babbel (2016)
-21; italki (2018) 19. Each successive sponsor gets a better number, and the 2015 report is
-a file drawer with the door open.
+The same two authors ran the same design for a series of vendors: Rosetta Stone (2009) 55
+hours; Duolingo (2012) 34; an **anonymised "Language App"** (2015) 25, published under a
+generic name because *"the report was not officially made public"*; Babbel (2016) 21;
+italki (2018) 19. Each successive sponsor gets a better number, and the 2015 report is a
+file drawer with the door open.
 
 ### 7.2 The company's own later measurement contradicts its famous one
 
@@ -761,22 +746,20 @@ administered externally by Language Testing International; the paper states plai
 Novice High, with Spanish listening scoring **significantly lower** than the university
 comparison cohort.
 
-The number that matters is buried in the methods. Median time to finish the beginning
-content was **112 hours** (125 Spanish, 99 French). The 2012 study priced roughly the same
-milestone at 34. The later follow-up (DRR-21-03, n = 340, through Unit 7) reports a median
-of **203 hours**. Same company, same product, its own instrumentation, and the hours
-figure has grown six-fold while the marketing number stayed put.
+The number that matters is in the methods. Median time to finish the beginning content was
+**112 hours** (125 Spanish, 99 French); the 2012 study priced roughly the same milestone at
+34, and the follow-up through Unit 7 (DRR-21-03, n = 340) reports a median of **203
+hours**. Same company, same product, its own instrumentation, and the hours figure has
+grown six-fold while the marketing number stayed put.
 
-`OBSERVED` on a related structural point: **no Duolingo Research Report before DRR-25-06
-(June 2025) used a control group.** Every reading, listening and speaking report is
-single-cohort and post-test-only, benchmarked against published university averages or
-against Duolingo's own CEFR expectations. Selection is heavy: DRR-24-04's funnel is 3,153
-invitations → 862 responses → 505 eligible → **165 tested**, 5.2%.
-
-To be fair where fairness is owed: the instruments are mostly external and reputable
-(ACTFL via LTI, Pearson Versant, Avant STAMP 4S). And DRR-25-06 appears to be a genuine
-randomised trial, n = 567 with Versant pre/post. It is not listed on the company's
-`/efficacy/studies` page and its live link returns 403.
+`OBSERVED`: **no Duolingo Research Report before DRR-25-06 (June 2025) used a control
+group.** Every reading, listening and speaking report is single-cohort and post-test-only,
+benchmarked against published university averages or against Duolingo's own CEFR
+expectations, with heavy selection (DRR-24-04: 3,153 invitations → **165 tested**, 5.2%).
+Where fairness is owed: the instruments are mostly external and reputable (ACTFL via LTI,
+Pearson Versant, Avant STAMP 4S), and DRR-25-06 appears to be a genuine randomised trial,
+n = 567 with Versant pre/post — which is not listed on the company's `/efficacy/studies`
+page and whose live link returns 403.
 
 ### 7.3 The independent record, which is thin and mostly null
 

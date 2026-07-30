@@ -3,7 +3,7 @@ title: "Anxiety, threat and self-concept — the affective layer that is not mot
 wave: R
 section: R3
 date_researched: 2026-07-30
-sources_count: 46
+sources_count: 61
 status: raw-research
 ---
 
@@ -841,11 +841,17 @@ performance outcome is the §9 failure mode wearing a different label.
 
 ### 10.3 The trap, stated plainly
 
-The most reproducible regularity in this report is that the self-report outcome moves roughly
-twice as far as the achievement outcome in the same trials: Huntley's g = −0.76 against
-g = 0.37; Sammallahti's g = −0.467 against g = 0.502 with a quality gradient running the wrong
-way; Yeager's SMD 0.33 against SMD 0.11 and SMD 0.01; Macnamara's manipulation-check subset at
-d̄ = 0.04. An affective feature that makes an eleven-year-old feel better about maths and
+The regularity that recurs across every literature surveyed here is that the self-report
+outcome outruns the achievement outcome inside the same trials. Huntley: anxiety g = −0.76
+against performance g = 0.37. Yeager: belief SMD 0.33 against grades SMD 0.11 and SMD 0.01.
+Macnamara: manipulation check passed, achievement d̄ = 0.04. One apparent counterexample is
+worth stating rather than hiding: Sammallahti reports anxiety g = −0.467 against performance
+g = 0.502, the ratio inverted. That meta-analysis also reports significant Egger asymmetry on
+both outcomes and finds that higher-quality studies produced non-significant results, so the
+larger performance estimate is the one most exposed to the bias, and it should not be taken as
+evidence against the pattern.
+
+An affective feature that makes an eleven-year-old feel better about maths and
 teaches no maths is a product that will test well, review well, retain well, and fail the child
 it was built for. The corpus already knows this shape from Deslauriers and from Bastani's
 guardrailed arm. This literature is where it is easiest to commit.
