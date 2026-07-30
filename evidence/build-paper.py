@@ -168,6 +168,21 @@ def build():
                 return f"§{SRC2NUM[src]}"
             unresolved.add(src)
             return m.group(0)
+        # ORDER MATTERS, and getting it wrong reintroduces C-38.
+        #
+        # Single-digit refs are always INTRA-section, because every source file is
+        # numbered with two digits. Once assembled, a bare "§3" would read as paper
+        # section 3, so it has to be qualified to "§<papernum>.3".
+        #
+        # That qualification must happen FIRST, on the raw text. Running it after
+        # the two-digit pass means a cross-section ref like "§09" has already
+        # become "§3" — a single digit — and gets qualified as though it were
+        # intra-section, producing "§1.3". Every cross-reference resolving to a
+        # single-digit paper section was silently mangled this way. Two-digit refs
+        # are safe here: the (?!\d) lookahead will not match "§09".
+        if papernum is not None:
+            text = re.sub(r"§\s?(\d)(?!\d)((?:\.\d+)*)",
+                          lambda m: f"§{papernum}.{m.group(1)}{m.group(2)}", text)
         text = re.sub(r"§\s?(\d{2})\b", sub, text)
         # prose form: "Section 25 established…" uses the same source numbering
         def sub2(m):
@@ -177,12 +192,6 @@ def build():
             unresolved.add(src)
             return m.group(0)
         text = re.sub(r"\b(Section|section)\s+(\d{2})\b", sub2, text)
-        # Single-digit refs are always INTRA-section (source files are 00-32), and
-        # once assembled a bare "§3" reads as paper section 3. Qualify them.
-        # C-38: 23 of these landed on real, wrong sections.
-        if papernum is not None:
-            text = re.sub(r"§\s?(\d)(?!\d)((?:\.\d+)*)",
-                          lambda m: f"§{papernum}.{m.group(1)}{m.group(2)}", text)
         return text
 
     unresolved = set()

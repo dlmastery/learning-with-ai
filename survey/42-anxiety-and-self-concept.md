@@ -295,8 +295,8 @@ performance estimate is the one most exposed to the bias. The same quality gradi
 runs through Macnamara's coding and Shewach's: better-designed studies finding less,
 three times over.
 
-This is §01's felt/real dissociation arriving from a third direction, and this
-literature is where it is easiest to commit. A private, patient, unlimited tutor that
+This is the felt/real dissociation of section 01 arriving from a third direction, and
+this literature is where it is easiest to commit. A private, patient, unlimited tutor that
 makes an eleven-year-old feel better about maths and teaches her no maths is a product
 that will test well, review well, retain well, and fail the child it was built for.
 
