@@ -5,7 +5,7 @@
 > understates the survey by ~42,000 words. It is kept unedited as a **record of what was
 > true on 27 July**, not as a current status page. For current status see the
 > [dashboard](https://dlmastery.github.io/learning-with-ai/); for an adversarial
-> assessment see [`evidence/review-2026-07-28.md`](evidence/review-2026-07-28.md).
+> assessment see [`evidence/review-2026-07-28.md`](../evidence/review-2026-07-28.md).
 >
 > Resolved since: F11 (zemomemo), C3 (slides + presentations), G1, F9, F7, A3, F4 all
 > delivered; survey at 22 sections / ~56,500 words; dashboard rebuilt on a declarative

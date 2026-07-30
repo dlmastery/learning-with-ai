@@ -145,7 +145,7 @@ silently edited inside a table headed *"published rather than silently edited."*
 
 The reviews are in [`evidence/`](evidence/). The first four returned **not publishable**.
 
-Five machine checks guard the repository, and all five are runnable:
+Six machine checks guard the repository, and all six are runnable:
 
 ```bash
 python3 evidence/check-corrections.py --self-test --strict   # no superseded value survives anywhere
@@ -153,6 +153,7 @@ python3 evidence/check-repetition.py                         # every restated fi
 python3 evidence/check-stance.py --strict                    # the discipline is the warrant, not the message
 python3 evidence/check-voice.py --strict                     # no sentence shape used until it stops meaning anything
 node evidence/test-demos.mjs                                 # every demo renders and runs, 390/1400 × light/dark
+node evidence/check-links.mjs                                # every internal link and anchor resolves
 ```
 
 The first version of the corrections checker **did not work.** A reviewer copied the repository,
