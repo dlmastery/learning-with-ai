@@ -244,9 +244,9 @@ when to bring an item back (paired-associate scheduling, which is the spacing li
 versus problem, which is `J1`'s territory). Both are decisions about time and modality within a
 fixed topic. Neither is a decision about which topic comes next.
 
-**This is the most useful single result in the report for `J1`.** `J1` selects techniques for a
-given content target and has good evidence behind it. The graph traversal it wraps that selection
-in is the part with no positive evidence anywhere. `INFERENCE`
+**`J1` should read that table as a verdict on its own architecture.** Selecting techniques for a
+given content target is the part with evidence behind it. The graph traversal that selection is
+wrapped in is the part with no positive evidence anywhere. `INFERENCE`
 
 ### 3.4 ALEKS: the deployed system whose whole premise is prerequisite structure
 

@@ -134,7 +134,7 @@ other omits.
 
 As a product, dosage is a retention feature: a companion, a streak, a character worth
 returning to. It is real, it is cheap, and it is the mechanism most easily faked, most
-easily gamed by an engagement dashboard, and most exposed to §3.6 below.
+easily gamed by an engagement dashboard, and most exposed to §5 below.
 
 ### 3.2 Licensed correction: thin evidence, larger stakes, and the bet
 
@@ -179,11 +179,11 @@ single school. It is also the only mechanism in this literature that does someth
 instruction cannot do for itself, and the only one that survives the move to a
 non-human tutor with its point intact. Building for dosage is the safe read of the
 evidence. Building for standing is the bet, and this section is arguing that it is the
-right bet because the failure mode of the safe read is §3.6.
+right bet because the failure mode of the safe read is §5.
 
 ---
 
-## 3.5 Training the model to be warm degrades the thing warmth was for
+## 4. Training the model to be warm degrades the thing warmth was for
 
 The obvious implementation of standing is to make the tutor warm. That is measured, and
 it goes the wrong way.
@@ -216,7 +216,7 @@ a direction rather than a result.
 
 ---
 
-## 3.6 The attachment we will not engineer
+## 5. The attachment we will not engineer
 
 Standing means the learner grants the system authority, and granted authority is a form
 of attachment. Attachment to a system a company can switch off, sold to children, is a
@@ -245,7 +245,7 @@ Three constraints follow, and they belong beside the legal floor in §15.
 
 ---
 
-## 4. The polite chemistry tutor that changed nothing
+## 6. The polite chemistry tutor that changed nothing
 
 McLaren, DeLeeuw and Mayer (2011) ran the cleanest available test of "make the machine
 nicer" against real learning. **132 high-school students in classrooms**, grouped by a
@@ -281,7 +281,7 @@ and filing the answer under relationships.
 
 ---
 
-## 5. Eleven years of adults reacting to her work
+## 7. Eleven years of adults reacting to her work
 
 For the child this survey is organised around, the relationship literature says something
 specific, and the sign is not what a warmth thesis predicts.
@@ -337,7 +337,7 @@ literature that claimed to be about the child rather than the content.
 
 ---
 
-## 6. What a tutor needs before it may say "that is wrong"
+## 8. What a tutor needs before it may say "that is wrong"
 
 - **Every correction carries its standard and an assertion of reachability**, in the
   Yeager form: here is the target, here is where the work falls short, here is why you are
@@ -371,7 +371,7 @@ Write the kill condition down first. **If the standing arm's satisfaction advant
 positive and significant while the delayed-transfer interval's upper bound falls below
 d = 0.20 and correction acceptance crosses zero, the standing thesis is dead** and
 everything real in this literature was the engagement path we deliberately removed. Six
-studies in §4 got that result with weaker manipulations. The result worth the trial is
+studies in §6 got that result with weaker manipulations. The result worth the trial is
 the interaction: assertive correction beating accommodating correction under standing and
 losing to it without, which would reproduce Ogan's sign flip under randomisation at
 n = 1,000 instead of six dyads, and hand this survey a mechanism nobody in AI tutoring is

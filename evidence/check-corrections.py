@@ -74,6 +74,12 @@ class Rule:
         self.cure = re.compile(cure, re.I)
 
 RULES = [
+    Rule("C-58",
+         r"(?:four|Four)[\s\S]{0,40}?(?:seven|those seven)?[\s\S]{0,20}?second[- ]language",
+         r"three of (?:them|those seven)|EJ1415077|chemistry course",
+         "Three of the seven ChatGPT RCTs are second-language learning, not four; "
+         "EJ1415077 is a foundational chemistry course",
+         "seven randomised trials, four of them second-language learning"),
     Rule("C-6/C-12",
          r"Nickow[\s\S]{0,120}?\b0\.37\b|\b0\.37\b[\s\S]{0,120}?Nickow|v:\s*0\.37\b",
          r"\b0\.288\b",
