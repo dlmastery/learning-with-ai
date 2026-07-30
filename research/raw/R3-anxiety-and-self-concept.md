@@ -91,45 +91,31 @@ against).
 | # | Quantity | Value | Source | Label |
 |---|---|---|---|---|
 | 1 | Maths anxiety × maths achievement, the founding estimate | r = **−.27**, 26 studies, elementary and secondary | Ma 1999, *JRME* 30(5) | `MEASURED-META` |
-| 2 | The modern replacement | r = **−.28** [−.29, −.26], 223 studies / 747 effect sizes, 1992–2018, I² = 90.42 | Barroso et al. 2021, *Psych. Bull.* | `MEASURED-META` |
-| 3 | The largest by participants | r = **−.30** [−.32, −.28], 177 studies / 250 samples / 906,311 participants | Caviola et al. 2022, *EPR* 34 | `MEASURED-META` |
-| 4 | …the same paper's test-anxiety estimate | r = −.23 [−.26, −.19], notably weaker than maths anxiety | ibid. | `MEASURED-META` |
-| 5 | Barroso's grade-level gradient | grades 3–5 −.20 [−.25, −.14]; 6–8 −.30; **9–12 −.34** [−.36, −.31] | Barroso et al. 2021 | `MEASURED-META` |
-| 6 | Barroso's ability moderator | samples selected for **low** maths ability r = **−.09** [−.17, −.004], k = 18, vs −.28 elsewhere | ibid. | `MEASURED-META` |
-| 7 | Publication-status moderator, same paper | published k = 520 r = −.29; unpublished k = 227 r = −.23; Egger z = 2.59, p = .01 | ibid. | `MEASURED-META` |
-| 8 | …and the direction of the missing studies | trim-and-fill imputes 129 effect sizes **to the left**; adjusted r = −0.29 | ibid. | `MEASURED-META` |
-| 9 | Children with developmental dyscalculia who are highly maths-anxious | **twice** the rate of typically-performing children | Devine et al. 2018, *JEP*, n = 1,757 | `OBSERVED` |
-| 10 | Children with high maths anxiety who have typical or high maths performance | **77%** | ibid. | `OBSERVED` |
-| 11 | Maths anxiety × computation-based working-memory span | r = **−.40**; verbal-based spans show **no** anxiety-group difference | Ashcraft & Kirk 2001, via Ashcraft & Krause 2007 | `OBSERVED` |
-| 12 | Maths anxiety × working memory, pooled | r = −0.168 [−0.203, −0.133], 57 studies / 66 samples / 16,589 participants, I² = 75.6% | Finell et al. 2022 | `MEASURED-META` |
-| 13 | …the mediated path from anxiety through WM to performance | indirect effect −0.092 [−0.169, −0.015], **8 studies**, 1,824 participants | ibid. | `MEASURED-META` |
-| 14 | Test-anxiety interventions, university students | test anxiety g = **−0.76**; academic performance g = **0.37**; 44 RCTs, n = 2,209; publication bias found | Huntley et al. 2019, *J. Anxiety Disord.* | `MEASURED-META` |
-| 15 | Mindfulness for test anxiety | ES = −0.716 [−1.383, −0.049], 18 studies / 1,275 participants; Egger p = .025; **no achievement outcome anywhere in the meta** | Yılmazer et al. 2024 | `MEASURED-META` |
-| 16 | Maths-anxiety interventions | anxiety g = −0.467; performance g = 0.502; 50 studies / 75 effect sizes; Egger significant on both | Sammallahti et al. 2023, *J. Numerical Cognition* | `MEASURED-META` |
-| 17 | …and the study-quality gradient inside it | higher EPHPP quality ratings associated with **non-significant** outcomes | ibid. | `MEASURED-META` |
-| 18 | Stereotype threat in schoolgirls | g = −0.22 [−0.34, −0.10], k = 47, I² = 61.75%, credibility interval [−0.85, 0.41] | Flore & Wicherts 2015, *JSP* | `MEASURED-META` |
-| 19 | …after trim-and-fill (11 imputed) | g = **−0.07** [−0.21, 0.06], **p = .27** | ibid. | `MEASURED-META` |
-| 20 | …small (N < 60) vs large (N ≥ 60) samples | −0.34 [−0.52, −0.16] vs **−0.13, p = .10** | ibid. | `MEASURED-META` |
-| 21 | Stereotype threat, overall | d = −.31, k = 181, N = 10,436 | Shewach et al. 2019, *JAP* | `MEASURED-META` |
-| 22 | …restricted to operational-test-like conditions | d = **−.14**, k = 45, N = 3,532; trim-and-fill **−.09** | ibid. | `MEASURED-META` |
-| 23 | …in actual high-stakes settings | d = **−.01**, k = 4, N = 1,670, vs lab d = −.36, t(179) = −5.73, p < .01 | ibid. | `MEASURED-META` |
-| 24 | …with monetary incentives present | d = **.00**, k = 9, N = 526 | ibid. | `MEASURED-META` |
-| 25 | Large pre-registered replication, Dutch high schools | **no** overall effect and **no** moderated effect, N = 2,064 | Flore, Mulder & Wicherts 2018 | `MEASURED-RCT` (null) |
-| 26 | NSLM: effect on the *belief* the intervention targets | fixed-mindset beliefs B = −0.38, SE .04, n = 5,650, t = −10.14, p < .001, **SMD 0.33** | Yeager et al. 2019, *Nature* | `MEASURED-RCT` |
-| 27 | NSLM: effect on core GPA, **lower-achieving** students | B = **0.10** grade points [0.04, 0.16], SE .03, n = 6,320, k = 65, p = .001, **SMD 0.11** | ibid. | `MEASURED-RCT` |
-| 28 | NSLM: effect on core GPA, **higher-achieving** students | B = 0.01 [−0.03, 0.06], n = 6,170, **p = .634, SMD 0.01** | ibid. | `MEASURED-RCT` (null) |
-| 29 | Growth mindset, all studies | d̄ = 0.05 [0.02, 0.09], 63 studies, N = 97,672; PET-corrected d̄ = **0.01** [−0.03, 0.05], p = .667 | Macnamara & Burgoyne 2023, *Psych. Bull.* | `MEASURED-META` |
-| 30 | …restricted to trials whose manipulation check passed | d̄ = **0.04** [−0.01, 0.10], 13 studies, N = 18,355 | ibid. | `MEASURED-META` |
-| 31 | …restricted to the highest-quality designs | d̄ = 0.02 [−0.06, 0.10], 6 studies, N = 13,571 | ibid. | `MEASURED-META` |
-| 32 | The counterpart estimate, overlapping study pool | targeted subgroups at high fidelity, achievement d = 0.14 [0.06, 0.22] | Burnette et al. 2023, *Psych. Bull.* | `MEASURED-META` |
-| 33 | Big-fish-little-pond effect, pooled | β = **−0.28** [−0.32, −0.24], Z = −13.84, 33 studies / 56 effect sizes / N = 1,276,838, I² = 99.78% | Fang et al. 2018 | `MEASURED-META` |
-| 34 | …across 26 countries | mean β = −.20 (SD .08), negative in **all 26**, N = 103,558 | Marsh & Hau 2003, *Am. Psychol.* | `OBSERVED` |
-| 35 | Inclusive vs segregated placement, general learning difficulties | cognitive d = **0.35**; psychosocial d = **0.00**; 40 studies / 428 ES / N = 11,987 | Krämer et al. 2021, *RER* | `MEASURED-META` |
-| 36 | Self-concept interventions for students with LD | benefit is confined to students with **documented low self-concept**; for them effect sizes are large | Elbaum & Vaughn 2003, *JLD* | `MEASURED-META` |
-| 37 | Reading anxiety × reading achievement | r = **−.30**, 64 studies / 180 ES / 14,467 participants; **learning-disability status is not a moderator** | Johnson et al. 2026, *Psych. Bull.* | `MEASURED-META` |
-| 38 | An adaptive dyscalculia trainer's responders | benefit concentrated in children with **low** maths anxiety and no comorbid literacy disorder; 67 children, randomised | Kohn et al. 2020 | `MEASURED-RCT` |
-| 39 | EEF *Changing Mindsets*, 101 schools, 5,018 pupils | maths ES −0.01 [−0.04, 0.01]; reading −0.00; GPS −0.00; **and all four self-report subscales null too** | Foliano et al. 2019 | `MEASURED-RCT` (null) |
-| 40 | Growth mindset at scale, 202 Argentine schools | no effect on intimidation, climate, performance, achievement or post-secondary plans; small effects ruled out | Ganimian 2020, *EEPA* | `MEASURED-RCT` (null) |
+| 2 | The modern replacement | r = **−.28** [−.29, −.26], 223 studies / 747 effect sizes, I² = 90.42 | Barroso et al. 2021, *Psych. Bull.* | `MEASURED-META` |
+| 3 | The largest by participants | r = **−.30** [−.32, −.28], 177 studies / 906,311 participants; test anxiety on the same corpus r = −.23 [−.26, −.19] | Caviola et al. 2022, *EPR* 34 | `MEASURED-META` |
+| 4 | Barroso's grade gradient | grades 3–5 −.20 [−.25, −.14]; 6–8 −.30; 9–12 **−.34** [−.36, −.31] | Barroso et al. 2021 | `MEASURED-META` |
+| 5 | Barroso's ability moderator | samples selected for **low** maths ability r = **−.09** [−.17, −.004], k = 18, vs −.28 elsewhere | ibid. | `MEASURED-META` |
+| 6 | …and its publication bias | published k = 520 r = −.29 vs unpublished k = 227 r = −.23; Egger z = 2.59, p = .01; trim-and-fill imputes **to the left**, adjusted r = −0.29 | ibid. | `MEASURED-META` |
+| 7 | Children with high maths anxiety who have typical or high maths performance | **77%**; children with dyscalculia are twice as likely to be highly anxious | Devine et al. 2018, *JEP*, n = 1,757 | `OBSERVED` |
+| 8 | Maths anxiety × computation-based working-memory span | r = **−.40**; verbal-based spans show **no** anxiety-group difference | Ashcraft & Kirk 2001, via Ashcraft & Krause 2007 | `OBSERVED` |
+| 9 | Maths anxiety × working memory, pooled, and the mediated path | r = −0.168 [−0.203, −0.133], 57 studies / 16,589 participants; indirect effect −0.092 [−0.169, −0.015] from **8 studies** | Finell et al. 2022 | `MEASURED-META` |
+| 10 | Test-anxiety interventions, university students | anxiety g = **−0.76**; performance g = **0.37**; 44 RCTs, n = 2,209; publication bias found | Huntley et al. 2019 | `MEASURED-META` |
+| 11 | Mindfulness for test anxiety | ES = −0.716 [−1.383, −0.049], 18 studies / 1,275 participants; **no achievement outcome anywhere in the meta** | Yılmazer et al. 2024 | `MEASURED-META` |
+| 12 | Maths-anxiety interventions | anxiety g = −0.467; performance g = 0.502; 50 studies; motivation-type interventions g = −0.251 [−0.595, 0.094]; higher study quality associated with **non-significant** outcomes | Sammallahti et al. 2023 | `MEASURED-META` |
+| 13 | Stereotype threat in schoolgirls | g = −0.22 [−0.34, −0.10], k = 47, credibility interval [−0.85, 0.41] | Flore & Wicherts 2015 | `MEASURED-META` |
+| 14 | …after trim-and-fill, and by sample size | g = **−0.07** [−0.21, 0.06], **p = .27**; N < 60 g = −0.34 vs N ≥ 60 g = −0.13, **p = .10** | ibid. | `MEASURED-META` |
+| 15 | Stereotype threat, overall vs operational conditions | d = −.31 (k = 181, N = 10,436) falling to d = **−.14** (k = 45) and **−.09** after trim-and-fill | Shewach et al. 2019, *JAP* | `MEASURED-META` |
+| 16 | …in actual high-stakes settings, and under monetary incentive | d = **−.01** (k = 4, N = 1,670) and d = **.00** (k = 9, N = 526); lab d = −.36, t(179) = −5.73, p < .01 | ibid. | `MEASURED-META` |
+| 17 | Large pre-registered replication, Dutch high schools | **no** overall effect and **no** moderated effect, N = 2,064 | Flore, Mulder & Wicherts 2018 | `MEASURED-RCT` (null) |
+| 18 | NSLM: the belief vs the grade, one trial | fixed-mindset beliefs **SMD 0.33** (n = 5,650, p < .001); core GPA, lower achievers **SMD 0.11** (B = 0.10 [0.04, 0.16], p = .001); higher achievers **SMD 0.01** (p = .634) | Yeager et al. 2019, *Nature* | `MEASURED-RCT` |
+| 19 | Growth mindset, all studies vs manipulation-check subset vs best designs | d̄ = 0.05 [0.02, 0.09] → PET-corrected **0.01**; **0.04 [−0.01, 0.10]** (13 studies); 0.02 [−0.06, 0.10] (6 studies) | Macnamara & Burgoyne 2023 | `MEASURED-META` |
+| 20 | The counterpart estimate, overlapping study pool | targeted subgroups at high fidelity, achievement d = 0.14 [0.06, 0.22] | Burnette et al. 2023 | `MEASURED-META` |
+| 21 | Big-fish-little-pond effect | β = **−0.28** [−0.32, −0.24], 33 studies / N = 1,276,838; mean β = −.20 and negative in **all 26** countries tested | Fang et al. 2018; Marsh & Hau 2003 | `MEASURED-META` |
+| 22 | Inclusive vs segregated placement, general learning difficulties | cognitive d = **0.35**; psychosocial d = **0.00**; 40 studies / N = 11,987 | Krämer et al. 2021, *RER* | `MEASURED-META` |
+| 23 | Self-concept interventions for students with LD | benefit confined to students with **documented low self-concept** | Elbaum & Vaughn 2003 | `MEASURED-META` |
+| 24 | Reading anxiety × reading achievement | r = **−.30**, 64 studies / 14,467 participants; **learning-disability status is not a moderator** | Johnson et al. 2026, *Psych. Bull.* | `MEASURED-META` |
+| 25 | An adaptive dyscalculia trainer's responders | benefit concentrated in children with **low** maths anxiety; 67 children, randomised | Kohn et al. 2020 | `MEASURED-RCT` |
+| 26 | Two mindset nulls at scale | EEF, 101 schools / 5,018 pupils: maths −0.01 [−0.04, 0.01], and all four self-report subscales null. Argentina, 202 schools: nothing, small effects ruled out | Foliano et al. 2019; Ganimian 2020 | `MEASURED-RCT` (null) |
 
 ---
 

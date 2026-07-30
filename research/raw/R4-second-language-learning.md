@@ -53,18 +53,18 @@ WebSearch budget was exhausted at 200 calls partway through §4. Retrieval there
 on the **ERIC API** (`api.ies.ed.gov/eric`), **Crossref**, **OpenAlex**, **arXiv**, and
 direct `curl` + `pdftotext` of open-access PDFs.
 
-| Target | Status |
-|---|---|
-| ERIC API | Fully reachable and fast. All census counts in §1 are reproducible; query strings given. |
-| Springer *Discover Education* (Xodabande et al.) | Open access. **Full text read**, `link.springer.com/content/pdf/…` (the HTML landing page 303s to `idp.springer.com`; the PDF path does not). |
-| *Technology in Language Teaching & Learning* (Soori et al.) | Open access via `files.eric.ed.gov`. **Full text read.** |
-| *Journal of Educational Computing Research* (Zhang et al., N = 436) | **HTTP 403** to WebFetch and to `curl` with a browser UA. OpenAlex confirms `oa_status: closed`, no repository copy anywhere. **Methods and results unread.** Everything said about it here comes from the Crossref-deposited abstract. |
-| *Review of Educational Research* (Wang et al. chatbot meta-analysis) | Sage **403**. Abstract obtained from Crossref and ERIC; **confidence interval for g = 0.484 not retrieved**. |
-| *Journal of Computer Assisted Learning* (Li et al. GenAI-SLA meta-analysis) | Wiley **403**. Full structured abstract obtained from Crossref, which carries the point estimate and CI. Moderator subgroup estimates not retrieved. |
-| *Language Learning & Technology* (Lee & Lee 2024) | Open access. **Full text read** including both forest plots. |
-| *Language Learning* (Kremmel et al. 2023 replication) | Green OA at Universität Innsbruck. **Full text read.** |
-| Semantic Scholar API | **HTTP 429** throughout. Not used. |
-| arXiv API | Reachable. Used for the pronunciation-benchmark literature. |
+**Full texts read**: Xodabande et al. (Springer OA; the HTML landing page 303s to
+`idp.springer.com`, the PDF path does not), Soori et al. (`files.eric.ed.gov`), Lee & Lee
+2024 (*LL&T*, including both forest plots), Kremmel et al. 2023 (green OA, Innsbruck),
+Liu et al. arXiv:2601.14744, Duolingo's Q1 2026 10-Q via EDGAR.
+
+**Blocked**: Sage **403** for Zhang et al. (N = 436) and for Wang et al.'s *RER*
+meta-analysis; OpenAlex confirms `oa_status: closed` with no repository copy of the
+former, so its methods and results are unread and everything in §2.3 comes from the
+Crossref-deposited abstract, and the confidence interval on g = 0.484 was not retrieved.
+Wiley **403** for Li et al.'s *JCAL* meta-analysis (full structured abstract obtained from
+Crossref, which carries the point estimate and CI) and for Rachels & Rockinson-Szapkiw.
+Semantic Scholar API returned **HTTP 429** throughout and was not used.
 
 ---
 
@@ -481,12 +481,10 @@ its job, and the d = 0.68 should not be quoted without the sentence attached.
 
 Almusharraf, Mahdi, Al-Nofaie & Aljasser (2024), *J. Computer Assisted Learning* 40(6),
 updated the synthesis to 31 studies and 42 effect sizes from experimental-versus-control
-designs. Its abstract reports every result as a verbal magnitude — "medium," "large" —
-and **no numeric effect size, confidence interval or heterogeneity statistic appears in
-it**. The full text was not retrievable in this session. A 2024 meta-analysis whose
-public abstract contains no numbers is not usable as evidence, and it is recorded here
-so that it is not silently treated as a second, converging estimate of Mahdi &
-Al Khateeb.
+designs. Its abstract reports every result as a verbal magnitude, "medium" or "large,"
+with **no numeric effect size, confidence interval or heterogeneity statistic**, and the
+full text was not retrievable here. It is recorded so that it is not silently treated as
+a second, converging estimate of Mahdi & Al Khateeb.
 
 The distinction the whole area rests on comes from Munro and Derwing: **accentedness**
 (how different a speaker sounds from a reference variety), **comprehensibility** (how
@@ -679,8 +677,8 @@ graduates.
 The same two authors produced the same design for a series of vendors: Rosetta Stone
 (2009) 55 hours; Duolingo (2012) 34; an **anonymised "Language App"** (2015) 25, published
 under a generic name because *"the report was not officially made public"*; Babbel (2016)
-21; italki (2018) 19. Each successive sponsor gets a better number. The 2015 report is a
-file drawer with the door open.
+21; italki (2018) 19. Each successive sponsor gets a better number, and the 2015 report is
+a file drawer with the door open.
 
 ### 7.2 The company's own later measurement contradicts its famous one
 
@@ -739,30 +737,24 @@ program efficacy."*
 ### 7.4 The English Test, where the vendor research is strongest and one result went missing
 
 The Duolingo English Test carries far more psychometric apparatus than the learning app.
-Its Technical Manual is self-published, not peer-reviewed, and carries a DOI under
+Its Technical Manual is self-published and not peer-reviewed, and carries a DOI under
 Duolingo's own self-assigned prefix `10.46999`, which makes it look peer-reviewed in a
-reference list.
-
-Concurrent validity, from the manual: DET Overall against official TOEFL iBT reports
-(n = 328) **r = .71** overall, **.82** center-based, **.61 for the Home Edition**. The
-Home Edition is the product actually used in admissions. Against IELTS (n = 1,943),
-Overall **r = .73** but subscores **Writing .54, Reading .53, Listening .57**, and
-subscore concordance tables are published from those.
+reference list. Concurrent validity, from the manual: DET Overall against official TOEFL
+iBT reports (n = 328) **r = .71** overall, **.82** center-based, **.61 for the Home
+Edition** — and the Home Edition is the product actually used in admissions. Against
+IELTS (n = 1,943), Overall **r = .73**, but subscores **Writing .54, Reading .53,
+Listening .57**, and subscore concordance tables are published from those.
 
 **Isaacs, Hu, Trenkic & Varga (2023),** *Language Testing* 40(3):748–770,
 [10.1177/02655322231158550](https://doi.org/10.1177/02655322231158550), is
-**Duolingo-commissioned** (its funding statement says so), which is worth noting because
-its result is unfavourable: across 1,881 DET-admitted students at a large London
-university, DET correlated with first-year credit-weighted grades at **adj. r = 0.195**
-for postgraduates and **adj. r = −0.112** for undergraduates, and DET-admitted students
-had lower academic success than IELTS and TOEFL iBT entrants. That paper is **cited zero
-times in both the 2025 and 2026 Technical Manuals**. The manual's predictive-validity
-section rests instead on a blog post (Kostromitina 2024) with no paper and no
-methodology document.
-
-Wagner (2020), *Language Assessment Quarterly* 17(3), independent: *"there is a lack of
-independent research validating the use of DET scores for admissions. Given these
-shortcomings, the use of DET scores cannot be recommended."*
+**Duolingo-commissioned** by its own funding statement, which matters because its result is
+unfavourable: across 1,881 DET-admitted students at a large London university, DET
+correlated with first-year credit-weighted grades at **adj. r = 0.195** for postgraduates
+and **adj. r = −0.112** for undergraduates, and DET-admitted students had lower academic
+success than IELTS and TOEFL entrants. That paper is **cited zero times in either the 2025
+or the 2026 Technical Manual**, whose predictive-validity section rests instead on a blog
+post with no paper and no methodology document. Wagner (2020), *Language Assessment
+Quarterly* 17(3), independent: *"the use of DET scores cannot be recommended."*
 
 ### 7.5 What the audited filings say, and one sentence in them that is not supported
 
@@ -874,4 +866,99 @@ designed pedagogy beats plain ChatGPT in a language classroom. It did not.
 
 ## 9. What is now buildable, the experiment worth running, and what I could not find out
 
-<!--SEC9-->
+### 9.1 Buildable now
+
+**Hold items out, and report the two numbers separately.** Every trial in §2 and every
+study behind the d = 0.68 CAPT estimate scores the material that was trained. In language
+this is avoidable for free: for any target set, a model can generate a matched held-out
+probe set controlled for frequency band, phonological structure and part of speech, and
+the tutor reports trained-item and untrained-item performance as two numbers. `SPEC`.
+Nothing in this literature would have survived that reporting convention unchanged, which
+is the reason to adopt it.
+
+**Generate input at a measured coverage, and validate the lexical profile rather than
+trusting the prompt.** Comprehension is close to linear in the proportion of words known
+(Schmitt et al. 2011), the 98% threshold failed replication (Kremmel et al. 2023), and
+the useful range runs from roughly 4,000 to 9,000 word families. So the design target is
+not a level to unlock; it is a coverage to hold, against the learner's own measured
+vocabulary, on material they want to read. A model can write to a lexical profile, but
+only with constraints: the CEFR-controlled generation work reports that unconstrained
+prompting gives *"weak control"* while prompting plus explicit lexical constraints reaches
+0.91 cosine similarity to reference profiles (arXiv:2606.21981, Arabic). `MEASURED-BENCH`.
+Build the validator, not just the prompt.
+
+**Build the speaking loop; do not ship phoneme-level correction as though it worked.**
+The unique advantage is unlimited low-stakes practice with a partner who cannot be
+embarrassed. The diagnostic layer is not ready: GPT-4o-Audio at **F1 = 46.3** on read
+speech. Ship practice volume and comprehensibility-level feedback, and hold segmental
+correction back.
+
+**And one design inversion the benchmark hands over.** Because stronger ASR *repairs*
+learner errors before any model sees them (§5.2), a deliberately non-robust recogniser is
+a better proxy for a real listener's difficulty than a robust one. Run the learner's
+speech through a small, accent-brittle recogniser and treat its failures as an
+intelligibility signal. `SPEC`, untested, and cheap to test.
+
+**Say the vendor sentence out loud.** No randomised trial has shown that any consumer
+language app teaches a language better than an alternative, in either direction. A product
+that wants to claim otherwise has to run the trial.
+
+### 9.2 The experiment
+
+**Does AI speaking practice transfer to speaking with a person?** Three arms, individually
+randomised: (A) 12 weeks of AI conversational practice, (B) 12 weeks of human conversation
+partners matched on **speaking minutes**, (C) matched-time non-speaking study. Primary
+outcome collected **four weeks after the last session**, in an unscripted conversation
+with a human interlocutor the participant has not met, scored for **comprehensibility** on
+a nine-point scale by two raters blind to condition, with intelligibility (orthographic
+transcription accuracy by naive listeners) as the co-primary. Secondary: minutes of L2
+speech produced, turns initiated, and self-reported willingness to communicate, so the
+self-report and behavioural measures can be compared in the same sample.
+
+**Power.** The estimate to plan against is not the CAPT d = 0.68, which comes from
+trained-item outcomes, and not the d ≈ 1.6 of §2.1 for the same reason. The defensible
+prior is Lee & Lee's control-adjusted **d = 0.39** against business-as-usual and the
+AI-versus-human null of §2.2, so plan for **d = 0.35** on the A-versus-C contrast and be
+prepared for A ≈ B. At α = .05 two-sided and 80% power, a two-arm comparison at d = 0.35
+needs **129 per arm**; three arms with a hierarchical testing order (A vs C first, then
+A vs B) and 20% attrition gives **n ≈ 465**. If the trial can only afford two arms, drop
+C and run A against B, which is the question a builder actually faces; that is 310
+participants. For contrast, the pronunciation trial in §2.1 had 30 per arm, which detects
+only d ≥ 0.72, and the writing trial had about 29 per arm before any correction for its
+three clusters.
+
+**Why this one.** It is the only place where AI has a capability advantage that is not
+economic, it is the outcome the whole marketed value proposition rests on, and ERIC
+currently contains zero trials that measure it. A null here would be more informative than
+another significant result on trained items.
+
+The cheaper second experiment, if the first is unaffordable: randomise learners to a
+spaced deck of 300 word families versus matched-time reading of text containing those
+families, and measure (i) recall of the 300, (ii) comprehension of **novel** text at
+controlled coverage, and (iii) lexical-decision priming, at eight weeks. That is Elleman's
+d = 0.50 versus d = 0.10 contrast run inside a single L2 sample, and no one has run it.
+
+### 9.3 What I could not find out
+
+- **The largest trial is unread.** Zhang et al. (2026), N = 436, is behind Sage with no
+  repository copy. Its abstract reports pre-post change for the treatment arm only.
+  Everything in §2.3 is a description of an abstract.
+- **Whether the Tehran learners' ChatGPT could hear them.** The paper says "the voice
+  feature." If it was speech-to-text, the model never received audio, and §5.2 shows that
+  matters a great deal. Unresolvable from the published text.
+- **The confidence interval on g = 0.484**, the best chatbot-language meta-analytic
+  estimate (Wang et al. 2024, *RER*). Sage 403.
+- **Almusharraf et al. (2024)'s numbers.** A 2024 CAPT meta-analysis of 31 studies whose
+  public abstract reports only "medium" and "large." Not usable, and not counted here as a
+  second estimate.
+- **Egger's-test values in Lee & Lee (2024).** Reported as a figure only; the numbers are
+  not in the text.
+- **Rachels & Rockinson-Szapkiw's F, p and effect sizes.** Paywalled, and no repository
+  copy. The null is documented from the abstract; its precision is not.
+- **Duolingo course completion.** Not disclosed in any SEC filing, and the FY2025 10-K
+  drops the cumulative-downloads figure the FY2022 10-K carried.
+- **Whether any of this holds outside high-resource languages.** Every trial here is
+  English as a foreign language, except Kim et al.'s French and James & Mayer's Italian.
+  F4 §3.5 records frontier models scoring at or near chance on around thirty of 122
+  language variants. For those languages the pedagogical architecture is not the
+  binding constraint and this report has nothing to say about them.

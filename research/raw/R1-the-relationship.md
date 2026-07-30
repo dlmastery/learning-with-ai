@@ -403,17 +403,14 @@ said. n = 73 completed (35 non-contingent, 38 contingent). Results:
   condition became nonsignificant, p = .12."* Formal mediation: indirect effect of condition on
   transfer through math talk = 0.25, Sobel–Goodman-2 z = 1.98, p < .05.
 
-`INFERENCE` (ours): the relational manipulation worked, and it worked **entirely through getting
-the child to spend longer and say more mathematics**. Small talk — the pure warmth channel,
-measured separately in the same design — predicted nothing. The affective feature bought
-*dosage and production*. This is Roorda's engagement path (β = .29 → .24) reproduced in a
-40-minute lab session with a machine, and it is the second independent demonstration in this
-report that the relationship's contribution to learning is largely the amount of learning that
-happens.
-
-Caveats stated: truncated n = 51 for the transfer analysis, one session, preschoolers, and the
-contingent condition took 2.5 minutes longer by construction, so dosage is confounded with the
-manipulation rather than being a discovered mediator.
+`INFERENCE` (ours): the relational manipulation worked, and it worked **through getting the
+child to spend longer and say more mathematics**. Small talk, the pure warmth channel measured
+separately in the same design, predicted nothing. The affective feature bought *dosage and
+production*. This is Roorda's engagement path reproduced in a lab session with a machine, and
+the second independent demonstration here that the relationship's contribution to learning is
+largely the amount of learning that happens. Caveats: truncated n = 51 for transfer, one
+session, preschoolers, and the contingent condition ran 2.5 minutes longer by construction, so
+dosage is confounded with the manipulation and not a discovered mediator.
 
 ---
 
@@ -475,12 +472,11 @@ The same behaviour — being challenged and told you are wrong — helps when th
 relationship and hurts when there is not. No other result in this report separates the two
 mechanisms so cleanly.
 
-**And it must be discounted hard.** The overall friends model was **F(1,107) = 1.824, p = .1** —
-the model itself did not reach significance, and the significant predictor sits inside a
-non-significant model. The stranger analysis rests on **6 dyads, 12 participants**, who were not
-randomised into that condition but ended up there because a friend did not show up or a schedule
-changed. Self-selection is uncontrolled. The paper is an exploratory conference analysis. Treat
-it as the hypothesis, not the evidence.
+**And it must be discounted hard.** The overall friends model was **F(1,107) = 1.824, p = .1**;
+the significant predictor sits inside a non-significant model. The stranger analysis rests on
+**6 dyads, 12 participants**, who were not randomised into that condition but landed there
+because a friend failed to show or a schedule changed, so self-selection is uncontrolled. It is
+an exploratory conference analysis. Treat it as the hypothesis.
 
 The independent support comes from a different literature. Yeager, Purdie-Vaughns, Garcia,
 Apfel, Brzustoski, Master, Hessert, Williams & Cohen (2014), *Journal of Experimental
@@ -490,25 +486,22 @@ of two appended notes. Treatment: *"I'm giving you these comments because I have
 expectations and I know that you can reach them."* Placebo control, syntactically matched:
 *"I'm giving you these comments so that you'll have feedback on your paper."* `MEASURED-RCT`
 
-Study 1, n = 44 (22 African American, 22 White), key outcome whether the student turned in a
+Study 1, n = 44 (22 African American, 22 White), outcome = whether the student turned in a
 revision. Omnibus effect of condition: b = 1.85, χ²(1) = 5.68, p = .017, OR = 4.60. Among
-African American students: **71% revised vs 17%** (covariate-adjusted; raw 64% vs 27%), b = 2.57,
-χ²(1) = 3.91, p = .045, OR = 11.95. Among White students the trend was in the same direction and
+African American students **71% revised vs 17%** (covariate-adjusted; raw 64% vs 27%), b = 2.57,
+χ²(1) = 3.91, p = .045, OR = 11.95; among White students the trend ran the same way and was
 non-significant (adjusted 87% vs 62%, p = .19). Study 2, a new cohort of 44 in the same
-classrooms with revision made compulsory, measured quality instead: **88% of African American
-students in the wise condition improved their essay score vs 34% in control**, χ²(1) = 4.56,
-p = .03, OR = 14.23; essay quality d = 0.97, t(16) = 2.52, p = .03. White students: 100% vs 80%,
-p = .11, d = 0.49 n.s.
+classrooms with revision made compulsory, measured quality: **88% of African American students in
+the wise condition improved their essay score vs 34% in control**, χ²(1) = 4.56, p = .03,
+OR = 14.23, quality d = 0.97, t(16) = 2.52, p = .03. White students 100% vs 80%, p = .11, d = 0.49 n.s.
 
 One sentence of relational framing attached to identical criticism roughly quadrupled the odds
 that a mistrusting student acted on it. **The relationship was not built; it was asserted, in
-nineteen words, at the moment of correction.** That is a manipulable, cheap, machine-emittable
-intervention.
+nineteen words, at the moment of correction.** That is cheap and machine-emittable.
 
 Discount applied: n = 44 per study, 22 per race group, odds ratios of 12 and 14 from cells of
-eleven. The confidence intervals are enormous and are not reported in the paper. I could not
-locate a large pre-registered replication of wise feedback this session and am not asserting one
-exists.
+eleven, with confidence intervals not reported. I could not locate a large preregistered
+replication this session and am not asserting one exists.
 
 **What licensed correction implies as a product:** not a warm tutor. A tutor with standing to
 say "that is wrong" and be believed, which is a different design object from a tutor that is
@@ -667,9 +660,9 @@ a real classroom, with a delayed posttest and transfer items, and it is flat. It
 demonstrates the lab-to-classroom failure mode: the low-prior-knowledge moderation that made the
 effect look real in the lab did not survive the classroom.
 
-**2. Perlman et al. (2016), *PLOS ONE*.** CLASS **Emotional Support showed no significant
-association with any child outcome** across five meta-analyses with n = 1,794–4,024, in a review
-of 35 studies and 15,167 children. Twelve of fourteen meta-analyses were null. `MEASURED-META`
+**2. Perlman et al. (2016), *PLOS ONE*** (detailed in §2). CLASS **Emotional Support showed no
+significant association with any child outcome** across five meta-analyses, n = 1,794–4,024.
+Twelve of fourteen meta-analyses were null. `MEASURED-META`
 
 **3. Williford, LoCasale-Crouch, Whittaker, DeCoster, Hartz, Carter, Wolcott & Hatfield (2017),
 *Child Development*.** A randomised controlled trial of **Banking Time**, an attachment-based
@@ -688,19 +681,15 @@ E-EMR."* Targeted benefits appeared for students with low baseline scores and fo
 minoritised groups, and there were "unexpected effects" in which advantaged groups did worse in
 the treatment condition. `MEASURED-RCT`
 
-**5. Domagk (2010), *Journal of Media Psychology*.** *"The mere inclusion of a pedagogical agent
-yielded no effect on motivation or learning."* Two unappealing social cues harmed transfer.
-`MEASURED-RCT`
-
-**6. Zhao, Mayer et al. (2025), *JECR*.** No significant differences in retention or transfer
-between a human instructor and pedagogical agents, while social connection differed.
-`MEASURED-RCT`
+**5. Domagk (2010)** and **6. Zhao, Mayer et al. (2025)**, both detailed in §4.2: agent presence
+produced no effect on motivation or learning, and agent-vs-human delivery produced no difference
+in retention or transfer while social connection differed. `MEASURED-RCT`
 
 **The pattern.** Every null above manipulated **surface affect** — politeness, agent presence,
 agent appearance, one-to-one warm play time, a relationship-skills curriculum — and measured
-learning. Every positive result in §5.2 manipulated **the standing to correct or the framing of
-a correction** and measured whether the learner acted on it. The field has repeatedly tested the
-wrong construct and reported the answer as being about relationships.
+learning. Every positive result in §5.2 manipulated **the standing to correct, or the framing of
+a correction**, and measured whether the learner acted on it. The field has repeatedly tested
+the wrong construct and filed the answer under relationships.
 
 ---
 
@@ -726,21 +715,21 @@ of the closeness deficit. A child with attentional symptoms does not merely fail
 warmth; she accumulates conflict, on the exact dimension that Roorda's moderator says costs her
 most.
 
-**And that is a trust problem, which is the mechanism Yeager measured.** Yeager et al. (2014) is
-not about disability, it is about students who have reason to doubt that critical feedback
-reflects a standard rather than a judgment about them. The theoretical claim is about
-*attributional ambiguity*: when a student cannot tell whether "this is wrong" means "the work
-falls short" or "you are the kind of person who gets things wrong," the safe move is not to
-revise. A child with years of red pen has the same ambiguity from a different source. The wise
-note removed it by naming the standard and asserting belief in the same breath, and it moved
-revision from 17% to 71% in the subgroup with the ambiguity. `MEASURED-RCT`
+**And that is a trust problem, which is the mechanism Yeager measured.** Yeager et al. (2014)
+concerns students who have reason to doubt that critical feedback reflects a standard instead of
+a judgment about them. The theoretical claim is *attributional ambiguity*: when a student cannot
+tell whether "this is wrong" means "the work falls short" or "you are the kind of person who
+gets things wrong," the safe move is not to revise. A child with years of red pen has the same
+ambiguity from a different source. The wise note removed it by naming the standard and asserting
+belief in one breath, and moved revision from 17% to 71% in the subgroup carrying the ambiguity.
+`MEASURED-RCT`
 
-`INFERENCE` (ours): the SELPA design implication is a specific inversion of the usual advice.
-The system should not try harder to be liked by this learner. It should (i) make conflict
-structurally impossible — never impatient, never sighing, never carrying yesterday's failure
-into today's session; (ii) attach the standard to every correction so that "wrong" is never
-attributable to her; and (iii) be the disclosure surface of §7, because for a child who has been
-reacted to for years, a tutor with no capacity to be disappointed is a genuinely novel object.
+`INFERENCE` (ours): the SELPA implication inverts the usual advice. The system should not try
+harder to be liked by this learner. It should (i) make conflict structurally impossible — never
+impatient, never carrying yesterday's failure into today's session; (ii) attach the standard to
+every correction so "wrong" is never attributable to her; and (iii) be the disclosure surface of
+§7, because for a child reacted to for eleven years, a tutor with no capacity to be disappointed
+is a novel object.
 
 **What is absent, stated as a query.** `OBSERVED — absence`: Emslander et al. (2025) explicitly
 *excluded* samples with psychological disorders or medical conditions from their second-order

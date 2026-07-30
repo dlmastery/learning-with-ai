@@ -982,11 +982,12 @@ personalise because it teaches a cohort.
 
 *Power.* The effects worth detecting are the size of the ones this report measured: 0.10–0.20 SD.
 For a two-arm individually-randomised trial at 80% power and α = .05 two-sided, detecting d = 0.15
-requires **n ≈ 700 per arm, 1,400 total**. Conditioning on a pre-test — and the analogue here is
-strong, since the OSP study's PSAT covariate and Briggs's PSAT controls both show prior-test
-correlations near .9 with the outcome — an ANCOVA adjustment with ρ = 0.80 multiplies the required n
-by (1 − ρ²) = 0.36, giving **n ≈ 252 per arm, about 510 total**. Add 20% for attrition between
-consent and the examination sitting and the trial is **roughly 620 candidates**. That is a
+requires **n ≈ 700 per arm, 1,400 total**. Conditioning on a pre-test brings that down sharply, and
+the analogue here is unusually strong: Briggs reports a PSAT–SAT section correlation of *"almost
+.9"*, and Powers & Rock's baseline regressions predicting later SAT from prior test scores return
+multiple Rs of .87–.94. Taking a deliberately conservative ρ = 0.80, an ANCOVA adjustment multiplies
+the required n by (1 − ρ²) = 0.36, giving **n ≈ 252 per arm, about 505 total**. Inflating for 20%
+attrition between consent and the examination sitting gives **roughly 630 candidates**. That is a
 single-school-district trial, not a national programme, and it produces a marks outcome that is
 externally scored, publicly documented, and immune to the LLM-as-judge failure `survey/32` warns
 about.
