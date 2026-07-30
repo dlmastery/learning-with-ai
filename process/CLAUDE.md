@@ -347,3 +347,23 @@ for tables inside a scroll box, and a table outside one widened the whole page.
 Both were correct rules whose precondition stopped holding when new content arrived.
 **When a component is reused by generated pages, the constraint has to live with the
 box that owns the overflow**, not with the assumption that the content stays small.
+
+### 9.12 A generator whose output has been hand-edited is a landmine
+
+`evidence/gen-demo-orientation.py` wrote the orientation block on every demo page
+and was safely re-runnable, because it replaced its own block rather than stacking.
+Then the blocks were rewritten by hand — twice — to break a shared rhythm and to
+meet the voice budgets.
+
+Re-running it would have reverted all of that on every page at once, **and no test
+would have failed**, because the output is valid HTML that renders, passes every
+render check, and links correctly. The only signal would have been prose quietly
+getting worse.
+
+Either the generator is the source of truth and nobody edits its output, or the
+output is the source of truth and the generator is retired. Holding both is the
+failure. This one is retired behind a guard that refuses to run and says why.
+
+The same test applies to `.gen-gallery.py` and `evidence/build-paper.py`: both are
+live generators, and their outputs — the gallery cards, `PAPER.md`, `docs/paper.html`
+— must never be hand-edited. Edit the data list or the section file instead.

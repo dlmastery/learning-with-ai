@@ -41,39 +41,38 @@ never treated as proof of non-existence, and `[X]` for a census run this session
 
 **1. Cooperative learning's achievement effect is conditional, the condition is individual
 accountability, and the condition is almost never met.** Slavin's review of 99 studies of at least
-four weeks in real classrooms splits cleanly. Of the 64 whose group reward was computed from the
-sum of members' individual learning, 50 (78%) found significant positive effects and none found
-negative effects; median effect size **+0.32**. Studies rewarding a single group product, or giving
-no group reward, had a median of **+0.07**. An observational study of 49 German classrooms found
-group goals and individual accountability present in 17% of lessons, and 7% of teachers
-implementing the five canonical elements. The headline number is the ceiling of a condition
-satisfied about one lesson in six.
+four weeks in real classrooms splits cleanly: of the 64 whose group reward was computed from the sum
+of members' individual learning, 50 (78%) found significant positive effects and none found negative
+effects, median **+0.32**; those rewarding a single group product, or nothing, had a median of
+**+0.07**. Observation of 49 German classrooms found group goals and individual accountability
+present in 17% of lessons. The headline number is the ceiling of a condition met about one lesson in
+six.
 
 **2. The group's distinctive cognitive contribution is disagreement, not throughput.** Smith et al.
-(2009) in *Science*: peer discussion of a concept question raises performance on a second,
-isomorphic question answered individually, *"even when none of the students in a discussion group
-originally knows the correct answer."* Against that, Marion & Thorley's meta-analysis of 64 studies
-establishes collaborative inhibition as robust — a group recalls less than the pooled recall of its
-members alone — while later individual retrieval improves. Groups are bad at producing an answer
-and good at leaving something behind.
+(2009) in *Science*: peer discussion raises performance on a second, isomorphic question answered
+individually, *"even when none of the students in a discussion group originally knows the correct
+answer."* Against that, Marion & Thorley's 64-study meta-analysis establishes collaborative
+inhibition as robust — a group recalls less than the pooled recall of its members alone — while
+later individual retrieval improves. Groups are bad at producing an answer and good at leaving
+something behind.
 
 **3. The contingency exception to the video deficit is much weaker than this project would like.**
 Roseberry et al.'s Skype result is `n = 36` across three conditions. Troseth's own lab then ran
-`n = 132` with four conditions and found no learning from video in either the responsive or the
-unresponsive condition. Strouse et al. (`n = 88`) found contingency raised engagement and only
-parental co-viewing raised learning. Tsuji et al. concluded verbatim that *"contingency is not
-sufficient."* Strouse & Samson's meta-analysis of 122 effect sizes found no moderation by live
-versus prerecorded video. The moderator that survives is the adult in the room.
+`n = 132` and found no learning from video in either the responsive or the unresponsive condition;
+Strouse et al. (`n = 88`) found contingency raised engagement and only parental co-viewing raised
+learning; Tsuji et al. concluded verbatim that *"contingency is not sufficient"*; and Strouse &
+Samson's meta-analysis of 122 effect sizes found no moderation by live versus prerecorded video. The
+moderator that survives is the adult in the room.
 
-**4. Andragogy was tested and did not survive.** Rachal found 18 experimental comparisons of
-andragogical with pedagogical instruction; of the 16 measuring achievement, 10 found no significant
-difference and 2 favoured the traditional group. What survived was not learning: application of
+**4. Andragogy was tested and did not survive.** Of 18 experimental comparisons with pedagogical
+instruction, the 16 measuring achievement produced 10 nulls and 2 results favouring the traditional
+group. No meta-analysis of andragogy exists. What survived was not learning: application of
 material, and attendance.
 
-**5. Corporate training measures learning 234 times for every 26 times it measures a result.**
-Those are the `k`s in Arthur et al.'s meta-analysis, and they are the finding. The adult segment
-has the most money, the least time, and the only unambiguous transfer criterion in this corpus —
-a job — and does not use it.
+**5. Corporate training measures learning 234 times for every 26 times it measures a result.** Those
+are the `k`s in Arthur et al.'s meta-analysis, and they are the finding. The adult segment has the
+most money, the least time, and the only unambiguous transfer criterion in this corpus — a job — and
+does not use it.
 
 ---
 

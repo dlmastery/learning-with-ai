@@ -43,8 +43,8 @@ The estimand is the difference in scale points between coached and matched uncoa
 candidates on an operational retest, and the gap between that and a pre-post gain is
 the entire commercial argument. Raw pre-post gains in the same dataset were 29 verbal
 and 40 mathematics for the coached, against 21 and 22 for the uncoached. A vendor
-reporting the coached column alone reports 29 and 40 as its effect, and most of both
-is regression, practice and ordinary growth.
+reporting the coached column alone calls 29 and 40 its effect, and most of both is
+regression, practice and ordinary growth.
 
 Against 6–8 and 13–18, the claims Powers and Rock quote from the two firms' websites
 in November 1997 are **120 combined points (Kaplan) and 140 (Princeton Review)**,
@@ -70,9 +70,9 @@ close to unmeasured.
 
 Briggs also carries the result nobody quotes. Under full controls, coaching's effect
 on ACT mathematics is not significant and on **reading it is negative, about −0.6 to
-−0.7 scale points** against uncoached students matched on prior PSAT verbal. A
-preparation regime tuned to one test's item style transfers negatively to another
-test of the same construct.
+−0.7 scale points** against students matched on prior PSAT verbal. A preparation
+regime tuned to one test's item style transfers negatively to another test of the
+same construct.
 
 ---
 
@@ -100,10 +100,9 @@ additional points on their last SAT compared to students who did not use OSP."*
 Thirty, against the 115 that travelled.
 
 A free platform and a $1,500 course therefore produce effects of the same order,
-which is the most useful sentence in this literature for anyone pricing a product.
-And the distribution of use matters more than the effect per hour: about **80% of
-users spend under three hours, median 1.8**. The binding constraint in the field is
-hours, not efficacy.
+which is the number to price against. And the distribution of use matters more than
+the effect per hour: about **80% of users spend under three hours, median 1.8**. The
+binding constraint in the field is hours, not efficacy.
 
 ---
 
@@ -133,9 +132,9 @@ effect on a score. `"shadow education" AND India AND achievement` returns zero.
 
 The scale against which that absence should be read: India's NSS 75th round
 (July 2017–June 2018) records private coaching at **11.8% of average household
-education expenditure**, peaking around 29–31% of students at secondary level, and
-the 2025 Comprehensive Modular Survey on Education reports roughly 27% of students
-taking private coaching. `FILING`
+education expenditure**, with incidence peaking around 29–31% of students at
+secondary level, and the 2025 Comprehensive Modular Survey on Education puts roughly
+27% of students in private coaching. `FILING`
 
 There is no causal estimate of what attending Kota, Allen, Aakash or Physics Wallah
 does to a NEET or JEE rank. No trial, no regression discontinuity, no published
@@ -370,10 +369,10 @@ say about a person; this is the per-item version of the same problem.
   the competition's advertised figures run three to seven times their measured ones
   and that gap is now documented well enough to use. §27 and §37 own the commercial
   argument this feeds.
-- **Ship the boring floor before anything else.** Closed-book retrieval instead of
-  rereading; a first practice paper early, because the first is worth 0.5 SD and the
-  tenth 0.1; review gaps at 20–40% of the time remaining; confidence elicited only
-  after a closed-book attempt. None of that needs a capability that does not exist.
+- **Ship the boring floor first.** Closed-book retrieval instead of rereading; a
+  first practice paper early, because the first is worth 0.5 SD and the tenth 0.1;
+  review gaps at 20–40% of the time remaining; confidence elicited only after a
+  closed-book attempt. None of it needs a capability that does not exist.
 - **Test per-item attribution before building on it.** If the system's attributions
   of lost marks agree with expert human attributions at no better than chance, the
   constructive half of this section collapses into score reporting. It is cheap to
@@ -381,12 +380,12 @@ say about a person; this is the per-item version of the same problem.
 - **Randomise the allocation and not the technique.** Every other ingredient is
   established (retrieval, spacing) or already null (nudging). Allocation is the large
   unmeasured degree of freedom, and the one a coaching centre structurally cannot
-  personalise because it teaches a cohort. Two arms with identical past-paper
-  libraries, marking and spacing defaults; the treatment arm's sessions allocated by
-  expected-marks maximisation over the learner's per-topic posterior and the
-  specification's historical topic weights. Detecting d = 0.15 needs n ≈ 700 per arm;
-  conditioning on a pre-test at a conservative ρ = 0.80 brings that to about 252 per
-  arm, and 20% attrition gives **roughly 630 candidates**. A single school district.
+  personalise because it teaches a cohort. Two arms, identical libraries and spacing
+  defaults; the treatment arm's sessions allocated by expected-marks maximisation over
+  the learner's per-topic posterior and the specification's historical topic weights.
+  Detecting d = 0.15 needs n ≈ 700 per arm; conditioning on a pre-test at a
+  conservative ρ = 0.80 brings that to about 252 per arm, and 20% attrition gives
+  **roughly 630 candidates**. A single school district.
 - **Carry an audit instrument.** A held-out paper from a different board covering the
   same specification, never trained or allocated against. If the gain appears on the
   primary examination and not on the audit paper, the system produced inflation and

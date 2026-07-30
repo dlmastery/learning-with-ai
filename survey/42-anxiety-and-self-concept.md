@@ -63,11 +63,11 @@ Bulletin*) pooled 223 studies and 747 correlation coefficients: maths anxiety ×
 achievement **r = −.28 [−.29, −.26]**, with I² = 90.42. Caviola et al. (2022) pooled
 177 studies and 906,311 participants and report **r = −.30 [−.32, −.28]**.
 
-These two are not independent confirmations of each other. They overlap heavily in
-primary literature and differ mainly in inclusion window. This survey's own rule
-against manufactured independence between workstreams applies with equal force to
-external sources: what the pair establishes is stability across two coding teams and
-two inclusion protocols, and nothing more than that.
+These two are not independent confirmations of each other: they overlap heavily in
+primary literature and differ mainly in inclusion window. This survey's rule against
+manufactured independence between its own workstreams applies with equal force to
+external sources. The pair establishes stability across two coding teams and two
+inclusion protocols, and nothing beyond that.
 
 Two moderators then destroy the reading a product would otherwise take from r = −.28.
 In samples **selected for low maths ability**, Barroso's estimate falls to
@@ -155,8 +155,8 @@ with the claim here, and no design below rests on the unretrieved numbers.
 Pooled, the mechanism is modest. Finell et al. (2022) give maths anxiety × working
 memory r = −0.168 [−0.203, −0.133] across 57 studies and 16,589 participants, with the
 mediated path to performance thinner still at −0.092 [−0.169, −0.015] from eight
-studies. That estimate is a correlation with working memory, and is not the
-anxiety-to-achievement correlation, which remains the −.28 to −.34 of §2.
+studies. That is a correlation with working memory and not the anxiety-to-achievement
+correlation, which remains the −.28 to −.34 of §2.
 
 The line a tutoring system can actually act on is elsewhere in the same paper:
 
@@ -257,11 +257,10 @@ Two field studies locate a documented harm that a machine does not have. Beilock
 students' achievement across a year: no relation at the start, and by the end, the more
 anxious the teacher, the more likely girls (not boys) were to endorse the stereotype
 that boys are good at maths, and the lower those girls' achievement. Maloney et al.
-(2015) found the same shape in parents, where children of more maths-anxious parents
-learned less and ended more anxious **only where those parents reported helping
-frequently with homework**.
+(2015) found the same in parents, where children of maths-anxious parents learned less
+and ended more anxious **only where those parents helped frequently with homework**.
 
-The channel both studies identify is the helper's own affect leaking into the help. A
+The channel both identify is the helper's own affect leaking into the help. A
 language model does not have maths anxiety, does not sigh at fractions and does not
 transmit a belief about who is good at this. The claim is bounded: it says nothing
 about what a model reproduces from its training data, and it predicts no benefit. It
@@ -318,12 +317,12 @@ Marsh & Hau (2003) found it negative in **all 26 countries** tested across 103,5
 fifteen-year-olds, mean β = −.20. On the reciprocal-effects model self-concept is not
 decorative; it feeds back into achievement.
 
-A personalised tutor deletes the comparison class. There is no class average because
+A personalised tutor deletes the comparison class: there is no class average because
 there is no class. On the contrast logic that should be protective; on the assimilation
 logic (Preckel & Brüll 2010 found belonging to a gifted track producing a positive
-effect of comparable size to the negative contrast effect) it could be neutral or
-harmful. `OBSERVED — absence`: searches across ERIC, Europe PMC, Crossref and arXiv
-found no study measuring academic self-concept in learners using a one-to-one AI tutor.
+effect of comparable size to the negative contrast) it could be neutral or harmful.
+`OBSERVED — absence`: searches across ERIC, Europe PMC, Crossref and arXiv found no
+study measuring academic self-concept in learners using a one-to-one AI tutor.
 
 The choice has to be made explicitly, because the system implies one whether or not it
 decides. The learner's own past performance is the reference class the evidence

@@ -32,8 +32,9 @@ happens. The rest would need roughly 1,600 randomised subjects to detect.
 
 Emslander, Holzberger, Ofstad, Fischbach and Scherer (2025), in *Psychological Bulletin*,
 is the authoritative version of this literature: a preregistered second-order synthesis of
-**26 meta-analyses, 119 effect sizes, approximately 2.64 million pre-K–12 students**. Overall relationship–outcome association **r̄ = .25 [.18, .32]**. Academic
-achievement is **r̄ = .20, the lowest of eight outcome clusters**, against r̄ = .34 for
+**26 meta-analyses, 119 effect sizes, approximately 2.64 million pre-K–12 students**.
+Overall relationship–outcome association **r̄ = .25 [.18, .32]**. Academic achievement is
+**r̄ = .20, the lowest of eight outcome clusters**, against r̄ = .34 for
 appropriate classroom behaviour, though a cross-classified model testing whether the
 clusters differ did not fit better, F(10, 71) = 0.435, p = .924.
 
@@ -45,9 +46,10 @@ than in elementary and younger samples (r̄ = .16 [.08, .24]).
 
 The correction this project owes belongs here. Our commissioning brief named Roorda 2011,
 its 2017 update and Cornelius-White (2007) as convergent anchors for the relationship
-effect. They are **nested inputs to Emslander et al., not three independent
-readings**; all three sit inside a synthesis that treats meta-analyses sharing ≥50% of
-primary studies as non-independent. Hattie's circulated d = 0.72 for teacher–student
+effect. They are **nested inputs to Emslander et al., not three independent readings**;
+all three
+sit inside a synthesis that treats meta-analyses sharing ≥50% of primary studies as
+non-independent. Hattie's circulated d = 0.72 for teacher–student
 relationships is a repackaging of Cornelius-White's r = .31, which converts to d ≈ 0.65
 rather than 0.72. This is the project's own no-manufactured-independence rule broken
 against external sources, logged as **C-56**; quote Emslander as the summary and the rest
@@ -114,8 +116,7 @@ standardised achievement outcome.** Cook measured engaged time; Williford et al.
 externalising behaviour; Duong et al. (2022) belonging and self-reported engagement;
 Driscoll and Pianta (2010) teacher-rated behaviour. The search covered the ERIC API for
 the intervention names that dominate the field and the What Works Clearinghouse record
-for My Teaching Partner–Secondary. The field builds relationships and measures
-relationships.
+for My Teaching Partner–Secondary. The field builds relationships and measures them.
 
 The mirror-image absence sits on our side. The flagship LearnLM/Eedi trial (N = 165 across
 five UK secondary schools, +5.5 percentage points on novel problems, 66.2% vs 60.7%,
@@ -123,16 +124,16 @@ carried in §09) **collected no measure of rapport, trust, help-seeking or willi
 admit not understanding.** Two literatures, each measuring the half the other omits.
 
 As a product, dosage is a retention feature: a companion, a streak, a character worth
-returning to. It is real and it is cheap. It is also the mechanism most easily faked, most
-easily gamed by an engagement dashboard, and most exposed to §5 below.
+returning to. It is real and cheap. It is also the mechanism most easily faked, most easily
+gamed by an engagement dashboard, and most exposed to §5 below.
 
 ### 3.2 Licensed correction: thin evidence, larger stakes, and the bet
 
 Ogan, Finkelstein, Walker, Carlson and Cassell (2012) coded **5,408 utterances from 108
 high-school students in 54 friend dyads** doing reciprocal peer tutoring in algebra,
-including *face threat*: insults, condescension, challenges. Among friends, face
-threat by the tutee **positively** predicted the tutor's learning gains, β = .375,
-t = 2.22, p = .03. Six dyads in the same study were strangers rather than friends, and
+including *face threat*: insults, condescension, challenges. Among friends, face threat by
+the tutee **positively** predicted the tutor's learning gains, β = .375, t = 2.22,
+p = .03. Six dyads in the same study were strangers rather than friends, and
 within them the sign inverted: **β = −.678, t = −2.92, p = .015, R² = .44**. Strangers
 also learned less overall, F(1, 120) = 4.71, p = .03.
 
@@ -145,15 +146,15 @@ its status is hypothesis.
 
 Yeager et al. (2014) supply support from a different literature. Seventh-graders received
 their own teacher's handwritten critical feedback on an essay with one of two appended
-notes, double-blind randomised. Treatment: *"I'm giving you
-these comments because I have very high expectations and I know that you can reach
-them."* Syntactically matched placebo: *"I'm giving you these comments so that you'll
+notes, double-blind randomised. Treatment: *"I'm giving you these comments because I have
+very high expectations and I know that you can reach them."* Syntactically matched
+placebo: *"I'm giving you these comments so that you'll
 have feedback on your paper."* Study 1 (n = 44) measured whether the student turned in a
 revision: omnibus b = 1.85, χ²(1) = 5.68, p = .017, OR = 4.60, and among African American
 students **71% revised versus 17%** on the covariate-adjusted estimate (raw 64% vs 27%),
-OR = 11.95, p = .045. Study 2, with revision compulsory, measured quality: 88% of African American students in
-the wise condition improved their essay score against 34% in control, χ²(1) = 4.56,
-p = .03, d = 0.97.
+OR = 11.95, p = .045. Study 2, with revision compulsory, measured quality: 88% of African
+American students in the wise condition improved their essay score against 34% in control,
+χ²(1) = 4.56, p = .03, d = 0.97.
 
 Nineteen words attached to identical criticism roughly quadrupled the odds that a
 mistrusting student acted on it. The relationship was asserted at the moment of
@@ -163,9 +164,9 @@ from cells of eleven, no confidence intervals reported, both experiments in the 
 classrooms, and no large preregistered replication located.
 
 **Where the evidence sits.** Dosage is what the .14 is mostly made of, and a product can
-bank on it. Licensed correction is a hypothesis resting on one
-exploratory analysis with a six-dyad cell and two small field experiments in a single
-school. It is also the only mechanism here that does something instruction cannot do for
+bank on it. Licensed correction is a hypothesis resting on one exploratory analysis with a
+six-dyad cell and two small field experiments in a single school. It is also the only
+mechanism here that does something instruction cannot do for
 itself and survives the move to a non-human tutor intact. Dosage is the safe read of the
 evidence; standing is the bet, and the right bet, because the failure mode of the safe
 read is §5.
@@ -235,8 +236,9 @@ Three constraints follow, and they belong beside the legal floor in §15.
 
 McLaren, DeLeeuw and Mayer (2011) ran the cleanest available test of "make the machine
 nicer" against real learning. **132 high-school students in classrooms**, grouped by a
-prior-knowledge questionnaire, used a chemistry tutor giving polite feedback and hints ("Let's convert the units of the first item") or direct ones ("Convert the units of
-the first item now"). Students *"did not benefit more from polite feedback and hints than
+prior-knowledge questionnaire, used a chemistry tutor giving polite feedback and hints
+("Let's convert the units of the first item") or direct ones ("Convert the units of the
+first item now"). Students *"did not benefit more from polite feedback and hints than
 direct feedback and hints on either an immediate or delayed posttest, both of which
 contained near transfer and conceptual test items."* And: *"contrary to an earlier lab
 study, low prior knowledge students did not benefit more from using the polite version of
@@ -248,13 +250,13 @@ most of §23's corpus manages, and the result is flat. Its second finding is the
 lab-to-classroom failure: the low-prior-knowledge moderation that made the effect look
 real did not survive contact with a real setting.
 
-It has company. CLASS **Emotional Support showed no significant association with any
-child outcome** in Perlman et al.'s (2016) systematic review, across five meta-analyses
-of n = 1,794 to 4,024. Banking Time, randomised across 183 teachers and 470 preschool
-children (Williford et al., 2017), found *"sparse evidence for main effects on child
-behavior"* and, unpredicted, that treated teachers showed **fewer positive interactions**
-with children than controls. Equity-Explicit Establish–Maintain–Restore, cluster-randomised
-across 94 teachers and 417 students (Duong et al., 2022), reported *"non-significant main
+It has company. CLASS **Emotional Support showed no significant association with any child
+outcome** in Perlman et al.'s (2016) systematic review, across five meta-analyses of
+n = 1,794 to 4,024. Banking Time, randomised across 183 teachers and 470 preschool children
+(Williford et al., 2017), found *"sparse evidence for main effects on child behavior"* and,
+unpredicted, that treated teachers showed **fewer positive interactions** with children
+than controls. Equity-Explicit Establish–Maintain–Restore, cluster-randomised across 94
+teachers and 417 students (Duong et al., 2022), reported *"non-significant main
 effects."*
 
 Every one of those manipulated **surface affect**: politeness, agent presence, agent
@@ -297,16 +299,16 @@ the participant's belief about who was behind it; those who believed they faced 
 computer *"reported lower fear of self-disclosure, lower impression management, displayed
 their sadness more intensely, and were rated by observers as more willing to disclose."*
 The effect sizes are behind Elsevier and could not be recovered, so the direction is
-documented and the size is not. Common Sense Media's representative sample of 1,060 U.S. teens found about one in three
-had chosen to discuss something serious with an AI instead of a person, with trust
-age-graded the wrong way for a children's product: 27% of 13–14-year-olds against 20% of
-older teens. That is a `FILING`, and reads as caution as much as encouragement.
+documented and the size is not. Common Sense Media's representative sample of 1,060 U.S.
+teens found about one in three had chosen to discuss something serious with an AI instead
+of a person, with trust age-graded the wrong way for a children's product: 27% of
+13–14-year-olds against 20% of older teens. That is a `FILING`, and reads as caution as
+much as encouragement.
 
 What the disclosure finding earns is a metric, not a claim: §34's Cognitive Tutor logs
 show that after three consecutive errors on a step, the next action was a hint request
 only 34% of the time. A tutor with no capacity to be disappointed is a novel object for a
-child who has been reacted to for eleven years, and the "I don't get it" rate is the
-number that would show it working.
+child reacted to for eleven years, and the "I don't get it" rate would show it working.
 
 `OBSERVED — absence`: there is **no meta-analysis of the relationship–achievement
 association restricted to students with IEPs or identified disabilities.** Emslander et

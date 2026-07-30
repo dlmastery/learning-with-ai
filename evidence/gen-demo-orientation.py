@@ -1,7 +1,27 @@
 #!/usr/bin/env python3
-"""Insert a what/why/how orientation block after <header> on every demo page.
-Written per-demo. Re-runnable: replaces an existing block rather than stacking."""
-import pathlib, re
+"""RETIRED SCAFFOLD — do not run this without reading the note below.
+
+It inserted a what/why/how orientation block after <header> on every demo page,
+replacing an existing block rather than stacking, which made it safely
+re-runnable while it was the source of truth.
+
+It is no longer the source of truth. Every orientation block on every demo page
+has since been rewritten by hand — first to break the identical
+imperative -> "Then" -> "watch" rhythm that fourteen of them shared, then again
+to bring em-dash and bold density inside the budgets that evidence/check-voice.py
+now enforces. The prose literals below are the pre-edit versions. Running this
+would silently revert that work on every page at once, and no test would fail,
+because the result is valid HTML that renders and passes every render check.
+
+The pages are the source of truth. This file is kept as the record of what was
+generated and when, not as a tool. If a new demo needs an orientation block,
+copy the shape from a current page rather than re-running this.
+"""
+import pathlib, re, sys
+
+if "--i-have-read-the-retirement-note" not in sys.argv:
+    sys.exit("gen-demo-orientation.py is retired; see the note at the top of this file. "
+             "Running it would revert hand-written prose on every demo page.")
 
 O = {
 "teachable-agent": (
