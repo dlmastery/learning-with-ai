@@ -44,8 +44,8 @@ status: raw-research
 ## Source reachability log (2026-07-30)
 
 WebSearch budget exhausted mid-session at 200 calls, per the pattern `N2` and `Z1` both
-record. Retrieval then ran on **ERIC** (`api.ies.ed.gov`), **Europe PMC** (search +
-`fullTextXML`), **Crossref REST**, and the **arXiv API**. Semantic Scholar returned `HTTP 429`
+record. Retrieval then ran on ERIC (`api.ies.ed.gov`), Europe PMC (search +
+`fullTextXML`), Crossref REST, and the arXiv API. Semantic Scholar returned `HTTP 429`
 on every attempt in two bursts and contributed nothing.
 
 - **Open PDFs that served to `curl` and `pdftotext`, quoted verbatim below:** Barroso et al.
@@ -86,25 +86,25 @@ against).
 |---|---|---|---|---|
 | 1 | Maths anxiety × maths achievement, the founding estimate | r = **−.27**, 26 studies, elementary and secondary | Ma 1999, *JRME* 30(5) | `MEASURED-META` |
 | 2 | The modern replacement | r = **−.28** [−.29, −.26], 223 studies / 747 effect sizes, I² = 90.42 | Barroso et al. 2021, *Psych. Bull.* | `MEASURED-META` |
-| 3 | The largest by participants | r = **−.30** [−.32, −.28], 177 studies / 906,311 participants; test anxiety on the same corpus r = −.23 [−.26, −.19] | Caviola et al. 2022, *EPR* 34 | `MEASURED-META` |
+| 3 | The largest by participants | r = −.30 [−.32, −.28], 177 studies / 906,311 participants; test anxiety on the same corpus r = −.23 [−.26, −.19] | Caviola et al. 2022, *EPR* 34 | `MEASURED-META` |
 | 4 | Barroso's grade gradient | grades 3–5 −.20 [−.25, −.14]; 6–8 −.30; 9–12 **−.34** [−.36, −.31] | Barroso et al. 2021 | `MEASURED-META` |
-| 5 | Barroso's ability moderator | samples selected for **low** maths ability r = **−.09** [−.17, −.004], k = 18, vs −.28 elsewhere | ibid. | `MEASURED-META` |
+| 5 | Barroso's ability moderator | samples selected for **low** maths ability r = −.09 [−.17, −.004], k = 18, vs −.28 elsewhere | ibid. | `MEASURED-META` |
 | 6 | …and its publication bias | published k = 520 r = −.29 vs unpublished k = 227 r = −.23; Egger z = 2.59, p = .01; trim-and-fill imputes **to the left**, adjusted r = −0.29 | ibid. | `MEASURED-META` |
 | 7 | Children with high maths anxiety who have typical or high maths performance | **77%**; children with dyscalculia are twice as likely to be highly anxious | Devine et al. 2018, *JEP*, n = 1,757 | `OBSERVED` |
 | 8 | Maths anxiety × computation-based working-memory span | r = **−.40**; verbal-based spans show **no** anxiety-group difference | Ashcraft & Kirk 2001, via Ashcraft & Krause 2007 | `OBSERVED` |
-| 9 | Maths anxiety × working memory, pooled, and the mediated path | r = −0.168 [−0.203, −0.133], 57 studies / 16,589 participants; indirect effect −0.092 [−0.169, −0.015] from **8 studies** | Finell et al. 2022 | `MEASURED-META` |
+| 9 | Maths anxiety × working memory, pooled, and the mediated path | r = −0.168 [−0.203, −0.133], 57 studies / 16,589 participants; indirect effect −0.092 [−0.169, −0.015] from 8 studies | Finell et al. 2022 | `MEASURED-META` |
 | 10 | Test-anxiety interventions, university students | anxiety g = **−0.76**; performance g = **0.37**; 44 RCTs, n = 2,209; publication bias found | Huntley et al. 2019 | `MEASURED-META` |
 | 11 | Mindfulness for test anxiety | ES = −0.716 [−1.383, −0.049], 18 studies / 1,275 participants; **no achievement outcome anywhere in the meta** | Yılmazer et al. 2024 | `MEASURED-META` |
 | 12 | Maths-anxiety interventions | anxiety g = −0.467; performance g = 0.502; 50 studies; motivation-type interventions g = −0.251 [−0.595, 0.094]; higher study quality associated with **non-significant** outcomes | Sammallahti et al. 2023 | `MEASURED-META` |
 | 13 | Stereotype threat in schoolgirls | g = −0.22 [−0.34, −0.10], k = 47, credibility interval [−0.85, 0.41] | Flore & Wicherts 2015 | `MEASURED-META` |
-| 14 | …after trim-and-fill, and by sample size | g = **−0.07** [−0.21, 0.06], **p = .27**; N < 60 g = −0.34 vs N ≥ 60 g = −0.13, **p = .10** | ibid. | `MEASURED-META` |
+| 14 | …after trim-and-fill, and by sample size | g = **−0.07** [−0.21, 0.06], **p = .27**; N < 60 g = −0.34 vs N ≥ 60 g = −0.13, p = .10 | ibid. | `MEASURED-META` |
 | 15 | Stereotype threat, overall vs operational conditions | d = −.31 (k = 181, N = 10,436) falling to d = **−.14** (k = 45) and **−.09** after trim-and-fill | Shewach et al. 2019, *JAP* | `MEASURED-META` |
 | 16 | …in actual high-stakes settings, and under monetary incentive | d = **−.01** (k = 4, N = 1,670) and d = **.00** (k = 9, N = 526); lab d = −.36, t(179) = −5.73, p < .01 | ibid. | `MEASURED-META` |
 | 17 | Large pre-registered replication, Dutch high schools | **no** overall effect and **no** moderated effect, N = 2,064 | Flore, Mulder & Wicherts 2018 | `MEASURED-RCT` (null) |
-| 18 | NSLM: the belief vs the grade, one trial | fixed-mindset beliefs **SMD 0.33** (n = 5,650, p < .001); core GPA, lower achievers **SMD 0.11** (B = 0.10 [0.04, 0.16], p = .001); higher achievers **SMD 0.01** (p = .634) | Yeager et al. 2019, *Nature* | `MEASURED-RCT` |
+| 18 | NSLM: the belief vs the grade, one trial | fixed-mindset beliefs **SMD 0.33** (n = 5,650, p < .001); core GPA, lower achievers SMD 0.11 (B = 0.10 [0.04, 0.16], p = .001); higher achievers **SMD 0.01** (p = .634) | Yeager et al. 2019, *Nature* | `MEASURED-RCT` |
 | 19 | Growth mindset, all studies vs manipulation-check subset vs best designs | d̄ = 0.05 [0.02, 0.09] → PET-corrected **0.01**; **0.04 [−0.01, 0.10]** (13 studies); 0.02 [−0.06, 0.10] (6 studies) | Macnamara & Burgoyne 2023 | `MEASURED-META` |
 | 20 | The counterpart estimate, overlapping study pool | targeted subgroups at high fidelity, achievement d = 0.14 [0.06, 0.22] | Burnette et al. 2023 | `MEASURED-META` |
-| 21 | Big-fish-little-pond effect | β = **−0.28** [−0.32, −0.24], 33 studies / N = 1,276,838; mean β = −.20 and negative in **all 26** countries tested | Fang et al. 2018; Marsh & Hau 2003 | `MEASURED-META` |
+| 21 | Big-fish-little-pond effect | β = **−0.28** [−0.32, −0.24], 33 studies / N = 1,276,838; mean β = −.20 and negative in all 26 countries tested | Fang et al. 2018; Marsh & Hau 2003 | `MEASURED-META` |
 | 22 | Inclusive vs segregated placement, general learning difficulties | cognitive d = **0.35**; psychosocial d = **0.00**; 40 studies / N = 11,987 | Krämer et al. 2021, *RER* | `MEASURED-META` |
 | 23 | Self-concept interventions for students with LD | benefit confined to students with **documented low self-concept** | Elbaum & Vaughn 2003 | `MEASURED-META` |
 | 24 | Reading anxiety × reading achievement | r = **−.30**, 64 studies / 14,467 participants; **learning-disability status is not a moderator** | Johnson et al. 2026, *Psych. Bull.* | `MEASURED-META` |
@@ -191,14 +191,14 @@ This is the question the project needs answered, because it determines whether y
 feeling or the gap.
 
 Carey, Hill, Devine & Szűcs (2016, *Frontiers in Psychology* 6:1987) framed it well and did
-not resolve it, which is the correct outcome. They name two accounts: the **Deficit Theory**,
+not resolve it, which is the correct outcome. They name two accounts: the Deficit Theory,
 in which *"poor performance… leads to higher anxiety about that situation in the future"*, and
-the **Debilitating Anxiety Model**, in which *"anxiety reduces performance by affecting the
+the Debilitating Anxiety Model, in which *"anxiety reduces performance by affecting the
 pre-processing, processing, and retrieval of information."* Their summary of the evidence, as
 retrieved from `PMC4703847`: *"the Deficit Theory is supported by longitudinal studies and
 studies of children with mathematical learning disabilities, but the Debilitating Anxiety
 Model is supported by research which manipulates anxiety levels and observes a change in
-mathematics performance."* They propose a **Reciprocal Theory** in which *"poor performance may
+mathematics performance."* They propose a Reciprocal Theory in which *"poor performance may
 trigger MA in certain individuals, [and] it may further reduce their maths performance in a
 vicious cycle."* `MEASURED-META` (review)
 
@@ -208,7 +208,7 @@ Longitudinal designs have the causal ordering but not the manipulation; experime
 manipulation but induce a state, not a trait, and measure performance minutes later.
 
 The numbers on the longitudinal arm are small. Ma & Xu (2004), quoted in Carey et al., found
-correlations of **−0.11 to −0.2** between a student's achievement in one year and their maths
+correlations of −0.11 to −0.2 between a student's achievement in one year and their maths
 anxiety in the following year. Sorvo, Kiuru, Koponen, Aro, Viholainen, Ahonen & Aro (2022,
 *Annals of the New York Academy of Sciences*) ran a cross-lagged model on 848 Finnish students
 from grade 6 to grade 7 and found the other arm: *"High anxiety in sixth grade predicted low
@@ -381,7 +381,7 @@ anxiety, and effect magnitudes *"in the small to moderate range."* `MEASURED-MET
 Huntley, Young, Temple, Longworth, Smith, Jha & Fisher (2019, *Journal of Anxiety Disorders*
 63, 36–50) pooled 44 randomised controlled trials of interventions for test-anxious university
 students, n = 2,209. Interventions beat controls at post-treatment on test anxiety at
-**g = −0.76** and on academic performance at **g = 0.37**, with behaviour therapy carrying the
+g = −0.76 and on academic performance at g = 0.37, with behaviour therapy carrying the
 most support. The authors' own qualification, verbatim: *"Evidence of publication bias was
 found and poor quality of reporting meant that confidence in results should be moderated."*
 `MEASURED-META`
@@ -430,36 +430,35 @@ matter. All figures below are from the *Nature* paper retrieved in full from `PM
 
 **Design.** A stratified random sample of 65 regular US public high schools; 12,490 ninth
 graders individually randomised within school; two online sessions totalling *"less than one
-hour"*, median 21 days apart; pre-registered analysis plan at `osf.io/tn6g4`; independent data
+hour"*, median 21 days apart; pre-registered plan at `osf.io/tn6g4`; independent data
 collection by ICF; blinded Bayesian corroboration. `MEASURED-RCT`
 
-**Effect on the belief.** Among lower-achieving adolescents, fixed-mindset beliefs fell,
-B = −0.38, 95% CI [−0.31, −0.46], SE 0.04, n = 5,650, k = 65, t = −10.14, p < 0.001,
-**standardised mean difference 0.33**.
+**The belief.** Among lower-achieving adolescents fixed-mindset beliefs fell, B = −0.38, 95% CI
+[−0.31, −0.46], SE 0.04, n = 5,650, k = 65, t = −10.14, p < 0.001, **SMD 0.33**.
 
-**Effect on grades, lower-achieving students.** Core-course GPA rose B = **0.10 grade points**,
-95% CI [0.04, 0.16], SE 0.03, n = 6,320, k = 65, t = 3.51, p = 0.001, **SMD 0.11**. Maths and
-science GPAs gave B = 0.10 as well.
+**Grades, lower achievers.** Core-course GPA rose B = 0.10 grade points, 95% CI [0.04,
+0.16], SE 0.03, n = 6,320, k = 65, t = 3.51, p = 0.001, **SMD 0.11**; maths and science GPAs
+gave B = 0.10 as well.
 
-**Effect on grades, higher-achieving students.** B = 0.01 grade points, 95% CI [−0.03, 0.06],
-SE 0.02, n = 6,170, t = 0.480, **p = 0.634, SMD 0.01**. The intervention × lower-achiever
-interaction was B = 0.09 [0.01, 0.17].
+**Grades, higher achievers.** B = 0.01 grade points, 95% CI [−0.03, 0.06], SE 0.02, n = 6,170,
+t = 0.480, **p = 0.634, SMD 0.01**. Intervention × lower-achiever interaction B = 0.09 [0.01,
+0.17].
 
 **Moderation.** The GPA effect was smaller in higher-achieving schools: interaction B = −0.07,
 SE 0.03, z = −2.76, p = 0.006, standardised β = −0.25, with medium-achieving schools showing
 larger effects than the top quartile. Peer norms supporting challenge-seeking, measured by a
 behavioural "make-a-math-worksheet" task aggregated from the control group, moderated the
-effect positively; self-reported mindset norms did not.
+effect; self-reported mindset norms did not.
 
-**Course-taking runs the other way.** Advanced-mathematics enrolment in tenth grade
-(41 schools) moved with interaction B = 0.04 [0.00, 0.08], z = 2.26, p = 0.024, *"the opposite
-of what we found for core course GPAs"*: +4 percentage points in the top quartile of schools
-(t = 2.37, p = 0.018) against +2 points in the lower 75% (t = 2.00, p = 0.045).
+**Course-taking runs the other way.** Advanced-mathematics enrolment in tenth grade (41
+schools): interaction B = 0.04 [0.00, 0.08], z = 2.26, p = 0.024, *"the opposite of what we
+found for core course GPAs"*; +4 percentage points in the top quartile of schools (t = 2.37,
+p = 0.018) against +2 points in the lower 75% (t = 2.00, p = 0.045).
 
-So the honest one-line summary is: an under-one-hour online intervention moved a self-reported
-belief by a third of a standard deviation, moved grades by a tenth of a standard deviation in
-the half of students who were behind, moved grades not at all in the half who were not, and
-moved course-taking mainly in the schools where it did not move grades.
+The one-line summary: an under-one-hour online intervention moved a self-reported belief by a
+third of a standard deviation, moved grades by a tenth of one in the students who were behind,
+moved grades not at all in those who were not, and moved course-taking mainly in the schools
+where it did not move grades.
 
 ### 5.1 The comparison against the field
 
@@ -478,7 +477,7 @@ Burnette, Billingsley, Banks, Knouse, Hoyt, Allison & Larkin (2023, *Psychologic
 analysed a heavily overlapping study pool with multilevel meta-regression and reported that
 when interventions were delivered to targeted subgroups with high fidelity, achievement
 effects were d = 0.14, 95% CI [0.06, 0.22], and mental-health effects d = 0.32 [0.10, 0.54].
-`MEASURED-META` These two meta-analyses are **not independent**; they descend from
+`MEASURED-META` These two meta-analyses are not independent; they descend from
 substantially the same primary trials and disagree about how to model heterogeneity, not about
 what the trials found.
 
@@ -550,7 +549,7 @@ k = 9**. Published d = −.37 (k = 132) against unpublished −.17 (k = 49), t(1
 p < .01. The 10% most precise studies give d = −.11; the least precise, −.38. `MEASURED-META`
 
 **The contested meta-analysis.** Picho-Kiroga, Turnbull & Rodriguez-Leahy (2021, *Journal of
-Advanced Academics*) reported mean d = .28 in females, with the effect **falling** as more of
+Advanced Academics*) reported mean d = .28 in females, with the effect falling as more of
 Steele's three essential conditions were present, until studies containing all three were
 indistinguishable from zero. Warne (2022, same journal) re-analysed their data file: median
 sample size 40; mean a priori power .189; 31 of 101 computable effect sizes significant against
@@ -585,33 +584,32 @@ evidence.
 Academic self-concept is the construct with the strongest and least contested evidence in this
 report, and it is the one with the sharpest unexamined consequence for a personalised tutor.
 
-**The reciprocal effects model.** Guay, Marsh & Boivin (2003, *Journal of Educational
-Psychology*) tested the causal ordering and supported a reciprocal model in which achievement
-affects self-concept and self-concept affects achievement. Seaton, Parker, Marsh, Craven &
-Yeung (2014) juxtaposed self-concept against achievement-goal orientations across four waves
-in 2,786 Australian students aged 11–17: *"when all were included in a single model, only
-self-concept had significant reciprocal relationships with achievement."* `OBSERVED`
+**The reciprocal effects model.** Guay, Marsh & Boivin (2003, *JEP*) supported a reciprocal
+model in which achievement affects self-concept and self-concept affects achievement. Seaton,
+Parker, Marsh, Craven & Yeung (2014) juxtaposed self-concept against achievement-goal
+orientations across four waves in 2,786 Australian students aged 11–17: *"when all were
+included in a single model, only self-concept had significant reciprocal relationships with
+achievement."* `OBSERVED`
 
-**The big-fish-little-pond effect.** Marsh & Hau (2003, *American Psychologist*) tested
-103,558 fifteen-year-olds across 26 countries. School-average achievement had a negative effect
-on individual academic self-concept in **all 26 countries**, mean β = −.20, SD = .08.
-`OBSERVED` Fang, Huang, Zhang, Huang, Li & Yuan (2018, *Frontiers in Psychology* 9:1569) pooled
-33 studies and 56 effect sizes over N = 1,276,838: β = −0.28, Z = −13.84, p < 0.001, CI [−0.32,
-−0.24], I² = 99.78%. Age moderated it (high school −0.32, middle −0.28, college −0.23, primary
-−0.21), as did region (Asia −0.35, Europe −0.30, North America −0.20) and domain (verbal −0.31,
-STEM −0.30, general −0.22). Comparison target, class against school, did not. `MEASURED-META`
+**The big-fish-little-pond effect.** Marsh & Hau (2003, *American Psychologist*) tested 103,558
+fifteen-year-olds across 26 countries. School-average achievement depressed individual academic
+self-concept in **all 26**, mean β = −.20, SD = .08. `OBSERVED` Fang et al. (2018, *Frontiers in
+Psychology* 9:1569) pooled 33 studies and 56 effect sizes over N = 1,276,838: β = −0.28,
+Z = −13.84, p < 0.001, CI [−0.32, −0.24], I² = 99.78%, moderated by age (high school −0.32 to
+primary −0.21), region (Asia −0.35, North America −0.20) and domain (verbal −0.31, general
+−0.22), and not by comparison target (class against school). `MEASURED-META`
 
 Marsh, Chessor, Craven & Roche (1995, *AERJ*) followed 53 Australian elementary students into
-gifted-and-talented programmes and found systematic declines in three components of academic
-self-concept and in none of four non-academic components. `OBSERVED` Parker, Dicke, Guo,
-Basarkod & Marsh (2021, *Educational Researcher*) showed across four TIMSS cycles that
-country-level **ability stratification** predicts the size of a country's BFLPE. `OBSERVED`
+gifted programmes and found systematic declines in three components of academic self-concept
+and none of four non-academic components. Parker, Dicke, Guo, Basarkod & Marsh (2021,
+*Educational Researcher*) showed across four TIMSS cycles that country-level **ability
+stratification** predicts the size of a country's BFLPE. `OBSERVED`
 
-And a counterweight that the corpus should carry, because it bounds the effect: Preckel &
-Brüll (2010) found that in German gifted-track classes a positive *assimilation* effect of
-class type counterbalanced the negative *contrast* effect of class-average ability, with the
-two of comparable size and no net BFLPE. `OBSERVED` Being in the pond and being labelled as
-belonging to a prestigious pond are separate inputs with opposite signs.
+A counterweight that bounds the effect: Preckel & Brüll (2010) found that in German gifted-track
+classes a positive *assimilation* effect of class type counterbalanced the negative *contrast*
+effect of class-average ability, the two of comparable size, with no net BFLPE. `OBSERVED`
+Being in the pond and being labelled as belonging to a prestigious pond are separate inputs
+with opposite signs.
 
 ### 7.1 The question nobody has costed
 
@@ -653,23 +651,19 @@ achievement has failed on the reciprocal model's own terms.
 The corpus's organising learner is served under a SELPA plan, so this section carries more
 weight than its evidence base can comfortably support. That is itself the finding.
 
-**Self-concept.** Bear, Minke & Manning (2002, *School Psychology Review*) meta-analysed 61
-studies and found that children with learning disabilities perceive their academic ability
-less favourably than peers, with **no difference as a function of special education setting**.
-Elbaum (2002, *Learning Disabilities Research & Practice*) meta-analysed 40 studies on
-placement and found no association between self-concept and placement in four of five
-comparisons; the exception was that students in self-contained classrooms within regular
-schools had lower self-concept than those in special schools, which is the BFLPE running
-inside a building. `MEASURED-META` Nelson (2012) pooled 22 studies of adults with learning
-disabilities: general self-concept d = −0.34, academic self-concept **d = −0.56**, social
-−0.32, physical −0.13. The deficit is domain-specific and it is academic. `MEASURED-META`
-
-**Placement.** Krämer, Möller & Zimmermann (2021, *Review of Educational Research*) pooled 40
-studies, 428 effect sizes, N = 11,987 on inclusive against segregated settings for students
-with general learning difficulties: cognitive outcomes d = 0.35, **psychosocial outcomes
-d = 0.00**. Students without difficulties differed neither cognitively (d = −0.14) nor
-psychosocially (d = 0.06). `MEASURED-META` Inclusion buys attainment and buys nothing
-affective, in either direction, for either group.
+**Self-concept and placement.** Bear, Minke & Manning (2002, *School Psychology Review*)
+meta-analysed 61 studies: children with learning disabilities perceive their academic ability
+less favourably than peers, with **no difference by special education setting**. Elbaum (2002)
+meta-analysed 40 placement studies and found no association in four of five comparisons; the
+exception was that students in self-contained classrooms inside regular schools had lower
+self-concept than those in special schools, which is the BFLPE running within a building.
+Nelson (2012) pooled 22 studies of adults with LD: general self-concept d = −0.34, academic
+d = −0.56, social −0.32, physical −0.13. The deficit is domain-specific and academic.
+`MEASURED-META` Krämer, Möller & Zimmermann (2021, *RER*) pooled 40 studies, 428 effect sizes,
+N = 11,987 on inclusive against segregated settings: cognitive d = 0.35, **psychosocial
+d = 0.00**; students without difficulties differed neither cognitively (−0.14) nor
+psychosocially (0.06). Inclusion buys attainment and buys nothing affective, either way, for
+either group. `MEASURED-META`
 
 **Interventions.** Elbaum & Vaughn (2001, *Elementary School Journal*) pooled 64 school-based
 self-concept intervention studies for students with LD. Their 2003 follow-up in the *Journal of
@@ -683,7 +677,7 @@ direction.
 **Anxiety specifically.** Devine et al. (2018) gives the prevalence structure in §1.1. Namkung,
 Peng & Goodrich (2025, *Learning Disability Quarterly*) re-analysed an RCT of 245 sixth graders,
 65 with mathematics learning difficulties: for students without MLD, mathematics vocabulary and
-computational fluency **fully mediated** the relation between maths anxiety and mathematics
+computational fluency fully mediated the relation between maths anxiety and mathematics
 competence; for students with MLD, only mathematics vocabulary had a direct effect. They
 conclude that *"the nature of the relation between mathematics anxiety and mathematics
 competence differs by MLD status, and students with MLD may require different types of
@@ -697,16 +691,14 @@ domain, and age were not significant moderators."* `MEASURED-META` The affective
 is the same size as the one on maths, and it does not spare children with an identified
 disability, nor is it larger for them.
 
-**Learned helplessness.** The evidence here is old and it is thin. Johnson (1981, *JEP*) found
-that low self-concept was predicted by school failure, internal attributions for failure and
-external attributions for success. Valås (2001) tracked 1,580 Norwegian students across three
-grade bands and found achievement related both directly and indirectly to attributions,
-expectations, helplessness and psychological adjustment. The attributional-retraining
-intervention literature is almost entirely first-year university students (Perry and colleagues
-across three decades), where the best-evidenced result is a reduction in course failure from
-14.6% to 6.4% in an introductory psychology course, and where Hall, Jackson Gradt, Goetz &
-Musu-Gillette (2011) found *"unanticipated negative treatment effects for students with higher
-self-esteem."* `OBSERVED`
+**Learned helplessness.** Old and thin. Johnson (1981, *JEP*) found low self-concept predicted
+by school failure plus internal attributions for failure and external attributions for success.
+Valås (2001) tracked 1,580 Norwegian students across three grade bands and found achievement
+related directly and indirectly to attributions, expectations, helplessness and adjustment. The
+attributional-retraining intervention literature is almost entirely first-year undergraduates
+(Perry and colleagues over three decades), where the best-evidenced result is a drop in course
+failure from 14.6% to 6.4%, and where Hall, Jackson Gradt, Goetz & Musu-Gillette (2011) found
+*"unanticipated negative treatment effects for students with higher self-esteem."* `OBSERVED`
 
 `OBSERVED — absence`: ERIC queries this session for learned helplessness or attributional style
 **in students with an IEP** return work from the 1980s and no modern intervention trial. There
@@ -715,34 +707,30 @@ delivered by any digital system. A tutoring product that intends to address a fa
 is operating on a literature whose most recent controlled evidence concerns Canadian
 undergraduates.
 
-**And one measured warning specific to adaptive software.** Kohn, Rauscher, Kucian, Käser,
-Wyschkon, Esser & von Aster (2020, *Frontiers in Psychology*) randomised 67 children with
-developmental dyscalculia to the adaptive trainer Calcularis 2.0 or a waiting control, at a
-minimum of 42 sessions. The programme worked, with gains stable at three months. The
-responder analysis is the part this project needs: *"this self-directed training was especially
-beneficial for children with low math anxiety scores and without an additional reading and/or
-spelling disorder."* `MEASURED-RCT` Adaptivity did not neutralise anxiety. The anxious children
-benefited least from the thing built to help them.
+**A measured warning specific to adaptive software.** Kohn et al. (2020, *Frontiers in
+Psychology*) randomised 67 children with developmental dyscalculia to the adaptive trainer
+Calcularis 2.0 or a waiting control, minimum 42 sessions. The programme worked, with gains
+stable at three months. The responder analysis is the part this project needs: *"this
+self-directed training was especially beneficial for children with low math anxiety scores and
+without an additional reading and/or spelling disorder."* `MEASURED-RCT` Adaptivity did not
+neutralise anxiety. The anxious children benefited least from the thing built to help them.
 
 ---
 
 ## 9. A documented null, given its own space
 
-The brief asks for at least one anxiety or mindset intervention that moved self-report and did
-not move achievement. There are three, at increasing levels of evidential force.
+Three cases, at increasing evidential force.
 
 **One: mindfulness for test anxiety has never been asked the question.** Yılmazer, Hamamcı &
-Türk (2024) pooled 18 studies and 1,275 participants and found ES = −0.716, 95% CI [−1.383,
-−0.049] on test anxiety. Achievement appears nowhere in the meta-analysis, because it appears
-nowhere in the primary studies at the level required for pooling. This is not a null result; it
-is a literature that measured only the feeling. `MEASURED-META`
+Türk (2024) pooled 18 studies and 1,275 participants: ES = −0.716, 95% CI [−1.383, −0.049] on
+test anxiety. Achievement appears nowhere in the meta-analysis, because it appears nowhere in
+the primary studies at the level required for pooling. A literature that measured only the
+feeling. `MEASURED-META`
 
-**Two: the National Study of Learning Mindsets, within one pre-registered trial.** The
-intervention reduced fixed-mindset beliefs at SMD 0.33 (n = 5,650, t = −10.14, p < 0.001) and
-produced a core-GPA effect in higher-achieving students of SMD 0.01, B = 0.01 grade points, 95%
-CI [−0.03, 0.06], n = 6,170, **p = 0.634**. Same trial, same intervention, same schools, same
-randomisation. The belief moved by thirty-three hundredths of a standard deviation and the
-grade moved by one hundredth. `MEASURED-RCT` (null in the higher-achieving stratum)
+**Two: the NSLM, within one pre-registered trial.** Fixed-mindset beliefs fell at SMD 0.33
+(n = 5,650, t = −10.14, p < 0.001) while core GPA in higher-achieving students moved SMD 0.01,
+B = 0.01 grade points [−0.03, 0.06], n = 6,170, **p = 0.634**. Same trial, same intervention,
+same schools, same randomisation. `MEASURED-RCT` (null in the higher-achieving stratum)
 
 **Three, and this is the strongest form of the finding: Macnamara & Burgoyne's manipulation-check
 meta-analysis.** They isolated the 13 studies, N = 18,355, that *demonstrated the intervention
@@ -829,7 +817,7 @@ stakes; this design must be checked against the possibility that it removes both
 `SPEC` — **2. Load-flat difficulty escalation.** From §3.3. When the avoidance signature
 appears (latency falling as accuracy falls on rising difficulty), hold storage demand constant
 and let conceptual demand rise, by externalising intermediate state.
-*Outcome measure:* delayed unassisted transfer at 7+ days on isomorphic items **without** the
+*Outcome measure:* delayed unassisted transfer at 7+ days on isomorphic items without the
 externalisation, compared against a matched arm that received the same items with the same
 pacing and no externalisation.
 
@@ -847,7 +835,7 @@ evaluated on that subgroup's interaction term.
 you", no leaderboard, no comparison to a class average that the system could compute and the
 learner never asked for. The learner's own past performance is the only reference class the
 BFLPE evidence supports.
-*Outcome measure:* academic self-concept as a **mediator** in a model whose outcome is delayed
+*Outcome measure:* academic self-concept as a mediator in a model whose outcome is delayed
 unassisted performance at 6+ weeks. A self-concept gain that does not carry through to the
 performance outcome is the §9 failure mode wearing a different label.
 

@@ -321,31 +321,29 @@ SLA field has been arguing about those commitments since 1982, and the argument 
 usefully unresolved.
 
 **Comprehensible input.** Krashen's Input Hypothesis holds that acquisition happens when
-the learner understands input slightly beyond current competence, that conscious learning
-of rules cannot become acquisition, and that an affective filter can block input from
+the learner understands input slightly beyond current competence, that conscious rule
+learning cannot become acquisition, and that an affective filter can block input from
 reaching the acquisition device. It is the most influential idea in language teaching and
-it is also the one that survives by being hard to disconfirm: "slightly beyond current
-competence" is not independently measurable, and a learner who fails to acquire can always
-be described as having received insufficiently comprehensible input or as having had a
-raised filter. Gregg's 1984 critique in *Applied Linguistics* is the canonical statement
-of this objection. `CRAFT` for the pedagogy, and the theoretical status is contested.
-
-The practical residue is real regardless. Extensive comprehensible input at a coverage
-the learner can handle is the thing a generative model can now supply in unlimited
-quantity, which is why §4.1's coverage arithmetic matters more than the theory does.
+it survives partly by being hard to disconfirm: "slightly beyond current competence" is
+not independently measurable, and a learner who fails to acquire can always be described
+as having received insufficiently comprehensible input or as having had a raised filter.
+Gregg's 1984 critique in *Applied Linguistics* is the canonical statement of the
+objection. `CRAFT` for the pedagogy; the theoretical status is contested. The practical
+residue holds regardless: extensive input at a coverage the learner can handle is what a
+generative model can now supply without limit, which is why §4.1's coverage arithmetic
+matters more here than the theory does.
 
 **Interaction.** Long's Interaction Hypothesis adds that negotiation of meaning — the
-repairs, clarification requests and confirmation checks that happen when comprehension
+repairs, clarification requests and confirmation checks that occur when comprehension
 breaks down — is what makes input usable, by drawing attention to the gap between what the
-learner said and what the language requires. This is the mechanism a conversational tutor
-is implicitly betting on, and it is the one a chatbot can execute at will.
+learner said and what the language requires. That is the mechanism a conversational tutor
+is implicitly betting on, and a chatbot can execute it at will.
 
-**Output.** Swain's Output Hypothesis, from the Canadian immersion data where learners
-with years of rich input still had non-native production, holds that producing language
-forces a shift from semantic to syntactic processing: you can understand a sentence
-without parsing it, but you cannot say one. **Pushed output**, production under pressure
-to be accurate and precise, is the operative version. This is the mechanism most consumer
-products have least of, and the one an AI conversational partner supplies for free.
+**Output.** Swain's Output Hypothesis, from Canadian immersion data where learners with
+years of rich input still produced non-native speech, holds that production forces a shift
+from semantic to syntactic processing: a sentence can be understood without being parsed,
+and cannot be said without it. **Pushed output**, production under pressure to be accurate,
+is the operative version, and it is the mechanism consumer products have least of.
 
 ### 3.1 Corrective feedback, and the one question a tutor design depends on
 
@@ -372,37 +370,35 @@ younger learners benefited more than older ones.
 
 Three things follow that a build should act on.
 
-**Implicit and explicit reverse across the retention interval.** Li's headline reversal —
-explicit ahead at immediate test, implicit better maintained — is the finding that should
-worry anyone whose tutor's design instinct is to explain the rule. If it is real, the
-correction style that wins the demo loses at eight weeks. The caution is that the contrast
-is between-study rather than within: the implicit studies are not the same studies as the
-explicit ones, and Li's own moderator table shows implicit feedback concentrated in the
-laboratory and in longer treatments. This is a confound the meta-analytic design cannot
-resolve, and no primary trial located here manipulates feedback explicitness and retention
-interval factorially in the same learners.
+**Implicit and explicit reverse across the retention interval.** Li's reversal — explicit
+ahead at immediate test, implicit better maintained — should worry anyone whose design
+instinct is to explain the rule, because if it is real then the correction style that wins
+the demo loses at eight weeks. The caution is that the contrast is between-study: the
+implicit studies are not the same studies as the explicit ones, and Li's own moderators put
+implicit feedback disproportionately in the laboratory and in longer treatments. No primary
+trial located here manipulates feedback explicitness and retention interval factorially in
+the same learners, so the reversal is suggestive and confounded.
 
-**Prompts beat recasts, and prompts are pushed output.** A recast supplies the correct
-form; a prompt withholds it and pushes the learner to produce it. Lyster and Saito's
-result is the corrective-feedback literature's version of the generation effect, and it is
-a direct design instruction: a tutor that reformulates the learner's sentence correctly is
-doing the less effective thing, and doing it because it is the easier thing for a language
-model to do.
+**Prompts beat recasts, and a prompt is pushed output.** A recast supplies the correct
+form; a prompt withholds it and pushes the learner to produce it. This is the
+corrective-feedback literature's version of the generation effect, and it is a direct
+design instruction: a tutor that smoothly reformulates the learner's sentence is doing the
+less effective thing, and doing it because reformulating is what a language model finds
+easy.
 
 **The outcome measure decides the answer.** Lyster and Saito find effects largest on free
-constructed response, which is the good news; Norris & Ortega (2000), *Language Learning*
-50(3), whose synthesis established that explicit instruction beats implicit, also
-established that the L2 instruction literature's outcome measures are dominated by
-discrete-point and metalinguistic formats that favour explicit knowledge. Both facts are
-in the same literature and they pull opposite ways.
+constructed response. Norris & Ortega (2000), *Language Learning* 50(3), whose synthesis
+established that explicit instruction beats implicit, also established that this
+literature's outcome measures are dominated by discrete-point and metalinguistic formats
+that favour explicit knowledge. Both facts sit in the same literature and pull opposite
+ways.
 
-**Untraceable in this session.** The specific pooled *d* values for Li (2010) and Lyster &
-Saito (2010), and their confidence intervals, could not be retrieved: both papers are
-closed access (Wiley and Cambridge respectively return 403, and OpenAlex records
-`oa_status: closed` with no repository full text for either). The directional findings
-above are quoted verbatim from the authors' own published abstracts. The widely circulated
-point estimates for these two meta-analyses are therefore **not stated here**, because
-this report could not read them at source.
+**Untraceable in this session.** The pooled *d* values for Li (2010) and Lyster & Saito
+(2010) and their confidence intervals could not be retrieved: both are closed access
+(Wiley and Cambridge return 403; OpenAlex records `oa_status: closed` with no repository
+full text for either). The directional findings above are quoted from the authors'
+published abstracts. The widely circulated point estimates are **not stated here**,
+because this report could not read them at source.
 
 ---
 
@@ -423,36 +419,29 @@ size yields 98% lexical coverage. The answer: **8,000–9,000 word families for 
 text, 6,000–7,000 for spoken text.** `OBSERVED` (corpus study, not an experiment).
 
 Laufer & Ravenhorst-Kalovski (2010), *Reading in a Foreign Language* 22(1), measured
-vocabulary size (Levels Test), coverage (Vocabulary Profile) and comprehension (a
-standardised national test) in the same learners and proposed two thresholds: an
-**optimal** one at 8,000 families / 98% coverage and a **minimal** one at
-**4,000–5,000 families / 95% coverage**. Their incidental observation is the useful one
-for a tutor: *"small increments of vocabulary knowledge contribute to reading
-comprehension even though they hardly improve text coverage"* — the returns are smooth,
-not stepped.
+vocabulary size, coverage and comprehension in the same learners and proposed two
+thresholds: an **optimal** one at 8,000 families / 98% coverage and a **minimal** one at
+**4,000–5,000 families / 95% coverage**. Their incidental observation is the useful one:
+*"small increments of vocabulary knowledge contribute to reading comprehension even though
+they hardly improve text coverage."* Schmitt, Jiang & Grabe (2011), *Modern Language
+Journal* 95(1), found the same directly with 661 participants from eight countries — a
+**relatively linear** relationship between percentage of vocabulary known and
+comprehension, with **no threshold**.
 
-Which is what Schmitt, Jiang & Grabe (2011), *Modern Language Journal* 95(1), found
-directly with 661 participants from eight countries: a **relatively linear** relationship
-between percentage of vocabulary known and comprehension, with **no threshold** at which
-comprehension jumps.
+Then the number itself failed to replicate. Kremmel, Indrarathne, Kormos & Suzuki (2023),
+*Language Learning* 73(4):1127–1163,
+[10.1111/lang.12622](https://doi.org/10.1111/lang.12622), preregistered with Open Data and
+Open Materials badges, replicated Hu & Nation (2000) with 104 Sri Lankan adult learners at
+five coverage densities. The study *"confirmed the original finding of a mostly linear
+relationship between vocabulary coverage and reading comprehension but **failed to
+replicate an inferred 98% coverage threshold as sufficient for adequate
+comprehension**."* `MEASURED-RCT`. The original figure rests on a regression over 66 New
+Zealand university students, and the replication found the relationship varies by genre
+and response format, so the threshold is not a single quantity.
 
-And then the number itself failed to replicate. Kremmel, Indrarathne, Kormos & Suzuki
-(2023), *Language Learning* 73(4):1127–1163,
-[10.1111/lang.12622](https://doi.org/10.1111/lang.12622), preregistered, Open Data and
-Open Materials badges, replicated Hu & Nation (2000) with 104 Sri Lankan adult learners
-at five coverage densities (80/90/95/98/100%). Their conclusion: the study *"confirmed the
-original finding of a mostly linear relationship between vocabulary coverage and reading
-comprehension but **failed to replicate an inferred 98% coverage threshold as sufficient
-for adequate comprehension**."* `MEASURED-RCT` (randomised assignment to coverage
-condition). The original figure rests on a regression over 66 New Zealand university
-students; the replication also found that unknown-word density affects comprehension
-differently by genre and by response format, so the threshold is not even a single
-quantity.
-
-The pedagogically load-bearing version, therefore: there is no cliff to get the learner
-over. There is a slope, its useful range runs from roughly 4,000 to roughly 9,000 word
-families, and every thousand families buys a bit more comprehension. That is a very
-different design target from "unlock B1."
+The load-bearing version: there is no cliff to get a learner over. There is a slope, its
+useful range runs from roughly 4,000 to 9,000 word families, and every thousand families
+buys a little more comprehension. That is a different design target from "unlock B1."
 
 ### 4.2 Incidental versus intentional, with real numbers on both
 
@@ -501,25 +490,24 @@ Effectiveness* 2(1):1–44, meta-analysed 37 vocabulary interventions, pre-K to 
 - correlation between a study's vocabulary effect and its comprehension effect, among
   studies reporting both: **r = 0.43**
 
-`MEASURED-META`. This is first-language vocabulary instruction, so the transfer is
-across a different boundary than L2 acquisition; it is nonetheless the clean version of
-the question, and the answer is a five-fold attenuation from "comprehends text built
-around the taught words" to "comprehends text."
+`MEASURED-META`. This is first-language vocabulary instruction, so the boundary being
+crossed is not identical to the L2 case; it remains the clean version of the question, and
+the answer is a five-fold attenuation from "comprehends text built around the taught
+words" to "comprehends text."
 
-The counterweight is worth stating fully, because the naive reading of Elleman is that
-deliberate vocabulary learning is shallow, and that is not what the psycholinguistics
-shows. Elgort (2011), *Language Learning* 61(2), taught 48 pseudowords by deliberate
-study and then probed them with masked repetition priming, form priming, and automatic
-semantic priming in lexical decision. All three effects appeared for the deliberately
-learned items, and response-latency variability showed they were processed with **higher
-automaticity than genuine low-frequency L2 words**. `MEASURED-RCT` (within-subject
-experimental). Deliberate learning produces real, integrated, automatised lexical
-entries.
+The counterweight matters, because the naive reading of Elleman is that deliberate
+vocabulary learning is shallow, and the psycholinguistics says otherwise. Elgort (2011),
+*Language Learning* 61(2), taught 48 pseudowords by deliberate study and probed them with
+masked repetition priming, form priming and automatic semantic priming in lexical
+decision. All three effects appeared, and response-latency variability showed the items
+were processed with **higher automaticity than genuine low-frequency L2 words**.
+`MEASURED-RCT` (within-subject). Deliberate learning produces integrated, automatised
+lexical entries.
 
 Both results hold. Deck study builds genuine word knowledge; word knowledge is not
-comprehension; and the gap between them is where the reading, listening and speaking
-practice has to go. A tutor that ships a scheduler and calls the vocabulary problem
-solved has built the d = 0.10 half.
+comprehension; the gap between them is where reading, listening and speaking practice has
+to go. A tutor that ships a scheduler and calls vocabulary solved has built the d = 0.10
+half.
 
 **The arithmetic nobody in the consumer category publishes.** Take the intentional-study
 delayed-recall figure at face value: about 39% of studied items retained in meaning
