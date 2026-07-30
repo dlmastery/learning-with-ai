@@ -933,9 +933,9 @@ took fifty years to meet. Effects in the 0.2–0.4 band, replicated across four
 countries, on a technology that did not exist in 2022, is a remarkable starting
 position — and the retention evidence will arrive.*
 
-Most of that is correct, which is why this section leads with the band — three field
-trials, named and dated above — and not with the gaps. But two things break the
-defence.
+Most of that is correct, which is why this section leads with the band and not with
+the gaps. The band is three field trials, named and dated above. But two things
+break the defence.
 
 First, the instrument is not expensive or novel. Two hundred and seventy-three
 ERIC records use it. It is four weeks of patience and a fresh item set — and item
