@@ -40,6 +40,13 @@ input[type=range]{width:100%;accent-color:var(--felt);height:22px;margin:0}
 .presets{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 4px}
 .eq{font:12.5px/1.75 var(--mono);color:var(--ink-2);background:var(--sunken);border:1px solid var(--line);
   border-radius:10px;padding:14px 16px;overflow-x:auto;white-space:pre}
+
+/* nothing may widen the page; wide content scrolls inside its own box */
+*{min-width:0}
+table{display:block;overflow-x:auto;max-width:100%}
+pre,.readout,.mono-block{overflow-x:auto;max-width:100%}
+svg{max-width:100%}
+input[type=range]{max-width:100%}
 </style>
 </head>
 <body>
@@ -250,7 +257,8 @@ function renderBars(host,spec){
   const L=narrow?2:236, R=narrow?54:64;
   const H=spec.rows.length*RH+T+B;
   const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
-  const track=W-L-R, px=v=>L+(v-spec.x.min)/(spec.x.max-spec.x.min)*track;
+  const track=W-L-R, span=(spec.x.max-spec.x.min)||1,
+        px=v=>Number.isFinite(v)?L+(v-spec.x.min)/span*track:L;
   for(let i=0;i<=4;i++){const v=spec.x.min+(spec.x.max-spec.x.min)*i/4;
     svg.appendChild(mk('line',{x1:px(v),y1:T,x2:px(v),y2:H-B,class:'gl'}));
     const t=mk('text',{x:px(v),y:H-B+16,'text-anchor':'middle',class:'vl'});
@@ -258,6 +266,7 @@ function renderBars(host,spec){
   const zero=Math.max(spec.x.min,Math.min(spec.x.max,0));
   svg.appendChild(mk('line',{x1:px(zero),y1:T,x2:px(zero),y2:H-B,stroke:'var(--line-2)','stroke-width':1.4}));
   spec.rows.forEach((r,i)=>{
+    if(!Number.isFinite(r.value)) return;   // a deterministic renderer must not emit NaN
     const y=T+i*RH+(narrow?22:12), h=18;
     const lb=mk('text',narrow?{x:L,y:T+i*RH+14,class:'sl'}:{x:L-12,y:y+14,'text-anchor':'end',class:'sl'});
     lb.textContent=r.label; svg.appendChild(lb);

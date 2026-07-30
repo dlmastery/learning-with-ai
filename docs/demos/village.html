@@ -84,10 +84,11 @@
   model are not independent minds</b> — they share a prior, a training set and a failure mode. A
   crew earns its keep only when the members differ in grounding, evidence and authority. Otherwise
   it is one voice billed five times.</p></div>
-  <div class="o"><b>How to use it</b><p>The interesting move is destructive. Drag <b>T2</b> above
-  <b>T1</b> in the ladder and read the diagnosis the village then publishes: three roles agree on
-  the wrong answer and two do not, so a judge that selects by weight of support picks the wrong one.
-  The homogeneity switch in §2 does worse — it removes the disagreement entirely.</p></div>
+  <div class="o"><b>How to use it</b><p>The interesting move is destructive. Lift <b>T2</b> above
+  <b>T1</b> and read the diagnosis the village then publishes: three roles agree on the wrong answer
+  and one does not, so a judge selecting by weight of support picks the wrong one. It is the only
+  line in the output that changes, which is how you know the ladder is doing work rather than
+  decorating it. The homogeneity switch in §2 does worse — it deletes the disagreement.</p></div>
 </section>
 
 <h2>1 · The turn</h2>
@@ -133,6 +134,13 @@ are never consulted. Move a tier and everything below recomputes.</p>
 asking anyone. The trace shows every tier that was tried and why it could or could not resolve.</p>
 
 <div id="arb"></div>
+
+<div class="note warn"><b>Watch the seam when you lift T2.</b> With the judge above scope
+precedence, the village publishes <em>“looks like a careless mistake”</em> in the same breath as
+<em>“this is the fourth time in sixteen days”</em> — a sentence pair no role would have written and
+that only an aggregator can produce. Three roles agreeing does not make them independent; they
+agreed because the wrong reading is the <em>easy</em> reading, which is what a shared prior is.
+The correct answer is still in the dissent log, which is the whole reason the log exists.</div>
 
 <h2>5 · What the village says</h2>
 <div class="panel">
@@ -274,9 +282,8 @@ const HET=[
   grd:'learner record', fam:'store', auth:['history'],
   claims:[
    {type:'fact',a:'wrong',txt:'Logged incorrect against the stored key.'},
-   {type:'diagnosis',a:'B1',txt:'Identical response shape on 14 May, 22 May and 28 May. Three occurrences, all B1.'},
    {type:'policy',a:'escalate',txt:'Fourth identical failure. The model of this learner is wrong; hand it to the teacher.'},
-   {type:'history',a:'repeat3',txt:'Three prior occurrences of the identical error in 16 days. This is not new.'}]}
+   {type:'history',a:'repeat3',txt:'Identical response shape on 14 May, 22 May and 28 May — three occurrences in 16 days, all with the same belief signature. This is not new, and it is not drifting.'}]}
 ];
 const HOM=HET.map((r,i)=>({id:r.id,nm:r.nm+' (instance '+(i+1)+')',remit:'Same base model, same prompt scaffold, a different name.',
   grd:'policy model', fam:'llm-a', auth:[], claims:MENTOR.claims}));
@@ -427,7 +434,7 @@ function drawArb(){
   $('say').innerHTML=(esc
     ? `<div class="msg agent"><span class="who">Village → human</span>${SAY.policy.escalate}</div>`
     : `<div class="msg agent"><span class="who">Village · one voice</span>${lines.join(' ')}</div>`)
-   +(choice?`<div class="msg agent"><span class="who">Surfaced to the learner</span>Two ways to go next — you pick: <b>${choice.join('</b> &nbsp;·&nbsp; <b>')}</b></div>`:'');
+   +(choice?`<div class="msg agent"><span class="who">Surfaced to the learner</span>${choice.length} ways to go next — you pick: <b>${choice.join('</b> &nbsp;·&nbsp; <b>')}</b></div>`:'');
   const t0=A.filter(x=>x.tier==='T0').length, t1=A.filter(x=>x.tier==='T1').length;
   $('cost').textContent=
    `resolved at T0 (executable) : ${t0}   — 0 model calls\n`+

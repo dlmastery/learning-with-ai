@@ -34,6 +34,13 @@
 .grid2{display:grid;grid-template-columns:1fr;gap:var(--s4)}
 @media(min-width:700px){.grid2{grid-template-columns:1fr 1fr}}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:var(--s4)}
+
+/* nothing may widen the page; wide content scrolls inside its own box */
+*{min-width:0}
+table{display:block;overflow-x:auto;max-width:100%}
+pre,.readout,.mono-block{overflow-x:auto;max-width:100%}
+svg{max-width:100%}
+input[type=range]{max-width:100%}
 </style>
 </head>
 <body>
@@ -51,9 +58,9 @@
   mechanism is not the prompt. It is that <em>producing</em> an explanation exposes the piece you
   did not have, to you, before anyone tells you. Below, that exposure is made mechanical.</p>
   <div class="chips">
-    <span class="chip m">Coverage scored live · consequences computed from the equation</span>
-    <span class="chip d">Reference decomposition and patterns authored</span>
-    <span class="chip n">A concept matcher, not comprehension — demonstrated below</span>
+    <span class="chip m">Coverage and consequences computed</span>
+    <span class="chip d">Reference decomposition authored</span>
+    <span class="chip n">A matcher, not comprehension</span>
   </div>
 </header>
 
@@ -127,7 +134,8 @@ score, and watch the coverage bar rise on a string that means nothing.</div>
   <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
     <li><strong>A reference decomposition is writable and cheap.</strong> Seven propositions across
     two probes, each with an explicit pattern set. Writing them took longer than running them; the
-    scoring itself is a few hundred microseconds and needs no network, no key and no model.</li>
+    scoring itself is timed on your own device in the consequence panel — microseconds — and needs
+    no network, no key and no model.</li>
     <li><strong>A miss can be turned into a demonstration instead of a correction.</strong> If you
     did not produce "check both candidates in the original", the page does not tell you that you
     are wrong — it computes the answer set you would have reported and substitutes it back until it
@@ -286,6 +294,13 @@ function score(){
     const rows=P.props.map(p=>({p, ...matchProp(txt,p)}));
     return {P,txt,rows,hit:rows.filter(r=>r.hit).length};
   });
+  /* performance.now() is deliberately coarsened, so time a batch and divide */
+  let reps=0, t1=performance.now();
+  while(performance.now()-t1<18){
+    for(let k=0;k<40;k++){ PROBES.forEach((P,i)=>{const s=($('ta'+i).value||'');
+      P.props.forEach(p=>matchProp(s,p));}); reps++; }
+  }
+  const us=((performance.now()-t1)/reps)*1000;
   const ms=(performance.now()-t0);
   const tot=results.reduce((s,r)=>s+r.P.props.length,0);
   const got=results.reduce((s,r)=>s+r.hit,0);
@@ -315,7 +330,8 @@ function score(){
   const bad=roots.find(r=>!r.ok), good=roots.find(r=>r.ok);
   const reported = (missP3||missQ1) ? roots.map(r=>r.x) : roots.filter(r=>r.ok).map(r=>r.x);
   let L=[];
-  L.push(`coverage      : ${got}/${tot} propositions  (${Math.round(100*got/tot)}%)  scored in ${ms.toFixed(3)} ms`);
+  L.push(`coverage      : ${got}/${tot} propositions  (${Math.round(100*got/tot)}%)`);
+  L.push(`matcher cost  : ${us.toFixed(1)} µs per full scoring pass, measured over ${reps.toLocaleString()} repetitions on this device`);
   L.push(`quadratic     : x² − 3x − 4 = 0  →  roots ${roots.map(r=>r.x).join(', ')}   (solved here, not stored)`);
   roots.forEach(r=>{
     L.push(`  x = ${String(r.x).padStart(2)}      : √(x+5) = ${r.lhs.toFixed(0)}   x − 1 = ${r.rhs.toFixed(0)}   → ${r.ok?'satisfies the original':'FAILS the original'}`);
@@ -336,7 +352,7 @@ function score(){
   if(missP4) L.push(`\nStill missing the mechanism: squaring maps ${bad.rhs.toFixed(0)} and ${Math.abs(bad.rhs).toFixed(0)} to the same value ${bad.sqr}, which is\nprecisely how a negative right-hand side survives into the quadratic.`);
   if(missP2 && !missP3) L.push(`\nYou described the check without naming what it is checking for. That is a procedure\nheld in memory rather than a reason held in understanding — it survives this problem\nand fails the first one shaped differently.`);
   $('conseq').innerHTML=L.join('\n');
-  $('sfb').textContent=`${got}/${tot} propositions · ${ms.toFixed(2)} ms`;
+  $('sfb').textContent=`${got}/${tot} propositions · ${us.toFixed(0)} µs per pass`;
   $('cards').scrollIntoView({behavior:'smooth',block:'start'});
 }
 $('score').onclick=score;
