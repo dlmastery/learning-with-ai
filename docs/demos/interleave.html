@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blocked Practice Feels Better and Teaches Less — the interleaving simulator</title>
+<meta name="description" content="Two schedules over one item pool, simulated learner by learner: blocked wins during practice and loses at delayed test — and the effect vanishes when you turn the confusability down." />
+<link rel="stylesheet" href="../site.css" />
+<link rel="stylesheet" href="demo.css" />
+<script src="../theme.js"></script>
+<style>
+.readout{font:13px/1.7 var(--mono);white-space:pre-wrap;color:var(--ink-2)}
+.ctls{display:grid;grid-template-columns:1fr;gap:18px 26px;margin-bottom:var(--s4)}
+@media(min-width:620px){.ctls{grid-template-columns:1fr 1fr}}
+input[type=range]{width:100%;accent-color:var(--real);height:22px;padding:0;border:0;background:none}
+.val{font:13px/1 var(--mono);color:var(--ink);float:right;text-transform:none;letter-spacing:0}
+.hint{font-size:12.5px;color:var(--ink-3);line-height:1.5;margin-top:6px}
+.seq{font:12.5px/2.1 var(--mono);word-break:break-all;color:var(--ink-3)}
+.seq b{display:inline-block;width:19px;text-align:center;border-radius:4px;margin-right:3px;
+  font-weight:650;color:#fff}
+.seq b.c0{background:var(--felt)} .seq b.c1{background:var(--real)}
+.seq b.c2{background:var(--ink-3)} .seq b.c3{background:var(--ink-2)}
+.schr{display:grid;grid-template-columns:1fr;gap:var(--s4);margin:var(--s4) 0}
+@media(min-width:700px){.schr{grid-template-columns:1fr 1fr}}
+.sbox{border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;background:var(--sunken)}
+.sbox .t{font:650 13px/1.3 var(--sans);margin-bottom:9px}
+.sbox.b .t{color:var(--felt)} .sbox.i .t{color:var(--real)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:var(--s5) 0}
+@media(min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}}
+.st{background:var(--surface);padding:16px 17px}
+.st .k{font:600 10px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:8px}
+.st .v{font:400 26px/1 var(--serif);color:var(--ink)}
+.st .v.f{color:var(--felt)} .st .v.r{color:var(--real)}
+.st .s{font-size:12px;color:var(--ink-3);margin-top:6px;line-height:1.45}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3);margin-top:12px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+svg text{font:11px var(--sans);fill:var(--ink-3)}
+svg .bl{stroke:var(--felt);stroke-width:2.5;fill:none}
+svg .il{stroke:var(--real);stroke-width:2.5;fill:none}
+svg .zero{stroke:var(--line-2);stroke-width:1;stroke-dasharray:3 3}
+svg .now{stroke:var(--ink-3);stroke-width:1.5;stroke-dasharray:4 4}
+</style>
+</head>
+<body>
+<button class="theme" id="tt" aria-label="Toggle colour theme">◐</button>
+<div class="wrap">
+
+<nav class="crumb"><a href="index.html">← Demo gallery</a> · <a href="../deck.html">The deck</a>
+· <a href="../paper.html">The paper</a></nav>
+
+<header>
+  <div class="eyebrow">Demo 19 · Mechanisms</div>
+  <h1>Blocked practice feels better and teaches less</h1>
+  <p class="lede">Same items, same total practice, two orders. One of them produces visibly higher
+  accuracy while the learner is working and lower accuracy a month later. Interleaving pools at
+  <strong>g = 0.42</strong> across 59 studies — and it is the one technique in the corpus whose
+  <em>sign</em> depends on what you are practising, which this page lets you switch off with a
+  slider.</p>
+  <div class="chips">
+    <span class="chip m">400 learners simulated per run, in this page</span>
+    <span class="chip m">Hedges' g computed from the simulated samples</span>
+    <span class="chip d">A generative model, not measured data</span>
+  </div>
+</header>
+
+<section class="orient">
+  <div class="o"><b>What this is</b><p>A schedule simulator. One item pool, three problem types, two
+  orders — <code>AAA BBB CCC</code> against <code>ABC ACB CBA</code> — run trial by trial through a
+  learner model with four exposed parameters, then tested after a delay. Every number below,
+  including the effect size, is produced by that run.</p></div>
+  <div class="o"><b>Why it matters</b><p>Blocked practice is what almost every worksheet, textbook
+  section and AI-generated problem set does by default, because it is the obvious thing to do and
+  because it produces the better-looking session. The classroom evidence against it is unusually
+  good: 54 seventh-grade classes, four months, an unannounced test a month later, <strong>61%
+  versus 38%</strong>.</p></div>
+  <div class="o"><b>How to use it</b><p>The default run shows the signature. Then there is one
+  parameter that matters more than the other three: confusability. Set it to zero — problem types
+  that cannot be mistaken for one another — and the advantage does not shrink politely. It goes to
+  roughly nothing and then negative, which is exactly what the vocabulary studies found.</p></div>
+</section>
+
+<h2>1 · The two schedules</h2>
+<div class="schr">
+  <div class="sbox b"><div class="t">Blocked — all of A, then all of B, then all of C</div>
+    <div class="seq" id="seqB"></div></div>
+  <div class="sbox i"><div class="t">Interleaved — one cycle at a time, order shuffled</div>
+    <div class="seq" id="seqI"></div></div>
+</div>
+
+<h2>2 · The parameters</h2>
+<p>The model is small enough to state in full. A learner has a <em>strength</em> per problem type
+and a single <em>discrimination</em> term — the ability to recognise which type a problem is when
+nothing tells them. In blocked practice the previous item tells them, so discrimination is never
+exercised and never grows.</p>
+
+<div class="panel">
+  <div class="ctls">
+    <div>
+      <label for="sim">Confusability of the problem types <span class="val" id="simv">0.85</span></label>
+      <input type="range" id="sim" min="0" max="100" step="1" value="85" />
+      <div class="hint">How often the types can be mistaken for one another when the cue is
+      removed. At 0 the learner always knows which procedure applies and discrimination is worth
+      nothing. <b>This is the moderator.</b></div>
+    </div>
+    <div>
+      <label for="kap">Switch cost <span class="val" id="kapv">0.30</span></label>
+      <input type="range" id="kap" min="0" max="60" step="1" value="30" />
+      <div class="hint">The acquisition penalty for changing task on consecutive trials —
+      contextual interference. This is what interleaving <em>pays</em>, and it is why the trade can
+      come out negative.</div>
+    </div>
+    <div>
+      <label for="del">Retention interval <span class="val" id="delv">14</span></label>
+      <input type="range" id="del" min="0" max="40" step="1" value="14" />
+      <div class="hint">Time between the last practice trial and the test, in model days. At 0 the
+      test <em>is</em> the practice, and blocked wins it.</div>
+    </div>
+    <div>
+      <label for="npc">Items per type <span class="val" id="npcv">9</span></label>
+      <input type="range" id="npc" min="3" max="14" step="1" value="9" />
+      <div class="hint">Total practice is identical in both conditions — 3 types × this many. Only
+      the order differs.</div>
+    </div>
+  </div>
+  <div class="row" style="margin:8px 0 0">
+    <button class="pri" id="run">Run 400 learners</button>
+    <button id="sweep">Sweep confusability 0 → 1</button>
+    <span class="sub" id="busy" style="margin-left:4px;margin-bottom:0"></span>
+  </div>
+</div>
+
+<h2>3 · The signature</h2>
+<div class="stats" id="stats">
+  <div class="st"><div class="k">Practice accuracy</div><div class="v">—</div><div class="s">not run</div></div>
+  <div class="st"><div class="k">Delayed test</div><div class="v">—</div><div class="s">not run</div></div>
+  <div class="st"><div class="k">Hedges' g at test</div><div class="v">—</div><div class="s">not run</div></div>
+  <div class="st"><div class="k">Discrimination gained</div><div class="v">—</div><div class="s">not run</div></div>
+</div>
+
+<div class="panel">
+  <div class="ptitle">Accuracy during practice</div>
+  <div class="psub" id="psub2">Mean across learners, smoothed over a 3-trial window so the
+  block-boundary sawtooth does not obscure the level.</div>
+  <svg id="curve" viewBox="0 0 640 230" role="img"
+       aria-label="Practice accuracy over trials for blocked and interleaved schedules."></svg>
+  <div class="legend">
+    <span><i style="background:var(--felt)"></i>blocked — what the session feels like</span>
+    <span><i style="background:var(--real)"></i>interleaved</span>
+  </div>
+  <div class="readout" id="out" style="margin-top:16px">Press run.</div>
+</div>
+
+<div class="note"><b>The divergence has a name here.</b> The left-hand curve is the only evidence
+the learner has while deciding whether the method is working, and it is the curve that ranks the
+schedules backwards. This page does not re-argue that point — <a href="felt-vs-real.html">demo
+08</a> takes it apart properly. What is worth noting is the mechanism, which is unusually plain:
+blocked practice removes the retrieval step. When the last four problems were all type B, the
+learner is not deciding what to do. They are executing.</div>
+
+<h2>4 · The moderator that decides the sign</h2>
+<p>Brunmair &amp; Richter, 59 studies, 238 effect sizes: <strong>g = 0.67</strong> for visual
+category induction, <strong>0.34</strong> for mathematics, not significant for expository texts and
+tastes, and <strong>g = −0.39 for vocabulary-like paired associates</strong> — where blocking wins,
+and not by a little. The sweep below recovers that shape from the model's one moderator.</p>
+
+<div class="panel">
+  <div class="ptitle">Effect size against confusability</div>
+  <div class="psub" id="ssub">Press the sweep button. 11 confusability levels × 400 learners × 2
+  schedules, run in this page.</div>
+  <svg id="sw" viewBox="0 0 640 230" role="img"
+       aria-label="Hedges g at delayed test as a function of confusability, crossing zero at low confusability."></svg>
+  <div class="readout" id="swout" style="margin-top:16px">Not run.</div>
+</div>
+
+<h2>5 · What this proves / what it does not</h2>
+
+<div class="panel">
+  <div class="ptitle">What this simulation earns</div>
+  <ul style="margin:0 0 22px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>The crossover is not smuggled in.</strong> Nothing in the model says "interleaving
+    is better". It says discrimination only grows on trials where the learner had to discriminate,
+    spacing raises stability, and switching costs acquisition. Practice-versus-test reversal falls
+    out of those three lines, which is the point of writing it as a generative model rather than a
+    bar chart.</li>
+    <li><strong>The moderator is load-bearing, and you can prove that by removing it.</strong> Drag
+    confusability to zero and the pooled advantage collapses to approximately nothing and then goes
+    negative under any switch cost. That reproduces the published sign flip — 0.67 for paintings,
+    −0.39 for vocabulary — from a single parameter, without the parameter having been fitted to
+    those numbers.</li>
+    <li><strong>The statistic is real arithmetic.</strong> Hedges' g here is computed from the two
+    simulated samples with the small-sample correction, not looked up. Change the seed by changing
+    any parameter and it moves the way a sampled statistic should.</li>
+  </ul>
+  <div class="ptitle">What it does not</div>
+  <ul style="margin:0 0 6px 20px;color:var(--ink-2);font-size:14.6px;line-height:1.62">
+    <li><strong>This is a model, not a measurement, and the g it prints is not evidence.</strong>
+    A generative model that reproduces a known pattern demonstrates that the pattern is
+    <em>mechanically coherent</em> — that you do not need anything exotic to get it. It is not
+    independent support for the pattern's existence. The support is Brunmair &amp; Richter's 59
+    studies and Rohrer's cluster RCT; this page is an explanation of them, not a replication.</li>
+    <li><strong>The parameter values are chosen, not estimated.</strong> Switch cost 0.30 and a
+    3-cycle spacing bonus are plausible magnitudes, not fitted ones. Read the ordering and the sign
+    change; do not quote the numbers.</li>
+    <li><strong>Real pools are not three clean types.</strong> The confusability slider is one
+    number standing in for a similarity structure that is, in real material, a matrix — some pairs
+    confusable, others not — and the right schedule for that is neither of the two here.</li>
+    <li><strong>"Interleave everything" is the failure mode this page exists to prevent.</strong> A
+    system applying interleaving as a global policy will improve mathematics practice and damage
+    vocabulary learning <em>in the same session</em>, and the learner will report the vocabulary
+    session as the good one. The policy has to be per-material, and the moderator is stated well
+    enough to implement — which means there is no excuse for the global version.</li>
+  </ul>
+</div>
+
+<footer>
+  <a href="index.html">Demo gallery</a> · <a href="../deck.html">The deck</a> ·
+  <a href="../paper.html">The paper</a>
+  <br /><br />g = 0.42 and the material breakdown: Brunmair &amp; Richter 2019. Classroom RCT:
+  Rohrer, Dedrick, Hartwig &amp; Cheung 2020.
+</footer>
+
+</div>
+<script>
+const tt=document.getElementById('tt'),R=document.documentElement;
+tt.onclick=()=>{const d=R.getAttribute('data-theme')==='dark'||
+  (!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  R.setAttribute('data-theme',d?'light':'dark');};
+</script>
+<script>
+const $=id=>document.getElementById(id);
+const NS="http://www.w3.org/2000/svg";
+const mk=(n,at)=>{const e=document.createElementNS(NS,n);for(const k in at)e.setAttribute(k,at[k]);return e;};
+function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);
+  t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+
+const C=3, NAMES=['A','B','C'], NLEARN=400, TESTITEMS=4;   /* per type */
+const ALPHA=0.34, BETA=0.30, SPACE_TAU=4;
+
+/* ── schedules ───────────────────────────────────────────────────────────── */
+function schedules(n){
+  const bl=[]; for(let c=0;c<C;c++) for(let i=0;i<n;i++) bl.push(c);
+  const rng=mulberry(9001+n), il=[];
+  for(let k=0;k<n;k++){
+    const cyc=[...Array(C).keys()];
+    for(let i=cyc.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[cyc[i],cyc[j]]=[cyc[j],cyc[i]];}
+    il.push(...cyc);
+  }
+  return {bl,il};
+}
+
+/* ── one learner through one schedule ────────────────────────────────────── */
+function learner(rng,seq,cfg){
+  const s=new Array(C).fill(0.06), h=new Array(C).fill(1.0), last=new Array(C).fill(-99);
+  let D=0.06;
+  const al=ALPHA*(0.72+0.56*rng()), be=BETA*(0.72+0.56*rng());
+  const acc=[];
+  for(let t=0;t<seq.length;t++){
+    const c=seq[t], prev=t>0?seq[t-1]:-1;
+    const cued=(prev===c);                       /* the previous item gives the type away */
+    const pid=cued?1:(1-(1-D)*cfg.sim);
+    acc.push(pid*s[c]);
+    const gap=Math.min(20,t-last[c]); last[c]=t;
+    const sw=(prev!==-1&&prev!==c);
+    const aEff=al*(1-(sw?cfg.kap:0));            /* contextual interference costs acquisition */
+    s[c]=s[c]+aEff*(1-s[c]);
+    h[c]+=0.5+1.5*(1-Math.exp(-gap/SPACE_TAU));  /* spacing raises stability */
+    if(sw) D=D+be*(1-D);                         /* discrimination grows only on switches */
+  }
+  /* delayed test: always mixed, no cue, TESTITEMS per type */
+  const pid=1-(1-D)*cfg.sim;
+  let ok=0,tot=0;
+  for(let c=0;c<C;c++){
+    const p=pid*s[c]*Math.exp(-cfg.T/h[c]);
+    for(let i=0;i<TESTITEMS;i++){ if(rng()<p) ok++; tot++; }
+  }
+  return {acc, test:ok/tot, D};
+}
+
+function condition(seq,cfg,seed){
+  const rng=mulberry(seed);
+  const N=seq.length, sum=new Array(N).fill(0), tests=[]; let Dsum=0;
+  for(let i=0;i<NLEARN;i++){
+    const r=learner(rng,seq,cfg);
+    for(let t=0;t<N;t++) sum[t]+=r.acc[t];
+    tests.push(r.test); Dsum+=r.D;
+  }
+  return {curve:sum.map(v=>v/NLEARN), tests, D:Dsum/NLEARN,
+          practice:sum.reduce((a,b)=>a+b,0)/(NLEARN*N)};
+}
+const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;
+const sd=a=>{const m=mean(a);return Math.sqrt(a.reduce((s,x)=>s+(x-m)**2,0)/(a.length-1));};
+function hedges(a,b){
+  const n1=a.length,n2=b.length,s1=sd(a),s2=sd(b);
+  const sp=Math.sqrt(((n1-1)*s1*s1+(n2-1)*s2*s2)/(n1+n2-2));
+  if(sp===0) return 0;
+  const d=(mean(a)-mean(b))/sp;
+  return d*(1-3/(4*(n1+n2)-9));
+}
+function smooth(a,w){return a.map((_,i)=>{
+  const lo=Math.max(0,i-Math.floor(w/2)), hi=Math.min(a.length,i+Math.ceil(w/2));
+  let s=0; for(let j=lo;j<hi;j++) s+=a[j]; return s/(hi-lo);});}
+
+/* ── UI ──────────────────────────────────────────────────────────────────── */
+function cfg(){return {sim:+$('sim').value/100, kap:+$('kap').value/100,
+  T:+$('del').value, n:+$('npc').value};}
+function paintSeq(){
+  const {bl,il}=schedules(+$('npc').value);
+  const fmt=a=>a.map(c=>`<b class="c${c}">${NAMES[c]}</b>`).join('');
+  $('seqB').innerHTML=fmt(bl); $('seqI').innerHTML=fmt(il);
+}
+['sim','kap','del','npc'].forEach(id=>$(id).addEventListener('input',()=>{
+  $('simv').textContent=(+$('sim').value/100).toFixed(2);
+  $('kapv').textContent=(+$('kap').value/100).toFixed(2);
+  $('delv').textContent=$('del').value;
+  $('npcv').textContent=$('npc').value;
+  if(id==='npc') paintSeq();
+}));
+
+function stat(k,v,cls,s){return `<div class="st"><div class="k">${k}</div>
+  <div class="v ${cls||''}">${v}</div><div class="s">${s}</div></div>`;}
+
+function run(){
+  const c=cfg(), {bl,il}=schedules(c.n);
+  const t0=performance.now();
+  const B=condition(bl,c,4242), I=condition(il,c,4242);
+  const g=hedges(I.tests,B.tests);
+  const ms=performance.now()-t0;
+  const mB=mean(B.tests), mI=mean(I.tests);
+  const pB=B.practice, pI=I.practice;
+
+  $('stats').innerHTML=
+    stat('Practice accuracy', ((pB-pI)>=0?'+':'')+((pB-pI)*100).toFixed(1)+' pp',
+         (pB-pI)>=0?'f':'r',
+         `blocked ${(pB*100).toFixed(1)}% · interleaved ${(pI*100).toFixed(1)}% — ${(pB>=pI)?'blocked ahead':'interleaved ahead'}`)+
+    stat('Delayed test', ((mI-mB)>=0?'+':'')+((mI-mB)*100).toFixed(1)+' pp',
+         (mI-mB)>=0?'r':'f',
+         `blocked ${(mB*100).toFixed(1)}% · interleaved ${(mI*100).toFixed(1)}% after ${c.T} days`)+
+    stat("Hedges' g at test", (g>=0?'+':'')+g.toFixed(2), g>=0?'r':'f',
+         `interleaved − blocked, ${NLEARN} per arm · published pooled g = 0.42`)+
+    stat('Discrimination gained', I.D.toFixed(2)+' vs '+B.D.toFixed(2), 'r',
+         'interleaved vs blocked, final value of D');
+
+  curve(smooth(B.curve,3), smooth(I.curve,3));
+  const flip=(pB>pI)&&(mI>mB);
+  $('out').innerHTML=
+   `schedule length    : ${bl.length} trials, identical in both arms\n`+
+   `confusability      : ${c.sim.toFixed(2)}    switch cost : ${c.kap.toFixed(2)}    delay : ${c.T} d\n`+
+   `learners simulated : ${NLEARN} per arm  (${(2*NLEARN*bl.length).toLocaleString()} practice trials in ${ms.toFixed(1)} ms)\n\n`+
+   `mean practice acc. : blocked ${(pB*100).toFixed(1)}%   interleaved ${(pI*100).toFixed(1)}%\n`+
+   `delayed test acc.  : blocked ${(mB*100).toFixed(1)}%   interleaved ${(mI*100).toFixed(1)}%\n`+
+   `Hedges' g          : ${(g>=0?'+':'')}${g.toFixed(3)}   (SD blocked ${sd(B.tests).toFixed(3)}, interleaved ${sd(I.tests).toFixed(3)})\n\n`+
+   (flip
+    ? `<b style="color:var(--real)">The signature is present.</b> Blocked practice is ahead by ${((pB-pI)*100).toFixed(1)} points while the\nlearner is working, and behind by ${((mI-mB)*100).toFixed(1)} points when it is tested. Nothing in the model\nasked for that ordering; it is what happens when the cue that makes practice easy\nis the same cue that stops discrimination being learned.`
+    : (c.sim<0.2
+       ? `<b style="color:var(--felt)">No reversal — and that is the finding.</b> At confusability ${c.sim.toFixed(2)} there is nothing to\ndiscriminate, so interleaving buys no discrimination and still pays the switch cost.\nThis is the vocabulary case: g = −0.39 in the published breakdown, blocking wins.`
+       : `No reversal under these settings. Read the two rows above rather than the headline —\nwith this delay and switch cost the two schedules are close, which is itself a\nreported outcome for several material types.`));
+  $('busy').textContent=`${ms.toFixed(0)} ms`;
+}
+
+function curve(B,I){
+  const svg=$('curve'); svg.replaceChildren();
+  const W=640,H=230,PL=42,PB=38,PT=14,N=B.length;
+  const X=i=>PL+(i/(N-1))*(W-PL-16), Y=v=>H-PB-v*(H-PB-PT);
+  for(let p=0;p<=1.0001;p+=0.25){
+    svg.appendChild(mk('line',{x1:PL,y1:Y(p),x2:W-16,y2:Y(p),stroke:'var(--line)','stroke-width':1}));
+    const t=mk('text',{x:PL-8,y:Y(p)+4,'text-anchor':'end'});t.textContent=Math.round(p*100)+'%';svg.appendChild(t);
+  }
+  const path=(a,cls)=>svg.appendChild(mk('path',{class:cls,
+    d:a.map((v,i)=>`${i?'L':'M'}${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(' ')}));
+  path(B,'bl'); path(I,'il');
+  const a=mk('text',{x:PL,y:H-14});a.textContent='trial 1';svg.appendChild(a);
+  const b=mk('text',{x:W-16,y:H-14,'text-anchor':'end'});b.textContent='trial '+N;svg.appendChild(b);
+  const c2=mk('text',{x:(PL+W-16)/2,y:H-14,'text-anchor':'middle'});
+  c2.textContent='practice trial (total practice identical in both arms)';svg.appendChild(c2);
+}
+
+function sweep(){
+  $('busy').textContent='sweeping…';
+  setTimeout(()=>{
+    const base=cfg(), pts=[], t0=performance.now();
+    for(let k=0;k<=10;k++){
+      const s=k/10, c={...base,sim:s}, {bl,il}=schedules(c.n);
+      const B=condition(bl,c,777), I=condition(il,c,777);
+      pts.push({s, g:hedges(I.tests,B.tests)});
+    }
+    const ms=performance.now()-t0;
+    const svg=$('sw'); svg.replaceChildren();
+    const W=640,H=230,PL=46,PB=38,PT=16;
+    const gs=pts.map(p=>p.g), lo=Math.min(-0.25,...gs), hi=Math.max(0.25,...gs);
+    const X=s=>PL+s*(W-PL-16), Y=g=>H-PB-((g-lo)/(hi-lo))*(H-PB-PT);
+    for(let t=0;t<=4;t++){
+      const g=lo+(hi-lo)*t/4;
+      svg.appendChild(mk('line',{x1:PL,y1:Y(g),x2:W-16,y2:Y(g),stroke:'var(--line)','stroke-width':1}));
+      const tx=mk('text',{x:PL-8,y:Y(g)+4,'text-anchor':'end'});tx.textContent=g.toFixed(2);svg.appendChild(tx);
+    }
+    svg.appendChild(mk('line',{x1:PL,y1:Y(0),x2:W-16,y2:Y(0),class:'zero'}));
+    svg.appendChild(mk('path',{class:'il',
+      d:pts.map((p,i)=>`${i?'L':'M'}${X(p.s).toFixed(1)},${Y(p.g).toFixed(1)}`).join(' ')}));
+    pts.forEach(p=>svg.appendChild(mk('circle',{cx:X(p.s),cy:Y(p.g),r:3,fill:'var(--real)'})));
+    svg.appendChild(mk('line',{x1:X(base.sim),y1:PT,x2:X(base.sim),y2:H-PB,class:'now'}));
+    const a=mk('text',{x:PL,y:H-14});a.textContent='confusability 0 — unrelated material';svg.appendChild(a);
+    const b=mk('text',{x:W-16,y:H-14,'text-anchor':'end'});b.textContent='1 — easily confused';svg.appendChild(b);
+    const c3=mk('text',{x:6,y:PT});c3.textContent="Hedges' g";svg.appendChild(c3);
+
+    const zero=pts.find((p,i)=>i&&((pts[i-1].g<0)!==(p.g<0)));
+    $('ssub').innerHTML=`11 levels × ${NLEARN} learners × 2 schedules · ${ms.toFixed(0)} ms · dashed
+      line is your current setting.`;
+    $('swout').innerHTML=
+     pts.map(p=>`  confusability ${p.s.toFixed(1)}   g = ${(p.g>=0?'+':'')}${p.g.toFixed(3)}`).join('\n')+
+     `\n\n`+
+     (zero
+      ? `<b>The sign changes between ${(zero.s-0.1).toFixed(1)} and ${zero.s.toFixed(1)}.</b> Below that point the schedule that\nfeels harder is also the one that teaches less, because there was never anything to\ndiscriminate and the switch cost is paid anyway. Brunmair &amp; Richter's own\nbreakdown has the same shape: 0.67 for paintings, 0.34 for mathematics, n.s. for\nexpository text, −0.39 for vocabulary.`
+      : `<b>No sign change across this sweep.</b> With switch cost at ${base.kap.toFixed(2)} the penalty never\noverwhelms the discrimination gain. Raise the switch cost and run it again — the\nvocabulary result needs both halves: nothing to discriminate <em>and</em> a real cost\nfor interleaving anyway.`);
+    $('busy').textContent=`${ms.toFixed(0)} ms`;
+  },10);
+}
+
+$('run').onclick=run; $('sweep').onclick=sweep;
+paintSeq(); run();
+</script>
+</body>
+</html>

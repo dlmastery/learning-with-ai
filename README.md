@@ -52,10 +52,15 @@ the organising constraint here, not a charitable sidebar.
 
 ### The finding the survey turns on
 
-Across **223 real tutoring domains, no language model beat chance at labelling an incorrect student
-action.** Not "performed poorly" — chance. Looking at what a learner did and saying what is wrong
-with it is the most basic thing a tutor does, and it is currently unverifiable by the systems being
-sold to do it.
+Across **223 tutoring domains, the models tested did not beat chance at labelling an incorrect
+student action.** Reading a learner's belief from what they did is the most basic thing a tutor
+does, and no instrument for it has been built.
+
+Scope it correctly, because that sharpens the claim rather than softening it: step-checking a
+model's *own* reasoning trace is **not** at chance — ProcessBench reports open models competitive
+with GPT-4o at finding the earliest erroneous step. Checking a chain of symbols is solved.
+**Reading a person is the part nobody has done**, and the distance between those two is the
+opportunity.
 
 That is not an isolated weakness. An agent differs from a chatbot in four ways — it can **sample**
 many times, **execute** and see what happened, **persist** state across a boundary, and work in

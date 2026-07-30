@@ -217,12 +217,8 @@ function plot(svg,series,o){
   const xl=mk('text',{x:PL,y:H-8}); xl.textContent=o.xlab||''; svg.appendChild(xl);
   const yl=mk('text',{x:2,y:PT-2}); yl.textContent=(o.ylab||'')+(lg?' (log scale)':''); svg.appendChild(yl);
 }
-const eng=v=>{
-  if(v>=1e9) return (v/1e9).toFixed(v>=1e11?0:1)+' billion';
-  if(v>=1e6) return (v/1e6).toFixed(v>=1e8?0:1)+' million';
-  if(v>=1e3) return (v/1e3).toFixed(1)+' thousand';
-  return v.toFixed(v<10?2:1);
-};
+const ht=mm=> mm>=1e6 ? (mm/1e6>=1000?Math.round(mm/1e6).toLocaleString():(mm/1e6).toFixed(2))+' km'
+            : mm>=1000 ? (mm/1000).toFixed(2)+' m' : mm.toFixed(2)+' mm';
 
 /* ── the four figures ───────────────────────────────────────────────────── */
 const FIGS=[
@@ -238,11 +234,11 @@ const FIGS=[
     plot(svg,[{pts,cls:'a'}],{logy:true,xlab:'folds',ylab:'thickness, km',
       hlines:[{y:384400,label:'distance to the Moon, 384,400 km'}],
       marks:n>0?[{x:n,label:'you are here'}]:[]});},
-  read:(n,c)=>`<div class="big">${c.km>=1?eng(c.km)+' km':(c.mm>=1000?(c.mm/1000).toFixed(2)+' m':c.mm.toFixed(2)+' mm')}
+  read:(n,c)=>`<div class="big">${ht(c.mm)}
     <small>after ${n} fold${n===1?'':'s'} — 0.1 mm × 2<sup>${n}</sup></small></div>`,
   prose:`<p>The doubling is trivial and the answer is not. Forty-two folds is <strong>439,805 km</strong>
     — past the Moon, which is 384,400 km away. The sheet crosses a metre at fold 14, Everest at
-    fold 30, and the Moon at fold 42.</p>
+    fold 27, and the Moon at fold 42.</p>
     <p>Nothing about the arithmetic is hard. What fails is the extrapolation: we read “fold it 42
     times” as forty-two somethings and estimate additively. The slider does not tell you that.
     It makes the log axis necessary, which is the same information arriving as a constraint
@@ -253,7 +249,7 @@ const FIGS=[
   ask:'£100 grows for 100 years. One account pays 2% a year, the other 4%. How many times bigger is the 4% pot at the end?',
   opts:['About 2×','About 3×','About 7×','About 25×'],
   right:2,
-  ctrl:{lab:'Rate on the second account',min:100,max:1000,step:5,init:400,start:400,fmt:v=>(v/100).toFixed(2)+'% a year'},
+  ctrl:{lab:'Rate on the second account',min:100,max:1000,step:5,init:200,start:200,fmt:v=>(v/100).toFixed(2)+'% a year'},
   calc:v=>{const r=v/10000; const a=100*Math.pow(1.02,100), b=100*Math.pow(1+r,100);
     return {a,b,ratio:b/a,r:r*100};},
   draw:(svg,v)=>{
@@ -262,9 +258,9 @@ const FIGS=[
     plot(svg,[{pts:A,cls:'b'},{pts:B,cls:'a'}],{logy:true,xlab:'years',ylab:'£'});},
   read:(v,c)=>`<div class="big">${c.ratio.toFixed(2)}× bigger
     <small>£${c.a.toFixed(0)} at 2% · £${c.b.toFixed(0)} at ${c.r.toFixed(2)}% — a gap of ${(c.r-2).toFixed(2)} percentage points</small></div>`,
-  prose:`<p>Two percentage points of difference produce a <strong>7.0×</strong> difference in the
-    pot. The rate is not a multiplier on the answer; it is a multiplier on the <em>exponent</em>,
-    and the exponent here is 100.</p>
+  prose:`<p>Put the dial on 4.00% and read it: <strong>6.97× bigger</strong>, £5,050 against £724.
+    Two percentage points. The rate is not a multiplier on the answer; it is a multiplier on the
+    <em>exponent</em>, and the exponent here is 100.</p>
     <p>This is the figure that does the most damage to intuition, because the wrong model —
     “double the rate, double the money” — is not silly. It is correct for simple interest, and
     simple interest is what most people have actually been taught to compute.</p>`},
@@ -295,7 +291,7 @@ const FIGS=[
   ask:'A linear process gains 10,000 units per step. An exponential starts at 1 and grows 3% per step. Does the exponential ever overtake — and if so, when?',
   opts:['Never','After about 500 steps','After about 50,000 steps','After about 10 million steps'],
   right:1,
-  ctrl:{lab:'Linear gain per step',min:1,max:100000,step:1,init:1,start:1,fmt:v=>v.toLocaleString()+' per step'},
+  ctrl:{lab:'Linear gain per step',min:10,max:100000,step:10,init:10,start:10,fmt:v=>v.toLocaleString()+' per step'},
   calc:k=>{let t=1; while(t<20000 && Math.pow(1.03,t)<=k*t) t++;
     return {k,cross:t<20000?t:null, at:Math.pow(1.03,t)};},
   draw:(svg,k)=>{
@@ -308,8 +304,8 @@ const FIGS=[
     <small>the exponential overtakes a line gaining ${k.toLocaleString()} per step — found by
     scanning steps until 1.03<sup>t</sup> &gt; ${k.toLocaleString()}·t</small></div>`,
   prose:`<p>It always overtakes, and it does not take long. Against a line gaining
-    <strong>10,000 per step</strong> the crossover is at step <strong>525</strong>. Multiply the
-    line's slope by ten and the crossover moves right by about 78 steps — the cost of a tenfold
+    <strong>10,000 per step</strong> the crossover is at step <strong>524</strong>. Multiply the
+    line's slope by ten and the crossover moves right by about 83 steps — the cost of a tenfold
     head start is <em>additive</em>, because it is a logarithm of the slope.</p>
     <p>Drag the slope to its maximum and read the crossover: a line gaining 100,000 per step is
     beaten by 3% compounding before step 610. There is no slope at which the line wins, and the

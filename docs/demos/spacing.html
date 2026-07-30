@@ -104,8 +104,8 @@ calendar changes.</p>
 
 <figure class="panel">
   <div class="ptitle">The whole year, not four points on it</div>
-  <div class="psub">Recall probability from the end of each arm's last session. Session days on
-  your arm are marked on the axis.</div>
+  <div class="psub">Recall probability measured from the end of each arm's last session — so the
+  spaced arm has already spent the extra calendar time before day zero here.</div>
   <div id="curve"></div>
 </figure>
 
@@ -242,7 +242,8 @@ const HUE=s=>s==='real'?'var(--real)':'var(--felt)';
 
 /* grouped bars: {groups:[{label, bars:[{series,value,tag}]}], y:{max,fmt}, alt} */
 function renderBars(host,spec){
-  const narrow=innerWidth<620, W=720, GH=narrow?70:64, T=10, B=30, L=narrow?58:96, R=44;
+  const narrow=innerWidth<620, W=720, GH=narrow?92:64, T=10, B=30;
+  const L=narrow?4:104, R=narrow?54:46;
   const H=spec.groups.length*GH+T+B;
   const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
   const track=W-L-R, px=v=>track*Math.min(1,v/spec.y.max);
@@ -251,9 +252,10 @@ function renderBars(host,spec){
     const t=mk('text',{x,y:H-B+16,'text-anchor':'middle',class:'vl'});
     t.textContent=Math.round(spec.y.max*i/4)+'%'; svg.appendChild(t);}
   spec.groups.forEach((gr,gi)=>{
-    const y0=T+gi*GH+8;
-    const lb=mk('text',{x:L-10,y:y0+GH/2-4,'text-anchor':'end',class:'sl',
-      style:`font-size:${narrow?11:12.5}px`});
+    const y0=T+gi*GH+(narrow?22:8);
+    const lb=mk('text',narrow
+      ? {x:L,y:T+gi*GH+15,class:'sl',style:'font-size:12.5px'}
+      : {x:L-12,y:y0+GH/2-4,'text-anchor':'end',class:'sl',style:'font-size:12.5px'});
     lb.textContent=gr.label; svg.appendChild(lb);
     gr.bars.forEach((b,bi)=>{
       const h=17, y=y0+bi*(h+7);
@@ -271,16 +273,15 @@ function renderPlot(host,spec){
   const px=v=>L+(v-spec.x.min)/(spec.x.max-spec.x.min)*(W-L-R);
   const py=v=>T+(1-(v-spec.y.min)/(spec.y.max-spec.y.min))*(H-T-B);
   const svg=mk('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':spec.alt});
-  if(spec.band) svg.appendChild(mk('rect',{x:px(spec.band[0]),y:T,
-    width:Math.max(2,px(spec.band[1])-px(spec.band[0])),height:H-T-B,
-    fill:'var(--ink-3)',opacity:.10}));
+  if(spec.yband) svg.appendChild(mk('rect',{x:L,y:py(spec.yband[1]),width:W-L-R,
+    height:Math.max(2,py(spec.yband[0])-py(spec.yband[1])),fill:'var(--ink-3)',opacity:.12}));
   for(let i=0;i<=4;i++){const v=spec.y.min+(spec.y.max-spec.y.min)*i/4,yy=py(v);
     svg.appendChild(mk('line',{x1:L,y1:yy,x2:W-R,y2:yy,class:'gl'}));
     const t=mk('text',{x:L-8,y:yy+4,'text-anchor':'end',class:'vl'});
     t.textContent=Math.round(v)+(spec.y.pct?'%':''); svg.appendChild(t);}
-  (spec.x.ticks||[]).forEach(v=>{
-    const t=mk('text',{x:px(v),y:H-24,'text-anchor':'middle',class:'vl'});
-    t.textContent=v; svg.appendChild(t);});
+  (spec.x.ticks||[]).forEach(tk=>{
+    const t=mk('text',{x:px(tk.at),y:H-24,'text-anchor':'middle',class:'vl'});
+    t.textContent=tk.label; svg.appendChild(t);});
   const xl=mk('text',{x:(L+W-R)/2,y:H-6,'text-anchor':'middle',class:'ax'});
   xl.textContent=spec.x.label; svg.appendChild(xl);
   (spec.marks||[]).forEach(m=>{
@@ -294,8 +295,8 @@ function renderPlot(host,spec){
     if(s.dots) s.pts.forEach(p=>svg.appendChild(mk('circle',
       {cx:px(p[0]),cy:py(p[1]),r:4,fill:HUE(s.series),stroke:'var(--surface)','stroke-width':2})));
   });
-  if(spec.bandLabel){const t=mk('text',{x:px((spec.band[0]+spec.band[1])/2),y:T+13,
-    'text-anchor':'middle',class:'ax'});t.textContent=spec.bandLabel;svg.appendChild(t);}
+  if(spec.bandLabel){const t=mk('text',{x:W-R,y:py(spec.yband[1])-6,
+    'text-anchor':'end',class:'ax'});t.textContent=spec.bandLabel;svg.appendChild(t);}
   host.replaceChildren(svg);
 }
 
@@ -358,7 +359,8 @@ function draw(){
 
   const pts=(Sx)=>{const a=[];for(let t=1;t<=365;t+=(t<30?1:5))a.push([t,retAt(Sx,t)*100]);return a;};
   renderPlot(el('curve'),{alt:'Recall probability over one year for both schedules.',
-    x:{min:0,max:365,label:'days after the final session',ticks:[0,30,90,180,270,365]},
+    x:{min:0,max:365,label:'days after the final session',
+       ticks:[0,30,90,180,270,365].map(v=>({at:v,label:v}))},
     y:{min:0,max:100,pct:true},
     series:[{series:'felt',pts:pts(base)},{series:'real',pts:pts(mine)}]});
 
@@ -432,9 +434,10 @@ function drawOpt(){
   const hs=[3,7,14,30,60,120,180,270,365];
   const pts=hs.map(h=>[Math.log10(h),bestGap(2,10,h,Math.max(6,Math.min(200,h*0.6))).G/h*100]);
   renderPlot(el('ridge'),{alt:'Optimal inter-session gap expressed as a percentage of the retention horizon, falling as the horizon lengthens.',
-    x:{min:Math.log10(3),max:Math.log10(365),label:'retention horizon (log days: 3 → 365)',ticks:[]},
+    x:{min:Math.log10(3),max:Math.log10(365),label:'retention horizon, log scale (days)',
+       ticks:[3,7,30,90,365].map(v=>({at:Math.log10(v),label:v}))},
     y:{min:0,max:40,pct:true},
-    band:[Math.log10(300),Math.log10(365)], bandLabel:'Cepeda 5–10% @ 1 yr',
+    yband:[5,10], bandLabel:'Cepeda: 5–10% at a one-year delay',
     series:[{series:'real',pts,dots:true}]});
 })();
 

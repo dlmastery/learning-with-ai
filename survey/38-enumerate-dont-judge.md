@@ -8,8 +8,10 @@ source_report: research/raw/V2-responsive-explanation.md
 
 # Enumerate, Don't Judge
 
-Earlier sections establish a wall. Across **223 real tutoring domains, no model beat
-chance at labelling an incorrect student action** — and since every agentic capability
+Earlier sections establish a wall. Across **223 tutoring domains, four models tested
+in an initial evaluation did not beat chance at labelling an incorrect student
+action** (§32 carries the scope, and the adjacent step-error literature that is *not*
+at chance) — and since every agentic capability
 is bounded by the check it closes on, the whole architecture appeared to be waiting on
 a model good enough to judge student work.
 

@@ -61,11 +61,29 @@ bound; it only stops you being capped below it.
 Now place teaching on that table. It sits firmly in the second column, and the reason
 is measured rather than asserted:
 
-> Across **223 real tutoring domains, no LLM beat chance at labelling an incorrect
+> Across **223 tutoring domains, no model beat chance at labelling an incorrect
 > student action.**
 
-Not "performed poorly." **Chance.** The single most basic operation a tutor
-performs — look at what a learner did and say what is wrong with it — is currently
+**Scoped correctly, because an earlier draft was not.** TutorGym evaluated four
+models — `claude-3-5-sonnet-20241022`, `claude-3-5-haiku-20241022`,
+`gpt-4o-2024-08-06`, `deepseek-v2.5` — in what its authors call an *initial
+evaluation*. That model set never appeared in this survey, and the result was
+restated here as *"currently unverifiable"* and *"every architecture"*, which is
+more than it supports.
+
+**And the adjacent positive literature was never searched.** ProcessBench
+(arXiv:2412.06559) asks models to *"identify the earliest step that contains an
+error"* in mathematical reasoning, and reports open models with critique capability
+**competitive with that same GPT-4o vintage**. A shared task on mistake
+identification reports macro-F1 in the low seventies across 50+ teams.
+
+So the honest claim is narrower and more useful. **Step-error identification in a
+model's own reasoning trace is not at chance. Diagnosing what a *learner* believes
+from what they did is** — and the distance between those two is exactly the gap this
+section is about. Not a wall; a specific unbuilt instrument.
+
+Not "performed poorly." **Chance** — on that model set, on that benchmark. The
+operation a tutor performs constantly — look at what a learner did and say what is wrong with it — is currently
 unverifiable by the systems being sold to do it.
 
 That is why this survey reads modest. It is not a failure of ambition. **Pedagogy has
