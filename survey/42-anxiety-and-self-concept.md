@@ -243,11 +243,10 @@ themselves does not produce a detectable change in what they achieve. The result
 against the theory's own mediation story, because the studies that best establish the
 mediator are the studies that fail to show the outcome.
 
-Two smaller full nulls sit beside it, where neither the feeling nor the achievement
-moved: Myers, Davis & Chan (2021) on expressive writing across four authentic
-psychology exams, and Thormodsæter et al. (2026), a multi-institution replication of a
-cognitive-reappraisal intervention across 12 courses at 7 institutions that moved
-neither self-reported test anxiety nor performance. `MEASURED-RCT` (null)
+Two full nulls sit beside it, where neither the feeling nor the achievement moved:
+Myers, Davis & Chan (2021) on expressive writing across four authentic psychology
+exams, and Thormodsæter et al. (2026), a replication of a cognitive-reappraisal
+intervention across 12 courses at 7 institutions. `MEASURED-RCT` (null)
 
 ---
 
@@ -269,17 +268,16 @@ about what a model reproduces from its training data, and it predicts no benefit
 names a harm that is absent by construction.
 
 The wider privacy premise, that a learner can be wrong in front of a machine at no
-social cost, has evidence on both sides and the project should hold both. Lucas et al.
-(2014) manipulated only the *belief* that an interviewer was automated and found lower
-resistance to self-disclosure and lower impression management. Alsaad et al. (2026),
+social cost, has evidence on both sides. Lucas et al. (2014) manipulated only the
+*belief* that an interviewer was automated and found lower resistance to
+self-disclosure and lower impression management. Against it, Alsaad et al. (2026),
 n = 373, found no increased disinhibition toward a chatbot and participants
 **significantly less** willing to disclose sensitive health information to one than to
-a human. Qi & Zhao (2026), across 30,000 matched dialogue turns, found learners
-dropping the hedges human communities require while adopting an authoritative
-"Director" stance instead of the humble "Petitioner" the confession story predicts.
-Removing the audience removes impression management and does not, on its own, produce
-disclosure of confusion. The child who will not raise her hand may also not type *I
-don't understand*, which makes elicitation the design problem and §05's
+a human; and Qi & Zhao (2026), across 30,000 matched dialogue turns, found learners
+adopting an authoritative "Director" stance instead of the humble "Petitioner" the
+confession story predicts. Removing the audience removes impression management without
+producing disclosure of confusion. The child who will not raise her hand may also not
+type *I don't understand*, which makes elicitation the design problem and §05's
 machine-audience hypothesis the frame this evidence both supports and complicates.
 
 Now the trap. Across every literature surveyed here the self-report outcome outruns the
@@ -327,11 +325,11 @@ effect of comparable size to the negative contrast effect) it could be neutral o
 harmful. `OBSERVED — absence`: searches across ERIC, Europe PMC, Crossref and arXiv
 found no study measuring academic self-concept in learners using a one-to-one AI tutor.
 
-The decision has to be made explicitly because the system implies one whether or not it
+The choice has to be made explicitly, because the system implies one whether or not it
 decides. The learner's own past performance is the reference class the evidence
 supports, and the constraint the corpus has not previously stated is that the
-comparison must not be smuggled back in through cohort percentiles, leaderboards or
-"students like you" framing.
+comparison must not be smuggled back in through percentiles, leaderboards or "students
+like you" framing.
 
 ---
 

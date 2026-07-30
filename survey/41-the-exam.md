@@ -46,11 +46,10 @@ and 40 mathematics for the coached, against 21 and 22 for the uncoached. A vendo
 reporting the coached column alone reports 29 and 40 as its effect, and most of both
 is regression, practice and ordinary growth.
 
-Against 6–8 and 13–18, the claims Powers and Rock quote from the two firms' own
-websites in November 1997 are **120 combined points (Kaplan) and 140 (Princeton
-Review)**, with Princeton Review guaranteeing 100 and Kaplan claiming 28% of students
-improve by at least 170. `VENDOR` The authors note these are documented *"only by
-surveying previous customers to ascertain score changes after coaching."*
+Against 6–8 and 13–18, the claims Powers and Rock quote from the two firms' websites
+in November 1997 are **120 combined points (Kaplan) and 140 (Princeton Review)**,
+with Princeton Review guaranteeing 100. `VENDOR` The authors note these are documented
+*"only by surveying previous customers to ascertain score changes after coaching."*
 
 Two further readings, and they are the same literature read twice, so no independence
 is claimed between them. Becker (1990), *Review of Educational Research* 60(3),
@@ -82,9 +81,8 @@ test of the same construct.
 The figure in circulation is that 20 hours of Official SAT Practice on Khan Academy
 is worth 115 points. Its origin is a College Board / Khan Academy **press release of
 8 May 2017**, and the quantity is an average PSAT/NMSQT-to-SAT score change among
-early adopters reporting 20 hours, with no comparison group net of typical growth.
-Typical growth between those two sittings is roughly 60 combined points on Briggs's
-NELS figure. `VENDOR`
+early adopters reporting 20 hours, with no comparison group net of typical growth —
+which, on Briggs's NELS figure, is itself about 60 combined points. `VENDOR`
 
 The primary source is Weatherholtz et al. (2020), a Khan Academy technical report
 subtitled *An Observational Study*, which states that *"these working papers have not
@@ -111,13 +109,13 @@ hours, not efficacy.
 
 ## 3. Preparation is a complement to prior advantage
 
-One moderator recurs in all four sources and it cuts against the equity claim. Powers
+One moderator recurs in all four sources and cuts against the equity claim. Powers
 and Rock found coaching effects correlated positively with English grades (r = .14),
 mathematics grades (r = .12) and parental education (r = .12); Briggs found coaching
-most effective for high-SES students with good mathematics grades. The Khan Academy
-report found best-practice behaviours least common where they would help most: in the
-bottom PSAT quartile 5% levelled up 15 or more skills against 24% in the top
-quartile, and 8% completed a practice examination against 19%. `OBSERVED`
+most effective for high-SES students. The Khan Academy report found best-practice
+behaviours least common where they would help most: in the bottom PSAT quartile 5%
+levelled up 15 or more skills against 24% in the top quartile, and 8% completed a
+practice examination against 19%. `OBSERVED`
 
 Free access did not flatten the gradient, because the gradient lives in usage rather
 than in access. §04 argues that designing for the margin is what makes a system work
@@ -129,10 +127,9 @@ for everyone; this is the measurement that says access alone will not do it.
 
 ERIC's entire holding on Indian entrance-examination coaching, under the query
 `"entrance exam" AND coaching AND India`, is two records, both sociological: Ørberg
-(2018) on the JEE coaching industry's relationship with the IITs, and Punjabi (2020)
-on how IIT-JEE coaching pedagogy displaces school pedagogy in Delhi. Neither
-estimates an effect on a score. `"shadow education" AND India AND achievement`
-returns zero.
+(2018) on the JEE industry's relationship with the IITs, and Punjabi (2020) on how
+IIT-JEE coaching pedagogy displaces school pedagogy in Delhi. Neither estimates an
+effect on a score. `"shadow education" AND India AND achievement` returns zero.
 
 The scale against which that absence should be read: India's NSS 75th round
 (July 2017–June 2018) records private coaching at **11.8% of average household
@@ -243,11 +240,9 @@ value comes from what is extracted per paper.
 ## 7. Homework: the moderation everybody quotes wrong
 
 Cooper, Robinson & Patall (2006), *Review of Educational Research* 76(1).
-`MEASURED-META` The causal arm is five studies, three with successful random
-assignment, pooling to **d = 0.60 [0.38, 0.82]** and **d = 0.53 [0.29, 0.79]**, with
-the authors' own robustness check noting the mean d would not have been significant
-under an assumed intraclass correlation of .4.
-
+`MEASURED-META` Its causal arm is five studies, three of them randomised, pooling to
+**d = 0.60 [0.38, 0.82]** and **d = 0.53 [0.29, 0.79]** — significance that the
+authors' own check shows would not survive an assumed intraclass correlation of .4.
 The correlational arm is where the quotable claim lives, and the standard paraphrase
 — homework does not work in primary school — survives none of three corrections.
 
