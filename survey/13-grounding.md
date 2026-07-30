@@ -335,31 +335,31 @@ cannot reach.**
 (b) Omission of required coverage is a set difference against a blueprint. "Did the
 artefact cover what it was supposed to cover?" is a set-cover computation, and assessment
 has done it since the 1950s under the name *table of specifications*. The earlier report's
-own right-hand column concedes the mechanism — "coverage against a syllabus" — and then
-leaves the row in the unverifiable table anyway. That is an inconsistency, not a finding.
+own right-hand column concedes the mechanism, "coverage against a syllabus", and then
+leaves the row in the unverifiable table anyway. That is an inconsistency and not a finding.
 
 (c) The choice of the declared scope itself is genuinely, permanently unverifiable.
 Whether *this* syllabus is the right syllabus; whether the 20% you declared out of scope
 was the 20% that mattered. Not truth-apt. The residue is one line long.
 
-The general move, and it is the most useful idea in this section:
+The general move:
 
-> **The declaration move.** Many properties that look unverifiable become verifiable when
+> The declaration move. Many properties that look unverifiable become verifiable when
 > you require the author to declare the thing that would falsify them. You cannot check
 > whether an analogy is *good*. You can check that it shipped with a declared alignment set
 > and limit set, that the limit set is non-empty, and that nothing in the alignment set
 > contradicts the target concept's ontology. You cannot check whether an omission was
 > *wise*. You can check that it was declared and falsified none of the five invariants.
 >
-> **Verification does not need ground truth. It needs a commitment.**
+> Verification does not need ground truth. It needs a commitment.
 
 The obvious attack: declare a trivially narrow scope and every fidelity check passes.
-Real — and it is why the two checks run as a *pair*. Narrowing the scope to escape a
+Real, and it is why the two checks run as a *pair*. Narrowing the scope to escape a
 fidelity failure mechanically produces a coverage failure against the blueprint. They
 pull in opposite directions, which is what makes a pair sound where either alone is
 gameable.
 
-And the sentence the earlier report got exactly right, which nothing above weakens:
+And the sentence the earlier report got right, which nothing above weakens:
 verification is a floor, not a quality. A fully verified explanation can be badly
 sequenced, pitched wrong, and pointless. Grounding removes a failure mode; it never adds a
 virtue.
@@ -370,7 +370,7 @@ virtue.
 
 > **Every rung verifies a declaration. No rung verifies the declaring.**
 
-The boundary moves from the model's fluency — an unbounded, undiagnosable surface — to the
+The boundary moves from the model's fluency, an unbounded and undiagnosable surface, to the
 map from the learner's world into the checker's world: the units you assigned, the symbols
 you bound, the source you selected, the domain you declared, the scope you announced. That
 surface is small, enumerable, auditable, and the same object at every rung. You have
@@ -390,21 +390,21 @@ explicit "I couldn't check this" is information and a missing badge is not. And 
 verdict falsifiable: ship the check, not just its result, so the learner can change the
 numbers and watch it break.
 
-One measured constraint: groundedness and comprehensibility trade off — "humans prefer
-responses generated using RAG, but not when responses are too grounded in the textbook
-content." Ground the claim; do not ground the prose.
+One measured constraint: groundedness and comprehensibility trade off, since "humans
+prefer responses generated using RAG, but not when responses are too grounded in the
+textbook content." Ground the claim; do not ground the prose.
 
 ---
 
-## 9. The strongest counter-argument
+## 9. Correctness was never the hard part
 
 *You have built an elaborate apparatus around the part of teaching that was never the hard
 part. Nobody's tutor fails because it got a sign wrong in a derivation; it fails because
 it explained the wrong thing at the wrong moment to the wrong learner.*
 
 That is right. As verification cost approaches zero, **100% of the remaining problem is
-the part verification does not address**, and the unverifiable layer — intuition,
-appropriateness, sequencing, why this matters — is exactly where the teaching is.
+the part verification does not address**, and the unverifiable layer (intuition,
+appropriateness, sequencing, why this matters) is where the teaching is.
 
 But §1 is not a safety argument at all. The checker is what lets a tutor wait, let a wrong
 model run, hand the instrument to the learner, and settle a disagreement by experiment
@@ -413,12 +413,12 @@ to make the tutor able to stop performing.**
 
 ---
 
-## 10. What this section commits us to
+## 10. The verification we owe every claim
 
 - **Never ship an L0 formula.** 0.38 ms, 99.1% recall. There is no argument on the other
   side.
 - **Run L2a and L2b together; escalate to L3 only on `ABSTAIN` or a universal.** The
-  symbolic rung has a 38.3% hole located exactly where physics and engineering teaching
+  symbolic rung has a 38.3% hole located where physics and engineering teaching
   lives.
 - **`{PASS, FAIL, ABSTAIN}` reaches the interface.** L3 never emits `FAIL`; L2a never
   emits `PASS`; a boolean at the last layer destroys the guarantee.
@@ -437,6 +437,6 @@ to make the tutor able to stop performing.**
   ships the check so the learner can re-run it.
 
 A verifier does not make an explanation better. It makes wrongness **discoverable by the
-learner instead of assertable by the tutor** — and that is the only kind of correction
-that does not require them to believe you. Which is why the rung that matters most is not
-the strongest one. It is the one the learner can run themselves.
+learner instead of assertable by the tutor**, which is the only kind of correction
+that does not require them to believe you. Which is why the rung that matters most is the
+one the learner can run themselves.

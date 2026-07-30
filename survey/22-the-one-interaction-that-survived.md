@@ -10,7 +10,7 @@ source_report: research/raw/J1-personalisation-engine.md
 
 Every section before this one asks *which techniques work*. This one asks the
 harder question, and the one everybody actually wants answered: **for this learner,
-on this concept, at this moment — which technique fires?**
+on this concept, at this moment, which technique fires?**
 
 The answer is not an algorithm. It is a fifteen-second measurement that was
 impractical until about eighteen months ago.
@@ -20,13 +20,13 @@ impractical until about eighteen months ago.
 ## 1. Start with the failure, because it is fifty years long
 
 Personalisation has a research programme behind it and the programme mostly
-failed. This is not a minor caveat; it is the single most important thing to know
-before building anything in this space, and it is routinely omitted.
+failed. Anyone building in this space needs to know that before anything else,
+and almost nobody says it.
 
-Cronbach and Snow spent two decades hunting **aptitude–treatment interactions** —
+Cronbach and Snow spent two decades hunting **aptitude–treatment interactions**,
 the idea that different learners need different instruction, and that you can
-predict which from measurable traits. Read Cronbach's own 1975 summary rather than
-anyone's characterisation of it:
+predict which from measurable traits. Here is Cronbach's own 1975 summary, in his
+own words:
 
 > *"The interactions did not turn out as we had anticipated."*
 
@@ -45,15 +45,15 @@ personalisation engine should have to write out by hand first:
 > *"Once we attend to interactions, we enter a hall of mirrors that extends to
 > infinity."* … *"Generalizations decay."*
 
-Fifty years of looking. **Exactly one interaction survived** — and it survived in
-two forms that turn out to be the same law.
+Fifty years of looking. **Exactly one interaction survived**, in two forms that
+turn out to be the same law.
 
-**With a boundary that §24 forces us to draw, and that we would rather not.**
+§24 forces a boundary here that we would rather not draw.
 Noetel's meta-meta-analysis found that **prior knowledge did not consistently
 moderate multimedia design effects (p = 0.14)**. That is in open tension with
 everything below. The honest reading, adopted here rather than argued away: the
-reversal is well established for **assistance and guidance** manipulations —
-worked examples, scaffolding, explicit instruction — and is **not reliably
+reversal is well established for **assistance and guidance** manipulations such as
+worked examples, scaffolding and explicit instruction, and is **not reliably
 detectable across the broad multimedia-design corpus**. So the survivor is
 narrower than "prior knowledge moderates instruction." It is *prior knowledge
 moderates how much help to give*. That is still the axis this section builds on,
@@ -70,17 +70,16 @@ simultaneously to make sense of the material.
 
 Three properties of this interaction decide the entire architecture:
 
-- **It is per-topic, not per-person.** The same learner is a novice in one chapter
+- It is per-topic, not per-person. The same learner is a novice in one chapter
   and an expert in the next. Any system that stores "this student needs
   scaffolding" as a trait has already made the mistake Cronbach warned about.
-- **It is asymmetric.** Under-assisting a novice is a missed gain. Over-assisting
+- It is asymmetric. Under-assisting a novice is a missed gain. Over-assisting
   an expert is an *active harm* at −0.428.
-- **It is heterogeneous.** I² ≈ 90%. It is a real law with noisy boundaries, not a
-  dial.
+- It is heterogeneous. I² ≈ 90%. It is a real law with noisy boundaries and
+  nothing like a dial.
 
-Everything else on the personalisation menu — learning styles, modality
-preference, personality type, demographic tailoring — is either debunked or
-unevidenced. The honest table is very short:
+Everything else on the personalisation menu is either debunked or unevidenced:
+learning styles, modality preference, personality type, demographic tailoring. The honest table is very short:
 
 | Dimension | Status |
 |---|---|
@@ -96,11 +95,9 @@ unevidenced. The honest table is very short:
 
 ## 3. What actually changed, and it is not the model
 
-Here is the reframe that makes this section worth writing.
-
 The blocker on real personalisation was never compute, and never the algorithm.
-It was that knowing where a learner sits on the one interaction that matters —
-*on this concept, right now* — required a pretest that cost more attention than the
+It was that knowing where a learner sits on the one interaction that matters,
+*on this concept, right now*, required a pretest that cost more attention than the
 lesson it was meant to configure. So every system fell back on the two signals that
 are free: stated preference and demographic label. Both are documented dead
 ends, and the field's fifty-year record of failure is substantially a record of
@@ -134,22 +131,22 @@ problem — bandits, reinforcement learning, policy optimisation. Four findings,
 from primary sources read in full:
 
 Most of the literature contains no test. Of 89 reinforcement-learning-in-
-education papers, **54 ran no statistical test at all** — and **45 of those 54 are
-content-sequencing papers, precisely the cluster that measured 0 for 8** — though
-that sub-cut sits inside a review whose overall finding is that **21 of 41 studies
+education papers, **54 ran no statistical test at all**, and **45 of those 54 are
+content-sequencing papers, precisely the cluster that measured 0 for 8**. That
+sub-cut sits inside a review whose overall finding is that **21 of 41 studies
 (51%) significantly beat all baselines**, a headline an earlier draft of this survey
 omitted. The narrow negative is real; the review is not negative. See §08. It is in
 earlier work. Only **14 of 89** included a non-adaptive control condition.
 
 The wins are not where people think. Of 18 documented wins, **14 are
 guidance-related and 4 are content-related.** Adaptivity helps by adjusting *how
-much help*, not by resequencing *what comes next*. That replicates the split
+much help* and never by resequencing *what comes next*. That replicates the split
 exactly.
 
 Bandits are statistically hostile in a classroom. They need **≥2× the
-participants** for equivalent power. And under *temporal entry bias* — students
-joining across a term, which is the normal shape of a school year rather than an
-edge case — **Type I error reaches 95%, and gets worse as the sample grows.** A
+participants** for equivalent power. And under *temporal entry bias*, meaning
+students joining across a term, which is the normal shape of a school year and not
+an edge case, **Type I error reaches 95%, and gets worse as the sample grows.** A
 system that adapts as learners arrive can manufacture a significant result from
 nothing, more reliably the longer it runs.
 
@@ -177,13 +174,12 @@ teaching-expectancy framing (**g = 0.48** vs **−0.02** without) run for everyo
 always (§24). They are not personalisation candidates and they are not A/B tested against
 nothing.
 
-This concedes the strongest form of the counter-argument **structurally rather than
-rhetorically**: the largest measured effects in this entire survey are *universal*,
-not personalised. If a system does only the substrate and no adaptation at all, it
+This concedes the strongest form of the counter-argument structurally: the largest
+measured effects in this entire survey are *universal* and not personalised. If a system does only the substrate and no adaptation at all, it
 captures most of the available gain. Anything the controller adds must be argued
 for on top of that, against that baseline.
 
-### 5.2 The fast loop — seconds, and forbidden to change method
+### 5.2 The fast loop: seconds, and forbidden to change method
 
 | | |
 |---|---|
@@ -195,7 +191,7 @@ for on top of that, against that baseline.
 The fast loop is where the one surviving interaction lives. It moves *how much
 support*, which is exactly the axis the 14-of-18 wins sit on.
 
-### 5.3 The slow loop — four probe points minimum, and it must prescribe
+### 5.3 The slow loop: four probe points minimum, and it must prescribe
 
 | | |
 |---|---|
@@ -212,7 +208,7 @@ is the arm that failed.**
 ### 5.4 Log the propensity, always
 
 Every action records the probability with which it was selected. That single
-discipline turns the entire deployment into an off-policy evaluation dataset — so
+discipline turns the entire deployment into an off-policy evaluation dataset, so
 the policy improves offline, on logs, rather than online, on children. Given
 the 95% Type I error under temporal entry bias and the documented objection to
 being experimented on, this is the only ethically and statistically defensible way
@@ -249,10 +245,10 @@ tracking, and we know what that does.
 > as a crossover.
 
 Three details carry the weight. Transfer, not retention, because Rey and
-Fischer found the reversal appears on transfer and not on retention — measuring
+Fischer found the reversal appears on transfer and not on retention; measuring
 retention would look like a null even if the effect is real. **The comparison is a
-well-chosen fixed level**, not no-instruction, because against nothing everything
-works. And crossover, so each learner is their own control, which is the only
+well-chosen fixed level** and never no-instruction, because against nothing
+everything works. And crossover, so each learner is their own control, which is the only
 design that fits an interaction this heterogeneous.
 
 The concession is stated in advance:
@@ -267,7 +263,7 @@ the saved complexity on getting the universal things right."
 
 ---
 
-## 8. What this section commits us to
+## 8. The controller we will actually build
 
 - **Lead with Cronbach.** Anyone proposing a personalisation dimension states which
   of the seven rows in §2 it belongs to, and defends it there.

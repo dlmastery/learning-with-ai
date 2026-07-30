@@ -10,7 +10,7 @@ source_report: research/raw/F6-motivation-persistence.md
 
 Here is the cheapest useful test in this survey. Take any metric you are thinking of
 putting in an objective function. Now simulate an agent that maximises it **while
-learning nothing** — the cheapest possible action sequence that satisfies the
+learning nothing**: the cheapest possible action sequence that satisfies the
 measurement. If it scores well, the metric is invalid as a learning objective.
 
 Call it the **Null-Learner Test**. Run it:
@@ -30,13 +30,13 @@ otherwise-careful people start reasoning in engagement units without noticing.
 
 ---
 
-## 1. What AI genuinely changes, and it is large
+## 1. Two of the three needs are no longer rationed
 
 Self-determination theory posits three needs whose satisfaction produces autonomous
 motivation: **autonomy, competence, relatedness.** Two of them were previously
 rationed by teacher time, and are now not.
 
-**Autonomy — AI is structurally the best autonomy-support technology ever built.**
+**Autonomy. AI is structurally the best autonomy-support technology ever built.**
 Choice enhances intrinsic motivation, effort, task performance and perceived
 competence across 41 studies. A generative system can offer choice over topic,
 sequence, pace, difficulty, representation, example domain, and *what the learner is
@@ -47,9 +47,9 @@ need conventional schooling most systematically violates.
 > *Guardrail, in the same breath:* autonomy in SDT is not "many options"; it is
 > volition and self-endorsement of one's own action. A system that generates 40 paths,
 > selects which 3 to display, and orders them by predicted engagement is supplying
-> **choice architecture masquerading as volition.**
+> choice architecture masquerading as volition.
 
-Competence — AI can supply it, conditional on being willing to say no. Competence
+Competence. AI can supply it, conditional on being willing to say no. Competence
 support is optimal challenge plus immediate informative feedback plus visible progress
 against a real standard. Every one of those is continuous and cheap for an LLM tutor
 and impossible for a human at any realistic ratio. The strongest direct evidence is
@@ -60,13 +60,13 @@ AI tutor learned more in less time and reported feeling more engaged and more mo
 > over months. And competence support requires **honest negative feedback**. A model
 > tuned on user satisfaction that tells a learner their wrong derivation is "a great
 > start!" has not supplied competence support — it has supplied its counterfeit.
-> **Sycophancy is the AI-specific mechanism by which competence support silently
-> inverts.**
+> Sycophancy is the AI-specific mechanism by which competence support silently
+> inverts.
 
-Relatedness — no, for the load-bearing part. Section 6 below.
+Relatedness: no, for the load-bearing part. Section 6 below.
 
 Two of three, at zero marginal cost, both previously rationed. That is a real and large
-change, and it is what this section leads with. The sharpest available failure mode is
+change, and this section leads with it. The sharpest available failure mode is
 that a system will *appear* to supply the third and thereby displace the humans who
 could.
 
@@ -95,14 +95,14 @@ And the second destroys the access narrative: the marginal MOOC user was not an
 underserved learner in a low-income country. It was an already-credentialed
 professional in a rich one.
 
-The honest rebuttal, stated because it is measured rather than rhetorical.
+The rebuttal, included because it is measured and not merely rhetorical.
 Completion is arguably the wrong denominator, because most enrollees never intended to
 complete. Henderikx et al. ran the same two MOOCs under both definitions:
-completion-based success **6.5% and 5.6%**; intention-adjusted success — did the
-learner achieve *their own* stated goal — **59% and 70%**. A tenfold swing from a
+completion-based success **6.5% and 5.6%**; intention-adjusted success (did the
+learner achieve *their own* stated goal) **59% and 70%**. A tenfold swing from a
 definitional choice. Kizilcec's four-trajectory taxonomy (completing, auditing,
 disengaging, sampling) made this tractable by treating the clusters as different
-products being consumed rather than degrees of failure. *And the replication note that
+products being consumed instead of degrees of failure. *And the replication note that
 belongs with it:* an attempt to reproduce that structure on a different,
 social-constructivist platform failed to fully replicate, with only samplers and
 completers stable across platforms. Engagement patterns are shaped by pedagogy, not
@@ -113,13 +113,13 @@ irrelevance to the persistence problem. Reframing sampling as success does not p
 one additional person who learned a hard thing they could not previously do. And
 platform-level non-return across a *year* is not a definitional artefact.
 
-> **Content supply was solved, and solving it moved almost nothing.** Any proposal whose
+> Content supply was solved, and solving it moved almost nothing. Any proposal whose
 > theory of change is "better, more personalised content" is pushing harder on the one
 > lever already pushed to exhaustion.
 
 ---
 
-## 3. The nulls, given their own space
+## 3. The interventions that stopped working at scale
 
 Behavioural interventions to raise persistence do not survive scaling. This is the most
 under-cited literature in edtech.
@@ -145,12 +145,12 @@ nothing. Binding your own future self does a lot.**
 
 The structural reason is the organising idea of this section. A commitment device is the
 only intervention in that list that transfers volition to the learner instead of
-spending it. Every other one is the system acting *on* the learner. Hold that distinction
-— it predicts, retroactively, almost every result below.
+spending it. Every other one is the system acting *on* the learner. Hold that
+distinction; it predicts, retroactively, almost every result below.
 
 ---
 
-## 4. Gamification, reported honestly
+## 4. Gamification works, and four caveats
 
 Two independent meta-analyses converge on a real, medium effect, and this survey says so.
 
@@ -163,8 +163,8 @@ So the headline is *not* "gamification doesn't work." Four caveats the marketing
 
 The cell vendors sell is the weakest one. The cognitive effect "was stable in a
 subsplit analysis of studies employing high methodological rigor," whereas "effects on
-motivational and behavioral outcomes were less stable." The claim actually made —
-*it makes people keep coming back* — rests on g = .25 with a lower CI bound of .04.
+motivational and behavioral outcomes were less stable." The claim actually made,
+*it makes people keep coming back*, rests on g = .25 with a lower CI bound of .04.
 
 The moderators point away from points, badges and leaderboards. The significant
 moderators were game fiction and social interaction, with "combining competition

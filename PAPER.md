@@ -5957,7 +5957,7 @@ The single most important number in this area:
 
 That was stated as a fact about Lean. It is a fact about *chains*.
 
-> **The composition rule.** Chaining a verified stage A into a verified stage B
+> The composition rule. Chaining a verified stage A into a verified stage B
 > produces **three** verification obligations, and the field routinely ships two:
 >
 > 1. `wellformed(A.out)` — A's output is legal in A's target language. *Usually
@@ -6008,7 +6008,7 @@ condition outright.
 
 The ruling: **no chain of verified stages may be reported as verified end-to-end unless
 every interface carries a round-trip certificate.** "97% formalization and 69% proving"
-is, absent obligation 3, not a claim about the pipeline at all.
+is, absent obligation 3, no claim about the pipeline at all.
 
 ---
 
@@ -6023,7 +6023,7 @@ perfectly verified explanation of the wrong 20% is a failure no tier detects."
 
 That row does not survive, and it should be split into three.
 
-**(a) Omission that *falsifies* is machine-checkable, and it is the class that causes
+**(a) Omission that *falsifies* is machine-checkable, and this is the class that causes
 harm.** Five properties a simplification may never falsify, each a property of the *pair*
 (simple rung, detailed rung), each decidable given both:
 
@@ -6045,31 +6045,31 @@ cannot reach.**
 (b) Omission of required coverage is a set difference against a blueprint. "Did the
 artefact cover what it was supposed to cover?" is a set-cover computation, and assessment
 has done it since the 1950s under the name *table of specifications*. The earlier report's
-own right-hand column concedes the mechanism — "coverage against a syllabus" — and then
-leaves the row in the unverifiable table anyway. That is an inconsistency, not a finding.
+own right-hand column concedes the mechanism, "coverage against a syllabus", and then
+leaves the row in the unverifiable table anyway. That is an inconsistency and not a finding.
 
 (c) The choice of the declared scope itself is genuinely, permanently unverifiable.
 Whether *this* syllabus is the right syllabus; whether the 20% you declared out of scope
 was the 20% that mattered. Not truth-apt. The residue is one line long.
 
-The general move, and it is the most useful idea in this section:
+The general move:
 
-> **The declaration move.** Many properties that look unverifiable become verifiable when
+> The declaration move. Many properties that look unverifiable become verifiable when
 > you require the author to declare the thing that would falsify them. You cannot check
 > whether an analogy is *good*. You can check that it shipped with a declared alignment set
 > and limit set, that the limit set is non-empty, and that nothing in the alignment set
 > contradicts the target concept's ontology. You cannot check whether an omission was
 > *wise*. You can check that it was declared and falsified none of the five invariants.
 >
-> **Verification does not need ground truth. It needs a commitment.**
+> Verification does not need ground truth. It needs a commitment.
 
 The obvious attack: declare a trivially narrow scope and every fidelity check passes.
-Real — and it is why the two checks run as a *pair*. Narrowing the scope to escape a
+Real, and it is why the two checks run as a *pair*. Narrowing the scope to escape a
 fidelity failure mechanically produces a coverage failure against the blueprint. They
 pull in opposite directions, which is what makes a pair sound where either alone is
 gameable.
 
-And the sentence the earlier report got exactly right, which nothing above weakens:
+And the sentence the earlier report got right, which nothing above weakens:
 verification is a floor, not a quality. A fully verified explanation can be badly
 sequenced, pitched wrong, and pointless. Grounding removes a failure mode; it never adds a
 virtue.
@@ -6080,7 +6080,7 @@ virtue.
 
 > **Every rung verifies a declaration. No rung verifies the declaring.**
 
-The boundary moves from the model's fluency — an unbounded, undiagnosable surface — to the
+The boundary moves from the model's fluency, an unbounded and undiagnosable surface, to the
 map from the learner's world into the checker's world: the units you assigned, the symbols
 you bound, the source you selected, the domain you declared, the scope you announced. That
 surface is small, enumerable, auditable, and the same object at every rung. You have
@@ -6100,9 +6100,9 @@ explicit "I couldn't check this" is information and a missing badge is not. And 
 verdict falsifiable: ship the check, not just its result, so the learner can change the
 numbers and watch it break.
 
-One measured constraint: groundedness and comprehensibility trade off — "humans prefer
-responses generated using RAG, but not when responses are too grounded in the textbook
-content." Ground the claim; do not ground the prose.
+One measured constraint: groundedness and comprehensibility trade off, since "humans
+prefer responses generated using RAG, but not when responses are too grounded in the
+textbook content." Ground the claim; do not ground the prose.
 
 ---
 
@@ -10072,7 +10072,7 @@ incomplete.
 
 Thirty teachers make thirty different mistakes.
 
-That is not a throwaway observation about human variability — it is a **structural
+That throwaway observation about human variability is a **structural
 safety property** of every education system that has ever existed. A teacher who
 misexplains limits, or who has an idiosyncratic blind spot about the passive voice,
 damages thirty children a year. The next teacher has a different blind spot. Across
@@ -10084,23 +10084,23 @@ A model's errors are not like that. They are **systematic, reproducible, and
 identical for every learner simultaneously.** If a widely deployed model holds a
 subtly wrong account of natural selection, or a plausible-but-broken intuition for
 conditional probability, then every child using it receives the same defect on the
-same afternoon — and the defect is invisible precisely because it is universal.
+same afternoon, and the defect is invisible because it is universal.
 There is no dissenting teacher down the corridor.
 
-Nobody has studied this **in education**, and there is no monitoring for it and no
-benchmark that would detect it. But a claim in an earlier draft of this section — that
-it has *no name in the literature* — was wrong, and the correction strengthens the
-argument rather than weakening it.
+Nobody has studied this in education, and there is no monitoring for it and no
+benchmark that would detect it. But an earlier draft of this section claimed it has
+*no name in the literature*, and that was wrong. The correction strengthens the
+argument instead of weakening it.
 
-**It has a formal result, in another field.** Kleinberg and Raghavan's *algorithmic
+It has a formal result, in another field. Kleinberg and Raghavan's *algorithmic
 monoculture* (PNAS 2021) proves that convergence on a single algorithm can **reduce
 collective decision quality even when that algorithm is more accurate for each agent
-in isolation** — and with no exogenous shock required. The harm is a consequence of
+in isolation**, and with no exogenous shock required. The harm is a consequence of
 correlation itself, not of the model being bad.
 
 That is our risk, stated as a theorem, five years before anyone applied it here. And
 there is now a measured hint of the mechanism: **71% of one model's
-misconception-detection failures concentrate in two question types** — reported
+misconception-detection failures concentrate in two question types**, reported
 incidentally by researchers studying something else entirely. Model pedagogical blind
 spots are not diffuse. They are structurally concentrated, which is exactly the
 condition under which monoculture bites hardest.
@@ -10108,15 +10108,15 @@ condition under which monoculture bites hardest.
 We keep the name *correlated pedagogical error* for the education-specific case, and
 withdraw the claim of novelty.
 
-The reason it is invisible is worth stating precisely. Every evaluation we have
+It is invisible for one specific reason. Every evaluation we have
 compares a model against a *reference answer*. Correlated error is the case where
 the model and the reference are wrong together, or where the error lives in the
 *explanation* rather than the answer. A model can be 100% accurate on the benchmark
 and systematically misteach the mechanism behind it.
 
-**What would detect it:** an ensemble of genuinely independent models and human
-experts, explaining the same concept, with disagreement in the *explanation* — not
-the answer — treated as the signal. That is a monitoring system nobody is building
+What would detect it: an ensemble of genuinely independent models and human
+experts, explaining the same concept, with disagreement treated as the signal when
+it falls in the *explanation* and not the answer. That is a monitoring system nobody is building
 because nobody has named the failure.
 
 ---
@@ -10124,7 +10124,7 @@ because nobody has named the failure.
 ## 2. Every effect in this document is measured in weeks
 
 The longest outcome interval in this corpus is months. Most are a single session.
-The Sierra Leone trial, the largest deployment we examine, ran **eight weeks** — an
+The Sierra Leone trial, the largest deployment we examine, ran **eight weeks**. An
 earlier version of this sentence said "a school year", which was wrong and made the
 field's time horizon look better than it is (§36.3). Almost nothing comes close even to eight
 weeks.
@@ -10136,7 +10136,7 @@ instrument cannot see the failure**, because the failure operates on a timescale
 order of magnitude longer than the measurement.
 
 This is not hypothetical hand-wringing. It is the exact shape of the one long-horizon
-result we do have: unguarded AI produced **+48% during access** and **−17% once
+result we do have: unguarded AI produced **+48% during access and −17% once
 withdrawn.** The sign flipped when the window widened (§36.2). We got that only because
 someone thought to measure after taking the tool away — and almost nobody does.
 
@@ -10163,8 +10163,8 @@ subject matter is encountered in units of a topic, and epistemics is encountered
 units of a *turn*. A child might meet photosynthesis five times and meet "how a
 confident answer sounds" ten thousand times.
 
-The honest position is that we do not know its magnitude or its sign. The
-uncomfortable position is that nobody is looking, and that a field measuring
+We do not know its magnitude or its sign. The
+uncomfortable part is that nobody is looking, and that a field measuring
 post-test scores would not notice either way.
 
 ---
@@ -10183,8 +10183,8 @@ exists by March.
 Worse than merely stale: potentially constraining. A system that has confidently
 concluded a child struggles with multi-step reasoning will route around multi-step
 reasoning, and the routing is invisible to the child, the parent, and the model. The
-prediction becomes a wall. We know this failure mode intimately from human education
-— it is called tracking, and its harms are well documented — and we are proposing to
+prediction becomes a wall. We know this failure mode intimately from human education.
+It is called tracking, its harms are well documented, and we are proposing to
 automate the inference that produces it.
 
 Nobody has asked whether personalisation is developmentally *anti*-adaptive. It is
@@ -10210,7 +10210,7 @@ had something the control group did not. What the same technique does when
 everyone has it is not a smaller version of that result. It is a different
 question, and it has never been asked.
 
-Two mechanisms make it different rather than merely attenuated. If a tutor lifts
+Two mechanisms make it different and not merely attenuated. If a tutor lifts
 everyone by 0.4 SD, the *absolute* learning is real and the *positional* benefit is
 zero — which matters if the learner's actual goal was admission. And if assessment
 adapts to a higher mean, the bar moves, and the measured gain evaporates while the
@@ -10236,10 +10236,10 @@ catches the honest and misses the dishonest.
 Treating this as a cheating problem may be the deepest frame error in contemporary
 education. It is a measurement crisis: our instruments stopped measuring what
 they were built to measure. Detection tries to restore the old instrument. The
-alternative — building assessment that is valid *given* assistance, measuring the
-process rather than the artifact, and testing what a person can do unassisted when
-that is the thing you actually care about — requires admitting the instrument is
-gone rather than defending it.
+alternative starts by admitting the instrument is gone instead of defending it:
+build assessment that is valid *given* assistance, measure the process and not the
+artifact, and test what a person can do unassisted when that is the thing you
+actually care about.
 
 We do not know what the replacement looks like. We are fairly confident it is not a
 classifier.
@@ -10271,12 +10271,12 @@ about. We flag it against ourselves.
 ## 8. Ten questions that expose most of this
 
 If the sections above are what we cannot see, these are the instruments for looking.
-They are aimed at any vendor, any paper, any demo — and at this document. Most
+They are aimed at any vendor, any paper, any demo, and at this document. Most
 claims in this field fail on the first three.
 
 1. **Show me the delayed, unassisted, novel-item test.** Not the practice score, not
    the same items. Weeks later, device closed, problems never seen. ERIC returns
-   **0 records** for `"retention test" AND "ChatGPT"` and **0** for `"transfer test"`.
+   **0 records** for `"retention test" AND "ChatGPT"` and 0 for `"transfer test"`.
    Without it, nothing was measured about learning.
 
 2. **What happened to the gap, not the mean?** Report the interaction with prior
@@ -10318,8 +10318,8 @@ claims in this field fail on the first three.
 
 ## 9. Turning question ten on ourselves
 
-The honest counter-case to this entire survey: **0.2–0.4 SD may be a population
-parameter rather than a technology limit.**
+The counter-case to this entire survey, at full strength: **0.2–0.4 SD may be a
+population parameter and not a technology limit.**
 
 The evidence for that reading is not weak. The best-powered studies on record are
 nulls — lesson study at **ES 0.02** across 181 schools and 12,747 pupils with very
@@ -10332,19 +10332,19 @@ panels lost to one good agent, eight random substitutions bought nothing over on
 There is a reading of this document in which every sophisticated mechanism we
 propose is another elaboration about to lose to simplicity.
 
-What would force us to concede: a well-powered trial of the assembled system —
-constrained, grounded, pivoting, remembering, teachable — with a delayed unassisted
+What would force us to concede: a well-powered trial of the assembled system,
+constrained and grounded and pivoting and remembering and teachable, with a delayed unassisted
 novel-item outcome, landing inside the 0.2–0.4 band. Not below it. *Inside* it.
 That would mean the mechanisms are decorative and the band is the ceiling.
 
 If that happens, the rewrite we would owe the reader is already drafted: *AI's
 contribution is scalable, high-fidelity, high-dosage delivery of what already
-worked.* Which is a smaller claim, still true, still worth building — and is
-precisely what the special-education evidence argues for on its own terms.
+worked.* Which is a smaller claim, still true, still worth building, and is
+what the special-education evidence argues for on its own terms.
 
 ---
 
-## 10. What this section commits us to
+## 10. What we do while these remain unmeasured
 
 - **Name correlated pedagogical error and build the monitor**, because a failure with
   no name gets no budget.
@@ -10352,7 +10352,7 @@ precisely what the special-education evidence argues for on its own terms.
   outcome.
 - **Assume the epistemic curriculum is running** whether or not we measure it, and
   write the tutor's default behaviours as though a child is learning epistemics from
-  every turn — because they are.
+  every turn, because they are.
 - **Let the learner model decay, and make restriction harder to justify than
   expansion.**
 - **State the scarcity condition** whenever quoting an effect size measured in a
